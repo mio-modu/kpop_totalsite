@@ -1,9 +1,36 @@
 import { ImageResponse } from "next/og";
+import { guides } from "@/content/guides";
+import { displayStatus } from "@/lib/freshness";
 import { site } from "@/lib/site";
 
 export const alt = `${site.name} — ${site.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+// Derived status needs a daily rebuild — see the note in app/page.tsx.
+export const revalidate = 86400;
+
+/**
+ * What the whole site can claim, for the card that speaks for the whole site.
+ *
+ * It was the literal string "DATED · SOURCED" — written before `sourced` was a
+ * status, when it was only a word. Left hardcoded it would go on saying
+ * SOURCED after a guide had been walked, and worse, it would say it while a
+ * check had quietly expired. This is the same hardcoded-claim pattern the rest
+ * of this site just stopped doing.
+ *
+ * The weakest rung wins. The card speaks for five guides at once, so claiming
+ * VERIFIED while four of them are only sourced would be the lie — and an
+ * expired check drags the whole card down to EXPIRED, which is the point.
+ */
+const RUNGS = ["stale", "draft", "sourced", "reported", "verified"] as const;
+
+function siteStamp() {
+  const weakest = guides
+    .map((g) => RUNGS.indexOf(displayStatus(g)))
+    .reduce((a, b) => Math.min(a, b), RUNGS.length - 1);
+  const label = RUNGS[weakest] ?? "sourced";
+  return label === "stale" ? "EXPIRED" : label.toUpperCase();
+}
 
 /**
  * The share card. Most of this site's early distribution is a link pasted into a
@@ -107,7 +134,7 @@ export default function OpengraphImage() {
               letterSpacing: "0.08em",
             }}
           >
-            DATED · SOURCED
+            DATED · {siteStamp()}
           </div>
         </div>
 

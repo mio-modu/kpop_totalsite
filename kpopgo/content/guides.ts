@@ -2,21 +2,44 @@
  * The content layer.
  *
  * Every claim on this site has to carry three things or it does not ship:
- *   1. `sources`      — where it came from, linkable by the reader
- *   2. `lastVerified` — the day a human last checked it against the live platform
- *   3. `status`       — "draft" until someone has walked the flow end to end
+ *   1. `sources`     — where it came from, linkable by the reader
+ *   2. `lastChecked` — the day a human last held it against the live platform
+ *   3. `status`      — how it was checked, which is not the same question
  *
- * `status: "draft"` renders a visible banner. That is deliberate: the entire
- * premise of this site is being more accurate than the stale guides that rank
- * today, so pretending to a verification that has not happened would torch the
- * only asset we have.
+ * The field is `lastChecked`, not `lastVerified`, because most of these pages
+ * have been checked without having been verified, and a field name that says
+ * otherwise is the first step towards a page that does.
  *
  * Nothing here helps anyone get around an identity check. Where a platform
  * requires Korean identity verification we say so plainly and describe the
  * official routes open to overseas fans instead.
  */
 
-export type GuideStatus = "draft" | "verified";
+/**
+ * How a guide was checked. Not a progress bar — each rung is a different
+ * *kind* of evidence, and the page says which one it has.
+ *
+ *   draft     Being written. Not finished, not to be published as a claim.
+ *   sourced   Every step traced to the platform's own documentation, the
+ *             official announcement, or press reporting, each linked and
+ *             dated. Nobody from this site went through the flow.
+ *   reported  The above, plus the failure points cross-checked against fans
+ *             who actually did it from outside Korea. Second-hand, but
+ *             second-hand from people who hit the wall.
+ *   verified  Somebody created an account and walked it end to end.
+ *
+ * `sourced` is not an excuse for the absence of `verified`; it is a different
+ * and honest statement. "The official procedure, as the platform stated it on
+ * 14 October 2026" is a claim this site can stand behind, and it is already a
+ * stronger claim than the guides currently ranking, which are undated.
+ *
+ * What makes it honest rather than a loophole is that it expires faster. See
+ * SHELF_LIFE in lib/freshness.ts: a sourced page goes off in 90 days, a
+ * verified one in 180. Documentation nobody tested is exactly what was wrong
+ * with every guide this site exists to replace, so it is held to the shorter
+ * clock, not the longer one.
+ */
+export type GuideStatus = "draft" | "sourced" | "reported" | "verified";
 
 export type Source = {
   label: string;
@@ -72,7 +95,8 @@ export type Guide = {
   /** Artwork id from content/artwork.ts. Falls back to the drawn SVG. */
   art: string;
   status: GuideStatus;
-  lastVerified: string;
+  /** The day a human last held this against the live platform. */
+  lastChecked: string;
   /** What this guide does and does not cover. Rendered above the steps. */
   scope: string;
   readMinutes: number;
@@ -99,8 +123,8 @@ export const guides: Guide[] = [
     summary:
       "The whole picture before you start: which platform your show is on, what identity check it runs, and what to have ready before the sale opens.",
     glyph: "ticket",
-    status: "draft",
-    lastVerified: RESEARCH_DATE,
+    status: "sourced",
+    lastChecked: RESEARCH_DATE,
     scope:
       "Covers shows held in South Korea and the ticketing platforms Korean agencies use. Overseas tour dates are sold by local promoters and are covered separately — the rules below do not apply to them.",
     readMinutes: 8,
@@ -229,8 +253,8 @@ export const guides: Guide[] = [
     summary:
       "The site that used to be interpark Global. It was renamed on 1 December 2025, most guides still send you to the old name, and here is the current route step by step.",
     glyph: "id",
-    status: "draft",
-    lastVerified: RESEARCH_DATE,
+    status: "sourced",
+    lastChecked: RESEARCH_DATE,
     scope:
       "Covers the overseas-facing platform for Korean shows. The Korean-language NOL Ticket site is a separate product with a separate account system and a stricter identity check.",
     readMinutes: 6,
@@ -327,8 +351,8 @@ export const guides: Guide[] = [
     summary:
       "Membership alone is not access. There is a verification step between the two, it has its own deadline, and missing it is the most common way fans lose a presale.",
     glyph: "star",
-    status: "draft",
-    lastVerified: RESEARCH_DATE,
+    status: "sourced",
+    lastChecked: RESEARCH_DATE,
     scope:
       "Covers the general shape of fan club presale qualification for Korean shows. Every tour sets its own tiers, cut-offs and conditions in the official announcement, which overrides anything general.",
     readMinutes: 5,
@@ -416,8 +440,8 @@ export const guides: Guide[] = [
     summary:
       "Three different systems can reject the same payment — the platform, your card network and your bank. Each has a different fix and only one of them is fast.",
     glyph: "card",
-    status: "draft",
-    lastVerified: RESEARCH_DATE,
+    status: "sourced",
+    lastChecked: RESEARCH_DATE,
     scope:
       "Covers overseas-issued card payments on Korean ticketing platforms. Not financial advice, and it cannot cover your specific bank's rules.",
     readMinutes: 5,
@@ -504,8 +528,8 @@ export const guides: Guide[] = [
     summary:
       "Where you buy decides whether your purchase is counted, what you pay in shipping, and whether you get the pre-order inclusions. Here is how to choose.",
     glyph: "parcel",
-    status: "draft",
-    lastVerified: RESEARCH_DATE,
+    status: "sourced",
+    lastChecked: RESEARCH_DATE,
     scope:
       "Covers buying official physical albums and goods for delivery outside Korea. Does not cover resale marketplaces or unofficial merchandise.",
     readMinutes: 6,

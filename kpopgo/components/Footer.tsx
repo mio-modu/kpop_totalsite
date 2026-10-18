@@ -37,7 +37,7 @@ export function Footer() {
         <div>
           <h2 className="data dim">How this works</h2>
           <ul className="t-sm mt-4 grid gap-2.5">
-            <li>Every page carries a verification date.</li>
+            <li>Every page says what kind of check it has had, and when.</li>
             <li>Every claim links its source.</li>
             <li>No identity-check workarounds, ever.</li>
             <li>No idol photos — every object is drawn for this site.</li>
@@ -69,9 +69,7 @@ export function Footer() {
         <p className="data-sm dim">
           Research compiled {RESEARCH_DATE} · Not legal, financial or immigration advice
         </p>
-        <p className="data-sm dim">
-          © {new Date().getFullYear()} {site.name} · T09 영화 같은 한 장면 · T13 보송한 3D 사물
-        </p>
+        <p className="data-sm dim">© {new Date().getFullYear()} {site.name}</p>
       </div>
     </footer>
   );

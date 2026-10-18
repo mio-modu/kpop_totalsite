@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { guides, RESEARCH_DATE } from "@/content/guides";
+import { SHELF_LIFE, displayStatus, type DisplayStatus } from "@/lib/freshness";
 import { site } from "@/lib/site";
+
+// Derived status needs a daily rebuild — see the note in app/page.tsx.
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,13 +15,58 @@ export const metadata: Metadata = {
 };
 
 /**
+ * The honest sentence for whatever the mix currently is.
+ *
+ * The earlier version had two branches, "all drafts" and "some verified", and
+ * would have had to be rewritten the moment a third state existed. It is
+ * assembled from the tally instead, so the page cannot fall behind the content.
+ */
+function describe(n: {
+  draft: number;
+  sourced: number;
+  reported: number;
+  verified: number;
+  expired: number;
+  /** Stored status, not derived: has anybody ever walked one of these? */
+  everWalked: boolean;
+  total: number;
+}) {
+  const parts: string[] = [];
+  if (n.verified) parts.push(`${n.verified} walked end to end`);
+  if (n.reported) parts.push(`${n.reported} cross-checked with fans who did it`);
+  if (n.sourced) parts.push(`${n.sourced} checked against official sources`);
+  if (n.expired) parts.push(`${n.expired} past the date it can vouch for itself`);
+  if (n.draft) parts.push(`${n.draft} still being written`);
+  const list =
+    parts.length > 1
+      ? `${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}`
+      : (parts[0] ?? "none yet");
+  // Keyed on the stored status, not the tally. A guide somebody walked in
+  // March whose seal has since expired still means somebody walked it, and
+  // "nobody has ever done this" would be false on a page about being accurate.
+  const tail = n.everWalked
+    ? ""
+    : " Nobody has yet created an account and gone through one of these flows personally, and we would rather say so than claim a verification we have not done — that is the whole reason this site has any right to exist alongside the ones that are out of date.";
+  return `Of ${n.total} guides: ${list}.${tail}`;
+}
+
+/**
  * AdSense reviewers look for a real publisher behind a site, and readers
  * deciding whether to trust a procedure want the same thing. One page answers
  * both — including the part that is least flattering, which is that nothing
  * here has been walked end to end yet.
  */
 export default function About() {
-  const drafts = guides.filter((g) => g.status === "draft").length;
+  // Counted off the derived status, not the stored one: a page whose check has
+  // lapsed should not be counted here as though it still held.
+  const tally = (s: DisplayStatus) =>
+    guides.filter((g) => displayStatus(g) === s).length;
+  const draft = tally("draft");
+  const sourced = tally("sourced");
+  const reported = tally("reported");
+  const verified = tally("verified");
+  const expired = tally("stale");
+  const everWalked = guides.some((g) => g.status === "verified");
 
   return (
     <div className="wrap py-12 sm:py-16">
@@ -46,23 +95,50 @@ export default function About() {
 
         <section>
           <h2 className="pm">How a guide is checked</h2>
-          <ul className="t mt-3 grid gap-2.5">
+          <p className="t mt-3">
+            Every claim links its source, and every page carries the date it was last
+            held against the live platform. What a page does <em>not</em> get is a
+            single tick that means nothing in particular. There are three kinds of
+            check, they are not interchangeable, and each page says which one it has
+            had.
+          </p>
+          <ul className="t mt-4 grid gap-3">
             <li>
-              Every claim links its source — an official announcement, a platform help
-              page, or press reporting.
+              <strong>Sourced</strong> — every step traced to the platform&apos;s own
+              help pages, the official announcement, or press reporting, each linked and
+              dated. Nobody from this site went through the flow.{" "}
+              <span className="dim">Expires after {SHELF_LIFE.sourced} days.</span>
             </li>
             <li>
-              Every page carries the date it was last checked against the live platform.
+              <strong>Reported</strong> — the above, plus the failure points
+              cross-checked against fans who did it from outside Korea. Second-hand, but
+              second-hand from people who hit the wall.{" "}
+              <span className="dim">Expires after {SHELF_LIFE.reported} days.</span>
             </li>
             <li>
-              A guide is marked <strong>Draft</strong> until a person has created an
-              account and walked the flow personally.
+              <strong>Verified</strong> — somebody created an account and walked it end
+              to end.{" "}
+              <span className="dim">Expires after {SHELF_LIFE.verified} days.</span>
             </li>
           </ul>
-          <p className="t mt-3">
-            {drafts === guides.length
-              ? `All ${guides.length} guides are currently drafts. The research is compiled from official sources, all linked, but nobody has yet gone through these flows end to end — and we would rather say so than claim a verification we have not done. That is the whole reason this site has any right to exist alongside the ones that are out of date.`
-              : `${guides.length - drafts} of ${guides.length} guides have been walked end to end. The rest are marked as drafts until they are.`}
+          <p className="t mt-4">
+            The expiry is the part that matters, and it is automatic. Every guide
+            ranking for these questions today was accurate when it was written; they are
+            wrong now because nothing made them stop claiming otherwise. Here the claim
+            comes down on its own, and the weaker check comes down sooner — a procedure
+            nobody tested is held to a shorter clock than one somebody walked, not a
+            longer one.
+          </p>
+          <p className="t mt-4">
+            {describe({
+              draft,
+              sourced,
+              reported,
+              verified,
+              expired,
+              everWalked,
+              total: guides.length,
+            })}
           </p>
           <p className="data dim mt-4">Research compiled {RESEARCH_DATE}</p>
         </section>

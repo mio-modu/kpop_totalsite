@@ -48,15 +48,31 @@ the reader needs a source they can date.
 Enforced by the `Guide` type in `content/guides.ts`:
 
 - `sources[]` — every claim links where it came from
-- `lastVerified` — the date a human last checked it against the live platform
-- `status` — `"draft"` until someone has walked the flow end to end; renders a visible
-  banner saying so
+- `lastChecked` — the date a human last held it against the live platform
+- `status` — which *kind* of check it has had, not how far along it is
 - `scope` — what the guide covers and what it does not
 
-Every page currently ships as `status: "draft"`. That is accurate: the content is compiled
-from official announcements, platform help pages and press reporting, and nobody has yet
-created an account and gone through a purchase. Flipping these to `"verified"` is week 2's
-job and is the actual product work.
+| `status` | What it means | Shelf life |
+| --- | --- | --- |
+| `draft` | Being written. Not yet traced to a source for every claim | never expires — it claims nothing |
+| `sourced` | Every step traced to the platform's own docs, the official announcement, or press reporting, each linked and dated. Nobody from this site went through the flow | **90 days** |
+| `reported` | The above, plus the failure points cross-checked against fans who did it from outside Korea | **120 days** |
+| `verified` | Somebody created an account and walked it end to end | **180 days** |
+
+Every page currently ships as `status: "sourced"`, which is accurate: the content is
+traced to official announcements, platform help pages and press reporting — all linked
+and dated — and nobody has yet created an account and gone through a purchase. Getting a
+guide to `"verified"` is week 2's job and is the actual product work.
+
+**The shelf lives are ordered on purpose.** A page nobody walked must never outlive one
+somebody did, or the ladder becomes a way of making a weaker claim last longer.
+`scripts/freshness.test.mjs` asserts that ordering, so it cannot be quietly relaxed.
+
+What renders is derived, not stored: `displayStatus` in `lib/freshness.ts` downgrades a
+page to **Expired** past its shelf life, so a lapsed check stops asserting itself without
+anyone having to remember. Because that depends on today's date, every route showing a
+status carries `export const revalidate = 86400` — a fully static page would freeze its
+status on the day it deployed.
 
 ## Stack
 
@@ -130,7 +146,7 @@ npm run typecheck
 | Week | Work | Gate |
 | --- | --- | --- |
 | 1 | English how-to keyword research; audit the 10 ranking guides for what is stale or wrong | 20 target queries + a documented error list |
-| 2 | **Walk NOL World, Weverse and YES24 Global end to end.** Register, verify, reach payment. Record every failure point and real elapsed time | All five guides flipped to `status: "verified"` |
+| 2 | **Walk NOL World, Weverse and YES24 Global end to end.** Register, verify, reach payment. Record every failure point and real elapsed time | Each guide walked moves from `sourced` to `status: "verified"` |
 | 3 | Draw the step diagrams; wire GA4; publish | 5 pages live and indexable |
 | 4 | Submit to Search Console; share in fan communities | Measure against the gates below |
 

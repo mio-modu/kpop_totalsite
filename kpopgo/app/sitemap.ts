@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // most recent verification date rather than no date at all. A sitemap entry
   // without lastModified tells a crawler nothing about whether to come back.
   const newest = guides
-    .map((g) => g.lastVerified)
+    .map((g) => g.lastChecked)
     .sort()
     .at(-1) as string;
   const latest = new Date(newest);
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/privacy`, changeFrequency: "yearly", priority: 0.2 },
     ...guides.map((g) => ({
       url: `${site.url}/guides/${g.slug}`,
-      lastModified: new Date(g.lastVerified),
+      lastModified: new Date(g.lastChecked),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),

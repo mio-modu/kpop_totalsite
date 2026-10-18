@@ -1,4 +1,5 @@
 import { guides, RESEARCH_DATE } from "@/content/guides";
+import { displayStatus } from "@/lib/freshness";
 import { site } from "@/lib/site";
 
 /**
@@ -14,6 +15,9 @@ import { site } from "@/lib/site";
  * again rather than sitting wherever it was first published.
  */
 export const dynamic = "force-static";
+// The per-item state label is derived from today's date, so the feed is
+// regenerated daily for the same reason the pages are.
+export const revalidate = 86400;
 
 function esc(s: string) {
   return s
@@ -25,16 +29,17 @@ function esc(s: string) {
 
 export function GET() {
   const items = [...guides]
-    .sort((a, b) => b.lastVerified.localeCompare(a.lastVerified))
+    .sort((a, b) => b.lastChecked.localeCompare(a.lastChecked))
     .map((g) => {
       const url = `${site.url}/guides/${g.slug}`;
-      const state = g.status === "verified" ? "Verified" : "Draft";
+      const d = displayStatus(g);
+      const state = d === "stale" ? "Expired" : d[0].toUpperCase() + d.slice(1);
       return `    <item>
       <title>${esc(g.title)}</title>
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
-      <pubDate>${new Date(g.lastVerified).toUTCString()}</pubDate>
-      <description>${esc(`${g.summary} (${state} · last checked ${g.lastVerified})`)}</description>
+      <pubDate>${new Date(g.lastChecked).toUTCString()}</pubDate>
+      <description>${esc(`${g.summary} (${state} · last checked ${g.lastChecked})`)}</description>
     </item>`;
     })
     .join("\n");

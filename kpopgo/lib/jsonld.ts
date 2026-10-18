@@ -21,7 +21,7 @@ export function guideJsonLd(guide: Guide) {
     // stale, and a crawler reads that from dateModified — but a page with a
     // modified date and no published date looks like it was back-dated.
     datePublished: RESEARCH_DATE,
-    dateModified: guide.lastVerified,
+    dateModified: guide.lastChecked,
     inLanguage: "en",
     // Pointing at the @id defined in siteJsonLd rather than restating the
     // publisher inline: one organisation in the graph, referenced twice.

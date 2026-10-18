@@ -9,6 +9,9 @@ import { Artwork } from "@/components/Artwork";
 import { VerifiedBadge, StatusNotice } from "@/components/Badges";
 import { AdSlot } from "@/components/AdSlot";
 
+// Derived status needs a daily rebuild — see the note in app/page.tsx.
+export const revalidate = 86400;
+
 export function generateStaticParams() {
   return guides.map((g) => ({ slug: g.slug }));
 }
@@ -203,7 +206,7 @@ export default async function GuidePage({
         <div className="obj p-6 sm:p-7">
           <p className="data dim">
             Sources <span className="han text-[0.6875rem]">출처</span> · last checked{" "}
-            {guide.lastVerified}
+            {guide.lastChecked}
           </p>
           <ul className="srcs mt-4 grid gap-2.5">
             {guide.sources.map((s, i) => (

@@ -6,6 +6,16 @@ import { Artwork } from "@/components/Artwork";
 import { VerifiedBadge } from "@/components/Badges";
 import { AdSlot } from "@/components/AdSlot";
 
+/**
+ * The status this page shows is derived from today's date (lib/freshness.ts),
+ * so a page frozen at build time would keep showing whatever was true on the
+ * day it was deployed — the exact failure the expiry exists to prevent. One
+ * day is short enough that a lapsed check is never live for long, and long
+ * enough that this stays a static site with a daily regeneration rather than
+ * a server rendering five pages per visitor.
+ */
+export const revalidate = 86400;
+
 const cities = [
   "서울 Seoul",
   "로스앤젤레스 Los Angeles",

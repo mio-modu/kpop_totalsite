@@ -6,6 +6,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { VerifiedBadge } from "@/components/Badges";
 import { AdSlot } from "@/components/AdSlot";
 
+// Derived status needs a daily rebuild — see the note in app/page.tsx.
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "All guides",
   description:

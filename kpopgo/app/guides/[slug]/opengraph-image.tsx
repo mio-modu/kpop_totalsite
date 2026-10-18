@@ -1,6 +1,10 @@
 import { ImageResponse } from "next/og";
 import { getGuide, guides } from "@/content/guides";
+import { displayStatus } from "@/lib/freshness";
 import { site } from "@/lib/site";
+
+// Derived status needs a daily rebuild — see the note in app/page.tsx.
+export const revalidate = 86400;
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -22,7 +26,12 @@ export default async function Image({ params }: { params: Promise<{ slug: string
 
   const title = guide?.title ?? site.name;
   const steps = guide ? `${String(guide.steps.length).padStart(2, "0")} STEPS` : "";
-  const stamp = guide ? `${guide.status === "verified" ? "VERIFIED" : "DRAFT"} · ${guide.lastVerified}` : "";
+  // The stamp follows the derived status, not the stored one. This card is
+  // where somebody decides whether to click, and "DRAFT" on a page whose every
+  // claim is sourced and dated undersold it badly.
+  const stamp = guide
+    ? `${displayStatus(guide) === "stale" ? "EXPIRED" : displayStatus(guide).toUpperCase()} · ${guide.lastChecked}`
+    : "";
 
   return new ImageResponse(
     (

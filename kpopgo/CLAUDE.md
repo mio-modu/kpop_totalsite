@@ -25,11 +25,25 @@ someone else's membership. A reader who follows that advice loses their order;
 a site that gives it loses the only thing it sells.
 
 **Nothing is marked verified until a person has walked it.** Every guide in
-`content/guides.ts` carries `status`, `lastVerified`, `scope` and `sources`,
-and `status: "draft"` renders a visible banner saying nobody has been through
-the flow yet. All five are drafts today and that is accurate. The entire
-premise is being more accurate than the stale guides that currently rank, so
-claiming a verification that did not happen makes us one of them.
+`content/guides.ts` carries `status`, `lastChecked`, `scope` and `sources`.
+`status` is a ladder of evidence, not a progress bar — `draft`, `sourced`,
+`reported`, `verified` — and each rung renders a notice saying which kind of
+check the page has had. All five are `sourced` today: every claim is traced to
+a linked, dated official source, and nobody has walked a flow end to end. The
+entire premise is being more accurate than the stale guides that currently
+rank, so claiming a verification that did not happen makes us one of them.
+
+**A weaker claim expires sooner.** `SHELF_LIFE` in `lib/freshness.ts` gives
+`sourced` 90 days and `verified` 180, and `displayStatus` derives what the page
+is still entitled to say rather than trusting what is stored. That ordering is
+what keeps `sourced` from being a loophole, and `scripts/freshness.test.mjs`
+asserts it. Do not add a rung without a shelf life shorter than the rung above
+it, and do not stretch a shelf life to avoid re-checking something.
+
+**A derived status needs a rebuild to come down.** Every route that shows one
+carries `export const revalidate = 86400`. A fully static page freezes the
+status on the day it deploys, which is the exact failure the expiry exists to
+prevent — so if you add a page that renders a status, give it the same line.
 
 ## Why this site exists
 

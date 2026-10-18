@@ -325,7 +325,29 @@ h4 {
     font-size: 0.8125rem;
     letter-spacing: 0;
   }
-  /* An expired seal is not a failed one — somebody did walk it. It reads in
+  /* The seal's colour carries the strength of the claim, so the four rungs do
+     not have to be read to be told apart. Vermilion leads and is reserved for
+     a verification somebody walked; cross-checked sits one step back in cyan;
+     a source check reads in plain ink, because it is a statement of method
+     rather than a boast and should look like a label, not a trophy. */
+  .seal-cy {
+    border-color: var(--cy);
+    color: var(--cy);
+  }
+  .seal-plain {
+    border-color: var(--rule);
+    color: var(--ink);
+  }
+  .seal-plain .seal-han {
+    color: var(--ju);
+  }
+  /* A draft claims nothing, and the dashed edge says so before the word does. */
+  .seal-draft {
+    border-style: dashed;
+    border-color: var(--rule);
+    color: var(--ink-46);
+  }
+  /* An expired seal is not a failed one — somebody did check it. It reads in
      the dim ink rather than the vermilion, so the page stops asserting without
      raising its voice. */
   .seal-stale {

@@ -54,6 +54,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/editorial-policy" className="tap hover:text-[var(--ink)]">
+                How we check
+              </Link>
+            </li>
+            <li>
               <Link href="/privacy" className="tap hover:text-[var(--ink)]">
                 Privacy
               </Link>

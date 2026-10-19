@@ -140,6 +140,14 @@ export default function About() {
               total: guides.length,
             })}
           </p>
+          <p className="t mt-4">
+            The full method — what each badge means, how long a check is good for, and a
+            dated log of the corrections we have had to make — is on{" "}
+            <Link href="/editorial-policy" className="ju underline underline-offset-4">
+              how we check things
+            </Link>
+            .
+          </p>
           <p className="data dim mt-4">Research compiled {RESEARCH_DATE}</p>
         </section>
 

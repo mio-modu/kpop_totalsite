@@ -249,7 +249,7 @@ export const guides: Guide[] = [
     art: "guide-nol",
     name: "NOL World",
     koLine: "놀 월드 예매 안내 — 구 인터파크 글로벌",
-    title: "NOL World ticketing guide",
+    title: "NOL World tickets: the site that was Interpark Global",
     summary:
       "The site that used to be interpark Global. It was renamed on 1 December 2025, most guides still send you to the old name, and here is the current route step by step.",
     glyph: "id",
@@ -347,7 +347,7 @@ export const guides: Guide[] = [
     art: "guide-presale",
     name: "Presale access",
     koLine: "팬클럽 선예매 — 자격 만들기",
-    title: "Fan club presale: how to actually qualify before the window closes",
+    title: "Fan club presale: how to qualify before it closes",
     summary:
       "Membership alone is not access. There is a verification step between the two, it has its own deadline, and missing it is the most common way fans lose a presale.",
     glyph: "star",
@@ -436,7 +436,7 @@ export const guides: Guide[] = [
     art: "guide-card",
     name: "Card declined",
     koLine: "해외 카드 결제 거절 — 원인별 해결",
-    title: "Foreign card declined on a Korean ticketing site: what to check",
+    title: "Why your card got declined on a Korean ticketing site",
     summary:
       "Three different systems can reject the same payment — the platform, your card network and your bank. Each has a different fix and only one of them is fast.",
     glyph: "card",
@@ -524,7 +524,7 @@ export const guides: Guide[] = [
     art: "album-stack",
     name: "Albums & goods",
     koLine: "해외 앨범 구매 — 차트 반영되는 곳",
-    title: "Buying K-pop albums from overseas so they count toward the charts",
+    title: "How to buy K-pop albums from overseas so they count",
     summary:
       "Where you buy decides whether your purchase is counted, what you pay in shipping, and whether you get the pre-order inclusions. Here is how to choose.",
     glyph: "parcel",

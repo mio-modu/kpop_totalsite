@@ -10,7 +10,7 @@ import { AdSlot } from "@/components/AdSlot";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "All guides",
+  title: "All guides: tickets, presales, cards and albums",
   description:
     "Every KPOPGO guide: ticketing platforms, identity verification, fan club presales, foreign card payments and overseas album orders.",
   alternates: { canonical: "/guides" },

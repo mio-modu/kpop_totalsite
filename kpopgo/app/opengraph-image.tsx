@@ -3,7 +3,7 @@ import { guides } from "@/content/guides";
 import { displayStatus } from "@/lib/freshness";
 import { site } from "@/lib/site";
 
-export const alt = `${site.name} — ${site.tagline}`;
+export const alt = `${site.headline} · ${site.name}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 // Derived status needs a daily rebuild — see the note in app/page.tsx.

@@ -19,6 +19,24 @@ const origin = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://kpopgo.app").replac
 
 export const site = {
   name: "KPOPGO",
+  /**
+   * What goes in a <title> and on a share card.
+   *
+   * The slogan below used to do this job, and Google threw it away: the home
+   * page was submitted as "KPOPGO — Get verified. Get tickets. Go." and
+   * rendered in results as plain "KPOPGO". Search rewrites a title when it
+   * decides the words help nobody who is searching, and a slogan is exactly
+   * that — it means something once you already know the site. The most
+   * valuable title tag on the site was spent on a phrase that only works
+   * after arrival.
+   *
+   * It stays a hub description rather than a how-to, because
+   * `buy-k-pop-concert-tickets-from-overseas` already owns "how to buy K-pop
+   * tickets" and two pages chasing one query split it between them.
+   */
+  headline: "K-pop ticketing guides for international fans",
+  /** Still a good slogan — it just is not a title. Used where a feed reader
+   *  shows a source name, which is a place a slogan reads correctly. */
   tagline: "Get verified. Get tickets. Go.",
   description:
     "Step-by-step guides for international K-pop fans: ticketing platforms, identity verification, foreign card payments, fan club presales and album orders — checked against the live platforms and dated.",

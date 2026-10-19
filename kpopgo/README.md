@@ -25,7 +25,7 @@ And the existing pages are stale in a specific, checkable way:
 | --- | --- | --- |
 | Interpark Ticket → NOL Ticket (Yanolja Core brand consolidation) | April 2025 | No |
 | interpark Global → **NOL World** | 1 December 2025 | No |
-| Revised Performances Act takes effect (resale rules) | 28 August 2025 | No |
+| Revised Performances Act takes effect (resale rules) | 28 August 2026 | No |
 
 Platform renames and policy changes also age out whatever an AI answer engine learned, and
 a fan who fails the process does not get the ticket — so the search intent is urgent and

@@ -2,8 +2,23 @@ import { RESEARCH_DATE, type Guide, guides } from "@/content/guides";
 import { site } from "./site";
 
 /**
- * Structured data serves two jobs here:
- *  - classic rich results for the how-to and FAQ blocks
+ * Structured data, and what it is actually still worth.
+ *
+ * The HowTo and FAQPage blocks below will not produce a rich result, and this
+ * comment used to say they would. Google deprecated HowTo rich results in
+ * September 2023 and FAQ rich results on 7 May 2026, after first narrowing
+ * FAQ to government and health sites in August 2023. Search Console stopped
+ * reporting on FAQ in June 2026, which is why the only enhancement this site
+ * shows there is Breadcrumbs — that one still renders, and it is the only
+ * rich result this content type can earn.
+ *
+ * Checked 19 October 2026. Google's position is that leftover markup causes
+ * no harm, so it stays: it is semantically correct, breadcrumbs depend on the
+ * same graph, and other consumers are not Google. But nobody should ship a
+ * change here expecting stars in the results page.
+ *
+ * What it is still for:
+ *  - Breadcrumbs, which do render
  *  - giving AI answer engines something quotable and attributable, since a
  *    chunk of this traffic will never reach the page at all
  */

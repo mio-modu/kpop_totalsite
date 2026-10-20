@@ -2111,9 +2111,9 @@ export const guides: Guide[] = [
       },
       {
         title: "Treat the currency question as a real decision",
-        body: "NOL World supports payment in 24 currencies including Korean won, US dollars, yen and yuan, and the available ones appear after you enter your card details. The choice it offers is between the currency of your card's issuing country and Korean won. That is two different exchange rates set by two different parties — one by whoever converts at the payment page, one by your card network and issuer. We are not going to tell you which is cheaper for your card, because it depends on your issuer's margin and fees. What you can do is find out your issuer's foreign-transaction terms before the day, since that is the half you are able to check in advance.",
+        body: "NOL World supports payment in 24 currencies including Korean won, US dollars, yen and yuan, and the available ones appear after you enter your card details. The choice it offers is between the currency of your card's issuing country and Korean won. That is two different exchange rates set by two different parties — one by whoever converts at the payment page, one by your card network and issuer. Choosing your own currency is dynamic currency conversion, and the party doing the converting sets the rate and takes a margin on it, so paying in won is usually the cheaper of the two. Usually, not always: your own card's foreign-transaction fee applies either way, and a poor issuer margin can close the gap. The half you can actually check before the day is your issuer's terms, so check those.",
         pitfall:
-          "Picking your home currency on reflex because the number looks familiar. Familiar is not the same as cheaper, and this is the one screen where you choose who does the conversion.",
+          "Picking your home currency because the number looks familiar. Familiar is the more expensive option here more often than not, and this is the one screen where you choose who does the conversion.",
         takes: "10 minutes, with your bank, beforehand",
         see: {
           slug: "nol-world-cancel-ticket-refund",
@@ -2172,7 +2172,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Should I pay in Korean won or my own currency?",
-        a: "NOL World offers both — it supports 24 currencies and lets you choose between your card's issuing-country currency and Korean won, with the options shown after you enter your card details. Which is cheaper depends on your card issuer's exchange margin and fees against whatever rate the payment page applies, and we are not going to guess that for your card. Ask your issuer about its foreign-transaction terms before the day, because that is the side you can check in advance.",
+        a: "Usually won. NOL World supports 24 currencies and lets you choose between your card's issuing-country currency and Korean won, shown after you enter your card details. Choosing your own currency is dynamic currency conversion, where the converting party sets the rate and adds a margin — so won is generally cheaper. Your card's own foreign-transaction fee applies either way, which is the part to check with your issuer before the day.",
       },
       {
         q: "I forgot to use my coupon. Can I add it now?",

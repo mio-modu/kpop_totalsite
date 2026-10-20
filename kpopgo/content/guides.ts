@@ -853,6 +853,124 @@ export const guides: Guide[] = [
       },
     ],
   },
+
+  {
+    slug: "kpop-ticketing-day-timezone",
+    ko: "티켓팅",
+    art: "guide-tickets",
+    name: "Ticketing day",
+    koLine: "티켓팅 당일 — 시차와 서머타임 계산",
+    title: "What time a Korean ticket sale opens where you are",
+    summary:
+      "Korea has no daylight saving and your country probably does, so the hour a Korean sale lands on your clock moves two to four times a year. Here is how to get it right for the date rather than for today.",
+    glyph: "star",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers converting an announced Korean sale time to your own, and the clock the platforms run on afterwards. It does not cover how to win a queue, which is mostly allocation and luck. The official announcement for your show is the only authority on the time itself.",
+    readMinutes: 6,
+    platforms: ["NOL World", "YES24 Global", "Weverse", "Melon Ticket"],
+    intro: [
+      "Every guide that converts a Korean sale time gives you one number. \u00228pm KST is 6am Eastern.\u0022 That number is correct for about four months of the year and wrong for the rest, because Korea does not observe daylight saving time and most of the countries reading this do.",
+      "The times below were computed from the IANA time zone database, release 2026c — the same data your operating system uses. The point is not to memorise them. It is to convert for the date of the sale, which is rarely the same answer as converting for today.",
+    ],
+    steps: [
+      {
+        title: "Take the announced time as KST, and do not adjust it",
+        body: "Korean sales are announced in Korean time, and Korean time does not move: KST is UTC+9 all year, with no summer adjustment. A general sale is commonly announced for 20:00 KST on a weekday, but that is a convention rather than a rule — 19:00 and 14:00 both appear, and fan club verification windows often open earlier the same day on their own schedule. The announcement for your show is the only authority.",
+        pitfall:
+          "Reading a time from a previous tour and assuming this one matches. The platform is the same, the hour often is not.",
+        takes: "2 minutes",
+        see: {
+          slug: "buy-k-pop-concert-tickets-from-overseas",
+          text: "Finding the official announcement rather than a fan repost",
+        },
+      },
+      {
+        title: "Convert for the date of the sale, not for today",
+        body: "This is the whole guide in one line. Because Korea never shifts and you do, the local hour of a Korean sale depends on which side of your own daylight saving change the date falls on. At 20:00 KST, a sale lands at 06:00 in New York in January and 07:00 in July. Los Angeles moves 03:00 to 04:00, Toronto 06:00 to 07:00, London 11:00 to 12:00.",
+        pitfall:
+          "Converting in a search box today for a sale three weeks away. If a clock change falls in between, the answer you get is an hour wrong — and it is wrong in the direction of being late.",
+        takes: "3 minutes",
+      },
+      {
+        title: "If you are in Australia, the gap moves the other way",
+        body: "Southern hemisphere daylight saving runs opposite to northern. At 20:00 KST a sale is 22:00 in Sydney in January and 21:00 in July — the gap narrows in the northern summer rather than widening. Across a full year the Sydney offset swings an hour in the opposite direction to every North American and European figure above, so a conversion borrowed from a US fan is wrong by two hours.",
+        pitfall:
+          "Most guides for this are written for American readers. Australian and New Zealand fans inherit their arithmetic and arrive an hour or two late.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Check whether a clock change falls between now and the sale",
+        body: "The changeover dates are not the same in each country, which creates short windows where the usual conversion is wrong even between two countries that both observe it. In 2027 New York changes on 14 March, London on 28 March, Sydney on 4 April. Mexico City and Manila do not change at all. If the sale date sits on the far side of your own changeover, set your alarm from the converted time for that date.",
+        pitfall:
+          "The two-week gap between the North American and European changes in March is the one that catches people, because the familiar New York to London difference is briefly not what it normally is.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Note the date as well as the hour",
+        body: "For most of the Americas a Korean evening sale lands on the same calendar date, early in the morning. For Sydney it is the same evening. The hour is the part people convert and the date is the part they assume, and an alarm set for the right hour on the wrong day is the same as no alarm.",
+        pitfall:
+          "A sale announced for a Tuesday evening in Seoul is a Tuesday morning in New York. Writing \u0022Tuesday\u0022 in a calendar without the converted time is how people arrive a day out.",
+        takes: "1 minute",
+      },
+      {
+        title: "Be signed in and verified before the window, not inside it",
+        body: "Everything that can be done in advance should already be done when the hour arrives: account created, overseas verification processed, fan club membership linked, payment method enabled for international use and for 3-D Secure. Queue systems commonly give a short window to choose seats and pay before releasing the hold, and none of that time is spare.",
+        pitfall:
+          "Opening a fresh private window to be safe means logging in and re-verifying inside the queue, which costs more than it protects.",
+        takes: "30 minutes before open",
+        see: {
+          slug: "foreign-card-declined-korean-ticketing",
+          text: "What to have ready so the payment step does not fail",
+        },
+      },
+      {
+        title: "Know the closing clock too, which is a different one",
+        body: "Opening time is not the only deadline that runs on Korean time. On YES24 Global, booking closes at 5pm the day before a Tuesday-to-Saturday show and at 11am on Saturday for a Sunday or Monday show, and cancellation runs on exactly the same clock. Those are KST too, and the same conversion applies — in the other direction, when it matters most.",
+        pitfall:
+          "Planning a cancellation from the show date rather than the platform\u0027s deadline. After it passes there is no cancellation, change or refund.",
+        takes: "5 minutes",
+        see: {
+          slug: "yes24-global-ticketing-guide",
+          text: "YES24\u0027s booking and cancellation clock in full",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Does Korea use daylight saving time?",
+        a: "No. KST is UTC+9 for the whole year. Korea ran summer time in 1987 and 1988, around the Seoul Olympics, and has not since — the time zone database shows no offset change in the four decades after. Every shift in the gap between Korea and your country therefore comes from your side.",
+      },
+      {
+        q: "What time do Korean ticket sales usually open?",
+        a: "A general sale is commonly announced for 20:00 KST on a weekday, often one to three months before the show. It is a convention, not a rule — other hours appear regularly, and fan club presales and verification windows run on their own earlier schedule. Read the announcement.",
+      },
+      {
+        q: "Why does my conversion keep changing by an hour?",
+        a: "Because your country changes its clocks and Korea does not. Convert for the date of the sale rather than for today, and check whether your own changeover falls in between.",
+      },
+      {
+        q: "I am in Australia — can I use a US fan's conversion?",
+        a: "No. Southern hemisphere daylight saving runs the opposite way, so the Sydney gap narrows when the New York gap widens. Borrowing a northern conversion puts you up to two hours out.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "IANA time zone database, release 2026c — the conversions and changeover dates above are computed from it, not quoted from anywhere",
+        url: "https://www.iana.org/time-zones",
+      },
+      {
+        label: "YES24 TICKET — English FAQ, booking and cancellation deadlines",
+        url: "https://ticket.yes24.com/English/FAQ",
+      },
+      {
+        label: "NOL World — the overseas-facing ticketing site and its announcements",
+        url: "https://world.nol.com/en/ticket",
+      },
+    ],
+  },
 ];
 
 /**

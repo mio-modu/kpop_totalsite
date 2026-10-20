@@ -1902,6 +1902,162 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "kpop-album-customs-duty-overseas",
+    ko: "관세",
+    art: "album-stack",
+    name: "Customs and duty",
+    koLine: "앨범 주문과 관세 — 면세 기준이 사라진 뒤",
+    title: "Customs on a K-pop album order: what changed when duty-free went away",
+    summary:
+      "The United States suspended its 800-dollar duty-free threshold and the EU removed its low-value exemption in the same year. A Korean album order is now dutiable from the first dollar, and the only question left is whether you pay at checkout or at the door.",
+    glyph: "parcel",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers the United States and the European Union, because those are the two changes we could read against primary sources — the CBP rules in the Federal Register and the Commission change as the US Postal Service states it. Not tax advice, and not a calculator: your own country, your parcel's contents and your carrier decide what you actually pay. Nothing here is a method for lowering a declared value.",
+    readMinutes: 9,
+    platforms: ["Weverse"],
+    intro: [
+      "For about a decade, an international fan ordering albums from Korea could ignore customs. A parcel under 800 dollars entered the United States free, most orders were nowhere near that, and the guides written in those years simply did not mention duty because there was nothing to mention.",
+      "That is over, in both of the markets this audience mostly lives in, and it happened fast enough that essentially every English guide online still describes the old world. This page is what replaced it — with the dates and the citations, because the single most useful thing about a rule this new is knowing exactly how new it is.",
+    ],
+    steps: [
+      {
+        title: "Know that the US threshold is gone, and that waiting it out is not a plan",
+        body: "The 800-dollar de minimis exemption has been suspended since 29 August 2025 under Executive Order 14324, and Executive Order 14388 continued that suspension on 20 February 2026. US Customs and Border Protection then wrote it into its own regulations for the postal network on 24 June 2026, effective 24 July 2026. The part that settles the question: Congress already terminated the exemption outright, effective 1 July 2027, in the One Big Beautiful Bill Act. So this is not a policy to sit out — the temporary version expires into a permanent one.",
+        pitfall:
+          "Treating this as a tariff story that will reverse. The statute does not reverse, and CBP states it issued its rule independently of the executive orders, so a court ruling on one would not restore the exemption by itself.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Know that the EU did the same thing, five months earlier",
+        body: "This is the half that almost no English guide covers. As the US Postal Service records in its own October 2026 rulemaking, the European Commission eliminated the de minimis exemption for most low-value goods entering the EU customs territory as of 1 July 2026, and established a new hierarchical system for deciding who is responsible for paying duties, taxes and import fees on them. Some EU destination postal operators now require items to be sent on a delivered-duty-paid basis, and where an item arrives duty unpaid and the money cannot be recovered from the addressee, the destination operator may pursue the sender instead.",
+        pitfall:
+          "Reading US coverage and assuming Europe is unaffected, or vice versa. Both markets removed their low-value exemptions in 2026, and a guide that mentions only one is describing half the world.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Recalculate what an album order actually costs",
+        body: "The practical effect is simple and unwelcome: a commercial parcel is now dutiable from the first dollar, in both markets. There is no value beneath which your order slips through, so the number that matters is landed cost — the album, the shipping, and the duty and tax your own country assesses on it. Work that out before you order rather than after, because the gap between the sticker price and the landed cost is now large enough to change which storefront you use.",
+        pitfall:
+          "Comparing two storefronts on item price. The cheaper listing can be the more expensive order, and you find out at the door.",
+        takes: "15 minutes per order",
+        see: {
+          slug: "buy-k-pop-albums-from-overseas",
+          text: "Where to order so the purchase still counts towards a chart",
+        },
+      },
+      {
+        title: "Work out whether you pay at checkout or at the door",
+        body: "There are two shapes this takes and it is worth knowing which you are in. Historically, for a mail shipment valued at 2,500 dollars or less, a CBP officer prepared the entry by hand and the recipient paid the duties, taxes and fees — generally at the local post office, before taking possession of the parcel. CBP's new postal process moves that work to a filer who reports and remits, which is what makes prepayment at checkout possible. So the same duty reaches you either as a line on the order page or as a payment demanded before release.",
+        pitfall:
+          "Assuming a parcel marked as shipped is a parcel that is coming. Under the pay-on-arrival shape it waits until somebody pays, and nobody will chase you harder than the storage clock.",
+        takes: "—",
+      },
+      {
+        title: "Check whether your platform prepays, because one now does",
+        body: "Weverse Shop changed its checkout on 3 February 2026. Its notice describes three things: taxes calculated from the final shipping or billing address at checkout; prices shown tax-exclusive for orders shipped outside Korea, where they used to be tax-inclusive; and prepaid duties and taxes collected at checkout instead of paid to customs on delivery — explicitly not for every country or region. It also added a billing-address field. If your order looks more expensive than it used to, that is the tax moving into view rather than a price rise.",
+        pitfall:
+          "Comparing a prepaid platform against a non-prepaid one and calling the prepaid one dearer. One of those prices includes the duty.",
+        takes: "10 minutes",
+        see: {
+          slug: "order-from-weverse-shop-overseas",
+          text: "The rest of the Weverse Shop ordering flow from overseas",
+        },
+      },
+      {
+        title: "Understand the gift exemption, and that it is genuinely a gift exemption",
+        body: "The gift route survived, and it is narrower than people assume. CBP states that this rule does not touch the exemption for bona fide gifts valued at 100 dollars or less — 200 if from certain island possessions — sent from a person in a foreign country to a person in the United States, nor the 200-dollar exemption for personal or household articles accompanying a traveller. Its reasoning is that the lower volume and lower threshold raise different concerns. So if a friend in Seoul genuinely sends you a birthday present under 100 dollars, that is still duty-free, and nothing below changes it.",
+        pitfall:
+          "Hearing that as a shipping option. The word in the statute is bona fide: it means an actual gift between people, not a purchase described as one. We are not going to tell you how to get an order relabelled, and a false declaration is a customs offence that puts the parcel and the person who signed for it at risk rather than saving the duty.",
+        takes: "—",
+      },
+      {
+        title: "Know that some parcels now need a heavier kind of entry",
+        body: "CBP's new postal informal entry process is limited to articles classifiable in chapters 1 to 97 of the US tariff schedule. Merchandise that carries additional duties under chapter 99, or is subject to quota, antidumping or countervailing duty orders, or needs Partner Government Agency data, or claims duty-free treatment under chapter 98 or a free trade agreement, requires formal entry instead. CBP delayed the compliance date for part of that requirement to 22 October 2026. For an album or a lightstick none of this normally bites, but it is the reason an unusual item can suddenly need a broker.",
+        pitfall:
+          "Assuming every small parcel gets the light-touch process. The category of the goods decides, not the price.",
+        takes: "—",
+      },
+      {
+        title: "Expect your parcel to carry far more data than it used to",
+        body: "The new process runs on a dataset, and knowing what is in it explains most delays. The filer has to obtain and transmit a filer code and bond number, a description of the merchandise, its country of origin, every applicable 10-digit tariff classification, the quantity or weight where a specific duty rate is used, the duty rate, the value, the total duty owed, the carrier and conveyance, the tracking number generated by the foreign postal operator, and the arrival port and date — reported to CBP by the seventh day of the month after the parcel arrives. A vague or wrong description is now a missing field in somebody's return.",
+        pitfall:
+          "Asking a seller to write something non-committal on the declaration to be safe. Non-committal is exactly what the new process cannot process, and it is the surest way to have a parcel held.",
+        takes: "—",
+      },
+      {
+        title: "Keep your own paperwork, because you are the one who gets asked",
+        body: "Under either shape, the person who can resolve a query about your parcel is you. Keep the order confirmation showing what you paid, including shipping, and keep the tracking number the Korean sender generated, since that is the field the entry is keyed on. If duty is charged on a value that does not match what you paid, that confirmation is the only document that settles it — and if your platform prepaid, keep the checkout receipt showing the tax line, because a second demand on arrival is a thing to dispute rather than pay twice.",
+        pitfall:
+          "Deleting the order email once the parcel ships. It stops being proof of purchase at the moment it becomes proof of value.",
+        takes: "2 minutes per order",
+      },
+      {
+        title: "Re-check this before a big order, and do not trust an undated guide",
+        body: "Everything above is dated on purpose. This area moved three times inside eighteen months — a suspension in August 2025, a continuation in February 2026, regulations in June and July 2026, a statutory termination landing in July 2027 — and the EU's change arrived in the middle of it. Any English guide that tells you orders under 800 dollars arrive duty-free is describing the world before 29 August 2025, and the way to tell is that it carries no date at all. Check the date on this page too.",
+        pitfall:
+          "Planning a comeback-week group order against a rule you last checked last year. The number you need is the one in force on the day the parcel arrives, not the day you ordered.",
+        takes: "10 minutes before a large order",
+      },
+    ],
+    faq: [
+      {
+        q: "Is there still any amount I can order duty-free into the US?",
+        a: "Not for a commercial purchase. The 800-dollar de minimis exemption has been suspended since 29 August 2025, CBP wrote the suspension into its postal regulations effective 24 July 2026, and Congress terminated the exemption outright effective 1 July 2027. Two narrower exemptions are untouched: bona fide gifts of 100 dollars or less sent person to person, and 200 dollars of personal or household articles accompanying a traveller.",
+      },
+      {
+        q: "Why does my Weverse Shop order suddenly show tax at checkout?",
+        a: "Weverse changed this on 3 February 2026. Its notice says taxes are now calculated from the final shipping or billing address at checkout, that prices for orders shipped outside Korea display tax-exclusive where they previously displayed tax-inclusive, and that duties and taxes are prepaid at checkout for some countries instead of collected on delivery. The total you see is closer to the real landed cost than it used to be.",
+      },
+      {
+        q: "So do I pay at checkout, or when it arrives?",
+        a: "Whichever your seller arranged. Where duty is prepaid you pay at checkout. Otherwise it is collected before you take possession — historically, for mail valued at 2,500 dollars or less, CBP prepared the entry and the recipient paid at the local post office. The duty is the same; only the moment differs.",
+      },
+      {
+        q: "A friend in Korea wants to post me a present. Is that taxed now?",
+        a: "CBP's rule explicitly leaves the gift exemption alone: a bona fide gift of 100 dollars or less, sent from a person abroad to a person in the United States, is still duty-free, and 200 dollars applies from certain island possessions. The statutory word is bona fide, so it has to be an actual gift rather than a purchase of yours in a different envelope.",
+      },
+      {
+        q: "Can I ask the seller to mark it as a gift or write a lower value?",
+        a: "No, and this page will not help with it. A false declaration is a customs offence, the exposure lands on the parcel and on the person it is addressed to, and the new postal process is built around matching declared values and tariff codes — so an invented one is more likely to get the parcel held than to save the duty. If the duty makes an order not worth it, the answer is not to place the order.",
+      },
+      {
+        q: "What about the EU, or the UK?",
+        a: "The EU removed the de minimis exemption for most low-value goods on 1 July 2026 and added a hierarchy for who pays, as the US Postal Service records in its own October 2026 rule — and some EU postal operators now require delivered-duty-paid shipping. We have not written the UK up because we could not read a primary source for it from here, and we are not going to summarise a tax rule from memory. Treat your own customs authority as the authority.",
+      },
+      {
+        q: "My parcel is being held and nobody will say why.",
+        a: "The likeliest causes are now structural rather than random. The new process needs a description, a country of origin, 10-digit tariff codes and a value that agree with each other; a parcel whose paperwork is vague or inconsistent is a parcel somebody cannot file. Some categories also need formal entry rather than the postal informal process. Your order confirmation and the sender's tracking number are the two documents that resolve most of it.",
+      },
+      {
+        q: "Will any of this go back to how it was?",
+        a: "The exemption itself will not. It is suspended now and terminated by statute from 1 July 2027, and CBP states it issued its postal rule under its own authority independently of the executive orders — so even a successful challenge to those would not restore duty-free entry on its own. What can still change is the mechanics: who files, who collects, and whether your platform prepays.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "CBP — Indefinite Suspension of the De Minimis Exemption for Mail Shipments and New Postal Informal Entry Process, 91 FR 37801 (24 June 2026, effective 24 July 2026)",
+        url: "https://www.govinfo.gov/content/pkg/FR-2026-06-24/html/2026-12669.htm",
+      },
+      {
+        label:
+          "CBP — Indefinite Suspension of the De Minimis Exemption for Merchandise Arriving Through All Modes Other Than the International Postal Network, 91 FR 37789",
+        url: "https://www.govinfo.gov/content/pkg/FR-2026-06-24/html/2026-12670.htm",
+      },
+      {
+        label:
+          "USPS — Customs Requirements and Payment Procedures, 91 FR 66000 (effective 19 October 2026), which states the EU removed its low-value exemption on 1 July 2026",
+        url: "https://www.govinfo.gov/content/pkg/FR-2026-10-19/html/2026-21310.htm",
+      },
+      {
+        label: "Weverse Shop — payment and customs service update, effective 3 February 2026",
+        url: "https://shop.weverse.io/en/notices/12149",
+      },
+    ],
+  },
 ];
 
 /**

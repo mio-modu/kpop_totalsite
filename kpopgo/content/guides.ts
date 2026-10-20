@@ -1609,6 +1609,142 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "nol-world-mobile-ticket-and-entry",
+    ko: "모바일티켓",
+    art: "guide-tickets",
+    name: "Mobile ticket",
+    koLine: "모바일 티켓과 입장 — QR·PIN·대리수령",
+    title: "Your NOL World mobile ticket: the QR, the PIN, and getting through the gate",
+    summary:
+      "The ticket only opens on a phone, it is English-only and your browser's auto-translate will mangle it, a sent ticket has a 24-hour PIN clock, and arriving late is not a guaranteed entry. The last twenty minutes of the whole process, in order.",
+    glyph: "ticket",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers the NOL World mobile ticket and venue entry as NOL World documents it: where the ticket opens, the two browser states that hide it, sending and receiving with the PIN clock, proxy collection, and late arrival. Entry rules are set per show and the venue decides on the night. Facial-recognition entry is a separate flow with its own guide.",
+    readMinutes: 7,
+    platforms: ["NOL World"],
+    intro: [
+      "Everything else on this site is preparation. This is the part where a flight, a hotel and a presale either turn into a seat or do not, and it runs on a phone you are holding in a crowd with bad signal.",
+      "Most of what goes wrong here is not dramatic. It is a browser in the wrong mode showing a QR code where the ticket should be, a translation extension rewriting a gate number, a PIN that expired while a friend was asleep. All four are documented by NOL World and all four are avoidable the night before.",
+    ],
+    steps: [
+      {
+        title: "Know which kind of ticket you actually hold",
+        body: "The delivery method was decided when you booked, and it determines everything below. A mobile ticket lives in your account and gets scanned from your screen. Pick-up at venue means a paper ticket from the box office on the day of the show, and NOL World does not release those early — the window opens an hour before, and a collected ticket cannot be re-issued if it is lost or stolen. Check which one you have now, not at the venue.",
+        pitfall:
+          "Assuming every booking is a mobile ticket because that is what the last concert used. It is a per-booking property, and the two routes fail in completely different ways.",
+        takes: "5 minutes",
+        see: {
+          slug: "nol-world-ticketing-guide",
+          text: "What collection at the box office requires, and when it opens",
+        },
+      },
+      {
+        title: "Open the mobile ticket on the phone you will enter with",
+        body: "NOL World states that mobile tickets are only available on the NOL World app or mobile web. Entry is by the QR code on the ticket. The route on a phone is app or mobile web, log in, Account/My, My Reservations, then the Mobile Ticket button. On a desktop the same button produces a QR code that is not your ticket — it is a handoff, meant to be scanned with your phone so the ticket opens there.",
+        pitfall:
+          "Screenshotting the ticket as a backup and planning to show the image. A ticket that renders live in an account is not the same artefact as a picture of one, and the gate is not where you want to discover the difference.",
+        takes: "10 minutes, the night before",
+      },
+      {
+        title: "Turn off browser translation before you go",
+        body: "NOL World says mobile tickets are provided in English only, and that if you are seeing other languages it is your browser's automatic translation — the fix being to turn translation off and refresh the page. For this audience that is the default state of the browser rather than an edge case. An auto-translator rewriting a gate, a block or a seat row is a problem you will not notice until somebody at the door reads it back to you.",
+        pitfall:
+          "Leaving translate-on because it has been helpful all trip. It has been translating Korean pages for you; here the page is already English and the only thing it can do is damage.",
+        takes: "2 minutes",
+      },
+      {
+        title: "If you see a QR code where the ticket should be, fix the browser mode",
+        body: "This is the single most common way the ticket appears to be missing, and it is not a fault. NOL World says that if your browser is in desktop mode, a QR code is shown instead of the mobile ticket — and that there is a View Tickets button below that QR which opens the ticket anyway. Otherwise switch the browser to mobile mode: in Chrome, the three-dot menu and View as mobile version; in Safari, the language button to the left of the address bar and Request Mobile Website; in Samsung Internet, the three-line menu and Mobile site.",
+        pitfall:
+          "Letting someone at the gate scan that QR code. It is the desktop handoff code, not your entry code, and the thing you need is one tap below it.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Understand what sending a ticket commits you to",
+        body: "Mobile ticket sharing goes one way: the purchaser sends to the attendee, and NOL World states that a received ticket cannot be sent on — only booked tickets can be sent. Sending stays possible until the day of the event. Not every product offers it; where the seller has withheld it, the Send button simply is not there. And the cost of sending is your own exit: once a ticket has been successfully sent, NOL World restricts cancellation of the reservation, which is only restored if the recipient deregisters.",
+        pitfall:
+          "Organising a group by sending everyone their ticket the week you book. You have just handed each person a veto over cancelling that reservation.",
+        takes: "5 minutes",
+        see: {
+          slug: "nol-world-cancel-ticket-refund",
+          text: "Why a sent ticket is a cancellation problem as well as a logistics one",
+        },
+      },
+      {
+        title: "If you are receiving a ticket, treat the PIN as a 24-hour clock",
+        body: "A received ticket is not usable until it is registered, and the window is short. NOL World says the PIN can only be registered within 24 hours of sending, and that an unregistered ticket returns to the sender after that — or if it is not registered by the viewing date. Registration runs from the URL in the message or email: Received Mobile Ticket, Ticket Register, then the PIN from the message. Afterwards the ticket lives under My Page, Received Mobile Ticket, Booking History. Returning one is the same path with the Return button, and NOL World says a registered ticket can still be returned.",
+        pitfall:
+          "Sending to a friend in a time zone where those 24 hours are mostly night. The ticket bounces back to you silently and the reservation is yours again, which is fine on Tuesday and not fine on the morning of the show.",
+        takes: "5 minutes, inside 24 hours",
+      },
+      {
+        title: "Check the show page before assuming someone else can collect for you",
+        body: "NOL World does allow a non-purchaser to collect tickets, with real conditions attached. The process differs by venue, proxy collection may be restricted depending on the type of show, and NOL World's instruction is to check the notice on the details page of the show you booked. What the other person needs is the booking details printed from My Ticket, the confirmation number, and identification of the purchaser. Treat that last requirement as the limit it is: on a show that gates entry on the buyer's own verified identity, do not plan around a proxy.",
+        pitfall:
+          "Reading proxy collection as a general right. It is a per-venue, per-show allowance, and the shows most likely to refuse it are exactly the high-demand ones you needed a presale for.",
+        takes: "10 minutes",
+        see: {
+          slug: "nol-world-verified-member-ekyc",
+          text: "Why identity-verified shows tie the ticket to the buyer",
+        },
+      },
+      {
+        title: "Do not treat late arrival as a seat you still have",
+        body: "NOL World is explicit that entry after the start depends on the show, and that some performances do not allow it at all — naming classical concerts and operas in particular. Where late entry exists it may mean waiting for the interval and watching the second half. And even when you are let in, NOL World says you may not be able to claim your seat until the interval, so a late arrival can mean standing or sitting elsewhere through the part you came for.",
+        pitfall:
+          "Budgeting arrival time from the start time. Budget it from the entry queue, the security check and the collection window, which all happen before the start time and none of which wait.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "There is a QR code where my ticket should be. Is my booking broken?",
+        a: "No — your browser is in desktop mode. NOL World says that produces a QR code in place of the mobile ticket, and that a View Tickets button below it opens the ticket. You can also switch the browser to mobile mode: Chrome's three-dot menu has View as mobile version, Safari's language button offers Request Mobile Website, and Samsung Internet's three-line menu has Mobile site.",
+      },
+      {
+        q: "My mobile ticket is showing in the wrong language.",
+        a: "NOL World provides mobile tickets in English only, so another language means your browser is auto-translating. Turn translation off and refresh. Worth doing before you travel rather than at the gate, because a translated gate number or seat row is wrong in a way that is hard to spot.",
+      },
+      {
+        q: "Can I show the ticket from my laptop at the door?",
+        a: "NOL World says mobile tickets are only available on the app or mobile web. On a desktop the Mobile Ticket button gives you a QR code to scan with your phone, which then opens the actual ticket there. Plan to enter on a phone.",
+      },
+      {
+        q: "Can my friend pick up my tickets at the box office?",
+        a: "Sometimes. NOL World says a non-purchaser can collect, but that the process varies by venue and proxy collection may be restricted depending on the type of show — so the notice on your show's details page is the authority. They would need the booking details printed from My Ticket, the confirmation number and identification of the purchaser. On shows that verify the buyer's identity at entry, do not rely on it.",
+      },
+      {
+        q: "I sent a mobile ticket by mistake. Can I take it back?",
+        a: "If the recipient has not registered it yet, yes — NOL World says the sender can cancel the sharing with the Cancel Send button. It also returns automatically if the recipient does not register within 24 hours or by the viewing date. Once registered, getting it back is their action: they return it from My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return.",
+      },
+      {
+        q: "What happens if my friend never registers the ticket I sent?",
+        a: "It comes back to you. NOL World says an unregistered ticket is automatically returned to the sender after 24 hours, or if it has not been registered by the viewing date. That restores your reservation — including, per its cancellation rules, your ability to cancel it — but it is a silent process, so check rather than assume.",
+      },
+      {
+        q: "I am going to be twenty minutes late. Will they let me in?",
+        a: "It depends on the show and nobody can promise it. NOL World says entry after the start depends on the performance and that some do not permit it at all, classical concerts and operas especially; where it is allowed you may have to wait for the interval, and you may not be able to claim your own seat until then.",
+      },
+      {
+        q: "Is the mobile ticket the same thing as facial-recognition entry?",
+        a: "No. NOL facepass is a separate system where a camera at the door admits you without a ticket check, and support for it is set per event. The mobile ticket and its QR code are the ordinary route, and the one to keep working even if you have registered a face.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "NOL World — FAQ: mobile ticket use, sharing and PIN registration, browser mode and language, proxy collection and late entry",
+        url: "https://world.nol.com/en/my-info/faqs",
+      },
+      {
+        label: "NOL World — the overseas-facing ticketing site",
+        url: "https://world.nol.com/en/ticket",
+      },
+    ],
+  },
 ];
 
 /**

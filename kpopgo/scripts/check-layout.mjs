@@ -32,6 +32,9 @@ const ROUTES = [
   // weren't representative any more.
   ["where-to-buy", "/where-to-buy"],
   ["policy", "/editorial-policy"],
+  // Japanese sets no spaces between words, so it wraps on different rules
+  // from English and is the likeliest thing to overflow a narrow column.
+  ["guide-ja", "/ja/guides/nol-world-verified-member-ekyc"],
 ];
 const WIDTHS = [320, 360, 390, 768, 1280];
 

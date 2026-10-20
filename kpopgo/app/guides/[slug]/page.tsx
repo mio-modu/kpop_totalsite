@@ -5,6 +5,7 @@ import { getGuide, guides, jamo } from "@/content/guides";
 import { guideJsonLd } from "@/lib/jsonld";
 import { translationsFor } from "@/content/translations";
 import { LOCALES } from "@/lib/i18n";
+import { LanguageLinks } from "@/components/LanguageLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { StackedScreens, SingleScreen, StepObject } from "@/components/Objects";
 import { Artwork } from "@/components/Artwork";
@@ -97,6 +98,8 @@ export default async function GuidePage({
             </span>
           ))}
         </div>
+
+        <LanguageLinks slug={guide.slug} />
       </header>
 
       {/* ─────────── The guide's own object ─────────── */}

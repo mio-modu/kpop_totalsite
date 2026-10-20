@@ -1932,9 +1932,9 @@ export const guides: Guide[] = [
       },
       {
         title: "Know that the EU did the same thing, five months earlier",
-        body: "This is the half that almost no English guide covers. As the US Postal Service records in its own October 2026 rulemaking, the European Commission eliminated the de minimis exemption for most low-value goods entering the EU customs territory as of 1 July 2026, and established a new hierarchical system for deciding who is responsible for paying duties, taxes and import fees on them. Some EU destination postal operators now require items to be sent on a delivered-duty-paid basis, and where an item arrives duty unpaid and the money cannot be recovered from the addressee, the destination operator may pursue the sender instead.",
+        body: "This is the half that almost no English guide covers. As the US Postal Service records in its own October 2026 rulemaking, the European Commission eliminated the de minimis exemption for most low-value goods entering the EU customs territory as of 1 July 2026, and established a new hierarchical system for deciding who is responsible for paying duties, taxes and import fees on them. Weverse Shop puts a number on what went: orders under 150 euros were previously exempt, that exemption is gone, and duty now applies regardless of the purchase amount. It also names the basis, which matters more than the date itself — the change applies to shipments clearing local customs from 1 July 2026, by clearance date rather than order date. Some EU destination postal operators now require items to be sent on a delivered-duty-paid basis, and where an item arrives duty unpaid and the money cannot be recovered from the addressee, the destination operator may pursue the sender instead.",
         pitfall:
-          "Reading US coverage and assuming Europe is unaffected, or vice versa. Both markets removed their low-value exemptions in 2026, and a guide that mentions only one is describing half the world.",
+          "Reading US coverage and assuming Europe is unaffected, or vice versa. Both markets removed their low-value exemptions in 2026, and a guide that mentions only one is describing half the world. The clearance-date basis is the other trap: an order placed before 1 July 2026 that cleared after it was caught anyway.",
         takes: "5 minutes",
       },
       {
@@ -2025,7 +2025,7 @@ export const guides: Guide[] = [
       },
       {
         q: "What about the EU, or the UK?",
-        a: "The EU removed the de minimis exemption for most low-value goods on 1 July 2026 and added a hierarchy for who pays, as the US Postal Service records in its own October 2026 rule — and some EU postal operators now require delivered-duty-paid shipping. We have not written the UK up because we could not read a primary source for it from here, and we are not going to summarise a tax rule from memory. Treat your own customs authority as the authority.",
+        a: "The EU removed the de minimis exemption for most low-value goods on 1 July 2026 and added a hierarchy for who pays, as the US Postal Service records in its own October 2026 rule — and some EU postal operators now require delivered-duty-paid shipping. Weverse Shop states the figure that went: the exemption had covered orders under 150 euros, and duty now applies whatever the amount, judged by the date a shipment clears local customs rather than the date it was ordered. We have not written the UK up because we could not read a primary source for it from here, and we are not going to summarise a tax rule from memory. Treat your own customs authority as the authority.",
       },
       {
         q: "My parcel is being held and nobody will say why.",
@@ -2055,6 +2055,11 @@ export const guides: Guide[] = [
       {
         label: "Weverse Shop — payment and customs service update, effective 3 February 2026",
         url: "https://shop.weverse.io/en/notices/12149",
+      },
+      {
+        label:
+          "Weverse Shop — Notice Regarding New EU Customs Policy and Potential Import Duties, which gives the 150-euro figure and the clearance-date basis",
+        url: "https://shop.weverse.io/en/notices/13627",
       },
     ],
   },
@@ -2357,6 +2362,162 @@ export const guides: Guide[] = [
       {
         label: "NOL World — the overseas-facing ticketing site",
         url: "https://world.nol.com/en/ticket",
+      },
+    ],
+  },
+  {
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    ko: "배송",
+    art: "pc-foil",
+    name: "Shipping and delays",
+    koLine: "위버스샵 배송 지연과 주문 취소 — 상태가 바뀌면 끝입니다",
+    title: "Why your Weverse Shop order is late, and when you can still cancel it",
+    summary:
+      "The cancel button disappears on a status change rather than a deadline, the EU scrapped its 150-euro duty-free limit, the US added a second inspection regime on top of the duty one, and a Korean holiday has a cutoff measured to the minute.",
+    glyph: "parcel",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers what happens after a Weverse Shop order is placed, from Weverse Shop's own notices: the cancellation window, the customs changes it has warned about for the EU and US, holiday and logistics delays, and who you are actually buying from. Holiday dates are 2026's and will be wrong next year — the notices page is the live version. Ordering itself has its own guide.",
+    readMinutes: 8,
+    platforms: ["Weverse"],
+    intro: [
+      "Weverse Shop publishes a steady stream of notices about deliveries, and almost nobody reads them until a parcel is late. They are where the real answers live: which customs change applies to you, which holiday ate four days, and the exact minute an order stopped being cancellable.",
+      "This is that stream, read in one go. Two of the items below are genuinely new rules rather than seasonal delays, and one of them is the moment your money stops being refundable.",
+    ],
+    steps: [
+      {
+        title: "Know that the cancel window closes on a status, not a clock",
+        body: "This is the fact worth knowing before anything goes wrong. Weverse Shop gives the cancellation path as the Weverse app, then More, then My Orders, then Order Details, then Cancel Order — and states that once your order status changes to Shipping Soon or In Transit, you will not be able to cancel the order. There is no stated grace period and no hours-after-ordering rule. The window is open until a warehouse changes a status, which can happen sooner than you expect on a popular release.",
+        pitfall:
+          "Deciding overnight whether to keep an impulse pre-order. The deadline is not a time you can look up — it is an event you do not control, and it can pass while you sleep.",
+        takes: "5 minutes, immediately",
+      },
+      {
+        title: "If you are in the EU, the 150-euro exemption is gone",
+        body: "Weverse Shop's own notice is specific where general coverage is vague. From 1 July 2026 the EU revised its rules for low-value imports: previously orders under 150 euros were exempt from customs duties, and that exemption has been eliminated, so duties now apply regardless of the purchase amount. The detail that matters most is the basis — Weverse says it applies to shipments clearing local customs from 1 July 2026, by local clearance date rather than order date. An order placed before the change can still be caught by it.",
+        pitfall:
+          "Assuming a small order is too cheap to be dutiable. There is no longer a floor, and the date that decides it is one you cannot see from the order page.",
+        takes: "10 minutes",
+        see: {
+          slug: "kpop-album-customs-duty-overseas",
+          text: "The rules behind this, in both the US and the EU",
+        },
+      },
+      {
+        title: "Expect customs, or the courier, to ask you for money directly",
+        body: "Weverse Shop says EU orders may incur duties during local clearance, that you may receive separate payment instructions from local customs or the courier, and that failure to pay those duties may delay or prevent delivery. That is a different experience from a charge at checkout: a message arrives from a company you have no relationship with, asking for money before a parcel you already paid for will move. It is not a scam by default — but it is also exactly what a scam imitates, so check the tracking number against your order rather than following a link in the message.",
+        pitfall:
+          "Ignoring a customs or courier payment request as phishing and letting the parcel sit. Non-payment is one of the documented ways an order simply never arrives.",
+        takes: "—",
+      },
+      {
+        title: "If you are in the US, know there are two separate changes, not one",
+        body: "The duty change gets all the coverage and it is not the only thing slowing US parcels. Weverse Shop warns separately that from 8 July 2026 the US Consumer Product Safety Commission enforces a mandatory eFiling policy, bringing stricter local customs inspections on all goods imported into the US, and that clearance is expected to take a few days longer than the standard delivery timeframe. That is a product-safety filing regime rather than a tariff — so a US order can be slow for a reason that has nothing to do with how much duty is owed.",
+        pitfall:
+          "Reading every US delay as the de minimis change and waiting for a duty bill that never comes. One of these two changes costs money and the other costs days.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Treat a Korean holiday as a cutoff measured in minutes",
+        body: "Weverse Shop publishes a cutoff schedule for each Korean holiday, and the times are precise. For Chuseok 2026 the order cutoff for addresses outside South Korea was 23 September at 11:00 KST, with express delivery resuming on 28 September; for Korean addresses the courier cutoff was 22 September at 11:00 KST, resuming the same day. Orders placed after the cutoff ship sequentially from the resumption date. Weverse adds two caveats: items shipped on the cutoff date may still arrive after the holiday depending on area, and the schedule comes from the courier and may change.",
+        pitfall:
+          "Reading those dates as this year's. They are the 2026 Chuseok figures, and the pattern — a cutoff at 11:00 KST a day or two before, resumption roughly a week later — is the part that carries over. The dates themselves have to be looked up each time.",
+        takes: "10 minutes before a holiday order",
+      },
+      {
+        title: "If your address is in China, a second holiday calendar applies",
+        body: "Weverse Shop issues separate notices for Chinese holidays, affecting orders with shipping addresses in China, because Chinese customs offices close and clearance stops. For the 2026 Mid-Autumn Festival on 25 to 27 September and National Day from 1 to 7 October, it said orders fully paid by 15 September at 11:00 KST were likely to be delivered during the National Day holiday, and orders paid after that would start shipping once the holiday ended on 8 October. Note it is the payment being complete that counts, not the order being placed.",
+        pitfall:
+          "A pre-order whose payment completes later than you think. Where the cutoff is defined by full payment, an order sitting unpaid is an order on the far side of a three-week gap.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Separate a freight disruption from a lost parcel",
+        body: "Some delays are neither customs nor holidays. In April 2026 Weverse Shop notified customers of delivery delays across all of Europe and selected Middle Eastern countries caused by fluctuations in global logistics routes and air and sea freight schedules, affecting orders shipped after 1 April 2026 that were in international transit. The useful part is what it says about tracking: because of rerouting, tracking updates and local arrivals can take longer than usual, and the package is still in transit. Silent tracking during a known disruption is the expected symptom, not evidence of loss.",
+        pitfall:
+          "Opening a lost-parcel claim because tracking has not moved for a week. Check the notices page for an active disruption covering your region first — a claim filed against a parcel that is merely rerouted wastes the time you would need for a real one.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Check whether Weverse is actually the seller",
+        body: "Weverse Shop states on its own pages that some products are offered by individual third-party sellers, that in those cases Weverse Company acts solely as an e-commerce intermediary and is not a party to the transaction, and that it assumes no responsibility for the product information or for transactions conducted by those sellers. That changes who you are dealing with when something is wrong — for a third-party item the counterparty is the seller, not Weverse. Worth establishing before you need to complain rather than during.",
+        pitfall:
+          "Assuming everything on the store carries the same backing because it sits behind the same checkout. The intermediary disclaimer is published, and it decides who owes you a remedy.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Read the notices yourself, because this page will go out of date faster than most",
+        body: "Everything above came from Weverse Shop's notices page, and that page is the live version. The customs changes are durable; the holiday schedules, the freight disruptions and the courier cutoffs are not — they are reissued for each occasion and superseded without the old notice changing. Before a holiday order or when a parcel is late, read the notices list rather than trusting any guide's dates, this one included. The date at the top of this page is when we last did that.",
+        pitfall:
+          "Trusting a cutoff time from a guide written last year. The structure repeats and the numbers do not.",
+        takes: "5 minutes",
+        see: {
+          slug: "order-from-weverse-shop-overseas",
+          text: "The ordering side: currency, tax, addresses and shipping availability",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Can I still cancel my order?",
+        a: "Only while the status allows it. Weverse Shop's path is the Weverse app, More, My Orders, Order Details, Cancel Order — and it states that once the status changes to Shipping Soon or In Transit, cancellation is no longer possible. There is no published grace period, so the answer depends on the order rather than the clock.",
+      },
+      {
+        q: "I am in the EU and my order has a customs bill. Is that right?",
+        a: "Probably. Weverse Shop says that from 1 July 2026 the EU eliminated the duty exemption that previously covered orders under 150 euros, so duties now apply regardless of amount, based on shipments clearing local customs from that date. It also warns you may get separate payment instructions from customs or the courier, and that not paying can delay or prevent delivery.",
+      },
+      {
+        q: "Why is my US order slow if there is no duty to pay?",
+        a: "Because there are two changes. Alongside the duty rules, Weverse Shop warns that from 8 July 2026 the US Consumer Product Safety Commission enforces mandatory eFiling, bringing stricter inspections on all goods imported into the US, with clearance expected to take a few days longer. That one costs time rather than money.",
+      },
+      {
+        q: "I got a message asking me to pay customs. Is it a scam?",
+        a: "It can legitimately be real — Weverse Shop says EU customers may receive separate payment instructions from local customs or the courier. It is also exactly what a scam imitates. Verify by matching the tracking number to your own order and going to the courier's site yourself rather than following a link in the message.",
+      },
+      {
+        q: "What is the holiday cutoff for a Korean holiday order?",
+        a: "Weverse Shop publishes one per holiday, to the minute. For Chuseok 2026 the cutoff for addresses outside Korea was 23 September at 11:00 KST, with express delivery resuming 28 September. It warns the schedule comes from the courier and can change, and that items shipped on the cutoff day may still arrive after the holiday. Look up the current one rather than reusing these dates.",
+      },
+      {
+        q: "My tracking has not updated in a week. Is my parcel lost?",
+        a: "Check the notices page for a disruption covering your region first. When Weverse Shop notified delays for Europe and the Middle East in April 2026 it said rerouting means tracking updates and local arrivals take longer than usual and the package is still in transit — so static tracking during a known disruption is the symptom rather than the problem.",
+      },
+      {
+        q: "Something is wrong with my item. Do I deal with Weverse?",
+        a: "Not always. Weverse Shop states that some products are sold by individual third-party sellers, that Weverse Company then acts solely as an intermediary and is not a party to the transaction, and that it takes no responsibility for those sellers' product information or transactions. Check which kind of item you bought before deciding who to approach.",
+      },
+      {
+        q: "Does the Chinese holiday schedule affect me if I am not in China?",
+        a: "The notices say those schedules apply to orders with shipping addresses in China, because Chinese customs offices close over the holidays. If your address is elsewhere, the Korean holiday cutoffs and any active freight disruption are the ones to watch instead.",
+      },
+    ],
+    sources: [
+      {
+        label: "Weverse Shop — Notice Regarding New EU Customs Policy and Potential Import Duties",
+        url: "https://shop.weverse.io/en/notices/13627",
+      },
+      {
+        label: "Weverse Shop — Notice Regarding Potential US Customs Clearance and Delivery Delays",
+        url: "https://shop.weverse.io/en/notices/13626",
+      },
+      {
+        label:
+          "Weverse Shop — Notice of Delivery Delays for Europe and the Middle East due to Global Logistics Changes",
+        url: "https://shop.weverse.io/en/notices/12868",
+      },
+      {
+        label: "Weverse Shop — 2026 Chuseok Holiday Shipping Schedule, Global Shop",
+        url: "https://shop.weverse.io/en/notices/14336",
+      },
+      {
+        label:
+          "Weverse Shop — Regarding Shipping during the 2026 Holidays of China, including the cancellation path",
+        url: "https://shop.weverse.io/en/notices/14331",
+      },
+      {
+        label: "Weverse Shop — the notices page, which is the live version of all of the above",
+        url: "https://shop.weverse.io/en/notices",
       },
     ],
   },

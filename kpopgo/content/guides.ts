@@ -2202,6 +2202,164 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "nol-world-account-recovery-and-booking-errors",
+    ko: "계정",
+    art: "fan-kit",
+    name: "Account and errors",
+    koLine: "계정 찾기와 예매 오류 — 로그인 방식이 전부를 결정합니다",
+    title: "Locked out of NOL World: finding the account, and fixing the page that will not open",
+    summary:
+      "Which login you used decides every recovery route, password reset exists only for email signups, and an unverified email can make an account hard to find at all. Plus the booking page errors that are not errors.",
+    glyph: "id",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers account recovery, account deletion and the booking-page failures NOL World documents: browser and app requirements, the mobile seat map, and the pop-ups that look like faults. Queue mechanics are in their own guide. Nothing here helps anyone into an account that is not theirs.",
+    readMinutes: 8,
+    platforms: ["NOL World"],
+    intro: [
+      "Two things go wrong on a ticketing site that have nothing to do with tickets. You cannot get into the account, or the page simply will not do what it is supposed to do — and both happen on the morning of a sale, when there is no time to read anything.",
+      "Almost all of it is decided by one choice you made months earlier without thinking: whether you signed up with an email address or with Google, Apple or Line. That single fact determines whether a password reset even exists for you, so it is the place to start.",
+    ],
+    steps: [
+      {
+        title: "Find out which login type you actually have",
+        body: "NOL World accounts are created either with an email address or through a social login — Google, Apple or Line among others. The consequence is sharper than it sounds: NOL World states that password recovery is only available for users who signed up with an email address. If you used a social login there is no NOL World password to reset, because there was never one. Work out which you are now, while nothing is urgent.",
+        pitfall:
+          "Assuming you have an email account because you remember typing an email address. A social login shows your email too, and the recovery routes are completely different.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Verify your email, because this is the one that cannot be undone",
+        body: "NOL World's own closing line on account recovery is the most important sentence in this area: it may be difficult to find accounts which were not verified via email. Everything else here is a procedure with an outcome. This one is a door that may simply not open — support is matching you to a record, and an unverified email is the strongest match they have. If you are reading this with an account that works, check that the email on it is verified and leave it verified.",
+        pitfall:
+          "Skipping the verification mail at signup because you were in a hurry to reach a sale. It costs nothing on the day and it is the difference between a recoverable account and a lost one.",
+        takes: "3 minutes, now",
+      },
+      {
+        title: "For a social login, look on the provider's side first",
+        body: "If you cannot remember whether you ever had a NOL World account, the provider knows. NOL World publishes where to look: in Google, under Google Account then Security then your connections to third-party apps and services. In Apple, under Settings, your name and Apple ID, then Sign-In & Security, then Sign in with Apple. In Line, under Settings then Account then Authorized apps. If NOL World is listed there, the account exists and you know which provider opens it.",
+        pitfall:
+          "Trying each social button in turn on the login page to see which one works. That can create a second account rather than finding the first, and now there are two — one of which holds your bookings.",
+        takes: "10 minutes",
+      },
+      {
+        title: "If that fails, send support the five things it asks for",
+        body: "NOL World will search for an account, and it names what it needs: the email address you may have used, the login type (Google, Line, Apple or email), your nickname, and the type of products you booked together with the reservation numbers. It also tells you where to find that last one — the reservation number is in the email voucher sent at the time of booking. Gather all of it before you write, because a request missing the reservation number is a request asking them to guess.",
+        pitfall:
+          "Deleting old booking confirmation emails as clutter. They hold the reservation numbers, which are the strongest identifier you can offer when the account itself is the thing you have lost.",
+        takes: "20 minutes",
+      },
+      {
+        title: "A new phone does not lose your bookings — a different account does",
+        body: "This is the most common false alarm and NOL World answers it plainly: changing your phone or logging in again does not erase your history. What it asks you to check is whether you are logged in with a different account from the one you originally used. That is almost always the real cause, and social login is why — a fresh phone offers whichever provider is most convenient, and tapping the wrong one lands you in an empty but perfectly valid second account.",
+        pitfall:
+          "Concluding the booking is gone and re-buying. The tickets are in the other account, and the second purchase is a real purchase.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Use a browser the booking page expects, and only the official channels",
+        body: "NOL World says it builds to web standards and recommends Google Chrome or Microsoft Edge on both desktop and mobile. If the booking window will not open its instruction is specific: update the browser to the latest version, clear the cache, and try again. For the app, update it from the App Store or Google Play. And it states where tickets can be bought at all — the NOL World website at world.nol.com/ticket and the NOL World app, and nowhere else.",
+        pitfall:
+          "Troubleshooting on a browser that was never supported, in an in-app webview opened from a social media link. Open the booking page in Chrome or Edge directly before you conclude the site is broken.",
+        takes: "15 minutes, the day before",
+      },
+      {
+        title: "If the seat map will not work on mobile web, switch to the app",
+        body: "There is a documented device problem rather than a general one. NOL World says that on some devices the mobile web environment enlarges the browser when you zoom in and out, which makes seat selection impossible — and that the route through it is to download the NOL World app. It names the device confirmed so far: the Galaxy Fold. If you are on a folding or unusually proportioned screen, install the app before the sale instead of discovering this inside a seven-minute payment window.",
+        pitfall:
+          "Pinching to zoom on a seat map to find a specific seat. On the affected devices that gesture is the thing that breaks selection.",
+        takes: "10 minutes, in advance",
+        see: {
+          slug: "nol-world-booking-fees-and-checkout-clock",
+          text: "The seven minutes you do not want to spend installing an app",
+        },
+      },
+      {
+        title: "Know which pop-ups are not faults",
+        body: "Two messages read like errors and are not. NOL World says the pop-up telling you this seat has already been selected appears when you choose the same seat at around the same moment as another user — nothing is wrong with your session, somebody was a second faster. And it says available seats update automatically without refreshing, so a seat map that looks frozen is usually a seat map that is working. Treat both as information rather than as something to fix.",
+        pitfall:
+          "Reloading the page to clear a pop-up. On a queued sale that is the one action that costs you your place.",
+        takes: "—",
+        see: {
+          slug: "nol-world-queue-and-seat-selection",
+          text: "Why refreshing is the expensive reflex here",
+        },
+      },
+      {
+        title: "Read the multiple-tabs advice against the fraud policy",
+        body: "NOL World asks for one device per account, and says simultaneous access from multiple devices on the same account may restrict your booking. It then gives technical advice for people booking simultaneously — that multiple tabs cause session conflicts, and to use completely separate browsers such as Chrome and Edge, or different devices. Read that carefully, because its own anti-fraud policy lists booking across accounts using identical or similar personal information as fraudulent use. The safe reading of the advice is about separate platforms: NOL World in one browser while another ticketing site runs in another. It is not permission to run several of your own accounts at once.",
+        pitfall:
+          "Taking a session-conflict tip as a sanctioned strategy for multiple accounts. The pages sit awkwardly together, and the one with published penalties attached is the fraud policy.",
+        takes: "5 minutes",
+        see: {
+          slug: "nol-world-verified-member-ekyc",
+          text: "What the anti-fraud policy actually lists, and what it costs",
+        },
+      },
+      {
+        title: "If you delete the account, know exactly what goes and what stays",
+        body: "Deletion is irreversible and NOL World itemises it. Deleted: your account and profile information, your reservation history, your trips, and your list of liked places. Retained: reviews and photos you left for a place. On the website any login method can delete the account. In the app with an email login the path is My Account, Settings, Delete Account, then your password; with a social login it is the same path but you verify through Google, Line or Apple instead. Two things from elsewhere in its documentation belong next to this: deleting erases your identity verification and frees it for another account, and an account restricted for misuse cannot be deleted at all.",
+        pitfall:
+          "Deleting an account to clear a problem with it. A restricted account cannot be deleted, and a verified one takes your verification with it — the reservation history goes and the reviews do not.",
+        takes: "—",
+        see: {
+          slug: "nol-world-verified-member-ekyc",
+          text: "What deletion does to a completed identity verification",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "I cannot remember my password. How do I reset it?",
+        a: "Only if you signed up with an email address — NOL World says password recovery is available for email signups only. The path is the login screen, Find Password, enter the signup email, then follow the reset link that arrives. If you used Google, Apple or Line there is no NOL World password; you sign in through the provider.",
+      },
+      {
+        q: "I do not even know which account I used.",
+        a: "Check the provider side first. NOL World publishes the paths: Google Account then Security then your connections to third-party apps and services; Apple's Settings then your Apple ID then Sign-In & Security then Sign in with Apple; Line's Settings then Account then Authorized apps. If NOL World appears, that is the account.",
+      },
+      {
+        q: "None of that worked. Will support find it?",
+        a: "They will look, with what you give them: the email you may have used, the login type, your nickname, and the types of product you booked with their reservation numbers — which NOL World says are in the email voucher sent when you booked. It also warns that accounts never verified by email may be difficult to find, so send everything you have.",
+      },
+      {
+        q: "I changed phones and my bookings are gone.",
+        a: "They are almost certainly not. NOL World says changing phone or logging in again does not erase history, and asks you to check whether you are signed in with a different account from the original. With social login that is easy to do by accident — a new phone offers the most convenient provider, not necessarily the one you used.",
+      },
+      {
+        q: "The booking window will not open at all.",
+        a: "NOL World's own steps: use a standard browser, and it names Chrome and Edge; update it to the latest version; clear the cache; try again. For the app, update to the latest version from the App Store or Google Play. It also states that tickets can only be bought on world.nol.com/ticket or in the NOL World app.",
+      },
+      {
+        q: "I cannot select a seat on my phone's browser.",
+        a: "There is a known device issue. NOL World says that on some devices zooming in and out enlarges the whole mobile browser, which makes seat selection impossible, and that the answer is to use the NOL World app. The device it names as confirmed is the Galaxy Fold. Install the app ahead of the sale rather than during it.",
+      },
+      {
+        q: "Can I open two tabs to improve my chances?",
+        a: "No, and NOL World asks for one device per account — it says simultaneous access from multiple devices on the same account may restrict your booking. Its advice about separate browsers is about session conflicts when you are genuinely using two different ticketing platforms, not an endorsement of running several of your own accounts. Booking across accounts on similar personal details is on its published fraudulent-use list.",
+      },
+      {
+        q: "What happens to my data if I delete my account?",
+        a: "NOL World says deletion cannot be undone, and lists what goes: account and profile information, reservation history, trips, and liked places. Reviews and photos you left for a place are retained. Elsewhere it says deleting also erases your identity verification, freeing it for another account, and that an account restricted for misuse cannot be deleted.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "NOL World — FAQ: account recovery and social logins, password reset, missing booking history, account deletion, browser and app requirements, and mobile seat selection",
+        url: "https://world.nol.com/en/my-info/faqs",
+      },
+      {
+        label: "NOL World — customer support inquiry form, used for account searches",
+        url: "https://world.nol.com/en/my-info/inquiries/new",
+      },
+      {
+        label: "NOL World — the overseas-facing ticketing site",
+        url: "https://world.nol.com/en/ticket",
+      },
+    ],
+  },
 ];
 
 /**

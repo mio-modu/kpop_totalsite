@@ -2521,6 +2521,160 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "weverse-data-leak-what-to-do",
+    ko: "유출",
+    art: "fan-kit",
+    name: "The data leak",
+    koLine: "위버스 개인정보 유출 — 무엇이 유출됐고, 무엇은 아닌가",
+    title: "The Weverse data leak: what actually leaked, and the one risk it creates",
+    summary:
+      "422,584 accounts, confirmed by Weverse itself. No names, no contact details, no card numbers — an internal identifier and your purchase history. That combination is not a drained account; it is the raw material for a message that knows what you bought.",
+    glyph: "id",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers what Weverse Company published about the leak it confirmed in September 2026, read in both the English and Korean versions of its notice. We are not security auditors and this is not legal advice: everything attributed to Weverse is its own statement, not a finding we verified. A security story can develop, and this page carries the date we last checked it.",
+    readMinutes: 8,
+    platforms: ["Weverse"],
+    intro: [
+      "In September 2026 the president of Weverse Company published a notice confirming that customer personal information had been leaked. Every reader of this site has a Weverse account, so the question is not whether it matters but what it actually changes — and the answer is narrower and more specific than either a shrug or a panic.",
+      "What follows is the notice read closely, in both languages it was published in. The useful part is not the number. It is that the particular combination of data that left is almost useless for stealing from you and unusually good for convincing you.",
+    ],
+    steps: [
+      {
+        title: "Read the two lists, because the difference decides everything",
+        body: "Weverse itemises what leaked under two headings. As personal information: internal identification information — a unique internal number generated for user identification when you registered. As general information it classifies as not personal: purchase type meaning payment method, the payment gateway name, the currency, the purchase amount, the cancellation amount, the purchase date and time, the purchase status, and the refund date and time where an order was cancelled. The scale is 422,584 cases counted in account ID units. What is not on either list is the point: no names, no contact details, no card numbers or payment credentials.",
+        pitfall:
+          "Reading 422,584 and filling in the rest from memories of other breaches. The response to a credential leak and the response to this are different, so the itemised list is worth more than the headline.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Weigh Weverse's reassurance fairly, including its limit",
+        body: "Weverse states that the leaked internal identifier is not information that directly identifies an individual, such as a name or contact details; that it is a value used only within Weverse Company's internal systems and cannot be used externally; and that payment forgery or unauthorised fund transfers are unlikely to occur from these data items alone. On its face that reasoning holds — an internal row number is not an identity, and none of these fields is a credential. The honest limit is that an internal identifier becomes identifying the moment it is joined to another dataset that also contains it, and nobody outside the company can measure how likely that is. That is the residual exposure: correlation, not theft.",
+        pitfall:
+          "Treating a reasonable reassurance as a guarantee, or treating it as spin. It is a specific claim about specific fields, and it is strongest exactly where it is narrowest.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Understand the actual risk: a message that knows what you bought",
+        body: "Look at the leaked fields together — payment method, gateway, currency, amount, date, status, refund date. That is not the equipment for charging your card. It is the equipment for writing a message that passes the only test most people apply to a suspicious email, which is whether the sender knows real details about a real order. A note quoting your actual purchase amount, on the actual date, in the actual currency, through the actual payment provider, is far more convincing than anything a random scammer could compose.",
+        pitfall:
+          "Using \u0027they know my order details\u0027 as proof that a message is genuine. After this leak that test has stopped working, and it is the test almost everyone uses.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Know why this lands on top of a real process",
+        body: "This matters more for this audience than for most, because legitimate strangers already ask Weverse customers for money. Weverse Shop warns EU buyers that they may receive separate payment instructions from local customs or the courier, and that not paying can delay or prevent delivery. So the genuine experience and the fraudulent one now look alike: a company you have no relationship with, referencing an order you really placed, asking for a payment before your parcel moves. The leak did not create that overlap, but it sharpened it.",
+        pitfall:
+          "Resolving the ambiguity by paying, or by ignoring everything. One loses money and the other loses the parcel.",
+        takes: "—",
+        see: {
+          slug: "weverse-shop-shipping-delays-and-cancellation",
+          text: "What a legitimate customs or courier payment request looks like",
+        },
+      },
+      {
+        title: "Use a check that does not depend on what the message knows",
+        body: "The way through is to stop assessing the message and start assessing the claim. Take the tracking number or order reference out of it, then go to the courier or to Weverse Shop yourself — typed address or saved bookmark, never a link in the message — and see whether that reference matches an order of yours and whether anything is genuinely owed. If the message is real, the same information is on the other side. If it is not, nothing is, and you have learned that without clicking anything.",
+        pitfall:
+          "Following the link because the details were right. The details being right is now the expected state of a fake.",
+        takes: "5 minutes per message",
+      },
+      {
+        title: "Do not mistake a password change for the fix",
+        body: "The reflex after any breach is to change the password, and here it addresses almost nothing: what was exposed was an identifier and purchase metadata through a payment-information API, not login credentials. Rotating the password costs nothing and harms nothing, so do it if it settles your mind — but do it knowing it is hygiene rather than a remedy, and that the thing that actually protects you is the verification habit in the previous step. Enabling whatever two-factor option your login provider offers is worth doing on general principle, and it is not a response to this leak either.",
+        pitfall:
+          "Changing the password, feeling finished, and then trusting the next message that quotes your order. Reflexive advice is comfortable and it crowds out the advice that works.",
+        takes: "10 minutes",
+        see: {
+          slug: "nol-world-account-recovery-and-booking-errors",
+          text: "Why your login type decides what you can even change",
+        },
+      },
+      {
+        title: "Find out whether you were affected, from the account rather than from a guide",
+        body: "Weverse says it carried out a separate procedure, in accordance with the criteria set by the relevant laws and regulations, to notify the customers whose data was in the leak. So the answer is in your own account: the email address registered on it, and your in-app notifications. No guide can tell you, this one included, and any third party claiming to check whether you were in the leak is a reason for suspicion rather than a service.",
+        pitfall:
+          "Searching for a lookup tool that will tell you if you were affected. For a leak of internal identifiers there is nothing meaningful such a tool could check, and the search itself is what a phishing page is waiting for.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Note what the company says it did, and what remains a promise",
+        body: "Weverse's account of its response, in its words: it strengthened access control on the payment information processing API and removed the internal identifier from it so the data would not be externally exposed; on 4 September it filed a breach incident report with the Korea Internet & Security Agency; and it notified affected customers. Its stated plans are a full investigation of all externally exposed APIs, tighter access control and minimised exposed information, tighter control of deployment processes, and more sensitive security monitoring. It also says it has asked the external actor who accessed the data to return it, and intends to pursue legal responsibility. Keep the two categories apart: the first group are claims about completed work that nobody outside can audit, and the second are intentions.",
+        pitfall:
+          "Reading a list of planned improvements as a list of fixes already in place. The notice does not claim that, and neither should a summary of it.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Give the handling its due, in proportion",
+        body: "The timeline Weverse describes is short: contacted by KISA on 3 September after an external reporter disclosed a vulnerability, immediate internal inspection and emergency response, a breach report filed with KISA on 4 September, and a public notice over the chief executive's name itemising what left — including the fields it argues are not legally personal information, which it did not have to enumerate. We read the Korean original against the English and they say the same thing, which is its own small signal. None of that undoes a leak. But a site that only ever reports incidents as scandals teaches its readers nothing about what competent handling looks like, and this is nearer to it than most.",
+        pitfall:
+          "Concluding from a calm assessment that nothing happened. 422,584 accounts is a real failure that a prompt disclosure does not cancel.",
+        takes: "—",
+      },
+      {
+        title: "Think twice before deleting the account, and know what deletion is not",
+        body: "Deleting the account is the other reflex, and it is a larger decision than it looks. Weverse Shop and NOL World both tie real things to an account: order and reservation history, saved addresses, a paid membership, and on the ticketing side a completed identity verification. The decisive point is simpler though. Deletion removes your data from the service going forward; it does not retract data that has already left. Whatever was in this leak was in it before you decided anything, and closing the account afterwards cannot reach it.",
+        pitfall:
+          "Deleting an account as a response to a leak. It is a reasonable thing to want and it is not a remedy for this, and it costs you the history you would need if a purchase were ever disputed.",
+        takes: "—",
+        see: {
+          slug: "nol-world-account-recovery-and-booking-errors",
+          text: "What account deletion removes, and what it keeps",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Was my name, address or card number leaked?",
+        a: "Not according to Weverse's own itemisation. What it lists is an internal identification number plus purchase metadata — payment method, payment gateway name, currency, purchase and cancellation amounts, purchase date and time, purchase status, and refund date and time. Names, contact details and payment credentials are not on the list.",
+      },
+      {
+        q: "Should I change my Weverse password?",
+        a: "It will not hurt, and it is not the fix. The exposure was an identifier and purchase metadata through a payment-information API rather than login credentials, so a new password does not address it. Do it if it helps you feel settled, then spend the real effort on verifying payment requests independently, which is what actually protects you here.",
+      },
+      {
+        q: "How do I know if I was one of the 422,584?",
+        a: "Through your own account. Weverse says it ran a separate notification procedure for affected customers under the relevant laws, so check the email registered to the account and your in-app notifications. No external tool can tell you, and anything advertising that it can should be treated as a phishing attempt.",
+      },
+      {
+        q: "Can someone use this to charge my card?",
+        a: "Weverse says payment forgery or unauthorised transfers are unlikely from these items alone, and on the face of the list that is sound — none of the leaked fields is a card number or a credential. The realistic risk is not a direct charge but a convincing message that persuades you to make a payment yourself.",
+      },
+      {
+        q: "If it is not personal information, why does it matter?",
+        a: "Because usefulness to an attacker and legal classification are different questions. Purchase amounts, dates, payment methods and currencies are exactly what makes a fraudulent message credible — and the usual way people judge a suspicious email is whether the sender knows real details about a real order. That test no longer works for anyone in this leak.",
+      },
+      {
+        q: "Should I delete my Weverse account?",
+        a: "It is a defensible choice and it is not a remedy. Deletion stops future collection; it cannot retract data that has already left, which includes anything in this leak. It also costs you order and reservation history, saved addresses, any paid membership, and on the ticketing side a completed identity verification — so decide it on whether you still want the service, not as a response to this.",
+      },
+      {
+        q: "What has Weverse actually done?",
+        a: "By its own account: strengthened access control on the payment information API and removed the internal identifier from it, filed a breach incident report with KISA on 4 September 2026, and notified affected customers. It also lists planned work — auditing all externally exposed APIs, tightening deployment controls, raising monitoring sensitivity — and says it has requested the data's return from the actor involved and intends to pursue legal responsibility. The completed items are its claims rather than audited findings.",
+      },
+      {
+        q: "Is there anything newer than this?",
+        a: "Not as of the date at the top of this page, which is when we last read Weverse Shop's notices list. A security matter can develop, so that list is the live version — if a follow-up notice exists, it will be there before it is here.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "Weverse Shop — Notice to Our Weverse Customers, the leak confirmation from the president of Weverse Company",
+        url: "https://shop.weverse.io/en/notices/14265",
+      },
+      {
+        label: "Weverse Shop — the same notice in Korean, read against the English for consistency",
+        url: "https://shop.weverse.io/ko/notices/14265",
+      },
+      {
+        label: "Weverse Shop — the notices page, where any follow-up would appear first",
+        url: "https://shop.weverse.io/en/notices",
+      },
+    ],
+  },
 ];
 
 /**

@@ -305,7 +305,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Complete overseas-customer verification before you need it",
-        body: "Payment with an overseas-issued card commonly depends on your account having been verified as an overseas customer first, which typically means submitting passport information and waiting for it to be processed. Processing is not instant. Do this days ahead of any sale you care about.",
+        body: "Overseas-customer verification is a one-time action per account, and NOL World states that the verified information cannot be reused. Verify on the account you actually intend to buy with — if you have more than one, the verification does not move between them. Deleting an account does erase its verification and free it for another, but an account restricted for misuse cannot be deleted at all. There is no age limit on verification itself, though age-restricted events may still refuse the booking. The confirmation arrives by email, so check spam before concluding it failed.",
         pitfall:
           "Discovering at the payment step that verification is still pending is the classic way to lose a held seat.",
         takes: "1-3 days including processing",
@@ -324,7 +324,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Bring the right document to collection",
-        body: "Where collection requires identity confirmation, the document generally has to be the one the booking was made under. If you booked on your passport, bring that passport — not a driving licence, not a photo of it.",
+        body: "Collection is at the venue box office on the day of the show and not before — NOL World says tickets cannot be picked up on an earlier day. The window opens one hour before the show, and you need the confirmation number together with identification. Allow for a queue at the box office itself. Once collected, a ticket cannot be re-issued if it is lost or stolen.",
         pitfall:
           "Name on the booking, name on the document and name on the membership all have to agree. A nickname anywhere in that chain is a problem.",
         takes: "—",
@@ -498,7 +498,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Have a genuinely different backup, not a sibling card",
-        body: "A second card from the same issuer will usually fail for the same reason. A different issuer, a different network, or the platform's supported alternative method if it offers one, is a real backup.",
+        body: "A second card from the same issuer will usually fail for the same reason. A different issuer, a different network, or the platform's supported alternative method if it offers one, is a real backup. The two overseas platforms also refuse opposite things, which is worth knowing before you blame the card: NOL World accepts VISA, MasterCard, AMEX, JCB and UnionPay but only when issued outside Korea, and refuses Korean-issued cards outright. YES24 Global does the reverse on two of them, excluding American Express issued outside Korea and UnionPay entirely. A card refused on one can be the right card on the other.",
         pitfall:
           "Two cards from the same bank is one card for the purposes of a fraud rule.",
         takes: "30 minutes to set up",
@@ -1090,6 +1090,115 @@ export const guides: Guide[] = [
       {
         label: "Weverse — the community side, where a membership is used",
         url: "https://weverse.io/",
+      },
+    ],
+  },
+
+  {
+    slug: "nol-world-queue-and-seat-selection",
+    ko: "대기열",
+    art: "guide-nol",
+    name: "The queue",
+    koLine: "NOL World 대기열 — 새로고침이 순번을 지웁니다",
+    title: "The NOL World queue, and what resets your place in it",
+    summary:
+      "Refreshing clears your position. A second device closes your first number. Seats update without reloading. All of it is in NOL World\u0027s own FAQ, and all of it contradicts what people do instinctively.",
+    glyph: "ticket",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers how the NOL World queue, seat map and waitlist behave during a sale. Registration and overseas verification happen before any of this and are covered in the NOL World guide. Everything here is from NOL World\u0027s published FAQ.",
+    readMinutes: 7,
+    platforms: ["NOL World"],
+    intro: [
+      "The instinct in a ticket queue is to refresh, and to open a second browser in case the first one is stuck. On NOL World both of those cost you the thing you are trying to protect, and the platform says so in its own help pages.",
+      "This is the part of a sale that no guide covers, because it cannot be worked out from the outside — you only see it once, for ninety seconds, while panicking.",
+    ],
+    steps: [
+      {
+        title: "Do not refresh. Refreshing resets your position",
+        body: "NOL World states it plainly: you cannot skip the queue, and if you refresh the page your position in the queue will be reset. Not re-checked, not re-queried — reset. Whatever number you were holding goes back to the end.",
+        pitfall:
+          "A queue page that looks frozen is usually just a queue page. The one action that feels like doing something is the one action that undoes the waiting you have already done.",
+        takes: "The whole queue",
+      },
+      {
+        title: "One account gets one queue number, and a second attempt kills the first",
+        body: "You can only receive one queue number per account. If you try for more — a second browser, a phone alongside a laptop — NOL World closes the first number you received. Pressing Reserve from another device while already queued prompts you to keep the existing queue or start a new one, and choosing a new one means waiting again from the beginning on that device.",
+        pitfall:
+          "Opening a backup device is the single most common ticketing tactic in fan communities and it is strictly worse than doing nothing here. The prompt that appears is not offering you a second chance; it is asking which one you want to throw away.",
+        takes: "0 minutes, if you resist",
+      },
+      {
+        title: "A queue number is not a ticket",
+        body: "NOL World says a position in the queue does not guarantee a ticket, because availability is limited and tickets are issued in order. The queue decides when you get to try, not whether anything is left when you arrive. The queue applies to every product bookable on NOL World, not only the high-demand ones.",
+        pitfall:
+          "Reading a low queue number as a result. It is a turn, and the stock may be gone before your turn comes.",
+        takes: "1 minute",
+      },
+      {
+        title: "Stop refreshing the seat map too — it updates by itself",
+        body: "The booking system was reorganised so that available seats update in real time without reloading. Seats held by other users disappear and cancelled seats come back on their own. If you see \u0022this seat has already been selected\u0022, it means another user chose the same seat at nearly the same moment — not that your page is stale.",
+        pitfall:
+          "Refreshing the seat map carries the same cost as refreshing the queue. The habit from older ticketing sites is the exact wrong habit here.",
+        takes: "During selection",
+      },
+      {
+        title: "Read the sold-out rate for what it measures",
+        body: "Where a sold-out rate is shown, it appears only once 90% or more of all seats have been paid for, and it counts paid tickets rather than selectable ones. Remaining-seat counts may not be shown at all: NOL World says the organiser decides, and that for high-demand products there is a lag between what is displayed and what is actually available.",
+        pitfall:
+          "Treating a sold-out percentage as live inventory. It is a paid-ticket figure with a 90% floor, and the gap between it and reality is widest exactly when you care most.",
+        takes: "1 minute",
+      },
+      {
+        title: "If you get a waitlist notification, you have six hours",
+        body: "If a booking waitlist seat becomes available and payment is not completed within six hours of the notification, the booking is automatically cancelled and refunded, and the opportunity passes to the next person on the list. Six hours is generous until you remember the notification arrives on Korean business hours and most readers of this will be asleep for part of it.",
+        pitfall:
+          "A six-hour window that opens at 3am your time is a two-hour window. Convert the notification time the same way you converted the sale time.",
+        takes: "Within 6 hours",
+        see: {
+          slug: "kpop-ticketing-day-timezone",
+          text: "Converting a Korean hour to yours, for the date it falls on",
+        },
+      },
+      {
+        title: "Know you cannot change the seat afterwards",
+        body: "Once the reservation is complete, seat changes are not possible — the only route is to cancel and rebook, which exposes you to the event\u0027s cancellation fee and to the seat being taken in between. The same applies to coupons: a coupon cannot be applied after payment, and using one means cancelling and rebooking the same seat with the fee that implies.",
+        pitfall:
+          "Booking a seat you are unsure about intending to fix it later. There is no later.",
+        takes: "Before you confirm",
+      },
+    ],
+    faq: [
+      {
+        q: "Does refreshing help me get through the NOL World queue faster?",
+        a: "The opposite. NOL World states that refreshing the page resets your position in the queue, and that the queue cannot be skipped.",
+      },
+      {
+        q: "Can I queue on my phone and my laptop at the same time?",
+        a: "No. One account receives one queue number, and attempting to get more closes the first one. If you press Reserve on a second device you are asked to keep the existing queue or start over on the new one.",
+      },
+      {
+        q: "Do I need to refresh the seat map to see new seats?",
+        a: "No. Seats update in real time — held seats disappear and cancelled seats return without a reload. Refreshing costs you the same as refreshing the queue.",
+      },
+      {
+        q: "What does the sold-out rate actually mean?",
+        a: "It appears only when 90% or more of seats have been paid for, and it counts paid tickets rather than seats you could select. For high-demand shows there is a known lag between the figure and real availability.",
+      },
+      {
+        q: "How long do I have after a waitlist notification?",
+        a: "Six hours. If payment is not completed in that time the booking is automatically cancelled and refunded and the seat passes to the next person on the waitlist.",
+      },
+    ],
+    sources: [
+      {
+        label: "NOL World — FAQ: booking and payment, including queue behaviour",
+        url: "https://world.nol.com/en/my-info/faqs",
+      },
+      {
+        label: "NOL World — the overseas-facing ticketing site",
+        url: "https://world.nol.com/en/ticket",
       },
     ],
   },

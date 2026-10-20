@@ -44,7 +44,17 @@ for (const theme of ["dark", "light"]) {
         colorScheme: theme,
       });
       const page = await ctx.newPage();
-      await page.goto(`${BASE}${path}`, { waitUntil: "networkidle" });
+      const res = await page.goto(`${BASE}${path}`, { waitUntil: "networkidle" });
+      // A page that errored has no horizontal overflow either, and this script
+      // once reported ALL CLEAN across a run where the home page and every
+      // guide were returning 500. A check that passes on a broken page is
+      // worse than no check, so the status is now part of the check.
+      if (!res || res.status() >= 400) {
+        bad++;
+        console.log(`  ✗ HTTP ${res?.status() ?? "no response"} ${theme} ${name} @${w}`);
+        await ctx.close();
+        continue;
+      }
       // Walk the page before measuring. Everything below the fold loads lazily,
       // and a full-page screenshot does not reliably trigger it — which cost an
       // hour once, chasing a decorative image that was rendering correctly and
@@ -57,13 +67,19 @@ for (const theme of ["dark", "light"]) {
         window.scrollTo(0, 0);
       });
       await page.waitForLoadState("networkidle");
+      const h = await page.evaluate(() => document.body.scrollHeight);
       const over = await page.evaluate(
         () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
       );
-      const h = await page.evaluate(() => document.body.scrollHeight);
       if (over > 0) {
         bad++;
         console.log(`  ✗ OVERFLOW ${theme} ${name} @${w}: +${over}px`);
+      }
+      // Every real page here clears a thousand pixels. Anything shorter is an
+      // error page, an empty render or a route that silently stopped existing.
+      if (h < 1000) {
+        bad++;
+        console.log(`  ✗ TOO SHORT ${theme} ${name} @${w}: ${h}px — did it render?`);
       }
       if (w === 390 || w === 1280) {
         await page.screenshot({
@@ -77,5 +93,5 @@ for (const theme of ["dark", "light"]) {
   }
 }
 await browser.close();
-console.log(bad === 0 ? "ALL CLEAN — no horizontal overflow" : `${bad} OVERFLOWS`);
+console.log(bad === 0 ? "ALL CLEAN — every page served, rendered and fit" : `${bad} PROBLEMS`);
 process.exit(bad === 0 ? 0 : 1);

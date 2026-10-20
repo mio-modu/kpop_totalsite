@@ -735,6 +735,124 @@ export const guides: Guide[] = [
       },
     ],
   },
+
+  {
+    slug: "yes24-global-ticketing-guide",
+    ko: "예스24 글로벌",
+    art: "lightstick",
+    name: "YES24 Global",
+    koLine: "예스24 영문 예매 — 계정·결제·수령",
+    title: "YES24 Global ticketing: the rules that are not on the English page",
+    summary:
+      "Your existing YES24 account will not work. PayPal only appears if the show is far enough away. Two card types are refused outright, and the venue checks your passport against the name you signed up with.",
+    glyph: "ticket",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers the English-language YES24 TICKET site used by overseas buyers. The Korean-language YES24 site runs a different account system and a different identity check. Per-show conditions on an event page override everything here, and YES24 says so itself.",
+    readMinutes: 8,
+    platforms: ["YES24 Global"],
+    intro: [
+      "YES24 publishes its overseas rules in an English purchase guide and FAQ, and almost none of what is in them appears in the guides that rank for this. They are specific, they are unusual, and several of them will end your booking on the day if you meet them for the first time at checkout.",
+      "Everything below is from those two pages, read on 20 October 2026. Where YES24 contradicts itself — and it does, once, on a fee — this page says so rather than picking the convenient number.",
+    ],
+    steps: [
+      {
+        title: "Sign up again, even if you already have a YES24 account",
+        body: "YES24 states it plainly: existing YES24 members who want to use the Global YES24 TICKET site must sign up again. It also warns that the Global ticket site is a different thing from global.yes24.com, the bookstore, and that the two do not share member information. Non-members cannot book at all, so this is the first step and not a formality.",
+        pitfall:
+          "Three YES24 properties with similar names and no shared login. Discovering this in a queue is discovering it too late — the account has to exist days earlier anyway, because of the name check below.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Register the name exactly as your passport has it",
+        body: "This is the one place a platform says the quiet part out loud. YES24\u0027s FAQ: if your YES24 account name is different from your passport name, you can have trouble taking the booked ticket at the venue. Will-call tickets can only be collected by the ticket holder, and collection needs a physical valid ID — a passport — alongside the booking record.",
+        pitfall:
+          "A middle name dropped, a romanisation chosen years ago, a given-name-first order. The venue is comparing two documents, not judging whether it is obviously you.",
+        takes: "10 minutes",
+        see: {
+          slug: "fan-club-presale-checklist",
+          text: "The three names that have to match, and where each is set",
+        },
+      },
+      {
+        title: "Check whether PayPal is even offered for your show",
+        body: "PayPal on YES24 Global is only available when there are more than 180 days between the booking date and the show date. For most K-pop concerts, announced a month or two ahead, that means PayPal is simply not an option and the card is the only route. There is also a 10-cent PayPal fee which is not refunded even if you cancel.",
+        pitfall:
+          "Planning around PayPal because a guide said it was accepted, then finding only a card field at checkout. The 180-day rule is why — not an error, and not something support can waive.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Know which cards are refused before you try one",
+        body: "The purchase guide excludes American Express cards issued outside Korea, and China UnionPay cards entirely. Everything else goes through as a card payment — and YES24 states that 3-D Secure authentication is required on the Global site, so the card has to be enrolled with your bank for it.",
+        pitfall:
+          "An Amex that works on every other site is refused here for where it was issued, not for anything about the card. That failure looks identical to a bank block, so people spend the sale ringing their bank about the wrong problem.",
+        takes: "10 minutes, with your bank",
+        see: {
+          slug: "foreign-card-declined-korean-ticketing",
+          text: "When the refusal is your bank rather than the platform",
+        },
+      },
+      {
+        title: "Choose will-call or overseas delivery at the time of booking",
+        body: "Both exist, but overseas delivery is per-show rather than universal: YES24 says availability varies by performance and the fee varies by destination, and that the event page is where it is stated. Changing the delivery method afterwards is only possible until 20 business days before the show — four working weeks, not four days.",
+        pitfall:
+          "Twenty business days is roughly a month of calendar. Booking two weeks out means the method you picked in the queue is the method you are keeping.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Read the booking and cancellation clock, which is not the show date",
+        body: "Booking closes at 5pm the day before a Tuesday-to-Saturday show, and at 11am on Saturday for a Sunday or Monday show. Cancellation runs on exactly the same clock, and after it passes there is no cancellation, change or refund. Cancellation is free within 7 days of purchase; after that it is a per-ticket fee rising to 10%, 20% and 30% of the paid amount as the show approaches. The limit is 10 tickets per person at a time.",
+        pitfall:
+          "The booking fee is where YES24 contradicts itself: the FAQ says 2,000 KRW in one line and then announces the change to 3,000 KRW per ticket from 14 August 2023 in the next. Treat 3,000 as current. Either way it is refundable only until 23:59 on the day you bought, not within the 7-day window that covers the ticket itself.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Bring the passport and the booking record to the venue",
+        body: "Collection requires a physical valid ID — YES24 names the passport — together with the record of booking confirmation. The purchase guide also tells you to print the purchase details and hand them in at the box office. Per-show policy on the event page overrides this, and YES24 says the event page wins, so read it even if you have collected at that venue before.",
+        pitfall:
+          "A photo of the confirmation on a phone is not what is described. Print it, and carry the passport you registered with rather than any other ID.",
+        takes: "At the venue",
+      },
+    ],
+    faq: [
+      {
+        q: "Can I use my existing YES24 account on the English site?",
+        a: "No. YES24 says existing members must sign up again for the Global YES24 TICKET site, and that it is separate from global.yes24.com with no shared member information.",
+      },
+      {
+        q: "Why is PayPal missing at checkout?",
+        a: "PayPal is only offered when there are more than 180 days between the booking date and the show date. Most concert bookings fall well inside that, so the card is the only route.",
+      },
+      {
+        q: "Which cards does YES24 Global refuse?",
+        a: "American Express cards issued outside South Korea, and China UnionPay cards. Other cards are accepted but must pass 3-D Secure, which the site requires.",
+      },
+      {
+        q: "Can someone else collect my ticket?",
+        a: "No. Will-call tickets can only be collected by the ticket holder, with a physical passport and the booking record — unless the individual show says otherwise on its own page.",
+      },
+      {
+        q: "How long does a refund take?",
+        a: "Card refunds are stated at 3 to 7 days, with the card company\u0027s own policy deciding, and up to 30 days. PayPal refunds go back to the PayPal balance within 5 business days — at the exchange rate on the refund date including the conversion spread, so the amount returned may be less than the amount paid.",
+      },
+    ],
+    sources: [
+      {
+        label: "YES24 TICKET — English purchase guide, steps 1 to 5",
+        url: "https://ticket.yes24.com/English/Guide",
+      },
+      {
+        label:
+          "YES24 TICKET — English FAQ: booking, payment, cancellation, collection",
+        url: "https://ticket.yes24.com/English/FAQ",
+      },
+      {
+        label: "YES24 TICKET — English site entry point",
+        url: "https://ticket.yes24.com/English",
+      },
+    ],
+  },
 ];
 
 /**

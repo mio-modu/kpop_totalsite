@@ -31,6 +31,17 @@ export type Correction = {
 
 export const corrections: Correction[] = [
   {
+    date: "2026-10-20",
+    where:
+      "Step 7 and the deletion FAQ of the NOL facepass guide",
+    wrong:
+      "Both said we had not been able to read NOL World's answer on whether facial data is deleted when you unsubscribe from facepass, and declined to summarise it. The refusal was right; stopping there was not. The answer was published the whole time and we had not found the way to read it.",
+    right:
+      "NOL World says the face photo is deleted on cancellation, and that the data is then separately stored and retained for one year from that point for identity-verification purposes, used only on re-registration and discarded afterwards. The guide now carries both halves, because the first one alone is the half that misleads.",
+    found:
+      "Writing the Verified Member guide meant reading the same FAQ properly, and the answers that had come back empty were references into a second part of the page payload. Resolving those made all 113 answers readable, this one among them.",
+  },
+  {
     date: "2026-10-19",
     where:
       "The home page timeline, step 7 of the ticketing guide, and the 부정거래 entry in the glossary",

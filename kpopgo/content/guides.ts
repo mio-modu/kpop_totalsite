@@ -548,7 +548,7 @@ export const guides: Guide[] = [
       "Where you buy decides whether your purchase is counted, what you pay in shipping, and whether you get the pre-order inclusions. Here is how to choose.",
     glyph: "parcel",
     status: "sourced",
-    lastChecked: RESEARCH_DATE,
+    lastChecked: "2026-10-20",
     scope:
       "Covers buying official physical albums and goods for delivery outside Korea. Does not cover resale marketplaces or unofficial merchandise.",
     readMinutes: 6,
@@ -581,10 +581,14 @@ export const guides: Guide[] = [
       },
       {
         title: "Price the shipping and the customs exposure, not the album",
-        body: "Shipping from Korea can exceed the album price, and your own country's duty-free threshold decides whether you pay import charges on top. Group orders reduce per-item shipping. Work out the landed cost before you commit, and know your threshold.",
+        body: "Shipping from Korea can exceed the album price, and whether you pay import charges on top depends on your own country's rules. Check what those are now rather than assuming: the United States suspended its 800-dollar threshold in August 2025 and the EU removed its 150-euro one on 1 July 2026, so for readers in either, there is no longer a value small enough to arrive free. Group orders reduce per-item shipping. Work out the landed cost before you commit.",
         pitfall:
-          "Combining several albums into one parcel can push the declared value over your threshold and cost more than shipping them separately. Run both numbers.",
+          "Planning around a duty-free allowance that no longer exists where you live. Where one does still exist, combining several albums into one parcel can push the declared value over it and cost more than shipping them separately — run both numbers.",
         takes: "20 minutes",
+        see: {
+          slug: "kpop-album-customs-duty-overseas",
+          text: "What replaced those thresholds, with the dates and the rules",
+        },
       },
       {
         title: "Keep the order record until it arrives",
@@ -601,7 +605,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Is a group order worth it?",
-        a: "Usually yes for shipping, because the per-item cost drops sharply. Weigh it against your country's duty-free threshold — a single high-value parcel can attract import charges that separate smaller ones would not.",
+        a: "Usually yes for shipping, because the per-item cost drops sharply. Weigh it against your country's import rules — where a duty-free allowance still exists, a single high-value parcel can attract charges that separate smaller ones would not. In the United States and the EU that calculation has changed: both removed their low-value exemptions, so there is no threshold left to stay under.",
       },
       {
         q: "Why are pre-order benefits different between shops?",
@@ -2111,9 +2115,9 @@ export const guides: Guide[] = [
       },
       {
         title: "Treat the currency question as a real decision",
-        body: "NOL World supports payment in 24 currencies including Korean won, US dollars, yen and yuan, and the available ones appear after you enter your card details. The choice it offers is between the currency of your card's issuing country and Korean won. That is two different exchange rates set by two different parties — one by whoever converts at the payment page, one by your card network and issuer. We are not going to tell you which is cheaper for your card, because it depends on your issuer's margin and fees. What you can do is find out your issuer's foreign-transaction terms before the day, since that is the half you are able to check in advance.",
+        body: "NOL World supports payment in 24 currencies including Korean won, US dollars, yen and yuan, and the available ones appear after you enter your card details. The choice it offers is between the currency of your card's issuing country and Korean won. That is two different exchange rates set by two different parties — one by whoever converts at the payment page, one by your card network and issuer. Choosing your own currency is dynamic currency conversion, and the party doing the converting sets the rate and takes a margin on it, so paying in won is usually the cheaper of the two. Usually, not always: your own card's foreign-transaction fee applies either way, and a poor issuer margin can close the gap. The half you can actually check before the day is your issuer's terms, so check those.",
         pitfall:
-          "Picking your home currency on reflex because the number looks familiar. Familiar is not the same as cheaper, and this is the one screen where you choose who does the conversion.",
+          "Picking your home currency because the number looks familiar. Familiar is the more expensive option here more often than not, and this is the one screen where you choose who does the conversion.",
         takes: "10 minutes, with your bank, beforehand",
         see: {
           slug: "nol-world-cancel-ticket-refund",
@@ -2172,7 +2176,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Should I pay in Korean won or my own currency?",
-        a: "NOL World offers both — it supports 24 currencies and lets you choose between your card's issuing-country currency and Korean won, with the options shown after you enter your card details. Which is cheaper depends on your card issuer's exchange margin and fees against whatever rate the payment page applies, and we are not going to guess that for your card. Ask your issuer about its foreign-transaction terms before the day, because that is the side you can check in advance.",
+        a: "Usually won. NOL World supports 24 currencies and lets you choose between your card's issuing-country currency and Korean won, shown after you enter your card details. Choosing your own currency is dynamic currency conversion, where the converting party sets the rate and adds a margin — so won is generally cheaper. Your card's own foreign-transaction fee applies either way, which is the part to check with your issuer before the day.",
       },
       {
         q: "I forgot to use my coupon. Can I add it now?",

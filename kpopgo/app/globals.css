@@ -29,6 +29,15 @@
   --font-han: var(--font-gothic-a1), "Apple SD Gothic Neo", sans-serif;
   --font-han-poster: var(--font-black-han), var(--font-gothic-a1), sans-serif;
   --font-data: var(--font-jetbrains), ui-monospace, "SF Mono", monospace;
+  /* Japanese is served from the reader's own system faces rather than a
+     webfont. A Japanese subset cannot be a closed list the way the Hangul one
+     is — the Korean words on this site come from booking screens and number
+     in the hundreds, while translated prose draws on thousands of kanji — so
+     shipping one would mean either a partial subset that renders some
+     characters in a different face, or a megabyte of font. System faces are
+     well made, already installed and cost nothing. */
+  --font-jp: var(--font-archivo), "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", "Noto Sans JP", "Meiryo", ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Dark is the resting state now. Cream paper reads as an editorial magazine,
@@ -1019,4 +1028,38 @@ h4 {
   .obj-lift:hover {
     transform: none;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Japanese pages
+   Scoped to [lang="ja"] so the English site renders identically. The
+   han-poster face is Korean and draws kanji with Korean glyph shapes, which
+   reads as subtly wrong to a Japanese reader — so Japanese text does not use
+   it even where the template would.
+   ═══════════════════════════════════════════════════════════════ */
+[lang="ja"],
+[lang="ja"] .t,
+[lang="ja"] .t-lg,
+[lang="ja"] .t-sm,
+[lang="ja"] .pm,
+[lang="ja"] .pl,
+[lang="ja"] h1,
+[lang="ja"] h2,
+[lang="ja"] h3,
+[lang="ja"] p,
+[lang="ja"] li {
+  font-family: var(--font-jp);
+}
+
+/* Japanese sets no spaces between words, so a long line needs explicit
+   permission to break and reads better with slightly looser leading. */
+[lang="ja"] .t,
+[lang="ja"] .t-lg,
+[lang="ja"] .t-sm,
+[lang="ja"] p,
+[lang="ja"] li {
+  line-height: 1.85;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
 }

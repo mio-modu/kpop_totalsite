@@ -2058,6 +2058,150 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    ko: "수수료",
+    art: "guide-card",
+    name: "Fees and the clock",
+    koLine: "예매수수료와 결제 시간 — 8천원, 10분, 7분",
+    title: "NOL World checkout: the booking fee, the clock, and the currency you pay in",
+    summary:
+      "A concert ticket carries an 8,000 won service fee, you get ten minutes to choose seats and seven to pay, and the payment window asks you to pick a currency. Three money decisions and one timer, all of them published and none of them obvious.",
+    glyph: "card",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers what NOL World publishes about the cost and the timing of its checkout: the service fee by genre, the two-stage purchase timer, the currency selection, coupons, and per-order limits. Fees and timers can be set per event and NOL World says so in both cases, so your event page overrides this. Nothing here is advice on which currency is cheaper for your particular card.",
+    readMinutes: 7,
+    platforms: ["NOL World"],
+    intro: [
+      "Most of what goes wrong at a Korean checkout is not the card. It is that the page is asking three questions with money attached and a timer running, and an overseas buyer meets all of it for the first time with about seven minutes left.",
+      "All of it is published, and none of it is on the product page where you decided the ticket was affordable. So the point of this page is to move the surprises to the week before.",
+    ],
+    steps: [
+      {
+        title: "Add the service fee before you decide the ticket is affordable",
+        body: "NOL World publishes its service fee by genre. Musicals and concerts carry 8,000 won — excluding certain products such as online concerts and fan club memberships. Other performances and sports are 3,000 won. Leisure and exhibitions are free. NOL World also says fees may vary by product and to check when purchasing, so treat these as the published baseline rather than a promise about your event.",
+        pitfall:
+          "Comparing a Korean ticket price against a ticket price at home and forgetting this sits on top. It is not large, and it is the kind of small surprise that makes a whole platform feel untrustworthy at the worst moment.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Know what the fee is actually buying, because one line of it matters",
+        body: "NOL World itemises what the service fee covers: website maintenance and related costs, payment processing that supports its fraud detection system, technology fees for preventing bot and macro-related fraudulent bookings, and system support for global reservations. That third item is the interesting one. The fee is partly funding the anti-macro machinery, which is the same enforcement direction as the identity checks and the revised Performances Act — and it is why the queue behaves like an adversarial system rather than a line.",
+        pitfall:
+          "Reading the fee as pure margin and the queue as incompetence. The platform is telling you it is spending the fee on keeping automated buyers out, which is also why the rules it imposes on you are strict.",
+        takes: "2 minutes",
+        see: {
+          slug: "nol-world-queue-and-seat-selection",
+          text: "How that anti-automation stance shows up in the queue itself",
+        },
+      },
+      {
+        title: "Understand the clock: ten minutes to choose, seven to pay",
+        body: "The purchase timer is two stages and NOL World states both. From entering the booking page you have up to ten minutes to select seats. Once you move to the price step your seats are held for seven minutes while you complete payment, with a timer at the top of the page. Miss it and the seats are automatically released and you start the booking again. Unassigned or general admission bookings still get the ten-minute limit before payment. NOL World adds that limits can vary by event and that some events have none.",
+        pitfall:
+          "Opening your banking app to find a card number inside the seven minutes. Card details, billing address and your bank's approval app should all be ready before you enter the booking page, because the clock does not care that your phone is asking you to log in again.",
+        takes: "17 minutes, if you use all of it",
+      },
+      {
+        title: "Treat the currency question as a real decision",
+        body: "NOL World supports payment in 24 currencies including Korean won, US dollars, yen and yuan, and the available ones appear after you enter your card details. The choice it offers is between the currency of your card's issuing country and Korean won. That is two different exchange rates set by two different parties — one by whoever converts at the payment page, one by your card network and issuer. We are not going to tell you which is cheaper for your card, because it depends on your issuer's margin and fees. What you can do is find out your issuer's foreign-transaction terms before the day, since that is the half you are able to check in advance.",
+        pitfall:
+          "Picking your home currency on reflex because the number looks familiar. Familiar is not the same as cheaper, and this is the one screen where you choose who does the conversion.",
+        takes: "10 minutes, with your bank, beforehand",
+        see: {
+          slug: "nol-world-cancel-ticket-refund",
+          text: "Why the same exchange-rate question comes back if you ever cancel",
+        },
+      },
+      {
+        title: "Apply the coupon before you pay, because there is no afterwards",
+        body: "NOL World is direct about this: once payment is completed you cannot apply a coupon. The only route it offers is to cancel the same seat and rebook with the coupon applied — and it warns that cancelling and rebooking may incur fees under the event's own fee policy, so check those first. Weigh that honestly against the coupon's value, and remember the seat you release is not reserved for you while you rebook.",
+        pitfall:
+          "Cancelling a seat you actually have, to save a discount you might not get to use. The coupon is worth less than the ticket, and the inventory does not wait.",
+        takes: "5 minutes",
+        see: {
+          slug: "nol-world-cancel-ticket-refund",
+          text: "What cancelling and rebooking actually costs",
+        },
+      },
+      {
+        title: "Expect a ticket limit, and expect it to be the organiser's",
+        body: "NOL World says that depending on the organiser there may be a limit on how many tickets can be reserved per order or per member for a given performance — and that where concert tickets are sold combined with a tour or other admission tickets, the organiser may also impose a per-member limit. So the ceiling is not a platform-wide number you can look up; it is set per show, sometimes per person rather than per transaction, and it is a reason a group order can fail at the last step.",
+        pitfall:
+          "Planning a four-person order around a limit you read on another show. A per-member limit cannot be solved by splitting the order across your own accounts either — that pattern is on NOL World's published list of fraudulent use.",
+        takes: "5 minutes",
+        see: {
+          slug: "nol-world-verified-member-ekyc",
+          text: "Why spreading an order across accounts is the wrong fix",
+        },
+      },
+      {
+        title: "Confirm the booking exists, in the place that shows status",
+        body: "After payment, open the NOL World website or app and go to Account/My, then My Reservations. NOL World says basic reservation details and status are visible both in the list and on the booking detail page. Do that once while you are still at a desk rather than assuming the confirmation email is the whole truth — the reservation list is where a status that is not what you expected shows up, and it is the screen you will be asked about if you contact support.",
+        pitfall:
+          "Treating a payment that went through as a booking that exists. They are usually the same thing and the whole point of checking is the time they are not.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Know what finished means for the thing you bought",
+        body: "For performing arts and concerts, NOL World says the process is complete at payment and you collect at the venue box office. Tour and activity products are not uniform: some issue a QR or barcode to your My Page or email that admits you directly, and some require you to present the voucher or booking confirmation at an on-site counter to exchange for a physical ticket before entry. NOL World's instruction is to check the product page for which one applies, because the difference decides whether you need to find a counter before the entrance.",
+        pitfall:
+          "Assuming a QR code in your email is an entry pass. For an exchange-type product it is the thing you swap at a counter, and the counter has opening hours.",
+        takes: "5 minutes",
+        see: {
+          slug: "nol-world-mobile-ticket-and-entry",
+          text: "The mobile ticket and the gate itself",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "How much is the booking fee on a concert ticket?",
+        a: "NOL World publishes 8,000 won for musicals and concerts, excluding certain products such as online concerts and fan club memberships; 3,000 won for other performances and sports; and nothing for leisure and exhibitions. It also says fees may vary by product and to check at purchase, so confirm on your own event.",
+      },
+      {
+        q: "How long do I actually have at checkout?",
+        a: "Ten minutes to select seats from entering the booking page, then a seven-minute hold while you pay, with a timer shown at the top. Exceed it and the seats are released and you start over. General admission still gets the ten minutes. NOL World says the limits can vary by event and that some events have none.",
+      },
+      {
+        q: "Should I pay in Korean won or my own currency?",
+        a: "NOL World offers both — it supports 24 currencies and lets you choose between your card's issuing-country currency and Korean won, with the options shown after you enter your card details. Which is cheaper depends on your card issuer's exchange margin and fees against whatever rate the payment page applies, and we are not going to guess that for your card. Ask your issuer about its foreign-transaction terms before the day, because that is the side you can check in advance.",
+      },
+      {
+        q: "I forgot to use my coupon. Can I add it now?",
+        a: "No. NOL World says a coupon cannot be applied once payment is complete. The only route it gives is cancelling the same seat and rebooking with the coupon, and it warns that cancellation and rebooking may carry fees under the event's policy. Check the fee before you release a seat you already hold.",
+      },
+      {
+        q: "Why can I only book two tickets when my friend booked four?",
+        a: "Because the limit belongs to the organiser, not the platform. NOL World says a performance may limit tickets per order or per member, and that combined concert-plus-tour products may carry a per-member limit as well. A different show, or a different sale round, can have a different ceiling.",
+      },
+      {
+        q: "Can I use a Korean credit card on NOL World?",
+        a: "No. NOL World accepts only cards issued outside Korea; Korean-issued cards belong to verified domestic members on the Korean site. A Korean card refused here is the rule working, not a fault.",
+      },
+      {
+        q: "Where do I check that my booking went through?",
+        a: "The NOL World site or app, under Account/My then My Reservations. NOL World says reservation details and status appear both in the list and on the detail page. That screen, rather than the confirmation email, is what shows status.",
+      },
+      {
+        q: "I have paid. Is there anything left to do before the show?",
+        a: "For a concert or performing-arts ticket, no — NOL World says the process is complete and you collect at the venue box office. For a tour or activity product it depends: some send a QR or barcode that admits you directly, others need the voucher exchanged for a physical ticket at an on-site counter first. The product page says which.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "NOL World — FAQ: service fees by genre, purchase time limits, accepted currencies and cards, coupons, ticket quantity limits and post-booking steps",
+        url: "https://world.nol.com/en/my-info/faqs",
+      },
+      {
+        label: "NOL World — the overseas-facing ticketing site",
+        url: "https://world.nol.com/en/ticket",
+      },
+    ],
+  },
 ];
 
 /**

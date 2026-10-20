@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Black_Han_Sans, Gothic_A1, JetBrains_Mono } from "next/font/google";
+import { Archivo, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -16,18 +17,35 @@ const archivo = Archivo({
   display: "swap",
 });
 
-// Hangul at poster scale. Used sparingly and always smaller than the Latin.
-const blackHan = Black_Han_Sans({
-  subsets: ["latin"],
+/**
+ * The Hangul faces are self-hosted subsets, not Google imports.
+ *
+ * A Hangul font carries 11,172 syllables; this site sets 241 of them, because
+ * every Korean word on it is one from a real booking screen and that is a
+ * closed list. Imported whole they came to 1.6MB — 98% of the page weight, to
+ * draw nothing. `subsets: ["latin"]` did not help: it governs which ranges are
+ * preloaded, not which exist, and the browser fetched the Korean ranges the
+ * moment Korean rendered.
+ *
+ * Regenerate with `node scripts/subset-fonts.mjs` after adding Korean text.
+ * scripts/fonts.test.mjs fails if the content outgrows app/fonts/covered.json,
+ * which is the only way this rots quietly — a new syllable would otherwise
+ * render in the fallback face and nobody would notice.
+ */
+const blackHan = localFont({
+  src: "./fonts/black-han-sans-400.woff2",
   weight: "400",
+  style: "normal",
   variable: "--font-black-han",
   display: "swap",
 });
 
-// Hangul for labels and body — the words a fan meets on the booking screen.
-const gothicA1 = Gothic_A1({
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
+const gothicA1 = localFont({
+  src: [
+    { path: "./fonts/gothic-a1-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/gothic-a1-700.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/gothic-a1-900.woff2", weight: "900", style: "normal" },
+  ],
   variable: "--font-gothic-a1",
   display: "swap",
 });

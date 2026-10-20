@@ -1745,6 +1745,163 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "nol-world-play-stay-package",
+    ko: "패키지",
+    art: "fan-kit",
+    name: "Play&Stay",
+    koLine: "공연+숙박 패키지 — 하나의 상품, 변경 불가",
+    title: "NOL World Play&Stay: one product, and almost nothing about it is changeable",
+    summary:
+      "A concert and a hotel sold as a single item. You cannot change the hotel, the dates or the nights, skipping the hotel refunds nothing, the seat is random and revealed on the day, and the tickets are handed only to you, in person, at the hotel, inside a window.",
+    glyph: "star",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers NOL World's Play and Stay concert-plus-hotel packages as NOL World documents them: what is fixed, how tickets are collected, the identity and name requirements, and what its cancellation answers actually say. Individual packages carry their own cancellation policy and inclusions, and the product page governs. Shuttle service is noted only where a package includes one.",
+    readMinutes: 9,
+    platforms: ["NOL World"],
+    intro: [
+      "A package looks like the easy option: one payment, a hotel near the venue, a guaranteed seat grade, no fighting a queue. For an overseas fan with one shot at a trip, that is a genuinely attractive trade.",
+      "It is also the most rigid product on the platform, and the rigidity is not obvious from the listing. Read NOL World's own answers in a row and a pattern appears: the package is one indivisible item. Not a ticket and a hotel room you can optimise separately — one thing, bought once, changeable almost nowhere. Everything below follows from that single fact, including the parts that will seem unfair when you need them.",
+    ],
+    steps: [
+      {
+        title: "Understand that you are buying one item, not two bookings",
+        body: "This is the whole guide in one step. NOL World states that the number of nights in a package cannot be modified, that the check-in and check-out dates specified in the package cannot be changed, and that hotel changes are not permitted. Nights cannot be added at purchase either — extra stays are a separate conversation with the hotel, at the hotel's price and subject to its availability. And one account can buy one item, so this is not a thing you stack.",
+        pitfall:
+          "Booking the package intending to tidy the details later: arrive a day early, move to a hotel nearer a friend, trim a night off the end. Every one of those is a documented no.",
+        takes: "15 minutes, before you pay",
+      },
+      {
+        title: "Accept that skipping the hotel refunds nothing",
+        body: "The question gets asked two ways in NOL World's FAQ and gets the same answer both times: you may choose not to stay at the hotel, but refunds for the hotel portion are not available, and the reservation is non-transferable to another person. So staying with a friend instead does not convert into money back, and the room you paid for cannot be handed to anyone else. Using one night and reclaiming the rest is also refused — the number of nights is fixed.",
+        pitfall:
+          "Treating the hotel half as a deposit you can walk away from. It is the half you cannot resell, cannot give away and cannot reclaim.",
+        takes: "—",
+      },
+      {
+        title: "Expect a random seat, and expect to learn it on the day",
+        body: "The package guarantees a grade, not a location. NOL World says seating within sections and zones, aside from your chosen category, is assigned randomly — and that your seat assignment is shown when you pick up the ticket at the hotel on the performance day. You will not know where you are sitting until hours before the show. It also closes the obvious follow-up: being unsatisfied with the seat is not a refund reason, and a cancellation fee may apply anyway.",
+        pitfall:
+          "Planning around a seat position — a particular side for a fan project, a row for a lens. The grade is the promise; the rest is a draw you see on the day.",
+        takes: "—",
+      },
+      {
+        title: "Collect at the hotel desk, in person, inside the window",
+        body: "There is exactly one way to get these tickets. NOL World says pickup is only at the NOL World ticket desk located in the hotel, only during the designated hours, and that tickets are issued exclusively to the reservation holder, who must pick them up in person. Asked whether someone eligible for a discount could collect and attend instead, its answer is that tickets can only be collected and used by the reservation holder, no exceptions. Miss the designated hours and the published answer is simply that tickets are available only during the specified time.",
+        pitfall:
+          "Scheduling the day around the venue. The binding appointment is at the hotel desk, in a window somebody else set, on the day of the show.",
+        takes: "Build the day around it",
+        see: {
+          slug: "nol-world-mobile-ticket-and-entry",
+          text: "How ordinary NOL World collection differs from this",
+        },
+      },
+      {
+        title: "Bring the documents the desk actually requires",
+        body: "NOL World is specific: the valid original ID of the reservation holder, plus the reservation confirmation either printed or on a phone — and without these, tickets cannot be collected. For non-Korean nationals the accepted ID is a passport or a certificate of alien registration. Korean nationals have a longer list, including a resident registration card, driver's licence, passport, youth ID or a mobile ID issued through Government 24 or PASS.",
+        pitfall:
+          "Leaving the passport in the room safe because the desk is in the same building. It is the original ID that opens the ticket, and a photo of it is not on the list.",
+        takes: "5 minutes of packing",
+      },
+      {
+        title: "For a two-person package, both of you have to be at the desk",
+        body: "This one reorganises a day and is easy to miss. NOL World says that for a package for two, both the reservation holder and the companion must be present to collect the tickets — and that the companion is also required to show identification, to confirm they meet the age requirement for entry. So the collection window is an appointment for two people with two IDs, not an errand one of you can run.",
+        pitfall:
+          "Splitting up on the day — one collecting tickets while the other sightsees or queues for merch. The desk will not release the tickets to one of you.",
+        takes: "—",
+      },
+      {
+        title: "Make the name match the passport exactly, now",
+        body: "NOL World answers this with both consequences in one sentence: if the name provided at booking does not match your passport, ticket collection and hotel check-in will not be possible. Both halves of the package, blocked by the same error. The question it answers names the usual culprits — a misspelling, a missing middle name, capitalisation, spacing. Check the booking against the passport page itself rather than against memory.",
+        pitfall:
+          "Assuming a small difference will be waved through because the package is already paid. Paid is not the thing being checked at either counter.",
+        takes: "10 minutes",
+        see: {
+          slug: "nol-world-verified-member-ekyc",
+          text: "How NOL World stores your name, and why its order may differ from the passport",
+        },
+      },
+      {
+        title: "Do not wait for a hotel confirmation email, because there is not one",
+        body: "This causes avoidable panic, so know it in advance. NOL World says hotel reservation confirmations are not sent out separately, and that if the payment went through, the hotel reservation is confirmed and valid. More usefully: reservation details are only passed to the hotel roughly two weeks before the stay, so the hotel genuinely cannot find you before then. If you ring earlier and they have never heard of you, that is the documented normal state.",
+        pitfall:
+          "Booking a backup room, or re-buying the package, because the hotel says there is no reservation six weeks out. Nothing was wrong, and now there are two bookings.",
+        takes: "2 minutes of reassurance",
+      },
+      {
+        title: "Check in as the purchaser, and read the small inclusions",
+        body: "Hotel check-in is gated on the same person as the tickets: NOL World says check-in is only available on verifying the identity of the reservation holder, so a companion cannot check in first and wait. If you will arrive late, its instruction is to contact the hotel in advance — while warning it may not be possible depending on the hotel. Two more specifics worth knowing before you book: minors cannot stay without a legal guardian, and breakfast is not included unless your particular package includes it.",
+        pitfall:
+          "Sending a friend ahead to drop the bags and start the stay. The room opens on your identity, not on the booking reference.",
+        takes: "—",
+      },
+      {
+        title: "If there is a shuttle, treat it as one departure with no second chance",
+        body: "Where a package includes a shuttle, NOL World's answers are unsentimental. Use of it is optional and not using it refunds nothing. There are no backup vehicles, so arriving late at the pick-up point means it has gone. A return-only shuttle is possible. A companion who did not book can ask the on-site shuttle manager, but seating is limited and cannot be guaranteed. And the detail that ruins an evening: you may bring a case onto the bus, but luggage storage inside the bus is not available once you arrive at the venue. The return boarding point and time are given to you when the tickets are handed over at the hotel.",
+        pitfall:
+          "Taking a suitcase to the concert because the bus allowed it on. At the venue there is nowhere to leave it, and you are carrying it through the show.",
+        takes: "—",
+      },
+      {
+        title: "Read the cancellation answers before you book, because they are no",
+        body: "This is the step to take seriously while the trip is still a plan. NOL World publishes answers to the two hardest cases and both are refusals. On infection: following the downgrade in the COVID-19 risk classification, quarantine is no longer mandatory, and accordingly no reduction in the cancellation fee applies even if you are infected. On bereavement and hospitalisation after an accident: refunds for personal reasons are not available, and cancellation fees apply according to each product's own policy. Whether that reads as harsh or as merely clear, it tells you where the risk sits — with you, from the moment you pay. The instrument designed to carry it is travel insurance taken out before departure, and what it actually covers depends on the policy you buy, so read that document rather than assuming it.",
+        pitfall:
+          "Carrying the risk uninsured on the assumption that a serious enough reason will be accepted. NOL World has already published its answer to the two most serious reasons there are.",
+        takes: "30 minutes with an insurance policy",
+        see: {
+          slug: "nol-world-cancel-ticket-refund",
+          text: "How cancellation works on an ordinary ticket, which is more forgiving than this",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Can I buy the package and not use the hotel?",
+        a: "You can decline to stay, but NOL World states the hotel portion is not refundable and the reservation cannot be transferred to anyone else. Using fewer nights than the package contains and reclaiming the difference is also refused, because the number of nights cannot be modified.",
+      },
+      {
+        q: "Can I extend the stay, shorten it, move the dates, or change hotel?",
+        a: "Nights cannot be modified, the check-in and check-out dates in the package cannot be changed, and hotel changes are not permitted. Extra nights cannot be added at purchase either — NOL World's instruction is to contact the hotel directly about availability and price, and it may not be possible. A room upgrade is the same: ask the hotel, and pay the hotel directly on arrival.",
+      },
+      {
+        q: "When do I find out my seat?",
+        a: "When you collect the ticket at the hotel on the day of the performance. The package guarantees a grade; within that grade, NOL World assigns sections and seats randomly. Being unhappy with the result is not a refund reason.",
+      },
+      {
+        q: "Can someone collect the tickets for me, or attend in my place?",
+        a: "No. NOL World says tickets are issued exclusively to the reservation holder and must be collected in person, and that they can only be collected and used by the reservation holder, no exceptions. For a two-person package both people must be at the desk, and the companion must also show ID so their age can be confirmed.",
+      },
+      {
+        q: "I have not received a hotel confirmation email.",
+        a: "There is not one. NOL World says hotel confirmations are not sent separately, and that a successful payment means the hotel reservation is confirmed. It also says reservation details reach the hotel only about two weeks before check-in, so direct confirmation is possible only after that.",
+      },
+      {
+        q: "I called the hotel and they cannot find my booking.",
+        a: "Expected, if you called early. NOL World says details are sent to the hotel roughly two weeks before the stay and that confirmation is only possible after that, and that a properly completed package reservation and payment means the hotel booking is secure. Do not re-book.",
+      },
+      {
+        q: "I tested positive, or had a family emergency. Will the cancellation fee be waived?",
+        a: "NOL World's published answer is no in both cases. It says that with COVID-19 quarantine no longer mandatory, no reduction applies to the cancellation fee even if you are infected; and that refunds for personal reasons, including bereavement or hospitalisation after an accident, are not available, with fees applying per each product's policy. Travel insurance bought before you travel is the mechanism for this risk — what it covers depends on the policy, so read it.",
+      },
+      {
+        q: "Do I have to use the shuttle, and can I take a suitcase on it?",
+        a: "It is optional, and not using it refunds nothing. A case can come onto the bus, but NOL World warns that luggage storage inside the bus is not available once you reach the venue — so a suitcase you bring is a suitcase you carry. There are no backup vehicles if you miss the departure, and the return boarding point and time are given out with the tickets at the hotel.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "NOL World — FAQ: Play and Stay packages, covering ticket collection at the hotel, documents, hotel changes, shuttle service and cancellation",
+        url: "https://world.nol.com/en/my-info/faqs",
+      },
+      {
+        label: "NOL World — the overseas-facing ticketing site",
+        url: "https://world.nol.com/en/ticket",
+      },
+    ],
+  },
 ];
 
 /**

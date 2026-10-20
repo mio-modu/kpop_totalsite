@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { guides } from "@/content/guides";
 import { site } from "@/lib/site";
+import { translations, translationsFor } from "@/content/translations";
+import { LOCALES } from "@/lib/i18n";
 
 export const dynamic = "force-static";
 
@@ -34,6 +36,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(g.lastChecked),
       changeFrequency: "weekly" as const,
       priority: 0.8,
+      // hreflang alternates, emitted only where a translation exists.
+      ...(translationsFor(g.slug).length > 0 && {
+        alternates: {
+          languages: {
+            en: `${site.url}/guides/${g.slug}`,
+            ...Object.fromEntries(
+              translationsFor(g.slug).map((t) => [
+                LOCALES[t.locale].tag,
+                `${site.url}${LOCALES[t.locale].prefix}/guides/${g.slug}`,
+              ]),
+            ),
+          },
+        },
+      }),
+    })),
+    // A translated guide is its own URL and needs its own entry, dated from
+    // the source check it was made against rather than from today — a
+    // translation of a page checked in July is not fresh content.
+    ...translations.map((t) => ({
+      url: `${site.url}${LOCALES[t.locale].prefix}/guides/${t.slug}`,
+      lastModified: new Date(t.sourceChecked),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
     })),
   ];
 }

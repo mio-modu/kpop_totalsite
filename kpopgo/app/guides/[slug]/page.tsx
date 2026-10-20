@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide, guides, jamo } from "@/content/guides";
 import { guideJsonLd } from "@/lib/jsonld";
+import { translationsFor } from "@/content/translations";
+import { LOCALES } from "@/lib/i18n";
 import { JsonLd } from "@/components/JsonLd";
 import { StackedScreens, SingleScreen, StepObject } from "@/components/Objects";
 import { Artwork } from "@/components/Artwork";
@@ -28,7 +30,24 @@ export async function generateMetadata({
   return {
     title: guide.title,
     description: guide.summary,
-    alternates: { canonical: `/guides/${guide.slug}` },
+    alternates: {
+      canonical: `/guides/${guide.slug}`,
+      // Only emitted where a translation actually exists. Advertising a
+      // language that 404s is worse than advertising none, and hreflang is
+      // reciprocal — the translated page points back here as x-default.
+      ...(translationsFor(guide.slug).length > 0 && {
+        languages: {
+          "x-default": `/guides/${guide.slug}`,
+          en: `/guides/${guide.slug}`,
+          ...Object.fromEntries(
+            translationsFor(guide.slug).map((t) => [
+              LOCALES[t.locale].tag,
+              `${LOCALES[t.locale].prefix}/guides/${guide.slug}`,
+            ]),
+          ),
+        },
+      }),
+    },
     openGraph: { title: guide.title, description: guide.summary, type: "article" },
   };
 }

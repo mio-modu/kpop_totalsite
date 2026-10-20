@@ -1462,6 +1462,153 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "nol-world-cancel-ticket-refund",
+    ko: "환불",
+    art: "guide-card",
+    name: "Cancel and refund",
+    koLine: "예매 취소와 환불 — 마감 시각과 환율 손실",
+    title: "Cancelling a NOL World ticket: the deadline, the fee, and the money you still lose",
+    summary:
+      "The cancellation deadline is the afternoon before the show in Korean time, Saturdays are earlier than the rest of the week, and a fully refunded ticket can still cost a foreign cardholder money. Also: sending the ticket to your friend takes the cancel button away.",
+    glyph: "card",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers cancelling a performance ticket on NOL World, as NOL World documents it: the deadlines, where the fee is shown, how the refund reaches a foreign card, and what makes cancellation impossible. NOL World does not publish a central fee schedule and this page does not invent one. Tour and activity products follow their own policies and are only noted where they differ.",
+    readMinutes: 7,
+    platforms: ["NOL World"],
+    intro: [
+      "An overseas fan cancels for reasons a domestic fan rarely has: a visa, a connecting flight, a work rota that moved. So the cancellation rules matter more to this audience than to the one they were written for — and they are strict, time-zoned, and in two places asymmetric in ways nobody would guess.",
+      "Two of the facts below are worth knowing before you book rather than after. Saturday shows close for cancellation six hours earlier than every other day. And a cancellation that NOL World processes in full can still leave a foreign cardholder out of pocket, which is nobody's mistake and is also nobody's problem to fix for you.",
+    ],
+    steps: [
+      {
+        title: "Learn the deadline before you book, because it is not the day of the show",
+        body: "NOL World closes performance cancellations the day before, not on the day: 5pm KST on the day before the show for weekdays and holidays, and 11am KST on the day before for a Saturday show. The Saturday rule is the one that catches people — it is six hours earlier than the rest of the week, and it applies to the Saturday performance, so the deadline falls on Friday morning Korean time.",
+        pitfall:
+          "Working out \u0027the day before\u0027 on your own calendar. For a Saturday evening show in Seoul, 11am KST Friday is Thursday evening in New York. The deadline can land a full day earlier than it reads.",
+        takes: "5 minutes, before you pay",
+        see: {
+          slug: "kpop-ticketing-day-timezone",
+          text: "Converting a KST deadline without getting the date wrong",
+        },
+      },
+      {
+        title: "Use the free window if you are having second thoughts",
+        body: "There is a no-fee period, and it is short: NOL World says that for tickets, cancelling by 11:59 PM on the day of your reservation means no cancellation fee. So the decision you can reverse for nothing is the one you make the same day you booked. After midnight it costs something.",
+        pitfall:
+          "Assuming that 11:59 PM is your own midnight. NOL World names KST explicitly on the other cancellation deadlines and does not name a zone on this one, so the safe reading is Korean time — and either way, a decision made in the last ten minutes of a window is a decision made too late.",
+        takes: "—",
+      },
+      {
+        title: "Know where the button is, and what it means when it is missing",
+        body: "The route is App or Web, then Account/My, then My Reservations, then Ticket Reservation List, then the reservation, then Cancel Reservation on the details page. If the Cancel Reservation button is not on the details page at all, NOL World's instruction is to contact customer support rather than keep looking: a representative confirms cancellation eligibility, the fee and the refund amount with the supplier and then guides you. You can follow the request from the reservation details page, and a confirmation email follows when it completes.",
+        pitfall:
+          "Reading a missing button as a website fault and retrying it for an hour. It is a status, and the clock in step one is still running while you retry.",
+        takes: "15 minutes, plus support time",
+      },
+      {
+        title: "Expect no fee schedule, and get the number from your own reservation",
+        body: "There is no published fee table to plan against. Asked how much the cancellation fee is, NOL World answers with a path — Web/App, Account/My, My Reservations, Reservation Details — because the figure is a property of your booking, not of the platform. For tour and activity products the fee and the refund amount are shown to you when you press Cancel Reservation, before you confirm. We are not going to print a percentage here that your reservation might not agree with.",
+        pitfall:
+          "Planning around a fee schedule from a blog post. Any guide quoting a fixed Korean cancellation percentage for your show is quoting something NOL World does not publish.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Check partial cancellation while you are still booking",
+        body: "Cancelling two seats out of four is possible for some shows and not for others, and NOL World's instruction is to check the partial-cancellation status while you are booking — which is to say, before it is the thing you need. Tour and activity products do not allow it at all: there the route is cancel the whole booking and rebook, and NOL World warns plainly that availability is not guaranteed afterwards and rebooking may not be possible.",
+        pitfall:
+          "Booking four seats on the assumption that the two uncertain friends can be dropped later. For a show without partial cancellation, the choice becomes all four or none.",
+        takes: "2 minutes, at booking",
+      },
+      {
+        title: "Understand that a full refund can still cost a foreign cardholder money",
+        body: "This is the part written for this audience and almost never explained in English. NOL World states that where a foreign credit card was used, a profit or loss of foreign exchange can occur because of the difference between the exchange rate on the booking date and the rate on the cancellation date — and, separately, that international transaction fees could be applied even though the transaction has been cancelled. Neither is a deduction NOL World makes. Both are your card issuer, and NOL World's advice is to ask the issuer for the exact rates and fees.",
+        pitfall:
+          "Reading a refunded amount that is smaller than the amount charged as an error or a hidden fee. The gap can be the exchange rate moving between two dates, and the person who can explain it is your bank, not the ticketing platform.",
+        takes: "A phone call to your bank",
+        see: {
+          slug: "foreign-card-declined-korean-ticketing",
+          text: "Why a foreign card behaves differently on Korean ticketing in the first place",
+        },
+      },
+      {
+        title: "Give the refund the time the card network needs",
+        body: "If the transaction has not yet reached your credit card company, NOL World says the cancellation completes right away. If it has, and the payment amount has been settled, expect roughly 5 to 7 days for the card company to reverse it, and the cancelled amount to be deducted from the following month's bill rather than returned as a payment. NOL World notes refund policies differ between card companies, so yours is the authority on its own timing.",
+        pitfall:
+          "Opening a dispute with your bank while the reversal is in progress. A chargeback on a transaction that is already being cancelled creates a second problem on an account you may want to book with again.",
+        takes: "5-7 days",
+      },
+      {
+        title: "Do not send the mobile ticket until you are certain you are going",
+        body: "This is the trap worth the whole page. Mobile ticket sharing lets the purchaser send a ticket to the person attending — and NOL World states that once the mobile ticket has been successfully sent, cancellation of the reservation is restricted. The way back is the recipient's: if they deregister the ticket, cancellation becomes possible again. Before registration there are softer exits — the sender can press Cancel Send while the ticket is unregistered, and an unregistered ticket returns automatically after 24 hours or by the viewing date.",
+        pitfall:
+          "Sending tickets to friends the week you book, as the organised thing to do. The cancel button is now effectively theirs, and getting it back means asking them to give the ticket up first.",
+        takes: "—",
+        see: {
+          slug: "nol-facepass-face-registration",
+          text: "Why the person who holds the ticket is increasingly the person who must enter on it",
+        },
+      },
+      {
+        title: "Read tour and activity policies separately",
+        body: "If your booking is a tour, a transfer or an activity rather than a performance ticket, none of the above is a safe default. NOL World says some of these products cannot be cancelled once purchased at all, and that a 100% cancellation fee may apply even on the day of purchase. The policy that governs is the one on the product's own details page and voucher, and NOL World asks you to read it before submitting a cancellation request.",
+        pitfall:
+          "Carrying the ticket rules across to a package booked in the same session. The same-day free window is a performance-ticket rule, and a tour product can be non-refundable from the moment you pay.",
+        takes: "10 minutes per product",
+      },
+    ],
+    faq: [
+      {
+        q: "What exactly is the cancellation deadline for a performance?",
+        a: "The day before the show, in Korean time. NOL World gives 5pm KST on the day before for weekdays and holidays, and 11am KST on the day before for Saturday performances. Convert it against your own date carefully — an 11am KST Friday deadline is Thursday evening in much of the Americas.",
+      },
+      {
+        q: "Is there any free cancellation?",
+        a: "For performance tickets, yes, on the day you book: NOL World says cancelling by 11:59 PM on the day of your reservation carries no cancellation fee. It does not name a time zone on that one while naming KST on the others, so treat it as Korean time and do not cut it fine. Tour and activity products are different — some charge 100% even on the same day.",
+      },
+      {
+        q: "How much is the cancellation fee?",
+        a: "NOL World does not publish a schedule. Asked that question it gives a path instead — Web or App, Account/My, My Reservations, Reservation Details — because the figure belongs to your booking. For tour and activity products, pressing Cancel Reservation shows you the cancellation fee and the refund amount before you confirm. Any English guide quoting a fixed percentage for your show is quoting a number the platform does not state.",
+      },
+      {
+        q: "I cancelled in time and got back less than I paid. Where did the rest go?",
+        a: "Probably not to NOL World. It states that a foreign card can produce a foreign-exchange profit or loss from the difference between the booking-date and cancellation-date rates, and that international transaction fees could still apply even though the transaction was cancelled. Both sit with your card issuer, and NOL World's own advice is to ask the issuer for the exact rates and fees.",
+      },
+      {
+        q: "How long does the money take to come back?",
+        a: "If the transaction has not reached your card company yet, the cancellation completes immediately. If it has, NOL World says about 5 to 7 days for the card company to cancel the transaction, with the amount deducted from the following month's bill. Card companies differ, so yours is the one that can tell you.",
+      },
+      {
+        q: "I already sent the mobile ticket to my friend. Can I still cancel?",
+        a: "Not while they hold it. NOL World says cancellation of the reservation is restricted once a mobile ticket has been successfully sent, and becomes possible again if the recipient deregisters it. If the ticket has not been registered yet you have easier exits: the sender can press Cancel Send, and an unregistered ticket returns automatically after 24 hours or by the viewing date.",
+      },
+      {
+        q: "Can I cancel two of my four seats?",
+        a: "It depends on the show, and NOL World's advice is to check the partial-cancellation status when you book rather than when you need it. Tour and activity products do not support partial cancellation at all — you would cancel the whole booking and rebook, with no guarantee the inventory is still there.",
+      },
+      {
+        q: "The Cancel Reservation button is not on my reservation page.",
+        a: "NOL World treats that as a case for customer support rather than a fault to retry. A representative confirms eligibility, the fee and the refund amount with the supplier first. Contact them early, because the deadline in the first answer keeps running while you wait.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "NOL World — FAQ: cancellation deadlines, same-day cancellation, refund timing, foreign-card exchange differences, partial cancellation and mobile ticket sharing",
+        url: "https://world.nol.com/en/my-info/faqs",
+      },
+      {
+        label: "NOL World — customer support inquiry form, for a reservation with no cancel button",
+        url: "https://world.nol.com/en/my-info/inquiries/new",
+      },
+      {
+        label: "NOL World — the overseas-facing ticketing site",
+        url: "https://world.nol.com/en/ticket",
+      },
+    ],
+  },
 ];
 
 /**

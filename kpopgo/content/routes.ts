@@ -139,8 +139,13 @@ export const routes: Route[] = [
     tells: [
       "You want the purchase to count towards a chart",
       "You are ordering merch or an album rather than booking a seat",
+      "Your order arrived with a customs bill, or your checkout total went up",
     ],
-    then: ["buy-k-pop-albums-from-overseas", "order-from-weverse-shop-overseas"],
+    then: [
+      "buy-k-pop-albums-from-overseas",
+      "order-from-weverse-shop-overseas",
+      "kpop-album-customs-duty-overseas",
+    ],
   },
 ];
 

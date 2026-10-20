@@ -39,6 +39,8 @@
  * with every guide this site exists to replace, so it is held to the shorter
  * clock, not the longer one.
  */
+import { partners } from "./affiliates";
+
 export type GuideStatus = "draft" | "sourced" | "reported" | "verified";
 
 export type Source = {
@@ -68,6 +70,19 @@ export type Step = {
    * nothing, because then no link means anything.
    */
   see?: { slug: string; text: string };
+  /**
+   * A paid link, where one belongs.
+   *
+   * `id` names a partner in content/affiliates.ts, checked at build time the
+   * same way `see` is. A step carrying this makes its whole guide render the
+   * paid-link disclosure above step one — the notice is derived, never
+   * remembered, because a disclosure someone has to remember is one that goes
+   * missing from exactly the page that gets screenshotted.
+   *
+   * It goes in only where the thing would have been named anyway. If a step
+   * had to be invented to hold it, it does not belong.
+   */
+  partner?: { id: string; text: string };
 };
 
 export type Guide = {
@@ -616,6 +631,16 @@ for (const guide of guides) {
     }
     if (step.see?.slug === guide.slug) {
       throw new Error(`${guide.slug} → step "${step.title}" links to itself`);
+    }
+    // A paid link pointing at a partner that is not on the public register
+    // would be an undisclosed paid link, which is the one failure here that
+    // is not recoverable. Fail the build rather than ship it.
+    if (step.partner && !partners.some((x) => x.id === step.partner!.id)) {
+      throw new Error(
+        `${guide.slug} → step "${step.title}" has a paid link to an unknown ` +
+          `partner: ${step.partner.id}. Every paid link must be declared in ` +
+          `content/affiliates.ts, which is what /editorial-policy publishes.`,
+      );
     }
   }
 }

@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { StackedScreens, SingleScreen, StepObject } from "@/components/Objects";
 import { Artwork } from "@/components/Artwork";
 import { VerifiedBadge, StatusNotice } from "@/components/Badges";
+import { PaidDisclosure, AffiliateLink } from "@/components/Affiliate";
 import { AdSlot } from "@/components/AdSlot";
 
 // Derived status needs a daily rebuild — see the note in app/page.tsx.
@@ -110,6 +111,7 @@ export default async function GuidePage({
           <p className="t-sm mt-3">{guide.scope}</p>
         </div>
         <StatusNotice guide={guide} />
+        <PaidDisclosure guide={guide} />
       </div>
 
       {/* ─────────── Intro ─────────── */}
@@ -149,6 +151,9 @@ export default async function GuidePage({
                     <p className="data ju">Where this breaks</p>
                     <p className="t-sm mt-1.5">{step.pitfall}</p>
                   </div>
+                ) : null}
+                {step.partner ? (
+                  <AffiliateLink id={step.partner.id} text={step.partner.text} />
                 ) : null}
                 {step.see ? (
                   <p className="carry">

@@ -44,6 +44,11 @@ export function Footer() {
           </ul>
           <ul className="t-sm mt-5 flex flex-wrap gap-x-5 gap-y-2">
             <li>
+              <Link href="/where-to-buy" className="tap hover:text-[var(--ink)]">
+                Where to buy
+              </Link>
+            </li>
+            <li>
               <Link href="/words" className="tap hover:text-[var(--ink)]">
                 Korean words
               </Link>

@@ -4,6 +4,7 @@ import { guides, glossary, platformList } from "@/content/guides";
 import { ObjectMark, StageScene, CrowdScene } from "@/components/Objects";
 import { Artwork } from "@/components/Artwork";
 import { VerifiedBadge } from "@/components/Badges";
+import { SHELF_LIFE } from "@/lib/freshness";
 import { AdSlot } from "@/components/AdSlot";
 
 /**
@@ -53,8 +54,23 @@ const failures = [
 const renames = [
   { ko: "인터파크 티켓 → 놀 티켓", en: "Interpark Ticket → NOL Ticket", when: "Apr 2025" },
   { ko: "인터파크 글로벌 → 놀 월드", en: "interpark Global → NOL World", when: "01 Dec 2025" },
-  { ko: "개정 공연법 시행", en: "Revised Performances Act in effect", when: "28 Aug 2025" },
+  { ko: "개정 공연법 시행", en: "Revised Performances Act in force", when: "28 Aug 2026" },
 ];
+
+/**
+ * What the hero is entitled to call itself.
+ *
+ * It used to read "Updated for NOL World · 01 Dec 2025", which was meant as
+ * "written for the NOL World era" and read by everyone as "last updated ten
+ * months ago" — on a site whose entire pitch is that it is not stale. The
+ * date now belongs to the check, and the rename is named in words instead.
+ *
+ * The OLDEST check date, not the newest: the site is only as current as its
+ * stalest page, which is the same rule the share card follows.
+ */
+const checkedOn = guides
+  .map((g) => g.lastChecked)
+  .reduce((a, b) => (a < b ? a : b));
 
 /**
  * The root is the one page without a canonical of its own, because the layout's
@@ -78,7 +94,7 @@ export default function Home() {
           <Artwork name="lightstick" fallback={null} drop={false} />
         </div>
         <div className="wrap stage-body py-16 sm:py-24 lg:py-32">
-          <p className="data ju">Updated for NOL World · 01 Dec 2025</p>
+          <p className="data ju">Checked {checkedOn} · NOL World, not interpark Global</p>
           <h1 className="px mt-4 max-w-[15ch]">Buying K-pop tickets from outside Korea</h1>
           <p className="han-m mt-4">
             <span className="mark">이렇게 어려울 필요 없습니다</span>
@@ -134,11 +150,9 @@ export default function Home() {
           </div>
           <div className="obj p-6">
             <ObjectMark name="star" />
-            <span className="figure mt-4">
-              100<span className="text-[0.5em]">%</span>
-            </span>
-            <p className="data mt-3.5">Claims with a source</p>
-            <p className="han-lb mt-1">출처 전부 표기</p>
+            <span className="figure mt-4">{SHELF_LIFE.sourced}</span>
+            <p className="data mt-3.5">Days before a guide expires itself</p>
+            <p className="han-lb mt-1">기한 지나면 자동 만료</p>
           </div>
         </div>
       </section>

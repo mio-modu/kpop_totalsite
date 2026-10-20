@@ -199,9 +199,9 @@ export const guides: Guide[] = [
       },
       {
         title: "Know the resale rules before you consider resale",
-        body: "South Korea tightened its rules on ticket resale with a revision to the Performances Act that took effect on 28 August 2025. Reporting on the change describes a prohibition on habitual or commercial resale above the purchase price, with substantial fines and the possibility of imprisonment. Treat above-face resale for Korean shows as off the table, and use the platform's own official resale or transfer function if the show provides one.",
+        body: "South Korea tightened its rules on ticket resale with a revision to the Performances Act that took effect on 28 August 2026 — amended in January, promulgated in February, in force since late August. Reporting on the change describes a prohibition on habitual or commercial resale above the purchase price, reaching buying with intent to resell as well as selling, and no longer limited to purchases made with automation. Penalties reported include fines of up to fifty times the sale value and forfeiture of the proceeds. Treat above-face resale for Korean shows as off the table, and use the platform's own official resale or transfer function if the show provides one.",
         pitfall:
-          "International resale marketplaces list Korean shows. That a listing exists does not make buying or selling it a good idea for you.",
+          "This is new law, in force only since August 2026, and the threshold for \u0022habitual\u0022 is still being settled in practice. A listing existing on an international resale marketplace tells you nothing about whether buying or selling it is safe for you.",
         takes: "5 minutes",
       },
     ],
@@ -237,7 +237,7 @@ export const guides: Guide[] = [
         url: "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=80109&type=N&insttCode=A260303",
       },
       {
-        label: "SCMP — penalties under the revised Performances Act, effective 28 Aug 2025",
+        label: "SCMP — penalties under the revised Performances Act, in force 28 Aug 2026",
         url: "https://www.scmp.com/week-asia/lifestyle/article/3360219/south-korean-ticket-touts-face-music-when-new-penalties-come-play",
       },
     ],

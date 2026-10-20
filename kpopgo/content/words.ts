@@ -161,7 +161,7 @@ export const wordGroups: WordGroup[] = [
         ko: "부정거래",
         roman: "bujeong-georae",
         en: "Illegitimate transaction",
-        note: "Covers scalping. South Korea's revised Performances Act, in effect since 28 August 2025, tightened the rules around resale above the purchase price.",
+        note: "Covers scalping. South Korea's revised Performances Act, in force since 28 August 2026, tightened the rules around resale above the purchase price.",
       },
     ],
   },

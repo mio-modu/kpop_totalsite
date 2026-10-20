@@ -55,7 +55,7 @@ changed:
 | --- | --- |
 | Interpark Ticket → NOL Ticket | April 2025 |
 | interpark Global → **NOL World** | 1 December 2025 |
-| Revised Performances Act in effect | 28 August 2025 |
+| Revised Performances Act in force | 28 August 2026 |
 
 The schedule and profile niches are taken — Billboard and Soompi run tour
 lists, and there are city-level specialists. The *procedure* niche is not: the

@@ -26,6 +26,12 @@ const ROUTES = [
   ["guide", "/guides/buy-k-pop-albums-from-overseas"],
   ["words", "/words"],
   ["about", "/about"],
+  // The chooser carries six cards with their own lists, so it is the widest
+  // thing on the site after the home page — and /editorial-policy grows every
+  // time a correction is logged. Both were outside this check until they
+  // weren't representative any more.
+  ["where-to-buy", "/where-to-buy"],
+  ["policy", "/editorial-policy"],
 ];
 const WIDTHS = [320, 360, 390, 768, 1280];
 

@@ -17,6 +17,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: site.url, lastModified: latest, changeFrequency: "weekly", priority: 1 },
     { url: `${site.url}/guides`, lastModified: latest, changeFrequency: "weekly", priority: 0.9 },
+    // The chooser is the front door for a fan who knows their group and
+    // nothing else, so it ranks with the guide index rather than below it.
+    {
+      url: `${site.url}/where-to-buy`,
+      lastModified: latest,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     { url: `${site.url}/words`, lastModified: latest, changeFrequency: "monthly", priority: 0.7 },
     { url: `${site.url}/about`, changeFrequency: "monthly", priority: 0.4 },
     { url: `${site.url}/editorial-policy`, changeFrequency: "monthly", priority: 0.5 },

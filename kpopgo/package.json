@@ -2,7 +2,7 @@
   "name": "kpopgo",
   "version": "0.1.0",
   "private": true,
-  "description": "KPOPGO \u2014 step-by-step guides for international K-pop fans buying tickets, albums and memberships from outside Korea.",
+  "description": "KPOPGO — step-by-step guides for international K-pop fans buying tickets, albums and memberships from outside Korea.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +10,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "watch": "node scripts/watch.mjs",
-    "test": "node --test \"scripts/*.test.mjs\""
+    "test": "node --test \"scripts/*.test.mjs\"",
+    "hosts": "node scripts/hosts.mjs"
   },
   "dependencies": {
     "next": "^15.5.28",

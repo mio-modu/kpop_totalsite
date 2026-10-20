@@ -227,6 +227,33 @@ Verify at 320, 360, 390 and 414 before pushing — `node scripts/check-layout.mj
 walks every route in both themes at five widths and reports horizontal
 overflow. Every tap target should clear 44px tall.
 
+## Outbound hosts
+
+The container reaches the internet through a proxy with an allowlist, and that
+allowlist is one text field: editing it **replaces** it. It has been pasted
+over with a partial list three times, and each time the omitted hosts went
+dark — `npm run watch` then reports cited sources as unreachable, which is
+indistinguishable from seven dead links.
+
+The field's correct contents were living in memory, so every edit was a
+reconstruction. They are now derived:
+
+```bash
+npm run hosts      # prints the complete list; paste the whole block
+```
+
+Cited hosts come from the content, so a new guide citing a new domain appears
+automatically. Fixed infrastructure — Figma, the design system, sibling sites,
+the platforms we retry, the customs and postal sources — is declared in
+`scripts/hosts.mjs` with a one-line reason each, because none of it is
+derivable and none of it is obvious six months later.
+
+Two hosts in that list are loaded by the reader's browser rather than by this
+container. They are there because `scripts/check-layout.mjs` drives a headless
+browser *inside* the container, so excluding them would have the layout check
+render a page no reader gets. `schema.org` is deliberately absent: it is a
+JSON-LD namespace and nothing fetches it.
+
 ## Commands
 
 ```bash

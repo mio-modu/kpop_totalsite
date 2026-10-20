@@ -26,8 +26,14 @@ export function Nav() {
 
         <div className="ml-auto flex items-center gap-2">
           <Link
-            href="/guides"
+            href="/where-to-buy"
             className="data dim tap nav-compact px-2 transition-colors hover:text-[var(--ink)]"
+          >
+            Where to buy
+          </Link>
+          <Link
+            href="/guides"
+            className="data dim tap hidden px-2 transition-colors hover:text-[var(--ink)] sm:inline-flex"
           >
             Guides
           </Link>

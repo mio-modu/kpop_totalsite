@@ -971,6 +971,128 @@ export const guides: Guide[] = [
       },
     ],
   },
+
+  {
+    slug: "weverse-membership-renewal-overseas",
+    ko: "멤버십",
+    art: "guide-presale",
+    name: "Membership renewal",
+    koLine: "위버스 멤버십 갱신 — 통화·자동결제·공백",
+    title: "Weverse membership renewal from overseas",
+    summary:
+      "Auto Payment runs on the last day of your term at the hour you first paid, in a currency that has to match, and if it fails past the renewal window there is no way back except buying again.",
+    glyph: "id",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers keeping an existing Weverse Official Membership running, and what a lapse costs. Joining a fan club for the first time, and qualifying for a specific presale, are separate questions covered in the presale guide. Everything here is from Weverse Shop\u0027s notice of 3 September 2026 and the product pages it points to.",
+    readMinutes: 6,
+    platforms: ["Weverse", "Weverse Shop"],
+    intro: [
+      "A membership that lapses in the wrong week does not cost you a subscription. It costs you the presale, because eligibility is checked against a membership that was active before a cut-off, and no amount of buying it again afterwards moves that date.",
+      "Weverse added Auto Payment on 3 September 2026, which removes the ordinary way of lapsing. It also introduced four rules that are easy to get wrong, and one point of no return.",
+    ],
+    steps: [
+      {
+        title: "Find out which membership category you are in",
+        body: "Weverse runs memberships in three categories — Global, Japan and USA — and they are managed separately. Payment methods, currencies and Auto Payment settings are all per category, and up to five payment methods can be stored for each with one marked primary. Which category you are in is not something you pick casually; it is where your membership already lives.",
+        pitfall:
+          "Setting up Auto Payment on the category you are not using. The screen looks identical, the membership that renews is the other one.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Check your currency is one the category actually accepts",
+        body: "As of 3 September 2026: a Global Membership takes South Korean debit or credit cards for KRW, and PayPal-registered cards for JPY, USD or MXN. A Japan Membership takes credit cards for JPY. A US Membership takes PayPal-registered cards for USD. For an overseas fan on a Global Membership paying in USD, that means the card goes through PayPal — there is no direct card option.",
+        pitfall:
+          "Expecting to register a Visa directly on a USD Global Membership. The same pattern runs through Weverse Shop, and it is why a card that works everywhere else can still fail here.",
+        takes: "10 minutes",
+        see: {
+          slug: "order-from-weverse-shop-overseas",
+          text: "Why the payment list depends on your currency rather than your country",
+        },
+      },
+      {
+        title: "Match the purchase currency to the primary method",
+        body: "Weverse states it directly: the payment currency used to buy the Membership must match the payment currency of your primary Auto Payment method. A mismatch is not resolved at renewal time in your favour — it is a renewal that does not go through.",
+        pitfall:
+          "Buying a membership in one currency and later adding a primary method in another, which looks fine on both screens and only fails on the day it matters.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Know the exact moment it renews",
+        body: "Auto Payment runs on the last day of the current membership\u0027s validity period, at the same time of day you first paid for it. That hour was set on a Korean server, so for most readers it falls somewhere in the night or early morning. If it fails, Weverse sends an email and a push notification and retries once a day at the same time, for as long as the renewal period lasts.",
+        pitfall:
+          "A card that expires mid-term, or a bank that blocks the charge, turns into a notification arriving at four in the morning your time. The retry is daily, not hourly — a day of not seeing the email is a day of the window spent.",
+        takes: "2 minutes",
+        see: {
+          slug: "kpop-ticketing-day-timezone",
+          text: "Converting a Korean hour to yours, for the date it actually falls on",
+        },
+      },
+      {
+        title: "Understand what cancelling Auto Payment does not do",
+        body: "Cancelling Auto Payment stops future renewals. It does not cancel or refund the membership you are already holding, and you keep using it normally until the validity period ends. Cancellation and refund of the membership itself is a separate matter governed by the product page for that membership.",
+        pitfall:
+          "Cancelling Auto Payment expecting money back, and separately: cancelling it to \u0022pause\u0022 while a tour is rumoured, which is the week you least want the renewal to stop.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Treat the end of the renewal period as a point of no return",
+        body: "If you cancelled Auto Payment you can reactivate it — but only while the renewal period is still running. Once that period has ended, reactivation is not available and the only route is to purchase the membership again. Weverse also gives two manual controls inside the window: Pay Now to renew immediately, and Retry Now if a payment failed on a method you have since fixed.",
+        pitfall:
+          "Waiting to see whether the retries succeed. Retry Now and Pay Now exist precisely so you do not have to, and both disappear when the window closes.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Renew rather than rebuy, because the record carries over",
+        body: "When a membership renews through Auto Payment, the member information registered on the existing membership is retained on the next one. That record — the name on it in particular — is what a presale eligibility check is run against. Buying a fresh membership after a lapse starts a new record and a new start date, which is the part that costs a presale rather than a subscription fee.",
+        pitfall:
+          "Assuming continuity is about loyalty. It is about a date and a name on a record, and a gap in either is what the check sees.",
+        takes: "2 minutes",
+        see: {
+          slug: "fan-club-presale-checklist",
+          text: "What the eligibility check actually compares, and when",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Can I pay for a Global Membership with my own Visa or Mastercard?",
+        a: "Not directly, outside KRW. A Global Membership takes Korean cards for KRW, and PayPal-registered cards for JPY, USD or MXN — so your card reaches Weverse through PayPal rather than as a direct card payment.",
+      },
+      {
+        q: "When exactly does Auto Payment charge me?",
+        a: "On the last day of your current membership\u0027s validity period, at the same time of day you first paid. That time was set on a Korean clock, so convert it for your own.",
+      },
+      {
+        q: "If Auto Payment fails, how many chances do I get?",
+        a: "Weverse notifies you by email and push, then retries once a day at the same time for the remainder of the renewal period. You can also use Retry Now after fixing the payment method, or Pay Now to renew immediately.",
+      },
+      {
+        q: "I cancelled Auto Payment. Can I turn it back on?",
+        a: "Yes, while the renewal period is still open — there is a Reactivate control for exactly that. After the renewal period ends you cannot, and the only option is to buy the membership again.",
+      },
+      {
+        q: "Does it matter if my membership lapses for a few days?",
+        a: "It can matter more than the price. Renewal retains the member information from the existing membership; a repurchase starts a new record with a new date. Presale eligibility is checked against that record and its cut-off, not against how long you have been a fan.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "Weverse Shop — Auto Payment for Official Membership, effective 3 September 2026",
+        url: "https://shop.weverse.io/en/notices/14202",
+      },
+      {
+        label: "Weverse Shop — the store where memberships are bought and managed",
+        url: "https://shop.weverse.io/",
+      },
+      {
+        label: "Weverse — the community side, where a membership is used",
+        url: "https://weverse.io/",
+      },
+    ],
+  },
 ];
 
 /**

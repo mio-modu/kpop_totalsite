@@ -256,7 +256,12 @@ const DRIFT_LIMIT = 0.97;
  */
 function isFixedDocument(url) {
   const path = new URL(url).pathname + new URL(url).search;
-  if (/\/(notice|news|press|article|view|blog|release)/i.test(path)) return true;
+  // A platform's own purchase guide, FAQ or policy page is the most important
+  // kind of fixed document there is — it is where the rules a step was written
+  // from actually live. The first version of this pattern missed them and
+  // classified YES24's English guide as a storefront.
+  if (/\/(notice|news|press|article|view|blog|release|guide|faq|help|terms|policy|support)/i.test(path))
+    return true;
   // A numeric id deep in the path is an article by another name.
   return /\/[^/]*\d{4,}/.test(path);
 }

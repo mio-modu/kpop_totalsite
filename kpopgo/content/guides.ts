@@ -1202,6 +1202,119 @@ export const guides: Guide[] = [
       },
     ],
   },
+
+  {
+    slug: "nol-facepass-face-registration",
+    ko: "얼굴인식",
+    art: "lightstick",
+    name: "Face registration",
+    koLine: "NOL facepass — 얼굴 등록과 입장",
+    title: "NOL facepass: who holds your face, and what it is for",
+    summary:
+      "Register once and a camera lets you in without a ticket check. The face is kept by Toss rather than by NOL World, it cannot be changed afterwards, and there is one question you should read in their words rather than ours.",
+    glyph: "id",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers what NOL World publishes about NOL facepass: what it does, who stores the facial data, and what registering commits you to. Support is per show, and the event page decides. Nothing here is a legal opinion about biometric data in your own country.",
+    readMinutes: 6,
+    platforms: ["NOL World"],
+    intro: [
+      "Korean venues are moving to facial recognition at the door, and an overseas fan meets it as a checkbox during booking with very little explanation in English. The question underneath it is not small: a company you have never dealt with is about to hold your face.",
+      "NOL World does publish answers. They are specific, they are more reassuring than most companies manage, and they are worth reading before the queue rather than during it.",
+    ],
+    steps: [
+      {
+        title: "Understand what it replaces",
+        body: "NOL World describes facepass as a way to cut the procedure and time that identity verification takes at entry. Once face registration is complete, a camera scans you at the door and you enter without ticket verification. It is a replacement for the document check at the gate, not an extra layer on top of it.",
+        pitfall:
+          "Reading it as a convenience feature only. The second half of NOL World\u0027s own description is enforcement, which is the next step.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Know the other reason it exists",
+        body: "NOL World states the purpose twice over: streamlining identity verification, and preventing the illegal sale and distribution of tickets. A face that must match the account that bought the ticket is a resale control, and it arrives in the same period as a revised Performances Act that reaches habitual resale above face value. Those two facts belong next to each other.",
+        pitfall:
+          "Assuming a ticket bought through a resale marketplace will simply work at a facepass gate. The system exists to make exactly that not work.",
+        takes: "2 minutes",
+        see: {
+          slug: "buy-k-pop-concert-tickets-from-overseas",
+          text: "What the revised Performances Act actually prohibits",
+        },
+      },
+      {
+        title: "Know where the face actually goes",
+        body: "This is the part most worth knowing. NOL World says facial information — the original image and the feature data — is encrypted and stored by Toss, the fintech company behind the FaceAccess service, and that it is not provided to NOL World or to agencies under any circumstances. Only the authentication result, success or failure, is shared. NOL World also says the data is not used for any purpose beyond providing the service, and cites Toss holding ISO 27701 and CBPR certification.",
+        pitfall:
+          "These are NOL World\u0027s statements about a third party, not an audit. They are unusually specific for this kind of page, which is a reason to take them seriously and not a reason to stop reading.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Treat registration as permanent",
+        body: "Once a face is registered it cannot be modified. NOL World gives the reason plainly — it is to prevent fraudulent use of the service. There is no correcting a bad registration later, so the conditions you register under are the conditions you keep: lighting, glasses, whatever the camera captured.",
+        pitfall:
+          "Registering quickly in a queue, in bad light, meaning to redo it properly later. There is no later.",
+        takes: "10 minutes, deliberately",
+      },
+      {
+        title: "Never let anyone register on your phone or account",
+        body: "NOL World says it directly: ensure no one else uses your account, and if someone registers face information using your phone or account, the company is not responsible for any resulting issues. A shared household device at the moment a tour goes on sale is exactly how this happens, and the account is the thing that carries the consequence.",
+        pitfall:
+          "Helping a friend register on your logged-in phone. The face that is now attached to your account is theirs, it cannot be modified, and the disclaimer is explicit.",
+        takes: "1 minute",
+      },
+      {
+        title: "Check whether your show supports it at all",
+        body: "Support is per event rather than universal — NOL World maintains a question specifically about how to check whether a concert supports facepass, which only exists because the answer varies. Check the event page for your show before planning entry around it, and have the ordinary route ready: confirmation number and identification at the box office.",
+        pitfall:
+          "Registering, then arriving at a venue that is still doing document checks, with the passport left at the hotel.",
+        takes: "3 minutes",
+        see: {
+          slug: "nol-world-ticketing-guide",
+          text: "What collection takes when facepass is not in use",
+        },
+      },
+      {
+        title: "Read the deletion answer in their words, not ours",
+        body: "NOL World publishes an answer to whether facial information is deleted if you unsubscribe from facepass. We were not able to read that answer in full, and a data-retention promise is the last thing anyone should take second-hand — a summary of it is worth less than the original, and the original can change. Open the NOL World FAQ, find that question, and read it yourself before you register. If the answer matters to you, it matters more than this page.",
+        pitfall:
+          "Taking any third party\u0027s word for what happens to biometric data, including ours.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Does NOL World see my face?",
+        a: "NOL World says no. Facial information is encrypted and held by Toss, and NOL World states it is not provided to NOL World or agencies under any circumstances — only the success or failure of the authentication is shared.",
+      },
+      {
+        q: "Can I re-register my face if the first attempt was bad?",
+        a: "No. NOL World says a registered face cannot be modified, to prevent fraudulent use of the service. Register deliberately the first time.",
+      },
+      {
+        q: "Will my facial data be deleted if I cancel facepass?",
+        a: "NOL World answers this in its own FAQ. We could not read that answer in full, and we are not going to paraphrase a data-retention promise we have not read. Read it there before registering.",
+      },
+      {
+        q: "Does every concert use facepass?",
+        a: "No. Support varies by event, and NOL World keeps a separate answer on how to check. Confirm on the event page for your show, and keep the ordinary collection route available.",
+      },
+      {
+        q: "What happens if someone else registers their face on my account?",
+        a: "NOL World says the company is not responsible for issues arising from that, and asks you to ensure no one else uses your account. Since a registered face cannot be changed, this is not recoverable in the ordinary way.",
+      },
+    ],
+    sources: [
+      {
+        label: "NOL World — FAQ: NOL facepass, including storage and third-party sharing",
+        url: "https://world.nol.com/en/my-info/faqs",
+      },
+      {
+        label: "NOL World — the overseas-facing ticketing site",
+        url: "https://world.nol.com/en/ticket",
+      },
+    ],
+  },
 ];
 
 /**

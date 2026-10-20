@@ -104,6 +104,18 @@ through an instruction undercuts it.
 Type: Archivo (wide poster display), Gothic A1 and Black Han Sans (Hangul),
 JetBrains Mono (dates, platform codes, step timings).
 
+**The Hangul faces are self-hosted subsets, not Google imports.** A Hangul
+font carries 11,172 syllables; this site sets 241, because every Korean word
+on it comes from a real booking screen and that is a closed list. Imported
+whole they were 1.6MB, 98% of the page weight, to draw nothing — and
+`subsets: ["latin"]` does not help, since it governs which ranges are
+preloaded, not which exist.
+
+After adding any Korean text, run `node scripts/subset-fonts.mjs` and commit
+`app/fonts/`. `scripts/fonts.test.mjs` fails if the content outgrows the
+subset, which is the only way this rots quietly: a new syllable renders in the
+fallback face and reads as a typo nobody catches.
+
 ## Hangul is content, not ornament
 
 Every Korean word on the site is one a fan meets on a real booking screen —

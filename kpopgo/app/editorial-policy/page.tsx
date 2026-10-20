@@ -3,6 +3,8 @@ import Link from "next/link";
 import { guides } from "@/content/guides";
 import { corrections } from "@/content/corrections";
 import { partners } from "@/content/affiliates";
+import { translations } from "@/content/translations";
+import { localeList } from "@/lib/i18n";
 import { SHELF_LIFE } from "@/lib/freshness";
 import { site } from "@/lib/site";
 
@@ -132,6 +134,63 @@ export default function EditorialPolicy() {
               and no advertiser has any say over what a guide says.
             </li>
           </ul>
+        </section>
+
+        <section>
+          <h2 className="pm">Languages, and what a translation is allowed to claim</h2>
+          {translations.length === 0 ? (
+            <>
+              <p className="t mt-3">
+                <strong>English only, today.</strong> Not one guide has been translated
+                yet, and this paragraph is generated from the translation register, so it
+                cannot stay here after that stops being true.
+              </p>
+              <p className="t mt-3">
+                The rules are fixed before the first translation rather than after, because
+                translation is the fastest way to lose the one thing this site sells. A
+                translated page is a copy of a claim made on a particular day from a source
+                checked on a particular day — and the moment the English page is re-checked,
+                the translation stops being that copy while looking exactly the same.
+              </p>
+              <p className="t mt-3">
+                So a translation inherits its source&rsquo;s expiry and can never present
+                itself as fresher: if the English guide has gone stale, so has every
+                translation of it, whatever date the translation carries. If the English
+                page has merely been re-checked since, the translated page says so and
+                links to the English. And it states how it was made — a machine-assisted
+                translation of a page about customs offences or biometric retention is
+                useful, and it is not the same thing as one a native speaker has read. That
+                distinction is the same one as <em>sourced</em> against{" "}
+                <em>verified</em>, for the same reason.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="t mt-3">
+                English is canonical. Every translated page states how it was produced and
+                whether the English source has moved since, and it can never display a
+                status its source has lost.
+              </p>
+              <ul className="t mt-4 grid gap-3">
+                {localeList
+                  .filter((l) => l.code !== "en")
+                  .map((l) => {
+                    const made = translations.filter((t) => t.locale === l.code);
+                    if (made.length === 0) return null;
+                    const native = made.filter((t) => t.review === "native-reviewed").length;
+                    return (
+                      <li key={l.code}>
+                        <strong>
+                          {l.native} ({l.english})
+                        </strong>{" "}
+                        — {made.length} of {guides.length} guides, {native} reviewed by a
+                        native speaker.
+                      </li>
+                    );
+                  })}
+              </ul>
+            </>
+          )}
         </section>
 
         <section>

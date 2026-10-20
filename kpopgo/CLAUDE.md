@@ -131,7 +131,66 @@ Every Korean word on the site is one a fan meets on a real booking screen —
 Hangul as decoration, and do not translate the site into Korean: the paying
 audience is Tier-1 English speakers, there is no Korean-language demand for a
 guide to buying Korean tickets, and machine translation would put the legal and
-verification wording at risk. Later languages get hand-reviewed translations.
+verification wording at risk. Other languages are handled under **Languages**
+below, which replaces an earlier promise that they would all be hand-reviewed:
+that rule was unkeepable at this scale and the honest version is a declared
+`review` level per translation, so a page says which kind it is instead of a
+policy claiming a standard nobody is meeting.
+
+## Languages
+
+English is canonical and carries no path prefix. `content/translations.ts` is
+the register and it is **empty**: the machinery exists first, as it did for
+paid links, because a translation added to a site with no freshness rules
+becomes the undated guide this site exists to replace.
+
+A translation is a copy of a claim made on a particular day from a source
+checked on a particular day. The moment the English page is re-checked, the
+translation stops being that copy **and nothing about it looks different** —
+which is the exact failure the status system exists to prevent. So
+`lib/i18n.ts` gives it the same treatment, with two asymmetric rules:
+
+- **A translation can never look fresher than its source.** If the English
+  guide has gone stale, so has every translation of it, whatever date the
+  translation carries. `translationState` checks the source's expiry *before*
+  comparing dates, and `scripts/i18n.test.mjs` asserts that ordering against
+  the source file — reverse the two checks and a stale guide would render a
+  healthy seal in Japanese.
+- **A translation goes `behind` the moment the source's `lastChecked` moves.**
+  Not wrong, but no longer a copy of anything anybody checked, so the page
+  says so and links to the English.
+
+`review` is the other half: `machine-assisted` or `native-reviewed`, with no
+default, because the default would be the flattering one. A machine-assisted
+translation of a page about customs offences or biometric retention is useful
+and is not the same artefact as one a native speaker has read — the same
+distinction as `sourced` against `verified`, for the same reason.
+
+The register fails the build on a translation that names an unknown guide,
+claims a `sourceChecked` in the future (which would pin it to `current`
+forever), was translated before the check it claims, omits `review`, or drops
+or adds a step. `/editorial-policy` reads the register directly and prints
+**"English only, today."**
+
+Routing is `app/[lang]/guides/[slug]`, driven entirely by the register with
+`dynamicParams = false`, so an untranslated path 404s rather than serving an
+empty shell. Static segments win over the dynamic one, so `/guides` and
+`/words` are unaffected — verify that after touching it, along with `/ja`
+returning 404 while the register is empty. hreflang is emitted only where a
+translation exists, because advertising a language that 404s is worse than
+advertising none.
+
+The translated template renders **less** than the English one: no artwork, no
+booking graphic, no related-guide rail. Those carry English text or exist to
+pull a reader deeper into pages that are not translated, and a translated page
+that funnels into English is worse than one that stops honestly. Sources stay
+in their original language — a citation is only checkable in the words the
+source uses.
+
+**The real cost is maintenance, not translation.** Every source re-check now
+has N pages to follow, and a translation nobody follows becomes exactly the
+stale guide this site was built against. That is why this is one language at a
+time, and why the freshness rules landed before the first word of Japanese.
 
 ## Artwork
 

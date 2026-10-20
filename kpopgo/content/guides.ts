@@ -1211,17 +1211,17 @@ export const guides: Guide[] = [
     koLine: "NOL facepass — 얼굴 등록과 입장",
     title: "NOL facepass: who holds your face, and what it is for",
     summary:
-      "Register once and a camera lets you in without a ticket check. The face is kept by Toss rather than by NOL World, it cannot be changed afterwards, and there is one question you should read in their words rather than ours.",
+      "Register once and a camera lets you in without a ticket check. The face is kept by Toss rather than by NOL World, it cannot be changed afterwards, and cancelling the service deletes the photo but keeps a separate copy for a year.",
     glyph: "id",
     status: "sourced",
     lastChecked: "2026-10-20",
     scope:
-      "Covers what NOL World publishes about NOL facepass: what it does, who stores the facial data, and what registering commits you to. Support is per show, and the event page decides. Nothing here is a legal opinion about biometric data in your own country.",
+      "Covers what NOL World publishes about NOL facepass, including its stated retention period after cancellation: what it does, who stores the facial data, and what registering commits you to. Support is per show, and the event page decides. Nothing here is a legal opinion about biometric data in your own country.",
     readMinutes: 6,
     platforms: ["NOL World"],
     intro: [
       "Korean venues are moving to facial recognition at the door, and an overseas fan meets it as a checkbox during booking with very little explanation in English. The question underneath it is not small: a company you have never dealt with is about to hold your face.",
-      "NOL World does publish answers. They are specific, they are more reassuring than most companies manage, and they are worth reading before the queue rather than during it.",
+      "NOL World does publish answers. They are specific, they are more reassuring than most companies manage, and they are worth reading before the queue rather than during it — including the one about what happens to the data after you cancel, which does not say what a single word like deleted would suggest.",
     ],
     steps: [
       {
@@ -1275,10 +1275,10 @@ export const guides: Guide[] = [
         },
       },
       {
-        title: "Read the deletion answer in their words, not ours",
-        body: "NOL World publishes an answer to whether facial information is deleted if you unsubscribe from facepass. We were not able to read that answer in full, and a data-retention promise is the last thing anyone should take second-hand — a summary of it is worth less than the original, and the original can change. Open the NOL World FAQ, find that question, and read it yourself before you register. If the answer matters to you, it matters more than this page.",
+        title: "Read the deletion answer carefully — it is not simply deletion",
+        body: "NOL World answers whether facial information is deleted if you unsubscribe, and the answer has two halves. The first: your face photo is deleted when you cancel the service, and using it again means registering again. The second: for the purpose of identity verification, the data is separately stored and retained for one year from the point of cancellation — used, NOL World says, only for identity verification on re-registration, and discarded after the year. So unsubscribing deletes the photo and starts a clock rather than stopping one. That is a defensible policy and it is not what the word deleted implies on its own, which is why it is worth reading in their words before you register.",
         pitfall:
-          "Taking any third party\u0027s word for what happens to biometric data, including ours.",
+          "Taking any third party\u0027s one-word summary of what happens to biometric data, including ours. Read the retention sentence, not the headline.",
         takes: "5 minutes",
       },
     ],
@@ -1293,7 +1293,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Will my facial data be deleted if I cancel facepass?",
-        a: "NOL World answers this in its own FAQ. We could not read that answer in full, and we are not going to paraphrase a data-retention promise we have not read. Read it there before registering.",
+        a: "Partly, and then on a timer. NOL World says the face photo is deleted when you unsubscribe, and that you would have to register again to use the service. It also says that for identity-verification purposes the data is separately stored and retained for one year from cancellation, used only for identity verification if you re-register, and discarded after that year. Until 20 October 2026 this page said we had not read that answer and declined to summarise it; it is now quoted above and logged in our corrections.",
       },
       {
         q: "Does every concert use facepass?",
@@ -1308,6 +1308,153 @@ export const guides: Guide[] = [
       {
         label: "NOL World — FAQ: NOL facepass, including storage and third-party sharing",
         url: "https://world.nol.com/en/my-info/faqs",
+      },
+      {
+        label: "NOL World — the overseas-facing ticketing site",
+        url: "https://world.nol.com/en/ticket",
+      },
+    ],
+  },
+  {
+    slug: "nol-world-verified-member-ekyc",
+    ko: "본인인증",
+    art: "guide-nol",
+    name: "Verified Member",
+    koLine: "NOL World 본인인증 — 여권 촬영과 이름 순서",
+    title: "NOL World Verified Member: passing the eKYC check from overseas",
+    summary:
+      "Some shows will not let you book at all until your passport has been verified. The check is a live passport-and-face capture, it cannot be redone casually, and the one instruction NOL World gives about timing is the one most people ignore.",
+    glyph: "id",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers the Verified Member Only identity check on NOL World, as NOL World documents it: when it applies, what the capture needs, what happens to the name it saves, and what resets or restricts it. Korean passport holders are directed to NOL Ticket instead, which is a different check on a different site. Nothing here is a way around a verification.",
+    readMinutes: 8,
+    platforms: ["NOL World", "NOL Ticket"],
+    intro: [
+      "A Verified Member Only show is one you cannot book at all until your identity has been verified. Not a warning at checkout — the reservation simply is not available to an unverified account. Fans find this out at the moment the booking opens, which is the worst possible moment, because the verification is a live capture of your passport and your face and it takes as long as it takes.",
+      "NOL World explains the service as a way to restrict access for unauthorised purposes such as ticket resale. That is worth taking at face value: the check exists to tie one person to one account, and almost every rule below follows from it.",
+    ],
+    steps: [
+      {
+        title: "Check whether your show needs it, and whether you are on the right site",
+        body: "Verified Member Only is set per product, not per account — NOL World says only members who have completed identity verification on the product page can make reservations. So the first question is whether your show carries the flag at all. The second is whether you should be on NOL World: NOL World tells Korean passport holders to use the NOL Ticket site instead, which runs a different check entirely.",
+        pitfall:
+          "Assuming the identity check is a one-off chore the site will prompt you about. For a Verified Member Only show there is no prompt — the booking is just not there.",
+        takes: "10 minutes",
+        see: {
+          slug: "nol-world-ticketing-guide",
+          text: "Where overseas-customer verification sits in the wider NOL World flow",
+        },
+      },
+      {
+        title: "Do it one to two days before the booking opens",
+        body: "This is NOL World's own instruction and the single most useful fact on this page: complete the verification at least one to two days in advance, because attempting it close to the ticket opening time means high traffic may cause difficulties. Once it is done, you can book any Verified Member Only show without verifying again. The cost of doing it early is an evening. The cost of doing it late is the show.",
+        pitfall:
+          "Starting the capture in the ten minutes before a presale. A verification that fails on traffic cannot be hurried, and the queue does not wait.",
+        takes: "30 minutes, two days early",
+        see: {
+          slug: "kpop-ticketing-day-timezone",
+          text: "Working out when the booking actually opens in your own time zone",
+        },
+      },
+      {
+        title: "Verify the account you are actually going to buy with",
+        body: "Verification is one-time per account, and NOL World states the verified information cannot be reused — one passport verifies one account. If you have more than one account, this is the moment to decide which one is real, because the verification does not move afterwards. NOL World adds that deleting an account erases its verified information and frees it for another, but that an account restricted for misuse cannot be deleted at all.",
+        pitfall:
+          "Verifying on the account you happened to be logged into, then buying on the other one. The second account is unverified, and the show is Verified Member Only.",
+        takes: "5 minutes of deciding",
+      },
+      {
+        title: "Have the original passport, valid and unexpired",
+        body: "Only valid passports are accepted, and NOL World is explicit that photos or copies are not: not a printed scan, not a screenshot, not a photo of the page on another screen. If your passport has expired you have to renew it before you can verify — there is no alternative document route on NOL World for a non-Korean passport holder.",
+        pitfall:
+          "Reaching for the passport photo already in your phone's camera roll because the real one is in a hotel safe. That attempt is recorded as an attempt with a copy.",
+        takes: "—",
+      },
+      {
+        title: "Get through the capture on the first attempt",
+        body: "NOL World publishes what makes the capture fail, and the list reads like a list of things people do when rushing. Align the passport and your face with the on-screen guides. Keep glare and reflections off both the passport page and your face. Your face must match the photo in the passport. Hold the device steady for at least five seconds while it captures. And if the device is low-spec or the network is unstable, the data may not save correctly even when the capture looked fine. When it fails, the screen states the reason — read it rather than retrying blind.",
+        pitfall:
+          "Doing this one-handed, at night, under a ceiling light that reflects off the laminate. Overhead light on a passport page is the most common reason a capture will not read.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Check the name that was actually saved",
+        body: "Only English names are accepted. NOL World says that if your passport name is not in English or contains special characters, the reservation cannot proceed, and that you may be redirected to a name correction request — a submission, not a settings change. The saved name is visible on My Page, which is where to check it rather than assuming. This matters now because after verification you cannot modify your name, date of birth or email address at all: reservations can only be made with the verified information.",
+        pitfall:
+          "Leaving the name unchecked because the verification said it succeeded. Succeeding and saving the right characters are two different things, and one of them is no longer editable.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Understand the name order — and what actually matters at the gate",
+        body: "NOL World changed the stored name order on 16 April 2025. Members verified before that date hold First Name + (Middle Name) + Last Name; members verified after it hold Last Name + First Name + (Middle Name). NOL World states plainly that even if the order differs from your passport, ticket verification and entry at the venue are still possible — on-site verification is only restricted if the name itself differs from the passport name. Members verified before 16 April 2025 get the new format applied when they re-verify after a passport expiry.",
+        pitfall:
+          "Filing a name correction request because the order looks wrong. NOL World says the order is not the problem; a different name is. Correct characters, not sequence.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Know what can undo a verification you already passed",
+        body: "A completed verification can be cancelled afterwards. NOL World names two causes: attempting verification with a forged or altered ID — which it defines to include printed copies and screenshots — and the passport used for verification expiring. If yours is cancelled, re-verify using the existing account. NOL World specifically warns that trying a new account instead may lead to repeated system failures, and that a verification found to have been obtained by fraudulent means can cost you access to booking services.",
+        pitfall:
+          "Opening a fresh account to escape a reset. The reset followed the document, not the account, and the new account inherits the problem plus the suspicion.",
+        takes: "—",
+      },
+      {
+        title: "Know what the platform counts as fraud, and what it costs",
+        body: "The reason the check is this strict is in NOL World's anti-fraud policy, and the consequences are published. Using stolen or fake IDs for verification is listed as fraudulent use. So is booking multiple tickets beyond normal use with identical or similar personal information — the same contact details, shipping address or payment information across accounts. Penalties run from a booking restriction of three months or more to permanent account suspension and cancellation of every ticket booked. The event organiser may add its own, including expulsion from the fan club. There is an appeal, and where fraudulent trading is clearly confirmed there is not.",
+        pitfall:
+          "Verifying several family accounts from one phone, one address and one card to raise your odds in a presale. That pattern is on the published list, and the stated penalty reaches every ticket on every one of those accounts.",
+        takes: "10 minutes of reading",
+        see: {
+          slug: "buy-k-pop-concert-tickets-from-overseas",
+          text: "What the revised Performances Act prohibits, and why platforms tightened",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "What does Verified Member Only actually mean on an event page?",
+        a: "That the show is closed to unverified accounts. NOL World describes it as a service letting members verify their identity before purchasing, where only members who have completed verification on the product page can make reservations. It states the purpose as restricting access for unauthorised purposes such as ticket resale. Have your passport and smartphone to hand, because the check needs both.",
+      },
+      {
+        q: "I hold a Korean passport. Can I just verify on NOL World?",
+        a: "NOL World tells Korean passport holders to use the NOL ticket site instead. That is a different site with a different identity check — generally Korean mobile authentication or I-PIN — and a separate account.",
+      },
+      {
+        q: "I am a Korean national living abroad with no Korean mobile number. What then?",
+        a: "NOL World publishes a document route. It directs South Korean citizens residing abroad to NOL Ticket, where identity can be verified by mobile authentication or I-PIN; where there is no Korean resident registration number and mobile authentication is unavailable, it accepts supporting documents proving overseas Korean status — a Certificate of Overseas Korean Registration together with a South Korean passport, submitted through its customer support inquiry form with your account ID. It says the certificate can be obtained online through the Overseas Koreans Agency, and that a Foreign Registration Card may be accepted as a substitute where the certificate is difficult to obtain. It also warns that falsified documents mean immediate restriction.",
+      },
+      {
+        q: "Is there a minimum age for identity verification?",
+        a: "NOL World says there is no age limit on the verification itself, but that you may still be unable to book or attend products carrying age restrictions. Verifying is not the same as being eligible for a particular show.",
+      },
+      {
+        q: "My name on My Page is in a different order from my passport. Will I be turned away?",
+        a: "NOL World says no. It changed the stored order on 16 April 2025 and states that ticket verification and entry are possible even where the order differs from the passport. On-site verification is only restricted if the name itself differs — so check the spelling and the characters, not the sequence.",
+      },
+      {
+        q: "My passport expired after I verified. Do I have to do anything?",
+        a: "Yes. NOL World lists passport expiration as a cause for a completed verification being cancelled, so a renewal means re-verifying — on the existing account, not a new one. If you were verified before 16 April 2025, this is also when the new name order gets applied to your record.",
+      },
+      {
+        q: "Can I verify with a family member's passport if mine has expired?",
+        a: "No, and this is the one question with a published consequence rather than an opinion. NOL World lists using stolen or fake IDs for verification among the activities it treats as fraudulent use, and the stated penalties run to permanent account suspension and cancellation of every ticket booked. It also says identity verification may be conducted at the venue and asks you to book in your own name and account and bring valid photo ID. A ticket that cannot survive the door is not a ticket.",
+      },
+      {
+        q: "My account was restricted. Is there an appeal?",
+        a: "NOL World publishes one. It says users are generally granted a period of at least one day to provide an explanation, and that an appeal should be a detailed statement including your restricted account ID, full name and contact information, with no required format or template, sent through its customer support inquiry form. Review takes roughly 10 to 15 days and the result arrives by email. It also states the limits: miss the deadline or fail to clear the suspicion and bookings are force-cancelled, and where fraudulent trading is clearly confirmed tickets may be cancelled with no appeal at all.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "NOL World — FAQ: Verified Member Only, identity verification (eKYC), and the anti-fraud and cancellation policy",
+        url: "https://world.nol.com/en/my-info/faqs",
+      },
+      {
+        label: "NOL World — customer support inquiry form, used for document submission and appeals",
+        url: "https://world.nol.com/en/my-info/inquiries/new",
       },
       {
         label: "NOL World — the overseas-facing ticketing site",

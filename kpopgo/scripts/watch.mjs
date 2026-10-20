@@ -217,6 +217,47 @@ function visibleText(html) {
     .trim();
 }
 
+/**
+ * Recover the text of a page that only exists inside its JavaScript.
+ *
+ * visibleText strips <script>, which is right for a server-rendered page and
+ * blind for an App Router one. NOL World's FAQ is the case that matters here:
+ * three guides on this site are written from it, and the 113 answers never
+ * appear in the markup at all — they live in the flight payload as compiled
+ * MDX, so the link check saw 45 words of chrome and compared those. A source
+ * the site leans on hardest was the one source drift could not see.
+ *
+ * This is not a renderer and does not try to be. It peels the payload's
+ * escaping and keeps the string literals that read like prose, which is enough
+ * for a word set that moves when the answers move. Markup vocabulary, module
+ * ids and URLs are dropped because they churn on every deploy.
+ */
+function payloadText(html) {
+  if (!html.includes("__next_f")) return "";
+  let s = html;
+  // The payload is a JS string literal containing JSON containing more
+  // escaped JS, so the quoting is two or three deep. Peel until it settles.
+  for (let i = 0; i < 4; i++) {
+    const next = s
+      .replace(/\\u0026/g, "&")
+      .replace(/\\\\n/g, "\n")
+      .replace(/\\n/g, "\n")
+      .replace(/\\"/g, '"')
+      .replace(/\\\\/g, "\\");
+    if (next === s) break;
+    s = next;
+  }
+  const out = [];
+  for (const m of s.matchAll(/"((?:[^"\\]|\\.)*)"/g)) {
+    const t = m[1];
+    if (t.length < 24 || !t.includes(" ")) continue;
+    if (/[{}<>;=]|function |_jsx|_components|^https?:|^\/|use strict/.test(t)) continue;
+    if (!/[a-z]{3}/i.test(t)) continue;
+    out.push(t);
+  }
+  return out.join(" ").toLowerCase().replace(/\s+/g, " ").trim();
+}
+
 /** Share of words the two versions still have in common. */
 function similarity(a, b) {
   const A = new Set(a.split(" ").filter(Boolean));
@@ -291,7 +332,15 @@ async function links(urls) {
       continue;
     }
 
-    const text = visibleText(r.body);
+    let text = visibleText(r.body);
+    // A client-rendered page gives up almost nothing to the markup pass, so
+    // fall back to its payload rather than skipping the comparison.
+    if (text.split(" ").filter(Boolean).length < 200) {
+      const fromPayload = payloadText(r.body);
+      if (fromPayload.split(" ").filter(Boolean).length > text.split(" ").filter(Boolean).length) {
+        text = fromPayload;
+      }
+    }
     const words = text.split(" ").filter(Boolean).length;
     // A page that came back as a shell — a login wall, an error rendered by
     // JavaScript — would otherwise read as a total rewrite every week.

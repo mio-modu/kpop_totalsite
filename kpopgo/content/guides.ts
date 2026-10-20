@@ -548,7 +548,7 @@ export const guides: Guide[] = [
       "Where you buy decides whether your purchase is counted, what you pay in shipping, and whether you get the pre-order inclusions. Here is how to choose.",
     glyph: "parcel",
     status: "sourced",
-    lastChecked: RESEARCH_DATE,
+    lastChecked: "2026-10-20",
     scope:
       "Covers buying official physical albums and goods for delivery outside Korea. Does not cover resale marketplaces or unofficial merchandise.",
     readMinutes: 6,
@@ -581,10 +581,14 @@ export const guides: Guide[] = [
       },
       {
         title: "Price the shipping and the customs exposure, not the album",
-        body: "Shipping from Korea can exceed the album price, and your own country's duty-free threshold decides whether you pay import charges on top. Group orders reduce per-item shipping. Work out the landed cost before you commit, and know your threshold.",
+        body: "Shipping from Korea can exceed the album price, and whether you pay import charges on top depends on your own country's rules. Check what those are now rather than assuming: the United States suspended its 800-dollar threshold in August 2025 and the EU removed its 150-euro one on 1 July 2026, so for readers in either, there is no longer a value small enough to arrive free. Group orders reduce per-item shipping. Work out the landed cost before you commit.",
         pitfall:
-          "Combining several albums into one parcel can push the declared value over your threshold and cost more than shipping them separately. Run both numbers.",
+          "Planning around a duty-free allowance that no longer exists where you live. Where one does still exist, combining several albums into one parcel can push the declared value over it and cost more than shipping them separately — run both numbers.",
         takes: "20 minutes",
+        see: {
+          slug: "kpop-album-customs-duty-overseas",
+          text: "What replaced those thresholds, with the dates and the rules",
+        },
       },
       {
         title: "Keep the order record until it arrives",
@@ -601,7 +605,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Is a group order worth it?",
-        a: "Usually yes for shipping, because the per-item cost drops sharply. Weigh it against your country's duty-free threshold — a single high-value parcel can attract import charges that separate smaller ones would not.",
+        a: "Usually yes for shipping, because the per-item cost drops sharply. Weigh it against your country's import rules — where a duty-free allowance still exists, a single high-value parcel can attract charges that separate smaller ones would not. In the United States and the EU that calculation has changed: both removed their low-value exemptions, so there is no threshold left to stay under.",
       },
       {
         q: "Why are pre-order benefits different between shops?",

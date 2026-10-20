@@ -157,6 +157,31 @@ Do not apply for AdSense before the guides are verified and there is real
 search data — a rejection carries a cooldown that makes a premature
 application the slower path.
 
+## Paid links
+
+`content/affiliates.ts` is the register, and it is empty: this site carries no
+paid link today. The machinery exists first on purpose, because knowing a
+section may one day hold a paid link changes how it is written now — a guide
+that already names the real trade-offs can carry a link honestly, and one that
+would have to grow a section to fit a link reads exactly like what it is.
+
+- **The disclosure is derived, never remembered.** A step carrying `partner`
+  makes its guide render `<PaidDisclosure>` above step one. Remove the last
+  partner and the notice goes by itself. A disclosure somebody has to remember
+  is one that will be missing from the page that gets screenshotted.
+- **Above the steps, not in the footer.** The FTC asks for disclosure that is
+  clear and before the link, most of these readers are American, and a notice
+  under 5,000px of page has been read by nobody.
+- **A link goes in only where the thing would have been named anyway**, and the
+  commission never changes the advice. If the paying option is worse, the step
+  says it is worse.
+- **Every partner is published** on `/editorial-policy`, which reads the
+  register directly, so the page cannot claim something the file does not say.
+- A paid link to an unregistered partner **fails the build** —
+  `scripts/affiliate.test.mjs` covers what a build cannot see: a `rel` that
+  loses `sponsored`, a link that loses its visible tag, a notice that drifts
+  below the steps.
+
 ## Phone width
 
 Most of the traffic will be on a phone, so the narrow layout is not a

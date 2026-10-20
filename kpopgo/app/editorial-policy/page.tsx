@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { guides } from "@/content/guides";
 import { corrections } from "@/content/corrections";
+import { partners } from "@/content/affiliates";
 import { SHELF_LIFE } from "@/lib/freshness";
 import { site } from "@/lib/site";
 
@@ -131,6 +132,44 @@ export default function EditorialPolicy() {
               and no advertiser has any say over what a guide says.
             </li>
           </ul>
+        </section>
+
+        <section>
+          <h2 className="pm">Who pays us</h2>
+          {partners.length === 0 ? (
+            <>
+              <p className="t mt-3">
+                <strong>Nobody, today.</strong> There is not a single paid link anywhere
+                on this site, and no advertising is running yet. This paragraph is
+                generated from the register itself, so it cannot stay here after that
+                stops being true.
+              </p>
+              <p className="t mt-3">
+                When that changes, every company paying us will be named here, with what
+                they sell and how they pay. The rules are already fixed: a paid link goes
+                in only where the thing would have been named anyway, the commission never
+                changes what a step says, and any guide containing one carries a notice
+                above its first step rather than a line in the footer.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="t mt-3">
+                Every company that pays this site is named here. A guide containing a paid
+                link says so above its first step, and the link itself is marked{" "}
+                <span className="paid-tag">Paid</span> where it sits. The commission never
+                changes what a step says.
+              </p>
+              <ul className="t mt-4 grid gap-3">
+                {partners.map((x) => (
+                  <li key={x.id}>
+                    <strong>{x.name}</strong> — {x.what}. {x.howWeArePaid}{" "}
+                    <span className="dim">Checked {x.checked}.</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </section>
 
         <section>

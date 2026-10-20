@@ -165,8 +165,14 @@ export default function About() {
               anonymous.
             </li>
             <li>
-              <strong>Take payment for a recommendation.</strong> Advertising is labelled
-              and no advertiser has any say over what a guide says.
+              <strong>Recommend anything because it pays.</strong> Advertising is
+              labelled, no advertiser has any say over what a guide says, and if this site
+              ever carries a paid link it is marked where it sits, disclosed above the
+              steps, and listed on{" "}
+              <Link href="/editorial-policy" className="ju underline underline-offset-4">
+                how we check things
+              </Link>
+              . There are none today.
             </li>
           </ul>
         </section>

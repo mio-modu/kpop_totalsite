@@ -737,6 +737,42 @@ h4 {
      Set apart from the step's own text but quieter than the pitfall beside
      it, because leaving the page is an option here, not the instruction. The
      arrow moves on hover, which is the whole of the animation. ── */
+  /* A paid link that looks exactly like an unpaid one is disclosed in the
+     legal sense and hidden in every sense that matters. The tag is the
+     disclosure; the vermilion edge is so it cannot be skimmed past. */
+  .paid {
+    margin-top: 14px;
+  }
+  .paid a {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 11px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--rule-soft);
+    border-left: 3px solid var(--ju);
+    background: var(--paper-2);
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .paid a:hover,
+  .paid a:focus-visible {
+    border-color: var(--ju);
+  }
+  .paid-tag {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 2px 7px;
+    border-radius: 5px;
+    background: var(--ju);
+    color: var(--ju-body);
+    font-family: var(--font-data);
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
   .carry {
     margin-top: 14px;
   }

@@ -40,6 +40,14 @@ what keeps `sourced` from being a loophole, and `scripts/freshness.test.mjs`
 asserts it. Do not add a rung without a shelf life shorter than the rung above
 it, and do not stretch a shelf life to avoid re-checking something.
 
+**A cited source can change without the link breaking.** `scripts/watch.mjs`
+fingerprints the visible text of every fixed document a guide cites and
+reports when the wording moves — Weverse's shipping-exclusions notice is
+literally titled "updated on Jul. 15, 2026" and is edited in place, so a 200
+proves nothing. Storefronts are link-checked only; their wording is supposed
+to move. Take a new baseline with `npm run watch -- --record` *after*
+deliberately re-reading a source, never to silence a warning.
+
 **A derived status needs a rebuild to come down.** Every route that shows one
 carries `export const revalidate = 86400`. A fully static page freezes the
 status on the day it deploys, which is the exact failure the expiry exists to

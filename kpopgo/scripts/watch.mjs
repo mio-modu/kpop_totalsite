@@ -25,9 +25,15 @@
  *
  * Exits non-zero when something needs a person.
  */
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
 const OFFLINE = process.argv.includes("--offline");
+/** Take a new baseline. Run this after deliberately re-reading the sources. */
+const RECORD = process.argv.includes("--record");
+const TODAY = new Date().toISOString().slice(0, 10);
+const UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+  "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 const ROOT = new URL("..", import.meta.url);
 
 /**
@@ -147,14 +153,42 @@ async function freshness() {
   }
 }
 
+/**
+ * Node's fetch ignores HTTPS_PROXY, and this repository is worked on from a
+ * container that only reaches the internet through one. In CI there is no
+ * proxy and fetch is the better client, so the fallback is conditional rather
+ * than permanent — the weekly run and a local run should exercise the same
+ * code path wherever they can.
+ */
+const PROXY = process.env.HTTPS_PROXY || process.env.https_proxy || "";
+
+async function viaCurl(url) {
+  const { execFile } = await import("node:child_process");
+  const { promisify } = await import("node:util");
+  try {
+    const { stdout } = await promisify(execFile)(
+      "curl",
+      ["-sS", "-L", "--max-time", "25", "-w", "\n__STATUS__%{http_code}", "-A", UA, url],
+      { maxBuffer: 20_000_000 },
+    );
+    const at = stdout.lastIndexOf("\n__STATUS__");
+    const status = Number(stdout.slice(at + 11).trim()) || 0;
+    const body = at === -1 ? stdout : stdout.slice(0, at);
+    return { ok: status >= 200 && status < 400, status, body };
+  } catch (e) {
+    return { ok: false, status: 0, body: "", error: String(e.message || e) };
+  }
+}
+
 async function hit(url) {
+  if (PROXY) return viaCurl(url);
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 20000);
   try {
     const res = await fetch(url, {
       redirect: "follow",
       signal: ctrl.signal,
-      headers: { "user-agent": "kpopgo-link-watch/1.0 (+https://kpopgo.app)" },
+      headers: { "user-agent": UA },
     });
     return { ok: res.ok, status: res.status, body: res.ok ? await res.text() : "" };
   } catch (e) {
@@ -164,16 +198,129 @@ async function hit(url) {
   }
 }
 
+/**
+ * What a cited page says, reduced to something comparable week to week.
+ *
+ * Scripts and styles go first — a Next.js notice page carries its whole state
+ * blob inline, and that changes on every deploy whether or not a word did.
+ * What is left is the text a reader sees, lowercased and collapsed, which is
+ * the thing a guide was written against.
+ */
+function visibleText(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&[a-z]+;|&#\d+;/gi, " ")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** Share of words the two versions still have in common. */
+function similarity(a, b) {
+  const A = new Set(a.split(" ").filter(Boolean));
+  const B = new Set(b.split(" ").filter(Boolean));
+  if (A.size === 0 && B.size === 0) return 1;
+  let shared = 0;
+  for (const w of A) if (B.has(w)) shared++;
+  return shared / new Set([...A, ...B]).size;
+}
+
+/**
+ * A 200 is not evidence that a source still says what we cited it for.
+ *
+ * Weverse's shipping-exclusions notice is literally titled "updated on
+ * Jul. 15, 2026" — it is edited in place. Add a country to that list tomorrow
+ * and the URL still returns 200 while a step on this site quietly becomes
+ * wrong. The link check cannot see that; comparing the text can.
+ *
+ * This reports that a source moved. It cannot tell whether the guide needs to
+ * change — that is a judgement about meaning, and no script makes it. Same
+ * division as the freshness system: automate noticing, not deciding.
+ */
+const DRIFT_LIMIT = 0.97;
+
+/**
+ * Which cited URLs are worth comparing week to week.
+ *
+ * A notice or an article is a fixed document: it says one thing, and if the
+ * words move, something was edited and the guide citing it needs re-reading.
+ * A storefront is not — world.nol.com rotates its featured concerts, so two
+ * fetches minutes apart already differ by 12%, and comparing it would cry wolf
+ * every week until nobody read the report. That is worse than not checking.
+ *
+ * Storefronts are still link-checked. They are cited as "go here", and the
+ * thing that matters about them is that they still exist under that name,
+ * which is what the brand watch covers.
+ */
+function isFixedDocument(url) {
+  const path = new URL(url).pathname + new URL(url).search;
+  if (/\/(notice|news|press|article|view|blog|release)/i.test(path)) return true;
+  // A numeric id deep in the path is an article by another name.
+  return /\/[^/]*\d{4,}/.test(path);
+}
+
 async function links(urls) {
+  const path = new URL("content/source-fingerprints.json", ROOT);
+  let prints = {};
+  try {
+    prints = JSON.parse(await readFile(path, "utf8"));
+  } catch {
+    note("info", "No source fingerprints yet — run `npm run watch -- --record` to take a baseline.");
+  }
+  const next = {};
+
   for (const url of urls) {
     const r = await hit(url);
     // 403 and 429 are a bot being turned away, not a dead page. Saying so
     // keeps the report honest instead of crying wolf every week.
     if (r.status === 403 || r.status === 429) {
       note("info", `${url} — ${r.status}, refused an automated request. Check by hand if it matters.`);
-    } else if (!r.ok) {
-      note("fail", `${url} — ${r.status || r.error}. A guide cites this.`);
+      if (prints[url]) next[url] = prints[url];
+      continue;
     }
+    if (!r.ok) {
+      note("fail", `${url} — ${r.status || r.error}. A guide cites this.`);
+      if (prints[url]) next[url] = prints[url];
+      continue;
+    }
+
+    const text = visibleText(r.body);
+    const words = text.split(" ").filter(Boolean).length;
+    // A page that came back as a shell — a login wall, an error rendered by
+    // JavaScript — would otherwise read as a total rewrite every week.
+    if (words < 40) {
+      note("info", `${url} — only ${words} words of text came back; not comparing.`);
+      if (prints[url]) next[url] = prints[url];
+      continue;
+    }
+
+    if (!isFixedDocument(url)) {
+      note("info", `${url} — a live page, link-checked only (its wording is expected to move).`);
+      continue;
+    }
+
+    const before = prints[url];
+    next[url] = { words, text: RECORD ? text : before?.text, seen: TODAY };
+    if (!before?.text) {
+      note("info", `${url} — no baseline recorded yet (${words} words).`);
+      continue;
+    }
+    const same = similarity(before.text, text);
+    if (same < DRIFT_LIMIT) {
+      note(
+        "warn",
+        `${url} — the page changed since it was cited: ${Math.round((1 - same) * 100)}% of its ` +
+          `wording is different (${before.words} → ${words} words, last seen ${before.seen}). ` +
+          `Re-read it against the guide that cites it.`,
+      );
+    }
+  }
+
+  if (RECORD) {
+    await writeFile(path, `${JSON.stringify(next, null, 2)}\n`);
+    console.log(`\n  Recorded ${Object.keys(next).length} source fingerprints.`);
   }
 }
 

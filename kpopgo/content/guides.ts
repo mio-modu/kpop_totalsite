@@ -222,6 +222,10 @@ export const guides: Guide[] = [
     ],
     faq: [
       {
+        q: "If my membership expires before the presale, can I just renew it in time?",
+        a: "Only if the renewal lands before the eligibility cut-off, and that cut-off is usually earlier than the presale itself. Weverse Shop\u0027s Auto Payment, available since 3 September 2026 on memberships that support it, charges a registered method on the last day of the validity period, which removes the gap entirely. Set it up before a tour is announced rather than after.",
+      },
+      {
         q: "Do I need a Korean phone number to buy K-pop concert tickets?",
         a: "For the Korean-language ticketing sites, identity verification generally depends on a Korean mobile number, and obtaining one normally requires Korean residency documentation. For the overseas-facing sites, you generally do not — they verify overseas customers by other means, typically passport details. Which applies to you depends on which platform your specific show is sold on.",
       },
@@ -387,9 +391,9 @@ export const guides: Guide[] = [
       },
       {
         title: "Buy the membership well before the cut-off",
-        body: "Buy from the official store for that artist. Keep the order confirmation and the membership number. If the membership is a physical kit with a digital code, allow for the code's delivery and activation time, which is not instant.",
+        body: "Buy from the official store for that artist. Keep the order confirmation and the membership number. If the membership is a physical kit with a digital code, allow for the code\u0027s delivery and activation time, which is not instant. Since 3 September 2026 Weverse Shop also offers Auto Payment on memberships that support it: the renewal is charged to a registered method on the last day of the validity period, so a membership cannot lapse unnoticed in the week a tour is announced. It is set per membership category — Global, Japan and USA are managed separately.",
         pitfall:
-          "Resold or gifted membership codes frequently fail verification because the registered name will not match your ticketing account.",
+          "Resold or gifted membership codes frequently fail verification because the registered name will not match your ticketing account. Auto Payment removes the lapse risk but not the name risk: it renews whatever account it is attached to.",
         takes: "30 minutes",
       },
       {
@@ -612,6 +616,122 @@ export const guides: Guide[] = [
       {
         label: "Weverse Shop — official artist store",
         url: "https://shop.weverse.io/",
+      },
+    ],
+  },
+
+  {
+    slug: "order-from-weverse-shop-overseas",
+    ko: "위버스샵",
+    art: "pc-foil",
+    name: "Weverse Shop",
+    koLine: "해외에서 위버스샵 주문 — 통화·세금·배송",
+    title: "Ordering from Weverse Shop outside Korea",
+    summary:
+      "Which store you are in, why the price changes at checkout, which payment methods your currency actually gets, and the countries Korea cannot ship to.",
+    glyph: "parcel",
+    status: "sourced",
+    lastChecked: "2026-10-20",
+    scope:
+      "Covers Weverse Shop ordering for physical merchandise and albums shipped from Korea. Membership purchases and ticketing are handled separately and are covered in the presale guide. Rules here come from Weverse Shop's own notices and change without much warning.",
+    readMinutes: 7,
+    platforms: ["Weverse Shop"],
+    intro: [
+      "Almost every English guide to Weverse Shop still says the global store takes PayPal or Eximbay and nothing else. That was true years ago. The payment list is longer now, it is set by the currency your account is in rather than by the country you live in, and since February 2026 the price on a product page is not the price you pay.",
+      "None of that is hidden — it is in the shop's own notices, which is where everything below comes from. It is just that nobody writing these guides went and read them.",
+    ],
+    steps: [
+      {
+        title: "Work out which Weverse Shop you are actually in",
+        body: "Weverse Shop is not one store. There is a GLOBAL shop and there are region shops, and they carry different stock, run different pre-order windows and ship from different places. An item you saw someone else order may simply not exist in your store. Check which one you are in before you plan around a release date, because a pre-order cut-off in one store tells you nothing about the others.",
+        pitfall:
+          "A link someone shares in a fan community opens their store, not yours. If the page loads but the item will not add to a cart, you are usually in the wrong shop rather than too late.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Set your currency before you look at anything",
+        body: "Your default currency decides which payment methods you are offered. Weverse states these per currency: USD gets PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay and Grab Pay. JPY gets the same list without Grab Pay. CNY drops PayPal. MXN is only PayPal and Apple Pay. KRW adds Korean cards and the Korean wallets — Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        pitfall:
+          "There is no plain \u0022pay with Visa\u0022 on the non-KRW currencies. Your card goes through PayPal or Eximbay, which is a different transaction to your bank than a Korean merchant charge — and the reason a card that works elsewhere can still fail here.",
+        takes: "3 minutes",
+        see: {
+          slug: "foreign-card-declined-korean-ticketing",
+          text: "If the payment fails anyway, the three systems that can refuse it",
+        },
+      },
+      {
+        title: "Expect the price to go up at checkout, and know why",
+        body: "Since 3 February 2026, Weverse calculates tax from your shipping and billing address. Orders going to Korea show tax-inclusive prices the whole way through. Orders going anywhere else show the product page price without tax, and the destination\u0027s tax is added at checkout once you enter an address. The number on the product page is not the number you pay, and that is deliberate rather than a fault.",
+        pitfall:
+          "This looks exactly like a scam or a bug, and it is the point where people abandon the order. The increase is the tax your own country charges, collected up front instead of by customs later.",
+        takes: "1 minute",
+      },
+      {
+        title: "Fill in the billing address, not just the shipping one",
+        body: "The same February 2026 change added a billing address field at checkout, because the tax calculation needs it. For some intangible products — digital items and content — the billing address may be required rather than optional. Enter it accurately: it is what the tax rate is computed from, and a wrong one is not something you can quietly correct later.",
+        pitfall:
+          "Copying the shipping address into the billing field without thinking is fine when they match and wrong when they do not. If your card is registered to a different address, use that one.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Check your address language against the destination",
+        body: "Weverse asks international customers to verify what language the destination country needs the address in before entering it. The rule is clearer in the other direction: an order shipping to South Korea has to carry the address in Korean, because couriers may not accept or may misprocess an English one. For everywhere else, write the address the way your own national postal service expects it.",
+        pitfall:
+          "Transliterating a Korean address into English is the single most common cause of a delayed or failed delivery on orders going to Korea.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Confirm Korea can ship to you at all",
+        body: "Shipping from South Korea is unavailable to a list of countries and regions that Weverse maintains and updates. As of the 15 July 2026 revision it covers Myanmar, the Democratic Republic of the Congo, Iraq, Iran, Lebanon, Mali, Russia, Andorra, Ukraine, Belarus, Afghanistan, the Netherlands Antilles, Israel and Turkey. The list moves, so check the notice rather than this page.",
+        pitfall:
+          "The list is described as temporary disruption rather than policy, which means a country can come off it as well as go on. Neither a previous successful order nor a friend\u0027s order last year settles whether you can order today.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Order inside the pre-order window if the inclusions matter",
+        body: "Pre-order benefits — the posters, photocards and first-press inclusions that are usually the reason for ordering from the official store rather than anywhere cheaper — are tied to the pre-order window, not to the album. Once the window closes, the same album ships without them. If the inclusions are the point, the deadline is the thing to plan around, not the release date.",
+        pitfall:
+          "Pre-order windows close at a Korean time of day, which is the previous evening or the small hours where most of this site\u0027s readers live.",
+        takes: "Before the cut-off",
+        see: {
+          slug: "buy-k-pop-albums-from-overseas",
+          text: "Whether the purchase counts toward the Korean charts",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Can I pay with a Visa or Mastercard on Weverse Shop?",
+        a: "Not as a direct card option outside the Korean currency setting. On USD, JPY, CNY and MXN the card goes through PayPal or Eximbay instead. That still reaches your card, but your bank sees a different kind of transaction, so enabling international payments in advance is worth doing.",
+      },
+      {
+        q: "Why did the price go up when I entered my address?",
+        a: "Since 3 February 2026, prices outside Korea are shown on the product page without tax, and the tax for your destination is added at checkout. It is the tax your own country charges, collected at purchase rather than on delivery.",
+      },
+      {
+        q: "Will I be charged customs when it arrives?",
+        a: "Weverse now prepays duties and taxes at checkout for applicable orders, which it says reduces the need for additional payment during clearance. It states this does not apply to every country or region, so it is a reasonable expectation rather than a guarantee.",
+      },
+      {
+        q: "Does Weverse Shop ship to my country?",
+        a: "Usually, but a maintained list of countries and regions cannot currently receive shipping from South Korea. Check that notice for the current list before ordering — it is revised as conditions change.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "Weverse Shop — Payment and Customs Service Update, effective 3 Feb 2026",
+        url: "https://shop.weverse.io/en/notices/12149",
+      },
+      {
+        label:
+          "Weverse Shop — countries shipping from Korea is unavailable to, updated 15 Jul 2026",
+        url: "https://shop.weverse.io/en/notices/216",
+      },
+      {
+        label:
+          "Weverse Global — pre-order notice listing payment methods by currency",
+        url: "https://shop.weverse.io/en/shop/USD/artists/75/notices/14466",
       },
     ],
   },

@@ -3817,6 +3817,382 @@ export const translations: Translation[] = [
     ],
     labels: ZH_LABELS,
   },
+  {
+    locale: "id",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: satu produk, dan nyaris tidak ada yang bisa diubah",
+    summary:
+      "Konser dan hotel dijual sebagai satu barang. Anda tidak bisa mengganti hotelnya, tanggalnya, atau jumlah malamnya; tidak menginap tidak mengembalikan apa pun; kursinya acak dan baru diumumkan pada hari-H; dan tiketnya diserahkan hanya kepada Anda sendiri, langsung, di hotel, di dalam satu jendela waktu.",
+    scope:
+      "Mencakup paket konser-plus-hotel Play and Stay dari NOL World sebagaimana NOL World mendokumentasikannya: apa yang terkunci, bagaimana tiket diambil, syarat identitas dan nama, dan apa yang sebenarnya dikatakan jawaban pembatalannya. Tiap paket membawa kebijakan pembatalan dan isinya sendiri, dan halaman produk yang berlaku. Layanan antar-jemput hanya dicatat di tempat sebuah paket menyertakannya.",
+    intro: [
+      "Sebuah paket terlihat seperti pilihan yang mudah: satu kali bayar, hotel dekat venue, kelas kursi yang dijamin, tidak perlu bertarung di antrean. Bagi fan dari luar negeri yang punya satu kesempatan untuk pergi, itu pertukaran yang sungguh menarik.",
+      "Ia juga produk paling kaku di platform ini, dan kekakuannya tidak terlihat dari halaman produknya. Baca jawaban NOL World sendiri berderet dan sebuah pola muncul: paket ini adalah satu barang yang tidak terbagi. Bukan sebuah tiket dan sebuah kamar hotel yang bisa Anda optimalkan terpisah — satu benda, dibeli sekali, nyaris tidak bisa diubah di mana pun. Semua di bawah ini mengalir dari satu fakta itu, termasuk bagian-bagian yang akan terasa tidak adil ketika Anda membutuhkannya.",
+    ],
+    steps: [
+      {
+        title: "Pahami bahwa Anda membeli satu barang, bukan dua pemesanan",
+        body: "Inilah seluruh panduan ini dalam satu langkah. NOL World menyatakan jumlah malam dalam sebuah paket tidak dapat diubah, tanggal check-in dan check-out yang ditentukan dalam paket tidak dapat diganti, dan penggantian hotel tidak diizinkan. Malam tambahan juga tidak bisa ditambahkan saat pembelian — menginap lebih lama adalah percakapan terpisah dengan hotelnya, dengan harga hotel dan tunduk pada ketersediaannya. Dan satu akun bisa membeli satu barang, jadi ini bukan sesuatu yang Anda tumpuk.",
+        pitfall:
+          "Memesan paketnya dengan niat merapikan detailnya nanti: datang sehari lebih awal, pindah ke hotel yang lebih dekat dengan teman, memangkas satu malam di akhir. Setiap satu dari itu adalah tidak yang terdokumentasi.",
+        takes: "15 menit, sebelum Anda membayar",
+      },
+      {
+        title: "Terima bahwa tidak menginap tidak mengembalikan apa pun",
+        body: "Pertanyaannya ditanyakan dengan dua cara di FAQ NOL World dan mendapat jawaban yang sama dua-duanya: Anda boleh memilih untuk tidak menginap di hotelnya, tetapi refund untuk porsi hotel tidak tersedia, dan pemesanannya tidak dapat dialihkan kepada orang lain. Jadi menginap di tempat teman tidak berubah menjadi uang kembali, dan kamar yang Anda bayar tidak bisa diserahkan kepada siapa pun. Memakai satu malam lalu menuntut sisanya juga ditolak — jumlah malamnya terkunci.",
+        pitfall:
+          "Memperlakukan separuh hotelnya sebagai uang muka yang bisa Anda tinggalkan. Itu justru separuh yang tidak bisa Anda jual, berikan, atau tarik kembali.",
+        takes: "—",
+      },
+      {
+        title: "Harapkan kursi acak, dan harapkan mengetahuinya pada hari-H",
+        body: "Paketnya menjamin kelas, bukan lokasi. NOL World menyatakan kursi di dalam seksi dan zona, di luar kategori yang Anda pilih, ditetapkan secara acak — dan bahwa penetapan kursi Anda ditampilkan ketika Anda mengambil tiket di hotel pada hari pertunjukan. Anda tidak akan tahu duduk di mana sampai beberapa jam sebelum konsernya. NOL World juga menutup pertanyaan lanjutan yang jelas: tidak puas dengan kursinya bukan alasan refund, dan biaya pembatalan tetap bisa berlaku.",
+        pitfall:
+          "Menyusun rencana di sekitar posisi kursi — sisi tertentu untuk sebuah proyek fan, satu baris untuk lensa. Kelasnya adalah janjinya; sisanya undian yang Anda lihat pada hari-H.",
+        takes: "—",
+      },
+      {
+        title: "Ambil di meja hotel, langsung, di dalam jendela waktunya",
+        body: "Hanya ada satu cara mendapatkan tiket ini. NOL World menyatakan pengambilan hanya di meja tiket NOL World yang berada di dalam hotel, hanya selama jam yang ditentukan, dan bahwa tiket diterbitkan secara eksklusif kepada pemegang pemesanan, yang harus mengambilnya sendiri. Ditanya apakah orang yang berhak atas diskon bisa mengambil lalu menghadiri sebagai gantinya, jawabannya adalah tiket hanya bisa diambil dan dipakai oleh pemegang pemesanan, tanpa pengecualian. Lewatkan jam yang ditentukan dan jawaban yang diterbitkan hanyalah bahwa tiket tersedia hanya selama waktu yang ditetapkan.",
+        pitfall:
+          "Menyusun hari itu di sekitar venue. Janji yang mengikat ada di meja hotel, di dalam jendela waktu yang ditetapkan orang lain, pada hari konsernya.",
+        takes: "Susun hari itu mengelilinginya",
+      },
+      {
+        title: "Bawa dokumen yang memang diminta mejanya",
+        body: "NOL World menyebutnya spesifik: identitas asli yang masih berlaku milik pemegang pemesanan, ditambah konfirmasi pemesanan baik dicetak maupun di ponsel — dan tanpa ini, tiket tidak bisa diambil. Untuk warga negara non-Korea, identitas yang diterima adalah paspor atau kartu registrasi orang asing. Warga negara Korea punya daftar yang lebih panjang, termasuk kartu registrasi penduduk, SIM, paspor, kartu identitas remaja, atau identitas seluler yang diterbitkan melalui Government 24 atau PASS.",
+        pitfall:
+          "Meninggalkan paspor di brankas kamar karena mejanya ada di gedung yang sama. Yang membuka tiketnya adalah identitas aslinya, dan fotonya tidak ada di daftar itu.",
+        takes: "5 menit saat berkemas",
+      },
+      {
+        title: "Untuk paket dua orang, kalian berdua harus ada di mejanya",
+        body: "Yang satu ini menata ulang sebuah hari dan mudah terlewat. NOL World menyatakan bahwa untuk paket berdua, baik pemegang pemesanan maupun pendampingnya harus hadir untuk mengambil tiketnya — dan bahwa pendampingnya juga wajib menunjukkan identitas, untuk memastikan mereka memenuhi syarat usia masuk. Jadi jendela pengambilannya adalah janji untuk dua orang dengan dua identitas, bukan tugas yang bisa dijalankan salah satu dari kalian.",
+        pitfall:
+          "Berpencar pada hari itu — satu mengambil tiket sementara yang lain jalan-jalan atau antre merchandise. Mejanya tidak akan melepas tiketnya kepada salah satu dari kalian.",
+        takes: "—",
+      },
+      {
+        title: "Samakan namanya dengan paspor, persis, sekarang",
+        body: "NOL World menjawabnya dengan kedua konsekuensinya dalam satu kalimat: jika nama yang diberikan saat memesan tidak cocok dengan paspor Anda, pengambilan tiket dan check-in hotel tidak akan bisa dilakukan. Kedua separuh paketnya, terhalang oleh kesalahan yang sama. Pertanyaan yang dijawabnya menyebut pelaku biasanya — salah eja, nama tengah yang hilang, huruf besar, spasi. Periksa pemesanannya terhadap halaman paspornya sendiri, bukan terhadap ingatan.",
+        pitfall:
+          "Mengira perbedaan kecil akan dilewatkan karena paketnya sudah dibayar. Sudah dibayar bukan hal yang sedang diperiksa di kedua meja itu.",
+        takes: "10 menit",
+      },
+      {
+        title: "Jangan menunggu surel konfirmasi hotel, karena tidak ada",
+        body: "Ini menimbulkan kepanikan yang bisa dihindari, jadi ketahuilah sebelumnya. NOL World menyatakan konfirmasi pemesanan hotel tidak dikirim terpisah, dan bahwa jika pembayarannya berhasil, pemesanan hotelnya sudah terkonfirmasi dan sah. Yang lebih berguna: detail pemesanan baru diteruskan ke hotel kira-kira dua pekan sebelum menginap, jadi hotelnya memang tidak bisa menemukan Anda sebelum itu. Kalau Anda menelepon lebih awal dan mereka belum pernah mendengar nama Anda, itu keadaan normal yang terdokumentasi.",
+        pitfall:
+          "Memesan kamar cadangan, atau membeli paketnya lagi, karena hotelnya bilang tidak ada pemesanan enam pekan sebelumnya. Tidak ada yang salah, dan sekarang ada dua pemesanan.",
+        takes: "2 menit untuk menenangkan diri",
+      },
+      {
+        title: "Check-in sebagai pembelinya, dan baca isi paket yang kecil-kecil",
+        body: "Check-in hotel bergantung pada orang yang sama dengan tiketnya: NOL World menyatakan check-in hanya tersedia setelah memverifikasi identitas pemegang pemesanan, jadi pendamping tidak bisa check-in lebih dulu lalu menunggu. Jika Anda akan tiba terlambat, instruksinya adalah menghubungi hotel sebelumnya — sambil memperingatkan itu bisa jadi tidak mungkin tergantung hotelnya. Dua hal lagi yang layak diketahui sebelum memesan: anak di bawah umur tidak bisa menginap tanpa wali yang sah, dan sarapan tidak termasuk kecuali paket Anda memang menyertakannya.",
+        pitfall:
+          "Mengirim teman lebih dulu untuk menaruh koper dan memulai menginapnya. Kamarnya terbuka atas identitas Anda, bukan atas nomor pemesanan.",
+        takes: "—",
+      },
+      {
+        title: "Kalau ada antar-jemput, perlakukan sebagai satu keberangkatan tanpa kesempatan kedua",
+        body: "Di tempat sebuah paket menyertakan antar-jemput, jawaban NOL World tidak sentimental. Memakainya bersifat pilihan dan tidak memakainya tidak mengembalikan apa pun. Tidak ada kendaraan cadangan, jadi tiba terlambat di titik penjemputan berarti ia sudah berangkat. Antar-jemput hanya untuk kepulangan dimungkinkan. Pendamping yang tidak memesan bisa bertanya kepada petugas antar-jemput di lokasi, tetapi tempat duduknya terbatas dan tidak bisa dijamin. Dan detail yang merusak sebuah malam: Anda boleh membawa koper ke dalam bus, tetapi penyimpanan bagasi di dalam bus tidak tersedia begitu Anda tiba di venue. Titik dan waktu naik untuk kepulangan diberikan ketika tiketnya diserahkan di hotel.",
+        pitfall:
+          "Membawa koper ke konser karena busnya memperbolehkannya naik. Di venue tidak ada tempat menitipkannya, dan Anda menggendongnya sepanjang pertunjukan.",
+        takes: "—",
+      },
+      {
+        title: "Baca jawaban pembatalannya sebelum memesan, karena jawabannya tidak",
+        body: "Inilah langkah yang harus ditanggapi serius selagi perjalanannya masih berupa rencana. NOL World menerbitkan jawaban untuk dua kasus tersulit dan keduanya penolakan. Soal infeksi: menyusul penurunan klasifikasi risiko COVID-19, karantina tidak lagi wajib, dan karenanya tidak ada pengurangan biaya pembatalan meski Anda terinfeksi. Soal kedukaan dan rawat inap setelah kecelakaan: refund untuk alasan pribadi tidak tersedia, dan biaya pembatalan berlaku menurut kebijakan masing-masing produk. Entah itu terbaca kejam atau sekadar jelas, ia memberi tahu Anda di mana risikonya duduk — pada Anda, sejak detik Anda membayar. Instrumen yang dirancang untuk memikulnya adalah asuransi perjalanan yang dibeli sebelum berangkat, dan apa yang sebenarnya ia tanggung bergantung pada polis yang Anda beli, jadi bacalah dokumen itu alih-alih mengiranya.",
+        pitfall:
+          "Memikul risikonya tanpa asuransi dengan asumsi alasan yang cukup serius akan diterima. NOL World sudah menerbitkan jawabannya untuk dua alasan paling serius yang ada.",
+        takes: "30 menit dengan sebuah polis asuransi",
+      },
+    ],
+    faq: [
+      {
+        q: "Bisakah saya membeli paketnya dan tidak memakai hotelnya?",
+        a: "Anda boleh menolak menginap, tetapi NOL World menyatakan porsi hotelnya tidak bisa direfund dan pemesanannya tidak bisa dialihkan kepada siapa pun. Memakai malam lebih sedikit daripada yang ada di paket lalu menuntut selisihnya juga ditolak, karena jumlah malamnya tidak dapat diubah.",
+      },
+      {
+        q: "Bisakah saya memperpanjang, memperpendek, menggeser tanggalnya, atau pindah hotel?",
+        a: "Jumlah malam tidak dapat diubah, tanggal check-in dan check-out di dalam paket tidak dapat diganti, dan penggantian hotel tidak diizinkan. Malam tambahan juga tidak bisa ditambahkan saat pembelian — instruksi NOL World adalah menghubungi hotel langsung soal ketersediaan dan harga, dan itu bisa jadi tidak mungkin. Peningkatan kamar sama saja: tanyakan ke hotel, dan bayar langsung ke hotel saat tiba.",
+      },
+      {
+        q: "Kapan saya tahu kursi saya?",
+        a: "Ketika Anda mengambil tiketnya di hotel pada hari pertunjukan. Paketnya menjamin kelas; di dalam kelas itu, NOL World menetapkan seksi dan kursi secara acak. Tidak senang dengan hasilnya bukan alasan refund.",
+      },
+      {
+        q: "Bisakah orang lain mengambilkan tiket saya, atau hadir menggantikan saya?",
+        a: "Tidak. NOL World menyatakan tiket diterbitkan secara eksklusif kepada pemegang pemesanan dan harus diambil sendiri, dan bahwa tiket hanya bisa diambil dan dipakai oleh pemegang pemesanan, tanpa pengecualian. Untuk paket dua orang keduanya harus ada di mejanya, dan pendampingnya juga harus menunjukkan identitas agar usianya bisa dipastikan.",
+      },
+      {
+        q: "Saya belum menerima surel konfirmasi hotel.",
+        a: "Memang tidak ada. NOL World menyatakan konfirmasi hotel tidak dikirim terpisah, dan bahwa pembayaran yang berhasil berarti pemesanan hotelnya terkonfirmasi. NOL World juga menyatakan detail pemesanan baru sampai ke hotel sekitar dua pekan sebelum check-in, jadi konfirmasi langsung baru mungkin setelah itu.",
+      },
+      {
+        q: "Saya menelepon hotelnya dan mereka tidak menemukan pemesanan saya.",
+        a: "Wajar, kalau Anda menelepon lebih awal. NOL World menyatakan detailnya dikirim ke hotel kira-kira dua pekan sebelum menginap dan konfirmasi baru mungkin setelah itu, dan bahwa pemesanan paket serta pembayaran yang selesai dengan benar berarti pemesanan hotelnya aman. Jangan memesan ulang.",
+      },
+      {
+        q: "Saya positif, atau ada keadaan darurat keluarga. Apakah biaya pembatalannya dihapus?",
+        a: "Jawaban yang diterbitkan NOL World adalah tidak untuk kedua kasus. NOL World menyatakan bahwa dengan karantina COVID-19 tidak lagi wajib, tidak ada pengurangan biaya pembatalan meski Anda terinfeksi; dan bahwa refund untuk alasan pribadi, termasuk kedukaan atau rawat inap setelah kecelakaan, tidak tersedia, dengan biaya berlaku menurut kebijakan tiap produk. Asuransi perjalanan yang dibeli sebelum berangkat adalah mekanisme untuk risiko ini — apa yang ia tanggung bergantung pada polisnya, jadi bacalah.",
+      },
+      {
+        q: "Apakah saya harus memakai antar-jemputnya, dan bolehkah saya membawa koper?",
+        a: "Memakainya bersifat pilihan, dan tidak memakainya tidak mengembalikan apa pun. Koper boleh naik ke bus, tetapi NOL World memperingatkan bahwa penyimpanan bagasi di dalam bus tidak tersedia begitu Anda mencapai venue — jadi koper yang Anda bawa adalah koper yang Anda gendong. Tidak ada kendaraan cadangan jika Anda terlambat, dan titik serta waktu naik untuk kepulangan dibagikan bersama tiketnya di hotel.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Weverse 個資外洩：究竟洩漏了什麼，以及它造成的那一個風險",
+    summary:
+      "422,584 個帳號，由 Weverse 自己確認。沒有姓名、沒有聯絡方式、沒有卡號——外洩的是一個內部識別碼和你的購買紀錄。那個組合不會把你的帳戶掏空；它是用來寫一封「知道你買了什麼」的訊息的原料。",
+    scope:
+      "涵蓋 Weverse Company 就其在 2026 年 9 月確認的外洩事件所公布的內容，英文版與韓文版的公告都讀過。我們不是資安稽核人員，本頁也不是法律建議：所有歸於 Weverse 的敘述都是它自己的說法，不是我們查證過的發現。資安事件可能有後續發展，而本頁帶著我們最後查核的日期。",
+    intro: [
+      "2026 年 9 月，Weverse Company 的代表公布了一則公告，確認顧客個人資料外洩。本站每一位讀者都有 Weverse 帳號，所以問題不是這件事重不重要，而是它實際改變了什麼——而答案比聳肩或恐慌都更窄、更具體。",
+      "以下是對那則公告的細讀，兩種公布語言都讀了。有用的部分不是那個數字。有用的是：外洩的那一組特定資料，對偷你的錢幾乎毫無用處，對說服你卻異常好用。",
+    ],
+    steps: [
+      {
+        title: "讀那兩份清單，因為差別決定了一切",
+        body: "Weverse 把外洩內容分成兩個標題逐項列出。屬於個人資料的：內部識別資訊——你註冊時為辨識使用者而產生的一組專屬內部編號。它歸類為非個人資料的一般資訊：購買類型即付款方式、金流服務商名稱、幣別、購買金額、取消金額、購買日期與時間、購買狀態，以及訂單被取消時的退款日期與時間。規模是以帳號 ID 為單位計算的 422,584 筆。重點在於兩份清單上都沒有的東西：沒有姓名、沒有聯絡方式、沒有卡號或付款憑證。",
+        pitfall:
+          "看到 422,584 這個數字，然後用對其他外洩事件的記憶把其餘的空格自己填上。憑證外洩的應對方式和這次的應對方式不同，所以那份逐項清單比標題更有價值。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "公允地衡量 Weverse 的安撫說法，包括它的界限",
+        body: "Weverse 表示，外洩的內部識別碼並非姓名或聯絡方式那種能直接辨識個人的資訊；它是只在 Weverse Company 內部系統中使用的值，無法在外部使用；而且僅憑這些資料項目，不太可能發生付款偽造或未經授權的資金移轉。就表面而言這個推論站得住腳——一個內部列編號不是身分，而這些欄位沒有一個是憑證。誠實的界限在於：一個內部識別碼，在它被接上另一個同樣含有它的資料集的那一刻就變得可辨識，而公司外部沒有人能衡量那有多大可能。那才是殘留的暴露：關聯，不是竊取。",
+        pitfall:
+          "把一個合理的安撫說法當成保證，或者把它當成公關話術。它是對特定欄位所做的特定主張，而它最有力的地方，恰好就是它最狹窄的地方。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "理解真正的風險：一封知道你買了什麼的訊息",
+        body: "把外洩的欄位放在一起看——付款方式、金流商、幣別、金額、日期、狀態、退款日期。那不是用來刷你的卡的裝備。那是用來寫一封訊息、並通過多數人對可疑郵件唯一會做的那個檢驗的裝備，而那個檢驗就是：寄件者知不知道一筆真實訂單的真實細節。一封引用你實際購買金額、在實際日期、以實際幣別、經由實際金流商的訊息，比任何隨機詐騙者所能寫出的東西都有說服力得多。",
+        pitfall:
+          "把「他們知道我的訂單細節」當成訊息為真的證明。在這次外洩之後，那個檢驗已經失效了，而那正是幾乎所有人都在用的檢驗。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "知道為什麼這件事疊在一個真實的流程之上",
+        body: "這對這群讀者比對多數人更重要，因為已經有正當的陌生人會向 Weverse 顧客要錢。Weverse Shop 提醒歐盟買家，他們可能會收到當地海關或物流業者另外寄來的付款指示，而不付款可能延誤或阻止送達。所以正當的經驗與詐騙的經驗現在長得一樣：一家你與之沒有關係的公司，引用一筆你確實下過的訂單，在你的包裹移動之前要你付一筆錢。外洩沒有製造出這個重疊，但它讓這個重疊更銳利了。",
+        pitfall:
+          "用「付錢了事」或「全部無視」來消解這份模糊。前者損失金錢，後者損失包裹。",
+        takes: "—",
+      },
+      {
+        title: "改用一種不依賴訊息知道什麼的檢驗方式",
+        body: "出路是停止評估那封訊息，改為評估它所主張的事。把追蹤號碼或訂單編號從訊息裡抄出來，然後自己去物流業者或 Weverse Shop——自己輸入網址或用存好的書籤，絕不要點訊息裡的連結——看看那個編號對不對得上你的某筆訂單，以及是否真的有什麼款項未付。如果訊息是真的，同樣的資訊在另一邊也看得到。如果不是真的，那邊什麼都沒有，而你沒點任何東西就知道了。",
+        pitfall:
+          "因為細節都對就點了連結。細節都對，現在正是一封假訊息的預期狀態。",
+        takes: "每封訊息 5 分鐘",
+      },
+      {
+        title: "不要把改密碼當成解方",
+        body: "任何外洩之後的反射動作都是改密碼，而在這裡它幾乎什麼都沒解決：暴露的是透過付款資訊 API 洩出的識別碼與購買中繼資料，不是登入憑證。換密碼不花成本也不造成傷害，所以如果它能讓你安心就去做——但做的時候要知道那是衛生習慣而不是補救，而真正保護你的是上一步那個查證習慣。開啟你的登入提供者所提供的任何雙因素選項都值得做，而那同樣不是對這次外洩的回應。",
+        pitfall:
+          "改了密碼，覺得事情辦完了，然後相信下一封引用你訂單的訊息。反射式的建議令人舒服，而它排擠掉了真正有效的建議。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "從帳號本身查你是否受影響，不要從指南查",
+        body: "Weverse 表示它依照相關法令所訂的標準，執行了一套獨立的程序，通知資料在這次外洩中的顧客。所以答案在你自己的帳號裡：帳號上登錄的電子郵件地址，以及你的 App 內通知。沒有任何指南能告訴你，包括這一份；而任何聲稱能幫你查詢是否在外洩名單中的第三方，都是該起疑的理由，而不是一項服務。",
+        pitfall:
+          "去搜尋一個能告訴你是否受影響的查詢工具。對一次內部識別碼的外洩而言，這種工具沒有任何有意義的東西可查，而那個搜尋動作本身，正是釣魚頁面在等的。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "記下公司說它做了什麼，以及什麼還只是承諾",
+        body: "Weverse 對自身應對的說法，用它的話：它強化了付款資訊處理 API 的存取控制，並將內部識別碼從中移除，使該資料不會對外暴露；於 9 月 4 日向韓國網際網路振興院（KISA）提交了資安事件通報；並通知了受影響的顧客。它所陳述的計畫包括：全面調查所有對外暴露的 API、收緊存取控制並將暴露資訊最小化、加強部署流程的控管，以及更敏銳的資安監控。它也表示已要求取得該資料的外部行為人歸還，並打算追究法律責任。請把兩類分開看：第一組是關於已完成工作的主張，外部沒有人能稽核；第二組是意向。",
+        pitfall:
+          "把一份計畫中的改善清單讀成一份已經到位的修復清單。公告並沒有那樣宣稱，對它的摘要也不該那樣宣稱。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "按比例給予應有的評價",
+        body: "Weverse 所描述的時間線很短：9 月 3 日在一名外部通報者揭露漏洞後接獲 KISA 聯繫，立即進行內部檢查與緊急應對，9 月 4 日向 KISA 提交外洩通報，以及一則以代表名義署名、逐項列出外洩內容的公開公告——包括那些它主張在法律上不屬於個人資料的欄位，而那些它本來不必列舉。我們把韓文原文對照英文讀過，兩者說的是同一件事，那本身就是一個小小的信號。這些都不能抵銷一次外洩。但一個只會把事件當醜聞來報導的網站，沒有教會讀者任何關於「稱職的處理長什麼樣」的事，而這一次比多數更接近它。",
+        pitfall:
+          "從一個冷靜的評估推論出「什麼都沒發生」。422,584 個帳號是一次真實的失誤，而即時揭露並不會把它取消掉。",
+        takes: "—",
+      },
+      {
+        title: "刪除帳號之前三思，並且知道刪除不是什麼",
+        body: "刪除帳號是另一個反射動作，而它是一個比看起來更大的決定。Weverse Shop 與 NOL World 都把實際的東西綁在帳號上：訂單與預約紀錄、儲存的地址、已付費的會員資格，而在售票那一側還有已完成的身分驗證。不過決定性的那一點更簡單。刪除會從此之後把你的資料從服務中移除；它無法收回已經流出去的資料。這次外洩裡的任何東西，在你做任何決定之前就已經在裡面了，而事後關閉帳號觸及不到它。",
+        pitfall:
+          "把刪除帳號當成對外洩的回應。那是一個合理的念頭，而它不是這件事的補救；而且它會讓你失去一旦某筆購買出現爭議時你會需要的那份紀錄。",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "我的姓名、地址或卡號外洩了嗎？",
+        a: "依 Weverse 自己的逐項列舉是沒有。它所列出的是一組內部識別編號，加上購買中繼資料——付款方式、金流服務商名稱、幣別、購買與取消金額、購買日期與時間、購買狀態，以及退款日期與時間。姓名、聯絡方式與付款憑證不在清單上。",
+      },
+      {
+        q: "我該換 Weverse 密碼嗎？",
+        a: "換了不會有害，而它不是解方。暴露的是透過付款資訊 API 洩出的識別碼與購買中繼資料，而不是登入憑證，所以新密碼並不針對它。如果換了能讓你安心就換，然後把真正的力氣花在獨立查證付款要求上，那才是在這裡真正保護你的事。",
+      },
+      {
+        q: "我怎麼知道自己是不是那 422,584 之一？",
+        a: "透過你自己的帳號。Weverse 表示它依相關法令為受影響顧客執行了一套獨立的通知程序，所以請查看帳號登錄的電子郵件與 App 內通知。沒有任何外部工具能告訴你，而任何宣稱做得到的東西都該被當成釣魚攻擊。",
+      },
+      {
+        q: "有人能用這些資料刷我的卡嗎？",
+        a: "Weverse 表示僅憑這些項目不太可能發生付款偽造或未經授權的移轉，而就清單表面看這是合理的——外洩的欄位沒有一個是卡號或憑證。現實的風險不是一筆直接的扣款，而是一封有說服力的訊息，說服你自己去付一筆錢。",
+      },
+      {
+        q: "如果它不是個人資料，那為什麼重要？",
+        a: "因為「對攻擊者有沒有用」和「法律上怎麼歸類」是兩個不同的問題。購買金額、日期、付款方式與幣別，恰好正是讓一封詐騙訊息變得可信的東西——而人們判斷可疑郵件的慣常方式，就是看寄件者知不知道一筆真實訂單的真實細節。對這次外洩中的每一個人來說，那個檢驗不再有效了。",
+      },
+      {
+        q: "我該刪掉 Weverse 帳號嗎？",
+        a: "那是一個站得住腳的選擇，而它不是補救。刪除會停止未來的蒐集；它無法收回已經流出去的資料，包括這次外洩中的任何東西。它同時會讓你失去訂單與預約紀錄、儲存的地址、任何已付費的會員資格，而在售票那一側還有已完成的身分驗證——所以請依「你是否還想用這項服務」來決定，而不是把它當成對這件事的回應。",
+      },
+      {
+        q: "Weverse 實際上做了什麼？",
+        a: "依它自己的說法：強化了付款資訊 API 的存取控制並將內部識別碼從中移除、於 2026 年 9 月 4 日向 KISA 提交資安事件通報，並通知了受影響的顧客。它也列出計畫中的工作——稽核所有對外暴露的 API、收緊部署控管、提高監控敏感度——並表示已向涉事行為人要求歸還資料，且打算追究法律責任。已完成的項目是它的主張，而不是經稽核的發現。",
+      },
+      {
+        q: "有比這更新的消息嗎？",
+        a: "截至本頁上方的日期為止沒有，而那個日期是我們最後一次讀 Weverse Shop 公告列表的時間。資安事件可能有後續發展，所以那份列表才是最新版本——如果有後續公告，它會先出現在那裡，然後才會出現在這裡。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Kebocoran data Weverse: apa yang benar-benar bocor, dan satu risiko yang ditimbulkannya",
+    summary:
+      "422,584 akun, dikonfirmasi Weverse sendiri. Tidak ada nama, tidak ada kontak, tidak ada nomor kartu — yang bocor adalah sebuah pengenal internal dan riwayat pembelian Anda. Kombinasi itu bukan akun yang dikuras; ia bahan mentah untuk sebuah pesan yang tahu apa yang Anda beli.",
+    scope:
+      "Mencakup apa yang Weverse Company terbitkan tentang kebocoran yang dikonfirmasinya pada September 2026, dibaca dalam versi Inggris maupun Korea dari pemberitahuannya. Kami bukan auditor keamanan dan ini bukan nasihat hukum: segala yang dikaitkan dengan Weverse adalah pernyataannya sendiri, bukan temuan yang kami verifikasi. Sebuah kasus keamanan bisa berkembang, dan halaman ini membawa tanggal terakhir kami memeriksanya.",
+    intro: [
+      "Pada September 2026 presiden Weverse Company menerbitkan pemberitahuan yang mengonfirmasi bahwa informasi pribadi pelanggan telah bocor. Setiap pembaca situs ini punya akun Weverse, jadi pertanyaannya bukan apakah ini penting melainkan apa yang sebenarnya berubah — dan jawabannya lebih sempit dan lebih spesifik daripada sekadar mengangkat bahu atau panik.",
+      "Yang menyusul adalah pemberitahuan itu dibaca cermat, dalam kedua bahasa ia diterbitkan. Bagian yang berguna bukan angkanya. Bagian yang berguna adalah bahwa kombinasi data tertentu yang keluar nyaris tidak berguna untuk mencuri dari Anda dan luar biasa berguna untuk meyakinkan Anda.",
+    ],
+    steps: [
+      {
+        title: "Baca kedua daftarnya, karena selisihnya menentukan segalanya",
+        body: "Weverse merinci apa yang bocor di bawah dua judul. Sebagai informasi pribadi: informasi identifikasi internal — sebuah nomor internal unik yang dibuat untuk identifikasi pengguna saat Anda mendaftar. Sebagai informasi umum yang ia golongkan bukan pribadi: jenis pembelian yaitu metode pembayaran, nama payment gateway, mata uang, jumlah pembelian, jumlah pembatalan, tanggal dan waktu pembelian, status pembelian, serta tanggal dan waktu refund jika sebuah pesanan dibatalkan. Skalanya 422,584 kasus yang dihitung dalam satuan ID akun. Yang tidak ada di kedua daftar itulah intinya: tidak ada nama, tidak ada kontak, tidak ada nomor kartu atau kredensial pembayaran.",
+        pitfall:
+          "Membaca 422,584 lalu mengisi sisanya dari ingatan tentang kebocoran lain. Respons terhadap kebocoran kredensial dan respons terhadap yang ini berbeda, jadi daftar rincinya lebih berharga daripada judulnya.",
+        takes: "5 menit",
+      },
+      {
+        title: "Timbang penenangan dari Weverse secara adil, termasuk batasnya",
+        body: "Weverse menyatakan bahwa pengenal internal yang bocor bukan informasi yang langsung mengidentifikasi seseorang, seperti nama atau kontak; bahwa ia nilai yang dipakai hanya di dalam sistem internal Weverse Company dan tidak bisa dipakai dari luar; dan bahwa pemalsuan pembayaran atau transfer dana tanpa izin tidak mungkin terjadi hanya dari butir-butir data ini. Di permukaan penalaran itu bertahan — sebuah nomor baris internal bukan identitas, dan tak satu pun dari kolom ini berupa kredensial. Batas jujurnya adalah bahwa sebuah pengenal internal menjadi mengidentifikasi pada detik ia disambungkan ke kumpulan data lain yang juga memuatnya, dan tak seorang pun di luar perusahaan bisa mengukur seberapa mungkin itu. Itulah paparan yang tersisa: korelasi, bukan pencurian.",
+        pitfall:
+          "Memperlakukan penenangan yang masuk akal sebagai jaminan, atau memperlakukannya sebagai pencitraan. Ia klaim spesifik tentang kolom-kolom spesifik, dan ia paling kuat justru di tempat ia paling sempit.",
+        takes: "5 menit",
+      },
+      {
+        title: "Pahami risiko sebenarnya: sebuah pesan yang tahu apa yang Anda beli",
+        body: "Lihat kolom-kolom yang bocor itu bersama-sama — metode pembayaran, gateway, mata uang, jumlah, tanggal, status, tanggal refund. Itu bukan perlengkapan untuk menagih kartu Anda. Itu perlengkapan untuk menulis sebuah pesan yang lolos satu-satunya uji yang kebanyakan orang terapkan pada surel mencurigakan, yaitu apakah pengirimnya tahu detail nyata tentang pesanan nyata. Sebuah pesan yang mengutip jumlah pembelian Anda yang sebenarnya, pada tanggal yang sebenarnya, dalam mata uang yang sebenarnya, lewat penyedia pembayaran yang sebenarnya, jauh lebih meyakinkan daripada apa pun yang bisa disusun penipu acak.",
+        pitfall:
+          "Memakai “mereka tahu detail pesanan saya” sebagai bukti bahwa sebuah pesan asli. Setelah kebocoran ini uji itu berhenti bekerja, dan itulah uji yang hampir semua orang pakai.",
+        takes: "5 menit",
+      },
+      {
+        title: "Ketahui kenapa ini mendarat di atas sebuah proses yang nyata",
+        body: "Ini lebih penting bagi pembaca ini daripada bagi kebanyakan orang, karena orang asing yang sah memang sudah meminta uang kepada pelanggan Weverse. Weverse Shop memperingatkan pembeli Uni Eropa bahwa mereka bisa menerima instruksi pembayaran terpisah dari bea cukai setempat atau kurir, dan bahwa tidak membayar bisa menunda atau menghalangi pengiriman. Jadi pengalaman yang asli dan yang palsu kini terlihat sama: sebuah perusahaan yang tidak punya hubungan dengan Anda, menyebut pesanan yang benar-benar Anda buat, meminta pembayaran sebelum paket Anda bergerak. Kebocoran ini tidak menciptakan tumpang tindih itu, tetapi ia menajamkannya.",
+        pitfall:
+          "Menyelesaikan keraguan itu dengan membayar, atau dengan mengabaikan semuanya. Yang satu kehilangan uang dan yang lain kehilangan paket.",
+        takes: "—",
+      },
+      {
+        title: "Pakai pemeriksaan yang tidak bergantung pada apa yang pesan itu tahu",
+        body: "Jalan keluarnya adalah berhenti menilai pesannya dan mulai menilai klaimnya. Ambil nomor pelacakan atau nomor pesanan dari dalamnya, lalu pergi sendiri ke kurirnya atau ke Weverse Shop — alamat yang Anda ketik sendiri atau penanda yang tersimpan, jangan pernah tautan di dalam pesannya — dan lihat apakah nomor itu cocok dengan salah satu pesanan Anda dan apakah ada yang benar-benar terutang. Jika pesannya asli, informasi yang sama ada di sisi sana. Jika tidak, tidak ada apa-apa, dan Anda mengetahuinya tanpa mengklik apa pun.",
+        pitfall:
+          "Mengikuti tautannya karena detailnya benar. Detail yang benar sekarang adalah keadaan yang diharapkan dari sebuah pesan palsu.",
+        takes: "5 menit per pesan",
+      },
+      {
+        title: "Jangan mengira penggantian kata sandi adalah solusinya",
+        body: "Refleks setelah kebocoran apa pun adalah mengganti kata sandi, dan di sini itu nyaris tidak menyentuh apa pun: yang terpapar adalah sebuah pengenal dan metadata pembelian lewat API informasi pembayaran, bukan kredensial masuk. Mengganti kata sandi tidak memakan biaya dan tidak merugikan, jadi lakukan kalau itu menenangkan Anda — tetapi lakukan sambil tahu bahwa itu kebersihan dan bukan obat, dan bahwa yang sebenarnya melindungi Anda adalah kebiasaan verifikasi di langkah sebelumnya. Mengaktifkan opsi dua faktor apa pun yang ditawarkan penyedia login Anda layak dilakukan atas prinsip umum, dan itu juga bukan respons terhadap kebocoran ini.",
+        pitfall:
+          "Mengganti kata sandi, merasa selesai, lalu memercayai pesan berikutnya yang mengutip pesanan Anda. Nasihat refleks itu nyaman dan ia mendesak keluar nasihat yang bekerja.",
+        takes: "10 menit",
+      },
+      {
+        title: "Cari tahu apakah Anda terdampak, dari akunnya dan bukan dari sebuah panduan",
+        body: "Weverse menyatakan ia menjalankan prosedur terpisah, sesuai kriteria yang ditetapkan hukum dan peraturan terkait, untuk memberi tahu pelanggan yang datanya ada dalam kebocoran itu. Jadi jawabannya ada di akun Anda sendiri: alamat surel yang terdaftar padanya, dan notifikasi di dalam aplikasi Anda. Tidak ada panduan yang bisa memberi tahu Anda, termasuk yang ini, dan pihak ketiga mana pun yang mengaku bisa memeriksa apakah Anda ada dalam kebocoran itu adalah alasan untuk curiga alih-alih sebuah layanan.",
+        pitfall:
+          "Mencari alat pencarian yang akan memberi tahu apakah Anda terdampak. Untuk kebocoran pengenal internal tidak ada yang bermakna untuk diperiksa alat semacam itu, dan pencarian itu sendirilah yang ditunggu sebuah halaman phishing.",
+        takes: "10 menit",
+      },
+      {
+        title: "Catat apa yang perusahaan bilang telah ia lakukan, dan apa yang masih berupa janji",
+        body: "Keterangan Weverse tentang responsnya, dalam kata-katanya: ia memperkuat kontrol akses pada API pemrosesan informasi pembayaran dan menghapus pengenal internal darinya agar datanya tidak terpapar ke luar; pada 4 September ia mengajukan laporan insiden kebocoran kepada Korea Internet & Security Agency; dan ia memberi tahu pelanggan yang terdampak. Rencana yang ia nyatakan adalah investigasi penuh atas semua API yang terpapar ke luar, kontrol akses yang lebih ketat dan informasi terpapar yang diminimalkan, kontrol proses penerapan yang lebih ketat, dan pemantauan keamanan yang lebih peka. Ia juga menyatakan telah meminta pihak eksternal yang mengakses data itu untuk mengembalikannya, dan berniat menuntut pertanggungjawaban hukum. Pisahkan kedua kategorinya: kelompok pertama adalah klaim tentang pekerjaan yang sudah selesai yang tak seorang pun di luar bisa mengauditnya, dan yang kedua adalah niat.",
+        pitfall:
+          "Membaca daftar perbaikan yang direncanakan sebagai daftar perbaikan yang sudah terpasang. Pemberitahuannya tidak mengklaim itu, dan ringkasannya juga tidak seharusnya.",
+        takes: "5 menit",
+      },
+      {
+        title: "Berikan penilaian yang sepadan atas penanganannya",
+        body: "Lini masa yang Weverse gambarkan pendek: dihubungi KISA pada 3 September setelah seorang pelapor eksternal mengungkap sebuah kerentanan, pemeriksaan internal dan respons darurat segera, laporan kebocoran diajukan ke KISA pada 4 September, dan sebuah pemberitahuan publik atas nama pimpinannya yang merinci apa yang keluar — termasuk kolom-kolom yang ia argumentasikan bukan informasi pribadi secara hukum, yang sebenarnya tidak harus ia sebutkan satu per satu. Kami membaca naskah Korea berdampingan dengan versi Inggrisnya dan keduanya mengatakan hal yang sama, yang merupakan sinyal kecilnya sendiri. Tak satu pun dari itu membatalkan sebuah kebocoran. Tetapi situs yang hanya pernah melaporkan insiden sebagai skandal tidak mengajari pembacanya apa pun tentang seperti apa penanganan yang cakap, dan yang ini lebih dekat ke sana daripada kebanyakan.",
+        pitfall:
+          "Menyimpulkan dari penilaian yang tenang bahwa tidak terjadi apa-apa. 422,584 akun adalah kegagalan nyata yang tidak dibatalkan oleh pengungkapan yang cepat.",
+        takes: "—",
+      },
+      {
+        title: "Pikir dua kali sebelum menghapus akun, dan ketahui penghapusan itu bukan apa",
+        body: "Menghapus akun adalah refleks yang lain, dan ia keputusan yang lebih besar daripada kelihatannya. Weverse Shop dan NOL World sama-sama mengikat hal-hal nyata pada sebuah akun: riwayat pesanan dan pemesanan, alamat tersimpan, keanggotaan berbayar, dan di sisi tiket sebuah verifikasi identitas yang sudah selesai. Namun titik yang menentukan lebih sederhana. Penghapusan membuang data Anda dari layanan ke depan; ia tidak menarik kembali data yang sudah keluar. Apa pun yang ada dalam kebocoran ini sudah ada di dalamnya sebelum Anda memutuskan apa pun, dan menutup akun sesudahnya tidak bisa menjangkaunya.",
+        pitfall:
+          "Menghapus akun sebagai respons terhadap sebuah kebocoran. Itu hal yang wajar untuk diinginkan dan ia bukan obat untuk yang ini, dan ia memakan riwayat yang akan Anda butuhkan jika sebuah pembelian pernah disengketakan.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah nama, alamat, atau nomor kartu saya bocor?",
+        a: "Tidak menurut rincian Weverse sendiri. Yang ia daftarkan adalah sebuah nomor identifikasi internal ditambah metadata pembelian — metode pembayaran, nama payment gateway, mata uang, jumlah pembelian dan pembatalan, tanggal dan waktu pembelian, status pembelian, serta tanggal dan waktu refund. Nama, kontak, dan kredensial pembayaran tidak ada di daftar itu.",
+      },
+      {
+        q: "Haruskah saya mengganti kata sandi Weverse saya?",
+        a: "Itu tidak akan merugikan, dan itu bukan solusinya. Yang terpapar adalah sebuah pengenal dan metadata pembelian lewat API informasi pembayaran alih-alih kredensial masuk, jadi kata sandi baru tidak menyentuhnya. Lakukan kalau itu menenangkan Anda, lalu habiskan usaha yang sebenarnya untuk memverifikasi permintaan pembayaran secara mandiri, karena itulah yang benar-benar melindungi Anda di sini.",
+      },
+      {
+        q: "Bagaimana saya tahu apakah saya salah satu dari 422,584 itu?",
+        a: "Lewat akun Anda sendiri. Weverse menyatakan ia menjalankan prosedur pemberitahuan terpisah untuk pelanggan terdampak menurut hukum yang berlaku, jadi periksa surel yang terdaftar pada akun itu dan notifikasi di dalam aplikasi Anda. Tidak ada alat eksternal yang bisa memberi tahu Anda, dan apa pun yang mengiklankan bahwa ia bisa sebaiknya diperlakukan sebagai percobaan phishing.",
+      },
+      {
+        q: "Bisakah seseorang memakai ini untuk menagih kartu saya?",
+        a: "Weverse menyatakan pemalsuan pembayaran atau transfer tanpa izin tidak mungkin hanya dari butir-butir ini, dan di permukaan daftarnya itu masuk akal — tak satu pun kolom yang bocor berupa nomor kartu atau kredensial. Risiko realistisnya bukan tagihan langsung melainkan sebuah pesan meyakinkan yang membujuk Anda melakukan pembayaran sendiri.",
+      },
+      {
+        q: "Kalau itu bukan informasi pribadi, kenapa ia penting?",
+        a: "Karena kegunaan bagi penyerang dan penggolongan hukum adalah dua pertanyaan berbeda. Jumlah pembelian, tanggal, metode pembayaran, dan mata uang persis itulah yang membuat sebuah pesan penipuan kredibel — dan cara biasa orang menilai surel mencurigakan adalah apakah pengirimnya tahu detail nyata tentang pesanan nyata. Uji itu tidak lagi bekerja bagi siapa pun dalam kebocoran ini.",
+      },
+      {
+        q: "Haruskah saya menghapus akun Weverse saya?",
+        a: "Itu pilihan yang bisa dipertahankan dan ia bukan obat. Penghapusan menghentikan pengumpulan di masa depan; ia tidak bisa menarik kembali data yang sudah keluar, termasuk apa pun dalam kebocoran ini. Ia juga memakan riwayat pesanan dan pemesanan, alamat tersimpan, keanggotaan berbayar apa pun, dan di sisi tiket sebuah verifikasi identitas yang sudah selesai — jadi putuskan berdasarkan apakah Anda masih menginginkan layanannya, bukan sebagai respons terhadap ini.",
+      },
+      {
+        q: "Apa yang sebenarnya sudah Weverse lakukan?",
+        a: "Menurut keterangannya sendiri: memperkuat kontrol akses pada API informasi pembayaran dan menghapus pengenal internal darinya, mengajukan laporan insiden kebocoran kepada KISA pada 4 September 2026, dan memberi tahu pelanggan yang terdampak. Ia juga mendaftar pekerjaan yang direncanakan — mengaudit semua API yang terpapar ke luar, memperketat kontrol penerapan, menaikkan kepekaan pemantauan — dan menyatakan telah meminta pengembalian data dari pihak yang terlibat serta berniat menuntut pertanggungjawaban hukum. Butir-butir yang sudah selesai adalah klaimnya, bukan temuan yang diaudit.",
+      },
+      {
+        q: "Apakah ada yang lebih baru dari ini?",
+        a: "Tidak per tanggal di bagian atas halaman ini, yaitu saat terakhir kami membaca daftar pemberitahuan Weverse Shop. Sebuah urusan keamanan bisa berkembang, jadi daftar itulah versi yang hidup — jika ada pemberitahuan lanjutan, ia akan ada di sana sebelum ada di sini.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

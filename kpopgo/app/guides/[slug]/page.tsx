@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide, guides, jamo } from "@/content/guides";
+import { reportsFor } from "@/content/reports";
 import { guideJsonLd } from "@/lib/jsonld";
 import { translationsFor } from "@/content/translations";
 import { LOCALES } from "@/lib/i18n";
@@ -62,6 +63,8 @@ export default async function GuidePage({
   const guide = getGuide(slug);
   if (!guide) notFound();
 
+  const walked = reportsFor(slug);
+
   const others = guides.filter((g) => g.slug !== guide.slug).slice(0, 3);
 
   return (
@@ -103,11 +106,21 @@ export default async function GuidePage({
       </header>
 
       {/* ─────────── The guide's own object ─────────── */}
-      {/* Capped narrower than it used to be: the pieces are not all the same
-          shape, and a square one at 560px pushed a thousand pixels of guide
-          below the fold to show an object nobody came for. */}
-      <div className="wrap mt-10 max-w-[420px]">
-        <Artwork name={guide.art} fallback={null} priority />
+      {/* Budgeted by height, and on the element itself rather than beside it.
+          The previous cap was `max-w-[420px]` on the same node as `.wrap`,
+          which sets max-width too — equal specificity, so source order decided
+          and `.wrap`'s 1140px won. The cap had never applied: this piece
+          rendered 1979px tall at 1280px and upscaled past its own 640px
+          source, putting a screen and a half of object above a guide somebody
+          came to read. A width cap would not have fixed it either, because
+          these pieces are not the same shape. */}
+      <div className="wrap mt-10 flex justify-center">
+        <Artwork
+          name={guide.art}
+          fallback={null}
+          priority
+          maxHeight="min(44vh, 360px)"
+        />
       </div>
 
       {/* ─────────── T21: the booking screens ─────────── */}
@@ -248,6 +261,39 @@ export default async function GuidePage({
           <p className="t-sm dim mt-4 text-[0.875rem]">
             If one of these has moved on since, the official announcement for your show is
             the authority — not this page.
+          </p>
+        </div>
+      </section>
+
+      {/* ─────────── The ask ───────────
+          Below the sources rather than above the steps, because a reader who
+          has not read the guide has nothing to report yet. The count is
+          derived from content/reports.ts, so the sentence cannot claim
+          evidence the register does not hold. */}
+      <section className="wrap mt-10">
+        <div className="obj p-6 sm:p-7">
+          <p className="data dim">
+            Walked this? <span className="han text-[0.6875rem]">제보</span>
+          </p>
+          {walked.length > 0 ? (
+            <p className="t mt-3">
+              {walked.length === 1
+                ? "One reader has reported walking this flow"
+                : `${walked.length} readers have reported walking this flow`}{" "}
+              — most recently on {walked[walked.length - 1].walked}. If the screens have
+              moved since, that is worth knowing.
+            </p>
+          ) : (
+            <p className="t mt-3">
+              Nobody has reported walking this one yet. This page is traced to the
+              platform&apos;s own documentation and no further — if you have just done it,
+              what the screens actually said is the thing that would improve it most.
+            </p>
+          )}
+          <p className="mt-4">
+            <Link href="/report" className="btn px-5 py-3">
+              Tell us what you saw
+            </Link>
           </p>
         </div>
       </section>

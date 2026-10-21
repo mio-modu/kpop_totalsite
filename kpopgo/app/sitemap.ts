@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/words`, lastModified: latest, changeFrequency: "monthly", priority: 0.7 },
     { url: `${site.url}/about`, changeFrequency: "monthly", priority: 0.4 },
     { url: `${site.url}/editorial-policy`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${site.url}/report`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${site.url}/privacy`, changeFrequency: "yearly", priority: 0.2 },
     ...guides.map((g) => ({
       url: `${site.url}/guides/${g.slug}`,

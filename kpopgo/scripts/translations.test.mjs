@@ -374,7 +374,22 @@ test("no translated field is far longer or shorter than its source", () => {
     // Headings are a different population: a 60-character English step title
     // compresses to a dozen characters in Japanese and is right to. The bands
     // were measured on prose, so they are applied to prose.
-    if (/\.title$|^title$/.test(p.where)) continue;
+    // Headings are a different population: a 60-character English step title
+    // compresses to a dozen characters in Japanese and is right to.
+    //
+    // An FAQ question is the same population and is excluded for the same
+    // reason. They are short, and they are dense with product names that
+    // cannot compress — "Can I pay for a Global Membership with my own Visa or
+    // Mastercard?" is two thirds untranslatable, so the ratio measures the
+    // names rather than the prose and lands wherever the names fall.
+    //
+    // An attempt to be cleverer about this — stripping Latin runs from both
+    // sides before measuring — made it worse, because an all-English source
+    // strips to nothing and falls back to its full length while the Chinese
+    // keeps only its Han characters. That compares 13 against 60 and fails
+    // correct translations. The answers are still checked, and an answer is
+    // where a rewritten field would actually cost a reader something.
+    if (/\.title$|^title$|\.q$/.test(p.where)) continue;
     if (p.en.length < 60) continue; // short labels vary too much to judge
     const band = BAND[p.locale];
     assert.ok(band, `${p.locale}: no length band declared for this locale`);
@@ -517,7 +532,7 @@ const LATIN_OK = new Set([
   // More screen labels and names, each one a string a reader meets on the
   // real site or a proper noun with no translation: NOL, YES24's "YES TICKET",
   // the Galaxy Fold the browser-mode answer names, and the menu items.
-  "NOL", "nol", "YES", "yes", "TICKET", "ticket", "Store", "Membership",
+  "NOL", "nol", "YES", "yes", "TICKET", "ticket", "Store", "Membership", "Official",
   "Delete", "Reactivate", "Retry", "Password", "Find", "Now", "Web", "FAQ",
   "American", "Express", "Microsoft", "Galaxy", "Fold", "POP", "SNS",
   "world", "global", "mobile", "site", "version", "com", "and",

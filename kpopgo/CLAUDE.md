@@ -144,8 +144,8 @@ the register, and the machinery landed before the first translated word, as it
 did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
-Four languages today: Japanese on 18 guides, Traditional Chinese on 14,
-Indonesian on 14, German on 6, none native-reviewed. Each language skips the
+Four languages today: Japanese on 18 guides, Traditional Chinese on 16,
+Indonesian on 16, German on 6, none native-reviewed. Each language skips the
 guides it has no reader for rather than padding to a round number, and
 `content/translations.ts` records which and why at the top.
 

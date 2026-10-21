@@ -645,7 +645,7 @@ export const guides: Guide[] = [
       "Which store you are in, why the price changes at checkout, which payment methods your currency actually gets, and the countries Korea cannot ship to.",
     glyph: "parcel",
     status: "sourced",
-    lastChecked: "2026-10-20",
+    lastChecked: "2026-10-21",
     scope:
       "Covers Weverse Shop ordering for physical merchandise and albums shipped from Korea. Membership purchases and ticketing are handled separately and are covered in the presale guide. Rules here come from Weverse Shop's own notices and change without much warning.",
     readMinutes: 7,
@@ -664,7 +664,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Set your currency before you look at anything",
-        body: "Your default currency decides which payment methods you are offered. Weverse states these per currency: USD gets PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay and Grab Pay. JPY gets the same list without Grab Pay. CNY drops PayPal. MXN is only PayPal and Apple Pay. KRW adds Korean cards and the Korean wallets — Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        body: "Your default currency decides which payment methods you are offered. Weverse states these per currency: USD gets PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay and Grab Pay. JPY gets the same list without Grab Pay. CNY drops PayPal. MXN is only PayPal and Apple Pay. KRW adds Korean cards and the Korean wallets — Toss, NAVER Pay, Kakao Pay, PAYCO. MXN is the shortest of the four non-Korean lists and the one worth planning around: two methods, both digital, no cash option. If neither is set up, there is no third button at checkout.",
         pitfall:
           "There is no plain \u0022pay with Visa\u0022 on the non-KRW currencies. Your card goes through PayPal or Eximbay, which is a different transaction to your bank than a Korean merchant charge — and the reason a card that works elsewhere can still fail here.",
         takes: "3 minutes",
@@ -730,6 +730,10 @@ export const guides: Guide[] = [
       {
         q: "Will I be charged customs when it arrives?",
         a: "Weverse now prepays duties and taxes at checkout for applicable orders, which it says reduces the need for additional payment during clearance. It states this does not apply to every country or region, so it is a reasonable expectation rather than a guarantee.",
+      },
+      {
+        q: "I am in Mexico. Which payment methods do I actually get?",
+        a: "Two. Weverse's payment notice lists MXN as PayPal and Apple Pay — the shortest of the four non-Korean currency lists, and both of them digital. There is no cash option and no third button, so set one of the two up before a pre-order window rather than inside it.",
       },
       {
         q: "Does Weverse Shop ship to my country?",

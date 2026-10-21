@@ -1673,8 +1673,8 @@ export const translations: Translation[] = [
   {
     locale: "ja",
     slug: "order-from-weverse-shop-overseas",
-    sourceChecked: "2026-10-14",
-    translated: "2026-10-20",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-21",
     review: "machine-assisted",
     title: "韓国外からWeverse Shopで注文する",
     summary:
@@ -1695,7 +1695,7 @@ export const translations: Translation[] = [
       },
       {
         title: "何かを見る前に通貨を設定する",
-        body: "既定の通貨が、提示される決済手段を決めます。Weverseは通貨ごとにこう示しています。USDはPayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay、Grab Pay。JPYはGrab Payを除く同じ一覧です。CNYはPayPalが外れます。MXNはPayPalとApple Payのみ。KRWには韓国のカードと韓国のウォレット——Toss、NAVER Pay、Kakao Pay、PAYCO——が加わります。",
+        body: "既定の通貨が、提示される決済手段を決めます。Weverseは通貨ごとにこう示しています。USDはPayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay、Grab Pay。JPYはGrab Payを除く同じ一覧です。CNYはPayPalが外れます。MXNはPayPalとApple Payのみ。KRWには韓国のカードと韓国のウォレット——Toss、NAVER Pay、Kakao Pay、PAYCO——が加わります。MXNは韓国以外の四つの一覧で最も短く、事前に備えておく価値があるのはこれです。手段は二つ、どちらも電子決済で、現金の選択肢はありません。どちらも用意していなければ、決済画面に三つ目のボタンはありません。",
         pitfall:
           "KRW以外の通貨に「Visaで払う」という素の選択肢はありません。カードはPayPalかEximbayを経由します。それは銀行から見れば韓国の加盟店への請求とは別種の取引で、他ではうまくいくカードがここで失敗しうる理由です。",
         takes: "3分",
@@ -1748,6 +1748,10 @@ export const translations: Translation[] = [
       {
         q: "届いたときに関税を請求されますか。",
         a: "Weverseは該当する注文について、決済時に関税と税を前払いするようになったとし、これにより通関時の追加支払いの必要が減るとしています。ただしすべての国・地域に適用されるわけではないとしているので、保証ではなく合理的な期待として受け取ってください。",
+      },
+      {
+        q: "メキシコにいます。実際に使える決済手段はどれですか。",
+        a: "二つです。Weverseの決済に関する案内はMXNをPayPalとApple Payとしています。韓国以外の四つの通貨の一覧で最も短く、どちらも電子決済です。現金の選択肢も三つ目のボタンもありませんので、予約受付の最中ではなく、その前にどちらかを用意しておいてください。",
       },
       {
         q: "Weverse Shopは私の国へ発送しますか。",
@@ -2265,7 +2269,7 @@ export const translations: Translation[] = [
   {
     locale: "zh-Hant",
     slug: "order-from-weverse-shop-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "在韓國以外下單 Weverse Shop",
@@ -2287,7 +2291,7 @@ export const translations: Translation[] = [
       },
       {
         title: "在你看任何東西之前先設定幣別",
-        body: "你的預設幣別決定了你會被提供哪些付款方式。Weverse 依幣別列出如下：USD 可用 PayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay 與 Grab Pay。JPY 是同一份清單，但沒有 Grab Pay。CNY 少了 PayPal。MXN 只有 PayPal 與 Apple Pay。KRW 則加上韓國信用卡與韓國電子錢包——Toss、NAVER Pay、Kakao Pay、PAYCO。",
+        body: "你的預設幣別決定了你會被提供哪些付款方式。Weverse 依幣別列出如下：USD 可用 PayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay 與 Grab Pay。JPY 是同一份清單，但沒有 Grab Pay。CNY 少了 PayPal。MXN 只有 PayPal 與 Apple Pay。KRW 則加上韓國信用卡與韓國電子錢包——Toss、NAVER Pay、Kakao Pay、PAYCO。MXN 是韓國以外四份清單裡最短的一份，也是最值得預先準備的一份：兩種方式，都是電子付款，沒有現金選項。兩種都沒準備好，結帳頁就沒有第三個按鈕。",
         pitfall:
           "在 KRW 以外的幣別上，沒有單純的「用 Visa 付款」這個選項。你的卡片是透過 PayPal 或 Eximbay 走的，而對你的銀行而言，那是一筆性質不同於韓國商家扣款的交易——這也正是一張在別處能用的卡，在這裡依然可能失敗的原因。",
         takes: "3 分鐘",
@@ -2340,6 +2344,10 @@ export const translations: Translation[] = [
       {
         q: "東西送到時我會被收關稅嗎？",
         a: "Weverse 現在會在符合條件的訂單上於結帳時預繳關稅與稅費，並表示這可以減少在通關過程中額外付款的需要。它也說明這並不適用於每一個國家或地區，所以這是一個合理的預期，而不是保證。",
+      },
+      {
+        q: "我在墨西哥。實際可以用的付款方式有哪些？",
+        a: "兩種。Weverse 的付款說明把 MXN 列為 PayPal 與 Apple Pay，是韓國以外四種幣別清單中最短的一份，而且兩種都是電子付款。沒有現金選項，也沒有第三個按鈕，所以請在預購開賣之前就把其中一種準備好，而不是在開賣當下才弄。",
       },
       {
         q: "Weverse Shop 寄送到我的國家嗎？",
@@ -2767,7 +2775,7 @@ export const translations: Translation[] = [
   {
     locale: "id",
     slug: "order-from-weverse-shop-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "Memesan dari Weverse Shop di luar Korea",
@@ -2789,7 +2797,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Setel mata uang Anda sebelum melihat apa pun",
-        body: "Mata uang bawaan Anda menentukan metode pembayaran apa yang ditawarkan kepada Anda. Weverse menyatakannya per mata uang: USD mendapat PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay, dan Grab Pay. JPY mendapat daftar yang sama tanpa Grab Pay. CNY kehilangan PayPal. MXN hanya PayPal dan Apple Pay. KRW menambahkan kartu Korea dan dompet digital Korea — Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        body: "Mata uang bawaan Anda menentukan metode pembayaran apa yang ditawarkan kepada Anda. Weverse menyatakannya per mata uang: USD mendapat PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay, dan Grab Pay. JPY mendapat daftar yang sama tanpa Grab Pay. CNY kehilangan PayPal. MXN hanya PayPal dan Apple Pay. KRW menambahkan kartu Korea dan dompet digital Korea — Toss, NAVER Pay, Kakao Pay, PAYCO. MXN adalah daftar terpendek dari keempat mata uang non-Korea dan yang paling layak direncanakan: dua metode, keduanya digital, tanpa opsi tunai. Jika tidak satu pun sudah disiapkan, tidak ada tombol ketiga di halaman pembayaran.",
         pitfall:
           "Tidak ada pilihan “bayar dengan Visa” yang sederhana pada mata uang selain KRW. Kartu Anda berjalan melalui PayPal atau Eximbay, dan bagi bank Anda itu transaksi berjenis lain daripada tagihan merchant Korea — dan itulah alasan kartu yang berfungsi di tempat lain masih bisa gagal di sini.",
         takes: "3 menit",
@@ -2842,6 +2850,10 @@ export const translations: Translation[] = [
       {
         q: "Apakah saya akan dikenai bea cukai ketika barangnya datang?",
         a: "Weverse sekarang membayar bea dan pajak di muka saat pembayaran untuk pesanan yang memenuhi syarat, dan menyatakan hal itu mengurangi kebutuhan pembayaran tambahan selama proses kepabeanan. Weverse juga menyatakan ini tidak berlaku untuk setiap negara atau kawasan, jadi ini harapan yang wajar, bukan jaminan.",
+      },
+      {
+        q: "Saya di Meksiko. Metode pembayaran mana yang sebenarnya saya dapatkan?",
+        a: "Dua. Pemberitahuan pembayaran Weverse mencantumkan MXN sebagai PayPal dan Apple Pay — daftar terpendek dari keempat mata uang non-Korea, dan keduanya digital. Tidak ada opsi tunai dan tidak ada tombol ketiga, jadi siapkan salah satu dari keduanya sebelum sebuah jendela prapesan dan bukan di dalamnya.",
       },
       {
         q: "Apakah Weverse Shop mengirim ke negara saya?",
@@ -4757,7 +4769,7 @@ export const translations: Translation[] = [
   {
     locale: "de",
     slug: "order-from-weverse-shop-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "Im Weverse Shop außerhalb Koreas bestellen",
@@ -4779,7 +4791,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Stellen Sie Ihre Währung ein, bevor Sie sich irgendetwas ansehen",
-        body: "Ihre Standardwährung entscheidet, welche Zahlungsarten Ihnen angeboten werden. Weverse nennt sie je Währung: USD bekommt PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay und Grab Pay. JPY bekommt dieselbe Liste ohne Grab Pay. Bei CNY entfällt PayPal. MXN hat nur PayPal und Apple Pay. KRW ergänzt koreanische Karten und die koreanischen Wallets — Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        body: "Ihre Standardwährung entscheidet, welche Zahlungsarten Ihnen angeboten werden. Weverse nennt sie je Währung: USD bekommt PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay und Grab Pay. JPY bekommt dieselbe Liste ohne Grab Pay. Bei CNY entfällt PayPal. MXN hat nur PayPal und Apple Pay. KRW ergänzt koreanische Karten und die koreanischen Wallets — Toss, NAVER Pay, Kakao Pay, PAYCO. MXN ist die kürzeste der vier Listen außerhalb des koreanischen Won und die, um die herum zu planen sich lohnt: zwei Methoden, beide digital, keine Barzahlung. Ist keine von beiden eingerichtet, gibt es an der Kasse keinen dritten Knopf.",
         pitfall:
           "Außerhalb von KRW gibt es kein schlichtes „mit Visa bezahlen“. Ihre Karte läuft über PayPal oder Eximbay, und für Ihre Bank ist das eine andere Art von Transaktion als eine Belastung durch einen koreanischen Händler — und genau deshalb kann eine Karte, die anderswo funktioniert, hier trotzdem abgelehnt werden.",
         takes: "3 Minuten",
@@ -4832,6 +4844,10 @@ export const translations: Translation[] = [
       {
         q: "Werden bei der Ankunft Zollgebühren fällig?",
         a: "Weverse zahlt für infrage kommende Bestellungen Zölle und Steuern inzwischen an der Kasse vorab, was nach eigenen Angaben den Bedarf an zusätzlichen Zahlungen während der Abfertigung verringert. Es wird ausdrücklich gesagt, dass dies nicht für jedes Land oder jede Region gilt — es ist also eine begründete Erwartung und keine Garantie.",
+      },
+      {
+        q: "Ich bin in Mexiko. Welche Zahlungsmethoden bekomme ich tatsächlich?",
+        a: "Zwei. Der Zahlungshinweis von Weverse führt MXN als PayPal und Apple Pay — die kürzeste der vier Listen außerhalb des koreanischen Won, und beide digital. Es gibt keine Barzahlung und keinen dritten Knopf, richten Sie also eine der beiden vor einem Vorbestellfenster ein und nicht darin.",
       },
       {
         q: "Versendet der Weverse Shop in mein Land?",
@@ -6289,7 +6305,7 @@ export const translations: Translation[] = [
   {
     locale: "es",
     slug: "order-from-weverse-shop-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "Pedir en Weverse Shop desde fuera de Corea",
@@ -6311,7 +6327,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Configura tu moneda antes de mirar cualquier cosa",
-        body: "Tu moneda predeterminada decide qué métodos de pago te ofrecen. Weverse los indica por moneda: USD tiene PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay y Grab Pay. JPY tiene la misma lista sin Grab Pay. CNY se queda sin PayPal. MXN es solo PayPal y Apple Pay. KRW añade las tarjetas coreanas y los monederos coreanos: Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        body: "Tu moneda predeterminada decide qué métodos de pago te ofrecen. Weverse los indica por moneda: USD tiene PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay y Grab Pay. JPY tiene la misma lista sin Grab Pay. CNY se queda sin PayPal. MXN es solo PayPal y Apple Pay. KRW añade las tarjetas coreanas y los monederos coreanos: Toss, NAVER Pay, Kakao Pay, PAYCO. MXN es la más corta de las cuatro listas fuera del won coreano y la que conviene planificar: dos métodos, los dos digitales, sin opción en efectivo. Si no tienes ninguno de los dos preparado, en la caja no hay un tercer botón.",
         pitfall:
           "En las monedas distintas de KRW no existe un simple „pagar con Visa“. Tu tarjeta pasa por PayPal o Eximbay, que para tu banco es una transacción de otro tipo que un cargo de un comercio coreano, y ese es el motivo de que una tarjeta que funciona en otros sitios pueda fallar aquí.",
         takes: "3 minutos",
@@ -6366,11 +6382,222 @@ export const translations: Translation[] = [
         a: "Weverse ahora prepaga derechos e impuestos al pagar en los pedidos a los que corresponde, lo que según dice reduce la necesidad de un pago adicional durante el despacho. Indica que esto no se aplica a todos los países ni regiones, así que es una expectativa razonable y no una garantía.",
       },
       {
+        q: "Estoy en México. ¿Qué métodos de pago me tocan en realidad?",
+        a: "Dos. El aviso de pagos de Weverse indica para MXN PayPal y Apple Pay — la más corta de las cuatro listas fuera del won coreano, y las dos digitales. No hay opción en efectivo ni un tercer botón, así que prepara uno de los dos antes de una ventana de pedido anticipado y no dentro de ella.",
+      },
+      {
         q: "¿Weverse Shop envía a mi país?",
         a: "Normalmente sí, pero hay una lista mantenida de países y regiones que de momento no pueden recibir envíos desde Corea del Sur. Consulta ese aviso para ver la lista vigente antes de pedir: se revisa cuando cambian las condiciones.",
       },
     ],
     labels: ES_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "K-Pop-Konzerttickets von außerhalb Koreas kaufen",
+    summary:
+      "Das ganze Bild, bevor Sie anfangen: auf welcher Plattform Ihre Veranstaltung liegt, welche Identitätsprüfung dort läuft, und was bereitliegen muss, bevor der Verkauf öffnet.",
+    scope:
+      "Behandelt Veranstaltungen in Südkorea und die Ticketplattformen, die koreanische Agenturen nutzen. Tourtermine im Ausland werden von örtlichen Veranstaltern verkauft und getrennt behandelt — die Regeln unten gelten für sie nicht.",
+    intro: [
+      "Fast jede Anleitung, die zu dieser Frage weit oben steht, wurde vor Dezember 2025 geschrieben und schickt Sie auf eine Seite, die es unter diesem Namen nicht mehr gibt. Das ist der Hauptgrund, warum es diese Seite gibt.",
+      "Es gibt keine eine K-Pop-Ticketseite. Die Plattform wird je Tournee von Agentur und Veranstalter gewählt und in der offiziellen Ankündigung zu dieser Veranstaltung genannt. Alles Weitere — welche Identitätsprüfung Sie erwartet, ob eine ausländische Karte funktioniert, wie früh der Vorverkauf öffnet — folgt aus dieser einen Tatsache.",
+      "Die Reihenfolge lautet also: zuerst die offizielle Ankündigung finden, dann die Plattform bestimmen, dann sich auf die konkreten Anforderungen dieser Plattform vorbereiten. Andersherum landet man mit einem verifizierten Konto auf der falschen Seite, eine Stunde vor dem Verkauf.",
+    ],
+    steps: [
+      {
+        title: "Finden Sie die offizielle Ankündigung, nicht den Repost eines Fans",
+        body: "Gehen Sie auf die offiziellen Kanäle der Künstler — die Seite der Agentur, die Weverse-Community der Künstler und ihre offiziellen Konten auf X und Instagram. Die Ankündigung nennt die Ticketplattform, die Zeiten für Vorverkauf und allgemeinen Verkauf in KST, die für den Vorverkauf nötige Mitgliedschaftsstufe sowie etwaige Bedingungen zu Wohnsitz oder Verifizierung. Machen Sie einen Screenshot davon. Alles Weitere hängt an diesem einen Dokument.",
+        pitfall:
+          "Fan-Konten fassen zusammen und formulieren um, und sie liegen oft genug bei der Plattform falsch, um Sie den Verkauf zu kosten. Außerdem aktualisieren sie selten, wenn sich ein Termin verschiebt.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Bestimmen Sie Ihre Plattform — und schließen Sie nicht vom Label darauf",
+        body: "Künstler von HYBE laufen in der Regel über das eigene Ticketing von Weverse. Andere koreanische Tourneen nutzen häufig NOL Ticket (die koreanischsprachige Seite) oder NOL World (das Gegenstück für das Ausland), YES24 oder Melon Ticket. Das ist allerdings eine Tendenz und keine Regel: Agenturen wechseln zwischen Tourneen die Plattform, und eine einzelne Tournee kann den koreanischen und den globalen Verkauf auf zwei verschiedene Seiten aufteilen. Lesen Sie die Ankündigung.",
+        pitfall:
+          "Die Zuordnung als feststehend zu behandeln — „HYBE heißt Weverse, SM heißt YES24“ — ist der häufigste Fehler in bestehenden Anleitungen. Er trifft oft genug nicht zu, um ins Gewicht zu fallen.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Klären Sie, welche Identitätsprüfung Sie erwartet",
+        body: "Koreanischsprachige Ticketseiten prüfen die Identität in der Regel gegen eine koreanische Mobilfunknummer, für die man praktisch ein koreanisches Aufenthaltsdokument braucht. Haben Sie keines, ist die koreanischsprachige Seite nicht Ihr Weg. Die nach außen gerichteten Seiten existieren genau für diesen Fall und prüfen auf anderem Weg — üblicherweise anhand von Passdaten, die zu Ihrem Konto passen müssen. Entscheiden Sie jetzt, welche Seite Sie nutzen, denn das nötige Konto liegt auf dieser Seite.",
+        pitfall:
+          "Die koreanischsprachige Seite erzwingen zu wollen ist verlorene Mühe, und bei Konstruktionen, die für die Verifizierung die Identität einer anderen Person borgen, helfen wir nicht — sie setzen Ihr Ticket und Ihr Konto aufs Spiel.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Legen Sie das Konto mit exakt den Passdaten an",
+        body: "Tragen Sie Ihren rechtlichen Namen so ein, wie er in der maschinenlesbaren Zone Ihres Passes steht, und Ihr Geburtsdatum in dem Format, das die Seite erwartet. Verlangt die Veranstaltung für den Vorverkauf eine Fanclub-Mitgliedschaft, müssen Name und Geburtsdatum auf der Mitgliedschaft und auf dem Ticketkonto gleich sein. Abweichungen sind eine dokumentierte Ursache für stornierte Bestellungen am Einlass oder während der Verifizierung.",
+        pitfall:
+          "Zweitnamen, Doppelnamen und die Reihenfolge der Namen sind die Stellen, an denen das bricht. Eine Mitgliedschaft auf „Maria Santos“ und ein Pass auf „Maria Elena Santos Cruz“ ist eine Abweichung.",
+        takes: "20 Minuten",
+      },
+      {
+        title: "Prüfen Sie Ihr Zahlungsmittel Tage vorher, nicht am Tag selbst",
+        body: "Im Ausland ausgestellte Karten werden häufig akzeptiert, oft aber erst, nachdem Ihr Konto als Auslandskunde verifiziert wurde. Unabhängig davon kann Ihre Bank eine erstmalige Belastung durch einen koreanischen Händler blockieren, und Abfragen nach 3-D Secure können im In-App-Browser scheitern. Rufen Sie Ihre Bank an, schalten Sie internationale Zahlungen frei, und führen Sie, wenn die Plattform es zulässt, vorher einen kleinen unabhängigen Kauf durch.",
+        pitfall:
+          "Eine Karte, die im Bezahlschritt abgelehnt wird, gibt Ihren Platz binnen Minuten zurück in den Pool. Das ist der teuerste Fehlschlag im ganzen Ablauf und vollständig vermeidbar.",
+        takes: "1-3 Tage Vorlauf",
+      },
+      {
+        title: "Richten Sie sich für den Verkauf selbst ein",
+        body: "Melden Sie sich an und schließen Sie jeden Verifizierungsschritt mindestens einen Tag vorher ab. Am Tag selbst sind Sie deutlich vor der Öffnungszeit eingeloggt, mit der offiziellen KST-Zeit als Bezug und nicht mit der Uhr Ihres Geräts. Entscheiden Sie Ihre Platzwünsche vorher — die meisten Warteschlangensysteme geben Ihnen ein kurzes Fenster zum Auswählen und Bezahlen, bevor sie Ihre Reservierung freigeben.",
+        pitfall:
+          "Ein frisches Inkognito-Fenster „zur Sicherheit“ zu öffnen bedeutet, sich innerhalb der Warteschlange neu anzumelden und neu zu verifizieren. Tun Sie das nicht.",
+        takes: "30 Minuten vor Öffnung",
+      },
+      {
+        title: "Kennen Sie die Regeln zum Weiterverkauf, bevor Sie ihn erwägen",
+        body: "Südkorea hat seine Regeln zum Ticketweiterverkauf mit einer Novelle des Aufführungsgesetzes verschärft, die am 28. August 2026 in Kraft trat — im Januar geändert, im Februar verkündet, seit Ende August in Kraft. Berichte über die Änderung beschreiben ein Verbot des gewerbsmäßigen oder gewohnheitsmäßigen Weiterverkaufs über dem Kaufpreis, das auch den Kauf in Weiterverkaufsabsicht erfasst und nicht mehr auf Käufe mit Automatisierung beschränkt ist. Berichtete Sanktionen reichen bis zum Fünfzigfachen des Verkaufswerts als Geldbuße sowie zur Einziehung der Erlöse. Behandeln Sie den Weiterverkauf über Nennwert bei koreanischen Veranstaltungen als ausgeschlossen und nutzen Sie die offizielle Weiterverkaufs- oder Übertragungsfunktion der Plattform, sofern die Veranstaltung eine anbietet.",
+        pitfall:
+          "Das ist neues Recht, erst seit August 2026 in Kraft, und die Schwelle für „gewohnheitsmäßig“ wird in der Praxis noch bestimmt. Dass ein Angebot auf einem internationalen Weiterverkaufsmarktplatz existiert, sagt nichts darüber, ob es für Sie sicher ist, dort zu kaufen oder zu verkaufen.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Wenn meine Mitgliedschaft vor dem Vorverkauf abläuft, kann ich sie einfach rechtzeitig verlängern?",
+        a: "Nur wenn die Verlängerung vor der Frist für die Berechtigung greift, und diese Frist liegt meist früher als der Vorverkauf selbst. Auto Payment im Weverse Shop, seit dem 3. September 2026 für unterstützte Mitgliedschaften verfügbar, bucht am letzten Tag der Laufzeit über eine hinterlegte Zahlungsmethode ab und schließt die Lücke ganz. Richten Sie es ein, bevor eine Tournee angekündigt wird, und nicht danach.",
+      },
+      {
+        q: "Brauche ich eine koreanische Telefonnummer, um K-Pop-Konzerttickets zu kaufen?",
+        a: "Für die koreanischsprachigen Ticketseiten hängt die Identitätsprüfung in der Regel an einer koreanischen Mobilfunknummer, und für eine solche braucht man normalerweise koreanische Aufenthaltsdokumente. Für die nach außen gerichteten Seiten in der Regel nicht — sie prüfen Auslandskunden auf anderem Weg, üblicherweise über Passdaten. Was für Sie gilt, hängt davon ab, über welche Plattform Ihre Veranstaltung verkauft wird.",
+      },
+      {
+        q: "Kann ich eine ausländische Kreditkarte verwenden?",
+        a: "Auf den nach außen gerichteten Plattformen meist ja, und oft erst, nachdem Ihr Konto als Auslandskunde verifiziert ist. Rechnen Sie damit, dass Ihre eigene Bank die andere Hälfte des Problems ist: Schalten Sie internationale Zahlungen vorab frei und seien Sie auf eine Abfrage nach 3-D Secure gefasst.",
+      },
+      {
+        q: "Wie früh öffnet der Fanclub-Vorverkauf?",
+        a: "Das ist je Veranstaltung verschieden, und die offizielle Ankündigung ist die einzige verlässliche Antwort. Vorverkaufsfenster liegen häufig einen Tag oder mehr vor dem allgemeinen Verkauf, und die Mitgliedschaft muss meist vor einer noch früheren Frist aktiv sein. Schließen Sie nicht von einer früheren Tournee auf den Zeitplan.",
+      },
+      {
+        q: "Sind die koreanische und die globale Seite dieselbe Warteschlange?",
+        a: "Nicht zwangsläufig. Kontingente, Verifizierung und die Anerkennung der Fanclub-Mitgliedschaft können zwischen einem koreanischsprachigen und einem globalen Verkauf derselben Veranstaltung getrennt behandelt werden. Eine auf der einen Seite verifizierte Mitgliedschaft wird auf der anderen nicht automatisch anerkannt, prüfen Sie also in der Ankündigung, was für Sie gilt.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Verified Member: die eKYC-Prüfung aus dem Ausland bestehen",
+    summary:
+      "Manche Veranstaltungen lassen Sie überhaupt nicht buchen, bevor Ihr Pass verifiziert ist. Die Prüfung ist eine Live-Aufnahme von Pass und Gesicht, sie lässt sich nicht beiläufig wiederholen, und die eine Anweisung von NOL World zum Zeitpunkt ist die, die die meisten übergehen.",
+    scope:
+      "Behandelt die Identitätsprüfung Verified Member Only auf NOL World, so wie NOL World sie dokumentiert: wann sie gilt, was die Aufnahme braucht, was mit dem gespeicherten Namen geschieht, und was sie zurücksetzt oder einschränkt. Inhaberinnen und Inhaber koreanischer Pässe werden stattdessen auf NOL Ticket verwiesen, eine andere Prüfung auf einer anderen Seite. Nichts hier ist ein Weg um eine Verifizierung herum.",
+    intro: [
+      "Eine Veranstaltung mit Verified Member Only ist eine, die Sie überhaupt nicht buchen können, bevor Ihre Identität verifiziert ist. Keine Warnung an der Kasse — die Reservierung ist für ein nicht verifiziertes Konto schlicht nicht verfügbar. Fans erfahren das in dem Moment, in dem die Buchung öffnet, und das ist der denkbar schlechteste, denn die Verifizierung ist eine Live-Aufnahme Ihres Passes und Ihres Gesichts und dauert, so lange sie dauert.",
+      "NOL World erklärt den Dienst als Weg, den Zugang für unbefugte Zwecke wie den Ticketweiterverkauf einzuschränken. Das sollte man wörtlich nehmen: Die Prüfung existiert, um eine Person an ein Konto zu binden, und fast jede Regel unten folgt daraus.",
+    ],
+    steps: [
+      {
+        title: "Prüfen Sie, ob Ihre Veranstaltung sie braucht und ob Sie auf der richtigen Seite sind",
+        body: "Verified Member Only wird je Produkt gesetzt und nicht je Konto — NOL World sagt, dass nur Mitglieder, die die Identitätsprüfung auf der Produktseite abgeschlossen haben, Reservierungen vornehmen können. Die erste Frage ist also, ob Ihre Veranstaltung die Kennzeichnung überhaupt trägt. Die zweite ist, ob Sie auf NOL World sein sollten: NOL World verweist Inhaberinnen und Inhaber koreanischer Pässe stattdessen auf die Seite NOL Ticket, die eine völlig andere Prüfung durchführt.",
+        pitfall:
+          "Anzunehmen, die Identitätsprüfung sei eine einmalige Pflicht, zu der die Seite Sie schon auffordern wird. Bei einer Veranstaltung mit Verified Member Only gibt es keine Aufforderung — die Buchung ist einfach nicht da.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Erledigen Sie es ein bis zwei Tage vor Öffnung der Buchung",
+        body: "Das ist NOL Worlds eigene Anweisung und die nützlichste Tatsache auf dieser Seite: Schließen Sie die Verifizierung mindestens ein bis zwei Tage im Voraus ab, denn ein Versuch kurz vor der Ticketöffnung kann durch hohes Aufkommen Schwierigkeiten machen. Ist sie einmal erledigt, können Sie jede Veranstaltung mit Verified Member Only buchen, ohne erneut zu verifizieren. Der Preis für früh ist ein Abend. Der Preis für spät ist die Veranstaltung.",
+        pitfall:
+          "Die Aufnahme in den zehn Minuten vor einem Vorverkauf zu beginnen. Eine Verifizierung, die am Andrang scheitert, lässt sich nicht beschleunigen, und die Warteschlange wartet nicht.",
+        takes: "30 Minuten, zwei Tage vorher",
+      },
+      {
+        title: "Verifizieren Sie das Konto, mit dem Sie tatsächlich kaufen werden",
+        body: "Die Verifizierung ist einmalig pro Konto, und NOL World gibt an, dass die verifizierten Angaben nicht erneut verwendet werden können — ein Pass verifiziert ein Konto. Haben Sie mehrere Konten, ist jetzt der Moment, zu entscheiden, welches das echte ist, denn die Verifizierung wandert danach nicht mehr. NOL World ergänzt, dass das Löschen eines Kontos dessen verifizierte Angaben entfernt und für ein anderes freigibt, dass aber ein wegen Missbrauchs eingeschränktes Konto überhaupt nicht gelöscht werden kann.",
+        pitfall:
+          "Auf dem Konto zu verifizieren, in dem Sie zufällig angemeldet waren, und dann auf dem anderen zu kaufen. Das zweite Konto ist nicht verifiziert, und die Veranstaltung ist Verified Member Only.",
+        takes: "5 Minuten Entscheidung",
+      },
+      {
+        title: "Halten Sie den Originalpass bereit, gültig und nicht abgelaufen",
+        body: "Akzeptiert werden nur gültige Pässe, und NOL World ist ausdrücklich: Fotos oder Kopien nicht. Kein ausgedruckter Scan, kein Screenshot, kein Foto der Seite auf einem anderen Bildschirm. Ist Ihr Pass abgelaufen, müssen Sie ihn erneuern, bevor Sie verifizieren können — für Inhaberinnen und Inhaber eines nicht koreanischen Passes gibt es auf NOL World keinen alternativen Dokumentenweg.",
+        pitfall:
+          "Zum Passfoto zu greifen, das ohnehin schon in der Fotogalerie liegt, weil der echte Pass im Hotelsafe ist. Dieser Versuch wird als Versuch mit einer Kopie erfasst.",
+        takes: "—",
+      },
+      {
+        title: "Schaffen Sie die Aufnahme im ersten Anlauf",
+        body: "NOL World veröffentlicht, woran die Aufnahme scheitert, und die Liste liest sich wie eine Liste dessen, was Menschen in Eile tun. Richten Sie Pass und Gesicht an den Hilfslinien auf dem Bildschirm aus. Halten Sie Blendungen und Spiegelungen sowohl von der Passseite als auch von Ihrem Gesicht fern. Ihr Gesicht muss zum Passfoto passen. Halten Sie das Gerät mindestens fünf Sekunden lang ruhig, während es aufnimmt. Und bei einem schwachen Gerät oder instabilem Netz können die Daten auch dann nicht korrekt gespeichert werden, wenn die Aufnahme gut aussah. Scheitert sie, nennt der Bildschirm den Grund — lesen Sie ihn, statt blind erneut zu versuchen.",
+        pitfall:
+          "Das Ganze einhändig, nachts, unter einer Deckenlampe zu machen, die sich in der Laminatfolie spiegelt. Licht von oben auf einer Passseite ist der häufigste Grund, warum eine Aufnahme nicht lesbar ist.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Prüfen Sie den Namen, der tatsächlich gespeichert wurde",
+        body: "Akzeptiert werden nur englische Namen. NOL World sagt, dass die Reservierung nicht fortgesetzt werden kann, wenn Ihr Passname nicht in englischer Schrift vorliegt oder Sonderzeichen enthält, und dass Sie zu einem Antrag auf Namenskorrektur weitergeleitet werden können — eine Einreichung, keine Einstellung. Der gespeicherte Name ist auf My Page sichtbar, und dort gehört er geprüft statt angenommen. Das zählt jetzt, weil Sie nach der Verifizierung Name, Geburtsdatum und E-Mail-Adresse überhaupt nicht mehr ändern können: Reservierungen sind nur noch mit den verifizierten Angaben möglich.",
+        pitfall:
+          "Den Namen ungeprüft zu lassen, weil die Verifizierung Erfolg gemeldet hat. Erfolgreich sein und die richtigen Zeichen speichern sind zwei verschiedene Dinge, und eines davon ist nicht mehr änderbar.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Verstehen Sie die Namensreihenfolge — und was am Einlass wirklich zählt",
+        body: "NOL World hat die gespeicherte Namensreihenfolge am 16. April 2025 geändert. Vor diesem Datum verifizierte Mitglieder führen Vorname + (zweiter Vorname) + Nachname; danach verifizierte Mitglieder führen Nachname + Vorname + (zweiter Vorname). NOL World sagt klar, dass Ticketprüfung und Einlass am Veranstaltungsort auch dann möglich sind, wenn die Reihenfolge von Ihrem Pass abweicht — die Prüfung vor Ort wird nur eingeschränkt, wenn der Name selbst vom Passnamen abweicht. Bei vor dem 16. April 2025 verifizierten Mitgliedern wird das neue Format angewendet, wenn sie nach Ablauf des Passes erneut verifizieren.",
+        pitfall:
+          "Einen Antrag auf Namenskorrektur zu stellen, weil die Reihenfolge falsch aussieht. NOL World sagt, die Reihenfolge ist nicht das Problem; ein abweichender Name ist es. Es geht um die Zeichen, nicht um die Abfolge.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Wissen Sie, was eine bereits bestandene Verifizierung aufheben kann",
+        body: "Eine abgeschlossene Verifizierung kann nachträglich aufgehoben werden. NOL World nennt zwei Ursachen: den Versuch einer Verifizierung mit einem gefälschten oder veränderten Ausweis — wozu es ausdrücklich auch ausgedruckte Kopien und Screenshots zählt — und das Ablaufen des zur Verifizierung verwendeten Passes. Wird Ihre aufgehoben, verifizieren Sie über das bestehende Konto erneut. NOL World warnt ausdrücklich, dass der Versuch mit einem neuen Konto zu wiederholten Systemfehlern führen kann, und dass eine betrügerisch erlangte Verifizierung Sie den Zugang zu den Buchungsdiensten kosten kann.",
+        pitfall:
+          "Ein frisches Konto anzulegen, um einer Zurücksetzung zu entkommen. Die Zurücksetzung folgte dem Dokument und nicht dem Konto, und das neue Konto erbt das Problem samt Verdacht.",
+        takes: "—",
+      },
+      {
+        title: "Wissen Sie, was die Plattform als Betrug zählt und was er kostet",
+        body: "Der Grund für die Strenge der Prüfung steht in der Anti-Betrugs-Richtlinie von NOL World, und die Folgen sind veröffentlicht. Die Verwendung gestohlener oder gefälschter Ausweise zur Verifizierung ist als betrügerische Nutzung gelistet. Ebenso das Buchen mehrerer Tickets über den normalen Gebrauch hinaus mit identischen oder ähnlichen persönlichen Angaben — dieselben Kontaktdaten, dieselbe Lieferanschrift oder dieselben Zahlungsinformationen über mehrere Konten hinweg. Die Sanktionen reichen von einer Buchungssperre von drei Monaten oder mehr bis zur dauerhaften Kontosperrung und der Stornierung jedes gebuchten Tickets. Der Veranstalter kann eigene hinzufügen, bis hin zum Ausschluss aus dem Fanclub. Es gibt einen Einspruch, und wo betrügerischer Handel klar bestätigt ist, gibt es ihn nicht.",
+        pitfall:
+          "Mehrere Familienkonten von einem Telefon, einer Adresse und einer Karte aus zu verifizieren, um die Chancen in einem Vorverkauf zu erhöhen. Genau dieses Muster steht auf der veröffentlichten Liste, und die genannte Sanktion erfasst jedes Ticket auf jedem dieser Konten.",
+        takes: "10 Minuten Lektüre",
+      },
+    ],
+    faq: [
+      {
+        q: "Was bedeutet Verified Member Only auf einer Veranstaltungsseite konkret?",
+        a: "Dass die Veranstaltung für nicht verifizierte Konten geschlossen ist. NOL World beschreibt es als Dienst, mit dem Mitglieder ihre Identität vor dem Kauf verifizieren können, und bei dem nur Mitglieder mit abgeschlossener Verifizierung auf der Produktseite reservieren können. Als Zweck nennt es die Einschränkung des Zugangs für unbefugte Zwecke wie den Ticketweiterverkauf. Halten Sie Pass und Smartphone bereit, die Prüfung braucht beides.",
+      },
+      {
+        q: "Ich habe einen koreanischen Pass. Kann ich einfach auf NOL World verifizieren?",
+        a: "NOL World verweist Inhaberinnen und Inhaber koreanischer Pässe stattdessen auf die Seite NOL Ticket. Das ist eine andere Seite mit einer anderen Identitätsprüfung — in der Regel koreanische Mobilfunk-Authentifizierung oder I-PIN — und einem eigenen Konto.",
+      },
+      {
+        q: "Ich bin koreanische Staatsangehörige im Ausland ohne koreanische Mobilfunknummer. Was dann?",
+        a: "NOL World veröffentlicht einen Dokumentenweg. Es verweist im Ausland lebende südkoreanische Staatsangehörige auf NOL Ticket, wo die Identität per Mobilfunk-Authentifizierung oder I-PIN geprüft werden kann; liegt keine koreanische Registriernummer vor und ist die Mobilfunk-Authentifizierung nicht verfügbar, akzeptiert es Nachweise über den Status als Auslandskoreanerin oder Auslandskoreaner — eine Bescheinigung über die Registrierung als Auslandskoreaner zusammen mit einem südkoreanischen Pass, eingereicht über das Anfrageformular des Kundendienstes mit Ihrer Konto-ID. Es sagt, die Bescheinigung lasse sich online über die Overseas Koreans Agency beschaffen, und dass eine Foreign Registration Card als Ersatz akzeptiert werden kann, wo die Bescheinigung schwer zu bekommen ist. Es warnt außerdem, dass gefälschte Unterlagen eine sofortige Einschränkung bedeuten.",
+      },
+      {
+        q: "Gibt es ein Mindestalter für die Identitätsprüfung?",
+        a: "NOL World sagt, für die Verifizierung selbst gebe es keine Altersgrenze, dass Sie aber Produkte mit Altersbeschränkungen dennoch nicht buchen oder besuchen können. Verifiziert zu sein ist nicht dasselbe, wie für eine bestimmte Veranstaltung berechtigt zu sein.",
+      },
+      {
+        q: "Mein Name auf My Page steht in einer anderen Reihenfolge als im Pass. Werde ich abgewiesen?",
+        a: "NOL World sagt nein. Es hat die gespeicherte Reihenfolge am 16. April 2025 geändert und gibt an, dass Ticketprüfung und Einlass auch bei abweichender Reihenfolge möglich sind. Die Prüfung vor Ort wird nur eingeschränkt, wenn der Name selbst abweicht — prüfen Sie also Schreibweise und Zeichen und nicht die Abfolge.",
+      },
+      {
+        q: "Mein Pass ist nach der Verifizierung abgelaufen. Muss ich etwas tun?",
+        a: "Ja. NOL World führt den Ablauf des Passes als Ursache dafür auf, dass eine abgeschlossene Verifizierung aufgehoben wird, eine Erneuerung bedeutet also erneutes Verifizieren — auf dem bestehenden Konto und nicht auf einem neuen. Wurden Sie vor dem 16. April 2025 verifiziert, wird dabei auch die neue Namensreihenfolge auf Ihren Datensatz angewendet.",
+      },
+      {
+        q: "Kann ich mit dem Pass eines Familienmitglieds verifizieren, wenn meiner abgelaufen ist?",
+        a: "Nein, und das ist die eine Frage mit einer veröffentlichten Folge statt einer Meinung. NOL World führt die Verwendung gestohlener oder gefälschter Ausweise zur Verifizierung unter den Handlungen auf, die es als betrügerische Nutzung behandelt, und die genannten Sanktionen reichen bis zur dauerhaften Kontosperrung und der Stornierung jedes gebuchten Tickets. Es sagt außerdem, dass am Veranstaltungsort eine Identitätsprüfung erfolgen kann, und bittet Sie, auf Ihren eigenen Namen und Ihr eigenes Konto zu buchen und einen gültigen Lichtbildausweis mitzubringen. Ein Ticket, das die Tür nicht übersteht, ist kein Ticket.",
+      },
+      {
+        q: "Mein Konto wurde eingeschränkt. Gibt es einen Einspruch?",
+        a: "NOL World veröffentlicht einen. Es sagt, Nutzerinnen und Nutzern werde in der Regel eine Frist von mindestens einem Tag zur Stellungnahme eingeräumt, und ein Einspruch solle eine ausführliche Darstellung mit der ID des eingeschränkten Kontos, dem vollständigen Namen und den Kontaktdaten sein, ohne vorgeschriebenes Format oder Muster, eingereicht über das Anfrageformular des Kundendienstes. Die Prüfung dauert etwa 10 bis 15 Tage und das Ergebnis kommt per E-Mail. Es nennt auch die Grenzen: Wird die Frist versäumt oder der Verdacht nicht ausgeräumt, werden Buchungen zwangsstorniert, und wo betrügerischer Handel klar bestätigt ist, können Tickets ohne jeden Einspruch storniert werden.",
+      },
+    ],
+    labels: DE_LABELS,
   },
 ];
 

@@ -551,6 +551,28 @@ Verify at 320, 360, 390 and 414 before pushing — `node scripts/check-layout.mj
 walks every route in both themes at five widths and reports horizontal
 overflow. Every tap target should clear 44px tall.
 
+**Its translated routes are derived, because the hand-written list went
+stale.** One route per locale used to be typed in under a comment claiming it
+held "the longest guide in each", which was true when written and silently
+stopped being. The failure is the quiet kind: the check measures five pages,
+prints ALL CLEAN, and the page somebody just edited was never among them —
+which is exactly what happened the day the chart guides gained
+`HF0082KTU001`. The English albums guide was covered by luck; no translated
+page carrying the code was looked at.
+
+`riskiestPerLocale()` reads the register instead and gives each locale the
+guide holding its longest **unbreakable** run. Length is not the risk — a run
+of characters with nowhere to wrap is, so it measures Latin letters, digits
+and the punctuation joining them, and skips the structural fields. Both
+exclusions were earned: counting any non-space run made every Japanese
+sentence a 350-character token, because Japanese sets no spaces and wraps
+between characters perfectly well; and leaving `slug` in made every locale
+pick whichever guide links to the longest-named one, a property of the file
+rather than of the page. It now selects `world.nol.com/ticket`,
+`mendokumentasikannya:` and `Fanclub-Verifizierungsfenster` — the real ones.
+Proved by planting a 55-character token in a different guide and watching the
+Japanese route move to it, then back.
+
 ## Outbound hosts
 
 The container reaches the internet through a proxy with an allowlist, and that

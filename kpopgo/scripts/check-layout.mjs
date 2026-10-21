@@ -70,6 +70,56 @@ async function assertStylesApply(browser) {
   }
 }
 
+
+/**
+ * One translated route per locale, chosen by what actually overflows.
+ *
+ * This list used to be written by hand, under a comment claiming it held
+ * "the longest guide in each" language. That was true the day it was written
+ * and quietly stopped being true, which is the ordinary fate of a hand-kept
+ * list — and the failure mode is bad: the check measures five pages, reports
+ * ALL CLEAN, and the page somebody just edited was never among them. That
+ * happened the day the chart guides gained `HF0082KTU001`; the English albums
+ * guide was covered by luck and no translated page carrying the code was
+ * looked at.
+ *
+ * What breaks a narrow column is not length. It is a run of characters with
+ * nowhere to wrap: an identifier, a URL, a long affixed Indonesian word. So
+ * each locale contributes the guide holding its longest unbreakable run, read
+ * out of the register. Add a code or a link to a translation and that page
+ * becomes the one measured, without anybody remembering to say so.
+ */
+function riskiestPerLocale() {
+  const src = fs.readFileSync(new URL("../content/translations.ts", import.meta.url), "utf8");
+  const starts = [...src.matchAll(/^ {4}locale: "([a-zA-Z-]+)",\n {4}slug: "([a-z0-9-]+)",/gm)];
+  const best = new Map();
+  for (const [i, m] of starts.entries()) {
+    const block = src
+      .slice(m.index, starts[i + 1]?.index ?? src.length)
+      // Drop the structural fields. A slug is forty-five characters of
+      // unbreakable ASCII and appears on every entry, so leaving it in makes
+      // every locale pick whichever guide links to the longest-named one —
+      // a property of the file, not of anything a reader sees.
+      .replace(/^\s*(?:locale|slug|url|id|sourceChecked|translated|review|art|glyph):.*$/gm, "");
+    // Latin letters, digits and the punctuation that joins them — the only
+    // characters here with no break opportunity inside them. Measuring any
+    // run of non-space instead makes every Japanese sentence a 350-character
+    // "unbreakable" token, because Japanese sets no spaces; it wraps between
+    // characters perfectly well, and the thing that does not is `HF0082KTU001`
+    // or a URL sitting inside that sentence.
+    const runs = block.match(/[A-Za-z0-9][A-Za-z0-9._/:+-]{6,}/g) ?? [];
+    const longest = runs.reduce((n, r) => Math.max(n, r.length), 0);
+    const [locale, slug] = [m[1], m[2]];
+    if (!best.has(locale) || best.get(locale).longest < longest) {
+      best.set(locale, { slug, longest });
+    }
+  }
+  return [...best].map(([locale, { slug }]) => [
+    `guide-${locale.toLowerCase()}`,
+    `/${locale.toLowerCase()}/guides/${slug}`,
+  ]);
+}
+
 const ROUTES = [
   ["home", "/"],
   ["guides", "/guides"],
@@ -83,17 +133,8 @@ const ROUTES = [
   ["where-to-buy", "/where-to-buy"],
   ["policy", "/editorial-policy"],
   ["report", "/report"],
-  // Japanese sets no spaces between words, so it wraps on different rules
-  // from English and is the likeliest thing to overflow a narrow column.
-  ["guide-ja", "/ja/guides/nol-world-verified-member-ekyc"],
-  // One route per locale, and the longest guide in each: Chinese because
-  // dense Han characters break differently from kana, and Indonesian
-  // because its affixed words ("mengalihhurufkan") are the longest
-  // unbreakable strings anywhere on the site.
-  ["guide-zh", "/zh-hant/guides/nol-world-verified-member-ekyc"],
-  ["guide-id", "/id/guides/nol-world-verified-member-ekyc"],
-  ["guide-de", "/de/guides/weverse-shop-shipping-delays-and-cancellation"],
-  ["guide-es", "/es/guides/weverse-shop-shipping-delays-and-cancellation"],
+  // The translated routes are derived, not listed — see riskiestPerLocale().
+  ...riskiestPerLocale(),
 ];
 const WIDTHS = [320, 360, 390, 768, 1280];
 

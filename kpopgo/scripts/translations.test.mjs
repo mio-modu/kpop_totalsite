@@ -204,6 +204,11 @@ const LOCALE_ALIASES = {
   // looking for.
   de: {
     UnionPay: ["China UnionPay", "UnionPay"],
+    // German prose writes the currency out and rarely reaches for the ISO
+    // code, the same way Chinese writes 美元 and Indonesian writes dolar.
+    USD: ["US-Dollar", "USD"],
+    KRW: ["Won", "KRW"],
+    JPY: ["Yen", "JPY"],
   },
   es: {
     KRW: ["won"],
@@ -676,6 +681,15 @@ const LATIN_OK = new Set([
   "More", "Orders", "Order", "Shipping", "Soon", "Transit", "eFiling",
   "American", "Express", "Microsoft", "Galaxy", "Fold", "POP", "SNS",
   "world", "global", "mobile", "site", "version", "com", "and",
+  // Ktown4u, and the carrier schemes its notices name. Each is a proper noun
+  // a reader has to recognise to act: "Ktown" because the tokeniser splits the
+  // name at its digit; UPS and EMS as the carriers; K-Packet and Prime Group
+  // as the postal arrangement a country can be dropped from; and the words of
+  // UPS's own two scheme names, International Collect on Delivery and Import
+  // Prepaid Duties and Taxes, which are what the fee and its avoidance are
+  // called on the bill and in the portal. Discover joins the card networks.
+  "Ktown", "UPS", "EMS", "Packet", "Prime", "Group", "Discover",
+  "International", "Collect", "Delivery", "Import", "Prepaid", "Duties", "Taxes",
 ]);
 
 /** Locales whose prose should contain no bare Latin words. */

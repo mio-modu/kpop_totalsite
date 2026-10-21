@@ -662,6 +662,13 @@ const LATIN_OK = new Set([
   "Send", "Mobile", "Received", "Register", "Booking", "History", "Return",
   "View", "Tickets", "Page", "Reserve", "Verified", "Member", "Only", "Request",
   "Website", "Secure", "English", "Japan", "USA", "GLOBAL",
+  // The two Korean album charts, their registry, and the shape of a store's
+  // certification code. These stay in Latin in every language because they are
+  // what the reader has to type into a search box and match against a page:
+  // a translated "한터" or "한泰" finds nothing on hanteochart.com, and a family
+  // code is an identifier rather than a word.
+  "Hanteo", "Circle", "Chart", "Family", "family", "hanteochart",
+  "circlechart", "com",
   // Codes and formats
   "KST", "KRW", "JPY", "USD", "CNY", "MXN", "QR", "PIN", "API", "APIs", "App",
   "URL", "SMS", "ID", "IDs", "eKYC", "I-PIN", "SPF", "Auto", "Payment",
@@ -695,11 +702,23 @@ const LATIN_OK = new Set([
 /** Locales whose prose should contain no bare Latin words. */
 const NON_LATIN = new Set(["ja", "zh-Hant"]);
 
+/**
+ * Identifiers, which are not words and must not be split into letter-runs.
+ *
+ * A Hanteo family code looks like `HF0082KTU001`. Read letter-run by
+ * letter-run it becomes "HF" and "KTU", and the check then demands that two
+ * fragments of one identifier be translated or registered as names — which
+ * would put meaningless three-letter strings into LATIN_OK, one per store
+ * this site ever cites. The code is a single token a reader copies into a
+ * search box, so it is removed before the prose is read for loose words.
+ */
+const IDENTIFIER = /\b[A-Z]{2}\d{4}[A-Z]{3}\d{3}\b/g;
+
 test("no untranslated Latin word is loose in Japanese or Chinese prose", () => {
   const bad = [];
   for (const p of allPairs()) {
     if (!NON_LATIN.has(p.locale)) continue;
-    for (const word of p.t.match(/[A-Za-z][A-Za-z+]{2,}/g) ?? []) {
+    for (const word of p.t.replace(IDENTIFIER, " ").match(/[A-Za-z][A-Za-z+]{2,}/g) ?? []) {
       if (LATIN_OK.has(word)) continue;
       bad.push(`${at(p)}: "${word}" is not translated and is not a known name`);
     }

@@ -64,23 +64,18 @@ const FIXED = [
   ["english.visitseoul.net", "Seoul tourism, English — transport and access pages"],
   ["www.seoulmetro.co.kr", "Seoul Metro — the line and exit a venue is reached from"],
 
-  // The two Korean album charts, and the one question this site currently
-  // refuses to answer.
+  // The two Korean album charts were declared here and are not any more,
+  // which is the whole lifecycle of a declaration and worth leaving a note
+  // about rather than a silent deletion.
   //
-  // Both the albums guide and the Ktown4u guide tell a reader that chart
-  // contribution depends on whether a shop reports its sales, and that the
-  // shop has to say so — because no register could be read from here. That
-  // was true and it was a worse answer than the one that exists: Hanteo
-  // publishes a searchable registry of its reporting stores, which Ktown4u
-  // links to from its own footer. A first-party registry beats an artist's
-  // announcement, and it turns "we cannot say" into a method the reader can
-  // run themselves for any shop, not just this one.
-  //
-  // Declared before being cited, which is the one case that justifies it:
-  // the pages cannot be cited until they can be read, and they cannot be
-  // read until the allowlist carries them.
-  ["www.hanteochart.com", "Hanteo — the registry of chart-reporting stores"],
-  ["circlechart.kr", "Circle Chart — the other Korean album chart"],
+  // They were declared before being cited, the one case that justifies it: a
+  // page cannot be cited until it can be read, and it cannot be read until
+  // the allowlist carries it. Both are cited now — by the albums guide and
+  // the Ktown4u guide, which no longer answer "we cannot say" on whether a
+  // shop reports to the charts — so both hosts come out of the content and a
+  // declaration would claim they are underivable when they are not. If the
+  // citations are ever removed, the hosts go with them, and that is correct:
+  // nothing here needs them for their own sake.
   // Loaded by the reader's browser, not by this container — but the headless
   // browser in scripts/check-layout.mjs is in this container, so allowing
   // them keeps the layout check rendering the page a reader actually gets.

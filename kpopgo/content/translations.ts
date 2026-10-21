@@ -1647,8 +1647,8 @@ export const translations: Translation[] = [
   {
     locale: "ja",
     slug: "buy-k-pop-albums-from-overseas",
-    sourceChecked: "2026-10-20",
-    translated: "2026-10-20",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-21",
     review: "machine-assisted",
     title: "海外からK-POPのアルバムを、集計に入る形で買う方法",
     summary:
@@ -1669,9 +1669,9 @@ export const translations: Translation[] = [
       },
       {
         title: "その販売店が韓国のチャートに報告しているか確認する",
-        body: "韓国のアルバムチャートに報告される売上は、特定の小売店と公式ストアから出ています。出品が本物の公式アルバムであることは、その売上が報告されたことを意味しません。チャートへの反映が購入の理由なら、注文する前にその販売店が報告対象かどうかを確かめてください。",
+        body: "Hanteo が一覧を公開しているので、これは信用の問題ではなく確認できることです。認証 Family 店は hanteochart.com で英語・スペイン語・韓国語から検索でき、それぞれに family コードがあります。Ktown4U は HF0082KTU001、Weverse は HF0082BTS001 です。Hanteo はオンラインの Family 店に対し、フッターへ Family マークを出して hanteochart.com へリンクすることも義務づけています。つまりフッターがどの店でもすぐできる確認で、一覧が裏取りです。Hanteo 自身は、コードと毎年出し直される認証マークの両方を見るよう買い手に指示しています。",
         pitfall:
-          "第三者のマーケットプレイスに出ている本物のアルバムは、集計に入らないことがよくあります。アルバムは本物で、反映だけがありません。",
+          "一覧は英語ページでも店名の多くが韓国語のままなので、英語で検索すると載っているのに見つからないことがあります。そして第三者マーケットプレイスの本物のアルバム出品が典型的な取りこぼしです。アルバムは本物、売り手は Family 店ではなく、反映はありません。",
         takes: "15分",
       },
       {
@@ -1699,7 +1699,7 @@ export const translations: Translation[] = [
     faq: [
       {
         q: "韓国外で買ったアルバムは韓国のチャートに反映されますか。",
-        a: "参加している販売店が報告した売上は反映され、それはあなたの居場所ではなく販売店によります。報告していない店で本物のアルバムを買えば、アルバムは本物でも売上は集計されません。チャートへの反映が目的なら、注文する前に販売店を確認してください。",
+        a: "「韓国のチャート」は別物が二つあり、あなたの購入が関わるのはその片方だけです。Hanteo は認証 Family 店が報告した売上を集計するので、決めるのはあなたの居場所ではなく店です。一覧で確認してください。Circle Chart は逆の作りで、アルバムチャートを小売店への出荷数から返品を差し引いたものと定義しています。つまりそのアルバムは流通から出た時点で数えられていて、あなたの注文では動きません。Circle には小売の売上を実時間で数える別の小売店アルバムチャートがあります。どちらも公表していないのは、海外からの注文を国内と同じに扱うという規定です。ですから一覧に載っている店で買うことが確認できる限界であって、保証ではありません。",
       },
       {
         q: "共同購入はした方がいいですか。",
@@ -2243,7 +2243,7 @@ export const translations: Translation[] = [
   {
     locale: "zh-Hant",
     slug: "buy-k-pop-albums-from-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "從海外購買 K-POP 專輯，而且要能被計入",
@@ -2265,9 +2265,9 @@ export const translations: Translation[] = [
       },
       {
         title: "確認賣家是否會回報給韓國排行榜",
-        body: "回報給韓國專輯排行榜的銷售，來自特定的零售商與官方商店。一個商品是正版專輯，並不代表這筆銷售被回報了。如果排行榜貢獻正是你購買的理由，請在下單之前先確認該零售商屬於會回報的那一類。",
+        body: "Hanteo 公開了名單，所以這件事可以查證，不是信任問題。認證 Family 商店可在 hanteochart.com 以英文、西班牙文與韓文搜尋，每一家都有 family 代碼：Ktown4U 是 HF0082KTU001，Weverse 是 HF0082BTS001。Hanteo 也要求線上 Family 商店在頁尾顯示 Family 標記並連回 hanteochart.com，所以頁尾是對任何商店都能做的快速檢查，名單則是確認。Hanteo 給買家的指示是：代碼與每年重新核發的認證標記都要看。",
         pitfall:
-          "第三方平台上的正版專輯商品，通常不會被計入。專輯是真的，貢獻不在那裡。",
+          "名單即使在英文頁面，多數店名仍是韓文，所以用英文搜尋時，店家明明在名單上卻像是不存在。另一個常見的漏接是第三方平台上的正版專輯：專輯是真的，賣家不是 Family 商店，貢獻不在那裡。",
         takes: "15 分鐘",
       },
       {
@@ -2295,7 +2295,7 @@ export const translations: Translation[] = [
     faq: [
       {
         q: "在韓國以外購買的專輯，會被計入韓國排行榜嗎？",
-        a: "由參與回報的零售商所回報的銷售會被計入，而這取決於零售商，而不是取決於你所在的地點。在不回報的店家買到正版專輯，意思是專輯是真的，但這筆銷售沒有被計入。如果排行榜貢獻就是重點，請在下單前先確認零售商。",
+        a: "「韓國榜單」其實是兩件不同的事，而且只有其中一件和你的購買有關。Hanteo 計入的是認證 Family 商店回報的銷量，所以決定的是店家而不是你所在的地點，請用名單確認。Circle Chart 的做法相反：它把專輯榜定義為出貨給零售通路的批發數量扣掉退貨，也就是說那張專輯在離開發行端時就已被計入，你的訂單不會讓它移動。Circle 另有一個即時計算零售銷量的零售專輯榜。兩邊都沒有公布的，是海外訂單是否與國內訂單一視同仁。所以在名單上的店家購買，是你能查到的極限，而不是保證。",
       },
       {
         q: "合併訂單值得嗎？",
@@ -2749,7 +2749,7 @@ export const translations: Translation[] = [
   {
     locale: "id",
     slug: "buy-k-pop-albums-from-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "Cara membeli album K-pop dari luar Korea agar terhitung",
@@ -2771,9 +2771,9 @@ export const translations: Translation[] = [
       },
       {
         title: "Periksa apakah penjualnya melaporkan ke tangga album Korea",
-        body: "Penjualan yang dilaporkan ke tangga album Korea berasal dari pengecer dan toko resmi tertentu. Sebuah barang berupa album resmi tidak berarti penjualannya dilaporkan. Jika kontribusi tangga lagu adalah alasan Anda membeli, pastikan pengecernya termasuk yang melaporkan sebelum Anda memesan.",
+        body: "Hanteo menerbitkan daftarnya, jadi ini bisa diperiksa dan bukan soal kepercayaan. Toko Family bersertifikatnya dapat dicari di hanteochart.com dalam bahasa Inggris dan Spanyol selain Korea, masing-masing membawa kode family: Ktown4U adalah HF0082KTU001 dan Weverse adalah HF0082BTS001. Hanteo juga mewajibkan setiap toko Family daring menampilkan tanda Family di bagian bawah halamannya, tertaut kembali ke hanteochart.com — jadi bagian bawah halaman adalah pemeriksaan cepat untuk toko mana pun, dan daftar itulah konfirmasinya. Instruksi Hanteo sendiri kepada pembeli adalah memeriksa kode sekaligus tanda sertifikasi, yang diterbitkan ulang setiap tahun.",
         pitfall:
-          "Barang album asli di lokapasar pihak ketiga umumnya tidak terhitung. Albumnya nyata; kontribusinya tidak ada di situ.",
+          "Daftar itu menuliskan sebagian besar nama toko dalam bahasa Korea bahkan di halaman berbahasa Inggris, jadi sebuah toko bisa ada di sana tetapi tampak tidak ada bagi pencarian dalam bahasa Inggris. Dan barang album asli di lokapasar pihak ketiga adalah kekeliruan yang umum: albumnya nyata, penjualnya bukan toko Family, dan kontribusinya tidak ada di situ.",
         takes: "15 menit",
       },
       {
@@ -2801,7 +2801,7 @@ export const translations: Translation[] = [
     faq: [
       {
         q: "Apakah album yang dibeli di luar Korea terhitung untuk tangga album Korea?",
-        a: "Penjualan yang dilaporkan oleh pengecer peserta terhitung, dan itu bergantung pada pengecernya, bukan pada lokasi Anda. Membeli album asli dari toko yang tidak melaporkan berarti albumnya nyata tetapi penjualannya tidak dihitung. Periksa pengecernya sebelum memesan jika kontribusi tangga lagu adalah intinya.",
+        a: "Tangga lagu Korea sebenarnya dua hal yang berbeda, dan hanya satu di antaranya menyangkut pembelian Anda. Hanteo menghitung penjualan yang dilaporkan toko Family bersertifikatnya, jadi tokonyalah yang menentukan dan bukan lokasi Anda — periksa terhadap daftarnya. Circle Chart dibangun terbalik: ia mendefinisikan Album Chart-nya sebagai jumlah pengiriman grosir ke pengecer dikurangi retur, yang berarti album itu sudah terhitung ketika meninggalkan distributor dan pesanan Anda tidak menggerakkannya. Circle menjalankan Retail Album Chart terpisah yang memang menghitung penjualan eceran, secara waktu nyata. Yang tidak diterbitkan oleh keduanya adalah aturan bahwa pesanan dari luar negeri diperlakukan sama dengan pesanan dalam negeri, jadi membeli dari toko yang terdaftar adalah sejauh yang bisa Anda periksa, bukan jaminan.",
       },
       {
         q: "Apakah pesanan bersama sepadan?",
@@ -4901,7 +4901,7 @@ export const translations: Translation[] = [
   {
     locale: "de",
     slug: "buy-k-pop-albums-from-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "K-Pop-Alben aus dem Ausland so kaufen, dass sie zählen",
@@ -4923,9 +4923,9 @@ export const translations: Translation[] = [
       },
       {
         title: "Prüfen Sie, ob der Verkäufer an die koreanischen Charts meldet",
-        body: "An die koreanischen Albumcharts gemeldete Verkäufe stammen von bestimmten Händlern und offiziellen Shops. Dass ein Angebot ein offizielles Album ist, bedeutet nicht, dass der Verkauf gemeldet wurde. Wenn der Chart-Beitrag der Grund für Ihren Kauf ist, vergewissern Sie sich vor der Bestellung, dass der Händler zu den meldenden gehört.",
+        body: "Hanteo veröffentlicht die Liste, das ist also prüfbar und keine Vertrauensfrage. Die zertifizierten Family-Shops lassen sich auf hanteochart.com auf Englisch und Spanisch ebenso wie auf Koreanisch durchsuchen, jeder mit einem Family-Code: Ktown4U ist HF0082KTU001 und Weverse ist HF0082BTS001. Hanteo verlangt außerdem von jedem Online-Family-Shop, die Family-Marke im Fußbereich zu zeigen und auf hanteochart.com zu verlinken — der Fußbereich ist damit die schnelle Prüfung bei jedem Shop, die Liste die Bestätigung. Hanteos eigene Anweisung an Käufer lautet, sowohl den Code als auch die jedes Jahr neu ausgegebene Zertifizierungsmarke zu prüfen.",
         pitfall:
-          "Angebote echter Alben auf Drittanbieter-Marktplätzen zählen üblicherweise nicht. Das Album ist echt; der Beitrag ist nicht da.",
+          "Die Liste führt die meisten Shopnamen selbst auf der englischen Seite auf Koreanisch, ein Shop kann also darin stehen und einer englischen Suche trotzdem fehlen. Und das Angebot eines echten Albums auf einem Drittanbieter-Marktplatz ist der übliche Fehlgriff: Das Album ist echt, der Verkäufer ist kein Family-Shop, und der Beitrag ist nicht da.",
         takes: "15 Minuten",
       },
       {
@@ -4953,7 +4953,7 @@ export const translations: Translation[] = [
     faq: [
       {
         q: "Zählen außerhalb Koreas gekaufte Alben für die koreanischen Charts?",
-        a: "Von teilnehmenden Händlern gemeldete Verkäufe zählen, und das hängt am Händler und nicht an Ihrem Standort. Ein echtes Album bei einem Shop zu kaufen, der nicht meldet, bedeutet: das Album ist echt, der Verkauf wird nicht gezählt. Prüfen Sie den Händler vor der Bestellung, wenn es Ihnen um den Chart-Beitrag geht.",
+        a: "Die koreanischen Charts sind zwei verschiedene Dinge, und nur eines davon hat überhaupt mit Ihrem Kauf zu tun. Hanteo zählt die Verkäufe, die seine zertifizierten Family-Shops melden, es entscheidet also der Shop und nicht Ihr Standort — prüfen Sie ihn gegen die Liste. Circle Chart ist andersherum gebaut: Es definiert seine Albumcharts als Auslieferungsmengen an den Handel abzüglich Retouren, das Album wurde also gezählt, als es den Vertrieb verließ, und Ihre Bestellung bewegt es nicht. Getrennt davon führt Circle eine Einzelhandels-Albumchart, die tatsächlich Verkäufe an Kunden zählt, in Echtzeit. Was beide nicht veröffentlichen, ist eine Regel, dass eine Bestellung aus dem Ausland wie eine inländische behandelt wird — bei einem gelisteten Shop zu kaufen ist also das Weiteste, was Sie prüfen können, und keine Garantie.",
       },
       {
         q: "Lohnt sich eine Sammelbestellung?",
@@ -7569,7 +7569,7 @@ export const translations: Translation[] = [
   {
     locale: "es",
     slug: "buy-k-pop-albums-from-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "Cómo comprar álbumes de K-pop desde el extranjero para que cuenten",
@@ -7591,9 +7591,9 @@ export const translations: Translation[] = [
       },
       {
         title: "Comprueba si el vendedor reporta a las listas coreanas",
-        body: "Las ventas que se reportan a las listas coreanas de álbumes salen de tiendas concretas y de las tiendas oficiales. Que un anuncio sea de un álbum oficial no significa que la venta se reportara. Si aportar a las listas es por lo que compras, verifica que la tienda sea de las que reportan antes de pedir.",
+        body: "Hanteo publica la lista, así que esto se puede comprobar y no es cuestión de confianza. Sus tiendas Family certificadas se buscan en hanteochart.com en inglés y español además de en coreano, cada una con un código family: Ktown4U es HF0082KTU001 y Weverse es HF0082BTS001. Hanteo también exige que toda tienda Family en línea muestre la marca Family en su pie de página, enlazada de vuelta a hanteochart.com — así que el pie de página es la comprobación rápida en cualquier tienda, y el registro es la confirmación. La propia instrucción de Hanteo a los compradores es revisar tanto el código como la marca de certificación, que se reemite cada año.",
         pitfall:
-          "Los anuncios de álbumes auténticos en mercados de terceros normalmente no cuentan. El álbum es real; la aportación no está ahí.",
+          "El registro lista la mayoría de los nombres de tienda en coreano incluso en la página en inglés, así que una tienda puede estar en él y parecer ausente en una búsqueda en inglés. Y el anuncio de un álbum auténtico en un mercado de terceros es el fallo habitual: el álbum es real, el vendedor no es tienda Family, y la aportación no está ahí.",
         takes: "15 minutos",
       },
       {
@@ -7621,7 +7621,7 @@ export const translations: Translation[] = [
     faq: [
       {
         q: "¿Los álbumes comprados fuera de Corea cuentan para las listas coreanas?",
-        a: "Cuentan las ventas reportadas por las tiendas participantes, y eso depende de la tienda y no de dónde estés. Comprar un álbum auténtico en una tienda que no reporta significa que el álbum es real pero la venta no se contabiliza. Comprueba la tienda antes de pedir si lo que buscas es aportar a las listas.",
+        a: "Las listas coreanas son dos cosas distintas y solo una de ellas tiene que ver con tu compra. Hanteo cuenta las ventas que reportan sus tiendas Family certificadas, así que decide la tienda y no dónde estés: compruébalo contra el registro. Circle Chart está construido al revés, porque define su lista de álbumes como unidades de salida mayorista hacia el comercio menos devoluciones, lo que significa que ese álbum se contó cuando salió de la distribuidora y tu pedido no lo mueve. Circle mantiene aparte una lista de álbumes minorista que sí cuenta ventas al público, en tiempo real. Lo que ninguno publica es una regla que diga que un pedido desde el extranjero se trata igual que uno nacional, así que comprar en una tienda listada es lo más lejos que puedes comprobar, no una garantía.",
       },
       {
         q: "¿Merece la pena un pedido en grupo?",
@@ -9063,7 +9063,7 @@ export const translations: Translation[] = [
     summary:
       "未払いの注文は24時間ではなく6時間で取り消されます。米国向けの荷物には受け取り時に12ドル請求されることがあります。国際送料は2026年2月に7%上がり、欧州の2か国は配送手段そのものを静かに失いました。",
     scope:
-      "Ktown4uからの海外向け現物商品・アルバム注文を、Ktown4u自身のお知らせに基づいて扱います。支払い期限、送料と配送手段、連休の停止、カスタマーサポートの受付時間まで。Ktown4uでの購入が韓国のアルバムチャートに反映されるかどうかは述べません。ここで読んだページにその記載がないためです。お知らせは再発行され差し替えられるので、お知らせ一覧が最新版です。",
+      "Ktown4uからの海外向け現物商品・アルバム注文を、Ktown4u自身のお知らせに基づいて扱います。支払い期限、送料と配送手段、連休の停止、カスタマーサポートの受付時間まで。Ktown4uでの購入が韓国のアルバムチャートに反映されるかどうかは、Ktown4u ではなく Hanteo 自身の認証店一覧から答えます。お知らせは再発行され差し替えられるので、お知らせ一覧が最新版です。",
     intro: [
       "海外のファンがアルバムを実際に買う場所として大きな割合を占めるのがKtown4uですが、その仕組みは自社のお知らせページ以外、英語でほとんど書かれていません。そのページは英語で、日付入りで、荷物が遅れるまで誰も読みません。",
       "それを一度に読み通したのがこのページです。最初の項目が最も注文を失わせているもので、2025年に変更されたのに大半の買い手が気づいていません。",
@@ -9119,10 +9119,10 @@ export const translations: Translation[] = [
         takes: "5分、一度だけ",
       },
       {
-        title: "韓国のチャートに反映されると決めてかからない",
-        body: "チャートへの反映は、その販売店が売上を報告しているかどうかで決まり、それは販売店自身が示すべき主張です。この記事のために読んだお知らせと規約のページに、Ktown4uはそれを記載していません。ですからこのページもそうは書きません。Ktown4uへの疑いではなく、出典のない「はい」こそが、このサイトが置き換えようとしているものだからです。チャートへの反映が購入の理由なら、商品ページか、そのリリースに関するアーティスト側の公式告知で確認してください。参加する販売店はそこに書かれているのが普通です。",
+        title: "Ktown4u は Hanteo の認証店で、それは自分で確認できる",
+        body: "このページは以前、この問いには答えられないと書いていました。Ktown4u が自社のお知らせに書いていないからです。反対側からなら答えられます。Hanteo が認証 Family 店を公開しており、Ktown4U は family コード HF0082KTU001 でその一覧に載っています。Hanteo はオンラインの Family 店に Family マークを出して hanteochart.com へリンクするよう求めており、Ktown4u 自身の店舗ページもその同じ一覧へリンクしています。店側とチャート側の両方から一致しているわけです。ここから受け取るのではなく、自分で確認してください。一覧は変わりますし、Hanteo の指示はコードと毎年出し直される認証マークを確かめることです。",
         pitfall:
-          "チャート報告店の一覧を、このページを含め第三者のものを最新だと受け取ること。報告の取り決めは販売店ごとで、リリースごとに変わりえます。",
+          "これを「自分の注文が韓国のあらゆるチャートに乗る」と読むこと。Hanteo は Family 店が報告した売上を数えます。Circle Chart の主要なアルバムチャートは小売店への出荷数を数えるので、小売の注文ではまったく動きません。そしてどちらも、海外からの注文を国内と同じに扱うかどうかは公表していません。",
         takes: "15分",
       },
     ],
@@ -9157,7 +9157,7 @@ export const translations: Translation[] = [
       },
       {
         q: "Ktown4uでの購入は韓国のチャートに反映されますか。",
-        a: "このページは述べません。ここで読んだページにKtown4uがそう記載していないためです。チャートへの反映は販売店が売上を報告しているかどうかで決まり、それは販売店自身が示す主張であって、第三者が推測できるものではありません。それが購入の理由なら、商品ページか、そのリリースに関するアーティスト側の公式告知で確認してください。",
+        a: "Ktown4U は Hanteo の認証 Family 店で、コード HF0082KTU001 で一覧に載っています。ですから Hanteo にとっては報告する店です。公開された出典で言えるのはそこまでです。海外からの注文を国内と同じに扱うかどうかの規定を Hanteo は公表していませんし、Circle Chart はさらに別の話で、主要なアルバムチャートは小売の売上ではなく小売店への出荷数を数えるため、そこでの注文はどちらにしても何も変えません。特定のリリースが目的なら、アーティスト側の公式告知がその回の参加販売店を挙げているのが普通です。",
       },
     ],
     labels: JA_LABELS,
@@ -9172,7 +9172,7 @@ export const translations: Translation[] = [
     summary:
       "未付款的訂單六小時就取消,不是二十四小時。寄往美國的包裹可能在你家門口被收 12 美元。國際運費在 2026 年 2 月調漲 7%,而歐洲有兩個國家悄悄失去了一種寄送方式。",
     scope:
-      "依據 Ktown4u 自己的公告,說明從 Ktown4u 訂購實體專輯與商品寄往韓國以外的情況:付款時限、運費與寄送方式、連假停擺,以及客服時間。這一頁不說 Ktown4u 的購買是否計入韓國專輯榜,因為本文所讀的頁面上 Ktown4u 沒有這樣寫。公告會重發並被取代,所以公告頁才是即時版本。",
+      "依據 Ktown4u 自己的公告,說明從 Ktown4u 訂購實體專輯與商品寄往韓國以外的情況:付款時限、運費與寄送方式、連假停擺,以及客服時間。Ktown4u 的購買是否計入韓國專輯榜，是從 Hanteo 自己的認證商店名單回答的，而不是從 Ktown4u。公告會重發並被取代,所以公告頁才是即時版本。",
     intro: [
       "海外粉絲有很大一部分實際上是在 Ktown4u 買專輯,而它怎麼運作,英文世界裡除了它自己的公告頁之外幾乎沒有記載。那一頁是英文的,有日期,而且在包裹遲到之前沒有人會讀。",
       "這篇就是把那一頁一次讀完。第一項是最常讓人丟掉訂單的,而它在 2025 年改過,多數買家並沒有注意到。",
@@ -9228,10 +9228,10 @@ export const translations: Translation[] = [
         takes: "5 分鐘,一次就好",
       },
       {
-        title: "不要預設這筆購買會計入韓國榜單",
-        body: "是否計入榜單,取決於該販售通路有沒有回報銷量,而那是通路自己該提出的主張。為這篇所讀的公告與條款頁面上,Ktown4u 並沒有寫。所以這一頁也不寫——這不是對 Ktown4u 的懷疑,而是因為一個沒有出處的「會」,正是這個網站想要取代的東西。如果計入榜單是你購買的理由,請到商品頁,或該次發行由藝人方發出的官方公告確認,參與的通路通常列在那裡。",
+        title: "Ktown4u 是 Hanteo 認證商店，而且你可以自己查證",
+        body: "這一頁以前寫說這個問題無法回答，因為 Ktown4u 沒有在自己的公告上說明。從另一端是答得出來的：Hanteo 公開了它的認證 Family 商店，而 Ktown4U 就以 family 代碼 HF0082KTU001 列在那份名單上。Hanteo 要求每一家線上 Family 商店顯示 Family 標記並連回 hanteochart.com，而 Ktown4u 自己的店面也連向同一份名單，所以店家端與榜單端兩邊是一致的。請自己查證，而不是從這裡接受：名單會變，而 Hanteo 的指示是確認代碼與每年重新核發的認證標記。",
         pitfall:
-          "把任何第三方的回報通路清單——包括這一頁——當成現行的。回報安排是逐家通路決定的,而且可能在不同發行之間改變。",
+          "把這讀成「我的訂單會出現在每一個韓國榜單上」。Hanteo 計算的是 Family 商店回報的銷量；Circle Chart 的主要專輯榜計算的是出貨給零售通路的批發量，所以任何零售訂單都不會讓它移動。而且兩邊都沒有公布海外訂單是否與國內訂單同等對待。",
         takes: "15 分鐘",
       },
     ],
@@ -9266,7 +9266,7 @@ export const translations: Translation[] = [
       },
       {
         q: "在 Ktown4u 買會計入韓國榜單嗎?",
-        a: "這一頁不說,因為本文所讀的頁面上 Ktown4u 沒有這樣寫。是否計入取決於通路有沒有回報銷量,而那是通路自己提出的主張,不是第三方可以推論的。如果這是你購買的理由,請在商品頁或該次發行的藝人方官方公告上確認。",
+        a: "Ktown4U 是 Hanteo 的認證 Family 商店，以代碼 HF0082KTU001 列在名單上，所以對 Hanteo 而言它是會回報的通路——公開來源能講到的就是這裡。Hanteo 並未公布海外訂單是否與國內訂單同等對待，而 Circle Chart 又是另一回事：它的主要專輯榜計算的是出貨給零售通路的批發量而非零售銷量，所以在那裡下單無論如何都不會改變什麼。如果重點是某一次發行，藝人方的官方公告通常會列出該次參與的通路。",
       },
     ],
     labels: ZH_LABELS,
@@ -9281,7 +9281,7 @@ export const translations: Translation[] = [
     summary:
       "Pesanan yang belum dibayar dibatalkan setelah enam jam, bukan dua puluh empat. Paket ke Amerika Serikat bisa membawa tagihan USD 12 yang ditagih di depan pintu Anda. Ongkos kirim internasional naik 7% pada Februari 2026, dan dua negara Eropa diam-diam kehilangan satu metode pengiriman sama sekali.",
     scope:
-      "Mencakup pemesanan album dan barang fisik dari Ktown4u untuk pengiriman ke luar Korea, dari pemberitahuan Ktown4u sendiri: jam pembayaran, biaya dan metode pengiriman, jeda hari raya, dan jam layanan pelanggan. Panduan ini tidak menyatakan apakah pembelian di Ktown4u dilaporkan ke tangga album Korea, karena Ktown4u tidak menyatakannya di halaman yang dibaca di sini. Pemberitahuan diterbitkan ulang dan digantikan, jadi daftar pemberitahuannya adalah versi yang hidup.",
+      "Mencakup pemesanan album dan barang fisik dari Ktown4u untuk pengiriman ke luar Korea, dari pemberitahuan Ktown4u sendiri: jam pembayaran, biaya dan metode pengiriman, jeda hari raya, dan jam layanan pelanggan. Apakah pembelian di Ktown4u dilaporkan ke tangga album Korea dijawab dari daftar toko bersertifikat milik Hanteo sendiri, bukan dari Ktown4u. Pemberitahuan diterbitkan ulang dan digantikan, jadi daftar pemberitahuannya adalah versi yang hidup.",
     intro: [
       "Ktown4u adalah tempat sebagian besar penggemar internasional benar-benar membeli album, dan nyaris tidak ada satu pun soal cara kerjanya yang tertulis dalam bahasa Inggris di luar halaman pemberitahuannya sendiri — yang berbahasa Inggris, bertanggal, dan tidak dibaca siapa pun sampai sebuah paket terlambat.",
       "Inilah halaman itu dibaca sekaligus. Butir pertama adalah yang membuat orang kehilangan pesanan, dan ia berubah pada 2025 tanpa disadari sebagian besar pembeli.",
@@ -9337,10 +9337,10 @@ export const translations: Translation[] = [
         takes: "5 menit, sekali",
       },
       {
-        title: "Jangan menganggap pembeliannya dihitung untuk tangga lagu Korea",
-        body: "Kontribusi ke tangga lagu bergantung pada apakah sebuah toko melaporkan penjualannya, dan itu klaim yang harus dibuat tokonya sendiri. Ktown4u tidak menyatakannya di halaman pemberitahuan dan kebijakan yang dibaca untuk panduan ini, jadi panduan ini juga tidak menyatakannya — bukan sebagai keraguan terhadap Ktown4u, melainkan karena sebuah ya tanpa sumber justru jenis klaim yang keberadaan situs ini hendak gantikan. Jika kontribusi ke tangga lagu adalah alasan Anda membeli, pastikan di halaman produk atau di pengumuman resmi dari pihak artis untuk rilis itu, tempat toko yang ikut serta biasanya disebut.",
+        title: "Ktown4u adalah toko bersertifikat Hanteo, dan Anda bisa memeriksanya sendiri",
+        body: "Panduan ini dulu menyatakan bahwa pertanyaannya tidak bisa dijawab, karena Ktown4u tidak menyebutkannya pada pemberitahuannya sendiri. Dari ujung yang lain pertanyaannya bisa dijawab: Hanteo menerbitkan toko Family bersertifikatnya, dan Ktown4U ada pada daftar itu dengan kode family HF0082KTU001. Hanteo mewajibkan setiap toko Family daring menampilkan tanda Family yang tertaut kembali ke hanteochart.com, dan etalase Ktown4u sendiri menaut ke daftar yang sama — jadi toko dan tangga lagu sepakat, dari kedua ujung. Periksa sendiri alih-alih menerimanya dari sini: daftar berubah, dan instruksi Hanteo adalah memastikan kode beserta tanda sertifikasi, yang diterbitkan ulang setiap tahun.",
         pitfall:
-          "Menerima daftar toko pelapor dari pihak ketiga mana pun, termasuk halaman ini, sebagai yang berlaku. Kesepakatan pelaporan bersifat per toko dan bisa berubah antar rilis.",
+          "Membacanya sebagai pesanan saya akan muncul di setiap tangga lagu Korea. Hanteo menghitung penjualan yang dilaporkan toko Family-nya; Album Chart utama Circle Chart justru menghitung pengiriman grosir ke pengecer, jadi tidak ada pesanan eceran yang menggerakkannya sama sekali. Dan keduanya tidak menerbitkan aturan tentang apakah pesanan dari luar negeri diperlakukan seperti pesanan dalam negeri.",
         takes: "15 menit",
       },
     ],
@@ -9375,7 +9375,7 @@ export const translations: Translation[] = [
       },
       {
         q: "Apakah membeli dari Ktown4u dihitung untuk tangga lagu Korea?",
-        a: "Panduan ini tidak menyatakannya, karena Ktown4u tidak menyatakannya di halaman yang dibaca di sini. Kontribusi ke tangga lagu bergantung pada sebuah toko melaporkan penjualannya, dan itu klaim yang dibuat tokonya alih-alih sesuatu yang bisa disimpulkan pihak ketiga. Jika itu alasan Anda membeli, pastikan di halaman produk atau di pengumuman resmi dari pihak artis untuk rilis tersebut.",
+        a: "Ktown4U adalah toko Family bersertifikat Hanteo, terdaftar dengan kode HF0082KTU001, jadi bagi Hanteo toko itu memang melapor — dan sejauh itulah sumber publik bisa membawa Anda. Hanteo tidak menerbitkan aturan tentang apakah pesanan dari luar negeri diperlakukan seperti pesanan dalam negeri, dan Circle Chart adalah pertanyaan yang lain lagi: Album Chart utamanya menghitung pengiriman grosir ke pengecer alih-alih penjualan eceran, sehingga pesanan di sana tidak mengubah apa pun. Jika yang Anda tuju adalah rilis tertentu, pengumuman resmi dari pihak artis biasanya menyebut toko yang ikut serta untuk rilis itu.",
       },
     ],
     labels: ID_LABELS,
@@ -9390,7 +9390,7 @@ export const translations: Translation[] = [
     summary:
       "Eine unbezahlte Bestellung wird nach sechs Stunden storniert, nicht nach vierundzwanzig. Pakete in die USA können eine Forderung von 12 US-Dollar tragen, die an Ihrer Haustür kassiert wird. Der internationale Versand stieg im Februar 2026 um 7%, und zwei europäische Länder verloren still eine Versandart ganz.",
     scope:
-      "Behandelt die Bestellung physischer Alben und Waren bei Ktown4u mit Lieferung außerhalb Koreas, aus Ktown4us eigenen Mitteilungen: die Zahlungsuhr, Versandkosten und Versandarten, Feiertagspausen und die Zeiten des Kundendienstes. Es sagt nicht, ob ein Kauf bei Ktown4u an die koreanischen Albumcharts gemeldet wird, weil Ktown4u das auf den hier gelesenen Seiten nicht angibt. Mitteilungen werden neu herausgegeben und abgelöst, die Mitteilungsliste ist also die lebende Fassung.",
+      "Behandelt die Bestellung physischer Alben und Waren bei Ktown4u mit Lieferung außerhalb Koreas, aus Ktown4us eigenen Mitteilungen: die Zahlungsuhr, Versandkosten und Versandarten, Feiertagspausen und die Zeiten des Kundendienstes. Ob ein Kauf bei Ktown4u an die koreanischen Albumcharts gemeldet wird, beantwortet Hanteos eigenes Verzeichnis zertifizierter Shops und nicht Ktown4u. Mitteilungen werden neu herausgegeben und abgelöst, die Mitteilungsliste ist also die lebende Fassung.",
     intro: [
       "Ktown4u ist der Ort, an dem ein großer Teil der Fans im Ausland tatsächlich Alben kauft, und fast nichts über seine Funktionsweise ist auf Englisch festgehalten außer auf seiner eigenen Mitteilungsseite — die auf Englisch ist, datiert, und von niemandem gelesen wird, bis ein Paket zu spät kommt.",
       "Das ist diese Seite, in einem Zug gelesen. Der erste Punkt ist der, der Leute Bestellungen kostet, und er änderte sich 2025, ohne dass die meisten Käuferinnen es bemerkten.",
@@ -9446,10 +9446,10 @@ export const translations: Translation[] = [
         takes: "5 Minuten, einmalig",
       },
       {
-        title: "Setzen Sie nicht voraus, dass der Kauf für die koreanischen Charts zählt",
-        body: "Der Beitrag zu den Charts hängt davon ab, ob ein Händler seine Verkäufe meldet, und das ist eine Aussage, die der Händler treffen muss. Ktown4u gibt sie auf den für diese Anleitung gelesenen Mitteilungs- und Richtlinienseiten nicht ab, also gibt diese Anleitung sie auch nicht ab — nicht als Zweifel an Ktown4u, sondern weil ein unbelegtes Ja genau die Art Behauptung ist, die diese Seite ersetzen will. Ist der Chartbeitrag der Grund Ihres Kaufs, prüfen Sie ihn auf der Produktseite oder in der offiziellen Ankündigung der Künstlerseite zu dieser Veröffentlichung, wo die teilnehmenden Händler üblicherweise genannt werden.",
+        title: "Ktown4u ist ein von Hanteo zertifizierter Shop, und das können Sie selbst prüfen",
+        body: "Diese Anleitung sagte bisher, die Frage lasse sich nicht beantworten, weil Ktown4u sie in den eigenen Mitteilungen nicht beantwortet. Vom anderen Ende her ist sie beantwortbar: Hanteo veröffentlicht seine zertifizierten Family-Shops, und Ktown4U steht mit dem Family-Code HF0082KTU001 in diesem Verzeichnis. Hanteo verlangt von jedem Online-Family-Shop, die Family-Marke mit Verlinkung auf hanteochart.com zu zeigen, und Ktown4us eigener Shop verlinkt auf dasselbe Verzeichnis — Shop und Chart stimmen also von beiden Enden her überein. Prüfen Sie es selbst, statt es von hier zu übernehmen: Verzeichnisse ändern sich, und Hanteos Anweisung lautet, den Code und die jedes Jahr neu ausgegebene Zertifizierungsmarke zu bestätigen.",
         pitfall:
-          "Die Liste meldender Shops eines Dritten, diese Seite eingeschlossen, für aktuell zu halten. Meldevereinbarungen gelten je Händler und können sich zwischen Veröffentlichungen ändern.",
+          "Dies als meine Bestellung erscheint in jeder koreanischen Chart zu lesen. Hanteo zählt die Verkäufe, die seine Family-Shops melden; die Haupt-Albumchart von Circle Chart zählt stattdessen Großhandelslieferungen an den Handel, sodass keine Endkundenbestellung sie überhaupt bewegt. Und keiner von beiden veröffentlicht eine Regel dazu, ob eine Bestellung aus dem Ausland wie eine inländische behandelt wird.",
         takes: "15 Minuten",
       },
     ],
@@ -9484,7 +9484,7 @@ export const translations: Translation[] = [
       },
       {
         q: "Zählt ein Kauf bei Ktown4u für die koreanischen Charts?",
-        a: "Diese Anleitung sagt es nicht, weil Ktown4u es auf den hier gelesenen Seiten nicht sagt. Der Chartbeitrag hängt davon ab, dass ein Händler seine Verkäufe meldet, und das ist eine Aussage des Händlers und nichts, was ein Dritter erschließen kann. Ist das der Grund Ihres Kaufs, prüfen Sie es auf der Produktseite oder in der offiziellen Ankündigung der Künstlerseite zu dieser Veröffentlichung.",
+        a: "Ktown4U ist ein von Hanteo zertifizierter Family-Shop, gelistet mit dem Code HF0082KTU001, für Hanteo meldet der Shop also — und weiter trägt eine öffentliche Quelle nicht. Hanteo veröffentlicht keine Regel dazu, ob eine Bestellung aus dem Ausland wie eine inländische behandelt wird, und Circle Chart ist noch einmal eine andere Frage: Dessen Haupt-Albumchart zählt Großhandelslieferungen an den Handel statt Endkundenverkäufe, eine Bestellung ändert dort also ohnehin nichts. Geht es um eine bestimmte Veröffentlichung, nennt die offizielle Ankündigung der Künstlerseite dafür üblicherweise die teilnehmenden Händler.",
       },
     ],
     labels: DE_LABELS,
@@ -9499,7 +9499,7 @@ export const translations: Translation[] = [
     summary:
       "Un pedido sin pagar se cancela a las seis horas, no a las veinticuatro. Los paquetes a Estados Unidos pueden traer un cobro de 12 dólares que te reclaman en la puerta. El envío internacional subió un 7% en febrero de 2026, y dos países europeos perdieron en silencio un método de envío entero.",
     scope:
-      "Cubre los pedidos de álbumes y artículos físicos en Ktown4u con entrega fuera de Corea, a partir de los avisos de Ktown4u: el reloj del pago, las tarifas y los métodos de envío, las pausas por festivos y el horario de atención al cliente. No dice si una compra en Ktown4u se reporta a las listas coreanas de álbumes, porque Ktown4u no lo declara en las páginas leídas aquí. Los avisos se reeditan y se sustituyen, así que la lista de avisos es la versión viva.",
+      "Cubre los pedidos de álbumes y artículos físicos en Ktown4u con entrega fuera de Corea, a partir de los avisos de Ktown4u: el reloj del pago, las tarifas y los métodos de envío, las pausas por festivos y el horario de atención al cliente. Si una compra en Ktown4u se reporta a las listas coreanas de álbumes lo responde el propio registro de tiendas certificadas de Hanteo, y no Ktown4u. Los avisos se reeditan y se sustituyen, así que la lista de avisos es la versión viva.",
     intro: [
       "Ktown4u es donde compra álbumes buena parte de los fans internacionales, y casi nada sobre cómo funciona está escrito en inglés fuera de su propia página de avisos — que está en inglés, fechada, y que no lee nadie hasta que un paquete llega tarde.",
       "Esto es esa página leída de una vez. El primer punto es el que le cuesta pedidos a la gente, y cambió en 2025 sin que la mayoría de los compradores se enterara.",
@@ -9555,10 +9555,10 @@ export const translations: Translation[] = [
         takes: "5 minutos, una vez",
       },
       {
-        title: "No des por hecho que la compra cuenta para las listas coreanas",
-        body: "Aportar a las listas depende de si una tienda reporta sus ventas, y eso es algo que la tienda tiene que afirmar. Ktown4u no lo declara en las páginas de avisos y políticas leídas para esta guía, así que esta guía tampoco lo declara — no por duda sobre Ktown4u, sino porque un sí sin fuente es exactamente el tipo de afirmación que esta web existe para reemplazar. Si aportar a las listas es por lo que compras, confírmalo en la página del producto o en el anuncio oficial del lado del artista para ese lanzamiento, donde suelen nombrarse las tiendas participantes.",
+        title: "Ktown4u es una tienda certificada por Hanteo, y puedes comprobarlo tú mismo",
+        body: "Esta guía decía antes que la pregunta no podía responderse, porque Ktown4u no lo declara en sus propios avisos. Desde el otro extremo sí se responde: Hanteo publica sus tiendas Family certificadas, y Ktown4U figura en ese registro con el código family HF0082KTU001. Hanteo exige que toda tienda Family en línea muestre la marca Family enlazada de vuelta a hanteochart.com, y la propia tienda de Ktown4u enlaza a ese mismo registro — así que la tienda y la lista coinciden, por los dos extremos. Compruébalo tú mismo en lugar de aceptarlo desde aquí: los registros cambian, y la instrucción de Hanteo es confirmar el código y la marca de certificación, que se reemite cada año.",
         pitfall:
-          "Tomar como vigente la lista de tiendas que reportan de cualquier tercero, esta página incluida. Los acuerdos de reporte son por tienda y pueden cambiar entre lanzamientos.",
+          "Leer esto como mi pedido aparecerá en todas las listas coreanas. Hanteo cuenta las ventas que reportan sus tiendas Family; la lista de álbumes principal de Circle Chart cuenta en cambio los envíos mayoristas al comercio, así que ningún pedido minorista la mueve. Y ninguno de los dos publica una regla sobre si un pedido desde el extranjero se trata como uno nacional.",
         takes: "15 minutos",
       },
     ],
@@ -9593,7 +9593,7 @@ export const translations: Translation[] = [
       },
       {
         q: "¿Comprar en Ktown4u cuenta para las listas coreanas?",
-        a: "Esta guía no lo dice, porque Ktown4u no lo dice en las páginas leídas aquí. Aportar a las listas depende de que una tienda reporte sus ventas, y eso es algo que afirma la tienda y no algo que pueda deducir un tercero. Si es por eso por lo que compras, confírmalo en la página del producto o en el anuncio oficial del lado del artista para ese lanzamiento.",
+        a: "Ktown4U es una tienda Family certificada por Hanteo, listada con el código HF0082KTU001, así que para Hanteo la tienda sí reporta — y hasta ahí llega una fuente pública. Hanteo no publica una regla sobre si un pedido desde el extranjero se trata como uno nacional, y Circle Chart es otra cuestión distinta: su lista de álbumes principal cuenta envíos mayoristas al comercio en lugar de ventas al público, así que un pedido allí no cambia nada de todos modos. Si lo que importa es un lanzamiento concreto, el anuncio oficial del lado del artista suele nombrar las tiendas participantes para esa edición.",
       },
     ],
     labels: ES_LABELS,

@@ -21,7 +21,8 @@
  * answer is "months ago".
  *
  *   node scripts/watch.mjs          # check links and freshness
- *   node scripts/watch.mjs --offline # skip the network, check parsing only
+ *   node scripts/watch.mjs --offline     # skip the network, check parsing only
+ *   node scripts/watch.mjs --record-new  # baseline only sources that have none
  *
  * Exits non-zero when something needs a person.
  */
@@ -30,6 +31,24 @@ import { readFile, writeFile } from "node:fs/promises";
 const OFFLINE = process.argv.includes("--offline");
 /** Take a new baseline. Run this after deliberately re-reading the sources. */
 const RECORD = process.argv.includes("--record");
+/**
+ * Take a baseline only for sources that have none yet.
+ *
+ * `--record` re-baselines everything it can fetch, which is right after a
+ * deliberate re-read of the sources and wrong at every other time: a page
+ * already showing drift is silenced by it, and silenced is indistinguishable
+ * from checked. That is not hypothetical. The Yahoo rebrand page has carried
+ * a standing 9% warning on purpose — its body does not extract cleanly, and
+ * a warning nobody has resolved is more honest than a baseline nobody read —
+ * and a plain `--record` run to pick up a new guide's sources would have
+ * quietly cleared it.
+ *
+ * So adding a guide uses this instead. It writes the entries that are
+ * missing, leaves every existing baseline exactly as it was, and therefore
+ * cannot clear a warning it did not look at.
+ */
+const RECORD_NEW = process.argv.includes("--record-new");
+const WRITES = RECORD || RECORD_NEW;
 const TODAY = new Date().toISOString().slice(0, 10);
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
@@ -356,7 +375,14 @@ async function links(urls) {
     }
 
     const before = prints[url];
-    next[url] = { words, text: RECORD ? text : before?.text, seen: TODAY };
+    // --record overwrites; --record-new fills a hole and never overwrites.
+    const keep = before?.text;
+    const take = RECORD || (RECORD_NEW && !keep);
+    next[url] = {
+      words: take ? words : (before?.words ?? words),
+      text: take ? text : keep,
+      seen: take ? TODAY : (before?.seen ?? TODAY),
+    };
     if (!before?.text) {
       note("info", `${url} — no baseline recorded yet (${words} words).`);
       continue;
@@ -372,9 +398,13 @@ async function links(urls) {
     }
   }
 
-  if (RECORD) {
+  if (WRITES) {
     await writeFile(path, `${JSON.stringify(next, null, 2)}\n`);
-    console.log(`\n  Recorded ${Object.keys(next).length} source fingerprints.`);
+    const held = Object.keys(next).filter((u) => prints[u]?.text).length;
+    console.log(
+      `\n  Wrote ${Object.keys(next).length} source fingerprints` +
+        (RECORD_NEW ? ` — ${held} existing baselines left untouched.` : "."),
+    );
   }
 }
 

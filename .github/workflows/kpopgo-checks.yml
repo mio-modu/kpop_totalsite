@@ -23,12 +23,15 @@
 # ESLint setup this project does not have and cannot complete unattended.
 name: kpopgo checks
 
+# Push only. A `pull_request` trigger alongside this one ran everything twice
+# on the first commit that had an open PR — same commit, same result, two
+# runs. Push covers same-repo branches, which is every branch this project
+# has, and it also covers a branch before its PR exists: the gap that let an
+# untested commit through in the first place. A fork PR would not be checked;
+# restoring that is adding `pull_request:` back, and worth doing the day
+# someone forks this.
 on:
   push:
-    paths:
-      - "kpopgo/**"
-      - ".github/workflows/kpopgo-checks.yml"
-  pull_request:
     paths:
       - "kpopgo/**"
       - ".github/workflows/kpopgo-checks.yml"

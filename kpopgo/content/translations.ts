@@ -6169,6 +6169,209 @@ export const translations: Translation[] = [
     ],
     labels: DE_LABELS,
   },
+  {
+    locale: "es",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Por qué tu pedido de Weverse Shop llega tarde, y cuándo todavía puedes cancelarlo",
+    summary:
+      "El botón de cancelar desaparece por un cambio de estado y no por un plazo, la Unión Europea eliminó su exención de 150 euros, Estados Unidos añadió un segundo régimen de inspección encima del de aranceles, y un periodo festivo coreano tiene una fecha límite medida al minuto.",
+    scope:
+      "Cubre lo que pasa después de hacer un pedido en Weverse Shop, a partir de los avisos de Weverse Shop: el plazo de cancelación, los cambios aduaneros que ha advertido para la UE y Estados Unidos, los retrasos por periodos festivos y logística, y a quién le estás comprando en realidad. Las fechas festivas son las de 2026 y el año que viene serán otras: la página de avisos es la versión viva. Hacer el pedido tiene su propia guía.",
+    intro: [
+      "Weverse Shop publica un flujo constante de avisos sobre envíos, y casi nadie los lee hasta que un paquete llega tarde. Ahí están las respuestas de verdad: qué cambio aduanero te afecta, qué periodo festivo se comió cuatro días, y el minuto exacto en que tu pedido dejó de poder cancelarse.",
+      "Esto es ese flujo, leído de una vez. Dos de los puntos de abajo son reglas realmente nuevas y no retrasos de temporada, y uno de ellos es el momento en que tu dinero deja de ser reembolsable.",
+      "Un detalle que importa si lees en español: Weverse Shop tiene tienda en español, pero su traducción no es completa. El aviso de Chuseok está en español y los dos avisos aduaneros — el de la UE y el de Estados Unidos — se sirven en inglés incluso en la tienda en español. Son precisamente los dos que cuestan dinero.",
+    ],
+    steps: [
+      {
+        title: "Entiende que el plazo de cancelación lo cierra un estado, no un reloj",
+        body: "Este es el dato que conviene saber antes de que algo vaya mal. Weverse Shop indica la ruta de cancelación como la aplicación Weverse, luego More, luego My Orders, luego Order Details, luego Cancel Order, y advierte que una vez que el estado de tu pedido cambia a Shipping Soon o In Transit ya no podrás cancelarlo. No hay ningún periodo de gracia declarado ni ninguna regla de tantas horas después de comprar. El plazo sigue abierto hasta que un almacén cambia un estado, y eso puede pasar antes de lo que esperas en un lanzamiento con mucha demanda.",
+        pitfall:
+          "Dejar para mañana la decisión de quedarte con un pedido anticipado impulsivo. El plazo no es una hora que puedas consultar: es un suceso que no controlas, y puede pasar mientras duermes.",
+        takes: "5 minutos, de inmediato",
+      },
+      {
+        title: "Si estás en la Unión Europea, la exención de 150 euros ya no existe",
+        body: "El aviso de Weverse Shop es concreto donde la cobertura general es vaga: desde el 1 de julio de 2026 la Unión Europea revisó sus normas para importaciones de bajo valor. Antes los pedidos por debajo de 150 euros estaban exentos de derechos de aduana, y esa exención se ha eliminado, así que los derechos se aplican ahora sea cual sea el importe de la compra. El detalle que más pesa es el criterio: Weverse dice que se aplica a los envíos que pasen la aduana local desde el 1 de julio de 2026, por fecha de despacho aduanero local y no por fecha del pedido. Un pedido hecho antes del cambio todavía puede quedar atrapado por él.",
+        pitfall:
+          "Dar por hecho que un pedido pequeño es demasiado barato para pagar aduana. Ya no hay suelo, y la fecha que lo decide no se ve desde la página del pedido.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Cuenta con que la aduana, o la empresa de mensajería, te pida dinero directamente",
+        body: "Weverse Shop dice que los pedidos a la UE pueden generar derechos de aduana durante el despacho local, que puedes recibir instrucciones de pago aparte de la aduana local o de la empresa de mensajería, y que no pagar esos derechos puede retrasar la entrega o impedirla. Es una experiencia distinta de un cargo en la caja: te llega un mensaje de una empresa con la que no tienes ninguna relación, pidiéndote dinero antes de que un paquete que ya pagaste se mueva. No es una estafa por defecto, pero es exactamente lo que imita una estafa, así que comprueba el número de seguimiento contra tu pedido en lugar de seguir el enlace del mensaje.",
+        pitfall:
+          "Ignorar una petición de pago de la aduana o de la mensajería como si fuera phishing y dejar el paquete parado. No pagar es una de las formas documentadas de que un pedido simplemente nunca llegue.",
+        takes: "—",
+      },
+      {
+        title: "Si estás en Estados Unidos, son dos cambios distintos y no uno",
+        body: "El cambio de aranceles se lleva toda la cobertura y no es lo único que frena los paquetes a Estados Unidos. Weverse Shop advierte por separado que desde el 8 de julio de 2026 la Comisión de Seguridad de Productos de Consumo de Estados Unidos (CPSC) aplica una política obligatoria de eFiling, lo que supone inspecciones aduaneras locales más estrictas sobre todas las mercancías importadas a Estados Unidos, y que el despacho tardará previsiblemente algunos días más que el plazo de entrega estándar. Es un régimen de declaración de seguridad del producto y no un arancel, así que un pedido a Estados Unidos puede ir lento por un motivo que no tiene nada que ver con cuántos derechos se deben.",
+        pitfall:
+          "Leer cada retraso estadounidense como el cambio del mínimo exento y esperar una factura de aduana que no va a llegar. De estos dos cambios, uno cuesta dinero y el otro cuesta días.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Trata un periodo festivo coreano como una fecha límite medida en minutos",
+        body: "Weverse Shop publica un calendario de fechas límite para cada periodo festivo coreano, y las horas son exactas. Para el Chuseok de 2026, el cierre de recepción para direcciones fuera de Corea fue el 23 de septiembre a las 11:00 a. m. (KST), con reanudación del servicio exprés el 28 de septiembre; para direcciones en Corea, el cierre de recepción de mensajería fue el 22 de septiembre a las 11:00 a. m. (KST), con reanudación ese mismo día. Los pedidos hechos después del cierre se despachan por orden a partir de la fecha de reanudación. Weverse añade dos advertencias: según la región, los productos despachados en la fecha límite pueden recibirse una vez terminado el periodo festivo, y el calendario viene de la empresa de mensajería y puede cambiar.",
+        pitfall:
+          "Leer esas fechas como si fueran de este año. Son las cifras del Chuseok de 2026, y lo que se mantiene es el patrón: un cierre a las 11:00 a. m. (KST) uno o dos días antes, y reanudación aproximadamente una semana después. Las fechas en sí hay que consultarlas cada vez.",
+        takes: "10 minutos antes de un pedido en periodo festivo",
+      },
+      {
+        title: "Si tu dirección está en China, se aplica un segundo calendario festivo",
+        body: "Weverse Shop publica avisos aparte para los periodos festivos chinos, que afectan a los pedidos con dirección de envío en China, porque las aduanas chinas cierran y el despacho se detiene. Para el Festival del Medio Otoño de 2026, del 25 al 27 de septiembre, y la Fiesta Nacional, del 1 al 7 de octubre, dijo que los pedidos pagados por completo hasta el 15 de septiembre a las 11:00 a. m. (KST) probablemente se entregarían durante la Fiesta Nacional, y que los pagados después empezarían a despacharse cuando terminara el periodo festivo, el 8 de octubre. Fíjate en que lo que cuenta es que el pago esté completo, no que el pedido esté hecho.",
+        pitfall:
+          "Un pedido anticipado cuyo pago se completa más tarde de lo que crees. Cuando la fecha límite se define por el pago completo, un pedido sin pagar es un pedido al otro lado de un hueco de tres semanas.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Separa una interrupción del transporte de un paquete perdido",
+        body: "Algunos retrasos no son aduana ni periodo festivo. En abril de 2026 Weverse Shop avisó de retrasos en las entregas en toda Europa y en algunos países de Oriente Medio, provocados por fluctuaciones en las rutas logísticas mundiales y en los horarios del transporte aéreo y marítimo, que afectaban a los pedidos despachados después del 1 de abril de 2026 y en tránsito internacional. La parte útil es lo que dice sobre el seguimiento: por los desvíos de ruta, las actualizaciones del seguimiento y las llegadas locales pueden tardar más de lo habitual, y el paquete sigue en tránsito. Un seguimiento callado durante una interrupción conocida es el síntoma previsible y no una prueba de pérdida.",
+        pitfall:
+          "Abrir una reclamación por paquete perdido porque el seguimiento no se mueve desde hace una semana. Mira primero la página de avisos por si hay una interrupción activa que cubra tu región: una reclamación por un paquete que solo va desviado te gasta el tiempo que necesitarías para una de verdad.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Comprueba si Weverse es realmente quien vende",
+        body: "Weverse Shop indica en sus propias páginas que algunos productos los ofrecen vendedores externos individuales, que en esos casos Weverse Company actúa únicamente como intermediario de comercio electrónico y no es parte de la transacción, y que no asume responsabilidad por la información del producto ni por las transacciones de esos vendedores. Eso cambia con quién tratas cuando algo va mal: en un artículo de un tercero, la contraparte es el vendedor y no Weverse. Conviene averiguarlo antes de necesitar reclamar y no mientras reclamas.",
+        pitfall:
+          "Suponer que todo lo de la tienda tiene el mismo respaldo porque todo pasa por la misma caja. La exención de responsabilidad del intermediario está publicada, y decide quién te debe una solución.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Lee los avisos tú mismo, porque esta página caducará más rápido que la mayoría",
+        body: "Todo lo anterior sale de la página de avisos de Weverse Shop, y esa página es la versión viva. Los cambios aduaneros son duraderos; los calendarios festivos, las interrupciones del transporte y los cierres de recepción no lo son: se vuelven a publicar en cada ocasión y quedan sustituidos sin que el aviso antiguo cambie. Antes de un pedido en periodo festivo o cuando un paquete llega tarde, lee la lista de avisos en lugar de fiarte de las fechas de cualquier guía, esta incluida. La fecha de arriba es cuándo lo hicimos nosotros por última vez.",
+        pitfall:
+          "Fiarte de una fecha límite sacada de una guía escrita el año pasado. Lo que se repite es la estructura y no las cifras.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Todavía puedo cancelar mi pedido?",
+        a: "Solo mientras el estado lo permita. La ruta de Weverse Shop es la aplicación Weverse, More, My Orders, Order Details, Cancel Order, y advierte que una vez que el estado cambia a Shipping Soon o In Transit la cancelación ya no es posible. No hay ningún periodo de gracia publicado, así que la respuesta depende del pedido y no del reloj.",
+      },
+      {
+        q: "Estoy en la Unión Europea y mi pedido tiene una factura de aduana. ¿Es correcto?",
+        a: "Probablemente sí. Weverse Shop dice que desde el 1 de julio de 2026 la UE eliminó la exención de derechos que antes cubría los pedidos por debajo de 150 euros, así que los derechos se aplican sea cual sea el importe, según los envíos que pasen la aduana local desde esa fecha. También advierte de que puedes recibir instrucciones de pago aparte de la aduana o de la mensajería, y de que no pagar puede retrasar la entrega o impedirla.",
+      },
+      {
+        q: "¿Por qué va lento mi pedido a Estados Unidos si no hay aduana que pagar?",
+        a: "Porque son dos cambios. Además de las normas de aranceles, Weverse Shop advierte de que desde el 8 de julio de 2026 la CPSC estadounidense aplica eFiling obligatorio, lo que supone inspecciones más estrictas sobre todas las mercancías importadas a Estados Unidos, con un despacho que previsiblemente tardará algunos días más. Ese cuesta tiempo en lugar de dinero.",
+      },
+      {
+        q: "Me ha llegado un mensaje pidiéndome pagar la aduana. ¿Es una estafa?",
+        a: "Puede ser legítimamente real: Weverse Shop dice que los clientes de la UE pueden recibir instrucciones de pago aparte de la aduana local o de la empresa de mensajería. También es exactamente lo que imita una estafa. Verifícalo comprobando el número de seguimiento contra tu propio pedido y entrando tú mismo en el sitio de la mensajería, en lugar de seguir el enlace del mensaje.",
+      },
+      {
+        q: "¿Cuál es la fecha límite para un pedido en periodo festivo coreano?",
+        a: "Weverse Shop publica una por periodo festivo, con la hora exacta. Para el Chuseok de 2026, el cierre de recepción para direcciones fuera de Corea fue el 23 de septiembre a las 11:00 a. m. (KST), con reanudación del servicio exprés el 28 de septiembre. Advierte de que el calendario viene de la mensajería y puede cambiar, y de que los productos despachados ese día pueden recibirse una vez terminado el periodo festivo. Consulta el calendario vigente en lugar de reutilizar estas fechas.",
+      },
+      {
+        q: "Mi seguimiento no se actualiza desde hace una semana. ¿Se ha perdido mi paquete?",
+        a: "Mira primero la página de avisos por si hay una interrupción que cubra tu región. Cuando Weverse Shop avisó de retrasos en Europa y Oriente Medio en abril de 2026, dijo que los desvíos de ruta hacen que las actualizaciones del seguimiento y las llegadas locales tarden más de lo habitual y que el paquete sigue en tránsito, así que un seguimiento quieto durante una interrupción conocida es el síntoma y no el problema.",
+      },
+      {
+        q: "Hay algo mal con mi artículo. ¿Trato con Weverse?",
+        a: "No siempre. Weverse Shop indica que algunos productos los venden vendedores externos individuales, que entonces Weverse Company actúa únicamente como intermediario y no es parte de la transacción, y que no asume responsabilidad por la información del producto ni por las transacciones de esos vendedores. Comprueba qué tipo de artículo compraste antes de decidir a quién acudir.",
+      },
+      {
+        q: "¿Me afecta el calendario festivo chino si no estoy en China?",
+        a: "Los avisos dicen que esos calendarios se aplican a los pedidos con dirección de envío en China, porque las aduanas chinas cierran durante los periodos festivos. Si tu dirección está en otro sitio, lo que hay que vigilar son los cierres de recepción de los periodos festivos coreanos y cualquier interrupción del transporte que esté activa.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Pedir en Weverse Shop desde fuera de Corea",
+    summary:
+      "En qué tienda estás, por qué el precio cambia al pagar, qué métodos de pago te toca de verdad según tu moneda, y los países a los que Corea no puede enviar.",
+    scope:
+      "Cubre los pedidos en Weverse Shop de productos físicos y álbumes enviados desde Corea. Las membresías y la venta de entradas se gestionan aparte y están en la guía de preventa. Las reglas de aquí salen de los avisos de Weverse Shop y cambian sin mucho preaviso.",
+    intro: [
+      "Casi todas las guías en inglés sobre Weverse Shop siguen diciendo que la tienda global acepta PayPal o Eximbay y nada más. Eso era verdad hace años. La lista de pagos es más larga ahora, la decide la moneda en la que está tu cuenta y no el país en el que vives, y desde febrero de 2026 el precio de la página del producto no es el precio que pagas.",
+      "Nada de eso está escondido: está en los avisos de la propia tienda, que es de donde sale todo lo de abajo. Lo que pasa es que nadie que escribe estas guías fue a leerlos.",
+    ],
+    steps: [
+      {
+        title: "Averigua en qué Weverse Shop estás en realidad",
+        body: "Weverse Shop no es una sola tienda. Hay una tienda GLOBAL y hay tiendas regionales, y llevan existencias distintas, abren ventanas de pedido anticipado distintas y envían desde sitios distintos. Un artículo que viste pedir a otra persona puede simplemente no existir en tu tienda. Comprueba en cuál estás antes de organizarte alrededor de una fecha de lanzamiento, porque un cierre de pedido anticipado en una tienda no te dice nada de las demás.",
+        pitfall:
+          "Un enlace que alguien comparte en una comunidad de fans abre su tienda, no la tuya. Si la página carga pero el artículo no entra en el carrito, normalmente estás en la tienda equivocada y no es que llegues tarde.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Configura tu moneda antes de mirar cualquier cosa",
+        body: "Tu moneda predeterminada decide qué métodos de pago te ofrecen. Weverse los indica por moneda: USD tiene PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay y Grab Pay. JPY tiene la misma lista sin Grab Pay. CNY se queda sin PayPal. MXN es solo PayPal y Apple Pay. KRW añade las tarjetas coreanas y los monederos coreanos: Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        pitfall:
+          "En las monedas distintas de KRW no existe un simple „pagar con Visa“. Tu tarjeta pasa por PayPal o Eximbay, que para tu banco es una transacción de otro tipo que un cargo de un comercio coreano, y ese es el motivo de que una tarjeta que funciona en otros sitios pueda fallar aquí.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Cuenta con que el precio suba al pagar, y entiende por qué",
+        body: "Desde el 3 de febrero de 2026, Weverse calcula los impuestos a partir de tu dirección de envío y de facturación. Los pedidos que van a Corea muestran precios con impuestos incluidos durante todo el proceso. Los pedidos que van a cualquier otro sitio muestran el precio de la página del producto sin impuestos, y el impuesto del destino se añade al pagar, una vez que introduces una dirección. El número de la página del producto no es el número que pagas, y eso es deliberado y no un fallo.",
+        pitfall:
+          "Esto se parece exactamente a una estafa o a un error, y es el punto en el que la gente abandona el pedido. La subida es el impuesto que cobra tu propio país, recaudado por adelantado en lugar de por la aduana más tarde.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Rellena la dirección de facturación, no solo la de envío",
+        body: "El mismo cambio de febrero de 2026 añadió un campo de dirección de facturación al pagar, porque el cálculo del impuesto la necesita. Para algunos productos intangibles — artículos y contenidos digitales — la dirección de facturación puede ser obligatoria en lugar de opcional. Introdúcela con precisión: es de donde se calcula el tipo impositivo, y una dirección equivocada no es algo que puedas corregir después sin más.",
+        pitfall:
+          "Copiar la dirección de envío en el campo de facturación sin pensar está bien cuando coinciden y está mal cuando no. Si tu tarjeta está registrada en otra dirección, usa esa.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Comprueba el idioma de tu dirección según el destino",
+        body: "Weverse pide a los clientes internacionales que verifiquen en qué idioma necesita la dirección el país de destino antes de escribirla. La regla es más clara en el otro sentido: un pedido que se envía a Corea del Sur tiene que llevar la dirección en coreano, porque las empresas de mensajería pueden no aceptar una dirección en inglés o procesarla mal. Para todo lo demás, escribe la dirección como la espera el servicio postal de tu propio país.",
+        pitfall:
+          "Transliterar una dirección coreana al alfabeto latino es la causa más frecuente de una entrega retrasada o fallida en pedidos que van a Corea.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Confirma que Corea puede enviarte algo",
+        body: "El envío desde Corea del Sur no está disponible para una lista de países y regiones que Weverse mantiene y actualiza. En la revisión del 15 de julio de 2026 incluye Myanmar, la República Democrática del Congo, Irak, Irán, Líbano, Malí, Rusia, Andorra, Ucrania, Bielorrusia, Afganistán, las Antillas Neerlandesas, Israel y Turquía. La lista se mueve, así que consulta el aviso y no esta página.",
+        pitfall:
+          "La lista se describe como una interrupción temporal y no como una política, lo que significa que un país puede salir de ella igual que entrar. Ni un pedido anterior que salió bien ni el pedido de una amiga el año pasado deciden si puedes pedir hoy.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Pide dentro de la ventana de pedido anticipado si los extras te importan",
+        body: "Los beneficios del pedido anticipado — los pósteres, las photocards y los extras de primera edición, que suelen ser el motivo de comprar en la tienda oficial y no en otro sitio más barato — están ligados a la ventana de pedido anticipado y no al álbum. Una vez que la ventana cierra, el mismo álbum se envía sin ellos. Si los extras son el objetivo, lo que hay que planificar es la fecha límite y no la fecha de lanzamiento.",
+        pitfall:
+          "Las ventanas de pedido anticipado cierran a una hora coreana, que es la tarde anterior o la madrugada en casi toda América Latina.",
+        takes: "Antes del cierre",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Puedo pagar con Visa o Mastercard en Weverse Shop?",
+        a: "No como opción directa de tarjeta fuera de la configuración en moneda coreana. En USD, JPY, CNY y MXN la tarjeta pasa por PayPal o Eximbay. Eso sigue llegando a tu tarjeta, pero tu banco ve un tipo de transacción distinto, así que vale la pena activar los pagos internacionales con antelación.",
+      },
+      {
+        q: "¿Por qué subió el precio cuando puse mi dirección?",
+        a: "Desde el 3 de febrero de 2026 los precios fuera de Corea se muestran en la página del producto sin impuestos, y el impuesto de tu destino se añade al pagar. Es el impuesto que cobra tu propio país, recaudado en el momento de la compra y no en la entrega.",
+      },
+      {
+        q: "¿Me van a cobrar aduana cuando llegue?",
+        a: "Weverse ahora prepaga derechos e impuestos al pagar en los pedidos a los que corresponde, lo que según dice reduce la necesidad de un pago adicional durante el despacho. Indica que esto no se aplica a todos los países ni regiones, así que es una expectativa razonable y no una garantía.",
+      },
+      {
+        q: "¿Weverse Shop envía a mi país?",
+        a: "Normalmente sí, pero hay una lista mantenida de países y regiones que de momento no pueden recibir envíos desde Corea del Sur. Consulta ese aviso para ver la lista vigente antes de pedir: se revisa cuando cambian las condiciones.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

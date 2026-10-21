@@ -255,6 +255,10 @@ export const translations: Translation[] = [
         a: "ブランド変更が検索結果、第三者のガイド、キャッシュされたページに行き渡るには時間がかかります。保存したリンクやブログ記事からではなく、あなたの公演の公式告知からたどってください。",
       },
       {
+        q: "NOL Globalは同じものですか。NOL Koreaは。",
+        a: "どちらも、名称変更をうろ覚えのまま思い出そうとしたときに出てくる名前で、実際に入力されているのがそれなので、はっきり書いておく価値があります。サイトは二つです。海外向けのNOL World——2025年12月1日までinterpark Globalだったもの。そして韓国語のNOL Ticket——2025年4月までInterpark Ticketだったものです。「NOL Global」「NOL Korea」「NOL KR」で案内された場合、探しているのはほぼ確実にNOL Worldです。",
+      },
+      {
         q: "NOL TicketのアカウントをNOL Worldで使えますか。",
         a: "別アカウント・別の本人確認として扱ってください。ログインや完了した本人確認が引き継がれると考えず、実際に購入するサイトで確かめてください。",
       },
@@ -1918,10 +1922,24 @@ for (const t of translations) {
   }
   // A translation that drops steps is not a translation of the page a reader
   // was linked to, and the missing step is always the one that mattered.
-  if (t.steps.length !== guide.steps.length) {
-    throw new Error(
-      `${t.slug} (${t.locale}): has ${t.steps.length} steps but the English ` +
-        `guide has ${guide.steps.length}. A translation may not drop or add steps.`,
-    );
+  //
+  // The same goes for the FAQ, and that one was found the hard way: the
+  // freshness rules key on `lastChecked`, which records when a source was last
+  // held against the live platform — not when the English text was edited. So
+  // adding an answer to a guide without re-checking anything leaves every
+  // translation of it one answer short while still reporting `current`. The
+  // count is the cheap half of catching that; the expensive half is still
+  // remembering to translate the new answer.
+  for (const [name, mine, theirs] of [
+    ["steps", t.steps.length, guide.steps.length],
+    ["faq entries", t.faq.length, guide.faq.length],
+  ]) {
+    if (mine !== theirs) {
+      throw new Error(
+        `${t.slug} (${t.locale}): has ${mine} ${name} but the English guide ` +
+          `has ${theirs}. A translation may not drop or add them — if the ` +
+          `English gained content, translate it or the page is silently short.`,
+      );
+    }
   }
 }

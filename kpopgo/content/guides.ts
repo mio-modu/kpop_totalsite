@@ -340,6 +340,10 @@ export const guides: Guide[] = [
         a: "Rebrands take a while to propagate through search results, third-party guides and cached pages. Navigate from the official announcement for your show rather than from a saved link or a blog post.",
       },
       {
+        q: "Is NOL Global the same thing? What about NOL Korea?",
+        a: "Those are the names people reach for when they half-remember the rename, and they are worth saying out loud because they are what gets typed. There are two sites: NOL World, the overseas-facing one, which was interpark Global until 1 December 2025; and NOL Ticket, the Korean-language one, which was Interpark Ticket until April 2025. If you were sent to \u0022NOL Global\u0022, \u0022NOL Korea\u0022 or \u0022NOL KR\u0022, the site you are looking for is almost certainly NOL World.",
+      },
+      {
         q: "Can I use my NOL Ticket account on NOL World?",
         a: "Treat them as separate accounts with separate verification. Do not assume a login or a completed verification carries across — confirm on the site you will actually be buying from.",
       },

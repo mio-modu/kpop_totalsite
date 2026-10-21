@@ -32,6 +32,7 @@ const ROUTES = [
   // weren't representative any more.
   ["where-to-buy", "/where-to-buy"],
   ["policy", "/editorial-policy"],
+  ["report", "/report"],
   // Japanese sets no spaces between words, so it wraps on different rules
   // from English and is the likeliest thing to overflow a narrow column.
   ["guide-ja", "/ja/guides/nol-world-verified-member-ekyc"],
@@ -95,6 +96,33 @@ for (const theme of ["dark", "light"]) {
       if (h < 1000) {
         bad++;
         console.log(`  ✗ TOO SHORT ${theme} ${name} @${w}: ${h}px — did it render?`);
+      }
+      // No in-flow object may eat half the screen before the reading starts.
+      // This is here because the guide pages' cap silently did not apply for
+      // a long time: `max-w-[420px]` sat on the same element as `.wrap`,
+      // which sets max-width too, so equal specificity meant source order
+      // decided and 1140px won. One piece rendered 1979px tall above the
+      // first step, and nothing failed — a cap nobody measures is not a cap.
+      //
+      // Scoped to `.art-drop`, which is the cut-out treatment objects inside
+      // the reading flow get. Full-bleed pieces pass `drop={false}` and are
+      // deliberately large: the home hero is the page's opening image, not
+      // something standing between a reader and a step.
+      const tall = await page.evaluate(
+        (vh) =>
+          [...document.querySelectorAll("img.art-drop")]
+            .map((el) => ({
+              src: (el.getAttribute("src") || "").split("/").pop(),
+              h: Math.round(el.getBoundingClientRect().height),
+            }))
+            .filter((x) => x.h > vh * 0.5),
+        h === 0 ? 800 : (await page.viewportSize()).height,
+      );
+      for (const t of tall) {
+        bad++;
+        console.log(
+          `  ✗ ARTWORK ${theme} ${name} @${w}: ${t.src} is ${t.h}px, over half the viewport`,
+        );
       }
       if (w === 390 || w === 1280) {
         await page.screenshot({

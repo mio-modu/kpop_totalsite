@@ -3,6 +3,7 @@ import Link from "next/link";
 import { guides } from "@/content/guides";
 import { corrections } from "@/content/corrections";
 import { partners } from "@/content/affiliates";
+import { reports } from "@/content/reports";
 import { translations } from "@/content/translations";
 import { localeList } from "@/lib/i18n";
 import { SHELF_LIFE } from "@/lib/freshness";
@@ -33,6 +34,11 @@ export const metadata: Metadata = {
  */
 export default function EditorialPolicy() {
   const sourceCount = guides.reduce((n, g) => n + g.sources.length, 0);
+  const byStatus = {
+    sourced: guides.filter((g) => g.status === "sourced").length,
+    reported: guides.filter((g) => g.status === "reported").length,
+    verified: guides.filter((g) => g.status === "verified").length,
+  };
   const stepCount = guides.reduce((n, g) => n + g.steps.length, 0);
 
   return (
@@ -75,9 +81,29 @@ export default function EditorialPolicy() {
             </li>
           </ul>
           <p className="t mt-4">
-            Today all {guides.length} guides are <strong>Sourced</strong>: {stepCount}{" "}
-            steps traced to {sourceCount} linked sources, and nobody has walked one end to
-            end. That is on every page, in the place a tick would normally go.
+            Today{" "}
+            {byStatus.sourced === guides.length
+              ? `all ${guides.length}`
+              : `${byStatus.sourced} of ${guides.length}`}{" "}
+            guides are <strong>Sourced</strong>:{" "}
+            {stepCount} steps traced to {sourceCount} linked sources.{" "}
+            {byStatus.reported > 0
+              ? `${byStatus.reported} ${byStatus.reported === 1 ? "has" : "have"} field reports against ${byStatus.reported === 1 ? "it" : "them"}, from ${reports.length} ${reports.length === 1 ? "reader" : "readers"} who walked the flow.`
+              : "Nobody has sent a field report yet."}{" "}
+            {byStatus.verified === 0
+              ? "Nobody here has walked one end to end."
+              : `${byStatus.verified} walked end to end from this side.`}{" "}
+            That is on every page, in the place a tick would normally go.
+          </p>
+          <p className="t mt-4">
+            <strong>Reported is derived, not typed.</strong> A guide reaches that rung
+            only when field reports for it exist in the register, and setting it by hand
+            fails the build — so the badge cannot say more than the evidence does. If you
+            have walked one of these,{" "}
+            <Link href="/report" className="ju underline underline-offset-4">
+              tell us what you saw
+            </Link>
+            .
           </p>
         </section>
 

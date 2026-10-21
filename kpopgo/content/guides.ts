@@ -40,6 +40,7 @@
  * clock, not the longer one.
  */
 import { partners } from "./affiliates";
+import { reports, reportCount } from "./reports";
 
 export type GuideStatus = "draft" | "sourced" | "reported" | "verified";
 
@@ -2715,6 +2716,67 @@ for (const guide of guides) {
           `content/affiliates.ts, which is what /editorial-policy publishes.`,
       );
     }
+  }
+}
+
+/**
+ * `reported` is derived from field reports, and cannot be written by hand.
+ *
+ * This is the same rule as the paid-link disclosure and the expiry seal, for
+ * the same reason: a claim about evidence that somebody types is a claim that
+ * will eventually be typed without the evidence. `draft` and `sourced` are
+ * things an author can attest to alone, so the content sets those. `reported`
+ * asserts that other people walked the flow, which is only true if their
+ * reports are in content/reports.ts — so it is lifted from there, and setting
+ * it in the content fails the build.
+ *
+ * `verified` stays hand-set, because it means a person on this side went
+ * through the flow, and no register can establish that for them.
+ */
+for (const guide of guides) {
+  if (guide.status === "reported") {
+    throw new Error(
+      `${guide.slug} sets status "reported" by hand. That rung is derived ` +
+        `from content/reports.ts — add the field reports that justify it and ` +
+        `set "sourced" here, or the page claims evidence nobody holds.`,
+    );
+  }
+}
+
+for (const report of reports) {
+  if (!guides.some((g) => g.slug === report.slug)) {
+    throw new Error(
+      `content/reports.ts has a report for an unknown guide: ${report.slug}`,
+    );
+  }
+  if (Date.parse(`${report.walked}T00:00:00Z`) > Date.now()) {
+    throw new Error(
+      `${report.slug}: a field report claims to have been walked on ` +
+        `${report.walked}, which is in the future.`,
+    );
+  }
+  if (report.checked < report.walked) {
+    throw new Error(
+      `${report.slug}: a field report was checked on ${report.checked}, ` +
+        `before the ${report.walked} walk it describes.`,
+    );
+  }
+  const guide = guides.find((g) => g.slug === report.slug)!;
+  const most = guide.steps.length;
+  for (const n of report.steps) {
+    if (n < 1 || n > most || !Number.isInteger(n)) {
+      throw new Error(
+        `${report.slug}: a field report names step ${n}, and the guide has ` +
+          `${most} steps.`,
+      );
+    }
+  }
+}
+
+// The lift itself, after validation so it cannot run on a bad register.
+for (const guide of guides) {
+  if (guide.status === "sourced" && reportCount(guide.slug) > 0) {
+    guide.status = "reported";
   }
 }
 

@@ -5,7 +5,11 @@ import { site } from "@/lib/site";
 export function Footer() {
   return (
     <footer style={{ borderTop: "1px solid var(--rule-soft)" }}>
-      <div className="wrap grid gap-10 py-12 md:grid-cols-[1.5fr_1fr_1fr]">
+      {/* The guide column sets the proportions: at twenty guides it was a
+          single column taller than the other two put together, which made the
+          footer a page of its own on every route. It runs two-up from sm, so
+          the brand and policy columns give back the width it needs. */}
+      <div className="wrap grid gap-10 py-12 md:grid-cols-[1.15fr_1.7fr_1.15fr]">
         <div>
           <span
             className="text-[1.125rem] font-black uppercase tracking-[-0.045em]"
@@ -23,7 +27,7 @@ export function Footer() {
 
         <nav aria-label="Guides">
           <h2 className="data dim">Guides</h2>
-          <ul className="mt-4 grid gap-2.5">
+          <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5">
             {guides.map((g) => (
               <li key={g.slug}>
                 <Link href={`/guides/${g.slug}`} className="t-sm tap hover:text-[var(--ink)]">
@@ -61,6 +65,11 @@ export function Footer() {
             <li>
               <Link href="/editorial-policy" className="tap hover:text-[var(--ink)]">
                 How we check
+              </Link>
+            </li>
+            <li>
+              <Link href="/report" className="tap hover:text-[var(--ink)]">
+                Report what you saw
               </Link>
             </li>
             <li>

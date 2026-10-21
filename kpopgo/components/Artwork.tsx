@@ -18,6 +18,7 @@ export function Artwork({
   priority = false,
   className,
   drop = true,
+  maxHeight,
 }: {
   name: string;
   fallback: React.ReactNode;
@@ -25,6 +26,17 @@ export function Artwork({
   className?: string;
   /** Cut-outs get a drawn shadow; full-bleed frames do not. */
   drop?: boolean;
+  /**
+   * A vertical budget, as any CSS length.
+   *
+   * Width is the wrong axis to cap these on, and the guide pages proved it:
+   * the pieces are not the same shape — `pc-foil` is 720x1286 and
+   * `guide-tickets` is 720x420 — so one width cap renders the first three
+   * times taller than the second. A height cap gives every piece the same
+   * share of the screen whatever its proportions, which is what the page
+   * actually wants to control.
+   */
+  maxHeight?: string;
 }) {
   const art = getArt(name);
   if (!art) return <>{fallback}</>;
@@ -40,8 +52,16 @@ export function Artwork({
       height={art.height}
       priority={priority}
       className={[drop ? "art-drop" : "", className].filter(Boolean).join(" ")}
-      sizes="(max-width: 900px) 100vw, 50vw"
-      style={{ width: "100%", height: "auto" }}
+      sizes={maxHeight ? "(max-width: 640px) 60vw, 420px" : "(max-width: 900px) 100vw, 50vw"}
+      // Inline, so it wins the cascade — which is the whole reason the guide
+      // page's `max-w-[420px]` silently did nothing for as long as it did.
+      // With a height budget the width has to be free, or capping one axis
+      // squashes the piece instead of scaling it.
+      style={
+        maxHeight
+          ? { width: "auto", height: "auto", maxWidth: "100%", maxHeight }
+          : { width: "100%", height: "auto" }
+      }
     />
   );
 }

@@ -48,6 +48,39 @@ proves nothing. Storefronts are link-checked only; their wording is supposed
 to move. Take a new baseline with `npm run watch -- --record` *after*
 deliberately re-reading a source, never to silence a warning.
 
+That last sentence was the whole safeguard, and a rule that lives only in a
+sentence gets broken by the next person in a hurry — which here was me.
+Adding the Ktown4u guide left its seven notices with no baseline, and the
+obvious fix, a plain `--record` run, would also have re-baselined the Yahoo
+rebrand page, clearing a 9% drift warning that is standing **on purpose**
+because that page's body does not extract cleanly. A silenced warning and a
+checked source look identical afterwards.
+
+So `npm run watch -- --record-new` now writes only the entries that are
+missing and leaves every existing baseline untouched. Use it when a new guide
+brings new sources; keep `--record` for a deliberate re-read, which is the one
+case where overwriting is the point. Note the asymmetry is real: that run
+reported `1 needing action, 1 worth a look` **after** writing, because leaving
+a warning standing is what it is for.
+
+**The checks did not run on most changes, and now they do.**
+`.github/workflows/kpopgo-watch.yml` sweeps the network weekly and keeps its
+test step, correctly: several assertions are date-dependent and go red as
+shelf lives expire rather than because anyone edited anything, so the schedule
+needs them. But its push trigger is narrowed to `content/guides.ts` and
+`scripts/watch.mjs`, so that a network sweep does not fire on every commit —
+and the effect was that a change to the translation register, to `lib/`, to
+`app/`, or to the test files themselves ran nothing. A commit adding a test to
+this repo was not tested by it.
+
+`.github/workflows/kpopgo-checks.yml` is the per-change gate: the suite and
+`tsc --noEmit` on anything under `kpopgo/`. The suite imports only node
+builtins and one local module, so that job installs nothing and takes
+seconds. `next build` is deliberately absent — Vercel builds every push and
+reports it as a commit status — as is `next lint`, which in Next 15.5 prompts
+for an ESLint config this project does not have and cannot complete
+unattended. The repository is public, so the minutes are free.
+
 **A derived status needs a rebuild to come down.** Every route that shows one
 carries `export const revalidate = 86400`. A fully static page freezes the
 status on the day it deploys, which is the exact failure the expiry exists to

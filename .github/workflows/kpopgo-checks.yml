@@ -1,0 +1,80 @@
+# The checks that should run on a change, which until now mostly did not.
+#
+# `kpopgo-watch.yml` carries a "Freshness unit tests" step, and that step is
+# right where it is: the weekly scheduled run needs it, because several of the
+# assertions are date-dependent and go red as shelf lives expire rather than
+# because anyone edited anything. What it is not is a per-change gate. That
+# workflow's push trigger is narrowed to `content/guides.ts`, `scripts/watch.mjs`
+# and its own file, for the sensible reason that its network sweep should not
+# fire on every commit.
+#
+# The effect was that a change touching anything else — the translation
+# register, lib/, app/, or the test files themselves — ran no checks at all. A
+# commit adding a test to this repo was not itself tested by it.
+#
+# So the network sweep keeps its narrow trigger and its own schedule, and the
+# cheap deterministic checks move here, where they run on everything under
+# kpopgo/. The repository is public, so Actions minutes are free and there is
+# nothing to ration.
+#
+# Deliberately not here: `next build`. Vercel builds every push and reports it
+# as a commit status, so a second build would cost two minutes to learn what is
+# already on the commit. And `next lint`, which in Next 15.5 prompts for an
+# ESLint setup this project does not have and cannot complete unattended.
+name: kpopgo checks
+
+on:
+  push:
+    paths:
+      - "kpopgo/**"
+      - ".github/workflows/kpopgo-checks.yml"
+  pull_request:
+    paths:
+      - "kpopgo/**"
+      - ".github/workflows/kpopgo-checks.yml"
+
+# A second push supersedes the first; nobody needs the older answer.
+concurrency:
+  group: kpopgo-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Every assertion in the suite imports node builtins and one local
+      # module, so there is nothing to install. Keeping it that way is what
+      # makes this job a few seconds rather than a minute.
+      - name: Test suite
+        working-directory: kpopgo
+        run: node --test "scripts/*.test.mjs"
+
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: kpopgo/package-lock.json
+
+      - name: Install
+        working-directory: kpopgo
+        run: npm ci
+
+      - name: tsc --noEmit
+        working-directory: kpopgo
+        run: npx tsc --noEmit

@@ -147,11 +147,21 @@ const JA_LABELS = {
  * Two guides are deliberately in no language but English, and this is the
  * reason rather than an oversight.
  *
- * The three Asian editions now carry the same eighteen of the twenty guides
- * and skip the same two. That was not planned — they were written at
- * different times for different reasons — and it is worth noticing, because
- * the two they all refuse are refused by the same test: a page whose subject
- * is a jurisdiction the reader is not in.
+ * Four editions now carry the same eighteen of the twenty guides and skip the
+ * same two. Three of them arrived there without being planned to, written at
+ * different times for different reasons, and the fourth — German — was
+ * brought up to the same eighteen deliberately once its commerce-only
+ * restriction turned out to be wrong. That convergence is worth noticing,
+ * because the two guides all four refuse are refused by the same test: a page
+ * whose subject is a jurisdiction the reader is not in.
+ *
+ * One asymmetry is left standing on purpose and should not be read as part of
+ * the rule. The timezone guide is excluded from the three Asian editions
+ * because none of their readers observes daylight saving. Germany and Spain
+ * do, so for those two it is not a mismatch at all — it is the one page whose
+ * thesis fits them better than it fits the English readership it was written
+ * for. German is at eighteen because eighteen was asked for; if a nineteenth
+ * is ever added there, this is it.
  *
  * `kpop-ticketing-day-timezone` is the sharper of the two, because its title
  * suggests the opposite. The guide is not really about time zones; it is
@@ -7199,6 +7209,259 @@ export const translations: Translation[] = [
       {
         q: "Ist das mobile Ticket dasselbe wie der Einlass per Gesichtserkennung?",
         a: "Nein. NOL facepass ist ein eigenes System, bei dem eine Kamera an der Tür Sie ohne Ticketprüfung einlässt, und die Unterstützung dafür wird je Veranstaltung gesetzt. Das mobile Ticket und sein QR-Code sind der gewöhnliche Weg, und der, den man funktionsfähig halten sollte, auch wenn man ein Gesicht registriert hat.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: ein Produkt, und fast nichts daran ist änderbar",
+    summary:
+      "Ein Konzert und ein Hotel, verkauft als ein einziger Posten. Sie können Hotel, Daten und Nächte nicht ändern, auf das Hotel zu verzichten erstattet nichts, der Platz ist zufällig und wird am Tag selbst verraten, und die Tickets werden nur Ihnen persönlich im Hotel innerhalb eines Zeitfensters ausgehändigt.",
+    scope:
+      "Behandelt die Pakete aus Konzert und Hotel namens Play and Stay von NOL World, so wie NOL World sie dokumentiert: was feststeht, wie Tickets abgeholt werden, welche Anforderungen an Identität und Namen gelten, und was die Antworten zur Stornierung tatsächlich sagen. Einzelne Pakete tragen eigene Stornoregelungen und Leistungen, und die Produktseite ist maßgeblich. Ein Shuttle wird nur dort erwähnt, wo ein Paket eines enthält.",
+    intro: [
+      "Ein Paket sieht nach der bequemen Lösung aus: eine Zahlung, ein Hotel in der Nähe des Veranstaltungsorts, eine zugesicherte Platzkategorie, kein Kampf mit einer Warteschlange. Für einen Fan aus dem Ausland mit einem einzigen Anlauf für eine Reise ist das ein ehrlich attraktiver Tausch.",
+      "Es ist zugleich das starrste Produkt der Plattform, und die Starrheit ist aus dem Angebot nicht ersichtlich. Liest man NOL Worlds eigene Antworten hintereinander, zeigt sich ein Muster: Das Paket ist ein unteilbarer Posten. Nicht ein Ticket und ein Hotelzimmer, die sich getrennt optimieren lassen — eine Sache, einmal gekauft, fast nirgends änderbar. Alles Folgende ergibt sich aus dieser einen Tatsache, auch die Teile, die unfair wirken werden, wenn Sie sie brauchen.",
+    ],
+    steps: [
+      {
+        title: "Verstehen Sie, dass Sie einen Posten kaufen und nicht zwei Buchungen",
+        body: "Das ist die ganze Anleitung in einem Schritt. NOL World gibt an, dass die Anzahl der Nächte in einem Paket nicht geändert werden kann, dass die im Paket angegebenen Daten für Anreise und Abreise nicht geändert werden können, und dass ein Hotelwechsel nicht zulässig ist. Nächte lassen sich auch beim Kauf nicht hinzufügen — ein längerer Aufenthalt ist ein eigenes Gespräch mit dem Hotel, zum Preis des Hotels und abhängig von dessen Verfügbarkeit. Und ein Konto kann einen Posten kaufen, das ist also nichts, was man stapelt.",
+        pitfall:
+          "Das Paket zu buchen mit der Absicht, die Einzelheiten später zu ordnen: einen Tag früher anreisen, in ein Hotel näher bei einer Freundin wechseln, hinten eine Nacht streichen. Jedes davon ist ein dokumentiertes Nein.",
+        takes: "15 Minuten, bevor Sie zahlen",
+      },
+      {
+        title: "Nehmen Sie hin, dass der Verzicht auf das Hotel nichts erstattet",
+        body: "Die Frage wird in der FAQ von NOL World auf zwei Arten gestellt und bekommt beide Male dieselbe Antwort: Sie dürfen sich entscheiden, nicht im Hotel zu übernachten, aber eine Erstattung des Hotelanteils gibt es nicht, und die Reservierung ist nicht auf eine andere Person übertragbar. Stattdessen bei einer Freundin zu übernachten verwandelt sich also nicht in Geld zurück, und das bezahlte Zimmer kann niemandem sonst übergeben werden. Eine Nacht zu nutzen und den Rest zurückzufordern wird ebenfalls abgelehnt — die Anzahl der Nächte steht fest.",
+        pitfall:
+          "Die Hotelhälfte als Anzahlung zu behandeln, von der man weggehen kann. Es ist die Hälfte, die Sie nicht weiterverkaufen, nicht verschenken und nicht zurückfordern können.",
+        takes: "—",
+      },
+      {
+        title: "Rechnen Sie mit einem zufälligen Platz, und damit, ihn am Tag selbst zu erfahren",
+        body: "Das Paket sichert eine Kategorie zu, keinen Ort. NOL World sagt, die Platzvergabe innerhalb von Abschnitten und Zonen erfolge, abgesehen von Ihrer gewählten Kategorie, zufällig — und dass Ihre Platzzuweisung beim Abholen des Tickets im Hotel am Tag der Aufführung gezeigt wird. Sie werden erst Stunden vor der Veranstaltung wissen, wo Sie sitzen. Es schließt auch die naheliegende Rückfrage: Unzufriedenheit mit dem Platz ist kein Erstattungsgrund, und eine Stornogebühr kann trotzdem anfallen.",
+        pitfall:
+          "Mit einer Platzposition zu planen — einer bestimmten Seite für ein Fanprojekt, einer Reihe für ein Objektiv. Die Kategorie ist das Versprechen; der Rest ist eine Ziehung, die Sie am Tag selbst sehen.",
+        takes: "—",
+      },
+      {
+        title: "Holen Sie am Hotelschalter ab, persönlich, innerhalb des Fensters",
+        body: "Es gibt genau einen Weg zu diesen Tickets. NOL World sagt, die Abholung erfolge nur am Ticketschalter von NOL World im Hotel, nur während der festgelegten Zeiten, und dass Tickets ausschließlich an die Person ausgegeben werden, auf die die Reservierung läuft, und von dieser persönlich abzuholen sind. Auf die Frage, ob jemand mit Anspruch auf eine Ermäßigung stattdessen abholen und hingehen könne, lautet die Antwort, dass Tickets nur von der Reservierungsinhaberin abgeholt und genutzt werden können, ohne Ausnahme. Verpasst man die festgelegten Zeiten, lautet die veröffentlichte Antwort schlicht, dass Tickets nur während der angegebenen Zeit verfügbar sind.",
+        pitfall:
+          "Den Tag um den Veranstaltungsort herum zu planen. Der verbindliche Termin ist am Hotelschalter, in einem Fenster, das jemand anderes gesetzt hat, am Tag der Veranstaltung.",
+        takes: "Bauen Sie den Tag darum herum",
+      },
+      {
+        title: "Bringen Sie die Dokumente mit, die der Schalter tatsächlich verlangt",
+        body: "NOL World ist konkret: den gültigen Originalausweis der Reservierungsinhaberin, dazu die Reservierungsbestätigung, ausgedruckt oder auf dem Telefon — und ohne diese können Tickets nicht abgeholt werden. Für Staatsangehörige außerhalb Koreas ist der akzeptierte Ausweis ein Pass oder eine Bescheinigung über die Registrierung als Ausländerin. Für koreanische Staatsangehörige gibt es eine längere Liste, darunter Personalausweis, Führerschein, Pass, Jugendausweis oder ein mobiler Ausweis, ausgestellt über Government 24 oder PASS.",
+        pitfall:
+          "Den Pass im Zimmersafe zu lassen, weil der Schalter im selben Gebäude ist. Es ist der Originalausweis, der das Ticket öffnet, und ein Foto davon steht nicht auf der Liste.",
+        takes: "5 Minuten beim Packen",
+      },
+      {
+        title: "Bei einem Paket für zwei müssen Sie beide am Schalter sein",
+        body: "Das ordnet einen Tag um und wird leicht übersehen. NOL World sagt, bei einem Paket für zwei Personen müssten sowohl die Reservierungsinhaberin als auch die Begleitperson zur Abholung anwesend sein — und dass auch die Begleitperson einen Ausweis vorzeigen muss, damit bestätigt werden kann, dass sie die Altersanforderung für den Einlass erfüllt. Das Abholfenster ist also ein Termin für zwei Personen mit zwei Ausweisen und keine Besorgung, die eine von Ihnen erledigen kann.",
+        pitfall:
+          "Sich am Tag aufzuteilen — eine holt die Tickets, die andere macht Sightseeing oder stellt sich für Merchandise an. Der Schalter gibt die Tickets nicht an eine von Ihnen heraus.",
+        takes: "—",
+      },
+      {
+        title: "Bringen Sie den Namen jetzt genau mit dem Pass in Übereinstimmung",
+        body: "NOL World beantwortet das mit beiden Folgen in einem Satz: Stimmt der bei der Buchung angegebene Name nicht mit Ihrem Pass überein, sind weder die Ticketabholung noch der Hotel-Check-in möglich. Beide Hälften des Pakets, blockiert durch denselben Fehler. Die Frage, auf die es antwortet, nennt die üblichen Verdächtigen — ein Tippfehler, ein fehlender zweiter Vorname, Groß- und Kleinschreibung, Leerzeichen. Prüfen Sie die Buchung gegen die Passseite selbst und nicht gegen Ihre Erinnerung.",
+        pitfall:
+          "Anzunehmen, ein kleiner Unterschied werde durchgewunken, weil das Paket schon bezahlt ist. Bezahlt ist nicht das, was an einem der beiden Schalter geprüft wird.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Warten Sie nicht auf eine Hotelbestätigung per E-Mail, denn es gibt keine",
+        body: "Das verursacht vermeidbare Panik, wissen Sie es also vorher. NOL World sagt, Hotelbestätigungen würden nicht gesondert versandt, und dass die Hotelreservierung bestätigt und gültig ist, wenn die Zahlung durchging. Noch nützlicher: Die Reservierungsdaten gehen erst etwa zwei Wochen vor dem Aufenthalt an das Hotel, das Hotel kann Sie vorher also wirklich nicht finden. Rufen Sie früher an und man hat nie von Ihnen gehört, ist das der dokumentierte Normalzustand.",
+        pitfall:
+          "Ein Ersatzzimmer zu buchen oder das Paket erneut zu kaufen, weil das Hotel sechs Wochen vorher keine Reservierung findet. Es war nichts falsch, und jetzt gibt es zwei Buchungen.",
+        takes: "2 Minuten Beruhigung",
+      },
+      {
+        title: "Checken Sie als Käuferin ein, und lesen Sie die kleinen Leistungen",
+        body: "Der Hotel-Check-in hängt an derselben Person wie die Tickets: NOL World sagt, der Check-in sei nur nach Prüfung der Identität der Reservierungsinhaberin möglich, eine Begleitperson kann also nicht zuerst einchecken und warten. Kommen Sie spät an, lautet die Anweisung, das Hotel vorab zu kontaktieren — mit der Warnung, dass es je nach Hotel womöglich nicht möglich ist. Zwei weitere Einzelheiten, die vor der Buchung zu kennen sich lohnt: Minderjährige können nicht ohne Erziehungsberechtigte übernachten, und Frühstück ist nicht enthalten, sofern Ihr konkretes Paket es nicht enthält.",
+        pitfall:
+          "Eine Freundin vorauszuschicken, damit sie das Gepäck abstellt und den Aufenthalt beginnt. Das Zimmer öffnet sich auf Ihre Identität und nicht auf die Buchungsnummer.",
+        takes: "—",
+      },
+      {
+        title: "Gibt es ein Shuttle, behandeln Sie es als eine Abfahrt ohne zweite Chance",
+        body: "Wo ein Paket ein Shuttle enthält, sind die Antworten von NOL World nüchtern. Die Nutzung ist freiwillig, und es nicht zu nutzen erstattet nichts. Es gibt keine Ersatzfahrzeuge, zu spät am Abfahrtsort zu sein heißt also, dass es weg ist. Ein Shuttle nur für die Rückfahrt ist möglich. Eine Begleitperson, die nicht gebucht hat, kann die Shuttle-Leitung vor Ort fragen, aber die Plätze sind begrenzt und nicht zugesichert. Und die Einzelheit, die einen Abend ruiniert: Sie dürfen einen Koffer in den Bus mitnehmen, aber eine Gepäckaufbewahrung im Bus gibt es nicht, sobald Sie am Veranstaltungsort angekommen sind. Ort und Zeit für das Einsteigen zur Rückfahrt bekommen Sie bei der Ticketübergabe im Hotel.",
+        pitfall:
+          "Einen Koffer zum Konzert mitzunehmen, weil der Bus ihn zugelassen hat. Am Veranstaltungsort gibt es nirgends, wo man ihn lassen könnte, und Sie tragen ihn durch die Veranstaltung.",
+        takes: "—",
+      },
+      {
+        title: "Lesen Sie die Antworten zur Stornierung vor der Buchung, denn sie lauten nein",
+        body: "Das ist der Schritt, den man ernst nehmen sollte, solange die Reise noch ein Plan ist. NOL World veröffentlicht Antworten auf die zwei härtesten Fälle, und beide sind Absagen. Zur Ansteckung: Nach der Herabstufung der Risikoeinstufung von COVID-19 ist eine Quarantäne nicht mehr verpflichtend, dementsprechend gilt auch bei einer Infektion keine Minderung der Stornogebühr. Zu Todesfall und Krankenhausaufenthalt nach einem Unfall: Erstattungen aus persönlichen Gründen gibt es nicht, und Stornogebühren fallen nach der jeweiligen Regelung des Produkts an. Ob sich das hart oder nur klar liest, es sagt Ihnen, wo das Risiko liegt — bei Ihnen, ab dem Moment der Zahlung. Das Instrument, das es tragen soll, ist eine vor der Abreise abgeschlossene Reiseversicherung, und was sie tatsächlich abdeckt, hängt von der Police ab, lesen Sie dieses Dokument also, statt es anzunehmen.",
+        pitfall:
+          "Das Risiko unversichert zu tragen in der Annahme, ein hinreichend ernster Grund werde schon akzeptiert. NOL World hat seine Antwort auf die zwei ernstesten Gründe, die es gibt, bereits veröffentlicht.",
+        takes: "30 Minuten mit einer Versicherungspolice",
+      },
+    ],
+    faq: [
+      {
+        q: "Kann ich das Paket kaufen und das Hotel nicht nutzen?",
+        a: "Sie können auf die Übernachtung verzichten, aber NOL World gibt an, dass der Hotelanteil nicht erstattungsfähig ist und die Reservierung nicht auf eine andere Person übertragen werden kann. Weniger Nächte zu nutzen, als das Paket enthält, und die Differenz zurückzufordern wird ebenfalls abgelehnt, weil die Anzahl der Nächte nicht geändert werden kann.",
+      },
+      {
+        q: "Kann ich den Aufenthalt verlängern, verkürzen, die Daten verschieben oder das Hotel wechseln?",
+        a: "Nächte können nicht geändert werden, die Daten für Anreise und Abreise im Paket können nicht geändert werden, und ein Hotelwechsel ist nicht zulässig. Zusätzliche Nächte lassen sich auch beim Kauf nicht hinzufügen — die Anweisung von NOL World lautet, sich wegen Verfügbarkeit und Preis direkt an das Hotel zu wenden, und es kann sein, dass es nicht möglich ist. Ein Zimmer-Upgrade ist dasselbe: beim Hotel fragen und bei Ankunft direkt dort zahlen.",
+      },
+      {
+        q: "Wann erfahre ich meinen Platz?",
+        a: "Wenn Sie das Ticket am Tag der Aufführung im Hotel abholen. Das Paket sichert eine Kategorie zu; innerhalb dieser Kategorie vergibt NOL World Abschnitte und Plätze zufällig. Mit dem Ergebnis unzufrieden zu sein ist kein Erstattungsgrund.",
+      },
+      {
+        q: "Kann jemand die Tickets für mich abholen oder an meiner Stelle hingehen?",
+        a: "Nein. NOL World sagt, Tickets würden ausschließlich an die Reservierungsinhaberin ausgegeben und müssten persönlich abgeholt werden, und dass sie nur von der Reservierungsinhaberin abgeholt und genutzt werden können, ohne Ausnahme. Bei einem Paket für zwei müssen beide Personen am Schalter sein, und die Begleitperson muss ebenfalls einen Ausweis zeigen, damit ihr Alter bestätigt werden kann.",
+      },
+      {
+        q: "Ich habe keine Hotelbestätigung per E-Mail bekommen.",
+        a: "Es gibt keine. NOL World sagt, Hotelbestätigungen würden nicht gesondert versandt, und dass eine erfolgreiche Zahlung bedeutet, dass die Hotelreservierung bestätigt ist. Es sagt außerdem, die Reservierungsdaten erreichten das Hotel erst etwa zwei Wochen vor der Anreise, eine direkte Bestätigung ist also erst danach möglich.",
+      },
+      {
+        q: "Ich habe das Hotel angerufen und man findet meine Buchung nicht.",
+        a: "Zu erwarten, wenn Sie früh angerufen haben. NOL World sagt, die Daten würden etwa zwei Wochen vor dem Aufenthalt an das Hotel gesendet und eine Bestätigung sei erst danach möglich, und dass eine ordnungsgemäß abgeschlossene Paketreservierung mit Zahlung bedeutet, dass die Hotelbuchung sicher ist. Buchen Sie nicht erneut.",
+      },
+      {
+        q: "Ich wurde positiv getestet oder hatte einen Notfall in der Familie. Wird die Stornogebühr erlassen?",
+        a: "Die veröffentlichte Antwort von NOL World lautet in beiden Fällen nein. Es sagt, da eine Quarantäne wegen COVID-19 nicht mehr verpflichtend ist, gelte auch bei einer Infektion keine Minderung der Stornogebühr; und dass Erstattungen aus persönlichen Gründen, einschließlich Todesfall oder Krankenhausaufenthalt nach einem Unfall, nicht möglich sind, wobei Gebühren nach der Regelung des jeweiligen Produkts anfallen. Eine vor der Reise abgeschlossene Reiseversicherung ist das Mittel für dieses Risiko — was sie abdeckt, hängt von der Police ab, lesen Sie sie also.",
+      },
+      {
+        q: "Muss ich das Shuttle nutzen, und kann ich einen Koffer mitnehmen?",
+        a: "Es ist freiwillig, und es nicht zu nutzen erstattet nichts. Ein Koffer darf in den Bus, aber NOL World warnt, dass es im Bus keine Gepäckaufbewahrung gibt, sobald Sie den Veranstaltungsort erreichen — ein mitgebrachter Koffer ist also ein getragener Koffer. Ersatzfahrzeuge gibt es nicht, wenn Sie die Abfahrt verpassen, und Ort und Zeit für das Einsteigen zur Rückfahrt werden mit den Tickets im Hotel ausgegeben.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Aus NOL World ausgesperrt: das Konto finden und Seiten reparieren, die nicht aufgehen",
+    summary:
+      "Die Anmeldeart, die Sie gewählt haben, bestimmt jeden Weg zur Wiederherstellung, ein Zurücksetzen des Passworts gibt es nur für die Registrierung per E-Mail, und eine nicht bestätigte E-Mail-Adresse kann ein Konto überhaupt schwer auffindbar machen. Dazu Fehler auf der Buchungsseite, die gar keine Fehler sind.",
+    scope:
+      "Behandelt die von NOL World dokumentierte Wiederherstellung und Löschung von Konten sowie die Fehlschläge auf der Buchungsseite: Anforderungen an Browser und App, den Sitzplan auf dem Telefon, und Hinweisfenster, die wie ein Defekt aussehen. Die Mechanik der Warteschlange hat eine eigene Anleitung. Nichts hier hilft irgendjemandem in ein Konto, das ihm nicht gehört.",
+    intro: [
+      "Zwei Dinge gehen auf einer Ticketseite schief, die mit Tickets überhaupt nichts zu tun haben. Entweder Sie kommen nicht in Ihr Konto, oder die Seite tut schlicht nicht, was sie soll — und beides passiert am Morgen des Verkaufs, wenn keine Zeit bleibt, irgendetwas zu lesen.",
+      "Fast alles davon entscheidet eine einzige Wahl, die Sie Monate vorher ohne Nachdenken getroffen haben: ob Sie sich mit einer E-Mail-Adresse registriert haben oder über Google, Apple oder Line. Diese eine Tatsache bestimmt, ob es ein Zurücksetzen des Passworts für Sie überhaupt gibt, und deshalb fängt es dort an.",
+    ],
+    steps: [
+      {
+        title: "Finden Sie heraus, welche Art von Anmeldung Sie tatsächlich haben",
+        body: "Ein Konto bei NOL World entsteht mit einer E-Mail-Adresse oder über die Anmeldung bei einem anderen Dienst — Google, Apple oder Line, unter anderem. Die Folge ist schärfer, als es klingt: NOL World gibt an, dass die Wiederherstellung des Passworts nur Nutzerinnen und Nutzern offensteht, die sich mit einer E-Mail-Adresse registriert haben. Nutzen Sie die Anmeldung über einen anderen Dienst, gibt es kein Passwort bei NOL World zum Zurücksetzen, weil es nie eines gab. Finden Sie jetzt heraus, welches von beidem Sie sind, solange nichts drängt.",
+        pitfall:
+          "Zu glauben, Sie hätten ein E-Mail-Konto, weil Sie sich erinnern, eine E-Mail-Adresse eingetippt zu haben. Die Anmeldung über einen anderen Dienst zeigt Ihre Adresse ebenfalls an, und der Weg zur Wiederherstellung ist ein völlig anderer.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Bestätigen Sie Ihre E-Mail-Adresse, denn das ist der Schritt, der sich nicht nachholen lässt",
+        body: "Der Schlusssatz von NOL World zur Wiederherstellung von Konten ist der wichtigste in diesem Bereich: Ein Konto, dessen E-Mail-Adresse nicht bestätigt wurde, kann schwer auffindbar sein. Alles andere hier ist ein Verfahren mit einem Ergebnis. Das hier ist eine Tür, die sich womöglich nicht öffnet — der Kundendienst gleicht Sie mit einem Datensatz ab, und eine bestätigte E-Mail-Adresse ist die stärkste Übereinstimmung, die er hat. Lesen Sie das mit einem funktionierenden Konto, prüfen Sie, dass dessen Adresse bestätigt ist, und lassen Sie es dabei.",
+        pitfall:
+          "Die Bestätigungsmail bei der Registrierung zu überspringen, weil ein Verkauf drängte. Das hat an jenem Tag nichts gekostet und es ist der Unterschied zwischen einem wiederherstellbaren und einem verlorenen Konto.",
+        takes: "3 Minuten, jetzt",
+      },
+      {
+        title: "Bei einer Anmeldung über einen anderen Dienst prüfen Sie zuerst dort",
+        body: "Wenn Sie nicht mehr wissen, ob Sie je ein Konto bei NOL World hatten, weiß es der Anbieter. NOL World veröffentlicht, wo man nachsieht: bei Google über das Google-Konto, dann Sicherheit, dann Ihre Verbindungen zu Apps und Diensten von Drittanbietern. Bei Apple über Settings, Ihren Namen und die Apple-ID, dann Sign-In & Security, dann Sign in with Apple. Bei Line über Settings, dann Konto, dann die zugelassenen Apps. Steht NOL World dort, existiert das Konto und Sie wissen, welcher Anbieter es öffnet.",
+        pitfall:
+          "Auf der Anmeldeseite jede Dienstschaltfläche der Reihe nach auszuprobieren, um zu sehen, welche funktioniert. Das kann ein zweites Konto anlegen, statt das erste zu finden, und nun gibt es zwei — in einem davon liegen Ihre Buchungen.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Scheitert das, senden Sie die fünf Angaben, die der Kundendienst verlangt",
+        body: "NOL World sucht das Konto, und es nennt, was es dafür braucht: die E-Mail-Adresse, die Sie verwendet haben könnten, die Art der Anmeldung (Google, Line, Apple oder E-Mail), Ihren Anzeigenamen sowie die Art des gebuchten Produkts samt Buchungsnummer. Es sagt auch, wo Letztere steht — die Buchungsnummer liegt in dem Gutschein, der Ihnen bei der Buchung per E-Mail geschickt wurde. Sammeln Sie alles, bevor Sie schreiben, denn eine Anfrage ohne Buchungsnummer ist eine Anfrage, die um Raten bittet.",
+        pitfall:
+          "Alte Bestätigungsmails zu Buchungen als Ballast zu löschen. Darin steht die Buchungsnummer, und die ist das stärkste Erkennungsmerkmal, das Sie anbieten können, wenn das Verlorene gerade das Konto selbst ist.",
+        takes: "20 Minuten",
+      },
+      {
+        title: "Ein neues Telefon löscht Ihre Buchungen nicht — ein anderes Konto schon",
+        body: "Das ist die häufigste falsche Sorge, und NOL World beantwortet sie unumwunden: Das Telefon zu wechseln oder sich erneut anzumelden löscht Ihren Verlauf nicht. Worum es Sie bittet, ist zu prüfen, ob Sie mit einem anderen Konto angemeldet sind als ursprünglich. Das ist fast immer die wirkliche Ursache, und die Anmeldung über einen anderen Dienst ist der Grund — ein neues Telefon bietet den bequemsten Anbieter an, und den falschen zu drücken setzt Sie in ein zweites, leeres, aber vollkommen echtes Konto.",
+        pitfall:
+          "Zu schließen, die Buchung sei weg, und erneut zu kaufen. Das Ticket liegt im anderen Konto, und der zweite Kauf ist ein echter Kauf.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Nutzen Sie den Browser, den die Buchungsseite erwartet, und nur offizielle Kanäle",
+        body: "NOL World gibt an, nach Webstandards gebaut zu sein, und empfiehlt Google Chrome oder Microsoft Edge, auf dem Rechner wie auf dem Telefon. Öffnet sich das Buchungsfenster nicht, ist die Anweisung konkret: den Browser auf die neueste Version bringen, den Cache leeren, erneut versuchen. Für die App aktualisieren Sie aus dem App Store oder von Google Play. Und es gibt an, wo Tickets überhaupt gekauft werden können — auf der Seite von NOL World unter world.nol.com/ticket und in der App von NOL World, und sonst nirgends.",
+        pitfall:
+          "In einem Browser nach dem Problem zu suchen, der nie unterstützt wurde, nämlich in der Webansicht einer App, geöffnet aus einem Link in sozialen Medien. Öffnen Sie die Buchungsseite direkt in Chrome oder Edge, bevor Sie schließen, die Seite sei defekt.",
+        takes: "15 Minuten, am Vortag",
+      },
+      {
+        title: "Funktioniert der Sitzplan im mobilen Web nicht, wechseln Sie in die App",
+        body: "Es gibt ein dokumentiertes Geräteproblem, kein allgemeines. NOL World gibt an, dass auf manchen Geräten die mobile Webumgebung den Browser vergrößert, wenn Sie hinein- und herauszoomen, was die Platzwahl unmöglich macht — und dass der Ausweg darin besteht, die App von NOL World zu laden. Es nennt das bislang bestätigte Gerät: Galaxy Fold. Nutzen Sie ein faltbares oder ungewöhnlich proportioniertes Display, installieren Sie die App vor dem Verkauf, statt das in einem Zahlungsfenster von sieben Minuten zu entdecken.",
+        pitfall:
+          "Den Sitzplan mit zwei Fingern zu vergrößern, um einen bestimmten Platz zu suchen. Auf den betroffenen Geräten ist genau diese Geste das, was die Auswahl zerstört.",
+        takes: "10 Minuten, im Voraus",
+      },
+      {
+        title: "Wissen Sie, welche Hinweisfenster kein Defekt sind",
+        body: "Zwei Meldungen lesen sich wie ein Fehler und sind keiner. NOL World gibt an, dass ein Hinweisfenster mit der Mitteilung, dieser Platz sei bereits ausgewählt, erscheint, wenn Sie denselben Platz nahezu gleichzeitig mit einer anderen Person wählen — mit Ihrer Sitzung ist nichts falsch, jemand war nur eine Sekunde schneller. Und es gibt an, dass verfügbare Plätze sich automatisch ohne Neuladen aktualisieren, ein Sitzplan, der eingefroren aussieht, ist also meist ein arbeitender Sitzplan. Behandeln Sie beides als Information statt als etwas zum Reparieren.",
+        pitfall:
+          "Die Seite neu zu laden, um ein Hinweisfenster loszuwerden. Bei einem Verkauf mit Warteschlange ist das die eine Handlung, die Ihre Position frisst.",
+        takes: "—",
+      },
+      {
+        title: "Lesen Sie den Rat zu mehreren Tabs zusammen mit der Anti-Betrugs-Richtlinie",
+        body: "NOL World bittet um ein Gerät je Konto und gibt an, dass gleichzeitiger Zugriff von mehreren Geräten auf dasselbe Konto Ihre Buchungen einschränken kann. Dann gibt es technischen Rat für Menschen, die gleichzeitig buchen — dass mehrere Tabs Sitzungskonflikte erzeugen, und dass man vollständig getrennte Browser wie Chrome und Edge oder verschiedene Geräte nutzen solle. Lesen Sie das sorgfältig, denn die eigene Anti-Betrugs-Richtlinie führt kontenübergreifende Buchungen mit identischen oder ähnlichen persönlichen Angaben als missbräuchliche Nutzung auf. Die sichere Lesart des Rats betrifft getrennte Plattformen: NOL World in einem Browser, während eine andere Ticketseite in einem anderen läuft. Es ist keine Erlaubnis, mehrere eigene Konten gleichzeitig zu betreiben.",
+        pitfall:
+          "Den Tipp zu Sitzungskonflikten als gebilligte Strategie für mehrere Konten zu nehmen. Die beiden Seiten stehen unbequem nebeneinander, und die mit der schriftlichen Sanktion ist die Anti-Betrugs-Richtlinie.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Löschen Sie das Konto, wissen Sie genau, was verschwindet und was bleibt",
+        body: "Die Löschung ist unumkehrbar und NOL World listet sie auf. Gelöscht werden: Ihre Konto- und Profilinformationen, Ihr Buchungsverlauf, Ihre Reisen und Ihre Liste gemerkter Orte. Erhalten bleiben: Bewertungen und Fotos, die Sie zu einem Ort hinterlassen haben. Auf der Website kann jede Anmeldeart das Konto löschen. In der App führt der Weg bei Anmeldung per E-Mail über My Account, Settings, Delete Account und dann Ihr Passwort; bei Anmeldung über einen anderen Dienst ist der Weg derselbe, aber Sie bestätigen über Google, Line oder Apple. Zwei Dinge aus anderen Teilen der Dokumentation gehören daneben: Die Löschung entfernt auch Ihre Identitätsprüfung und gibt sie für ein anderes Konto frei, und ein wegen Missbrauchs eingeschränktes Konto lässt sich überhaupt nicht löschen.",
+        pitfall:
+          "Ein Konto zu löschen, um ein Problem mit diesem Konto zu beheben. Ein eingeschränktes Konto lässt sich nicht löschen, und ein verifiziertes nimmt Ihre Verifizierung mit — der Buchungsverlauf ist weg und die Bewertungen sind es nicht.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Ich habe mein Passwort vergessen. Wie setze ich es zurück?",
+        a: "Nur wenn Sie sich mit einer E-Mail-Adresse registriert haben — NOL World gibt an, dass die Wiederherstellung des Passworts nur für die Registrierung per E-Mail zur Verfügung steht. Der Weg führt über den Anmeldebildschirm, Find Password, die Eingabe der Registrierungsadresse und dann den Link zum Zurücksetzen, der ankommt. Nutzen Sie Google, Apple oder Line, gibt es kein Passwort bei NOL World; Sie melden sich über den Anbieter an.",
+      },
+      {
+        q: "Ich weiß nicht einmal, welches Konto ich benutzt habe.",
+        a: "Prüfen Sie zuerst beim Anbieter. NOL World veröffentlicht die Wege: Google-Konto, dann Sicherheit, dann Ihre Verbindungen zu Apps und Diensten von Drittanbietern; Settings bei Apple, dann Ihre Apple-ID, dann Sign-In & Security, dann Sign in with Apple; Settings bei Line, dann Konto, dann die zugelassenen Apps. Taucht NOL World auf, ist das das Konto.",
+      },
+      {
+        q: "Nichts davon hat funktioniert. Wird der Kundendienst es finden?",
+        a: "Er sucht, mit dem, was Sie liefern: die möglicherweise verwendete E-Mail-Adresse, die Art der Anmeldung, Ihren Anzeigenamen sowie die Art des gebuchten Produkts samt Buchungsnummer — die laut NOL World in dem Gutschein steht, der Ihnen bei der Buchung per E-Mail geschickt wurde. Es warnt außerdem, dass ein nie per E-Mail bestätigtes Konto schwer auffindbar sein kann, senden Sie also alles, was Sie haben.",
+      },
+      {
+        q: "Ich habe das Telefon gewechselt und meine Buchungen sind weg.",
+        a: "Fast sicher nicht. NOL World gibt an, dass ein Telefonwechsel oder eine erneute Anmeldung den Verlauf nicht löscht, und bittet Sie zu prüfen, ob Sie mit einem anderen Konto angemeldet sind als ursprünglich. Bei der Anmeldung über einen anderen Dienst passiert das leicht unabsichtlich — ein neues Telefon bietet den bequemsten Anbieter an, nicht unbedingt den von Ihnen genutzten.",
+      },
+      {
+        q: "Das Buchungsfenster öffnet sich gar nicht.",
+        a: "Die eigenen Schritte von NOL World: einen Standardbrowser nutzen, und es nennt Chrome und Edge; auf die neueste Version aktualisieren; den Cache leeren; erneut versuchen. Für die App auf die neueste Version aus dem App Store oder von Google Play aktualisieren. Es gibt außerdem an, dass Tickets nur unter world.nol.com/ticket oder in der App von NOL World gekauft werden können.",
+      },
+      {
+        q: "Ich kann im Browser meines Telefons keinen Platz auswählen.",
+        a: "Es gibt ein bekanntes Geräteproblem. NOL World gibt an, dass auf manchen Geräten das Hinein- und Herauszoomen den gesamten mobilen Browser vergrößert, was die Platzwahl unmöglich macht, und dass die Antwort darin besteht, die App von NOL World zu nutzen. Das von ihm als bestätigt genannte Gerät ist das Galaxy Fold. Installieren Sie die App vor dem Verkauf statt währenddessen.",
+      },
+      {
+        q: "Kann ich zwei Tabs öffnen, um meine Chancen zu verbessern?",
+        a: "Nein, und NOL World bittet um ein Gerät je Konto — es gibt an, dass gleichzeitiger Zugriff von mehreren Geräten auf dasselbe Konto Ihre Buchungen einschränken kann. Sein Rat zu getrennten Browsern betrifft Sitzungskonflikte, wenn Sie tatsächlich zwei verschiedene Ticketplattformen nutzen, und ist keine Billigung dafür, mehrere eigene Konten zu betreiben. Kontenübergreifende Buchungen mit ähnlichen persönlichen Angaben stehen auf der von ihm veröffentlichten Liste missbräuchlicher Nutzung.",
+      },
+      {
+        q: "Was passiert mit meinen Daten, wenn ich das Konto lösche?",
+        a: "NOL World gibt an, die Löschung sei unumkehrbar, und listet auf, was verschwindet: Konto- und Profilinformationen, Buchungsverlauf, Reisen und gemerkte Orte. Bewertungen und Fotos, die Sie zu einem Ort hinterlassen haben, bleiben erhalten. An anderer Stelle gibt es an, dass die Löschung auch Ihre Identitätsprüfung entfernt und sie für ein anderes Konto freigibt, und dass ein wegen Missbrauchs eingeschränktes Konto nicht gelöscht werden kann.",
       },
     ],
     labels: DE_LABELS,

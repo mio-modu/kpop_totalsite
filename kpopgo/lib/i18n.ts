@@ -29,7 +29,7 @@
 import type { Guide } from "@/content/guides";
 import { displayStatus, type DisplayStatus } from "./freshness";
 
-export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de";
+export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de" | "es";
 
 /** English is the canonical language and carries no path prefix. */
 export const DEFAULT_LOCALE: Locale = "en";
@@ -67,19 +67,53 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     tag: "id",
     prefix: "/id",
   },
-  // The first European language, and the first whose readers are not here for
-  // the ticketing guides at all. Germany is among the top ten importers of
-  // Korean albums and, with the UK, leads Europe's K-pop event market — but a
-  // German fan sees the tour in Berlin, bought from a local promoter, which
-  // this site's scope explicitly excludes. What they do from here is order
-  // albums and merchandise and then meet EU customs, so the German edition
-  // leads with the guide every other language skips.
+  // The first European language. Germany is among the top ten importers of
+  // Korean albums and, with the UK, leads Europe's K-pop event market, so it
+  // led with the commerce guides — albums, merchandise, then EU customs.
+  //
+  // It was commerce *only* for a while, on the reasoning that a German fan
+  // sees the tour in Berlin, bought from a local promoter, which this site's
+  // scope excludes. That reasoning was too broad and the restriction is gone.
+  // It holds for the acts large enough to run a European leg and fails for
+  // everyone else: a fan of a mid-tier group that never leaves Asia flies to
+  // Seoul from Berlin exactly as they would from Taipei, and for that reader
+  // the German edition had nothing. The ticketing guides are theirs too.
   de: {
     code: "de",
     native: "Deutsch",
     english: "German",
     tag: "de",
     prefix: "/de",
+  },
+  // Spanish, and the inverse of the German case rather than a repeat of it.
+  //
+  // The audience is the largest this site has added: Mexico alone is the
+  // fifth-largest K-pop market on Spotify, with more than 14 million
+  // listeners and over 500% growth in five years, and K-pop is 34.9% of
+  // Hallyu content consumption across Latin America.
+  //
+  // The ticketing guides matter *more* here than in Europe, not less, and the
+  // reason is the shape of the tours. BTS's 2026 Arirang run reached Mexico
+  // City, Bogotá, Lima, Santiago and Buenos Aires — and those were the first
+  // full-group shows the band had ever played in Colombia, Peru and
+  // Argentina. A region that waits a decade for its first date from the
+  // largest act in the genre is a region whose fans fly to Seoul for
+  // everybody else.
+  //
+  // One caveat belongs with the first Spanish word rather than after it:
+  // Weverse entered Latin America through EBANX in April 2025, launching in
+  // Mexico with OXXO Pay — cash settlement at a convenience store, chosen
+  // because only around a quarter of Mexicans use cards at all. A straight
+  // translation of the declined-card guide would therefore be half wrong for
+  // a Mexican reader, who has a route the English page does not know about.
+  // That guide needs its own paragraph in Spanish, checked against Weverse's
+  // own help pages rather than against the 2025 launch coverage.
+  es: {
+    code: "es",
+    native: "Español",
+    english: "Spanish",
+    tag: "es",
+    prefix: "/es",
   },
 };
 

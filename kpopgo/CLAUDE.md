@@ -158,19 +158,52 @@ cites, where Asia/Tokyo, Asia/Taipei and Asia/Jakarta have no transition in
 the next decade, so the gap to KST is zero, one and two hours permanently. For
 those readers the arithmetic the guide exists to teach does not exist.
 
-**The guide set differs by language, and German is why that rule exists.** The
-Asian editions lead with ticketing, because a fan in Taipei or Jakarta flies
-to Seoul for the show — Taiwan sent 1.66 million visitors to Korea in the
-first eight months of 2026. A German fan sees the tour in Berlin, sold by a
-local promoter, which this site's scope excludes. What they do from here is
-order albums and then meet EU customs, so the German edition is commerce only
-and skips every ticketing guide.
+**A language's edition leads with what its readers came for, but it does not
+stop there — and German is the correction, not the rule.** The Asian editions
+lead with ticketing, because a fan in Taipei or Jakarta flies to Seoul for the
+show; Taiwan sent 1.66 million visitors to Korea in the first eight months of
+2026. German led with commerce, because a German fan sees the tour in Berlin,
+sold by a local promoter, which this site's scope excludes.
+
+German was then held at **commerce only** on that reasoning, and that was
+wrong. The reasoning holds for the acts large enough to run a European leg and
+fails for everyone else: a fan of a mid-tier group that never leaves Asia
+flies to Seoul from Berlin exactly as they would from Taipei, and for that
+reader the German edition had nothing at all. The restriction is gone and
+German carries the ticketing guides too. **Lead order is an editorial
+judgement; it is not a reason to withhold a page from a reader who needs it.**
+
+Spanish is the inverse case and is why the correction matters. Mexico alone is
+the fifth-largest K-pop market on Spotify — 14 million-plus listeners, 500%
+growth in five years — and K-pop is 34.9% of Hallyu consumption across Latin
+America. BTS's 2026 Arirang tour reached Mexico City, Bogotá, Lima, Santiago
+and Buenos Aires, and those were the band's **first full-group shows ever** in
+Colombia, Peru and Argentina. A region that waits that long for its first date
+from the biggest act in the genre is a region whose fans fly to Seoul for
+everybody else, so the ticketing guides matter more there than in Europe, not
+less.
+
+Spanish also carries one correction that is not a translation: Weverse entered
+Latin America through EBANX in April 2025, launching in Mexico with **OXXO
+Pay** — cash settlement at a convenience store, chosen because only around a
+quarter of Mexicans use payment cards at all. A straight translation of the
+declined-card guide is therefore half wrong for a Mexican reader, who has a
+route the English page does not know exists. That guide needs its own
+paragraph in Spanish, checked against Weverse's own help pages rather than
+against the 2025 launch coverage.
 
 The customs guide looks like the obvious German flagship and is not: five of
 its ten steps are US-specific — CBP, executive orders, US tariff chapters — so
 translating it would hand a German reader half a page about American law. The
 shipping guide carries the step that is actually theirs, on the EU scrapping
 its 150-euro exemption, and leads instead.
+
+**The timezone guide is the one page German should have that the Asian
+editions should not**, and for the exact reason they skip it. Germany observes
+daylight saving and Korea does not, so the local hour of a Korean sale moves
+twice a year for a German reader — which is the guide's entire thesis, absent
+in Tokyo, Taipei and Jakarta. Spain observes it too. Where that guide is
+skipped for German or Spanish it is a gap, not a decision.
 
 A translation is a copy of a claim made on a particular day from a source
 checked on a particular day. The moment the English page is re-checked, the

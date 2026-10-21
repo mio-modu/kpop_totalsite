@@ -98,6 +98,21 @@ const ZH_LABELS = {
     "本翻譯所依據的英文版已超過有效期限。請以英文版與資料來源確認目前的狀況。",
 };
 
+const ES_LABELS = {
+  pitfall: "Error habitual",
+  takes: "Tiempo estimado:",
+  sources: "Fuentes",
+  readEnglish: "Leer la versión en inglés",
+  related: "Otras guías en este idioma",
+  reviewedMachine:
+    "Esta traducción se hizo con ayuda automática y no la ha revisado una persona hispanohablante nativa. Para decisiones importantes, consulte la versión en inglés y las fuentes originales.",
+  reviewedNative: "Una persona hispanohablante nativa ha revisado esta traducción.",
+  sourceMoved:
+    "La versión en inglés se volvió a verificar después de hacer esta traducción. Si hay discrepancias, la versión en inglés es la que vale.",
+  sourceStale:
+    "La versión en inglés en la que se basa esta traducción ha superado su plazo de vigencia. Consulte la versión en inglés y sus fuentes para saber cómo están las cosas ahora.",
+};
+
 const ID_LABELS = {
   pitfall: "Kesalahan umum",
   takes: "Perkiraan waktu:",
@@ -6011,6 +6026,148 @@ export const translations: Translation[] = [
       },
     ],
     labels: ID_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Tickets: die Seite, die interpark Global war",
+    summary:
+      "Die Seite, die früher interpark Global hieß. Sie wurde am 1. Dezember 2025 umbenannt, die meisten Anleitungen schicken Sie noch zum alten Namen, und hier steht der aktuelle Weg Schritt für Schritt.",
+    scope:
+      "Behandelt die nach außen gerichtete Plattform für koreanische Veranstaltungen. Die koreanischsprachige Seite NOL Ticket ist ein eigenes Produkt mit eigenem Kontosystem und strengerer Identitätsprüfung.",
+    intro: [
+      "Zwei Umbenennungen fanden kurz hintereinander statt, und fast keine englischsprachige Anleitung im Netz hat eine davon aufgenommen. Yanolja Core führte seine Marken im April 2025 unter dem Namen NOL zusammen — damals wurde aus Interpark Ticket NOL Ticket. Am 1. Dezember 2025 wurde dann aus dem nach außen gerichteten interpark Global NOL World.",
+      "Die praktische Folge: Anleitungen, die Sie zu „Interpark Global“ schicken, samt Screenshots der alten Oberfläche, beschreiben ein Produkt, das umbenannt und neu gestaltet wurde. Wer einer davon folgt, navigiert nach einer veralteten Karte.",
+      "Diese Seite verfolgt die aktuelle. Das Datum oben ist der Tag der letzten Prüfung.",
+    ],
+    steps: [
+      {
+        title: "Beginnen Sie auf der Seite für das Ausland, nicht auf der koreanischen",
+        body: "NOL World ist die Eingangstür für Fans im Ausland. Die koreanischsprachige Seite NOL Ticket führt die strengere inländische Identitätsprüfung durch und ist für Sie in der Regel nicht der richtige Weg, sofern Sie keine koreanischen Aufenthaltsdokumente besitzen. Es handelt sich um getrennte Konten — eine Registrierung auf der einen Seite verschafft Ihnen die andere nicht.",
+        pitfall:
+          "Suchergebnisse und alte Lesezeichen führen weiterhin zur früheren Markierung. Vergewissern Sie sich, dass Sie auf der Auslandsseite sind, bevor Sie Zeit in ein Konto investieren.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Registrieren Sie sich mit den Angaben genau wie im Pass",
+        body: "Verwenden Sie Ihren rechtlichen Namen und Ihr Geburtsdatum genau so, wie sie im Pass stehen. Hat die gewünschte Veranstaltung einen Fanclub-Vorverkauf, müssen diese Angaben außerdem mit Ihrem Mitgliedschaftseintrag übereinstimmen. Beheben Sie jede Abweichung, bevor das Vorverkaufsfenster öffnet, nicht während es offen ist.",
+        pitfall:
+          "Einen bereits verifizierten Namen später zu ändern ist ein Support-Vorgang und kein Schalter in den Einstellungen. Machen Sie es beim ersten Mal richtig.",
+        takes: "20 Minuten",
+      },
+      {
+        title: "Erledigen Sie die Verifizierung für Auslandskunden, bevor Sie sie brauchen",
+        body: "Die Verifizierung für Auslandskunden ist eine einmalige Handlung pro Konto, und NOL World gibt an, dass die verifizierten Angaben nicht erneut verwendet werden können. Verifizieren Sie auf dem Konto, mit dem Sie tatsächlich kaufen wollen — haben Sie mehrere, wandert die Verifizierung nicht zwischen ihnen. Ein Konto zu löschen hebt dessen Verifizierung zwar auf und gibt sie für ein anderes frei, doch ein wegen Missbrauchs eingeschränktes Konto lässt sich überhaupt nicht löschen. Für die Verifizierung selbst gilt keine Altersgrenze, auch wenn altersbeschränkte Veranstaltungen die Buchung dennoch ablehnen können. Die Bestätigung kommt per E-Mail, prüfen Sie also den Spam-Ordner, bevor Sie von einem Fehlschlag ausgehen.",
+        pitfall:
+          "Beim Bezahlschritt festzustellen, dass die Verifizierung noch aussteht, ist der klassische Weg, einen reservierten Platz zu verlieren.",
+        takes: "1-3 Tage inklusive Bearbeitung",
+      },
+      {
+        title: "Prüfen Sie die Bedingungen der einzelnen Veranstaltung auf ihrer Seite",
+        body: "Platzobergrenzen pro Konto, ob eine Mitgliedschaft nötig ist, welche Ausweisanforderungen am Veranstaltungsort gelten und ob die Veranstaltung überhaupt für Käufer aus dem Ausland offen ist, wird je Veranstaltung festgelegt. Lesen Sie die Veranstaltungsseite und die offizielle Ankündigung zusammen — wo sie sich widersprechen, gilt die offizielle Ankündigung zu Ihrer Veranstaltung.",
+        pitfall:
+          "Manche Veranstaltungen behalten bestimmte Platzblöcke oder Verkaufsrunden inländischen Käufern vor. Das gilt je Veranstaltung und ist aus keiner allgemeinen Anleitung zu erfahren.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Bringen Sie das richtige Dokument zur Abholung mit",
+        body: "Abgeholt wird an der Kasse des Veranstaltungsorts am Tag der Veranstaltung und nicht früher — NOL World gibt an, dass Tickets nicht an einem vorherigen Tag abgeholt werden können. Das Fenster öffnet eine Stunde vor Beginn, und Sie brauchen die Bestätigungsnummer zusammen mit einem Ausweis. Rechnen Sie mit einer Schlange an der Kasse selbst. Ein abgeholtes Ticket kann bei Verlust oder Diebstahl nicht neu ausgestellt werden.",
+        pitfall:
+          "Der Name auf der Buchung, der Name auf dem Dokument und der Name auf der Mitgliedschaft müssen alle übereinstimmen. Ein Spitzname irgendwo in dieser Kette ist ein Problem.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Ist NOL World dasselbe wie Interpark Global?",
+        a: "Es ist derselbe nach außen gerichtete Ticketdienst nach einer Umbenennung. Aus interpark Global wurde am 1. Dezember 2025 NOL World, nachdem Yanolja Core seine Marken im April 2025 unter dem Namen NOL zusammengeführt hatte, als aus Interpark Ticket NOL Ticket wurde.",
+      },
+      {
+        q: "Warum steht in meinem alten Lesezeichen noch Interpark?",
+        a: "Umbenennungen brauchen eine Weile, bis sie sich durch Suchergebnisse, Anleitungen Dritter und zwischengespeicherte Seiten durchgearbeitet haben. Navigieren Sie von der offiziellen Ankündigung zu Ihrer Veranstaltung aus und nicht von einem gespeicherten Link oder einem Blogbeitrag.",
+      },
+      {
+        q: "Ist NOL Global dasselbe? Und NOL Korea?",
+        a: "Das sind die Namen, nach denen Leute greifen, wenn sie sich halb an die Umbenennung erinnern, und sie gehören ausgesprochen, weil sie es sind, was getippt wird. Es gibt zwei Seiten: NOL World, die nach außen gerichtete, die bis zum 1. Dezember 2025 interpark Global hieß; und NOL Ticket, die koreanischsprachige, die bis April 2025 Interpark Ticket hieß. Wurden Sie zu „NOL Global“, „NOL Korea“ oder „NOL KR“ geschickt, ist die gesuchte Seite mit großer Wahrscheinlichkeit NOL World.",
+      },
+      {
+        q: "Kann ich mein NOL Ticket Konto auf NOL World benutzen?",
+        a: "Behandeln Sie sie als getrennte Konten mit getrennter Verifizierung. Gehen Sie nicht davon aus, dass eine Anmeldung oder eine abgeschlossene Verifizierung übertragen wird — prüfen Sie es auf der Seite, von der Sie tatsächlich kaufen werden.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Fanclub-Vorverkauf: wie Sie sich qualifizieren, bevor er schließt",
+    summary:
+      "Die Mitgliedschaft allein ist noch kein Zugang. Zwischen beiden steht ein Verifizierungsschritt, der seine eigene Frist hat, und ihn zu verpassen ist der häufigste Weg, einen Vorverkauf zu verlieren.",
+    scope:
+      "Behandelt die allgemeine Form der Qualifikation für Fanclub-Vorverkäufe koreanischer Veranstaltungen. Jede Tournee legt ihre eigenen Stufen, Fristen und Bedingungen in der offiziellen Ankündigung fest, die alles Allgemeine aufhebt.",
+    intro: [
+      "Der Zugang zum Vorverkauf ist eine Kette aus drei Gliedern, und Fans kennen meist nur das erste. Sie kaufen die Mitgliedschaft. Dann verknüpfen und verifizieren Sie diese Mitgliedschaft gegen das Ticketkonto. Erst danach erhalten Sie die Vorverkaufsberechtigung.",
+      "Jedes Glied hat seine eigene Frist, und die Verifizierungsfrist liegt regelmäßig früher, als Leute erwarten — in manchen Fällen Tage vor dem Vorverkauf selbst. Eine am Vorabend gekaufte Mitgliedschaft kann zu spät sein, obwohl sie aktiv ist.",
+      "Behandeln Sie die Ankündigung als Vorgabe und diese Seite als Prüfliste.",
+    ],
+    steps: [
+      {
+        title: "Lesen Sie die Berechtigungsklausel, nicht die Überschrift",
+        body: "Die Ankündigung gibt an, welches Mitgliedschaftsprodukt und welche Stufe qualifiziert und bis zu welchem Datum sie gekauft oder aktiv gewesen sein muss. Das sind zwei verschiedene Daten, und beide zählen. Schreiben Sie sie in Ihrer eigenen Zeitzone neben KST auf.",
+        pitfall:
+          "Eine Mitgliedschaft, die aktiv ist, aber nach der Frist gekauft wurde, qualifiziert auf manchen Tourneen nicht. „Ich habe die Mitgliedschaft“ ist nicht dasselbe wie „ich habe mich qualifiziert“.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Kaufen Sie die Mitgliedschaft deutlich vor der Frist",
+        body: "Kaufen Sie im offiziellen Store der jeweiligen Künstler. Bewahren Sie die Bestellbestätigung und die Mitgliedsnummer auf. Ist die Mitgliedschaft ein physisches Set mit digitalem Code, rechnen Sie Zeit für Versand und Freischaltung des Codes ein, die nicht sofort erfolgt. Seit dem 3. September 2026 bietet Weverse Shop außerdem Auto Payment für Mitgliedschaften, die es unterstützen: Die Verlängerung wird am letzten Tag der Laufzeit über eine hinterlegte Zahlungsmethode abgebucht, sodass eine Mitgliedschaft nicht unbemerkt in genau der Woche auslaufen kann, in der eine Tournee angekündigt wird. Es wird je Mitgliedschaftskategorie eingestellt — Global, Japan und USA werden getrennt verwaltet.",
+        pitfall:
+          "Weiterverkaufte oder geschenkte Mitgliedschaftscodes scheitern häufig an der Verifizierung, weil der eingetragene Name nicht zu Ihrem Ticketkonto passt. Auto Payment nimmt das Risiko des Auslaufens, nicht das Risiko beim Namen: Es verlängert genau das Konto, an dem es hängt.",
+        takes: "30 Minuten",
+      },
+      {
+        title: "Verknüpfen und verifizieren Sie die Mitgliedschaft auf der Ticketplattform",
+        body: "Das ist der Schritt, den Leute überspringen. Auf der Ticketplattform gibt es eine eigene Handlung, um Ihren Fanclub-Status zu verifizieren, und sie öffnet in einem Fenster — üblicherweise einige Tage vor dem Vorverkauf — und schließt vor ihm. Tun Sie es in der Stunde, in der es öffnet.",
+        pitfall:
+          "Die Verifizierung für einen koreanischsprachigen Verkauf und für einen globalen Verkauf kann bei derselben Veranstaltung getrennt behandelt werden. Eine abzuschließen gewährt nicht zwangsläufig die andere.",
+        takes: "20 Minuten, innerhalb des Fensters",
+      },
+      {
+        title: "Machen Sie die drei Namen identisch",
+        body: "Pass, Fanclub-Mitgliedschaft und Ticketkonto. Alle drei. Derselbe rechtliche Name, dasselbe Geburtsdatum, dieselbe Reihenfolge. Ist einer falsch, korrigieren Sie ihn vor dem Verifizierungsfenster und nicht danach.",
+        pitfall:
+          "Das ist die häufigste dokumentierte Ursache dafür, dass eine Vorverkaufsberechtigung nicht greift, und es ist unsichtbar bis zu dem Moment, in dem es zählt.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Bestätigen Sie, dass die Berechtigung angekommen ist",
+        body: "Suchen Sie nach dem Verifizieren nach einer ausdrücklichen Bestätigung — einem Abzeichen, einer Statuszeile, einer E-Mail. Finden Sie keine positive Bestätigung Ihrer Berechtigung, gehen Sie davon aus, dass Sie sie nicht haben, und wenden Sie sich an den Support, solange das Fenster noch offen ist.",
+        pitfall:
+          "Schweigen ist kein Erfolg. Ein abgeschicktes Formular ist keine erteilte Berechtigung.",
+        takes: "10 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Garantiert der Kauf einer Mitgliedschaft den Zugang zum Vorverkauf?",
+        a: "Nein. Auf den meisten Tourneen gibt es einen eigenen Verifizierungsschritt, der die Mitgliedschaft mit Ihrem Ticketkonto verknüpft, mit einem eigenen Fenster, das vor dem Vorverkauf öffnet und schließt. Die Mitgliedschaft ist eine Voraussetzung und nicht die Berechtigung selbst.",
+      },
+      {
+        q: "Kann ich die Mitgliedschaft einer anderen Person nutzen?",
+        a: "In der Praxis nein, denn die Verifizierung prüft den eingetragenen Namen und das Geburtsdatum gegen Ihr Ticketkonto und Ihr Ausweisdokument. Es funktioniert nicht und riskiert darüber hinaus die Stornierung der Buchung.",
+      },
+      {
+        q: "Wie viel früher öffnet der Vorverkauf gegenüber dem allgemeinen Verkauf?",
+        a: "Das hängt von der Tournee ab. Ein Tag oder mehr Vorlauf ist üblich, und die Frist für die Mitgliedschaft liegt noch früher. Die offizielle Ankündigung zu Ihrer Veranstaltung ist die einzige verlässliche Quelle.",
+      },
+    ],
+    labels: DE_LABELS,
   },
 ];
 

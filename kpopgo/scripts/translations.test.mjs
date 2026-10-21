@@ -366,6 +366,12 @@ const BAND = {
   // then some: compounds replace phrases, but case endings, separable verbs
   // and the longer words themselves cost more characters than they save.
   de: [0.8, 1.7],
+  // Spanish runs longer than English and for the plainest reason of the four:
+  // it spends words where English compounds. "Ticketing account" becomes
+  // "cuenta de venta de entradas", and the preposition is not optional. It is
+  // tighter than German, which also builds compounds, and looser than
+  // Indonesian, which does not inflect.
+  es: [0.85, 1.6],
 };
 
 test("no translated field is far longer or shorter than its source", () => {
@@ -433,7 +439,48 @@ const FORBIDDEN = {
     [/[Ѐ-ӿ]/, "Cyrillic"],
     [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a German field)"],
   ],
+  es: [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a Spanish field)"],
+  ],
 };
+
+/**
+ * Spanish opens its questions and exclamations, and a machine translation
+ * drops the opening mark.
+ *
+ * This is Spanish's equivalent of the Simplified-character table: a rule the
+ * language has that English does not, so nothing upstream enforces it, and
+ * one that a reader of the language notices in the first second. Every FAQ
+ * entry on this site is a question, so in Spanish every one of them has to
+ * carry ¿ as well as ?, and the inverted mark opens the question rather than
+ * the sentence — "Si la verificación falla, ¿qué hago?" is correct and
+ * "¿Si la verificación falla, qué hago?" is not, which is why the check looks
+ * for presence rather than position.
+ *
+ * It is cheap and it is not cosmetic. A guide whose headings are visibly not
+ * written by someone who knows the language undercuts the one thing this site
+ * sells, on the pages where a reader decides whether to trust it.
+ */
+test("Spanish questions and exclamations carry their opening mark", () => {
+  const bad = [];
+  for (const p of allPairs()) {
+    if (p.locale !== "es") continue;
+    const t = p.t.trim();
+    if (/\?/.test(t) && !t.includes("¿"))
+      bad.push(`${at(p)}: has ? with no ¿ — "${t.slice(0, 70)}"`);
+    if (/!/.test(t) && !t.includes("¡"))
+      bad.push(`${at(p)}: has ! with no ¡ — "${t.slice(0, 70)}"`);
+  }
+  assert.deepEqual(
+    bad,
+    [],
+    `\n${bad.join("\n")}\n\nSpanish opens a question with ¿ and an ` +
+      `exclamation with ¡. A field carrying only the closing mark was ` +
+      `translated without them.\n`,
+  );
+});
 
 /**
  * Simplified forms whose traditional counterparts this site uses.
@@ -475,11 +522,11 @@ test("no stray script or untranslated word in the translation", () => {
  * script checks see nothing wrong, because there is nothing wrong with the
  * English — it is simply not a translation. For Japanese and Chinese the
  * script checks make this unreachable, since a field with no kana or Han
- * characters at all would be obvious. Indonesian and German share the Latin
- * alphabet with English, so for those two this is the only check that would
- * catch it — and German is the likelier to produce a field left alone,
- * because enough English sentences are near enough to German that one can
- * look translated at a glance.
+ * characters at all would be obvious. Indonesian, German and Spanish
+ * share the Latin alphabet with English, so for those three this is the only
+ * check that would catch it — and German is the likeliest to produce a field
+ * left alone, because enough English sentences are near enough to German that
+ * one can look translated at a glance.
  */
 test("no field was left in English", () => {
   const bad = [];

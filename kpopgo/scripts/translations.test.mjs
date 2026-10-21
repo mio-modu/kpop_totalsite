@@ -515,6 +515,34 @@ const FORBIDDEN = {
  * written by someone who knows the language undercuts the one thing this site
  * sells, on the pages where a reader decides whether to trust it.
  */
+/**
+ * Quotation marks belong to the language, and the wrong ones are a fingerprint.
+ *
+ * German opens a quotation low and closes it high — „so“ — and Spanish uses
+ * angle quotes, «así», or the ordinary curly pair. A German quotation mark
+ * sitting in Spanish prose is not a style quibble: it is evidence the field
+ * was written in the same sitting as a German one and carried the habit
+ * across, which is exactly how it got here. The first Spanish card guide
+ * shipped with „tu verificación está pendiente“ for that reason.
+ *
+ * Caught by a reader of either language in the first second, invisible to
+ * every other check on this page, and free to assert.
+ */
+const QUOTES = {
+  es: [[/[„“]/, "German quotation marks (use « » or “ ”)"]],
+  de: [[/[«»]/, "Spanish angle quotes (use „ “)"]],
+};
+
+test("quotation marks match the language", () => {
+  const bad = [];
+  for (const p of allPairs()) {
+    for (const [re, why] of QUOTES[p.locale] ?? []) {
+      if (re.test(p.t)) bad.push(`${at(p)}: ${why}`);
+    }
+  }
+  assert.deepEqual(bad, [], `\n${bad.join("\n")}\n`);
+});
+
 test("Spanish questions and exclamations carry their opening mark", () => {
   const bad = [];
   for (const p of allPairs()) {

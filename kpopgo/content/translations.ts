@@ -6339,7 +6339,7 @@ export const translations: Translation[] = [
         title: "Configura tu moneda antes de mirar cualquier cosa",
         body: "Tu moneda predeterminada decide qué métodos de pago te ofrecen. Weverse los indica por moneda: USD tiene PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay y Grab Pay. JPY tiene la misma lista sin Grab Pay. CNY se queda sin PayPal. MXN es solo PayPal y Apple Pay. KRW añade las tarjetas coreanas y los monederos coreanos: Toss, NAVER Pay, Kakao Pay, PAYCO. MXN es la más corta de las cuatro listas fuera del won coreano y la que conviene planificar: dos métodos, los dos digitales, sin opción en efectivo. Si no tienes ninguno de los dos preparado, en la caja no hay un tercer botón.",
         pitfall:
-          "En las monedas distintas de KRW no existe un simple „pagar con Visa“. Tu tarjeta pasa por PayPal o Eximbay, que para tu banco es una transacción de otro tipo que un cargo de un comercio coreano, y ese es el motivo de que una tarjeta que funciona en otros sitios pueda fallar aquí.",
+          "En las monedas distintas de KRW no existe un simple «pagar con Visa». Tu tarjeta pasa por PayPal o Eximbay, que para tu banco es una transacción de otro tipo que un cargo de un comercio coreano, y ese es el motivo de que una tarjeta que funciona en otros sitios pueda fallar aquí.",
         takes: "3 minutos",
       },
       {
@@ -7465,6 +7465,232 @@ export const translations: Translation[] = [
       },
     ],
     labels: DE_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Por qué te rechazaron la tarjeta en una web de entradas coreana",
+    summary:
+      "Tres sistemas distintos pueden rechazar el mismo pago — la plataforma, la red de tu tarjeta y tu banco. Cada uno tiene una solución distinta y solo una de ellas es rápida.",
+    scope:
+      "Cubre los pagos con tarjetas emitidas fuera de Corea en plataformas coreanas de venta de entradas. No es asesoramiento financiero y no puede cubrir las normas concretas de tu banco.",
+    intro: [
+      "Una tarjeta rechazada en el paso del pago es el fallo más caro de toda la venta de entradas de K-pop, porque un asiento reservado vuelve al montón en cuestión de minutos. Casi todo es evitable si te lo montas con tiempo.",
+      "Parece aleatorio porque tres sistemas independientes pueden rechazar la misma transacción, y el mensaje de error que ves rara vez te dice cuál de ellos lo hizo. Repásalos en el orden del tiempo que tarda cada arreglo.",
+    ],
+    steps: [
+      {
+        title: "Comprueba si la verificación de tu cuenta está realmente completa",
+        body: "En varias plataformas, las tarjetas emitidas fuera de Corea solo funcionan una vez que la cuenta está verificada como cliente del extranjero. Si esa verificación sigue pendiente, la tarjeta fallará por muy sana que esté. Este es el arreglo más lento, y por eso va primero.",
+        pitfall:
+          "El error del pago no te va a decir «tu verificación está pendiente». Va a parecer un problema de la tarjeta.",
+        takes: "1-3 días",
+      },
+      {
+        title: "Avisa a tu banco antes de la venta, no después",
+        body: "Activa las transacciones internacionales y en línea, y si tu banco lo permite, autoriza por adelantado el rango de importe y el país. Un primer cargo de un comercio coreano a una hora rara es exactamente el perfil que bloquea un sistema antifraude.",
+        pitfall:
+          "Los bloqueos antifraude automáticos suelen ser silenciosos de tu lado: ni SMS ni aviso en la aplicación. Solo te enteras por el rechazo genérico del comercio.",
+        takes: "1 día",
+      },
+      {
+        title: "No des el paso del pago dentro del navegador de una aplicación",
+        body: "Las verificaciones de 3-D Secure y las claves de un solo uso de los bancos fallan a menudo dentro del navegador incrustado en una aplicación social o de mensajería. Usa un navegador normal, de móvil o de escritorio, y asegúrate de poder recibir el mensaje de verificación de tu banco en ese mismo dispositivo.",
+        pitfall:
+          "La redirección puede parecer que sale bien y luego perder la autorización sin avisar, lo que se lee como un rechazo.",
+        takes: "0 minutos, solo hazlo bien",
+      },
+      {
+        title: "Ten un respaldo de verdad, no una tarjeta hermana",
+        body: "Una segunda tarjeta del mismo emisor suele fallar por el mismo motivo. Un emisor distinto, una red distinta, o el método alternativo que ofrezca la plataforma, sí es un respaldo de verdad. Las dos plataformas para el extranjero rechazan además cosas opuestas, y conviene saberlo antes de culpar a la tarjeta: NOL World acepta VISA, MasterCard, AMEX, JCB y UnionPay pero solo emitidas fuera de Corea, y rechaza de plano las tarjetas emitidas en Corea. YES24 Global hace lo contrario con dos de ellas, excluyendo American Express emitida fuera de Corea y UnionPay por completo. Una tarjeta rechazada en una puede ser la tarjeta correcta en la otra.",
+        pitfall:
+          "Dos tarjetas del mismo banco son una sola tarjeta a efectos de una regla antifraude.",
+        takes: "30 minutos para prepararlo",
+      },
+      {
+        title: "Comprueba la moneda y el importe antes de confirmar",
+        body: "Mira si te cobran en KRW o en un importe convertido, y ten clara la comisión por transacción en el extranjero de tu tarjeta. Una conversión que empuje el total por encima de un límite que tú mismo pusiste también puede provocar un rechazo.",
+        pitfall:
+          "La conversión dinámica de divisa añade coste sin hacer ruido. Pagar en KRW suele ser la opción más barata.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Por qué me rechazaron la tarjeta si tiene saldo?",
+        a: "Casi siempre por una de tres cosas: tu cuenta en la plataforma no ha terminado la verificación de cliente del extranjero, el sistema antifraude de tu banco bloqueó un comercio extranjero desconocido, o falló un paso de 3-D Secure, normalmente porque se ejecutó dentro del navegador de una aplicación. El mensaje de rechazo casi nunca distingue entre ellas.",
+      },
+      {
+        q: "¿Funciona PayPal?",
+        a: "Algunas plataformas para el extranjero admiten métodos de pago alternativos en algunos espectáculos. Se decide por plataforma y por evento, no de forma general, así que mira las opciones de pago que aparecen en la página de tu evento antes de planificar nada alrededor.",
+      },
+      {
+        q: "¿Pago en KRW o en mi propia moneda?",
+        a: "Pagar en la moneda del comercio suele salir más barato que dejar que la página de pago convierta por ti, porque la conversión dinámica de divisa añade un margen. La comisión por transacción en el extranjero de tu propia tarjeta se aplica igual en los dos casos.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Cómo comprar álbumes de K-pop desde el extranjero para que cuenten",
+    summary:
+      "Dónde compras decide si tu compra se contabiliza, cuánto pagas de envío y si te llegan los extras del pedido anticipado. Aquí tienes cómo elegir.",
+    scope:
+      "Cubre la compra de álbumes físicos y artículos oficiales con entrega fuera de Corea. No cubre mercados de reventa ni productos no oficiales.",
+    intro: [
+      "Esta es la pregunta que sigue viva todo el año, a diferencia de las entradas — y por eso va junto a ellas. Y a diferencia de las entradas, tiene una respuesta equivocada que no te cuesta nada visible: tu álbum llega, simplemente no se contabilizó.",
+      "Tres cosas cambian según dónde compres: si la venta se reporta a las listas coreanas, si vienen con ella los extras del pedido anticipado, y el coste real puesto en casa una vez metidos el envío y la aduana. No se mueven juntas, así que la opción más barata es a menudo la que no cuenta para nada.",
+    ],
+    steps: [
+      {
+        title: "Decide qué quieres realmente de la compra",
+        body: "Aportar a las listas, el álbum físico, los extras del pedido anticipado, o el precio más bajo. Estas cosas tiran en direcciones distintas. Elige la prioridad antes de elegir la tienda, porque la tienda viene después de eso.",
+        pitfall:
+          "Comprar en un mercado generalista para ahorrar y descubrir luego que no contó es la versión estándar de este error.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Comprueba si el vendedor reporta a las listas coreanas",
+        body: "Las ventas que se reportan a las listas coreanas de álbumes salen de tiendas concretas y de las tiendas oficiales. Que un anuncio sea de un álbum oficial no significa que la venta se reportara. Si aportar a las listas es por lo que compras, verifica que la tienda sea de las que reportan antes de pedir.",
+        pitfall:
+          "Los anuncios de álbumes auténticos en mercados de terceros normalmente no cuentan. El álbum es real; la aportación no está ahí.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Pide dentro de la ventana de pedido anticipado si quieres los extras",
+        body: "Los beneficios del pedido anticipado — pósteres, photocards adicionales, entradas a eventos — están ligados a pedir dentro de una ventana, y a menudo a esa tienda concreta. La ventana cierra antes del día de lanzamiento, no ese día.",
+        pitfall:
+          "Los extras exclusivos de una tienda no son intercambiables. Pedir el mismo álbum en otro sitio te da un conjunto distinto o ninguno.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Calcula el envío y la exposición a la aduana, no el álbum",
+        body: "El envío desde Corea puede superar el precio del álbum, y que pagues cargos de importación encima depende de las normas de tu propio país. Mira cuáles son ahora en lugar de suponerlo: Estados Unidos suspendió su umbral de 800 dólares en agosto de 2025 y la Unión Europea eliminó el suyo de 150 euros el 1 de julio de 2026, así que para quien lea desde cualquiera de los dos ya no hay un valor lo bastante pequeño como para llegar libre. Los pedidos en grupo reducen el envío por artículo. Calcula el coste puesto en casa antes de comprometerte.",
+        pitfall:
+          "Planificar alrededor de una franquicia aduanera que donde vives ya no existe. Donde todavía existe una, juntar varios álbumes en un solo paquete puede empujar el valor declarado por encima de ella y costar más que enviarlos por separado — haz las dos cuentas.",
+        takes: "20 minutos",
+      },
+      {
+        title: "Guarda el registro del pedido hasta que llegue",
+        body: "Guarda la confirmación, el número de seguimiento y el valor declarado. Para cualquier cosa que salga mal — un paquete dañado, una consulta de aduanas, un extra que falta — eso es lo que la tienda te va a pedir.",
+        pitfall:
+          "La atención al cliente de las tiendas coreanas suele trabajar con números de pedido y no con búsquedas por correo. Sin el número, la conversación va lenta.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Los álbumes comprados fuera de Corea cuentan para las listas coreanas?",
+        a: "Cuentan las ventas reportadas por las tiendas participantes, y eso depende de la tienda y no de dónde estés. Comprar un álbum auténtico en una tienda que no reporta significa que el álbum es real pero la venta no se contabiliza. Comprueba la tienda antes de pedir si lo que buscas es aportar a las listas.",
+      },
+      {
+        q: "¿Merece la pena un pedido en grupo?",
+        a: "Para el envío normalmente sí, porque el coste por artículo baja mucho. Compénsalo con las normas de importación de tu país — donde todavía existe una franquicia aduanera, un solo paquete de valor alto puede atraer cargos que varios paquetes pequeños no atraerían. En Estados Unidos y en la Unión Europea esa cuenta ha cambiado: los dos eliminaron sus exenciones de bajo valor, así que ya no queda umbral bajo el que quedarse.",
+      },
+      {
+        q: "¿Por qué los beneficios del pedido anticipado son distintos entre tiendas?",
+        a: "Las tiendas negocian sus propios extras exclusivos, así que el mismo álbum lleva extras distintos según dónde se haya pedido por anticipado. Si lo que quieres es un extra concreto, tienes que pedir en la tienda que lo ofrece, dentro de su ventana.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Renovar la membresía de Weverse desde el extranjero",
+    summary:
+      "El pago automático se ejecuta el último día de tu periodo a la hora en que pagaste la primera vez, en una moneda que tiene que coincidir, y si falla pasada la ventana de renovación no hay vuelta atrás salvo volver a comprarla.",
+    scope:
+      "Cubre mantener en marcha una Official Membership de Weverse que ya tienes, y lo que cuesta que se corte. Entrar por primera vez en un club de fans, y calificar para una preventa concreta, son cuestiones aparte que están en la guía de preventa. Todo lo de aquí sale del aviso de Weverse Shop del 3 de septiembre de 2026 y de las páginas de producto a las que remite.",
+    intro: [
+      "Una membresía que se corta en la semana equivocada no te cuesta una suscripción. Te cuesta la preventa, porque la elegibilidad se comprueba contra una membresía que estuviera activa antes de una fecha límite, y comprarla otra vez después no mueve esa fecha.",
+      "Weverse añadió el pago automático el 3 de septiembre de 2026, lo que elimina la forma habitual de que se corte. También introdujo cuatro reglas fáciles de equivocar, y un punto sin retorno.",
+    ],
+    steps: [
+      {
+        title: "Averigua en qué categoría de membresía estás",
+        body: "Weverse gestiona las membresías en tres categorías — Global, Japan y USA — y se administran por separado. Los métodos de pago, las monedas y los ajustes del pago automático son por categoría, y se pueden guardar hasta cinco métodos de pago en cada una, con uno marcado como principal. En qué categoría estás no es algo que elijas a la ligera; es donde ya vive tu membresía.",
+        pitfall:
+          "Configurar el pago automático en la categoría que no usas. La pantalla se ve idéntica y la membresía que se renueva es la otra.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Comprueba que tu moneda es una que la categoría acepta de verdad",
+        body: "A 3 de septiembre de 2026: una Global Membership admite tarjetas de débito o crédito surcoreanas para KRW, y tarjetas registradas en PayPal para JPY, USD o MXN. Una Japan Membership admite tarjetas de crédito para JPY. Una US Membership admite tarjetas registradas en PayPal para USD. Para un fan en el extranjero con una Global Membership pagando en USD, eso significa que la tarjeta pasa por PayPal — no hay opción de tarjeta directa.",
+        pitfall:
+          "Esperar registrar una Visa directamente en una Global Membership en USD. El mismo patrón recorre Weverse Shop, y es la razón de que una tarjeta que funciona en todas partes pueda fallar aquí.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Haz que la moneda de compra coincida con la del método principal",
+        body: "Weverse lo dice directamente: la moneda de pago con la que compraste la membresía tiene que coincidir con la moneda de pago de tu método principal de pago automático. Un desajuste no se resuelve a tu favor en el momento de la renovación — es una renovación que no sale.",
+        pitfall:
+          "Comprar una membresía en una moneda y añadir después un método principal en otra, lo que se ve bien en las dos pantallas y solo falla el día que importa.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Ten claro el momento exacto en que se renueva",
+        body: "El pago automático se ejecuta el último día del periodo de validez de la membresía actual, a la misma hora del día en que pagaste la primera vez. Esa hora se fijó en un servidor coreano, así que para casi todo el que lea esto cae en algún punto de la noche o la madrugada. Si falla, Weverse envía un correo y una notificación push y reintenta una vez al día a la misma hora, mientras dure el periodo de renovación.",
+        pitfall:
+          "Una tarjeta que caduca a mitad del periodo, o un banco que bloquea el cargo, se convierte en una notificación que llega a las cuatro de la madrugada en tu hora. El reintento es diario, no cada hora: un día sin ver el correo es un día de ventana gastado.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Entiende lo que cancelar el pago automático no hace",
+        body: "Cancelar el pago automático detiene las renovaciones futuras. No cancela ni reembolsa la membresía que ya tienes, y sigues usándola con normalidad hasta que termine el periodo de validez. La cancelación y el reembolso de la membresía en sí son un asunto aparte que rige la página de producto de esa membresía.",
+        pitfall:
+          "Cancelar el pago automático esperando que te devuelvan dinero, y además: cancelarlo para «pausar» mientras se rumorea una gira, que es justo la semana en la que menos quieres que la renovación se detenga.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Trata el final del periodo de renovación como un punto sin retorno",
+        body: "Si cancelaste el pago automático puedes reactivarlo — pero solo mientras el periodo de renovación siga en marcha. Una vez terminado ese periodo, la reactivación no está disponible y el único camino es comprar la membresía otra vez. Weverse da además dos controles manuales dentro de la ventana: Pay Now para renovar de inmediato, y Retry Now si un pago falló con un método que ya has arreglado.",
+        pitfall:
+          "Esperar a ver si los reintentos salen bien. Retry Now y Pay Now existen precisamente para que no tengas que hacerlo, y los dos desaparecen cuando la ventana cierra.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Renueva en lugar de volver a comprar, porque el registro se arrastra",
+        body: "Cuando una membresía se renueva mediante el pago automático, los datos de miembro registrados en la membresía existente se conservan en la siguiente. Ese registro — el nombre que lleva, en particular — es contra lo que se ejecuta una comprobación de elegibilidad para una preventa. Comprar una membresía nueva después de un corte empieza un registro nuevo y una fecha de inicio nueva, y esa es la parte que cuesta una preventa y no una cuota.",
+        pitfall:
+          "Suponer que la continuidad va de lealtad. Va de una fecha y un nombre en un registro, y un hueco en cualquiera de los dos es lo que ve la comprobación.",
+        takes: "2 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Puedo pagar una Global Membership con mi propia Visa o Mastercard?",
+        a: "No directamente, fuera de KRW. Una Global Membership admite tarjetas coreanas para KRW, y tarjetas registradas en PayPal para JPY, USD o MXN — así que tu tarjeta llega a Weverse a través de PayPal y no como un pago directo con tarjeta.",
+      },
+      {
+        q: "¿Cuándo me cobra exactamente el pago automático?",
+        a: "El último día del periodo de validez de tu membresía actual, a la misma hora del día en que pagaste la primera vez. Esa hora se fijó en un reloj coreano, así que conviértela a la tuya.",
+      },
+      {
+        q: "Si el pago automático falla, ¿cuántas oportunidades tengo?",
+        a: "Weverse te avisa por correo y notificación push, y luego reintenta una vez al día a la misma hora durante lo que quede del periodo de renovación. También puedes usar Retry Now después de arreglar el método de pago, o Pay Now para renovar de inmediato.",
+      },
+      {
+        q: "Cancelé el pago automático. ¿Puedo volver a activarlo?",
+        a: "Sí, mientras el periodo de renovación siga abierto — hay un control de reactivación justo para eso. Después de que termine el periodo de renovación no puedes, y la única opción es comprar la membresía otra vez.",
+      },
+      {
+        q: "¿Importa que mi membresía se corte unos días?",
+        a: "Puede importar más que el precio. La renovación conserva los datos de miembro de la membresía existente; una recompra empieza un registro nuevo con una fecha nueva. La elegibilidad para una preventa se comprueba contra ese registro y su fecha límite, no contra cuánto tiempo llevas siendo fan.",
+      },
+    ],
+    labels: ES_LABELS,
   },
 ];
 

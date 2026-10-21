@@ -179,3 +179,80 @@ test("the route resolves its segment rather than casting it", () => {
   );
   assert.match(route, /localeFromSegment\(/, "the route does not look its segment up");
 });
+
+/**
+ * The same-language rail links nowhere a reader of that language cannot go.
+ *
+ * The rail exists because six translated pages with no links between them are
+ * six dead ends, reachable only from the sitemap. It is built from the `see`
+ * cross-references authored into the English guide's steps, filtered to the
+ * translations that exist — so the failure to guard against is not a broken
+ * link but a *silently empty* rail, which looks identical to a page that
+ * correctly has no siblings, and a heading rendered over nothing.
+ */
+const translatedByLocale = new Map();
+for (const m of reg.matchAll(/^ {4}locale: "([a-zA-Z-]+)",\n {4}slug: "([a-z0-9-]+)",/gm)) {
+  if (!translatedByLocale.has(m[1])) translatedByLocale.set(m[1], new Set());
+  translatedByLocale.get(m[1]).add(m[2]);
+}
+
+const guidesSrc = await readFile(new URL("../content/guides.ts", import.meta.url), "utf8");
+const seeByGuide = new Map();
+{
+  const marks = [...guidesSrc.matchAll(/^ {4}slug: "([a-z0-9-]+)",$/gm)];
+  for (let i = 0; i < marks.length; i++) {
+    const body = guidesSrc.slice(
+      marks[i].index,
+      i + 1 < marks.length ? marks[i + 1].index : guidesSrc.length,
+    );
+    seeByGuide.set(
+      marks[i][1],
+      [...body.matchAll(/\n {10}slug:\s*\n?\s*"([a-z0-9-]+)",/g)].map((m) => m[1]),
+    );
+  }
+}
+
+test("every locale's rail reaches at least one sibling that exists", () => {
+  for (const [locale, slugs] of translatedByLocale) {
+    const reachable = [...slugs].filter((s) =>
+      (seeByGuide.get(s) ?? []).some((t) => t !== s && slugs.has(t)),
+    );
+    assert.ok(
+      reachable.length > 0,
+      `${locale}: no translated guide cross-references another translated one, ` +
+        `so every page in this language is a dead end. Pick guides that ` +
+        `reference each other, or the rail renders nothing anywhere.`,
+    );
+  }
+});
+
+test("the rail is built from the prefix and hidden when empty", () => {
+  assert.match(
+    route,
+    /href=\{`\$\{LOCALES\[tr\.locale\]\.prefix\}\/guides\/\$\{r\.slug\}`\}/,
+    "the rail builds its href without the locale's prefix, which is the same " +
+      "capitalisation bug that 404'd every Chinese page",
+  );
+  assert.match(
+    route,
+    /related\.length > 0 &&/,
+    "the rail is not guarded on length, so a page with no translated siblings " +
+      "renders a heading over an empty list",
+  );
+});
+
+test("every label set carries every label the template needs", () => {
+  const needed = [...reg.matchAll(/^ {4}(\w+): string;$/gm)].map((m) => m[1]);
+  assert.ok(needed.includes("related"), "the label type lost `related`");
+  const sets = [...reg.matchAll(/^const (\w+_LABELS) = \{([\s\S]*?)^\};$/gm)];
+  assert.ok(sets.length >= 3, `expected a label set per language, found ${sets.length}`);
+  for (const [, name, body] of sets) {
+    for (const key of needed) {
+      assert.match(
+        body,
+        new RegExp(`^ {2}${key}:`, "m"),
+        `${name} is missing \`${key}\`, so that language falls back to nothing`,
+      );
+    }
+  }
+});

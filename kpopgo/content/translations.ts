@@ -55,6 +55,8 @@ export type Translation = TranslationMeta & {
     takes: string;
     sources: string;
     readEnglish: string;
+    /** Heading over the rail of other guides available in this language. */
+    related: string;
     /** "Translated with machine assistance; not reviewed by a native speaker." */
     reviewedMachine: string;
     /** "Translation reviewed by a native speaker." */
@@ -71,6 +73,7 @@ const ZH_LABELS = {
   takes: "所需時間：",
   sources: "資料來源",
   readEnglish: "閱讀英文版",
+  related: "本語言的其他指南",
   reviewedMachine:
     "本翻譯以機器翻譯為基礎，未經母語人士校閱。涉及重要判斷時，請以英文版與原始資料來源為準。",
   reviewedNative: "本翻譯已經母語人士校閱。",
@@ -85,6 +88,7 @@ const ID_LABELS = {
   takes: "Perkiraan waktu:",
   sources: "Sumber",
   readEnglish: "Baca versi bahasa Inggris",
+  related: "Panduan lain dalam bahasa ini",
   reviewedMachine:
     "Terjemahan ini dibuat dengan bantuan mesin dan belum diperiksa oleh penutur asli. Untuk keputusan penting, rujuk versi bahasa Inggris dan sumber aslinya.",
   reviewedNative: "Terjemahan ini telah diperiksa oleh penutur asli.",
@@ -99,6 +103,7 @@ const JA_LABELS = {
   takes: "所要：",
   sources: "出典",
   readEnglish: "英語版を読む",
+  related: "この言語で読める他のガイド",
   reviewedMachine:
     "機械翻訳をもとにした翻訳です。ネイティブによる校閲は受けていません。正確さが重要な判断には英語版と出典をご確認ください。",
   reviewedNative: "ネイティブによる校閲を受けた翻訳です。",
@@ -2926,6 +2931,44 @@ export function getTranslation(slug: string, locale: Locale): Translation | unde
 }
 
 /** The locales a given guide has been translated into. */
+/**
+ * Other guides a reader of this language can actually read.
+ *
+ * The translated template carried no related rail at all, and the reason was
+ * sound while a language had one or two pages: a rail would have been a list
+ * of links into English, and a translated page that funnels into English is
+ * worse than one that stops honestly. At six pages per language that reason
+ * inverts. Six pages with no links between them are six dead ends, and the
+ * only way Google finds the sixth is the sitemap — on a site whose single
+ * channel is search, that is the difference between a translated section and
+ * six orphans.
+ *
+ * The relationships are not computed from tags or platform overlap. They are
+ * the `see` cross-references already authored into the English guide's steps,
+ * in the order they appear there, because somebody decided those were the
+ * guides worth sending a reader to and a similarity score did not. Anything
+ * with no translation in this locale is dropped rather than linked in
+ * English, which is the original rule doing its job rather than being
+ * abandoned.
+ */
+export function relatedTranslations(
+  slug: string,
+  locale: Locale,
+): { slug: string; title: string }[] {
+  const guide = guides.find((g) => g.slug === slug);
+  if (!guide) return [];
+  const seen = new Set<string>([slug]);
+  const out: { slug: string; title: string }[] = [];
+  for (const step of guide.steps) {
+    const target = step.see?.slug;
+    if (!target || seen.has(target)) continue;
+    seen.add(target);
+    const tr = getTranslation(target, locale);
+    if (tr) out.push({ slug: target, title: tr.title });
+  }
+  return out;
+}
+
 export function translationsFor(slug: string): Translation[] {
   return translations.filter((t) => t.slug === slug);
 }

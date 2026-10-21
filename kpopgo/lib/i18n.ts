@@ -29,7 +29,7 @@
 import type { Guide } from "@/content/guides";
 import { displayStatus, type DisplayStatus } from "./freshness";
 
-export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de" | "es" | "pt-BR";
+export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de" | "es" | "pt-BR" | "fr";
 
 /** English is the canonical language and carries no path prefix. */
 export const DEFAULT_LOCALE: Locale = "en";
@@ -142,6 +142,28 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     english: "Portuguese (Brazil)",
     tag: "pt-BR",
     prefix: "/pt-br",
+  },
+  // French carries no region, and that is the honest scope rather than a
+  // shortcut. Its readers are spread across zones that disagree about almost
+  // nothing this site covers: Paris, Brussels and Montreal all observe
+  // daylight saving, and the one francophone zone that does not — Dakar — is
+  // not a market this site has a reader in. Where Brazil's region decided a
+  // page, France's would decide nothing, so there is no `fr-FR`.
+  //
+  // It sits with German and Spanish on both exclusions, on the same tests
+  // they were given rather than new ones. France observes daylight saving and
+  // Korea does not, so the timezone guide applies: checked against this
+  // container's zoneinfo, 20:00 KST is 12:00 in Paris in January and 13:00 in
+  // July, which is the Berlin and Madrid line the English page already
+  // converts for. And France is in the EU, so the customs guide is refused
+  // for the reason counted there: five of its ten steps are US law, and the
+  // one EU fact is already carried by the shipping guide.
+  fr: {
+    code: "fr",
+    native: "Français",
+    english: "French",
+    tag: "fr",
+    prefix: "/fr",
   },
 };
 

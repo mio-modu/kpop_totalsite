@@ -113,6 +113,21 @@ const ES_LABELS = {
     "La versión en inglés en la que se basa esta traducción ha superado su plazo de vigencia. Consulte la versión en inglés y sus fuentes para saber cómo están las cosas ahora.",
 };
 
+const FR_LABELS = {
+  pitfall: "Erreur fréquente",
+  takes: "Temps estimé :",
+  sources: "Sources",
+  readEnglish: "Lire la version anglaise",
+  related: "Autres guides dans cette langue",
+  reviewedMachine:
+    "Cette traduction a été réalisée avec l\u0027aide de la machine et n\u0027a pas été relue par une personne de langue maternelle française. Pour les décisions importantes, reportez-vous à la version anglaise et aux sources d\u0027origine.",
+  reviewedNative: "Une personne de langue maternelle française a relu cette traduction.",
+  sourceMoved:
+    "La version anglaise a été revérifiée après la réalisation de cette traduction. En cas de divergence, c\u0027est la version anglaise qui fait foi.",
+  sourceStale:
+    "La version anglaise sur laquelle repose cette traduction a dépassé sa durée de validité. Consultez la version anglaise et ses sources pour savoir où en sont les choses aujourd\u0027hui.",
+};
+
 const PT_LABELS = {
   pitfall: "Erro comum",
   takes: "Tempo estimado:",
@@ -9948,6 +9963,170 @@ export const translations: Translation[] = [
       },
     ],
     labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Acheter des billets de concert K-pop en Corée depuis l'étranger",
+    summary:
+      "La vue d'ensemble avant de commencer : sur quelle plateforme votre concert est vendu, quelle vérification d'identité vous attend, et ce qui doit être prêt avant l'ouverture de la vente.",
+    scope:
+      "Couvre les concerts donnés en Corée du Sud et les plateformes de billetterie qu'utilisent les agences coréennes. Les dates de tournée hors de Corée sont vendues par des promoteurs locaux : c'est autre chose, et les règles ci-dessous ne s'y appliquent pas.",
+    intro: [
+      "La plupart des guides qui ressortent en tête sur cette question ont été écrits avant décembre 2025 et vous envoient vers des sites qui n'existent plus sous ce nom. C'est la raison principale de l'existence de cette page.",
+      "Il n'y a pas de site unique de billetterie K-pop. La plateforme est choisie tournée par tournée par l'agence et le promoteur, et elle est nommée dans l'annonce officielle du concert concerné. Tout le reste — quelle vérification d'identité vous attend, si une carte étrangère passe, combien de temps à l'avance la prévente ouvre — découle de ce seul fait.",
+      "L'ordre des opérations est donc : trouver d'abord l'annonce officielle, identifier la plateforme, et seulement ensuite se préparer aux exigences propres à celle-ci. Faire l'inverse, c'est ainsi qu'on se retrouve avec un compte vérifié sur le mauvais site une heure avant la vente.",
+    ],
+    steps: [
+      {
+        title: "Trouvez l'annonce officielle, pas le repartage d'un fan",
+        body: "Allez sur les canaux officiels de l'artiste — le site de l'agence, la communauté Weverse de l'artiste, et leurs comptes X/Instagram officiels. L'annonce nomme la plateforme de billetterie, les horaires de prévente et de vente générale en KST, le niveau d'abonnement exigé pour la prévente, et toute condition de résidence ou de vérification. Faites une capture d'écran. Tout ce que vous ferez ensuite dépend de ce seul document.",
+        pitfall:
+          "Les comptes de fans agrègent et reformulent, et ils se trompent de plateforme assez souvent pour vous coûter la vente. Ils mettent aussi rarement à jour quand une date change.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Identifiez votre plateforme — et ne la déduisez pas du label",
+        body: "Les artistes HYBE passent en général par la billetterie de Weverse. Les autres tournées coréennes utilisent couramment NOL Ticket (le site en coréen) ou NOL World (son équivalent tourné vers l'étranger), YES24, ou Melon Ticket. Mais c'est une tendance, pas une règle : les agences changent de plateforme d'une tournée à l'autre, et une même tournée peut répartir la vente coréenne et la vente mondiale sur deux sites différents. Lisez l'annonce.",
+        pitfall:
+          "Considérer cette correspondance comme fixe — « HYBE veut dire Weverse, SM veut dire YES24 » — est l'erreur la plus répandue dans les guides existants. Elle est fausse assez souvent pour compter.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Déterminez quelle vérification d'identité vous attend",
+        body: "Les sites de billetterie en coréen vérifient généralement l'identité à partir d'un numéro de mobile coréen, ce qui suppose en pratique un justificatif de résidence en Corée pour l'obtenir. Si vous n'en avez pas, le site en coréen n'est pas votre voie. Les sites tournés vers l'étranger existent précisément pour ce cas et vérifient autrement — le plus souvent par les données du passeport rattachées à votre compte. Décidez maintenant quel site vous utilisez, car le compte dont vous avez besoin est sur ce site-là.",
+        pitfall:
+          "Essayer de forcer le site en coréen est une perte de temps. Et les arrangements qui empruntent l'identité de quelqu'un d'autre pour passer la vérification ne sont pas quelque chose avec quoi nous aiderons — ils mettent en danger votre billet et votre compte.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Créez le compte exactement avec les données du passeport",
+        body: "Saisissez votre nom légal tel qu'il figure dans la zone de lecture automatique de votre passeport, et votre date de naissance dans le format attendu par le site. Si le concert exige un abonnement de fan-club pour la prévente, le nom et la date de naissance sur l'abonnement et sur le compte de billetterie doivent être identiques. Les divergences sont une cause documentée d'annulation de commande à l'entrée ou lors de la vérification.",
+        pitfall:
+          "Les deuxièmes prénoms, les noms à trait d'union et l'ordre des noms sont là où cela casse. Un abonnement au nom de « Maria Santos » et un passeport portant « Maria Elena Santos Cruz », c'est une divergence.",
+        takes: "20 minutes",
+      },
+      {
+        title: "Vérifiez votre moyen de paiement des jours avant, pas le jour même",
+        body: "Les cartes émises à l'étranger sont couramment acceptées, mais souvent seulement une fois votre compte vérifié comme client étranger. Par ailleurs, votre banque peut bloquer un premier débit chez un commerçant coréen, et les écrans 3-D Secure peuvent échouer dans un navigateur intégré à une application. Appelez votre banque, activez les paiements internationaux, et si la plateforme permet de tester le parcours, passez d'abord un petit achat sans rapport.",
+        pitfall:
+          "Une carte refusée à l'étape du paiement libère votre place et la remet dans le stock en quelques minutes. C'est l'échec le plus coûteux de tout le processus, et il est entièrement évitable.",
+        takes: "1 à 3 jours d'avance",
+      },
+      {
+        title: "Préparez-vous pour la vente elle-même",
+        body: "Connectez-vous et terminez chaque étape de vérification au moins un jour à l'avance. Le jour J, soyez connecté bien avant l'heure d'ouverture, en prenant l'heure officielle en KST comme référence plutôt que l'horloge de votre appareil. Ayez vos préférences de places décidées d'avance — la plupart des systèmes de file d'attente ne laissent qu'une courte fenêtre pour choisir et payer avant de libérer votre réservation.",
+        pitfall:
+          "Ouvrir une nouvelle fenêtre de navigation privée « par sécurité » revient à se reconnecter et à refaire la vérification dans la file. Ne le faites pas.",
+        takes: "30 minutes avant l'ouverture",
+      },
+      {
+        title: "Connaissez les règles de revente avant même d'y penser",
+        body: "La Corée du Sud a durci ses règles sur la revente de billets avec une révision de la loi sur les spectacles entrée en vigueur le 28 août 2026 — modifiée en janvier, promulguée en février, applicable depuis fin août. La couverture de ce changement décrit une interdiction de la revente habituelle ou commerciale au-dessus du prix d'achat, qui vise aussi l'achat avec intention de revendre, et qui ne se limite plus aux achats réalisés par automatisation. Les sanctions rapportées comprennent des amendes pouvant atteindre cinquante fois le montant de la vente, ainsi que la confiscation des gains. Considérez la revente au-dessus du prix facial pour les concerts coréens comme exclue, et utilisez la fonction officielle de revente ou de transfert de la plateforme quand le concert en propose une.",
+        pitfall:
+          "Cette loi est récente, en vigueur seulement depuis août 2026, et le seuil de ce qui compte comme « habituel » se fixe encore dans la pratique. Qu'une annonce existe sur une place de marché internationale de revente ne vous dit rien sur le fait qu'acheter ou vendre soit sans risque pour vous.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Si mon abonnement expire avant la prévente, puis-je simplement le renouveler à temps ?",
+        a: "Seulement si le renouvellement intervient avant la date limite d'éligibilité, et cette limite est généralement antérieure à la prévente elle-même. Le Paiement Automatique de Weverse Shop, disponible depuis le 3 septembre 2026 sur les abonnements qui le prennent en charge, débite un moyen enregistré le dernier jour de la période de validité, ce qui supprime complètement l'intervalle. Mettez-le en place avant qu'une tournée soit annoncée, pas après.",
+      },
+      {
+        q: "Faut-il un numéro de téléphone coréen pour acheter des billets de concert K-pop ?",
+        a: "Pour les sites de billetterie en coréen, la vérification d'identité dépend généralement d'un numéro de mobile coréen, et en obtenir un suppose normalement des justificatifs de résidence en Corée. Pour les sites tournés vers l'étranger, en général non — ils vérifient les clients étrangers autrement, le plus souvent par les données du passeport. Ce qui s'applique à vous dépend de la plateforme sur laquelle votre concert est vendu.",
+      },
+      {
+        q: "Puis-je utiliser une carte bancaire étrangère ?",
+        a: "Le plus souvent oui sur les plateformes tournées vers l'étranger, et souvent seulement une fois votre compte vérifié comme client étranger. Attendez-vous à ce que votre propre banque soit l'autre moitié du problème : activez les paiements internationaux à l'avance et préparez-vous à un écran 3-D Secure.",
+      },
+      {
+        q: "Combien de temps à l'avance ouvre la prévente du fan-club ?",
+        a: "Cela varie selon le concert, et l'annonce officielle est la seule réponse fiable. Les fenêtres de prévente précèdent couramment la vente générale d'un jour ou plus, et l'abonnement doit en général être actif avant une date limite encore antérieure. Ne déduisez pas le calendrier d'une tournée précédente.",
+      },
+      {
+        q: "Le site coréen et le site mondial, est-ce la même file d'attente ?",
+        a: "Pas nécessairement. Les quotas, la vérification et la reconnaissance du fan-club peuvent être gérés séparément entre une vente en coréen et une vente mondiale pour le même concert. Un abonnement vérifié sur l'un n'est pas automatiquement reconnu sur l'autre : vérifiez dans l'annonce ce qui s'applique à vous.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Billets NOL World : le site qui s'appelait Interpark Global",
+    summary:
+      "Le site qui s'appelait autrefois interpark Global. Il a été renommé le 1 décembre 2025, la plupart des guides vous envoient encore vers l'ancien nom, et voici le parcours actuel, étape par étape.",
+    scope:
+      "Couvre la plateforme tournée vers l'étranger pour les concerts coréens. Le site NOL Ticket, en coréen, est un produit distinct, avec un système de comptes distinct et une vérification d'identité plus stricte.",
+    intro: [
+      "Deux changements de nom se sont enchaînés et presque aucun guide en anglais sur le web n'a intégré ni l'un ni l'autre. Yanolja Core a regroupé ses marques sous le nom NOL en avril 2025, et c'est à ce moment qu'Interpark Ticket est devenu NOL Ticket. Puis, le 1 décembre 2025, interpark Global, tourné vers l'étranger, est devenu NOL World.",
+      "La conséquence pratique : les guides qui vous disent d'aller sur « Interpark Global », et les captures d'écran de son ancienne interface, décrivent un produit qui a été renommé et refondu. Si vous en suivez un, vous naviguez avec une carte périmée.",
+      "Cette page suit l'actuelle. La date en haut est celle de la dernière vérification.",
+    ],
+    steps: [
+      {
+        title: "Commencez par le site tourné vers l'étranger, pas par le coréen",
+        body: "NOL World est la porte d'entrée pour les fans hors de Corée. Le site NOL Ticket, en coréen, applique la vérification d'identité domestique plus stricte et n'est en général pas votre voie, sauf si vous détenez des justificatifs de résidence coréenne. Ce sont des comptes distincts — s'inscrire sur l'un ne vous donne pas l'autre.",
+        pitfall:
+          "Les résultats de recherche et les favoris anciens pointent encore vers l'ancienne marque. Assurez-vous d'être sur le site tourné vers l'étranger avant de passer du temps à créer un compte.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Inscrivez-vous avec les données exactes du passeport",
+        body: "Utilisez votre nom légal et votre date de naissance tels qu'ils sont imprimés sur votre passeport. Si le concert que vous visez a une prévente de fan-club, ces données doivent également correspondre à votre fiche d'abonnement. Corrigez toute divergence avant l'ouverture de la fenêtre de prévente, pas pendant.",
+        pitfall:
+          "Changer un nom déjà vérifié ensuite relève d'une demande au support, pas d'un réglage dans les paramètres. Faites-le correctement du premier coup.",
+        takes: "20 minutes",
+      },
+      {
+        title: "Terminez la vérification client étranger avant d'en avoir besoin",
+        body: "La vérification client étranger est une action unique par compte, et NOL World indique que les informations vérifiées ne peuvent pas être réutilisées. Vérifiez sur le compte avec lequel vous comptez réellement acheter — si vous en avez plusieurs, la vérification ne se transfère pas de l'un à l'autre. Supprimer un compte efface bien sa vérification et la libère pour un autre, mais un compte restreint pour usage abusif ne peut pas être supprimé du tout. Il n'y a pas de limite d'âge pour la vérification elle-même, même si des événements soumis à une restriction d'âge peuvent encore refuser la réservation. La confirmation arrive par e-mail : regardez les indésirables avant de conclure à un échec.",
+        pitfall:
+          "Découvrir à l'étape du paiement que la vérification est encore en cours est la façon classique de perdre une place réservée.",
+        takes: "1 à 3 jours, traitement compris",
+      },
+      {
+        title: "Vérifiez les conditions propres au concert sur la page de l'événement",
+        body: "Les limites de places par compte, l'exigence éventuelle d'un abonnement, les pièces d'identité demandées sur place et le fait que le concert soit ou non ouvert aux acheteurs étrangers se décident événement par événement. Lisez la page de l'événement et l'annonce officielle ensemble — en cas de désaccord, c'est l'annonce officielle de votre concert qui l'emporte.",
+        pitfall:
+          "Certains concerts réservent des blocs de places ou des tours de vente aux acheteurs domestiques. Cela se décide concert par concert et ne se devine pas depuis un guide général.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Apportez le bon document au retrait",
+        body: "Le retrait se fait à la billetterie de la salle le jour du concert et pas avant — NOL World indique que les billets ne peuvent pas être retirés un jour antérieur. La fenêtre ouvre une heure avant le concert, et il vous faut le numéro de confirmation accompagné d'une pièce d'identité. Prévoyez une file à la billetterie elle-même. Une fois retiré, un billet ne peut pas être réédité s'il est perdu ou volé.",
+        pitfall:
+          "Le nom sur la réservation, le nom sur la pièce d'identité et le nom sur l'abonnement doivent tous concorder. Un surnom à n'importe quel maillon de cette chaîne est un problème.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World, est-ce la même chose qu'Interpark Global ?",
+        a: "C'est le même service de billetterie tourné vers l'étranger après un changement de marque. interpark Global a été renommé NOL World le 1 décembre 2025, à la suite du regroupement des marques de Yanolja Core sous le nom NOL en avril 2025, quand Interpark Ticket est devenu NOL Ticket.",
+      },
+      {
+        q: "Pourquoi mon ancien favori affiche-t-il encore Interpark ?",
+        a: "Les changements de marque mettent du temps à se propager dans les résultats de recherche, les guides tiers et les pages en cache. Naviguez depuis l'annonce officielle de votre concert plutôt que depuis un lien enregistré ou un billet de blog.",
+      },
+      {
+        q: "NOL Global, est-ce la même chose ? Et NOL Korea ?",
+        a: "Ce sont les noms que les gens emploient quand ils se souviennent à moitié du changement, et il vaut la peine de les dire à voix haute parce que ce sont eux qui se tapent. Il y a deux sites : NOL World, tourné vers l'étranger, qui était interpark Global jusqu'au 1 décembre 2025 ; et NOL Ticket, en coréen, qui était Interpark Ticket jusqu'en avril 2025. Si on vous a envoyé vers « NOL Global », « NOL Korea » ou « NOL KR », le site que vous cherchez est presque certainement NOL World.",
+      },
+      {
+        q: "Puis-je utiliser mon compte NOL Ticket sur NOL World ?",
+        a: "Traitez-les comme des comptes distincts, avec des vérifications distinctes. Ne supposez pas qu'une connexion ou une vérification terminée vaut sur les deux — confirmez-le sur le site où vous allez réellement acheter.",
+      },
+    ],
+    labels: FR_LABELS,
   },
 ];
 

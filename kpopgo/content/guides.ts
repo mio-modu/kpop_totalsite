@@ -568,7 +568,7 @@ export const guides: Guide[] = [
       "Where you buy decides whether your purchase is counted, what you pay in shipping, and whether you get the pre-order inclusions. Here is how to choose.",
     glyph: "parcel",
     status: "sourced",
-    lastChecked: "2026-10-20",
+    lastChecked: "2026-10-21",
     scope:
       "Covers buying official physical albums and goods for delivery outside Korea. Does not cover resale marketplaces or unofficial merchandise.",
     readMinutes: 6,
@@ -587,9 +587,9 @@ export const guides: Guide[] = [
       },
       {
         title: "Check whether the seller reports to the Korean charts",
-        body: "Sales reported to the Korean album charts come from specific retailers and official stores. A listing being an official album does not mean the sale was reported. If chart contribution is why you are buying, verify the retailer is a reporting one before you order.",
+        body: "Hanteo publishes the list, so this is checkable rather than a matter of trust. Its certified Family stores are searchable at hanteochart.com in English and Spanish as well as Korean, each carrying a family code: Ktown4U is HF0082KTU001 and Weverse is HF0082BTS001. Hanteo also requires every online Family store to display the Family mark in its footer, linked back to hanteochart.com — so the footer is the thirty-second check on any shop, and the register is the confirmation. Hanteo\u0027s own instruction to buyers is to check both the code and the certification mark, which is reissued each year.",
         pitfall:
-          "Third-party marketplace listings of genuine albums commonly do not count. The album is real; the contribution is not there.",
+          "The register lists most store names in Korean even on the English page, so a shop can be on it and look absent to a search in English. And a third-party marketplace listing of a genuine album is the common miss: the album is real, the seller is not a Family store, and the contribution is not there.",
         takes: "15 minutes",
         see: {
           slug: "ktown4u-ordering-shipping-and-fees",
@@ -625,7 +625,7 @@ export const guides: Guide[] = [
     faq: [
       {
         q: "Do albums bought outside Korea count toward the Korean charts?",
-        a: "Sales reported by participating retailers count, and that depends on the retailer rather than on your location. Buying a genuine album from a shop that does not report means the album is real but the sale is not counted. Check the retailer before ordering if chart contribution is the point.",
+        a: "\u0022The Korean charts\u0022 is two different things and only one of them is about your purchase at all. Hanteo counts sales reported by its certified Family stores, so the shop decides rather than your location — check it against the register. Circle Chart is built the other way round: it defines its Album Chart as wholesale shipment units to retailers, minus returns, which means that album was counted when it left the distributor and your order does not move it. Circle runs a separate Retail Album Chart that does count retail sales, in real time. What neither publishes is a rule saying an overseas order from a listed store is treated the same as a domestic one, so buying from a listed shop is the furthest you can check, not a guarantee.",
       },
       {
         q: "Is a group order worth it?",
@@ -644,6 +644,18 @@ export const guides: Guide[] = [
       {
         label: "Weverse Shop — official artist store",
         url: "https://shop.weverse.io/",
+      },
+      {
+        label: "Hanteo Chart — certified Family stores, with each store\u0027s family code",
+        url: "https://www.hanteochart.com/en/family/search",
+      },
+      {
+        label: "Hanteo Chart — Family guide: online stores must show the mark in the footer",
+        url: "https://www.hanteochart.com/en/family/guide",
+      },
+      {
+        label: "Circle Chart — FAQ, including how each chart is counted",
+        url: "https://circlechart.kr/page_community/faq.circle",
       },
     ],
   },
@@ -2725,7 +2737,7 @@ export const guides: Guide[] = [
     status: "sourced",
     lastChecked: "2026-10-21",
     scope:
-      "Covers ordering physical albums and goods from Ktown4u for delivery outside Korea, from Ktown4u\u0027s own notices: the payment clock, shipping fees and methods, holiday pauses, and customer support hours. It does not say whether a Ktown4u purchase is reported to the Korean album charts, because Ktown4u does not state that on the pages read here. Notices are reissued and superseded, so the notices list is the live version.",
+      "Covers ordering physical albums and goods from Ktown4u for delivery outside Korea, from Ktown4u\u0027s own notices: the payment clock, shipping fees and methods, holiday pauses, and customer support hours. Whether a Ktown4u purchase reports to the Korean album charts is answered from Hanteo\u0027s own register of certified stores rather than from Ktown4u. Notices are reissued and superseded, so the notices list is the live version.",
     readMinutes: 7,
     platforms: ["Ktown4u"],
     intro: [
@@ -2787,10 +2799,10 @@ export const guides: Guide[] = [
         takes: "5 minutes, once",
       },
       {
-        title: "Do not assume the purchase counts toward the Korean charts",
-        body: "Chart contribution depends on whether a retailer reports its sales, and that is a claim a retailer has to make. Ktown4u does not state it on the notices and policy pages read for this guide, so this guide does not state it either — not as a doubt about Ktown4u, but because an unsourced yes is exactly the kind of claim this site exists to replace. If chart contribution is the reason you are buying, confirm it on the product page or with the artist\u0027s own announcement for that release, where the participating retailers are usually named.",
+        title: "Ktown4u is a Hanteo certified store, and you can check that yourself",
+        body: "This guide used to say the question could not be answered, because Ktown4u does not state it on its own notices. It is answerable from the other end: Hanteo publishes its certified Family stores, and Ktown4U is on that register with the family code HF0082KTU001. Hanteo requires every online Family store to show the Family mark linked back to hanteochart.com, and Ktown4u\u0027s own storefront links to that same register — so the shop and the chart agree, from both ends. Check it rather than take it from here: registers change, and Hanteo\u0027s instruction is to confirm the code and the certification mark, which is reissued each year.",
         pitfall:
-          "Taking a third party\u0027s list of chart-reporting shops, this page included, as current. Reporting arrangements are per retailer and can change between releases.",
+          "Reading this as \u0022my order will appear on every Korean chart\u0022. Hanteo counts sales its Family stores report; Circle Chart\u0027s main Album Chart counts wholesale shipments to retailers instead, so no retail order moves it at all. And neither publishes a rule on whether an overseas order is treated like a domestic one.",
         takes: "15 minutes",
         see: {
           slug: "buy-k-pop-albums-from-overseas",
@@ -2829,7 +2841,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Does buying from Ktown4u count toward the Korean charts?",
-        a: "This guide does not say, because Ktown4u does not say it on the pages read here. Chart contribution depends on a retailer reporting its sales, and that is a claim the retailer makes rather than something a third party can infer. If it is the reason you are buying, confirm it on the product page or in the artist\u0027s own announcement for that release.",
+        a: "Ktown4U is a Hanteo certified Family store, listed with the code HF0082KTU001, so for Hanteo the shop is a reporting one — which is as far as a public source goes. Hanteo does not publish a rule on whether an overseas order is treated like a domestic one, and Circle Chart is a separate question again: its main Album Chart counts wholesale shipments to retailers rather than retail sales, so an order there changes nothing either way. If a specific release is the point, the artist\u0027s own announcement usually names the participating retailers for it.",
       },
     ],
     sources: [
@@ -2860,6 +2872,14 @@ export const guides: Guide[] = [
       {
         label: "Ktown4u — the notices page, which is the live version of all of the above",
         url: "https://www.ktown4u.com/notices",
+      },
+      {
+        label: "Hanteo Chart — certified Family stores, where Ktown4U is listed as HF0082KTU001",
+        url: "https://www.hanteochart.com/en/family/search",
+      },
+      {
+        label: "Circle Chart — FAQ: the Album Chart counts wholesale shipments, not retail sales",
+        url: "https://circlechart.kr/page_community/faq.circle",
       },
     ],
   },

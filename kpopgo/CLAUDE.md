@@ -71,10 +71,32 @@ taught everyone reading the weekly report to skip that line, and then the next
 one like it. The site sets a session cookie and redirects once; a client that
 does not keep the cookie is sent back to the same URL forever, which is what
 the redirect counter was really showing. `scripts/watch.mjs` now carries a
-cookie jar, and korea.net answers 200 with 757 words. YES24's storefront was
-the same bug wearing different clothes — 26 words of shell, enough to trip the
-brand check — and is now read in full. Two standing alarms, one missing curl
-flag.
+cookie jar, and korea.net answers 200 with 757 words — confirmed on a GitHub
+runner too, where that `✗` is now gone.
+
+**YES24 was not the same bug, and claiming it was is the mistake worth keeping
+written down.** Its storefront came back as 26 words of shell, the cookie jar
+turned that into 319 words from this container, and the obvious conclusion was
+wrong: on a GitHub runner, the same commit on the same day still gets 26
+words. The difference is the network, not the cookie. A fix verified in one
+environment and announced for both is how a false alarm gets re-badged as
+fixed.
+
+So the brand check stopped guessing. It read `r.body`, the raw HTML, where a
+name surviving inside a `<script>` blob counts as present and a page rendering
+it from JSON counts as renamed — neither is the question. It now reads the
+visible text, and refuses to judge a page that came back under the same
+40-word threshold the fingerprint comparison uses, saying it cannot judge
+rather than inventing a rename. `ticket.yes24.com` is exactly that page from
+some networks and not others.
+
+Two things that nearly shipped from this, both caught by running it rather
+than reading it: `visibleText()` lowercases, so comparing `"NOL"`, `"Weverse"`
+and `"YES24"` against it reported all three as renamed at once — one false
+alarm would have become three. And `BRAND_WATCH` still pointed at
+`concerts.weverse.io`, which 302s to the singular host; the guides were
+corrected for that earlier in the day and this list was not, because it is a
+different list.
 
 The same change retired a conditional that made this hard to see. The script
 used to pick curl behind a proxy and node's `fetch` otherwise, with a comment
@@ -550,6 +572,28 @@ degradation of the wide one:
 Verify at 320, 360, 390 and 414 before pushing — `node scripts/check-layout.mjs`
 walks every route in both themes at five widths and reports horizontal
 overflow. Every tap target should clear 44px tall.
+
+**Its translated routes are derived, because the hand-written list went
+stale.** One route per locale used to be typed in under a comment claiming it
+held "the longest guide in each", which was true when written and silently
+stopped being. The failure is the quiet kind: the check measures five pages,
+prints ALL CLEAN, and the page somebody just edited was never among them —
+which is exactly what happened the day the chart guides gained
+`HF0082KTU001`. The English albums guide was covered by luck; no translated
+page carrying the code was looked at.
+
+`riskiestPerLocale()` reads the register instead and gives each locale the
+guide holding its longest **unbreakable** run. Length is not the risk — a run
+of characters with nowhere to wrap is, so it measures Latin letters, digits
+and the punctuation joining them, and skips the structural fields. Both
+exclusions were earned: counting any non-space run made every Japanese
+sentence a 350-character token, because Japanese sets no spaces and wraps
+between characters perfectly well; and leaving `slug` in made every locale
+pick whichever guide links to the longest-named one, a property of the file
+rather than of the page. It now selects `world.nol.com/ticket`,
+`mendokumentasikannya:` and `Fanclub-Verifizierungsfenster` — the real ones.
+Proved by planting a 55-character token in a different guide and watching the
+Japanese route move to it, then back.
 
 ## Outbound hosts
 

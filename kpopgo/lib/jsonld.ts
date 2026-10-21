@@ -1,4 +1,6 @@
 import { RESEARCH_DATE, type Guide, guides } from "@/content/guides";
+import type { Translation } from "@/content/translations";
+import { LOCALES } from "./i18n";
 import { site } from "./site";
 
 /**
@@ -72,6 +74,66 @@ export function guideJsonLd(guide: Guide) {
   };
 
   return [howTo, faq, breadcrumb];
+}
+
+/**
+ * A translated guide.
+ *
+ * These pages had no structured data at all — fifty-one of them, in the
+ * sitemap, telling a crawler nothing about what they were. That mattered more
+ * than it looks: breadcrumbs are, per the note above, the one rich result this
+ * content type can still earn, and the translations were the only pages not
+ * emitting them.
+ *
+ * Deliberately **not** HowTo and FAQPage. The English pages carry those for
+ * the reasons given above — semantically correct, harmless, occasionally read
+ * by something that is not Google — but copying dead markup onto fifty-one
+ * more pages would be cargo. Article is the right type here and is still live:
+ * it carries the language, the dates and the relationship to the original,
+ * which is what a translated page actually has to say about itself.
+ *
+ * `dateModified` obeys the same rule as the visible status: **a translation
+ * can never look fresher than its source.** The page last changed on the day
+ * it was translated, but the claims in it were only ever verified on the day
+ * the source was checked — so the later of those two is a date the page has
+ * not earned, and the earlier is the honest one. Emitting `translated` alone
+ * would tell a crawler this page is newer than the English it was copied from,
+ * which is the exact inversion lib/i18n.ts exists to prevent on screen.
+ */
+export function translatedGuideJsonLd(guide: Guide, tr: Translation) {
+  const info = LOCALES[tr.locale];
+  const url = `${site.url}${info.prefix}/guides/${guide.slug}`;
+  const english = `${site.url}/guides/${guide.slug}`;
+
+  const article = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": url,
+    headline: tr.title,
+    description: tr.summary,
+    inLanguage: info.tag,
+    datePublished: tr.translated,
+    dateModified: tr.translated < guide.lastChecked ? tr.translated : guide.lastChecked,
+    url,
+    mainEntityOfPage: url,
+    // Both relations on purpose: isBasedOn is the general one a reader of the
+    // graph will understand, translationOfWork is the precise one.
+    isBasedOn: english,
+    translationOfWork: { "@type": "Article", "@id": english, url: english },
+    publisher: { "@type": "Organization", name: site.name, url: site.url },
+  };
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: site.name, item: site.url },
+      { "@type": "ListItem", position: 2, name: "Guides", item: `${site.url}/guides` },
+      { "@type": "ListItem", position: 3, name: tr.title, item: url },
+    ],
+  };
+
+  return [article, breadcrumb];
 }
 
 /**

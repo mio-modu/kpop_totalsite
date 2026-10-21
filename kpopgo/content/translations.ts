@@ -5067,6 +5067,96 @@ export const translations: Translation[] = [
     ],
     labels: DE_LABELS,
   },
+  {
+    locale: "de",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Weverse-Mitgliedschaft aus dem Ausland verlängern",
+    summary:
+      "Die automatische Zahlung läuft am letzten Tag Ihrer Laufzeit zu der Uhrzeit, zu der Sie zuerst bezahlt haben, in einer Währung, die übereinstimmen muss — und scheitert sie über das Verlängerungsfenster hinaus, führt kein Weg zurück außer einem Neukauf.",
+    scope:
+      "Behandelt, wie Sie eine bestehende Weverse Official Membership am Laufen halten und was ein Ablauf kostet. Der erstmalige Beitritt zu einem Fanclub und die Qualifikation für einen bestimmten Vorverkauf sind eigene Fragen und stehen in der Vorverkaufs-Anleitung. Alles hier stammt aus der Mitteilung des Weverse Shops vom 3. September 2026 und den darin verlinkten Produktseiten.",
+    intro: [
+      "Eine Mitgliedschaft, die in der falschen Woche ausläuft, kostet Sie nicht ein Abonnement. Sie kostet Sie den Vorverkauf, denn die Berechtigung wird gegen eine Mitgliedschaft geprüft, die vor einem Stichtag aktiv war, und kein noch so schneller Neukauf danach verschiebt dieses Datum.",
+      "Weverse hat am 3. September 2026 die automatische Zahlung eingeführt, die den gewöhnlichen Weg in den Ablauf beseitigt. Damit kamen allerdings vier Regeln, die sich leicht falsch machen lassen, und ein Punkt ohne Wiederkehr.",
+    ],
+    steps: [
+      {
+        title: "Finden Sie heraus, in welcher Mitgliedschaftskategorie Sie sind",
+        body: "Weverse führt Mitgliedschaften in drei Kategorien — Global, Japan und USA — und sie werden getrennt verwaltet. Zahlungsmethoden, Währungen und Einstellungen zur automatischen Zahlung gelten jeweils je Kategorie, und je Kategorie lassen sich bis zu fünf Zahlungsmethoden hinterlegen, von denen eine als primär markiert wird. In welcher Kategorie Sie sind, wählen Sie nicht nebenbei; es ist der Ort, an dem Ihre Mitgliedschaft bereits liegt.",
+        pitfall:
+          "Die automatische Zahlung in der Kategorie einzurichten, die Sie nicht nutzen. Der Bildschirm sieht identisch aus, und die Mitgliedschaft, die sich verlängert, ist die andere.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Prüfen Sie, ob Ihre Währung von der Kategorie überhaupt angenommen wird",
+        body: "Stand 3. September 2026: Eine Global Membership nimmt südkoreanische Debit- oder Kreditkarten für KRW und bei PayPal hinterlegte Karten für JPY, USD oder MXN. Eine Japan Membership nimmt Kreditkarten für JPY. Eine US Membership nimmt bei PayPal hinterlegte Karten für USD. Für eine Person im Ausland mit Global Membership und Zahlung in USD heißt das: die Karte läuft über PayPal — eine direkte Kartenoption gibt es nicht.",
+        pitfall:
+          "Zu erwarten, eine Visa direkt auf einer USD-Global-Membership hinterlegen zu können. Dasselbe Muster zieht sich durch den Weverse Shop, und es ist der Grund, warum eine überall sonst funktionierende Karte hier scheitern kann.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Bringen Sie die Kaufwährung mit der primären Methode in Übereinstimmung",
+        body: "Weverse sagt es unmissverständlich: die beim Kauf der Mitgliedschaft verwendete Zahlungswährung muss mit der Zahlungswährung Ihrer primären Methode für die automatische Zahlung übereinstimmen. Eine Abweichung wird am Verlängerungstag nicht zu Ihren Gunsten aufgelöst — sie ist eine Verlängerung, die nicht durchgeht.",
+        pitfall:
+          "Eine Mitgliedschaft in einer Währung zu kaufen und später eine primäre Methode in einer anderen zu hinterlegen, was auf beiden Bildschirmen stimmig aussieht und erst an dem Tag scheitert, an dem es zählt.",
+        takes: "3 Minuten",
+      },
+      {
+        title: "Kennen Sie den genauen Moment der Verlängerung",
+        body: "Die automatische Zahlung läuft am letzten Tag der aktuellen Gültigkeitsdauer, zu derselben Tageszeit, zu der Sie erstmals bezahlt haben. Diese Uhrzeit wurde auf einem koreanischen Server gesetzt, liegt für die meisten Leserinnen und Leser also irgendwo in der Nacht oder am frühen Morgen. Scheitert sie, schickt Weverse eine E-Mail und eine Push-Benachrichtigung und versucht es einmal täglich zur selben Zeit erneut, solange der Verlängerungszeitraum läuft.",
+        pitfall:
+          "Eine Karte, die mitten in der Laufzeit abläuft, oder eine Bank, die die Belastung blockiert, wird zu einer Benachrichtigung um vier Uhr morgens Ihrer Zeit. Der erneute Versuch erfolgt täglich, nicht stündlich — ein Tag, an dem Sie die E-Mail nicht sehen, ist ein verbrauchter Tag des Fensters.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Verstehen Sie, was das Abschalten der automatischen Zahlung nicht bewirkt",
+        body: "Die automatische Zahlung abzuschalten stoppt künftige Verlängerungen. Es storniert oder erstattet nicht die Mitgliedschaft, die Sie bereits halten, und Sie nutzen sie bis zum Ende der Gültigkeitsdauer normal weiter. Stornierung und Erstattung der Mitgliedschaft selbst sind eine eigene Sache und richten sich nach der Produktseite dieser Mitgliedschaft.",
+        pitfall:
+          "Die automatische Zahlung abzuschalten und Geld zurückzuerwarten — und, davon getrennt: sie abzuschalten, um zu „pausieren“, während eine Tour gerüchteweise ansteht, also genau in der Woche, in der die Verlängerung am wenigsten aussetzen sollte.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Behandeln Sie das Ende des Verlängerungszeitraums als Punkt ohne Wiederkehr",
+        body: "Haben Sie die automatische Zahlung abgeschaltet, können Sie sie wieder aktivieren — aber nur, solange der Verlängerungszeitraum noch läuft. Ist dieser Zeitraum vorbei, ist eine Reaktivierung nicht mehr möglich, und der einzige Weg ist ein erneuter Kauf der Mitgliedschaft. Innerhalb des Fensters gibt Weverse außerdem zwei manuelle Bedienelemente: Pay Now für die sofortige Verlängerung und Retry Now, wenn eine Zahlung über eine inzwischen korrigierte Methode gescheitert ist.",
+        pitfall:
+          "Abzuwarten, ob die erneuten Versuche durchgehen. Retry Now und Pay Now gibt es genau dafür, dass Sie das nicht müssen, und beide verschwinden, wenn das Fenster schließt.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Verlängern statt neu kaufen, denn der Datensatz wird übernommen",
+        body: "Verlängert sich eine Mitgliedschaft über die automatische Zahlung, werden die auf der bestehenden Mitgliedschaft hinterlegten Mitgliedsangaben auf die nächste übernommen. Genau dieser Datensatz — insbesondere der darauf stehende Name — ist das, wogegen eine Berechtigungsprüfung im Vorverkauf läuft. Nach einem Ablauf eine frische Mitgliedschaft zu kaufen beginnt einen neuen Datensatz und ein neues Startdatum, und das ist der Teil, der einen Vorverkauf kostet statt einer Abogebühr.",
+        pitfall:
+          "Anzunehmen, es gehe bei der Kontinuität um Treue. Es geht um ein Datum und einen Namen auf einem Datensatz, und eine Lücke in einem von beidem ist das, was die Prüfung sieht.",
+        takes: "2 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Kann ich eine Global Membership mit meiner eigenen Visa oder Mastercard bezahlen?",
+        a: "Außerhalb von KRW nicht direkt. Eine Global Membership nimmt koreanische Karten für KRW und bei PayPal hinterlegte Karten für JPY, USD oder MXN — Ihre Karte erreicht Weverse also über PayPal und nicht als direkte Kartenzahlung.",
+      },
+      {
+        q: "Wann genau belastet mich die automatische Zahlung?",
+        a: "Am letzten Tag der aktuellen Gültigkeitsdauer, zu derselben Tageszeit, zu der Sie erstmals bezahlt haben. Diese Zeit wurde nach koreanischer Uhr gesetzt, rechnen Sie sie also für Ihre eigene um.",
+      },
+      {
+        q: "Wenn die automatische Zahlung scheitert, wie viele Versuche habe ich?",
+        a: "Weverse benachrichtigt Sie per E-Mail und Push und versucht es dann einmal täglich zur selben Zeit erneut, für den Rest des Verlängerungszeitraums. Sie können außerdem Retry Now nutzen, nachdem Sie die Zahlungsmethode korrigiert haben, oder Pay Now, um sofort zu verlängern.",
+      },
+      {
+        q: "Ich habe die automatische Zahlung abgeschaltet. Kann ich sie wieder einschalten?",
+        a: "Ja, solange der Verlängerungszeitraum noch offen ist — dafür gibt es genau ein Bedienelement zur Reaktivierung. Nach Ende des Verlängerungszeitraums geht das nicht mehr, und die einzige Möglichkeit ist der erneute Kauf der Mitgliedschaft.",
+      },
+      {
+        q: "Macht es etwas aus, wenn meine Mitgliedschaft ein paar Tage ausläuft?",
+        a: "Es kann mehr ausmachen als der Preis. Eine Verlängerung übernimmt die Mitgliedsangaben der bestehenden Mitgliedschaft; ein Neukauf beginnt einen neuen Datensatz mit neuem Datum. Die Vorverkaufsberechtigung wird gegen diesen Datensatz und dessen Stichtag geprüft und nicht danach, wie lange Sie schon Fan sind.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

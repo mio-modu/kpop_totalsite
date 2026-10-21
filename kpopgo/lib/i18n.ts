@@ -29,7 +29,7 @@
 import type { Guide } from "@/content/guides";
 import { displayStatus, type DisplayStatus } from "./freshness";
 
-export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de" | "es";
+export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de" | "es" | "pt-BR";
 
 /** English is the canonical language and carries no path prefix. */
 export const DEFAULT_LOCALE: Locale = "en";
@@ -114,6 +114,34 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     english: "Spanish",
     tag: "es",
     prefix: "/es",
+  },
+  // Brazil, not Portuguese generally, and the region in the code is doing
+  // work rather than decorating it.
+  //
+  // Brazil is the other half of Latin America and the half Spanish does not
+  // reach. It is one of the largest K-pop markets outside Asia, and the
+  // reasoning that put Spanish ahead of German applies here with nothing
+  // subtracted: a fan in São Paulo flies to Seoul for everyone who never
+  // tours South America, which is almost everyone.
+  //
+  // The region matters because it decides a page. Brazil abolished daylight
+  // saving in 2019, so the timezone guide — which is really a daylight-saving
+  // guide — teaches arithmetic a Brazilian reader does not have to do.
+  // Checked against this container's zoneinfo rather than recalled:
+  // America/Sao_Paulo, America/Manaus and America/Recife all sit at the same
+  // offset in January and July, and 20:00 KST is 08:00 in São Paulo on both
+  // dates. That is the Tokyo and Jakarta situation, not the Madrid one.
+  //
+  // Portugal does observe it, so a generic `pt` edition would have to carry
+  // that guide for half its readers and waste it on the other half. `pt-BR`
+  // is the honest scope, and it is why the exclusion below is a decision
+  // rather than a gap.
+  "pt-BR": {
+    code: "pt-BR",
+    native: "Português (Brasil)",
+    english: "Portuguese (Brazil)",
+    tag: "pt-BR",
+    prefix: "/pt-br",
   },
 };
 

@@ -251,7 +251,7 @@ export const guides: Guide[] = [
     sources: [
       {
         label: "Weverse — official concerts and ticketing",
-        url: "https://concerts.weverse.io/",
+        url: "https://concert.weverse.io/",
       },
       {
         label: "NOL World (formerly interpark Global) — rebrand announcement, 1 Dec 2025",
@@ -450,7 +450,7 @@ export const guides: Guide[] = [
     sources: [
       {
         label: "Weverse — official concerts and ticketing",
-        url: "https://concerts.weverse.io/",
+        url: "https://concert.weverse.io/",
       },
       {
         label: "r/kpophelp — fans comparing presale qualification in practice",

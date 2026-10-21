@@ -140,9 +140,16 @@ policy claiming a standard nobody is meeting.
 ## Languages
 
 English is canonical and carries no path prefix. `content/translations.ts` is
-the register and it is **empty**: the machinery exists first, as it did for
-paid links, because a translation added to a site with no freshness rules
-becomes the undated guide this site exists to replace.
+the register, and the machinery landed before the first translated word, as it
+did for paid links, because a translation added to a site with no freshness
+rules becomes the undated guide this site exists to replace.
+
+Three languages today: Japanese on 18 guides, Traditional Chinese on 6,
+Indonesian on 6, none native-reviewed. Each language skips the guides it has
+no reader for rather than padding to a round number, and
+`content/translations.ts` records which and why at the top — the timezone
+guide is daylight-saving arithmetic and none of these three countries observes
+it, and the customs guide is United States and EU law.
 
 A translation is a copy of a claim made on a particular day from a source
 checked on a particular day. The moment the English page is re-checked, the
@@ -155,7 +162,7 @@ which is the exact failure the status system exists to prevent. So
   translation carries. `translationState` checks the source's expiry *before*
   comparing dates, and `scripts/i18n.test.mjs` asserts that ordering against
   the source file — reverse the two checks and a stale guide would render a
-  healthy seal in Japanese.
+  healthy seal in every language it was translated into.
 - **A translation goes `behind` the moment the source's `lastChecked` moves.**
   Not wrong, but no longer a copy of anything anybody checked, so the page
   says so and links to the English.
@@ -169,16 +176,32 @@ distinction as `sourced` against `verified`, for the same reason.
 The register fails the build on a translation that names an unknown guide,
 claims a `sourceChecked` in the future (which would pin it to `current`
 forever), was translated before the check it claims, omits `review`, or drops
-or adds a step. `/editorial-policy` reads the register directly and prints
-**"English only, today."**
+or adds a step, and `content/translations.ts` fails it on a FAQ count that
+does not match the English, which is not the same check as the step count:
+`lastChecked` tracks source checking rather than content editing, so editing
+an English FAQ left its translations short while every date still read
+`current`. `/editorial-policy` reads the register directly and prints each
+language with how many guides it covers and how many a native speaker has
+read, so it cannot claim a coverage the file does not hold.
 
 Routing is `app/[lang]/guides/[slug]`, driven entirely by the register with
 `dynamicParams = false`, so an untranslated path 404s rather than serving an
 empty shell. Static segments win over the dynamic one, so `/guides` and
-`/words` are unaffected — verify that after touching it, along with `/ja`
-returning 404 while the register is empty. hreflang is emitted only where a
-translation exists, because advertising a language that 404s is worse than
-advertising none.
+`/words` are unaffected — verify that after touching it, along with an
+untranslated path under a live locale still returning 404. hreflang is emitted
+only where a translation exists, because advertising a language that 404s is
+worse than advertising none.
+
+**The URL segment is not the locale code.** `zh-Hant` is written with a
+capital H because hreflang wants it that way, and a URL path is
+case-sensitive, so the path is `/zh-hant` and the two cannot be the same
+string. The route generates and resolves its segment through `segmentOf` and
+`localeFromSegment`, both derived from `prefix`, because they drifted once:
+the route generated `/zh-Hant` while every link was built from `prefix` and
+pointed at `/zh-hant`, and with `dynamicParams` off that is not a redirect but
+every Chinese page returning 404 from every link to it. `scripts/i18n.test.mjs`
+now asserts the route against the prefix, so never cast the segment to a
+`Locale`.
 
 The translated template renders **less** than the English one: no artwork, no
 booking graphic, no related-guide rail. Those carry English text or exist to
@@ -192,10 +215,10 @@ translation, and it exists because the errors that hurt a reader are not
 errors of style. A deadline that reads 17時 where the source says 11時, a fee
 of 3,000 against 8,000, a 2026 that became 2025 — each is a factual error
 wearing fluent prose, and reading it back does not catch them reliably. The
-checks are: every number of two digits or more survives into the Japanese,
+checks are: every number of two digits or more survives into the translation,
 product names and currencies are not quietly renamed, no stray Hangul or
-Cyrillic or untranslated English, brackets balance, and no prose field is far
-outside the 0.3–0.9 length band that a real translation sits in.
+Cyrillic, no script belonging to another target language, brackets balance,
+and no prose field is far outside the length band a real translation sits in.
 
 That last one earns its place. The number and name checks caught three
 invented intros only because those paragraphs happened to contain a year; one
@@ -204,11 +227,43 @@ field somebody wrote fresh instead of translating. Headings are excluded,
 because Japanese compresses a sixty-character English step title into a dozen
 characters and is right to.
 
+**Every check runs against every locale in the register, and that is load
+bearing.** The first version was scoped to `locale: "ja"`, which was fine
+while Japanese was the only language and became a silent hole the day it was
+not: four Chinese translations landed and the suite reported the same 28
+passes, having read none of them. The same pass found the entry boundary was
+wrong too — `locale` sits above `slug`, so splitting the register on `slug`
+gave each entry the *next* one's locale and dropped the last translation
+entirely. A check scoped to one locale stops existing when the second arrives,
+so the suite asserts that every locale present has checked pairs.
+
+The band is **per locale**, because the fraction is a property of the writing
+system and not of translation. Japanese sits at 0.35–0.65, Chinese lower
+again having no kana, and Indonesian runs *longer* than English, because its
+affixes and full prepositional phrases cost characters English does not spend.
+A single band wide enough for all three would catch nothing. Indonesian also
+gets a check the others do not need: a field left in English passes every
+other assertion, since the numbers survive, the names survive and the ratio is
+exactly 1.0 — only a comparison against the source catches it, and only
+Indonesian can reach that state, the other two being written in another
+script.
+
 Two exclusions in the number check were earned by false positives rather than
 guessed at: a 12-hour clock time is correctly written as 24-hour in Japanese,
 so the converted hour is offered as an alternative rather than the check being
 dropped; and COVID-19 is 新型コロナウイルス and carries no 19, so the name is
-checked as a product name instead.
+checked as a product name instead. A third followed: the minutes of an
+o'clock time are dropped, because 11:00 KST is 11時 and 上午11時 and the `00`
+legitimately disappears in both — nothing is lost, since the hour is itself a
+two-digit number in the same string and still checked, so an 11:00 that became
+17時 still fails, and so does an 11:30 that lost its 30.
+
+Chinese gets one more: a table of high-frequency **Simplified** characters
+whose traditional forms this content uses. Traditional over Simplified is a
+distribution decision — Google is blocked in mainland China, so Traditional
+reaches the readers who can actually reach the page — and a page mixing the
+two reads as careless to exactly the Taiwanese and Hong Kong readers it is
+for.
 
 **None of this makes a translation native-reviewed.** It makes the facts in it
 trustworthy. `review` stays at `machine-assisted` until a native speaker has
@@ -218,8 +273,9 @@ otherwise.
 
 **The real cost is maintenance, not translation.** Every source re-check now
 has N pages to follow, and a translation nobody follows becomes exactly the
-stale guide this site was built against. That is why this is one language at a
-time, and why the freshness rules landed before the first word of Japanese.
+stale guide this site was built against. That is why the freshness rules
+landed before the first word of Japanese, and why a language is added only
+with its checks generalised in the same change rather than after it.
 
 ## Artwork
 

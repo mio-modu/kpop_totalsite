@@ -38,6 +38,13 @@
      well made, already installed and cost nothing. */
   --font-jp: var(--font-archivo), "Hiragino Sans", "Hiragino Kaku Gothic ProN",
     "Yu Gothic", "Noto Sans JP", "Meiryo", ui-sans-serif, system-ui, sans-serif;
+  /* Traditional Chinese, for the same reason as Japanese: a subset is not
+     possible for a script of this size, and the system faces are good. The
+     order is deliberate — a Japanese face would render these characters with
+     Japanese glyph shapes, which is the mirror of the mistake the Japanese
+     pages avoid by not inheriting the Korean poster face. */
+  --font-zh-hant: var(--font-archivo), "PingFang TC", "Microsoft JhengHei",
+    "Noto Sans TC", "Hiragino Sans CNS", ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Dark is the resting state now. Cream paper reads as an editorial magazine,
@@ -1062,4 +1069,55 @@ h4 {
   word-break: normal;
   overflow-wrap: anywhere;
   line-break: strict;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Traditional Chinese pages
+   Same scoping rule as Japanese: confined to [lang="zh-Hant"] so nothing
+   about the English or Japanese pages changes. Chinese sets no spaces
+   between words either, so the same wrapping and leading treatment applies.
+   ═══════════════════════════════════════════════════════════════ */
+[lang="zh-Hant"],
+[lang="zh-Hant"] .t,
+[lang="zh-Hant"] .t-lg,
+[lang="zh-Hant"] .t-sm,
+[lang="zh-Hant"] .pm,
+[lang="zh-Hant"] .pl,
+[lang="zh-Hant"] h1,
+[lang="zh-Hant"] h2,
+[lang="zh-Hant"] h3,
+[lang="zh-Hant"] p,
+[lang="zh-Hant"] li {
+  font-family: var(--font-zh-hant);
+}
+
+[lang="zh-Hant"] .t,
+[lang="zh-Hant"] .t-lg,
+[lang="zh-Hant"] .t-sm,
+[lang="zh-Hant"] p,
+[lang="zh-Hant"] li {
+  line-height: 1.85;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+/*
+ * Indonesian needs no font — it is Latin script and Archivo already sets it.
+ * What it needs is a wrapping rule, for the opposite reason to Japanese and
+ * Chinese. Those break anywhere because they have no spaces; Indonesian has
+ * spaces and very long words, built by stacking affixes onto a root:
+ * "mengalihhurufkan" is one word for "to transliterate", and it is the
+ * longest unbreakable string on the site. At 320px inside a step card there
+ * is not room for it, so without this it is the one thing that pushes a page
+ * sideways — which on a site ranked partly on layout stability costs search
+ * position, not just tidiness.
+ */
+[lang="id"] .t,
+[lang="id"] .t-lg,
+[lang="id"] .t-sm,
+[lang="id"] p,
+[lang="id"] li {
+  overflow-wrap: break-word;
+  hyphens: auto;
 }

@@ -3,7 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide } from "@/content/guides";
 import { translations, getTranslation } from "@/content/translations";
-import { LOCALES, translatedDisplayStatus, type Locale } from "@/lib/i18n";
+import {
+  LOCALES,
+  localeFromSegment,
+  segmentOf,
+  translatedDisplayStatus,
+} from "@/lib/i18n";
 import { site } from "@/lib/site";
 import { TranslationNotice } from "@/components/TranslationNotice";
 import { AdSlot } from "@/components/AdSlot";
@@ -26,7 +31,8 @@ export const revalidate = 86400;
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return translations.map((t) => ({ lang: t.locale, slug: t.slug }));
+  // The segment, not the locale code: zh-Hant lives at /zh-hant.
+  return translations.map((t) => ({ lang: segmentOf(t.locale), slug: t.slug }));
 }
 
 export async function generateMetadata({
@@ -35,7 +41,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string; slug: string }>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
-  const tr = getTranslation(slug, lang as Locale);
+  const locale = localeFromSegment(lang);
+  const tr = locale && getTranslation(slug, locale);
   if (!tr) return {};
   const info = LOCALES[tr.locale];
   return {
@@ -66,7 +73,8 @@ export default async function TranslatedGuide({
 }) {
   const { lang, slug } = await params;
   const guide = getGuide(slug);
-  const tr = guide ? getTranslation(slug, lang as Locale) : undefined;
+  const locale = localeFromSegment(lang);
+  const tr = guide && locale ? getTranslation(slug, locale) : undefined;
   if (!guide || !tr) notFound();
 
   const status = translatedDisplayStatus(guide, tr);

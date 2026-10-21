@@ -124,3 +124,58 @@ test("review level has no default, so nothing is flattered by omission", () => {
     "review must not have a default value",
   );
 });
+
+/**
+ * The URL a locale lives at, and the one the route generates, are the same.
+ *
+ * This is asserted against the source files rather than derived, because the
+ * bug it covers is a disagreement *between* two files. zh-Hant is written
+ * with a capital H — the tag wants it that way — and a URL path is
+ * case-sensitive, so the path has to be lowercase. The route generated its
+ * segment by casting the locale code, producing /zh-Hant, while guidePath
+ * built every link from `prefix` and produced /zh-hant. With dynamicParams
+ * off, that is not a redirect: it is every Chinese page returning 404 from
+ * every link to it, on a site whose only channel is search.
+ */
+const route = await readFile(
+  new URL("../app/[lang]/guides/[slug]/page.tsx", import.meta.url),
+  "utf8",
+);
+
+test("every locale path is a lowercase URL segment", () => {
+  const prefixes = [...src.matchAll(/prefix: "([^"]*)"/g)].map((m) => m[1]);
+  assert.ok(prefixes.length > 1, "no prefixes found in lib/i18n.ts");
+  for (const p of prefixes) {
+    if (p === "") continue; // English is canonical and carries no prefix
+    assert.match(p, /^\/[a-z0-9-]+$/, `prefix ${p} is not a lowercase path segment`);
+  }
+  const segments = prefixes.filter(Boolean);
+  assert.equal(new Set(segments).size, segments.length, "two locales share a URL segment");
+});
+
+test("the route generates its paths from the prefix, not from the locale code", () => {
+  const params = route.match(/generateStaticParams\(\)\s*\{[\s\S]*?\n\}/)?.[0];
+  assert.ok(params, "generateStaticParams not found in the route");
+  assert.match(
+    params,
+    /segmentOf\(/,
+    "generateStaticParams builds the lang segment without segmentOf, so it can " +
+      "disagree with the prefix every link on the site is built from",
+  );
+  assert.doesNotMatch(
+    params,
+    /lang:\s*t\.locale\b/,
+    "generateStaticParams uses the locale code as the URL segment, which puts " +
+      "zh-Hant at a capitalised path nothing links to",
+  );
+});
+
+test("the route resolves its segment rather than casting it", () => {
+  assert.doesNotMatch(
+    route,
+    /lang as Locale/,
+    "casting the URL segment to a Locale silently mismatches any locale whose " +
+      "path differs from its code",
+  );
+  assert.match(route, /localeFromSegment\(/, "the route does not look its segment up");
+});

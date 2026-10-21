@@ -581,6 +581,10 @@ export const guides: Guide[] = [
         pitfall:
           "Third-party marketplace listings of genuine albums commonly do not count. The album is real; the contribution is not there.",
         takes: "15 minutes",
+        see: {
+          slug: "ktown4u-ordering-shipping-and-fees",
+          text: "One of the shops most international fans actually use, and what its notices say",
+        },
       },
       {
         title: "Order inside the pre-order window for the inclusions",
@@ -2695,6 +2699,157 @@ export const guides: Guide[] = [
       {
         label: "Weverse Shop — the notices page, where any follow-up would appear first",
         url: "https://shop.weverse.io/en/notices",
+      },
+    ],
+  },
+  {
+    slug: "ktown4u-ordering-shipping-and-fees",
+    ko: "주문",
+    art: "album-stack",
+    name: "Ktown4u",
+    koLine: "케이타운포유 주문 — 6시간 결제 시한과 배송비",
+    title: "Ordering from Ktown4u: the six-hour payment clock and the fees nobody mentions",
+    summary:
+      "An unpaid order is cancelled after six hours, not twenty-four. US parcels can carry a USD 12 charge collected at your door. International shipping went up 7% in February 2026, and two European countries quietly lost a shipping method entirely.",
+    glyph: "parcel",
+    status: "sourced",
+    lastChecked: "2026-10-21",
+    scope:
+      "Covers ordering physical albums and goods from Ktown4u for delivery outside Korea, from Ktown4u\u0027s own notices: the payment clock, shipping fees and methods, holiday pauses, and customer support hours. It does not say whether a Ktown4u purchase is reported to the Korean album charts, because Ktown4u does not state that on the pages read here. Notices are reissued and superseded, so the notices list is the live version.",
+    readMinutes: 7,
+    platforms: ["Ktown4u"],
+    intro: [
+      "Ktown4u is where a large share of international fans actually buy albums, and almost nothing about how it works is written down in English outside its own notices page — which is in English, dated, and read by nobody until a parcel is late.",
+      "This is that page read in one go. The first item is the one that costs people orders, and it changed in 2025 without most buyers noticing.",
+    ],
+    steps: [
+      {
+        title: "Know that an unpaid order dies in six hours, not a day",
+        body: "This is the fact worth knowing before you place anything. Ktown4u held unpaid orders for 24 hours and cut that to 6, effective 19 February 2025 KST, with unpaid orders automatically cancelled six hours after they are placed. For a fan ordering at midnight in Europe or the Americas, six Korean hours can elapse entirely while you sleep — and a pre-order placed and not paid is a pre-order that was never placed.",
+        pitfall:
+          "Reserving the item now and paying when your card or your pay day allows. That worked under the old window and does not under this one.",
+        takes: "Pay at the time you order",
+      },
+      {
+        title: "If you are in the US, budget for a charge collected at your door",
+        body: "From 2 June 2025 Ktown4u applies a UPS fee policy to US shipments: where customs duties, taxes or other government charges are owed, an additional USD 12 is charged if those duties were not prepaid electronically before delivery. Ktown4u names it the International Collect on Delivery fee, and says it is billed to the recipient in the US at the time of delivery. The way out is also published — prepay the duties through the UPS Import Prepaid Duties and Taxes system, which it says accepts Apple Pay, Google Pay, or a Visa, Mastercard or Discover card.",
+        pitfall:
+          "Treating the checkout total as the total. This fee is not charged by Ktown4u at purchase; it arrives with the parcel, and it is twelve dollars on top of whatever duty is actually owed.",
+        takes: "10 minutes, before the parcel ships",
+        see: {
+          slug: "kpop-album-customs-duty-overseas",
+          text: "Why US parcels now attract duty at all, after the de minimis change",
+        },
+      },
+      {
+        title: "Price the shipping against the current rate, not last year\u0027s",
+        body: "Ktown4u raised international shipping fees by 7% effective 1 February 2026 at 00:00 KST, which it attributes to a regular rate adjustment by the carriers. That is small per parcel and large across a group order, and it is the kind of change that makes a shipping estimate from a year-old blog post quietly wrong. The figure that counts is the one the cart shows you at the moment you order.",
+        pitfall:
+          "Budgeting a group order from a spreadsheet someone made last season. Rate adjustments are regular, which means there will be another one.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Check your country still has the shipping method you expect",
+        body: "Shipping methods are withdrawn by country, not just delayed. Ktown4u suspended K-Packet service to Germany and Spain from 17 January 2025, because the German and Spanish postal operators withdrew from the Prime Group arrangement it runs on. Its stated handling is to email affected customers about moving to another shipping service and the additional cost — so an order already placed can change price after the fact. The method you used last time is not a method you still have.",
+        pitfall:
+          "Choosing the cheapest method out of habit and not reading the follow-up email. The email is where the replacement service and its extra cost are named.",
+        takes: "5 minutes, at checkout",
+      },
+      {
+        title: "Read the per-country disruption notices, which are unusually specific",
+        body: "Ktown4u publishes delivery disruptions down to postal codes. Its EMS notice for Slovakia of 4 April 2025 names the affected postal codes — 930 07, 930 06, 930 04, 930 03 and 900 68 — and the cause, a foot-and-mouth outbreak in southwestern Slovakia and a state of emergency from 25 March 2025, with parcels held at the local post office and recipients notified. The detail is the point: when tracking stops for your region, the notices page usually says why, and that is a different situation from a lost parcel.",
+        pitfall:
+          "Opening a lost-parcel claim during a disruption that is published and explained. Check the notices list for your country before you spend the afternoon on a claim.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Treat a Korean holiday as a week with no despatch and no support",
+        body: "Ktown4u pauses both halves of its operation over Korean holidays, and publishes the dates each time. For Lunar New Year 2026 parcel delivery was paused 14 to 18 February with deliveries resuming sequentially from 19 February, and customer support was unavailable across the same days. For Chuseok 2025 the pause ran 3 to 9 October with both resuming on the 10th. It warns each time that delays can run past the resumption date because of the volume of orders built up behind it.",
+        pitfall:
+          "Reading the resumption date as a delivery date. It is the day the queue starts moving, and your order is somewhere in it.",
+        takes: "10 minutes before a holiday order",
+      },
+      {
+        title: "Write to support inside the hours it actually keeps",
+        body: "Ktown4u moved its customer service channel to weekdays 10:00 to 17:00 KST from 1 November 2023, with a lunch break from 12:30 to 13:30. That is a five-and-a-half hour window, on Korean weekdays, which for most readers of this site falls in the middle of the night. It matters most in combination with the six-hour payment clock: an order placed on a Friday evening in Europe can expire before anyone is at a desk to be asked about it.",
+        pitfall:
+          "Expecting a reply before you act. Convert those hours into your own once, write them down, and assume nothing outside them.",
+        takes: "5 minutes, once",
+      },
+      {
+        title: "Do not assume the purchase counts toward the Korean charts",
+        body: "Chart contribution depends on whether a retailer reports its sales, and that is a claim a retailer has to make. Ktown4u does not state it on the notices and policy pages read for this guide, so this guide does not state it either — not as a doubt about Ktown4u, but because an unsourced yes is exactly the kind of claim this site exists to replace. If chart contribution is the reason you are buying, confirm it on the product page or with the artist\u0027s own announcement for that release, where the participating retailers are usually named.",
+        pitfall:
+          "Taking a third party\u0027s list of chart-reporting shops, this page included, as current. Reporting arrangements are per retailer and can change between releases.",
+        takes: "15 minutes",
+        see: {
+          slug: "buy-k-pop-albums-from-overseas",
+          text: "What chart contribution depends on, and how to decide what you want from a purchase",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "How long do I have to pay for a Ktown4u order?",
+        a: "Six hours. Ktown4u cut the holding time for unpaid orders from 24 hours to 6, effective 19 February 2025 KST, and says unpaid orders are automatically cancelled six hours after placement. Pay at the time you order rather than planning to come back to it.",
+      },
+      {
+        q: "What is the USD 12 charge on my US delivery?",
+        a: "Ktown4u\u0027s International Collect on Delivery fee for UPS shipments to the US, in force since 2 June 2025. It applies where customs duties, taxes or other government charges are owed and were not prepaid electronically before delivery, and it is billed to the recipient at delivery. Prepaying through the UPS Import Prepaid Duties and Taxes system avoids it — Ktown4u lists Apple Pay, Google Pay and Visa, Mastercard or Discover as the ways to do that.",
+      },
+      {
+        q: "Why is shipping more expensive than it was?",
+        a: "Ktown4u raised international shipping fees by 7% from 1 February 2026 at 00:00 KST, attributing it to a regular rate adjustment by the carriers. Regular means there will be another one, so price a group order from the cart rather than from an older estimate.",
+      },
+      {
+        q: "My usual shipping method has disappeared. What happened?",
+        a: "Methods are withdrawn by country. Ktown4u suspended K-Packet to Germany and Spain from 17 January 2025 after the German and Spanish postal operators withdrew from the Prime Group arrangement, and said it would email affected customers about switching service and the additional cost. If an order was already placed, that email is where the new method and price are named.",
+      },
+      {
+        q: "My tracking has not moved. Is the parcel lost?",
+        a: "Check the notices list for your country first. Ktown4u publishes disruptions in unusual detail — its Slovakia EMS notice of 4 April 2025 named the five affected postal codes and the quarantine measures behind the delay, and said parcels would be held at the local post office with recipients notified. A published disruption is a different problem from a lost parcel.",
+      },
+      {
+        q: "What happens to my order over a Korean holiday?",
+        a: "Despatch and customer support both stop. For Lunar New Year 2026 parcel delivery paused 14 to 18 February, resuming sequentially from the 19th, with support unavailable on the same days; Chuseok 2025 ran 3 to 9 October with both resuming on the 10th. Ktown4u warns each time that the backlog can push deliveries past the resumption date.",
+      },
+      {
+        q: "When can I actually reach customer service?",
+        a: "Weekdays 10:00 to 17:00 KST, with a lunch break 12:30 to 13:30, as set from 1 November 2023. Convert that into your own time zone before you need it, because combined with the six-hour payment clock an order can expire outside those hours.",
+      },
+      {
+        q: "Does buying from Ktown4u count toward the Korean charts?",
+        a: "This guide does not say, because Ktown4u does not say it on the pages read here. Chart contribution depends on a retailer reporting its sales, and that is a claim the retailer makes rather than something a third party can infer. If it is the reason you are buying, confirm it on the product page or in the artist\u0027s own announcement for that release.",
+      },
+    ],
+    sources: [
+      {
+        label: "Ktown4u — Notice Regarding Change in Non-Payment Order Holding Time, 7 Feb 2025",
+        url: "https://www.ktown4u.com/notices/7001",
+      },
+      {
+        label: "Ktown4u — International Fee for UPS Shipments to the U.S., 2 Jun 2025",
+        url: "https://www.ktown4u.com/notices/7123",
+      },
+      {
+        label: "Ktown4u — International Shipping Fee Adjustment, effective 1 Feb 2026",
+        url: "https://www.ktown4u.com/notices/7360",
+      },
+      {
+        label: "Ktown4u — Suspension of K-Packet Shipping Service in Germany and Spain, 17 Jan 2025",
+        url: "https://www.ktown4u.com/notices/6960",
+      },
+      {
+        label: "Ktown4u — EMS International Parcel Delivery Delay (Slovakia), 4 Apr 2025",
+        url: "https://www.ktown4u.com/notices/7056",
+      },
+      {
+        label: "Ktown4u — Lunar New Year 2026 delivery and support pause",
+        url: "https://www.ktown4u.com/notices/7386",
+      },
+      {
+        label: "Ktown4u — the notices page, which is the live version of all of the above",
+        url: "https://www.ktown4u.com/notices",
       },
     ],
   },

@@ -20,6 +20,56 @@ const OUT = process.argv[2] || ".layout-check";
 const BASE = process.env.BASE_URL || "http://localhost:3000";
 fs.mkdirSync(OUT, { recursive: true });
 
+/**
+ * Refuse to measure a page whose stylesheet has not fully applied.
+ *
+ * This check once reported ten confident failures on the home page — a
+ * decoration that is `display: none` on a phone laid out at full width and
+ * tripped the artwork cap at every width, in both themes. The page was
+ * correct: the same element measured 0px at 390px and 274px at 1280px in
+ * production, and the production CSS carried the right rules.
+ *
+ * So the measurement was wrong, not the page. The cause was never
+ * established — it reproduced across two runs against a dev server and then
+ * stopped reproducing against a cold one, which rules out the easy story
+ * that `next dev` simply does not apply these rules. Whatever it was, it was
+ * transient and it was silent.
+ *
+ * That is the part worth guarding. False alarms are the cheap half: the same
+ * gap means a real overflow can be measured against an unstyled page and
+ * reported clean, which is the failure this whole script exists to prevent.
+ *
+ * So rather than sniffing for a server type, the guard asserts the property
+ * that actually broke: `.prop` must compute to `display: none` at phone
+ * width, because that rule is in the stylesheet and nothing else sets it. If
+ * it has not applied, nothing measured afterwards means anything, so stop
+ * rather than report. The script's header already said to run this against
+ * `npm run build && npm start`; that was a convention, and this is the part
+ * of it a machine can hold.
+ */
+async function assertStylesApply(browser) {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 800 } });
+  const page = await ctx.newPage();
+  await page.goto(`${BASE}/`, { waitUntil: "networkidle", timeout: 90_000 });
+  const state = await page.evaluate(() => {
+    const el = document.querySelector(".prop");
+    return el ? getComputedStyle(el).display : "missing";
+  });
+  await ctx.close();
+  if (state !== "none") {
+    console.error(
+      `\n  ✗ The stylesheet has not fully applied: .prop computes to ` +
+        `"${state}" at 390px, and it must be "none".\n` +
+        `    Nothing measured against this page describes production, in\n` +
+        `    either direction, so this run is stopping rather than reporting.\n\n` +
+        `    Serve a build and try again:\n` +
+        `      npm run build && npm start &\n` +
+        `      node scripts/check-layout.mjs\n`,
+    );
+    process.exit(2);
+  }
+}
+
 const ROUTES = [
   ["home", "/"],
   ["guides", "/guides"],
@@ -51,6 +101,7 @@ const browser = await chromium.launch({
   executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
   args: ["--no-sandbox"],
 });
+await assertStylesApply(browser);
 
 let bad = 0;
 for (const theme of ["dark", "light"]) {

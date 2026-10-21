@@ -50,6 +50,19 @@ const FIXED = [
   ["www.govinfo.gov", "US statutes and the Federal Register of record"],
   ["www.cbp.gov", "US Customs and Border Protection"],
   ["www.ipc.be", "International Post Corporation — cross-border mail status"],
+  // Venues. A fan who gets through the queue then has to physically arrive
+  // somewhere, and the English-language coverage of what that takes — which
+  // gate, which exit, what you may carry in, when doors open — is worse than
+  // the ticketing coverage this site already replaced. These are the operators
+  // of record for the halls K-pop tours actually play, and nothing can be
+  // written about a venue without reading its own pages first.
+  ["www.kspo.or.kr", "KSPO Dome operator — the main Seoul K-pop arena"],
+  ["kspo.or.kr", "KSPO Dome, apex"],
+  ["www.sisul.or.kr", "Seoul Facilities Corporation — Gocheok Sky Dome and Jamsil"],
+  ["www.inspirekorea.com", "Inspire Arena, Incheon — the newest large venue"],
+  ["www.kintex.com", "KINTEX, Goyang — hosts arena-scale concerts and fan events"],
+  ["english.visitseoul.net", "Seoul tourism, English — transport and access pages"],
+  ["www.seoulmetro.co.kr", "Seoul Metro — the line and exit a venue is reached from"],
   // Loaded by the reader's browser, not by this container — but the headless
   // browser in scripts/check-layout.mjs is in this container, so allowing
   // them keeps the layout check rendering the page a reader actually gets.

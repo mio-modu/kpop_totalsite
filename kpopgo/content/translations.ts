@@ -129,48 +129,65 @@ const JA_LABELS = {
 };
 
 /**
- * Two guides are deliberately not in Japanese, and this is the reason rather
- * than an oversight.
+ * Two guides are deliberately in no language but English, and this is the
+ * reason rather than an oversight.
  *
- * `kpop-ticketing-day-timezone` is a guide about converting KST to your own
- * clock. Japan is UTC+9, the same as Korea, so for this audience there is
- * nothing to convert — the page would be almost entirely about a problem the
- * reader does not have. Where a Japanese reader does still need to know that,
- * the cancellation and membership guides say so in the one line it takes.
+ * The three Asian editions now carry the same eighteen of the twenty guides
+ * and skip the same two. That was not planned — they were written at
+ * different times for different reasons — and it is worth noticing, because
+ * the two they all refuse are refused by the same test: a page whose subject
+ * is a jurisdiction the reader is not in.
+ *
+ * `kpop-ticketing-day-timezone` is the sharper of the two, because its title
+ * suggests the opposite. The guide is not really about time zones; it is
+ * about daylight saving. Korea has none and most of its English readership
+ * does, so the local hour of a Korean sale moves two to four times a year,
+ * and that arithmetic is what most of its seven steps are for. None of the
+ * three target locales observes daylight saving either — verified against the
+ * same IANA database the guide itself cites rather than from memory, with
+ * `zdump -v` showing no transition in Asia/Tokyo, Asia/Taipei or
+ * Asia/Jakarta across the next decade, and identical January and July offsets
+ * in each:
+ *
+ *   Asia/Seoul   UTC+9    Asia/Tokyo    UTC+9   — no conversion at all
+ *   Asia/Taipei  UTC+8    KST minus 1, permanently
+ *   Asia/Jakarta UTC+7    KST minus 2, permanently
+ *
+ * So for a Japanese reader there is nothing to convert, and for a Taiwanese or
+ * Indonesian one the gap is a fixed hour or two that never moves. Translating
+ * it would hand all three a page mostly about New York's March clock change.
+ * The parts that do apply — be verified before the window opens, and the
+ * checkout clock is a separate deadline — are already in guides 01 and 12,
+ * which are translated into all three.
  *
  * `kpop-album-customs-duty-overseas` covers the United States and the EU,
- * because those are the two changes there were primary sources for. Japan's
- * own import rules are not in it, and translating the page would invite a
- * Japanese reader to think they were. A Japan edition would need a Japanese
- * source: both customs.go.jp and japanpost.jp are blocked by this container's
- * outbound allowlist, so it cannot be written from here today.
+ * because those are the two changes there were primary sources for. No
+ * reader of these three languages is in either. Worse, the page would read as
+ * though it covered them: a translated customs guide is exactly the kind of
+ * page a reader trusts on the one subject where being wrong costs money at a
+ * border. Each would need its own national source — and for Japanese,
+ * customs.go.jp and japanpost.jp are both outside this container's outbound
+ * allowlist, so it cannot be written from here today even if the appetite
+ * were there.
  *
  * Translating either to reach a round number would be padding, and the same
  * instinct this site refuses everywhere else.
  *
- * Traditional Chinese and Indonesian cover six guides each, and skip three.
- *
- * `kpop-album-customs-duty-overseas` is skipped for the reason above: it is a
- * United States and EU page, and no reader of either language is in it.
- *
- * `weverse-shop-shipping-delays-and-cancellation` is skipped for now because
- * its holiday-cutoff tables are the Korean and Chinese holiday calendars, and
- * for a Taiwanese or Indonesian reader the useful half — what a cutoff means
- * for an order already paid for — is one paragraph inside a page of dates
- * that are not theirs. It is worth a translation once that half can stand on
- * its own; it is not worth one as it is.
- *
- * `kpop-ticketing-day-timezone` is skipped for a sharper version of the
- * Japanese reason. The guide is not really about time zones, it is about
- * daylight saving: Korea has none and most of its English readership does, so
- * the hour moves two to four times a year and three of its seven steps are
- * that arithmetic. Neither Taiwan (UTC+8) nor Indonesia (UTC+7) observes
- * daylight saving either, so the gap to KST is a fixed one or two hours that
- * never moves — a Taiwanese reader cannot get this wrong. Translating it
- * would hand them a page mostly about New York's March clock change. The
- * parts that do apply to them — be verified before the window opens, and the
- * closing clock is a separate deadline — are already in guides 01 and 12,
- * which are translated.
+ * `weverse-shop-shipping-delays-and-cancellation` used to be on this list for
+ * Chinese and Indonesian, and the reason given was that its holiday-cutoff
+ * tables are the Korean and Chinese calendars, leaving a Taiwanese or
+ * Indonesian reader one useful paragraph inside a page of dates that are not
+ * theirs. Re-read against the guide, that undercounted. Five of its nine
+ * steps and five of its eight FAQ entries carry no region at all, and the
+ * first of them is the most valuable fact in the whole set — that the cancel
+ * window closes on a status change rather than a clock, so it can pass while
+ * you sleep. The regional steps are not dead weight for these readers
+ * either: the Chinese-holiday notice is the one a Taiwanese reader is most
+ * likely to read as applying to them, and the page says plainly that it does
+ * not. Both translations landed on 2026-10-21. The earlier judgment is left
+ * written down rather than deleted, because it was a reasonable call made on
+ * a weaker reading, and that is the kind of thing worth being able to find
+ * again.
  */
 export const translations: Translation[] = [
   {
@@ -5156,6 +5173,844 @@ export const translations: Translation[] = [
       },
     ],
     labels: DE_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "YES24 Global 購票：那些沒有寫在英文頁面上的規則",
+    summary:
+      "你既有的 YES24 帳號不能用。PayPal 只有在演出日期夠遠時才會出現。有兩種卡片被直接拒絕，而場館會拿你的護照比對你註冊時用的姓名。",
+    scope:
+      "涵蓋海外買家所使用的英文版 YES24 TICKET 網站。韓文版 YES24 網站是另一套帳號系統與另一種身分查驗。場次頁面上的個別條件優先於本頁所有內容，YES24 自己也這麼說。",
+    intro: [
+      "YES24 把它的海外規則公布在一份英文購買指南與 FAQ 裡，而在這個主題上排名靠前的那些指南，幾乎沒有一份寫到裡面的內容。那些規則很具體、很不尋常，而其中有幾條，如果你是在結帳當下第一次遇到，當天的訂票就會到此為止。",
+      "以下全部出自那兩個頁面，於 2026 年 10 月 20 日讀取。在 YES24 自相矛盾的地方——而它確實矛盾過一次，在手續費上——本頁會直說，而不是挑一個方便的數字。",
+    ],
+    steps: [
+      {
+        title: "就算你已經有 YES24 帳號，也要重新註冊一次",
+        body: "YES24 說得很直白：想使用 Global YES24 TICKET 網站的既有 YES24 會員，必須重新註冊。它也提醒，Global 售票網站與書店 global.yes24.com 是不同的東西，兩者不共用會員資料。非會員完全無法訂票，所以這是第一步，不是形式。",
+        pitfall:
+          "三個名稱相近、彼此不共用登入的 YES24 服務。在排隊中才發現，就是太晚發現——而且因為下面那條姓名查驗，帳號本來就必須在好幾天前就存在。",
+        takes: "15 分鐘",
+      },
+      {
+        title: "姓名要與護照上的完全一致",
+        body: "這是少數幾個平台把話說白的地方。YES24 的 FAQ：如果你的 YES24 帳號姓名與護照姓名不同，你在場館領取已訂的票時可能會遇到問題。現場取票只能由持票人本人領取，而領取需要實體有效證件——護照——連同訂票紀錄。",
+        pitfall:
+          "漏掉的中間名、多年前選定的羅馬拼音、名在前姓在後的順序。場館是在比對兩份文件，不是在判斷那明顯就是你。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "確認你那一場究竟有沒有提供 PayPal",
+        body: "YES24 Global 上的 PayPal 只有在訂票日與演出日相隔超過 180 天時才可使用。對多數提前一兩個月公布的 K-POP 演唱會而言，這表示 PayPal 根本不是選項，信用卡是唯一的路。另外還有一筆 10 美分的 PayPal 手續費，即使你取消也不退還。",
+        pitfall:
+          "因為某份指南說接受 PayPal 就照著規劃，然後在結帳時只看到信用卡欄位。那條 180 天規則就是原因——不是錯誤，也不是客服能通融的事。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "在你試刷之前，先知道哪些卡會被拒絕",
+        body: "購買指南排除在韓國境外發行的 American Express 卡片，以及完全排除中國銀聯卡。其餘都以信用卡付款的方式通過——而 YES24 表示 Global 網站要求 3-D Secure 驗證，所以你的卡必須已在銀行端完成該項註冊。",
+        pitfall:
+          "一張在其他所有網站都能用的 Amex，在這裡因為發行地而被拒，與卡片本身無關。那種失敗看起來和銀行封鎖一模一樣，於是人們把整場開賣花在跟銀行談一個錯誤的問題上。",
+        takes: "10 分鐘，與你的銀行",
+      },
+      {
+        title: "在訂票當下就選定現場領取或海外寄送",
+        body: "兩種都存在，但海外寄送是逐場次而非全面提供：YES24 表示可用與否依場次而異、費用依目的地而異，而場次頁面才是載明之處。事後變更領取方式，只能在演出前 20 個工作日之前進行——那是四個工作週，不是四天。",
+        pitfall:
+          "20 個工作日大約是一個月的日曆時間。在演出前兩週才訂票，意味著你在排隊中選的方式就是你要留著的方式。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "讀懂訂票與取消的時鐘，那不是演出日",
+        body: "訂票在週二至週六演出的前一天下午5點關閉，週日或週一演出則在星期六上午11點關閉。取消跑的是完全相同的時鐘，而期限過後就沒有取消、變更或退款。購買後 7 天內取消免費；之後是每張票的手續費，隨著演出接近升至已付金額的 10%、20% 與 30%。每人同時最多 10 張。",
+        pitfall:
+          "訂票手續費是 YES24 自相矛盾之處：FAQ 在一行裡寫 2,000 KRW，下一行又宣告自 2023 年 8 月 14 日起每張票改為 3,000 KRW。請以 3,000 為現行值。無論如何，它只在你購買當天的 23:59 之前可退，而不是在涵蓋門票本身的那 7 天期間內。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "帶護照和訂票紀錄到場館",
+        body: "領取需要實體有效證件——YES24 明確指名護照——連同訂票確認的紀錄。購買指南也要你把購買明細列印出來，在售票口交出。場次頁面上的個別政策優先於此，而 YES24 表示以場次頁面為準，所以即使你在那個場館領過票也要再讀一次。",
+        pitfall:
+          "手機上的確認畫面照片不是它所描述的東西。請列印出來，並攜帶你註冊時用的那本護照，而不是任何其他證件。",
+        takes: "在場館",
+      },
+    ],
+    faq: [
+      {
+        q: "我可以在英文網站上使用既有的 YES24 帳號嗎？",
+        a: "不行。YES24 表示既有會員必須為 Global YES24 TICKET 網站重新註冊，而且它與 global.yes24.com 是分開的，不共用會員資料。",
+      },
+      {
+        q: "為什麼結帳時沒有 PayPal？",
+        a: "PayPal 只有在訂票日與演出日相隔超過 180 天時才會提供。多數演唱會的訂票都遠在那之內，所以信用卡是唯一的路。",
+      },
+      {
+        q: "YES24 Global 拒絕哪些卡片？",
+        a: "在南韓境外發行的 American Express 卡片，以及中國銀聯卡。其他卡片可以使用，但必須通過該網站所要求的 3-D Secure。",
+      },
+      {
+        q: "可以請別人幫我領票嗎？",
+        a: "不行。現場取票只能由持票人本人領取，並攜帶實體護照與訂票紀錄——除非該場演出在自己的頁面上另有說明。",
+      },
+      {
+        q: "退款要多久？",
+        a: "信用卡退款載明為 3 到 7 天，由卡片公司自身的政策決定，最長可達 30 天。PayPal 退款會在 5 個工作日內回到 PayPal 餘額——以退款當日的匯率計算並含換匯價差，所以退回的金額可能少於付出的金額。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Tiket YES24 Global: aturan yang tidak ada di halaman berbahasa Inggrisnya",
+    summary:
+      "Akun YES24 Anda yang sudah ada tidak akan berfungsi. PayPal hanya muncul jika konsernya masih cukup jauh. Dua jenis kartu ditolak langsung, dan venue mencocokkan paspor Anda dengan nama yang Anda pakai saat mendaftar.",
+    scope:
+      "Mencakup situs YES24 TICKET berbahasa Inggris yang dipakai pembeli dari luar negeri. Situs YES24 berbahasa Korea menjalankan sistem akun yang berbeda dan pemeriksaan identitas yang berbeda. Syarat per konser di halaman acara mengalahkan semua yang ada di sini, dan YES24 sendiri menyatakan itu.",
+    intro: [
+      "YES24 menerbitkan aturan untuk pembeli luar negeri dalam sebuah panduan pembelian dan FAQ berbahasa Inggris, dan nyaris tak satu pun isinya muncul di panduan-panduan yang menempati peringkat untuk topik ini. Aturannya spesifik, tidak biasa, dan beberapa di antaranya akan mengakhiri pemesanan Anda pada hari-H jika Anda baru menemuinya saat checkout.",
+      "Semua di bawah ini berasal dari kedua halaman itu, dibaca pada 20 Oktober 2026. Di tempat YES24 bertentangan dengan dirinya sendiri — dan itu terjadi sekali, soal sebuah biaya — halaman ini mengatakannya alih-alih memilih angka yang nyaman.",
+    ],
+    steps: [
+      {
+        title: "Daftar lagi, bahkan jika Anda sudah punya akun YES24",
+        body: "YES24 menyatakannya terang-terangan: anggota YES24 yang sudah ada dan ingin memakai situs Global YES24 TICKET harus mendaftar lagi. Ia juga memperingatkan bahwa situs tiket Global berbeda dari global.yes24.com, toko bukunya, dan bahwa keduanya tidak berbagi informasi anggota. Non-anggota sama sekali tidak bisa memesan, jadi ini langkah pertama dan bukan formalitas.",
+        pitfall:
+          "Tiga layanan YES24 dengan nama mirip dan tanpa login bersama. Menemukan ini di tengah antrean berarti menemukannya terlalu lambat — akunnya toh harus sudah ada beberapa hari sebelumnya, karena pemeriksaan nama di bawah ini.",
+        takes: "15 menit",
+      },
+      {
+        title: "Daftarkan nama persis seperti di paspor Anda",
+        body: "Inilah satu tempat di mana sebuah platform mengatakan bagian yang biasanya didiamkan. FAQ YES24: jika nama akun YES24 Anda berbeda dari nama paspor Anda, Anda bisa mengalami kesulitan mengambil tiket yang sudah dipesan di venue. Tiket yang diambil di loket hanya bisa diambil oleh pemegang tiketnya, dan pengambilannya membutuhkan identitas fisik yang berlaku — sebuah paspor — bersama catatan pemesanan.",
+        pitfall:
+          "Nama tengah yang hilang, romanisasi yang dipilih bertahun-tahun lalu, urutan nama depan dulu. Venue sedang membandingkan dua dokumen, bukan menilai apakah itu jelas-jelas Anda.",
+        takes: "10 menit",
+      },
+      {
+        title: "Periksa apakah PayPal bahkan ditawarkan untuk konser Anda",
+        body: "PayPal di YES24 Global hanya tersedia ketika jarak antara tanggal pemesanan dan tanggal konser lebih dari 180 hari. Untuk sebagian besar konser K-pop, yang diumumkan satu atau dua bulan sebelumnya, itu berarti PayPal sama sekali bukan pilihan dan kartu adalah satu-satunya rute. Ada juga biaya PayPal sebesar 10 sen yang tidak dikembalikan meski Anda membatalkan.",
+        pitfall:
+          "Menyusun rencana di atas PayPal karena sebuah panduan bilang ia diterima, lalu hanya menemukan kolom kartu saat checkout. Aturan 180 hari itulah sebabnya — bukan kesalahan, dan bukan sesuatu yang bisa dikesampingkan layanan pelanggan.",
+        takes: "2 menit",
+      },
+      {
+        title: "Ketahui kartu mana yang ditolak sebelum Anda mencoba satu",
+        body: "Panduan pembeliannya mengecualikan kartu American Express yang diterbitkan di luar Korea, dan kartu China UnionPay sepenuhnya. Selebihnya diproses sebagai pembayaran kartu — dan YES24 menyatakan autentikasi 3-D Secure diwajibkan di situs Global, jadi kartunya harus sudah terdaftar untuk itu di bank Anda.",
+        pitfall:
+          "Sebuah Amex yang berfungsi di setiap situs lain ditolak di sini karena tempat ia diterbitkan, bukan karena apa pun tentang kartunya. Kegagalan itu terlihat identik dengan blokir bank, jadi orang menghabiskan waktu penjualan menelepon bank soal masalah yang keliru.",
+        takes: "10 menit, bersama bank Anda",
+      },
+      {
+        title: "Pilih pengambilan di loket atau pengiriman ke luar negeri saat memesan",
+        body: "Keduanya ada, tetapi pengiriman ke luar negeri bersifat per konser alih-alih menyeluruh: YES24 menyatakan ketersediaannya berbeda menurut pertunjukan dan biayanya berbeda menurut tujuan, dan bahwa halaman acaranya adalah tempat hal itu dinyatakan. Mengubah metode penyerahan sesudahnya hanya mungkin sampai 20 hari kerja sebelum konsernya — empat pekan kerja, bukan empat hari.",
+        pitfall:
+          "Dua puluh hari kerja kira-kira sebulan kalender. Memesan dua pekan sebelumnya berarti metode yang Anda pilih di antrean adalah metode yang Anda pertahankan.",
+        takes: "5 menit",
+      },
+      {
+        title: "Baca jam pemesanan dan pembatalannya, yang bukan tanggal konsernya",
+        body: "Pemesanan ditutup pukul 17.00 pada hari sebelum konser yang jatuh Selasa sampai Sabtu, dan pukul 11.00 pada hari Sabtu untuk konser Minggu atau Senin. Pembatalan berjalan pada jam yang persis sama, dan setelah itu lewat tidak ada pembatalan, perubahan, atau refund. Pembatalan gratis dalam 7 hari sejak pembelian; setelah itu ada biaya per tiket yang naik menjadi 10%, 20%, dan 30% dari jumlah yang dibayar seiring mendekatnya konser. Batasnya 10 tiket per orang sekaligus.",
+        pitfall:
+          "Biaya pemesanan adalah tempat YES24 bertentangan dengan dirinya sendiri: FAQ-nya menulis 2,000 KRW di satu baris lalu mengumumkan perubahan menjadi 3,000 KRW per tiket sejak 14 Agustus 2023 di baris berikutnya. Perlakukan 3,000 sebagai yang berlaku. Bagaimanapun ia hanya bisa direfund sampai pukul 23.59 pada hari Anda membeli, bukan dalam jendela 7 hari yang mencakup tiketnya sendiri.",
+        takes: "5 menit",
+      },
+      {
+        title: "Bawa paspor dan catatan pemesanan ke venue",
+        body: "Pengambilan membutuhkan identitas fisik yang berlaku — YES24 menyebut paspor — bersama catatan konfirmasi pemesanan. Panduan pembeliannya juga meminta Anda mencetak rincian pembelian dan menyerahkannya di loket. Kebijakan per konser di halaman acara mengalahkan ini, dan YES24 menyatakan halaman acaranya yang menang, jadi bacalah bahkan jika Anda pernah mengambil tiket di venue itu sebelumnya.",
+        pitfall:
+          "Foto konfirmasi di ponsel bukan yang digambarkan. Cetaklah, dan bawalah paspor yang Anda pakai mendaftar alih-alih identitas lain mana pun.",
+        takes: "Di venue",
+      },
+    ],
+    faq: [
+      {
+        q: "Bisakah saya memakai akun YES24 saya yang sudah ada di situs berbahasa Inggris?",
+        a: "Tidak. YES24 menyatakan anggota yang sudah ada harus mendaftar lagi untuk situs Global YES24 TICKET, dan bahwa situs itu terpisah dari global.yes24.com tanpa berbagi informasi anggota.",
+      },
+      {
+        q: "Kenapa PayPal tidak ada saat checkout?",
+        a: "PayPal hanya ditawarkan ketika jarak antara tanggal pemesanan dan tanggal konser lebih dari 180 hari. Sebagian besar pemesanan konser jatuh jauh di dalam jarak itu, jadi kartu adalah satu-satunya rute.",
+      },
+      {
+        q: "Kartu mana yang ditolak YES24 Global?",
+        a: "Kartu American Express yang diterbitkan di luar Korea Selatan, dan kartu China UnionPay. Kartu lain diterima tetapi harus lolos 3-D Secure, yang diwajibkan situs itu.",
+      },
+      {
+        q: "Bisakah orang lain mengambil tiket saya?",
+        a: "Tidak. Tiket di loket hanya bisa diambil oleh pemegang tiketnya, dengan paspor fisik dan catatan pemesanannya — kecuali konser tersebut menyatakan lain di halamannya sendiri.",
+      },
+      {
+        q: "Berapa lama refund memakan waktu?",
+        a: "Refund kartu dinyatakan 3 sampai 7 hari, dengan kebijakan perusahaan kartunya sendiri yang menentukan, dan hingga 30 hari. Refund PayPal kembali ke saldo PayPal dalam 5 hari kerja — pada kurs di tanggal refund termasuk selisih konversinya, jadi jumlah yang dikembalikan bisa lebih kecil daripada yang dibayar.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "從海外續訂 Weverse 會員資格",
+    summary:
+      "自動付款會在你有效期間的最後一天、你第一次付款的那個時刻執行，幣別必須相符；而如果它失敗並超過續訂期間，除了重新購買之外沒有回頭路。",
+    scope:
+      "涵蓋如何讓既有的 Weverse Official Membership 持續有效，以及失效的代價。第一次加入後援會，以及取得某一場先行販售的資格，是另外的問題，收錄在先行販售指南中。本頁所有內容出自 Weverse Shop 2026 年 9 月 3 日的公告與其所指向的商品頁。",
+    intro: [
+      "在錯誤的那一週失效的會員資格，讓你失去的不是一份訂閱。它讓你失去先行販售，因為資格是對照一份在截止日之前就有效的會員資格來查驗的，而事後再怎麼重買都不會移動那個日期。",
+      "Weverse 在 2026 年 9 月 3 日加入了自動付款，消除了一般意義上的失效途徑。它同時也帶來四條很容易弄錯的規則，以及一個不可逆的時點。",
+    ],
+    steps: [
+      {
+        title: "搞清楚你在哪一個會員類別",
+        body: "Weverse 的會員資格分三個類別——Global、Japan 與 USA——而它們是分開管理的。付款方式、幣別與自動付款設定全都是逐類別的，每個類別最多可儲存五種付款方式，其中一種標記為主要。你屬於哪一個類別不是隨手挑的；那是你的會員資格已經所在的地方。",
+        pitfall:
+          "在你沒有在用的那個類別上設定自動付款。畫面看起來一模一樣，而會續訂的是另一個。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "確認你的幣別是該類別真的接受的",
+        body: "截至 2026 年 9 月 3 日：Global Membership 接受南韓的簽帳卡或信用卡以 KRW 付款，以及在 PayPal 登錄的卡片以 JPY、USD 或 MXN 付款。Japan Membership 接受信用卡以 JPY 付款。US Membership 接受在 PayPal 登錄的卡片以 USD 付款。對一位持 Global Membership 並以 USD 付款的海外粉絲而言，這表示卡片是透過 PayPal 走的——沒有直接刷卡的選項。",
+        pitfall:
+          "期待在 USD 的 Global Membership 上直接登錄一張 Visa。同樣的模式貫穿整個 Weverse Shop，這也是為什麼一張在其他地方都能用的卡在這裡仍可能失敗。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "讓購買幣別與主要付款方式一致",
+        body: "Weverse 說得很直接：購買會員資格時所使用的付款幣別，必須與你主要自動付款方式的付款幣別一致。不一致不會在續訂當下往對你有利的方向解決——它就是一次沒有通過的續訂。",
+        pitfall:
+          "用一種幣別買了會員資格，之後又加了另一種幣別的主要付款方式，在兩個畫面上看起來都沒問題，只在真正重要的那一天失敗。",
+        takes: "3 分鐘",
+      },
+      {
+        title: "知道它續訂的確切時刻",
+        body: "自動付款在目前會員資格有效期間的最後一天執行，時間是你第一次付款的那個時刻。那個時刻是在韓國的伺服器上設定的，所以對多數讀者而言它落在深夜或清晨。如果失敗，Weverse 會寄出電子郵件與推播通知，並在續訂期間內每天在同一時刻重試一次。",
+        pitfall:
+          "一張在期間中途到期的卡，或一家擋下扣款的銀行，會變成你當地時間凌晨四點到達的一則通知。重試是每天一次，不是每小時一次——一天沒看到那封信，就是花掉了那個期間的一天。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "理解取消自動付款不會做到什麼",
+        body: "取消自動付款會停止未來的續訂。它不會取消或退還你已經持有的會員資格，而你會一直正常使用到有效期間結束為止。會員資格本身的取消與退款是另一回事，依該會員資格的商品頁規範。",
+        pitfall:
+          "取消自動付款並期待拿回錢；以及另外一種：在有巡迴傳聞時取消它來「暫停」，而那正是你最不希望續訂停止的那一週。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "把續訂期間的結束當成不可逆的時點",
+        body: "如果你取消了自動付款，你可以重新啟用它——但只能在續訂期間還在跑的時候。那個期間一旦結束，就無法重新啟用，唯一的路是重新購買會員資格。Weverse 也在期間內提供兩個手動控制項：Pay Now 立即續訂，以及 Retry Now，用於在你已修正付款方式後重試一次失敗的付款。",
+        pitfall:
+          "等著看那些重試會不會成功。Retry Now 與 Pay Now 的存在正是為了讓你不必等，而兩者都會在期間結束時消失。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "續訂而不是重買，因為紀錄會延續",
+        body: "當會員資格透過自動付款續訂時，登錄在既有會員資格上的會員資料會被保留到下一份上。那份紀錄——尤其是上面的姓名——正是先行販售資格查驗所對照的東西。失效之後重新購買一份新的會員資格，會開始一份新的紀錄與一個新的起始日期，而那才是讓你失去先行販售、而不只是一筆訂閱費的部分。",
+        pitfall:
+          "以為連續性是關於忠誠度。它關於一份紀錄上的一個日期與一個姓名，而任一者的空缺就是查驗所看到的東西。",
+        takes: "2 分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "我可以用自己的 Visa 或 Mastercard 支付 Global Membership 嗎？",
+        a: "在 KRW 之外不能直接刷。Global Membership 接受韓國卡片以 KRW 付款，以及在 PayPal 登錄的卡片以 JPY、USD 或 MXN 付款——所以你的卡是透過 PayPal 抵達 Weverse，而不是作為一筆直接的刷卡付款。",
+      },
+      {
+        q: "自動付款究竟在什麼時候扣我的款？",
+        a: "在你目前會員資格有效期間的最後一天，時間是你第一次付款的那個時刻。那個時間是依韓國的時鐘設定的，所以請換算成你自己的。",
+      },
+      {
+        q: "如果自動付款失敗，我有幾次機會？",
+        a: "Weverse 會以電子郵件與推播通知你，然後在續訂期間剩下的時間內每天在同一時刻重試一次。你也可以在修正付款方式之後使用 Retry Now，或用 Pay Now 立即續訂。",
+      },
+      {
+        q: "我取消了自動付款。可以再打開嗎？",
+        a: "可以，只要續訂期間還開著——那裡正好有一個重新啟用的控制項。續訂期間結束之後就不行了，唯一的選項是重新購買會員資格。",
+      },
+      {
+        q: "我的會員資格斷幾天有差嗎？",
+        a: "它造成的影響可能比價格更大。續訂會保留既有會員資格的會員資料；重新購買則開始一份帶有新日期的新紀錄。先行販售資格是對照那份紀錄與它的截止日查驗的，而不是看你當粉絲當了多久。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Memperpanjang keanggotaan Weverse dari luar negeri",
+    summary:
+      "Auto Payment berjalan pada hari terakhir masa berlaku Anda, pada jam yang sama saat Anda pertama kali membayar, dalam mata uang yang harus cocok — dan jika ia gagal melewati jendela perpanjangan, tidak ada jalan kembali selain membeli lagi.",
+    scope:
+      "Mencakup cara menjaga Weverse Official Membership yang sudah ada tetap berjalan, dan apa yang hilang kalau ia kedaluwarsa. Bergabung dengan fan club untuk pertama kali, dan memenuhi syarat untuk presale tertentu, adalah pertanyaan terpisah yang dibahas di panduan presale. Semua di sini berasal dari pemberitahuan Weverse Shop tertanggal 3 September 2026 dan halaman produk yang dirujuknya.",
+    intro: [
+      "Keanggotaan yang kedaluwarsa di pekan yang salah tidak membuat Anda kehilangan sebuah langganan. Ia membuat Anda kehilangan presale, karena kelayakan diperiksa terhadap keanggotaan yang aktif sebelum sebuah batas waktu, dan membeli lagi sesudahnya tidak menggeser tanggal itu sedikit pun.",
+      "Weverse menambahkan Auto Payment pada 3 September 2026, yang menghapus cara biasa sebuah keanggotaan kedaluwarsa. Ia juga memperkenalkan empat aturan yang mudah dilakukan keliru, dan satu titik tanpa jalan kembali.",
+    ],
+    steps: [
+      {
+        title: "Cari tahu Anda ada di kategori keanggotaan yang mana",
+        body: "Weverse menjalankan keanggotaan dalam tiga kategori — Global, Japan, dan USA — dan ketiganya dikelola terpisah. Metode pembayaran, mata uang, dan setelan Auto Payment semuanya berlaku per kategori, dan hingga lima metode pembayaran bisa disimpan untuk masing-masing dengan satu ditandai sebagai utama. Anda ada di kategori mana bukan sesuatu yang Anda pilih sembarangan; itu tempat keanggotaan Anda sudah berada.",
+        pitfall:
+          "Menyiapkan Auto Payment pada kategori yang tidak Anda pakai. Layarnya terlihat identik, dan keanggotaan yang diperpanjang adalah yang satunya.",
+        takes: "5 menit",
+      },
+      {
+        title: "Periksa mata uang Anda termasuk yang benar-benar diterima kategorinya",
+        body: "Per 3 September 2026: Global Membership menerima kartu debit atau kredit Korea Selatan untuk KRW, dan kartu yang terdaftar di PayPal untuk JPY, USD, atau MXN. Japan Membership menerima kartu kredit untuk JPY. US Membership menerima kartu terdaftar PayPal untuk USD. Bagi fan di luar negeri dengan Global Membership yang membayar dalam USD, itu berarti kartunya berjalan lewat PayPal — tidak ada opsi kartu langsung.",
+        pitfall:
+          "Mengharapkan bisa mendaftarkan Visa secara langsung pada Global Membership berdenominasi USD. Pola yang sama berjalan di seluruh Weverse Shop, dan itulah sebabnya kartu yang berfungsi di mana-mana masih bisa gagal di sini.",
+        takes: "10 menit",
+      },
+      {
+        title: "Cocokkan mata uang pembelian dengan metode utamanya",
+        body: "Weverse menyatakannya langsung: mata uang pembayaran yang dipakai membeli keanggotaan harus cocok dengan mata uang pembayaran metode Auto Payment utama Anda. Ketidakcocokan tidak diselesaikan pada saat perpanjangan demi keuntungan Anda — ia adalah perpanjangan yang tidak lolos.",
+        pitfall:
+          "Membeli keanggotaan dalam satu mata uang lalu kemudian menambahkan metode utama dalam mata uang lain, yang terlihat baik-baik saja di kedua layar dan baru gagal pada hari yang menentukan.",
+        takes: "3 menit",
+      },
+      {
+        title: "Ketahui momen persisnya ia diperpanjang",
+        body: "Auto Payment berjalan pada hari terakhir masa berlaku keanggotaan saat ini, pada jam yang sama saat Anda pertama kali membayarnya. Jam itu ditetapkan di server Korea, jadi bagi sebagian besar pembaca ia jatuh di suatu titik pada malam atau dini hari. Jika gagal, Weverse mengirim surel dan notifikasi dan mencoba lagi sekali sehari pada jam yang sama, selama periode perpanjangannya masih berjalan.",
+        pitfall:
+          "Kartu yang kedaluwarsa di tengah masa berlaku, atau bank yang memblokir tagihannya, berubah menjadi notifikasi yang tiba pukul empat pagi waktu Anda. Percobaan ulangnya harian, bukan per jam — satu hari tidak melihat surelnya adalah satu hari jendela yang terpakai.",
+        takes: "2 menit",
+      },
+      {
+        title: "Pahami apa yang tidak dilakukan oleh pembatalan Auto Payment",
+        body: "Membatalkan Auto Payment menghentikan perpanjangan di masa depan. Ia tidak membatalkan atau mengembalikan dana keanggotaan yang sudah Anda pegang, dan Anda tetap memakainya seperti biasa sampai masa berlakunya habis. Pembatalan dan refund keanggotaan itu sendiri adalah hal terpisah yang diatur oleh halaman produk keanggotaan tersebut.",
+        pitfall:
+          "Membatalkan Auto Payment dengan harapan uang kembali — dan, terpisah dari itu: membatalkannya untuk “menjeda” saat sebuah tur sedang dirumorkan, yaitu pekan ketika Anda paling tidak ingin perpanjangannya berhenti.",
+        takes: "2 menit",
+      },
+      {
+        title: "Perlakukan akhir periode perpanjangan sebagai titik tanpa jalan kembali",
+        body: "Jika Anda membatalkan Auto Payment, Anda bisa mengaktifkannya kembali — tetapi hanya selama periode perpanjangannya masih berjalan. Begitu periode itu berakhir, pengaktifan ulang tidak tersedia dan satu-satunya rute adalah membeli keanggotaannya lagi. Weverse juga memberi dua kendali manual di dalam jendela itu: Pay Now untuk memperpanjang segera, dan Retry Now jika sebuah pembayaran gagal pada metode yang sejak itu sudah Anda perbaiki.",
+        pitfall:
+          "Menunggu untuk melihat apakah percobaan ulangnya berhasil. Retry Now dan Pay Now ada justru agar Anda tidak perlu menunggu, dan keduanya menghilang ketika jendelanya menutup.",
+        takes: "5 menit",
+      },
+      {
+        title: "Perpanjang alih-alih membeli ulang, karena catatannya terbawa",
+        body: "Ketika sebuah keanggotaan diperpanjang lewat Auto Payment, informasi anggota yang terdaftar pada keanggotaan yang ada dipertahankan pada yang berikutnya. Catatan itu — khususnya nama di dalamnya — adalah apa yang diperiksa oleh sebuah pemeriksaan kelayakan presale. Membeli keanggotaan baru setelah kedaluwarsa memulai catatan baru dan tanggal mulai baru, dan itulah bagian yang membuat Anda kehilangan presale alih-alih sekadar biaya langganan.",
+        pitfall:
+          "Mengira kesinambungan itu soal kesetiaan. Ia soal sebuah tanggal dan sebuah nama pada sebuah catatan, dan celah pada salah satunya adalah yang dilihat pemeriksaan itu.",
+        takes: "2 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Bisakah saya membayar Global Membership dengan Visa atau Mastercard saya sendiri?",
+        a: "Tidak secara langsung, di luar KRW. Global Membership menerima kartu Korea untuk KRW, dan kartu terdaftar PayPal untuk JPY, USD, atau MXN — jadi kartu Anda mencapai Weverse lewat PayPal alih-alih sebagai pembayaran kartu langsung.",
+      },
+      {
+        q: "Kapan tepatnya Auto Payment menagih saya?",
+        a: "Pada hari terakhir masa berlaku keanggotaan Anda saat ini, pada jam yang sama saat Anda pertama kali membayar. Waktu itu ditetapkan menurut jam Korea, jadi konversikan untuk jam Anda sendiri.",
+      },
+      {
+        q: "Kalau Auto Payment gagal, berapa kesempatan yang saya punya?",
+        a: "Weverse memberi tahu Anda lewat surel dan notifikasi, lalu mencoba lagi sekali sehari pada jam yang sama untuk sisa periode perpanjangannya. Anda juga bisa memakai Retry Now setelah memperbaiki metode pembayarannya, atau Pay Now untuk memperpanjang segera.",
+      },
+      {
+        q: "Saya membatalkan Auto Payment. Bisakah saya menyalakannya lagi?",
+        a: "Bisa, selama periode perpanjangannya masih terbuka — ada kendali pengaktifan ulang persis untuk itu. Setelah periode perpanjangan berakhir Anda tidak bisa, dan satu-satunya pilihan adalah membeli keanggotaannya lagi.",
+      },
+      {
+        q: "Apakah penting kalau keanggotaan saya kedaluwarsa beberapa hari?",
+        a: "Itu bisa lebih penting daripada harganya. Perpanjangan mempertahankan informasi anggota dari keanggotaan yang ada; pembelian ulang memulai catatan baru dengan tanggal baru. Kelayakan presale diperiksa terhadap catatan itu dan batas waktunya, bukan terhadap sudah berapa lama Anda menjadi fan.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "被鎖在 NOL World 外面：找回帳號，以及修好那個打不開的頁面",
+    summary:
+      "你當初用哪種登入方式，決定了之後每一條找回路線；密碼重設只存在於電子郵件註冊的帳號；而一個未驗證的電子郵件，可能讓帳號根本難以被找到。另外還有那些看起來像錯誤、其實不是錯誤的訂票頁面訊息。",
+    scope:
+      "涵蓋帳號找回、帳號刪除，以及 NOL World 所記載的訂票頁面的失敗情況：瀏覽器與 App 的要求、行動版座位圖，以及那些看起來像故障的彈出訊息。排隊機制有自己的指南。本頁沒有任何內容能幫助任何人進入不屬於自己的帳號。",
+    intro: [
+      "在售票網站上有兩件事會出錯，而它們都與門票無關。你進不去帳號，或者頁面就是不肯做它該做的事——而兩者都發生在開賣當天早上，那時沒有時間讀任何東西。",
+      "這幾乎全部取決於你幾個月前不假思索做出的一個選擇：你是用電子郵件註冊，還是用 Google、Apple 或 Line。單是那一件事，就決定了密碼重設對你而言存不存在，所以那是起點。",
+    ],
+    steps: [
+      {
+        title: "搞清楚你實際上是哪一種登入方式",
+        body: "NOL World 的帳號可以用電子郵件建立，也可以透過社群登入建立——Google、Apple 或 Line 等。後果比聽起來更尖銳：NOL World 表示密碼找回僅供以電子郵件註冊的使用者使用。如果你用的是社群登入，就沒有 NOL World 的密碼可以重設，因為從來就沒有過。現在、在什麼都還不急的時候，先搞清楚你是哪一種。",
+        pitfall:
+          "因為記得自己輸入過電子郵件地址，就以為自己是電子郵件帳號。社群登入同樣會顯示你的電子郵件，而兩者的找回路線完全不同。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "驗證你的電子郵件，因為這是唯一無法事後補救的一項",
+        body: "NOL World 在帳號找回說明結尾的那句話，是這個領域最重要的一句：未經電子郵件驗證的帳號可能難以被找到。這裡其他每一項都是有結果的程序。這一項是一扇可能就是打不開的門——客服是在把你比對到一筆紀錄，而未驗證的電子郵件就是他們手上最強的比對依據。如果你現在是用一個還能用的帳號在讀這段，請確認上面的電子郵件已經驗證，並讓它保持已驗證。",
+        pitfall:
+          "註冊時因為急著趕上開賣而跳過驗證信。它在當天不花你任何成本，而它就是「可以找回的帳號」與「失去的帳號」之間的差別。",
+        takes: "3 分鐘，現在就做",
+      },
+      {
+        title: "如果是社群登入，先從服務供應商那一側找",
+        body: "如果你連自己有沒有開過 NOL World 帳號都想不起來，供應商知道。NOL World 公布了去哪裡看：在 Google，進入 Google 帳戶，然後安全性，然後你與第三方應用程式和服務的連結。在 Apple，進入設定、你的名字與 Apple ID，然後登入與安全性，然後透過 Apple 登入。在 Line，進入設定，然後帳號，然後已授權的應用程式。如果 NOL World 列在那裡，帳號就存在，而你也知道哪一個供應商能打開它。",
+        pitfall:
+          "在登入頁面上把每個社群按鈕輪流試一遍，看哪個能進。那可能是建立了第二個帳號而不是找到第一個，於是現在有兩個——其中一個裝著你的訂單。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "如果那也失敗，把客服要的五樣東西一次給齊",
+        body: "NOL World 會幫你搜尋帳號，而它列出了它需要的東西：你可能用過的電子郵件地址、登入方式（Google、Line、Apple 或電子郵件）、你的暱稱，以及你所訂商品的類型連同預約編號。它也告訴你最後那一項在哪裡——預約編號在訂票當時寄出的電子憑證信件裡。請在寫信之前把這些全部收集好，因為一封缺少預約編號的請求，等於是在請他們用猜的。",
+        pitfall:
+          "把舊的訂票確認信當成雜物刪掉。它們裝著預約編號，而當你弄丟的正是帳號本身時，那是你能提出的最強識別資訊。",
+        takes: "20 分鐘",
+      },
+      {
+        title: "換新手機不會弄丟你的訂單——換成另一個帳號才會",
+        body: "這是最常見的假警報，而 NOL World 直白地回答了：更換手機或重新登入不會抹除你的紀錄。它要你確認的是，你是不是用了一個與原本不同的帳號登入。那幾乎總是真正的原因，而社群登入就是為什麼——一支新手機會提供當下最方便的那個供應商，而點錯一個就會讓你進到一個空的、但完全有效的第二個帳號。",
+        pitfall:
+          "斷定訂單不見了，然後重新買一次。票在另一個帳號裡，而第二次購買是一筆真實的購買。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "使用訂票頁面預期的瀏覽器，而且只用官方管道",
+        body: "NOL World 表示它是依網頁標準建置的，並建議在桌機與行動裝置上使用 Google Chrome 或 Microsoft Edge。如果訂票視窗打不開，它的指示很具體：把瀏覽器更新到最新版本、清除快取，然後再試一次。App 則從 App Store 或 Google Play 更新。它也載明門票究竟能在哪裡購買——NOL World 網站 world.nol.com/ticket 與 NOL World App，除此之外沒有別的地方。",
+        pitfall:
+          "在一個從來就不受支援的瀏覽器上除錯，而且是從社群媒體連結開啟的 App 內嵌網頁。在你斷定網站壞了之前，先直接用 Chrome 或 Edge 打開訂票頁面。",
+        takes: "15 分鐘，前一天",
+      },
+      {
+        title: "如果座位圖在行動版網頁上不能用，改用 App",
+        body: "這是一個有記載的裝置問題，不是一般性問題。NOL World 表示在某些裝置上，行動網頁環境會在你放大縮小時把瀏覽器整個放大，使得選位變得不可能——而解決路線是下載 NOL World App。它點名了目前已確認的裝置：Galaxy Fold。如果你用的是摺疊式或比例不尋常的螢幕，請在開賣前就安裝 App，而不是在七分鐘的付款視窗裡才發現這件事。",
+        pitfall:
+          "用雙指縮放在座位圖上找某個特定座位。在受影響的裝置上，那個手勢正是讓選位失效的動作。",
+        takes: "10 分鐘，事先",
+      },
+      {
+        title: "知道哪些彈出訊息不是故障",
+        body: "有兩則訊息讀起來像錯誤，其實不是。NOL World 表示「此座位已被選擇」的彈出訊息，會在你與另一位使用者幾乎同一瞬間選了同一個座位時出現——你的連線沒有任何問題，只是有人快了一秒。它也表示可選座位會自動更新而不需要重新整理，所以一個看起來凍住的座位圖，通常是一個正在運作的座位圖。請把兩者都當成資訊，而不是需要修理的東西。",
+        pitfall:
+          "為了清掉一個彈出訊息而重新載入頁面。在有排隊的開賣中，那正是會讓你失去順位的那一個動作。",
+        takes: "—",
+      },
+      {
+        title: "把多分頁的建議對照反詐欺政策一起讀",
+        body: "NOL World 要求每個帳號只用一台裝置，並表示同一帳號從多台裝置同時存取可能導致你的訂票受限。接著它又為同時訂票的人提供技術建議——多個分頁會造成連線衝突，建議使用完全不同的瀏覽器例如 Chrome 與 Edge，或不同的裝置。請仔細讀那一段，因為它自己的反詐欺政策把「以相同或相似的個人資料跨帳號訂票」列為不正當使用。那條建議的安全讀法是關於不同平台：在一個瀏覽器開 NOL World，在另一個開另一家售票網站。它不是允許你同時跑自己的好幾個帳號。",
+        pitfall:
+          "把一則關於連線衝突的技術提示當成官方認可的多帳號策略。這兩個頁面擺在一起很彆扭，而附有公開罰則的那一個是反詐欺政策。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "如果你要刪除帳號，先確切知道什麼會消失、什麼會留下",
+        body: "刪除不可逆，而 NOL World 逐項列出了。會被刪除的：你的帳號與個人資料、你的預約紀錄、你的行程，以及你收藏的地點清單。會被保留的：你為某個地點留下的評論與照片。在網站上，任何登入方式都可以刪除帳號。在 App 中以電子郵件登入時，路徑是 My Account、Settings、Delete Account，然後輸入密碼；社群登入則是同樣的路徑，但改以 Google、Line 或 Apple 驗證。它文件中另外兩處的內容該被放在這旁邊：刪除會抹除你的身分驗證並把它釋出給另一個帳號，而因濫用被限制的帳號根本無法刪除。",
+        pitfall:
+          "為了清掉某個帳號上的問題而刪除它。被限制的帳號刪不掉，而已驗證的帳號會把你的驗證一起帶走——預約紀錄會消失，評論則不會。",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "我忘記密碼了。要怎麼重設？",
+        a: "只有在你是以電子郵件註冊時才能重設——NOL World 表示密碼找回僅供電子郵件註冊者使用。路徑是登入畫面、Find Password、輸入註冊用的電子郵件，然後依照寄來的重設連結操作。如果你用的是 Google、Apple 或 Line，就沒有 NOL World 的密碼；你是透過該供應商登入的。",
+      },
+      {
+        q: "我根本不知道自己用的是哪個帳號。",
+        a: "先從供應商那一側查。NOL World 公布了路徑：Google 帳戶然後安全性然後你與第三方應用程式和服務的連結；Apple 的設定然後你的 Apple ID 然後登入與安全性然後透過 Apple 登入；Line 的設定然後帳號然後已授權的應用程式。如果 NOL World 出現在那裡，那就是那個帳號。",
+      },
+      {
+        q: "以上都沒用。客服找得到嗎？",
+        a: "他們會找，用你給的東西：你可能用過的電子郵件、登入方式、你的暱稱，以及你所訂商品的類型連同預約編號——NOL World 表示那些編號在訂票時寄出的電子憑證信件裡。它也警告從未經電子郵件驗證的帳號可能難以被找到，所以請把你有的全部寄過去。",
+      },
+      {
+        q: "我換了手機，訂單不見了。",
+        a: "幾乎可以確定沒有不見。NOL World 表示更換手機或重新登入不會抹除紀錄，並要你確認自己是不是用了與原本不同的帳號登入。用社群登入時這很容易不小心發生——新手機提供的是最方便的那個供應商，不一定是你當初用的那個。",
+      },
+      {
+        q: "訂票視窗完全打不開。",
+        a: "NOL World 自己的步驟：使用標準瀏覽器，它點名 Chrome 與 Edge；更新到最新版本；清除快取；再試一次。App 則從 App Store 或 Google Play 更新到最新版本。它也載明門票只能在 world.nol.com/ticket 或 NOL World App 上購買。",
+      },
+      {
+        q: "我在手機瀏覽器上選不了座位。",
+        a: "這是一個已知的裝置問題。NOL World 表示在某些裝置上放大縮小會把整個行動瀏覽器放大，使選位變得不可能，而解法是使用 NOL World App。它點名已確認的裝置是 Galaxy Fold。請在開賣之前安裝 App，而不是在開賣當中。",
+      },
+      {
+        q: "我可以開兩個分頁來提高機率嗎？",
+        a: "不行，而且 NOL World 要求每個帳號只用一台裝置——它表示同一帳號從多台裝置同時存取可能導致你的訂票受限。它關於使用不同瀏覽器的建議，是針對你確實在用兩個不同售票平台時的連線衝突，不是對同時跑自己多個帳號的背書。以相似個人資料跨帳號訂票，就在它公開的不正當使用清單上。",
+      },
+      {
+        q: "如果我刪除帳號，我的資料會怎樣？",
+        a: "NOL World 表示刪除無法復原，並列出會消失的東西：帳號與個人資料、預約紀錄、行程，以及收藏的地點。你為某個地點留下的評論與照片會被保留。它在別處也表示刪除同時會抹除你的身分驗證並把它釋出給另一個帳號，而因濫用被限制的帳號無法刪除。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Terkunci di luar NOL World: menemukan akunnya, dan memperbaiki halaman yang tidak mau terbuka",
+    summary:
+      "Metode masuk yang Anda pakai menentukan setiap jalur pemulihan, pengaturan ulang kata sandi hanya ada untuk pendaftaran lewat surel, dan surel yang belum terverifikasi bisa membuat sebuah akun sulit ditemukan sama sekali. Ditambah kesalahan di halaman pemesanan yang sebenarnya bukan kesalahan.",
+    scope:
+      "Mencakup pemulihan akun, penghapusan akun, dan kegagalan halaman pemesanan yang didokumentasikan NOL World: syarat peramban dan aplikasi, peta kursi di seluler, dan pop-up yang terlihat seperti kerusakan. Mekanika antrean ada di panduannya sendiri. Tidak ada apa pun di sini yang membantu siapa pun masuk ke akun yang bukan miliknya.",
+    intro: [
+      "Ada dua hal yang salah di sebuah situs tiket yang sama sekali tidak berhubungan dengan tiket. Anda tidak bisa masuk ke akun, atau halamannya sekadar tidak mau melakukan apa yang seharusnya — dan keduanya terjadi pada pagi hari penjualan, ketika tidak ada waktu untuk membaca apa pun.",
+      "Nyaris semuanya ditentukan oleh satu pilihan yang Anda buat berbulan-bulan sebelumnya tanpa berpikir: apakah Anda mendaftar dengan alamat surel atau lewat Google, Apple, atau Line. Fakta tunggal itu menentukan apakah pengaturan ulang kata sandi bahkan ada untuk Anda, jadi di situlah titik mulainya.",
+    ],
+    steps: [
+      {
+        title: "Cari tahu jenis akun masuk yang sebenarnya Anda punya",
+        body: "Akun NOL World dibuat dengan alamat surel atau melalui masuk lewat layanan lain — Google, Apple, atau Line, antara lain. Akibatnya lebih tajam daripada kedengarannya: NOL World menyatakan pemulihan kata sandi hanya tersedia bagi pengguna yang mendaftar dengan alamat surel. Jika Anda memakai masuk lewat layanan lain, tidak ada kata sandi NOL World untuk diatur ulang, karena tidak pernah ada. Cari tahu Anda yang mana sekarang, selagi tidak ada yang mendesak.",
+        pitfall:
+          "Mengira Anda punya akun surel karena ingat pernah mengetikkan alamat surel. Masuk lewat layanan lain juga menampilkan surel Anda, dan jalur pemulihannya sepenuhnya berbeda.",
+        takes: "5 menit",
+      },
+      {
+        title: "Verifikasi surel Anda, karena inilah yang tidak bisa dibatalkan",
+        body: "Kalimat penutup NOL World sendiri soal pemulihan akun adalah yang terpenting di area ini: akun yang tidak diverifikasi lewat surel bisa sulit ditemukan. Semua hal lain di sini adalah prosedur dengan sebuah hasil. Yang satu ini adalah pintu yang bisa saja tidak terbuka — layanan pelanggan sedang mencocokkan Anda dengan sebuah catatan, dan surel yang belum terverifikasi adalah pencocokan terkuat yang mereka punya. Jika Anda membaca ini dengan akun yang masih berfungsi, periksa bahwa surel padanya sudah terverifikasi dan biarkan tetap begitu.",
+        pitfall:
+          "Melewatkan surel verifikasi saat mendaftar karena terburu-buru mengejar sebuah penjualan. Itu tidak memakan biaya apa pun pada hari itu dan ia adalah pembeda antara akun yang bisa dipulihkan dan akun yang hilang.",
+        takes: "3 menit, sekarang",
+      },
+      {
+        title: "Untuk masuk lewat layanan lain, periksa sisi penyedianya dulu",
+        body: "Jika Anda tidak ingat apakah pernah punya akun NOL World, penyedianya tahu. NOL World menerbitkan tempat mencarinya: di Google, lewat Akun Google lalu Keamanan lalu koneksi Anda ke aplikasi dan layanan pihak ketiga. Di Apple, lewat Settings, nama Anda dan Apple ID, lalu Sign-In & Security, lalu Sign in with Apple. Di Line, lewat Settings lalu akun lalu aplikasi yang diizinkan. Jika NOL World terdaftar di sana, akunnya ada dan Anda tahu penyedia mana yang membukanya.",
+        pitfall:
+          "Mencoba setiap tombol layanan satu per satu di halaman masuk untuk melihat mana yang berhasil. Itu bisa membuat akun kedua alih-alih menemukan yang pertama, dan sekarang ada dua — salah satunya menyimpan pemesanan Anda.",
+        takes: "10 menit",
+      },
+      {
+        title: "Kalau itu gagal, kirimkan lima hal yang diminta layanan pelanggan",
+        body: "NOL World akan mencari akunnya, dan ia menyebut apa yang dibutuhkannya: alamat surel yang mungkin Anda pakai, jenis masuknya (Google, Line, Apple, atau surel), nama panggilan Anda, serta jenis produk yang Anda pesan beserta nomor pemesanannya. Ia juga memberi tahu di mana yang terakhir itu berada — nomor pemesanan ada di voucher surel yang dikirim saat Anda memesan. Kumpulkan semuanya sebelum menulis, karena permintaan tanpa nomor pemesanan adalah permintaan yang meminta mereka menebak.",
+        pitfall:
+          "Menghapus surel konfirmasi pemesanan lama sebagai sampah. Di dalamnya ada nomor pemesanan, yang merupakan pengenal terkuat yang bisa Anda tawarkan ketika yang hilang justru akunnya sendiri.",
+        takes: "20 menit",
+      },
+      {
+        title: "Ponsel baru tidak menghilangkan pemesanan Anda — akun yang berbeda yang menghilangkannya",
+        body: "Ini kekhawatiran palsu yang paling umum dan NOL World menjawabnya terang-terangan: mengganti ponsel atau masuk lagi tidak menghapus riwayat Anda. Yang ia minta Anda periksa adalah apakah Anda masuk dengan akun yang berbeda dari yang semula Anda pakai. Itu hampir selalu penyebab sebenarnya, dan masuk lewat layanan lain adalah sebabnya — ponsel baru menawarkan penyedia yang paling praktis, dan menekan yang keliru menempatkan Anda di akun kedua yang kosong tetapi sepenuhnya sah.",
+        pitfall:
+          "Menyimpulkan pemesanannya hilang lalu membeli lagi. Tiketnya ada di akun yang satunya, dan pembelian kedua itu pembelian sungguhan.",
+        takes: "5 menit",
+      },
+      {
+        title: "Pakai peramban yang diharapkan halaman pemesanan, dan hanya kanal resmi",
+        body: "NOL World menyatakan ia dibangun mengikuti standar web dan merekomendasikan Google Chrome atau Microsoft Edge, baik di komputer maupun di ponsel. Jika jendela pemesanan tidak mau terbuka, instruksinya spesifik: perbarui peramban ke versi terbaru, bersihkan cache, lalu coba lagi. Untuk aplikasinya, perbarui dari App Store atau Google Play. Dan ia menyatakan di mana tiket bisa dibeli sama sekali — situs NOL World di world.nol.com/ticket dan aplikasi NOL World, dan tidak di tempat lain.",
+        pitfall:
+          "Mencari-cari masalah di peramban yang memang tidak pernah didukung, di dalam tampilan web aplikasi yang dibuka dari tautan media sosial. Buka halaman pemesanan langsung di Chrome atau Edge sebelum Anda menyimpulkan situsnya rusak.",
+        takes: "15 menit, sehari sebelumnya",
+      },
+      {
+        title: "Kalau peta kursi tidak berfungsi di web seluler, pindah ke aplikasi",
+        body: "Ada masalah perangkat yang terdokumentasi, bukan masalah umum. NOL World menyatakan bahwa pada sebagian perangkat, lingkungan web seluler memperbesar peramban ketika Anda memperbesar dan memperkecil, yang membuat pemilihan kursi mustahil — dan jalan keluarnya adalah mengunduh aplikasi NOL World. Ia menyebut perangkat yang sejauh ini terkonfirmasi: Galaxy Fold. Jika Anda memakai layar lipat atau berproporsi tidak biasa, pasang aplikasinya sebelum penjualan alih-alih menemukan hal ini di dalam jendela pembayaran tujuh menit.",
+        pitfall:
+          "Mencubit layar untuk memperbesar peta kursi demi mencari kursi tertentu. Pada perangkat yang terdampak, gerakan itulah yang merusak pemilihannya.",
+        takes: "10 menit, di muka",
+      },
+      {
+        title: "Ketahui pop-up mana yang bukan kerusakan",
+        body: "Dua pesan terbaca seperti kesalahan dan bukan. NOL World menyatakan pop-up yang memberi tahu bahwa kursi ini sudah dipilih muncul ketika Anda memilih kursi yang sama pada waktu yang nyaris bersamaan dengan pengguna lain — tidak ada yang salah dengan sesi Anda, seseorang hanya lebih cepat sedetik. Dan ia menyatakan kursi yang tersedia diperbarui otomatis tanpa perlu disegarkan, jadi peta kursi yang terlihat membeku biasanya peta kursi yang sedang bekerja. Perlakukan keduanya sebagai informasi alih-alih sebagai sesuatu untuk diperbaiki.",
+        pitfall:
+          "Memuat ulang halaman untuk menghilangkan sebuah pop-up. Pada penjualan berantrean, itu satu tindakan yang memakan posisi Anda.",
+        takes: "—",
+      },
+      {
+        title: "Baca saran soal banyak tab berdampingan dengan kebijakan antipenipuannya",
+        body: "NOL World meminta satu perangkat per akun, dan menyatakan akses bersamaan dari beberapa perangkat pada akun yang sama bisa membatasi pemesanan Anda. Ia lalu memberi saran teknis bagi orang yang memesan secara bersamaan — bahwa banyak tab menimbulkan konflik sesi, dan untuk memakai peramban yang sepenuhnya terpisah seperti Chrome dan Edge, atau perangkat berbeda. Baca itu dengan cermat, karena kebijakan antipenipuannya sendiri mendaftarkan pemesanan lintas akun dengan data pribadi identik atau serupa sebagai penggunaan tidak sah. Bacaan yang aman atas saran itu adalah soal platform terpisah: NOL World di satu peramban sementara situs tiket lain berjalan di peramban lain. Itu bukan izin untuk menjalankan beberapa akun Anda sendiri sekaligus.",
+        pitfall:
+          "Mengambil kiat soal konflik sesi sebagai strategi yang direstui untuk banyak akun. Kedua halaman itu duduk berdampingan dengan canggung, dan yang membawa sanksi tertulis adalah kebijakan antipenipuannya.",
+        takes: "5 menit",
+      },
+      {
+        title: "Kalau Anda menghapus akunnya, ketahui persis apa yang hilang dan apa yang tinggal",
+        body: "Penghapusan tidak bisa dibatalkan dan NOL World merincinya. Dihapus: informasi akun dan profil Anda, riwayat pemesanan Anda, perjalanan Anda, dan daftar tempat yang Anda sukai. Dipertahankan: ulasan dan foto yang Anda tinggalkan untuk sebuah tempat. Di situs, metode masuk mana pun bisa menghapus akunnya. Di aplikasi dengan masuk lewat surel, jalurnya adalah My Account, Settings, Delete Account, lalu kata sandi Anda; dengan masuk lewat layanan lain jalurnya sama tetapi Anda memverifikasi lewat Google, Line, atau Apple. Dua hal dari bagian lain dokumentasinya layak diletakkan di samping ini: menghapus juga menghapus verifikasi identitas Anda dan membebaskannya untuk akun lain, dan akun yang dibatasi karena penyalahgunaan sama sekali tidak bisa dihapus.",
+        pitfall:
+          "Menghapus akun untuk membereskan masalah pada akun itu. Akun yang dibatasi tidak bisa dihapus, dan akun yang terverifikasi membawa serta verifikasi Anda — riwayat pemesanannya hilang dan ulasannya tidak.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Saya tidak ingat kata sandi saya. Bagaimana cara mengaturnya ulang?",
+        a: "Hanya jika Anda mendaftar dengan alamat surel — NOL World menyatakan pemulihan kata sandi tersedia hanya untuk pendaftaran lewat surel. Jalurnya adalah layar masuk, Find Password, masukkan surel pendaftaran, lalu ikuti tautan pengaturan ulang yang datang. Jika Anda memakai Google, Apple, atau Line, tidak ada kata sandi NOL World; Anda masuk lewat penyedianya.",
+      },
+      {
+        q: "Saya bahkan tidak tahu akun mana yang saya pakai.",
+        a: "Periksa sisi penyedianya dulu. NOL World menerbitkan jalurnya: Akun Google lalu Keamanan lalu koneksi Anda ke aplikasi dan layanan pihak ketiga; Settings Apple lalu Apple ID Anda lalu Sign-In & Security lalu Sign in with Apple; Settings Line lalu akun lalu aplikasi yang diizinkan. Jika NOL World muncul, itulah akunnya.",
+      },
+      {
+        q: "Tidak satu pun berhasil. Apakah layanan pelanggan akan menemukannya?",
+        a: "Mereka akan mencari, dengan apa yang Anda berikan: surel yang mungkin Anda pakai, jenis masuknya, nama panggilan Anda, dan jenis produk yang Anda pesan beserta nomor pemesanannya — yang menurut NOL World ada di voucher surel yang dikirim saat Anda memesan. Ia juga memperingatkan bahwa akun yang tidak pernah diverifikasi lewat surel bisa sulit ditemukan, jadi kirimkan semua yang Anda punya.",
+      },
+      {
+        q: "Saya ganti ponsel dan pemesanan saya hilang.",
+        a: "Hampir pasti tidak. NOL World menyatakan mengganti ponsel atau masuk lagi tidak menghapus riwayat, dan meminta Anda memeriksa apakah Anda masuk dengan akun yang berbeda dari yang semula. Dengan masuk lewat layanan lain itu mudah terjadi tanpa sengaja — ponsel baru menawarkan penyedia yang paling praktis, belum tentu yang Anda pakai.",
+      },
+      {
+        q: "Jendela pemesanannya sama sekali tidak mau terbuka.",
+        a: "Langkah NOL World sendiri: pakai peramban standar, dan ia menyebut Chrome dan Edge; perbarui ke versi terbaru; bersihkan cache; coba lagi. Untuk aplikasinya, perbarui ke versi terbaru dari App Store atau Google Play. Ia juga menyatakan tiket hanya bisa dibeli di world.nol.com/ticket atau di aplikasi NOL World.",
+      },
+      {
+        q: "Saya tidak bisa memilih kursi di peramban ponsel saya.",
+        a: "Ada masalah perangkat yang diketahui. NOL World menyatakan bahwa pada sebagian perangkat, memperbesar dan memperkecil memperbesar seluruh peramban seluler, yang membuat pemilihan kursi mustahil, dan bahwa jawabannya adalah memakai aplikasi NOL World. Perangkat yang ia sebut terkonfirmasi adalah Galaxy Fold. Pasang aplikasinya menjelang penjualan alih-alih saat penjualan berlangsung.",
+      },
+      {
+        q: "Bisakah saya membuka dua tab untuk memperbesar peluang?",
+        a: "Tidak, dan NOL World meminta satu perangkat per akun — ia menyatakan akses bersamaan dari beberapa perangkat pada akun yang sama bisa membatasi pemesanan Anda. Sarannya soal peramban terpisah adalah tentang konflik sesi ketika Anda benar-benar memakai dua platform tiket berbeda, bukan dukungan untuk menjalankan beberapa akun Anda sendiri. Memesan lintas akun dengan data pribadi serupa ada di daftar penggunaan tidak sah yang ia terbitkan.",
+      },
+      {
+        q: "Apa yang terjadi pada data saya kalau saya menghapus akun?",
+        a: "NOL World menyatakan penghapusan tidak bisa dibatalkan, dan mendaftar apa yang hilang: informasi akun dan profil, riwayat pemesanan, perjalanan, dan tempat yang disukai. Ulasan dan foto yang Anda tinggalkan untuk sebuah tempat dipertahankan. Di bagian lain ia menyatakan penghapusan juga menghapus verifikasi identitas Anda, membebaskannya untuk akun lain, dan bahwa akun yang dibatasi karena penyalahgunaan tidak bisa dihapus.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Weverse Shop 訂單為何遲到,以及什麼時候還取消得掉",
+    summary:
+      "取消鍵消失的時機是狀態改變,不是某個時限;歐盟取消了150歐元的免稅門檻,美國在關稅之外又加了一套查驗制度,而韓國連假的截止時間是算到分鐘的。",
+    scope:
+      "依據 Weverse Shop 自己的公告,說明下單之後會發生的事:取消期限、它針對歐盟與美國提醒過的海關變動、連假與物流造成的延遲,以及你究竟是在跟誰買東西。連假日期是2026年的,明年就不對了——公告頁才是即時版本。下單本身另有專篇。",
+    intro: [
+      "Weverse Shop 不斷在發配送相關的公告,而幾乎沒有人會去讀,直到自己的包裹遲了。真正的答案就在那裡:哪一項海關變動適用於你、哪個連假吃掉了四天,以及你的訂單在哪一分鐘不再能取消。",
+      "這篇就是把那一整串公告一次讀完。其中有兩項是真正的新規定而非季節性延遲,而其中一項正是你的錢不再能退的那一刻。",
+    ],
+    steps: [
+      {
+        title: "先知道取消期限是由狀態決定的,不是由時鐘決定",
+        body: "這是出事之前最值得知道的一件事。Weverse Shop 給的取消路徑是 Weverse App、More、My Orders、Order Details、Cancel Order,並說明一旦訂單狀態變成 Shipping Soon 或 In Transit,你就無法再取消。它沒有訂出任何寬限期,也沒有「下單幾小時內」的規則。期限會一直開著,直到倉庫改動狀態為止——而熱門商品的狀態可能比你預期的更早就改掉了。",
+        pitfall:
+          "打算睡一覺再決定要不要留下一時衝動的預購。那個期限不是你查得到的時間,而是一個你控制不了的事件,而且它可能在你睡覺時就過去了。",
+        takes: "5分鐘,立刻",
+      },
+      {
+        title: "你在歐盟的話,150歐元的免稅額已經沒有了",
+        body: "Weverse Shop 自己的公告在一般報導含糊之處講得很具體:自2026年7月1日起,歐盟修訂了低價值進口的規定,先前150歐元以下的訂單免徵關稅,該免稅已被取消,因此不論購買金額多少都要課稅。最關鍵的細節是認定基準——Weverse 說它適用於自2026年7月1日起在當地通關的貨件,看的是當地通關日而非下單日。在變動之前下的單,仍然可能被它抓到。",
+        pitfall:
+          "以為小額訂單便宜到不會被課稅。現在已經沒有下限了,而決定這件事的日期,是你從訂單頁上看不到的那一個。",
+        takes: "10分鐘",
+      },
+      {
+        title: "要預期海關或快遞會直接向你收錢",
+        body: "Weverse Shop 說歐盟訂單可能在當地通關時產生稅費,你可能會收到當地海關或快遞另外寄來的付款指示,而未繳納這些稅費可能導致延遲或無法送達。這跟結帳時被收費是完全不同的體驗:一間你毫無往來關係的公司寄來訊息,要你為一個你已經付過錢的包裹再付一次錢。它並非預設就是詐騙——但這也正是詐騙模仿的樣子,所以請拿追蹤號碼去對自己的訂單,而不是點訊息裡的連結。",
+        pitfall:
+          "把海關或快遞的付款要求當成釣魚信忽略掉,讓包裹就那樣擺著。未繳款是訂單最後根本沒送到的已知途徑之一。",
+        takes: "—",
+      },
+      {
+        title: "你在美國的話,要知道那是兩項各自獨立的變動",
+        body: "關稅變動佔據了所有報導,而它並不是唯一讓美國包裹變慢的原因。Weverse Shop 另外提醒,自2026年7月8日起,美國消費品安全委員會(CPSC)強制實施 eFiling 政策,對所有進口到美國的商品進行更嚴格的當地海關查驗,預計通關會比標準配送時程多花幾天。那是一套產品安全申報制度而非關稅——所以美國訂單變慢的原因,可能跟要繳多少稅完全無關。",
+        pitfall:
+          "把每一次美國延遲都讀成免稅門檻那件事,然後等一張永遠不會來的稅單。這兩項變動裡,一項花錢,另一項花時間。",
+        takes: "5分鐘",
+      },
+      {
+        title: "把韓國連假當成一個以分鐘計的截止時間",
+        body: "Weverse Shop 會為每個韓國連假公布截止時程,而那些時間很精確。2026年中秋,韓國以外地址的下單截止是9月23日11:00 KST,快遞配送於9月28日恢復;韓國境內地址的快遞截止是9月22日11:00 KST,當天即恢復。截止後下的單,會從恢復日起依序出貨。Weverse 另加兩點提醒:截止日當天出貨的商品,仍可能因地區而在連假後才送達,而該時程來自快遞公司,可能會變動。",
+        pitfall:
+          "把那些日期讀成今年的。那是2026年中秋的數字,而真正能延用的是那個模式——前一兩天的11:00 KST截止,大約一週後恢復。日期本身每次都得重新查。",
+        takes: "連假前下單,10分鐘",
+      },
+      {
+        title: "如果你的地址在中國,還有第二份連假行事曆",
+        body: "Weverse Shop 會為中國的連假另發公告,影響的是收件地址在中國的訂單,因為中國海關停止作業,通關也跟著停。2026年9月25日至27日的中秋節與10月1日至7日的國慶假期,它說在9月15日11:00 KST前完成付款的訂單,有可能在國慶假期期間送達,而在那之後付款的訂單,要等假期於10月8日結束後才開始出貨。請注意,算的是付款完成,而不是下單。",
+        pitfall:
+          "一筆付款完成時間比你以為的更晚的預購。當截止是以完款來認定時,一筆還沒付清的訂單,就是一筆落在三週空窗另一側的訂單。",
+        takes: "10分鐘",
+      },
+      {
+        title: "把貨運中斷和包裹遺失分開看",
+        body: "有些延遲既不是海關也不是連假。2026年4月,Weverse Shop 通知全歐洲及部分中東國家出現配送延遲,原因是全球物流路線與海空運班期波動,影響的是2026年4月1日之後出貨且正在國際運送中的訂單。真正有用的部分是它對追蹤資訊的說明:因為改道,追蹤更新與當地抵達都可能比平常更久,而包裹仍在運送中。在已知的中斷期間追蹤停滯,是預期中的症狀,不是遺失的證據。",
+        pitfall:
+          "因為追蹤一週沒動就去開遺失包裹的案件。先去公告頁看看有沒有涵蓋你所在地區的現行中斷——對一個只是被改道的包裹提出申訴,會耗掉你處理真正問題時需要的時間。",
+        takes: "10分鐘",
+      },
+      {
+        title: "確認賣家到底是不是 Weverse",
+        body: "Weverse Shop 在自己的頁面上說明,部分商品由個別第三方賣家提供,在這些情況下 Weverse Company 僅作為電子商務仲介,並非交易的當事人,且對這些賣家的商品資訊與交易不承擔責任。那會改變出問題時你面對的是誰——第三方商品的對造是賣家,不是 Weverse。這件事值得在你需要投訴之前就先弄清楚,而不是在投訴的過程中。",
+        pitfall:
+          "以為店內所有東西都有同樣的背書,只因為它們都走同一個結帳流程。那份仲介免責聲明是公開的,而它決定了誰該給你補償。",
+        takes: "5分鐘",
+      },
+      {
+        title: "自己去讀公告,因為這一頁會比大多數頁面更快過期",
+        body: "上面的一切都來自 Weverse Shop 的公告頁,而那一頁才是即時版本。海關變動是耐久的;連假時程、貨運中斷與快遞截止則不是——它們每次都重發一份,舊的那份不會改動就被取代了。在連假前下單或包裹遲到時,請去讀公告清單,而不要相信任何指南上的日期,包括這一篇。這一頁頂端的日期,就是我們上次去讀的時間。",
+        pitfall:
+          "相信一份去年寫的指南上的截止時間。重複的是結構,不是數字。",
+        takes: "5分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "我還能取消訂單嗎?",
+        a: "只有在狀態還允許的時候。Weverse Shop 給的路徑是 Weverse App、More、My Orders、Order Details、Cancel Order,並說明一旦狀態變成 Shipping Soon 或 In Transit,就不再能取消。它沒有公布任何寬限期,所以答案取決於訂單本身,而不是時鐘。",
+      },
+      {
+        q: "我在歐盟,訂單被收了海關稅。這樣對嗎?",
+        a: "很可能對。Weverse Shop 說自2026年7月1日起,歐盟取消了先前涵蓋150歐元以下訂單的免稅額,因此不論金額多少都要課稅,認定基準是自該日起在當地通關的貨件。它也提醒你可能收到海關或快遞另寄的付款指示,而不繳可能導致延遲或無法送達。",
+      },
+      {
+        q: "如果沒有稅要繳,我的美國訂單為什麼還是慢?",
+        a: "因為那是兩項變動。除了關稅規定之外,Weverse Shop 提醒自2026年7月8日起,美國消費品安全委員會(CPSC)強制實施 eFiling,對所有進口到美國的商品加強查驗,預計通關會多花幾天。那一項花的是時間,不是錢。",
+      },
+      {
+        q: "我收到要我繳海關稅的訊息。那是詐騙嗎?",
+        a: "它確實可能是真的——Weverse Shop 說歐盟客戶可能收到當地海關或快遞另寄的付款指示。它同時也正是詐騙模仿的樣子。請拿追蹤號碼去對自己的訂單,並自己連到快遞公司的網站,而不是點訊息裡的連結。",
+      },
+      {
+        q: "韓國連假下單的截止時間是什麼時候?",
+        a: "Weverse Shop 每個連假公布一次,精確到分鐘。2026年中秋,韓國以外地址的截止是9月23日11:00 KST,快遞配送於9月28日恢復。它提醒該時程來自快遞公司、可能變動,而截止日當天出貨的商品仍可能在連假後才送達。請查當期的那一份,不要沿用這些日期。",
+      },
+      {
+        q: "我的追蹤資訊一週沒更新了。包裹是不是丟了?",
+        a: "先去公告頁看有沒有涵蓋你所在地區的中斷。2026年4月 Weverse Shop 通知歐洲與中東延遲時說,改道意味著追蹤更新與當地抵達都會比平常更久,而包裹仍在運送中——所以在已知的中斷期間追蹤靜止,是症狀而不是問題本身。",
+      },
+      {
+        q: "我的商品有問題。我是要找 Weverse 嗎?",
+        a: "不一定。Weverse Shop 說明部分商品由個別第三方賣家販售,此時 Weverse Company 僅作為仲介、並非交易當事人,且對那些賣家的商品資訊與交易不承擔責任。在決定找誰之前,先確認你買的是哪一種商品。",
+      },
+      {
+        q: "我不在中國,中國的連假時程會影響我嗎?",
+        a: "公告說那些時程適用於收件地址在中國的訂單,因為中國海關在連假期間停止作業。如果你的地址在別處,要盯的是韓國連假的截止時間,以及任何現行的貨運中斷。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Mengapa pesanan Weverse Shop Anda terlambat, dan kapan Anda masih bisa membatalkannya",
+    summary:
+      "Tombol pembatalan hilang karena perubahan status alih-alih karena sebuah tenggat, Uni Eropa menghapus batas bebas bea 150 euronya, Amerika Serikat menambahkan satu rezim pemeriksaan kedua di atas rezim bea, dan sebuah hari raya Korea punya batas waktu yang dihitung sampai ke menitnya.",
+    scope:
+      "Mencakup apa yang terjadi setelah pesanan Weverse Shop dibuat, dari pemberitahuan Weverse Shop sendiri: tenggat pembatalan, perubahan kepabeanan yang telah ia peringatkan untuk Uni Eropa dan Amerika Serikat, keterlambatan karena hari raya dan logistik, serta dari siapa sebenarnya Anda membeli. Tanggal hari rayanya adalah tanggal tahun 2026 dan akan salah tahun depan — halaman pemberitahuannya adalah versi yang hidup. Pemesanannya sendiri punya panduannya sendiri.",
+    intro: [
+      "Weverse Shop menerbitkan aliran pemberitahuan yang tetap soal pengiriman, dan nyaris tidak ada yang membacanya sampai sebuah paket terlambat. Di situlah jawaban yang sebenarnya tinggal: perubahan kepabeanan mana yang berlaku untuk Anda, hari raya mana yang menelan empat hari, dan menit persisnya ketika sebuah pesanan berhenti bisa dibatalkan.",
+      "Inilah aliran itu, dibaca sekaligus. Dua dari hal di bawah ini adalah aturan yang benar-benar baru alih-alih keterlambatan musiman, dan salah satunya adalah saat ketika uang Anda berhenti bisa dikembalikan.",
+    ],
+    steps: [
+      {
+        title: "Ketahui bahwa jendela pembatalan menutup karena sebuah status, bukan karena jam",
+        body: "Inilah fakta yang layak diketahui sebelum ada yang salah. Weverse Shop memberikan jalur pembatalan sebagai aplikasi Weverse, lalu More, lalu My Orders, lalu Order Details, lalu Cancel Order — dan menyatakan bahwa begitu status pesanan Anda berubah menjadi Shipping Soon atau In Transit, Anda tidak akan bisa membatalkan pesanan itu. Tidak ada masa tenggang yang dinyatakan dan tidak ada aturan berapa jam setelah pemesanan. Jendelanya terbuka sampai sebuah gudang mengubah sebuah status, yang bisa terjadi lebih cepat daripada yang Anda perkirakan pada rilis yang populer.",
+        pitfall:
+          "Memutuskan sepanjang malam apakah akan menyimpan sebuah prapesan yang impulsif. Tenggatnya bukan sebuah waktu yang bisa Anda cari — ia sebuah peristiwa yang tidak Anda kendalikan, dan ia bisa berlalu selagi Anda tidur.",
+        takes: "5 menit, segera",
+      },
+      {
+        title: "Jika Anda di Uni Eropa, pembebasan 150 euro itu sudah tidak ada",
+        body: "Pemberitahuan Weverse Shop sendiri bersifat spesifik di tempat liputan umum bersifat kabur: sejak 1 Juli 2026 Uni Eropa merevisi aturannya untuk impor bernilai rendah — sebelumnya pesanan di bawah 150 euro dibebaskan dari bea masuk, dan pembebasan itu telah dihapus, sehingga bea sekarang berlaku terlepas dari jumlah pembeliannya. Rincian yang paling penting adalah dasarnya: Weverse menyatakan ini berlaku untuk kiriman yang menyelesaikan kepabeanan setempat sejak 1 Juli 2026, menurut tanggal pembebasan setempat alih-alih tanggal pemesanan. Sebuah pesanan yang dibuat sebelum perubahan itu masih bisa terjaring olehnya.",
+        pitfall:
+          "Menganggap pesanan kecil terlalu murah untuk dikenai bea. Tidak ada lagi batas bawahnya, dan tanggal yang memutuskannya adalah tanggal yang tidak bisa Anda lihat dari halaman pesanan.",
+        takes: "10 menit",
+      },
+      {
+        title: "Perkirakan kepabeanan, atau kurirnya, akan meminta uang langsung kepada Anda",
+        body: "Weverse Shop menyatakan pesanan Uni Eropa bisa dikenai bea selama pembebasan setempat, bahwa Anda mungkin menerima instruksi pembayaran terpisah dari kepabeanan setempat atau dari kurirnya, dan bahwa kelalaian membayar bea itu bisa menunda atau menghalangi pengiriman. Itu pengalaman yang berbeda dari sebuah tagihan di kasir: sebuah pesan datang dari perusahaan yang tidak punya hubungan apa pun dengan Anda, meminta uang sebelum sebuah paket yang sudah Anda bayar mau bergerak. Secara bawaan ia bukan penipuan — tetapi ia juga persis apa yang ditiru sebuah penipuan, jadi cocokkan nomor pelacakannya dengan pesanan Anda alih-alih mengikuti tautan di dalam pesan itu.",
+        pitfall:
+          "Mengabaikan permintaan pembayaran dari kepabeanan atau kurir sebagai pengelabuan lalu membiarkan paketnya menganggur. Tidak membayar adalah salah satu cara terdokumentasi sebuah pesanan sekadar tidak pernah datang.",
+        takes: "—",
+      },
+      {
+        title: "Jika Anda di Amerika Serikat, ketahui bahwa ada dua perubahan terpisah, bukan satu",
+        body: "Perubahan bea mendapat semua liputannya dan ia bukan satu-satunya hal yang memperlambat paket Amerika. Weverse Shop memperingatkan secara terpisah bahwa sejak 8 Juli 2026 Komisi Keamanan Produk Konsumen Amerika Serikat memberlakukan kebijakan eFiling yang bersifat wajib, yang membawa pemeriksaan kepabeanan setempat yang lebih ketat atas semua barang yang diimpor ke Amerika Serikat, dan bahwa pembebasannya diperkirakan memakan beberapa hari lebih lama daripada rentang pengiriman standar. Itu sebuah rezim pelaporan keamanan produk alih-alih sebuah tarif — jadi sebuah pesanan Amerika bisa lambat karena alasan yang tidak berhubungan sama sekali dengan berapa bea yang terutang.",
+        pitfall:
+          "Membaca setiap keterlambatan Amerika sebagai perubahan nilai minimum itu lalu menunggu tagihan bea yang tidak pernah datang. Satu dari dua perubahan ini memakan uang dan yang lainnya memakan hari.",
+        takes: "5 menit",
+      },
+      {
+        title: "Perlakukan hari raya Korea sebagai batas waktu yang diukur dalam menit",
+        body: "Weverse Shop menerbitkan jadwal batas waktu untuk setiap hari raya Korea, dan waktunya presisi. Untuk Chuseok 2026, batas pemesanan bagi alamat di luar Korea Selatan adalah 23 September pada 11:00 KST, dengan pengiriman ekspres kembali berjalan pada 28 September; untuk alamat Korea batas kurirnya adalah 22 September pada 11:00 KST, kembali berjalan pada hari yang sama. Pesanan yang dibuat setelah batas itu dikirim berurutan dari tanggal mulai berjalan kembali. Weverse menambahkan dua catatan: barang yang dikirim pada tanggal batas itu masih bisa datang setelah hari rayanya tergantung wilayah, dan jadwalnya datang dari kurir serta bisa berubah.",
+        pitfall:
+          "Membaca tanggal-tanggal itu sebagai tanggal tahun ini. Itu angka Chuseok 2026, dan polanya — sebuah batas pada 11:00 KST satu atau dua hari sebelumnya, mulai berjalan kembali kira-kira seminggu setelahnya — adalah bagian yang terbawa. Tanggalnya sendiri harus dicari setiap kali.",
+        takes: "10 menit sebelum pesanan hari raya",
+      },
+      {
+        title: "Jika alamat Anda di Tiongkok, sebuah kalender hari raya kedua berlaku",
+        body: "Weverse Shop menerbitkan pemberitahuan terpisah untuk hari raya Tiongkok, yang berdampak pada pesanan dengan alamat pengiriman di Tiongkok, karena kantor kepabeanan Tiongkok tutup dan pembebasannya berhenti. Untuk Festival Pertengahan Musim Gugur 2026 pada 25 sampai 27 September dan Hari Nasional dari 1 sampai 7 Oktober, ia menyatakan pesanan yang dibayar penuh sampai 15 September pada 11:00 KST kemungkinan dikirimkan selama hari raya Hari Nasional, dan pesanan yang dibayar setelah itu akan mulai dikirim begitu hari rayanya berakhir pada 8 Oktober. Perhatikan bahwa yang dihitung adalah pembayarannya selesai, bukan pesanannya dibuat.",
+        pitfall:
+          "Sebuah prapesan yang pembayarannya selesai lebih lambat daripada yang Anda kira. Di tempat batasnya ditentukan oleh pembayaran penuh, sebuah pesanan yang menganggur belum terbayar adalah pesanan di sisi jauh sebuah jurang tiga minggu.",
+        takes: "10 menit",
+      },
+      {
+        title: "Pisahkan sebuah gangguan pengangkutan dari sebuah paket yang hilang",
+        body: "Sebagian keterlambatan bukan kepabeanan dan bukan hari raya. Pada April 2026 Weverse Shop memberitahukan keterlambatan pengiriman di seluruh Eropa dan sejumlah negara Timur Tengah terpilih, yang disebabkan oleh fluktuasi rute logistik global serta jadwal pengangkutan udara dan laut, yang berdampak pada pesanan yang dikirim setelah 1 April 2026 dan sedang dalam perjalanan internasional. Bagian yang berguna adalah apa yang ia nyatakan soal pelacakan: karena pengalihan rute, pembaruan pelacakan dan kedatangan setempat bisa memakan waktu lebih lama daripada biasanya, dan paketnya masih dalam perjalanan. Pelacakan yang sunyi selama gangguan yang diketahui adalah gejala yang diperkirakan, bukan bukti kehilangan.",
+        pitfall:
+          "Membuka klaim paket hilang karena pelacakannya tidak bergerak selama seminggu. Periksa dulu halaman pemberitahuan untuk gangguan yang sedang aktif yang mencakup wilayah Anda — sebuah klaim yang diajukan atas paket yang sekadar dialihkan rutenya menghabiskan waktu yang akan Anda butuhkan untuk klaim yang sungguhan.",
+        takes: "10 menit",
+      },
+      {
+        title: "Periksa apakah Weverse benar-benar penjualnya",
+        body: "Weverse Shop menyatakan di halamannya sendiri bahwa sebagian produk ditawarkan oleh penjual pihak ketiga perorangan, bahwa dalam kasus itu Weverse Company bertindak semata sebagai perantara niaga elektronik dan bukan pihak dalam transaksinya, dan bahwa ia tidak memikul tanggung jawab atas informasi produk maupun atas transaksi yang dijalankan penjual tersebut. Itu mengubah dengan siapa Anda berhadapan ketika ada yang salah — untuk barang pihak ketiga, pihak lawannya adalah penjualnya, bukan Weverse. Layak dipastikan sebelum Anda perlu mengeluh alih-alih sewaktu mengeluh.",
+        pitfall:
+          "Menganggap semua yang ada di toko itu memikul dukungan yang sama karena semuanya duduk di belakang kasir yang sama. Penafian perantara itu diterbitkan, dan ia memutuskan siapa yang berutang ganti kepada Anda.",
+        takes: "5 menit",
+      },
+      {
+        title: "Baca sendiri pemberitahuannya, karena halaman ini akan kedaluwarsa lebih cepat daripada sebagian besar",
+        body: "Semua hal di atas datang dari halaman pemberitahuan Weverse Shop, dan halaman itu adalah versi yang hidup. Perubahan kepabeanannya tahan lama; jadwal hari raya, gangguan pengangkutan dan batas waktu kurirnya tidak — semuanya diterbitkan ulang untuk setiap kesempatan dan digantikan tanpa pemberitahuan lamanya berubah. Sebelum sebuah pesanan hari raya atau ketika sebuah paket terlambat, bacalah daftar pemberitahuannya alih-alih memercayai tanggal panduan mana pun, termasuk panduan ini. Tanggal di puncak halaman ini adalah kapan kami terakhir melakukannya.",
+        pitfall:
+          "Memercayai sebuah batas waktu dari panduan yang ditulis tahun lalu. Yang berulang adalah strukturnya dan bukan angkanya.",
+        takes: "5 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah saya masih bisa membatalkan pesanan saya?",
+        a: "Hanya selagi statusnya mengizinkan. Jalur Weverse Shop adalah aplikasi Weverse, More, My Orders, Order Details, Cancel Order — dan ia menyatakan bahwa begitu statusnya berubah menjadi Shipping Soon atau In Transit, pembatalan tidak lagi mungkin. Tidak ada masa tenggang yang diterbitkan, jadi jawabannya tergantung pesanannya alih-alih jamnya.",
+      },
+      {
+        q: "Saya di Uni Eropa dan pesanan saya punya tagihan kepabeanan. Apakah itu benar?",
+        a: "Mungkin benar. Weverse Shop menyatakan bahwa sejak 1 Juli 2026 Uni Eropa menghapus pembebasan bea yang sebelumnya mencakup pesanan di bawah 150 euro, sehingga bea sekarang berlaku terlepas dari jumlahnya, berdasarkan kiriman yang menyelesaikan kepabeanan setempat sejak tanggal itu. Ia juga memperingatkan Anda mungkin mendapat instruksi pembayaran terpisah dari kepabeanan atau kurirnya, dan bahwa tidak membayar bisa menunda atau menghalangi pengiriman.",
+      },
+      {
+        q: "Mengapa pesanan Amerika saya lambat kalau tidak ada bea yang harus dibayar?",
+        a: "Karena ada dua perubahan. Berdampingan dengan aturan beanya, Weverse Shop memperingatkan bahwa sejak 8 Juli 2026 Komisi Keamanan Produk Konsumen Amerika Serikat memberlakukan eFiling yang wajib, yang membawa pemeriksaan lebih ketat atas semua barang yang diimpor ke Amerika Serikat, dengan pembebasannya diperkirakan memakan beberapa hari lebih lama. Yang satu itu memakan waktu alih-alih uang.",
+      },
+      {
+        q: "Saya mendapat pesan yang meminta saya membayar kepabeanan. Apakah itu penipuan?",
+        a: "Ia bisa secara sah memang nyata — Weverse Shop menyatakan pelanggan Uni Eropa bisa menerima instruksi pembayaran terpisah dari kepabeanan setempat atau dari kurirnya. Ia juga persis apa yang ditiru sebuah penipuan. Pastikan dengan mencocokkan nomor pelacakannya ke pesanan Anda sendiri dan membuka situs kurirnya sendiri alih-alih mengikuti tautan di dalam pesan itu.",
+      },
+      {
+        q: "Apa batas waktu untuk pesanan pada hari raya Korea?",
+        a: "Weverse Shop menerbitkan satu per hari raya, sampai ke menitnya. Untuk Chuseok 2026 batas bagi alamat di luar Korea adalah 23 September pada 11:00 KST, dengan pengiriman ekspres kembali berjalan 28 September. Ia memperingatkan jadwalnya datang dari kurir dan bisa berubah, dan bahwa barang yang dikirim pada hari batas itu masih bisa datang setelah hari rayanya. Carilah yang sedang berlaku alih-alih memakai ulang tanggal-tanggal ini.",
+      },
+      {
+        q: "Pelacakan saya tidak diperbarui selama seminggu. Apakah paket saya hilang?",
+        a: "Periksa dulu halaman pemberitahuan untuk sebuah gangguan yang mencakup wilayah Anda. Ketika Weverse Shop memberitahukan keterlambatan untuk Eropa dan Timur Tengah pada April 2026, ia menyatakan pengalihan rute berarti pembaruan pelacakan dan kedatangan setempat memakan waktu lebih lama daripada biasanya dan paketnya masih dalam perjalanan — jadi pelacakan yang diam selama gangguan yang diketahui adalah gejalanya alih-alih masalahnya.",
+      },
+      {
+        q: "Ada yang salah dengan barang saya. Apakah saya berhadapan dengan Weverse?",
+        a: "Tidak selalu. Weverse Shop menyatakan bahwa sebagian produk dijual oleh penjual pihak ketiga perorangan, bahwa Weverse Company lalu bertindak semata sebagai perantara dan bukan pihak dalam transaksinya, dan bahwa ia tidak memikul tanggung jawab atas informasi produk maupun transaksi penjual tersebut. Periksa jenis barang mana yang Anda beli sebelum memutuskan kepada siapa harus mendekat.",
+      },
+      {
+        q: "Apakah jadwal hari raya Tiongkok berdampak pada saya kalau saya tidak di Tiongkok?",
+        a: "Pemberitahuannya menyatakan jadwal itu berlaku untuk pesanan dengan alamat pengiriman di Tiongkok, karena kantor kepabeanan Tiongkok tutup selama hari raya. Jika alamat Anda di tempat lain, batas waktu hari raya Korea dan gangguan pengangkutan yang sedang aktif adalah yang perlu diperhatikan.",
+      },
+    ],
+    labels: ID_LABELS,
   },
 ];
 

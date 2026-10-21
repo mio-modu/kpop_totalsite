@@ -32,7 +32,7 @@
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 
 const GUIDES = await readFile(
   new URL("../content/guides.ts", import.meta.url),
@@ -121,5 +121,48 @@ test("every guide continues somewhere", () => {
     `these guides point nowhere, which claims the process ends inside them: ${dead.join(
       ", ",
     )}`,
+  );
+});
+
+/**
+ * The crawler's version of the same question.
+ *
+ * The sitemap builds its guide and translation entries from the content, so
+ * those cannot drift. The eight pages that are not guides are written out by
+ * hand, which is correct — they have nothing to derive from — and is therefore
+ * the one place a page can be added and silently left out. A page missing from
+ * the sitemap is not broken and not unreachable; it is just slower to be found,
+ * which is the kind of defect that never announces itself.
+ *
+ * Dynamic segments are excluded because they are the derived half.
+ */
+const staticRoutes = await (async () => {
+  const dir = new URL("../app/", import.meta.url);
+  const found = [];
+  const walk = async (rel) => {
+    for (const e of await readdir(new URL(rel, dir), { withFileTypes: true })) {
+      if (e.isDirectory()) await walk(`${rel}${e.name}/`);
+      else if (e.name === "page.tsx") found.push(`/${rel}`.replace(/\/$/, "") || "/");
+    }
+  };
+  await walk("");
+  return found.filter((r) => !r.includes("["));
+})();
+
+test("every hand-written page is in the sitemap", async () => {
+  const sitemap = await readFile(
+    new URL("../app/sitemap.ts", import.meta.url),
+    "utf8",
+  );
+  assert.ok(staticRoutes.length > 0, "no static routes found under app/");
+  const missing = staticRoutes.filter((r) =>
+    r === "/"
+      ? !/\{ url: site\.url,/.test(sitemap)
+      : !sitemap.includes(`${"${site.url}"}${r}\``),
+  );
+  assert.deepEqual(
+    missing,
+    [],
+    `these pages exist but no sitemap entry names them: ${missing.join(", ")}`,
   );
 });

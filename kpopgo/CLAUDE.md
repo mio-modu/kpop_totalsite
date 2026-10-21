@@ -318,6 +318,17 @@ Weverse Auto Payment in two sentences, and the NOL World collection step tells
 readers tickets come from the box office on the day, which is simply untrue
 for a Play&Stay buyer collecting at a hotel desk.
 
+The same file carries the crawler's version of the question. Guide and
+translation entries in `app/sitemap.ts` are built from the content and cannot
+drift; the eight pages that are not guides are written out by hand, correctly,
+since they have nothing to derive from — and are therefore the one place a
+page can be added and silently left out. That is not a broken page, just a
+slower-found one, which is the kind of defect that never announces itself. The
+check walks `app/**/page.tsx`, skips the dynamic segments as the derived half,
+and fails if a hand-written page has no entry. Both directions were proved by
+planting them: a new page with no entry, and an entry removed from a page that
+still exists.
+
 `scripts/translations.test.mjs` is the net under a machine-assisted
 translation, and it exists because the errors that hurt a reader are not
 errors of style. A deadline that reads 17時 where the source says 11時, a fee

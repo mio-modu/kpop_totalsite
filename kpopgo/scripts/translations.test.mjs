@@ -192,7 +192,38 @@ const LOCALE_ALIASES = {
     USD: ["dolar"],
     CNY: ["yuan"],
   },
+  // German welds a brand onto the noun it qualifies and hyphenates the join,
+  // so the card is an American-Express-Karte and the space inside the brand
+  // becomes a hyphen. The name is intact and correctly set; it is the space
+  // the plain check was looking for.
+  de: {
+    "American Express": ["American-Express"],
+    Amex: ["American-Express"],
+    UnionPay: ["China UnionPay", "UnionPay"],
+  },
+  es: {
+    KRW: ["won"],
+    JPY: ["yen"],
+    USD: ["dólar", "dolar"],
+    CNY: ["yuan"],
+    "American Express": ["American Express"],
+  },
 };
+
+/**
+ * Locales that group thousands with a period rather than a comma.
+ *
+ * 2,000 KRW is written 2.000 KRW in German, Indonesian and Spanish, and that
+ * is the correct form rather than a liberty taken by the translator — so the
+ * period form is offered as an alternative, exactly as the converted 24-hour
+ * clock is for Japanese. The digits are still checked: a 2.000 that became
+ * 3.000 still fails, and so does one that lost its thousands entirely.
+ *
+ * Earned by a false positive. The YES24 booking fee is the only place on the
+ * site where a four-digit money amount appears in prose, which is why this
+ * surfaced on the twelfth German page rather than the first.
+ */
+const PERIOD_THOUSANDS = new Set(["de", "id", "es"]);
 
 const aliasesFor = (locale, noun) => [
   ...ALIASES[noun],
@@ -315,8 +346,13 @@ test("every number in the English survives into the translation", () => {
   for (const p of allPairs()) {
     for (const { n, alt } of numbers(p.en)) {
       // 8,000 and 8000 are interchangeable; accept either, plus any legitimate
-      // alternative form such as a converted clock hour.
-      if (!p.t.includes(n) && !alt.some((a) => p.t.includes(a))) {
+      // alternative form such as a converted clock hour or a period-grouped
+      // thousand in the locales that write them that way.
+      const forms = [...alt];
+      if (PERIOD_THOUSANDS.has(p.locale) && n.includes(",")) {
+        forms.push(n.replace(/,/g, "."));
+      }
+      if (!p.t.includes(n) && !forms.some((a) => p.t.includes(a))) {
         bad.push(`${at(p)}: "${n}" is in the English and not the translation`);
       }
     }

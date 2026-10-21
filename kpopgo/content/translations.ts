@@ -6599,6 +6599,186 @@ export const translations: Translation[] = [
     ],
     labels: DE_LABELS,
   },
+  {
+    locale: "de",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "YES24 Global: die Regeln, die nicht auf der englischen Seite stehen",
+    summary:
+      "Ihr vorhandenes YES24-Konto funktioniert nicht. PayPal erscheint nur, wenn die Veranstaltung weit genug entfernt ist. Zwei Kartenarten werden rundheraus abgelehnt, und der Veranstaltungsort gleicht Ihren Pass mit dem Namen ab, mit dem Sie sich angemeldet haben.",
+    scope:
+      "Behandelt die englischsprachige Seite YES24 TICKET, die Käuferinnen und Käufer aus dem Ausland nutzen. Die koreanischsprachige YES24-Seite hat ein anderes Kontosystem und eine andere Identitätsprüfung. Bedingungen einzelner Veranstaltungen auf der Veranstaltungsseite gehen allem hier vor, und YES24 sagt das selbst.",
+    intro: [
+      "YES24 veröffentlicht seine Regeln für das Ausland in einem englischen Kaufleitfaden und einer FAQ, und fast nichts davon taucht in den Anleitungen auf, die dazu weit oben stehen. Sie sind konkret, sie sind ungewöhnlich, und mehrere davon beenden Ihre Buchung am Tag selbst, wenn Sie ihnen erstmals an der Kasse begegnen.",
+      "Alles Folgende stammt aus diesen beiden Seiten, gelesen am 20. Oktober 2026. Wo YES24 sich selbst widerspricht — und das tut es einmal, bei einer Gebühr — sagt diese Seite es, statt die bequeme Zahl zu wählen.",
+    ],
+    steps: [
+      {
+        title: "Melden Sie sich neu an, auch wenn Sie schon ein YES24-Konto haben",
+        body: "YES24 sagt es ausdrücklich: Bestehende YES24-Mitglieder, die die Seite Global YES24 TICKET nutzen wollen, müssen sich erneut anmelden. Es warnt außerdem, dass die globale Ticketseite etwas anderes ist als global.yes24.com, die Buchhandlung, und dass beide keine Mitgliedsdaten teilen. Nichtmitglieder können überhaupt nicht buchen, das ist also der erste Schritt und keine Formalität.",
+        pitfall:
+          "Drei YES24-Angebote mit ähnlichen Namen und ohne gemeinsamen Login. Das in einer Warteschlange zu entdecken heißt, es zu spät zu entdecken — das Konto muss ohnehin Tage früher existieren, wegen der Namensprüfung unten.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Tragen Sie den Namen genau so ein, wie Ihr Pass ihn führt",
+        body: "Das ist die eine Stelle, an der eine Plattform ausspricht, was sonst unausgesprochen bleibt. Aus der FAQ von YES24: Weicht der Name Ihres YES24-Kontos vom Namen in Ihrem Pass ab, können Sie Schwierigkeiten bekommen, das gebuchte Ticket am Veranstaltungsort abzuholen. An der Abendkasse hinterlegte Tickets können nur von der Ticketinhaberin oder dem Ticketinhaber abgeholt werden, und für die Abholung braucht es einen physischen gültigen Ausweis — einen Pass — zusammen mit dem Buchungsnachweis.",
+        pitfall:
+          "Ein weggelassener zweiter Vorname, eine vor Jahren gewählte Umschrift, eine Reihenfolge mit dem Vornamen zuerst. Der Veranstaltungsort vergleicht zwei Dokumente und beurteilt nicht, ob Sie es offensichtlich sind.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Prüfen Sie, ob PayPal für Ihre Veranstaltung überhaupt angeboten wird",
+        body: "PayPal gibt es auf YES24 Global nur, wenn zwischen Buchungsdatum und Veranstaltungsdatum mehr als 180 Tage liegen. Bei den meisten K-Pop-Konzerten, die ein bis zwei Monate vorher angekündigt werden, heißt das, dass PayPal schlicht keine Option ist und die Karte der einzige Weg. Außerdem fällt eine PayPal-Gebühr von 10 Cent an, die auch bei einer Stornierung nicht erstattet wird.",
+        pitfall:
+          "Mit PayPal zu planen, weil eine Anleitung sagte, es werde akzeptiert, und an der Kasse nur ein Kartenfeld vorzufinden. Die 180-Tage-Regel ist der Grund — kein Fehler, und nichts, was der Kundendienst aufheben kann.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wissen Sie vorher, welche Karten abgelehnt werden",
+        body: "Der Kaufleitfaden schließt außerhalb Koreas ausgestellte American-Express-Karten aus, und Karten von China UnionPay ganz. Alles andere läuft als Kartenzahlung durch — und YES24 gibt an, dass auf der globalen Seite eine Authentifizierung nach 3-D Secure erforderlich ist, die Karte muss dafür also bei Ihrer Bank freigeschaltet sein.",
+        pitfall:
+          "Eine American-Express-Karte, die auf jeder anderen Seite funktioniert, wird hier wegen des Ausstellungsorts abgelehnt und nicht wegen irgendetwas an der Karte. Dieser Fehlschlag sieht genauso aus wie eine Sperre der Bank, also verbringen Leute den Verkauf damit, ihre Bank wegen des falschen Problems anzurufen.",
+        takes: "10 Minuten, mit Ihrer Bank",
+      },
+      {
+        title: "Wählen Sie Abendkasse oder Auslandsversand bei der Buchung",
+        body: "Beides gibt es, aber der Auslandsversand gilt je Veranstaltung und nicht allgemein: YES24 sagt, die Verfügbarkeit hänge von der Aufführung ab und die Gebühr vom Zielort, und dass beides auf der Veranstaltungsseite steht. Die Versandart nachträglich zu ändern ist nur bis 20 Werktage vor der Veranstaltung möglich — vier Arbeitswochen, nicht vier Tage.",
+        pitfall:
+          "Zwanzig Werktage sind grob ein Kalendermonat. Wer zwei Wochen vorher bucht, behält die Art, die er in der Warteschlange gewählt hat.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Lesen Sie die Buchungs- und Stornouhr, die nicht das Veranstaltungsdatum ist",
+        body: "Die Buchung schließt um 17 Uhr am Vortag einer Veranstaltung von Dienstag bis Samstag, und um 11 Uhr am Samstag für eine Veranstaltung am Sonntag oder Montag. Die Stornierung läuft auf genau derselben Uhr, und danach gibt es keine Stornierung, Änderung oder Erstattung mehr. Innerhalb von 7 Tagen nach dem Kauf ist die Stornierung kostenlos; danach fällt je Ticket eine Gebühr an, die mit näher rückender Veranstaltung auf 10%, 20% und 30% des gezahlten Betrags steigt. Die Grenze liegt bei 10 Tickets pro Person auf einmal.",
+        pitfall:
+          "Bei der Buchungsgebühr widerspricht YES24 sich selbst: Die FAQ nennt in einer Zeile 2.000 KRW und kündigt in der nächsten die Änderung auf 3.000 KRW je Ticket ab dem 14. August 2023 an. Behandeln Sie 3.000 als aktuell. So oder so ist sie nur bis 23:59 Uhr am Kauftag erstattbar und nicht innerhalb der 7-Tage-Frist, die für das Ticket selbst gilt.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Bringen Sie Pass und Buchungsnachweis zum Veranstaltungsort",
+        body: "Die Abholung verlangt einen physischen gültigen Ausweis — YES24 nennt den Pass — zusammen mit dem Nachweis der Buchungsbestätigung. Der Kaufleitfaden sagt außerdem, Sie sollen die Kaufdaten ausdrucken und an der Kasse abgeben. Die Regelung der einzelnen Veranstaltung auf deren Seite geht dem vor, und YES24 sagt, die Veranstaltungsseite gewinne, lesen Sie sie also auch dann, wenn Sie an diesem Ort schon einmal abgeholt haben.",
+        pitfall:
+          "Ein Foto der Bestätigung auf dem Handy ist nicht das, was beschrieben wird. Drucken Sie sie aus, und tragen Sie den Pass bei sich, mit dem Sie sich registriert haben, und keinen anderen Ausweis.",
+        takes: "Am Veranstaltungsort",
+      },
+    ],
+    faq: [
+      {
+        q: "Kann ich mein vorhandenes YES24-Konto auf der englischen Seite nutzen?",
+        a: "Nein. YES24 sagt, bestehende Mitglieder müssten sich für die Seite Global YES24 TICKET erneut anmelden, und dass diese von global.yes24.com getrennt ist und keine Mitgliedsdaten teilt.",
+      },
+      {
+        q: "Warum fehlt PayPal an der Kasse?",
+        a: "PayPal wird nur angeboten, wenn zwischen Buchungsdatum und Veranstaltungsdatum mehr als 180 Tage liegen. Die meisten Konzertbuchungen liegen deutlich darunter, also ist die Karte der einzige Weg.",
+      },
+      {
+        q: "Welche Karten lehnt YES24 Global ab?",
+        a: "Außerhalb Südkoreas ausgestellte American-Express-Karten und Karten von China UnionPay. Andere Karten werden akzeptiert, müssen aber 3-D Secure bestehen, das die Seite verlangt.",
+      },
+      {
+        q: "Kann jemand anderes mein Ticket abholen?",
+        a: "Nein. An der Abendkasse hinterlegte Tickets können nur von der Ticketinhaberin oder dem Ticketinhaber abgeholt werden, mit einem physischen Pass und dem Buchungsnachweis — es sei denn, die einzelne Veranstaltung sagt auf ihrer eigenen Seite etwas anderes.",
+      },
+      {
+        q: "Wie lange dauert eine Erstattung?",
+        a: "Für Karten werden 3 bis 7 Tage angegeben, wobei die Regelung des Kartenunternehmens entscheidet, und bis zu 30 Tage. PayPal-Erstattungen gehen innerhalb von 5 Werktagen auf das PayPal-Guthaben zurück — zum Wechselkurs am Tag der Erstattung einschließlich des Umrechnungsaufschlags, sodass der zurückgezahlte Betrag geringer ausfallen kann als der gezahlte.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Die Warteschlange von NOL World, und was Ihren Platz darin zurücksetzt",
+    summary:
+      "Aktualisieren löscht Ihre Position. Ein zweites Gerät schließt Ihre erste Nummer. Plätze aktualisieren sich ohne Neuladen. Alles davon steht in der FAQ von NOL World, und alles davon widerspricht dem, was Menschen instinktiv tun.",
+    scope:
+      "Behandelt das Verhalten von Warteschlange, Sitzplan und Warteliste auf NOL World während eines Verkaufs. Registrierung und Verifizierung für Auslandskunden geschehen vor all dem und stehen in der NOL-World-Anleitung. Alles hier stammt aus der veröffentlichten FAQ von NOL World.",
+    intro: [
+      "Der Instinkt in einer Ticketwarteschlange ist, zu aktualisieren und einen zweiten Browser zu öffnen, falls der erste hängt. Auf NOL World kostet Sie beides genau das, was Sie zu schützen versuchen, und die Plattform sagt das in ihren eigenen Hilfeseiten.",
+      "Das ist der Teil eines Verkaufs, den keine Anleitung abdeckt, weil er sich von außen nicht erschließen lässt — man sieht ihn einmal, für neunzig Sekunden, in Panik.",
+    ],
+    steps: [
+      {
+        title: "Nicht aktualisieren. Aktualisieren setzt Ihre Position zurück",
+        body: "NOL World sagt es ausdrücklich: Die Warteschlange lässt sich nicht überspringen, und wenn Sie die Seite aktualisieren, wird Ihre Position in der Warteschlange zurückgesetzt. Nicht erneut geprüft, nicht erneut abgefragt — zurückgesetzt. Welche Nummer Sie auch hielten, sie geht ans Ende.",
+        pitfall:
+          "Eine Warteschlangenseite, die eingefroren aussieht, ist meistens einfach eine Warteschlangenseite. Die eine Handlung, die sich danach anfühlt, etwas zu tun, ist die eine Handlung, die das bereits abgesessene Warten zunichtemacht.",
+        takes: "Die ganze Warteschlange",
+      },
+      {
+        title: "Ein Konto bekommt eine Nummer, und ein zweiter Versuch tötet die erste",
+        body: "Pro Konto erhalten Sie nur eine Wartenummer. Versuchen Sie mehr — ein zweiter Browser, ein Telefon neben dem Laptop — schließt NOL World die zuerst erhaltene Nummer. Drücken Sie Reserve von einem anderen Gerät, während Sie bereits in der Schlange stehen, werden Sie gefragt, ob Sie die bestehende Warteschlange behalten oder eine neue beginnen wollen, und eine neue bedeutet, auf diesem Gerät wieder von vorn zu warten.",
+        pitfall:
+          "Ein Ersatzgerät zu öffnen ist die verbreitetste Ticketing-Taktik in Fan-Communities und hier strikt schlechter, als gar nichts zu tun. Die Abfrage, die erscheint, bietet Ihnen keine zweite Chance an; sie fragt, welche Sie wegwerfen wollen.",
+        takes: "0 Minuten, wenn Sie widerstehen",
+      },
+      {
+        title: "Eine Wartenummer ist kein Ticket",
+        body: "NOL World sagt, eine Position in der Warteschlange garantiere kein Ticket, weil die Verfügbarkeit begrenzt ist und Tickets der Reihe nach ausgegeben werden. Die Warteschlange entscheidet, wann Sie es versuchen dürfen, und nicht, ob bei Ihrer Ankunft noch etwas da ist. Die Warteschlange gilt für jedes auf NOL World buchbare Produkt und nicht nur für die stark nachgefragten.",
+        pitfall:
+          "Eine niedrige Wartenummer als Ergebnis zu lesen. Sie ist ein Platz in der Reihe, und der Bestand kann weg sein, bevor Sie dran sind.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Hören Sie auch beim Sitzplan auf zu aktualisieren — er aktualisiert sich selbst",
+        body: "Das Buchungssystem wurde so umgebaut, dass freie Plätze in Echtzeit und ohne Neuladen aktualisiert werden. Von anderen gehaltene Plätze verschwinden und stornierte Plätze kommen von selbst zurück. Sehen Sie „dieser Platz wurde bereits ausgewählt“, heißt das, dass eine andere Person fast im selben Moment denselben Platz gewählt hat — und nicht, dass Ihre Seite veraltet ist.",
+        pitfall:
+          "Den Sitzplan zu aktualisieren kostet dasselbe wie die Warteschlange zu aktualisieren. Die Gewohnheit von älteren Ticketseiten ist hier genau die falsche Gewohnheit.",
+        takes: "Während der Auswahl",
+      },
+      {
+        title: "Lesen Sie die Ausverkaufsquote als das, was sie misst",
+        body: "Wo eine Ausverkaufsquote gezeigt wird, erscheint sie erst, wenn 90% oder mehr aller Plätze bezahlt sind, und sie zählt bezahlte Tickets und nicht auswählbare. Zahlen zu Restplätzen werden womöglich gar nicht angezeigt: NOL World sagt, das entscheide der Veranstalter, und dass es bei stark nachgefragten Produkten eine Verzögerung zwischen Anzeige und tatsächlicher Verfügbarkeit gibt.",
+        pitfall:
+          "Einen Ausverkaufsprozentsatz als Live-Bestand zu behandeln. Es ist eine Zahl bezahlter Tickets mit einer Untergrenze von 90%, und der Abstand zur Wirklichkeit ist genau dann am größten, wenn er Ihnen am meisten bedeutet.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Kommt eine Benachrichtigung von der Warteliste, haben Sie sechs Stunden",
+        body: "Wird ein Platz von der Buchungswarteliste frei und die Zahlung nicht innerhalb von sechs Stunden nach der Benachrichtigung abgeschlossen, wird die Buchung automatisch storniert und erstattet, und die Gelegenheit geht an die nächste Person auf der Liste. Sechs Stunden klingen großzügig, bis man bedenkt, dass die Benachrichtigung zu koreanischen Geschäftszeiten eintrifft und die meisten Leserinnen und Leser dieser Seite einen Teil davon verschlafen.",
+        pitfall:
+          "Ein Sechs-Stunden-Fenster, das um 3 Uhr Ihrer Zeit öffnet, ist ein Zwei-Stunden-Fenster. Rechnen Sie die Zeit der Benachrichtigung so um, wie Sie die Verkaufszeit umgerechnet haben.",
+        takes: "Innerhalb von 6 Stunden",
+      },
+      {
+        title: "Wissen Sie, dass Sie den Platz danach nicht mehr ändern können",
+        body: "Ist die Reservierung abgeschlossen, sind Platzänderungen nicht möglich — der einzige Weg ist stornieren und neu buchen, was Sie der Stornogebühr der Veranstaltung aussetzt und dem Risiko, dass der Platz zwischendurch weg ist. Dasselbe gilt für Gutscheine: Ein Gutschein kann nach der Zahlung nicht mehr angewendet werden, und ihn zu nutzen bedeutet, denselben Platz zu stornieren und neu zu buchen, mit der Gebühr, die das mit sich bringt.",
+        pitfall:
+          "Einen Platz zu buchen, bei dem Sie unsicher sind, in der Absicht, das später zu richten. Es gibt kein Später.",
+        takes: "Bevor Sie bestätigen",
+      },
+    ],
+    faq: [
+      {
+        q: "Hilft Aktualisieren, schneller durch die Warteschlange von NOL World zu kommen?",
+        a: "Im Gegenteil. NOL World gibt an, dass das Aktualisieren der Seite Ihre Position in der Warteschlange zurücksetzt und dass die Warteschlange nicht übersprungen werden kann.",
+      },
+      {
+        q: "Kann ich gleichzeitig auf dem Handy und auf dem Laptop anstehen?",
+        a: "Nein. Ein Konto erhält eine Wartenummer, und der Versuch, mehr zu bekommen, schließt die erste. Drücken Sie auf einem zweiten Gerät Reserve, werden Sie gefragt, ob Sie die bestehende Warteschlange behalten oder auf dem neuen Gerät von vorn beginnen wollen.",
+      },
+      {
+        q: "Muss ich den Sitzplan aktualisieren, um neue Plätze zu sehen?",
+        a: "Nein. Plätze aktualisieren sich in Echtzeit — gehaltene Plätze verschwinden und stornierte kommen ohne Neuladen zurück. Aktualisieren kostet Sie dasselbe wie das Aktualisieren der Warteschlange.",
+      },
+      {
+        q: "Was bedeutet die Ausverkaufsquote tatsächlich?",
+        a: "Sie erscheint erst, wenn 90% oder mehr der Plätze bezahlt sind, und sie zählt bezahlte Tickets und nicht Plätze, die Sie auswählen könnten. Bei stark nachgefragten Veranstaltungen gibt es eine bekannte Verzögerung zwischen der Zahl und der echten Verfügbarkeit.",
+      },
+      {
+        q: "Wie lange habe ich nach einer Benachrichtigung von der Warteliste Zeit?",
+        a: "Sechs Stunden. Wird die Zahlung in dieser Zeit nicht abgeschlossen, wird die Buchung automatisch storniert und erstattet und der Platz geht an die nächste Person auf der Warteliste.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

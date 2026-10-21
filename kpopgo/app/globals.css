@@ -1121,3 +1121,39 @@ h4 {
   overflow-wrap: break-word;
   hyphens: auto;
 }
+
+/*
+ * German needs the same wrapping rule as Indonesian and for a sharper version
+ * of the same reason. Indonesian builds long words by stacking affixes;
+ * German builds them by welding nouns together, and the vocabulary this site
+ * uses is exactly the kind that welds — Zahlungsdienstleister,
+ * Identitätsprüfung, Einfuhrumsatzsteuer. At 320px inside a step card none of
+ * those fit, and a single one of them pushes the page sideways.
+ */
+[lang="de"] .t,
+[lang="de"] .t-lg,
+[lang="de"] .t-sm,
+[lang="de"] p,
+[lang="de"] li {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/*
+ * A footer column heading.
+ *
+ * These were `.data dim`, which put them at 46% ink above a list of links at
+ * full strength — the label reading as less important than the thing it
+ * labels, so "GUIDES" and the twenty guide names under it sat at the same
+ * apparent weight and the column had no visible top.
+ *
+ * The fix is not only colour. A hairline under the heading separates the
+ * label from its list structurally, which survives both themes and anyone
+ * reading at low contrast, where a colour difference alone would not.
+ */
+.col-head {
+  color: var(--ink);
+  display: block;
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid var(--rule-soft);
+}

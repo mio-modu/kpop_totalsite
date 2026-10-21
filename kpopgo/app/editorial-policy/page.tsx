@@ -7,6 +7,7 @@ import { reports } from "@/content/reports";
 import { translations } from "@/content/translations";
 import { localeList } from "@/lib/i18n";
 import { SHELF_LIFE } from "@/lib/freshness";
+import { Contact } from "@/components/Contact";
 import { site } from "@/lib/site";
 
 // Derived status needs a daily rebuild — see the note in app/page.tsx.
@@ -287,7 +288,7 @@ export default function EditorialPolicy() {
           <p className="t mt-3">
             A correction is the most useful thing you can send. If a step has changed, if
             a screen does not look like the one described, or if a guide cost you a sale:{" "}
-            <span className="ju">hello@{site.host}</span>
+            <Contact what="A correction" />
           </p>
           <p className="t mt-3">
             See also{" "}

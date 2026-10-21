@@ -42,6 +42,7 @@ const ROUTES = [
   // unbreakable strings anywhere on the site.
   ["guide-zh", "/zh-hant/guides/nol-world-verified-member-ekyc"],
   ["guide-id", "/id/guides/nol-world-verified-member-ekyc"],
+  ["guide-de", "/de/guides/weverse-shop-shipping-delays-and-cancellation"],
 ];
 const WIDTHS = [320, 360, 390, 768, 1280];
 

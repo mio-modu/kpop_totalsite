@@ -118,11 +118,84 @@ test("/report asks for nothing that identifies the reader", () => {
   );
 });
 
-test("/report has somewhere to send to", () => {
+test("/report sends to the site's one address, and only if it works", () => {
+  // The first version of this test asserted the opposite: that /report fell
+  // back to `hello@${site.host}`. That was the defect written down as a rule —
+  // the fallback pointed at a mailbox nobody had created, so the test was
+  // guarding the thing that was broken. Worth leaving the note: a test can
+  // encode a bug as a requirement and then defend it.
   assert.match(
     REPORT_PAGE,
-    /REPORT_TO \|\| `hello@\$\{site\.host\}`/,
-    "/report has no fallback destination, so an unset REPORT_TO renders a form " +
-      "that goes nowhere",
+    /REPORT_TO \|\| contact\.address/,
+    "/report builds its own destination instead of using the site's one address",
+  );
+  assert.match(
+    REPORT_PAGE,
+    /contactWorks/,
+    "/report offers to send without checking that anything receives it",
+  );
+});
+
+/**
+ * No page prints an email address it assembled itself.
+ *
+ * This is the assertion that would have caught the original defect. Four pages
+ * built `hello@${site.host}` inline, so the string existed in four places and
+ * nowhere did anything know whether a mailbox stood behind it. Registering a
+ * domain does not create one; it bounced, and the site spent months inviting
+ * readers to send corrections into nothing.
+ *
+ * A reader who writes a correction to a dead address believes they reported
+ * it and stops thinking about it, so the error stays and nobody is looking
+ * for it any more. That is strictly worse than publishing no address, which
+ * is why the component says so plainly when the inbox is unconfirmed.
+ */
+const SITE = await read("lib/site.ts");
+const CONTACT = await read("components/Contact.tsx");
+
+test("no page assembles its own email address", async () => {
+  const pages = [
+    "app/report/page.tsx",
+    "app/editorial-policy/page.tsx",
+    "app/privacy/page.tsx",
+    "app/about/page.tsx",
+  ];
+  for (const page of pages) {
+    const src = await read(page);
+    assert.doesNotMatch(
+      src,
+      /[\w.]+@\$\{|[\w.]+@[\w.]+\.(app|com|io|kr)/,
+      `${page} prints an email address directly instead of using <Contact>, ` +
+        `which is how four pages came to publish one that bounced`,
+    );
+  }
+});
+
+test("the address is not shown until a person has watched mail arrive", () => {
+  assert.match(
+    SITE,
+    /confirmed: "(\d{4}-\d{2}-\d{2})?"/,
+    "lib/site.ts no longer records when the inbox was last proved to work",
+  );
+  assert.match(
+    CONTACT,
+    /if \(contactWorks\)/,
+    "<Contact> no longer gates the address on the inbox having been tested",
+  );
+  assert.match(
+    CONTACT,
+    /if \(!contactWorks\) return null/,
+    "<MailtoButton> renders a mailto even when nothing receives it",
+  );
+});
+
+test("a confirmed date is a real past date", () => {
+  const m = SITE.match(/confirmed: "([^"]*)"/);
+  assert.ok(m, "no confirmed field");
+  if (m[1] === "") return; // untested, which the pages state honestly
+  assert.match(m[1], /^\d{4}-\d{2}-\d{2}$/, `confirmed "${m[1]}" is not a date`);
+  assert.ok(
+    m[1] <= new Date().toISOString().slice(0, 10),
+    `the inbox is recorded as confirmed on ${m[1]}, which is in the future`,
   );
 });

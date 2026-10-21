@@ -68,6 +68,21 @@ export type Translation = TranslationMeta & {
   };
 };
 
+const DE_LABELS = {
+  pitfall: "Häufiger Fehler",
+  takes: "Dauer:",
+  sources: "Quellen",
+  readEnglish: "Englische Fassung lesen",
+  related: "Weitere Anleitungen auf Deutsch",
+  reviewedMachine:
+    "Diese Übersetzung wurde maschinell erstellt und nicht von einer Person mit deutscher Muttersprache geprüft. Bei wichtigen Entscheidungen gelten die englische Fassung und die Originalquellen.",
+  reviewedNative: "Diese Übersetzung wurde von einer Person mit deutscher Muttersprache geprüft.",
+  sourceMoved:
+    "Die englische Fassung wurde nach dieser Übersetzung erneut geprüft. Bei Abweichungen gilt die englische Fassung.",
+  sourceStale:
+    "Die englische Fassung, auf der diese Übersetzung beruht, hat ihre Gültigkeitsdauer überschritten. Bitte prüfen Sie den aktuellen Stand in der englischen Fassung und in den Quellen.",
+};
+
 const ZH_LABELS = {
   pitfall: "常見錯誤",
   takes: "所需時間：",
@@ -4192,6 +4207,955 @@ export const translations: Translation[] = [
       },
     ],
     labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL facepass：誰握著你的臉，以及那是為了什麼",
+    summary:
+      "登錄一次，之後攝影機就讓你進場，不查票。臉是由 Toss 保管，不是 NOL World；登錄之後無法修改；而取消服務會刪除照片，但另外保留一份副本一年。",
+    scope:
+      "涵蓋 NOL World 就 NOL facepass 所公布的內容，包括它所述的取消後保留期間：它做什麼、臉部資料由誰儲存，以及登錄意味著你承諾了什麼。支援與否是逐場次的，由活動頁面決定。本頁沒有任何關於你所在國家生體資料法規的法律意見。",
+    intro: [
+      "韓國的場館正在轉向門口的人臉辨識，而海外粉絲遇到它的方式，是訂票過程中一個幾乎沒有英文說明的勾選框。那底下的問題並不小：一家你從未打過交道的公司，即將握有你的臉。",
+      "NOL World 確實公布了答案。那些答案很具體，比多數公司做得到的更令人安心，而且值得在排隊之前讀，而不是在排隊當中讀——包括取消之後資料會怎樣的那一則，它所說的並不是「刪除」這兩個字單獨會讓人以為的意思。",
+    ],
+    steps: [
+      {
+        title: "搞清楚它取代了什麼",
+        body: "NOL World 把 facepass 描述為縮短入場時身分驗證所需程序與時間的方法。臉部登錄完成之後，門口的攝影機會掃描你，你不經票券查驗就進場。它是門口證件查驗的替代品，不是疊在它上面的額外一層。",
+        pitfall:
+          "只把它讀成一項便利功能。NOL World 自己描述的後半段是管制，而那就是下一步。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "知道它存在的另一個理由",
+        body: "NOL World 把目的說了兩遍：簡化身分驗證，以及防止門票的非法販售與流通。一張必須與購票帳號相符的臉就是一道轉售管制，而它出現的時期，恰好與一部觸及高於票面價之慣常性轉售的修正版《公演法》重疊。這兩個事實該被放在一起看。",
+        pitfall:
+          "以為透過轉售平台買到的票在 facepass 閘口就能照樣通過。這套系統的存在，正是為了讓那件事行不通。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "知道那張臉實際上去了哪裡",
+        body: "這是最值得知道的部分。NOL World 表示臉部資訊——原始影像與特徵資料——是加密後由 Toss 儲存的，也就是 FaceAccess 服務背後的那家金融科技公司，而且在任何情況下都不會提供給 NOL World 或主辦單位。只有驗證結果，成功或失敗，會被分享。NOL World 也表示該資料不會被用於提供服務以外的任何目的，並引述 Toss 持有 ISO 27701 與 CBPR 認證。",
+        pitfall:
+          "這些是 NOL World 對一家第三方公司所做的陳述，不是一份稽核報告。以這類頁面而言它們具體得不尋常，那是認真看待它們的理由，不是停止閱讀的理由。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "把登錄當成永久的",
+        body: "臉一旦登錄就無法修改。NOL World 直白地給出理由——那是為了防止該服務被不正當使用。之後沒有辦法更正一次糟糕的登錄，所以你登錄時的條件就是你會一直保有的條件：光線、眼鏡，攝影機當時拍到的一切。",
+        pitfall:
+          "在排隊中匆匆登錄，在糟糕的光線下，打算之後再好好重做一次。沒有之後。",
+        takes: "10 分鐘，慎重地",
+      },
+      {
+        title: "絕不要讓任何人在你的手機或帳號上登錄",
+        body: "NOL World 說得很直接：請確保沒有其他人使用你的帳號，而如果有人用你的手機或帳號登錄了臉部資訊，該公司對由此產生的任何問題不負責任。一台家人共用的裝置，在巡迴開賣的那一刻，正是這種事發生的方式，而承擔後果的是那個帳號。",
+        pitfall:
+          "在你已登入的手機上幫朋友登錄。現在附在你帳號上的那張臉是他們的，它無法修改，而免責聲明寫得很明白。",
+        takes: "1 分鐘",
+      },
+      {
+        title: "確認你那一場究竟支不支援",
+        body: "支援與否是逐場次而非全面的——NOL World 專門維護了一則「如何確認某場演出是否支援 facepass」的問答，而那則問答之所以存在，正是因為答案會變。在你把入場計畫押在它上面之前，請先看你那一場的活動頁面，並把一般路線準備好：確認編號與售票口的身分證件。",
+        pitfall:
+          "登錄完了，然後抵達一個仍在做證件查驗的場館，而護照留在飯店。",
+        takes: "3 分鐘",
+      },
+      {
+        title: "仔細讀刪除那一則答案——它不只是刪除",
+        body: "NOL World 回答了「取消訂閱後臉部資訊是否會被刪除」，而那個答案有兩半。第一半：你的臉部照片會在你取消服務時被刪除，而要再次使用就得重新登錄。第二半：為了身分驗證的目的，該資料會被另外儲存並自取消時點起保留一年——NOL World 表示那只用於重新登錄時的身分驗證，並在那一年之後銷毀。所以取消訂閱是刪除照片並啟動一個計時器，而不是停止一個。那是一項站得住腳的政策，而它不是「刪除」這兩個字單獨會讓人以為的意思，這正是為什麼值得在登錄之前用他們自己的措辭讀一遍。",
+        pitfall:
+          "接受任何第三方對生體資料處理方式的一句話摘要，包括我們的。請讀那句關於保留期間的話，不要讀標題。",
+        takes: "5 分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World 看得到我的臉嗎？",
+        a: "NOL World 表示看不到。臉部資訊是加密後由 Toss 保管的，而 NOL World 表示在任何情況下都不會提供給 NOL World 或主辦單位——只有驗證的成功或失敗會被分享。",
+      },
+      {
+        q: "如果第一次登錄效果不好，我可以重新登錄嗎？",
+        a: "不行。NOL World 表示已登錄的臉無法修改，以防止該服務被不正當使用。請在第一次就慎重地登錄。",
+      },
+      {
+        q: "如果我取消 facepass，我的臉部資料會被刪除嗎？",
+        a: "一部分會，然後進入一個計時器。NOL World 表示取消訂閱時臉部照片會被刪除，而你若要再使用該服務就必須重新登錄。它也表示為了身分驗證的目的，該資料會被另外儲存並自取消起保留一年，僅在你重新登錄時用於身分驗證，並在那一年之後銷毀。在 2026 年 10 月 20 日之前，本頁曾表示我們尚未讀到那則答案並拒絕為它做摘要；現在它已引述於上，並記錄在我們的更正紀錄中。",
+      },
+      {
+        q: "每一場演唱會都用 facepass 嗎？",
+        a: "不是。支援情況依場次而異，而 NOL World 另外維護了一則關於如何確認的答案。請在你那一場的活動頁面上確認，並保留一般的領票路線可用。",
+      },
+      {
+        q: "如果別人在我的帳號上登錄了他們的臉，會怎樣？",
+        a: "NOL World 表示該公司對由此產生的問題不負責任，並要求你確保沒有其他人使用你的帳號。由於已登錄的臉無法變更，這件事無法用一般方式挽回。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL facepass: siapa yang memegang wajah Anda, dan untuk apa",
+    summary:
+      "Daftar sekali dan sebuah kamera mempersilakan Anda masuk tanpa pemeriksaan tiket. Wajahnya disimpan oleh Toss, bukan oleh NOL World, ia tidak bisa diubah sesudahnya, dan membatalkan layanannya menghapus fotonya tetapi menyimpan salinan terpisah selama satu tahun.",
+    scope:
+      "Mencakup apa yang NOL World terbitkan tentang NOL facepass, termasuk masa penyimpanan setelah pembatalan sebagaimana ia nyatakan: apa yang ia lakukan, siapa yang menyimpan data wajahnya, dan apa yang Anda ikat dengan mendaftar. Dukungannya ditetapkan per konser, dan halaman acaranya yang menentukan. Tidak ada di sini yang merupakan pendapat hukum tentang data biometrik di negara Anda sendiri.",
+    intro: [
+      "Venue-venue Korea sedang beralih ke pengenalan wajah di pintu masuk, dan seorang fan dari luar negeri menemuinya sebagai sebuah kotak centang saat memesan dengan penjelasan berbahasa Inggris yang sangat sedikit. Pertanyaan di baliknya tidak kecil: sebuah perusahaan yang belum pernah berurusan dengan Anda sebentar lagi akan memegang wajah Anda.",
+      "NOL World memang menerbitkan jawaban. Jawabannya spesifik, lebih menenangkan daripada yang berhasil dilakukan kebanyakan perusahaan, dan layak dibaca sebelum antrean alih-alih di tengahnya — termasuk yang tentang apa yang terjadi pada datanya setelah Anda membatalkan, yang tidak mengatakan apa yang disiratkan satu kata seperti dihapus.",
+    ],
+    steps: [
+      {
+        title: "Pahami apa yang ia gantikan",
+        body: "NOL World menggambarkan facepass sebagai cara memangkas prosedur dan waktu yang dibutuhkan verifikasi identitas saat masuk. Begitu pendaftaran wajah selesai, sebuah kamera memindai Anda di pintu dan Anda masuk tanpa verifikasi tiket. Ia pengganti pemeriksaan dokumen di gerbang, bukan lapisan tambahan di atasnya.",
+        pitfall:
+          "Membacanya sebagai fitur kenyamanan saja. Paruh kedua dari deskripsi NOL World sendiri adalah penegakan, dan itulah langkah berikutnya.",
+        takes: "2 menit",
+      },
+      {
+        title: "Ketahui alasan lain keberadaannya",
+        body: "NOL World menyatakan tujuannya dua kali: menyederhanakan verifikasi identitas, dan mencegah penjualan serta peredaran tiket secara ilegal. Sebuah wajah yang harus cocok dengan akun yang membeli tiketnya adalah kendali penjualan ulang, dan ia tiba pada periode yang sama dengan revisi Undang-Undang Pertunjukan yang menjangkau penjualan ulang kebiasaan di atas harga tiket. Kedua fakta itu layak diletakkan berdampingan.",
+        pitfall:
+          "Mengira tiket yang dibeli lewat lokapasar penjualan ulang akan begitu saja berfungsi di gerbang facepass. Sistem itu ada justru agar hal itu tidak berfungsi.",
+        takes: "2 menit",
+      },
+      {
+        title: "Ketahui ke mana wajah itu sebenarnya pergi",
+        body: "Inilah bagian yang paling layak diketahui. NOL World menyatakan informasi wajah — citra aslinya dan data fiturnya — dienkripsi dan disimpan oleh Toss, perusahaan fintech di balik layanan FaceAccess, dan bahwa ia tidak diberikan kepada NOL World maupun kepada penyelenggara dalam keadaan apa pun. Hanya hasil autentikasinya, berhasil atau gagal, yang dibagikan. NOL World juga menyatakan datanya tidak dipakai untuk tujuan apa pun di luar penyediaan layanannya, dan menyebut Toss memegang sertifikasi ISO 27701 dan CBPR.",
+        pitfall:
+          "Ini pernyataan NOL World tentang pihak ketiga, bukan sebuah audit. Pernyataannya luar biasa spesifik untuk halaman semacam ini, yang merupakan alasan untuk menanggapinya serius dan bukan alasan untuk berhenti membaca.",
+        takes: "5 menit",
+      },
+      {
+        title: "Perlakukan pendaftaran sebagai permanen",
+        body: "Begitu sebuah wajah terdaftar ia tidak bisa diubah. NOL World memberi alasannya terang-terangan — itu untuk mencegah penggunaan layanannya secara tidak sah. Tidak ada memperbaiki pendaftaran yang buruk di kemudian hari, jadi kondisi saat Anda mendaftar adalah kondisi yang Anda simpan: pencahayaannya, kacamatanya, apa pun yang ditangkap kameranya.",
+        pitfall:
+          "Mendaftar terburu-buru di tengah antrean, di bawah cahaya yang buruk, dengan niat mengulanginya dengan benar nanti. Tidak ada nanti.",
+        takes: "10 menit, dengan sengaja",
+      },
+      {
+        title: "Jangan pernah biarkan siapa pun mendaftar di ponsel atau akun Anda",
+        body: "NOL World mengatakannya langsung: pastikan tidak ada orang lain yang memakai akun Anda, dan jika seseorang mendaftarkan informasi wajah memakai ponsel atau akun Anda, perusahaan tidak bertanggung jawab atas masalah apa pun yang timbul. Sebuah perangkat rumah tangga yang dipakai bersama, pada detik sebuah tur dibuka, persis begitulah hal ini terjadi, dan akunlah yang memikul akibatnya.",
+        pitfall:
+          "Membantu teman mendaftar di ponsel Anda yang sedang masuk ke akun. Wajah yang kini melekat pada akun Anda adalah wajah mereka, ia tidak bisa diubah, dan penafian itu tertulis jelas.",
+        takes: "1 menit",
+      },
+      {
+        title: "Periksa apakah konser Anda mendukungnya sama sekali",
+        body: "Dukungannya per acara alih-alih menyeluruh — NOL World memelihara satu pertanyaan khusus tentang cara memeriksa apakah sebuah konser mendukung facepass, dan pertanyaan itu hanya ada karena jawabannya berbeda-beda. Periksa halaman acara konser Anda sebelum menyusun rencana masuk di atasnya, dan siapkan rute biasanya: nomor konfirmasi dan identitas di loket.",
+        pitfall:
+          "Mendaftar, lalu tiba di venue yang masih melakukan pemeriksaan dokumen, dengan paspor tertinggal di hotel.",
+        takes: "3 menit",
+      },
+      {
+        title: "Baca jawaban soal penghapusan dengan cermat — ia bukan sekadar penghapusan",
+        body: "NOL World menjawab apakah informasi wajah dihapus jika Anda berhenti berlangganan, dan jawabannya punya dua paruh. Yang pertama: foto wajah Anda dihapus ketika Anda membatalkan layanannya, dan memakainya lagi berarti mendaftar lagi. Yang kedua: untuk keperluan verifikasi identitas, datanya disimpan terpisah dan ditahan selama satu tahun sejak titik pembatalan — dipakai, kata NOL World, hanya untuk verifikasi identitas saat pendaftaran ulang, dan dibuang setelah tahun itu. Jadi berhenti berlangganan menghapus fotonya dan memulai sebuah hitungan mundur alih-alih menghentikannya. Itu kebijakan yang bisa dipertahankan dan ia bukan apa yang disiratkan kata dihapus sendirian, dan karena itulah ia layak dibaca dalam kata-kata mereka sebelum Anda mendaftar.",
+        pitfall:
+          "Menerima ringkasan satu kata dari pihak ketiga mana pun tentang apa yang terjadi pada data biometrik, termasuk ringkasan kami. Baca kalimat tentang masa penyimpanannya, bukan judulnya.",
+        takes: "5 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah NOL World melihat wajah saya?",
+        a: "NOL World menyatakan tidak. Informasi wajah dienkripsi dan dipegang oleh Toss, dan NOL World menyatakan ia tidak diberikan kepada NOL World maupun penyelenggara dalam keadaan apa pun — hanya berhasil atau gagalnya autentikasi yang dibagikan.",
+      },
+      {
+        q: "Bisakah saya mendaftarkan ulang wajah saya kalau percobaan pertama buruk?",
+        a: "Tidak. NOL World menyatakan wajah yang sudah terdaftar tidak bisa diubah, untuk mencegah penggunaan layanannya secara tidak sah. Daftarlah dengan sengaja pada kali pertama.",
+      },
+      {
+        q: "Apakah data wajah saya dihapus kalau saya membatalkan facepass?",
+        a: "Sebagian, lalu masuk hitungan mundur. NOL World menyatakan foto wajahnya dihapus ketika Anda berhenti berlangganan, dan bahwa Anda harus mendaftar lagi untuk memakai layanannya. NOL World juga menyatakan bahwa untuk keperluan verifikasi identitas datanya disimpan terpisah dan ditahan selama satu tahun sejak pembatalan, dipakai hanya untuk verifikasi identitas jika Anda mendaftar ulang, dan dibuang setelah tahun itu. Sampai 20 Oktober 2026 halaman ini menyatakan kami belum membaca jawaban itu dan menolak meringkasnya; kini ia dikutip di atas dan dicatat dalam daftar koreksi kami.",
+      },
+      {
+        q: "Apakah setiap konser memakai facepass?",
+        a: "Tidak. Dukungannya berbeda menurut acara, dan NOL World menyimpan jawaban terpisah tentang cara memeriksanya. Pastikan di halaman acara konser Anda, dan jaga agar rute pengambilan biasa tetap tersedia.",
+      },
+      {
+        q: "Apa yang terjadi kalau orang lain mendaftarkan wajahnya di akun saya?",
+        a: "NOL World menyatakan perusahaan tidak bertanggung jawab atas masalah yang timbul dari itu, dan meminta Anda memastikan tidak ada orang lain yang memakai akun Anda. Karena wajah yang sudah terdaftar tidak bisa diubah, ini tidak bisa dipulihkan dengan cara biasa.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World 結帳：預訂手續費、那個時鐘，以及你用哪種幣別付款",
+    summary:
+      "一張演唱會門票帶著 8,000 韓元的服務手續費，你有十分鐘選座位、七分鐘付款，而付款視窗會要你選一種幣別。三個跟錢有關的決定和一個計時器，全都是公開的，而且沒有一個是顯而易見的。",
+    scope:
+      "涵蓋 NOL World 就其結帳的費用與時間所公布的內容：依類型區分的服務手續費、兩段式購買計時器、幣別選擇、優惠券，以及每筆訂單的上限。手續費與計時器都可能逐場次設定，而 NOL World 兩者都這麼說了，所以你那一場的活動頁面效力更高。本頁沒有任何關於哪一種幣別對你那張特定卡片比較便宜的建議。",
+    intro: [
+      "韓國結帳頁面上出錯的多數情況都不是卡片的問題。而是那個頁面正在問三個附帶金錢的問題，同時有一個計時器在走，而一位海外買家第一次遇到這一切時，大約只剩七分鐘。",
+      "這些全都是公開的，而且沒有一項出現在你判斷「這張票買得起」的那個商品頁上。所以本頁的目的，是把那些意外搬到前一週。",
+    ],
+    steps: [
+      {
+        title: "在你判斷這張票買得起之前，先把服務手續費加上去",
+        body: "NOL World 依類型公布其服務手續費。音樂劇與演唱會是 8,000 韓元——不含線上演唱會與後援會會員資格等特定商品。其他演出與體育賽事是 3,000 韓元。休閒與展覽免費。NOL World 也表示手續費可能依商品而異，請在購買時確認，所以請把這些當成公布的基準線，而不是對你那一場的承諾。",
+        pitfall:
+          "拿韓國票價跟你本地的票價比較，卻忘了這一筆是疊在上面的。它金額不大，而它正是那種會在最糟的時刻讓整個平台顯得不可信的小意外。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "知道這筆手續費實際上買到什麼，因為其中一行很重要",
+        body: "NOL World 逐項列出服務手續費涵蓋什麼：網站維護與相關成本、支援其詐欺偵測系統的支付處理、防止機器人與巨集相關之不正當訂票的技術費用，以及全球預約的系統支援。第三項才是有意思的那一項。這筆費用有一部分在資助反巨集的機制，而那與身分查驗、與修正版《公演法》是同一個管制方向——這也是為什麼那個排隊系統表現得像一個對抗性系統，而不是一條隊伍。",
+        pitfall:
+          "把手續費讀成純粹的利潤，把排隊讀成無能。平台正在告訴你它把這筆費用花在把自動化買家擋在外面，而那也正是它對你施加的規則如此嚴格的原因。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "搞懂那個時鐘：十分鐘選位，七分鐘付款",
+        body: "購買計時器分兩段，NOL World 兩段都說明了。從進入訂票頁面起，你最多有十分鐘選座位。一旦你進到價格步驟，你的座位會被保留七分鐘供你完成付款，頁面上方有一個計時器。錯過它，座位就會自動被釋出，而你要從頭再訂一次。不指定座位或自由入座的訂票，在付款前同樣有十分鐘的上限。NOL World 補充說上限可能依活動而異，而有些活動沒有上限。",
+        pitfall:
+          "在那七分鐘之內才打開銀行 App 去找卡號。卡片資料、帳單地址與你銀行的核准 App，都應該在你進入訂票頁面之前就準備好，因為那個時鐘不在乎你的手機正要你重新登入一次。",
+        takes: "17 分鐘，如果你全部用完",
+      },
+      {
+        title: "把幣別那個問題當成一個真正的決定",
+        body: "NOL World 支援以 24 種幣別付款，包括韓元、美元、日圓與人民幣，而可選的幣別會在你輸入卡片資料之後出現。它提供的選擇，是在你卡片發卡國的幣別與韓元之間。那是由兩個不同的對象所訂的兩種不同匯率——一個由在付款頁面做換算的那一方訂，一個由你的卡組織與發卡機構訂。選擇你自己的幣別就是動態貨幣轉換，而做換算的那一方會訂匯率並從中抽取一層價差，所以以韓元付款通常是兩者中比較便宜的。通常，但不是總是：你自己卡片的國外交易手續費不管選哪一種都會收，而發卡機構的差勁匯差也可能把差距抹平。你真正能在當天之前查清楚的那一半，是你發卡機構的條款，所以去查它。",
+        pitfall:
+          "因為數字看起來熟悉就選自己的本國幣別。在這裡，熟悉的那個選項比較貴的機率更高，而這是唯一一個由你決定「誰來做換算」的畫面。",
+        takes: "10 分鐘，事先跟你的銀行",
+      },
+      {
+        title: "在付款之前套用優惠券，因為沒有之後",
+        body: "NOL World 對這一點很直接：付款一旦完成，你就無法再套用優惠券。它提供的唯一路線，是取消同一個座位並在套用優惠券的情況下重訂——而它警告取消與重訂可能依該活動自身的費用政策產生手續費，所以請先確認那些。請誠實地把那個成本與優惠券的價值相比，並且記得你釋出的那個座位在你重訂期間並不會為你保留。",
+        pitfall:
+          "為了省下一筆你未必用得到的折扣，去取消一個你實際上已經拿到的座位。優惠券的價值低於門票，而庫存不會等人。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "預期會有張數上限，而且預期那是主辦單位訂的",
+        body: "NOL World 表示依主辦單位而定，同一場演出可能對每筆訂單或每位會員可預約的張數設有上限——而在演唱會門票與旅遊或其他入場券合併販售的情況下，主辦單位也可能另外施加每位會員的上限。所以那個上限不是一個你可以查到的全平台數字；它是逐場次設定的，有時是按人而不是按交易計算，而它是一筆團體訂單可能在最後一步失敗的原因。",
+        pitfall:
+          "照著你在另一場演出讀到的上限去規劃四人訂單。每位會員的上限也不能靠把訂單拆到你自己的多個帳號來解決——那個模式就在 NOL World 公布的不正當使用清單上。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "在會顯示狀態的地方確認訂單確實存在",
+        body: "付款之後，打開 NOL World 網站或 App，前往 Account/My，然後 My Reservations。NOL World 表示基本的預約明細與狀態在列表與預約詳細頁上都看得到。請趁你還坐在電腦前時做一次，而不是假設確認信就是全部的事實——預約列表才是一個「不如你預期的狀態」會現形的地方，而那也是你聯絡客服時會被問到的畫面。",
+        pitfall:
+          "把一筆成功的付款當成一筆存在的訂單。它們通常是同一件事，而去確認的全部意義，就在於它們不是的那一次。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "知道對你買的東西而言「完成」是什麼意思",
+        body: "對表演藝術與演唱會，NOL World 表示流程在付款時即告完成，而你在場館售票口領票。旅遊與體驗類商品則不一致：有些會發一個 QR 或條碼到你的 My Page 或電子郵件，可直接入場；有些則要求你在現場櫃台出示憑證或預約確認，換成實體票之後才能入場。NOL World 的指示是去商品頁確認適用哪一種，因為這個差別決定了你是否需要在入口之前先找到一個櫃台。",
+        pitfall:
+          "以為電子郵件裡的 QR 碼就是入場券。對換票型商品而言，那是你拿去櫃台交換的東西，而櫃台有營業時間。",
+        takes: "5 分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "演唱會門票的預訂手續費是多少？",
+        a: "NOL World 公布音樂劇與演唱會為 8,000 韓元，不含線上演唱會與後援會會員資格等特定商品；其他演出與體育賽事為 3,000 韓元；休閒與展覽則不收。它也表示手續費可能依商品而異並請在購買時確認，所以請在你自己那一場上確認。",
+      },
+      {
+        q: "結帳時我實際上有多少時間？",
+        a: "從進入訂票頁面起有十分鐘選座位，接著是你付款期間的七分鐘保留，頁面上方會顯示計時器。超過就會釋出座位而你得重來。自由入座同樣有那十分鐘。NOL World 表示上限可能依活動而異，而有些活動沒有上限。",
+      },
+      {
+        q: "我該用韓元還是自己的幣別付款？",
+        a: "通常是韓元。NOL World 支援 24 種幣別，並讓你在卡片發卡國幣別與韓元之間選擇，選項在你輸入卡片資料之後出現。選擇你自己的幣別就是動態貨幣轉換，由做換算的那一方訂匯率並加上一層差額——所以韓元一般比較便宜。你卡片自己的國外交易手續費不管選哪一種都會收，而那正是該在當天之前跟發卡機構確認的部分。",
+      },
+      {
+        q: "我忘了用優惠券。現在可以加上去嗎？",
+        a: "不行。NOL World 表示付款完成之後就無法再套用優惠券。它給出的唯一路線是取消同一個座位並套用優惠券重訂，而它警告取消與重訂可能依該活動的政策產生手續費。在你釋出一個已經握在手上的座位之前，請先確認那筆費用。",
+      },
+      {
+        q: "為什麼我只能訂兩張，而我朋友訂了四張？",
+        a: "因為那個上限屬於主辦單位，不屬於平台。NOL World 表示一場演出可能對每筆訂單或每位會員限制張數，而演唱會加旅遊的合併商品也可能另有每位會員的上限。不同的演出，或不同的販售輪次，上限可以不一樣。",
+      },
+      {
+        q: "我可以在 NOL World 使用韓國信用卡嗎？",
+        a: "不行。NOL World 只接受在韓國境外發行的卡片；韓國發行的卡片屬於韓文站上已驗證的國內會員。一張韓國卡在這裡被拒，是規則正在運作，不是故障。",
+      },
+      {
+        q: "我要去哪裡確認我的訂單有沒有成立？",
+        a: "NOL World 的網站或 App，在 Account/My 之下的 My Reservations。NOL World 表示預約明細與狀態在列表與詳細頁上都會出現。顯示狀態的是那個畫面，而不是確認信。",
+      },
+      {
+        q: "我已經付款了。演出之前還有事要做嗎？",
+        a: "如果是演唱會或表演藝術的門票，沒有——NOL World 表示流程已完成，你在場館售票口領票。如果是旅遊或體驗類商品則要看情況：有些會寄出可直接入場的 QR 或條碼，有些則需要先在現場櫃台把憑證換成實體票。商品頁會說明是哪一種。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Checkout NOL World: biaya pemesanan, jamnya, dan mata uang yang Anda bayar",
+    summary:
+      "Sebuah tiket konser membawa biaya layanan 8,000 won, Anda punya sepuluh menit untuk memilih kursi dan tujuh menit untuk membayar, dan jendela pembayarannya meminta Anda memilih mata uang. Tiga keputusan soal uang dan satu penghitung waktu, semuanya diterbitkan dan tak satu pun jelas dengan sendirinya.",
+    scope:
+      "Mencakup apa yang NOL World terbitkan tentang biaya dan waktu checkout-nya: biaya layanan menurut genre, penghitung waktu pembelian dua tahap, pemilihan mata uang, kupon, dan batas per pesanan. Biaya dan penghitung waktu bisa ditetapkan per acara dan NOL World menyatakan itu untuk keduanya, jadi halaman acara Anda yang berlaku. Tidak ada di sini yang merupakan nasihat tentang mata uang mana yang lebih murah untuk kartu Anda sendiri.",
+    intro: [
+      "Sebagian besar yang salah di checkout Korea bukan kartunya. Melainkan bahwa halamannya sedang mengajukan tiga pertanyaan yang melekat pada uang sementara sebuah penghitung waktu berjalan, dan seorang pembeli dari luar negeri menemui semuanya untuk pertama kali dengan sekitar tujuh menit tersisa.",
+      "Semuanya diterbitkan, dan tak satu pun ada di halaman produk tempat Anda memutuskan tiketnya terjangkau. Jadi maksud halaman ini adalah memindahkan kejutan-kejutan itu ke pekan sebelumnya.",
+    ],
+    steps: [
+      {
+        title: "Tambahkan biaya layanannya sebelum Anda memutuskan tiketnya terjangkau",
+        body: "NOL World menerbitkan biaya layanannya menurut genre. Musikal dan konser membawa 8,000 won — tidak termasuk produk tertentu seperti konser daring dan keanggotaan fan club. Pertunjukan lain dan olahraga adalah 3,000 won. Rekreasi dan pameran gratis. NOL World juga menyatakan biayanya bisa berbeda menurut produk dan meminta Anda memeriksanya saat membeli, jadi perlakukan ini sebagai garis dasar yang diterbitkan alih-alih janji tentang acara Anda.",
+        pitfall:
+          "Membandingkan harga tiket Korea dengan harga tiket di negara Anda dan melupakan bahwa ini duduk di atasnya. Jumlahnya tidak besar, dan ia justru jenis kejutan kecil yang membuat sebuah platform terasa tidak bisa dipercaya pada saat terburuk.",
+        takes: "2 menit",
+      },
+      {
+        title: "Ketahui apa yang biaya itu sebenarnya beli, karena satu barisnya penting",
+        body: "NOL World merinci apa yang dicakup biaya layanannya: pemeliharaan situs dan biaya terkait, pemrosesan pembayaran yang menopang sistem deteksi penipuannya, biaya teknologi untuk mencegah pemesanan tidak sah lewat bot dan makro, serta dukungan sistem untuk pemesanan global. Butir ketiga itulah yang menarik. Biayanya sebagian mendanai mesin anti-makro, yang merupakan arah penegakan yang sama dengan pemeriksaan identitas dan revisi Undang-Undang Pertunjukan — dan itulah sebabnya antreannya berperilaku seperti sistem yang bermusuhan alih-alih sebuah barisan.",
+        pitfall:
+          "Membaca biayanya sebagai margin murni dan antreannya sebagai ketidakbecusan. Platformnya sedang memberi tahu Anda bahwa ia membelanjakan biaya itu untuk menahan pembeli otomatis di luar, yang juga sebabnya aturan yang ia kenakan kepada Anda begitu ketat.",
+        takes: "2 menit",
+      },
+      {
+        title: "Pahami jamnya: sepuluh menit memilih, tujuh menit membayar",
+        body: "Penghitung waktu pembeliannya dua tahap dan NOL World menyatakan keduanya. Sejak memasuki halaman pemesanan Anda punya hingga sepuluh menit untuk memilih kursi. Begitu Anda berpindah ke tahap harga, kursi Anda ditahan selama tujuh menit selagi Anda menyelesaikan pembayaran, dengan penghitung waktu di bagian atas halaman. Lewatkan dan kursinya otomatis dilepas dan Anda memulai pemesanannya lagi. Pemesanan tanpa kursi tertentu atau tiket berdiri tetap mendapat batas sepuluh menit sebelum pembayaran. NOL World menambahkan bahwa batasnya bisa berbeda menurut acara dan bahwa sebagian acara tidak punya batas.",
+        pitfall:
+          "Membuka aplikasi bank Anda untuk mencari nomor kartu di dalam tujuh menit itu. Detail kartu, alamat penagihan, dan aplikasi persetujuan bank Anda semuanya harus siap sebelum Anda memasuki halaman pemesanan, karena jamnya tidak peduli bahwa ponsel Anda sedang meminta Anda masuk lagi.",
+        takes: "17 menit, kalau Anda memakai semuanya",
+      },
+      {
+        title: "Perlakukan pertanyaan mata uang sebagai keputusan yang sungguhan",
+        body: "NOL World mendukung pembayaran dalam 24 mata uang termasuk won Korea, dolar Amerika, yen, dan yuan, dan yang tersedia muncul setelah Anda memasukkan detail kartu. Pilihan yang ia tawarkan adalah antara mata uang negara penerbit kartu Anda dan won Korea. Itu dua kurs berbeda yang ditetapkan dua pihak berbeda — satu oleh siapa pun yang mengonversi di halaman pembayaran, satu oleh jaringan kartu dan penerbit Anda. Memilih mata uang Anda sendiri adalah konversi mata uang dinamis, dan pihak yang mengonversi menetapkan kursnya serta mengambil selisih darinya, jadi membayar dalam won biasanya yang lebih murah di antara keduanya. Biasanya, bukan selalu: biaya transaksi luar negeri kartu Anda berlaku pada kedua pilihan, dan selisih penerbit yang buruk bisa menutup jaraknya. Paruh yang benar-benar bisa Anda periksa sebelum hari-H adalah ketentuan penerbit Anda, jadi periksalah itu.",
+        pitfall:
+          "Memilih mata uang negara Anda karena angkanya terlihat familiar. Yang familiar di sini lebih sering menjadi pilihan yang lebih mahal, dan inilah satu-satunya layar tempat Anda memilih siapa yang melakukan konversinya.",
+        takes: "10 menit, bersama bank Anda, sebelumnya",
+      },
+      {
+        title: "Terapkan kuponnya sebelum membayar, karena tidak ada sesudahnya",
+        body: "NOL World terang-terangan soal ini: begitu pembayaran selesai Anda tidak bisa menerapkan kupon. Satu-satunya rute yang ia tawarkan adalah membatalkan kursi yang sama dan memesan ulang dengan kuponnya diterapkan — dan ia memperingatkan bahwa membatalkan lalu memesan ulang bisa menimbulkan biaya menurut kebijakan biaya acara itu sendiri, jadi periksa itu lebih dulu. Timbang itu dengan jujur terhadap nilai kuponnya, dan ingat kursi yang Anda lepas tidak dipesan untuk Anda selagi Anda memesan ulang.",
+        pitfall:
+          "Membatalkan kursi yang benar-benar Anda punya, demi menyelamatkan diskon yang belum tentu sempat Anda pakai. Kuponnya bernilai lebih kecil daripada tiketnya, dan stoknya tidak menunggu.",
+        takes: "5 menit",
+      },
+      {
+        title: "Harapkan ada batas tiket, dan harapkan itu milik penyelenggaranya",
+        body: "NOL World menyatakan bahwa tergantung penyelenggaranya mungkin ada batas berapa tiket yang bisa dipesan per pesanan atau per anggota untuk sebuah pertunjukan — dan bahwa ketika tiket konser dijual digabung dengan tur atau tiket masuk lain, penyelenggaranya juga bisa mengenakan batas per anggota. Jadi plafonnya bukan angka seluruh platform yang bisa Anda cari; ia ditetapkan per konser, kadang per orang alih-alih per transaksi, dan ia salah satu sebab sebuah pesanan kelompok bisa gagal di langkah terakhir.",
+        pitfall:
+          "Menyusun pesanan untuk empat orang berdasarkan batas yang Anda baca di konser lain. Batas per anggota juga tidak bisa diakali dengan memecah pesanan ke beberapa akun Anda sendiri — pola itu ada di daftar penggunaan tidak sah yang diterbitkan NOL World.",
+        takes: "5 menit",
+      },
+      {
+        title: "Pastikan pemesanannya ada, di tempat yang menampilkan status",
+        body: "Setelah pembayaran, buka situs atau aplikasi NOL World dan masuk ke Account/My, lalu My Reservations. NOL World menyatakan detail dan status pemesanan dasar terlihat baik di daftarnya maupun di halaman detail pemesanan. Lakukan itu sekali selagi Anda masih di depan meja alih-alih mengira surel konfirmasi adalah seluruh kebenarannya — daftar pemesanan itulah tempat sebuah status yang tidak seperti harapan Anda muncul, dan itu layar yang akan ditanyakan jika Anda menghubungi layanan pelanggan.",
+        pitfall:
+          "Memperlakukan pembayaran yang berhasil sebagai pemesanan yang ada. Keduanya biasanya hal yang sama dan seluruh maksud memeriksanya adalah saat keduanya tidak sama.",
+        takes: "2 menit",
+      },
+      {
+        title: "Ketahui apa arti selesai bagi barang yang Anda beli",
+        body: "Untuk seni pertunjukan dan konser, NOL World menyatakan prosesnya selesai pada pembayaran dan Anda mengambilnya di loket venue. Produk tur dan aktivitas tidak seragam: sebagian menerbitkan QR atau barcode ke My Page atau surel Anda yang mempersilakan Anda masuk langsung, dan sebagian menuntut Anda menunjukkan voucher atau konfirmasi pemesanan di konter di lokasi untuk ditukar dengan tiket fisik sebelum masuk. Instruksi NOL World adalah memeriksa halaman produknya untuk tahu mana yang berlaku, karena perbedaannya menentukan apakah Anda perlu menemukan sebuah konter sebelum pintu masuk.",
+        pitfall:
+          "Mengira kode QR di surel Anda adalah tiket masuk. Untuk produk berjenis tukar, itu benda yang Anda tukarkan di konter, dan konternya punya jam buka.",
+        takes: "5 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Berapa biaya pemesanan untuk tiket konser?",
+        a: "NOL World menerbitkan 8,000 won untuk musikal dan konser, tidak termasuk produk tertentu seperti konser daring dan keanggotaan fan club; 3,000 won untuk pertunjukan lain dan olahraga; dan nol untuk rekreasi dan pameran. NOL World juga menyatakan biayanya bisa berbeda menurut produk dan meminta Anda memeriksanya saat membeli, jadi pastikan pada acara Anda sendiri.",
+      },
+      {
+        q: "Berapa lama waktu saya sebenarnya di checkout?",
+        a: "Sepuluh menit untuk memilih kursi sejak memasuki halaman pemesanan, lalu tahanan tujuh menit selagi Anda membayar, dengan penghitung waktu di bagian atas. Lewati dan kursinya dilepas dan Anda mulai dari awal. Tiket berdiri tetap mendapat sepuluh menit itu. NOL World menyatakan batasnya bisa berbeda menurut acara dan bahwa sebagian acara tidak punya batas.",
+      },
+      {
+        q: "Sebaiknya saya membayar dalam won Korea atau mata uang saya sendiri?",
+        a: "Biasanya won. NOL World mendukung 24 mata uang dan membiarkan Anda memilih antara mata uang negara penerbit kartu Anda dan won Korea, ditampilkan setelah Anda memasukkan detail kartu. Memilih mata uang Anda sendiri adalah konversi mata uang dinamis, di mana pihak yang mengonversi menetapkan kursnya dan menambahkan selisih — jadi won umumnya lebih murah. Biaya transaksi luar negeri kartu Anda sendiri berlaku pada kedua pilihan, dan itulah bagian yang perlu Anda periksa ke penerbit sebelum hari-H.",
+      },
+      {
+        q: "Saya lupa memakai kupon saya. Bisakah saya menambahkannya sekarang?",
+        a: "Tidak. NOL World menyatakan kupon tidak bisa diterapkan setelah pembayaran selesai. Satu-satunya rute yang ia beri adalah membatalkan kursi yang sama dan memesan ulang dengan kuponnya, dan ia memperingatkan bahwa pembatalan serta pemesanan ulang bisa membawa biaya menurut kebijakan acara itu. Periksa biayanya sebelum Anda melepas kursi yang sudah Anda pegang.",
+      },
+      {
+        q: "Kenapa saya hanya bisa memesan dua tiket sementara teman saya memesan empat?",
+        a: "Karena batasnya milik penyelenggaranya, bukan platformnya. NOL World menyatakan sebuah pertunjukan bisa membatasi tiket per pesanan atau per anggota, dan bahwa produk gabungan konser-plus-tur bisa membawa batas per anggota juga. Konser yang berbeda, atau babak penjualan yang berbeda, bisa punya plafon yang berbeda.",
+      },
+      {
+        q: "Bisakah saya memakai kartu kredit Korea di NOL World?",
+        a: "Tidak. NOL World hanya menerima kartu yang diterbitkan di luar Korea; kartu terbitan Korea adalah milik anggota domestik terverifikasi di situs berbahasa Korea. Kartu Korea yang ditolak di sini adalah aturan yang sedang bekerja, bukan kerusakan.",
+      },
+      {
+        q: "Di mana saya memeriksa bahwa pemesanan saya berhasil?",
+        a: "Situs atau aplikasi NOL World, di bawah Account/My lalu My Reservations. NOL World menyatakan detail dan status pemesanan muncul baik di daftarnya maupun di halaman detailnya. Layar itulah, bukan surel konfirmasi, yang menampilkan status.",
+      },
+      {
+        q: "Saya sudah membayar. Ada yang tersisa untuk dilakukan sebelum konsernya?",
+        a: "Untuk tiket konser atau seni pertunjukan, tidak — NOL World menyatakan prosesnya selesai dan Anda mengambilnya di loket venue. Untuk produk tur atau aktivitas itu bergantung: sebagian mengirim QR atau barcode yang mempersilakan Anda masuk langsung, sebagian lain perlu vouchernya ditukar dengan tiket fisik di konter di lokasi lebih dulu. Halaman produknya menyatakan yang mana.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Warum Ihre Weverse-Shop-Bestellung spät ist, und wann Sie sie noch stornieren können",
+    summary:
+      "Die Schaltfläche zum Stornieren verschwindet bei einem Statuswechsel und nicht zu einer festen Uhrzeit, die EU hat ihre Zollfreigrenze von 150 Euro abgeschafft, die USA haben zusätzlich zur Zollprüfung eine zweite Kontrolle eingeführt, und ein koreanischer Feiertag hat einen auf die Minute festgelegten Annahmeschluss.",
+    scope:
+      "Behandelt, was nach einer Weverse-Shop-Bestellung geschieht, nach den eigenen Mitteilungen des Shops: das Stornofenster, die Zolländerungen, vor denen er für die EU und die USA gewarnt hat, Verzögerungen durch Feiertage und Logistik, und von wem Sie tatsächlich kaufen. Die Feiertagsdaten sind die von 2026 und werden nächstes Jahr falsch sein — die Mitteilungsseite ist die lebende Fassung. Das Bestellen selbst hat eine eigene Anleitung.",
+    intro: [
+      "Weverse Shop veröffentlicht einen steten Strom von Mitteilungen über Lieferungen, und fast niemand liest sie, bevor ein Paket zu spät ist. Dort stehen die eigentlichen Antworten: welche Zolländerung für Sie gilt, welcher Feiertag vier Tage gefressen hat, und in welcher Minute eine Bestellung nicht mehr stornierbar war.",
+      "Dies ist dieser Strom, in einem Zug gelesen. Zwei der folgenden Punkte sind tatsächlich neue Regeln und keine saisonalen Verzögerungen, und einer davon ist der Moment, in dem Ihr Geld nicht mehr erstattungsfähig ist.",
+    ],
+    steps: [
+      {
+        title: "Das Stornofenster schließt bei einem Status, nicht bei einer Uhrzeit",
+        body: "Das ist die Tatsache, die man kennen sollte, bevor etwas schiefgeht. Weverse Shop nennt als Weg zur Stornierung die Weverse-App, dann More, dann My Orders, dann Order Details, dann Cancel Order — und erklärt, dass Sie die Bestellung nicht mehr stornieren können, sobald der Status auf Shipping Soon oder In Transit wechselt. Es gibt keine genannte Kulanzfrist und keine Regel, die an Stunden nach der Bestellung anknüpft. Das Fenster bleibt offen, bis ein Lager einen Status ändert, und das kann bei einer gefragten Veröffentlichung früher geschehen, als Sie erwarten.",
+        pitfall:
+          "Über Nacht zu entscheiden, ob eine spontane Vorbestellung bleiben soll. Die Frist ist keine Uhrzeit, die Sie nachschlagen können — sie ist ein Ereignis, das Sie nicht steuern, und sie kann verstreichen, während Sie schlafen.",
+        takes: "5 Minuten, sofort",
+      },
+      {
+        title: "Wenn Sie in der EU sind: die Freigrenze von 150 Euro ist weg",
+        body: "Die eigene Mitteilung von Weverse Shop ist genau dort konkret, wo allgemeine Berichterstattung vage bleibt. Zum 1. Juli 2026 hat die EU ihre Regeln für geringwertige Einfuhren geändert: zuvor waren Bestellungen unter 150 Euro von Zöllen befreit, diese Befreiung ist entfallen, und Zölle fallen nun unabhängig vom Kaufbetrag an. Entscheidend ist die Bezugsgröße — Weverse schreibt, dass dies für Sendungen gilt, die ab dem 1. Juli 2026 die örtliche Zollabfertigung durchlaufen, also nach dem Abfertigungsdatum vor Ort und nicht nach dem Bestelldatum. Eine vor der Änderung aufgegebene Bestellung kann trotzdem erfasst werden.",
+        pitfall:
+          "Anzunehmen, eine kleine Bestellung sei zu günstig, um zollpflichtig zu sein. Es gibt keine Untergrenze mehr, und das Datum, das darüber entscheidet, sehen Sie auf der Bestellseite nicht.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Rechnen Sie damit, dass Zoll oder Zusteller direkt Geld von Ihnen verlangen",
+        body: "Weverse Shop schreibt, dass bei EU-Bestellungen während der örtlichen Abfertigung Zölle anfallen können, dass Sie gesonderte Zahlungsanweisungen vom örtlichen Zoll oder vom Zusteller erhalten können, und dass eine Nichtzahlung die Zustellung verzögern oder verhindern kann. Das ist etwas anderes als eine Belastung an der Kasse: Es kommt eine Nachricht von einem Unternehmen, zu dem Sie keine Beziehung haben, und verlangt Geld, bevor sich ein bereits bezahltes Paket bewegt. Das ist nicht von vornherein Betrug — aber es ist genau das, was Betrug nachahmt. Prüfen Sie daher die Sendungsnummer gegen Ihre Bestellung, statt einem Link in der Nachricht zu folgen.",
+        pitfall:
+          "Eine Zahlungsaufforderung von Zoll oder Zusteller als Phishing abzutun und das Paket liegen zu lassen. Nichtzahlung ist einer der dokumentierten Wege, auf denen eine Bestellung schlicht nie ankommt.",
+        takes: "—",
+      },
+      {
+        title: "Wenn Sie in den USA sind: es sind zwei getrennte Änderungen, nicht eine",
+        body: "Die Zolländerung bekommt die ganze Aufmerksamkeit und ist nicht das Einzige, was US-Pakete ausbremst. Weverse Shop warnt gesondert, dass die US Consumer Product Safety Commission ab dem 8. Juli 2026 eine verpflichtende eFiling-Regelung durchsetzt, was strengere örtliche Zollkontrollen für alle in die USA eingeführten Waren bedeutet, und dass die Abfertigung voraussichtlich einige Tage länger dauert als die übliche Lieferzeit. Das ist eine Meldepflicht zur Produktsicherheit und kein Zoll — eine US-Bestellung kann also aus einem Grund langsam sein, der mit der Höhe des Zolls nichts zu tun hat.",
+        pitfall:
+          "Jede US-Verzögerung als Folge der Freigrenzen-Änderung zu lesen und auf eine Zollrechnung zu warten, die nie kommt. Eine dieser beiden Änderungen kostet Geld, die andere kostet Tage.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Behandeln Sie einen koreanischen Feiertag als minutengenauen Annahmeschluss",
+        body: "Weverse Shop veröffentlicht zu jedem koreanischen Feiertag einen Zeitplan, und die Zeiten sind präzise. Für Chuseok 2026 lag der Bestellschluss für Adressen außerhalb Südkoreas am 23. September um 11:00 KST, der Expressversand wurde am 28. September wieder aufgenommen; für koreanische Adressen lag der Annahmeschluss des Zustellers am 22. September um 11:00 KST, mit Wiederaufnahme am selben Tag. Nach dem Annahmeschluss aufgegebene Bestellungen gehen ab dem Wiederaufnahmedatum der Reihe nach raus. Weverse fügt zwei Einschränkungen hinzu: Am Tag des Annahmeschlusses versandte Artikel können je nach Region trotzdem nach dem Feiertag ankommen, und der Zeitplan kommt vom Zusteller und kann sich ändern.",
+        pitfall:
+          "Diese Daten für die des laufenden Jahres zu halten. Es sind die Chuseok-Werte von 2026, und das Muster — ein Annahmeschluss um 11:00 KST ein bis zwei Tage vorher, Wiederaufnahme etwa eine Woche später — ist der Teil, der sich überträgt. Die Daten selbst müssen jedes Mal nachgeschlagen werden.",
+        takes: "10 Minuten vor einer Feiertagsbestellung",
+      },
+      {
+        title: "Wenn Ihre Adresse in China liegt, gilt ein zweiter Feiertagskalender",
+        body: "Weverse Shop gibt gesonderte Mitteilungen zu chinesischen Feiertagen heraus, die Bestellungen mit Lieferadressen in China betreffen, weil chinesische Zollstellen schließen und die Abfertigung stillsteht. Für das Mittherbstfest 2026 vom 25. bis 27. September und den Nationalfeiertag vom 1. bis 7. Oktober hieß es, dass vollständig bis zum 15. September um 11:00 KST bezahlte Bestellungen voraussichtlich während der Nationalfeiertage zugestellt würden, und dass später bezahlte Bestellungen erst nach dem Ende der Feiertage am 8. Oktober in den Versand gehen. Beachten Sie: es zählt die vollständige Zahlung, nicht die Aufgabe der Bestellung.",
+        pitfall:
+          "Eine Vorbestellung, deren Zahlung später abgeschlossen wird, als Sie denken. Wo der Annahmeschluss an der vollständigen Zahlung hängt, liegt eine unbezahlte Bestellung auf der anderen Seite einer dreiwöchigen Lücke.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Unterscheiden Sie eine Frachtstörung von einem verlorenen Paket",
+        body: "Manche Verzögerungen sind weder Zoll noch Feiertage. Im April 2026 informierte Weverse Shop über Lieferverzögerungen in ganz Europa und ausgewählten Ländern des Nahen Ostens, verursacht durch Schwankungen globaler Logistikrouten sowie Luft- und Seefrachtpläne, betroffen waren nach dem 1. April 2026 versandte Sendungen im internationalen Transit. Nützlich ist, was über die Sendungsverfolgung gesagt wird: wegen der Umleitungen können Aktualisierungen und die Ankunft vor Ort länger dauern als üblich, und das Paket ist weiterhin unterwegs. Eine stumme Sendungsverfolgung während einer bekannten Störung ist das erwartete Symptom und kein Beleg für einen Verlust.",
+        pitfall:
+          "Eine Verlustmeldung zu eröffnen, weil sich die Sendungsverfolgung eine Woche lang nicht bewegt hat. Prüfen Sie zuerst die Mitteilungsseite auf eine laufende Störung für Ihre Region — eine Meldung gegen ein lediglich umgeleitetes Paket verbraucht die Zeit, die Sie für einen echten Fall bräuchten.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Prüfen Sie, ob Weverse überhaupt der Verkäufer ist",
+        body: "Weverse Shop erklärt auf den eigenen Seiten, dass einige Produkte von einzelnen Drittanbietern angeboten werden, dass Weverse Company in diesen Fällen ausschließlich als Vermittler im elektronischen Handel auftritt und nicht Partei des Geschäfts ist, und dass keine Verantwortung für die Produktangaben oder die Geschäfte dieser Verkäufer übernommen wird. Das ändert, mit wem Sie es zu tun haben, wenn etwas nicht stimmt — bei einem Artikel eines Drittanbieters ist der Vertragspartner der Verkäufer und nicht Weverse. Das klärt man besser, bevor man sich beschweren muss, als mittendrin.",
+        pitfall:
+          "Anzunehmen, alles im Shop habe dieselbe Absicherung, weil es hinter derselben Kasse liegt. Der Vermittlerhinweis ist veröffentlicht, und er entscheidet, wer Ihnen Abhilfe schuldet.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Lesen Sie die Mitteilungen selbst, denn diese Seite veraltet schneller als die meisten",
+        body: "Alles Obenstehende stammt von der Mitteilungsseite von Weverse Shop, und diese Seite ist die lebende Fassung. Die Zolländerungen sind dauerhaft; die Feiertagspläne, die Frachtstörungen und die Annahmeschlüsse der Zusteller sind es nicht — sie werden zu jedem Anlass neu herausgegeben und ersetzt, ohne dass sich die alte Mitteilung ändert. Lesen Sie vor einer Feiertagsbestellung oder bei einem verspäteten Paket die Mitteilungsliste, statt den Daten irgendeiner Anleitung zu vertrauen, auch dieser nicht. Das Datum oben auf dieser Seite ist der Tag, an dem wir das zuletzt getan haben.",
+        pitfall:
+          "Einer Annahmeschlusszeit aus einer im Vorjahr geschriebenen Anleitung zu vertrauen. Die Struktur wiederholt sich, die Zahlen nicht.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Kann ich meine Bestellung noch stornieren?",
+        a: "Nur solange der Status es zulässt. Der Weg von Weverse Shop lautet Weverse-App, More, My Orders, Order Details, Cancel Order — und es heißt, dass eine Stornierung nicht mehr möglich ist, sobald der Status auf Shipping Soon oder In Transit wechselt. Eine veröffentlichte Kulanzfrist gibt es nicht, die Antwort hängt also an der Bestellung und nicht an der Uhr.",
+      },
+      {
+        q: "Ich bin in der EU und habe eine Zollrechnung. Ist das richtig so?",
+        a: "Wahrscheinlich ja. Weverse Shop schreibt, dass die EU zum 1. Juli 2026 die Zollbefreiung abgeschafft hat, die zuvor Bestellungen unter 150 Euro erfasste, sodass Zölle nun unabhängig vom Betrag anfallen, bezogen auf Sendungen, die ab diesem Datum die örtliche Zollabfertigung durchlaufen. Es wird außerdem gewarnt, dass Sie gesonderte Zahlungsanweisungen vom Zoll oder vom Zusteller erhalten können und dass eine Nichtzahlung die Zustellung verzögern oder verhindern kann.",
+      },
+      {
+        q: "Warum ist meine US-Bestellung langsam, wenn kein Zoll zu zahlen ist?",
+        a: "Weil es zwei Änderungen gibt. Neben den Zollregeln warnt Weverse Shop, dass die US Consumer Product Safety Commission ab dem 8. Juli 2026 ein verpflichtendes eFiling durchsetzt, was strengere Kontrollen für alle in die USA eingeführten Waren bedeutet, mit voraussichtlich einigen Tagen längerer Abfertigung. Diese kostet Zeit statt Geld.",
+      },
+      {
+        q: "Ich habe eine Nachricht bekommen, die Zollgebühren verlangt. Ist das Betrug?",
+        a: "Sie kann durchaus echt sein — Weverse Shop schreibt, dass Kundinnen und Kunden in der EU gesonderte Zahlungsanweisungen vom örtlichen Zoll oder vom Zusteller erhalten können. Sie ist zugleich genau das, was Betrug nachahmt. Prüfen Sie, indem Sie die Sendungsnummer mit Ihrer eigenen Bestellung abgleichen und selbst auf die Seite des Zustellers gehen, statt einem Link in der Nachricht zu folgen.",
+      },
+      {
+        q: "Wie lautet der Annahmeschluss für eine Bestellung zu einem koreanischen Feiertag?",
+        a: "Weverse Shop veröffentlicht zu jedem Feiertag einen, minutengenau. Für Chuseok 2026 lag der Annahmeschluss für Adressen außerhalb Koreas am 23. September um 11:00 KST, der Expressversand wurde am 28. September wieder aufgenommen. Es wird gewarnt, dass der Zeitplan vom Zusteller kommt und sich ändern kann und dass am Tag des Annahmeschlusses versandte Artikel trotzdem nach dem Feiertag ankommen können. Schlagen Sie den aktuellen nach, statt diese Daten wiederzuverwenden.",
+      },
+      {
+        q: "Meine Sendungsverfolgung hat sich seit einer Woche nicht aktualisiert. Ist mein Paket verloren?",
+        a: "Prüfen Sie zuerst die Mitteilungsseite auf eine Störung für Ihre Region. Als Weverse Shop im April 2026 Verzögerungen für Europa und den Nahen Osten meldete, hieß es, dass Umleitungen dazu führen, dass Aktualisierungen der Sendungsverfolgung und die Ankunft vor Ort länger dauern als üblich und das Paket weiterhin unterwegs ist — eine stehende Sendungsverfolgung während einer bekannten Störung ist also das Symptom und nicht das Problem.",
+      },
+      {
+        q: "Mit meinem Artikel stimmt etwas nicht. Wende ich mich an Weverse?",
+        a: "Nicht immer. Weverse Shop erklärt, dass einige Produkte von einzelnen Drittanbietern verkauft werden, dass Weverse Company dann ausschließlich als Vermittler auftritt und nicht Partei des Geschäfts ist, und dass keine Verantwortung für die Produktangaben oder Geschäfte dieser Verkäufer übernommen wird. Prüfen Sie, welche Art von Artikel Sie gekauft haben, bevor Sie entscheiden, an wen Sie sich wenden.",
+      },
+      {
+        q: "Betrifft mich der chinesische Feiertagsplan, wenn ich nicht in China bin?",
+        a: "Die Mitteilungen besagen, dass diese Pläne für Bestellungen mit Lieferadressen in China gelten, weil chinesische Zollstellen über die Feiertage schließen. Liegt Ihre Adresse anderswo, sind stattdessen die koreanischen Feiertagsfristen und eine etwaige laufende Frachtstörung die relevanten.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Im Weverse Shop außerhalb Koreas bestellen",
+    summary:
+      "In welchem Shop Sie sich befinden, warum sich der Preis an der Kasse ändert, welche Zahlungsarten Ihre Währung tatsächlich bekommt, und in welche Länder Korea nicht versenden kann.",
+    scope:
+      "Behandelt das Bestellen im Weverse Shop für physische Waren und Alben, die aus Korea versandt werden. Der Kauf von Mitgliedschaften und Tickets wird getrennt behandelt und in der Vorverkaufs-Anleitung beschrieben. Die Regeln hier stammen aus den eigenen Mitteilungen des Weverse Shops und ändern sich ohne große Vorwarnung.",
+    intro: [
+      "Nahezu jede englischsprachige Anleitung zum Weverse Shop behauptet bis heute, der globale Shop nehme nur PayPal oder Eximbay. Das stimmte vor Jahren. Die Liste der Zahlungsarten ist inzwischen länger, sie richtet sich nach der im Konto eingestellten Währung und nicht nach Ihrem Wohnsitzland, und seit Februar 2026 ist der Preis auf der Produktseite nicht der Preis, den Sie zahlen.",
+      "Nichts davon ist versteckt — es steht in den eigenen Mitteilungen des Shops, und von dort stammt alles Folgende. Nur ist niemand, der diese Anleitungen schreibt, hingegangen und hat sie gelesen.",
+    ],
+    steps: [
+      {
+        title: "Finden Sie heraus, in welchem Weverse Shop Sie eigentlich sind",
+        body: "Der Weverse Shop ist nicht ein Laden. Es gibt einen GLOBAL-Shop und es gibt Regional-Shops, und sie führen unterschiedliche Bestände, haben unterschiedliche Vorbestellzeiträume und versenden von unterschiedlichen Orten. Ein Artikel, den jemand anderes bestellt hat, existiert in Ihrem Shop möglicherweise schlicht nicht. Prüfen Sie, in welchem Sie sind, bevor Sie um ein Erscheinungsdatum herum planen, denn ein Vorbestellschluss in einem Shop sagt nichts über die anderen aus.",
+        pitfall:
+          "Ein in einer Fan-Community geteilter Link öffnet deren Shop, nicht Ihren. Wenn die Seite lädt, der Artikel sich aber nicht in den Warenkorb legen lässt, sind Sie meist im falschen Shop und nicht zu spät.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Stellen Sie Ihre Währung ein, bevor Sie sich irgendetwas ansehen",
+        body: "Ihre Standardwährung entscheidet, welche Zahlungsarten Ihnen angeboten werden. Weverse nennt sie je Währung: USD bekommt PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay und Grab Pay. JPY bekommt dieselbe Liste ohne Grab Pay. Bei CNY entfällt PayPal. MXN hat nur PayPal und Apple Pay. KRW ergänzt koreanische Karten und die koreanischen Wallets — Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        pitfall:
+          "Außerhalb von KRW gibt es kein schlichtes „mit Visa bezahlen“. Ihre Karte läuft über PayPal oder Eximbay, und für Ihre Bank ist das eine andere Art von Transaktion als eine Belastung durch einen koreanischen Händler — und genau deshalb kann eine Karte, die anderswo funktioniert, hier trotzdem abgelehnt werden.",
+        takes: "3 Minuten",
+      },
+      {
+        title: "Rechnen Sie damit, dass der Preis an der Kasse steigt, und wissen Sie warum",
+        body: "Seit dem 3. Februar 2026 berechnet Weverse die Steuer anhand Ihrer Liefer- und Rechnungsadresse. Bestellungen nach Korea zeigen durchgehend Preise inklusive Steuer. Bestellungen in alle anderen Länder zeigen auf der Produktseite den Preis ohne Steuer, und die Steuer des Ziellandes wird an der Kasse hinzugerechnet, sobald Sie eine Adresse eingeben. Die Zahl auf der Produktseite ist nicht die Zahl, die Sie zahlen, und das ist Absicht und kein Fehler.",
+        pitfall:
+          "Das sieht genau wie Betrug oder ein Fehler aus, und an dieser Stelle brechen Leute die Bestellung ab. Der Aufschlag ist die Steuer, die Ihr eigenes Land erhebt, nur vorab eingezogen statt später durch den Zoll.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Füllen Sie die Rechnungsadresse aus, nicht nur die Lieferadresse",
+        body: "Dieselbe Änderung vom Februar 2026 hat an der Kasse ein Feld für die Rechnungsadresse ergänzt, weil die Steuerberechnung sie braucht. Bei manchen unkörperlichen Produkten — digitalen Artikeln und Inhalten — kann die Rechnungsadresse Pflicht statt freiwillig sein. Tragen Sie sie korrekt ein: daraus wird der Steuersatz berechnet, und eine falsche Angabe lässt sich später nicht still korrigieren.",
+        pitfall:
+          "Die Lieferadresse gedankenlos in das Rechnungsfeld zu kopieren, ist richtig, wenn beide übereinstimmen, und falsch, wenn nicht. Ist Ihre Karte auf eine andere Adresse ausgestellt, nehmen Sie diese.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Prüfen Sie die Sprache Ihrer Adresse gegen das Zielland",
+        body: "Weverse bittet internationale Kundinnen und Kunden, vor der Eingabe zu prüfen, in welcher Sprache das Zielland die Adresse benötigt. In die andere Richtung ist die Regel klarer: eine Bestellung nach Südkorea muss die Adresse auf Koreanisch tragen, weil Zusteller eine englische möglicherweise nicht annehmen oder falsch verarbeiten. Für alle anderen Ziele schreiben Sie die Adresse so, wie es Ihre eigene Post erwartet.",
+        pitfall:
+          "Eine koreanische Adresse ins Englische zu übertragen ist die mit Abstand häufigste Ursache für eine verspätete oder gescheiterte Zustellung bei Bestellungen nach Korea.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Vergewissern Sie sich, dass Korea überhaupt zu Ihnen versenden kann",
+        body: "Der Versand aus Südkorea ist in eine Reihe von Ländern und Regionen nicht möglich, deren Liste Weverse pflegt und aktualisiert. In der Fassung vom 15. Juli 2026 umfasst sie Myanmar, die Demokratische Republik Kongo, Irak, Iran, Libanon, Mali, Russland, Andorra, die Ukraine, Belarus, Afghanistan, die Niederländischen Antillen, Israel und die Türkei. Die Liste bewegt sich, prüfen Sie also die Mitteilung und nicht diese Seite.",
+        pitfall:
+          "Die Liste wird als vorübergehende Störung und nicht als Politik beschrieben, was bedeutet, dass ein Land ebenso wieder herunterkommen wie hinzukommen kann. Weder eine frühere erfolgreiche Bestellung noch die einer Freundin im letzten Jahr entscheidet, ob Sie heute bestellen können.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Bestellen Sie innerhalb des Vorbestellzeitraums, wenn die Beigaben zählen",
+        body: "Vorbestellprämien — die Poster, Photocards und Erstauflagen-Beigaben, die meist überhaupt erst der Grund sind, im offiziellen Shop statt irgendwo günstiger zu bestellen — hängen am Vorbestellzeitraum und nicht am Album. Ist der Zeitraum vorbei, wird dasselbe Album ohne sie versandt. Wenn es Ihnen um die Beigaben geht, ist die Frist das, worum herum zu planen ist, und nicht das Erscheinungsdatum.",
+        pitfall:
+          "Vorbestellzeiträume enden zu einer koreanischen Uhrzeit, und das ist für die meisten Leserinnen und Leser dieser Seite der Vorabend oder die frühen Morgenstunden.",
+        takes: "Vor dem Fristende",
+      },
+    ],
+    faq: [
+      {
+        q: "Kann ich im Weverse Shop mit Visa oder Mastercard bezahlen?",
+        a: "Nicht als direkte Kartenoption außerhalb der koreanischen Währungseinstellung. Bei USD, JPY, CNY und MXN läuft die Karte stattdessen über PayPal oder Eximbay. Das erreicht weiterhin Ihre Karte, aber Ihre Bank sieht eine andere Art von Transaktion, weshalb es sich lohnt, Auslandszahlungen vorab freizuschalten.",
+      },
+      {
+        q: "Warum ist der Preis gestiegen, als ich meine Adresse eingegeben habe?",
+        a: "Seit dem 3. Februar 2026 werden Preise außerhalb Koreas auf der Produktseite ohne Steuer angezeigt, und die Steuer für Ihr Zielland kommt an der Kasse hinzu. Es ist die Steuer, die Ihr eigenes Land erhebt, eingezogen beim Kauf statt bei der Zustellung.",
+      },
+      {
+        q: "Werden bei der Ankunft Zollgebühren fällig?",
+        a: "Weverse zahlt für infrage kommende Bestellungen Zölle und Steuern inzwischen an der Kasse vorab, was nach eigenen Angaben den Bedarf an zusätzlichen Zahlungen während der Abfertigung verringert. Es wird ausdrücklich gesagt, dass dies nicht für jedes Land oder jede Region gilt — es ist also eine begründete Erwartung und keine Garantie.",
+      },
+      {
+        q: "Versendet der Weverse Shop in mein Land?",
+        a: "In der Regel ja, aber es gibt eine gepflegte Liste von Ländern und Regionen, die derzeit keinen Versand aus Südkorea erhalten können. Prüfen Sie vor der Bestellung die aktuelle Liste in jener Mitteilung — sie wird überarbeitet, wenn sich die Lage ändert.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "K-Pop-Alben aus dem Ausland so kaufen, dass sie zählen",
+    summary:
+      "Wo Sie kaufen, entscheidet darüber, ob Ihr Kauf gezählt wird, was Sie für den Versand zahlen und ob Sie die Vorbestellprämien bekommen. So wählen Sie.",
+    scope:
+      "Behandelt den Kauf offizieller physischer Alben und Waren mit Lieferung außerhalb Koreas. Wiederverkaufsplattformen und inoffizielle Merchandise-Artikel sind nicht erfasst.",
+    intro: [
+      "Anders als bei Tickets läuft diese Frage das ganze Jahr über — deshalb steht sie hier neben ihnen. Und anders als bei Tickets gibt es eine falsche Antwort, die sichtbar nichts kostet: Ihr Album kommt an, es wurde nur nicht gezählt.",
+      "Drei Dinge hängen davon ab, wo Sie kaufen: ob der Verkauf an die koreanischen Charts gemeldet wird, ob die Vorbestellprämien mitkommen, und was die Bestellung wirklich kostet, wenn Versand und Zoll eingerechnet sind. Sie bewegen sich nicht gemeinsam, weshalb die günstigste Option häufig genau die ist, die für nichts zählt.",
+    ],
+    steps: [
+      {
+        title: "Entscheiden Sie, was Sie von dem Kauf eigentlich wollen",
+        body: "Chart-Beitrag, das physische Album, die Vorbestellprämien oder der niedrigste Preis. Diese Ziele ziehen in verschiedene Richtungen. Legen Sie die Priorität fest, bevor Sie den Shop wählen, denn der Shop ergibt sich daraus.",
+        pitfall:
+          "Auf einem allgemeinen Marktplatz zu kaufen, um Geld zu sparen, und dann festzustellen, dass es nicht gezählt wurde, ist die Standardfassung dieses Fehlers.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Prüfen Sie, ob der Verkäufer an die koreanischen Charts meldet",
+        body: "An die koreanischen Albumcharts gemeldete Verkäufe stammen von bestimmten Händlern und offiziellen Shops. Dass ein Angebot ein offizielles Album ist, bedeutet nicht, dass der Verkauf gemeldet wurde. Wenn der Chart-Beitrag der Grund für Ihren Kauf ist, vergewissern Sie sich vor der Bestellung, dass der Händler zu den meldenden gehört.",
+        pitfall:
+          "Angebote echter Alben auf Drittanbieter-Marktplätzen zählen üblicherweise nicht. Das Album ist echt; der Beitrag ist nicht da.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Bestellen Sie für die Beigaben innerhalb des Vorbestellzeitraums",
+        body: "Vorbestellprämien — Poster, zusätzliche Photocards, Teilnahmen an Veranstaltungen — hängen daran, innerhalb eines bestimmten Zeitraums zu bestellen, und oft an genau diesem Händler. Der Zeitraum endet vor dem Erscheinungstag, nicht an ihm.",
+        pitfall:
+          "Händlerexklusive Beigaben sind nicht austauschbar. Dasselbe Album woanders zu bestellen bringt einen anderen Satz oder gar keinen.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Rechnen Sie Versand und Zollrisiko aus, nicht den Albumpreis",
+        body: "Der Versand aus Korea kann den Albumpreis übersteigen, und ob Sie darüber hinaus Einfuhrabgaben zahlen, hängt von den Regeln Ihres eigenen Landes ab. Prüfen Sie diese jetzt, statt etwas anzunehmen: Die Vereinigten Staaten haben ihre Freigrenze von 800 Dollar im August 2025 ausgesetzt, und die EU hat ihre Grenze von 150 Euro am 1. Juli 2026 abgeschafft — für Leserinnen und Leser in beiden Räumen gibt es also keinen Betrag mehr, der klein genug wäre, um abgabenfrei anzukommen. Sammelbestellungen senken die Versandkosten je Artikel. Rechnen Sie die Gesamtkosten aus, bevor Sie sich festlegen.",
+        pitfall:
+          "Um eine Freigrenze herum zu planen, die es dort, wo Sie leben, nicht mehr gibt. Und wo es noch eine gibt, kann das Bündeln mehrerer Alben in ein Paket den angemeldeten Wert über die Grenze heben und teurer werden als getrennter Versand — rechnen Sie beides durch.",
+        takes: "20 Minuten",
+      },
+      {
+        title: "Bewahren Sie den Bestellnachweis auf, bis die Ware da ist",
+        body: "Sichern Sie die Bestätigung, die Sendungsnummer und den angemeldeten Wert. Für alles, was schiefgeht — ein beschädigtes Paket, eine Rückfrage des Zolls, eine fehlende Beigabe — ist genau das, wonach der Händler Sie fragen wird.",
+        pitfall:
+          "Der Kundendienst koreanischer Händler arbeitet oft mit Bestellnummern statt mit einer Suche nach der E-Mail-Adresse. Ohne die Nummer wird das Gespräch zäh.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Zählen außerhalb Koreas gekaufte Alben für die koreanischen Charts?",
+        a: "Von teilnehmenden Händlern gemeldete Verkäufe zählen, und das hängt am Händler und nicht an Ihrem Standort. Ein echtes Album bei einem Shop zu kaufen, der nicht meldet, bedeutet: das Album ist echt, der Verkauf wird nicht gezählt. Prüfen Sie den Händler vor der Bestellung, wenn es Ihnen um den Chart-Beitrag geht.",
+      },
+      {
+        q: "Lohnt sich eine Sammelbestellung?",
+        a: "Für den Versand meist ja, weil die Kosten je Artikel deutlich sinken. Wägen Sie das gegen die Einfuhrregeln Ihres Landes ab — wo es noch eine Freigrenze gibt, kann ein einzelnes hochwertiges Paket Abgaben auslösen, die mehrere kleinere nicht ausgelöst hätten. In den Vereinigten Staaten und der EU hat sich diese Rechnung geändert: beide haben ihre Befreiungen für geringe Werte abgeschafft, es bleibt also keine Grenze, unter der man bleiben könnte.",
+      },
+      {
+        q: "Warum sind die Vorbestellprämien bei den Shops unterschiedlich?",
+        a: "Händler verhandeln ihre eigenen exklusiven Beigaben, dasselbe Album trägt also je nach Ort der Vorbestellung andere Extras. Wenn Sie eine bestimmte Beigabe wollen, müssen Sie bei dem Shop bestellen, der sie anbietet, und zwar innerhalb seines Zeitraums.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Warum Ihre Karte auf einer koreanischen Ticketseite abgelehnt wurde",
+    summary:
+      "Drei verschiedene Systeme können dieselbe Zahlung ablehnen — die Plattform, Ihr Kartennetz und Ihre Bank. Jedes hat eine andere Lösung, und nur eine davon ist schnell.",
+    scope:
+      "Behandelt Zahlungen mit im Ausland ausgestellten Karten auf koreanischen Ticketplattformen. Keine Finanzberatung, und die Regeln Ihrer eigenen Bank kann diese Seite nicht abdecken.",
+    intro: [
+      "Eine abgelehnte Karte im Zahlungsschritt ist der teuerste Fehlschlag beim K-Pop-Ticketkauf, denn ein reservierter Platz geht binnen Minuten zurück in den Pool. Fast alles davon lässt sich mit etwas Vorlauf verhindern.",
+      "Es wirkt deshalb zufällig, weil drei voneinander unabhängige Systeme dieselbe Transaktion ablehnen können und die Fehlermeldung, die Sie sehen, selten verrät, welches es war. Arbeiten Sie sie in der Reihenfolge ab, wie lange ihre Behebung jeweils dauert.",
+    ],
+    steps: [
+      {
+        title: "Prüfen Sie, ob Ihre Kontoverifizierung wirklich abgeschlossen ist",
+        body: "Auf mehreren Plattformen funktionieren im Ausland ausgestellte Karten erst, wenn das Konto als Konto einer ausländischen Kundin oder eines ausländischen Kunden verifiziert wurde. Läuft diese Prüfung noch, scheitert die Karte, so gesund sie auch sein mag. Das ist die langsamste Lösung, und deshalb steht sie zuerst.",
+        pitfall:
+          "Die Fehlermeldung wird nicht sagen „Ihre Verifizierung läuft noch“. Sie wird wie ein Kartenproblem aussehen.",
+        takes: "1-3 Tage",
+      },
+      {
+        title: "Sagen Sie Ihrer Bank vor dem Verkaufsstart Bescheid, nicht danach",
+        body: "Schalten Sie internationale Zahlungen und Online-Zahlungen frei, und lassen Sie, falls Ihre Bank das unterstützt, den Betragsrahmen und das Land vorab autorisieren. Eine erstmalige Belastung durch einen koreanischen Händler zu ungewöhnlicher Stunde ist genau das Profil, das ein Betrugssystem blockiert.",
+        pitfall:
+          "Automatische Betrugssperren bleiben auf Ihrer Seite oft stumm — keine SMS, keine Benachrichtigung in der App. Sie erfahren davon nur durch die nichtssagende Ablehnung beim Händler.",
+        takes: "1 Tag",
+      },
+      {
+        title: "Führen Sie den Zahlungsschritt nicht im In-App-Browser aus",
+        body: "3-D Secure und die Einmalpasswort-Abläufe von Banken scheitern häufig in dem Browser, der in einer Social-Media- oder Messenger-App eingebettet ist. Nutzen Sie einen normalen Browser am Telefon oder am Rechner, und stellen Sie sicher, dass Sie die Bestätigungsnachricht Ihrer Bank auf demselben Gerät empfangen können.",
+        pitfall:
+          "Die Weiterleitung kann erfolgreich aussehen und die Autorisierung dann still verlieren, was sich wie eine Ablehnung liest.",
+        takes: "0 Minuten, machen Sie es einfach richtig",
+      },
+      {
+        title: "Halten Sie eine wirklich andere Karte bereit, keine Schwesterkarte",
+        body: "Eine zweite Karte desselben Herausgebers scheitert meist aus demselben Grund. Ein anderer Herausgeber, ein anderes Netz oder die unterstützte Alternativmethode der Plattform, falls vorhanden, ist eine echte Rückfalloption. Die beiden Auslandsplattformen lehnen außerdem Gegensätzliches ab, was man wissen sollte, bevor man die Karte beschuldigt: NOL World akzeptiert VISA, MasterCard, AMEX, JCB und UnionPay, aber nur außerhalb Koreas ausgestellt, und lehnt in Korea ausgestellte Karten rundweg ab. YES24 Global macht es bei zweien davon umgekehrt und schließt außerhalb Koreas ausgestellte American Express sowie UnionPay vollständig aus. Eine auf der einen Seite abgelehnte Karte kann auf der anderen die richtige sein.",
+        pitfall:
+          "Zwei Karten derselben Bank sind für eine Betrugsregel eine Karte.",
+        takes: "30 Minuten Vorbereitung",
+      },
+      {
+        title: "Prüfen Sie Währung und Betrag, bevor Sie bestätigen",
+        body: "Lesen Sie nach, ob Ihnen in KRW oder in einem umgerechneten Betrag belastet wird, und kennen Sie die Auslandsgebühr Ihrer Karte. Eine Umrechnung, die die Summe über ein von Ihnen selbst gesetztes Limit hebt, kann ebenfalls zu einer Ablehnung führen.",
+        pitfall:
+          "Die dynamische Währungsumrechnung verteuert still. In KRW zu zahlen ist in der Regel die günstigere Wahl.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Warum wurde meine Karte abgelehnt, obwohl Geld darauf ist?",
+        a: "Meist eine von drei Ursachen: Ihr Plattformkonto hat die Verifizierung als ausländische Kundschaft nicht abgeschlossen, das Betrugssystem Ihrer Bank hat einen unbekannten ausländischen Händler blockiert, oder ein 3-D-Secure-Schritt ist gescheitert — häufig, weil er im In-App-Browser lief. Die Ablehnungsmeldung unterscheidet das in der Regel nicht.",
+      },
+      {
+        q: "Funktioniert PayPal?",
+        a: "Manche auf Auslandskundschaft ausgerichteten Plattformen unterstützen bei manchen Veranstaltungen alternative Zahlungsarten. Das wird je Plattform und je Veranstaltung festgelegt und gilt nicht allgemein, prüfen Sie also die auf Ihrer Veranstaltungsseite genannten Zahlungsoptionen, bevor Sie damit planen.",
+      },
+      {
+        q: "Soll ich in KRW oder in meiner eigenen Währung zahlen?",
+        a: "In der Währung des Händlers zu zahlen ist in der Regel günstiger, als die Zahlungsseite umrechnen zu lassen, weil die dynamische Währungsumrechnung einen Aufschlag enthält. Die Auslandsgebühr Ihrer eigenen Karte fällt in beiden Fällen an.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Das Weverse-Datenleck: was tatsächlich abgeflossen ist, und das eine Risiko daraus",
+    summary:
+      "422,584 Konten, von Weverse selbst bestätigt. Keine Namen, keine Kontaktdaten, keine Kartennummern — eine interne Kennung und Ihre Kaufhistorie. Diese Kombination ist kein leergeräumtes Konto; sie ist das Rohmaterial für eine Nachricht, die weiß, was Sie gekauft haben.",
+    scope:
+      "Behandelt, was Weverse Company zu dem im September 2026 bestätigten Leck veröffentlicht hat, gelesen in der englischen und der koreanischen Fassung der Mitteilung. Wir sind keine Sicherheitsprüfer und dies ist keine Rechtsberatung: Alles, was Weverse zugeschrieben wird, ist dessen eigene Aussage und kein von uns verifizierter Befund. Ein Sicherheitsvorfall kann sich weiterentwickeln, und diese Seite trägt das Datum unserer letzten Prüfung.",
+    intro: [
+      "Im September 2026 veröffentlichte der Präsident von Weverse Company eine Mitteilung, die den Abfluss personenbezogener Kundendaten bestätigte. Jede Leserin und jeder Leser dieser Seite hat ein Weverse-Konto, die Frage ist also nicht, ob das wichtig ist, sondern was sich tatsächlich ändert — und die Antwort ist enger und genauer als ein Achselzucken oder eine Panik.",
+      "Es folgt diese Mitteilung, genau gelesen, in beiden Sprachen, in denen sie erschien. Nützlich ist nicht die Zahl. Nützlich ist, dass die bestimmte Datenkombination, die abgeflossen ist, zum Bestehlen fast unbrauchbar und zum Überzeugen ungewöhnlich gut geeignet ist.",
+    ],
+    steps: [
+      {
+        title: "Lesen Sie die beiden Listen, denn der Unterschied entscheidet alles",
+        body: "Weverse führt das Abgeflossene unter zwei Überschriften auf. Als personenbezogene Daten: interne Identifikationsinformationen — eine eindeutige interne Nummer, die bei Ihrer Registrierung zur Nutzeridentifikation erzeugt wurde. Als allgemeine Informationen, die es nicht als personenbezogen einstuft: Kaufart im Sinne der Zahlungsmethode, Name des Zahlungsdienstleisters, Währung, Kaufbetrag, Stornobetrag, Datum und Uhrzeit des Kaufs, Kaufstatus sowie Datum und Uhrzeit der Erstattung bei stornierten Bestellungen. Der Umfang beträgt 422,584 Fälle, gezählt in Einheiten von Konto-IDs. Entscheidend ist, was auf keiner der beiden Listen steht: keine Namen, keine Kontaktdaten, keine Kartennummern oder Zahlungsdaten.",
+        pitfall:
+          "Die Zahl 422,584 zu lesen und den Rest aus Erinnerungen an andere Vorfälle zu ergänzen. Die Reaktion auf ein Leck von Zugangsdaten und die auf dieses sind verschieden, weshalb die Einzelaufstellung mehr wert ist als die Schlagzeile.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Wägen Sie die Beruhigung von Weverse fair ab, samt ihrer Grenze",
+        body: "Weverse erklärt, die abgeflossene interne Kennung sei keine Information, die eine Person unmittelbar identifiziere, wie ein Name oder Kontaktdaten; sie sei ein Wert, der nur innerhalb der internen Systeme von Weverse Company verwendet werde und extern nicht nutzbar sei; und Zahlungsfälschung oder unbefugte Geldtransfers seien allein aus diesen Datenpunkten unwahrscheinlich. Der Form nach trägt diese Begründung — eine interne Zeilennummer ist keine Identität, und keines dieser Felder ist ein Zugangsdatum. Die ehrliche Grenze ist, dass eine interne Kennung in dem Moment identifizierend wird, in dem sie mit einem anderen Datensatz verbunden wird, der sie ebenfalls enthält, und niemand außerhalb des Unternehmens kann messen, wie wahrscheinlich das ist. Das ist das verbleibende Risiko: Verknüpfung, nicht Diebstahl.",
+        pitfall:
+          "Eine vernünftige Beruhigung als Garantie zu nehmen — oder als PR abzutun. Es ist eine konkrete Aussage über konkrete Felder, und sie ist genau dort am stärksten, wo sie am engsten ist.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Verstehen Sie das eigentliche Risiko: eine Nachricht, die weiß, was Sie gekauft haben",
+        body: "Betrachten Sie die abgeflossenen Felder zusammen — Zahlungsmethode, Dienstleister, Währung, Betrag, Datum, Status, Erstattungsdatum. Das ist keine Ausrüstung, um Ihre Karte zu belasten. Es ist die Ausrüstung, um eine Nachricht zu schreiben, die den einzigen Test besteht, den die meisten Menschen auf eine verdächtige E-Mail anwenden: ob die Absenderseite echte Details einer echten Bestellung kennt. Eine Nachricht, die Ihren tatsächlichen Kaufbetrag zitiert, am tatsächlichen Datum, in der tatsächlichen Währung, über den tatsächlichen Zahlungsdienstleister, ist weit überzeugender als alles, was ein beliebiger Betrüger verfassen könnte.",
+        pitfall:
+          "„Die kennen meine Bestelldaten“ als Beweis dafür zu nehmen, dass eine Nachricht echt ist. Nach diesem Leck funktioniert dieser Test nicht mehr, und es ist der Test, den fast alle verwenden.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Wissen Sie, warum das auf einen echten Vorgang trifft",
+        body: "Für dieses Publikum wiegt das schwerer als für die meisten, denn legitime Fremde verlangen von Weverse-Kundschaft bereits Geld. Weverse Shop warnt Käuferinnen und Käufer in der EU, dass sie gesonderte Zahlungsanweisungen vom örtlichen Zoll oder vom Zusteller erhalten können und dass eine Nichtzahlung die Zustellung verzögern oder verhindern kann. Die echte und die betrügerische Erfahrung sehen also inzwischen gleich aus: ein Unternehmen, zu dem Sie keine Beziehung haben, verweist auf eine Bestellung, die Sie wirklich aufgegeben haben, und verlangt eine Zahlung, bevor sich Ihr Paket bewegt. Das Leck hat diese Überschneidung nicht geschaffen, aber es hat sie geschärft.",
+        pitfall:
+          "Die Unklarheit durch Zahlen aufzulösen — oder durch Ignorieren. Das eine kostet Geld, das andere das Paket.",
+        takes: "—",
+      },
+      {
+        title: "Nutzen Sie eine Prüfung, die nicht davon abhängt, was die Nachricht weiß",
+        body: "Der Weg hindurch besteht darin, nicht mehr die Nachricht zu bewerten, sondern ihre Behauptung. Nehmen Sie die Sendungs- oder Bestellnummer heraus, gehen Sie dann selbst zum Zusteller oder zum Weverse Shop — selbst eingetippte Adresse oder gespeichertes Lesezeichen, niemals ein Link aus der Nachricht — und sehen Sie nach, ob diese Nummer zu einer Ihrer Bestellungen gehört und ob tatsächlich etwas offen ist. Ist die Nachricht echt, stehen dieselben Angaben auch auf der anderen Seite. Ist sie es nicht, steht dort nichts, und Sie haben das erfahren, ohne irgendwo zu klicken.",
+        pitfall:
+          "Dem Link zu folgen, weil die Details stimmten. Dass die Details stimmen, ist jetzt der Normalzustand einer Fälschung.",
+        takes: "5 Minuten je Nachricht",
+      },
+      {
+        title: "Verwechseln Sie ein neues Passwort nicht mit der Lösung",
+        body: "Der Reflex nach jedem Vorfall ist, das Passwort zu ändern, und hier adressiert das fast nichts: abgeflossen sind eine Kennung und Kaufmetadaten über eine Schnittstelle für Zahlungsinformationen, keine Anmeldedaten. Das Passwort zu wechseln kostet nichts und schadet nicht, tun Sie es also, wenn es Sie beruhigt — aber tun Sie es im Wissen, dass es Hygiene und kein Heilmittel ist, und dass Sie in Wahrheit die Prüfgewohnheit aus dem vorigen Schritt schützt. Welche Zwei-Faktor-Option Ihr Anmeldedienst auch bietet, sie zu aktivieren lohnt sich grundsätzlich, und auch das ist keine Antwort auf dieses Leck.",
+        pitfall:
+          "Das Passwort zu ändern, sich fertig zu fühlen und dann der nächsten Nachricht zu glauben, die Ihre Bestellung zitiert. Reflexhafte Ratschläge sind bequem und verdrängen die, die wirken.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Finden Sie über das Konto heraus, ob Sie betroffen sind, nicht über eine Anleitung",
+        body: "Weverse schreibt, es habe ein gesondertes Verfahren nach den Kriterien der einschlägigen Gesetze und Vorschriften durchgeführt, um die Kundschaft zu benachrichtigen, deren Daten im Leck enthalten waren. Die Antwort liegt also in Ihrem eigenen Konto: in der dort hinterlegten E-Mail-Adresse und in Ihren Benachrichtigungen in der App. Keine Anleitung kann es Ihnen sagen, auch diese nicht, und jede dritte Partei, die zu prüfen verspricht, ob Sie im Leck waren, ist ein Grund für Misstrauen und kein Dienst.",
+        pitfall:
+          "Nach einem Werkzeug zu suchen, das Ihnen sagt, ob Sie betroffen sind. Bei einem Leck interner Kennungen gibt es nichts Sinnvolles, was ein solches Werkzeug prüfen könnte, und die Suche selbst ist das, worauf eine Phishing-Seite wartet.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Halten Sie fest, was das Unternehmen getan haben will und was Absicht bleibt",
+        body: "Die Darstellung von Weverse zur eigenen Reaktion, in dessen Worten: Es habe die Zugriffskontrolle auf die Schnittstelle zur Verarbeitung von Zahlungsinformationen verschärft und die interne Kennung daraus entfernt, damit die Daten nicht nach außen gelangen; es habe am 4. September eine Meldung über den Sicherheitsvorfall bei der Korea Internet & Security Agency eingereicht; und es habe die betroffene Kundschaft benachrichtigt. Als Vorhaben genannt werden: eine vollständige Untersuchung aller nach außen offenen Schnittstellen, strengere Zugriffskontrolle und minimierte offengelegte Informationen, strengere Kontrolle der Bereitstellungsprozesse und eine empfindlichere Sicherheitsüberwachung. Außerdem habe man die externe Partei, die auf die Daten zugegriffen hat, zu deren Rückgabe aufgefordert und beabsichtige, rechtliche Verantwortung geltend zu machen. Halten Sie beide Kategorien auseinander: die erste Gruppe sind Aussagen über abgeschlossene Arbeiten, die niemand von außen prüfen kann, die zweite sind Absichten.",
+        pitfall:
+          "Eine Liste geplanter Verbesserungen als Liste bereits erfolgter Behebungen zu lesen. Die Mitteilung behauptet das nicht, und eine Zusammenfassung davon sollte es auch nicht.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Erkennen Sie die Handhabung an, im angemessenen Maß",
+        body: "Der von Weverse beschriebene Ablauf ist kurz: Kontaktaufnahme durch die KISA am 3. September, nachdem eine externe meldende Person eine Schwachstelle offengelegt hatte, sofortige interne Prüfung und Notfallreaktion, eine Meldung des Vorfalls bei der KISA am 4. September, und eine öffentliche Mitteilung im Namen der Unternehmensspitze, die auflistet, was abgeflossen ist — einschließlich der Felder, die nach eigener Argumentation rechtlich keine personenbezogenen Daten sind und die aufzuzählen nicht nötig gewesen wäre. Wir haben das koreanische Original gegen die englische Fassung gelesen, und beide sagen dasselbe, was für sich ein kleines Signal ist. Nichts davon macht ein Leck ungeschehen. Aber eine Seite, die Vorfälle ausschließlich als Skandale meldet, lehrt ihre Leserschaft nichts darüber, wie kompetente Handhabung aussieht, und dies kommt ihr näher als das meiste.",
+        pitfall:
+          "Aus einer nüchternen Bewertung zu schließen, es sei nichts passiert. 422,584 Konten sind ein echtes Versagen, das eine zügige Offenlegung nicht aufhebt.",
+        takes: "—",
+      },
+      {
+        title: "Überlegen Sie zweimal, bevor Sie das Konto löschen, und wissen Sie, was Löschen nicht ist",
+        body: "Das Konto zu löschen ist der andere Reflex, und es ist eine größere Entscheidung, als es aussieht. Weverse Shop und NOL World knüpfen beide echte Dinge an ein Konto: Bestell- und Buchungshistorie, gespeicherte Adressen, eine bezahlte Mitgliedschaft und auf der Ticketseite eine abgeschlossene Identitätsprüfung. Der entscheidende Punkt ist aber einfacher. Eine Löschung entfernt Ihre Daten künftig aus dem Dienst; sie holt keine Daten zurück, die bereits abgeflossen sind. Was in diesem Leck war, war darin, bevor Sie irgendetwas entschieden haben, und ein nachträglich geschlossenes Konto erreicht es nicht.",
+        pitfall:
+          "Ein Konto als Reaktion auf ein Leck zu löschen. Der Wunsch ist nachvollziehbar und es ist kein Mittel dagegen, und es kostet Sie die Historie, die Sie bräuchten, falls ein Kauf je strittig würde.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Sind mein Name, meine Adresse oder meine Kartennummer abgeflossen?",
+        a: "Nach der eigenen Aufstellung von Weverse nicht. Aufgeführt werden eine interne Identifikationsnummer sowie Kaufmetadaten — Zahlungsmethode, Name des Zahlungsdienstleisters, Währung, Kauf- und Stornobeträge, Datum und Uhrzeit des Kaufs, Kaufstatus sowie Datum und Uhrzeit der Erstattung. Namen, Kontaktdaten und Zahlungsdaten stehen nicht auf der Liste.",
+      },
+      {
+        q: "Soll ich mein Weverse-Passwort ändern?",
+        a: "Es schadet nicht, und es ist nicht die Lösung. Betroffen waren eine Kennung und Kaufmetadaten über eine Schnittstelle für Zahlungsinformationen und keine Anmeldedaten, ein neues Passwort adressiert das also nicht. Tun Sie es, wenn es Sie beruhigt, und stecken Sie die eigentliche Mühe in die unabhängige Prüfung von Zahlungsaufforderungen, denn die schützt Sie hier wirklich.",
+      },
+      {
+        q: "Woher weiß ich, ob ich zu den 422,584 gehöre?",
+        a: "Über Ihr eigenes Konto. Weverse schreibt, es habe für betroffene Kundschaft nach den einschlägigen Gesetzen ein gesondertes Benachrichtigungsverfahren durchgeführt, prüfen Sie also die im Konto hinterlegte E-Mail-Adresse und Ihre Benachrichtigungen in der App. Kein externes Werkzeug kann es Ihnen sagen, und alles, was damit wirbt, sollte als Phishing-Versuch behandelt werden.",
+      },
+      {
+        q: "Kann damit jemand meine Karte belasten?",
+        a: "Weverse schreibt, Zahlungsfälschung oder unbefugte Transfers seien allein aus diesen Punkten unwahrscheinlich, und der Form der Liste nach ist das stimmig — keines der abgeflossenen Felder ist eine Kartennummer oder ein Zugangsdatum. Das realistische Risiko ist keine direkte Belastung, sondern eine überzeugende Nachricht, die Sie dazu bringt, selbst zu zahlen.",
+      },
+      {
+        q: "Wenn es keine personenbezogenen Daten sind, warum ist es dann wichtig?",
+        a: "Weil Nützlichkeit für Angreifende und rechtliche Einordnung zwei verschiedene Fragen sind. Kaufbeträge, Daten, Zahlungsmethoden und Währungen sind genau das, was eine betrügerische Nachricht glaubwürdig macht — und wie Menschen eine verdächtige E-Mail üblicherweise beurteilen, ist die Frage, ob die Absenderseite echte Details einer echten Bestellung kennt. Für alle in diesem Leck funktioniert dieser Test nicht mehr.",
+      },
+      {
+        q: "Soll ich mein Weverse-Konto löschen?",
+        a: "Das ist eine vertretbare Entscheidung und kein Mittel dagegen. Eine Löschung stoppt die künftige Erhebung; sie holt keine bereits abgeflossenen Daten zurück, auch nichts aus diesem Leck. Sie kostet Sie außerdem Bestell- und Buchungshistorie, gespeicherte Adressen, jede bezahlte Mitgliedschaft und auf der Ticketseite eine abgeschlossene Identitätsprüfung — entscheiden Sie also danach, ob Sie den Dienst noch wollen, und nicht als Reaktion hierauf.",
+      },
+      {
+        q: "Was hat Weverse tatsächlich getan?",
+        a: "Nach eigener Darstellung: die Zugriffskontrolle auf die Schnittstelle für Zahlungsinformationen verschärft und die interne Kennung daraus entfernt, am 4. September 2026 eine Meldung über den Sicherheitsvorfall bei der KISA eingereicht und die betroffene Kundschaft benachrichtigt. Außerdem werden geplante Arbeiten aufgeführt — Prüfung aller nach außen offenen Schnittstellen, strengere Kontrolle der Bereitstellung, empfindlichere Überwachung — und es heißt, man habe von der beteiligten Partei die Rückgabe der Daten verlangt und beabsichtige, rechtliche Verantwortung geltend zu machen. Die abgeschlossenen Punkte sind dessen Aussagen und keine geprüften Befunde.",
+      },
+      {
+        q: "Gibt es etwas Neueres als das hier?",
+        a: "Nicht zum Datum oben auf dieser Seite, und das ist der Tag, an dem wir zuletzt die Mitteilungsliste des Weverse Shops gelesen haben. Ein Sicherheitsthema kann sich weiterentwickeln, diese Liste ist also die lebende Fassung — gibt es eine Folgemitteilung, steht sie dort, bevor sie hier steht.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Weverse-Mitgliedschaft aus dem Ausland verlängern",
+    summary:
+      "Die automatische Zahlung läuft am letzten Tag Ihrer Laufzeit zu der Uhrzeit, zu der Sie zuerst bezahlt haben, in einer Währung, die übereinstimmen muss — und scheitert sie über das Verlängerungsfenster hinaus, führt kein Weg zurück außer einem Neukauf.",
+    scope:
+      "Behandelt, wie Sie eine bestehende Weverse Official Membership am Laufen halten und was ein Ablauf kostet. Der erstmalige Beitritt zu einem Fanclub und die Qualifikation für einen bestimmten Vorverkauf sind eigene Fragen und stehen in der Vorverkaufs-Anleitung. Alles hier stammt aus der Mitteilung des Weverse Shops vom 3. September 2026 und den darin verlinkten Produktseiten.",
+    intro: [
+      "Eine Mitgliedschaft, die in der falschen Woche ausläuft, kostet Sie nicht ein Abonnement. Sie kostet Sie den Vorverkauf, denn die Berechtigung wird gegen eine Mitgliedschaft geprüft, die vor einem Stichtag aktiv war, und kein noch so schneller Neukauf danach verschiebt dieses Datum.",
+      "Weverse hat am 3. September 2026 die automatische Zahlung eingeführt, die den gewöhnlichen Weg in den Ablauf beseitigt. Damit kamen allerdings vier Regeln, die sich leicht falsch machen lassen, und ein Punkt ohne Wiederkehr.",
+    ],
+    steps: [
+      {
+        title: "Finden Sie heraus, in welcher Mitgliedschaftskategorie Sie sind",
+        body: "Weverse führt Mitgliedschaften in drei Kategorien — Global, Japan und USA — und sie werden getrennt verwaltet. Zahlungsmethoden, Währungen und Einstellungen zur automatischen Zahlung gelten jeweils je Kategorie, und je Kategorie lassen sich bis zu fünf Zahlungsmethoden hinterlegen, von denen eine als primär markiert wird. In welcher Kategorie Sie sind, wählen Sie nicht nebenbei; es ist der Ort, an dem Ihre Mitgliedschaft bereits liegt.",
+        pitfall:
+          "Die automatische Zahlung in der Kategorie einzurichten, die Sie nicht nutzen. Der Bildschirm sieht identisch aus, und die Mitgliedschaft, die sich verlängert, ist die andere.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Prüfen Sie, ob Ihre Währung von der Kategorie überhaupt angenommen wird",
+        body: "Stand 3. September 2026: Eine Global Membership nimmt südkoreanische Debit- oder Kreditkarten für KRW und bei PayPal hinterlegte Karten für JPY, USD oder MXN. Eine Japan Membership nimmt Kreditkarten für JPY. Eine US Membership nimmt bei PayPal hinterlegte Karten für USD. Für eine Person im Ausland mit Global Membership und Zahlung in USD heißt das: die Karte läuft über PayPal — eine direkte Kartenoption gibt es nicht.",
+        pitfall:
+          "Zu erwarten, eine Visa direkt auf einer USD-Global-Membership hinterlegen zu können. Dasselbe Muster zieht sich durch den Weverse Shop, und es ist der Grund, warum eine überall sonst funktionierende Karte hier scheitern kann.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Bringen Sie die Kaufwährung mit der primären Methode in Übereinstimmung",
+        body: "Weverse sagt es unmissverständlich: die beim Kauf der Mitgliedschaft verwendete Zahlungswährung muss mit der Zahlungswährung Ihrer primären Methode für die automatische Zahlung übereinstimmen. Eine Abweichung wird am Verlängerungstag nicht zu Ihren Gunsten aufgelöst — sie ist eine Verlängerung, die nicht durchgeht.",
+        pitfall:
+          "Eine Mitgliedschaft in einer Währung zu kaufen und später eine primäre Methode in einer anderen zu hinterlegen, was auf beiden Bildschirmen stimmig aussieht und erst an dem Tag scheitert, an dem es zählt.",
+        takes: "3 Minuten",
+      },
+      {
+        title: "Kennen Sie den genauen Moment der Verlängerung",
+        body: "Die automatische Zahlung läuft am letzten Tag der aktuellen Gültigkeitsdauer, zu derselben Tageszeit, zu der Sie erstmals bezahlt haben. Diese Uhrzeit wurde auf einem koreanischen Server gesetzt, liegt für die meisten Leserinnen und Leser also irgendwo in der Nacht oder am frühen Morgen. Scheitert sie, schickt Weverse eine E-Mail und eine Push-Benachrichtigung und versucht es einmal täglich zur selben Zeit erneut, solange der Verlängerungszeitraum läuft.",
+        pitfall:
+          "Eine Karte, die mitten in der Laufzeit abläuft, oder eine Bank, die die Belastung blockiert, wird zu einer Benachrichtigung um vier Uhr morgens Ihrer Zeit. Der erneute Versuch erfolgt täglich, nicht stündlich — ein Tag, an dem Sie die E-Mail nicht sehen, ist ein verbrauchter Tag des Fensters.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Verstehen Sie, was das Abschalten der automatischen Zahlung nicht bewirkt",
+        body: "Die automatische Zahlung abzuschalten stoppt künftige Verlängerungen. Es storniert oder erstattet nicht die Mitgliedschaft, die Sie bereits halten, und Sie nutzen sie bis zum Ende der Gültigkeitsdauer normal weiter. Stornierung und Erstattung der Mitgliedschaft selbst sind eine eigene Sache und richten sich nach der Produktseite dieser Mitgliedschaft.",
+        pitfall:
+          "Die automatische Zahlung abzuschalten und Geld zurückzuerwarten — und, davon getrennt: sie abzuschalten, um zu „pausieren“, während eine Tour gerüchteweise ansteht, also genau in der Woche, in der die Verlängerung am wenigsten aussetzen sollte.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Behandeln Sie das Ende des Verlängerungszeitraums als Punkt ohne Wiederkehr",
+        body: "Haben Sie die automatische Zahlung abgeschaltet, können Sie sie wieder aktivieren — aber nur, solange der Verlängerungszeitraum noch läuft. Ist dieser Zeitraum vorbei, ist eine Reaktivierung nicht mehr möglich, und der einzige Weg ist ein erneuter Kauf der Mitgliedschaft. Innerhalb des Fensters gibt Weverse außerdem zwei manuelle Bedienelemente: Pay Now für die sofortige Verlängerung und Retry Now, wenn eine Zahlung über eine inzwischen korrigierte Methode gescheitert ist.",
+        pitfall:
+          "Abzuwarten, ob die erneuten Versuche durchgehen. Retry Now und Pay Now gibt es genau dafür, dass Sie das nicht müssen, und beide verschwinden, wenn das Fenster schließt.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Verlängern statt neu kaufen, denn der Datensatz wird übernommen",
+        body: "Verlängert sich eine Mitgliedschaft über die automatische Zahlung, werden die auf der bestehenden Mitgliedschaft hinterlegten Mitgliedsangaben auf die nächste übernommen. Genau dieser Datensatz — insbesondere der darauf stehende Name — ist das, wogegen eine Berechtigungsprüfung im Vorverkauf läuft. Nach einem Ablauf eine frische Mitgliedschaft zu kaufen beginnt einen neuen Datensatz und ein neues Startdatum, und das ist der Teil, der einen Vorverkauf kostet statt einer Abogebühr.",
+        pitfall:
+          "Anzunehmen, es gehe bei der Kontinuität um Treue. Es geht um ein Datum und einen Namen auf einem Datensatz, und eine Lücke in einem von beidem ist das, was die Prüfung sieht.",
+        takes: "2 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Kann ich eine Global Membership mit meiner eigenen Visa oder Mastercard bezahlen?",
+        a: "Außerhalb von KRW nicht direkt. Eine Global Membership nimmt koreanische Karten für KRW und bei PayPal hinterlegte Karten für JPY, USD oder MXN — Ihre Karte erreicht Weverse also über PayPal und nicht als direkte Kartenzahlung.",
+      },
+      {
+        q: "Wann genau belastet mich die automatische Zahlung?",
+        a: "Am letzten Tag der aktuellen Gültigkeitsdauer, zu derselben Tageszeit, zu der Sie erstmals bezahlt haben. Diese Zeit wurde nach koreanischer Uhr gesetzt, rechnen Sie sie also für Ihre eigene um.",
+      },
+      {
+        q: "Wenn die automatische Zahlung scheitert, wie viele Versuche habe ich?",
+        a: "Weverse benachrichtigt Sie per E-Mail und Push und versucht es dann einmal täglich zur selben Zeit erneut, für den Rest des Verlängerungszeitraums. Sie können außerdem Retry Now nutzen, nachdem Sie die Zahlungsmethode korrigiert haben, oder Pay Now, um sofort zu verlängern.",
+      },
+      {
+        q: "Ich habe die automatische Zahlung abgeschaltet. Kann ich sie wieder einschalten?",
+        a: "Ja, solange der Verlängerungszeitraum noch offen ist — dafür gibt es genau ein Bedienelement zur Reaktivierung. Nach Ende des Verlängerungszeitraums geht das nicht mehr, und die einzige Möglichkeit ist der erneute Kauf der Mitgliedschaft.",
+      },
+      {
+        q: "Macht es etwas aus, wenn meine Mitgliedschaft ein paar Tage ausläuft?",
+        a: "Es kann mehr ausmachen als der Preis. Eine Verlängerung übernimmt die Mitgliedsangaben der bestehenden Mitgliedschaft; ein Neukauf beginnt einen neuen Datensatz mit neuem Datum. Die Vorverkaufsberechtigung wird gegen diesen Datensatz und dessen Stichtag geprüft und nicht danach, wie lange Sie schon Fan sind.",
+      },
+    ],
+    labels: DE_LABELS,
   },
 ];
 

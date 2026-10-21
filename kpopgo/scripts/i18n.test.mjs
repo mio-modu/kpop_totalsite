@@ -266,3 +266,48 @@ test("every label set carries every label the template needs", () => {
     }
   }
 });
+
+/**
+ * A translated page says what it is, and does not overstate its freshness.
+ *
+ * These pages shipped with no structured data at all — fifty-one of them in
+ * the sitemap, each telling a crawler nothing — while breadcrumbs are the one
+ * rich result this content type can still earn. The assertions here are the
+ * two that can rot: the type (Article, not the deprecated HowTo and FAQPage
+ * the English pages carry for other reasons) and the date.
+ *
+ * The date is the one worth a test. A translated page's `dateModified` must
+ * never be later than the source's `lastChecked`, for the same reason
+ * translationState checks expiry before comparing dates: the page cannot have
+ * been verified more recently than the check it was copied from. Emitting the
+ * translation date alone would tell a crawler the copy is newer than the
+ * original, which inverts the whole rule on a surface nobody looks at.
+ */
+const jsonld = await readFile(new URL("../lib/jsonld.ts", import.meta.url), "utf8");
+
+test("translated pages emit breadcrumbs and an Article, not dead markup", () => {
+  assert.match(jsonld, /export function translatedGuideJsonLd/, "no builder for translated pages");
+  const fn = jsonld.slice(jsonld.indexOf("export function translatedGuideJsonLd"));
+  const body = fn.slice(0, fn.indexOf("\n}\n"));
+  assert.match(body, /"@type": "BreadcrumbList"/, "translated pages emit no breadcrumbs");
+  assert.match(body, /"@type": "Article"/, "translated pages emit no Article");
+  assert.doesNotMatch(
+    body,
+    /"@type": "(HowTo|FAQPage)"/,
+    "translated pages copy HowTo or FAQPage, whose rich results Google " +
+      "retired in 2023 and May 2026 — that is cargo on fifty-one pages",
+  );
+  assert.match(body, /inLanguage: info\.tag/, "the Article does not declare its language");
+  assert.match(body, /translationOfWork/, "the Article does not point at the original");
+});
+
+test("a translation's dateModified cannot outrun its source", () => {
+  const fn = jsonld.slice(jsonld.indexOf("export function translatedGuideJsonLd"));
+  assert.match(
+    fn.slice(0, fn.indexOf("\n}\n")),
+    /dateModified: tr\.translated < guide\.lastChecked \? tr\.translated : guide\.lastChecked/,
+    "dateModified is not clamped to the source's lastChecked, so a translated " +
+      "page can advertise itself to a crawler as fresher than the English it " +
+      "was copied from",
+  );
+});

@@ -362,6 +362,10 @@ const BAND = {
   ja: [0.3, 0.9],
   "zh-Hant": [0.22, 0.75],
   id: [0.7, 1.6],
+  // German runs longer than English for the same reason Indonesian does and
+  // then some: compounds replace phrases, but case endings, separable verbs
+  // and the longer words themselves cost more characters than they save.
+  de: [0.8, 1.7],
 };
 
 test("no translated field is far longer or shorter than its source", () => {
@@ -409,6 +413,11 @@ const FORBIDDEN = {
     [/[Ѐ-ӿ]/, "Cyrillic"],
     [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in an Indonesian field)"],
   ],
+  de: [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a German field)"],
+  ],
 };
 
 /**
@@ -451,8 +460,11 @@ test("no stray script or untranslated word in the translation", () => {
  * script checks see nothing wrong, because there is nothing wrong with the
  * English — it is simply not a translation. For Japanese and Chinese the
  * script checks make this unreachable, since a field with no kana or Han
- * characters at all would be obvious. Indonesian shares the Latin alphabet
- * with English, so for Indonesian this is the only check that would catch it.
+ * characters at all would be obvious. Indonesian and German share the Latin
+ * alphabet with English, so for those two this is the only check that would
+ * catch it — and German is the likelier to produce a field left alone,
+ * because enough English sentences are near enough to German that one can
+ * look translated at a glance.
  */
 test("no field was left in English", () => {
   const bad = [];
@@ -461,4 +473,73 @@ test("no field was left in English", () => {
     if (p.t.trim() === p.en.trim()) bad.push(`${at(p)}: identical to the English`);
   }
   assert.deepEqual(bad, [], `\n${bad.join("\n")}\n`);
+});
+
+/**
+ * A Latin word loose in Japanese or Chinese prose.
+ *
+ * CLAUDE.md claimed this check existed and it did not. What existed was a
+ * script check — Hangul, Cyrillic, kana in the wrong place — which catches a
+ * paragraph from the wrong language and misses a single English word sitting
+ * in an otherwise fluent sentence. That is the likelier failure by far: the
+ * Chinese fees guide shipped with "並從中抽取一層margin", one untranslated
+ * word in the middle of a correct sentence about exchange-rate margins,
+ * invisible to every other assertion here.
+ *
+ * The rule only works for languages that do not use the Latin alphabet, which
+ * is why Indonesian is excluded and has its own check — a field left in
+ * English — further up. For ja and zh-Hant the allowed Latin strings are a
+ * closed set: product names, platform UI labels a reader will see on screen,
+ * and currency codes. Anything else is either an untranslated word or a name
+ * that belongs in the list, and both are worth a moment's thought.
+ */
+const LATIN_OK = new Set([
+  // Product and company names
+  ...Object.keys(ALIASES),
+  "Weverse", "Shop", "World", "Ticket", "Global", "Interpark", "interpark",
+  "Yanolja", "Core", "Melon", "HYBE", "Toss", "NAVER", "Kakao", "PAYCO",
+  "Alipay", "WeChat", "Grab", "Pay", "Apple", "Visa", "Mastercard", "MasterCard",
+  "VISA", "AMEX", "JCB", "Eximbay", "PayPal", "FaceAccess", "facepass",
+  "Play", "Stay", "Government", "PASS", "KISA", "ISO", "CBPR", "COVID",
+  "Chrome", "Safari", "Samsung", "Internet", "Edge", "Instagram", "Google",
+  "Company", "Korea", "Myanmar", "Andorra", "Mali", "Belarus", "Afghanistan",
+  "Israel", "Antilles", "Netherlands", "Iraq", "Iran", "Lebanon", "Russia",
+  "Ukraine", "Turkey", "Congo", "Maria", "Elena", "Santos", "Cruz",
+  // Screen labels a reader has to recognise in English on the real site
+  "Account", "My", "Reservations", "Reservation", "List", "Details", "Cancel",
+  "Send", "Mobile", "Received", "Register", "Booking", "History", "Return",
+  "View", "Tickets", "Page", "Reserve", "Verified", "Member", "Only", "Request",
+  "Website", "Secure", "English", "Japan", "USA", "GLOBAL",
+  // Codes and formats
+  "KST", "KRW", "JPY", "USD", "CNY", "MXN", "QR", "PIN", "API", "APIs", "App",
+  "URL", "SMS", "ID", "IDs", "eKYC", "I-PIN", "SPF", "Auto", "Payment",
+  "DCC", "TXT", "MX", "UTC+", "Alipay+",
+  // More screen labels and names, each one a string a reader meets on the
+  // real site or a proper noun with no translation: NOL, YES24's "YES TICKET",
+  // the Galaxy Fold the browser-mode answer names, and the menu items.
+  "NOL", "nol", "YES", "yes", "TICKET", "ticket", "Store", "Membership",
+  "Delete", "Reactivate", "Retry", "Password", "Find", "Now", "Web", "FAQ",
+  "American", "Express", "Microsoft", "Galaxy", "Fold", "POP", "SNS",
+  "world", "global", "mobile", "site", "version", "com", "and",
+]);
+
+/** Locales whose prose should contain no bare Latin words. */
+const NON_LATIN = new Set(["ja", "zh-Hant"]);
+
+test("no untranslated Latin word is loose in Japanese or Chinese prose", () => {
+  const bad = [];
+  for (const p of allPairs()) {
+    if (!NON_LATIN.has(p.locale)) continue;
+    for (const word of p.t.match(/[A-Za-z][A-Za-z+]{2,}/g) ?? []) {
+      if (LATIN_OK.has(word)) continue;
+      bad.push(`${at(p)}: "${word}" is not translated and is not a known name`);
+    }
+  }
+  assert.deepEqual(
+    bad,
+    [],
+    `\n${bad.join("\n")}\n\nEither translate the word, or — if it is a product ` +
+      `name or a label the reader sees on the real screen — add it to ` +
+      `LATIN_OK with that reason in mind.\n`,
+  );
 });

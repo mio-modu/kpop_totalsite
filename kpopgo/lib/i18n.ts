@@ -29,7 +29,7 @@
 import type { Guide } from "@/content/guides";
 import { displayStatus, type DisplayStatus } from "./freshness";
 
-export type Locale = "en" | "ja" | "zh-Hant" | "id";
+export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de";
 
 /** English is the canonical language and carries no path prefix. */
 export const DEFAULT_LOCALE: Locale = "en";
@@ -66,6 +66,20 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     english: "Indonesian",
     tag: "id",
     prefix: "/id",
+  },
+  // The first European language, and the first whose readers are not here for
+  // the ticketing guides at all. Germany is among the top ten importers of
+  // Korean albums and, with the UK, leads Europe's K-pop event market — but a
+  // German fan sees the tour in Berlin, bought from a local promoter, which
+  // this site's scope explicitly excludes. What they do from here is order
+  // albums and merchandise and then meet EU customs, so the German edition
+  // leads with the guide every other language skips.
+  de: {
+    code: "de",
+    native: "Deutsch",
+    english: "German",
+    tag: "de",
+    prefix: "/de",
   },
 };
 

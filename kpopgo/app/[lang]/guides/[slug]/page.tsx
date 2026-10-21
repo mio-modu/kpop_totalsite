@@ -12,6 +12,8 @@ import {
 import { site } from "@/lib/site";
 import { TranslationNotice } from "@/components/TranslationNotice";
 import { AdSlot } from "@/components/AdSlot";
+import { JsonLd } from "@/components/JsonLd";
+import { translatedGuideJsonLd } from "@/lib/jsonld";
 
 /**
  * A guide in a language other than English.
@@ -82,6 +84,10 @@ export default async function TranslatedGuide({
 
   return (
     <article lang={LOCALES[tr.locale].tag}>
+      {translatedGuideJsonLd(guide, tr).map((data, i) => (
+        <JsonLd key={i} data={data} />
+      ))}
+
       <header className="wrap pt-10 sm:pt-14">
         <p className="pc-han mt-2">{guide.ko}</p>
         <h1 className="pl mt-3 max-w-[24ch]">{tr.title}</h1>

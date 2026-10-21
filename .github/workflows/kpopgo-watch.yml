@@ -83,16 +83,36 @@ jobs:
               `_Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}_`,
             ].join('\n');
 
+            // What counts as news: the lines that ask for a person. The
+            // header carries a date and a duration, and each guide's line
+            // counts down a day at a time, so comparing whole reports would
+            // call every run a change and comparing nothing called every run
+            // worth a comment — this issue had sixty-three of them, which is
+            // an alarm nobody hears any more.
+            const findings = (text) =>
+              text.split('\n')
+                .map((l) => l.trim())
+                .filter((l) => l.startsWith('✗') || l.startsWith('!'))
+                .join('\n');
+
             if (open.length) {
+              const before = findings(open[0].body || '');
+              const after = findings(report);
               await github.rest.issues.update({
                 owner: context.repo.owner, repo: context.repo.repo,
                 issue_number: open[0].number, body,
               });
-              await github.rest.issues.createComment({
-                owner: context.repo.owner, repo: context.repo.repo,
-                issue_number: open[0].number,
-                body: 'Still open as of this run — see the updated report above.',
-              });
+              // The body is always refreshed, so the issue still shows the
+              // current state; only the notification is held back.
+              if (before !== after) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner, repo: context.repo.repo,
+                  issue_number: open[0].number,
+                  body:
+                    'What this run found is **different from the last one** — ' +
+                    'the report above has been updated.\n\n```\n' + after + '\n```',
+                });
+              }
             } else {
               await github.rest.issues.create({
                 owner: context.repo.owner, repo: context.repo.repo,

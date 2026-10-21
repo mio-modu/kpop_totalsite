@@ -26,7 +26,7 @@ export function Footer() {
         </div>
 
         <nav aria-label="Guides">
-          <h2 className="data dim">Guides</h2>
+          <h2 className="data col-head">Guides</h2>
           <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5">
             {guides.map((g) => (
               <li key={g.slug}>
@@ -39,7 +39,7 @@ export function Footer() {
         </nav>
 
         <div>
-          <h2 className="data dim">How this works</h2>
+          <h2 className="data col-head">How this works</h2>
           <ul className="t-sm mt-4 grid gap-2.5">
             <li>Every page says what kind of check it has had, and when.</li>
             <li>Every claim links its source.</li>

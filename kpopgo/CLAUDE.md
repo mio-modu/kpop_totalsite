@@ -144,12 +144,24 @@ the register, and the machinery landed before the first translated word, as it
 did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
-Three languages today: Japanese on 18 guides, Traditional Chinese on 12,
-Indonesian on 12, none native-reviewed. Each language skips the guides it has
-no reader for rather than padding to a round number, and
-`content/translations.ts` records which and why at the top — the timezone
-guide is daylight-saving arithmetic and none of these three countries observes
-it, and the customs guide is United States and EU law.
+Four languages today: Japanese on 18 guides, Traditional Chinese on 14,
+Indonesian on 14, German on 5, none native-reviewed. Each language skips the
+guides it has no reader for rather than padding to a round number, and
+`content/translations.ts` records which and why at the top.
+
+**The guide set differs by language, and German is why that rule exists.** The
+Asian editions lead with ticketing, because a fan in Taipei or Jakarta flies
+to Seoul for the show — Taiwan sent 1.66 million visitors to Korea in the
+first eight months of 2026. A German fan sees the tour in Berlin, sold by a
+local promoter, which this site's scope excludes. What they do from here is
+order albums and then meet EU customs, so the German edition is commerce only
+and skips every ticketing guide.
+
+The customs guide looks like the obvious German flagship and is not: five of
+its ten steps are US-specific — CBP, executive orders, US tariff chapters — so
+translating it would hand a German reader half a page about American law. The
+shipping guide carries the step that is actually theirs, on the EU scrapping
+its 150-euro exemption, and leads instead.
 
 A translation is a copy of a claim made on a particular day from a source
 checked on a particular day. The moment the English page is re-checked, the

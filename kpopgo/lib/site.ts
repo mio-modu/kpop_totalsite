@@ -90,11 +90,11 @@ export const site = {
  * To turn it on: point the address at a real inbox (MX records at the
  * registrar, or a forwarder), send yourself a test, and put the date here.
  */
-export const contact = {
+export const contact: { address: string; confirmed: string } = {
   address: `hello@${site.host}`,
   /** YYYY-MM-DD a test message was sent and arrived. Empty means untested. */
-  confirmed: "",
-} as const;
+  confirmed: "2026-10-21",
+};
 
 /** True only once a person has watched a test message arrive. */
 export const contactWorks = contact.confirmed !== "";

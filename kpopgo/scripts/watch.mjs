@@ -27,6 +27,8 @@
  * Exits non-zero when something needs a person.
  */
 import { readFile, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 
 const OFFLINE = process.argv.includes("--offline");
 /** Take a new baseline. Run this after deliberately re-reading the sources. */
@@ -173,21 +175,60 @@ async function freshness() {
 }
 
 /**
- * Node's fetch ignores HTTPS_PROXY, and this repository is worked on from a
- * container that only reaches the internet through one. In CI there is no
- * proxy and fetch is the better client, so the fallback is conditional rather
- * than permanent — the weekly run and a local run should exercise the same
- * code path wherever they can.
+ * This used to branch on HTTPS_PROXY: curl in the container, node's fetch in
+ * CI, on the reasoning that fetch is the better client where it works. The
+ * comment even said both runs "should exercise the same code path wherever
+ * they can" — which they could not, because the proxy is exactly what decides
+ * which one runs. So the path a change was written against was never the path
+ * CI ran, and a cookie bug sat in both for weeks with nothing to compare.
+ *
+ * curl is present in both places. One path.
  */
-const PROXY = process.env.HTTPS_PROXY || process.env.https_proxy || "";
 
-async function viaCurl(url) {
+/**
+ * One cookie jar for the whole run, which is what a browser is.
+ *
+ * `korea.net` was reported as a dead citation for weeks — "an endless 302
+ * loop", recorded in this repo as nothing to fix because the page opens fine
+ * for a reader. That diagnosis was wrong. The site sets a session cookie and
+ * redirects once; a client that does not keep the cookie is sent back to the
+ * same URL forever, which is what the redirect counter was actually showing.
+ * With a jar it answers 200 with 771 words on the first try.
+ *
+ * A permanent false alarm is worse than no alarm, because it teaches everyone
+ * reading the weekly report to skip that line — and the next line like it.
+ *
+ * curl keeps cookies per domain, so one jar across the run is the browser's
+ * behaviour rather than a shortcut. It lives in a temp file that goes away
+ * with the process.
+ */
+const JAR = join(tmpdir(), `kpopgo-watch-${process.pid}.cookies`);
+
+/**
+ * Everything goes through curl, including where node's fetch would work.
+ *
+ * There used to be two paths — curl behind a proxy, `fetch` otherwise — and
+ * they did not behave the same. This script runs in a proxied container and
+ * on a GitHub runner, so the path exercised while writing a change was never
+ * the path that ran in CI. One implementation is worth more here than the few
+ * milliseconds the other saved, and curl is present in both places.
+ */
+async function hit(url) {
   const { execFile } = await import("node:child_process");
   const { promisify } = await import("node:util");
   try {
     const { stdout } = await promisify(execFile)(
       "curl",
-      ["-sS", "-L", "--max-time", "25", "-w", "\n__STATUS__%{http_code}", "-A", UA, url],
+      [
+        "-sS", "-L",
+        // A real loop still has to end; 10 is past any legitimate chain.
+        "--max-redirs", "10",
+        "--cookie-jar", JAR, "--cookie", JAR,
+        "--max-time", "25",
+        "-w", "\n__STATUS__%{http_code}",
+        "-A", UA,
+        url,
+      ],
       { maxBuffer: 20_000_000 },
     );
     const at = stdout.lastIndexOf("\n__STATUS__");
@@ -196,24 +237,6 @@ async function viaCurl(url) {
     return { ok: status >= 200 && status < 400, status, body };
   } catch (e) {
     return { ok: false, status: 0, body: "", error: String(e.message || e) };
-  }
-}
-
-async function hit(url) {
-  if (PROXY) return viaCurl(url);
-  const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), 20000);
-  try {
-    const res = await fetch(url, {
-      redirect: "follow",
-      signal: ctrl.signal,
-      headers: { "user-agent": UA },
-    });
-    return { ok: res.ok, status: res.status, body: res.ok ? await res.text() : "" };
-  } catch (e) {
-    return { ok: false, status: 0, body: "", error: String(e.message || e) };
-  } finally {
-    clearTimeout(timer);
   }
 }
 

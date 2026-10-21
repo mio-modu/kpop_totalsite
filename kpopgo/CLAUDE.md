@@ -63,6 +63,34 @@ case where overwriting is the point. Note the asymmetry is real: that run
 reported `1 needing action, 1 worth a look` **after** writing, because leaving
 a warning standing is what it is for.
 
+**A permanent false alarm is worse than no alarm.** `korea.net` was reported
+as a dead citation week after week and written off in this repo as an endless
+302 loop that only affects bots — the page opens fine in a browser, so nothing
+to fix. That was wrong, and it was wrong in the direction that costs most: it
+taught everyone reading the weekly report to skip that line, and then the next
+one like it. The site sets a session cookie and redirects once; a client that
+does not keep the cookie is sent back to the same URL forever, which is what
+the redirect counter was really showing. `scripts/watch.mjs` now carries a
+cookie jar, and korea.net answers 200 with 757 words. YES24's storefront was
+the same bug wearing different clothes — 26 words of shell, enough to trip the
+brand check — and is now read in full. Two standing alarms, one missing curl
+flag.
+
+The same change retired a conditional that made this hard to see. The script
+used to pick curl behind a proxy and node's `fetch` otherwise, with a comment
+saying a local run and the weekly run "should exercise the same code path
+wherever they can" — which they never could, because the proxy is exactly what
+decides. The path a change was written against was never the path CI ran.
+There is one path now, and curl exists in both places.
+
+The weekly workflow also stopped commenting on every run. It had sixty-three
+`Still open as of this run` comments on one issue, which is an alarm nobody
+hears. It now compares the lines that ask for a person — the `✗` and `!` ones,
+not the header's date or the per-guide day counters, which change on their own
+— and comments only when that set changes. The issue body is refreshed every
+run regardless, so the current state is never stale; only the notification is
+held back.
+
 **The checks did not run on most changes, and now they do.**
 `.github/workflows/kpopgo-watch.yml` sweeps the network weekly and keeps its
 test step, correctly: several assertions are date-dependent and go red as

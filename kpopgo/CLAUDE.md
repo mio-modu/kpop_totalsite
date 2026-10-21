@@ -160,12 +160,13 @@ Closing that gap meant editing the English first, which is the pattern worth
 keeping: the English page converted for New York, Los Angeles, Toronto,
 London and Sydney, so a German or Spanish edition could either carry American
 cities or change the numbers, and changing numbers is what the checks exist to
-stop. The cities belong in the English page, so that is where they went. The customs guide is a US and EU page. The
-timezone guide is really a daylight-saving guide, and none of Japan, Taiwan or
-Indonesia observes it — checked against the IANA database the guide itself
-cites, where Asia/Tokyo, Asia/Taipei and Asia/Jakarta have no transition in
-the next decade, so the gap to KST is zero, one and two hours permanently. For
-those readers the arithmetic the guide exists to teach does not exist.
+stop. The cities belong in the English page, so that is where they went.
+
+The three Asian editions still refuse that guide, and correctly: checked
+against the IANA database the guide itself cites, Asia/Tokyo, Asia/Taipei and
+Asia/Jakarta have no transition in the next decade, so the gap to KST is zero,
+one and two hours permanently. For those readers the arithmetic the guide
+exists to teach does not exist.
 
 **A language's edition leads with what its readers came for, but it does not
 stop there — and German is the correction, not the rule.** The Asian editions
@@ -201,18 +202,25 @@ route the English page does not know exists. That guide needs its own
 paragraph in Spanish, checked against Weverse's own help pages rather than
 against the 2025 launch coverage.
 
-The customs guide looks like the obvious German flagship and is not: five of
-its ten steps are US-specific — CBP, executive orders, US tariff chapters — so
-translating it would hand a German reader half a page about American law. The
-shipping guide carries the step that is actually theirs, on the EU scrapping
-its 150-euro exemption, and leads instead.
+**The customs guide is the one exclusion worth re-opening and the one that
+survives it.** Germany and Spain are in the EU, and the guide covers the EU,
+so the German commerce-only mistake looked like it might be repeating. It is
+not, and the composition is why: of ten steps, five are US-specific — CBP,
+executive orders, US tariff chapters — one is EU-specific, and four are
+region-neutral. A German edition would be half American law to buy one EU
+step. And that step's fact, the EU scrapping its 150-euro exemption, is
+already carried in German and Spanish by the shipping guide, which is wholly
+theirs. Counted rather than asserted, so the next person to have this hunch
+can check it instead of re-litigating it.
 
-**The timezone guide is the one page German should have that the Asian
-editions should not**, and for the exact reason they skip it. Germany observes
-daylight saving and Korea does not, so the local hour of a Korean sale moves
-twice a year for a German reader — which is the guide's entire thesis, absent
-in Tokyo, Taipei and Jakarta. Spain observes it too. Where that guide is
-skipped for German or Spanish it is a gap, not a decision.
+**The timezone guide was the one page German and Spanish should have had and
+did not**, for the exact reason the Asian editions skip it: Germany and Spain
+observe daylight saving and Korea does not, so the local hour of a Korean sale
+moves twice a year for those readers — the guide's entire thesis, absent in
+Tokyo, Taipei and Jakarta. That gap is closed. It is left written down because
+the useful part is not the gap but how it was found: a note in the register
+saying an exclusion was a gap rather than a decision, carried across several
+changes until somebody acted on it.
 
 A translation is a copy of a claim made on a particular day from a source
 checked on a particular day. The moment the English page is re-checked, the
@@ -289,6 +297,26 @@ guide was an orphan in both directions. `scripts/i18n.test.mjs` fails on any
 translated guide with no sibling in its own language, and the fix is usually
 in the English: the queue guide was an orphan because no English guide linked
 to it, so guide 01's sale-day step now does.
+
+**Reading it both ways is right for the rail and hides one thing, so there is
+a second check that reads it one way.** Symmetry means a guide that links out
+three times has three siblings whether or not anything points back at it — so
+it has a rail, passes the check above, and is still a page no other guide
+sends a reader to. `weverse-membership-renewal-overseas` and
+`nol-world-play-stay-package` sat in exactly that state: three outbound links
+each, zero inbound, both checks green. They were found by building the
+directed graph by hand, which is not a thing anyone does twice, so
+`scripts/links.test.mjs` now does it: no dangling `see`, none pointing at its
+own guide, and every guide with at least one inbound and one outbound edge.
+
+The inbound rule is a hard failure and the consequence is accepted rather
+than softened: if a new guide has no step anywhere that a reader would
+genuinely leave from, it is not yet part of the subject. Adding a decorative
+link to clear the check is the thing the restraint rule forbids, one step
+removed. Both guides got a real one — the presale checklist already summarised
+Weverse Auto Payment in two sentences, and the NOL World collection step tells
+readers tickets come from the box office on the day, which is simply untrue
+for a Play&Stay buyer collecting at a hotel desk.
 
 `scripts/translations.test.mjs` is the net under a machine-assisted
 translation, and it exists because the errors that hurt a reader are not

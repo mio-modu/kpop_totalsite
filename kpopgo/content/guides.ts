@@ -333,6 +333,11 @@ export const guides: Guide[] = [
         body: "Collection is at the venue box office on the day of the show and not before — NOL World says tickets cannot be picked up on an earlier day. The window opens one hour before the show, and you need the confirmation number together with identification. Allow for a queue at the box office itself. Once collected, a ticket cannot be re-issued if it is lost or stolen.",
         pitfall:
           "Name on the booking, name on the document and name on the membership all have to agree. A nickname anywhere in that chain is a problem.",
+        see: {
+          slug: "nol-world-play-stay-package",
+          text:
+            "None of this applies if you bought a Play&Stay package — those tickets are handed to you at the hotel desk, not the box office, and the window is a different one.",
+        },
         takes: "—",
       },
     ],
@@ -404,6 +409,11 @@ export const guides: Guide[] = [
         body: "Buy from the official store for that artist. Keep the order confirmation and the membership number. If the membership is a physical kit with a digital code, allow for the code\u0027s delivery and activation time, which is not instant. Since 3 September 2026 Weverse Shop also offers Auto Payment on memberships that support it: the renewal is charged to a registered method on the last day of the validity period, so a membership cannot lapse unnoticed in the week a tour is announced. It is set per membership category — Global, Japan and USA are managed separately.",
         pitfall:
           "Resold or gifted membership codes frequently fail verification because the registered name will not match your ticketing account. Auto Payment removes the lapse risk but not the name risk: it renews whatever account it is attached to.",
+        see: {
+          slug: "weverse-membership-renewal-overseas",
+          text:
+            "Auto Payment is summarised here and set up elsewhere: the currency rule, the hour it charges and the point after which reactivation is gone are in the membership renewal guide.",
+        },
         takes: "30 minutes",
       },
       {

@@ -144,25 +144,37 @@ const JA_LABELS = {
 };
 
 /**
- * Two guides are deliberately in no language but English, and this is the
- * reason rather than an oversight.
+ * One guide is deliberately in no language but English, and a second is in
+ * two of the five. Both are decisions with reasons, not oversights, and the
+ * reasons are here because the counts will keep moving and the reasoning
+ * should not have to be reconstructed each time.
  *
- * Four editions skipped the same two guides; two of them now skip only one.
- * It was eighteen of twenty when they converged and is nineteen of
- * twenty-one now; the count moves with the English and the shape does not. Three arrived there without being planned to, written at
- * different times for different reasons; German was brought up to it once its
- * commerce-only restriction turned out to be wrong; and Spanish was written
- * to it from the start, because by then the shape was known. That convergence is worth noticing,
- * because the two guides all four refuse are refused by the same test: a page
- * whose subject is a jurisdiction the reader is not in.
+ * Where it stands against twenty-one English guides:
  *
- * One asymmetry is left standing on purpose and should not be read as part of
- * the rule. The timezone guide is excluded from the three Asian editions
- * because none of their readers observes daylight saving. Germany and Spain
- * do, so for those two it is not a mismatch at all — it is the one page whose
- * thesis fits them better than it fits the English readership it was written
- * for. German is at eighteen because eighteen was asked for; if a nineteenth
- * is ever added there, this is it.
+ *   ja, zh-Hant, id   19/21   skip the timezone guide and the customs guide
+ *   de, es            20/21   skip the customs guide only
+ *
+ * Four editions once skipped the same two. Three arrived there without being
+ * planned to, written at different times for different reasons; German was
+ * brought up to the shape once its commerce-only restriction turned out to be
+ * wrong; Spanish was written to it from the start, because by then the shape
+ * was known. That convergence was worth noticing, because both refusals
+ * answered the same test: a page whose subject is a jurisdiction the reader
+ * is not in. Applying that test honestly is also what later split the two
+ * apart — see the timezone note below.
+ *
+ * That asymmetry used to be a standing note here: the timezone guide is
+ * excluded from the three Asian editions because none of their readers
+ * observes daylight saving, but Germany and Spain do, so for those two it was
+ * never a mismatch — it is the one page whose thesis fits them better than it
+ * fits the English readership it was written for. The note said German was at
+ * eighteen only because eighteen was asked for, and that if a nineteenth were
+ * ever added, this was it. It was added, for both languages, on 2026-10-21.
+ *
+ * The note is kept rather than deleted because what it demonstrates outlived
+ * it: an exclusion recorded as a gap rather than a decision, carried across
+ * several changes with its reasoning intact, until someone could act on it
+ * without re-deriving anything. A silent omission would have stayed silent.
  *
  * `kpop-ticketing-day-timezone` is the sharper of the two, because its title
  * suggests the opposite. The guide is not really about time zones; it is
@@ -186,17 +198,36 @@ const JA_LABELS = {
  * checkout clock is a separate deadline — are already in guides 01 and 12,
  * which are translated into all three.
  *
- * `kpop-album-customs-duty-overseas` covers the United States and the EU,
- * because those are the two changes there were primary sources for. No
- * reader of these three languages is in either. Worse, the page would read as
- * though it covered them: a translated customs guide is exactly the kind of
- * page a reader trusts on the one subject where being wrong costs money at a
- * border. Each would need its own national source — and for Japanese,
- * customs.go.jp and japanpost.jp are both outside this container's outbound
- * allowlist, so it cannot be written from here today even if the appetite
- * were there.
+ * `kpop-album-customs-duty-overseas` is the one guide no edition takes, and
+ * the reason differs by language, so both halves are recorded.
  *
- * Translating either to reach a round number would be padding, and the same
+ * It covers the United States and the EU, because those are the two changes
+ * there were primary sources for. Counted against the page rather than
+ * guessed at: of ten steps, five are US-specific — CBP, the executive
+ * orders, US tariff chapters — one is EU-specific, and four carry no region.
+ *
+ * For Japanese, Chinese and Indonesian readers, neither jurisdiction is
+ * theirs. Worse, the page would read as though it covered them: a translated
+ * customs guide is exactly the kind of page a reader trusts on the one
+ * subject where being wrong costs money at a border. Each would need its own
+ * national source — and for Japanese, customs.go.jp and japanpost.jp are both
+ * outside this container's outbound allowlist, so it cannot be written from
+ * here today even if the appetite were there.
+ *
+ * German and Spanish are the harder case, because Germany and Spain are in
+ * the EU and the guide covers the EU. That is the same shape as the
+ * commerce-only restriction that turned out to be wrong, so it was re-opened
+ * on purpose rather than left alone. It survives: a translation would be half
+ * American law to buy one EU step, and that step's fact — the EU scrapping
+ * its 150-euro exemption — is already carried in both languages by the
+ * Weverse shipping guide, which is wholly theirs. The exclusion costs those
+ * readers nothing they do not already have.
+ *
+ * Both halves are counted rather than asserted so that the next person with
+ * this hunch can check it in a minute instead of re-arguing it. If the page
+ * ever grows a second EU-specific step, re-open it again.
+ *
+ * Translating it to reach a round number would be padding, and the same
  * instinct this site refuses everywhere else.
  *
  * `weverse-shop-shipping-delays-and-cancellation` used to be on this list for

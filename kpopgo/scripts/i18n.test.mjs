@@ -212,18 +212,28 @@ const seeByGuide = new Map();
   }
 }
 
-test("every locale's rail reaches at least one sibling that exists", () => {
+test("no translated guide is an orphan in its own language", () => {
+  const orphans = [];
   for (const [locale, slugs] of translatedByLocale) {
-    const reachable = [...slugs].filter((s) =>
-      (seeByGuide.get(s) ?? []).some((t) => t !== s && slugs.has(t)),
-    );
-    assert.ok(
-      reachable.length > 0,
-      `${locale}: no translated guide cross-references another translated one, ` +
-        `so every page in this language is a dead end. Pick guides that ` +
-        `reference each other, or the rail renders nothing anywhere.`,
-    );
+    for (const slug of slugs) {
+      const outbound = (seeByGuide.get(slug) ?? []).filter(
+        (t) => t !== slug && slugs.has(t),
+      );
+      const inbound = [...slugs].filter(
+        (other) => other !== slug && (seeByGuide.get(other) ?? []).includes(slug),
+      );
+      if (outbound.length === 0 && inbound.length === 0) orphans.push(`${locale} ${slug}`);
+    }
   }
+  assert.deepEqual(
+    orphans,
+    [],
+    `\n${orphans.join("\n")}\n\nEach of these renders no rail and nothing in its ` +
+      `language links to it, so the only way a reader or a crawler reaches it is ` +
+      `the sitemap. Either translate a guide it cross-references, or — if the ` +
+      `English guide genuinely has no relationships — add the missing \`see\` to ` +
+      `the English, which is where the gap actually is.\n`,
+  );
 });
 
 test("the rail is built from the prefix and hidden when empty", () => {

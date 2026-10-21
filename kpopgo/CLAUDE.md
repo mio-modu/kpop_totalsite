@@ -145,11 +145,11 @@ did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
 Five languages today — Japanese, Traditional Chinese, Indonesian, German and
-Spanish — each on the same 18 of the 20 guides, none native-reviewed. Each
+Spanish — each on the same 19 of the 21 guides, none native-reviewed. Each
 language skips the guides it has no reader for rather than padding to a round
 number, and `content/translations.ts` records which and why at the top.
 
-All five sit on the same eighteen, and the two they all refuse fail the same
+All five sit on the same set, and the two they all refuse fail the same
 test: a page whose subject is a jurisdiction the reader is not in. That the
 set converged rather than being imposed is the interesting part — but do not
 read the convergence as the rule. The timezone guide is excluded from the

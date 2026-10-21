@@ -5517,6 +5517,252 @@ export const translations: Translation[] = [
     ],
     labels: ID_LABELS,
   },
+  {
+    locale: "zh-Hant",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "被鎖在 NOL World 外面：找回帳號，以及修好那個打不開的頁面",
+    summary:
+      "你當初用哪種登入方式，決定了之後每一條找回路線；密碼重設只存在於電子郵件註冊的帳號；而一個未驗證的電子郵件，可能讓帳號根本難以被找到。另外還有那些看起來像錯誤、其實不是錯誤的訂票頁面訊息。",
+    scope:
+      "涵蓋帳號找回、帳號刪除，以及 NOL World 所記載的訂票頁面的失敗情況：瀏覽器與 App 的要求、行動版座位圖，以及那些看起來像故障的彈出訊息。排隊機制有自己的指南。本頁沒有任何內容能幫助任何人進入不屬於自己的帳號。",
+    intro: [
+      "在售票網站上有兩件事會出錯，而它們都與門票無關。你進不去帳號，或者頁面就是不肯做它該做的事——而兩者都發生在開賣當天早上，那時沒有時間讀任何東西。",
+      "這幾乎全部取決於你幾個月前不假思索做出的一個選擇：你是用電子郵件註冊，還是用 Google、Apple 或 Line。單是那一件事，就決定了密碼重設對你而言存不存在，所以那是起點。",
+    ],
+    steps: [
+      {
+        title: "搞清楚你實際上是哪一種登入方式",
+        body: "NOL World 的帳號可以用電子郵件建立，也可以透過社群登入建立——Google、Apple 或 Line 等。後果比聽起來更尖銳：NOL World 表示密碼找回僅供以電子郵件註冊的使用者使用。如果你用的是社群登入，就沒有 NOL World 的密碼可以重設，因為從來就沒有過。現在、在什麼都還不急的時候，先搞清楚你是哪一種。",
+        pitfall:
+          "因為記得自己輸入過電子郵件地址，就以為自己是電子郵件帳號。社群登入同樣會顯示你的電子郵件，而兩者的找回路線完全不同。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "驗證你的電子郵件，因為這是唯一無法事後補救的一項",
+        body: "NOL World 在帳號找回說明結尾的那句話，是這個領域最重要的一句：未經電子郵件驗證的帳號可能難以被找到。這裡其他每一項都是有結果的程序。這一項是一扇可能就是打不開的門——客服是在把你比對到一筆紀錄，而未驗證的電子郵件就是他們手上最強的比對依據。如果你現在是用一個還能用的帳號在讀這段，請確認上面的電子郵件已經驗證，並讓它保持已驗證。",
+        pitfall:
+          "註冊時因為急著趕上開賣而跳過驗證信。它在當天不花你任何成本，而它就是「可以找回的帳號」與「失去的帳號」之間的差別。",
+        takes: "3 分鐘，現在就做",
+      },
+      {
+        title: "如果是社群登入，先從服務供應商那一側找",
+        body: "如果你連自己有沒有開過 NOL World 帳號都想不起來，供應商知道。NOL World 公布了去哪裡看：在 Google，進入 Google 帳戶，然後安全性，然後你與第三方應用程式和服務的連結。在 Apple，進入設定、你的名字與 Apple ID，然後登入與安全性，然後透過 Apple 登入。在 Line，進入設定，然後帳號，然後已授權的應用程式。如果 NOL World 列在那裡，帳號就存在，而你也知道哪一個供應商能打開它。",
+        pitfall:
+          "在登入頁面上把每個社群按鈕輪流試一遍，看哪個能進。那可能是建立了第二個帳號而不是找到第一個，於是現在有兩個——其中一個裝著你的訂單。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "如果那也失敗，把客服要的五樣東西一次給齊",
+        body: "NOL World 會幫你搜尋帳號，而它列出了它需要的東西：你可能用過的電子郵件地址、登入方式（Google、Line、Apple 或電子郵件）、你的暱稱，以及你所訂商品的類型連同預約編號。它也告訴你最後那一項在哪裡——預約編號在訂票當時寄出的電子憑證信件裡。請在寫信之前把這些全部收集好，因為一封缺少預約編號的請求，等於是在請他們用猜的。",
+        pitfall:
+          "把舊的訂票確認信當成雜物刪掉。它們裝著預約編號，而當你弄丟的正是帳號本身時，那是你能提出的最強識別資訊。",
+        takes: "20 分鐘",
+      },
+      {
+        title: "換新手機不會弄丟你的訂單——換成另一個帳號才會",
+        body: "這是最常見的假警報，而 NOL World 直白地回答了：更換手機或重新登入不會抹除你的紀錄。它要你確認的是，你是不是用了一個與原本不同的帳號登入。那幾乎總是真正的原因，而社群登入就是為什麼——一支新手機會提供當下最方便的那個供應商，而點錯一個就會讓你進到一個空的、但完全有效的第二個帳號。",
+        pitfall:
+          "斷定訂單不見了，然後重新買一次。票在另一個帳號裡，而第二次購買是一筆真實的購買。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "使用訂票頁面預期的瀏覽器，而且只用官方管道",
+        body: "NOL World 表示它是依網頁標準建置的，並建議在桌機與行動裝置上使用 Google Chrome 或 Microsoft Edge。如果訂票視窗打不開，它的指示很具體：把瀏覽器更新到最新版本、清除快取，然後再試一次。App 則從 App Store 或 Google Play 更新。它也載明門票究竟能在哪裡購買——NOL World 網站 world.nol.com/ticket 與 NOL World App，除此之外沒有別的地方。",
+        pitfall:
+          "在一個從來就不受支援的瀏覽器上除錯，而且是從社群媒體連結開啟的 App 內嵌網頁。在你斷定網站壞了之前，先直接用 Chrome 或 Edge 打開訂票頁面。",
+        takes: "15 分鐘，前一天",
+      },
+      {
+        title: "如果座位圖在行動版網頁上不能用，改用 App",
+        body: "這是一個有記載的裝置問題，不是一般性問題。NOL World 表示在某些裝置上，行動網頁環境會在你放大縮小時把瀏覽器整個放大，使得選位變得不可能——而解決路線是下載 NOL World App。它點名了目前已確認的裝置：Galaxy Fold。如果你用的是摺疊式或比例不尋常的螢幕，請在開賣前就安裝 App，而不是在七分鐘的付款視窗裡才發現這件事。",
+        pitfall:
+          "用雙指縮放在座位圖上找某個特定座位。在受影響的裝置上，那個手勢正是讓選位失效的動作。",
+        takes: "10 分鐘，事先",
+      },
+      {
+        title: "知道哪些彈出訊息不是故障",
+        body: "有兩則訊息讀起來像錯誤，其實不是。NOL World 表示「此座位已被選擇」的彈出訊息，會在你與另一位使用者幾乎同一瞬間選了同一個座位時出現——你的連線沒有任何問題，只是有人快了一秒。它也表示可選座位會自動更新而不需要重新整理，所以一個看起來凍住的座位圖，通常是一個正在運作的座位圖。請把兩者都當成資訊，而不是需要修理的東西。",
+        pitfall:
+          "為了清掉一個彈出訊息而重新載入頁面。在有排隊的開賣中，那正是會讓你失去順位的那一個動作。",
+        takes: "—",
+      },
+      {
+        title: "把多分頁的建議對照反詐欺政策一起讀",
+        body: "NOL World 要求每個帳號只用一台裝置，並表示同一帳號從多台裝置同時存取可能導致你的訂票受限。接著它又為同時訂票的人提供技術建議——多個分頁會造成連線衝突，建議使用完全不同的瀏覽器例如 Chrome 與 Edge，或不同的裝置。請仔細讀那一段，因為它自己的反詐欺政策把「以相同或相似的個人資料跨帳號訂票」列為不正當使用。那條建議的安全讀法是關於不同平台：在一個瀏覽器開 NOL World，在另一個開另一家售票網站。它不是允許你同時跑自己的好幾個帳號。",
+        pitfall:
+          "把一則關於連線衝突的技術提示當成官方認可的多帳號策略。這兩個頁面擺在一起很彆扭，而附有公開罰則的那一個是反詐欺政策。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "如果你要刪除帳號，先確切知道什麼會消失、什麼會留下",
+        body: "刪除不可逆，而 NOL World 逐項列出了。會被刪除的：你的帳號與個人資料、你的預約紀錄、你的行程，以及你收藏的地點清單。會被保留的：你為某個地點留下的評論與照片。在網站上，任何登入方式都可以刪除帳號。在 App 中以電子郵件登入時，路徑是 My Account、Settings、Delete Account，然後輸入密碼；社群登入則是同樣的路徑，但改以 Google、Line 或 Apple 驗證。它文件中另外兩處的內容該被放在這旁邊：刪除會抹除你的身分驗證並把它釋出給另一個帳號，而因濫用被限制的帳號根本無法刪除。",
+        pitfall:
+          "為了清掉某個帳號上的問題而刪除它。被限制的帳號刪不掉，而已驗證的帳號會把你的驗證一起帶走——預約紀錄會消失，評論則不會。",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "我忘記密碼了。要怎麼重設？",
+        a: "只有在你是以電子郵件註冊時才能重設——NOL World 表示密碼找回僅供電子郵件註冊者使用。路徑是登入畫面、Find Password、輸入註冊用的電子郵件，然後依照寄來的重設連結操作。如果你用的是 Google、Apple 或 Line，就沒有 NOL World 的密碼；你是透過該供應商登入的。",
+      },
+      {
+        q: "我根本不知道自己用的是哪個帳號。",
+        a: "先從供應商那一側查。NOL World 公布了路徑：Google 帳戶然後安全性然後你與第三方應用程式和服務的連結；Apple 的設定然後你的 Apple ID 然後登入與安全性然後透過 Apple 登入；Line 的設定然後帳號然後已授權的應用程式。如果 NOL World 出現在那裡，那就是那個帳號。",
+      },
+      {
+        q: "以上都沒用。客服找得到嗎？",
+        a: "他們會找，用你給的東西：你可能用過的電子郵件、登入方式、你的暱稱，以及你所訂商品的類型連同預約編號——NOL World 表示那些編號在訂票時寄出的電子憑證信件裡。它也警告從未經電子郵件驗證的帳號可能難以被找到，所以請把你有的全部寄過去。",
+      },
+      {
+        q: "我換了手機，訂單不見了。",
+        a: "幾乎可以確定沒有不見。NOL World 表示更換手機或重新登入不會抹除紀錄，並要你確認自己是不是用了與原本不同的帳號登入。用社群登入時這很容易不小心發生——新手機提供的是最方便的那個供應商，不一定是你當初用的那個。",
+      },
+      {
+        q: "訂票視窗完全打不開。",
+        a: "NOL World 自己的步驟：使用標準瀏覽器，它點名 Chrome 與 Edge；更新到最新版本；清除快取；再試一次。App 則從 App Store 或 Google Play 更新到最新版本。它也載明門票只能在 world.nol.com/ticket 或 NOL World App 上購買。",
+      },
+      {
+        q: "我在手機瀏覽器上選不了座位。",
+        a: "這是一個已知的裝置問題。NOL World 表示在某些裝置上放大縮小會把整個行動瀏覽器放大，使選位變得不可能，而解法是使用 NOL World App。它點名已確認的裝置是 Galaxy Fold。請在開賣之前安裝 App，而不是在開賣當中。",
+      },
+      {
+        q: "我可以開兩個分頁來提高機率嗎？",
+        a: "不行，而且 NOL World 要求每個帳號只用一台裝置——它表示同一帳號從多台裝置同時存取可能導致你的訂票受限。它關於使用不同瀏覽器的建議，是針對你確實在用兩個不同售票平台時的連線衝突，不是對同時跑自己多個帳號的背書。以相似個人資料跨帳號訂票，就在它公開的不正當使用清單上。",
+      },
+      {
+        q: "如果我刪除帳號，我的資料會怎樣？",
+        a: "NOL World 表示刪除無法復原，並列出會消失的東西：帳號與個人資料、預約紀錄、行程，以及收藏的地點。你為某個地點留下的評論與照片會被保留。它在別處也表示刪除同時會抹除你的身分驗證並把它釋出給另一個帳號，而因濫用被限制的帳號無法刪除。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Terkunci di luar NOL World: menemukan akunnya, dan memperbaiki halaman yang tidak mau terbuka",
+    summary:
+      "Metode masuk yang Anda pakai menentukan setiap jalur pemulihan, pengaturan ulang kata sandi hanya ada untuk pendaftaran lewat surel, dan surel yang belum terverifikasi bisa membuat sebuah akun sulit ditemukan sama sekali. Ditambah kesalahan di halaman pemesanan yang sebenarnya bukan kesalahan.",
+    scope:
+      "Mencakup pemulihan akun, penghapusan akun, dan kegagalan halaman pemesanan yang didokumentasikan NOL World: syarat peramban dan aplikasi, peta kursi di seluler, dan pop-up yang terlihat seperti kerusakan. Mekanika antrean ada di panduannya sendiri. Tidak ada apa pun di sini yang membantu siapa pun masuk ke akun yang bukan miliknya.",
+    intro: [
+      "Ada dua hal yang salah di sebuah situs tiket yang sama sekali tidak berhubungan dengan tiket. Anda tidak bisa masuk ke akun, atau halamannya sekadar tidak mau melakukan apa yang seharusnya — dan keduanya terjadi pada pagi hari penjualan, ketika tidak ada waktu untuk membaca apa pun.",
+      "Nyaris semuanya ditentukan oleh satu pilihan yang Anda buat berbulan-bulan sebelumnya tanpa berpikir: apakah Anda mendaftar dengan alamat surel atau lewat Google, Apple, atau Line. Fakta tunggal itu menentukan apakah pengaturan ulang kata sandi bahkan ada untuk Anda, jadi di situlah titik mulainya.",
+    ],
+    steps: [
+      {
+        title: "Cari tahu jenis akun masuk yang sebenarnya Anda punya",
+        body: "Akun NOL World dibuat dengan alamat surel atau melalui masuk lewat layanan lain — Google, Apple, atau Line, antara lain. Akibatnya lebih tajam daripada kedengarannya: NOL World menyatakan pemulihan kata sandi hanya tersedia bagi pengguna yang mendaftar dengan alamat surel. Jika Anda memakai masuk lewat layanan lain, tidak ada kata sandi NOL World untuk diatur ulang, karena tidak pernah ada. Cari tahu Anda yang mana sekarang, selagi tidak ada yang mendesak.",
+        pitfall:
+          "Mengira Anda punya akun surel karena ingat pernah mengetikkan alamat surel. Masuk lewat layanan lain juga menampilkan surel Anda, dan jalur pemulihannya sepenuhnya berbeda.",
+        takes: "5 menit",
+      },
+      {
+        title: "Verifikasi surel Anda, karena inilah yang tidak bisa dibatalkan",
+        body: "Kalimat penutup NOL World sendiri soal pemulihan akun adalah yang terpenting di area ini: akun yang tidak diverifikasi lewat surel bisa sulit ditemukan. Semua hal lain di sini adalah prosedur dengan sebuah hasil. Yang satu ini adalah pintu yang bisa saja tidak terbuka — layanan pelanggan sedang mencocokkan Anda dengan sebuah catatan, dan surel yang belum terverifikasi adalah pencocokan terkuat yang mereka punya. Jika Anda membaca ini dengan akun yang masih berfungsi, periksa bahwa surel padanya sudah terverifikasi dan biarkan tetap begitu.",
+        pitfall:
+          "Melewatkan surel verifikasi saat mendaftar karena terburu-buru mengejar sebuah penjualan. Itu tidak memakan biaya apa pun pada hari itu dan ia adalah pembeda antara akun yang bisa dipulihkan dan akun yang hilang.",
+        takes: "3 menit, sekarang",
+      },
+      {
+        title: "Untuk masuk lewat layanan lain, periksa sisi penyedianya dulu",
+        body: "Jika Anda tidak ingat apakah pernah punya akun NOL World, penyedianya tahu. NOL World menerbitkan tempat mencarinya: di Google, lewat Akun Google lalu Keamanan lalu koneksi Anda ke aplikasi dan layanan pihak ketiga. Di Apple, lewat Settings, nama Anda dan Apple ID, lalu Sign-In & Security, lalu Sign in with Apple. Di Line, lewat Settings lalu akun lalu aplikasi yang diizinkan. Jika NOL World terdaftar di sana, akunnya ada dan Anda tahu penyedia mana yang membukanya.",
+        pitfall:
+          "Mencoba setiap tombol layanan satu per satu di halaman masuk untuk melihat mana yang berhasil. Itu bisa membuat akun kedua alih-alih menemukan yang pertama, dan sekarang ada dua — salah satunya menyimpan pemesanan Anda.",
+        takes: "10 menit",
+      },
+      {
+        title: "Kalau itu gagal, kirimkan lima hal yang diminta layanan pelanggan",
+        body: "NOL World akan mencari akunnya, dan ia menyebut apa yang dibutuhkannya: alamat surel yang mungkin Anda pakai, jenis masuknya (Google, Line, Apple, atau surel), nama panggilan Anda, serta jenis produk yang Anda pesan beserta nomor pemesanannya. Ia juga memberi tahu di mana yang terakhir itu berada — nomor pemesanan ada di voucher surel yang dikirim saat Anda memesan. Kumpulkan semuanya sebelum menulis, karena permintaan tanpa nomor pemesanan adalah permintaan yang meminta mereka menebak.",
+        pitfall:
+          "Menghapus surel konfirmasi pemesanan lama sebagai sampah. Di dalamnya ada nomor pemesanan, yang merupakan pengenal terkuat yang bisa Anda tawarkan ketika yang hilang justru akunnya sendiri.",
+        takes: "20 menit",
+      },
+      {
+        title: "Ponsel baru tidak menghilangkan pemesanan Anda — akun yang berbeda yang menghilangkannya",
+        body: "Ini kekhawatiran palsu yang paling umum dan NOL World menjawabnya terang-terangan: mengganti ponsel atau masuk lagi tidak menghapus riwayat Anda. Yang ia minta Anda periksa adalah apakah Anda masuk dengan akun yang berbeda dari yang semula Anda pakai. Itu hampir selalu penyebab sebenarnya, dan masuk lewat layanan lain adalah sebabnya — ponsel baru menawarkan penyedia yang paling praktis, dan menekan yang keliru menempatkan Anda di akun kedua yang kosong tetapi sepenuhnya sah.",
+        pitfall:
+          "Menyimpulkan pemesanannya hilang lalu membeli lagi. Tiketnya ada di akun yang satunya, dan pembelian kedua itu pembelian sungguhan.",
+        takes: "5 menit",
+      },
+      {
+        title: "Pakai peramban yang diharapkan halaman pemesanan, dan hanya kanal resmi",
+        body: "NOL World menyatakan ia dibangun mengikuti standar web dan merekomendasikan Google Chrome atau Microsoft Edge, baik di komputer maupun di ponsel. Jika jendela pemesanan tidak mau terbuka, instruksinya spesifik: perbarui peramban ke versi terbaru, bersihkan cache, lalu coba lagi. Untuk aplikasinya, perbarui dari App Store atau Google Play. Dan ia menyatakan di mana tiket bisa dibeli sama sekali — situs NOL World di world.nol.com/ticket dan aplikasi NOL World, dan tidak di tempat lain.",
+        pitfall:
+          "Mencari-cari masalah di peramban yang memang tidak pernah didukung, di dalam tampilan web aplikasi yang dibuka dari tautan media sosial. Buka halaman pemesanan langsung di Chrome atau Edge sebelum Anda menyimpulkan situsnya rusak.",
+        takes: "15 menit, sehari sebelumnya",
+      },
+      {
+        title: "Kalau peta kursi tidak berfungsi di web seluler, pindah ke aplikasi",
+        body: "Ada masalah perangkat yang terdokumentasi, bukan masalah umum. NOL World menyatakan bahwa pada sebagian perangkat, lingkungan web seluler memperbesar peramban ketika Anda memperbesar dan memperkecil, yang membuat pemilihan kursi mustahil — dan jalan keluarnya adalah mengunduh aplikasi NOL World. Ia menyebut perangkat yang sejauh ini terkonfirmasi: Galaxy Fold. Jika Anda memakai layar lipat atau berproporsi tidak biasa, pasang aplikasinya sebelum penjualan alih-alih menemukan hal ini di dalam jendela pembayaran tujuh menit.",
+        pitfall:
+          "Mencubit layar untuk memperbesar peta kursi demi mencari kursi tertentu. Pada perangkat yang terdampak, gerakan itulah yang merusak pemilihannya.",
+        takes: "10 menit, di muka",
+      },
+      {
+        title: "Ketahui pop-up mana yang bukan kerusakan",
+        body: "Dua pesan terbaca seperti kesalahan dan bukan. NOL World menyatakan pop-up yang memberi tahu bahwa kursi ini sudah dipilih muncul ketika Anda memilih kursi yang sama pada waktu yang nyaris bersamaan dengan pengguna lain — tidak ada yang salah dengan sesi Anda, seseorang hanya lebih cepat sedetik. Dan ia menyatakan kursi yang tersedia diperbarui otomatis tanpa perlu disegarkan, jadi peta kursi yang terlihat membeku biasanya peta kursi yang sedang bekerja. Perlakukan keduanya sebagai informasi alih-alih sebagai sesuatu untuk diperbaiki.",
+        pitfall:
+          "Memuat ulang halaman untuk menghilangkan sebuah pop-up. Pada penjualan berantrean, itu satu tindakan yang memakan posisi Anda.",
+        takes: "—",
+      },
+      {
+        title: "Baca saran soal banyak tab berdampingan dengan kebijakan antipenipuannya",
+        body: "NOL World meminta satu perangkat per akun, dan menyatakan akses bersamaan dari beberapa perangkat pada akun yang sama bisa membatasi pemesanan Anda. Ia lalu memberi saran teknis bagi orang yang memesan secara bersamaan — bahwa banyak tab menimbulkan konflik sesi, dan untuk memakai peramban yang sepenuhnya terpisah seperti Chrome dan Edge, atau perangkat berbeda. Baca itu dengan cermat, karena kebijakan antipenipuannya sendiri mendaftarkan pemesanan lintas akun dengan data pribadi identik atau serupa sebagai penggunaan tidak sah. Bacaan yang aman atas saran itu adalah soal platform terpisah: NOL World di satu peramban sementara situs tiket lain berjalan di peramban lain. Itu bukan izin untuk menjalankan beberapa akun Anda sendiri sekaligus.",
+        pitfall:
+          "Mengambil kiat soal konflik sesi sebagai strategi yang direstui untuk banyak akun. Kedua halaman itu duduk berdampingan dengan canggung, dan yang membawa sanksi tertulis adalah kebijakan antipenipuannya.",
+        takes: "5 menit",
+      },
+      {
+        title: "Kalau Anda menghapus akunnya, ketahui persis apa yang hilang dan apa yang tinggal",
+        body: "Penghapusan tidak bisa dibatalkan dan NOL World merincinya. Dihapus: informasi akun dan profil Anda, riwayat pemesanan Anda, perjalanan Anda, dan daftar tempat yang Anda sukai. Dipertahankan: ulasan dan foto yang Anda tinggalkan untuk sebuah tempat. Di situs, metode masuk mana pun bisa menghapus akunnya. Di aplikasi dengan masuk lewat surel, jalurnya adalah My Account, Settings, Delete Account, lalu kata sandi Anda; dengan masuk lewat layanan lain jalurnya sama tetapi Anda memverifikasi lewat Google, Line, atau Apple. Dua hal dari bagian lain dokumentasinya layak diletakkan di samping ini: menghapus juga menghapus verifikasi identitas Anda dan membebaskannya untuk akun lain, dan akun yang dibatasi karena penyalahgunaan sama sekali tidak bisa dihapus.",
+        pitfall:
+          "Menghapus akun untuk membereskan masalah pada akun itu. Akun yang dibatasi tidak bisa dihapus, dan akun yang terverifikasi membawa serta verifikasi Anda — riwayat pemesanannya hilang dan ulasannya tidak.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Saya tidak ingat kata sandi saya. Bagaimana cara mengaturnya ulang?",
+        a: "Hanya jika Anda mendaftar dengan alamat surel — NOL World menyatakan pemulihan kata sandi tersedia hanya untuk pendaftaran lewat surel. Jalurnya adalah layar masuk, Find Password, masukkan surel pendaftaran, lalu ikuti tautan pengaturan ulang yang datang. Jika Anda memakai Google, Apple, atau Line, tidak ada kata sandi NOL World; Anda masuk lewat penyedianya.",
+      },
+      {
+        q: "Saya bahkan tidak tahu akun mana yang saya pakai.",
+        a: "Periksa sisi penyedianya dulu. NOL World menerbitkan jalurnya: Akun Google lalu Keamanan lalu koneksi Anda ke aplikasi dan layanan pihak ketiga; Settings Apple lalu Apple ID Anda lalu Sign-In & Security lalu Sign in with Apple; Settings Line lalu akun lalu aplikasi yang diizinkan. Jika NOL World muncul, itulah akunnya.",
+      },
+      {
+        q: "Tidak satu pun berhasil. Apakah layanan pelanggan akan menemukannya?",
+        a: "Mereka akan mencari, dengan apa yang Anda berikan: surel yang mungkin Anda pakai, jenis masuknya, nama panggilan Anda, dan jenis produk yang Anda pesan beserta nomor pemesanannya — yang menurut NOL World ada di voucher surel yang dikirim saat Anda memesan. Ia juga memperingatkan bahwa akun yang tidak pernah diverifikasi lewat surel bisa sulit ditemukan, jadi kirimkan semua yang Anda punya.",
+      },
+      {
+        q: "Saya ganti ponsel dan pemesanan saya hilang.",
+        a: "Hampir pasti tidak. NOL World menyatakan mengganti ponsel atau masuk lagi tidak menghapus riwayat, dan meminta Anda memeriksa apakah Anda masuk dengan akun yang berbeda dari yang semula. Dengan masuk lewat layanan lain itu mudah terjadi tanpa sengaja — ponsel baru menawarkan penyedia yang paling praktis, belum tentu yang Anda pakai.",
+      },
+      {
+        q: "Jendela pemesanannya sama sekali tidak mau terbuka.",
+        a: "Langkah NOL World sendiri: pakai peramban standar, dan ia menyebut Chrome dan Edge; perbarui ke versi terbaru; bersihkan cache; coba lagi. Untuk aplikasinya, perbarui ke versi terbaru dari App Store atau Google Play. Ia juga menyatakan tiket hanya bisa dibeli di world.nol.com/ticket atau di aplikasi NOL World.",
+      },
+      {
+        q: "Saya tidak bisa memilih kursi di peramban ponsel saya.",
+        a: "Ada masalah perangkat yang diketahui. NOL World menyatakan bahwa pada sebagian perangkat, memperbesar dan memperkecil memperbesar seluruh peramban seluler, yang membuat pemilihan kursi mustahil, dan bahwa jawabannya adalah memakai aplikasi NOL World. Perangkat yang ia sebut terkonfirmasi adalah Galaxy Fold. Pasang aplikasinya menjelang penjualan alih-alih saat penjualan berlangsung.",
+      },
+      {
+        q: "Bisakah saya membuka dua tab untuk memperbesar peluang?",
+        a: "Tidak, dan NOL World meminta satu perangkat per akun — ia menyatakan akses bersamaan dari beberapa perangkat pada akun yang sama bisa membatasi pemesanan Anda. Sarannya soal peramban terpisah adalah tentang konflik sesi ketika Anda benar-benar memakai dua platform tiket berbeda, bukan dukungan untuk menjalankan beberapa akun Anda sendiri. Memesan lintas akun dengan data pribadi serupa ada di daftar penggunaan tidak sah yang ia terbitkan.",
+      },
+      {
+        q: "Apa yang terjadi pada data saya kalau saya menghapus akun?",
+        a: "NOL World menyatakan penghapusan tidak bisa dibatalkan, dan mendaftar apa yang hilang: informasi akun dan profil, riwayat pemesanan, perjalanan, dan tempat yang disukai. Ulasan dan foto yang Anda tinggalkan untuk sebuah tempat dipertahankan. Di bagian lain ia menyatakan penghapusan juga menghapus verifikasi identitas Anda, membebaskannya untuk akun lain, dan bahwa akun yang dibatasi karena penyalahgunaan tidak bisa dihapus.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

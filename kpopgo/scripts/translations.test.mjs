@@ -534,6 +534,8 @@ const LATIN_OK = new Set([
   // the Galaxy Fold the browser-mode answer names, and the menu items.
   "NOL", "nol", "YES", "yes", "TICKET", "ticket", "Store", "Membership", "Official",
   "Delete", "Reactivate", "Retry", "Password", "Find", "Now", "Web", "FAQ",
+  // NOL World app menu path: My Account > Settings > Delete Account
+  "Settings", "Security", "Authorized", "Apple", "Sign", "Line",
   "American", "Express", "Microsoft", "Galaxy", "Fold", "POP", "SNS",
   "world", "global", "mobile", "site", "version", "com", "and",
 ]);

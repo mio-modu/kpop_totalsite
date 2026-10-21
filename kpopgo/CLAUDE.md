@@ -28,7 +28,7 @@ a site that gives it loses the only thing it sells.
 `content/guides.ts` carries `status`, `lastChecked`, `scope` and `sources`.
 `status` is a ladder of evidence, not a progress bar — `draft`, `sourced`,
 `reported`, `verified` — and each rung renders a notice saying which kind of
-check the page has had. All five are `sourced` today: every claim is traced to
+check the page has had. All twenty are `sourced` today: every claim is traced to
 a linked, dated official source, and nobody has walked a flow end to end. The
 entire premise is being more accurate than the stale guides that currently
 rank, so claiming a verification that did not happen makes us one of them.
@@ -144,8 +144,8 @@ the register, and the machinery landed before the first translated word, as it
 did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
-Four languages today: Japanese on 18 guides, Traditional Chinese on 16,
-Indonesian on 16, German on 6, none native-reviewed. Each language skips the
+Four languages today: Japanese on 18 guides, Traditional Chinese on 17,
+Indonesian on 17, German on 6, none native-reviewed. Each language skips the
 guides it has no reader for rather than padding to a round number, and
 `content/translations.ts` records which and why at the top.
 

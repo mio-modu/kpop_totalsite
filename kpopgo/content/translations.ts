@@ -129,48 +129,65 @@ const JA_LABELS = {
 };
 
 /**
- * Two guides are deliberately not in Japanese, and this is the reason rather
- * than an oversight.
+ * Two guides are deliberately in no language but English, and this is the
+ * reason rather than an oversight.
  *
- * `kpop-ticketing-day-timezone` is a guide about converting KST to your own
- * clock. Japan is UTC+9, the same as Korea, so for this audience there is
- * nothing to convert — the page would be almost entirely about a problem the
- * reader does not have. Where a Japanese reader does still need to know that,
- * the cancellation and membership guides say so in the one line it takes.
+ * The three Asian editions now carry the same eighteen of the twenty guides
+ * and skip the same two. That was not planned — they were written at
+ * different times for different reasons — and it is worth noticing, because
+ * the two they all refuse are refused by the same test: a page whose subject
+ * is a jurisdiction the reader is not in.
+ *
+ * `kpop-ticketing-day-timezone` is the sharper of the two, because its title
+ * suggests the opposite. The guide is not really about time zones; it is
+ * about daylight saving. Korea has none and most of its English readership
+ * does, so the local hour of a Korean sale moves two to four times a year,
+ * and that arithmetic is what most of its seven steps are for. None of the
+ * three target locales observes daylight saving either — verified against the
+ * same IANA database the guide itself cites rather than from memory, with
+ * `zdump -v` showing no transition in Asia/Tokyo, Asia/Taipei or
+ * Asia/Jakarta across the next decade, and identical January and July offsets
+ * in each:
+ *
+ *   Asia/Seoul   UTC+9    Asia/Tokyo    UTC+9   — no conversion at all
+ *   Asia/Taipei  UTC+8    KST minus 1, permanently
+ *   Asia/Jakarta UTC+7    KST minus 2, permanently
+ *
+ * So for a Japanese reader there is nothing to convert, and for a Taiwanese or
+ * Indonesian one the gap is a fixed hour or two that never moves. Translating
+ * it would hand all three a page mostly about New York's March clock change.
+ * The parts that do apply — be verified before the window opens, and the
+ * checkout clock is a separate deadline — are already in guides 01 and 12,
+ * which are translated into all three.
  *
  * `kpop-album-customs-duty-overseas` covers the United States and the EU,
- * because those are the two changes there were primary sources for. Japan's
- * own import rules are not in it, and translating the page would invite a
- * Japanese reader to think they were. A Japan edition would need a Japanese
- * source: both customs.go.jp and japanpost.jp are blocked by this container's
- * outbound allowlist, so it cannot be written from here today.
+ * because those are the two changes there were primary sources for. No
+ * reader of these three languages is in either. Worse, the page would read as
+ * though it covered them: a translated customs guide is exactly the kind of
+ * page a reader trusts on the one subject where being wrong costs money at a
+ * border. Each would need its own national source — and for Japanese,
+ * customs.go.jp and japanpost.jp are both outside this container's outbound
+ * allowlist, so it cannot be written from here today even if the appetite
+ * were there.
  *
  * Translating either to reach a round number would be padding, and the same
  * instinct this site refuses everywhere else.
  *
- * Traditional Chinese and Indonesian cover six guides each, and skip three.
- *
- * `kpop-album-customs-duty-overseas` is skipped for the reason above: it is a
- * United States and EU page, and no reader of either language is in it.
- *
- * `weverse-shop-shipping-delays-and-cancellation` is skipped for now because
- * its holiday-cutoff tables are the Korean and Chinese holiday calendars, and
- * for a Taiwanese or Indonesian reader the useful half — what a cutoff means
- * for an order already paid for — is one paragraph inside a page of dates
- * that are not theirs. It is worth a translation once that half can stand on
- * its own; it is not worth one as it is.
- *
- * `kpop-ticketing-day-timezone` is skipped for a sharper version of the
- * Japanese reason. The guide is not really about time zones, it is about
- * daylight saving: Korea has none and most of its English readership does, so
- * the hour moves two to four times a year and three of its seven steps are
- * that arithmetic. Neither Taiwan (UTC+8) nor Indonesia (UTC+7) observes
- * daylight saving either, so the gap to KST is a fixed one or two hours that
- * never moves — a Taiwanese reader cannot get this wrong. Translating it
- * would hand them a page mostly about New York's March clock change. The
- * parts that do apply to them — be verified before the window opens, and the
- * closing clock is a separate deadline — are already in guides 01 and 12,
- * which are translated.
+ * `weverse-shop-shipping-delays-and-cancellation` used to be on this list for
+ * Chinese and Indonesian, and the reason given was that its holiday-cutoff
+ * tables are the Korean and Chinese calendars, leaving a Taiwanese or
+ * Indonesian reader one useful paragraph inside a page of dates that are not
+ * theirs. Re-read against the guide, that undercounted. Five of its nine
+ * steps and five of its eight FAQ entries carry no region at all, and the
+ * first of them is the most valuable fact in the whole set — that the cancel
+ * window closes on a status change rather than a clock, so it can pass while
+ * you sleep. The regional steps are not dead weight for these readers
+ * either: the Chinese-holiday notice is the one a Taiwanese reader is most
+ * likely to read as applying to them, and the page says plainly that it does
+ * not. Both translations landed on 2026-10-21. The earlier judgment is left
+ * written down rather than deleted, because it was a reasonable call made on
+ * a weaker reading, and that is the kind of thing worth being able to find
+ * again.
  */
 export const translations: Translation[] = [
   {
@@ -5759,6 +5776,238 @@ export const translations: Translation[] = [
       {
         q: "Apa yang terjadi pada data saya kalau saya menghapus akun?",
         a: "NOL World menyatakan penghapusan tidak bisa dibatalkan, dan mendaftar apa yang hilang: informasi akun dan profil, riwayat pemesanan, perjalanan, dan tempat yang disukai. Ulasan dan foto yang Anda tinggalkan untuk sebuah tempat dipertahankan. Di bagian lain ia menyatakan penghapusan juga menghapus verifikasi identitas Anda, membebaskannya untuk akun lain, dan bahwa akun yang dibatasi karena penyalahgunaan tidak bisa dihapus.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Weverse Shop 訂單為何遲到,以及什麼時候還取消得掉",
+    summary:
+      "取消鍵消失的時機是狀態改變,不是某個時限;歐盟取消了150歐元的免稅門檻,美國在關稅之外又加了一套查驗制度,而韓國連假的截止時間是算到分鐘的。",
+    scope:
+      "依據 Weverse Shop 自己的公告,說明下單之後會發生的事:取消期限、它針對歐盟與美國提醒過的海關變動、連假與物流造成的延遲,以及你究竟是在跟誰買東西。連假日期是2026年的,明年就不對了——公告頁才是即時版本。下單本身另有專篇。",
+    intro: [
+      "Weverse Shop 不斷在發配送相關的公告,而幾乎沒有人會去讀,直到自己的包裹遲了。真正的答案就在那裡:哪一項海關變動適用於你、哪個連假吃掉了四天,以及你的訂單在哪一分鐘不再能取消。",
+      "這篇就是把那一整串公告一次讀完。其中有兩項是真正的新規定而非季節性延遲,而其中一項正是你的錢不再能退的那一刻。",
+    ],
+    steps: [
+      {
+        title: "先知道取消期限是由狀態決定的,不是由時鐘決定",
+        body: "這是出事之前最值得知道的一件事。Weverse Shop 給的取消路徑是 Weverse App、More、My Orders、Order Details、Cancel Order,並說明一旦訂單狀態變成 Shipping Soon 或 In Transit,你就無法再取消。它沒有訂出任何寬限期,也沒有「下單幾小時內」的規則。期限會一直開著,直到倉庫改動狀態為止——而熱門商品的狀態可能比你預期的更早就改掉了。",
+        pitfall:
+          "打算睡一覺再決定要不要留下一時衝動的預購。那個期限不是你查得到的時間,而是一個你控制不了的事件,而且它可能在你睡覺時就過去了。",
+        takes: "5分鐘,立刻",
+      },
+      {
+        title: "你在歐盟的話,150歐元的免稅額已經沒有了",
+        body: "Weverse Shop 自己的公告在一般報導含糊之處講得很具體:自2026年7月1日起,歐盟修訂了低價值進口的規定,先前150歐元以下的訂單免徵關稅,該免稅已被取消,因此不論購買金額多少都要課稅。最關鍵的細節是認定基準——Weverse 說它適用於自2026年7月1日起在當地通關的貨件,看的是當地通關日而非下單日。在變動之前下的單,仍然可能被它抓到。",
+        pitfall:
+          "以為小額訂單便宜到不會被課稅。現在已經沒有下限了,而決定這件事的日期,是你從訂單頁上看不到的那一個。",
+        takes: "10分鐘",
+      },
+      {
+        title: "要預期海關或快遞會直接向你收錢",
+        body: "Weverse Shop 說歐盟訂單可能在當地通關時產生稅費,你可能會收到當地海關或快遞另外寄來的付款指示,而未繳納這些稅費可能導致延遲或無法送達。這跟結帳時被收費是完全不同的體驗:一間你毫無往來關係的公司寄來訊息,要你為一個你已經付過錢的包裹再付一次錢。它並非預設就是詐騙——但這也正是詐騙模仿的樣子,所以請拿追蹤號碼去對自己的訂單,而不是點訊息裡的連結。",
+        pitfall:
+          "把海關或快遞的付款要求當成釣魚信忽略掉,讓包裹就那樣擺著。未繳款是訂單最後根本沒送到的已知途徑之一。",
+        takes: "—",
+      },
+      {
+        title: "你在美國的話,要知道那是兩項各自獨立的變動",
+        body: "關稅變動佔據了所有報導,而它並不是唯一讓美國包裹變慢的原因。Weverse Shop 另外提醒,自2026年7月8日起,美國消費品安全委員會(CPSC)強制實施 eFiling 政策,對所有進口到美國的商品進行更嚴格的當地海關查驗,預計通關會比標準配送時程多花幾天。那是一套產品安全申報制度而非關稅——所以美國訂單變慢的原因,可能跟要繳多少稅完全無關。",
+        pitfall:
+          "把每一次美國延遲都讀成免稅門檻那件事,然後等一張永遠不會來的稅單。這兩項變動裡,一項花錢,另一項花時間。",
+        takes: "5分鐘",
+      },
+      {
+        title: "把韓國連假當成一個以分鐘計的截止時間",
+        body: "Weverse Shop 會為每個韓國連假公布截止時程,而那些時間很精確。2026年中秋,韓國以外地址的下單截止是9月23日11:00 KST,快遞配送於9月28日恢復;韓國境內地址的快遞截止是9月22日11:00 KST,當天即恢復。截止後下的單,會從恢復日起依序出貨。Weverse 另加兩點提醒:截止日當天出貨的商品,仍可能因地區而在連假後才送達,而該時程來自快遞公司,可能會變動。",
+        pitfall:
+          "把那些日期讀成今年的。那是2026年中秋的數字,而真正能延用的是那個模式——前一兩天的11:00 KST截止,大約一週後恢復。日期本身每次都得重新查。",
+        takes: "連假前下單,10分鐘",
+      },
+      {
+        title: "如果你的地址在中國,還有第二份連假行事曆",
+        body: "Weverse Shop 會為中國的連假另發公告,影響的是收件地址在中國的訂單,因為中國海關停止作業,通關也跟著停。2026年9月25日至27日的中秋節與10月1日至7日的國慶假期,它說在9月15日11:00 KST前完成付款的訂單,有可能在國慶假期期間送達,而在那之後付款的訂單,要等假期於10月8日結束後才開始出貨。請注意,算的是付款完成,而不是下單。",
+        pitfall:
+          "一筆付款完成時間比你以為的更晚的預購。當截止是以完款來認定時,一筆還沒付清的訂單,就是一筆落在三週空窗另一側的訂單。",
+        takes: "10分鐘",
+      },
+      {
+        title: "把貨運中斷和包裹遺失分開看",
+        body: "有些延遲既不是海關也不是連假。2026年4月,Weverse Shop 通知全歐洲及部分中東國家出現配送延遲,原因是全球物流路線與海空運班期波動,影響的是2026年4月1日之後出貨且正在國際運送中的訂單。真正有用的部分是它對追蹤資訊的說明:因為改道,追蹤更新與當地抵達都可能比平常更久,而包裹仍在運送中。在已知的中斷期間追蹤停滯,是預期中的症狀,不是遺失的證據。",
+        pitfall:
+          "因為追蹤一週沒動就去開遺失包裹的案件。先去公告頁看看有沒有涵蓋你所在地區的現行中斷——對一個只是被改道的包裹提出申訴,會耗掉你處理真正問題時需要的時間。",
+        takes: "10分鐘",
+      },
+      {
+        title: "確認賣家到底是不是 Weverse",
+        body: "Weverse Shop 在自己的頁面上說明,部分商品由個別第三方賣家提供,在這些情況下 Weverse Company 僅作為電子商務仲介,並非交易的當事人,且對這些賣家的商品資訊與交易不承擔責任。那會改變出問題時你面對的是誰——第三方商品的對造是賣家,不是 Weverse。這件事值得在你需要投訴之前就先弄清楚,而不是在投訴的過程中。",
+        pitfall:
+          "以為店內所有東西都有同樣的背書,只因為它們都走同一個結帳流程。那份仲介免責聲明是公開的,而它決定了誰該給你補償。",
+        takes: "5分鐘",
+      },
+      {
+        title: "自己去讀公告,因為這一頁會比大多數頁面更快過期",
+        body: "上面的一切都來自 Weverse Shop 的公告頁,而那一頁才是即時版本。海關變動是耐久的;連假時程、貨運中斷與快遞截止則不是——它們每次都重發一份,舊的那份不會改動就被取代了。在連假前下單或包裹遲到時,請去讀公告清單,而不要相信任何指南上的日期,包括這一篇。這一頁頂端的日期,就是我們上次去讀的時間。",
+        pitfall:
+          "相信一份去年寫的指南上的截止時間。重複的是結構,不是數字。",
+        takes: "5分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "我還能取消訂單嗎?",
+        a: "只有在狀態還允許的時候。Weverse Shop 給的路徑是 Weverse App、More、My Orders、Order Details、Cancel Order,並說明一旦狀態變成 Shipping Soon 或 In Transit,就不再能取消。它沒有公布任何寬限期,所以答案取決於訂單本身,而不是時鐘。",
+      },
+      {
+        q: "我在歐盟,訂單被收了海關稅。這樣對嗎?",
+        a: "很可能對。Weverse Shop 說自2026年7月1日起,歐盟取消了先前涵蓋150歐元以下訂單的免稅額,因此不論金額多少都要課稅,認定基準是自該日起在當地通關的貨件。它也提醒你可能收到海關或快遞另寄的付款指示,而不繳可能導致延遲或無法送達。",
+      },
+      {
+        q: "如果沒有稅要繳,我的美國訂單為什麼還是慢?",
+        a: "因為那是兩項變動。除了關稅規定之外,Weverse Shop 提醒自2026年7月8日起,美國消費品安全委員會(CPSC)強制實施 eFiling,對所有進口到美國的商品加強查驗,預計通關會多花幾天。那一項花的是時間,不是錢。",
+      },
+      {
+        q: "我收到要我繳海關稅的訊息。那是詐騙嗎?",
+        a: "它確實可能是真的——Weverse Shop 說歐盟客戶可能收到當地海關或快遞另寄的付款指示。它同時也正是詐騙模仿的樣子。請拿追蹤號碼去對自己的訂單,並自己連到快遞公司的網站,而不是點訊息裡的連結。",
+      },
+      {
+        q: "韓國連假下單的截止時間是什麼時候?",
+        a: "Weverse Shop 每個連假公布一次,精確到分鐘。2026年中秋,韓國以外地址的截止是9月23日11:00 KST,快遞配送於9月28日恢復。它提醒該時程來自快遞公司、可能變動,而截止日當天出貨的商品仍可能在連假後才送達。請查當期的那一份,不要沿用這些日期。",
+      },
+      {
+        q: "我的追蹤資訊一週沒更新了。包裹是不是丟了?",
+        a: "先去公告頁看有沒有涵蓋你所在地區的中斷。2026年4月 Weverse Shop 通知歐洲與中東延遲時說,改道意味著追蹤更新與當地抵達都會比平常更久,而包裹仍在運送中——所以在已知的中斷期間追蹤靜止,是症狀而不是問題本身。",
+      },
+      {
+        q: "我的商品有問題。我是要找 Weverse 嗎?",
+        a: "不一定。Weverse Shop 說明部分商品由個別第三方賣家販售,此時 Weverse Company 僅作為仲介、並非交易當事人,且對那些賣家的商品資訊與交易不承擔責任。在決定找誰之前,先確認你買的是哪一種商品。",
+      },
+      {
+        q: "我不在中國,中國的連假時程會影響我嗎?",
+        a: "公告說那些時程適用於收件地址在中國的訂單,因為中國海關在連假期間停止作業。如果你的地址在別處,要盯的是韓國連假的截止時間,以及任何現行的貨運中斷。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Mengapa pesanan Weverse Shop Anda terlambat, dan kapan Anda masih bisa membatalkannya",
+    summary:
+      "Tombol pembatalan hilang karena perubahan status alih-alih karena sebuah tenggat, Uni Eropa menghapus batas bebas bea 150 euronya, Amerika Serikat menambahkan satu rezim pemeriksaan kedua di atas rezim bea, dan sebuah hari raya Korea punya batas waktu yang dihitung sampai ke menitnya.",
+    scope:
+      "Mencakup apa yang terjadi setelah pesanan Weverse Shop dibuat, dari pemberitahuan Weverse Shop sendiri: tenggat pembatalan, perubahan kepabeanan yang telah ia peringatkan untuk Uni Eropa dan Amerika Serikat, keterlambatan karena hari raya dan logistik, serta dari siapa sebenarnya Anda membeli. Tanggal hari rayanya adalah tanggal tahun 2026 dan akan salah tahun depan — halaman pemberitahuannya adalah versi yang hidup. Pemesanannya sendiri punya panduannya sendiri.",
+    intro: [
+      "Weverse Shop menerbitkan aliran pemberitahuan yang tetap soal pengiriman, dan nyaris tidak ada yang membacanya sampai sebuah paket terlambat. Di situlah jawaban yang sebenarnya tinggal: perubahan kepabeanan mana yang berlaku untuk Anda, hari raya mana yang menelan empat hari, dan menit persisnya ketika sebuah pesanan berhenti bisa dibatalkan.",
+      "Inilah aliran itu, dibaca sekaligus. Dua dari hal di bawah ini adalah aturan yang benar-benar baru alih-alih keterlambatan musiman, dan salah satunya adalah saat ketika uang Anda berhenti bisa dikembalikan.",
+    ],
+    steps: [
+      {
+        title: "Ketahui bahwa jendela pembatalan menutup karena sebuah status, bukan karena jam",
+        body: "Inilah fakta yang layak diketahui sebelum ada yang salah. Weverse Shop memberikan jalur pembatalan sebagai aplikasi Weverse, lalu More, lalu My Orders, lalu Order Details, lalu Cancel Order — dan menyatakan bahwa begitu status pesanan Anda berubah menjadi Shipping Soon atau In Transit, Anda tidak akan bisa membatalkan pesanan itu. Tidak ada masa tenggang yang dinyatakan dan tidak ada aturan berapa jam setelah pemesanan. Jendelanya terbuka sampai sebuah gudang mengubah sebuah status, yang bisa terjadi lebih cepat daripada yang Anda perkirakan pada rilis yang populer.",
+        pitfall:
+          "Memutuskan sepanjang malam apakah akan menyimpan sebuah prapesan yang impulsif. Tenggatnya bukan sebuah waktu yang bisa Anda cari — ia sebuah peristiwa yang tidak Anda kendalikan, dan ia bisa berlalu selagi Anda tidur.",
+        takes: "5 menit, segera",
+      },
+      {
+        title: "Jika Anda di Uni Eropa, pembebasan 150 euro itu sudah tidak ada",
+        body: "Pemberitahuan Weverse Shop sendiri bersifat spesifik di tempat liputan umum bersifat kabur: sejak 1 Juli 2026 Uni Eropa merevisi aturannya untuk impor bernilai rendah — sebelumnya pesanan di bawah 150 euro dibebaskan dari bea masuk, dan pembebasan itu telah dihapus, sehingga bea sekarang berlaku terlepas dari jumlah pembeliannya. Rincian yang paling penting adalah dasarnya: Weverse menyatakan ini berlaku untuk kiriman yang menyelesaikan kepabeanan setempat sejak 1 Juli 2026, menurut tanggal pembebasan setempat alih-alih tanggal pemesanan. Sebuah pesanan yang dibuat sebelum perubahan itu masih bisa terjaring olehnya.",
+        pitfall:
+          "Menganggap pesanan kecil terlalu murah untuk dikenai bea. Tidak ada lagi batas bawahnya, dan tanggal yang memutuskannya adalah tanggal yang tidak bisa Anda lihat dari halaman pesanan.",
+        takes: "10 menit",
+      },
+      {
+        title: "Perkirakan kepabeanan, atau kurirnya, akan meminta uang langsung kepada Anda",
+        body: "Weverse Shop menyatakan pesanan Uni Eropa bisa dikenai bea selama pembebasan setempat, bahwa Anda mungkin menerima instruksi pembayaran terpisah dari kepabeanan setempat atau dari kurirnya, dan bahwa kelalaian membayar bea itu bisa menunda atau menghalangi pengiriman. Itu pengalaman yang berbeda dari sebuah tagihan di kasir: sebuah pesan datang dari perusahaan yang tidak punya hubungan apa pun dengan Anda, meminta uang sebelum sebuah paket yang sudah Anda bayar mau bergerak. Secara bawaan ia bukan penipuan — tetapi ia juga persis apa yang ditiru sebuah penipuan, jadi cocokkan nomor pelacakannya dengan pesanan Anda alih-alih mengikuti tautan di dalam pesan itu.",
+        pitfall:
+          "Mengabaikan permintaan pembayaran dari kepabeanan atau kurir sebagai pengelabuan lalu membiarkan paketnya menganggur. Tidak membayar adalah salah satu cara terdokumentasi sebuah pesanan sekadar tidak pernah datang.",
+        takes: "—",
+      },
+      {
+        title: "Jika Anda di Amerika Serikat, ketahui bahwa ada dua perubahan terpisah, bukan satu",
+        body: "Perubahan bea mendapat semua liputannya dan ia bukan satu-satunya hal yang memperlambat paket Amerika. Weverse Shop memperingatkan secara terpisah bahwa sejak 8 Juli 2026 Komisi Keamanan Produk Konsumen Amerika Serikat memberlakukan kebijakan eFiling yang bersifat wajib, yang membawa pemeriksaan kepabeanan setempat yang lebih ketat atas semua barang yang diimpor ke Amerika Serikat, dan bahwa pembebasannya diperkirakan memakan beberapa hari lebih lama daripada rentang pengiriman standar. Itu sebuah rezim pelaporan keamanan produk alih-alih sebuah tarif — jadi sebuah pesanan Amerika bisa lambat karena alasan yang tidak berhubungan sama sekali dengan berapa bea yang terutang.",
+        pitfall:
+          "Membaca setiap keterlambatan Amerika sebagai perubahan nilai minimum itu lalu menunggu tagihan bea yang tidak pernah datang. Satu dari dua perubahan ini memakan uang dan yang lainnya memakan hari.",
+        takes: "5 menit",
+      },
+      {
+        title: "Perlakukan hari raya Korea sebagai batas waktu yang diukur dalam menit",
+        body: "Weverse Shop menerbitkan jadwal batas waktu untuk setiap hari raya Korea, dan waktunya presisi. Untuk Chuseok 2026, batas pemesanan bagi alamat di luar Korea Selatan adalah 23 September pada 11:00 KST, dengan pengiriman ekspres kembali berjalan pada 28 September; untuk alamat Korea batas kurirnya adalah 22 September pada 11:00 KST, kembali berjalan pada hari yang sama. Pesanan yang dibuat setelah batas itu dikirim berurutan dari tanggal mulai berjalan kembali. Weverse menambahkan dua catatan: barang yang dikirim pada tanggal batas itu masih bisa datang setelah hari rayanya tergantung wilayah, dan jadwalnya datang dari kurir serta bisa berubah.",
+        pitfall:
+          "Membaca tanggal-tanggal itu sebagai tanggal tahun ini. Itu angka Chuseok 2026, dan polanya — sebuah batas pada 11:00 KST satu atau dua hari sebelumnya, mulai berjalan kembali kira-kira seminggu setelahnya — adalah bagian yang terbawa. Tanggalnya sendiri harus dicari setiap kali.",
+        takes: "10 menit sebelum pesanan hari raya",
+      },
+      {
+        title: "Jika alamat Anda di Tiongkok, sebuah kalender hari raya kedua berlaku",
+        body: "Weverse Shop menerbitkan pemberitahuan terpisah untuk hari raya Tiongkok, yang berdampak pada pesanan dengan alamat pengiriman di Tiongkok, karena kantor kepabeanan Tiongkok tutup dan pembebasannya berhenti. Untuk Festival Pertengahan Musim Gugur 2026 pada 25 sampai 27 September dan Hari Nasional dari 1 sampai 7 Oktober, ia menyatakan pesanan yang dibayar penuh sampai 15 September pada 11:00 KST kemungkinan dikirimkan selama hari raya Hari Nasional, dan pesanan yang dibayar setelah itu akan mulai dikirim begitu hari rayanya berakhir pada 8 Oktober. Perhatikan bahwa yang dihitung adalah pembayarannya selesai, bukan pesanannya dibuat.",
+        pitfall:
+          "Sebuah prapesan yang pembayarannya selesai lebih lambat daripada yang Anda kira. Di tempat batasnya ditentukan oleh pembayaran penuh, sebuah pesanan yang menganggur belum terbayar adalah pesanan di sisi jauh sebuah jurang tiga minggu.",
+        takes: "10 menit",
+      },
+      {
+        title: "Pisahkan sebuah gangguan pengangkutan dari sebuah paket yang hilang",
+        body: "Sebagian keterlambatan bukan kepabeanan dan bukan hari raya. Pada April 2026 Weverse Shop memberitahukan keterlambatan pengiriman di seluruh Eropa dan sejumlah negara Timur Tengah terpilih, yang disebabkan oleh fluktuasi rute logistik global serta jadwal pengangkutan udara dan laut, yang berdampak pada pesanan yang dikirim setelah 1 April 2026 dan sedang dalam perjalanan internasional. Bagian yang berguna adalah apa yang ia nyatakan soal pelacakan: karena pengalihan rute, pembaruan pelacakan dan kedatangan setempat bisa memakan waktu lebih lama daripada biasanya, dan paketnya masih dalam perjalanan. Pelacakan yang sunyi selama gangguan yang diketahui adalah gejala yang diperkirakan, bukan bukti kehilangan.",
+        pitfall:
+          "Membuka klaim paket hilang karena pelacakannya tidak bergerak selama seminggu. Periksa dulu halaman pemberitahuan untuk gangguan yang sedang aktif yang mencakup wilayah Anda — sebuah klaim yang diajukan atas paket yang sekadar dialihkan rutenya menghabiskan waktu yang akan Anda butuhkan untuk klaim yang sungguhan.",
+        takes: "10 menit",
+      },
+      {
+        title: "Periksa apakah Weverse benar-benar penjualnya",
+        body: "Weverse Shop menyatakan di halamannya sendiri bahwa sebagian produk ditawarkan oleh penjual pihak ketiga perorangan, bahwa dalam kasus itu Weverse Company bertindak semata sebagai perantara niaga elektronik dan bukan pihak dalam transaksinya, dan bahwa ia tidak memikul tanggung jawab atas informasi produk maupun atas transaksi yang dijalankan penjual tersebut. Itu mengubah dengan siapa Anda berhadapan ketika ada yang salah — untuk barang pihak ketiga, pihak lawannya adalah penjualnya, bukan Weverse. Layak dipastikan sebelum Anda perlu mengeluh alih-alih sewaktu mengeluh.",
+        pitfall:
+          "Menganggap semua yang ada di toko itu memikul dukungan yang sama karena semuanya duduk di belakang kasir yang sama. Penafian perantara itu diterbitkan, dan ia memutuskan siapa yang berutang ganti kepada Anda.",
+        takes: "5 menit",
+      },
+      {
+        title: "Baca sendiri pemberitahuannya, karena halaman ini akan kedaluwarsa lebih cepat daripada sebagian besar",
+        body: "Semua hal di atas datang dari halaman pemberitahuan Weverse Shop, dan halaman itu adalah versi yang hidup. Perubahan kepabeanannya tahan lama; jadwal hari raya, gangguan pengangkutan dan batas waktu kurirnya tidak — semuanya diterbitkan ulang untuk setiap kesempatan dan digantikan tanpa pemberitahuan lamanya berubah. Sebelum sebuah pesanan hari raya atau ketika sebuah paket terlambat, bacalah daftar pemberitahuannya alih-alih memercayai tanggal panduan mana pun, termasuk panduan ini. Tanggal di puncak halaman ini adalah kapan kami terakhir melakukannya.",
+        pitfall:
+          "Memercayai sebuah batas waktu dari panduan yang ditulis tahun lalu. Yang berulang adalah strukturnya dan bukan angkanya.",
+        takes: "5 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah saya masih bisa membatalkan pesanan saya?",
+        a: "Hanya selagi statusnya mengizinkan. Jalur Weverse Shop adalah aplikasi Weverse, More, My Orders, Order Details, Cancel Order — dan ia menyatakan bahwa begitu statusnya berubah menjadi Shipping Soon atau In Transit, pembatalan tidak lagi mungkin. Tidak ada masa tenggang yang diterbitkan, jadi jawabannya tergantung pesanannya alih-alih jamnya.",
+      },
+      {
+        q: "Saya di Uni Eropa dan pesanan saya punya tagihan kepabeanan. Apakah itu benar?",
+        a: "Mungkin benar. Weverse Shop menyatakan bahwa sejak 1 Juli 2026 Uni Eropa menghapus pembebasan bea yang sebelumnya mencakup pesanan di bawah 150 euro, sehingga bea sekarang berlaku terlepas dari jumlahnya, berdasarkan kiriman yang menyelesaikan kepabeanan setempat sejak tanggal itu. Ia juga memperingatkan Anda mungkin mendapat instruksi pembayaran terpisah dari kepabeanan atau kurirnya, dan bahwa tidak membayar bisa menunda atau menghalangi pengiriman.",
+      },
+      {
+        q: "Mengapa pesanan Amerika saya lambat kalau tidak ada bea yang harus dibayar?",
+        a: "Karena ada dua perubahan. Berdampingan dengan aturan beanya, Weverse Shop memperingatkan bahwa sejak 8 Juli 2026 Komisi Keamanan Produk Konsumen Amerika Serikat memberlakukan eFiling yang wajib, yang membawa pemeriksaan lebih ketat atas semua barang yang diimpor ke Amerika Serikat, dengan pembebasannya diperkirakan memakan beberapa hari lebih lama. Yang satu itu memakan waktu alih-alih uang.",
+      },
+      {
+        q: "Saya mendapat pesan yang meminta saya membayar kepabeanan. Apakah itu penipuan?",
+        a: "Ia bisa secara sah memang nyata — Weverse Shop menyatakan pelanggan Uni Eropa bisa menerima instruksi pembayaran terpisah dari kepabeanan setempat atau dari kurirnya. Ia juga persis apa yang ditiru sebuah penipuan. Pastikan dengan mencocokkan nomor pelacakannya ke pesanan Anda sendiri dan membuka situs kurirnya sendiri alih-alih mengikuti tautan di dalam pesan itu.",
+      },
+      {
+        q: "Apa batas waktu untuk pesanan pada hari raya Korea?",
+        a: "Weverse Shop menerbitkan satu per hari raya, sampai ke menitnya. Untuk Chuseok 2026 batas bagi alamat di luar Korea adalah 23 September pada 11:00 KST, dengan pengiriman ekspres kembali berjalan 28 September. Ia memperingatkan jadwalnya datang dari kurir dan bisa berubah, dan bahwa barang yang dikirim pada hari batas itu masih bisa datang setelah hari rayanya. Carilah yang sedang berlaku alih-alih memakai ulang tanggal-tanggal ini.",
+      },
+      {
+        q: "Pelacakan saya tidak diperbarui selama seminggu. Apakah paket saya hilang?",
+        a: "Periksa dulu halaman pemberitahuan untuk sebuah gangguan yang mencakup wilayah Anda. Ketika Weverse Shop memberitahukan keterlambatan untuk Eropa dan Timur Tengah pada April 2026, ia menyatakan pengalihan rute berarti pembaruan pelacakan dan kedatangan setempat memakan waktu lebih lama daripada biasanya dan paketnya masih dalam perjalanan — jadi pelacakan yang diam selama gangguan yang diketahui adalah gejalanya alih-alih masalahnya.",
+      },
+      {
+        q: "Ada yang salah dengan barang saya. Apakah saya berhadapan dengan Weverse?",
+        a: "Tidak selalu. Weverse Shop menyatakan bahwa sebagian produk dijual oleh penjual pihak ketiga perorangan, bahwa Weverse Company lalu bertindak semata sebagai perantara dan bukan pihak dalam transaksinya, dan bahwa ia tidak memikul tanggung jawab atas informasi produk maupun transaksi penjual tersebut. Periksa jenis barang mana yang Anda beli sebelum memutuskan kepada siapa harus mendekat.",
+      },
+      {
+        q: "Apakah jadwal hari raya Tiongkok berdampak pada saya kalau saya tidak di Tiongkok?",
+        a: "Pemberitahuannya menyatakan jadwal itu berlaku untuk pesanan dengan alamat pengiriman di Tiongkok, karena kantor kepabeanan Tiongkok tutup selama hari raya. Jika alamat Anda di tempat lain, batas waktu hari raya Korea dan gangguan pengangkutan yang sedang aktif adalah yang perlu diperhatikan.",
       },
     ],
     labels: ID_LABELS,

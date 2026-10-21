@@ -536,6 +536,12 @@ const LATIN_OK = new Set([
   "Delete", "Reactivate", "Retry", "Password", "Find", "Now", "Web", "FAQ",
   // NOL World app menu path: My Account > Settings > Delete Account
   "Settings", "Security", "Authorized", "Apple", "Sign", "Line",
+  // Weverse Shop cancel path (More > My Orders > Order Details > Cancel Order)
+  // and the two order statuses that close it (Shipping Soon, In Transit). A
+  // reader is being told to look for these strings and act before one of them
+  // appears, so translating them into prose breaks the only instruction that
+  // matters. "eFiling" is the CPSC regime's own name.
+  "More", "Orders", "Order", "Shipping", "Soon", "Transit", "eFiling",
   "American", "Express", "Microsoft", "Galaxy", "Fold", "POP", "SNS",
   "world", "global", "mobile", "site", "version", "com", "and",
 ]);

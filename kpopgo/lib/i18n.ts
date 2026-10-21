@@ -29,7 +29,7 @@
 import type { Guide } from "@/content/guides";
 import { displayStatus, type DisplayStatus } from "./freshness";
 
-export type Locale = "en" | "ja";
+export type Locale = "en" | "ja" | "zh-Hant" | "id";
 
 /** English is the canonical language and carries no path prefix. */
 export const DEFAULT_LOCALE: Locale = "en";
@@ -48,9 +48,51 @@ export type LocaleInfo = {
 export const LOCALES: Record<Locale, LocaleInfo> = {
   en: { code: "en", native: "English", english: "English", tag: "en", prefix: "" },
   ja: { code: "ja", native: "日本語", english: "Japanese", tag: "ja", prefix: "/ja" },
+  // Traditional rather than Simplified, and the reason is distribution rather
+  // than preference: this site's only channel is Google search, and Google is
+  // blocked in mainland China. Traditional reaches Taiwan, Hong Kong and
+  // Macau, where it works. A Simplified edition would be a translation for
+  // readers who cannot reach the page that carries it.
+  "zh-Hant": {
+    code: "zh-Hant",
+    native: "繁體中文",
+    english: "Traditional Chinese",
+    tag: "zh-Hant",
+    prefix: "/zh-hant",
+  },
+  id: {
+    code: "id",
+    native: "Bahasa Indonesia",
+    english: "Indonesian",
+    tag: "id",
+    prefix: "/id",
+  },
 };
 
 export const localeList: LocaleInfo[] = Object.values(LOCALES);
+
+/**
+ * The URL segment for a locale, which is not always its code.
+ *
+ * A BCP 47 subtag can carry case — zh-Hant is written that way by convention
+ * and the hreflang attribute wants it — but a URL path is case-sensitive and
+ * a capital letter in one is a second address for the same page. So the path
+ * is lowercase and the tag is not, which means the route cannot simply cast
+ * its segment to a Locale: it has to look the segment up. Deriving both from
+ * `prefix` is what stops the two drifting, and they did drift once — the
+ * route generated /zh-Hant while every link on the site pointed at /zh-hant,
+ * so with dynamicParams off, every Chinese page 404'd from every link to it.
+ */
+export const segmentOf = (locale: Locale): string => LOCALES[locale].prefix.replace(/^\//, "");
+
+const BY_SEGMENT = new Map(
+  localeList.filter((l) => l.prefix).map((l) => [segmentOf(l.code), l.code]),
+);
+
+/** The locale a URL segment names, or undefined if it names none. */
+export function localeFromSegment(segment: string): Locale | undefined {
+  return BY_SEGMENT.get(segment);
+}
 
 /** Locales other than the canonical one. */
 export const translatedLocales: LocaleInfo[] = localeList.filter(

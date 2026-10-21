@@ -35,6 +35,12 @@ const ROUTES = [
   // Japanese sets no spaces between words, so it wraps on different rules
   // from English and is the likeliest thing to overflow a narrow column.
   ["guide-ja", "/ja/guides/nol-world-verified-member-ekyc"],
+  // One route per locale, and the longest guide in each: Chinese because
+  // dense Han characters break differently from kana, and Indonesian
+  // because its affixed words ("mengalihhurufkan") are the longest
+  // unbreakable strings anywhere on the site.
+  ["guide-zh", "/zh-hant/guides/nol-world-verified-member-ekyc"],
+  ["guide-id", "/id/guides/nol-world-verified-member-ekyc"],
 ];
 const WIDTHS = [320, 360, 390, 768, 1280];
 

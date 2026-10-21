@@ -66,6 +66,34 @@ export type Translation = TranslationMeta & {
   };
 };
 
+const ZH_LABELS = {
+  pitfall: "常見錯誤",
+  takes: "所需時間：",
+  sources: "資料來源",
+  readEnglish: "閱讀英文版",
+  reviewedMachine:
+    "本翻譯以機器翻譯為基礎，未經母語人士校閱。涉及重要判斷時，請以英文版與原始資料來源為準。",
+  reviewedNative: "本翻譯已經母語人士校閱。",
+  sourceMoved:
+    "英文版在本翻譯完成之後曾再次查核。若內容有出入，以英文版為準。",
+  sourceStale:
+    "本翻譯所依據的英文版已超過有效期限。請以英文版與資料來源確認目前的狀況。",
+};
+
+const ID_LABELS = {
+  pitfall: "Kesalahan umum",
+  takes: "Perkiraan waktu:",
+  sources: "Sumber",
+  readEnglish: "Baca versi bahasa Inggris",
+  reviewedMachine:
+    "Terjemahan ini dibuat dengan bantuan mesin dan belum diperiksa oleh penutur asli. Untuk keputusan penting, rujuk versi bahasa Inggris dan sumber aslinya.",
+  reviewedNative: "Terjemahan ini telah diperiksa oleh penutur asli.",
+  sourceMoved:
+    "Versi bahasa Inggris telah diperiksa ulang setelah terjemahan ini dibuat. Jika ada perbedaan, versi bahasa Inggris yang berlaku.",
+  sourceStale:
+    "Versi bahasa Inggris yang menjadi dasar terjemahan ini sudah melewati masa berlakunya. Periksa versi bahasa Inggris dan sumbernya untuk keadaan terkini.",
+};
+
 const JA_LABELS = {
   pitfall: "つまずきやすい点",
   takes: "所要：",
@@ -99,6 +127,30 @@ const JA_LABELS = {
  *
  * Translating either to reach a round number would be padding, and the same
  * instinct this site refuses everywhere else.
+ *
+ * Traditional Chinese and Indonesian cover six guides each, and skip three.
+ *
+ * `kpop-album-customs-duty-overseas` is skipped for the reason above: it is a
+ * United States and EU page, and no reader of either language is in it.
+ *
+ * `weverse-shop-shipping-delays-and-cancellation` is skipped for now because
+ * its holiday-cutoff tables are the Korean and Chinese holiday calendars, and
+ * for a Taiwanese or Indonesian reader the useful half — what a cutoff means
+ * for an order already paid for — is one paragraph inside a page of dates
+ * that are not theirs. It is worth a translation once that half can stand on
+ * its own; it is not worth one as it is.
+ *
+ * `kpop-ticketing-day-timezone` is skipped for a sharper version of the
+ * Japanese reason. The guide is not really about time zones, it is about
+ * daylight saving: Korea has none and most of its English readership does, so
+ * the hour moves two to four times a year and three of its seven steps are
+ * that arithmetic. Neither Taiwan (UTC+8) nor Indonesia (UTC+7) observes
+ * daylight saving either, so the gap to KST is a fixed one or two hours that
+ * never moves — a Taiwanese reader cannot get this wrong. Translating it
+ * would hand them a page mostly about New York's March clock change. The
+ * parts that do apply to them — be verified before the window opens, and the
+ * closing clock is a separate deadline — are already in guides 01 and 12,
+ * which are translated.
  */
 export const translations: Translation[] = [
   {
@@ -1857,6 +1909,1010 @@ export const translations: Translation[] = [
       },
     ],
     labels: JA_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "如何從韓國以外購買 K-POP 演唱會門票",
+    summary:
+      "開始之前先看全貌：你要看的場次在哪個平台開賣、它會做哪一種身分驗證、以及開賣前必須先準備好什麼。",
+    scope:
+      "涵蓋在南韓境內舉行的演出，以及韓國經紀公司使用的售票平台。海外巡迴場次由當地主辦單位販售，屬於另一回事，以下規則並不適用。",
+    intro: [
+      "在這個問題上排名最前的英文指南，幾乎都寫於 2025 年 12 月之前，告訴你去一個已經不叫那個名字的網站。這正是本頁存在的主要原因。",
+      "K-POP 沒有單一的售票網站。平台是由經紀公司與主辦單位「每一次巡迴」各自決定的，並且會寫在該場次的官方公告裡。其餘的一切——你會遇到哪種身分驗證、海外信用卡能不能用、先行販售提前多久——都由這一件事決定。",
+      "所以順序是：先找到官方公告，確認平台，然後針對那個平台的要求做準備。反過來做，就是在開賣前一小時發現自己在錯的網站上完成了驗證。",
+    ],
+    steps: [
+      {
+        title: "找官方公告，不要看粉絲轉發",
+        body: "去藝人的官方管道——經紀公司網站、藝人的 Weverse 社群、官方 X 與 Instagram。公告會寫明售票平台、先行與一般販售的時間（以 KST 標示）、先行所需的會員等級，以及居住地或驗證條件。請截圖保存。接下來的每一步都取決於這一份文件。",
+        pitfall:
+          "粉絲帳號會彙整與改寫資訊，平台寫錯的情況足以讓你錯過開賣。日期變動時也很少更新。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "確認平台——不要從公司名推測",
+        body: "HYBE 旗下的藝人多半走 Weverse 自家的售票。其他韓國巡迴常見的是 NOL Ticket（韓文站）或 NOL World（其海外版）、YES24、Melon Ticket。但這是傾向而非規則：經紀公司會在不同巡迴之間更換平台，同一個巡迴也可能把韓國場與全球場分到兩個不同網站。請讀公告。",
+        pitfall:
+          "把對應關係當成固定的——「HYBE 就是 Weverse、SM 就是 YES24」——是現有指南中最常見的錯誤，而且錯的頻率高到不能忽略。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "搞清楚你會遇到哪一種身分驗證",
+        body: "韓文售票網站大多以韓國手機號碼進行本人驗證，而取得該號碼實務上需要韓國的居留文件。如果你沒有，韓文網站就不是你的路線。海外版網站正是為這種情況而存在，並以其他方式驗證——通常是與帳號綁定的護照資料。現在就決定要用哪一個網站，因為你需要的帳號在那個網站上。",
+        pitfall:
+          "硬要讓韓文網站通過是白費力氣。而借用他人身分來通過驗證這類安排，本站不會協助——那會讓你的門票與帳號同時陷入風險。",
+        takes: "15 分鐘",
+      },
+      {
+        title: "用護照上的資料完全一致地建立帳號",
+        body: "姓名請使用護照機讀區上的法定姓名，出生日期依網站要求的格式輸入。若該場次的先行販售需要後援會會員資格，會員資料與售票帳號上的姓名和出生日期必須一致。資料不符是訂單在入場或驗證時被取消的已記錄原因。",
+        pitfall:
+          "中間名、帶連字號的姓氏、姓名順序是出錯的地方。會員資料寫「Maria Santos」而護照是「Maria Elena Santos Cruz」，這就是不符。",
+        takes: "20 分鐘",
+      },
+      {
+        title: "付款方式請提前幾天確認，不要等到當天",
+        body: "海外發行的卡片通常可以使用，但往往要等帳號完成海外顧客驗證之後。另外，你的銀行可能會擋下第一次來自韓國商家的扣款，而 3-D Secure 驗證在 App 內建瀏覽器中也常失敗。打電話給銀行開通海外交易；如果平台有可測試的流程，先完成一筆無關的小額付款。",
+        pitfall:
+          "在付款階段被拒絕，你保留的座位會在幾分鐘內回到票池。這是整個流程中代價最高的失敗，也是完全可以避免的失敗。",
+        takes: "預留 1～3 天",
+      },
+      {
+        title: "為開賣本身做好準備",
+        body: "登入，並在前一天之前完成所有驗證步驟。當天請提早登入，並以官方的 KST 時間為準，而不是你裝置上的時鐘。事先決定好想要的座位——多數排隊系統只給你很短的時間選位與付款，逾時就釋出。",
+        pitfall:
+          "為了「保險起見」開一個新的無痕視窗，等於要在排隊中重新登入與重新驗證。不要這樣做。",
+        takes: "開賣前 30 分鐘",
+      },
+      {
+        title: "在考慮轉售之前，先了解轉售規定",
+        body: "南韓以《公演法》修正案加強了門票轉售的規範，並於 2026 年 8 月 28 日施行——1 月修正、2 月公布、8 月下旬起生效。相關報導指出，該法禁止以高於購買價格的慣常性或營業性轉售，範圍及於以轉售為目的的購買，且不再限於使用自動化程式的購買。報導提及的罰則包括最高達售價五十倍的罰金與沒收所得。對韓國場次而言，請把高於票面價的轉售視為不存在的選項；若該場次提供官方轉售或讓渡功能，請使用它。",
+        pitfall:
+          "這是 2026 年 8 月才施行的新法，「慣常性」的認定在實務上尚未確立。國際轉售平台上存在某筆刊登，並不能說明你買賣它是否安全。",
+        takes: "5 分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "如果會員資格在先行販售前到期，來得及續訂嗎？",
+        a: "只有在續訂於資格截止日之前生效才算數，而那個截止日通常比先行販售本身更早。Weverse Shop 的自動付款（自 2026 年 9 月 3 日起於支援的會員資格上提供）會在有效期間的最後一天向已登錄的付款方式扣款，等於完全消除空窗。請在巡迴公布之前就設定好，而不是之後。",
+      },
+      {
+        q: "購買 K-POP 演唱會門票需要韓國電話號碼嗎？",
+        a: "就韓文售票網站而言，本人驗證大多依賴韓國手機號碼，而取得該號碼通常需要韓國居留文件。海外版網站一般不需要——它們以其他方式驗證海外顧客，通常是護照資料。你屬於哪一種，取決於你的場次在哪個平台販售。",
+      },
+      {
+        q: "可以使用海外信用卡嗎？",
+        a: "在海外版平台上通常可以，而且往往要等帳號完成海外顧客驗證之後。請預期另一半問題出在自己的銀行：事先開通海外交易，並準備好通過 3-D Secure 驗證。",
+      },
+      {
+        q: "後援會先行販售比一般販售早多久？",
+        a: "依場次而異，唯一可靠的答案是官方公告。先行通常比一般販售早一天以上，而會員資格通常必須在更早的截止日之前有效。不要用上一次巡迴來推測。",
+      },
+      {
+        q: "韓國站和全球站是同一個排隊嗎？",
+        a: "不一定。同一場次的韓文販售與全球販售，在配票、驗證與後援會資格認定上可能分開處理。在其中一邊完成的驗證，不保證另一邊也承認，所以請依公告確認哪一邊適用於你。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World 購票：那個曾經叫做 Interpark Global 的網站",
+    summary:
+      "就是以前的 interpark Global。它在 2025 年 12 月 1 日改名，多數指南仍把你導向舊名稱，以下是目前的流程。",
+    scope:
+      "涵蓋韓國演出的海外版平台。韓文的 NOL Ticket 是另一個產品，帳號系統不同，身分驗證也更嚴格。",
+    intro: [
+      "兩次改名發生在相近的時間，而網路上幾乎所有英文指南都沒有反映其中任何一次。Yanolja Core 在 2025 年 4 月把旗下品牌整合到 NOL 之下，Interpark Ticket 於此時變成 NOL Ticket。接著在 2025 年 12 月 1 日，海外版的 interpark Global 變成了 NOL World。",
+      "實務上的結果是：那些叫你去「Interpark Global」的指南，以及它舊介面的截圖，描述的是一個已經改名並重新設計過的產品。如果你照著那種指南走，等於拿著過期的地圖。",
+      "本頁追蹤的是目前這張地圖。頁面上方的日期，是我們最後一次查核的日子。",
+    ],
+    steps: [
+      {
+        title: "從海外版網站開始，不是韓文版",
+        body: "NOL World 是海外粉絲的入口。韓文的 NOL Ticket 執行較嚴格的國內身分驗證，除非你持有韓國居留文件，否則一般不是你的路線。兩者是分開的帳號，在其中一邊註冊不會讓你取得另一邊。",
+        pitfall:
+          "搜尋結果與舊書籤至今仍會指向先前的品牌名稱。在花時間建立帳號之前，先確認你在海外版網站上。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "以護照上的資料註冊",
+        body: "姓名與出生日期請使用護照上印的法定資料。若你想看的場次有後援會先行，這些資料也必須與會員紀錄一致。任何不符請在先行開放之前修正，而不是在進行中。",
+        pitfall:
+          "事後更改已驗證的姓名是客服申請流程，不是設定切換。第一次就填對。",
+        takes: "20 分鐘",
+      },
+      {
+        title: "在需要用到之前完成海外顧客驗證",
+        body: "海外顧客驗證是每個帳號一次性的程序，NOL World 明確表示已驗證的資料無法重複使用。請在你實際要購買的帳號上完成——若你有多個帳號，驗證不會轉移。刪除帳號確實會一併清除其驗證資料並釋出給另一個帳號使用，但因濫用而被限制的帳號根本無法刪除。驗證本身沒有年齡限制，不過有年齡限制的場次仍可能拒絕訂購。完成通知以電子郵件寄出，所以在判斷失敗之前請先檢查垃圾郵件。",
+        pitfall:
+          "在付款階段才發現驗證仍在處理中，是失去已保留座位的典型途徑。",
+        takes: "含處理時間 1～3 天",
+      },
+      {
+        title: "在場次頁面確認該場的條件",
+        body: "每個帳號可購買的座位數、是否需要會員資格、現場的證件要求，以及該場次是否開放給海外購買者，都是逐場設定的。請同時閱讀場次頁面與官方公告；兩者不一致時，以你那一場的官方公告為準。",
+        pitfall:
+          "有些場次會把特定座位區或販售輪次限定給國內購買者。這是逐場的情況，無法從一般性的指南得知。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "領票時帶上正確的文件",
+        body: "領票地點是演出當天的場館售票口，而且不能更早——NOL World 表示無法在演出日之前領取。窗口於開演前一小時開放，你需要訂位編號與身分證件。請預留售票口本身也會排隊的時間。票一旦領取，遺失或遭竊都不會補發。",
+        pitfall:
+          "訂位上的姓名、證件上的姓名、會員紀錄上的姓名必須全部一致。這條鏈上任何一處出現暱稱都是問題。",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World 和 Interpark Global 是同一個嗎？",
+        a: "是品牌更名後的同一個海外售票服務。interpark Global 於 2025 年 12 月 1 日更名為 NOL World，延續 Yanolja Core 在 2025 年 4 月把品牌整合到 NOL 之下、Interpark Ticket 改為 NOL Ticket 的那一波。",
+      },
+      {
+        q: "為什麼我的舊書籤還是顯示 Interpark？",
+        a: "品牌更名要滲透到搜尋結果、第三方指南與快取頁面需要時間。請從你那一場的官方公告出發，而不是從儲存的連結或部落格文章。",
+      },
+      {
+        q: "NOL Global 是同一個嗎？NOL Korea 呢？",
+        a: "這些是人們在半記得改名這件事時會想到的名稱，而且值得說清楚，因為那正是被輸入的字。網站有兩個：海外版的 NOL World，在 2025 年 12 月 1 日之前叫 interpark Global；以及韓文版的 NOL Ticket，在 2025 年 4 月之前叫 Interpark Ticket。如果你是被導向「NOL Global」「NOL Korea」或「NOL KR」，你要找的幾乎肯定是 NOL World。",
+      },
+      {
+        q: "NOL Ticket 的帳號可以在 NOL World 使用嗎？",
+        a: "請當成兩個獨立的帳號與獨立的驗證。不要假設登入或已完成的驗證會延續——請在你實際購買的那個網站上確認。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "為什麼你的卡片在韓國售票網站被拒絕",
+    summary:
+      "有三套不同的系統可以拒絕同一筆付款——售票平台、你的卡組織，以及你的銀行。每一個的解法都不一樣，而其中只有一個是快的。",
+    scope:
+      "涵蓋在韓國售票平台上使用海外發行卡片付款的情況。本頁不是財務建議，也無法涵蓋你自己銀行的規則。",
+    intro: [
+      "在付款步驟被拒卡，是 K-POP 購票流程中代價最高的失敗，因為被保留的座位會在幾分鐘內回到票池。而這幾乎都可以靠提前準備避免。",
+      "它之所以讓人覺得毫無規律，是因為有三套彼此獨立的系統可以拒絕同一筆交易，而你看到的錯誤訊息很少告訴你是哪一個拒絕的。請依照「各自需要多久才能解決」的順序逐一排除。",
+    ],
+    steps: [
+      {
+        title: "先確認你的帳號驗證是否真的已經完成",
+        body: "在好幾個平台上，海外發行的卡片只有在帳號完成海外顧客驗證之後才能使用。如果驗證仍在處理中，卡片狀態再怎麼正常也一樣會失敗。這是最慢才能解決的一項，所以排在第一位。",
+        pitfall:
+          "付款錯誤訊息不會寫「你的驗證尚在處理中」。它看起來就只像是卡片有問題。",
+        takes: "1～3 天",
+      },
+      {
+        title: "在開賣之前就通知銀行，而不是之後",
+        body: "請開通海外與線上交易；如果你的銀行支援，也可以事先針對金額區間與國家做預先授權。一筆來自韓國商家、發生在不尋常時段的首次扣款，正是風控系統會擋下的典型樣貌。",
+        pitfall:
+          "自動風控的封鎖在你這一側往往是無聲的——沒有簡訊，也沒有 App 通知。你只會從商家那邊收到一句籠統的「交易被拒」。",
+        takes: "1 天",
+      },
+      {
+        title: "不要在 App 內建瀏覽器裡完成付款步驟",
+        body: "3-D Secure 與銀行的一次性密碼流程，在社群或通訊軟體內建的瀏覽器中經常失效。請使用一般的手機或桌機瀏覽器，並確認你能在同一台裝置上收到銀行的驗證訊息。",
+        pitfall:
+          "轉導頁面可能看起來成功了，實際上卻靜靜地丟掉了授權，而這在你眼中就是一次拒卡。",
+        takes: "0 分鐘，只要做對就好",
+      },
+      {
+        title: "準備一張真正不同的備用卡，不是同一家的另一張",
+        body: "同一家發卡機構的第二張卡，通常會因為同樣的理由失敗。不同發卡機構、不同卡組織，或平台提供的其他支援付款方式，才算真正的備案。另外，兩個海外平台拒絕的東西恰好相反，在怪卡片之前值得先知道：NOL World 接受 VISA、MasterCard、AMEX、JCB 與 UnionPay，但僅限在韓國境外發行，並且直接拒絕韓國發行的卡片。YES24 Global 在其中兩項上反其道而行，排除在韓國境外發行的 American Express，並完全排除 UnionPay。在一邊被拒的卡片，可能正是另一邊該用的卡片。",
+        pitfall:
+          "就風控規則而言，同一家銀行的兩張卡等於一張卡。",
+        takes: "設定約 30 分鐘",
+      },
+      {
+        title: "在確認之前看清幣別與金額",
+        body: "請確認自己是以 KRW 計價，還是以換算後的金額扣款，並了解自己卡片的國外交易手續費。換算後的金額若超過你自己設定的額度上限，同樣會造成拒卡。",
+        pitfall:
+          "動態貨幣轉換會悄悄增加成本。以 KRW 付款通常是比較便宜的選擇。",
+        takes: "5 分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "我的卡明明有餘額，為什麼被拒絕？",
+        a: "最常見的是三件事之一：你的平台帳號尚未完成海外顧客驗證；你的銀行風控系統擋下了一個不熟悉的國外商家；或是 3-D Secure 這一步失敗了——通常是因為它在 App 內建瀏覽器中執行。拒絕訊息一般不會區分這三者。",
+      },
+      {
+        q: "PayPal 可以用嗎？",
+        a: "部分面向海外的平台在部分場次支援其他付款方式。這是按平台、按場次設定的，而不是全面通用，所以在把計畫押在它上面之前，請先確認你那一場頁面上列出的付款選項。",
+      },
+      {
+        q: "我該以 KRW 付款，還是以自己的幣別付款？",
+        a: "以商家的幣別付款通常比讓付款頁面幫你換算更便宜，因為動態貨幣轉換會加上一層匯差。不論選哪一種，你自己卡片的國外交易手續費依然會收。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "從海外購買 K-POP 專輯，而且要能被計入",
+    summary:
+      "你在哪裡買，決定了這筆購買會不會被計入、運費付多少，以及能不能拿到預購贈品。以下是選擇的方法。",
+    scope:
+      "涵蓋購買官方實體專輯與周邊並寄送到韓國境外的情況。不涵蓋二手轉售平台或非官方商品。",
+    intro: [
+      "和門票不同，這個問題全年都在發生——這也是它被放在門票旁邊的原因。而同樣和門票不同的是，它有一個錯誤答案，而且錯了也看不出代價：專輯照樣送到你手上，只是沒有被計入。",
+      "會因為購買地點而不同的有三件事：這筆銷售有沒有被回報給韓國排行榜、預購贈品有沒有跟著來，以及把運費與關稅算進去之後的實際到手成本。這三件事不會同進同退，所以最便宜的選項經常就是那個什麼都不計入的選項。",
+    ],
+    steps: [
+      {
+        title: "先決定你真正想從這筆購買得到什麼",
+        body: "排行榜貢獻、實體專輯本身、預購贈品，還是最低價格。這幾個方向會互相拉扯。請在挑店家之前先決定優先順序，因為店家是由它決定的。",
+        pitfall:
+          "為了省錢在綜合購物平台下單，然後才發現它不被計入，這是這個錯誤最標準的版本。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "確認賣家是否會回報給韓國排行榜",
+        body: "回報給韓國專輯排行榜的銷售，來自特定的零售商與官方商店。一個商品是正版專輯，並不代表這筆銷售被回報了。如果排行榜貢獻正是你購買的理由，請在下單之前先確認該零售商屬於會回報的那一類。",
+        pitfall:
+          "第三方平台上的正版專輯商品，通常不會被計入。專輯是真的，貢獻不在那裡。",
+        takes: "15 分鐘",
+      },
+      {
+        title: "在預購期間內下單，才拿得到贈品",
+        body: "預購特典——海報、額外的小卡、活動抽選資格——綁定的是「在某段期間內下單」，而且往往綁定那一家特定零售商。那段期間在發行日之前就結束，不是在發行日當天。",
+        pitfall:
+          "各零售商的獨家贈品並不互通。在別家買同一張專輯，拿到的是另一組贈品，或者什麼都沒有。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "要估的是運費與關稅風險，不是專輯價格",
+        body: "從韓國寄出的運費可能超過專輯本身的價格，而你是否還要另外付進口稅費，取決於你自己國家的規則。請現在就去確認，而不是憑印象假設：美國在 2025 年 8 月暫停了 800 美元的免稅門檻，歐盟也在 2026 年 7 月 1 日取消了 150 歐元的門檻，所以對這兩地的讀者而言，已經不存在「小到可以免稅入境」的金額。合併訂單可以降低每件商品的運費。請在下單之前把到手成本算出來。",
+        pitfall:
+          "照著一個在你所在地已經不存在的免稅額度做規劃。而在仍然存在免稅額度的地方，把好幾張專輯併成一個包裹，可能讓申報價值超過門檻，反而比分開寄更貴——兩種算法都算一次。",
+        takes: "20 分鐘",
+      },
+      {
+        title: "在收到之前保留訂單紀錄",
+        body: "請保存訂單確認、追蹤號碼與申報價值。任何環節出問題——包裹破損、海關查詢、贈品缺漏——這些都是零售商會向你索取的東西。",
+        pitfall:
+          "韓國零售商的客服經常是以訂單編號查詢，而不是用電子郵件找。沒有編號，對話會很慢。",
+        takes: "5 分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "在韓國以外購買的專輯，會被計入韓國排行榜嗎？",
+        a: "由參與回報的零售商所回報的銷售會被計入，而這取決於零售商，而不是取決於你所在的地點。在不回報的店家買到正版專輯，意思是專輯是真的，但這筆銷售沒有被計入。如果排行榜貢獻就是重點，請在下單前先確認零售商。",
+      },
+      {
+        q: "合併訂單值得嗎？",
+        a: "就運費而言通常值得，因為每件商品的分攤成本會明顯下降。但要與你所在國家的進口規則一起衡量——在仍有免稅額度的地方，單一個高價值包裹可能被課稅，而分開的幾個小包裹不會。在美國與歐盟，這個算法已經變了：兩者都取消了低價值免稅，所以已經沒有門檻可以躲在下面。",
+      },
+      {
+        q: "為什麼各家店的預購特典不一樣？",
+        a: "零售商各自談自己的獨家贈品，所以同一張專輯會因為在哪裡預購而附上不同的額外內容。如果你想要的是某個特定贈品，就必須在提供它的那家店、在它的期間內下單。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "在韓國以外下單 Weverse Shop",
+    summary:
+      "你身處哪一個商店、為什麼結帳時價格會變、你的幣別實際上能用哪些付款方式，以及韓國無法寄送的國家。",
+    scope:
+      "涵蓋從韓國出貨的實體周邊與專輯的 Weverse Shop 下單流程。會員資格購買與售票另有處理，收錄在先行販售指南中。本頁的規則來自 Weverse Shop 自己的公告，而且變動時不太會事先預告。",
+    intro: [
+      "幾乎每一份英文的 Weverse Shop 指南至今仍寫著全球商店只接受 PayPal 或 Eximbay，別無其他。那在好幾年前是對的。付款方式的清單現在長得多，它是由你帳號所設定的幣別決定，而不是由你居住的國家決定；而且自 2026 年 2 月起，商品頁上的價格不是你實際支付的價格。",
+      "這些都不是什麼秘密——它們就寫在商店自己的公告裡，而以下內容全部出自那裡。只是寫那些指南的人，沒有人真的去讀過。",
+    ],
+    steps: [
+      {
+        title: "先搞清楚你實際上在哪一個 Weverse Shop",
+        body: "Weverse Shop 不是一間店。有一個 GLOBAL 商店，也有各個地區商店，它們的庫存不同、預購期間不同、出貨地點也不同。你看到別人下單的某個商品，在你的商店裡可能根本不存在。在你照著某個發行日做規劃之前，先確認自己在哪一個商店，因為某一間店的預購截止時間，對其他店完全沒有參考價值。",
+        pitfall:
+          "別人在粉絲社群分享的連結，打開的是他們的商店，不是你的。如果頁面載入得開、商品卻加不進購物車，通常是你在錯的商店，而不是你太晚了。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "在你看任何東西之前先設定幣別",
+        body: "你的預設幣別決定了你會被提供哪些付款方式。Weverse 依幣別列出如下：USD 可用 PayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay 與 Grab Pay。JPY 是同一份清單，但沒有 Grab Pay。CNY 少了 PayPal。MXN 只有 PayPal 與 Apple Pay。KRW 則加上韓國信用卡與韓國電子錢包——Toss、NAVER Pay、Kakao Pay、PAYCO。",
+        pitfall:
+          "在 KRW 以外的幣別上，沒有單純的「用 Visa 付款」這個選項。你的卡片是透過 PayPal 或 Eximbay 走的，而對你的銀行而言，那是一筆性質不同於韓國商家扣款的交易——這也正是一張在別處能用的卡，在這裡依然可能失敗的原因。",
+        takes: "3 分鐘",
+      },
+      {
+        title: "預期結帳時價格會上升，並且知道為什麼",
+        body: "自 2026 年 2 月 3 日起，Weverse 依你的收件地址與帳單地址計算稅額。寄往韓國的訂單，全程顯示含稅價格。寄往其他任何地方的訂單，商品頁顯示的是未稅價格，而目的地的稅額會在你輸入地址之後、於結帳時加上。商品頁上的數字不是你要付的數字，而這是刻意設計，不是故障。",
+        pitfall:
+          "這看起來完全像是詐騙或程式錯誤，而這也正是人們放棄訂單的那個時間點。增加的金額就是你自己國家課的稅，只是提前收取，而不是之後由海關來收。",
+        takes: "1 分鐘",
+      },
+      {
+        title: "請填寫帳單地址，不只是收件地址",
+        body: "同一次 2026 年 2 月的變更在結帳頁加上了帳單地址欄位，因為稅額計算需要它。對某些無形商品——數位商品與內容——帳單地址可能是必填而非選填。請準確填寫：稅率是從它算出來的，而填錯之後並不是你能事後悄悄改掉的東西。",
+        pitfall:
+          "把收件地址直接複製到帳單地址欄位，在兩者相同時沒問題，在兩者不同時就是錯的。如果你的卡片登記在另一個地址，就填那一個。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "確認地址的書寫語言符合目的地要求",
+        body: "Weverse 請海外顧客在輸入地址之前，先確認目的地國家需要以哪一種語言填寫地址。反方向的規則更明確：寄往南韓的訂單，地址必須以韓文書寫，因為物流業者可能不接受英文地址，或是在處理時出錯。至於其他所有地方，請依你自己國家郵政體系所期望的格式書寫。",
+        pitfall:
+          "把韓文地址音譯成英文，是寄往韓國的訂單延誤或投遞失敗最常見的單一原因。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "確認韓國能不能寄到你那裡",
+        body: "從南韓出貨無法寄達的國家與地區，由 Weverse 維護一份清單並持續更新。在 2026 年 7 月 15 日修訂的版本中，清單包含緬甸、剛果民主共和國、伊拉克、伊朗、黎巴嫩、馬利、俄羅斯、安道爾、烏克蘭、白俄羅斯、阿富汗、荷屬安地列斯、以色列與土耳其。這份清單會變動，所以請看公告，而不是看本頁。",
+        pitfall:
+          "這份清單被描述為暫時性的運送中斷，而非政策，意思是一個國家既可能被加進去，也可能被移出。先前成功下單過，或朋友去年下單過，都不能說明你今天能不能下單。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "如果在意贈品，就要在預購期間內下單",
+        body: "預購特典——那些海報、小卡與初回盤贈品，通常正是人們選擇在官方商店而非更便宜的地方下單的理由——綁定的是預購期間，而不是那張專輯。期間一結束，同一張專輯就不附這些東西出貨。如果贈品才是重點，該圍繞著規劃的是截止時間，而不是發行日。",
+        pitfall:
+          "預購期間是在韓國的某個時刻結束，而對本站多數讀者所在的地方來說，那是前一天的傍晚或凌晨。",
+        takes: "在截止之前",
+      },
+    ],
+    faq: [
+      {
+        q: "在 Weverse Shop 可以用 Visa 或 Mastercard 付款嗎？",
+        a: "在韓國幣別設定以外，不能作為直接的信用卡選項。在 USD、JPY、CNY 與 MXN 上，卡片是透過 PayPal 或 Eximbay 走的。那依然會扣到你的卡，但你的銀行看到的是另一種類型的交易，所以事先開通海外付款是值得做的。",
+      },
+      {
+        q: "為什麼我輸入地址之後價格變高了？",
+        a: "自 2026 年 2 月 3 日起，韓國以外的價格在商品頁上以未稅顯示，而你目的地的稅額會在結帳時加上。那是你自己國家課的稅，在購買時收取，而不是在送達時收取。",
+      },
+      {
+        q: "東西送到時我會被收關稅嗎？",
+        a: "Weverse 現在會在符合條件的訂單上於結帳時預繳關稅與稅費，並表示這可以減少在通關過程中額外付款的需要。它也說明這並不適用於每一個國家或地區，所以這是一個合理的預期，而不是保證。",
+      },
+      {
+        q: "Weverse Shop 寄送到我的國家嗎？",
+        a: "通常會，但有一份維護中的國家與地區清單目前無法接收從南韓寄出的貨物。請在下單之前查看該公告上的現行清單——它會隨著情況變化而修訂。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Verified Member：從海外通過 eKYC 身分驗證",
+    summary:
+      "有些場次在你的護照通過驗證之前，根本不讓你訂票。這項檢查是護照與人臉的即時拍攝，無法隨意重做，而 NOL World 關於時機所給的唯一一句指示，正是多數人會忽略的那一句。",
+    scope:
+      "涵蓋 NOL World 上的 Verified Member Only 身分檢查，依 NOL World 自己的說明：何時適用、拍攝需要什麼、它所儲存的姓名會怎麼處理，以及什麼會重置或限制它。持韓國護照者被導向 NOL Ticket，那是另一個網站上的另一種檢查。本頁沒有任何繞過驗證的方法。",
+    intro: [
+      "Verified Member Only 的場次，是在你的身分完成驗證之前根本無法訂票的場次。不是結帳時跳出的警告——而是這個預約對未驗證的帳號來說就是不存在。粉絲往往在開賣的那一刻才發現這件事，而那是最糟的時間點，因為驗證是對你的護照與你的臉做即時拍攝，它需要多少時間就是多少時間。",
+      "NOL World 把這項服務說明為限制轉售等未經授權用途的手段。這句話值得照字面接受：這項檢查的存在，是為了把一個人綁在一個帳號上，而以下幾乎每一條規則都是由此衍生出來的。",
+    ],
+    steps: [
+      {
+        title: "確認你的場次是否需要它，以及你是否在對的網站上",
+        body: "Verified Member Only 是逐項商品設定的，不是逐個帳號——NOL World 表示，只有在商品頁上完成身分驗證的會員才能進行預約。所以第一個問題是，你的場次究竟有沒有掛上這個標記。第二個問題是，你該不該待在 NOL World：NOL World 告訴持韓國護照者改用 NOL Ticket 網站，而那上面跑的是完全不同的一套檢查。",
+        pitfall:
+          "以為身分檢查是個網站會提醒你去做的一次性瑣事。對 Verified Member Only 的場次而言，沒有提醒——預約就只是不在那裡。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "在開賣前一到兩天完成它",
+        body: "這是 NOL World 自己的指示，也是本頁最有用的一個事實：請至少提前一到兩天完成驗證，因為在接近開賣時間時嘗試，大量流量可能造成困難。一旦完成，你就能訂任何 Verified Member Only 的場次，不需要再驗證一次。提早做的代價是一個晚上。太晚做的代價是那場演出。",
+        pitfall:
+          "在先行販售前十分鐘才開始拍攝。一個因為流量而失敗的驗證無法催快，而排隊不會等你。",
+        takes: "提前兩天，30 分鐘",
+      },
+      {
+        title: "驗證你實際上要用來購買的那個帳號",
+        body: "驗證是每個帳號一次性的，而 NOL World 表示已驗證的資料無法重複使用——一本護照驗證一個帳號。如果你有超過一個帳號，現在就是決定哪一個才是你真正要用的時候，因為驗證之後它不會再搬家。NOL World 補充說，刪除帳號會清除其驗證資料並釋出給另一個帳號使用，但因濫用而被限制的帳號根本無法刪除。",
+        pitfall:
+          "在剛好登入著的那個帳號上完成驗證，然後用另一個帳號去買。第二個帳號是未驗證的，而那場演出是 Verified Member Only。",
+        takes: "5 分鐘的決定",
+      },
+      {
+        title: "準備護照正本，且在有效期限內",
+        body: "只接受有效護照，而 NOL World 明確表示照片或影本都不行：不是列印的掃描檔，不是螢幕截圖，也不是用另一個螢幕翻拍的護照頁。如果你的護照已經過期，就必須先換發才能驗證——在 NOL World 上，非韓國護照持有者沒有其他替代文件的路線。",
+        pitfall:
+          "因為護照正本放在飯店保險箱，就拿手機相簿裡現成的護照照片頂替。那一次嘗試會被記錄為一次使用影本的嘗試。",
+        takes: "—",
+      },
+      {
+        title: "第一次就把拍攝做過",
+        body: "NOL World 公開了哪些情況會導致拍攝失敗，而那份清單讀起來就像是一份「人在匆忙時會做的事」清單。請把護照與你的臉對齊螢幕上的引導框。別讓反光與眩光落在護照頁與你的臉上。你的臉必須與護照上的照片相符。拍攝時請把裝置穩穩握住至少五秒。而如果裝置規格偏低或網路不穩，即使拍攝看起來正常，資料也可能沒有正確儲存。失敗時螢幕會顯示原因——請讀它，不要盲目重試。",
+        pitfall:
+          "在夜裡、單手、在一盞會反射在壓膜上的天花板燈下做這件事。護照頁上方的頂光，是拍攝讀不出來最常見的原因。",
+        takes: "15 分鐘",
+      },
+      {
+        title: "檢查實際被儲存下來的姓名",
+        body: "只接受英文姓名。NOL World 表示，如果你的護照姓名不是英文或含有特殊字元，預約將無法進行，而你可能會被導向姓名更正申請——那是一項申請，不是設定裡的切換。被儲存的姓名可以在 My Page 上看到，請去那裡確認，而不是憑假設。這一點現在很重要，因為驗證之後你完全無法修改姓名、出生日期或電子郵件地址：預約只能以已驗證的資料進行。",
+        pitfall:
+          "因為驗證顯示成功就不去檢查姓名。成功與存對字元是兩件不同的事，而其中一件已經不能再編輯了。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "了解姓名順序——以及在入場時真正重要的是什麼",
+        body: "NOL World 在 2025 年 4 月 16 日變更了儲存的姓名順序。在該日期之前完成驗證的會員，資料是名 +（中間名）+ 姓；在該日期之後完成驗證的會員，則是姓 + 名 +（中間名）。NOL World 明確表示，即使順序與你的護照不同，票券驗證與在場館入場仍然可行——現場驗證只有在姓名本身與護照姓名不同時才會受限。在 2025 年 4 月 16 日之前完成驗證的會員，會在護照到期後重新驗證時套用新格式。",
+        pitfall:
+          "因為順序看起來不對就提出姓名更正申請。NOL World 說順序不是問題；姓名不同才是。要對的是字元，不是順序。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "了解什麼會推翻你已經通過的驗證",
+        body: "已完成的驗證在事後仍可能被取消。NOL World 列出兩個原因：以偽造或變造的證件嘗試驗證——而它把列印影本與螢幕截圖都定義在內——以及用於驗證的護照過期。如果你的驗證被取消，請使用既有帳號重新驗證。NOL World 特別警告，改用新帳號可能導致系統反覆失敗，而被認定以不正當手段取得的驗證，可能讓你失去使用訂票服務的權限。",
+        pitfall:
+          "開一個新帳號來躲避重置。重置跟著的是那份文件，不是那個帳號，而新帳號會把問題連同懷疑一起繼承過來。",
+        takes: "—",
+      },
+      {
+        title: "了解平台把什麼當成詐欺，以及代價是什麼",
+        body: "這項檢查之所以這麼嚴，原因寫在 NOL World 的反詐欺政策裡，而後果是公開的。使用被竊或偽造的證件進行驗證，被列為不正當使用。以相同或相似的個人資料超出正常使用範圍訂購多張門票也是——跨帳號使用相同的聯絡資料、收件地址或付款資訊。罰則從三個月以上的訂票限制，一路到永久停權並取消所有已訂門票。主辦單位可能再加上自己的罰則，包括逐出後援會。申訴管道是有的；而在不正當交易被明確認定的情況下，沒有。",
+        pitfall:
+          "用一支手機、一個地址、一張卡去驗證好幾個家人的帳號，以提高先行販售的中選機率。那個模式就在公開的清單上，而所述罰則會觸及那些帳號上的每一張門票。",
+        takes: "10 分鐘的閱讀",
+      },
+    ],
+    faq: [
+      {
+        q: "Verified Member Only 在場次頁面上實際代表什麼？",
+        a: "代表這場演出對未驗證的帳號關閉。NOL World 把它描述為一項讓會員在購買前驗證身分的服務，其中只有在商品頁上完成驗證的會員才能進行預約。它說明目的是限制轉售等未經授權的用途。請把護照與智慧型手機都準備好，因為這項檢查兩者都需要。",
+      },
+      {
+        q: "我持韓國護照。我可以直接在 NOL World 上驗證嗎？",
+        a: "NOL World 告訴持韓國護照者改用 NOL ticket 網站。那是另一個網站、另一套身分檢查——一般是韓國手機認證或 I-PIN——以及另一個帳號。",
+      },
+      {
+        q: "我是住在海外、沒有韓國手機號碼的韓國國民。那該怎麼辦？",
+        a: "NOL World 公開了一條文件路線。它把居住海外的南韓公民導向 NOL Ticket，在那裡可以透過手機認證或 I-PIN 驗證身分；若沒有韓國居民登錄號碼且無法使用手機認證，則接受證明在外國民身分的佐證文件——在外國民登錄證明書搭配南韓護照，透過其客服詢問表單連同你的帳號 ID 一併提交。它說該證明書可以透過在外同胞廳線上申請，而在證明書難以取得的情況下，外國人登錄證可能被接受作為替代。它也警告，偽造文件將導致立即限制。",
+      },
+      {
+        q: "身分驗證有年齡下限嗎？",
+        a: "NOL World 表示驗證本身沒有年齡限制，但你仍可能無法訂購或參加有年齡限制的商品。完成驗證與符合某一場演出的資格，是兩件不同的事。",
+      },
+      {
+        q: "我 My Page 上的姓名順序和護照不一樣。我會被拒絕入場嗎？",
+        a: "NOL World 說不會。它在 2025 年 4 月 16 日變更了儲存順序，並表示即使順序與護照不同，票券驗證與入場仍然可行。現場驗證只有在姓名本身不同時才會受限——所以要檢查的是拼法與字元，不是順序。",
+      },
+      {
+        q: "我驗證之後護照過期了。我需要做什麼嗎？",
+        a: "需要。NOL World 把護照過期列為已完成驗證被取消的原因之一，所以換發護照就意味著要重新驗證——在既有帳號上，不是新帳號。如果你是在 2025 年 4 月 16 日之前完成驗證的，這也是新姓名順序被套用到你資料上的時候。",
+      },
+      {
+        q: "如果我的護照過期了，可以用家人的護照驗證嗎？",
+        a: "不行，而這是唯一一個有公開後果、而非只有意見的問題。NOL World 把使用被竊或偽造的證件進行驗證，列在它視為不正當使用的行為之中，而所述罰則一路到永久停權並取消所有已訂門票。它也說身分驗證可能在場館進行，並要求你以自己的姓名與帳號訂票，並攜帶有效的附照片身分證件。一張過不了門口的票，不是票。",
+      },
+      {
+        q: "我的帳號被限制了。有申訴管道嗎？",
+        a: "NOL World 公開了一條。它表示使用者一般會被給予至少一天的期間提出說明，而申訴應是一份詳細的陳述，包含你被限制的帳號 ID、全名與聯絡資訊，沒有規定的格式或範本，透過其客服詢問表單寄出。審查大約需要 10 到 15 天，結果以電子郵件通知。它也說明了界限：錯過期限或未能澄清疑慮，預約就會被強制取消；而在不正當交易被明確認定的情況下，門票可能被取消且完全沒有申訴。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Cara membeli tiket konser K-pop dari luar Korea",
+    summary:
+      "Pahami gambaran besarnya lebih dulu: platform mana yang menjual konser yang Anda tuju, jenis verifikasi identitas apa yang dijalankannya, dan apa saja yang harus sudah siap sebelum penjualan dibuka.",
+    scope:
+      "Mencakup konser yang diselenggarakan di Korea Selatan dan platform tiket yang dipakai agensi Korea. Tanggal tur di luar Korea dijual oleh promotor lokal, itu hal yang berbeda, dan aturan di bawah ini tidak berlaku untuknya.",
+    intro: [
+      "Panduan berbahasa Inggris yang menempati peringkat teratas untuk pertanyaan ini hampir seluruhnya ditulis sebelum Desember 2025, dan mengarahkan Anda ke sebuah situs yang namanya sudah bukan nama itu lagi. Itulah alasan utama halaman ini ada.",
+      "Tidak ada satu situs tiket tunggal untuk K-pop. Platformnya ditentukan oleh agensi dan promotor untuk setiap tur, dan selalu dicantumkan dalam pengumuman resmi konser tersebut. Semua hal lain — jenis verifikasi identitas yang akan Anda hadapi, apakah kartu kredit luar negeri bisa dipakai, berapa lama presale dibuka lebih awal — ditentukan oleh satu hal itu.",
+      "Jadi urutannya begini: temukan pengumuman resminya, pastikan platformnya, lalu bersiap sesuai syarat platform tersebut. Melakukannya terbalik berarti Anda baru sadar satu jam sebelum penjualan dibuka bahwa Anda sudah menyelesaikan verifikasi di situs yang salah.",
+    ],
+    steps: [
+      {
+        title: "Cari pengumuman resmi, bukan repost dari fan",
+        body: "Buka kanal resmi artisnya — situs agensi, komunitas Weverse artis tersebut, serta X dan Instagram resmi. Pengumuman akan menyebutkan platform tiketnya, waktu presale dan penjualan umum dalam KST, tingkat keanggotaan yang dibutuhkan untuk presale, serta syarat domisili atau verifikasi. Simpan tangkapan layarnya. Setiap langkah berikutnya bergantung pada dokumen ini.",
+        pitfall:
+          "Akun fan merangkum dan menulis ulang informasi, dan platform yang salah dicantumkan sudah cukup untuk membuat Anda melewatkan penjualan. Mereka juga jarang memperbarui ketika tanggalnya berubah.",
+        takes: "10 menit",
+      },
+      {
+        title: "Pastikan platformnya — jangan menduga dari nama agensi",
+        body: "Artis di bawah HYBE umumnya memakai sistem tiket Weverse sendiri. Tur Korea lainnya sering memakai NOL Ticket (situs berbahasa Korea) atau NOL World (versi luar negerinya), YES24, dan Melon Ticket. Tetapi itu kecenderungan, bukan aturan: agensi berpindah platform antar tur, dan satu tur yang sama bisa memisahkan tanggal Korea dan tanggal global ke dua situs yang berbeda. Bacalah pengumumannya.",
+        pitfall:
+          "Menganggap pemetaan itu tetap — “HYBE berarti Weverse, SM berarti YES24” — adalah kesalahan paling umum di panduan yang ada sekarang, dan cukup sering terjadi sehingga tidak bisa diabaikan.",
+        takes: "5 menit",
+      },
+      {
+        title: "Pahami jenis verifikasi identitas yang akan Anda hadapi",
+        body: "Sebagian besar situs tiket berbahasa Korea melakukan verifikasi identitas melalui nomor ponsel Korea, dan dalam praktiknya nomor itu menuntut dokumen domisili Korea. Jika Anda tidak memilikinya, situs berbahasa Korea bukan jalur Anda. Situs versi luar negeri ada justru untuk keadaan ini, dan memverifikasi dengan cara lain — biasanya data paspor yang terikat pada akun. Tentukan sekarang situs mana yang akan Anda pakai, karena akun yang Anda butuhkan ada di situs itu.",
+        pitfall:
+          "Memaksakan diri lolos di situs berbahasa Korea adalah upaya yang terbuang. Dan untuk pengaturan seperti meminjam identitas orang lain agar lolos verifikasi, situs ini tidak akan membantu — itu menempatkan tiket dan akun Anda sekaligus dalam risiko.",
+        takes: "15 menit",
+      },
+      {
+        title: "Buat akun dengan data yang sama persis seperti di paspor",
+        body: "Gunakan nama resmi seperti tertulis di zona bacaan mesin paspor Anda, dan masukkan tanggal lahir dalam format yang diminta situs. Jika presale konser tersebut menuntut keanggotaan fan club, nama dan tanggal lahir di data keanggotaan dan di akun tiket harus sama. Ketidaksesuaian data adalah penyebab yang terdokumentasi atas pesanan yang dibatalkan saat masuk venue atau saat verifikasi.",
+        pitfall:
+          "Nama tengah, nama belakang bertanda hubung, dan urutan nama adalah tempat kesalahan terjadi. Data keanggotaan tertulis “Maria Santos” sementara paspor tertulis “Maria Elena Santos Cruz” — itu ketidaksesuaian.",
+        takes: "20 menit",
+      },
+      {
+        title: "Pastikan metode pembayaran beberapa hari sebelumnya, bukan di hari-H",
+        body: "Kartu yang diterbitkan di luar negeri umumnya bisa dipakai, tetapi sering baru setelah akun Anda menyelesaikan verifikasi pelanggan luar negeri. Selain itu, bank Anda mungkin memblokir tagihan pertama dari merchant Korea, dan verifikasi 3-D Secure sering gagal di dalam peramban bawaan aplikasi. Hubungi bank Anda untuk mengaktifkan transaksi internasional; jika platformnya punya alur yang bisa diuji, selesaikan satu pembayaran kecil yang tidak berkaitan lebih dulu.",
+        pitfall:
+          "Ditolak di tahap pembayaran berarti kursi yang Anda tahan kembali ke kolam dalam hitungan menit. Ini kegagalan paling mahal dalam seluruh proses, dan sekaligus yang paling bisa dihindari.",
+        takes: "Sisakan 1-3 hari",
+      },
+      {
+        title: "Bersiap untuk penjualannya sendiri",
+        body: "Masuk ke akun Anda, dan selesaikan semua langkah verifikasi paling lambat sehari sebelumnya. Di hari-H, masuklah lebih awal, dan berpeganglah pada waktu KST resmi, bukan pada jam di perangkat Anda. Tentukan kursi yang Anda inginkan sebelumnya — sebagian besar sistem antrean hanya memberi waktu singkat untuk memilih kursi dan membayar sebelum tahanan itu dilepas.",
+        pitfall:
+          "Membuka jendela penjelajahan pribadi baru “untuk aman” berarti Anda harus masuk dan memverifikasi ulang di dalam antrean. Jangan lakukan itu.",
+        takes: "30 menit sebelum dibuka",
+      },
+      {
+        title: "Pahami aturan penjualan ulang sebelum mempertimbangkannya",
+        body: "Korea Selatan memperketat aturan penjualan ulang tiket melalui revisi Undang-Undang Pertunjukan yang berlaku sejak 28 Agustus 2026 — direvisi pada Januari, diumumkan pada Februari, dan berlaku sejak akhir Agustus. Pemberitaan menyebut undang-undang itu melarang penjualan ulang yang bersifat kebiasaan atau komersial di atas harga pembelian, mencakup pembelian yang bertujuan menjual kembali, dan tidak lagi terbatas pada pembelian yang memakai program otomatis. Sanksi yang disebutkan dalam pemberitaan mencakup denda hingga lima puluh kali harga jual dan perampasan keuntungan. Untuk konser di Korea, anggap penjualan ulang di atas harga tiket sebagai pilihan yang tidak ada; jika konser tersebut menyediakan fitur penjualan ulang atau pengalihan resmi, pakailah itu.",
+        pitfall:
+          "Ini undang-undang baru yang berlaku sejak Agustus 2026, dan dalam praktiknya batasan “bersifat kebiasaan” belum mapan. Keberadaan sebuah penawaran di platform penjualan ulang internasional tidak memberi tahu Anda apakah membeli atau menjualnya aman.",
+        takes: "5 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Kalau keanggotaan saya habis sebelum presale, apakah masih bisa diperpanjang tepat waktu?",
+        a: "Hanya berlaku jika perpanjangan itu aktif sebelum tanggal batas kelayakan, dan tanggal itu biasanya lebih awal daripada presale itu sendiri. Pembayaran otomatis Weverse Shop, yang tersedia untuk keanggotaan yang didukung sejak 3 September 2026, menagih metode pembayaran terdaftar Anda pada hari terakhir masa berlaku, sehingga jeda itu hilang sepenuhnya. Aturlah sebelum tur diumumkan, bukan sesudahnya.",
+      },
+      {
+        q: "Apakah saya perlu nomor telepon Korea untuk membeli tiket konser K-pop?",
+        a: "Untuk situs tiket berbahasa Korea, verifikasi identitas umumnya bergantung pada nomor ponsel Korea, dan nomor itu biasanya menuntut dokumen domisili Korea. Situs versi luar negeri umumnya tidak — mereka memverifikasi pelanggan luar negeri dengan cara lain, biasanya data paspor. Yang mana yang berlaku untuk Anda bergantung pada platform mana yang menjual konser Anda.",
+      },
+      {
+        q: "Bisakah saya memakai kartu kredit luar negeri?",
+        a: "Di platform versi luar negeri umumnya bisa, dan sering baru setelah akun Anda menyelesaikan verifikasi pelanggan luar negeri. Siapkan diri bahwa separuh masalah lainnya ada di bank Anda sendiri: aktifkan transaksi internasional lebih dulu, dan pastikan Anda siap melewati verifikasi 3-D Secure.",
+      },
+      {
+        q: "Berapa lama presale fan club dibuka sebelum penjualan umum?",
+        a: "Berbeda untuk setiap konser, dan satu-satunya jawaban yang bisa dipercaya adalah pengumuman resminya. Presale biasanya lebih awal sehari atau lebih dari penjualan umum, dan keanggotaan biasanya harus aktif sebelum tanggal batas yang jauh lebih awal lagi. Jangan menduga dari tur sebelumnya.",
+      },
+      {
+        q: "Apakah situs Korea dan situs global memakai antrean yang sama?",
+        a: "Belum tentu. Untuk konser yang sama, penjualan berbahasa Korea dan penjualan global bisa ditangani terpisah dalam hal alokasi kursi, verifikasi, dan pengakuan kelayakan fan club. Verifikasi yang selesai di satu sisi tidak menjamin pengakuan di sisi lain, jadi pastikan dari pengumumannya sisi mana yang berlaku untuk Anda.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Tiket NOL World: situs yang dulu bernama Interpark Global",
+    summary:
+      "Ini adalah interpark Global yang dulu. Namanya berubah pada 1 Desember 2025, sebagian besar panduan masih mengarahkan Anda ke nama lamanya, dan berikut alur yang berlaku sekarang.",
+    scope:
+      "Mencakup platform versi luar negeri untuk konser di Korea. NOL Ticket yang berbahasa Korea adalah produk berbeda, dengan sistem akun berbeda dan verifikasi identitas yang lebih ketat.",
+    intro: [
+      "Dua perubahan nama terjadi dalam waktu yang berdekatan, dan hampir semua panduan berbahasa Inggris di internet tidak mencerminkan satu pun di antaranya. Yanolja Core menyatukan merek-mereknya di bawah nama NOL pada April 2025, dan saat itulah Interpark Ticket menjadi NOL Ticket. Lalu pada 1 Desember 2025, interpark Global versi luar negeri menjadi NOL World.",
+      "Akibatnya dalam praktik: panduan yang menyuruh Anda ke “Interpark Global”, lengkap dengan tangkapan layar antarmuka lamanya, menggambarkan sebuah produk yang sudah berganti nama dan dirancang ulang. Mengikutinya sama dengan memegang peta kedaluwarsa.",
+      "Halaman ini melacak peta yang berlaku sekarang. Tanggal di bagian atas halaman adalah hari terakhir kami memeriksanya.",
+    ],
+    steps: [
+      {
+        title: "Mulai dari situs versi luar negeri, bukan versi Korea",
+        body: "NOL World adalah pintu masuk bagi fan di luar Korea. NOL Ticket yang berbahasa Korea menjalankan verifikasi identitas domestik yang lebih ketat dan umumnya bukan jalur Anda kecuali Anda memegang dokumen domisili Korea. Keduanya adalah akun terpisah, dan mendaftar di satu sisi tidak memberi Anda akses ke sisi lainnya.",
+        pitfall:
+          "Hasil pencarian dan penanda halaman lama sampai sekarang masih mengarah ke nama merek sebelumnya. Pastikan Anda berada di situs versi luar negeri sebelum menghabiskan waktu membuat akun.",
+        takes: "5 menit",
+      },
+      {
+        title: "Daftar dengan data yang ada di paspor",
+        body: "Gunakan nama resmi dan tanggal lahir seperti tercetak di paspor Anda. Jika konser yang Anda tuju punya presale fan club, data itu juga harus sama dengan catatan keanggotaan Anda. Perbaiki ketidaksesuaian apa pun sebelum presale dibuka, bukan saat presale sedang berjalan.",
+        pitfall:
+          "Mengubah nama yang sudah terverifikasi setelahnya adalah proses pengajuan ke layanan pelanggan, bukan sakelar di pengaturan. Isi dengan benar sejak awal.",
+        takes: "20 menit",
+      },
+      {
+        title: "Selesaikan verifikasi pelanggan luar negeri sebelum Anda membutuhkannya",
+        body: "Verifikasi pelanggan luar negeri adalah proses sekali per akun, dan NOL World menyatakan dengan jelas bahwa data yang sudah diverifikasi tidak dapat dipakai ulang. Selesaikan di akun yang benar-benar akan Anda pakai membeli — jika Anda punya beberapa akun, verifikasi itu tidak berpindah. Menghapus akun memang menghapus data verifikasinya dan membebaskannya untuk akun lain, tetapi akun yang dibatasi karena penyalahgunaan sama sekali tidak bisa dihapus. Verifikasi itu sendiri tidak punya batas usia, meski konser dengan batas usia tetap bisa menolak pesanan. Pemberitahuan penyelesaian dikirim lewat surel, jadi periksa folder spam sebelum menyimpulkan bahwa prosesnya gagal.",
+        pitfall:
+          "Baru menyadari di tahap pembayaran bahwa verifikasi masih diproses adalah cara klasik kehilangan kursi yang sudah Anda tahan.",
+        takes: "1-3 hari termasuk pemrosesan",
+      },
+      {
+        title: "Pastikan syarat konsernya di halaman konser itu sendiri",
+        body: "Jumlah kursi yang bisa dibeli per akun, apakah keanggotaan dibutuhkan, syarat identitas di lokasi, dan apakah konser itu terbuka bagi pembeli dari luar negeri — semuanya diatur per konser. Baca halaman konser dan pengumuman resminya; ketika keduanya berbeda, pengumuman resmi untuk konser Anda yang berlaku.",
+        pitfall:
+          "Sebagian konser membatasi blok kursi atau babak penjualan tertentu hanya untuk pembeli domestik. Ini berlaku per konser dan tidak bisa diketahui dari panduan umum.",
+        takes: "10 menit",
+      },
+      {
+        title: "Bawa dokumen yang benar saat mengambil tiket",
+        body: "Tiket diambil di loket venue pada hari pertunjukan, dan tidak bisa lebih awal — NOL World menyatakan pengambilan tidak dapat dilakukan sebelum hari pertunjukan. Loket dibuka satu jam sebelum pertunjukan dimulai, dan Anda membutuhkan nomor pemesanan serta kartu identitas. Sisakan waktu karena loket itu sendiri juga akan ada antreannya. Setelah tiket diambil, tiket yang hilang atau dicuri tidak akan diterbitkan ulang.",
+        pitfall:
+          "Nama di pemesanan, nama di kartu identitas, dan nama di catatan keanggotaan harus sama semuanya. Satu nama panggilan di mana pun pada rantai itu adalah masalah.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah NOL World sama dengan Interpark Global?",
+        a: "Ini layanan tiket versi luar negeri yang sama setelah berganti merek. interpark Global berganti nama menjadi NOL World pada 1 Desember 2025, menyusul penyatuan merek Yanolja Core di bawah nama NOL pada April 2025, saat Interpark Ticket menjadi NOL Ticket.",
+      },
+      {
+        q: "Kenapa penanda halaman lama saya masih menampilkan Interpark?",
+        a: "Pergantian merek butuh waktu untuk menyebar ke hasil pencarian, panduan pihak ketiga, dan halaman tersimpan. Bernavigasilah dari pengumuman resmi konser Anda, bukan dari tautan tersimpan atau tulisan blog.",
+      },
+      {
+        q: "Apakah NOL Global sama saja? Bagaimana dengan NOL Korea?",
+        a: "Itu nama-nama yang terlintas ketika orang setengah mengingat pergantian nama tersebut, dan perlu disebut terang-terangan karena itulah yang diketik orang. Ada dua situs: NOL World, yang versi luar negeri, yang bernama interpark Global hingga 1 Desember 2025; dan NOL Ticket, yang berbahasa Korea, yang bernama Interpark Ticket hingga April 2025. Jika Anda diarahkan ke “NOL Global”, “NOL Korea”, atau “NOL KR”, situs yang Anda cari hampir pasti NOL World.",
+      },
+      {
+        q: "Bisakah saya memakai akun NOL Ticket saya di NOL World?",
+        a: "Anggap keduanya sebagai akun terpisah dengan verifikasi terpisah. Jangan berasumsi bahwa sesi masuk atau verifikasi yang sudah selesai berlaku di keduanya — pastikan di situs tempat Anda benar-benar akan membeli.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Kenapa kartu Anda ditolak di situs tiket Korea",
+    summary:
+      "Tiga sistem yang berbeda bisa menolak pembayaran yang sama — platformnya, jaringan kartu Anda, dan bank Anda. Masing-masing punya solusi berbeda, dan hanya satu di antaranya yang cepat.",
+    scope:
+      "Mencakup pembayaran dengan kartu yang diterbitkan di luar negeri di platform tiket Korea. Ini bukan nasihat keuangan, dan tidak bisa mencakup aturan bank Anda sendiri.",
+    intro: [
+      "Kartu yang ditolak di tahap pembayaran adalah kegagalan paling mahal dalam pembelian tiket K-pop, karena kursi yang sudah ditahan kembali ke kolam dalam hitungan menit. Hampir semuanya bisa dicegah kalau Anda punya waktu persiapan.",
+      "Alasan hal ini terasa acak adalah karena tiga sistem yang saling berdiri sendiri bisa menolak transaksi yang sama, dan pesan kesalahan yang Anda lihat jarang memberi tahu yang mana. Periksalah satu per satu, berdasarkan urutan berapa lama masing-masing butuh waktu untuk diperbaiki.",
+    ],
+    steps: [
+      {
+        title: "Periksa apakah verifikasi akun Anda benar-benar sudah selesai",
+        body: "Di beberapa platform, kartu yang diterbitkan di luar negeri baru bisa dipakai setelah akunnya diverifikasi sebagai pelanggan luar negeri. Jika verifikasi itu masih diproses, kartu akan gagal sebaik apa pun kondisinya. Ini solusi yang paling lama, dan itulah sebabnya ia ada di urutan pertama.",
+        pitfall:
+          "Pesan kesalahan pembayaran tidak akan berbunyi “verifikasi Anda masih diproses”. Tampilannya akan terlihat seperti masalah kartu.",
+        takes: "1-3 hari",
+      },
+      {
+        title: "Beri tahu bank Anda sebelum penjualan, bukan sesudahnya",
+        body: "Aktifkan transaksi internasional dan transaksi daring, dan jika bank Anda mendukungnya, mintalah otorisasi awal untuk rentang nilai dan negaranya. Tagihan pertama yang pernah ada dari merchant Korea pada jam yang tidak biasa persis cocok dengan profil yang diblokir sistem antipenipuan.",
+        pitfall:
+          "Pemblokiran antipenipuan otomatis sering tidak bersuara di sisi Anda — tidak ada SMS, tidak ada notifikasi aplikasi. Anda baru tahu dari penolakan umum yang muncul di sisi merchant.",
+        takes: "1 hari",
+      },
+      {
+        title: "Jangan lakukan tahap pembayaran di dalam peramban bawaan aplikasi",
+        body: "Alur 3-D Secure dan kata sandi sekali pakai dari bank sering rusak di dalam peramban yang tertanam di aplikasi media sosial atau pesan. Pakailah peramban ponsel atau komputer yang biasa, dan pastikan Anda bisa menerima pesan verifikasi bank di perangkat yang sama.",
+        pitfall:
+          "Pengalihan halaman bisa tampak berhasil lalu diam-diam menggugurkan otorisasinya, dan itu terbaca sebagai penolakan.",
+        takes: "0 menit, cukup lakukan dengan benar",
+      },
+      {
+        title: "Siapkan cadangan yang benar-benar berbeda, bukan kartu sekandung",
+        body: "Kartu kedua dari penerbit yang sama biasanya gagal karena alasan yang sama. Penerbit yang berbeda, jaringan yang berbeda, atau metode alternatif yang didukung platform jika ada, barulah cadangan yang nyata. Dua platform luar negeri itu juga menolak hal yang berlawanan, dan itu layak diketahui sebelum Anda menyalahkan kartunya: NOL World menerima VISA, MasterCard, AMEX, JCB, dan UnionPay tetapi hanya yang diterbitkan di luar Korea, dan menolak kartu terbitan Korea sama sekali. YES24 Global melakukan kebalikannya pada dua di antaranya, mengecualikan American Express yang diterbitkan di luar Korea dan UnionPay sepenuhnya. Kartu yang ditolak di satu platform bisa jadi kartu yang tepat di platform lainnya.",
+        pitfall:
+          "Dua kartu dari bank yang sama adalah satu kartu bagi sebuah aturan antipenipuan.",
+        takes: "30 menit untuk menyiapkan",
+      },
+      {
+        title: "Periksa mata uang dan nominalnya sebelum mengonfirmasi",
+        body: "Baca apakah Anda ditagih dalam KRW atau dalam nominal yang sudah dikonversi, dan ketahui biaya transaksi luar negeri kartu Anda. Konversi yang mendorong totalnya melewati batas yang Anda tetapkan sendiri juga bisa menyebabkan penolakan.",
+        pitfall:
+          "Konversi mata uang dinamis diam-diam menambah biaya. Membayar dalam KRW biasanya pilihan yang lebih murah.",
+        takes: "5 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Kenapa kartu saya ditolak padahal saldonya cukup?",
+        a: "Paling sering salah satu dari tiga hal: akun platform Anda belum menyelesaikan verifikasi pelanggan luar negeri, sistem antipenipuan bank Anda memblokir merchant asing yang tidak dikenal, atau tahap 3-D Secure gagal — umumnya karena dijalankan di dalam peramban bawaan aplikasi. Pesan penolakannya biasanya tidak membedakan ketiganya.",
+      },
+      {
+        q: "Apakah PayPal bisa dipakai?",
+        a: "Sebagian platform yang melayani luar negeri mendukung metode pembayaran alternatif pada sebagian konser. Ini diatur per platform dan per acara, bukan secara menyeluruh, jadi periksa pilihan pembayaran yang tercantum di halaman acara Anda sebelum menyusun rencana di atasnya.",
+      },
+      {
+        q: "Sebaiknya saya membayar dalam KRW atau dalam mata uang saya sendiri?",
+        a: "Membayar dalam mata uang merchant umumnya lebih murah daripada membiarkan halaman pembayaran mengonversikannya untuk Anda, karena konversi mata uang dinamis menambahkan selisih. Biaya transaksi luar negeri dari kartu Anda sendiri tetap berlaku pada kedua pilihan itu.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Cara membeli album K-pop dari luar Korea agar terhitung",
+    summary:
+      "Tempat Anda membeli menentukan apakah pembelian Anda dihitung, berapa yang Anda bayar untuk pengiriman, dan apakah Anda mendapat bonus pra-pesan. Berikut cara memilihnya.",
+    scope:
+      "Mencakup pembelian album fisik dan barang resmi untuk dikirim ke luar Korea. Tidak mencakup lokapasar penjualan ulang atau barang dagangan tidak resmi.",
+    intro: [
+      "Berbeda dengan tiket, pertanyaan ini berjalan sepanjang tahun — dan itulah alasan ia ditempatkan di samping tiket. Dan berbeda dengan tiket, pertanyaan ini punya jawaban salah yang tidak terlihat memakan biaya apa pun: album Anda tetap datang, hanya saja ia tidak dihitung.",
+      "Tiga hal berbeda tergantung tempat Anda membeli: apakah penjualannya dilaporkan ke tangga album Korea, apakah bonus pra-pesannya ikut datang, dan berapa biaya sampai di tangan setelah pengiriman dan bea masuk dihitung. Ketiganya tidak bergerak bersamaan, jadi pilihan termurah sering kali justru pilihan yang tidak terhitung sama sekali.",
+    ],
+    steps: [
+      {
+        title: "Tentukan apa yang sebenarnya Anda inginkan dari pembelian ini",
+        body: "Kontribusi tangga lagu, album fisiknya, bonus pra-pesannya, atau harga terendah. Keempatnya menarik ke arah yang berbeda. Tetapkan prioritasnya sebelum Anda memilih tokonya, karena tokonya mengikuti prioritas itu.",
+        pitfall:
+          "Membeli di lokapasar umum untuk menghemat uang lalu menemukan bahwa itu tidak terhitung adalah versi standar dari kesalahan ini.",
+        takes: "5 menit",
+      },
+      {
+        title: "Periksa apakah penjualnya melaporkan ke tangga album Korea",
+        body: "Penjualan yang dilaporkan ke tangga album Korea berasal dari pengecer dan toko resmi tertentu. Sebuah barang berupa album resmi tidak berarti penjualannya dilaporkan. Jika kontribusi tangga lagu adalah alasan Anda membeli, pastikan pengecernya termasuk yang melaporkan sebelum Anda memesan.",
+        pitfall:
+          "Barang album asli di lokapasar pihak ketiga umumnya tidak terhitung. Albumnya nyata; kontribusinya tidak ada di situ.",
+        takes: "15 menit",
+      },
+      {
+        title: "Pesan di dalam masa pra-pesan untuk mendapatkan bonusnya",
+        body: "Bonus pra-pesan — poster, photocard tambahan, kesempatan ikut acara — terikat pada pemesanan di dalam suatu masa tertentu, dan sering terikat pada pengecer itu saja. Masa itu ditutup sebelum hari rilis, bukan pada hari rilis.",
+        pitfall:
+          "Bonus eksklusif tiap pengecer tidak bisa ditukar satu sama lain. Memesan album yang sama di tempat lain memberi Anda kumpulan bonus yang berbeda, atau tidak sama sekali.",
+        takes: "10 menit",
+      },
+      {
+        title: "Hitung biaya pengiriman dan paparan bea masuknya, bukan harga albumnya",
+        body: "Pengiriman dari Korea bisa melebihi harga albumnya, dan apakah Anda masih membayar pungutan impor di atas itu bergantung pada aturan negara Anda sendiri. Periksa aturan itu sekarang, jangan berasumsi: Amerika Serikat menangguhkan batas 800 dolarnya pada Agustus 2025 dan Uni Eropa menghapus batas 150 euronya pada 1 Juli 2026, jadi bagi pembaca di kedua wilayah itu, tidak ada lagi nilai yang cukup kecil untuk masuk tanpa pungutan. Pesanan bersama menurunkan biaya kirim per barang. Hitunglah biaya sampai di tangan sebelum Anda memutuskan.",
+        pitfall:
+          "Menyusun rencana di atas pembebasan bea yang sudah tidak ada lagi di tempat Anda tinggal. Dan di tempat yang masih punya pembebasan itu, menggabungkan beberapa album ke dalam satu paket bisa mendorong nilai deklarasinya melewati batas dan jadi lebih mahal daripada mengirimnya terpisah — hitung keduanya.",
+        takes: "20 menit",
+      },
+      {
+        title: "Simpan catatan pesanan sampai barangnya datang",
+        body: "Simpan konfirmasi pesanan, nomor pelacakan, dan nilai deklarasinya. Untuk apa pun yang salah — paket rusak, pertanyaan dari bea cukai, bonus yang tidak ada — inilah yang akan diminta pengecernya dari Anda.",
+        pitfall:
+          "Layanan pelanggan pengecer Korea sering bekerja dengan nomor pesanan, bukan dengan pencarian lewat surel. Tanpa nomor itu, percakapannya berjalan lambat.",
+        takes: "5 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah album yang dibeli di luar Korea terhitung untuk tangga album Korea?",
+        a: "Penjualan yang dilaporkan oleh pengecer peserta terhitung, dan itu bergantung pada pengecernya, bukan pada lokasi Anda. Membeli album asli dari toko yang tidak melaporkan berarti albumnya nyata tetapi penjualannya tidak dihitung. Periksa pengecernya sebelum memesan jika kontribusi tangga lagu adalah intinya.",
+      },
+      {
+        q: "Apakah pesanan bersama sepadan?",
+        a: "Untuk biaya kirim biasanya iya, karena biaya per barang turun tajam. Timbanglah itu dengan aturan impor negara Anda — di tempat yang masih punya pembebasan bea, satu paket bernilai tinggi bisa dikenai pungutan yang tidak akan dikenakan pada beberapa paket kecil terpisah. Di Amerika Serikat dan Uni Eropa perhitungan itu sudah berubah: keduanya menghapus pembebasan untuk nilai rendah, jadi tidak ada lagi batas yang bisa dijadikan tempat berlindung.",
+      },
+      {
+        q: "Kenapa bonus pra-pesan berbeda antar toko?",
+        a: "Pengecer menegosiasikan bonus eksklusifnya sendiri, jadi album yang sama membawa tambahan yang berbeda tergantung di mana ia dipra-pesan. Jika sebuah bonus tertentu adalah yang Anda inginkan, Anda harus memesan dari toko yang menawarkannya, di dalam masa yang berlaku di toko itu.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Memesan dari Weverse Shop di luar Korea",
+    summary:
+      "Toko mana yang sedang Anda buka, kenapa harganya berubah saat pembayaran, metode pembayaran apa yang benar-benar didapat mata uang Anda, dan negara mana yang tidak bisa dikirimi dari Korea.",
+    scope:
+      "Mencakup pemesanan di Weverse Shop untuk barang dagangan fisik dan album yang dikirim dari Korea. Pembelian keanggotaan dan tiket ditangani terpisah dan dibahas di panduan presale. Aturan di sini berasal dari pemberitahuan Weverse Shop sendiri dan berubah tanpa banyak peringatan.",
+    intro: [
+      "Hampir setiap panduan berbahasa Inggris tentang Weverse Shop sampai sekarang masih mengatakan bahwa toko global hanya menerima PayPal atau Eximbay, dan tidak ada yang lain. Itu benar bertahun-tahun lalu. Daftar pembayarannya sekarang lebih panjang, daftar itu ditentukan oleh mata uang yang disetel di akun Anda, bukan oleh negara tempat Anda tinggal, dan sejak Februari 2026 harga di halaman produk bukanlah harga yang Anda bayar.",
+      "Tidak ada satu pun dari itu yang disembunyikan — semuanya ada di pemberitahuan milik toko itu sendiri, dan dari sanalah seluruh isi di bawah ini berasal. Hanya saja tidak ada penulis panduan yang pergi membacanya.",
+    ],
+    steps: [
+      {
+        title: "Pastikan Weverse Shop mana yang sebenarnya Anda buka",
+        body: "Weverse Shop bukan satu toko. Ada toko GLOBAL dan ada toko-toko kawasan, dan masing-masing membawa stok berbeda, menjalankan masa pra-pesan berbeda, serta mengirim dari tempat berbeda. Barang yang Anda lihat dipesan orang lain bisa saja memang tidak ada di toko Anda. Pastikan Anda di toko yang mana sebelum menyusun rencana di sekitar sebuah tanggal rilis, karena batas pra-pesan di satu toko tidak memberi tahu Anda apa pun tentang toko lainnya.",
+        pitfall:
+          "Tautan yang dibagikan seseorang di komunitas fan membuka toko mereka, bukan toko Anda. Jika halamannya terbuka tetapi barangnya tidak mau masuk keranjang, biasanya Anda berada di toko yang salah, bukan terlambat.",
+        takes: "2 menit",
+      },
+      {
+        title: "Setel mata uang Anda sebelum melihat apa pun",
+        body: "Mata uang bawaan Anda menentukan metode pembayaran apa yang ditawarkan kepada Anda. Weverse menyatakannya per mata uang: USD mendapat PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay, dan Grab Pay. JPY mendapat daftar yang sama tanpa Grab Pay. CNY kehilangan PayPal. MXN hanya PayPal dan Apple Pay. KRW menambahkan kartu Korea dan dompet digital Korea — Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        pitfall:
+          "Tidak ada pilihan “bayar dengan Visa” yang sederhana pada mata uang selain KRW. Kartu Anda berjalan melalui PayPal atau Eximbay, dan bagi bank Anda itu transaksi berjenis lain daripada tagihan merchant Korea — dan itulah alasan kartu yang berfungsi di tempat lain masih bisa gagal di sini.",
+        takes: "3 menit",
+      },
+      {
+        title: "Perkirakan harganya naik saat pembayaran, dan pahami sebabnya",
+        body: "Sejak 3 Februari 2026, Weverse menghitung pajak dari alamat pengiriman dan alamat penagihan Anda. Pesanan yang menuju Korea menampilkan harga termasuk pajak sepanjang prosesnya. Pesanan yang menuju tempat lain menampilkan harga halaman produk tanpa pajak, dan pajak negara tujuan ditambahkan saat pembayaran begitu Anda memasukkan alamat. Angka di halaman produk bukan angka yang Anda bayar, dan itu disengaja, bukan kesalahan.",
+        pitfall:
+          "Ini terlihat persis seperti penipuan atau gangguan sistem, dan di titik inilah orang meninggalkan pesanannya. Kenaikan itu adalah pajak yang negara Anda sendiri kenakan, dipungut di depan alih-alih oleh bea cukai nanti.",
+        takes: "1 menit",
+      },
+      {
+        title: "Isi alamat penagihan, bukan hanya alamat pengiriman",
+        body: "Perubahan Februari 2026 yang sama menambahkan kolom alamat penagihan saat pembayaran, karena perhitungan pajaknya membutuhkannya. Untuk sebagian produk tak berwujud — barang dan konten digital — alamat penagihan bisa jadi wajib, bukan opsional. Isilah dengan akurat: dari situlah tarif pajaknya dihitung, dan alamat yang salah bukan sesuatu yang bisa Anda perbaiki diam-diam nanti.",
+        pitfall:
+          "Menyalin alamat pengiriman ke kolom penagihan tanpa berpikir aman ketika keduanya sama dan salah ketika keduanya berbeda. Jika kartu Anda terdaftar pada alamat lain, pakailah alamat itu.",
+        takes: "2 menit",
+      },
+      {
+        title: "Periksa bahasa alamat Anda terhadap negara tujuan",
+        body: "Weverse meminta pelanggan internasional memastikan bahasa apa yang dibutuhkan negara tujuan untuk alamatnya sebelum memasukkannya. Aturannya lebih jelas pada arah sebaliknya: pesanan yang dikirim ke Korea Selatan harus membawa alamat dalam bahasa Korea, karena kurir bisa menolak atau salah memproses alamat berbahasa Inggris. Untuk tempat lainnya, tulislah alamat sesuai yang diharapkan layanan pos negara Anda sendiri.",
+        pitfall:
+          "Mengalihhurufkan alamat Korea ke bahasa Inggris adalah penyebab tunggal paling umum pengiriman tertunda atau gagal pada pesanan yang menuju Korea.",
+        takes: "5 menit",
+      },
+      {
+        title: "Pastikan Korea bisa mengirim ke tempat Anda sama sekali",
+        body: "Pengiriman dari Korea Selatan tidak tersedia untuk sejumlah negara dan kawasan yang daftarnya dipelihara dan diperbarui Weverse. Pada revisi 15 Juli 2026, daftar itu mencakup Myanmar, Republik Demokratik Kongo, Irak, Iran, Lebanon, Mali, Rusia, Andorra, Ukraina, Belarus, Afghanistan, Antilles Belanda, Israel, dan Turki. Daftarnya bergerak, jadi periksalah pemberitahuannya, bukan halaman ini.",
+        pitfall:
+          "Daftar itu digambarkan sebagai gangguan sementara, bukan kebijakan, yang berarti sebuah negara bisa keluar dari daftar sebagaimana ia bisa masuk. Pesanan Anda yang berhasil sebelumnya maupun pesanan teman Anda tahun lalu tidak memutuskan apakah Anda bisa memesan hari ini.",
+        takes: "2 menit",
+      },
+      {
+        title: "Pesan di dalam masa pra-pesan jika bonusnya penting bagi Anda",
+        body: "Bonus pra-pesan — poster, photocard, dan bonus cetakan pertama yang biasanya justru menjadi alasan memesan dari toko resmi alih-alih dari tempat yang lebih murah — terikat pada masa pra-pesan, bukan pada albumnya. Begitu masa itu ditutup, album yang sama dikirim tanpa bonus-bonus itu. Jika bonusnya adalah intinya, yang harus dijadikan pusat rencana adalah tenggatnya, bukan tanggal rilisnya.",
+        pitfall:
+          "Masa pra-pesan ditutup pada suatu jam di Korea, yang berarti malam sebelumnya atau dini hari di tempat sebagian besar pembaca situs ini tinggal.",
+        takes: "Sebelum tenggat",
+      },
+    ],
+    faq: [
+      {
+        q: "Bisakah saya membayar dengan Visa atau Mastercard di Weverse Shop?",
+        a: "Tidak sebagai pilihan kartu langsung di luar setelan mata uang Korea. Pada USD, JPY, CNY, dan MXN, kartunya berjalan melalui PayPal atau Eximbay. Itu tetap menagih kartu Anda, tetapi bank Anda melihat jenis transaksi yang berbeda, jadi mengaktifkan pembayaran internasional lebih dulu layak dilakukan.",
+      },
+      {
+        q: "Kenapa harganya naik ketika saya memasukkan alamat saya?",
+        a: "Sejak 3 Februari 2026, harga di luar Korea ditampilkan di halaman produk tanpa pajak, dan pajak untuk negara tujuan Anda ditambahkan saat pembayaran. Itu adalah pajak yang negara Anda sendiri kenakan, dipungut saat pembelian alih-alih saat pengiriman.",
+      },
+      {
+        q: "Apakah saya akan dikenai bea cukai ketika barangnya datang?",
+        a: "Weverse sekarang membayar bea dan pajak di muka saat pembayaran untuk pesanan yang memenuhi syarat, dan menyatakan hal itu mengurangi kebutuhan pembayaran tambahan selama proses kepabeanan. Weverse juga menyatakan ini tidak berlaku untuk setiap negara atau kawasan, jadi ini harapan yang wajar, bukan jaminan.",
+      },
+      {
+        q: "Apakah Weverse Shop mengirim ke negara saya?",
+        a: "Biasanya iya, tetapi ada daftar terpelihara berisi negara dan kawasan yang saat ini tidak bisa menerima pengiriman dari Korea Selatan. Periksa pemberitahuan itu untuk daftar yang berlaku sebelum memesan — daftarnya direvisi seiring perubahan keadaan.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Verified Member: lolos pemeriksaan eKYC dari luar Korea",
+    summary:
+      "Sebagian konser tidak mengizinkan Anda memesan sama sekali sampai paspor Anda terverifikasi. Pemeriksaannya berupa pengambilan gambar paspor dan wajah secara langsung, tidak bisa diulang sembarangan, dan satu arahan yang NOL World berikan soal waktu justru arahan yang paling sering diabaikan orang.",
+    scope:
+      "Mencakup pemeriksaan identitas Verified Member Only di NOL World, sebagaimana NOL World mendokumentasikannya: kapan ia berlaku, apa yang dibutuhkan pengambilan gambarnya, apa yang terjadi pada nama yang disimpannya, dan apa yang mengatur ulang atau membatasinya. Pemegang paspor Korea diarahkan ke NOL Ticket, yang merupakan pemeriksaan berbeda di situs berbeda. Tidak ada apa pun di sini yang merupakan cara mengakali sebuah verifikasi.",
+    intro: [
+      "Konser Verified Member Only adalah konser yang sama sekali tidak bisa Anda pesan sampai identitas Anda terverifikasi. Bukan peringatan saat pembayaran — pemesanannya memang tidak tersedia bagi akun yang belum terverifikasi. Fan mengetahui hal ini tepat pada saat pemesanan dibuka, dan itu saat terburuk yang mungkin, karena verifikasinya adalah pengambilan gambar langsung atas paspor dan wajah Anda dan ia butuh waktu sebanyak yang ia butuhkan.",
+      "NOL World menjelaskan layanan ini sebagai cara membatasi akses untuk tujuan tidak sah seperti penjualan ulang tiket. Itu layak diterima apa adanya: pemeriksaan ini ada untuk mengikat satu orang pada satu akun, dan hampir setiap aturan di bawah ini mengalir dari situ.",
+    ],
+    steps: [
+      {
+        title: "Periksa apakah konser Anda membutuhkannya, dan apakah Anda di situs yang benar",
+        body: "Verified Member Only disetel per produk, bukan per akun — NOL World menyatakan bahwa hanya anggota yang telah menyelesaikan verifikasi identitas di halaman produk yang bisa melakukan pemesanan. Jadi pertanyaan pertama adalah apakah konser Anda membawa tanda itu sama sekali. Pertanyaan kedua adalah apakah Anda semestinya berada di NOL World: NOL World memberi tahu pemegang paspor Korea untuk memakai situs NOL Ticket, yang menjalankan pemeriksaan yang sepenuhnya berbeda.",
+        pitfall:
+          "Menganggap pemeriksaan identitas sebagai tugas sekali jalan yang akan diingatkan oleh situsnya. Untuk konser Verified Member Only tidak ada pengingat — pemesanannya memang tidak ada di sana.",
+        takes: "10 menit",
+      },
+      {
+        title: "Lakukan satu sampai dua hari sebelum pemesanan dibuka",
+        body: "Ini arahan NOL World sendiri dan fakta paling berguna di halaman ini: selesaikan verifikasinya setidaknya satu sampai dua hari di muka, karena mencobanya dekat dengan waktu pembukaan tiket berarti lalu lintas yang tinggi bisa menimbulkan kesulitan. Begitu selesai, Anda bisa memesan konser Verified Member Only mana pun tanpa memverifikasi lagi. Biaya melakukannya lebih awal adalah satu malam. Biaya melakukannya terlambat adalah konsernya.",
+        pitfall:
+          "Memulai pengambilan gambar pada sepuluh menit sebelum presale. Verifikasi yang gagal karena lalu lintas tidak bisa dipercepat, dan antrean tidak menunggu.",
+        takes: "30 menit, dua hari lebih awal",
+      },
+      {
+        title: "Verifikasilah akun yang benar-benar akan Anda pakai membeli",
+        body: "Verifikasi berlaku sekali per akun, dan NOL World menyatakan bahwa data yang telah diverifikasi tidak dapat dipakai ulang — satu paspor memverifikasi satu akun. Jika Anda punya lebih dari satu akun, inilah saat memutuskan mana yang nyata, karena verifikasinya tidak berpindah sesudahnya. NOL World menambahkan bahwa menghapus akun akan menghapus data verifikasinya dan membebaskannya untuk akun lain, tetapi akun yang dibatasi karena penyalahgunaan sama sekali tidak bisa dihapus.",
+        pitfall:
+          "Memverifikasi di akun yang kebetulan sedang Anda masuki, lalu membeli di akun yang lain. Akun kedua itu belum terverifikasi, dan konsernya Verified Member Only.",
+        takes: "5 menit untuk memutuskan",
+      },
+      {
+        title: "Siapkan paspor asli, yang masih berlaku dan belum kedaluwarsa",
+        body: "Hanya paspor yang masih berlaku yang diterima, dan NOL World tegas bahwa foto atau salinan tidak diterima: bukan hasil pindai yang dicetak, bukan tangkapan layar, bukan foto halaman paspor di layar lain. Jika paspor Anda sudah kedaluwarsa, Anda harus memperbaruinya sebelum bisa memverifikasi — tidak ada jalur dokumen alternatif di NOL World bagi pemegang paspor non-Korea.",
+        pitfall:
+          "Mengambil foto paspor yang sudah ada di galeri ponsel Anda karena paspor aslinya tertinggal di lemari besi hotel. Upaya itu tercatat sebagai upaya memakai salinan.",
+        takes: "—",
+      },
+      {
+        title: "Lolos pengambilan gambar pada percobaan pertama",
+        body: "NOL World menerbitkan apa saja yang membuat pengambilan gambar gagal, dan daftarnya terbaca seperti daftar hal-hal yang orang lakukan ketika terburu-buru. Sejajarkan paspor dan wajah Anda dengan panduan di layar. Jauhkan kilau dan pantulan dari halaman paspor maupun wajah Anda. Wajah Anda harus cocok dengan foto di paspor. Tahan perangkatnya tetap stabil setidaknya lima detik selama pengambilan gambar. Dan jika perangkatnya berspesifikasi rendah atau jaringannya tidak stabil, datanya bisa tidak tersimpan dengan benar meski pengambilan gambarnya terlihat baik-baik saja. Ketika gagal, layarnya menyebutkan alasannya — bacalah, jangan mencoba ulang dengan buta.",
+        pitfall:
+          "Melakukan ini dengan satu tangan, pada malam hari, di bawah lampu plafon yang memantul di laminasi paspor. Cahaya dari atas pada halaman paspor adalah alasan paling umum sebuah pengambilan gambar tidak terbaca.",
+        takes: "15 menit",
+      },
+      {
+        title: "Periksa nama yang sebenarnya tersimpan",
+        body: "Hanya nama dalam huruf Latin yang diterima. NOL World menyatakan bahwa jika nama paspor Anda tidak dalam bahasa Inggris atau mengandung karakter khusus, pemesanannya tidak dapat dilanjutkan, dan Anda bisa dialihkan ke pengajuan koreksi nama — sebuah pengajuan, bukan perubahan di setelan. Nama yang tersimpan terlihat di My Page, dan di situlah tempat memeriksanya alih-alih berasumsi. Ini penting sekarang karena setelah verifikasi Anda sama sekali tidak bisa mengubah nama, tanggal lahir, atau alamat surel: pemesanan hanya bisa dilakukan dengan data yang terverifikasi.",
+        pitfall:
+          "Tidak memeriksa namanya karena verifikasinya menyatakan berhasil. Berhasil dan menyimpan karakter yang benar adalah dua hal berbeda, dan salah satunya sudah tidak bisa disunting lagi.",
+        takes: "5 menit",
+      },
+      {
+        title: "Pahami urutan namanya — dan apa yang sebenarnya penting di pintu masuk",
+        body: "NOL World mengubah urutan nama yang disimpan pada 16 April 2025. Anggota yang terverifikasi sebelum tanggal itu menyimpan Nama Depan + (Nama Tengah) + Nama Belakang; anggota yang terverifikasi setelahnya menyimpan Nama Belakang + Nama Depan + (Nama Tengah). NOL World menyatakan dengan terang bahwa meski urutannya berbeda dari paspor Anda, verifikasi tiket dan masuk ke venue tetap dimungkinkan — verifikasi di lokasi hanya dibatasi jika namanya sendiri berbeda dari nama di paspor. Anggota yang terverifikasi sebelum 16 April 2025 akan mendapat format baru itu ketika mereka memverifikasi ulang setelah paspornya kedaluwarsa.",
+        pitfall:
+          "Mengajukan koreksi nama karena urutannya terlihat salah. NOL World menyatakan urutannya bukan masalahnya; nama yang berbeda itulah masalahnya. Yang harus benar adalah karakternya, bukan urutannya.",
+        takes: "5 menit",
+      },
+      {
+        title: "Pahami apa yang bisa membatalkan verifikasi yang sudah Anda lalui",
+        body: "Verifikasi yang sudah selesai bisa dibatalkan sesudahnya. NOL World menyebut dua penyebabnya: mencoba verifikasi dengan identitas palsu atau yang diubah — yang ia definisikan mencakup salinan cetak dan tangkapan layar — serta paspor yang dipakai untuk verifikasi menjadi kedaluwarsa. Jika verifikasi Anda dibatalkan, verifikasilah ulang memakai akun yang sudah ada. NOL World secara khusus memperingatkan bahwa mencoba akun baru justru bisa menimbulkan kegagalan sistem berulang, dan bahwa verifikasi yang ternyata diperoleh dengan cara tidak sah bisa membuat Anda kehilangan akses ke layanan pemesanan.",
+        pitfall:
+          "Membuka akun baru untuk kabur dari pengaturan ulang itu. Pengaturan ulang itu mengikuti dokumennya, bukan akunnya, dan akun baru mewarisi masalahnya sekaligus kecurigaannya.",
+        takes: "—",
+      },
+      {
+        title: "Pahami apa yang platform anggap penipuan, dan berapa harganya",
+        body: "Alasan pemeriksaan ini seketat ini ada di kebijakan antipenipuan NOL World, dan konsekuensinya diterbitkan. Memakai identitas curian atau palsu untuk verifikasi terdaftar sebagai penggunaan tidak sah. Demikian pula memesan banyak tiket di luar penggunaan normal dengan data pribadi yang identik atau serupa — data kontak, alamat pengiriman, atau informasi pembayaran yang sama di beberapa akun. Sanksinya berkisar dari pembatasan pemesanan selama tiga bulan atau lebih sampai penangguhan akun permanen dan pembatalan setiap tiket yang dipesan. Penyelenggara acara bisa menambahkan sanksinya sendiri, termasuk pengeluaran dari fan club. Ada jalur banding, dan di kasus perdagangan tidak sah yang terkonfirmasi jelas, tidak ada.",
+        pitfall:
+          "Memverifikasi beberapa akun anggota keluarga dari satu ponsel, satu alamat, dan satu kartu untuk menaikkan peluang Anda di presale. Pola itu ada di daftar yang diterbitkan, dan sanksi yang disebutkan menjangkau setiap tiket di setiap akun tersebut.",
+        takes: "10 menit untuk membaca",
+      },
+    ],
+    faq: [
+      {
+        q: "Apa arti Verified Member Only sebenarnya di halaman sebuah acara?",
+        a: "Bahwa konser itu tertutup bagi akun yang belum terverifikasi. NOL World menggambarkannya sebagai layanan yang memungkinkan anggota memverifikasi identitasnya sebelum membeli, di mana hanya anggota yang telah menyelesaikan verifikasi di halaman produk yang bisa melakukan pemesanan. NOL World menyatakan tujuannya adalah membatasi akses untuk tujuan tidak sah seperti penjualan ulang tiket. Siapkan paspor dan ponsel cerdas Anda, karena pemeriksaannya membutuhkan keduanya.",
+      },
+      {
+        q: "Saya pemegang paspor Korea. Bisakah saya langsung memverifikasi di NOL World?",
+        a: "NOL World memberi tahu pemegang paspor Korea untuk memakai situs NOL ticket. Itu situs berbeda dengan pemeriksaan identitas berbeda — umumnya autentikasi ponsel Korea atau I-PIN — dan akun terpisah.",
+      },
+      {
+        q: "Saya warga negara Korea yang tinggal di luar negeri tanpa nomor ponsel Korea. Lalu bagaimana?",
+        a: "NOL World menerbitkan sebuah jalur dokumen. NOL World mengarahkan warga Korea Selatan yang berdomisili di luar negeri ke NOL Ticket, tempat identitas bisa diverifikasi lewat autentikasi ponsel atau I-PIN; ketika tidak ada nomor registrasi penduduk Korea dan autentikasi ponsel tidak tersedia, NOL Ticket menerima dokumen pendukung yang membuktikan status warga Korea di luar negeri — Sertifikat Registrasi Warga Korea di Luar Negeri bersama paspor Korea Selatan, diajukan melalui formulir pertanyaan layanan pelanggannya beserta ID akun Anda. NOL World menyatakan sertifikat itu bisa diperoleh secara daring melalui Badan Warga Korea di Luar Negeri, dan bahwa Kartu Registrasi Orang Asing bisa diterima sebagai pengganti ketika sertifikatnya sulit didapat. NOL World juga memperingatkan bahwa dokumen palsu berarti pembatasan segera.",
+      },
+      {
+        q: "Apakah ada batas usia minimum untuk verifikasi identitas?",
+        a: "NOL World menyatakan tidak ada batas usia pada verifikasinya sendiri, tetapi Anda masih bisa tidak dapat memesan atau menghadiri produk yang membawa batasan usia. Terverifikasi tidak sama dengan memenuhi syarat untuk sebuah konser tertentu.",
+      },
+      {
+        q: "Nama saya di My Page urutannya berbeda dari paspor saya. Apakah saya akan ditolak?",
+        a: "NOL World menyatakan tidak. NOL World mengubah urutan yang disimpan pada 16 April 2025 dan menyatakan bahwa verifikasi tiket dan masuk tetap dimungkinkan meski urutannya berbeda dari paspor. Verifikasi di lokasi hanya dibatasi jika namanya sendiri berbeda — jadi periksalah ejaan dan karakternya, bukan urutannya.",
+      },
+      {
+        q: "Paspor saya kedaluwarsa setelah saya memverifikasi. Apakah saya harus melakukan sesuatu?",
+        a: "Ya. NOL World mencantumkan kedaluwarsanya paspor sebagai penyebab dibatalkannya verifikasi yang sudah selesai, jadi memperbarui paspor berarti memverifikasi ulang — di akun yang sudah ada, bukan akun baru. Jika Anda terverifikasi sebelum 16 April 2025, inilah juga saat urutan nama yang baru diterapkan pada catatan Anda.",
+      },
+      {
+        q: "Bisakah saya memverifikasi dengan paspor anggota keluarga kalau paspor saya kedaluwarsa?",
+        a: "Tidak, dan ini satu-satunya pertanyaan yang punya konsekuensi tertulis alih-alih sekadar pendapat. NOL World mencantumkan pemakaian identitas curian atau palsu untuk verifikasi di antara tindakan yang ia perlakukan sebagai penggunaan tidak sah, dan sanksi yang disebutkan sampai pada penangguhan akun permanen dan pembatalan setiap tiket yang dipesan. NOL World juga menyatakan verifikasi identitas bisa dilakukan di venue dan meminta Anda memesan dengan nama dan akun Anda sendiri serta membawa identitas berfoto yang masih berlaku. Tiket yang tidak bisa bertahan di pintu masuk bukanlah tiket.",
+      },
+      {
+        q: "Akun saya dibatasi. Apakah ada jalur banding?",
+        a: "NOL World menerbitkan satu. NOL World menyatakan pengguna umumnya diberi waktu setidaknya satu hari untuk memberikan penjelasan, dan bahwa banding semestinya berupa pernyataan terperinci yang mencakup ID akun Anda yang dibatasi, nama lengkap, dan informasi kontak, tanpa format atau templat yang diwajibkan, dikirim melalui formulir pertanyaan layanan pelanggannya. Peninjauannya butuh kira-kira 10 sampai 15 hari dan hasilnya datang lewat surel. NOL World juga menyatakan batasnya: melewatkan tenggatnya atau gagal menghilangkan kecurigaan berarti pemesanan dibatalkan secara paksa, dan di kasus perdagangan tidak sah yang terkonfirmasi jelas, tiket bisa dibatalkan tanpa banding sama sekali.",
+      },
+    ],
+    labels: ID_LABELS,
   },
 ];
 

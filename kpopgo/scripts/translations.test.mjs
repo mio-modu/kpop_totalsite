@@ -11,7 +11,7 @@
  * wearing fluent prose, and no amount of reading it back catches them
  * reliably. A machine does.
  *
- * What this cannot check is whether the Japanese reads naturally, which is
+ * What this cannot check is whether the translation reads naturally, which is
  * exactly why `review` stays at machine-assisted. These assertions make the
  * facts trustworthy; they do not make the writing native, and nothing here
  * should ever be used to argue that they do.
@@ -20,6 +20,13 @@
  * digits or more, years, currency codes, product names and hostnames. English
  * spells small numbers as words ("five seconds", "one to two days") and those
  * are skipped rather than guessed at.
+ *
+ * Every check runs against every locale in the register. The first version
+ * hard-coded `locale: "ja"`, which was fine while Japanese was the only
+ * language and became a silent hole the day it was not: four Traditional
+ * Chinese translations landed and the suite still reported the same 28 passes,
+ * having looked at none of them. A check scoped to one locale is a check that
+ * stops existing when the second one arrives.
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -100,13 +107,38 @@ function parts(block) {
 }
 
 const enGuides = new Map(blocks(GUIDES).map((b) => [b.slug, parts(b.body)]));
-const jaBlocks = blocks(TRANSLATIONS).filter((b) => /locale: "ja"/.test(b.body));
-const ja = new Map(jaBlocks.map((b) => [b.slug, parts(b.body)]));
 
 /**
- * Names that are written differently in Japanese on purpose. Anything not
- * listed here has to survive verbatim — a product name that quietly changed
- * is a reader who cannot find the button.
+ * The register, split per entry rather than per slug.
+ *
+ * A guide translated into three languages is three entries sharing a slug, so
+ * the slug cannot be the key. It cannot be the *boundary* either, which is the
+ * subtler half: `locale` is written above `slug` in every entry, so a block
+ * running from one slug line to the next contains the following entry's locale
+ * and not its own. Read that way the suite attributed Japanese prose to
+ * Chinese entries it had invented, and — with only Japanese in the register —
+ * silently dropped the last translation, whose block had no locale line after
+ * it at all. So the boundary is the locale line, and the slug is read inside.
+ */
+const entries = [];
+{
+  const marks = [...TRANSLATIONS.matchAll(/^ {4}locale: "([a-zA-Z-]+)",$/gm)];
+  for (let i = 0; i < marks.length; i++) {
+    const body = TRANSLATIONS.slice(
+      marks[i].index,
+      i + 1 < marks.length ? marks[i + 1].index : TRANSLATIONS.length,
+    );
+    const slug = body.match(/^ {4}slug: "([a-z0-9-]+)",$/m)?.[1];
+    if (!slug) continue;
+    entries.push({ locale: marks[i][1], slug, t: parts(body) });
+  }
+}
+const LOCALES = [...new Set(entries.map((e) => e.locale))].sort();
+
+/**
+ * Names that are written differently in the target language on purpose.
+ * Anything not listed here has to survive verbatim — a product name that
+ * quietly changed is a reader who cannot find the button.
  */
 const ALIASES = {
   Toss: ["トス", "Toss"],
@@ -141,6 +173,32 @@ const ALIASES = {
   "COVID-19": ["新型コロナ", "COVID-19"],
 };
 
+/** Forms each locale is additionally allowed to use for the same name. */
+const LOCALE_ALIASES = {
+  "zh-Hant": {
+    KRW: ["韓元", "韓圜"],
+    JPY: ["日圓", "日元"],
+    USD: ["美元"],
+    CNY: ["人民幣"],
+    UnionPay: ["銀聯"],
+    "American Express": ["美國運通"],
+    Amex: ["美國運通"],
+    Apple: ["蘋果"],
+    "COVID-19": ["新冠", "新型冠狀"],
+  },
+  id: {
+    KRW: ["won"],
+    JPY: ["yen"],
+    USD: ["dolar"],
+    CNY: ["yuan"],
+  },
+};
+
+const aliasesFor = (locale, noun) => [
+  ...ALIASES[noun],
+  ...(LOCALE_ALIASES[locale]?.[noun] ?? []),
+];
+
 const NOUNS = Object.keys(ALIASES);
 
 /**
@@ -154,16 +212,23 @@ const NOUNS = Object.keys(ALIASES);
  *    dropped, so a 5pm that became 15時 would still fail.
  *  · COVID-19 is 新型コロナウイルス in Japanese and carries no 19. The name is
  *    checked as a product name instead, where the alias belongs.
+ *  · The minutes of an o'clock time are dropped. "11:00 KST" is correctly
+ *    11時 in Japanese and 上午11時 in Chinese, and the 00 disappears in both.
+ *    Nothing is lost by dropping it: the hour is itself a two-digit number in
+ *    the same string and is still checked, so 11:00 rendered as 17時 fails on
+ *    the 11. A non-zero minute is not excluded, so 11:30 that lost its 30
+ *    still fails.
  */
 function numbers(text) {
   if (!text) return [];
   const skip = new Set();
   for (const m of text.matchAll(/COVID-(\d+)/gi)) skip.add(m[1]);
+  if (/\b\d{1,2}:00\b/.test(text)) skip.add("00");
   const found = [...text.matchAll(/\b\d{1,3}(?:,\d{3})+\b|\b\d{2,}\b/g)].map((m) => m[0]);
   return found.filter((n) => !skip.has(n)).map((n) => ({ n, alt: alternatives(text, n) }));
 }
 
-/** Forms a number may legitimately take in the Japanese. */
+/** Forms a number may legitimately take in the translation. */
 function alternatives(text, n) {
   const alts = [n.replace(/,/g, "")];
   // 12-hour to 24-hour: match this number as the hour of an am/pm time.
@@ -186,24 +251,24 @@ function nounsIn(text) {
 }
 
 /** Pair up the fields of a guide and its translation. */
-function pairs(en, jp) {
+function pairs(en, tr) {
   const out = [];
   const add = (where, a, b) => {
-    if (a && b) out.push({ where, en: a, ja: b });
+    if (a && b) out.push({ where, en: a, t: b });
   };
-  add("title", en.title, jp.title);
-  add("summary", en.summary, jp.summary);
-  add("scope", en.scope, jp.scope);
-  en.intro.forEach((p, i) => add(`intro[${i}]`, p, jp.intro[i]));
+  add("title", en.title, tr.title);
+  add("summary", en.summary, tr.summary);
+  add("scope", en.scope, tr.scope);
+  en.intro.forEach((p, i) => add(`intro[${i}]`, p, tr.intro[i]));
   en.steps.forEach((s, i) => {
-    const t = jp.steps[i];
+    const t = tr.steps[i];
     if (!t) return;
     add(`step[${i}].title`, s.title, t.title);
     add(`step[${i}].body`, s.body, t.body);
     add(`step[${i}].pitfall`, s.pitfall, t.pitfall);
   });
   en.faq.forEach((f, i) => {
-    const t = jp.faq[i];
+    const t = tr.faq[i];
     if (!t) return;
     add(`faq[${i}].q`, f.q, t.q);
     add(`faq[${i}].a`, f.a, t.a);
@@ -211,31 +276,48 @@ function pairs(en, jp) {
   return out;
 }
 
+/** Every (entry, field pair) in the register, so no check can miss a locale. */
+function* allPairs() {
+  for (const e of entries) {
+    const en = enGuides.get(e.slug);
+    if (!en) continue;
+    for (const p of pairs(en, e.t)) yield { ...p, locale: e.locale, slug: e.slug };
+  }
+}
+
+const at = (p) => `${p.locale} ${p.slug} ${p.where}`;
+
 test("the extractor actually found the content it is checking", () => {
-  assert.ok(ja.size > 0, "no Japanese translations parsed");
-  for (const [slug, jp] of ja) {
+  assert.ok(entries.length > 0, "no translations parsed");
+  for (const { locale, slug, t } of entries) {
     const en = enGuides.get(slug);
-    assert.ok(en, `translation for unknown guide ${slug}`);
-    assert.ok(jp.steps.length > 0, `${slug}: no steps parsed from the translation`);
+    assert.ok(en, `${locale}: translation for unknown guide ${slug}`);
+    assert.ok(t.steps.length > 0, `${locale} ${slug}: no steps parsed`);
     assert.equal(
-      jp.steps.length,
+      t.steps.length,
       en.steps.length,
-      `${slug}: parsed ${jp.steps.length} ja steps against ${en.steps.length} en`,
+      `${locale} ${slug}: parsed ${t.steps.length} steps against ${en.steps.length} en`,
     );
-    assert.ok(pairs(en, jp).length > 10, `${slug}: suspiciously few field pairs`);
+    assert.ok(pairs(en, t).length > 10, `${locale} ${slug}: suspiciously few field pairs`);
   }
 });
 
-test("every number in the English survives into the Japanese", () => {
+test("every locale in the register is actually being checked", () => {
+  // The hole this suite had for four translations: a locale present in the
+  // register and absent from the checks reports nothing, which reads exactly
+  // like a locale with no problems.
+  const seen = new Set([...allPairs()].map((p) => p.locale));
+  assert.deepEqual([...seen].sort(), LOCALES, "a locale in the register has no checked pairs");
+});
+
+test("every number in the English survives into the translation", () => {
   const bad = [];
-  for (const [slug, jp] of ja) {
-    for (const { where, en, ja: j } of pairs(enGuides.get(slug), jp)) {
-      for (const { n, alt } of numbers(en)) {
-        // Japanese writes 8,000 and 8000 interchangeably; accept either, plus
-        // any legitimate alternative form such as a converted clock hour.
-        if (!j.includes(n) && !alt.some((a) => j.includes(a))) {
-          bad.push(`${slug} ${where}: "${n}" is in the English and not the Japanese`);
-        }
+  for (const p of allPairs()) {
+    for (const { n, alt } of numbers(p.en)) {
+      // 8,000 and 8000 are interchangeable; accept either, plus any legitimate
+      // alternative form such as a converted clock hour.
+      if (!p.t.includes(n) && !alt.some((a) => p.t.includes(a))) {
+        bad.push(`${at(p)}: "${n}" is in the English and not the translation`);
       }
     }
   }
@@ -244,12 +326,10 @@ test("every number in the English survives into the Japanese", () => {
 
 test("product names and currencies are not quietly renamed", () => {
   const bad = [];
-  for (const [slug, jp] of ja) {
-    for (const { where, en, ja: j } of pairs(enGuides.get(slug), jp)) {
-      for (const noun of nounsIn(en)) {
-        if (!ALIASES[noun].some((a) => j.includes(a))) {
-          bad.push(`${slug} ${where}: "${noun}" has no counterpart in the Japanese`);
-        }
+  for (const p of allPairs()) {
+    for (const noun of nounsIn(p.en)) {
+      if (!aliasesFor(p.locale, noun).some((a) => p.t.includes(a))) {
+        bad.push(`${at(p)}: "${noun}" has no counterpart in the translation`);
       }
     }
   }
@@ -259,50 +339,126 @@ test("product names and currencies are not quietly renamed", () => {
 /**
  * A translated paragraph is roughly a fixed fraction of its source's length.
  *
- * Across this content the ratio sits between 0.35 and 0.65 with a median of
- * 0.45, because Japanese says the same thing in fewer characters and does it
+ * In Japanese the ratio sits between 0.35 and 0.65 with a median of 0.45,
+ * because Japanese says the same thing in fewer characters and does it
  * consistently. That consistency is useful: a field far outside the band is
  * usually not a translation at all but a paragraph somebody wrote fresh,
  * which is exactly the failure the number and product-name checks only catch
  * by luck — they caught three invented intros here because those happened to
  * contain a year. One that did not would have passed.
  *
- * Bounds are deliberately wider than the observed range. This is a smoke
+ * The band is per locale because the fraction is a property of the writing
+ * system, not of translation. Chinese compresses harder than Japanese, having
+ * no kana; Indonesian runs *longer* than English, because its affixes and its
+ * preference for full prepositional phrases cost characters an English
+ * sentence does not spend. A single band wide enough for both would be wide
+ * enough to catch nothing.
+ *
+ * Bounds are deliberately wider than each observed range. This is a smoke
  * alarm for a rewritten or truncated field, not a style rule, and a check
  * that fires on ordinary variation is a check somebody deletes.
  */
+const BAND = {
+  ja: [0.3, 0.9],
+  "zh-Hant": [0.22, 0.75],
+  id: [0.7, 1.6],
+};
+
 test("no translated field is far longer or shorter than its source", () => {
   const bad = [];
-  for (const [slug, jp] of ja) {
-    for (const { where, en, ja: j } of pairs(enGuides.get(slug), jp)) {
-      // Headings are a different population: Japanese compresses a 60-character
-      // English step title into a dozen characters and is right to. The band
-      // below was measured on prose, so it is applied to prose.
-      if (/\.title$|^title$/.test(where)) continue;
-      if (en.length < 60) continue; // short labels vary too much to judge
-      const ratio = j.length / en.length;
-      if (ratio < 0.3 || ratio > 0.9) {
-        bad.push(
-          `${slug} ${where}: Japanese is ${ratio.toFixed(2)}x the English ` +
-            `(${en.length} to ${j.length} characters) — rewritten rather than translated?`,
-        );
-      }
+  for (const p of allPairs()) {
+    // Headings are a different population: a 60-character English step title
+    // compresses to a dozen characters in Japanese and is right to. The bands
+    // were measured on prose, so they are applied to prose.
+    if (/\.title$|^title$/.test(p.where)) continue;
+    if (p.en.length < 60) continue; // short labels vary too much to judge
+    const band = BAND[p.locale];
+    assert.ok(band, `${p.locale}: no length band declared for this locale`);
+    const ratio = p.t.length / p.en.length;
+    if (ratio < band[0] || ratio > band[1]) {
+      bad.push(
+        `${at(p)}: translation is ${ratio.toFixed(2)}x the English ` +
+          `(${p.en.length} to ${p.t.length} characters), outside ` +
+          `${band[0]}–${band[1]} — rewritten rather than translated?`,
+      );
     }
   }
   assert.deepEqual(bad, [], `\n${bad.join("\n")}\n`);
 });
 
-test("no stray script or untranslated word in the Japanese", () => {
+/**
+ * Scripts that have no business being in a given translation.
+ *
+ * Hangul and Cyrillic are wrong everywhere: both have turned up here, a 제보자
+ * left inside Japanese prose and a риスク that mixed Cyrillic into a katakana
+ * word, and neither is visible to a reader who does not know the language.
+ *
+ * The rest is per locale and catches a different failure — a translation
+ * produced in the wrong language. Kana in Chinese means a Japanese paragraph
+ * was pasted in; any Han character or kana in Indonesian means the same.
+ */
+const FORBIDDEN = {
+  ja: [[/[가-힣]/, "Hangul"], [/[Ѐ-ӿ]/, "Cyrillic"]],
+  "zh-Hant": [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ]/, "kana (Japanese text in a Chinese field)"],
+  ],
+  id: [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in an Indonesian field)"],
+  ],
+};
+
+/**
+ * Simplified forms whose traditional counterparts this site uses.
+ *
+ * Traditional rather than Simplified is a distribution decision made in
+ * lib/i18n.ts, and a page that mixes the two reads as careless to exactly the
+ * Taiwanese and Hong Kong readers it is for. These are the high-frequency
+ * characters this content actually uses, not a complete table — a complete
+ * table is a conversion library, and this is a smoke alarm.
+ */
+const SIMPLIFIED = [..."个们这时会后买卖发为实门关认证单价过还对国韩预费运产业应当问题号码网页请确验账边变处现间开结经续连选择项额显转换银联机构场内"];
+
+test("no stray script or untranslated word in the translation", () => {
   const bad = [];
-  for (const [slug, jp] of ja) {
-    for (const { where, ja: j } of pairs(enGuides.get(slug), jp)) {
-      if (/[가-힣]/.test(j)) bad.push(`${slug} ${where}: contains Hangul`);
-      if (/[Ѐ-ӿ]/.test(j)) bad.push(`${slug} ${where}: contains Cyrillic`);
-      if (j.split("（").length !== j.split("）").length)
-        bad.push(`${slug} ${where}: unbalanced full-width parentheses`);
-      if (j.split("「").length !== j.split("」").length)
-        bad.push(`${slug} ${where}: unbalanced full-width quotes`);
+  for (const p of allPairs()) {
+    for (const [re, name] of FORBIDDEN[p.locale] ?? []) {
+      if (re.test(p.t)) bad.push(`${at(p)}: contains ${name}`);
     }
+    if (p.locale === "zh-Hant") {
+      const hits = [...new Set(SIMPLIFIED.filter((c) => p.t.includes(c)))];
+      if (hits.length) bad.push(`${at(p)}: simplified characters ${hits.join(" ")}`);
+    }
+    if (p.locale !== "id") {
+      if (p.t.split("（").length !== p.t.split("）").length)
+        bad.push(`${at(p)}: unbalanced full-width parentheses`);
+      if (p.t.split("「").length !== p.t.split("」").length)
+        bad.push(`${at(p)}: unbalanced full-width quotes`);
+    }
+    if (p.t.split("(").length !== p.t.split(")").length)
+      bad.push(`${at(p)}: unbalanced parentheses`);
+  }
+  assert.deepEqual(bad, [], `\n${bad.join("\n")}\n`);
+});
+
+/**
+ * A field left in English passes every check above.
+ *
+ * Numbers survive, product names survive, the ratio is exactly 1.0 and the
+ * script checks see nothing wrong, because there is nothing wrong with the
+ * English — it is simply not a translation. For Japanese and Chinese the
+ * script checks make this unreachable, since a field with no kana or Han
+ * characters at all would be obvious. Indonesian shares the Latin alphabet
+ * with English, so for Indonesian this is the only check that would catch it.
+ */
+test("no field was left in English", () => {
+  const bad = [];
+  for (const p of allPairs()) {
+    if (p.en.length < 40) continue;
+    if (p.t.trim() === p.en.trim()) bad.push(`${at(p)}: identical to the English`);
   }
   assert.deepEqual(bad, [], `\n${bad.join("\n")}\n`);
 });

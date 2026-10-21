@@ -148,7 +148,11 @@ const ALIASES = {
   Line: ["LINE", "Line"],
   LINE: ["LINE"],
   "American Express": ["アメリカン・エキスプレス", "American Express", "Amex", "AMEX"],
-  Amex: ["Amex", "AMEX", "アメリカン・エキスプレス"],
+  // Amex and American Express are one name with two spellings, so each entry
+  // carries the other. A translation that spells out what the English
+  // abbreviated has not renamed anything — Spanish, for one, does not use
+  // the short form at all.
+  Amex: ["Amex", "AMEX", "American Express", "アメリカン・エキスプレス"],
   UnionPay: ["UnionPay", "ユニオンペイ", "銀聯"],
   PayPal: ["PayPal"],
   Eximbay: ["Eximbay"],
@@ -234,17 +238,18 @@ const PERIOD_THOUSANDS = new Set(["de", "id", "es"]);
  * The difference is systematic, so it is a rule — every multi-word name gets
  * its hyphenated form for free, which covers the names nobody has written yet.
  */
-const hyphenated = (locale, noun) =>
-  locale === "de" && noun.includes(" ") ? [noun.replace(/ /g, "-")] : [];
+const hyphenated = (locale, forms) =>
+  locale === "de"
+    ? forms.filter((f) => f.includes(" ")).map((f) => f.replace(/ /g, "-"))
+    : [];
 
-const aliasesFor = (locale, noun) => [
-  ...ALIASES[noun],
-  ...(LOCALE_ALIASES[locale]?.[noun] ?? []),
-  ...hyphenated(locale, noun),
-  // Amex and American Express are one name with two spellings, and German
-  // compounds the long one, so the short entry needs the long one's compound.
-  ...(locale === "de" && noun === "Amex" ? ["American-Express"] : []),
-];
+const aliasesFor = (locale, noun) => {
+  const forms = [...ALIASES[noun], ...(LOCALE_ALIASES[locale]?.[noun] ?? [])];
+  // Derived from every accepted form rather than from the key, so the German
+  // compound of an alias is covered too: Amex accepts "American Express",
+  // which in German is written American-Express-Karte.
+  return [...forms, ...hyphenated(locale, forms)];
+};
 
 const NOUNS = Object.keys(ALIASES);
 

@@ -144,13 +144,18 @@ the register, and the machinery landed before the first translated word, as it
 did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
-Five languages today: Japanese, Traditional Chinese, Indonesian and German on
-18 of the 20 guides each, Spanish still filling, none native-reviewed. Each
+Five languages today — Japanese, Traditional Chinese, Indonesian, German and
+Spanish — each on the same 18 of the 20 guides, none native-reviewed. Each
 language skips the guides it has no reader for rather than padding to a round
 number, and `content/translations.ts` records which and why at the top.
 
-Four editions now sit on the same eighteen, and the two they all refuse fail
-the same test: a page whose subject is a jurisdiction the reader is not in. The customs guide is a US and EU page. The
+All five sit on the same eighteen, and the two they all refuse fail the same
+test: a page whose subject is a jurisdiction the reader is not in. That the
+set converged rather than being imposed is the interesting part — but do not
+read the convergence as the rule. The timezone guide is excluded from the
+three Asian editions because none of their readers observes daylight saving,
+and Germany and Spain do, so for those two it is a gap rather than a
+decision. The customs guide is a US and EU page. The
 timezone guide is really a daylight-saving guide, and none of Japan, Taiwan or
 Indonesia observes it — checked against the IANA database the guide itself
 cites, where Asia/Tokyo, Asia/Taipei and Asia/Jakarta have no transition in

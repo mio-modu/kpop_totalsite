@@ -148,7 +148,11 @@ const ALIASES = {
   Line: ["LINE", "Line"],
   LINE: ["LINE"],
   "American Express": ["アメリカン・エキスプレス", "American Express", "Amex", "AMEX"],
-  Amex: ["Amex", "AMEX", "アメリカン・エキスプレス"],
+  // Amex and American Express are one name with two spellings, so each entry
+  // carries the other. A translation that spells out what the English
+  // abbreviated has not renamed anything — Spanish, for one, does not use
+  // the short form at all.
+  Amex: ["Amex", "AMEX", "American Express", "アメリカン・エキスプレス"],
   UnionPay: ["UnionPay", "ユニオンペイ", "銀聯"],
   PayPal: ["PayPal"],
   Eximbay: ["Eximbay"],
@@ -192,12 +196,60 @@ const LOCALE_ALIASES = {
     USD: ["dolar"],
     CNY: ["yuan"],
   },
+  // German needs almost nothing listed by hand, because its one systematic
+  // difference is handled as a rule below: it welds a brand onto the noun it
+  // qualifies and hyphenates every join, so an American Express card is an
+  // American-Express-Karte and a NOL World ticket is a NOL-World-Ticket. The
+  // name is intact and correctly set; the space is what the plain check was
+  // looking for.
+  de: {
+    UnionPay: ["China UnionPay", "UnionPay"],
+  },
+  es: {
+    KRW: ["won"],
+    JPY: ["yen"],
+    USD: ["dólar", "dolar"],
+    CNY: ["yuan"],
+    "American Express": ["American Express"],
+  },
 };
 
-const aliasesFor = (locale, noun) => [
-  ...ALIASES[noun],
-  ...(LOCALE_ALIASES[locale]?.[noun] ?? []),
-];
+/**
+ * Locales that group thousands with a period rather than a comma.
+ *
+ * 2,000 KRW is written 2.000 KRW in German, Indonesian and Spanish, and that
+ * is the correct form rather than a liberty taken by the translator — so the
+ * period form is offered as an alternative, exactly as the converted 24-hour
+ * clock is for Japanese. The digits are still checked: a 2.000 that became
+ * 3.000 still fails, and so does one that lost its thousands entirely.
+ *
+ * Earned by a false positive. The YES24 booking fee is the only place on the
+ * site where a four-digit money amount appears in prose, which is why this
+ * surfaced on the twelfth German page rather than the first.
+ */
+const PERIOD_THOUSANDS = new Set(["de", "id", "es"]);
+
+/**
+ * German hyphenates a multi-word name into the compound it forms.
+ *
+ * Enumerating the compounds was the first attempt and it was wrong in the way
+ * a table is always wrong: it listed American-Express because that page had
+ * been written, and said nothing about NOL-World until the next page failed.
+ * The difference is systematic, so it is a rule — every multi-word name gets
+ * its hyphenated form for free, which covers the names nobody has written yet.
+ */
+const hyphenated = (locale, forms) =>
+  locale === "de"
+    ? forms.filter((f) => f.includes(" ")).map((f) => f.replace(/ /g, "-"))
+    : [];
+
+const aliasesFor = (locale, noun) => {
+  const forms = [...ALIASES[noun], ...(LOCALE_ALIASES[locale]?.[noun] ?? [])];
+  // Derived from every accepted form rather than from the key, so the German
+  // compound of an alias is covered too: Amex accepts "American Express",
+  // which in German is written American-Express-Karte.
+  return [...forms, ...hyphenated(locale, forms)];
+};
 
 const NOUNS = Object.keys(ALIASES);
 
@@ -315,8 +367,13 @@ test("every number in the English survives into the translation", () => {
   for (const p of allPairs()) {
     for (const { n, alt } of numbers(p.en)) {
       // 8,000 and 8000 are interchangeable; accept either, plus any legitimate
-      // alternative form such as a converted clock hour.
-      if (!p.t.includes(n) && !alt.some((a) => p.t.includes(a))) {
+      // alternative form such as a converted clock hour or a period-grouped
+      // thousand in the locales that write them that way.
+      const forms = [...alt];
+      if (PERIOD_THOUSANDS.has(p.locale) && n.includes(",")) {
+        forms.push(n.replace(/,/g, "."));
+      }
+      if (!p.t.includes(n) && !forms.some((a) => p.t.includes(a))) {
         bad.push(`${at(p)}: "${n}" is in the English and not the translation`);
       }
     }
@@ -366,6 +423,12 @@ const BAND = {
   // then some: compounds replace phrases, but case endings, separable verbs
   // and the longer words themselves cost more characters than they save.
   de: [0.8, 1.7],
+  // Spanish runs longer than English and for the plainest reason of the four:
+  // it spends words where English compounds. "Ticketing account" becomes
+  // "cuenta de venta de entradas", and the preposition is not optional. It is
+  // tighter than German, which also builds compounds, and looser than
+  // Indonesian, which does not inflect.
+  es: [0.85, 1.6],
 };
 
 test("no translated field is far longer or shorter than its source", () => {
@@ -433,7 +496,76 @@ const FORBIDDEN = {
     [/[Ѐ-ӿ]/, "Cyrillic"],
     [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a German field)"],
   ],
+  es: [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a Spanish field)"],
+  ],
 };
+
+/**
+ * Spanish opens its questions and exclamations, and a machine translation
+ * drops the opening mark.
+ *
+ * This is Spanish's equivalent of the Simplified-character table: a rule the
+ * language has that English does not, so nothing upstream enforces it, and
+ * one that a reader of the language notices in the first second. Every FAQ
+ * entry on this site is a question, so in Spanish every one of them has to
+ * carry ¿ as well as ?, and the inverted mark opens the question rather than
+ * the sentence — "Si la verificación falla, ¿qué hago?" is correct and
+ * "¿Si la verificación falla, qué hago?" is not, which is why the check looks
+ * for presence rather than position.
+ *
+ * It is cheap and it is not cosmetic. A guide whose headings are visibly not
+ * written by someone who knows the language undercuts the one thing this site
+ * sells, on the pages where a reader decides whether to trust it.
+ */
+/**
+ * Quotation marks belong to the language, and the wrong ones are a fingerprint.
+ *
+ * German opens a quotation low and closes it high — „so“ — and Spanish uses
+ * angle quotes, «así», or the ordinary curly pair. A German quotation mark
+ * sitting in Spanish prose is not a style quibble: it is evidence the field
+ * was written in the same sitting as a German one and carried the habit
+ * across, which is exactly how it got here. The first Spanish card guide
+ * shipped with „tu verificación está pendiente“ for that reason.
+ *
+ * Caught by a reader of either language in the first second, invisible to
+ * every other check on this page, and free to assert.
+ */
+const QUOTES = {
+  es: [[/[„“]/, "German quotation marks (use « » or “ ”)"]],
+  de: [[/[«»]/, "Spanish angle quotes (use „ “)"]],
+};
+
+test("quotation marks match the language", () => {
+  const bad = [];
+  for (const p of allPairs()) {
+    for (const [re, why] of QUOTES[p.locale] ?? []) {
+      if (re.test(p.t)) bad.push(`${at(p)}: ${why}`);
+    }
+  }
+  assert.deepEqual(bad, [], `\n${bad.join("\n")}\n`);
+});
+
+test("Spanish questions and exclamations carry their opening mark", () => {
+  const bad = [];
+  for (const p of allPairs()) {
+    if (p.locale !== "es") continue;
+    const t = p.t.trim();
+    if (/\?/.test(t) && !t.includes("¿"))
+      bad.push(`${at(p)}: has ? with no ¿ — "${t.slice(0, 70)}"`);
+    if (/!/.test(t) && !t.includes("¡"))
+      bad.push(`${at(p)}: has ! with no ¡ — "${t.slice(0, 70)}"`);
+  }
+  assert.deepEqual(
+    bad,
+    [],
+    `\n${bad.join("\n")}\n\nSpanish opens a question with ¿ and an ` +
+      `exclamation with ¡. A field carrying only the closing mark was ` +
+      `translated without them.\n`,
+  );
+});
 
 /**
  * Simplified forms whose traditional counterparts this site uses.
@@ -475,11 +607,11 @@ test("no stray script or untranslated word in the translation", () => {
  * script checks see nothing wrong, because there is nothing wrong with the
  * English — it is simply not a translation. For Japanese and Chinese the
  * script checks make this unreachable, since a field with no kana or Han
- * characters at all would be obvious. Indonesian and German share the Latin
- * alphabet with English, so for those two this is the only check that would
- * catch it — and German is the likelier to produce a field left alone,
- * because enough English sentences are near enough to German that one can
- * look translated at a glance.
+ * characters at all would be obvious. Indonesian, German and Spanish
+ * share the Latin alphabet with English, so for those three this is the only
+ * check that would catch it — and German is the likeliest to produce a field
+ * left alone, because enough English sentences are near enough to German that
+ * one can look translated at a glance.
  */
 test("no field was left in English", () => {
   const bad = [];

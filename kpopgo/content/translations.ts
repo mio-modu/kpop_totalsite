@@ -98,6 +98,21 @@ const ZH_LABELS = {
     "本翻譯所依據的英文版已超過有效期限。請以英文版與資料來源確認目前的狀況。",
 };
 
+const ES_LABELS = {
+  pitfall: "Error habitual",
+  takes: "Tiempo estimado:",
+  sources: "Fuentes",
+  readEnglish: "Leer la versión en inglés",
+  related: "Otras guías en este idioma",
+  reviewedMachine:
+    "Esta traducción se hizo con ayuda automática y no la ha revisado una persona hispanohablante nativa. Para decisiones importantes, consulte la versión en inglés y las fuentes originales.",
+  reviewedNative: "Una persona hispanohablante nativa ha revisado esta traducción.",
+  sourceMoved:
+    "La versión en inglés se volvió a verificar después de hacer esta traducción. Si hay discrepancias, la versión en inglés es la que vale.",
+  sourceStale:
+    "La versión en inglés en la que se basa esta traducción ha superado su plazo de vigencia. Consulte la versión en inglés y sus fuentes para saber cómo están las cosas ahora.",
+};
+
 const ID_LABELS = {
   pitfall: "Kesalahan umum",
   takes: "Perkiraan waktu:",
@@ -132,11 +147,21 @@ const JA_LABELS = {
  * Two guides are deliberately in no language but English, and this is the
  * reason rather than an oversight.
  *
- * The three Asian editions now carry the same eighteen of the twenty guides
- * and skip the same two. That was not planned — they were written at
- * different times for different reasons — and it is worth noticing, because
- * the two they all refuse are refused by the same test: a page whose subject
- * is a jurisdiction the reader is not in.
+ * All five editions now carry the same eighteen of the twenty guides and skip
+ * the same two. Three arrived there without being planned to, written at
+ * different times for different reasons; German was brought up to it once its
+ * commerce-only restriction turned out to be wrong; and Spanish was written
+ * to it from the start, because by then the shape was known. That convergence is worth noticing,
+ * because the two guides all four refuse are refused by the same test: a page
+ * whose subject is a jurisdiction the reader is not in.
+ *
+ * One asymmetry is left standing on purpose and should not be read as part of
+ * the rule. The timezone guide is excluded from the three Asian editions
+ * because none of their readers observes daylight saving. Germany and Spain
+ * do, so for those two it is not a mismatch at all — it is the one page whose
+ * thesis fits them better than it fits the English readership it was written
+ * for. German is at eighteen because eighteen was asked for; if a nineteenth
+ * is ever added there, this is it.
  *
  * `kpop-ticketing-day-timezone` is the sharper of the two, because its title
  * suggests the opposite. The guide is not really about time zones; it is
@@ -1658,8 +1683,8 @@ export const translations: Translation[] = [
   {
     locale: "ja",
     slug: "order-from-weverse-shop-overseas",
-    sourceChecked: "2026-10-14",
-    translated: "2026-10-20",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-21",
     review: "machine-assisted",
     title: "韓国外からWeverse Shopで注文する",
     summary:
@@ -1680,7 +1705,7 @@ export const translations: Translation[] = [
       },
       {
         title: "何かを見る前に通貨を設定する",
-        body: "既定の通貨が、提示される決済手段を決めます。Weverseは通貨ごとにこう示しています。USDはPayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay、Grab Pay。JPYはGrab Payを除く同じ一覧です。CNYはPayPalが外れます。MXNはPayPalとApple Payのみ。KRWには韓国のカードと韓国のウォレット——Toss、NAVER Pay、Kakao Pay、PAYCO——が加わります。",
+        body: "既定の通貨が、提示される決済手段を決めます。Weverseは通貨ごとにこう示しています。USDはPayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay、Grab Pay。JPYはGrab Payを除く同じ一覧です。CNYはPayPalが外れます。MXNはPayPalとApple Payのみ。KRWには韓国のカードと韓国のウォレット——Toss、NAVER Pay、Kakao Pay、PAYCO——が加わります。MXNは韓国以外の四つの一覧で最も短く、事前に備えておく価値があるのはこれです。手段は二つ、どちらも電子決済で、現金の選択肢はありません。どちらも用意していなければ、決済画面に三つ目のボタンはありません。",
         pitfall:
           "KRW以外の通貨に「Visaで払う」という素の選択肢はありません。カードはPayPalかEximbayを経由します。それは銀行から見れば韓国の加盟店への請求とは別種の取引で、他ではうまくいくカードがここで失敗しうる理由です。",
         takes: "3分",
@@ -1733,6 +1758,10 @@ export const translations: Translation[] = [
       {
         q: "届いたときに関税を請求されますか。",
         a: "Weverseは該当する注文について、決済時に関税と税を前払いするようになったとし、これにより通関時の追加支払いの必要が減るとしています。ただしすべての国・地域に適用されるわけではないとしているので、保証ではなく合理的な期待として受け取ってください。",
+      },
+      {
+        q: "メキシコにいます。実際に使える決済手段はどれですか。",
+        a: "二つです。Weverseの決済に関する案内はMXNをPayPalとApple Payとしています。韓国以外の四つの通貨の一覧で最も短く、どちらも電子決済です。現金の選択肢も三つ目のボタンもありませんので、予約受付の最中ではなく、その前にどちらかを用意しておいてください。",
       },
       {
         q: "Weverse Shopは私の国へ発送しますか。",
@@ -2250,7 +2279,7 @@ export const translations: Translation[] = [
   {
     locale: "zh-Hant",
     slug: "order-from-weverse-shop-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "在韓國以外下單 Weverse Shop",
@@ -2272,7 +2301,7 @@ export const translations: Translation[] = [
       },
       {
         title: "在你看任何東西之前先設定幣別",
-        body: "你的預設幣別決定了你會被提供哪些付款方式。Weverse 依幣別列出如下：USD 可用 PayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay 與 Grab Pay。JPY 是同一份清單，但沒有 Grab Pay。CNY 少了 PayPal。MXN 只有 PayPal 與 Apple Pay。KRW 則加上韓國信用卡與韓國電子錢包——Toss、NAVER Pay、Kakao Pay、PAYCO。",
+        body: "你的預設幣別決定了你會被提供哪些付款方式。Weverse 依幣別列出如下：USD 可用 PayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay 與 Grab Pay。JPY 是同一份清單，但沒有 Grab Pay。CNY 少了 PayPal。MXN 只有 PayPal 與 Apple Pay。KRW 則加上韓國信用卡與韓國電子錢包——Toss、NAVER Pay、Kakao Pay、PAYCO。MXN 是韓國以外四份清單裡最短的一份，也是最值得預先準備的一份：兩種方式，都是電子付款，沒有現金選項。兩種都沒準備好，結帳頁就沒有第三個按鈕。",
         pitfall:
           "在 KRW 以外的幣別上，沒有單純的「用 Visa 付款」這個選項。你的卡片是透過 PayPal 或 Eximbay 走的，而對你的銀行而言，那是一筆性質不同於韓國商家扣款的交易——這也正是一張在別處能用的卡，在這裡依然可能失敗的原因。",
         takes: "3 分鐘",
@@ -2325,6 +2354,10 @@ export const translations: Translation[] = [
       {
         q: "東西送到時我會被收關稅嗎？",
         a: "Weverse 現在會在符合條件的訂單上於結帳時預繳關稅與稅費，並表示這可以減少在通關過程中額外付款的需要。它也說明這並不適用於每一個國家或地區，所以這是一個合理的預期，而不是保證。",
+      },
+      {
+        q: "我在墨西哥。實際可以用的付款方式有哪些？",
+        a: "兩種。Weverse 的付款說明把 MXN 列為 PayPal 與 Apple Pay，是韓國以外四種幣別清單中最短的一份，而且兩種都是電子付款。沒有現金選項，也沒有第三個按鈕，所以請在預購開賣之前就把其中一種準備好，而不是在開賣當下才弄。",
       },
       {
         q: "Weverse Shop 寄送到我的國家嗎？",
@@ -2752,7 +2785,7 @@ export const translations: Translation[] = [
   {
     locale: "id",
     slug: "order-from-weverse-shop-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "Memesan dari Weverse Shop di luar Korea",
@@ -2774,7 +2807,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Setel mata uang Anda sebelum melihat apa pun",
-        body: "Mata uang bawaan Anda menentukan metode pembayaran apa yang ditawarkan kepada Anda. Weverse menyatakannya per mata uang: USD mendapat PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay, dan Grab Pay. JPY mendapat daftar yang sama tanpa Grab Pay. CNY kehilangan PayPal. MXN hanya PayPal dan Apple Pay. KRW menambahkan kartu Korea dan dompet digital Korea — Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        body: "Mata uang bawaan Anda menentukan metode pembayaran apa yang ditawarkan kepada Anda. Weverse menyatakannya per mata uang: USD mendapat PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay, dan Grab Pay. JPY mendapat daftar yang sama tanpa Grab Pay. CNY kehilangan PayPal. MXN hanya PayPal dan Apple Pay. KRW menambahkan kartu Korea dan dompet digital Korea — Toss, NAVER Pay, Kakao Pay, PAYCO. MXN adalah daftar terpendek dari keempat mata uang non-Korea dan yang paling layak direncanakan: dua metode, keduanya digital, tanpa opsi tunai. Jika tidak satu pun sudah disiapkan, tidak ada tombol ketiga di halaman pembayaran.",
         pitfall:
           "Tidak ada pilihan “bayar dengan Visa” yang sederhana pada mata uang selain KRW. Kartu Anda berjalan melalui PayPal atau Eximbay, dan bagi bank Anda itu transaksi berjenis lain daripada tagihan merchant Korea — dan itulah alasan kartu yang berfungsi di tempat lain masih bisa gagal di sini.",
         takes: "3 menit",
@@ -2827,6 +2860,10 @@ export const translations: Translation[] = [
       {
         q: "Apakah saya akan dikenai bea cukai ketika barangnya datang?",
         a: "Weverse sekarang membayar bea dan pajak di muka saat pembayaran untuk pesanan yang memenuhi syarat, dan menyatakan hal itu mengurangi kebutuhan pembayaran tambahan selama proses kepabeanan. Weverse juga menyatakan ini tidak berlaku untuk setiap negara atau kawasan, jadi ini harapan yang wajar, bukan jaminan.",
+      },
+      {
+        q: "Saya di Meksiko. Metode pembayaran mana yang sebenarnya saya dapatkan?",
+        a: "Dua. Pemberitahuan pembayaran Weverse mencantumkan MXN sebagai PayPal dan Apple Pay — daftar terpendek dari keempat mata uang non-Korea, dan keduanya digital. Tidak ada opsi tunai dan tidak ada tombol ketiga, jadi siapkan salah satu dari keduanya sebelum sebuah jendela prapesan dan bukan di dalamnya.",
       },
       {
         q: "Apakah Weverse Shop mengirim ke negara saya?",
@@ -4742,7 +4779,7 @@ export const translations: Translation[] = [
   {
     locale: "de",
     slug: "order-from-weverse-shop-overseas",
-    sourceChecked: "2026-10-20",
+    sourceChecked: "2026-10-21",
     translated: "2026-10-21",
     review: "machine-assisted",
     title: "Im Weverse Shop außerhalb Koreas bestellen",
@@ -4764,7 +4801,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Stellen Sie Ihre Währung ein, bevor Sie sich irgendetwas ansehen",
-        body: "Ihre Standardwährung entscheidet, welche Zahlungsarten Ihnen angeboten werden. Weverse nennt sie je Währung: USD bekommt PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay und Grab Pay. JPY bekommt dieselbe Liste ohne Grab Pay. Bei CNY entfällt PayPal. MXN hat nur PayPal und Apple Pay. KRW ergänzt koreanische Karten und die koreanischen Wallets — Toss, NAVER Pay, Kakao Pay, PAYCO.",
+        body: "Ihre Standardwährung entscheidet, welche Zahlungsarten Ihnen angeboten werden. Weverse nennt sie je Währung: USD bekommt PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay und Grab Pay. JPY bekommt dieselbe Liste ohne Grab Pay. Bei CNY entfällt PayPal. MXN hat nur PayPal und Apple Pay. KRW ergänzt koreanische Karten und die koreanischen Wallets — Toss, NAVER Pay, Kakao Pay, PAYCO. MXN ist die kürzeste der vier Listen außerhalb des koreanischen Won und die, um die herum zu planen sich lohnt: zwei Methoden, beide digital, keine Barzahlung. Ist keine von beiden eingerichtet, gibt es an der Kasse keinen dritten Knopf.",
         pitfall:
           "Außerhalb von KRW gibt es kein schlichtes „mit Visa bezahlen“. Ihre Karte läuft über PayPal oder Eximbay, und für Ihre Bank ist das eine andere Art von Transaktion als eine Belastung durch einen koreanischen Händler — und genau deshalb kann eine Karte, die anderswo funktioniert, hier trotzdem abgelehnt werden.",
         takes: "3 Minuten",
@@ -4817,6 +4854,10 @@ export const translations: Translation[] = [
       {
         q: "Werden bei der Ankunft Zollgebühren fällig?",
         a: "Weverse zahlt für infrage kommende Bestellungen Zölle und Steuern inzwischen an der Kasse vorab, was nach eigenen Angaben den Bedarf an zusätzlichen Zahlungen während der Abfertigung verringert. Es wird ausdrücklich gesagt, dass dies nicht für jedes Land oder jede Region gilt — es ist also eine begründete Erwartung und keine Garantie.",
+      },
+      {
+        q: "Ich bin in Mexiko. Welche Zahlungsmethoden bekomme ich tatsächlich?",
+        a: "Zwei. Der Zahlungshinweis von Weverse führt MXN als PayPal und Apple Pay — die kürzeste der vier Listen außerhalb des koreanischen Won, und beide digital. Es gibt keine Barzahlung und keinen dritten Knopf, richten Sie also eine der beiden vor einem Vorbestellfenster ein und nicht darin.",
       },
       {
         q: "Versendet der Weverse Shop in mein Land?",
@@ -6011,6 +6052,2974 @@ export const translations: Translation[] = [
       },
     ],
     labels: ID_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Tickets: die Seite, die interpark Global war",
+    summary:
+      "Die Seite, die früher interpark Global hieß. Sie wurde am 1. Dezember 2025 umbenannt, die meisten Anleitungen schicken Sie noch zum alten Namen, und hier steht der aktuelle Weg Schritt für Schritt.",
+    scope:
+      "Behandelt die nach außen gerichtete Plattform für koreanische Veranstaltungen. Die koreanischsprachige Seite NOL Ticket ist ein eigenes Produkt mit eigenem Kontosystem und strengerer Identitätsprüfung.",
+    intro: [
+      "Zwei Umbenennungen fanden kurz hintereinander statt, und fast keine englischsprachige Anleitung im Netz hat eine davon aufgenommen. Yanolja Core führte seine Marken im April 2025 unter dem Namen NOL zusammen — damals wurde aus Interpark Ticket NOL Ticket. Am 1. Dezember 2025 wurde dann aus dem nach außen gerichteten interpark Global NOL World.",
+      "Die praktische Folge: Anleitungen, die Sie zu „Interpark Global“ schicken, samt Screenshots der alten Oberfläche, beschreiben ein Produkt, das umbenannt und neu gestaltet wurde. Wer einer davon folgt, navigiert nach einer veralteten Karte.",
+      "Diese Seite verfolgt die aktuelle. Das Datum oben ist der Tag der letzten Prüfung.",
+    ],
+    steps: [
+      {
+        title: "Beginnen Sie auf der Seite für das Ausland, nicht auf der koreanischen",
+        body: "NOL World ist die Eingangstür für Fans im Ausland. Die koreanischsprachige Seite NOL Ticket führt die strengere inländische Identitätsprüfung durch und ist für Sie in der Regel nicht der richtige Weg, sofern Sie keine koreanischen Aufenthaltsdokumente besitzen. Es handelt sich um getrennte Konten — eine Registrierung auf der einen Seite verschafft Ihnen die andere nicht.",
+        pitfall:
+          "Suchergebnisse und alte Lesezeichen führen weiterhin zur früheren Markierung. Vergewissern Sie sich, dass Sie auf der Auslandsseite sind, bevor Sie Zeit in ein Konto investieren.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Registrieren Sie sich mit den Angaben genau wie im Pass",
+        body: "Verwenden Sie Ihren rechtlichen Namen und Ihr Geburtsdatum genau so, wie sie im Pass stehen. Hat die gewünschte Veranstaltung einen Fanclub-Vorverkauf, müssen diese Angaben außerdem mit Ihrem Mitgliedschaftseintrag übereinstimmen. Beheben Sie jede Abweichung, bevor das Vorverkaufsfenster öffnet, nicht während es offen ist.",
+        pitfall:
+          "Einen bereits verifizierten Namen später zu ändern ist ein Support-Vorgang und kein Schalter in den Einstellungen. Machen Sie es beim ersten Mal richtig.",
+        takes: "20 Minuten",
+      },
+      {
+        title: "Erledigen Sie die Verifizierung für Auslandskunden, bevor Sie sie brauchen",
+        body: "Die Verifizierung für Auslandskunden ist eine einmalige Handlung pro Konto, und NOL World gibt an, dass die verifizierten Angaben nicht erneut verwendet werden können. Verifizieren Sie auf dem Konto, mit dem Sie tatsächlich kaufen wollen — haben Sie mehrere, wandert die Verifizierung nicht zwischen ihnen. Ein Konto zu löschen hebt dessen Verifizierung zwar auf und gibt sie für ein anderes frei, doch ein wegen Missbrauchs eingeschränktes Konto lässt sich überhaupt nicht löschen. Für die Verifizierung selbst gilt keine Altersgrenze, auch wenn altersbeschränkte Veranstaltungen die Buchung dennoch ablehnen können. Die Bestätigung kommt per E-Mail, prüfen Sie also den Spam-Ordner, bevor Sie von einem Fehlschlag ausgehen.",
+        pitfall:
+          "Beim Bezahlschritt festzustellen, dass die Verifizierung noch aussteht, ist der klassische Weg, einen reservierten Platz zu verlieren.",
+        takes: "1-3 Tage inklusive Bearbeitung",
+      },
+      {
+        title: "Prüfen Sie die Bedingungen der einzelnen Veranstaltung auf ihrer Seite",
+        body: "Platzobergrenzen pro Konto, ob eine Mitgliedschaft nötig ist, welche Ausweisanforderungen am Veranstaltungsort gelten und ob die Veranstaltung überhaupt für Käufer aus dem Ausland offen ist, wird je Veranstaltung festgelegt. Lesen Sie die Veranstaltungsseite und die offizielle Ankündigung zusammen — wo sie sich widersprechen, gilt die offizielle Ankündigung zu Ihrer Veranstaltung.",
+        pitfall:
+          "Manche Veranstaltungen behalten bestimmte Platzblöcke oder Verkaufsrunden inländischen Käufern vor. Das gilt je Veranstaltung und ist aus keiner allgemeinen Anleitung zu erfahren.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Bringen Sie das richtige Dokument zur Abholung mit",
+        body: "Abgeholt wird an der Kasse des Veranstaltungsorts am Tag der Veranstaltung und nicht früher — NOL World gibt an, dass Tickets nicht an einem vorherigen Tag abgeholt werden können. Das Fenster öffnet eine Stunde vor Beginn, und Sie brauchen die Bestätigungsnummer zusammen mit einem Ausweis. Rechnen Sie mit einer Schlange an der Kasse selbst. Ein abgeholtes Ticket kann bei Verlust oder Diebstahl nicht neu ausgestellt werden.",
+        pitfall:
+          "Der Name auf der Buchung, der Name auf dem Dokument und der Name auf der Mitgliedschaft müssen alle übereinstimmen. Ein Spitzname irgendwo in dieser Kette ist ein Problem.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Ist NOL World dasselbe wie Interpark Global?",
+        a: "Es ist derselbe nach außen gerichtete Ticketdienst nach einer Umbenennung. Aus interpark Global wurde am 1. Dezember 2025 NOL World, nachdem Yanolja Core seine Marken im April 2025 unter dem Namen NOL zusammengeführt hatte, als aus Interpark Ticket NOL Ticket wurde.",
+      },
+      {
+        q: "Warum steht in meinem alten Lesezeichen noch Interpark?",
+        a: "Umbenennungen brauchen eine Weile, bis sie sich durch Suchergebnisse, Anleitungen Dritter und zwischengespeicherte Seiten durchgearbeitet haben. Navigieren Sie von der offiziellen Ankündigung zu Ihrer Veranstaltung aus und nicht von einem gespeicherten Link oder einem Blogbeitrag.",
+      },
+      {
+        q: "Ist NOL Global dasselbe? Und NOL Korea?",
+        a: "Das sind die Namen, nach denen Leute greifen, wenn sie sich halb an die Umbenennung erinnern, und sie gehören ausgesprochen, weil sie es sind, was getippt wird. Es gibt zwei Seiten: NOL World, die nach außen gerichtete, die bis zum 1. Dezember 2025 interpark Global hieß; und NOL Ticket, die koreanischsprachige, die bis April 2025 Interpark Ticket hieß. Wurden Sie zu „NOL Global“, „NOL Korea“ oder „NOL KR“ geschickt, ist die gesuchte Seite mit großer Wahrscheinlichkeit NOL World.",
+      },
+      {
+        q: "Kann ich mein NOL Ticket Konto auf NOL World benutzen?",
+        a: "Behandeln Sie sie als getrennte Konten mit getrennter Verifizierung. Gehen Sie nicht davon aus, dass eine Anmeldung oder eine abgeschlossene Verifizierung übertragen wird — prüfen Sie es auf der Seite, von der Sie tatsächlich kaufen werden.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Fanclub-Vorverkauf: wie Sie sich qualifizieren, bevor er schließt",
+    summary:
+      "Die Mitgliedschaft allein ist noch kein Zugang. Zwischen beiden steht ein Verifizierungsschritt, der seine eigene Frist hat, und ihn zu verpassen ist der häufigste Weg, einen Vorverkauf zu verlieren.",
+    scope:
+      "Behandelt die allgemeine Form der Qualifikation für Fanclub-Vorverkäufe koreanischer Veranstaltungen. Jede Tournee legt ihre eigenen Stufen, Fristen und Bedingungen in der offiziellen Ankündigung fest, die alles Allgemeine aufhebt.",
+    intro: [
+      "Der Zugang zum Vorverkauf ist eine Kette aus drei Gliedern, und Fans kennen meist nur das erste. Sie kaufen die Mitgliedschaft. Dann verknüpfen und verifizieren Sie diese Mitgliedschaft gegen das Ticketkonto. Erst danach erhalten Sie die Vorverkaufsberechtigung.",
+      "Jedes Glied hat seine eigene Frist, und die Verifizierungsfrist liegt regelmäßig früher, als Leute erwarten — in manchen Fällen Tage vor dem Vorverkauf selbst. Eine am Vorabend gekaufte Mitgliedschaft kann zu spät sein, obwohl sie aktiv ist.",
+      "Behandeln Sie die Ankündigung als Vorgabe und diese Seite als Prüfliste.",
+    ],
+    steps: [
+      {
+        title: "Lesen Sie die Berechtigungsklausel, nicht die Überschrift",
+        body: "Die Ankündigung gibt an, welches Mitgliedschaftsprodukt und welche Stufe qualifiziert und bis zu welchem Datum sie gekauft oder aktiv gewesen sein muss. Das sind zwei verschiedene Daten, und beide zählen. Schreiben Sie sie in Ihrer eigenen Zeitzone neben KST auf.",
+        pitfall:
+          "Eine Mitgliedschaft, die aktiv ist, aber nach der Frist gekauft wurde, qualifiziert auf manchen Tourneen nicht. „Ich habe die Mitgliedschaft“ ist nicht dasselbe wie „ich habe mich qualifiziert“.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Kaufen Sie die Mitgliedschaft deutlich vor der Frist",
+        body: "Kaufen Sie im offiziellen Store der jeweiligen Künstler. Bewahren Sie die Bestellbestätigung und die Mitgliedsnummer auf. Ist die Mitgliedschaft ein physisches Set mit digitalem Code, rechnen Sie Zeit für Versand und Freischaltung des Codes ein, die nicht sofort erfolgt. Seit dem 3. September 2026 bietet Weverse Shop außerdem Auto Payment für Mitgliedschaften, die es unterstützen: Die Verlängerung wird am letzten Tag der Laufzeit über eine hinterlegte Zahlungsmethode abgebucht, sodass eine Mitgliedschaft nicht unbemerkt in genau der Woche auslaufen kann, in der eine Tournee angekündigt wird. Es wird je Mitgliedschaftskategorie eingestellt — Global, Japan und USA werden getrennt verwaltet.",
+        pitfall:
+          "Weiterverkaufte oder geschenkte Mitgliedschaftscodes scheitern häufig an der Verifizierung, weil der eingetragene Name nicht zu Ihrem Ticketkonto passt. Auto Payment nimmt das Risiko des Auslaufens, nicht das Risiko beim Namen: Es verlängert genau das Konto, an dem es hängt.",
+        takes: "30 Minuten",
+      },
+      {
+        title: "Verknüpfen und verifizieren Sie die Mitgliedschaft auf der Ticketplattform",
+        body: "Das ist der Schritt, den Leute überspringen. Auf der Ticketplattform gibt es eine eigene Handlung, um Ihren Fanclub-Status zu verifizieren, und sie öffnet in einem Fenster — üblicherweise einige Tage vor dem Vorverkauf — und schließt vor ihm. Tun Sie es in der Stunde, in der es öffnet.",
+        pitfall:
+          "Die Verifizierung für einen koreanischsprachigen Verkauf und für einen globalen Verkauf kann bei derselben Veranstaltung getrennt behandelt werden. Eine abzuschließen gewährt nicht zwangsläufig die andere.",
+        takes: "20 Minuten, innerhalb des Fensters",
+      },
+      {
+        title: "Machen Sie die drei Namen identisch",
+        body: "Pass, Fanclub-Mitgliedschaft und Ticketkonto. Alle drei. Derselbe rechtliche Name, dasselbe Geburtsdatum, dieselbe Reihenfolge. Ist einer falsch, korrigieren Sie ihn vor dem Verifizierungsfenster und nicht danach.",
+        pitfall:
+          "Das ist die häufigste dokumentierte Ursache dafür, dass eine Vorverkaufsberechtigung nicht greift, und es ist unsichtbar bis zu dem Moment, in dem es zählt.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Bestätigen Sie, dass die Berechtigung angekommen ist",
+        body: "Suchen Sie nach dem Verifizieren nach einer ausdrücklichen Bestätigung — einem Abzeichen, einer Statuszeile, einer E-Mail. Finden Sie keine positive Bestätigung Ihrer Berechtigung, gehen Sie davon aus, dass Sie sie nicht haben, und wenden Sie sich an den Support, solange das Fenster noch offen ist.",
+        pitfall:
+          "Schweigen ist kein Erfolg. Ein abgeschicktes Formular ist keine erteilte Berechtigung.",
+        takes: "10 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Garantiert der Kauf einer Mitgliedschaft den Zugang zum Vorverkauf?",
+        a: "Nein. Auf den meisten Tourneen gibt es einen eigenen Verifizierungsschritt, der die Mitgliedschaft mit Ihrem Ticketkonto verknüpft, mit einem eigenen Fenster, das vor dem Vorverkauf öffnet und schließt. Die Mitgliedschaft ist eine Voraussetzung und nicht die Berechtigung selbst.",
+      },
+      {
+        q: "Kann ich die Mitgliedschaft einer anderen Person nutzen?",
+        a: "In der Praxis nein, denn die Verifizierung prüft den eingetragenen Namen und das Geburtsdatum gegen Ihr Ticketkonto und Ihr Ausweisdokument. Es funktioniert nicht und riskiert darüber hinaus die Stornierung der Buchung.",
+      },
+      {
+        q: "Wie viel früher öffnet der Vorverkauf gegenüber dem allgemeinen Verkauf?",
+        a: "Das hängt von der Tournee ab. Ein Tag oder mehr Vorlauf ist üblich, und die Frist für die Mitgliedschaft liegt noch früher. Die offizielle Ankündigung zu Ihrer Veranstaltung ist die einzige verlässliche Quelle.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Por qué tu pedido de Weverse Shop llega tarde, y cuándo todavía puedes cancelarlo",
+    summary:
+      "El botón de cancelar desaparece por un cambio de estado y no por un plazo, la Unión Europea eliminó su exención de 150 euros, Estados Unidos añadió un segundo régimen de inspección encima del de aranceles, y un periodo festivo coreano tiene una fecha límite medida al minuto.",
+    scope:
+      "Cubre lo que pasa después de hacer un pedido en Weverse Shop, a partir de los avisos de Weverse Shop: el plazo de cancelación, los cambios aduaneros que ha advertido para la UE y Estados Unidos, los retrasos por periodos festivos y logística, y a quién le estás comprando en realidad. Las fechas festivas son las de 2026 y el año que viene serán otras: la página de avisos es la versión viva. Hacer el pedido tiene su propia guía.",
+    intro: [
+      "Weverse Shop publica un flujo constante de avisos sobre envíos, y casi nadie los lee hasta que un paquete llega tarde. Ahí están las respuestas de verdad: qué cambio aduanero te afecta, qué periodo festivo se comió cuatro días, y el minuto exacto en que tu pedido dejó de poder cancelarse.",
+      "Esto es ese flujo, leído de una vez. Dos de los puntos de abajo son reglas realmente nuevas y no retrasos de temporada, y uno de ellos es el momento en que tu dinero deja de ser reembolsable.",
+      "Un detalle que importa si lees en español: Weverse Shop tiene tienda en español, pero su traducción no es completa. El aviso de Chuseok está en español y los dos avisos aduaneros — el de la UE y el de Estados Unidos — se sirven en inglés incluso en la tienda en español. Son precisamente los dos que cuestan dinero.",
+    ],
+    steps: [
+      {
+        title: "Entiende que el plazo de cancelación lo cierra un estado, no un reloj",
+        body: "Este es el dato que conviene saber antes de que algo vaya mal. Weverse Shop indica la ruta de cancelación como la aplicación Weverse, luego More, luego My Orders, luego Order Details, luego Cancel Order, y advierte que una vez que el estado de tu pedido cambia a Shipping Soon o In Transit ya no podrás cancelarlo. No hay ningún periodo de gracia declarado ni ninguna regla de tantas horas después de comprar. El plazo sigue abierto hasta que un almacén cambia un estado, y eso puede pasar antes de lo que esperas en un lanzamiento con mucha demanda.",
+        pitfall:
+          "Dejar para mañana la decisión de quedarte con un pedido anticipado impulsivo. El plazo no es una hora que puedas consultar: es un suceso que no controlas, y puede pasar mientras duermes.",
+        takes: "5 minutos, de inmediato",
+      },
+      {
+        title: "Si estás en la Unión Europea, la exención de 150 euros ya no existe",
+        body: "El aviso de Weverse Shop es concreto donde la cobertura general es vaga: desde el 1 de julio de 2026 la Unión Europea revisó sus normas para importaciones de bajo valor. Antes los pedidos por debajo de 150 euros estaban exentos de derechos de aduana, y esa exención se ha eliminado, así que los derechos se aplican ahora sea cual sea el importe de la compra. El detalle que más pesa es el criterio: Weverse dice que se aplica a los envíos que pasen la aduana local desde el 1 de julio de 2026, por fecha de despacho aduanero local y no por fecha del pedido. Un pedido hecho antes del cambio todavía puede quedar atrapado por él.",
+        pitfall:
+          "Dar por hecho que un pedido pequeño es demasiado barato para pagar aduana. Ya no hay suelo, y la fecha que lo decide no se ve desde la página del pedido.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Cuenta con que la aduana, o la empresa de mensajería, te pida dinero directamente",
+        body: "Weverse Shop dice que los pedidos a la UE pueden generar derechos de aduana durante el despacho local, que puedes recibir instrucciones de pago aparte de la aduana local o de la empresa de mensajería, y que no pagar esos derechos puede retrasar la entrega o impedirla. Es una experiencia distinta de un cargo en la caja: te llega un mensaje de una empresa con la que no tienes ninguna relación, pidiéndote dinero antes de que un paquete que ya pagaste se mueva. No es una estafa por defecto, pero es exactamente lo que imita una estafa, así que comprueba el número de seguimiento contra tu pedido en lugar de seguir el enlace del mensaje.",
+        pitfall:
+          "Ignorar una petición de pago de la aduana o de la mensajería como si fuera phishing y dejar el paquete parado. No pagar es una de las formas documentadas de que un pedido simplemente nunca llegue.",
+        takes: "—",
+      },
+      {
+        title: "Si estás en Estados Unidos, son dos cambios distintos y no uno",
+        body: "El cambio de aranceles se lleva toda la cobertura y no es lo único que frena los paquetes a Estados Unidos. Weverse Shop advierte por separado que desde el 8 de julio de 2026 la Comisión de Seguridad de Productos de Consumo de Estados Unidos (CPSC) aplica una política obligatoria de eFiling, lo que supone inspecciones aduaneras locales más estrictas sobre todas las mercancías importadas a Estados Unidos, y que el despacho tardará previsiblemente algunos días más que el plazo de entrega estándar. Es un régimen de declaración de seguridad del producto y no un arancel, así que un pedido a Estados Unidos puede ir lento por un motivo que no tiene nada que ver con cuántos derechos se deben.",
+        pitfall:
+          "Leer cada retraso estadounidense como el cambio del mínimo exento y esperar una factura de aduana que no va a llegar. De estos dos cambios, uno cuesta dinero y el otro cuesta días.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Trata un periodo festivo coreano como una fecha límite medida en minutos",
+        body: "Weverse Shop publica un calendario de fechas límite para cada periodo festivo coreano, y las horas son exactas. Para el Chuseok de 2026, el cierre de recepción para direcciones fuera de Corea fue el 23 de septiembre a las 11:00 a. m. (KST), con reanudación del servicio exprés el 28 de septiembre; para direcciones en Corea, el cierre de recepción de mensajería fue el 22 de septiembre a las 11:00 a. m. (KST), con reanudación ese mismo día. Los pedidos hechos después del cierre se despachan por orden a partir de la fecha de reanudación. Weverse añade dos advertencias: según la región, los productos despachados en la fecha límite pueden recibirse una vez terminado el periodo festivo, y el calendario viene de la empresa de mensajería y puede cambiar.",
+        pitfall:
+          "Leer esas fechas como si fueran de este año. Son las cifras del Chuseok de 2026, y lo que se mantiene es el patrón: un cierre a las 11:00 a. m. (KST) uno o dos días antes, y reanudación aproximadamente una semana después. Las fechas en sí hay que consultarlas cada vez.",
+        takes: "10 minutos antes de un pedido en periodo festivo",
+      },
+      {
+        title: "Si tu dirección está en China, se aplica un segundo calendario festivo",
+        body: "Weverse Shop publica avisos aparte para los periodos festivos chinos, que afectan a los pedidos con dirección de envío en China, porque las aduanas chinas cierran y el despacho se detiene. Para el Festival del Medio Otoño de 2026, del 25 al 27 de septiembre, y la Fiesta Nacional, del 1 al 7 de octubre, dijo que los pedidos pagados por completo hasta el 15 de septiembre a las 11:00 a. m. (KST) probablemente se entregarían durante la Fiesta Nacional, y que los pagados después empezarían a despacharse cuando terminara el periodo festivo, el 8 de octubre. Fíjate en que lo que cuenta es que el pago esté completo, no que el pedido esté hecho.",
+        pitfall:
+          "Un pedido anticipado cuyo pago se completa más tarde de lo que crees. Cuando la fecha límite se define por el pago completo, un pedido sin pagar es un pedido al otro lado de un hueco de tres semanas.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Separa una interrupción del transporte de un paquete perdido",
+        body: "Algunos retrasos no son aduana ni periodo festivo. En abril de 2026 Weverse Shop avisó de retrasos en las entregas en toda Europa y en algunos países de Oriente Medio, provocados por fluctuaciones en las rutas logísticas mundiales y en los horarios del transporte aéreo y marítimo, que afectaban a los pedidos despachados después del 1 de abril de 2026 y en tránsito internacional. La parte útil es lo que dice sobre el seguimiento: por los desvíos de ruta, las actualizaciones del seguimiento y las llegadas locales pueden tardar más de lo habitual, y el paquete sigue en tránsito. Un seguimiento callado durante una interrupción conocida es el síntoma previsible y no una prueba de pérdida.",
+        pitfall:
+          "Abrir una reclamación por paquete perdido porque el seguimiento no se mueve desde hace una semana. Mira primero la página de avisos por si hay una interrupción activa que cubra tu región: una reclamación por un paquete que solo va desviado te gasta el tiempo que necesitarías para una de verdad.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Comprueba si Weverse es realmente quien vende",
+        body: "Weverse Shop indica en sus propias páginas que algunos productos los ofrecen vendedores externos individuales, que en esos casos Weverse Company actúa únicamente como intermediario de comercio electrónico y no es parte de la transacción, y que no asume responsabilidad por la información del producto ni por las transacciones de esos vendedores. Eso cambia con quién tratas cuando algo va mal: en un artículo de un tercero, la contraparte es el vendedor y no Weverse. Conviene averiguarlo antes de necesitar reclamar y no mientras reclamas.",
+        pitfall:
+          "Suponer que todo lo de la tienda tiene el mismo respaldo porque todo pasa por la misma caja. La exención de responsabilidad del intermediario está publicada, y decide quién te debe una solución.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Lee los avisos tú mismo, porque esta página caducará más rápido que la mayoría",
+        body: "Todo lo anterior sale de la página de avisos de Weverse Shop, y esa página es la versión viva. Los cambios aduaneros son duraderos; los calendarios festivos, las interrupciones del transporte y los cierres de recepción no lo son: se vuelven a publicar en cada ocasión y quedan sustituidos sin que el aviso antiguo cambie. Antes de un pedido en periodo festivo o cuando un paquete llega tarde, lee la lista de avisos en lugar de fiarte de las fechas de cualquier guía, esta incluida. La fecha de arriba es cuándo lo hicimos nosotros por última vez.",
+        pitfall:
+          "Fiarte de una fecha límite sacada de una guía escrita el año pasado. Lo que se repite es la estructura y no las cifras.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Todavía puedo cancelar mi pedido?",
+        a: "Solo mientras el estado lo permita. La ruta de Weverse Shop es la aplicación Weverse, More, My Orders, Order Details, Cancel Order, y advierte que una vez que el estado cambia a Shipping Soon o In Transit la cancelación ya no es posible. No hay ningún periodo de gracia publicado, así que la respuesta depende del pedido y no del reloj.",
+      },
+      {
+        q: "Estoy en la Unión Europea y mi pedido tiene una factura de aduana. ¿Es correcto?",
+        a: "Probablemente sí. Weverse Shop dice que desde el 1 de julio de 2026 la UE eliminó la exención de derechos que antes cubría los pedidos por debajo de 150 euros, así que los derechos se aplican sea cual sea el importe, según los envíos que pasen la aduana local desde esa fecha. También advierte de que puedes recibir instrucciones de pago aparte de la aduana o de la mensajería, y de que no pagar puede retrasar la entrega o impedirla.",
+      },
+      {
+        q: "¿Por qué va lento mi pedido a Estados Unidos si no hay aduana que pagar?",
+        a: "Porque son dos cambios. Además de las normas de aranceles, Weverse Shop advierte de que desde el 8 de julio de 2026 la CPSC estadounidense aplica eFiling obligatorio, lo que supone inspecciones más estrictas sobre todas las mercancías importadas a Estados Unidos, con un despacho que previsiblemente tardará algunos días más. Ese cuesta tiempo en lugar de dinero.",
+      },
+      {
+        q: "Me ha llegado un mensaje pidiéndome pagar la aduana. ¿Es una estafa?",
+        a: "Puede ser legítimamente real: Weverse Shop dice que los clientes de la UE pueden recibir instrucciones de pago aparte de la aduana local o de la empresa de mensajería. También es exactamente lo que imita una estafa. Verifícalo comprobando el número de seguimiento contra tu propio pedido y entrando tú mismo en el sitio de la mensajería, en lugar de seguir el enlace del mensaje.",
+      },
+      {
+        q: "¿Cuál es la fecha límite para un pedido en periodo festivo coreano?",
+        a: "Weverse Shop publica una por periodo festivo, con la hora exacta. Para el Chuseok de 2026, el cierre de recepción para direcciones fuera de Corea fue el 23 de septiembre a las 11:00 a. m. (KST), con reanudación del servicio exprés el 28 de septiembre. Advierte de que el calendario viene de la mensajería y puede cambiar, y de que los productos despachados ese día pueden recibirse una vez terminado el periodo festivo. Consulta el calendario vigente en lugar de reutilizar estas fechas.",
+      },
+      {
+        q: "Mi seguimiento no se actualiza desde hace una semana. ¿Se ha perdido mi paquete?",
+        a: "Mira primero la página de avisos por si hay una interrupción que cubra tu región. Cuando Weverse Shop avisó de retrasos en Europa y Oriente Medio en abril de 2026, dijo que los desvíos de ruta hacen que las actualizaciones del seguimiento y las llegadas locales tarden más de lo habitual y que el paquete sigue en tránsito, así que un seguimiento quieto durante una interrupción conocida es el síntoma y no el problema.",
+      },
+      {
+        q: "Hay algo mal con mi artículo. ¿Trato con Weverse?",
+        a: "No siempre. Weverse Shop indica que algunos productos los venden vendedores externos individuales, que entonces Weverse Company actúa únicamente como intermediario y no es parte de la transacción, y que no asume responsabilidad por la información del producto ni por las transacciones de esos vendedores. Comprueba qué tipo de artículo compraste antes de decidir a quién acudir.",
+      },
+      {
+        q: "¿Me afecta el calendario festivo chino si no estoy en China?",
+        a: "Los avisos dicen que esos calendarios se aplican a los pedidos con dirección de envío en China, porque las aduanas chinas cierran durante los periodos festivos. Si tu dirección está en otro sitio, lo que hay que vigilar son los cierres de recepción de los periodos festivos coreanos y cualquier interrupción del transporte que esté activa.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Pedir en Weverse Shop desde fuera de Corea",
+    summary:
+      "En qué tienda estás, por qué el precio cambia al pagar, qué métodos de pago te toca de verdad según tu moneda, y los países a los que Corea no puede enviar.",
+    scope:
+      "Cubre los pedidos en Weverse Shop de productos físicos y álbumes enviados desde Corea. Las membresías y la venta de entradas se gestionan aparte y están en la guía de preventa. Las reglas de aquí salen de los avisos de Weverse Shop y cambian sin mucho preaviso.",
+    intro: [
+      "Casi todas las guías en inglés sobre Weverse Shop siguen diciendo que la tienda global acepta PayPal o Eximbay y nada más. Eso era verdad hace años. La lista de pagos es más larga ahora, la decide la moneda en la que está tu cuenta y no el país en el que vives, y desde febrero de 2026 el precio de la página del producto no es el precio que pagas.",
+      "Nada de eso está escondido: está en los avisos de la propia tienda, que es de donde sale todo lo de abajo. Lo que pasa es que nadie que escribe estas guías fue a leerlos.",
+    ],
+    steps: [
+      {
+        title: "Averigua en qué Weverse Shop estás en realidad",
+        body: "Weverse Shop no es una sola tienda. Hay una tienda GLOBAL y hay tiendas regionales, y llevan existencias distintas, abren ventanas de pedido anticipado distintas y envían desde sitios distintos. Un artículo que viste pedir a otra persona puede simplemente no existir en tu tienda. Comprueba en cuál estás antes de organizarte alrededor de una fecha de lanzamiento, porque un cierre de pedido anticipado en una tienda no te dice nada de las demás.",
+        pitfall:
+          "Un enlace que alguien comparte en una comunidad de fans abre su tienda, no la tuya. Si la página carga pero el artículo no entra en el carrito, normalmente estás en la tienda equivocada y no es que llegues tarde.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Configura tu moneda antes de mirar cualquier cosa",
+        body: "Tu moneda predeterminada decide qué métodos de pago te ofrecen. Weverse los indica por moneda: USD tiene PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay y Grab Pay. JPY tiene la misma lista sin Grab Pay. CNY se queda sin PayPal. MXN es solo PayPal y Apple Pay. KRW añade las tarjetas coreanas y los monederos coreanos: Toss, NAVER Pay, Kakao Pay, PAYCO. MXN es la más corta de las cuatro listas fuera del won coreano y la que conviene planificar: dos métodos, los dos digitales, sin opción en efectivo. Si no tienes ninguno de los dos preparado, en la caja no hay un tercer botón.",
+        pitfall:
+          "En las monedas distintas de KRW no existe un simple «pagar con Visa». Tu tarjeta pasa por PayPal o Eximbay, que para tu banco es una transacción de otro tipo que un cargo de un comercio coreano, y ese es el motivo de que una tarjeta que funciona en otros sitios pueda fallar aquí.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Cuenta con que el precio suba al pagar, y entiende por qué",
+        body: "Desde el 3 de febrero de 2026, Weverse calcula los impuestos a partir de tu dirección de envío y de facturación. Los pedidos que van a Corea muestran precios con impuestos incluidos durante todo el proceso. Los pedidos que van a cualquier otro sitio muestran el precio de la página del producto sin impuestos, y el impuesto del destino se añade al pagar, una vez que introduces una dirección. El número de la página del producto no es el número que pagas, y eso es deliberado y no un fallo.",
+        pitfall:
+          "Esto se parece exactamente a una estafa o a un error, y es el punto en el que la gente abandona el pedido. La subida es el impuesto que cobra tu propio país, recaudado por adelantado en lugar de por la aduana más tarde.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Rellena la dirección de facturación, no solo la de envío",
+        body: "El mismo cambio de febrero de 2026 añadió un campo de dirección de facturación al pagar, porque el cálculo del impuesto la necesita. Para algunos productos intangibles — artículos y contenidos digitales — la dirección de facturación puede ser obligatoria en lugar de opcional. Introdúcela con precisión: es de donde se calcula el tipo impositivo, y una dirección equivocada no es algo que puedas corregir después sin más.",
+        pitfall:
+          "Copiar la dirección de envío en el campo de facturación sin pensar está bien cuando coinciden y está mal cuando no. Si tu tarjeta está registrada en otra dirección, usa esa.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Comprueba el idioma de tu dirección según el destino",
+        body: "Weverse pide a los clientes internacionales que verifiquen en qué idioma necesita la dirección el país de destino antes de escribirla. La regla es más clara en el otro sentido: un pedido que se envía a Corea del Sur tiene que llevar la dirección en coreano, porque las empresas de mensajería pueden no aceptar una dirección en inglés o procesarla mal. Para todo lo demás, escribe la dirección como la espera el servicio postal de tu propio país.",
+        pitfall:
+          "Transliterar una dirección coreana al alfabeto latino es la causa más frecuente de una entrega retrasada o fallida en pedidos que van a Corea.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Confirma que Corea puede enviarte algo",
+        body: "El envío desde Corea del Sur no está disponible para una lista de países y regiones que Weverse mantiene y actualiza. En la revisión del 15 de julio de 2026 incluye Myanmar, la República Democrática del Congo, Irak, Irán, Líbano, Malí, Rusia, Andorra, Ucrania, Bielorrusia, Afganistán, las Antillas Neerlandesas, Israel y Turquía. La lista se mueve, así que consulta el aviso y no esta página.",
+        pitfall:
+          "La lista se describe como una interrupción temporal y no como una política, lo que significa que un país puede salir de ella igual que entrar. Ni un pedido anterior que salió bien ni el pedido de una amiga el año pasado deciden si puedes pedir hoy.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Pide dentro de la ventana de pedido anticipado si los extras te importan",
+        body: "Los beneficios del pedido anticipado — los pósteres, las photocards y los extras de primera edición, que suelen ser el motivo de comprar en la tienda oficial y no en otro sitio más barato — están ligados a la ventana de pedido anticipado y no al álbum. Una vez que la ventana cierra, el mismo álbum se envía sin ellos. Si los extras son el objetivo, lo que hay que planificar es la fecha límite y no la fecha de lanzamiento.",
+        pitfall:
+          "Las ventanas de pedido anticipado cierran a una hora coreana, que es la tarde anterior o la madrugada en casi toda América Latina.",
+        takes: "Antes del cierre",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Puedo pagar con Visa o Mastercard en Weverse Shop?",
+        a: "No como opción directa de tarjeta fuera de la configuración en moneda coreana. En USD, JPY, CNY y MXN la tarjeta pasa por PayPal o Eximbay. Eso sigue llegando a tu tarjeta, pero tu banco ve un tipo de transacción distinto, así que vale la pena activar los pagos internacionales con antelación.",
+      },
+      {
+        q: "¿Por qué subió el precio cuando puse mi dirección?",
+        a: "Desde el 3 de febrero de 2026 los precios fuera de Corea se muestran en la página del producto sin impuestos, y el impuesto de tu destino se añade al pagar. Es el impuesto que cobra tu propio país, recaudado en el momento de la compra y no en la entrega.",
+      },
+      {
+        q: "¿Me van a cobrar aduana cuando llegue?",
+        a: "Weverse ahora prepaga derechos e impuestos al pagar en los pedidos a los que corresponde, lo que según dice reduce la necesidad de un pago adicional durante el despacho. Indica que esto no se aplica a todos los países ni regiones, así que es una expectativa razonable y no una garantía.",
+      },
+      {
+        q: "Estoy en México. ¿Qué métodos de pago me tocan en realidad?",
+        a: "Dos. El aviso de pagos de Weverse indica para MXN PayPal y Apple Pay — la más corta de las cuatro listas fuera del won coreano, y las dos digitales. No hay opción en efectivo ni un tercer botón, así que prepara uno de los dos antes de una ventana de pedido anticipado y no dentro de ella.",
+      },
+      {
+        q: "¿Weverse Shop envía a mi país?",
+        a: "Normalmente sí, pero hay una lista mantenida de países y regiones que de momento no pueden recibir envíos desde Corea del Sur. Consulta ese aviso para ver la lista vigente antes de pedir: se revisa cuando cambian las condiciones.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "K-Pop-Konzerttickets von außerhalb Koreas kaufen",
+    summary:
+      "Das ganze Bild, bevor Sie anfangen: auf welcher Plattform Ihre Veranstaltung liegt, welche Identitätsprüfung dort läuft, und was bereitliegen muss, bevor der Verkauf öffnet.",
+    scope:
+      "Behandelt Veranstaltungen in Südkorea und die Ticketplattformen, die koreanische Agenturen nutzen. Tourtermine im Ausland werden von örtlichen Veranstaltern verkauft und getrennt behandelt — die Regeln unten gelten für sie nicht.",
+    intro: [
+      "Fast jede Anleitung, die zu dieser Frage weit oben steht, wurde vor Dezember 2025 geschrieben und schickt Sie auf eine Seite, die es unter diesem Namen nicht mehr gibt. Das ist der Hauptgrund, warum es diese Seite gibt.",
+      "Es gibt keine eine K-Pop-Ticketseite. Die Plattform wird je Tournee von Agentur und Veranstalter gewählt und in der offiziellen Ankündigung zu dieser Veranstaltung genannt. Alles Weitere — welche Identitätsprüfung Sie erwartet, ob eine ausländische Karte funktioniert, wie früh der Vorverkauf öffnet — folgt aus dieser einen Tatsache.",
+      "Die Reihenfolge lautet also: zuerst die offizielle Ankündigung finden, dann die Plattform bestimmen, dann sich auf die konkreten Anforderungen dieser Plattform vorbereiten. Andersherum landet man mit einem verifizierten Konto auf der falschen Seite, eine Stunde vor dem Verkauf.",
+    ],
+    steps: [
+      {
+        title: "Finden Sie die offizielle Ankündigung, nicht den Repost eines Fans",
+        body: "Gehen Sie auf die offiziellen Kanäle der Künstler — die Seite der Agentur, die Weverse-Community der Künstler und ihre offiziellen Konten auf X und Instagram. Die Ankündigung nennt die Ticketplattform, die Zeiten für Vorverkauf und allgemeinen Verkauf in KST, die für den Vorverkauf nötige Mitgliedschaftsstufe sowie etwaige Bedingungen zu Wohnsitz oder Verifizierung. Machen Sie einen Screenshot davon. Alles Weitere hängt an diesem einen Dokument.",
+        pitfall:
+          "Fan-Konten fassen zusammen und formulieren um, und sie liegen oft genug bei der Plattform falsch, um Sie den Verkauf zu kosten. Außerdem aktualisieren sie selten, wenn sich ein Termin verschiebt.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Bestimmen Sie Ihre Plattform — und schließen Sie nicht vom Label darauf",
+        body: "Künstler von HYBE laufen in der Regel über das eigene Ticketing von Weverse. Andere koreanische Tourneen nutzen häufig NOL Ticket (die koreanischsprachige Seite) oder NOL World (das Gegenstück für das Ausland), YES24 oder Melon Ticket. Das ist allerdings eine Tendenz und keine Regel: Agenturen wechseln zwischen Tourneen die Plattform, und eine einzelne Tournee kann den koreanischen und den globalen Verkauf auf zwei verschiedene Seiten aufteilen. Lesen Sie die Ankündigung.",
+        pitfall:
+          "Die Zuordnung als feststehend zu behandeln — „HYBE heißt Weverse, SM heißt YES24“ — ist der häufigste Fehler in bestehenden Anleitungen. Er trifft oft genug nicht zu, um ins Gewicht zu fallen.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Klären Sie, welche Identitätsprüfung Sie erwartet",
+        body: "Koreanischsprachige Ticketseiten prüfen die Identität in der Regel gegen eine koreanische Mobilfunknummer, für die man praktisch ein koreanisches Aufenthaltsdokument braucht. Haben Sie keines, ist die koreanischsprachige Seite nicht Ihr Weg. Die nach außen gerichteten Seiten existieren genau für diesen Fall und prüfen auf anderem Weg — üblicherweise anhand von Passdaten, die zu Ihrem Konto passen müssen. Entscheiden Sie jetzt, welche Seite Sie nutzen, denn das nötige Konto liegt auf dieser Seite.",
+        pitfall:
+          "Die koreanischsprachige Seite erzwingen zu wollen ist verlorene Mühe, und bei Konstruktionen, die für die Verifizierung die Identität einer anderen Person borgen, helfen wir nicht — sie setzen Ihr Ticket und Ihr Konto aufs Spiel.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Legen Sie das Konto mit exakt den Passdaten an",
+        body: "Tragen Sie Ihren rechtlichen Namen so ein, wie er in der maschinenlesbaren Zone Ihres Passes steht, und Ihr Geburtsdatum in dem Format, das die Seite erwartet. Verlangt die Veranstaltung für den Vorverkauf eine Fanclub-Mitgliedschaft, müssen Name und Geburtsdatum auf der Mitgliedschaft und auf dem Ticketkonto gleich sein. Abweichungen sind eine dokumentierte Ursache für stornierte Bestellungen am Einlass oder während der Verifizierung.",
+        pitfall:
+          "Zweitnamen, Doppelnamen und die Reihenfolge der Namen sind die Stellen, an denen das bricht. Eine Mitgliedschaft auf „Maria Santos“ und ein Pass auf „Maria Elena Santos Cruz“ ist eine Abweichung.",
+        takes: "20 Minuten",
+      },
+      {
+        title: "Prüfen Sie Ihr Zahlungsmittel Tage vorher, nicht am Tag selbst",
+        body: "Im Ausland ausgestellte Karten werden häufig akzeptiert, oft aber erst, nachdem Ihr Konto als Auslandskunde verifiziert wurde. Unabhängig davon kann Ihre Bank eine erstmalige Belastung durch einen koreanischen Händler blockieren, und Abfragen nach 3-D Secure können im In-App-Browser scheitern. Rufen Sie Ihre Bank an, schalten Sie internationale Zahlungen frei, und führen Sie, wenn die Plattform es zulässt, vorher einen kleinen unabhängigen Kauf durch.",
+        pitfall:
+          "Eine Karte, die im Bezahlschritt abgelehnt wird, gibt Ihren Platz binnen Minuten zurück in den Pool. Das ist der teuerste Fehlschlag im ganzen Ablauf und vollständig vermeidbar.",
+        takes: "1-3 Tage Vorlauf",
+      },
+      {
+        title: "Richten Sie sich für den Verkauf selbst ein",
+        body: "Melden Sie sich an und schließen Sie jeden Verifizierungsschritt mindestens einen Tag vorher ab. Am Tag selbst sind Sie deutlich vor der Öffnungszeit eingeloggt, mit der offiziellen KST-Zeit als Bezug und nicht mit der Uhr Ihres Geräts. Entscheiden Sie Ihre Platzwünsche vorher — die meisten Warteschlangensysteme geben Ihnen ein kurzes Fenster zum Auswählen und Bezahlen, bevor sie Ihre Reservierung freigeben.",
+        pitfall:
+          "Ein frisches Inkognito-Fenster „zur Sicherheit“ zu öffnen bedeutet, sich innerhalb der Warteschlange neu anzumelden und neu zu verifizieren. Tun Sie das nicht.",
+        takes: "30 Minuten vor Öffnung",
+      },
+      {
+        title: "Kennen Sie die Regeln zum Weiterverkauf, bevor Sie ihn erwägen",
+        body: "Südkorea hat seine Regeln zum Ticketweiterverkauf mit einer Novelle des Aufführungsgesetzes verschärft, die am 28. August 2026 in Kraft trat — im Januar geändert, im Februar verkündet, seit Ende August in Kraft. Berichte über die Änderung beschreiben ein Verbot des gewerbsmäßigen oder gewohnheitsmäßigen Weiterverkaufs über dem Kaufpreis, das auch den Kauf in Weiterverkaufsabsicht erfasst und nicht mehr auf Käufe mit Automatisierung beschränkt ist. Berichtete Sanktionen reichen bis zum Fünfzigfachen des Verkaufswerts als Geldbuße sowie zur Einziehung der Erlöse. Behandeln Sie den Weiterverkauf über Nennwert bei koreanischen Veranstaltungen als ausgeschlossen und nutzen Sie die offizielle Weiterverkaufs- oder Übertragungsfunktion der Plattform, sofern die Veranstaltung eine anbietet.",
+        pitfall:
+          "Das ist neues Recht, erst seit August 2026 in Kraft, und die Schwelle für „gewohnheitsmäßig“ wird in der Praxis noch bestimmt. Dass ein Angebot auf einem internationalen Weiterverkaufsmarktplatz existiert, sagt nichts darüber, ob es für Sie sicher ist, dort zu kaufen oder zu verkaufen.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Wenn meine Mitgliedschaft vor dem Vorverkauf abläuft, kann ich sie einfach rechtzeitig verlängern?",
+        a: "Nur wenn die Verlängerung vor der Frist für die Berechtigung greift, und diese Frist liegt meist früher als der Vorverkauf selbst. Auto Payment im Weverse Shop, seit dem 3. September 2026 für unterstützte Mitgliedschaften verfügbar, bucht am letzten Tag der Laufzeit über eine hinterlegte Zahlungsmethode ab und schließt die Lücke ganz. Richten Sie es ein, bevor eine Tournee angekündigt wird, und nicht danach.",
+      },
+      {
+        q: "Brauche ich eine koreanische Telefonnummer, um K-Pop-Konzerttickets zu kaufen?",
+        a: "Für die koreanischsprachigen Ticketseiten hängt die Identitätsprüfung in der Regel an einer koreanischen Mobilfunknummer, und für eine solche braucht man normalerweise koreanische Aufenthaltsdokumente. Für die nach außen gerichteten Seiten in der Regel nicht — sie prüfen Auslandskunden auf anderem Weg, üblicherweise über Passdaten. Was für Sie gilt, hängt davon ab, über welche Plattform Ihre Veranstaltung verkauft wird.",
+      },
+      {
+        q: "Kann ich eine ausländische Kreditkarte verwenden?",
+        a: "Auf den nach außen gerichteten Plattformen meist ja, und oft erst, nachdem Ihr Konto als Auslandskunde verifiziert ist. Rechnen Sie damit, dass Ihre eigene Bank die andere Hälfte des Problems ist: Schalten Sie internationale Zahlungen vorab frei und seien Sie auf eine Abfrage nach 3-D Secure gefasst.",
+      },
+      {
+        q: "Wie früh öffnet der Fanclub-Vorverkauf?",
+        a: "Das ist je Veranstaltung verschieden, und die offizielle Ankündigung ist die einzige verlässliche Antwort. Vorverkaufsfenster liegen häufig einen Tag oder mehr vor dem allgemeinen Verkauf, und die Mitgliedschaft muss meist vor einer noch früheren Frist aktiv sein. Schließen Sie nicht von einer früheren Tournee auf den Zeitplan.",
+      },
+      {
+        q: "Sind die koreanische und die globale Seite dieselbe Warteschlange?",
+        a: "Nicht zwangsläufig. Kontingente, Verifizierung und die Anerkennung der Fanclub-Mitgliedschaft können zwischen einem koreanischsprachigen und einem globalen Verkauf derselben Veranstaltung getrennt behandelt werden. Eine auf der einen Seite verifizierte Mitgliedschaft wird auf der anderen nicht automatisch anerkannt, prüfen Sie also in der Ankündigung, was für Sie gilt.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Verified Member: die eKYC-Prüfung aus dem Ausland bestehen",
+    summary:
+      "Manche Veranstaltungen lassen Sie überhaupt nicht buchen, bevor Ihr Pass verifiziert ist. Die Prüfung ist eine Live-Aufnahme von Pass und Gesicht, sie lässt sich nicht beiläufig wiederholen, und die eine Anweisung von NOL World zum Zeitpunkt ist die, die die meisten übergehen.",
+    scope:
+      "Behandelt die Identitätsprüfung Verified Member Only auf NOL World, so wie NOL World sie dokumentiert: wann sie gilt, was die Aufnahme braucht, was mit dem gespeicherten Namen geschieht, und was sie zurücksetzt oder einschränkt. Inhaberinnen und Inhaber koreanischer Pässe werden stattdessen auf NOL Ticket verwiesen, eine andere Prüfung auf einer anderen Seite. Nichts hier ist ein Weg um eine Verifizierung herum.",
+    intro: [
+      "Eine Veranstaltung mit Verified Member Only ist eine, die Sie überhaupt nicht buchen können, bevor Ihre Identität verifiziert ist. Keine Warnung an der Kasse — die Reservierung ist für ein nicht verifiziertes Konto schlicht nicht verfügbar. Fans erfahren das in dem Moment, in dem die Buchung öffnet, und das ist der denkbar schlechteste, denn die Verifizierung ist eine Live-Aufnahme Ihres Passes und Ihres Gesichts und dauert, so lange sie dauert.",
+      "NOL World erklärt den Dienst als Weg, den Zugang für unbefugte Zwecke wie den Ticketweiterverkauf einzuschränken. Das sollte man wörtlich nehmen: Die Prüfung existiert, um eine Person an ein Konto zu binden, und fast jede Regel unten folgt daraus.",
+    ],
+    steps: [
+      {
+        title: "Prüfen Sie, ob Ihre Veranstaltung sie braucht und ob Sie auf der richtigen Seite sind",
+        body: "Verified Member Only wird je Produkt gesetzt und nicht je Konto — NOL World sagt, dass nur Mitglieder, die die Identitätsprüfung auf der Produktseite abgeschlossen haben, Reservierungen vornehmen können. Die erste Frage ist also, ob Ihre Veranstaltung die Kennzeichnung überhaupt trägt. Die zweite ist, ob Sie auf NOL World sein sollten: NOL World verweist Inhaberinnen und Inhaber koreanischer Pässe stattdessen auf die Seite NOL Ticket, die eine völlig andere Prüfung durchführt.",
+        pitfall:
+          "Anzunehmen, die Identitätsprüfung sei eine einmalige Pflicht, zu der die Seite Sie schon auffordern wird. Bei einer Veranstaltung mit Verified Member Only gibt es keine Aufforderung — die Buchung ist einfach nicht da.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Erledigen Sie es ein bis zwei Tage vor Öffnung der Buchung",
+        body: "Das ist NOL Worlds eigene Anweisung und die nützlichste Tatsache auf dieser Seite: Schließen Sie die Verifizierung mindestens ein bis zwei Tage im Voraus ab, denn ein Versuch kurz vor der Ticketöffnung kann durch hohes Aufkommen Schwierigkeiten machen. Ist sie einmal erledigt, können Sie jede Veranstaltung mit Verified Member Only buchen, ohne erneut zu verifizieren. Der Preis für früh ist ein Abend. Der Preis für spät ist die Veranstaltung.",
+        pitfall:
+          "Die Aufnahme in den zehn Minuten vor einem Vorverkauf zu beginnen. Eine Verifizierung, die am Andrang scheitert, lässt sich nicht beschleunigen, und die Warteschlange wartet nicht.",
+        takes: "30 Minuten, zwei Tage vorher",
+      },
+      {
+        title: "Verifizieren Sie das Konto, mit dem Sie tatsächlich kaufen werden",
+        body: "Die Verifizierung ist einmalig pro Konto, und NOL World gibt an, dass die verifizierten Angaben nicht erneut verwendet werden können — ein Pass verifiziert ein Konto. Haben Sie mehrere Konten, ist jetzt der Moment, zu entscheiden, welches das echte ist, denn die Verifizierung wandert danach nicht mehr. NOL World ergänzt, dass das Löschen eines Kontos dessen verifizierte Angaben entfernt und für ein anderes freigibt, dass aber ein wegen Missbrauchs eingeschränktes Konto überhaupt nicht gelöscht werden kann.",
+        pitfall:
+          "Auf dem Konto zu verifizieren, in dem Sie zufällig angemeldet waren, und dann auf dem anderen zu kaufen. Das zweite Konto ist nicht verifiziert, und die Veranstaltung ist Verified Member Only.",
+        takes: "5 Minuten Entscheidung",
+      },
+      {
+        title: "Halten Sie den Originalpass bereit, gültig und nicht abgelaufen",
+        body: "Akzeptiert werden nur gültige Pässe, und NOL World ist ausdrücklich: Fotos oder Kopien nicht. Kein ausgedruckter Scan, kein Screenshot, kein Foto der Seite auf einem anderen Bildschirm. Ist Ihr Pass abgelaufen, müssen Sie ihn erneuern, bevor Sie verifizieren können — für Inhaberinnen und Inhaber eines nicht koreanischen Passes gibt es auf NOL World keinen alternativen Dokumentenweg.",
+        pitfall:
+          "Zum Passfoto zu greifen, das ohnehin schon in der Fotogalerie liegt, weil der echte Pass im Hotelsafe ist. Dieser Versuch wird als Versuch mit einer Kopie erfasst.",
+        takes: "—",
+      },
+      {
+        title: "Schaffen Sie die Aufnahme im ersten Anlauf",
+        body: "NOL World veröffentlicht, woran die Aufnahme scheitert, und die Liste liest sich wie eine Liste dessen, was Menschen in Eile tun. Richten Sie Pass und Gesicht an den Hilfslinien auf dem Bildschirm aus. Halten Sie Blendungen und Spiegelungen sowohl von der Passseite als auch von Ihrem Gesicht fern. Ihr Gesicht muss zum Passfoto passen. Halten Sie das Gerät mindestens fünf Sekunden lang ruhig, während es aufnimmt. Und bei einem schwachen Gerät oder instabilem Netz können die Daten auch dann nicht korrekt gespeichert werden, wenn die Aufnahme gut aussah. Scheitert sie, nennt der Bildschirm den Grund — lesen Sie ihn, statt blind erneut zu versuchen.",
+        pitfall:
+          "Das Ganze einhändig, nachts, unter einer Deckenlampe zu machen, die sich in der Laminatfolie spiegelt. Licht von oben auf einer Passseite ist der häufigste Grund, warum eine Aufnahme nicht lesbar ist.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Prüfen Sie den Namen, der tatsächlich gespeichert wurde",
+        body: "Akzeptiert werden nur englische Namen. NOL World sagt, dass die Reservierung nicht fortgesetzt werden kann, wenn Ihr Passname nicht in englischer Schrift vorliegt oder Sonderzeichen enthält, und dass Sie zu einem Antrag auf Namenskorrektur weitergeleitet werden können — eine Einreichung, keine Einstellung. Der gespeicherte Name ist auf My Page sichtbar, und dort gehört er geprüft statt angenommen. Das zählt jetzt, weil Sie nach der Verifizierung Name, Geburtsdatum und E-Mail-Adresse überhaupt nicht mehr ändern können: Reservierungen sind nur noch mit den verifizierten Angaben möglich.",
+        pitfall:
+          "Den Namen ungeprüft zu lassen, weil die Verifizierung Erfolg gemeldet hat. Erfolgreich sein und die richtigen Zeichen speichern sind zwei verschiedene Dinge, und eines davon ist nicht mehr änderbar.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Verstehen Sie die Namensreihenfolge — und was am Einlass wirklich zählt",
+        body: "NOL World hat die gespeicherte Namensreihenfolge am 16. April 2025 geändert. Vor diesem Datum verifizierte Mitglieder führen Vorname + (zweiter Vorname) + Nachname; danach verifizierte Mitglieder führen Nachname + Vorname + (zweiter Vorname). NOL World sagt klar, dass Ticketprüfung und Einlass am Veranstaltungsort auch dann möglich sind, wenn die Reihenfolge von Ihrem Pass abweicht — die Prüfung vor Ort wird nur eingeschränkt, wenn der Name selbst vom Passnamen abweicht. Bei vor dem 16. April 2025 verifizierten Mitgliedern wird das neue Format angewendet, wenn sie nach Ablauf des Passes erneut verifizieren.",
+        pitfall:
+          "Einen Antrag auf Namenskorrektur zu stellen, weil die Reihenfolge falsch aussieht. NOL World sagt, die Reihenfolge ist nicht das Problem; ein abweichender Name ist es. Es geht um die Zeichen, nicht um die Abfolge.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Wissen Sie, was eine bereits bestandene Verifizierung aufheben kann",
+        body: "Eine abgeschlossene Verifizierung kann nachträglich aufgehoben werden. NOL World nennt zwei Ursachen: den Versuch einer Verifizierung mit einem gefälschten oder veränderten Ausweis — wozu es ausdrücklich auch ausgedruckte Kopien und Screenshots zählt — und das Ablaufen des zur Verifizierung verwendeten Passes. Wird Ihre aufgehoben, verifizieren Sie über das bestehende Konto erneut. NOL World warnt ausdrücklich, dass der Versuch mit einem neuen Konto zu wiederholten Systemfehlern führen kann, und dass eine betrügerisch erlangte Verifizierung Sie den Zugang zu den Buchungsdiensten kosten kann.",
+        pitfall:
+          "Ein frisches Konto anzulegen, um einer Zurücksetzung zu entkommen. Die Zurücksetzung folgte dem Dokument und nicht dem Konto, und das neue Konto erbt das Problem samt Verdacht.",
+        takes: "—",
+      },
+      {
+        title: "Wissen Sie, was die Plattform als Betrug zählt und was er kostet",
+        body: "Der Grund für die Strenge der Prüfung steht in der Anti-Betrugs-Richtlinie von NOL World, und die Folgen sind veröffentlicht. Die Verwendung gestohlener oder gefälschter Ausweise zur Verifizierung ist als betrügerische Nutzung gelistet. Ebenso das Buchen mehrerer Tickets über den normalen Gebrauch hinaus mit identischen oder ähnlichen persönlichen Angaben — dieselben Kontaktdaten, dieselbe Lieferanschrift oder dieselben Zahlungsinformationen über mehrere Konten hinweg. Die Sanktionen reichen von einer Buchungssperre von drei Monaten oder mehr bis zur dauerhaften Kontosperrung und der Stornierung jedes gebuchten Tickets. Der Veranstalter kann eigene hinzufügen, bis hin zum Ausschluss aus dem Fanclub. Es gibt einen Einspruch, und wo betrügerischer Handel klar bestätigt ist, gibt es ihn nicht.",
+        pitfall:
+          "Mehrere Familienkonten von einem Telefon, einer Adresse und einer Karte aus zu verifizieren, um die Chancen in einem Vorverkauf zu erhöhen. Genau dieses Muster steht auf der veröffentlichten Liste, und die genannte Sanktion erfasst jedes Ticket auf jedem dieser Konten.",
+        takes: "10 Minuten Lektüre",
+      },
+    ],
+    faq: [
+      {
+        q: "Was bedeutet Verified Member Only auf einer Veranstaltungsseite konkret?",
+        a: "Dass die Veranstaltung für nicht verifizierte Konten geschlossen ist. NOL World beschreibt es als Dienst, mit dem Mitglieder ihre Identität vor dem Kauf verifizieren können, und bei dem nur Mitglieder mit abgeschlossener Verifizierung auf der Produktseite reservieren können. Als Zweck nennt es die Einschränkung des Zugangs für unbefugte Zwecke wie den Ticketweiterverkauf. Halten Sie Pass und Smartphone bereit, die Prüfung braucht beides.",
+      },
+      {
+        q: "Ich habe einen koreanischen Pass. Kann ich einfach auf NOL World verifizieren?",
+        a: "NOL World verweist Inhaberinnen und Inhaber koreanischer Pässe stattdessen auf die Seite NOL Ticket. Das ist eine andere Seite mit einer anderen Identitätsprüfung — in der Regel koreanische Mobilfunk-Authentifizierung oder I-PIN — und einem eigenen Konto.",
+      },
+      {
+        q: "Ich bin koreanische Staatsangehörige im Ausland ohne koreanische Mobilfunknummer. Was dann?",
+        a: "NOL World veröffentlicht einen Dokumentenweg. Es verweist im Ausland lebende südkoreanische Staatsangehörige auf NOL Ticket, wo die Identität per Mobilfunk-Authentifizierung oder I-PIN geprüft werden kann; liegt keine koreanische Registriernummer vor und ist die Mobilfunk-Authentifizierung nicht verfügbar, akzeptiert es Nachweise über den Status als Auslandskoreanerin oder Auslandskoreaner — eine Bescheinigung über die Registrierung als Auslandskoreaner zusammen mit einem südkoreanischen Pass, eingereicht über das Anfrageformular des Kundendienstes mit Ihrer Konto-ID. Es sagt, die Bescheinigung lasse sich online über die Overseas Koreans Agency beschaffen, und dass eine Foreign Registration Card als Ersatz akzeptiert werden kann, wo die Bescheinigung schwer zu bekommen ist. Es warnt außerdem, dass gefälschte Unterlagen eine sofortige Einschränkung bedeuten.",
+      },
+      {
+        q: "Gibt es ein Mindestalter für die Identitätsprüfung?",
+        a: "NOL World sagt, für die Verifizierung selbst gebe es keine Altersgrenze, dass Sie aber Produkte mit Altersbeschränkungen dennoch nicht buchen oder besuchen können. Verifiziert zu sein ist nicht dasselbe, wie für eine bestimmte Veranstaltung berechtigt zu sein.",
+      },
+      {
+        q: "Mein Name auf My Page steht in einer anderen Reihenfolge als im Pass. Werde ich abgewiesen?",
+        a: "NOL World sagt nein. Es hat die gespeicherte Reihenfolge am 16. April 2025 geändert und gibt an, dass Ticketprüfung und Einlass auch bei abweichender Reihenfolge möglich sind. Die Prüfung vor Ort wird nur eingeschränkt, wenn der Name selbst abweicht — prüfen Sie also Schreibweise und Zeichen und nicht die Abfolge.",
+      },
+      {
+        q: "Mein Pass ist nach der Verifizierung abgelaufen. Muss ich etwas tun?",
+        a: "Ja. NOL World führt den Ablauf des Passes als Ursache dafür auf, dass eine abgeschlossene Verifizierung aufgehoben wird, eine Erneuerung bedeutet also erneutes Verifizieren — auf dem bestehenden Konto und nicht auf einem neuen. Wurden Sie vor dem 16. April 2025 verifiziert, wird dabei auch die neue Namensreihenfolge auf Ihren Datensatz angewendet.",
+      },
+      {
+        q: "Kann ich mit dem Pass eines Familienmitglieds verifizieren, wenn meiner abgelaufen ist?",
+        a: "Nein, und das ist die eine Frage mit einer veröffentlichten Folge statt einer Meinung. NOL World führt die Verwendung gestohlener oder gefälschter Ausweise zur Verifizierung unter den Handlungen auf, die es als betrügerische Nutzung behandelt, und die genannten Sanktionen reichen bis zur dauerhaften Kontosperrung und der Stornierung jedes gebuchten Tickets. Es sagt außerdem, dass am Veranstaltungsort eine Identitätsprüfung erfolgen kann, und bittet Sie, auf Ihren eigenen Namen und Ihr eigenes Konto zu buchen und einen gültigen Lichtbildausweis mitzubringen. Ein Ticket, das die Tür nicht übersteht, ist kein Ticket.",
+      },
+      {
+        q: "Mein Konto wurde eingeschränkt. Gibt es einen Einspruch?",
+        a: "NOL World veröffentlicht einen. Es sagt, Nutzerinnen und Nutzern werde in der Regel eine Frist von mindestens einem Tag zur Stellungnahme eingeräumt, und ein Einspruch solle eine ausführliche Darstellung mit der ID des eingeschränkten Kontos, dem vollständigen Namen und den Kontaktdaten sein, ohne vorgeschriebenes Format oder Muster, eingereicht über das Anfrageformular des Kundendienstes. Die Prüfung dauert etwa 10 bis 15 Tage und das Ergebnis kommt per E-Mail. Es nennt auch die Grenzen: Wird die Frist versäumt oder der Verdacht nicht ausgeräumt, werden Buchungen zwangsstorniert, und wo betrügerischer Handel klar bestätigt ist, können Tickets ohne jeden Einspruch storniert werden.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "YES24 Global: die Regeln, die nicht auf der englischen Seite stehen",
+    summary:
+      "Ihr vorhandenes YES24-Konto funktioniert nicht. PayPal erscheint nur, wenn die Veranstaltung weit genug entfernt ist. Zwei Kartenarten werden rundheraus abgelehnt, und der Veranstaltungsort gleicht Ihren Pass mit dem Namen ab, mit dem Sie sich angemeldet haben.",
+    scope:
+      "Behandelt die englischsprachige Seite YES24 TICKET, die Käuferinnen und Käufer aus dem Ausland nutzen. Die koreanischsprachige YES24-Seite hat ein anderes Kontosystem und eine andere Identitätsprüfung. Bedingungen einzelner Veranstaltungen auf der Veranstaltungsseite gehen allem hier vor, und YES24 sagt das selbst.",
+    intro: [
+      "YES24 veröffentlicht seine Regeln für das Ausland in einem englischen Kaufleitfaden und einer FAQ, und fast nichts davon taucht in den Anleitungen auf, die dazu weit oben stehen. Sie sind konkret, sie sind ungewöhnlich, und mehrere davon beenden Ihre Buchung am Tag selbst, wenn Sie ihnen erstmals an der Kasse begegnen.",
+      "Alles Folgende stammt aus diesen beiden Seiten, gelesen am 20. Oktober 2026. Wo YES24 sich selbst widerspricht — und das tut es einmal, bei einer Gebühr — sagt diese Seite es, statt die bequeme Zahl zu wählen.",
+    ],
+    steps: [
+      {
+        title: "Melden Sie sich neu an, auch wenn Sie schon ein YES24-Konto haben",
+        body: "YES24 sagt es ausdrücklich: Bestehende YES24-Mitglieder, die die Seite Global YES24 TICKET nutzen wollen, müssen sich erneut anmelden. Es warnt außerdem, dass die globale Ticketseite etwas anderes ist als global.yes24.com, die Buchhandlung, und dass beide keine Mitgliedsdaten teilen. Nichtmitglieder können überhaupt nicht buchen, das ist also der erste Schritt und keine Formalität.",
+        pitfall:
+          "Drei YES24-Angebote mit ähnlichen Namen und ohne gemeinsamen Login. Das in einer Warteschlange zu entdecken heißt, es zu spät zu entdecken — das Konto muss ohnehin Tage früher existieren, wegen der Namensprüfung unten.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Tragen Sie den Namen genau so ein, wie Ihr Pass ihn führt",
+        body: "Das ist die eine Stelle, an der eine Plattform ausspricht, was sonst unausgesprochen bleibt. Aus der FAQ von YES24: Weicht der Name Ihres YES24-Kontos vom Namen in Ihrem Pass ab, können Sie Schwierigkeiten bekommen, das gebuchte Ticket am Veranstaltungsort abzuholen. An der Abendkasse hinterlegte Tickets können nur von der Ticketinhaberin oder dem Ticketinhaber abgeholt werden, und für die Abholung braucht es einen physischen gültigen Ausweis — einen Pass — zusammen mit dem Buchungsnachweis.",
+        pitfall:
+          "Ein weggelassener zweiter Vorname, eine vor Jahren gewählte Umschrift, eine Reihenfolge mit dem Vornamen zuerst. Der Veranstaltungsort vergleicht zwei Dokumente und beurteilt nicht, ob Sie es offensichtlich sind.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Prüfen Sie, ob PayPal für Ihre Veranstaltung überhaupt angeboten wird",
+        body: "PayPal gibt es auf YES24 Global nur, wenn zwischen Buchungsdatum und Veranstaltungsdatum mehr als 180 Tage liegen. Bei den meisten K-Pop-Konzerten, die ein bis zwei Monate vorher angekündigt werden, heißt das, dass PayPal schlicht keine Option ist und die Karte der einzige Weg. Außerdem fällt eine PayPal-Gebühr von 10 Cent an, die auch bei einer Stornierung nicht erstattet wird.",
+        pitfall:
+          "Mit PayPal zu planen, weil eine Anleitung sagte, es werde akzeptiert, und an der Kasse nur ein Kartenfeld vorzufinden. Die 180-Tage-Regel ist der Grund — kein Fehler, und nichts, was der Kundendienst aufheben kann.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wissen Sie vorher, welche Karten abgelehnt werden",
+        body: "Der Kaufleitfaden schließt außerhalb Koreas ausgestellte American-Express-Karten aus, und Karten von China UnionPay ganz. Alles andere läuft als Kartenzahlung durch — und YES24 gibt an, dass auf der globalen Seite eine Authentifizierung nach 3-D Secure erforderlich ist, die Karte muss dafür also bei Ihrer Bank freigeschaltet sein.",
+        pitfall:
+          "Eine American-Express-Karte, die auf jeder anderen Seite funktioniert, wird hier wegen des Ausstellungsorts abgelehnt und nicht wegen irgendetwas an der Karte. Dieser Fehlschlag sieht genauso aus wie eine Sperre der Bank, also verbringen Leute den Verkauf damit, ihre Bank wegen des falschen Problems anzurufen.",
+        takes: "10 Minuten, mit Ihrer Bank",
+      },
+      {
+        title: "Wählen Sie Abendkasse oder Auslandsversand bei der Buchung",
+        body: "Beides gibt es, aber der Auslandsversand gilt je Veranstaltung und nicht allgemein: YES24 sagt, die Verfügbarkeit hänge von der Aufführung ab und die Gebühr vom Zielort, und dass beides auf der Veranstaltungsseite steht. Die Versandart nachträglich zu ändern ist nur bis 20 Werktage vor der Veranstaltung möglich — vier Arbeitswochen, nicht vier Tage.",
+        pitfall:
+          "Zwanzig Werktage sind grob ein Kalendermonat. Wer zwei Wochen vorher bucht, behält die Art, die er in der Warteschlange gewählt hat.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Lesen Sie die Buchungs- und Stornouhr, die nicht das Veranstaltungsdatum ist",
+        body: "Die Buchung schließt um 17 Uhr am Vortag einer Veranstaltung von Dienstag bis Samstag, und um 11 Uhr am Samstag für eine Veranstaltung am Sonntag oder Montag. Die Stornierung läuft auf genau derselben Uhr, und danach gibt es keine Stornierung, Änderung oder Erstattung mehr. Innerhalb von 7 Tagen nach dem Kauf ist die Stornierung kostenlos; danach fällt je Ticket eine Gebühr an, die mit näher rückender Veranstaltung auf 10%, 20% und 30% des gezahlten Betrags steigt. Die Grenze liegt bei 10 Tickets pro Person auf einmal.",
+        pitfall:
+          "Bei der Buchungsgebühr widerspricht YES24 sich selbst: Die FAQ nennt in einer Zeile 2.000 KRW und kündigt in der nächsten die Änderung auf 3.000 KRW je Ticket ab dem 14. August 2023 an. Behandeln Sie 3.000 als aktuell. So oder so ist sie nur bis 23:59 Uhr am Kauftag erstattbar und nicht innerhalb der 7-Tage-Frist, die für das Ticket selbst gilt.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Bringen Sie Pass und Buchungsnachweis zum Veranstaltungsort",
+        body: "Die Abholung verlangt einen physischen gültigen Ausweis — YES24 nennt den Pass — zusammen mit dem Nachweis der Buchungsbestätigung. Der Kaufleitfaden sagt außerdem, Sie sollen die Kaufdaten ausdrucken und an der Kasse abgeben. Die Regelung der einzelnen Veranstaltung auf deren Seite geht dem vor, und YES24 sagt, die Veranstaltungsseite gewinne, lesen Sie sie also auch dann, wenn Sie an diesem Ort schon einmal abgeholt haben.",
+        pitfall:
+          "Ein Foto der Bestätigung auf dem Handy ist nicht das, was beschrieben wird. Drucken Sie sie aus, und tragen Sie den Pass bei sich, mit dem Sie sich registriert haben, und keinen anderen Ausweis.",
+        takes: "Am Veranstaltungsort",
+      },
+    ],
+    faq: [
+      {
+        q: "Kann ich mein vorhandenes YES24-Konto auf der englischen Seite nutzen?",
+        a: "Nein. YES24 sagt, bestehende Mitglieder müssten sich für die Seite Global YES24 TICKET erneut anmelden, und dass diese von global.yes24.com getrennt ist und keine Mitgliedsdaten teilt.",
+      },
+      {
+        q: "Warum fehlt PayPal an der Kasse?",
+        a: "PayPal wird nur angeboten, wenn zwischen Buchungsdatum und Veranstaltungsdatum mehr als 180 Tage liegen. Die meisten Konzertbuchungen liegen deutlich darunter, also ist die Karte der einzige Weg.",
+      },
+      {
+        q: "Welche Karten lehnt YES24 Global ab?",
+        a: "Außerhalb Südkoreas ausgestellte American-Express-Karten und Karten von China UnionPay. Andere Karten werden akzeptiert, müssen aber 3-D Secure bestehen, das die Seite verlangt.",
+      },
+      {
+        q: "Kann jemand anderes mein Ticket abholen?",
+        a: "Nein. An der Abendkasse hinterlegte Tickets können nur von der Ticketinhaberin oder dem Ticketinhaber abgeholt werden, mit einem physischen Pass und dem Buchungsnachweis — es sei denn, die einzelne Veranstaltung sagt auf ihrer eigenen Seite etwas anderes.",
+      },
+      {
+        q: "Wie lange dauert eine Erstattung?",
+        a: "Für Karten werden 3 bis 7 Tage angegeben, wobei die Regelung des Kartenunternehmens entscheidet, und bis zu 30 Tage. PayPal-Erstattungen gehen innerhalb von 5 Werktagen auf das PayPal-Guthaben zurück — zum Wechselkurs am Tag der Erstattung einschließlich des Umrechnungsaufschlags, sodass der zurückgezahlte Betrag geringer ausfallen kann als der gezahlte.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Die Warteschlange von NOL World, und was Ihren Platz darin zurücksetzt",
+    summary:
+      "Aktualisieren löscht Ihre Position. Ein zweites Gerät schließt Ihre erste Nummer. Plätze aktualisieren sich ohne Neuladen. Alles davon steht in der FAQ von NOL World, und alles davon widerspricht dem, was Menschen instinktiv tun.",
+    scope:
+      "Behandelt das Verhalten von Warteschlange, Sitzplan und Warteliste auf NOL World während eines Verkaufs. Registrierung und Verifizierung für Auslandskunden geschehen vor all dem und stehen in der NOL-World-Anleitung. Alles hier stammt aus der veröffentlichten FAQ von NOL World.",
+    intro: [
+      "Der Instinkt in einer Ticketwarteschlange ist, zu aktualisieren und einen zweiten Browser zu öffnen, falls der erste hängt. Auf NOL World kostet Sie beides genau das, was Sie zu schützen versuchen, und die Plattform sagt das in ihren eigenen Hilfeseiten.",
+      "Das ist der Teil eines Verkaufs, den keine Anleitung abdeckt, weil er sich von außen nicht erschließen lässt — man sieht ihn einmal, für neunzig Sekunden, in Panik.",
+    ],
+    steps: [
+      {
+        title: "Nicht aktualisieren. Aktualisieren setzt Ihre Position zurück",
+        body: "NOL World sagt es ausdrücklich: Die Warteschlange lässt sich nicht überspringen, und wenn Sie die Seite aktualisieren, wird Ihre Position in der Warteschlange zurückgesetzt. Nicht erneut geprüft, nicht erneut abgefragt — zurückgesetzt. Welche Nummer Sie auch hielten, sie geht ans Ende.",
+        pitfall:
+          "Eine Warteschlangenseite, die eingefroren aussieht, ist meistens einfach eine Warteschlangenseite. Die eine Handlung, die sich danach anfühlt, etwas zu tun, ist die eine Handlung, die das bereits abgesessene Warten zunichtemacht.",
+        takes: "Die ganze Warteschlange",
+      },
+      {
+        title: "Ein Konto bekommt eine Nummer, und ein zweiter Versuch tötet die erste",
+        body: "Pro Konto erhalten Sie nur eine Wartenummer. Versuchen Sie mehr — ein zweiter Browser, ein Telefon neben dem Laptop — schließt NOL World die zuerst erhaltene Nummer. Drücken Sie Reserve von einem anderen Gerät, während Sie bereits in der Schlange stehen, werden Sie gefragt, ob Sie die bestehende Warteschlange behalten oder eine neue beginnen wollen, und eine neue bedeutet, auf diesem Gerät wieder von vorn zu warten.",
+        pitfall:
+          "Ein Ersatzgerät zu öffnen ist die verbreitetste Ticketing-Taktik in Fan-Communities und hier strikt schlechter, als gar nichts zu tun. Die Abfrage, die erscheint, bietet Ihnen keine zweite Chance an; sie fragt, welche Sie wegwerfen wollen.",
+        takes: "0 Minuten, wenn Sie widerstehen",
+      },
+      {
+        title: "Eine Wartenummer ist kein Ticket",
+        body: "NOL World sagt, eine Position in der Warteschlange garantiere kein Ticket, weil die Verfügbarkeit begrenzt ist und Tickets der Reihe nach ausgegeben werden. Die Warteschlange entscheidet, wann Sie es versuchen dürfen, und nicht, ob bei Ihrer Ankunft noch etwas da ist. Die Warteschlange gilt für jedes auf NOL World buchbare Produkt und nicht nur für die stark nachgefragten.",
+        pitfall:
+          "Eine niedrige Wartenummer als Ergebnis zu lesen. Sie ist ein Platz in der Reihe, und der Bestand kann weg sein, bevor Sie dran sind.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Hören Sie auch beim Sitzplan auf zu aktualisieren — er aktualisiert sich selbst",
+        body: "Das Buchungssystem wurde so umgebaut, dass freie Plätze in Echtzeit und ohne Neuladen aktualisiert werden. Von anderen gehaltene Plätze verschwinden und stornierte Plätze kommen von selbst zurück. Sehen Sie „dieser Platz wurde bereits ausgewählt“, heißt das, dass eine andere Person fast im selben Moment denselben Platz gewählt hat — und nicht, dass Ihre Seite veraltet ist.",
+        pitfall:
+          "Den Sitzplan zu aktualisieren kostet dasselbe wie die Warteschlange zu aktualisieren. Die Gewohnheit von älteren Ticketseiten ist hier genau die falsche Gewohnheit.",
+        takes: "Während der Auswahl",
+      },
+      {
+        title: "Lesen Sie die Ausverkaufsquote als das, was sie misst",
+        body: "Wo eine Ausverkaufsquote gezeigt wird, erscheint sie erst, wenn 90% oder mehr aller Plätze bezahlt sind, und sie zählt bezahlte Tickets und nicht auswählbare. Zahlen zu Restplätzen werden womöglich gar nicht angezeigt: NOL World sagt, das entscheide der Veranstalter, und dass es bei stark nachgefragten Produkten eine Verzögerung zwischen Anzeige und tatsächlicher Verfügbarkeit gibt.",
+        pitfall:
+          "Einen Ausverkaufsprozentsatz als Live-Bestand zu behandeln. Es ist eine Zahl bezahlter Tickets mit einer Untergrenze von 90%, und der Abstand zur Wirklichkeit ist genau dann am größten, wenn er Ihnen am meisten bedeutet.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Kommt eine Benachrichtigung von der Warteliste, haben Sie sechs Stunden",
+        body: "Wird ein Platz von der Buchungswarteliste frei und die Zahlung nicht innerhalb von sechs Stunden nach der Benachrichtigung abgeschlossen, wird die Buchung automatisch storniert und erstattet, und die Gelegenheit geht an die nächste Person auf der Liste. Sechs Stunden klingen großzügig, bis man bedenkt, dass die Benachrichtigung zu koreanischen Geschäftszeiten eintrifft und die meisten Leserinnen und Leser dieser Seite einen Teil davon verschlafen.",
+        pitfall:
+          "Ein Sechs-Stunden-Fenster, das um 3 Uhr Ihrer Zeit öffnet, ist ein Zwei-Stunden-Fenster. Rechnen Sie die Zeit der Benachrichtigung so um, wie Sie die Verkaufszeit umgerechnet haben.",
+        takes: "Innerhalb von 6 Stunden",
+      },
+      {
+        title: "Wissen Sie, dass Sie den Platz danach nicht mehr ändern können",
+        body: "Ist die Reservierung abgeschlossen, sind Platzänderungen nicht möglich — der einzige Weg ist stornieren und neu buchen, was Sie der Stornogebühr der Veranstaltung aussetzt und dem Risiko, dass der Platz zwischendurch weg ist. Dasselbe gilt für Gutscheine: Ein Gutschein kann nach der Zahlung nicht mehr angewendet werden, und ihn zu nutzen bedeutet, denselben Platz zu stornieren und neu zu buchen, mit der Gebühr, die das mit sich bringt.",
+        pitfall:
+          "Einen Platz zu buchen, bei dem Sie unsicher sind, in der Absicht, das später zu richten. Es gibt kein Später.",
+        takes: "Bevor Sie bestätigen",
+      },
+    ],
+    faq: [
+      {
+        q: "Hilft Aktualisieren, schneller durch die Warteschlange von NOL World zu kommen?",
+        a: "Im Gegenteil. NOL World gibt an, dass das Aktualisieren der Seite Ihre Position in der Warteschlange zurücksetzt und dass die Warteschlange nicht übersprungen werden kann.",
+      },
+      {
+        q: "Kann ich gleichzeitig auf dem Handy und auf dem Laptop anstehen?",
+        a: "Nein. Ein Konto erhält eine Wartenummer, und der Versuch, mehr zu bekommen, schließt die erste. Drücken Sie auf einem zweiten Gerät Reserve, werden Sie gefragt, ob Sie die bestehende Warteschlange behalten oder auf dem neuen Gerät von vorn beginnen wollen.",
+      },
+      {
+        q: "Muss ich den Sitzplan aktualisieren, um neue Plätze zu sehen?",
+        a: "Nein. Plätze aktualisieren sich in Echtzeit — gehaltene Plätze verschwinden und stornierte kommen ohne Neuladen zurück. Aktualisieren kostet Sie dasselbe wie das Aktualisieren der Warteschlange.",
+      },
+      {
+        q: "Was bedeutet die Ausverkaufsquote tatsächlich?",
+        a: "Sie erscheint erst, wenn 90% oder mehr der Plätze bezahlt sind, und sie zählt bezahlte Tickets und nicht Plätze, die Sie auswählen könnten. Bei stark nachgefragten Veranstaltungen gibt es eine bekannte Verzögerung zwischen der Zahl und der echten Verfügbarkeit.",
+      },
+      {
+        q: "Wie lange habe ich nach einer Benachrichtigung von der Warteliste Zeit?",
+        a: "Sechs Stunden. Wird die Zahlung in dieser Zeit nicht abgeschlossen, wird die Buchung automatisch storniert und erstattet und der Platz geht an die nächste Person auf der Warteliste.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL facepass: wer Ihr Gesicht hält, und wofür es da ist",
+    summary:
+      "Einmal registrieren, und eine Kamera lässt Sie ohne Ticketprüfung ein. Das Gesicht liegt bei Toss und nicht bei NOL World, es lässt sich danach nicht mehr ändern, und eine Kündigung des Dienstes löscht das Foto und behält ein Jahr lang eine getrennte Kopie.",
+    scope:
+      "Behandelt, was NOL World zu NOL facepass veröffentlicht, einschließlich der angegebenen Aufbewahrungsfrist nach einer Kündigung: was es tut, wer die Gesichtsdaten speichert und worauf eine Registrierung Sie festlegt. Die Unterstützung gilt je Veranstaltung, und die Veranstaltungsseite entscheidet. Nichts hier ist eine rechtliche Einschätzung zu biometrischen Daten in Ihrem eigenen Land.",
+    intro: [
+      "Koreanische Veranstaltungsorte gehen an der Tür zur Gesichtserkennung über, und ein Fan aus dem Ausland begegnet ihr als Kästchen während der Buchung, mit sehr wenig Erklärung auf Englisch. Die Frage darunter ist nicht klein: Ein Unternehmen, mit dem Sie nie zu tun hatten, wird gleich Ihr Gesicht halten.",
+      "NOL World veröffentlicht durchaus Antworten. Sie sind konkret, sie sind beruhigender, als die meisten Unternehmen das hinbekommen, und sie gehören vor die Warteschlange gelesen statt hinein — darunter die zur Frage, was nach einer Kündigung mit den Daten geschieht, die nicht das sagt, was ein einzelnes Wort wie gelöscht nahelegt.",
+    ],
+    steps: [
+      {
+        title: "Verstehen Sie, was es ersetzt",
+        body: "NOL World beschreibt facepass als Weg, Aufwand und Zeit der Identitätsprüfung beim Einlass zu verringern. Ist die Gesichtsregistrierung abgeschlossen, scannt Sie eine Kamera an der Tür und Sie betreten den Ort ohne Ticketprüfung. Es ist ein Ersatz für die Dokumentenprüfung am Eingang und keine zusätzliche Schicht darüber.",
+        pitfall:
+          "Es nur als Komfortfunktion zu lesen. Die zweite Hälfte der Beschreibung von NOL World ist Durchsetzung, und davon handelt der nächste Schritt.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Kennen Sie den anderen Grund, warum es existiert",
+        body: "NOL World nennt den Zweck doppelt: die Identitätsprüfung zu vereinfachen und den illegalen Verkauf und Vertrieb von Tickets zu verhindern. Ein Gesicht, das zum Konto passen muss, das das Ticket gekauft hat, ist eine Weiterverkaufskontrolle, und es kommt in demselben Zeitraum wie eine Novelle des Aufführungsgesetzes, die den gewohnheitsmäßigen Weiterverkauf über Nennwert erfasst. Diese beiden Tatsachen gehören nebeneinander.",
+        pitfall:
+          "Anzunehmen, ein über einen Weiterverkaufsmarktplatz gekauftes Ticket funktioniere an einem facepass-Eingang schon irgendwie. Das System existiert, damit genau das nicht funktioniert.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wissen Sie, wohin das Gesicht tatsächlich geht",
+        body: "Das ist der Teil, den zu wissen sich am meisten lohnt. NOL World sagt, die Gesichtsinformationen — das Originalbild und die Merkmalsdaten — würden verschlüsselt und von Toss gespeichert, dem Fintech-Unternehmen hinter dem Dienst FaceAccess, und sie würden unter keinen Umständen an NOL World oder an Agenturen weitergegeben. Geteilt wird nur das Ergebnis der Authentifizierung, Erfolg oder Fehlschlag. NOL World sagt außerdem, die Daten würden zu keinem Zweck über die Erbringung des Dienstes hinaus verwendet, und verweist darauf, dass Toss über Zertifizierungen nach ISO 27701 und CBPR verfügt.",
+        pitfall:
+          "Das sind Aussagen von NOL World über einen Dritten und keine Prüfung. Sie sind für eine solche Seite ungewöhnlich konkret, was ein Grund ist, sie ernst zu nehmen, und keiner, mit dem Lesen aufzuhören.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Behandeln Sie die Registrierung als endgültig",
+        body: "Ist ein Gesicht einmal registriert, lässt es sich nicht mehr ändern. NOL World nennt den Grund unumwunden — es soll die missbräuchliche Nutzung des Dienstes verhindern. Eine schlechte Registrierung lässt sich später nicht korrigieren, also sind die Bedingungen, unter denen Sie registrieren, die Bedingungen, die Sie behalten: Licht, Brille, was die Kamera eben aufgenommen hat.",
+        pitfall:
+          "In der Warteschlange schnell zu registrieren, bei schlechtem Licht, mit der Absicht, es später ordentlich zu wiederholen. Es gibt kein Später.",
+        takes: "10 Minuten, mit Bedacht",
+      },
+      {
+        title: "Lassen Sie niemanden auf Ihrem Telefon oder Ihrem Konto registrieren",
+        body: "NOL World sagt es direkt: Stellen Sie sicher, dass niemand sonst Ihr Konto nutzt, und wenn jemand mit Ihrem Telefon oder Ihrem Konto Gesichtsinformationen registriert, haftet das Unternehmen nicht für die daraus entstehenden Probleme. Ein gemeinsam genutztes Gerät im Haushalt in dem Moment, in dem eine Tournee in den Verkauf geht, ist genau der Weg, auf dem das passiert, und das Konto ist das, was die Folge trägt.",
+        pitfall:
+          "Einer Freundin zu helfen, auf Ihrem angemeldeten Telefon zu registrieren. Das Gesicht, das nun an Ihrem Konto hängt, ist ihres, es lässt sich nicht ändern, und der Haftungsausschluss ist ausdrücklich.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Prüfen Sie, ob Ihre Veranstaltung es überhaupt unterstützt",
+        body: "Die Unterstützung gilt je Veranstaltung und nicht allgemein — NOL World führt eigens eine Frage dazu, wie man prüft, ob ein Konzert facepass unterstützt, und die existiert nur, weil die Antwort schwankt. Prüfen Sie die Veranstaltungsseite, bevor Sie den Einlass darum herum planen, und halten Sie den gewöhnlichen Weg bereit: Bestätigungsnummer und Ausweis an der Kasse.",
+        pitfall:
+          "Zu registrieren und dann an einem Veranstaltungsort anzukommen, der noch Dokumente prüft, während der Pass im Hotel liegt.",
+        takes: "3 Minuten",
+      },
+      {
+        title: "Lesen Sie die Antwort zur Löschung genau — es ist nicht einfach eine Löschung",
+        body: "NOL World beantwortet die Frage, ob Gesichtsinformationen bei einer Kündigung gelöscht werden, und die Antwort hat zwei Hälften. Die erste: Ihr Gesichtsfoto wird beim Kündigen des Dienstes gelöscht, und eine erneute Nutzung bedeutet erneutes Registrieren. Die zweite: Zum Zweck der Identitätsprüfung werden die Daten getrennt gespeichert und ab dem Zeitpunkt der Kündigung ein Jahr lang aufbewahrt — verwendet, so NOL World, nur zur Identitätsprüfung bei einer erneuten Registrierung, und nach dem Jahr vernichtet. Eine Kündigung löscht also das Foto und startet eine Uhr, statt eine anzuhalten. Das ist eine vertretbare Regelung und es ist nicht das, was das Wort gelöscht für sich genommen nahelegt, weshalb es sich lohnt, es vor der Registrierung in ihren Worten zu lesen.",
+        pitfall:
+          "Die Ein-Wort-Zusammenfassung irgendeines Dritten darüber zu übernehmen, was mit biometrischen Daten geschieht, unsere eingeschlossen. Lesen Sie den Satz zur Aufbewahrung und nicht die Überschrift.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Sieht NOL World mein Gesicht?",
+        a: "NOL World sagt nein. Gesichtsinformationen werden verschlüsselt und von Toss gehalten, und NOL World gibt an, sie würden unter keinen Umständen an NOL World oder Agenturen weitergegeben — geteilt wird nur, ob die Authentifizierung erfolgreich war oder nicht.",
+      },
+      {
+        q: "Kann ich mein Gesicht neu registrieren, wenn der erste Versuch schlecht war?",
+        a: "Nein. NOL World sagt, ein registriertes Gesicht lasse sich nicht ändern, um die missbräuchliche Nutzung des Dienstes zu verhindern. Registrieren Sie beim ersten Mal mit Bedacht.",
+      },
+      {
+        q: "Werden meine Gesichtsdaten gelöscht, wenn ich facepass kündige?",
+        a: "Teilweise, und dann mit einer Uhr. NOL World sagt, das Gesichtsfoto werde bei der Kündigung gelöscht und man müsse für eine weitere Nutzung erneut registrieren. Es sagt außerdem, dass die Daten zum Zweck der Identitätsprüfung getrennt gespeichert und ab der Kündigung ein Jahr lang aufbewahrt werden, nur zur Identitätsprüfung bei einer erneuten Registrierung verwendet und nach diesem Jahr vernichtet werden. Bis zum 20. Oktober 2026 stand auf dieser Seite, dass wir diese Antwort nicht gelesen hatten und sie nicht zusammenfassen wollten; sie ist jetzt oben zitiert und in unseren Korrekturen vermerkt.",
+      },
+      {
+        q: "Nutzt jedes Konzert facepass?",
+        a: "Nein. Die Unterstützung schwankt je Veranstaltung, und NOL World führt eine eigene Antwort dazu, wie man das prüft. Vergewissern Sie sich auf der Veranstaltungsseite Ihrer Veranstaltung und halten Sie den gewöhnlichen Abholweg bereit.",
+      },
+      {
+        q: "Was passiert, wenn jemand anderes sein Gesicht auf meinem Konto registriert?",
+        a: "NOL World sagt, das Unternehmen hafte nicht für Probleme, die daraus entstehen, und bittet Sie sicherzustellen, dass niemand sonst Ihr Konto nutzt. Da ein registriertes Gesicht nicht geändert werden kann, ist das auf gewöhnlichem Weg nicht behebbar.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Die Kasse von NOL World: Buchungsgebühr, Uhr und die Währung, in der Sie zahlen",
+    summary:
+      "Ein Konzertticket trägt eine Servicegebühr von 8.000 Won, Sie haben zehn Minuten für die Platzwahl und sieben zum Bezahlen, und das Zahlungsfenster bittet Sie, eine Währung zu wählen. Drei Geldentscheidungen und eine Uhr, alle veröffentlicht und keine davon offensichtlich.",
+    scope:
+      "Behandelt, was NOL World zu Kosten und Zeitablauf seiner Kasse veröffentlicht: die Servicegebühr nach Genre, die zweistufige Kaufuhr, die Währungswahl, Gutscheine und Grenzen je Bestellung. Gebühren und Uhren können je Veranstaltung gesetzt werden, und NOL World sagt das in beiden Fällen, Ihre Veranstaltungsseite geht dem hier also vor. Nichts hier ist eine Empfehlung, welche Währung für Ihre konkrete Karte günstiger ist.",
+    intro: [
+      "Das meiste, was an einer koreanischen Kasse schiefgeht, ist nicht die Karte. Es ist, dass die Seite drei Fragen mit Geld daran stellt, während eine Uhr läuft, und eine Käuferin aus dem Ausland allem davon zum ersten Mal mit etwa sieben Minuten Restzeit begegnet.",
+      "Alles davon ist veröffentlicht, und nichts davon steht auf der Produktseite, auf der Sie entschieden haben, dass das Ticket bezahlbar ist. Der Zweck dieser Seite ist also, die Überraschungen in die Woche davor zu verlegen.",
+    ],
+    steps: [
+      {
+        title: "Rechnen Sie die Servicegebühr dazu, bevor Sie das Ticket für bezahlbar halten",
+        body: "NOL World veröffentlicht seine Servicegebühr nach Genre. Musicals und Konzerte tragen 8.000 Won — ausgenommen bestimmte Produkte wie Online-Konzerte und Fanclub-Mitgliedschaften. Andere Aufführungen und Sport kosten 3.000 Won. Freizeit und Ausstellungen sind kostenlos. NOL World sagt außerdem, Gebühren könnten je Produkt abweichen und seien beim Kauf zu prüfen, behandeln Sie das also als veröffentlichten Ausgangswert und nicht als Zusage zu Ihrer Veranstaltung.",
+        pitfall:
+          "Einen koreanischen Ticketpreis mit einem Ticketpreis zu Hause zu vergleichen und zu vergessen, dass dies obendrauf kommt. Es ist nicht viel, und es ist genau die kleine Überraschung, die eine ganze Plattform im schlechtesten Moment unglaubwürdig wirken lässt.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wissen Sie, was die Gebühr tatsächlich kauft, denn eine Zeile davon zählt",
+        body: "NOL World listet auf, was die Servicegebühr abdeckt: Wartung der Website und zugehörige Kosten, Zahlungsabwicklung einschließlich der Betrugserkennung, Technikgebühren zur Verhinderung von Buchungen durch Bots und Makros, sowie Systemunterstützung für globale Reservierungen. Der dritte Punkt ist der interessante. Die Gebühr finanziert zum Teil die Maschinerie gegen Makros, was dieselbe Durchsetzungsrichtung ist wie die Identitätsprüfungen und die Novelle des Aufführungsgesetzes — und sie ist der Grund, warum sich die Warteschlange wie ein gegnerisches System anfühlt und nicht wie eine Reihe.",
+        pitfall:
+          "Die Gebühr als reine Marge und die Warteschlange als Unfähigkeit zu lesen. Die Plattform sagt Ihnen, dass sie die Gebühr dafür ausgibt, automatisierte Käufer draußen zu halten, und das ist auch der Grund, warum die Regeln, die sie Ihnen auferlegt, streng sind.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Verstehen Sie die Uhr: zehn Minuten zum Wählen, sieben zum Zahlen",
+        body: "Die Kaufuhr hat zwei Stufen, und NOL World nennt beide. Ab dem Betreten der Buchungsseite haben Sie bis zu zehn Minuten für die Platzwahl. Sobald Sie zum Preisschritt wechseln, werden Ihre Plätze sieben Minuten lang gehalten, während Sie die Zahlung abschließen, mit einer Uhr oben auf der Seite. Verpassen Sie sie, werden die Plätze automatisch freigegeben und Sie beginnen die Buchung von vorn. Auch Buchungen ohne Platzzuweisung oder mit freier Platzwahl bekommen die Zehn-Minuten-Grenze vor der Zahlung. NOL World ergänzt, dass die Grenzen je Veranstaltung abweichen können und manche Veranstaltungen keine haben.",
+        pitfall:
+          "Innerhalb der sieben Minuten die Banking-App zu öffnen, um eine Kartennummer zu suchen. Kartendaten, Rechnungsanschrift und die Freigabe-App Ihrer Bank sollten alle bereit sein, bevor Sie die Buchungsseite betreten, denn die Uhr nimmt keine Rücksicht darauf, dass Ihr Telefon Sie erneut zur Anmeldung auffordert.",
+        takes: "17 Minuten, wenn Sie alles ausschöpfen",
+      },
+      {
+        title: "Behandeln Sie die Währungsfrage als echte Entscheidung",
+        body: "NOL World unterstützt die Zahlung in 24 Währungen, darunter koreanischer Won, US-Dollar, Yen und Yuan, und die verfügbaren erscheinen, nachdem Sie Ihre Kartendaten eingegeben haben. Die angebotene Wahl liegt zwischen der Währung des Ausstellungslandes Ihrer Karte und koreanischem Won. Das sind zwei verschiedene Wechselkurse, gesetzt von zwei verschiedenen Parteien — einer von demjenigen, der auf der Zahlungsseite umrechnet, einer von Ihrem Kartennetzwerk und Ihrer Bank. Die eigene Währung zu wählen ist dynamische Währungsumrechnung, und die umrechnende Partei setzt den Kurs und nimmt eine Marge darauf, also ist die Zahlung in Won meist die günstigere der beiden. Meist, nicht immer: Die Fremdwährungsgebühr Ihrer eigenen Karte fällt ohnehin an, und eine schlechte Marge Ihrer Bank kann den Abstand schließen. Die Hälfte, die Sie vor dem Tag tatsächlich prüfen können, sind die Bedingungen Ihrer Bank, prüfen Sie also die.",
+        pitfall:
+          "Die heimische Währung zu wählen, weil die Zahl vertraut aussieht. Vertraut ist hier häufiger die teurere Variante, und das ist der eine Bildschirm, auf dem Sie wählen, wer die Umrechnung vornimmt.",
+        takes: "10 Minuten, mit Ihrer Bank, vorher",
+      },
+      {
+        title: "Lösen Sie den Gutschein ein, bevor Sie zahlen, denn ein Danach gibt es nicht",
+        body: "NOL World ist hier unumwunden: Ist die Zahlung abgeschlossen, können Sie keinen Gutschein mehr anwenden. Der einzige Weg, den es anbietet, ist, denselben Platz zu stornieren und mit angewendetem Gutschein neu zu buchen — und es warnt, dass Stornieren und Neubuchen Gebühren nach der Gebührenregelung der Veranstaltung auslösen können, prüfen Sie die also zuerst. Wägen Sie das ehrlich gegen den Wert des Gutscheins ab, und denken Sie daran, dass der freigegebene Platz während Ihrer Neubuchung nicht für Sie reserviert ist.",
+        pitfall:
+          "Einen Platz zu stornieren, den Sie tatsächlich haben, um einen Rabatt zu retten, den Sie vielleicht gar nicht einsetzen können. Der Gutschein ist weniger wert als das Ticket, und der Bestand wartet nicht.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Rechnen Sie mit einer Ticketgrenze, und damit, dass sie dem Veranstalter gehört",
+        body: "NOL World sagt, je nach Veranstalter könne es eine Grenze geben, wie viele Tickets je Bestellung oder je Mitglied für eine Aufführung reserviert werden können — und dass bei Konzerttickets, die zusammen mit einer Tour oder anderen Eintrittskarten verkauft werden, der Veranstalter zusätzlich eine Grenze je Mitglied setzen kann. Die Obergrenze ist also keine plattformweite Zahl zum Nachschlagen; sie wird je Veranstaltung gesetzt, manchmal je Person statt je Vorgang, und sie ist ein Grund, warum eine Gruppenbestellung im letzten Schritt scheitern kann.",
+        pitfall:
+          "Eine Bestellung für vier Personen um eine Grenze herum zu planen, die Sie bei einer anderen Veranstaltung gelesen haben. Eine Grenze je Mitglied lässt sich auch nicht dadurch lösen, dass Sie die Bestellung über Ihre eigenen Konten aufteilen — dieses Muster steht auf der veröffentlichten Liste missbräuchlicher Nutzung von NOL World.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Bestätigen Sie, dass die Buchung existiert, an der Stelle, die den Status zeigt",
+        body: "Öffnen Sie nach der Zahlung die Website oder App von NOL World und gehen Sie auf Account/My und dann My Reservations. NOL World sagt, grundlegende Reservierungsdaten und der Status seien sowohl in der Liste als auch auf der Detailseite der Buchung sichtbar. Tun Sie das einmal, solange Sie noch am Schreibtisch sitzen, statt anzunehmen, die Bestätigungsmail sei die ganze Wahrheit — die Reservierungsliste ist die Stelle, an der ein unerwarteter Status auftaucht, und es ist der Bildschirm, nach dem man Sie fragen wird, wenn Sie den Kundendienst kontaktieren.",
+        pitfall:
+          "Eine durchgegangene Zahlung als existierende Buchung zu behandeln. Meist ist beides dasselbe, und der ganze Sinn des Prüfens ist der Fall, in dem es das nicht ist.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wissen Sie, was fertig für das bedeutet, was Sie gekauft haben",
+        body: "Bei darstellender Kunst und Konzerten sagt NOL World, der Vorgang sei mit der Zahlung abgeschlossen und Sie holen an der Kasse des Veranstaltungsorts ab. Produkte aus Touren und Aktivitäten sind nicht einheitlich: Manche stellen einen QR- oder Barcode auf My Page oder per E-Mail aus, der direkt einlässt, und manche verlangen, dass Sie den Gutschein oder die Buchungsbestätigung an einem Schalter vor Ort gegen ein physisches Ticket eintauschen, bevor Sie eintreten. Die Anweisung von NOL World lautet, auf der Produktseite zu prüfen, welcher Fall gilt, denn der Unterschied entscheidet, ob Sie vor dem Eingang noch einen Schalter finden müssen.",
+        pitfall:
+          "Einen QR-Code in der E-Mail für eine Eintrittskarte zu halten. Bei einem Produkt zum Eintauschen ist er das, was Sie an einem Schalter tauschen, und der Schalter hat Öffnungszeiten.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Wie hoch ist die Buchungsgebühr bei einem Konzertticket?",
+        a: "NOL World veröffentlicht 8.000 Won für Musicals und Konzerte, ausgenommen bestimmte Produkte wie Online-Konzerte und Fanclub-Mitgliedschaften; 3.000 Won für andere Aufführungen und Sport; und nichts für Freizeit und Ausstellungen. Es sagt außerdem, Gebühren könnten je Produkt abweichen und seien beim Kauf zu prüfen, vergewissern Sie sich also bei Ihrer eigenen Veranstaltung.",
+      },
+      {
+        q: "Wie viel Zeit habe ich an der Kasse wirklich?",
+        a: "Zehn Minuten für die Platzwahl ab dem Betreten der Buchungsseite, dann eine Haltefrist von sieben Minuten, während Sie zahlen, mit einer Uhr oben auf der Seite. Überschreiten Sie sie, werden die Plätze freigegeben und Sie fangen von vorn an. Freie Platzwahl bekommt die zehn Minuten ebenfalls. NOL World sagt, die Grenzen könnten je Veranstaltung abweichen und manche Veranstaltungen hätten keine.",
+      },
+      {
+        q: "Soll ich in koreanischen Won oder in meiner eigenen Währung zahlen?",
+        a: "Meist in Won. NOL World unterstützt 24 Währungen und lässt Sie zwischen der Währung des Ausstellungslandes Ihrer Karte und koreanischem Won wählen, angezeigt nach Eingabe der Kartendaten. Die eigene Währung zu wählen ist dynamische Währungsumrechnung, bei der die umrechnende Partei den Kurs setzt und eine Marge aufschlägt — Won ist also in der Regel günstiger. Die Fremdwährungsgebühr Ihrer eigenen Karte fällt ohnehin an, und das ist der Teil, den Sie vor dem Tag bei Ihrer Bank prüfen sollten.",
+      },
+      {
+        q: "Ich habe meinen Gutschein vergessen. Kann ich ihn jetzt hinzufügen?",
+        a: "Nein. NOL World sagt, ein Gutschein könne nach abgeschlossener Zahlung nicht mehr angewendet werden. Der einzige angebotene Weg ist, denselben Platz zu stornieren und mit dem Gutschein neu zu buchen, und es warnt, dass Stornierung und Neubuchung Gebühren nach der Regelung der Veranstaltung tragen können. Prüfen Sie die Gebühr, bevor Sie einen Platz freigeben, den Sie bereits halten.",
+      },
+      {
+        q: "Warum kann ich nur zwei Tickets buchen, wenn meine Freundin vier gebucht hat?",
+        a: "Weil die Grenze dem Veranstalter gehört und nicht der Plattform. NOL World sagt, eine Aufführung könne Tickets je Bestellung oder je Mitglied begrenzen, und dass kombinierte Produkte aus Konzert und Tour zusätzlich eine Grenze je Mitglied tragen können. Eine andere Veranstaltung oder eine andere Verkaufsrunde kann eine andere Obergrenze haben.",
+      },
+      {
+        q: "Kann ich auf NOL World eine koreanische Kreditkarte verwenden?",
+        a: "Nein. NOL World akzeptiert nur außerhalb Koreas ausgestellte Karten; in Korea ausgestellte Karten gehören verifizierten inländischen Mitgliedern auf der koreanischen Seite. Eine hier abgelehnte koreanische Karte ist die Regel, die funktioniert, und kein Fehler.",
+      },
+      {
+        q: "Wo prüfe ich, dass meine Buchung durchgegangen ist?",
+        a: "Auf der Seite oder in der App von NOL World, unter Account/My und dann My Reservations. NOL World sagt, Reservierungsdaten und Status erschienen sowohl in der Liste als auch auf der Detailseite. Dieser Bildschirm zeigt den Status, nicht die Bestätigungsmail.",
+      },
+      {
+        q: "Ich habe gezahlt. Ist vor der Veranstaltung noch etwas zu tun?",
+        a: "Bei einem Konzert- oder Theaterticket nein — NOL World sagt, der Vorgang sei abgeschlossen und Sie holen an der Kasse des Veranstaltungsorts ab. Bei einem Produkt aus Tour oder Aktivität kommt es darauf an: Manche senden einen QR- oder Barcode, der direkt einlässt, andere verlangen, dass der Gutschein zuvor an einem Schalter vor Ort gegen ein physisches Ticket getauscht wird. Welcher Fall gilt, steht auf der Produktseite.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Ein NOL-World-Ticket stornieren: die Frist, die Gebühr und das Geld, das Sie trotzdem verlieren",
+    summary:
+      "Die Stornofrist ist der Nachmittag vor der Veranstaltung in koreanischer Zeit, samstags früher als an allen anderen Tagen, und ein vollständig erstattetes Ticket kann eine Karteninhaberin aus dem Ausland trotzdem Geld kosten. Außerdem: Das Ticket an eine Freundin zu senden nimmt Ihnen die Stornoschaltfläche weg.",
+    scope:
+      "Behandelt das Stornieren eines Veranstaltungstickets auf NOL World, so wie NOL World es dokumentiert: die Fristen, wo die Gebühr steht, wie die Erstattung auf eine ausländische Karte zurückkommt und was eine Stornierung unmöglich macht. NOL World veröffentlicht keine zentrale Gebührentabelle, und diese Seite erfindet keine. Produkte aus Touren und Aktivitäten folgen eigenen Regelungen und werden nur dort erwähnt, wo sie abweichen.",
+    intro: [
+      "Ein Fan aus dem Ausland storniert aus Gründen, die ein Fan im Inland selten hat: ein Visum, ein Anschlussflug, ein verschobener Dienstplan. Die Stornoregeln bedeuten diesem Publikum also mehr als dem, für das sie geschrieben wurden — und sie sind streng, an Zeitzonen gebunden und an zwei Stellen auf eine Weise unsymmetrisch, die niemand erraten würde.",
+      "Zwei der Tatsachen unten gehören vor die Buchung gelesen und nicht danach. Für Veranstaltungen am Samstag schließt die Stornierung sechs Stunden früher als an jedem anderen Tag. Und eine Stornierung, die NOL World vollständig abwickelt, kann eine Karteninhaberin aus dem Ausland trotzdem Geld kosten, was niemandes Fehler ist und auch niemandes Aufgabe, für Sie zu beheben.",
+    ],
+    steps: [
+      {
+        title: "Lernen Sie die Frist vor der Buchung, denn sie ist nicht der Veranstaltungstag",
+        body: "NOL World schließt Stornierungen für Veranstaltungen am Vortag und nicht am Tag selbst: 17 Uhr KST am Tag vor der Veranstaltung an Wochentagen und Feiertagen, und 11 Uhr KST am Vortag bei einer Veranstaltung am Samstag. Die Samstagsregel ist die, die Leute erwischt — sie liegt sechs Stunden früher als der Rest der Woche, und sie gilt für die Samstagsvorstellung, die Frist fällt also auf Freitagvormittag koreanischer Zeit.",
+        pitfall:
+          "„Den Tag davor“ in Ihrem eigenen Kalender auszurechnen. Für eine Samstagabendvorstellung in Seoul ist 11 Uhr KST am Freitag der Donnerstagabend in New York. Die Frist kann einen ganzen Tag früher liegen, als sie sich liest.",
+        takes: "5 Minuten, bevor Sie zahlen",
+      },
+      {
+        title: "Nutzen Sie das kostenlose Fenster, wenn Sie Zweifel bekommen",
+        body: "Es gibt eine gebührenfreie Frist, und sie ist kurz: NOL World sagt, bei Tickets falle keine Stornogebühr an, wenn Sie bis 23:59 Uhr am Tag Ihrer Reservierung stornieren. Die Entscheidung, die Sie kostenlos rückgängig machen können, ist also die, die Sie am selben Tag treffen, an dem Sie gebucht haben. Nach Mitternacht kostet sie etwas.",
+        pitfall:
+          "Anzunehmen, 23:59 Uhr sei Ihre eigene Mitternacht. NOL World nennt KST bei den anderen Stornofristen ausdrücklich und bei dieser keine Zone, die sichere Lesart ist also koreanische Zeit — und ohnehin ist eine Entscheidung in den letzten zehn Minuten eines Fensters eine zu spät getroffene Entscheidung.",
+        takes: "—",
+      },
+      {
+        title: "Wissen Sie, wo die Schaltfläche ist und was es heißt, wenn sie fehlt",
+        body: "Der Weg ist App oder Web, dann Account/My, dann My Reservations, dann Ticket Reservation List, dann die Reservierung, dann Cancel Reservation auf der Detailseite. Fehlt die Schaltfläche Cancel Reservation auf der Detailseite ganz, lautet die Anweisung von NOL World, den Kundendienst zu kontaktieren statt weiterzusuchen: Eine Mitarbeiterin klärt Stornierbarkeit, Gebühr und Erstattungsbetrag mit dem Anbieter und führt Sie dann. Den Vorgang verfolgen Sie auf der Detailseite der Reservierung, und nach Abschluss folgt eine Bestätigungsmail.",
+        pitfall:
+          "Eine fehlende Schaltfläche als Fehler der Website zu lesen und es eine Stunde lang erneut zu versuchen. Es ist ein Status, und die Uhr aus dem ersten Schritt läuft weiter, während Sie es erneut versuchen.",
+        takes: "15 Minuten, plus Zeit beim Kundendienst",
+      },
+      {
+        title: "Rechnen Sie mit keiner Gebührentabelle und holen Sie die Zahl aus Ihrer eigenen Reservierung",
+        body: "Es gibt keine veröffentlichte Gebührentabelle, mit der sich planen ließe. Auf die Frage nach der Höhe der Stornogebühr antwortet NOL World mit einem Pfad — Web/App, Account/My, My Reservations, Reservation Details — weil die Zahl eine Eigenschaft Ihrer Buchung ist und nicht der Plattform. Bei Produkten aus Touren und Aktivitäten werden Gebühr und Erstattungsbetrag angezeigt, wenn Sie Cancel Reservation drücken, vor der Bestätigung. Wir drucken hier keinen Prozentsatz, dem Ihre Reservierung womöglich widerspricht.",
+        pitfall:
+          "Mit einer Gebührentabelle aus einem Blogbeitrag zu planen. Jede Anleitung, die einen festen koreanischen Stornoprozentsatz für Ihre Veranstaltung nennt, zitiert etwas, das NOL World nicht veröffentlicht.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Prüfen Sie die Teilstornierung, solange Sie noch buchen",
+        body: "Zwei von vier Plätzen zu stornieren ist bei manchen Veranstaltungen möglich und bei anderen nicht, und die Anweisung von NOL World lautet, den Status der Teilstornierung während des Buchens zu prüfen — also bevor es das ist, was Sie brauchen. Produkte aus Touren und Aktivitäten erlauben sie überhaupt nicht: Dort heißt der Weg, die ganze Buchung zu stornieren und neu zu buchen, und NOL World warnt unumwunden, dass die Verfügbarkeit danach nicht garantiert ist und eine Neubuchung womöglich nicht möglich ist.",
+        pitfall:
+          "Vier Plätze in der Annahme zu buchen, die zwei unsicheren Freundinnen ließen sich später herausnehmen. Bei einer Veranstaltung ohne Teilstornierung wird daraus alle vier oder keiner.",
+        takes: "2 Minuten, beim Buchen",
+      },
+      {
+        title: "Verstehen Sie, dass eine volle Erstattung eine ausländische Karte trotzdem Geld kosten kann",
+        body: "Das ist der Teil, der für dieses Publikum geschrieben ist und auf Englisch fast nie erklärt wird. NOL World gibt an, dass bei Verwendung einer ausländischen Kreditkarte ein Währungsgewinn oder -verlust entstehen kann, wegen des Unterschieds zwischen dem Wechselkurs am Buchungstag und dem am Stornotag — und, davon getrennt, dass Gebühren für Auslandstransaktionen anfallen können, obwohl die Transaktion storniert wurde. Keines von beidem ist ein Abzug, den NOL World vornimmt. Beides ist Ihr Kartenherausgeber, und der Rat von NOL World lautet, bei ihm die genauen Kurse und Gebühren zu erfragen.",
+        pitfall:
+          "Einen Erstattungsbetrag, der kleiner ist als der belastete, als Fehler oder versteckte Gebühr zu lesen. Die Lücke kann der Wechselkurs zwischen zwei Daten sein, und wer sie erklären kann, ist Ihre Bank und nicht die Ticketplattform.",
+        takes: "Ein Anruf bei Ihrer Bank",
+      },
+      {
+        title: "Geben Sie der Erstattung die Zeit, die das Kartennetzwerk braucht",
+        body: "Hat die Transaktion Ihr Kreditkartenunternehmen noch nicht erreicht, ist die Stornierung laut NOL World sofort abgeschlossen. Hat sie es, und ist der Zahlbetrag abgerechnet, rechnen Sie mit etwa 5 bis 7 Tagen, bis das Kartenunternehmen sie zurückbucht, und damit, dass der stornierte Betrag von der Rechnung des Folgemonats abgezogen wird statt als Zahlung zurückzukommen. NOL World merkt an, dass sich die Erstattungsregeln zwischen Kartenunternehmen unterscheiden, Ihres ist also für sein eigenes Zeitmaß maßgeblich.",
+        pitfall:
+          "Bei Ihrer Bank eine Beanstandung zu eröffnen, während die Rückbuchung läuft. Ein Chargeback auf eine Transaktion, die ohnehin storniert wird, schafft ein zweites Problem auf einem Konto, mit dem Sie womöglich wieder buchen wollen.",
+        takes: "5-7 Tage",
+      },
+      {
+        title: "Senden Sie das mobile Ticket erst, wenn Sie sicher hingehen",
+        body: "Das ist die Falle, für die die ganze Seite sich lohnt. Das Teilen mobiler Tickets erlaubt es der Käuferin, ein Ticket an die Person zu senden, die hingeht — und NOL World gibt an, dass die Stornierung der Reservierung eingeschränkt ist, sobald das mobile Ticket erfolgreich gesendet wurde. Der Weg zurück gehört der Empfängerin: Hebt sie die Registrierung des Tickets auf, wird eine Stornierung wieder möglich. Vor der Registrierung gibt es sanftere Ausgänge — die Senderin kann Cancel Send drücken, solange das Ticket nicht registriert ist, und ein nicht registriertes Ticket kommt nach 24 Stunden oder bis zum Veranstaltungsdatum automatisch zurück.",
+        pitfall:
+          "Tickets in der Woche der Buchung an Freundinnen zu senden, weil das ordentlich wirkt. Die Stornoschaltfläche gehört nun faktisch ihnen, und sie zurückzubekommen heißt, sie zu bitten, das Ticket zuerst aufzugeben.",
+        takes: "—",
+      },
+      {
+        title: "Lesen Sie Regelungen für Touren und Aktivitäten getrennt",
+        body: "Ist Ihre Buchung eine Tour, ein Transfer oder eine Aktivität statt eines Veranstaltungstickets, ist nichts von alldem eine sichere Vorgabe. NOL World sagt, manche dieser Produkte könnten nach dem Kauf überhaupt nicht storniert werden, und dass eine Stornogebühr von 100% auch am Kauftag anfallen kann. Maßgeblich ist die Regelung auf der eigenen Detailseite des Produkts und auf dem Gutschein, und NOL World bittet Sie, sie zu lesen, bevor Sie eine Stornierung beantragen.",
+        pitfall:
+          "Die Ticketregeln auf ein Paket zu übertragen, das in derselben Sitzung gebucht wurde. Das kostenlose Fenster am selben Tag ist eine Regel für Veranstaltungstickets, und ein Tourprodukt kann ab dem Moment der Zahlung nicht erstattbar sein.",
+        takes: "10 Minuten je Produkt",
+      },
+    ],
+    faq: [
+      {
+        q: "Wie lautet die Stornofrist für eine Veranstaltung genau?",
+        a: "Der Tag vor der Veranstaltung, in koreanischer Zeit. NOL World nennt 17 Uhr KST am Vortag für Wochentage und Feiertage und 11 Uhr KST am Vortag für Samstagsvorstellungen. Rechnen Sie das sorgfältig gegen Ihr eigenes Datum um — eine Frist um 11 Uhr KST am Freitag ist in weiten Teilen Amerikas der Donnerstagabend.",
+      },
+      {
+        q: "Gibt es eine kostenlose Stornierung?",
+        a: "Bei Veranstaltungstickets ja, am Tag der Buchung: NOL World sagt, eine Stornierung bis 23:59 Uhr am Tag Ihrer Reservierung trage keine Stornogebühr. Es nennt bei dieser keine Zeitzone, während es bei den anderen KST nennt, behandeln Sie sie also als koreanische Zeit und reizen Sie sie nicht aus. Produkte aus Touren und Aktivitäten sind anders — manche berechnen 100% auch am selben Tag.",
+      },
+      {
+        q: "Wie hoch ist die Stornogebühr?",
+        a: "NOL World veröffentlicht keine Tabelle. Auf diese Frage gibt es stattdessen einen Pfad — Web oder App, Account/My, My Reservations, Reservation Details — weil die Zahl zu Ihrer Buchung gehört. Bei Produkten aus Touren und Aktivitäten zeigt das Drücken von Cancel Reservation Stornogebühr und Erstattungsbetrag vor der Bestätigung. Jede englische Anleitung, die für Ihre Veranstaltung einen festen Prozentsatz nennt, zitiert eine Zahl, die die Plattform nicht angibt.",
+      },
+      {
+        q: "Ich habe rechtzeitig storniert und weniger zurückbekommen, als ich gezahlt habe. Wo ist der Rest?",
+        a: "Vermutlich nicht bei NOL World. Es gibt an, dass eine ausländische Karte einen Währungsgewinn oder -verlust aus dem Unterschied zwischen dem Kurs am Buchungstag und dem am Stornotag erzeugen kann, und dass Gebühren für Auslandstransaktionen trotz der Stornierung anfallen können. Beides liegt bei Ihrem Kartenherausgeber, und NOL Worlds eigener Rat lautet, ihn nach den genauen Kursen und Gebühren zu fragen.",
+      },
+      {
+        q: "Wie lange dauert es, bis das Geld zurückkommt?",
+        a: "Hat die Transaktion Ihr Kartenunternehmen noch nicht erreicht, ist die Stornierung sofort abgeschlossen. Hat sie es, nennt NOL World etwa 5 bis 7 Tage, bis das Kartenunternehmen die Transaktion storniert, mit Abzug des Betrags von der Rechnung des Folgemonats. Kartenunternehmen unterscheiden sich, Ihres kann es Ihnen also sagen.",
+      },
+      {
+        q: "Ich habe das mobile Ticket schon an meine Freundin gesendet. Kann ich noch stornieren?",
+        a: "Nicht, solange sie es hält. NOL World sagt, die Stornierung der Reservierung sei eingeschränkt, sobald ein mobiles Ticket erfolgreich gesendet wurde, und werde wieder möglich, wenn die Empfängerin dessen Registrierung aufhebt. Ist das Ticket noch nicht registriert, haben Sie leichtere Ausgänge: Die Senderin kann Cancel Send drücken, und ein nicht registriertes Ticket kommt nach 24 Stunden oder bis zum Veranstaltungsdatum automatisch zurück.",
+      },
+      {
+        q: "Kann ich zwei meiner vier Plätze stornieren?",
+        a: "Das hängt von der Veranstaltung ab, und der Rat von NOL World lautet, den Status der Teilstornierung beim Buchen zu prüfen und nicht dann, wenn Sie sie brauchen. Produkte aus Touren und Aktivitäten unterstützen überhaupt keine Teilstornierung — dort würden Sie die ganze Buchung stornieren und neu buchen, ohne Gewähr, dass der Bestand noch da ist.",
+      },
+      {
+        q: "Die Schaltfläche Cancel Reservation ist auf meiner Reservierungsseite nicht da.",
+        a: "NOL World behandelt das als Fall für den Kundendienst und nicht als Fehler zum erneuten Versuchen. Eine Mitarbeiterin klärt zuerst Stornierbarkeit, Gebühr und Erstattungsbetrag mit dem Anbieter. Melden Sie sich früh, denn die Frist aus der ersten Antwort läuft weiter, während Sie warten.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Ihr mobiles Ticket bei NOL World: der QR-Code, die PIN und der Weg durch den Einlass",
+    summary:
+      "Das Ticket öffnet nur auf einem Telefon, es ist ausschließlich auf Englisch und die automatische Übersetzung Ihres Browsers verunstaltet es, ein gesendetes Ticket hat eine 24-Stunden-Uhr für die PIN, und zu spät zu kommen ist kein garantierter Einlass. Die letzten zwanzig Minuten des ganzen Vorgangs, der Reihe nach.",
+    scope:
+      "Behandelt das mobile Ticket von NOL World und den Einlass am Veranstaltungsort, so wie NOL World es dokumentiert: wo das Ticket öffnet, die zwei Browserzustände, die es verbergen, Senden und Empfangen mit der PIN-Uhr, die Abholung durch Dritte und das verspätete Eintreffen. Einlassregeln werden je Veranstaltung gesetzt, und der Veranstaltungsort entscheidet am Abend. Der Einlass per Gesichtserkennung ist ein eigener Ablauf mit einer eigenen Anleitung.",
+    intro: [
+      "Alles andere auf dieser Seite ist Vorbereitung. Das hier ist der Teil, in dem ein Flug, ein Hotel und ein Vorverkauf entweder zu einem Sitzplatz werden oder nicht, und er läuft auf einem Telefon, das Sie in einer Menge mit schlechtem Empfang halten.",
+      "Das meiste, was hier schiefgeht, ist nicht dramatisch. Es ist ein Browser im falschen Modus, der einen QR-Code zeigt, wo das Ticket sein sollte, eine Übersetzungserweiterung, die eine Einlassnummer umschreibt, eine PIN, die ablief, während eine Freundin schlief. Alle vier sind von NOL World dokumentiert und alle vier sind am Abend davor vermeidbar.",
+    ],
+    steps: [
+      {
+        title: "Wissen Sie, welche Art Ticket Sie tatsächlich halten",
+        body: "Die Zustellart wurde bei der Buchung entschieden, und sie bestimmt alles Weitere. Ein mobiles Ticket liegt in Ihrem Konto und wird von Ihrem Bildschirm gescannt. Abholung am Veranstaltungsort bedeutet ein Papierticket von der Kasse am Tag der Veranstaltung, und NOL World gibt diese nicht früher heraus — das Fenster öffnet eine Stunde vorher, und ein abgeholtes Ticket kann bei Verlust oder Diebstahl nicht neu ausgestellt werden. Prüfen Sie jetzt, welches Sie haben, und nicht am Veranstaltungsort.",
+        pitfall:
+          "Anzunehmen, jede Buchung sei ein mobiles Ticket, weil das letzte Konzert eines war. Es ist eine Eigenschaft der einzelnen Buchung, und die beiden Wege scheitern auf völlig verschiedene Weise.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Öffnen Sie das mobile Ticket auf dem Telefon, mit dem Sie hineingehen",
+        body: "NOL World gibt an, dass mobile Tickets nur in der App von NOL World oder im mobilen Web verfügbar sind. Der Einlass erfolgt über den QR-Code auf dem Ticket. Der Weg auf einem Telefon ist App oder mobiles Web, anmelden, Account/My, My Reservations, dann die Schaltfläche Mobile Ticket. Auf einem Rechner erzeugt dieselbe Schaltfläche einen QR-Code, der nicht Ihr Ticket ist — er ist eine Übergabe und soll mit dem Telefon gescannt werden, damit das Ticket dort öffnet.",
+        pitfall:
+          "Vom Ticket einen Screenshot als Sicherung zu machen und vorzuhaben, das Bild zu zeigen. Ein Ticket, das live in einem Konto erzeugt wird, ist nicht dasselbe wie ein Bild davon, und der Einlass ist nicht die Stelle, an der Sie den Unterschied entdecken wollen.",
+        takes: "10 Minuten, am Abend davor",
+      },
+      {
+        title: "Schalten Sie die Browserübersetzung aus, bevor Sie losgehen",
+        body: "NOL World sagt, mobile Tickets würden ausschließlich auf Englisch bereitgestellt, und wenn Sie andere Sprachen sehen, sei das die automatische Übersetzung Ihres Browsers — die Abhilfe ist, die Übersetzung auszuschalten und die Seite neu zu laden. Für dieses Publikum ist das der Normalzustand des Browsers und kein Sonderfall. Ein Übersetzer, der einen Einlass, einen Block oder eine Sitzreihe umschreibt, ist ein Problem, das Sie erst bemerken, wenn jemand an der Tür es Ihnen vorliest.",
+        pitfall:
+          "Die Übersetzung anzulassen, weil sie die ganze Reise über hilfreich war. Sie hat Ihnen koreanische Seiten übersetzt; hier ist die Seite bereits englisch, und das Einzige, was sie tun kann, ist Schaden anrichten.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Sehen Sie einen QR-Code, wo das Ticket sein sollte, stellen Sie den Browsermodus um",
+        body: "Das ist die häufigste Art, wie das Ticket zu fehlen scheint, und es ist kein Fehler. NOL World sagt, wenn Ihr Browser im Desktop-Modus ist, werde statt des mobilen Tickets ein QR-Code angezeigt — und dass es unter diesem QR-Code eine Schaltfläche View Tickets gibt, die das Ticket dennoch öffnet. Andernfalls stellen Sie den Browser auf den mobilen Modus um: in Chrome über das Drei-Punkte-Menü und View as mobile version; in Safari über die Sprachschaltfläche links der Adresszeile und Request Mobile Website; in Samsung Internet über das Drei-Striche-Menü und Mobile site.",
+        pitfall:
+          "Jemanden am Einlass diesen QR-Code scannen zu lassen. Es ist der Übergabecode für den Rechner und nicht Ihr Einlasscode, und das, was Sie brauchen, ist eine Berührung darunter.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Verstehen Sie, worauf das Senden eines Tickets Sie festlegt",
+        body: "Das Teilen mobiler Tickets geht in eine Richtung: Die Käuferin sendet an die Person, die hingeht, und NOL World gibt an, dass ein empfangenes Ticket nicht weitergesendet werden kann — nur gebuchte Tickets lassen sich senden. Das Senden bleibt bis zum Tag der Veranstaltung möglich. Nicht jedes Produkt bietet es an; wo der Verkäufer es zurückgehalten hat, ist die Schaltfläche zum Senden schlicht nicht da. Und der Preis des Sendens ist Ihr eigener Ausgang: Sobald ein Ticket erfolgreich gesendet wurde, schränkt NOL World die Stornierung der Reservierung ein, die erst wiederhergestellt wird, wenn die Empfängerin die Registrierung aufhebt.",
+        pitfall:
+          "Eine Gruppe zu organisieren, indem Sie in der Woche der Buchung allen ihr Ticket senden. Sie haben jeder Person gerade ein Vetorecht gegen die Stornierung dieser Reservierung gegeben.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Wenn Sie ein Ticket empfangen, behandeln Sie die PIN als 24-Stunden-Uhr",
+        body: "Ein empfangenes Ticket ist erst nutzbar, wenn es registriert ist, und das Fenster ist kurz. NOL World sagt, die PIN könne nur innerhalb von 24 Stunden nach dem Senden registriert werden, und ein nicht registriertes Ticket gehe danach an die Senderin zurück — oder wenn es bis zum Veranstaltungsdatum nicht registriert wurde. Die Registrierung läuft über die URL in der Nachricht oder E-Mail: Received Mobile Ticket, Ticket Register, dann die PIN aus der Nachricht. Danach liegt das Ticket unter My Page, Received Mobile Ticket, Booking History. Zurückgeben läuft über denselben Weg mit der Schaltfläche Return, und NOL World sagt, ein registriertes Ticket lasse sich weiterhin zurückgeben.",
+        pitfall:
+          "An eine Freundin in einer Zeitzone zu senden, in der diese 24 Stunden überwiegend Nacht sind. Das Ticket kommt still zu Ihnen zurück und die Reservierung gehört wieder Ihnen, was am Dienstag in Ordnung ist und am Morgen der Veranstaltung nicht.",
+        takes: "5 Minuten, innerhalb von 24 Stunden",
+      },
+      {
+        title: "Prüfen Sie die Veranstaltungsseite, bevor Sie annehmen, jemand anderes könne für Sie abholen",
+        body: "NOL World erlaubt die Abholung durch Nichtkäufer durchaus, mit echten Bedingungen daran. Der Ablauf unterscheidet sich je Veranstaltungsort, die Abholung durch Dritte kann je nach Art der Veranstaltung eingeschränkt sein, und die Anweisung von NOL World lautet, den Hinweis auf der Detailseite der gebuchten Veranstaltung zu prüfen. Was die andere Person braucht, sind die aus My Ticket ausgedruckten Buchungsdaten, die Bestätigungsnummer und ein Ausweis der Käuferin. Behandeln Sie diese letzte Anforderung als die Grenze, die sie ist: Bei einer Veranstaltung, deren Einlass an der verifizierten Identität der Käuferin hängt, planen Sie nicht mit einer Vertretung.",
+        pitfall:
+          "Die Abholung durch Dritte als allgemeines Recht zu lesen. Sie ist eine Erlaubnis je Veranstaltungsort und je Veranstaltung, und die Veranstaltungen, die sie am ehesten verweigern, sind genau die stark nachgefragten, für die Sie einen Vorverkauf brauchten.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Behandeln Sie verspätetes Eintreffen nicht als Platz, den Sie noch haben",
+        body: "NOL World sagt ausdrücklich, dass der Einlass nach Beginn von der Veranstaltung abhängt und manche Aufführungen ihn gar nicht erlauben — namentlich klassische Konzerte und Opern. Wo es den späten Einlass gibt, kann er bedeuten, auf die Pause zu warten und die zweite Hälfte zu sehen. Und selbst wenn Sie hereingelassen werden, sagt NOL World, dass Sie Ihren Platz womöglich erst in der Pause einnehmen können, ein verspätetes Eintreffen kann also heißen, durch genau den Teil, für den Sie gekommen sind, zu stehen oder woanders zu sitzen.",
+        pitfall:
+          "Die Ankunftszeit vom Beginn her zu planen. Planen Sie sie von der Einlassschlange, der Sicherheitskontrolle und dem Abholfenster her, die alle vor dem Beginn stattfinden und von denen keines wartet.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Da ist ein QR-Code, wo mein Ticket sein sollte. Ist meine Buchung kaputt?",
+        a: "Nein — Ihr Browser ist im Desktop-Modus. NOL World sagt, das erzeuge einen QR-Code anstelle des mobilen Tickets, und dass eine Schaltfläche View Tickets darunter das Ticket öffnet. Sie können den Browser auch auf den mobilen Modus umstellen: Das Drei-Punkte-Menü von Chrome hat View as mobile version, die Sprachschaltfläche von Safari bietet Request Mobile Website, und das Drei-Striche-Menü von Samsung Internet hat Mobile site.",
+      },
+      {
+        q: "Mein mobiles Ticket wird in der falschen Sprache angezeigt.",
+        a: "NOL World stellt mobile Tickets ausschließlich auf Englisch bereit, eine andere Sprache bedeutet also, dass Ihr Browser automatisch übersetzt. Schalten Sie die Übersetzung aus und laden Sie neu. Das sollte man vor der Reise erledigen und nicht am Einlass, denn eine übersetzte Einlassnummer oder Sitzreihe ist auf eine schwer erkennbare Weise falsch.",
+      },
+      {
+        q: "Kann ich das Ticket an der Tür von meinem Laptop zeigen?",
+        a: "NOL World sagt, mobile Tickets seien nur in der App oder im mobilen Web verfügbar. Auf einem Rechner gibt Ihnen die Schaltfläche Mobile Ticket einen QR-Code zum Scannen mit dem Telefon, auf dem dann das eigentliche Ticket öffnet. Planen Sie den Einlass mit einem Telefon.",
+      },
+      {
+        q: "Kann meine Freundin meine Tickets an der Kasse abholen?",
+        a: "Manchmal. NOL World sagt, Nichtkäufer könnten abholen, dass der Ablauf aber je Veranstaltungsort abweicht und die Abholung durch Dritte je nach Art der Veranstaltung eingeschränkt sein kann — maßgeblich ist also der Hinweis auf der Detailseite Ihrer Veranstaltung. Sie bräuchte die aus My Ticket ausgedruckten Buchungsdaten, die Bestätigungsnummer und einen Ausweis der Käuferin. Bei Veranstaltungen, die die Identität der Käuferin am Einlass prüfen, verlassen Sie sich nicht darauf.",
+      },
+      {
+        q: "Ich habe ein mobiles Ticket versehentlich gesendet. Kann ich es zurückholen?",
+        a: "Wenn die Empfängerin es noch nicht registriert hat, ja — NOL World sagt, die Senderin könne das Teilen mit der Schaltfläche Cancel Send abbrechen. Es kommt auch automatisch zurück, wenn die Empfängerin es nicht innerhalb von 24 Stunden oder bis zum Veranstaltungsdatum registriert. Nach der Registrierung ist die Rückgabe ihre Handlung: Sie gibt es über My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return zurück.",
+      },
+      {
+        q: "Was passiert, wenn meine Freundin das gesendete Ticket nie registriert?",
+        a: "Es kommt zu Ihnen zurück. NOL World sagt, ein nicht registriertes Ticket werde nach 24 Stunden automatisch an die Senderin zurückgegeben, oder wenn es bis zum Veranstaltungsdatum nicht registriert wurde. Das stellt Ihre Reservierung wieder her — nach den Stornoregeln einschließlich Ihrer Möglichkeit, sie zu stornieren — aber es ist ein stiller Vorgang, prüfen Sie es also, statt es anzunehmen.",
+      },
+      {
+        q: "Ich komme zwanzig Minuten zu spät. Lassen sie mich rein?",
+        a: "Das hängt von der Veranstaltung ab und niemand kann es zusagen. NOL World sagt, der Einlass nach Beginn hänge von der Aufführung ab und manche erlaubten ihn gar nicht, klassische Konzerte und Opern besonders; wo er erlaubt ist, müssen Sie womöglich auf die Pause warten, und bis dahin können Sie Ihren eigenen Platz womöglich nicht einnehmen.",
+      },
+      {
+        q: "Ist das mobile Ticket dasselbe wie der Einlass per Gesichtserkennung?",
+        a: "Nein. NOL facepass ist ein eigenes System, bei dem eine Kamera an der Tür Sie ohne Ticketprüfung einlässt, und die Unterstützung dafür wird je Veranstaltung gesetzt. Das mobile Ticket und sein QR-Code sind der gewöhnliche Weg, und der, den man funktionsfähig halten sollte, auch wenn man ein Gesicht registriert hat.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: ein Produkt, und fast nichts daran ist änderbar",
+    summary:
+      "Ein Konzert und ein Hotel, verkauft als ein einziger Posten. Sie können Hotel, Daten und Nächte nicht ändern, auf das Hotel zu verzichten erstattet nichts, der Platz ist zufällig und wird am Tag selbst verraten, und die Tickets werden nur Ihnen persönlich im Hotel innerhalb eines Zeitfensters ausgehändigt.",
+    scope:
+      "Behandelt die Pakete aus Konzert und Hotel namens Play and Stay von NOL World, so wie NOL World sie dokumentiert: was feststeht, wie Tickets abgeholt werden, welche Anforderungen an Identität und Namen gelten, und was die Antworten zur Stornierung tatsächlich sagen. Einzelne Pakete tragen eigene Stornoregelungen und Leistungen, und die Produktseite ist maßgeblich. Ein Shuttle wird nur dort erwähnt, wo ein Paket eines enthält.",
+    intro: [
+      "Ein Paket sieht nach der bequemen Lösung aus: eine Zahlung, ein Hotel in der Nähe des Veranstaltungsorts, eine zugesicherte Platzkategorie, kein Kampf mit einer Warteschlange. Für einen Fan aus dem Ausland mit einem einzigen Anlauf für eine Reise ist das ein ehrlich attraktiver Tausch.",
+      "Es ist zugleich das starrste Produkt der Plattform, und die Starrheit ist aus dem Angebot nicht ersichtlich. Liest man NOL Worlds eigene Antworten hintereinander, zeigt sich ein Muster: Das Paket ist ein unteilbarer Posten. Nicht ein Ticket und ein Hotelzimmer, die sich getrennt optimieren lassen — eine Sache, einmal gekauft, fast nirgends änderbar. Alles Folgende ergibt sich aus dieser einen Tatsache, auch die Teile, die unfair wirken werden, wenn Sie sie brauchen.",
+    ],
+    steps: [
+      {
+        title: "Verstehen Sie, dass Sie einen Posten kaufen und nicht zwei Buchungen",
+        body: "Das ist die ganze Anleitung in einem Schritt. NOL World gibt an, dass die Anzahl der Nächte in einem Paket nicht geändert werden kann, dass die im Paket angegebenen Daten für Anreise und Abreise nicht geändert werden können, und dass ein Hotelwechsel nicht zulässig ist. Nächte lassen sich auch beim Kauf nicht hinzufügen — ein längerer Aufenthalt ist ein eigenes Gespräch mit dem Hotel, zum Preis des Hotels und abhängig von dessen Verfügbarkeit. Und ein Konto kann einen Posten kaufen, das ist also nichts, was man stapelt.",
+        pitfall:
+          "Das Paket zu buchen mit der Absicht, die Einzelheiten später zu ordnen: einen Tag früher anreisen, in ein Hotel näher bei einer Freundin wechseln, hinten eine Nacht streichen. Jedes davon ist ein dokumentiertes Nein.",
+        takes: "15 Minuten, bevor Sie zahlen",
+      },
+      {
+        title: "Nehmen Sie hin, dass der Verzicht auf das Hotel nichts erstattet",
+        body: "Die Frage wird in der FAQ von NOL World auf zwei Arten gestellt und bekommt beide Male dieselbe Antwort: Sie dürfen sich entscheiden, nicht im Hotel zu übernachten, aber eine Erstattung des Hotelanteils gibt es nicht, und die Reservierung ist nicht auf eine andere Person übertragbar. Stattdessen bei einer Freundin zu übernachten verwandelt sich also nicht in Geld zurück, und das bezahlte Zimmer kann niemandem sonst übergeben werden. Eine Nacht zu nutzen und den Rest zurückzufordern wird ebenfalls abgelehnt — die Anzahl der Nächte steht fest.",
+        pitfall:
+          "Die Hotelhälfte als Anzahlung zu behandeln, von der man weggehen kann. Es ist die Hälfte, die Sie nicht weiterverkaufen, nicht verschenken und nicht zurückfordern können.",
+        takes: "—",
+      },
+      {
+        title: "Rechnen Sie mit einem zufälligen Platz, und damit, ihn am Tag selbst zu erfahren",
+        body: "Das Paket sichert eine Kategorie zu, keinen Ort. NOL World sagt, die Platzvergabe innerhalb von Abschnitten und Zonen erfolge, abgesehen von Ihrer gewählten Kategorie, zufällig — und dass Ihre Platzzuweisung beim Abholen des Tickets im Hotel am Tag der Aufführung gezeigt wird. Sie werden erst Stunden vor der Veranstaltung wissen, wo Sie sitzen. Es schließt auch die naheliegende Rückfrage: Unzufriedenheit mit dem Platz ist kein Erstattungsgrund, und eine Stornogebühr kann trotzdem anfallen.",
+        pitfall:
+          "Mit einer Platzposition zu planen — einer bestimmten Seite für ein Fanprojekt, einer Reihe für ein Objektiv. Die Kategorie ist das Versprechen; der Rest ist eine Ziehung, die Sie am Tag selbst sehen.",
+        takes: "—",
+      },
+      {
+        title: "Holen Sie am Hotelschalter ab, persönlich, innerhalb des Fensters",
+        body: "Es gibt genau einen Weg zu diesen Tickets. NOL World sagt, die Abholung erfolge nur am Ticketschalter von NOL World im Hotel, nur während der festgelegten Zeiten, und dass Tickets ausschließlich an die Person ausgegeben werden, auf die die Reservierung läuft, und von dieser persönlich abzuholen sind. Auf die Frage, ob jemand mit Anspruch auf eine Ermäßigung stattdessen abholen und hingehen könne, lautet die Antwort, dass Tickets nur von der Reservierungsinhaberin abgeholt und genutzt werden können, ohne Ausnahme. Verpasst man die festgelegten Zeiten, lautet die veröffentlichte Antwort schlicht, dass Tickets nur während der angegebenen Zeit verfügbar sind.",
+        pitfall:
+          "Den Tag um den Veranstaltungsort herum zu planen. Der verbindliche Termin ist am Hotelschalter, in einem Fenster, das jemand anderes gesetzt hat, am Tag der Veranstaltung.",
+        takes: "Bauen Sie den Tag darum herum",
+      },
+      {
+        title: "Bringen Sie die Dokumente mit, die der Schalter tatsächlich verlangt",
+        body: "NOL World ist konkret: den gültigen Originalausweis der Reservierungsinhaberin, dazu die Reservierungsbestätigung, ausgedruckt oder auf dem Telefon — und ohne diese können Tickets nicht abgeholt werden. Für Staatsangehörige außerhalb Koreas ist der akzeptierte Ausweis ein Pass oder eine Bescheinigung über die Registrierung als Ausländerin. Für koreanische Staatsangehörige gibt es eine längere Liste, darunter Personalausweis, Führerschein, Pass, Jugendausweis oder ein mobiler Ausweis, ausgestellt über Government 24 oder PASS.",
+        pitfall:
+          "Den Pass im Zimmersafe zu lassen, weil der Schalter im selben Gebäude ist. Es ist der Originalausweis, der das Ticket öffnet, und ein Foto davon steht nicht auf der Liste.",
+        takes: "5 Minuten beim Packen",
+      },
+      {
+        title: "Bei einem Paket für zwei müssen Sie beide am Schalter sein",
+        body: "Das ordnet einen Tag um und wird leicht übersehen. NOL World sagt, bei einem Paket für zwei Personen müssten sowohl die Reservierungsinhaberin als auch die Begleitperson zur Abholung anwesend sein — und dass auch die Begleitperson einen Ausweis vorzeigen muss, damit bestätigt werden kann, dass sie die Altersanforderung für den Einlass erfüllt. Das Abholfenster ist also ein Termin für zwei Personen mit zwei Ausweisen und keine Besorgung, die eine von Ihnen erledigen kann.",
+        pitfall:
+          "Sich am Tag aufzuteilen — eine holt die Tickets, die andere macht Sightseeing oder stellt sich für Merchandise an. Der Schalter gibt die Tickets nicht an eine von Ihnen heraus.",
+        takes: "—",
+      },
+      {
+        title: "Bringen Sie den Namen jetzt genau mit dem Pass in Übereinstimmung",
+        body: "NOL World beantwortet das mit beiden Folgen in einem Satz: Stimmt der bei der Buchung angegebene Name nicht mit Ihrem Pass überein, sind weder die Ticketabholung noch der Hotel-Check-in möglich. Beide Hälften des Pakets, blockiert durch denselben Fehler. Die Frage, auf die es antwortet, nennt die üblichen Verdächtigen — ein Tippfehler, ein fehlender zweiter Vorname, Groß- und Kleinschreibung, Leerzeichen. Prüfen Sie die Buchung gegen die Passseite selbst und nicht gegen Ihre Erinnerung.",
+        pitfall:
+          "Anzunehmen, ein kleiner Unterschied werde durchgewunken, weil das Paket schon bezahlt ist. Bezahlt ist nicht das, was an einem der beiden Schalter geprüft wird.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Warten Sie nicht auf eine Hotelbestätigung per E-Mail, denn es gibt keine",
+        body: "Das verursacht vermeidbare Panik, wissen Sie es also vorher. NOL World sagt, Hotelbestätigungen würden nicht gesondert versandt, und dass die Hotelreservierung bestätigt und gültig ist, wenn die Zahlung durchging. Noch nützlicher: Die Reservierungsdaten gehen erst etwa zwei Wochen vor dem Aufenthalt an das Hotel, das Hotel kann Sie vorher also wirklich nicht finden. Rufen Sie früher an und man hat nie von Ihnen gehört, ist das der dokumentierte Normalzustand.",
+        pitfall:
+          "Ein Ersatzzimmer zu buchen oder das Paket erneut zu kaufen, weil das Hotel sechs Wochen vorher keine Reservierung findet. Es war nichts falsch, und jetzt gibt es zwei Buchungen.",
+        takes: "2 Minuten Beruhigung",
+      },
+      {
+        title: "Checken Sie als Käuferin ein, und lesen Sie die kleinen Leistungen",
+        body: "Der Hotel-Check-in hängt an derselben Person wie die Tickets: NOL World sagt, der Check-in sei nur nach Prüfung der Identität der Reservierungsinhaberin möglich, eine Begleitperson kann also nicht zuerst einchecken und warten. Kommen Sie spät an, lautet die Anweisung, das Hotel vorab zu kontaktieren — mit der Warnung, dass es je nach Hotel womöglich nicht möglich ist. Zwei weitere Einzelheiten, die vor der Buchung zu kennen sich lohnt: Minderjährige können nicht ohne Erziehungsberechtigte übernachten, und Frühstück ist nicht enthalten, sofern Ihr konkretes Paket es nicht enthält.",
+        pitfall:
+          "Eine Freundin vorauszuschicken, damit sie das Gepäck abstellt und den Aufenthalt beginnt. Das Zimmer öffnet sich auf Ihre Identität und nicht auf die Buchungsnummer.",
+        takes: "—",
+      },
+      {
+        title: "Gibt es ein Shuttle, behandeln Sie es als eine Abfahrt ohne zweite Chance",
+        body: "Wo ein Paket ein Shuttle enthält, sind die Antworten von NOL World nüchtern. Die Nutzung ist freiwillig, und es nicht zu nutzen erstattet nichts. Es gibt keine Ersatzfahrzeuge, zu spät am Abfahrtsort zu sein heißt also, dass es weg ist. Ein Shuttle nur für die Rückfahrt ist möglich. Eine Begleitperson, die nicht gebucht hat, kann die Shuttle-Leitung vor Ort fragen, aber die Plätze sind begrenzt und nicht zugesichert. Und die Einzelheit, die einen Abend ruiniert: Sie dürfen einen Koffer in den Bus mitnehmen, aber eine Gepäckaufbewahrung im Bus gibt es nicht, sobald Sie am Veranstaltungsort angekommen sind. Ort und Zeit für das Einsteigen zur Rückfahrt bekommen Sie bei der Ticketübergabe im Hotel.",
+        pitfall:
+          "Einen Koffer zum Konzert mitzunehmen, weil der Bus ihn zugelassen hat. Am Veranstaltungsort gibt es nirgends, wo man ihn lassen könnte, und Sie tragen ihn durch die Veranstaltung.",
+        takes: "—",
+      },
+      {
+        title: "Lesen Sie die Antworten zur Stornierung vor der Buchung, denn sie lauten nein",
+        body: "Das ist der Schritt, den man ernst nehmen sollte, solange die Reise noch ein Plan ist. NOL World veröffentlicht Antworten auf die zwei härtesten Fälle, und beide sind Absagen. Zur Ansteckung: Nach der Herabstufung der Risikoeinstufung von COVID-19 ist eine Quarantäne nicht mehr verpflichtend, dementsprechend gilt auch bei einer Infektion keine Minderung der Stornogebühr. Zu Todesfall und Krankenhausaufenthalt nach einem Unfall: Erstattungen aus persönlichen Gründen gibt es nicht, und Stornogebühren fallen nach der jeweiligen Regelung des Produkts an. Ob sich das hart oder nur klar liest, es sagt Ihnen, wo das Risiko liegt — bei Ihnen, ab dem Moment der Zahlung. Das Instrument, das es tragen soll, ist eine vor der Abreise abgeschlossene Reiseversicherung, und was sie tatsächlich abdeckt, hängt von der Police ab, lesen Sie dieses Dokument also, statt es anzunehmen.",
+        pitfall:
+          "Das Risiko unversichert zu tragen in der Annahme, ein hinreichend ernster Grund werde schon akzeptiert. NOL World hat seine Antwort auf die zwei ernstesten Gründe, die es gibt, bereits veröffentlicht.",
+        takes: "30 Minuten mit einer Versicherungspolice",
+      },
+    ],
+    faq: [
+      {
+        q: "Kann ich das Paket kaufen und das Hotel nicht nutzen?",
+        a: "Sie können auf die Übernachtung verzichten, aber NOL World gibt an, dass der Hotelanteil nicht erstattungsfähig ist und die Reservierung nicht auf eine andere Person übertragen werden kann. Weniger Nächte zu nutzen, als das Paket enthält, und die Differenz zurückzufordern wird ebenfalls abgelehnt, weil die Anzahl der Nächte nicht geändert werden kann.",
+      },
+      {
+        q: "Kann ich den Aufenthalt verlängern, verkürzen, die Daten verschieben oder das Hotel wechseln?",
+        a: "Nächte können nicht geändert werden, die Daten für Anreise und Abreise im Paket können nicht geändert werden, und ein Hotelwechsel ist nicht zulässig. Zusätzliche Nächte lassen sich auch beim Kauf nicht hinzufügen — die Anweisung von NOL World lautet, sich wegen Verfügbarkeit und Preis direkt an das Hotel zu wenden, und es kann sein, dass es nicht möglich ist. Ein Zimmer-Upgrade ist dasselbe: beim Hotel fragen und bei Ankunft direkt dort zahlen.",
+      },
+      {
+        q: "Wann erfahre ich meinen Platz?",
+        a: "Wenn Sie das Ticket am Tag der Aufführung im Hotel abholen. Das Paket sichert eine Kategorie zu; innerhalb dieser Kategorie vergibt NOL World Abschnitte und Plätze zufällig. Mit dem Ergebnis unzufrieden zu sein ist kein Erstattungsgrund.",
+      },
+      {
+        q: "Kann jemand die Tickets für mich abholen oder an meiner Stelle hingehen?",
+        a: "Nein. NOL World sagt, Tickets würden ausschließlich an die Reservierungsinhaberin ausgegeben und müssten persönlich abgeholt werden, und dass sie nur von der Reservierungsinhaberin abgeholt und genutzt werden können, ohne Ausnahme. Bei einem Paket für zwei müssen beide Personen am Schalter sein, und die Begleitperson muss ebenfalls einen Ausweis zeigen, damit ihr Alter bestätigt werden kann.",
+      },
+      {
+        q: "Ich habe keine Hotelbestätigung per E-Mail bekommen.",
+        a: "Es gibt keine. NOL World sagt, Hotelbestätigungen würden nicht gesondert versandt, und dass eine erfolgreiche Zahlung bedeutet, dass die Hotelreservierung bestätigt ist. Es sagt außerdem, die Reservierungsdaten erreichten das Hotel erst etwa zwei Wochen vor der Anreise, eine direkte Bestätigung ist also erst danach möglich.",
+      },
+      {
+        q: "Ich habe das Hotel angerufen und man findet meine Buchung nicht.",
+        a: "Zu erwarten, wenn Sie früh angerufen haben. NOL World sagt, die Daten würden etwa zwei Wochen vor dem Aufenthalt an das Hotel gesendet und eine Bestätigung sei erst danach möglich, und dass eine ordnungsgemäß abgeschlossene Paketreservierung mit Zahlung bedeutet, dass die Hotelbuchung sicher ist. Buchen Sie nicht erneut.",
+      },
+      {
+        q: "Ich wurde positiv getestet oder hatte einen Notfall in der Familie. Wird die Stornogebühr erlassen?",
+        a: "Die veröffentlichte Antwort von NOL World lautet in beiden Fällen nein. Es sagt, da eine Quarantäne wegen COVID-19 nicht mehr verpflichtend ist, gelte auch bei einer Infektion keine Minderung der Stornogebühr; und dass Erstattungen aus persönlichen Gründen, einschließlich Todesfall oder Krankenhausaufenthalt nach einem Unfall, nicht möglich sind, wobei Gebühren nach der Regelung des jeweiligen Produkts anfallen. Eine vor der Reise abgeschlossene Reiseversicherung ist das Mittel für dieses Risiko — was sie abdeckt, hängt von der Police ab, lesen Sie sie also.",
+      },
+      {
+        q: "Muss ich das Shuttle nutzen, und kann ich einen Koffer mitnehmen?",
+        a: "Es ist freiwillig, und es nicht zu nutzen erstattet nichts. Ein Koffer darf in den Bus, aber NOL World warnt, dass es im Bus keine Gepäckaufbewahrung gibt, sobald Sie den Veranstaltungsort erreichen — ein mitgebrachter Koffer ist also ein getragener Koffer. Ersatzfahrzeuge gibt es nicht, wenn Sie die Abfahrt verpassen, und Ort und Zeit für das Einsteigen zur Rückfahrt werden mit den Tickets im Hotel ausgegeben.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Aus NOL World ausgesperrt: das Konto finden und Seiten reparieren, die nicht aufgehen",
+    summary:
+      "Die Anmeldeart, die Sie gewählt haben, bestimmt jeden Weg zur Wiederherstellung, ein Zurücksetzen des Passworts gibt es nur für die Registrierung per E-Mail, und eine nicht bestätigte E-Mail-Adresse kann ein Konto überhaupt schwer auffindbar machen. Dazu Fehler auf der Buchungsseite, die gar keine Fehler sind.",
+    scope:
+      "Behandelt die von NOL World dokumentierte Wiederherstellung und Löschung von Konten sowie die Fehlschläge auf der Buchungsseite: Anforderungen an Browser und App, den Sitzplan auf dem Telefon, und Hinweisfenster, die wie ein Defekt aussehen. Die Mechanik der Warteschlange hat eine eigene Anleitung. Nichts hier hilft irgendjemandem in ein Konto, das ihm nicht gehört.",
+    intro: [
+      "Zwei Dinge gehen auf einer Ticketseite schief, die mit Tickets überhaupt nichts zu tun haben. Entweder Sie kommen nicht in Ihr Konto, oder die Seite tut schlicht nicht, was sie soll — und beides passiert am Morgen des Verkaufs, wenn keine Zeit bleibt, irgendetwas zu lesen.",
+      "Fast alles davon entscheidet eine einzige Wahl, die Sie Monate vorher ohne Nachdenken getroffen haben: ob Sie sich mit einer E-Mail-Adresse registriert haben oder über Google, Apple oder Line. Diese eine Tatsache bestimmt, ob es ein Zurücksetzen des Passworts für Sie überhaupt gibt, und deshalb fängt es dort an.",
+    ],
+    steps: [
+      {
+        title: "Finden Sie heraus, welche Art von Anmeldung Sie tatsächlich haben",
+        body: "Ein Konto bei NOL World entsteht mit einer E-Mail-Adresse oder über die Anmeldung bei einem anderen Dienst — Google, Apple oder Line, unter anderem. Die Folge ist schärfer, als es klingt: NOL World gibt an, dass die Wiederherstellung des Passworts nur Nutzerinnen und Nutzern offensteht, die sich mit einer E-Mail-Adresse registriert haben. Nutzen Sie die Anmeldung über einen anderen Dienst, gibt es kein Passwort bei NOL World zum Zurücksetzen, weil es nie eines gab. Finden Sie jetzt heraus, welches von beidem Sie sind, solange nichts drängt.",
+        pitfall:
+          "Zu glauben, Sie hätten ein E-Mail-Konto, weil Sie sich erinnern, eine E-Mail-Adresse eingetippt zu haben. Die Anmeldung über einen anderen Dienst zeigt Ihre Adresse ebenfalls an, und der Weg zur Wiederherstellung ist ein völlig anderer.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Bestätigen Sie Ihre E-Mail-Adresse, denn das ist der Schritt, der sich nicht nachholen lässt",
+        body: "Der Schlusssatz von NOL World zur Wiederherstellung von Konten ist der wichtigste in diesem Bereich: Ein Konto, dessen E-Mail-Adresse nicht bestätigt wurde, kann schwer auffindbar sein. Alles andere hier ist ein Verfahren mit einem Ergebnis. Das hier ist eine Tür, die sich womöglich nicht öffnet — der Kundendienst gleicht Sie mit einem Datensatz ab, und eine bestätigte E-Mail-Adresse ist die stärkste Übereinstimmung, die er hat. Lesen Sie das mit einem funktionierenden Konto, prüfen Sie, dass dessen Adresse bestätigt ist, und lassen Sie es dabei.",
+        pitfall:
+          "Die Bestätigungsmail bei der Registrierung zu überspringen, weil ein Verkauf drängte. Das hat an jenem Tag nichts gekostet und es ist der Unterschied zwischen einem wiederherstellbaren und einem verlorenen Konto.",
+        takes: "3 Minuten, jetzt",
+      },
+      {
+        title: "Bei einer Anmeldung über einen anderen Dienst prüfen Sie zuerst dort",
+        body: "Wenn Sie nicht mehr wissen, ob Sie je ein Konto bei NOL World hatten, weiß es der Anbieter. NOL World veröffentlicht, wo man nachsieht: bei Google über das Google-Konto, dann Sicherheit, dann Ihre Verbindungen zu Apps und Diensten von Drittanbietern. Bei Apple über Settings, Ihren Namen und die Apple-ID, dann Sign-In & Security, dann Sign in with Apple. Bei Line über Settings, dann Konto, dann die zugelassenen Apps. Steht NOL World dort, existiert das Konto und Sie wissen, welcher Anbieter es öffnet.",
+        pitfall:
+          "Auf der Anmeldeseite jede Dienstschaltfläche der Reihe nach auszuprobieren, um zu sehen, welche funktioniert. Das kann ein zweites Konto anlegen, statt das erste zu finden, und nun gibt es zwei — in einem davon liegen Ihre Buchungen.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Scheitert das, senden Sie die fünf Angaben, die der Kundendienst verlangt",
+        body: "NOL World sucht das Konto, und es nennt, was es dafür braucht: die E-Mail-Adresse, die Sie verwendet haben könnten, die Art der Anmeldung (Google, Line, Apple oder E-Mail), Ihren Anzeigenamen sowie die Art des gebuchten Produkts samt Buchungsnummer. Es sagt auch, wo Letztere steht — die Buchungsnummer liegt in dem Gutschein, der Ihnen bei der Buchung per E-Mail geschickt wurde. Sammeln Sie alles, bevor Sie schreiben, denn eine Anfrage ohne Buchungsnummer ist eine Anfrage, die um Raten bittet.",
+        pitfall:
+          "Alte Bestätigungsmails zu Buchungen als Ballast zu löschen. Darin steht die Buchungsnummer, und die ist das stärkste Erkennungsmerkmal, das Sie anbieten können, wenn das Verlorene gerade das Konto selbst ist.",
+        takes: "20 Minuten",
+      },
+      {
+        title: "Ein neues Telefon löscht Ihre Buchungen nicht — ein anderes Konto schon",
+        body: "Das ist die häufigste falsche Sorge, und NOL World beantwortet sie unumwunden: Das Telefon zu wechseln oder sich erneut anzumelden löscht Ihren Verlauf nicht. Worum es Sie bittet, ist zu prüfen, ob Sie mit einem anderen Konto angemeldet sind als ursprünglich. Das ist fast immer die wirkliche Ursache, und die Anmeldung über einen anderen Dienst ist der Grund — ein neues Telefon bietet den bequemsten Anbieter an, und den falschen zu drücken setzt Sie in ein zweites, leeres, aber vollkommen echtes Konto.",
+        pitfall:
+          "Zu schließen, die Buchung sei weg, und erneut zu kaufen. Das Ticket liegt im anderen Konto, und der zweite Kauf ist ein echter Kauf.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Nutzen Sie den Browser, den die Buchungsseite erwartet, und nur offizielle Kanäle",
+        body: "NOL World gibt an, nach Webstandards gebaut zu sein, und empfiehlt Google Chrome oder Microsoft Edge, auf dem Rechner wie auf dem Telefon. Öffnet sich das Buchungsfenster nicht, ist die Anweisung konkret: den Browser auf die neueste Version bringen, den Cache leeren, erneut versuchen. Für die App aktualisieren Sie aus dem App Store oder von Google Play. Und es gibt an, wo Tickets überhaupt gekauft werden können — auf der Seite von NOL World unter world.nol.com/ticket und in der App von NOL World, und sonst nirgends.",
+        pitfall:
+          "In einem Browser nach dem Problem zu suchen, der nie unterstützt wurde, nämlich in der Webansicht einer App, geöffnet aus einem Link in sozialen Medien. Öffnen Sie die Buchungsseite direkt in Chrome oder Edge, bevor Sie schließen, die Seite sei defekt.",
+        takes: "15 Minuten, am Vortag",
+      },
+      {
+        title: "Funktioniert der Sitzplan im mobilen Web nicht, wechseln Sie in die App",
+        body: "Es gibt ein dokumentiertes Geräteproblem, kein allgemeines. NOL World gibt an, dass auf manchen Geräten die mobile Webumgebung den Browser vergrößert, wenn Sie hinein- und herauszoomen, was die Platzwahl unmöglich macht — und dass der Ausweg darin besteht, die App von NOL World zu laden. Es nennt das bislang bestätigte Gerät: Galaxy Fold. Nutzen Sie ein faltbares oder ungewöhnlich proportioniertes Display, installieren Sie die App vor dem Verkauf, statt das in einem Zahlungsfenster von sieben Minuten zu entdecken.",
+        pitfall:
+          "Den Sitzplan mit zwei Fingern zu vergrößern, um einen bestimmten Platz zu suchen. Auf den betroffenen Geräten ist genau diese Geste das, was die Auswahl zerstört.",
+        takes: "10 Minuten, im Voraus",
+      },
+      {
+        title: "Wissen Sie, welche Hinweisfenster kein Defekt sind",
+        body: "Zwei Meldungen lesen sich wie ein Fehler und sind keiner. NOL World gibt an, dass ein Hinweisfenster mit der Mitteilung, dieser Platz sei bereits ausgewählt, erscheint, wenn Sie denselben Platz nahezu gleichzeitig mit einer anderen Person wählen — mit Ihrer Sitzung ist nichts falsch, jemand war nur eine Sekunde schneller. Und es gibt an, dass verfügbare Plätze sich automatisch ohne Neuladen aktualisieren, ein Sitzplan, der eingefroren aussieht, ist also meist ein arbeitender Sitzplan. Behandeln Sie beides als Information statt als etwas zum Reparieren.",
+        pitfall:
+          "Die Seite neu zu laden, um ein Hinweisfenster loszuwerden. Bei einem Verkauf mit Warteschlange ist das die eine Handlung, die Ihre Position frisst.",
+        takes: "—",
+      },
+      {
+        title: "Lesen Sie den Rat zu mehreren Tabs zusammen mit der Anti-Betrugs-Richtlinie",
+        body: "NOL World bittet um ein Gerät je Konto und gibt an, dass gleichzeitiger Zugriff von mehreren Geräten auf dasselbe Konto Ihre Buchungen einschränken kann. Dann gibt es technischen Rat für Menschen, die gleichzeitig buchen — dass mehrere Tabs Sitzungskonflikte erzeugen, und dass man vollständig getrennte Browser wie Chrome und Edge oder verschiedene Geräte nutzen solle. Lesen Sie das sorgfältig, denn die eigene Anti-Betrugs-Richtlinie führt kontenübergreifende Buchungen mit identischen oder ähnlichen persönlichen Angaben als missbräuchliche Nutzung auf. Die sichere Lesart des Rats betrifft getrennte Plattformen: NOL World in einem Browser, während eine andere Ticketseite in einem anderen läuft. Es ist keine Erlaubnis, mehrere eigene Konten gleichzeitig zu betreiben.",
+        pitfall:
+          "Den Tipp zu Sitzungskonflikten als gebilligte Strategie für mehrere Konten zu nehmen. Die beiden Seiten stehen unbequem nebeneinander, und die mit der schriftlichen Sanktion ist die Anti-Betrugs-Richtlinie.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Löschen Sie das Konto, wissen Sie genau, was verschwindet und was bleibt",
+        body: "Die Löschung ist unumkehrbar und NOL World listet sie auf. Gelöscht werden: Ihre Konto- und Profilinformationen, Ihr Buchungsverlauf, Ihre Reisen und Ihre Liste gemerkter Orte. Erhalten bleiben: Bewertungen und Fotos, die Sie zu einem Ort hinterlassen haben. Auf der Website kann jede Anmeldeart das Konto löschen. In der App führt der Weg bei Anmeldung per E-Mail über My Account, Settings, Delete Account und dann Ihr Passwort; bei Anmeldung über einen anderen Dienst ist der Weg derselbe, aber Sie bestätigen über Google, Line oder Apple. Zwei Dinge aus anderen Teilen der Dokumentation gehören daneben: Die Löschung entfernt auch Ihre Identitätsprüfung und gibt sie für ein anderes Konto frei, und ein wegen Missbrauchs eingeschränktes Konto lässt sich überhaupt nicht löschen.",
+        pitfall:
+          "Ein Konto zu löschen, um ein Problem mit diesem Konto zu beheben. Ein eingeschränktes Konto lässt sich nicht löschen, und ein verifiziertes nimmt Ihre Verifizierung mit — der Buchungsverlauf ist weg und die Bewertungen sind es nicht.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Ich habe mein Passwort vergessen. Wie setze ich es zurück?",
+        a: "Nur wenn Sie sich mit einer E-Mail-Adresse registriert haben — NOL World gibt an, dass die Wiederherstellung des Passworts nur für die Registrierung per E-Mail zur Verfügung steht. Der Weg führt über den Anmeldebildschirm, Find Password, die Eingabe der Registrierungsadresse und dann den Link zum Zurücksetzen, der ankommt. Nutzen Sie Google, Apple oder Line, gibt es kein Passwort bei NOL World; Sie melden sich über den Anbieter an.",
+      },
+      {
+        q: "Ich weiß nicht einmal, welches Konto ich benutzt habe.",
+        a: "Prüfen Sie zuerst beim Anbieter. NOL World veröffentlicht die Wege: Google-Konto, dann Sicherheit, dann Ihre Verbindungen zu Apps und Diensten von Drittanbietern; Settings bei Apple, dann Ihre Apple-ID, dann Sign-In & Security, dann Sign in with Apple; Settings bei Line, dann Konto, dann die zugelassenen Apps. Taucht NOL World auf, ist das das Konto.",
+      },
+      {
+        q: "Nichts davon hat funktioniert. Wird der Kundendienst es finden?",
+        a: "Er sucht, mit dem, was Sie liefern: die möglicherweise verwendete E-Mail-Adresse, die Art der Anmeldung, Ihren Anzeigenamen sowie die Art des gebuchten Produkts samt Buchungsnummer — die laut NOL World in dem Gutschein steht, der Ihnen bei der Buchung per E-Mail geschickt wurde. Es warnt außerdem, dass ein nie per E-Mail bestätigtes Konto schwer auffindbar sein kann, senden Sie also alles, was Sie haben.",
+      },
+      {
+        q: "Ich habe das Telefon gewechselt und meine Buchungen sind weg.",
+        a: "Fast sicher nicht. NOL World gibt an, dass ein Telefonwechsel oder eine erneute Anmeldung den Verlauf nicht löscht, und bittet Sie zu prüfen, ob Sie mit einem anderen Konto angemeldet sind als ursprünglich. Bei der Anmeldung über einen anderen Dienst passiert das leicht unabsichtlich — ein neues Telefon bietet den bequemsten Anbieter an, nicht unbedingt den von Ihnen genutzten.",
+      },
+      {
+        q: "Das Buchungsfenster öffnet sich gar nicht.",
+        a: "Die eigenen Schritte von NOL World: einen Standardbrowser nutzen, und es nennt Chrome und Edge; auf die neueste Version aktualisieren; den Cache leeren; erneut versuchen. Für die App auf die neueste Version aus dem App Store oder von Google Play aktualisieren. Es gibt außerdem an, dass Tickets nur unter world.nol.com/ticket oder in der App von NOL World gekauft werden können.",
+      },
+      {
+        q: "Ich kann im Browser meines Telefons keinen Platz auswählen.",
+        a: "Es gibt ein bekanntes Geräteproblem. NOL World gibt an, dass auf manchen Geräten das Hinein- und Herauszoomen den gesamten mobilen Browser vergrößert, was die Platzwahl unmöglich macht, und dass die Antwort darin besteht, die App von NOL World zu nutzen. Das von ihm als bestätigt genannte Gerät ist das Galaxy Fold. Installieren Sie die App vor dem Verkauf statt währenddessen.",
+      },
+      {
+        q: "Kann ich zwei Tabs öffnen, um meine Chancen zu verbessern?",
+        a: "Nein, und NOL World bittet um ein Gerät je Konto — es gibt an, dass gleichzeitiger Zugriff von mehreren Geräten auf dasselbe Konto Ihre Buchungen einschränken kann. Sein Rat zu getrennten Browsern betrifft Sitzungskonflikte, wenn Sie tatsächlich zwei verschiedene Ticketplattformen nutzen, und ist keine Billigung dafür, mehrere eigene Konten zu betreiben. Kontenübergreifende Buchungen mit ähnlichen persönlichen Angaben stehen auf der von ihm veröffentlichten Liste missbräuchlicher Nutzung.",
+      },
+      {
+        q: "Was passiert mit meinen Daten, wenn ich das Konto lösche?",
+        a: "NOL World gibt an, die Löschung sei unumkehrbar, und listet auf, was verschwindet: Konto- und Profilinformationen, Buchungsverlauf, Reisen und gemerkte Orte. Bewertungen und Fotos, die Sie zu einem Ort hinterlassen haben, bleiben erhalten. An anderer Stelle gibt es an, dass die Löschung auch Ihre Identitätsprüfung entfernt und sie für ein anderes Konto freigibt, und dass ein wegen Missbrauchs eingeschränktes Konto nicht gelöscht werden kann.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Por qué te rechazaron la tarjeta en una web de entradas coreana",
+    summary:
+      "Tres sistemas distintos pueden rechazar el mismo pago — la plataforma, la red de tu tarjeta y tu banco. Cada uno tiene una solución distinta y solo una de ellas es rápida.",
+    scope:
+      "Cubre los pagos con tarjetas emitidas fuera de Corea en plataformas coreanas de venta de entradas. No es asesoramiento financiero y no puede cubrir las normas concretas de tu banco.",
+    intro: [
+      "Una tarjeta rechazada en el paso del pago es el fallo más caro de toda la venta de entradas de K-pop, porque un asiento reservado vuelve al montón en cuestión de minutos. Casi todo es evitable si te lo montas con tiempo.",
+      "Parece aleatorio porque tres sistemas independientes pueden rechazar la misma transacción, y el mensaje de error que ves rara vez te dice cuál de ellos lo hizo. Repásalos en el orden del tiempo que tarda cada arreglo.",
+    ],
+    steps: [
+      {
+        title: "Comprueba si la verificación de tu cuenta está realmente completa",
+        body: "En varias plataformas, las tarjetas emitidas fuera de Corea solo funcionan una vez que la cuenta está verificada como cliente del extranjero. Si esa verificación sigue pendiente, la tarjeta fallará por muy sana que esté. Este es el arreglo más lento, y por eso va primero.",
+        pitfall:
+          "El error del pago no te va a decir «tu verificación está pendiente». Va a parecer un problema de la tarjeta.",
+        takes: "1-3 días",
+      },
+      {
+        title: "Avisa a tu banco antes de la venta, no después",
+        body: "Activa las transacciones internacionales y en línea, y si tu banco lo permite, autoriza por adelantado el rango de importe y el país. Un primer cargo de un comercio coreano a una hora rara es exactamente el perfil que bloquea un sistema antifraude.",
+        pitfall:
+          "Los bloqueos antifraude automáticos suelen ser silenciosos de tu lado: ni SMS ni aviso en la aplicación. Solo te enteras por el rechazo genérico del comercio.",
+        takes: "1 día",
+      },
+      {
+        title: "No des el paso del pago dentro del navegador de una aplicación",
+        body: "Las verificaciones de 3-D Secure y las claves de un solo uso de los bancos fallan a menudo dentro del navegador incrustado en una aplicación social o de mensajería. Usa un navegador normal, de móvil o de escritorio, y asegúrate de poder recibir el mensaje de verificación de tu banco en ese mismo dispositivo.",
+        pitfall:
+          "La redirección puede parecer que sale bien y luego perder la autorización sin avisar, lo que se lee como un rechazo.",
+        takes: "0 minutos, solo hazlo bien",
+      },
+      {
+        title: "Ten un respaldo de verdad, no una tarjeta hermana",
+        body: "Una segunda tarjeta del mismo emisor suele fallar por el mismo motivo. Un emisor distinto, una red distinta, o el método alternativo que ofrezca la plataforma, sí es un respaldo de verdad. Las dos plataformas para el extranjero rechazan además cosas opuestas, y conviene saberlo antes de culpar a la tarjeta: NOL World acepta VISA, MasterCard, AMEX, JCB y UnionPay pero solo emitidas fuera de Corea, y rechaza de plano las tarjetas emitidas en Corea. YES24 Global hace lo contrario con dos de ellas, excluyendo American Express emitida fuera de Corea y UnionPay por completo. Una tarjeta rechazada en una puede ser la tarjeta correcta en la otra.",
+        pitfall:
+          "Dos tarjetas del mismo banco son una sola tarjeta a efectos de una regla antifraude.",
+        takes: "30 minutos para prepararlo",
+      },
+      {
+        title: "Comprueba la moneda y el importe antes de confirmar",
+        body: "Mira si te cobran en KRW o en un importe convertido, y ten clara la comisión por transacción en el extranjero de tu tarjeta. Una conversión que empuje el total por encima de un límite que tú mismo pusiste también puede provocar un rechazo.",
+        pitfall:
+          "La conversión dinámica de divisa añade coste sin hacer ruido. Pagar en KRW suele ser la opción más barata.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Por qué me rechazaron la tarjeta si tiene saldo?",
+        a: "Casi siempre por una de tres cosas: tu cuenta en la plataforma no ha terminado la verificación de cliente del extranjero, el sistema antifraude de tu banco bloqueó un comercio extranjero desconocido, o falló un paso de 3-D Secure, normalmente porque se ejecutó dentro del navegador de una aplicación. El mensaje de rechazo casi nunca distingue entre ellas.",
+      },
+      {
+        q: "¿Funciona PayPal?",
+        a: "Algunas plataformas para el extranjero admiten métodos de pago alternativos en algunos espectáculos. Se decide por plataforma y por evento, no de forma general, así que mira las opciones de pago que aparecen en la página de tu evento antes de planificar nada alrededor.",
+      },
+      {
+        q: "¿Pago en KRW o en mi propia moneda?",
+        a: "Pagar en la moneda del comercio suele salir más barato que dejar que la página de pago convierta por ti, porque la conversión dinámica de divisa añade un margen. La comisión por transacción en el extranjero de tu propia tarjeta se aplica igual en los dos casos.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Cómo comprar álbumes de K-pop desde el extranjero para que cuenten",
+    summary:
+      "Dónde compras decide si tu compra se contabiliza, cuánto pagas de envío y si te llegan los extras del pedido anticipado. Aquí tienes cómo elegir.",
+    scope:
+      "Cubre la compra de álbumes físicos y artículos oficiales con entrega fuera de Corea. No cubre mercados de reventa ni productos no oficiales.",
+    intro: [
+      "Esta es la pregunta que sigue viva todo el año, a diferencia de las entradas — y por eso va junto a ellas. Y a diferencia de las entradas, tiene una respuesta equivocada que no te cuesta nada visible: tu álbum llega, simplemente no se contabilizó.",
+      "Tres cosas cambian según dónde compres: si la venta se reporta a las listas coreanas, si vienen con ella los extras del pedido anticipado, y el coste real puesto en casa una vez metidos el envío y la aduana. No se mueven juntas, así que la opción más barata es a menudo la que no cuenta para nada.",
+    ],
+    steps: [
+      {
+        title: "Decide qué quieres realmente de la compra",
+        body: "Aportar a las listas, el álbum físico, los extras del pedido anticipado, o el precio más bajo. Estas cosas tiran en direcciones distintas. Elige la prioridad antes de elegir la tienda, porque la tienda viene después de eso.",
+        pitfall:
+          "Comprar en un mercado generalista para ahorrar y descubrir luego que no contó es la versión estándar de este error.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Comprueba si el vendedor reporta a las listas coreanas",
+        body: "Las ventas que se reportan a las listas coreanas de álbumes salen de tiendas concretas y de las tiendas oficiales. Que un anuncio sea de un álbum oficial no significa que la venta se reportara. Si aportar a las listas es por lo que compras, verifica que la tienda sea de las que reportan antes de pedir.",
+        pitfall:
+          "Los anuncios de álbumes auténticos en mercados de terceros normalmente no cuentan. El álbum es real; la aportación no está ahí.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Pide dentro de la ventana de pedido anticipado si quieres los extras",
+        body: "Los beneficios del pedido anticipado — pósteres, photocards adicionales, entradas a eventos — están ligados a pedir dentro de una ventana, y a menudo a esa tienda concreta. La ventana cierra antes del día de lanzamiento, no ese día.",
+        pitfall:
+          "Los extras exclusivos de una tienda no son intercambiables. Pedir el mismo álbum en otro sitio te da un conjunto distinto o ninguno.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Calcula el envío y la exposición a la aduana, no el álbum",
+        body: "El envío desde Corea puede superar el precio del álbum, y que pagues cargos de importación encima depende de las normas de tu propio país. Mira cuáles son ahora en lugar de suponerlo: Estados Unidos suspendió su umbral de 800 dólares en agosto de 2025 y la Unión Europea eliminó el suyo de 150 euros el 1 de julio de 2026, así que para quien lea desde cualquiera de los dos ya no hay un valor lo bastante pequeño como para llegar libre. Los pedidos en grupo reducen el envío por artículo. Calcula el coste puesto en casa antes de comprometerte.",
+        pitfall:
+          "Planificar alrededor de una franquicia aduanera que donde vives ya no existe. Donde todavía existe una, juntar varios álbumes en un solo paquete puede empujar el valor declarado por encima de ella y costar más que enviarlos por separado — haz las dos cuentas.",
+        takes: "20 minutos",
+      },
+      {
+        title: "Guarda el registro del pedido hasta que llegue",
+        body: "Guarda la confirmación, el número de seguimiento y el valor declarado. Para cualquier cosa que salga mal — un paquete dañado, una consulta de aduanas, un extra que falta — eso es lo que la tienda te va a pedir.",
+        pitfall:
+          "La atención al cliente de las tiendas coreanas suele trabajar con números de pedido y no con búsquedas por correo. Sin el número, la conversación va lenta.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Los álbumes comprados fuera de Corea cuentan para las listas coreanas?",
+        a: "Cuentan las ventas reportadas por las tiendas participantes, y eso depende de la tienda y no de dónde estés. Comprar un álbum auténtico en una tienda que no reporta significa que el álbum es real pero la venta no se contabiliza. Comprueba la tienda antes de pedir si lo que buscas es aportar a las listas.",
+      },
+      {
+        q: "¿Merece la pena un pedido en grupo?",
+        a: "Para el envío normalmente sí, porque el coste por artículo baja mucho. Compénsalo con las normas de importación de tu país — donde todavía existe una franquicia aduanera, un solo paquete de valor alto puede atraer cargos que varios paquetes pequeños no atraerían. En Estados Unidos y en la Unión Europea esa cuenta ha cambiado: los dos eliminaron sus exenciones de bajo valor, así que ya no queda umbral bajo el que quedarse.",
+      },
+      {
+        q: "¿Por qué los beneficios del pedido anticipado son distintos entre tiendas?",
+        a: "Las tiendas negocian sus propios extras exclusivos, así que el mismo álbum lleva extras distintos según dónde se haya pedido por anticipado. Si lo que quieres es un extra concreto, tienes que pedir en la tienda que lo ofrece, dentro de su ventana.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Renovar la membresía de Weverse desde el extranjero",
+    summary:
+      "El pago automático se ejecuta el último día de tu periodo a la hora en que pagaste la primera vez, en una moneda que tiene que coincidir, y si falla pasada la ventana de renovación no hay vuelta atrás salvo volver a comprarla.",
+    scope:
+      "Cubre mantener en marcha una Official Membership de Weverse que ya tienes, y lo que cuesta que se corte. Entrar por primera vez en un club de fans, y calificar para una preventa concreta, son cuestiones aparte que están en la guía de preventa. Todo lo de aquí sale del aviso de Weverse Shop del 3 de septiembre de 2026 y de las páginas de producto a las que remite.",
+    intro: [
+      "Una membresía que se corta en la semana equivocada no te cuesta una suscripción. Te cuesta la preventa, porque la elegibilidad se comprueba contra una membresía que estuviera activa antes de una fecha límite, y comprarla otra vez después no mueve esa fecha.",
+      "Weverse añadió el pago automático el 3 de septiembre de 2026, lo que elimina la forma habitual de que se corte. También introdujo cuatro reglas fáciles de equivocar, y un punto sin retorno.",
+    ],
+    steps: [
+      {
+        title: "Averigua en qué categoría de membresía estás",
+        body: "Weverse gestiona las membresías en tres categorías — Global, Japan y USA — y se administran por separado. Los métodos de pago, las monedas y los ajustes del pago automático son por categoría, y se pueden guardar hasta cinco métodos de pago en cada una, con uno marcado como principal. En qué categoría estás no es algo que elijas a la ligera; es donde ya vive tu membresía.",
+        pitfall:
+          "Configurar el pago automático en la categoría que no usas. La pantalla se ve idéntica y la membresía que se renueva es la otra.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Comprueba que tu moneda es una que la categoría acepta de verdad",
+        body: "A 3 de septiembre de 2026: una Global Membership admite tarjetas de débito o crédito surcoreanas para KRW, y tarjetas registradas en PayPal para JPY, USD o MXN. Una Japan Membership admite tarjetas de crédito para JPY. Una US Membership admite tarjetas registradas en PayPal para USD. Para un fan en el extranjero con una Global Membership pagando en USD, eso significa que la tarjeta pasa por PayPal — no hay opción de tarjeta directa.",
+        pitfall:
+          "Esperar registrar una Visa directamente en una Global Membership en USD. El mismo patrón recorre Weverse Shop, y es la razón de que una tarjeta que funciona en todas partes pueda fallar aquí.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Haz que la moneda de compra coincida con la del método principal",
+        body: "Weverse lo dice directamente: la moneda de pago con la que compraste la membresía tiene que coincidir con la moneda de pago de tu método principal de pago automático. Un desajuste no se resuelve a tu favor en el momento de la renovación — es una renovación que no sale.",
+        pitfall:
+          "Comprar una membresía en una moneda y añadir después un método principal en otra, lo que se ve bien en las dos pantallas y solo falla el día que importa.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Ten claro el momento exacto en que se renueva",
+        body: "El pago automático se ejecuta el último día del periodo de validez de la membresía actual, a la misma hora del día en que pagaste la primera vez. Esa hora se fijó en un servidor coreano, así que para casi todo el que lea esto cae en algún punto de la noche o la madrugada. Si falla, Weverse envía un correo y una notificación push y reintenta una vez al día a la misma hora, mientras dure el periodo de renovación.",
+        pitfall:
+          "Una tarjeta que caduca a mitad del periodo, o un banco que bloquea el cargo, se convierte en una notificación que llega a las cuatro de la madrugada en tu hora. El reintento es diario, no cada hora: un día sin ver el correo es un día de ventana gastado.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Entiende lo que cancelar el pago automático no hace",
+        body: "Cancelar el pago automático detiene las renovaciones futuras. No cancela ni reembolsa la membresía que ya tienes, y sigues usándola con normalidad hasta que termine el periodo de validez. La cancelación y el reembolso de la membresía en sí son un asunto aparte que rige la página de producto de esa membresía.",
+        pitfall:
+          "Cancelar el pago automático esperando que te devuelvan dinero, y además: cancelarlo para «pausar» mientras se rumorea una gira, que es justo la semana en la que menos quieres que la renovación se detenga.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Trata el final del periodo de renovación como un punto sin retorno",
+        body: "Si cancelaste el pago automático puedes reactivarlo — pero solo mientras el periodo de renovación siga en marcha. Una vez terminado ese periodo, la reactivación no está disponible y el único camino es comprar la membresía otra vez. Weverse da además dos controles manuales dentro de la ventana: Pay Now para renovar de inmediato, y Retry Now si un pago falló con un método que ya has arreglado.",
+        pitfall:
+          "Esperar a ver si los reintentos salen bien. Retry Now y Pay Now existen precisamente para que no tengas que hacerlo, y los dos desaparecen cuando la ventana cierra.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Renueva en lugar de volver a comprar, porque el registro se arrastra",
+        body: "Cuando una membresía se renueva mediante el pago automático, los datos de miembro registrados en la membresía existente se conservan en la siguiente. Ese registro — el nombre que lleva, en particular — es contra lo que se ejecuta una comprobación de elegibilidad para una preventa. Comprar una membresía nueva después de un corte empieza un registro nuevo y una fecha de inicio nueva, y esa es la parte que cuesta una preventa y no una cuota.",
+        pitfall:
+          "Suponer que la continuidad va de lealtad. Va de una fecha y un nombre en un registro, y un hueco en cualquiera de los dos es lo que ve la comprobación.",
+        takes: "2 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Puedo pagar una Global Membership con mi propia Visa o Mastercard?",
+        a: "No directamente, fuera de KRW. Una Global Membership admite tarjetas coreanas para KRW, y tarjetas registradas en PayPal para JPY, USD o MXN — así que tu tarjeta llega a Weverse a través de PayPal y no como un pago directo con tarjeta.",
+      },
+      {
+        q: "¿Cuándo me cobra exactamente el pago automático?",
+        a: "El último día del periodo de validez de tu membresía actual, a la misma hora del día en que pagaste la primera vez. Esa hora se fijó en un reloj coreano, así que conviértela a la tuya.",
+      },
+      {
+        q: "Si el pago automático falla, ¿cuántas oportunidades tengo?",
+        a: "Weverse te avisa por correo y notificación push, y luego reintenta una vez al día a la misma hora durante lo que quede del periodo de renovación. También puedes usar Retry Now después de arreglar el método de pago, o Pay Now para renovar de inmediato.",
+      },
+      {
+        q: "Cancelé el pago automático. ¿Puedo volver a activarlo?",
+        a: "Sí, mientras el periodo de renovación siga abierto — hay un control de reactivación justo para eso. Después de que termine el periodo de renovación no puedes, y la única opción es comprar la membresía otra vez.",
+      },
+      {
+        q: "¿Importa que mi membresía se corte unos días?",
+        a: "Puede importar más que el precio. La renovación conserva los datos de miembro de la membresía existente; una recompra empieza un registro nuevo con una fecha nueva. La elegibilidad para una preventa se comprueba contra ese registro y su fecha límite, no contra cuánto tiempo llevas siendo fan.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Cómo comprar entradas de conciertos de K-pop desde fuera de Corea",
+    summary:
+      "El cuadro completo antes de empezar: en qué plataforma está tu espectáculo, qué comprobación de identidad usa, y qué tienes que tener listo antes de que abra la venta.",
+    scope:
+      "Cubre espectáculos celebrados en Corea del Sur y las plataformas de venta que usan las agencias coreanas. Las fechas de gira fuera de Corea las venden promotores locales y se tratan aparte — las reglas de abajo no se les aplican.",
+    intro: [
+      "Casi todas las guías que salen arriba para esta pregunta se escribieron antes de diciembre de 2025 y te mandan a una web que ya no existe con ese nombre. Esa es la razón principal de que exista esta página.",
+      "No hay una única web de entradas de K-pop. La plataforma la eligen la agencia y el promotor para cada gira, y se nombra en el anuncio oficial de ese espectáculo. Todo lo demás — qué comprobación de identidad te toca, si funciona una tarjeta extranjera, con cuánta antelación abre la preventa — se deduce de ese único dato.",
+      "Así que el orden es: primero encontrar el anuncio oficial, luego identificar la plataforma, y luego prepararte para los requisitos concretos de esa plataforma. Hacerlo al revés es como se acaba con una cuenta verificada en la web equivocada una hora antes de la venta.",
+    ],
+    steps: [
+      {
+        title: "Encuentra el anuncio oficial, no el repost de un fan",
+        body: "Ve a los canales oficiales de los artistas — la web de la agencia, la comunidad de Weverse de los artistas, y sus cuentas oficiales de X e Instagram. El anuncio nombra la plataforma de venta, las horas de preventa y venta general en KST, el nivel de membresía necesario para la preventa, y cualquier condición de residencia o verificación. Hazle una captura. Todo lo que hagas a partir de ahí depende de ese único documento.",
+        pitfall:
+          "Las cuentas de fans resumen y parafrasean, y se equivocan de plataforma con la frecuencia suficiente como para costarte la venta. Además rara vez actualizan cuando una fecha cambia.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Identifica tu plataforma — y no la deduzcas del sello",
+        body: "Los artistas de HYBE suelen pasar por la venta de entradas propia de Weverse. Otras giras coreanas usan con frecuencia NOL Ticket (la web en coreano) o NOL World (su equivalente para el extranjero), YES24 o Melon Ticket. Pero esto es una tendencia y no una regla: las agencias cambian de plataforma entre giras, y una misma gira puede repartir la venta coreana y la global entre dos webs distintas. Lee el anuncio.",
+        pitfall:
+          "Tratar la correspondencia como fija — «HYBE es Weverse, SM es YES24» — es el error más común de las guías que ya existen. Falla lo bastante a menudo como para importar.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Averigua qué comprobación de identidad te toca",
+        body: "Las webs de entradas en coreano suelen verificar la identidad contra un número de móvil coreano, que en la práctica exige un documento de residencia en Corea para conseguirlo. Si no lo tienes, la web en coreano no es tu camino. Las webs orientadas al extranjero existen precisamente para este caso y verifican por otros medios — normalmente datos del pasaporte cotejados con tu cuenta. Decide ahora qué web vas a usar, porque la cuenta que necesitas está en esa web.",
+        pitfall:
+          "Intentar forzar que la web en coreano funcione es esfuerzo perdido, y con los apaños que toman prestada la identidad de otra persona para la verificación no vamos a ayudar — ponen en riesgo tu entrada y tu cuenta.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Crea la cuenta con los datos del pasaporte exactos",
+        body: "Pon tu nombre legal tal como aparece en la zona de lectura mecánica de tu pasaporte, y tu fecha de nacimiento en el formato que espera la web. Si el espectáculo exige membresía de club de fans para la preventa, el nombre y la fecha de nacimiento de la membresía y de la cuenta de entradas tienen que ser los mismos. Los desajustes son una causa documentada de pedidos cancelados en la puerta o durante la verificación.",
+        pitfall:
+          "Los segundos nombres, los apellidos compuestos y el orden de los nombres son donde esto se rompe. Una membresía que dice «Maria Santos» y un pasaporte que dice «Maria Elena Santos Cruz» es un desajuste.",
+        takes: "20 minutos",
+      },
+      {
+        title: "Verifica tu método de pago días antes, no el mismo día",
+        body: "Las tarjetas emitidas en el extranjero suelen aceptarse, pero a menudo solo después de que tu cuenta esté verificada como cliente del extranjero. Aparte de eso, tu banco puede bloquear un primer cargo de un comercio coreano, y las verificaciones de 3-D Secure pueden fallar dentro del navegador de una aplicación. Llama a tu banco, activa las transacciones internacionales, y si la plataforma permite probarlo, haz antes una compra pequeña sin relación.",
+        pitfall:
+          "Una tarjeta que se rechaza en el paso del pago libera tu asiento de vuelta al montón en minutos. Es el fallo más caro de todo el proceso y es completamente evitable.",
+        takes: "1-3 días de margen",
+      },
+      {
+        title: "Prepárate para la venta en sí",
+        body: "Inicia sesión y completa todos los pasos de verificación al menos un día antes. El día de la venta, estate con la sesión iniciada bastante antes de la hora de apertura, con la hora oficial en KST como referencia y no con el reloj de tu dispositivo. Ten decididas de antemano tus preferencias de asiento — la mayoría de los sistemas de cola te dan una ventana corta para elegir y pagar antes de soltar tu reserva.",
+        pitfall:
+          "Abrir una ventana de incógnito nueva «por si acaso» significa iniciar sesión y volver a verificarte dentro de la cola. No lo hagas.",
+        takes: "30 minutos antes de la apertura",
+      },
+      {
+        title: "Conoce las reglas de reventa antes de planteártela",
+        body: "Corea del Sur endureció sus normas sobre reventa de entradas con una reforma de la Ley de Espectáculos que entró en vigor el 28 de agosto de 2026 — modificada en enero, promulgada en febrero, vigente desde finales de agosto. La información sobre el cambio describe una prohibición de la reventa habitual o comercial por encima del precio de compra, que alcanza también a comprar con intención de revender y que ya no se limita a las compras hechas con automatización. Las sanciones de las que se informa incluyen multas de hasta cincuenta veces el valor de la venta y el decomiso de lo obtenido. Da por descartada la reventa por encima del valor nominal en espectáculos coreanos, y usa la función oficial de reventa o transferencia de la plataforma si el espectáculo ofrece una.",
+        pitfall:
+          "Es una ley nueva, en vigor solo desde agosto de 2026, y el umbral de lo «habitual» todavía se está asentando en la práctica. Que exista un anuncio en un mercado de reventa internacional no te dice nada sobre si comprarlo o venderlo es seguro para ti.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Si mi membresía caduca antes de la preventa, ¿puedo renovarla a tiempo y ya está?",
+        a: "Solo si la renovación cae antes de la fecha límite de elegibilidad, y esa fecha suele ser anterior a la preventa. El pago automático de Weverse Shop, disponible desde el 3 de septiembre de 2026 en las membresías que lo admiten, cobra a un método registrado el último día del periodo de validez, lo que elimina el hueco por completo. Configúralo antes de que se anuncie una gira, no después.",
+      },
+      {
+        q: "¿Necesito un número de teléfono coreano para comprar entradas de conciertos de K-pop?",
+        a: "Para las webs de entradas en coreano, la verificación de identidad depende normalmente de un número de móvil coreano, y conseguir uno suele exigir documentación de residencia en Corea. Para las webs orientadas al extranjero, normalmente no — verifican a los clientes del extranjero por otros medios, habitualmente datos del pasaporte. Cuál te aplica depende de en qué plataforma se venda tu espectáculo concreto.",
+      },
+      {
+        q: "¿Puedo usar una tarjeta de crédito extranjera?",
+        a: "En las plataformas orientadas al extranjero normalmente sí, y a menudo solo después de que tu cuenta esté verificada como cliente del extranjero. Cuenta con que tu propio banco sea la otra mitad del problema: activa las transacciones internacionales con antelación y prepárate para una verificación de 3-D Secure.",
+      },
+      {
+        q: "¿Con cuánta antelación abre la preventa del club de fans?",
+        a: "Varía según el espectáculo, y el anuncio oficial es la única respuesta fiable. Las ventanas de preventa suelen ir un día o más por delante de la venta general, y la membresía normalmente tiene que estar activa antes de una fecha límite todavía anterior. No deduzcas los plazos de una gira anterior.",
+      },
+      {
+        q: "¿La web coreana y la global son la misma cola?",
+        a: "No necesariamente. Las asignaciones, la verificación y el reconocimiento del club de fans pueden gestionarse por separado entre una venta en coreano y una venta global del mismo espectáculo. Una membresía verificada en una no se reconoce automáticamente en la otra, así que mira en el anuncio cuál te aplica.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Entradas en NOL World: la web que era interpark Global",
+    summary:
+      "La web que antes se llamaba interpark Global. Cambió de nombre el 1 de diciembre de 2025, casi todas las guías te siguen mandando al nombre antiguo, y aquí tienes el camino actual paso a paso.",
+    scope:
+      "Cubre la plataforma orientada al extranjero para espectáculos coreanos. La web en coreano NOL Ticket es un producto distinto, con su propio sistema de cuentas y una comprobación de identidad más estricta.",
+    intro: [
+      "Hubo dos cambios de nombre seguidos y casi ninguna guía en inglés ha absorbido ninguno de los dos. Yanolja Core unificó sus marcas bajo el nombre NOL en abril de 2025, que es cuando Interpark Ticket pasó a ser NOL Ticket. Después, el 1 de diciembre de 2025, el interpark Global orientado al extranjero pasó a ser NOL World.",
+      "La consecuencia práctica: las guías que te mandan a «Interpark Global», con capturas de su interfaz antigua, describen un producto que ha cambiado de nombre y de diseño. Si sigues una de esas, navegas con un mapa caducado.",
+      "Esta página sigue el actual. La fecha de arriba es cuándo se comprobó por última vez.",
+    ],
+    steps: [
+      {
+        title: "Empieza en la web orientada al extranjero, no en la coreana",
+        body: "NOL World es la puerta de entrada para los fans de fuera. La web en coreano NOL Ticket ejecuta la comprobación de identidad nacional, más estricta, y en general no es tu camino salvo que tengas documentación de residencia en Corea. Son cuentas separadas: registrarte en una no te da la otra.",
+        pitfall:
+          "Los resultados de búsqueda y los marcadores antiguos siguen llevando a la marca anterior. Confirma que estás en la web para el extranjero antes de invertir tiempo en crear una cuenta.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Regístrate con los datos exactos del pasaporte",
+        body: "Usa tu nombre legal y tu fecha de nacimiento tal como están impresos en el pasaporte. Si el espectáculo que quieres tiene preventa de club de fans, estos datos tienen que coincidir también con tu registro de membresía. Arregla cualquier desajuste antes de que abra la ventana de preventa, no durante.",
+        pitfall:
+          "Cambiar después un nombre ya verificado es un trámite de atención al cliente y no un interruptor en los ajustes. Hazlo bien a la primera.",
+        takes: "20 minutos",
+      },
+      {
+        title: "Completa la verificación de cliente del extranjero antes de necesitarla",
+        body: "La verificación de cliente del extranjero es una acción única por cuenta, y NOL World indica que los datos verificados no pueden reutilizarse. Verifica en la cuenta con la que realmente vas a comprar — si tienes más de una, la verificación no se mueve entre ellas. Borrar una cuenta sí elimina su verificación y la libera para otra, pero una cuenta restringida por uso indebido no se puede borrar en absoluto. No hay límite de edad para la verificación en sí, aunque los eventos con restricción de edad pueden rechazar igualmente la reserva. La confirmación llega por correo, así que mira el spam antes de concluir que falló.",
+        pitfall:
+          "Descubrir en el paso del pago que la verificación sigue pendiente es la forma clásica de perder un asiento reservado.",
+        takes: "1-3 días incluido el procesamiento",
+      },
+      {
+        title: "Mira las condiciones concretas del espectáculo en su página",
+        body: "Los límites de asientos por cuenta, si hace falta una membresía, qué documento se exige en el recinto y si el espectáculo está abierto a compradores del extranjero se fijan por evento. Lee la página del evento y el anuncio oficial juntos — donde no coincidan, manda el anuncio oficial de tu espectáculo.",
+        pitfall:
+          "Algunos espectáculos reservan ciertos bloques de asientos o rondas de venta a compradores nacionales. Eso es por espectáculo y no se puede saber desde una guía general.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Lleva el documento correcto a la recogida",
+        body: "La recogida es en la taquilla del recinto el día del espectáculo y no antes — NOL World dice que las entradas no se pueden recoger un día anterior. La ventana abre una hora antes del espectáculo, y necesitas el número de confirmación junto con un documento de identidad. Cuenta con que haya cola en la propia taquilla. Una vez recogida, una entrada no se puede volver a emitir si se pierde o te la roban.",
+        pitfall:
+          "El nombre de la reserva, el del documento y el de la membresía tienen que coincidir todos. Un apodo en cualquier punto de esa cadena es un problema.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "¿NOL World es lo mismo que Interpark Global?",
+        a: "Es el mismo servicio de venta de entradas orientado al extranjero después de un cambio de marca. interpark Global pasó a llamarse NOL World el 1 de diciembre de 2025, tras la unificación de marcas de Yanolja Core bajo el nombre NOL en abril de 2025, cuando Interpark Ticket pasó a ser NOL Ticket.",
+      },
+      {
+        q: "¿Por qué mi marcador antiguo sigue diciendo Interpark?",
+        a: "Los cambios de marca tardan en propagarse por los resultados de búsqueda, las guías de terceros y las páginas en caché. Navega desde el anuncio oficial de tu espectáculo y no desde un enlace guardado o una entrada de blog.",
+      },
+      {
+        q: "¿NOL Global es lo mismo? ¿Y NOL Korea?",
+        a: "Son los nombres a los que recurre la gente cuando recuerda el cambio a medias, y vale la pena decirlos en voz alta porque son los que se teclean. Hay dos webs: NOL World, la orientada al extranjero, que fue interpark Global hasta el 1 de diciembre de 2025; y NOL Ticket, la que está en coreano, que fue Interpark Ticket hasta abril de 2025. Si te mandaron a «NOL Global», «NOL Korea» o «NOL KR», la web que buscas es casi con seguridad NOL World.",
+      },
+      {
+        q: "¿Puedo usar mi cuenta de NOL Ticket en NOL World?",
+        a: "Trátalas como cuentas separadas con verificaciones separadas. No des por hecho que un inicio de sesión o una verificación completada se traslada — compruébalo en la web desde la que realmente vas a comprar.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Preventa del club de fans: cómo calificar antes de que cierre",
+    summary:
+      "La membresía por sí sola no es acceso. Entre las dos hay un paso de verificación, tiene su propia fecha límite, y perdérselo es la forma más común de que un fan se quede sin preventa.",
+    scope:
+      "Cubre la forma general de calificar para las preventas de clubes de fans en espectáculos coreanos. Cada gira fija sus propios niveles, cortes y condiciones en el anuncio oficial, que manda sobre cualquier cosa general.",
+    intro: [
+      "El acceso a la preventa es una cadena de tres eslabones, y los fans suelen conocer solo el primero. Compras la membresía. Luego vinculas y verificas esa membresía contra la cuenta de entradas. Solo entonces consigues el derecho a la preventa.",
+      "Cada eslabón tiene su propia fecha límite, y la de la verificación suele ser bastante más temprana de lo que la gente espera — en algunos casos, días antes de la preventa en sí. Una membresía comprada la noche anterior puede llegar tarde aunque esté activa.",
+      "Trata el anuncio como la especificación y esta página como la lista de comprobación.",
+    ],
+    steps: [
+      {
+        title: "Lee la cláusula de elegibilidad, no el titular",
+        body: "El anuncio especifica qué producto y qué nivel de membresía califican, y la fecha para la que debe haberse comprado o estar activa. Son dos fechas distintas y las dos importan. Apúntalas en tu propia zona horaria junto a KST.",
+        pitfall:
+          "Una membresía que está activa pero se compró después del corte no califica en algunas giras. «Tengo la membresía» no es lo mismo que «califiqué».",
+        takes: "10 minutos",
+      },
+      {
+        title: "Compra la membresía bastante antes del corte",
+        body: "Compra en la tienda oficial de esos artistas. Guarda la confirmación del pedido y el número de membresía. Si la membresía es un kit físico con un código digital, cuenta con el tiempo de envío y activación del código, que no es inmediato. Desde el 3 de septiembre de 2026 Weverse Shop ofrece además pago automático en las membresías que lo admiten: la renovación se cobra a un método registrado el último día del periodo de validez, de modo que una membresía no puede caducar sin que lo notes justo en la semana en que se anuncia una gira. Se configura por categoría de membresía — Global, Japan y USA se gestionan por separado.",
+        pitfall:
+          "Los códigos de membresía revendidos o regalados fallan con frecuencia en la verificación porque el nombre registrado no coincidirá con tu cuenta de entradas. El pago automático elimina el riesgo de que caduque, no el riesgo del nombre: renueva exactamente la cuenta a la que está asociado.",
+        takes: "30 minutos",
+      },
+      {
+        title: "Vincula y verifica la membresía en la plataforma de entradas",
+        body: "Este es el paso que la gente se salta. En la plataforma de entradas hay una acción aparte para verificar tu condición de miembro del club de fans, y abre en una ventana — normalmente unos días antes de la preventa — y cierra antes de ella. Hazlo en la hora en que abre.",
+        pitfall:
+          "La verificación para una venta en coreano y para una venta global pueden gestionarse por separado en el mismo espectáculo. Completar una no concede necesariamente la otra.",
+        takes: "20 minutos, dentro de la ventana",
+      },
+      {
+        title: "Haz que los tres nombres sean idénticos",
+        body: "Pasaporte, membresía del club de fans y cuenta de entradas. Los tres. El mismo nombre legal, la misma fecha de nacimiento, el mismo orden. Si uno está mal, corrígelo antes de la ventana de verificación y no después.",
+        pitfall:
+          "Esta es la causa documentada más frecuente de que un derecho de preventa no llegue a aplicarse, y es invisible hasta el momento en que importa.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Confirma que el derecho llegó a aplicarse",
+        body: "Después de verificar, busca una confirmación explícita — una insignia, una línea de estado, un correo. Si no encuentras una confirmación positiva de que eres elegible, da por hecho que no lo eres y contacta con atención al cliente mientras la ventana siga abierta.",
+        pitfall:
+          "El silencio no es éxito. Un formulario enviado no es un derecho concedido.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Comprar una membresía garantiza el acceso a la preventa?",
+        a: "No. En la mayoría de las giras hay un paso de verificación aparte que vincula la membresía con tu cuenta de entradas, con su propia ventana que abre y cierra antes de la preventa. La membresía es un requisito previo, no el derecho en sí.",
+      },
+      {
+        q: "¿Puedo usar la membresía de otra persona?",
+        a: "En la práctica no, porque la verificación coteja el nombre registrado y la fecha de nacimiento contra tu cuenta de entradas y tu documento de identidad. Además de no funcionar, arriesga que te cancelen el pedido.",
+      },
+      {
+        q: "¿Con cuánta antelación abre la preventa respecto a la venta general?",
+        a: "Varía según la gira. Un día o más por delante es lo habitual, y el corte de la membresía queda todavía antes. El anuncio oficial de tu espectáculo es la única fuente fiable.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "La cola de NOL World, y lo que reinicia tu puesto en ella",
+    summary:
+      "Actualizar borra tu posición. Un segundo dispositivo cierra tu primer número. Los asientos se actualizan sin recargar. Todo está en la propia FAQ de NOL World, y todo contradice lo que la gente hace por instinto.",
+    scope:
+      "Cubre cómo se comportan la cola, el mapa de asientos y la lista de espera de NOL World durante una venta. El registro y la verificación de cliente del extranjero ocurren antes de todo esto y están en la guía de NOL World. Todo lo de aquí sale de la FAQ publicada de NOL World.",
+    intro: [
+      "El instinto en una cola de entradas es actualizar, y abrir un segundo navegador por si el primero se ha quedado colgado. En NOL World las dos cosas te cuestan justo aquello que intentas proteger, y la plataforma lo dice en sus propias páginas de ayuda.",
+      "Esta es la parte de una venta que ninguna guía cubre, porque no se puede deducir desde fuera — solo la ves una vez, durante noventa segundos, mientras te entra el pánico.",
+    ],
+    steps: [
+      {
+        title: "No actualices. Actualizar reinicia tu posición",
+        body: "NOL World lo dice sin rodeos: no puedes saltarte la cola, y si actualizas la página tu posición en la cola se reinicia. No se vuelve a comprobar, no se vuelve a consultar — se reinicia. El número que tuvieras se va al final.",
+        pitfall:
+          "Una página de cola que parece congelada suele ser simplemente una página de cola. La única acción que se siente como hacer algo es la única acción que deshace la espera que ya llevas.",
+        takes: "Toda la cola",
+      },
+      {
+        title: "Una cuenta recibe un número, y un segundo intento mata el primero",
+        body: "Solo puedes recibir un número de cola por cuenta. Si intentas conseguir más — un segundo navegador, un móvil al lado del portátil — NOL World cierra el primer número que recibiste. Pulsar Reserve desde otro dispositivo mientras ya estás en la cola te pregunta si quieres conservar la cola existente o empezar una nueva, y elegir una nueva significa volver a esperar desde el principio en ese dispositivo.",
+        pitfall:
+          "Abrir un dispositivo de respaldo es la táctica de entradas más extendida en las comunidades de fans y aquí es estrictamente peor que no hacer nada. La pregunta que aparece no te ofrece una segunda oportunidad; te pregunta cuál quieres tirar.",
+        takes: "0 minutos, si te aguantas",
+      },
+      {
+        title: "Un número de cola no es una entrada",
+        body: "NOL World dice que una posición en la cola no garantiza una entrada, porque la disponibilidad es limitada y las entradas se emiten por orden. La cola decide cuándo te toca intentarlo, no si queda algo cuando llegues. La cola se aplica a todos los productos reservables en NOL World, no solo a los de mucha demanda.",
+        pitfall:
+          "Leer un número de cola bajo como un resultado. Es un turno, y el inventario puede haberse acabado antes de que llegue el tuyo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Deja de actualizar también el mapa de asientos — se actualiza solo",
+        body: "El sistema de reservas se reorganizó para que los asientos disponibles se actualicen en tiempo real sin recargar. Los asientos que otras personas retienen desaparecen y los cancelados vuelven por su cuenta. Si ves «este asiento ya ha sido seleccionado», significa que otra persona eligió el mismo asiento casi en el mismo instante, no que tu página esté desfasada.",
+        pitfall:
+          "Actualizar el mapa de asientos cuesta lo mismo que actualizar la cola. La costumbre que traes de webs de entradas más antiguas es exactamente la costumbre equivocada aquí.",
+        takes: "Durante la selección",
+      },
+      {
+        title: "Lee el porcentaje de entradas agotadas por lo que mide",
+        body: "Donde se muestra un porcentaje de agotado, solo aparece cuando el 90% o más de todos los asientos están pagados, y cuenta entradas pagadas y no seleccionables. Puede que no se muestre ningún recuento de asientos restantes: NOL World dice que lo decide el organizador, y que en los productos de mucha demanda hay un desfase entre lo que se muestra y lo que hay realmente disponible.",
+        pitfall:
+          "Tratar un porcentaje de agotado como inventario en vivo. Es una cifra de entradas pagadas con un suelo del 90%, y la distancia entre ella y la realidad es mayor justo cuando más te importa.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Si te llega un aviso de lista de espera, tienes seis horas",
+        body: "Si queda libre un asiento de la lista de espera y el pago no se completa en las seis horas siguientes al aviso, la reserva se cancela y se reembolsa automáticamente, y la oportunidad pasa a la siguiente persona de la lista. Seis horas parecen generosas hasta que recuerdas que el aviso llega en horario laboral coreano y que quien lee esto estará dormido durante parte de ellas.",
+        pitfall:
+          "Una ventana de seis horas que abre a las 3 de la madrugada en tu hora es una ventana de dos horas. Convierte la hora del aviso igual que convertiste la hora de la venta.",
+        takes: "Dentro de 6 horas",
+      },
+      {
+        title: "Ten claro que después no puedes cambiar el asiento",
+        body: "Una vez completada la reserva, los cambios de asiento no son posibles — el único camino es cancelar y volver a reservar, lo que te expone a la comisión de cancelación del evento y a que el asiento se lo lleve otra persona por el camino. Lo mismo vale para los cupones: un cupón no se puede aplicar después de pagar, y usarlo significa cancelar y volver a reservar el mismo asiento con la comisión que eso implique.",
+        pitfall:
+          "Reservar un asiento del que no estás segura pensando en arreglarlo luego. No hay luego.",
+        takes: "Antes de confirmar",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Actualizar me ayuda a pasar antes la cola de NOL World?",
+        a: "Al contrario. NOL World indica que actualizar la página reinicia tu posición en la cola, y que la cola no se puede saltar.",
+      },
+      {
+        q: "¿Puedo hacer cola en el móvil y en el portátil a la vez?",
+        a: "No. Una cuenta recibe un número de cola, e intentar conseguir más cierra el primero. Si pulsas Reserve en un segundo dispositivo, se te pregunta si conservas la cola existente o empiezas de cero en el nuevo.",
+      },
+      {
+        q: "¿Tengo que actualizar el mapa de asientos para ver asientos nuevos?",
+        a: "No. Los asientos se actualizan en tiempo real — los retenidos desaparecen y los cancelados vuelven sin recargar. Actualizar te cuesta lo mismo que actualizar la cola.",
+      },
+      {
+        q: "¿Qué significa realmente el porcentaje de agotado?",
+        a: "Solo aparece cuando el 90% o más de los asientos están pagados, y cuenta entradas pagadas y no asientos que pudieras seleccionar. En espectáculos de mucha demanda hay un desfase conocido entre la cifra y la disponibilidad real.",
+      },
+      {
+        q: "¿Cuánto tiempo tengo después de un aviso de lista de espera?",
+        a: "Seis horas. Si el pago no se completa en ese plazo, la reserva se cancela y se reembolsa automáticamente y el asiento pasa a la siguiente persona de la lista de espera.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Verified Member: pasar la comprobación eKYC desde el extranjero",
+    summary:
+      "Algunos espectáculos no te dejan reservar hasta que tu pasaporte esté verificado. La comprobación es una captura en vivo del pasaporte y de tu cara, no se repite a la ligera, y la única instrucción que da NOL World sobre el momento es la que casi todo el mundo ignora.",
+    scope:
+      "Cubre la comprobación de identidad Verified Member Only en NOL World, tal como NOL World la documenta: cuándo se aplica, qué necesita la captura, qué pasa con el nombre que guarda, y qué la reinicia o la restringe. A quienes tienen pasaporte coreano se les remite a NOL Ticket, que es otra comprobación en otra web. Nada de aquí es una forma de saltarse una verificación.",
+    intro: [
+      "Un espectáculo Verified Member Only es uno que no puedes reservar hasta que tu identidad esté verificada. No es un aviso en la caja — la reserva simplemente no está disponible para una cuenta sin verificar. Los fans se enteran en el momento en que abre la reserva, que es el peor momento posible, porque la verificación es una captura en vivo de tu pasaporte y de tu cara y tarda lo que tarda.",
+      "NOL World explica el servicio como una forma de restringir el acceso con fines no autorizados, como la reventa de entradas. Conviene tomarlo al pie de la letra: la comprobación existe para atar una persona a una cuenta, y casi todas las reglas de abajo se deducen de ahí.",
+    ],
+    steps: [
+      {
+        title: "Mira si tu espectáculo lo necesita, y si estás en la web correcta",
+        body: "Verified Member Only se fija por producto y no por cuenta — NOL World dice que solo los miembros que han completado la verificación de identidad en la página del producto pueden reservar. Así que la primera pregunta es si tu espectáculo lleva esa marca. La segunda es si deberías estar en NOL World: NOL World remite a quienes tienen pasaporte coreano a la web NOL Ticket, que ejecuta una comprobación completamente distinta.",
+        pitfall:
+          "Suponer que la comprobación de identidad es un trámite único que la web ya te pedirá. En un espectáculo Verified Member Only no hay aviso — la reserva simplemente no está.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Hazlo uno o dos días antes de que abra la reserva",
+        body: "Esta es la instrucción de NOL World y el dato más útil de esta página: completa la verificación con al menos uno o dos días de antelación, porque intentarlo cerca de la hora de apertura de las entradas significa que el tráfico alto puede causar dificultades. Una vez hecha, puedes reservar cualquier espectáculo Verified Member Only sin volver a verificarte. El precio de hacerlo pronto es una tarde. El precio de hacerlo tarde es el espectáculo.",
+        pitfall:
+          "Empezar la captura en los diez minutos previos a una preventa. Una verificación que falla por tráfico no se puede acelerar, y la cola no espera.",
+        takes: "30 minutos, dos días antes",
+      },
+      {
+        title: "Verifica la cuenta con la que realmente vas a comprar",
+        body: "La verificación es única por cuenta, y NOL World indica que los datos verificados no pueden reutilizarse — un pasaporte verifica una cuenta. Si tienes más de una cuenta, este es el momento de decidir cuál es la de verdad, porque la verificación no se mueve después. NOL World añade que borrar una cuenta elimina sus datos verificados y los libera para otra, pero que una cuenta restringida por uso indebido no se puede borrar en absoluto.",
+        pitfall:
+          "Verificar en la cuenta en la que estabas conectada por casualidad y luego comprar en la otra. La segunda cuenta no está verificada, y el espectáculo es Verified Member Only.",
+        takes: "5 minutos de decisión",
+      },
+      {
+        title: "Ten el pasaporte original, válido y sin caducar",
+        body: "Solo se aceptan pasaportes válidos, y NOL World es explícito en que las fotos o copias no sirven: ni un escaneo impreso, ni una captura de pantalla, ni una foto de la página en otra pantalla. Si tu pasaporte ha caducado, tienes que renovarlo antes de poder verificarte — en NOL World no hay una vía documental alternativa para quien no tiene pasaporte coreano.",
+        pitfall:
+          "Tirar de la foto del pasaporte que ya tienes en el carrete porque el de verdad está en la caja fuerte del hotel. Ese intento queda registrado como un intento con una copia.",
+        takes: "—",
+      },
+      {
+        title: "Pasa la captura al primer intento",
+        body: "NOL World publica qué hace fallar la captura, y la lista se lee como una lista de cosas que la gente hace con prisa. Alinea el pasaporte y tu cara con las guías de la pantalla. Mantén los reflejos y los brillos lejos tanto de la página del pasaporte como de tu cara. Tu cara tiene que coincidir con la foto del pasaporte. Sujeta el dispositivo quieto al menos cinco segundos mientras captura. Y si el dispositivo es flojo o la red inestable, los datos pueden no guardarse bien aunque la captura pareciera correcta. Cuando falla, la pantalla indica el motivo — léelo en lugar de reintentar a ciegas.",
+        pitfall:
+          "Hacer esto con una mano, de noche, bajo una lámpara de techo que se refleja en el plastificado. La luz cenital sobre la página de un pasaporte es el motivo más común de que una captura no se lea.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Comprueba el nombre que se guardó de verdad",
+        body: "Solo se aceptan nombres en alfabeto inglés. NOL World dice que si el nombre de tu pasaporte no está en inglés o contiene caracteres especiales, la reserva no puede continuar, y que te pueden redirigir a una solicitud de corrección de nombre — un trámite, no un cambio de ajustes. El nombre guardado se ve en My Page, y ahí es donde hay que comprobarlo en lugar de suponerlo. Esto importa ahora porque después de la verificación no puedes modificar en absoluto tu nombre, tu fecha de nacimiento ni tu correo: las reservas solo se pueden hacer con los datos verificados.",
+        pitfall:
+          "Dejar el nombre sin comprobar porque la verificación dijo que salió bien. Salir bien y guardar los caracteres correctos son dos cosas distintas, y una de ellas ya no se puede editar.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Entiende el orden del nombre — y qué importa de verdad en la puerta",
+        body: "NOL World cambió el orden del nombre guardado el 16 de abril de 2025. Quienes se verificaron antes de esa fecha tienen nombre + (segundo nombre) + apellido; quienes se verificaron después tienen apellido + nombre + (segundo nombre). NOL World dice con claridad que, aunque el orden sea distinto del de tu pasaporte, la verificación de la entrada y el acceso al recinto siguen siendo posibles — la comprobación en el recinto solo se restringe si el nombre en sí difiere del del pasaporte. A quienes se verificaron antes del 16 de abril de 2025 se les aplica el formato nuevo cuando vuelven a verificarse tras caducar el pasaporte.",
+        pitfall:
+          "Presentar una solicitud de corrección de nombre porque el orden se ve raro. NOL World dice que el orden no es el problema; un nombre distinto sí. Lo que importa son los caracteres, no la secuencia.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Ten claro qué puede deshacer una verificación que ya pasaste",
+        body: "Una verificación completada se puede cancelar después. NOL World nombra dos causas: intentar verificarse con un documento falsificado o alterado — que define incluyendo copias impresas y capturas de pantalla — y que caduque el pasaporte usado para verificarse. Si te la cancelan, vuelve a verificarte usando la cuenta existente. NOL World advierte específicamente de que intentarlo con una cuenta nueva puede provocar fallos repetidos del sistema, y de que una verificación obtenida por medios fraudulentos puede costarte el acceso a los servicios de reserva.",
+        pitfall:
+          "Abrir una cuenta nueva para escapar de un reinicio. El reinicio siguió al documento, no a la cuenta, y la cuenta nueva hereda el problema más la sospecha.",
+        takes: "—",
+      },
+      {
+        title: "Ten claro qué cuenta la plataforma como fraude, y lo que cuesta",
+        body: "La razón de que la comprobación sea tan estricta está en la política antifraude de NOL World, y las consecuencias están publicadas. Usar documentos robados o falsos para verificarse figura como uso fraudulento. También reservar varias entradas más allá del uso normal con datos personales idénticos o similares — los mismos datos de contacto, la misma dirección de envío o la misma información de pago en varias cuentas. Las sanciones van desde una restricción de reserva de tres meses o más hasta la suspensión permanente de la cuenta y la cancelación de todas las entradas reservadas. El organizador del evento puede añadir las suyas, incluida la expulsión del club de fans. Hay un recurso, y donde el comercio fraudulento está claramente confirmado no lo hay.",
+        pitfall:
+          "Verificar varias cuentas familiares desde un móvil, una dirección y una tarjeta para mejorar tus opciones en una preventa. Ese patrón está en la lista publicada, y la sanción declarada alcanza todas las entradas de todas esas cuentas.",
+        takes: "10 minutos de lectura",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Qué significa Verified Member Only en la página de un evento?",
+        a: "Que el espectáculo está cerrado a las cuentas sin verificar. NOL World lo describe como un servicio que permite a los miembros verificar su identidad antes de comprar, donde solo quienes han completado la verificación en la página del producto pueden reservar. Declara que el propósito es restringir el acceso con fines no autorizados, como la reventa de entradas. Ten a mano el pasaporte y el móvil, porque la comprobación necesita los dos.",
+      },
+      {
+        q: "Tengo pasaporte coreano. ¿Puedo verificarme en NOL World sin más?",
+        a: "NOL World remite a quienes tienen pasaporte coreano a la web NOL ticket. Es otra web con otra comprobación de identidad — normalmente autenticación por móvil coreano o I-PIN — y una cuenta aparte.",
+      },
+      {
+        q: "Soy de nacionalidad coreana y vivo fuera, sin número de móvil coreano. ¿Entonces qué?",
+        a: "NOL World publica una vía documental. Remite a los ciudadanos surcoreanos residentes en el extranjero a NOL Ticket, donde la identidad se puede verificar por autenticación móvil o I-PIN; cuando no hay número de registro de residente coreano y la autenticación móvil no está disponible, acepta documentos que acrediten la condición de coreano en el extranjero — un certificado de registro de coreano en el extranjero junto con un pasaporte surcoreano, enviados por su formulario de consulta de atención al cliente con el ID de tu cuenta. Dice que el certificado se puede obtener en línea a través de la Overseas Koreans Agency, y que una Foreign Registration Card puede aceptarse como sustituto donde el certificado sea difícil de conseguir. Advierte además de que los documentos falsificados suponen restricción inmediata.",
+      },
+      {
+        q: "¿Hay una edad mínima para la verificación de identidad?",
+        a: "NOL World dice que no hay límite de edad para la verificación en sí, pero que aun así puedes no poder reservar ni asistir a productos con restricciones de edad. Estar verificado no es lo mismo que ser elegible para un espectáculo concreto.",
+      },
+      {
+        q: "Mi nombre en My Page está en otro orden que en mi pasaporte. ¿Me van a rechazar?",
+        a: "NOL World dice que no. Cambió el orden guardado el 16 de abril de 2025 e indica que la verificación de la entrada y el acceso son posibles aunque el orden difiera del pasaporte. La comprobación en el recinto solo se restringe si el nombre en sí difiere — así que revisa la ortografía y los caracteres, no la secuencia.",
+      },
+      {
+        q: "Mi pasaporte caducó después de verificarme. ¿Tengo que hacer algo?",
+        a: "Sí. NOL World enumera la caducidad del pasaporte como causa de que se cancele una verificación completada, así que una renovación significa volver a verificarse — en la cuenta existente, no en una nueva. Si te verificaste antes del 16 de abril de 2025, este es también el momento en que se aplica el nuevo orden del nombre a tu registro.",
+      },
+      {
+        q: "¿Puedo verificarme con el pasaporte de un familiar si el mío caducó?",
+        a: "No, y esta es la única pregunta con una consecuencia publicada en lugar de una opinión. NOL World enumera el uso de documentos robados o falsos para verificarse entre las actividades que trata como uso fraudulento, y las sanciones declaradas llegan hasta la suspensión permanente de la cuenta y la cancelación de todas las entradas reservadas. Dice además que puede hacerse una verificación de identidad en el recinto, y pide que reserves a tu propio nombre y con tu propia cuenta y lleves un documento con foto válido. Una entrada que no sobrevive a la puerta no es una entrada.",
+      },
+      {
+        q: "Me restringieron la cuenta. ¿Hay recurso?",
+        a: "NOL World publica uno. Dice que a los usuarios se les concede normalmente un plazo de al menos un día para dar explicaciones, y que un recurso debe ser una exposición detallada que incluya el ID de la cuenta restringida, el nombre completo y los datos de contacto, sin formato ni plantilla obligatorios, enviada por su formulario de consulta de atención al cliente. La revisión tarda entre 10 y 15 días y el resultado llega por correo. Declara también los límites: si se pasa el plazo o no se despeja la sospecha, las reservas se cancelan de oficio, y donde el comercio fraudulento está claramente confirmado las entradas pueden cancelarse sin recurso alguno.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "La caja de NOL World: la comisión, el reloj y la moneda en la que pagas",
+    summary:
+      "Una entrada de concierto lleva una comisión de servicio de 8.000 wones, tienes diez minutos para elegir asiento y siete para pagar, y la ventana de pago te pide que elijas moneda. Tres decisiones de dinero y un cronómetro, todas publicadas y ninguna evidente.",
+    scope:
+      "Cubre lo que NOL World publica sobre el coste y los tiempos de su caja: la comisión de servicio por género, el cronómetro de compra en dos tramos, la elección de moneda, los cupones y los límites por pedido. Las comisiones y los cronómetros se pueden fijar por evento y NOL World lo dice en los dos casos, así que la página de tu evento manda sobre esto. Nada de aquí es consejo sobre qué moneda sale más barata para tu tarjeta concreta.",
+    intro: [
+      "Casi todo lo que sale mal en una caja coreana no es la tarjeta. Es que la página te hace tres preguntas con dinero de por medio mientras corre un cronómetro, y una compradora del extranjero se encuentra con todo ello por primera vez con unos siete minutos por delante.",
+      "Todo está publicado, y nada está en la página de producto donde decidiste que la entrada era asequible. Así que el objetivo de esta página es mover las sorpresas a la semana anterior.",
+    ],
+    steps: [
+      {
+        title: "Suma la comisión de servicio antes de decidir que la entrada es asequible",
+        body: "NOL World publica su comisión de servicio por género. Los musicales y los conciertos llevan 8.000 wones — excluidos ciertos productos como los conciertos en línea y las membresías de clubes de fans. Otros espectáculos y el deporte, 3.000 wones. Ocio y exposiciones, gratis. NOL World dice además que las comisiones pueden variar por producto y que las compruebes al comprar, así que trata estas cifras como el punto de partida publicado y no como una promesa sobre tu evento.",
+        pitfall:
+          "Comparar el precio de una entrada coreana con el de una entrada en tu país y olvidar que esto va encima. No es mucho, y es justo el tipo de pequeña sorpresa que hace que una plataforma entera parezca poco fiable en el peor momento.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Ten claro qué compra esa comisión, porque una línea importa",
+        body: "NOL World detalla lo que cubre la comisión de servicio: mantenimiento de la web y costes asociados, procesamiento de pagos que sostiene su sistema de detección de fraude, tasas tecnológicas para prevenir reservas fraudulentas con bots y macros, y soporte de sistemas para las reservas globales. El tercer punto es el interesante. La comisión financia en parte la maquinaria antimacros, que es la misma dirección que las comprobaciones de identidad y la reforma de la Ley de Espectáculos — y es la razón de que la cola se comporte como un sistema adversario y no como una fila.",
+        pitfall:
+          "Leer la comisión como margen puro y la cola como incompetencia. La plataforma te está diciendo que gasta la comisión en mantener fuera a los compradores automatizados, que es también la razón de que las reglas que te impone sean estrictas.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Entiende el reloj: diez minutos para elegir, siete para pagar",
+        body: "El cronómetro de compra tiene dos tramos y NOL World declara los dos. Desde que entras en la página de reserva tienes hasta diez minutos para elegir asientos. Al pasar al paso del precio, tus asientos quedan retenidos siete minutos mientras completas el pago, con un cronómetro arriba de la página. Si lo pasas, los asientos se liberan automáticamente y empiezas la reserva de nuevo. Las reservas sin asiento asignado o de entrada general también tienen el límite de diez minutos antes del pago. NOL World añade que los límites pueden variar por evento y que algunos eventos no tienen ninguno.",
+        pitfall:
+          "Abrir la aplicación del banco a buscar un número de tarjeta dentro de los siete minutos. Los datos de la tarjeta, la dirección de facturación y la aplicación de aprobación de tu banco deberían estar listos antes de entrar en la página de reserva, porque al cronómetro le da igual que tu móvil te esté pidiendo iniciar sesión otra vez.",
+        takes: "17 minutos, si los gastas todos",
+      },
+      {
+        title: "Trata la pregunta de la moneda como una decisión de verdad",
+        body: "NOL World admite el pago en 24 monedas, incluidos el won coreano, el dólar estadounidense, el yen y el yuan, y las disponibles aparecen después de que introduzcas los datos de la tarjeta. La elección que te ofrece es entre la moneda del país emisor de tu tarjeta y el won coreano. Son dos tipos de cambio distintos fijados por dos partes distintas — uno por quien convierte en la página de pago, otro por tu red de tarjetas y tu emisor. Elegir tu propia moneda es conversión dinámica de divisa, y quien hace la conversión fija el tipo y se lleva un margen, así que pagar en wones suele ser lo más barato de los dos. Suele, no siempre: la comisión por transacción en el extranjero de tu propia tarjeta se aplica igual, y un mal margen del emisor puede cerrar la diferencia. La mitad que sí puedes comprobar antes del día son las condiciones de tu emisor, así que compruébalas.",
+        pitfall:
+          "Elegir tu moneda de casa porque la cifra te resulta familiar. Lo familiar es aquí la opción más cara más veces que no, y esta es la única pantalla en la que eliges quién hace la conversión.",
+        takes: "10 minutos, con tu banco, antes",
+      },
+      {
+        title: "Aplica el cupón antes de pagar, porque no hay un después",
+        body: "NOL World es directo: una vez completado el pago no puedes aplicar un cupón. El único camino que ofrece es cancelar el mismo asiento y volver a reservar con el cupón aplicado — y advierte de que cancelar y volver a reservar puede llevar comisiones según la política del propio evento, así que compruébalas antes. Pondéralo con honestidad frente a lo que vale el cupón, y recuerda que el asiento que sueltas no queda reservado para ti mientras vuelves a reservar.",
+        pitfall:
+          "Cancelar un asiento que de verdad tienes para salvar un descuento que quizá no llegues a usar. El cupón vale menos que la entrada, y el inventario no espera.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Cuenta con un límite de entradas, y con que sea del organizador",
+        body: "NOL World dice que, según el organizador, puede haber un límite de cuántas entradas se pueden reservar por pedido o por miembro para un espectáculo dado — y que cuando las entradas de concierto se venden combinadas con un tour u otras entradas de acceso, el organizador puede imponer además un límite por miembro. Así que el techo no es un número de toda la plataforma que puedas consultar; se fija por espectáculo, a veces por persona en lugar de por operación, y es una razón de que un pedido de grupo pueda fallar en el último paso.",
+        pitfall:
+          "Planificar un pedido para cuatro personas alrededor de un límite que leíste en otro espectáculo. Un límite por miembro tampoco se resuelve repartiendo el pedido entre tus propias cuentas — ese patrón está en la lista publicada de uso fraudulento de NOL World.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Confirma que la reserva existe, en el sitio que muestra el estado",
+        body: "Después de pagar, abre la web o la aplicación de NOL World y ve a Account/My y luego My Reservations. NOL World dice que los datos básicos de la reserva y su estado se ven tanto en la lista como en la página de detalle de la reserva. Hazlo una vez mientras sigues sentada ante un escritorio en lugar de suponer que el correo de confirmación es toda la verdad — la lista de reservas es donde aparece un estado que no esperabas, y es la pantalla por la que te van a preguntar si contactas con atención al cliente.",
+        pitfall:
+          "Tratar un pago que pasó como una reserva que existe. Normalmente son lo mismo, y el sentido de comprobarlo es la vez en que no lo son.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Ten claro qué significa terminado para lo que compraste",
+        body: "Para artes escénicas y conciertos, NOL World dice que el proceso está completo al pagar y que recoges en la taquilla del recinto. Los productos de tours y actividades no son uniformes: algunos emiten un código QR o de barras en tu My Page o por correo que da acceso directamente, y otros exigen presentar el bono o la confirmación de reserva en un mostrador in situ para canjearlo por una entrada física antes de entrar. La instrucción de NOL World es mirar en la página del producto cuál de los dos aplica, porque la diferencia decide si tienes que encontrar un mostrador antes de la entrada.",
+        pitfall:
+          "Dar por hecho que un código QR en el correo es un pase de acceso. En un producto de canje es lo que intercambias en un mostrador, y el mostrador tiene horario.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto es la comisión de reserva en una entrada de concierto?",
+        a: "NOL World publica 8.000 wones para musicales y conciertos, excluidos ciertos productos como los conciertos en línea y las membresías de clubes de fans; 3.000 wones para otros espectáculos y deporte; y nada para ocio y exposiciones. Dice además que las comisiones pueden variar por producto y que se comprueben al comprar, así que confírmalo en tu propio evento.",
+      },
+      {
+        q: "¿Cuánto tiempo tengo realmente en la caja?",
+        a: "Diez minutos para elegir asientos desde que entras en la página de reserva, y luego una retención de siete minutos mientras pagas, con un cronómetro arriba. Si te pasas, los asientos se liberan y vuelves a empezar. La entrada general también tiene los diez minutos. NOL World dice que los límites pueden variar por evento y que algunos eventos no tienen ninguno.",
+      },
+      {
+        q: "¿Pago en wones coreanos o en mi propia moneda?",
+        a: "Normalmente en wones. NOL World admite 24 monedas y te deja elegir entre la moneda del país emisor de tu tarjeta y el won coreano, mostrada después de introducir los datos de la tarjeta. Elegir tu propia moneda es conversión dinámica de divisa, donde quien convierte fija el tipo y añade un margen — así que el won suele salir más barato. La comisión por transacción en el extranjero de tu propia tarjeta se aplica igual, y esa es la parte que conviene comprobar con tu emisor antes del día.",
+      },
+      {
+        q: "Se me olvidó usar el cupón. ¿Puedo añadirlo ahora?",
+        a: "No. NOL World dice que un cupón no se puede aplicar una vez completado el pago. El único camino que da es cancelar el mismo asiento y volver a reservar con el cupón, y advierte de que la cancelación y la nueva reserva pueden llevar comisiones según la política del evento. Comprueba la comisión antes de soltar un asiento que ya tienes.",
+      },
+      {
+        q: "¿Por qué solo puedo reservar dos entradas si mi amiga reservó cuatro?",
+        a: "Porque el límite es del organizador y no de la plataforma. NOL World dice que un espectáculo puede limitar las entradas por pedido o por miembro, y que los productos combinados de concierto y tour pueden llevar además un límite por miembro. Otro espectáculo, u otra ronda de venta, puede tener otro techo.",
+      },
+      {
+        q: "¿Puedo usar una tarjeta de crédito coreana en NOL World?",
+        a: "No. NOL World solo acepta tarjetas emitidas fuera de Corea; las emitidas en Corea son para los miembros nacionales verificados en la web coreana. Una tarjeta coreana rechazada aquí es la regla funcionando, no un fallo.",
+      },
+      {
+        q: "¿Dónde compruebo que mi reserva salió bien?",
+        a: "En la web o la aplicación de NOL World, en Account/My y luego My Reservations. NOL World dice que los datos de la reserva y su estado aparecen tanto en la lista como en la página de detalle. Esa pantalla, y no el correo de confirmación, es la que muestra el estado.",
+      },
+      {
+        q: "Ya he pagado. ¿Queda algo por hacer antes del espectáculo?",
+        a: "Para una entrada de concierto o de artes escénicas, no — NOL World dice que el proceso está completo y que recoges en la taquilla del recinto. Para un producto de tour o actividad depende: algunos envían un código QR o de barras que da acceso directamente, otros necesitan que el bono se canjee antes por una entrada física en un mostrador in situ. La página del producto dice cuál.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Cancelar una entrada de NOL World: la fecha límite, la comisión y el dinero que pierdes igual",
+    summary:
+      "La fecha límite de cancelación es la tarde anterior al espectáculo en hora coreana, los sábados es más temprano que el resto de la semana, y una entrada totalmente reembolsada puede costarle dinero igualmente a quien paga con tarjeta extranjera. Además: enviarle la entrada a tu amiga te quita el botón de cancelar.",
+    scope:
+      "Cubre la cancelación de una entrada de espectáculo en NOL World, tal como NOL World la documenta: las fechas límite, dónde se muestra la comisión, cómo llega el reembolso a una tarjeta extranjera, y qué hace imposible cancelar. NOL World no publica una tabla central de comisiones y esta página no se inventa ninguna. Los productos de tours y actividades siguen sus propias políticas y solo se mencionan donde difieren.",
+    intro: [
+      "Una fan del extranjero cancela por motivos que una fan de Corea rara vez tiene: un visado, un vuelo de conexión, un turno de trabajo que se movió. Así que las reglas de cancelación importan más a este público que a aquel para el que se escribieron — y son estrictas, van por husos horarios, y en dos puntos son asimétricas de maneras que nadie adivinaría.",
+      "Dos de los datos de abajo conviene conocerlos antes de reservar y no después. Los espectáculos de sábado cierran la cancelación seis horas antes que cualquier otro día. Y una cancelación que NOL World tramita por completo puede dejar igualmente con menos dinero a quien paga con tarjeta extranjera, lo que no es culpa de nadie y tampoco es problema de nadie resolvértelo.",
+    ],
+    steps: [
+      {
+        title: "Aprende la fecha límite antes de reservar, porque no es el día del espectáculo",
+        body: "NOL World cierra las cancelaciones de espectáculos el día anterior, no el mismo día: las 17:00 KST del día previo al espectáculo entre semana y festivos, y las 11:00 KST del día previo para un espectáculo de sábado. La regla del sábado es la que pilla a la gente — es seis horas antes que el resto de la semana, y se aplica a la función del sábado, así que la fecha límite cae el viernes por la mañana en hora coreana.",
+        pitfall:
+          "Calcular «el día antes» en tu propio calendario. Para una función del sábado por la noche en Seúl, las 11:00 KST del viernes son el jueves por la noche en Ciudad de México. La fecha límite puede caer un día entero antes de lo que parece leerse.",
+        takes: "5 minutos, antes de pagar",
+      },
+      {
+        title: "Usa la ventana gratuita si te están entrando dudas",
+        body: "Hay un periodo sin comisión, y es corto: NOL World dice que, en las entradas, cancelar antes de las 23:59 del día de tu reserva no lleva comisión de cancelación. Así que la decisión que puedes revertir gratis es la que tomas el mismo día en que reservaste. Pasada la medianoche cuesta algo.",
+        pitfall:
+          "Suponer que esas 23:59 son tu propia medianoche. NOL World nombra KST explícitamente en las otras fechas límite de cancelación y no nombra zona en esta, así que la lectura segura es hora coreana — y en cualquier caso, una decisión tomada en los últimos diez minutos de una ventana es una decisión tomada tarde.",
+        takes: "—",
+      },
+      {
+        title: "Ten claro dónde está el botón, y qué significa que no esté",
+        body: "El camino es App o Web, luego Account/My, luego My Reservations, luego Ticket Reservation List, luego la reserva, luego Cancel Reservation en la página de detalle. Si el botón Cancel Reservation no está en la página de detalle, la instrucción de NOL World es contactar con atención al cliente en lugar de seguir buscando: una persona confirma con el proveedor si se puede cancelar, la comisión y el importe del reembolso, y luego te guía. Puedes seguir la solicitud desde la página de detalle de la reserva, y llega un correo de confirmación cuando se completa.",
+        pitfall:
+          "Leer un botón ausente como un fallo de la web y reintentarlo durante una hora. Es un estado, y el reloj del primer paso sigue corriendo mientras reintentas.",
+        takes: "15 minutos, más el tiempo de atención al cliente",
+      },
+      {
+        title: "No esperes una tabla de comisiones, y saca la cifra de tu propia reserva",
+        body: "No hay una tabla de comisiones publicada con la que planificar. A la pregunta de cuánto es la comisión de cancelación, NOL World responde con un camino — Web/App, Account/My, My Reservations, Reservation Details — porque la cifra es una propiedad de tu reserva y no de la plataforma. En los productos de tours y actividades, la comisión y el importe del reembolso se te muestran al pulsar Cancel Reservation, antes de confirmar. No vamos a imprimir aquí un porcentaje con el que tu reserva podría no estar de acuerdo.",
+        pitfall:
+          "Planificar con una tabla de comisiones sacada de una entrada de blog. Cualquier guía que cite un porcentaje fijo de cancelación coreano para tu espectáculo está citando algo que NOL World no publica.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Comprueba la cancelación parcial mientras todavía estás reservando",
+        body: "Cancelar dos asientos de cuatro es posible en algunos espectáculos y no en otros, y la instrucción de NOL World es comprobar el estado de la cancelación parcial mientras reservas — es decir, antes de que sea lo que necesitas. Los productos de tours y actividades no la permiten en absoluto: ahí el camino es cancelar toda la reserva y volver a reservar, y NOL World advierte sin rodeos de que la disponibilidad después no está garantizada y de que volver a reservar puede no ser posible.",
+        pitfall:
+          "Reservar cuatro asientos suponiendo que las dos amigas dudosas se pueden quitar luego. En un espectáculo sin cancelación parcial, la elección pasa a ser los cuatro o ninguno.",
+        takes: "2 minutos, al reservar",
+      },
+      {
+        title: "Entiende que un reembolso completo puede costarle dinero igualmente a una tarjeta extranjera",
+        body: "Esta es la parte escrita para este público y casi nunca explicada en inglés. NOL World indica que, cuando se usó una tarjeta de crédito extranjera, puede producirse una ganancia o una pérdida de cambio por la diferencia entre el tipo del día de la reserva y el del día de la cancelación — y, por separado, que las comisiones por transacción internacional pueden aplicarse aunque la operación se haya cancelado. Ninguna de las dos es una deducción que haga NOL World. Las dos son de tu emisor de tarjeta, y el consejo de NOL World es pedirle al emisor los tipos y comisiones exactos.",
+        pitfall:
+          "Leer un importe reembolsado menor que el cobrado como un error o una comisión oculta. La diferencia puede ser el tipo de cambio moviéndose entre dos fechas, y quien puede explicártelo es tu banco, no la plataforma de entradas.",
+        takes: "Una llamada a tu banco",
+      },
+      {
+        title: "Dale al reembolso el tiempo que necesita la red de tarjetas",
+        body: "Si la operación todavía no ha llegado a tu compañía de tarjeta, NOL World dice que la cancelación se completa al momento. Si ya ha llegado y el importe está liquidado, cuenta con unos 5 a 7 días para que la compañía lo revierta, y con que el importe cancelado se descuente de la factura del mes siguiente en lugar de devolverse como un pago. NOL World señala que las políticas de reembolso difieren entre compañías de tarjeta, así que la tuya manda sobre sus propios plazos.",
+        pitfall:
+          "Abrir una reclamación en tu banco mientras la reversión está en curso. Un contracargo sobre una operación que ya se está cancelando crea un segundo problema en una cuenta con la que quizá quieras volver a reservar.",
+        takes: "5-7 días",
+      },
+      {
+        title: "No envíes la entrada móvil hasta que estés segura de que vas",
+        body: "Esta es la trampa que justifica la página entera. Compartir la entrada móvil permite a quien compró enviársela a quien va a asistir — y NOL World indica que, una vez enviada correctamente la entrada móvil, la cancelación de la reserva queda restringida. La vuelta atrás es de quien la recibe: si da de baja la entrada, la cancelación vuelve a ser posible. Antes del registro hay salidas más suaves — quien envía puede pulsar Cancel Send mientras la entrada esté sin registrar, y una entrada sin registrar vuelve automáticamente a las 24 horas o para la fecha de la función.",
+        pitfall:
+          "Enviar las entradas a las amigas la semana en que reservas, porque parece lo organizado. El botón de cancelar es ahora efectivamente suyo, y recuperarlo significa pedirles que suelten la entrada primero.",
+        takes: "—",
+      },
+      {
+        title: "Lee aparte las políticas de tours y actividades",
+        body: "Si tu reserva es un tour, un traslado o una actividad en lugar de una entrada de espectáculo, nada de lo anterior es un valor por defecto seguro. NOL World dice que algunos de estos productos no se pueden cancelar en absoluto una vez comprados, y que puede aplicarse una comisión de cancelación del 100% incluso el mismo día de la compra. La política que rige es la de la propia página de detalle del producto y la del bono, y NOL World te pide que la leas antes de enviar una solicitud de cancelación.",
+        pitfall:
+          "Trasladar las reglas de las entradas a un paquete reservado en la misma sesión. La ventana gratuita del mismo día es una regla de entradas de espectáculo, y un producto de tour puede ser no reembolsable desde el momento en que pagas.",
+        takes: "10 minutos por producto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuál es exactamente la fecha límite de cancelación de un espectáculo?",
+        a: "El día anterior al espectáculo, en hora coreana. NOL World da las 17:00 KST del día previo entre semana y festivos, y las 11:00 KST del día previo para las funciones de sábado. Conviértelo con cuidado contra tu propia fecha — una fecha límite a las 11:00 KST del viernes es el jueves por la noche en buena parte de América.",
+      },
+      {
+        q: "¿Hay alguna cancelación gratuita?",
+        a: "En las entradas de espectáculo sí, el día en que reservas: NOL World dice que cancelar antes de las 23:59 del día de tu reserva no lleva comisión de cancelación. En esa no nombra zona horaria mientras que en las otras sí nombra KST, así que trátala como hora coreana y no la apures. Los productos de tours y actividades son distintos — algunos cobran el 100% incluso el mismo día.",
+      },
+      {
+        q: "¿Cuánto es la comisión de cancelación?",
+        a: "NOL World no publica una tabla. Ante esa pregunta da un camino — Web o App, Account/My, My Reservations, Reservation Details — porque la cifra pertenece a tu reserva. En los productos de tours y actividades, pulsar Cancel Reservation te muestra la comisión de cancelación y el importe del reembolso antes de confirmar. Cualquier guía en inglés que cite un porcentaje fijo para tu espectáculo está citando una cifra que la plataforma no declara.",
+      },
+      {
+        q: "Cancelé a tiempo y me devolvieron menos de lo que pagué. ¿Dónde está el resto?",
+        a: "Probablemente no en NOL World. Indica que una tarjeta extranjera puede producir una ganancia o pérdida de cambio por la diferencia entre el tipo del día de la reserva y el del día de la cancelación, y que las comisiones por transacción internacional pueden aplicarse aunque la operación se cancelara. Las dos cosas son de tu emisor de tarjeta, y el propio consejo de NOL World es pedirle los tipos y comisiones exactos.",
+      },
+      {
+        q: "¿Cuánto tarda en volver el dinero?",
+        a: "Si la operación todavía no ha llegado a tu compañía de tarjeta, la cancelación se completa de inmediato. Si ya ha llegado, NOL World dice unos 5 a 7 días para que la compañía cancele la operación, con el importe descontado de la factura del mes siguiente. Las compañías de tarjeta difieren, así que la tuya es la que puede decírtelo.",
+      },
+      {
+        q: "Ya le envié la entrada móvil a mi amiga. ¿Todavía puedo cancelar?",
+        a: "No mientras ella la tenga. NOL World dice que la cancelación de la reserva queda restringida una vez que una entrada móvil se ha enviado correctamente, y que vuelve a ser posible si quien la recibe la da de baja. Si la entrada aún no está registrada tienes salidas más fáciles: quien envía puede pulsar Cancel Send, y una entrada sin registrar vuelve automáticamente a las 24 horas o para la fecha de la función.",
+      },
+      {
+        q: "¿Puedo cancelar dos de mis cuatro asientos?",
+        a: "Depende del espectáculo, y el consejo de NOL World es comprobar el estado de la cancelación parcial al reservar y no cuando la necesites. Los productos de tours y actividades no admiten cancelación parcial en absoluto — tendrías que cancelar toda la reserva y volver a reservar, sin garantía de que el inventario siga ahí.",
+      },
+      {
+        q: "El botón Cancel Reservation no está en mi página de reserva.",
+        a: "NOL World lo trata como un caso para atención al cliente y no como un fallo que reintentar. Una persona confirma primero con el proveedor si se puede cancelar, la comisión y el importe del reembolso. Contacta pronto, porque la fecha límite de la primera respuesta sigue corriendo mientras esperas.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Tu entrada móvil de NOL World: el QR, el PIN y pasar la puerta",
+    summary:
+      "La entrada solo se abre en un móvil, está únicamente en inglés y la traducción automática de tu navegador la destroza, una entrada enviada tiene un reloj de 24 horas para el PIN, y llegar tarde no es acceso garantizado. Los últimos veinte minutos de todo el proceso, en orden.",
+    scope:
+      "Cubre la entrada móvil de NOL World y el acceso al recinto tal como NOL World lo documenta: dónde se abre la entrada, los dos estados del navegador que la esconden, enviarla y recibirla con el reloj del PIN, la recogida por terceros, y la llegada tarde. Las reglas de acceso se fijan por espectáculo y el recinto decide esa noche. El acceso por reconocimiento facial es un proceso aparte con su propia guía.",
+    intro: [
+      "Todo lo demás de esta web es preparación. Esta es la parte en la que un vuelo, un hotel y una preventa se convierten en un asiento o no, y ocurre en un móvil que sostienes entre una multitud con mala cobertura.",
+      "Casi nada de lo que sale mal aquí es dramático. Es un navegador en el modo equivocado mostrando un QR donde debería estar la entrada, una extensión de traducción reescribiendo un número de puerta, un PIN que caducó mientras una amiga dormía. Las cuatro cosas están documentadas por NOL World y las cuatro son evitables la noche antes.",
+    ],
+    steps: [
+      {
+        title: "Ten claro qué tipo de entrada tienes en realidad",
+        body: "El método de entrega se decidió al reservar, y determina todo lo de abajo. Una entrada móvil vive en tu cuenta y se escanea desde tu pantalla. Recogida en el recinto significa una entrada de papel en taquilla el día del espectáculo, y NOL World no las entrega antes — la ventana abre una hora antes, y una entrada recogida no se puede volver a emitir si se pierde o te la roban. Comprueba cuál tienes ahora, no en el recinto.",
+        pitfall:
+          "Suponer que toda reserva es una entrada móvil porque eso fue lo del último concierto. Es una propiedad de cada reserva, y los dos caminos fallan de maneras completamente distintas.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Abre la entrada móvil en el móvil con el que vas a entrar",
+        body: "NOL World indica que las entradas móviles solo están disponibles en la aplicación de NOL World o en la web móvil. El acceso es por el código QR de la entrada. El camino en un móvil es aplicación o web móvil, iniciar sesión, Account/My, My Reservations, y luego el botón Mobile Ticket. En un ordenador, ese mismo botón produce un código QR que no es tu entrada — es un traspaso, pensado para escanearse con tu móvil para que la entrada se abra ahí.",
+        pitfall:
+          "Hacerle una captura a la entrada como respaldo y pensar en enseñar la imagen. Una entrada que se genera en vivo dentro de una cuenta no es el mismo objeto que una foto de ella, y la puerta no es donde quieres descubrir la diferencia.",
+        takes: "10 minutos, la noche antes",
+      },
+      {
+        title: "Desactiva la traducción del navegador antes de ir",
+        body: "NOL World dice que las entradas móviles se ofrecen solo en inglés, y que si ves otros idiomas es la traducción automática de tu navegador — con la solución de desactivar la traducción y recargar la página. Para este público ese es el estado por defecto del navegador y no un caso raro. Un traductor automático reescribiendo una puerta, un bloque o una fila de asientos es un problema que no vas a notar hasta que alguien en la entrada te lo lea en voz alta.",
+        pitfall:
+          "Dejar la traducción activada porque ha sido útil todo el viaje. Te ha estado traduciendo páginas en coreano; aquí la página ya está en inglés y lo único que puede hacer es estropearla.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Si ves un QR donde debería estar la entrada, arregla el modo del navegador",
+        body: "Esta es con diferencia la forma más común de que la entrada parezca no estar, y no es un fallo. NOL World dice que si tu navegador está en modo escritorio se muestra un código QR en lugar de la entrada móvil — y que hay un botón View Tickets debajo de ese QR que abre la entrada igualmente. Si no, cambia el navegador a modo móvil: en Chrome, el menú de tres puntos y View as mobile version; en Safari, el botón de idioma a la izquierda de la barra de direcciones y Request Mobile Website; en Samsung Internet, el menú de tres líneas y Mobile site.",
+        pitfall:
+          "Dejar que alguien en la puerta escanee ese código QR. Es el código de traspaso del escritorio, no tu código de acceso, y lo que necesitas está a un toque por debajo.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Entiende a qué te compromete enviar una entrada",
+        body: "Compartir entradas móviles va en una dirección: quien compró envía a quien asiste, y NOL World indica que una entrada recibida no se puede reenviar — solo se pueden enviar entradas reservadas. Enviar sigue siendo posible hasta el día del evento. No todos los productos lo ofrecen; donde quien vende lo ha retirado, el botón de enviar simplemente no está. Y el precio de enviar es tu propia salida: una vez enviada correctamente una entrada, NOL World restringe la cancelación de la reserva, que solo se recupera si quien la recibe la da de baja.",
+        pitfall:
+          "Organizar un grupo enviando a cada persona su entrada la semana en que reservas. Acabas de darle a cada una un derecho de veto sobre la cancelación de esa reserva.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Si recibes una entrada, trata el PIN como un reloj de 24 horas",
+        body: "Una entrada recibida no sirve hasta que se registra, y la ventana es corta. NOL World dice que el PIN solo se puede registrar dentro de las 24 horas siguientes al envío, y que una entrada sin registrar vuelve a quien la envió después de eso — o si no se registra para la fecha de la función. El registro se hace desde la URL del mensaje o del correo: Received Mobile Ticket, Ticket Register, y luego el PIN del mensaje. Después la entrada vive en My Page, Received Mobile Ticket, Booking History. Devolverla es el mismo camino con el botón Return, y NOL World dice que una entrada registrada todavía se puede devolver.",
+        pitfall:
+          "Enviar a una amiga en un huso horario donde esas 24 horas son casi todo noche. La entrada rebota hacia ti en silencio y la reserva vuelve a ser tuya, lo cual está bien un martes y no está bien la mañana del espectáculo.",
+        takes: "5 minutos, dentro de 24 horas",
+      },
+      {
+        title: "Mira la página del espectáculo antes de suponer que otra persona puede recoger por ti",
+        body: "NOL World sí permite que recoja alguien que no compró, con condiciones reales. El procedimiento difiere por recinto, la recogida por terceros puede estar restringida según el tipo de espectáculo, y la instrucción de NOL World es mirar el aviso en la página de detalle del espectáculo que reservaste. Lo que necesita la otra persona son los datos de la reserva impresos desde My Ticket, el número de confirmación, y un documento de identidad de quien compró. Trata ese último requisito como el límite que es: en un espectáculo que condiciona el acceso a la identidad verificada de quien compró, no planifiques con un tercero.",
+        pitfall:
+          "Leer la recogida por terceros como un derecho general. Es un permiso por recinto y por espectáculo, y los espectáculos que más probablemente lo nieguen son justo los de mucha demanda para los que necesitaste una preventa.",
+        takes: "10 minutos",
+      },
+      {
+        title: "No trates llegar tarde como un asiento que sigues teniendo",
+        body: "NOL World es explícito en que el acceso después del comienzo depende del espectáculo, y en que algunas funciones no lo permiten en absoluto — nombrando en particular los conciertos clásicos y las óperas. Donde existe el acceso tardío, puede significar esperar al intermedio y ver la segunda parte. E incluso cuando te dejan pasar, NOL World dice que puedes no poder ocupar tu asiento hasta el intermedio, así que llegar tarde puede significar estar de pie o sentada en otro sitio durante la parte por la que viniste.",
+        pitfall:
+          "Calcular la hora de llegada desde la hora de comienzo. Calcúlala desde la cola de acceso, el control de seguridad y la ventana de recogida, que ocurren todos antes de la hora de comienzo y ninguno de los cuales espera.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Hay un código QR donde debería estar mi entrada. ¿Está rota mi reserva?",
+        a: "No — tu navegador está en modo escritorio. NOL World dice que eso produce un código QR en lugar de la entrada móvil, y que un botón View Tickets debajo abre la entrada. También puedes cambiar el navegador a modo móvil: el menú de tres puntos de Chrome tiene View as mobile version, el botón de idioma de Safari ofrece Request Mobile Website, y el menú de tres líneas de Samsung Internet tiene Mobile site.",
+      },
+      {
+        q: "Mi entrada móvil se muestra en el idioma equivocado.",
+        a: "NOL World ofrece las entradas móviles solo en inglés, así que otro idioma significa que tu navegador está traduciendo automáticamente. Desactiva la traducción y recarga. Conviene hacerlo antes de viajar y no en la puerta, porque un número de puerta o una fila traducidos están mal de una forma difícil de detectar.",
+      },
+      {
+        q: "¿Puedo enseñar la entrada desde mi portátil en la puerta?",
+        a: "NOL World dice que las entradas móviles solo están disponibles en la aplicación o en la web móvil. En un ordenador, el botón Mobile Ticket te da un código QR para escanear con el móvil, que luego abre ahí la entrada de verdad. Planifica entrar con un móvil.",
+      },
+      {
+        q: "¿Puede mi amiga recoger mis entradas en taquilla?",
+        a: "A veces. NOL World dice que puede recoger quien no compró, pero que el procedimiento varía por recinto y la recogida por terceros puede estar restringida según el tipo de espectáculo — así que el aviso de la página de detalle de tu espectáculo es lo que manda. Necesitaría los datos de la reserva impresos desde My Ticket, el número de confirmación y un documento de identidad de quien compró. En espectáculos que verifican la identidad de quien compra al entrar, no cuentes con ello.",
+      },
+      {
+        q: "Envié una entrada móvil por error. ¿Puedo recuperarla?",
+        a: "Si quien la recibe aún no la ha registrado, sí — NOL World dice que quien envía puede cancelar el envío con el botón Cancel Send. También vuelve automáticamente si quien la recibe no la registra en 24 horas o para la fecha de la función. Una vez registrada, recuperarla es acción suya: la devuelve desde My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return.",
+      },
+      {
+        q: "¿Qué pasa si mi amiga nunca registra la entrada que le envié?",
+        a: "Vuelve a ti. NOL World dice que una entrada sin registrar se devuelve automáticamente a quien la envió después de 24 horas, o si no se ha registrado para la fecha de la función. Eso restaura tu reserva — incluida, según sus reglas de cancelación, tu capacidad de cancelarla — pero es un proceso silencioso, así que compruébalo en lugar de suponerlo.",
+      },
+      {
+        q: "Voy a llegar veinte minutos tarde. ¿Me dejarán entrar?",
+        a: "Depende del espectáculo y nadie puede prometértelo. NOL World dice que el acceso después del comienzo depende de la función y que algunas no lo permiten en absoluto, los conciertos clásicos y las óperas especialmente; donde se permite puede que tengas que esperar al intermedio, y puede que hasta entonces no puedas ocupar tu propio asiento.",
+      },
+      {
+        q: "¿La entrada móvil es lo mismo que el acceso por reconocimiento facial?",
+        a: "No. NOL facepass es un sistema aparte donde una cámara en la puerta te deja pasar sin comprobar la entrada, y su disponibilidad se fija por evento. La entrada móvil y su código QR son el camino normal, y el que conviene mantener funcionando aunque hayas registrado una cara.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL facepass: quién guarda tu cara, y para qué sirve",
+    summary:
+      "Te registras una vez y una cámara te deja pasar sin comprobar la entrada. La cara la guarda Toss y no NOL World, no se puede cambiar después, y cancelar el servicio borra la foto pero conserva una copia aparte durante un año.",
+    scope:
+      "Cubre lo que NOL World publica sobre NOL facepass, incluido el plazo de conservación que declara tras una cancelación: qué hace, quién almacena los datos faciales, y a qué te compromete registrarte. La compatibilidad va por espectáculo, y la página del evento decide. Nada de aquí es una opinión legal sobre datos biométricos en tu propio país.",
+    intro: [
+      "Los recintos coreanos están pasando al reconocimiento facial en la puerta, y una fan del extranjero se lo encuentra como una casilla durante la reserva, con muy poca explicación en inglés. La pregunta que hay debajo no es pequeña: una empresa con la que nunca has tratado está a punto de guardar tu cara.",
+      "NOL World sí publica respuestas. Son concretas, son más tranquilizadoras de lo que consiguen casi todas las empresas, y vale la pena leerlas antes de la cola y no durante — incluida la de qué pasa con los datos después de cancelar, que no dice lo que una sola palabra como borrado sugeriría.",
+    ],
+    steps: [
+      {
+        title: "Entiende qué sustituye",
+        body: "NOL World describe facepass como una forma de reducir el trámite y el tiempo que lleva la comprobación de identidad en el acceso. Una vez completado el registro facial, una cámara te escanea en la puerta y entras sin comprobación de entrada. Es un sustituto de la comprobación de documentos en la puerta, no una capa añadida encima.",
+        pitfall:
+          "Leerlo solo como una función de comodidad. La segunda mitad de la propia descripción de NOL World es control, y de eso va el paso siguiente.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Conoce la otra razón de que exista",
+        body: "NOL World declara el propósito por partida doble: simplificar la comprobación de identidad, y prevenir la venta y distribución ilegal de entradas. Una cara que tiene que coincidir con la cuenta que compró la entrada es un control de reventa, y llega en el mismo periodo que una reforma de la Ley de Espectáculos que alcanza la reventa habitual por encima del valor nominal. Esos dos hechos van uno al lado del otro.",
+        pitfall:
+          "Suponer que una entrada comprada en un mercado de reventa simplemente funcionará en una puerta con facepass. El sistema existe para que precisamente eso no funcione.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Ten claro adónde va la cara en realidad",
+        body: "Esta es la parte que más vale la pena saber. NOL World dice que la información facial — la imagen original y los datos de rasgos — se cifra y la almacena Toss, la empresa fintech detrás del servicio FaceAccess, y que no se facilita a NOL World ni a las agencias bajo ninguna circunstancia. Solo se comparte el resultado de la autenticación, correcta o fallida. NOL World dice además que los datos no se usan para ningún fin más allá de prestar el servicio, y cita que Toss tiene certificaciones ISO 27701 y CBPR.",
+        pitfall:
+          "Son declaraciones de NOL World sobre un tercero, no una auditoría. Son inusualmente concretas para una página de este tipo, lo cual es razón para tomarlas en serio y no razón para dejar de leer.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Trata el registro como permanente",
+        body: "Una vez registrada una cara, no se puede modificar. NOL World da el motivo sin rodeos — es para prevenir el uso fraudulento del servicio. No hay forma de corregir después un registro malo, así que las condiciones en las que te registras son las que te quedas: la luz, las gafas, lo que la cámara capturase.",
+        pitfall:
+          "Registrarte deprisa en una cola, con mala luz, pensando en repetirlo bien más tarde. No hay más tarde.",
+        takes: "10 minutos, a conciencia",
+      },
+      {
+        title: "No dejes que nadie se registre en tu móvil ni en tu cuenta",
+        body: "NOL World lo dice directamente: asegúrate de que nadie más use tu cuenta, y si alguien registra información facial usando tu móvil o tu cuenta, la empresa no se responsabiliza de los problemas que resulten. Un dispositivo compartido en casa justo cuando una gira sale a la venta es exactamente cómo ocurre esto, y la cuenta es lo que carga con la consecuencia.",
+        pitfall:
+          "Ayudar a una amiga a registrarse en tu móvil con tu sesión abierta. La cara que ahora está asociada a tu cuenta es la suya, no se puede modificar, y la exención de responsabilidad es explícita.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Mira si tu espectáculo lo admite siquiera",
+        body: "La compatibilidad va por evento y no es universal — NOL World mantiene una pregunta específica sobre cómo comprobar si un concierto admite facepass, que solo existe porque la respuesta varía. Mira la página del evento de tu espectáculo antes de planificar el acceso alrededor de ello, y ten listo el camino normal: número de confirmación y documento de identidad en taquilla.",
+        pitfall:
+          "Registrarte y luego llegar a un recinto que sigue comprobando documentos, con el pasaporte en el hotel.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Lee con atención la respuesta sobre el borrado — no es simplemente un borrado",
+        body: "NOL World responde a si la información facial se borra al darse de baja, y la respuesta tiene dos mitades. La primera: tu foto facial se borra al cancelar el servicio, y volver a usarlo significa volver a registrarse. La segunda: a efectos de comprobación de identidad, los datos se almacenan por separado y se conservan durante un año desde el momento de la cancelación — usados, dice NOL World, solo para comprobar la identidad en un nuevo registro, y destruidos pasado ese año. Así que darse de baja borra la foto y arranca un reloj, en lugar de pararlo. Es una política defendible y no es lo que la palabra borrado implica por sí sola, por lo que vale la pena leerlo en sus palabras antes de registrarse.",
+        pitfall:
+          "Quedarte con el resumen de una palabra que haga un tercero sobre qué pasa con datos biométricos, el nuestro incluido. Lee la frase sobre la conservación, no el titular.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿NOL World ve mi cara?",
+        a: "NOL World dice que no. La información facial se cifra y la guarda Toss, y NOL World declara que no se facilita a NOL World ni a las agencias bajo ninguna circunstancia — solo se comparte si la autenticación fue correcta o fallida.",
+      },
+      {
+        q: "¿Puedo volver a registrar mi cara si el primer intento salió mal?",
+        a: "No. NOL World dice que una cara registrada no se puede modificar, para prevenir el uso fraudulento del servicio. Regístrate a conciencia la primera vez.",
+      },
+      {
+        q: "¿Se borrarán mis datos faciales si cancelo facepass?",
+        a: "En parte, y luego con un temporizador. NOL World dice que la foto facial se borra al darte de baja, y que tendrías que registrarte otra vez para usar el servicio. Dice además que, a efectos de comprobación de identidad, los datos se almacenan por separado y se conservan durante un año desde la cancelación, se usan solo para comprobar la identidad si te registras de nuevo, y se destruyen pasado ese año. Hasta el 20 de octubre de 2026 esta página decía que no habíamos leído esa respuesta y nos negábamos a resumirla; ahora está citada arriba y registrada en nuestras correcciones.",
+      },
+      {
+        q: "¿Todos los conciertos usan facepass?",
+        a: "No. La compatibilidad varía por evento, y NOL World mantiene una respuesta aparte sobre cómo comprobarlo. Confírmalo en la página del evento de tu espectáculo, y mantén disponible el camino normal de recogida.",
+      },
+      {
+        q: "¿Qué pasa si otra persona registra su cara en mi cuenta?",
+        a: "NOL World dice que la empresa no se responsabiliza de los problemas que surjan de eso, y pide que te asegures de que nadie más use tu cuenta. Como una cara registrada no se puede cambiar, esto no se arregla por la vía normal.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Fuera de NOL World: encontrar la cuenta y arreglar páginas que no abren",
+    summary:
+      "El método de inicio de sesión que usaste determina cada vía de recuperación, el restablecimiento de contraseña solo existe para el registro por correo, y un correo sin verificar puede hacer que una cuenta sea difícil de encontrar siquiera. Además, errores en la página de reserva que en realidad no son errores.",
+    scope:
+      "Cubre la recuperación y el borrado de cuentas y los fallos de la página de reserva que NOL World documenta: requisitos de navegador y aplicación, el mapa de asientos en el móvil, y avisos emergentes que parecen una avería. La mecánica de la cola tiene su propia guía. Nada de aquí ayuda a nadie a entrar en una cuenta que no es suya.",
+    intro: [
+      "Hay dos cosas que salen mal en una web de entradas y que no tienen nada que ver con las entradas. O no consigues entrar en tu cuenta, o la página simplemente no hace lo que debería — y las dos pasan la mañana de la venta, cuando no hay tiempo de leer nada.",
+      "Casi todo lo decide una única elección que hiciste meses antes sin pensarlo: si te registraste con una dirección de correo o a través de Google, Apple o Line. Ese único dato determina si el restablecimiento de contraseña existe siquiera para ti, así que es por donde se empieza.",
+    ],
+    steps: [
+      {
+        title: "Averigua qué tipo de inicio de sesión tienes en realidad",
+        body: "Una cuenta de NOL World se crea con una dirección de correo o mediante el inicio de sesión con otro servicio — Google, Apple o Line, entre otros. La consecuencia es más dura de lo que suena: NOL World declara que la recuperación de contraseña solo está disponible para quienes se registraron con una dirección de correo. Si usas el inicio de sesión con otro servicio, no hay contraseña de NOL World que restablecer, porque nunca la hubo. Averigua ahora cuál de los dos eres, mientras no urge nada.",
+        pitfall:
+          "Creer que tienes una cuenta de correo porque recuerdas haber escrito una dirección. El inicio de sesión con otro servicio también muestra tu correo, y la vía de recuperación es completamente distinta.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Verifica tu correo, porque esto es lo que no se puede deshacer",
+        body: "La frase con la que NOL World cierra su apartado de recuperación de cuentas es la más importante de esta zona: una cuenta no verificada por correo puede ser difícil de encontrar. Todo lo demás aquí es un procedimiento con un resultado. Esto es una puerta que puede no abrirse — atención al cliente está cotejándote con un registro, y un correo verificado es la coincidencia más fuerte que tienen. Si lees esto con una cuenta que todavía funciona, comprueba que su correo está verificado y déjalo así.",
+        pitfall:
+          "Saltarte el correo de verificación al registrarte porque ibas con prisa por una venta. Ese día no costó nada y es la diferencia entre una cuenta recuperable y una cuenta perdida.",
+        takes: "3 minutos, ahora",
+      },
+      {
+        title: "Con inicio de sesión de otro servicio, mira primero en el lado del proveedor",
+        body: "Si no recuerdas si llegaste a tener una cuenta de NOL World, el proveedor sí lo sabe. NOL World publica dónde mirar: en Google, por Cuenta de Google, luego Seguridad, luego tus conexiones con aplicaciones y servicios de terceros. En Apple, por Settings, tu nombre y el Apple ID, luego Sign-In & Security, luego Sign in with Apple. En Line, por Settings, luego cuenta, luego aplicaciones autorizadas. Si NOL World aparece ahí, la cuenta existe y ya sabes qué proveedor la abre.",
+        pitfall:
+          "Probar uno a uno cada botón de servicio en la página de inicio de sesión a ver cuál funciona. Eso puede crear una segunda cuenta en lugar de encontrar la primera, y ahora hay dos — en una de ellas están tus reservas.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Si eso falla, envía las cinco cosas que pide atención al cliente",
+        body: "NOL World buscará la cuenta, y dice qué necesita: la dirección de correo que podrías haber usado, el tipo de inicio de sesión (Google, Line, Apple o correo), tu apodo, y el tipo de producto que reservaste junto con su número de reserva. También dice dónde está esto último — el número de reserva está en el bono que se envía por correo al reservar. Reúnelo todo antes de escribir, porque una solicitud sin número de reserva es una solicitud que les pide adivinar.",
+        pitfall:
+          "Borrar los correos antiguos de confirmación de reserva por hacer limpieza. Dentro está el número de reserva, que es el identificador más fuerte que puedes ofrecer cuando lo perdido es precisamente la cuenta.",
+        takes: "20 minutos",
+      },
+      {
+        title: "Un móvil nuevo no borra tus reservas — una cuenta distinta sí",
+        body: "Esta es la preocupación falsa más común y NOL World la responde abiertamente: cambiar de móvil o volver a iniciar sesión no borra tu historial. Lo que te pide comprobar es si has iniciado sesión con una cuenta distinta de la que usaste al principio. Esa es casi siempre la causa real, y el inicio de sesión con otro servicio es el motivo — un móvil nuevo te ofrece el proveedor más cómodo, y pulsar el equivocado te deja en una segunda cuenta vacía pero completamente legítima.",
+        pitfall:
+          "Concluir que la reserva se perdió y volver a comprar. La entrada está en la otra cuenta, y la segunda compra es una compra de verdad.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Usa el navegador que espera la página de reserva, y solo canales oficiales",
+        body: "NOL World declara estar construido según los estándares web y recomienda Google Chrome o Microsoft Edge, tanto en ordenador como en móvil. Si la ventana de reserva no abre, la instrucción es concreta: actualiza el navegador a la última versión, borra la caché, y vuelve a intentarlo. Para la aplicación, actualízala desde App Store o Google Play. Y declara dónde se pueden comprar entradas: en la web de NOL World, en world.nol.com/ticket, y en la aplicación de NOL World, y en ningún otro sitio.",
+        pitfall:
+          "Buscar el problema en un navegador que nunca estuvo admitido, dentro de la vista web de una aplicación abierta desde un enlace de redes sociales. Abre la página de reserva directamente en Chrome o Edge antes de concluir que la web está rota.",
+        takes: "15 minutos, el día antes",
+      },
+      {
+        title: "Si el mapa de asientos no funciona en la web móvil, pásate a la aplicación",
+        body: "Hay un problema de dispositivo documentado, no un problema general. NOL World declara que en algunos dispositivos el entorno web móvil amplía el navegador cuando acercas y alejas, lo que hace imposible seleccionar asiento — y que la salida es descargar la aplicación de NOL World. Nombra el dispositivo confirmado hasta ahora: Galaxy Fold. Si usas una pantalla plegable o de proporciones poco habituales, instala la aplicación antes de la venta en lugar de descubrir esto dentro de una ventana de pago de siete minutos.",
+        pitfall:
+          "Pellizcar la pantalla para ampliar el mapa de asientos y buscar un sitio concreto. En los dispositivos afectados, ese gesto es justo lo que rompe la selección.",
+        takes: "10 minutos, con antelación",
+      },
+      {
+        title: "Ten claro qué avisos emergentes no son una avería",
+        body: "Dos mensajes se leen como un error y no lo son. NOL World declara que el aviso que dice que este asiento ya ha sido seleccionado aparece cuando eliges el mismo asiento casi al mismo tiempo que otra persona — tu sesión no tiene nada mal, alguien fue un segundo más rápido. Y declara que los asientos disponibles se actualizan automáticamente sin necesidad de recargar, así que un mapa de asientos que parece congelado suele ser un mapa de asientos funcionando. Trata las dos cosas como información y no como algo que arreglar.",
+        pitfall:
+          "Recargar la página para quitarte de encima un aviso. En una venta con cola, esa es la única acción que te come el puesto.",
+        takes: "—",
+      },
+      {
+        title: "Lee el consejo sobre varias pestañas junto con su política antifraude",
+        body: "NOL World pide un dispositivo por cuenta, y declara que el acceso simultáneo desde varios dispositivos a la misma cuenta puede restringir tus reservas. Luego da consejo técnico a quien reserva simultáneamente — que varias pestañas generan conflictos de sesión, y que se usen navegadores completamente separados como Chrome y Edge, o dispositivos distintos. Léelo con cuidado, porque su propia política antifraude enumera las reservas entre varias cuentas con datos personales idénticos o similares como uso no autorizado. La lectura segura de ese consejo va de plataformas separadas: NOL World en un navegador mientras otra web de entradas corre en otro. No es permiso para operar varias cuentas tuyas a la vez.",
+        pitfall:
+          "Tomar el consejo sobre conflictos de sesión como una estrategia avalada para varias cuentas. Las dos páginas conviven de forma incómoda, y la que lleva una sanción escrita es la política antifraude.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Si borras la cuenta, ten claro qué desaparece y qué se queda",
+        body: "El borrado es irreversible y NOL World lo detalla. Se borran: la información de tu cuenta y tu perfil, tu historial de reservas, tus viajes y tu lista de sitios guardados. Se conservan: las reseñas y fotos que dejaste sobre un sitio. En la web, cualquier método de inicio de sesión puede borrar la cuenta. En la aplicación con inicio de sesión por correo, el camino es My Account, Settings, Delete Account, y luego tu contraseña; con inicio de sesión de otro servicio el camino es el mismo pero verificas a través de Google, Line o Apple. Dos cosas de otras partes de su documentación merecen ir al lado: borrar elimina también tu verificación de identidad y la libera para otra cuenta, y una cuenta restringida por uso indebido no se puede borrar en absoluto.",
+        pitfall:
+          "Borrar una cuenta para arreglar un problema de esa cuenta. Una cuenta restringida no se puede borrar, y una verificada se lleva consigo tu verificación — el historial de reservas se va y las reseñas no.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "No recuerdo mi contraseña. ¿Cómo la restablezco?",
+        a: "Solo si te registraste con una dirección de correo — NOL World declara que la recuperación de contraseña está disponible únicamente para el registro por correo. El camino es la pantalla de inicio de sesión, Find Password, introducir el correo de registro, y seguir el enlace de restablecimiento que llegue. Si usas Google, Apple o Line, no hay contraseña de NOL World; entras a través del proveedor.",
+      },
+      {
+        q: "Ni siquiera sé qué cuenta usé.",
+        a: "Mira primero en el lado del proveedor. NOL World publica los caminos: Cuenta de Google, luego Seguridad, luego tus conexiones con aplicaciones y servicios de terceros; Settings de Apple, luego tu Apple ID, luego Sign-In & Security, luego Sign in with Apple; Settings de Line, luego cuenta, luego aplicaciones autorizadas. Si aparece NOL World, esa es la cuenta.",
+      },
+      {
+        q: "Nada de eso funcionó. ¿La encontrará atención al cliente?",
+        a: "La buscarán, con lo que les des: el correo que podrías haber usado, el tipo de inicio de sesión, tu apodo, y el tipo de producto que reservaste junto con su número de reserva — que según NOL World está en el bono enviado por correo al reservar. También advierte de que una cuenta nunca verificada por correo puede ser difícil de encontrar, así que envía todo lo que tengas.",
+      },
+      {
+        q: "Cambié de móvil y mis reservas desaparecieron.",
+        a: "Casi con seguridad no. NOL World declara que cambiar de móvil o volver a iniciar sesión no borra el historial, y te pide comprobar si has iniciado sesión con una cuenta distinta de la original. Con el inicio de sesión de otro servicio eso pasa fácilmente sin querer — un móvil nuevo ofrece el proveedor más cómodo, no necesariamente el que usabas.",
+      },
+      {
+        q: "La ventana de reserva no abre en absoluto.",
+        a: "Los pasos de NOL World: usa un navegador estándar, y nombra Chrome y Edge; actualiza a la última versión; borra la caché; vuelve a intentarlo. Para la aplicación, actualiza a la última versión desde App Store o Google Play. Declara también que las entradas solo se pueden comprar en world.nol.com/ticket o en la aplicación de NOL World.",
+      },
+      {
+        q: "No puedo seleccionar asiento en el navegador de mi móvil.",
+        a: "Hay un problema de dispositivo conocido. NOL World declara que en algunos dispositivos acercar y alejar amplía todo el navegador móvil, lo que hace imposible seleccionar asiento, y que la respuesta es usar la aplicación de NOL World. El dispositivo que nombra como confirmado es el Galaxy Fold. Instala la aplicación antes de la venta y no durante.",
+      },
+      {
+        q: "¿Puedo abrir dos pestañas para mejorar mis opciones?",
+        a: "No, y NOL World pide un dispositivo por cuenta — declara que el acceso simultáneo desde varios dispositivos a la misma cuenta puede restringir tus reservas. Su consejo sobre navegadores separados va de conflictos de sesión cuando de verdad usas dos plataformas de entradas distintas, no es un aval para operar varias cuentas tuyas. Reservar entre varias cuentas con datos personales similares está en la lista de uso no autorizado que publica.",
+      },
+      {
+        q: "¿Qué pasa con mis datos si borro la cuenta?",
+        a: "NOL World declara que el borrado es irreversible, y enumera lo que desaparece: información de cuenta y perfil, historial de reservas, viajes y sitios guardados. Las reseñas y fotos que dejaste sobre un sitio se conservan. En otra parte declara que borrar elimina también tu verificación de identidad, liberándola para otra cuenta, y que una cuenta restringida por uso indebido no se puede borrar.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "YES24 Global: las reglas que no están en la página en inglés",
+    summary:
+      "Tu cuenta de YES24 de siempre no sirve. PayPal solo aparece si el espectáculo está lo bastante lejos. Dos tipos de tarjeta se rechazan de plano, y en el recinto cotejan tu pasaporte con el nombre con el que te registraste.",
+    scope:
+      "Cubre la web en inglés YES24 TICKET que usan los compradores del extranjero. La web de YES24 en coreano tiene otro sistema de cuentas y otra comprobación de identidad. Las condiciones de cada espectáculo en su página de evento mandan sobre todo lo de aquí, y YES24 lo dice por sí mismo.",
+    intro: [
+      "YES24 publica sus reglas para el extranjero en una guía de compra y una FAQ en inglés, y casi nada de lo que hay en ellas aparece en las guías que salen arriba. Son concretas, son poco habituales, y varias de ellas te terminan la reserva el mismo día si te las encuentras por primera vez en la caja.",
+      "Todo lo de abajo sale de esas dos páginas, leídas el 20 de octubre de 2026. Donde YES24 se contradice a sí mismo — y lo hace una vez, con una comisión — esta página lo dice en lugar de quedarse con la cifra cómoda.",
+    ],
+    steps: [
+      {
+        title: "Regístrate otra vez, aunque ya tengas cuenta en YES24",
+        body: "YES24 lo dice claramente: quienes ya son miembros de YES24 y quieran usar la web Global YES24 TICKET tienen que registrarse de nuevo. Advierte además de que la web global de entradas es algo distinto de global.yes24.com, la librería, y de que las dos no comparten datos de miembro. Quien no es miembro no puede reservar en absoluto, así que este es el primer paso y no un trámite.",
+        pitfall:
+          "Tres sitios de YES24 con nombres parecidos y sin inicio de sesión compartido. Descubrirlo en una cola es descubrirlo tarde — la cuenta tiene que existir días antes de todos modos, por la comprobación de nombre de abajo.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Registra el nombre exactamente como lo tiene tu pasaporte",
+        body: "Este es el sitio donde una plataforma dice en voz alta lo que las demás callan. De la FAQ de YES24: si el nombre de tu cuenta de YES24 es distinto del de tu pasaporte, puedes tener problemas para recoger la entrada reservada en el recinto. Las entradas en taquilla solo las puede recoger quien las tiene, y la recogida necesita un documento físico válido — un pasaporte — junto con el registro de la reserva.",
+        pitfall:
+          "Un segundo nombre omitido, una transcripción elegida hace años, un orden con el nombre primero. En el recinto están comparando dos documentos, no juzgando si obviamente eres tú.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Mira si PayPal se ofrece siquiera para tu espectáculo",
+        body: "PayPal en YES24 Global solo está disponible cuando hay más de 180 días entre la fecha de la reserva y la del espectáculo. Para la mayoría de los conciertos de K-pop, anunciados con uno o dos meses de antelación, eso significa que PayPal simplemente no es una opción y la tarjeta es el único camino. Hay además una comisión de PayPal de 10 céntimos que no se devuelve aunque canceles.",
+        pitfall:
+          "Planificar con PayPal porque una guía dijo que se aceptaba, y encontrarte solo un campo de tarjeta en la caja. La regla de los 180 días es el motivo — no es un error, y no es algo que atención al cliente pueda saltarse.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Ten claro qué tarjetas se rechazan antes de probar una",
+        body: "La guía de compra excluye las tarjetas American Express emitidas fuera de Corea, y las tarjetas China UnionPay por completo. Todo lo demás pasa como pago con tarjeta — y YES24 declara que en la web global se exige autenticación 3-D Secure, así que la tarjeta tiene que estar dada de alta para ello con tu banco.",
+        pitfall:
+          "Una American Express que funciona en cualquier otro sitio se rechaza aquí por dónde fue emitida, no por nada de la tarjeta. Ese fallo se ve idéntico a un bloqueo del banco, así que la gente se pasa la venta llamando a su banco por el problema equivocado.",
+        takes: "10 minutos, con tu banco",
+      },
+      {
+        title: "Elige taquilla o envío al extranjero en el momento de reservar",
+        body: "Las dos cosas existen, pero el envío al extranjero va por espectáculo y no es universal: YES24 dice que la disponibilidad varía según la función y que la tarifa varía según el destino, y que la página del evento es donde se indica. Cambiar el método de entrega después solo es posible hasta 20 días hábiles antes del espectáculo — cuatro semanas laborables, no cuatro días.",
+        pitfall:
+          "Veinte días hábiles son aproximadamente un mes de calendario. Reservar con dos semanas de margen significa que el método que elegiste en la cola es el método con el que te quedas.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Lee el reloj de reserva y cancelación, que no es la fecha del espectáculo",
+        body: "La reserva cierra a las 17:00 del día anterior en espectáculos de martes a sábado, y a las 11:00 del sábado para un espectáculo de domingo o lunes. La cancelación corre exactamente con el mismo reloj, y una vez pasado no hay cancelación, cambio ni reembolso. La cancelación es gratuita dentro de los 7 días siguientes a la compra; después es una comisión por entrada que sube al 10%, 20% y 30% del importe pagado según se acerca el espectáculo. El límite es de 10 entradas por persona cada vez.",
+        pitfall:
+          "La comisión de reserva es donde YES24 se contradice: la FAQ dice 2.000 KRW en una línea y en la siguiente anuncia el cambio a 3.000 KRW por entrada desde el 14 de agosto de 2023. Trata 3.000 como la vigente. En cualquier caso solo es reembolsable hasta las 23:59 del día en que compraste, no dentro de la ventana de 7 días que cubre la entrada en sí.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Lleva el pasaporte y el registro de la reserva al recinto",
+        body: "La recogida exige un documento físico válido — YES24 nombra el pasaporte — junto con el registro de la confirmación de reserva. La guía de compra dice además que imprimas los datos de la compra y los entregues en taquilla. La política de cada espectáculo en su página de evento manda sobre esto, y YES24 dice que gana la página del evento, así que léela aunque ya hayas recogido en ese recinto antes.",
+        pitfall:
+          "Una foto de la confirmación en el móvil no es lo que se describe. Imprímela, y lleva el pasaporte con el que te registraste y no cualquier otro documento.",
+        takes: "En el recinto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Puedo usar mi cuenta de YES24 de siempre en la web en inglés?",
+        a: "No. YES24 dice que quienes ya son miembros tienen que registrarse de nuevo para la web Global YES24 TICKET, y que está separada de global.yes24.com sin datos de miembro compartidos.",
+      },
+      {
+        q: "¿Por qué no está PayPal en la caja?",
+        a: "PayPal solo se ofrece cuando hay más de 180 días entre la fecha de la reserva y la del espectáculo. La mayoría de las reservas de conciertos quedan bastante por debajo, así que la tarjeta es el único camino.",
+      },
+      {
+        q: "¿Qué tarjetas rechaza YES24 Global?",
+        a: "Las American Express emitidas fuera de Corea del Sur, y las China UnionPay. Otras tarjetas se aceptan pero tienen que pasar 3-D Secure, que la web exige.",
+      },
+      {
+        q: "¿Puede recoger mi entrada otra persona?",
+        a: "No. Las entradas en taquilla solo las puede recoger quien las tiene, con un pasaporte físico y el registro de la reserva — salvo que el espectáculo concreto diga otra cosa en su propia página.",
+      },
+      {
+        q: "¿Cuánto tarda un reembolso?",
+        a: "En tarjeta se indican de 3 a 7 días, decidiendo la política de la propia compañía de tarjeta, y hasta 30 días. Los reembolsos de PayPal vuelven al saldo de PayPal en 5 días hábiles — al tipo de cambio del día del reembolso incluido el margen de conversión, así que el importe devuelto puede ser menor que el pagado.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "La filtración de datos de Weverse: qué se filtró de verdad, y el único riesgo que crea",
+    summary:
+      "422.584 cuentas, confirmadas por la propia Weverse. Ni nombres, ni datos de contacto, ni números de tarjeta — un identificador interno y tu historial de compras. Esa combinación no es una cuenta vaciada; es la materia prima de un mensaje que sabe qué compraste.",
+    scope:
+      "Cubre lo que Weverse Company publicó sobre la filtración que confirmó en septiembre de 2026, leído tanto en la versión en inglés como en la coreana de su aviso. No somos auditores de seguridad y esto no es asesoramiento legal: todo lo atribuido a Weverse es declaración suya, no un hallazgo que hayamos verificado. Un caso de seguridad puede evolucionar, y esta página lleva la fecha en que la comprobamos por última vez.",
+    intro: [
+      "En septiembre de 2026 el presidente de Weverse Company publicó un aviso confirmando que se había filtrado información personal de clientes. Todo el mundo que lee esta web tiene cuenta de Weverse, así que la pregunta no es si importa sino qué cambia en realidad — y la respuesta es más estrecha y más concreta que un encogimiento de hombros o un ataque de pánico.",
+      "Lo que sigue es ese aviso leído con atención, en los dos idiomas en que se publicó. La parte útil no es la cifra. Es que la combinación concreta de datos que salió es casi inútil para robarte y especialmente buena para convencerte.",
+    ],
+    steps: [
+      {
+        title: "Lee las dos listas, porque la diferencia lo decide todo",
+        body: "Weverse detalla lo filtrado bajo dos epígrafes. Como información personal: información de identificación interna — un número interno único generado para identificar al usuario al registrarse. Como información general que clasifica como no personal: el tipo de compra, es decir el método de pago, el nombre de la pasarela de pago, la moneda, el importe de la compra, el importe de la cancelación, la fecha y hora de la compra, el estado de la compra, y la fecha y hora del reembolso cuando se canceló un pedido. La escala son 422.584 casos contados en unidades de ID de cuenta. Lo que no está en ninguna de las dos listas es lo importante: ni nombres, ni datos de contacto, ni números de tarjeta ni credenciales de pago.",
+        pitfall:
+          "Leer 422.584 y rellenar el resto con recuerdos de otras brechas. La respuesta a una filtración de credenciales y la respuesta a esta son distintas, así que la lista detallada vale más que el titular.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pondera con justicia lo que tranquiliza Weverse, incluido su límite",
+        body: "Weverse declara que el identificador interno filtrado no es información que identifique directamente a una persona, como un nombre o unos datos de contacto; que es un valor usado solo dentro de los sistemas internos de Weverse Company y que no se puede usar fuera; y que la falsificación de pagos o las transferencias de fondos no autorizadas son improbables solo con estos datos. A primera vista el razonamiento se sostiene — un número de fila interno no es una identidad, y ninguno de estos campos es una credencial. El límite honesto es que un identificador interno pasa a identificar en el momento en que se cruza con otro conjunto de datos que también lo contenga, y nadie fuera de la empresa puede medir lo probable que es eso. Esa es la exposición que queda: correlación, no robo.",
+        pitfall:
+          "Tratar una tranquilización razonable como una garantía, o tratarla como propaganda. Es una afirmación concreta sobre campos concretos, y es más sólida justo donde es más estrecha.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Entiende el riesgo real: un mensaje que sabe qué compraste",
+        body: "Mira los campos filtrados juntos — método de pago, pasarela, moneda, importe, fecha, estado, fecha de reembolso. Eso no es el equipo para cobrar en tu tarjeta. Es el equipo para escribir un mensaje que pasa la única prueba que casi todo el mundo aplica a un correo sospechoso, que es si quien lo envía conoce detalles reales de un pedido real. Una nota que cita tu importe de compra real, en la fecha real, en la moneda real, a través del proveedor de pago real, es muchísimo más convincente que cualquier cosa que pudiera redactar un estafador al azar.",
+        pitfall:
+          "Usar «conocen los datos de mi pedido» como prueba de que un mensaje es auténtico. Después de esta filtración esa prueba ha dejado de funcionar, y es la prueba que usa casi todo el mundo.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Ten claro por qué esto cae encima de un proceso real",
+        body: "Esto importa más a este público que a la mayoría, porque ya hay desconocidos legítimos que piden dinero a los clientes de Weverse. Weverse Shop advierte a los compradores de la Unión Europea de que pueden recibir instrucciones de pago aparte de la aduana local o de la empresa de mensajería, y de que no pagar puede retrasar o impedir la entrega. Así que la experiencia auténtica y la fraudulenta se parecen ahora: una empresa con la que no tienes ninguna relación, que menciona un pedido que de verdad hiciste, pidiendo un pago antes de que tu paquete se mueva. La filtración no creó ese solapamiento, pero lo afiló.",
+        pitfall:
+          "Resolver la ambigüedad pagando, o ignorándolo todo. Una cosa te cuesta dinero y la otra te cuesta el paquete.",
+        takes: "—",
+      },
+      {
+        title: "Usa una comprobación que no dependa de lo que el mensaje sabe",
+        body: "La salida es dejar de evaluar el mensaje y empezar a evaluar la afirmación. Sácale el número de seguimiento o la referencia del pedido, y luego ve tú misma a la empresa de mensajería o a Weverse Shop — dirección escrita a mano o marcador guardado, nunca un enlace del mensaje — y mira si esa referencia coincide con un pedido tuyo y si de verdad se debe algo. Si el mensaje es real, la misma información está del otro lado. Si no lo es, no hay nada, y lo has averiguado sin pulsar nada.",
+        pitfall:
+          "Seguir el enlace porque los datos eran correctos. Que los datos sean correctos es ahora el estado previsible de una falsificación.",
+        takes: "5 minutos por mensaje",
+      },
+      {
+        title: "No confundas un cambio de contraseña con la solución",
+        body: "El reflejo después de cualquier brecha es cambiar la contraseña, y aquí no resuelve casi nada: lo que se expuso fue un identificador y metadatos de compra a través de una API de información de pago, no credenciales de acceso. Rotar la contraseña no cuesta nada y no hace daño, así que hazlo si te deja más tranquila — pero hazlo sabiendo que es higiene y no un remedio, y que lo que de verdad te protege es la costumbre de verificar del paso anterior. Activar la opción de doble factor que ofrezca tu proveedor de acceso vale la pena por principio general, y tampoco es una respuesta a esta filtración.",
+        pitfall:
+          "Cambiar la contraseña, sentir que ya está, y luego fiarte del siguiente mensaje que cite tu pedido. El consejo reflejo es cómodo y desplaza al consejo que funciona.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Averigua si te afectó, desde la cuenta y no desde una guía",
+        body: "Weverse dice que llevó a cabo un procedimiento aparte, conforme a los criterios fijados por las leyes y normas aplicables, para notificar a los clientes cuyos datos estaban en la filtración. Así que la respuesta está en tu propia cuenta: la dirección de correo registrada en ella, y tus notificaciones dentro de la aplicación. Ninguna guía puede decírtelo, esta incluida, y cualquier tercero que diga comprobar si estabas en la filtración es motivo de sospecha y no un servicio.",
+        pitfall:
+          "Buscar una herramienta de consulta que te diga si te afectó. En una filtración de identificadores internos no hay nada significativo que una herramienta así pudiera comprobar, y la búsqueda en sí es lo que está esperando una página de phishing.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Fíjate en qué dice la empresa que hizo, y qué sigue siendo una promesa",
+        body: "El relato de Weverse sobre su respuesta, en sus palabras: reforzó el control de acceso de la API de procesamiento de información de pago y eliminó de ella el identificador interno para que los datos no quedaran expuestos externamente; el 4 de septiembre presentó un informe de incidente de brecha ante la Korea Internet & Security Agency; y notificó a los clientes afectados. Sus planes declarados son una investigación completa de todas las API expuestas externamente, un control de acceso más estricto y una exposición mínima de información, un control más estricto de los procesos de despliegue, y una supervisión de seguridad más sensible. Dice además que ha pedido a quien accedió a los datos desde fuera que los devuelva, y que tiene intención de exigir responsabilidad legal. Mantén separadas las dos categorías: el primer grupo son afirmaciones sobre trabajo terminado que nadie de fuera puede auditar, y el segundo son intenciones.",
+        pitfall:
+          "Leer una lista de mejoras previstas como una lista de arreglos ya hechos. El aviso no afirma eso, y un resumen de él tampoco debería.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Reconoce el manejo en su justa medida",
+        body: "La cronología que describe Weverse es corta: contactada por KISA el 3 de septiembre después de que alguien de fuera revelara una vulnerabilidad, inspección interna inmediata y respuesta de emergencia, informe de brecha presentado ante KISA el 4 de septiembre, y un aviso público firmado por el consejero delegado detallando qué salió — incluidos los campos que sostiene que no son información personal en términos legales, que no tenía obligación de enumerar. Leímos el original coreano contra el inglés y dicen lo mismo, lo cual es una pequeña señal en sí misma. Nada de eso deshace una filtración. Pero una web que solo informa de los incidentes como escándalos no enseña a quien la lee qué aspecto tiene un manejo competente, y esto se acerca más que la mayoría.",
+        pitfall:
+          "Concluir de una valoración serena que no pasó nada. 422.584 cuentas son un fallo real que una divulgación rápida no cancela.",
+        takes: "—",
+      },
+      {
+        title: "Piénsalo dos veces antes de borrar la cuenta, y ten claro qué no es borrar",
+        body: "Borrar la cuenta es el otro reflejo, y es una decisión mayor de lo que parece. Weverse Shop y NOL World atan cosas reales a una cuenta: historial de pedidos y reservas, direcciones guardadas, una membresía de pago, y en el lado de las entradas una verificación de identidad completada. El punto decisivo es más simple, eso sí. Borrar elimina tus datos del servicio de ahí en adelante; no retira datos que ya salieron. Lo que estuviera en esta filtración estaba antes de que decidieras nada, y cerrar la cuenta después no puede alcanzarlo.",
+        pitfall:
+          "Borrar una cuenta como respuesta a una filtración. Es algo razonable de querer y no es un remedio para esto, y te cuesta el historial que necesitarías si alguna vez se discutiera una compra.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Se filtró mi nombre, mi dirección o mi número de tarjeta?",
+        a: "No según el propio detalle de Weverse. Lo que enumera es un número de identificación interna más metadatos de compra — método de pago, nombre de la pasarela de pago, moneda, importes de compra y cancelación, fecha y hora de la compra, estado de la compra, y fecha y hora del reembolso. Los nombres, los datos de contacto y las credenciales de pago no están en la lista.",
+      },
+      {
+        q: "¿Debería cambiar mi contraseña de Weverse?",
+        a: "No hace daño, y no es la solución. Lo expuesto fue un identificador y metadatos de compra a través de una API de información de pago, no credenciales de acceso, así que una contraseña nueva no lo aborda. Hazlo si te deja más tranquila, y luego dedica el esfuerzo de verdad a verificar las peticiones de pago por tu cuenta, que es lo que de verdad te protege aquí.",
+      },
+      {
+        q: "¿Cómo sé si fui una de las 422.584?",
+        a: "Por tu propia cuenta. Weverse dice que ejecutó un procedimiento de notificación aparte para los clientes afectados conforme a las leyes aplicables, así que mira el correo registrado en la cuenta y tus notificaciones dentro de la aplicación. Ninguna herramienta externa puede decírtelo, y cualquier cosa que anuncie que sí debe tratarse como un intento de phishing.",
+      },
+      {
+        q: "¿Puede alguien usar esto para cobrarme en la tarjeta?",
+        a: "Weverse dice que la falsificación de pagos o las transferencias no autorizadas son improbables solo con estos elementos, y visto el listado eso es razonable — ninguno de los campos filtrados es un número de tarjeta ni una credencial. El riesgo realista no es un cargo directo sino un mensaje convincente que te persuada de hacer tú misma un pago.",
+      },
+      {
+        q: "Si no es información personal, ¿por qué importa?",
+        a: "Porque lo útil para un atacante y la clasificación legal son preguntas distintas. Los importes, las fechas, los métodos de pago y las monedas son exactamente lo que hace creíble un mensaje fraudulento — y la forma habitual de juzgar un correo sospechoso es si quien lo envía conoce datos reales de un pedido real. Esa prueba ya no funciona para nadie que esté en esta filtración.",
+      },
+      {
+        q: "¿Debería borrar mi cuenta de Weverse?",
+        a: "Es una decisión defendible y no es un remedio. Borrar detiene la recogida futura; no puede retirar datos que ya salieron, lo que incluye cualquier cosa de esta filtración. Además te cuesta el historial de pedidos y reservas, las direcciones guardadas, cualquier membresía de pago, y en el lado de las entradas una verificación de identidad completada — así que decídelo según si todavía quieres el servicio, no como respuesta a esto.",
+      },
+      {
+        q: "¿Qué ha hecho Weverse en realidad?",
+        a: "Según su propio relato: reforzó el control de acceso de la API de información de pago y eliminó de ella el identificador interno, presentó un informe de incidente de brecha ante KISA el 4 de septiembre de 2026, y notificó a los clientes afectados. Enumera además trabajo previsto — auditar todas las API expuestas externamente, endurecer los controles de despliegue, subir la sensibilidad de la supervisión — y dice que ha solicitado la devolución de los datos a quien estuvo implicado y que piensa exigir responsabilidad legal. Lo ya terminado son afirmaciones suyas y no hallazgos auditados.",
+      },
+      {
+        q: "¿Hay algo más reciente que esto?",
+        a: "No a fecha de arriba de esta página, que es cuando leímos por última vez la lista de avisos de Weverse Shop. Un asunto de seguridad puede evolucionar, así que esa lista es la versión viva — si existe un aviso posterior, estará allí antes que aquí.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: un producto, y casi nada de él se puede cambiar",
+    summary:
+      "Un concierto y un hotel vendidos como un único artículo. No puedes cambiar el hotel, las fechas ni las noches, renunciar al hotel no reembolsa nada, el asiento es aleatorio y se revela el mismo día, y las entradas se entregan solo a ti, en persona, en el hotel, dentro de una franja.",
+    scope:
+      "Cubre los paquetes de concierto más hotel Play and Stay de NOL World tal como NOL World los documenta: qué está fijado, cómo se recogen las entradas, los requisitos de identidad y de nombre, y qué dicen realmente sus respuestas sobre cancelación. Cada paquete lleva su propia política de cancelación y sus propias inclusiones, y manda la página del producto. El servicio de autobús solo se menciona donde un paquete incluye uno.",
+    intro: [
+      "Un paquete parece la opción fácil: un solo pago, un hotel cerca del recinto, una categoría de asiento garantizada, nada de pelearse con una cola. Para una fan del extranjero con una sola oportunidad de hacer el viaje, ese trato es sinceramente atractivo.",
+      "Es también el producto más rígido de la plataforma, y la rigidez no se ve desde el anuncio. Lee seguidas las propias respuestas de NOL World y aparece un patrón: el paquete es un único artículo indivisible. No una entrada y una habitación de hotel que puedas optimizar por separado — una sola cosa, comprada una vez, casi imposible de cambiar. Todo lo de abajo se deduce de ese único hecho, incluidas las partes que te parecerán injustas cuando las necesites.",
+    ],
+    steps: [
+      {
+        title: "Entiende que estás comprando un artículo, no dos reservas",
+        body: "Esta es la guía entera en un paso. NOL World declara que el número de noches de un paquete no se puede modificar, que las fechas de entrada y salida especificadas en el paquete no se pueden cambiar, y que no se permiten cambios de hotel. Tampoco se pueden añadir noches en la compra — una estancia más larga es una conversación aparte con el hotel, a su precio y sujeta a su disponibilidad. Y una cuenta puede comprar un artículo, así que esto no es algo que se apile.",
+        pitfall:
+          "Reservar el paquete con la idea de ordenar los detalles después: llegar un día antes, mudarte a un hotel más cerca de una amiga, recortar una noche al final. Cada una de esas cosas es un no documentado.",
+        takes: "15 minutos, antes de pagar",
+      },
+      {
+        title: "Acepta que renunciar al hotel no reembolsa nada",
+        body: "La pregunta se hace de dos formas en la FAQ de NOL World y recibe la misma respuesta las dos veces: puedes elegir no alojarte en el hotel, pero no hay reembolsos de la parte de hotel, y la reserva no es transferible a otra persona. Así que quedarte en casa de una amiga no se convierte en dinero de vuelta, y la habitación que pagaste no se le puede ceder a nadie. Usar una noche y reclamar el resto también se rechaza — el número de noches está fijado.",
+        pitfall:
+          "Tratar la mitad del hotel como un depósito del que puedes marcharte. Es la mitad que no puedes revender, ni regalar, ni reclamar.",
+        takes: "—",
+      },
+      {
+        title: "Cuenta con un asiento aleatorio, y con enterarte el mismo día",
+        body: "El paquete garantiza una categoría, no una ubicación. NOL World dice que la asignación dentro de secciones y zonas, al margen de la categoría que elegiste, es aleatoria — y que tu asiento asignado se muestra cuando recoges la entrada en el hotel el día de la función. No vas a saber dónde te sientas hasta unas horas antes del espectáculo. Cierra también la pregunta obvia: no estar satisfecha con el asiento no es motivo de reembolso, y puede aplicarse una comisión de cancelación igualmente.",
+        pitfall:
+          "Planificar alrededor de una posición de asiento — un lado concreto para un proyecto de fans, una fila para un objetivo. La categoría es la promesa; el resto es un sorteo que ves el mismo día.",
+        takes: "—",
+      },
+      {
+        title: "Recoge en el mostrador del hotel, en persona, dentro de la franja",
+        body: "Hay exactamente una forma de conseguir estas entradas. NOL World dice que la recogida es solo en el mostrador de entradas de NOL World situado en el hotel, solo durante el horario designado, y que las entradas se entregan exclusivamente a quien figura en la reserva, que debe recogerlas en persona. Preguntado si alguien con derecho a un descuento podría recogerlas y asistir en su lugar, responde que las entradas solo las puede recoger y usar quien figura en la reserva, sin excepciones. Si te saltas el horario designado, la respuesta publicada es simplemente que las entradas están disponibles solo durante el tiempo especificado.",
+        pitfall:
+          "Organizar el día alrededor del recinto. La cita que obliga es la del mostrador del hotel, en una franja que fijó otra persona, el día del espectáculo.",
+        takes: "Monta el día alrededor de esto",
+      },
+      {
+        title: "Lleva los documentos que el mostrador exige de verdad",
+        body: "NOL World es concreto: el documento de identidad original y válido de quien figura en la reserva, más la confirmación de la reserva impresa o en el móvil — y sin eso, las entradas no se pueden recoger. Para quienes no son de nacionalidad coreana, el documento aceptado es un pasaporte o un certificado de registro de extranjero. Para quienes sí lo son hay una lista más larga, que incluye el documento de residente, el carné de conducir, el pasaporte, el documento juvenil o un documento móvil emitido a través de Government 24 o PASS.",
+        pitfall:
+          "Dejar el pasaporte en la caja fuerte de la habitación porque el mostrador está en el mismo edificio. Es el documento original lo que abre la entrada, y una foto de él no está en la lista.",
+        takes: "5 minutos al hacer la maleta",
+      },
+      {
+        title: "En un paquete para dos, tenéis que estar las dos en el mostrador",
+        body: "Esto reorganiza un día y se pasa por alto con facilidad. NOL World dice que en un paquete para dos personas, tanto quien figura en la reserva como la acompañante deben estar presentes para recoger las entradas — y que la acompañante también tiene que mostrar un documento de identidad, para confirmar que cumple el requisito de edad para entrar. Así que la franja de recogida es una cita para dos personas con dos documentos, no un recado que pueda hacer una de vosotras.",
+        pitfall:
+          "Separaros ese día — una recogiendo entradas mientras la otra hace turismo o hace cola para merchandising. El mostrador no le entregará las entradas a una sola.",
+        takes: "—",
+      },
+      {
+        title: "Haz que el nombre coincida exactamente con el pasaporte, ahora",
+        body: "NOL World responde a esto con las dos consecuencias en una sola frase: si el nombre que diste al reservar no coincide con tu pasaporte, no será posible ni recoger las entradas ni hacer el check-in del hotel. Las dos mitades del paquete, bloqueadas por el mismo error. La pregunta que responde nombra a los culpables habituales — una errata, un segundo nombre que falta, las mayúsculas, los espacios. Comprueba la reserva contra la propia página del pasaporte y no contra tu memoria.",
+        pitfall:
+          "Suponer que una diferencia pequeña se pasará por alto porque el paquete ya está pagado. Pagado no es lo que se comprueba en ninguno de los dos mostradores.",
+        takes: "10 minutos",
+      },
+      {
+        title: "No esperes un correo de confirmación del hotel, porque no hay",
+        body: "Esto provoca un pánico evitable, así que tenlo claro de antemano. NOL World dice que las confirmaciones de reserva de hotel no se envían por separado, y que si el pago pasó, la reserva del hotel está confirmada y es válida. Y más útil todavía: los datos de la reserva solo se pasan al hotel unas dos semanas antes de la estancia, así que el hotel realmente no puede encontrarte antes de eso. Si llamas antes y no han oído hablar de ti nunca, ese es el estado normal documentado.",
+        pitfall:
+          "Reservar una habitación de respaldo, o volver a comprar el paquete, porque el hotel dice que no hay reserva seis semanas antes. No pasaba nada, y ahora hay dos reservas.",
+        takes: "2 minutos de tranquilidad",
+      },
+      {
+        title: "Haz el check-in como quien compró, y lee las inclusiones pequeñas",
+        body: "El check-in del hotel depende de la misma persona que las entradas: NOL World dice que el check-in solo está disponible verificando la identidad de quien figura en la reserva, así que una acompañante no puede hacer el check-in primero y esperar. Si vas a llegar tarde, su instrucción es contactar con el hotel por adelantado — advirtiendo de que puede no ser posible según el hotel. Dos detalles más que conviene saber antes de reservar: los menores no pueden alojarse sin tutor legal, y el desayuno no está incluido salvo que tu paquete concreto lo incluya.",
+        pitfall:
+          "Enviar a una amiga por delante a dejar las maletas y empezar la estancia. La habitación se abre con tu identidad, no con el número de reserva.",
+        takes: "—",
+      },
+      {
+        title: "Si hay autobús, trátalo como una salida sin segunda oportunidad",
+        body: "Donde un paquete incluye autobús, las respuestas de NOL World no se andan con sentimentalismos. Usarlo es opcional y no usarlo no reembolsa nada. No hay vehículos de refuerzo, así que llegar tarde al punto de recogida significa que se ha ido. Es posible un autobús solo de vuelta. Una acompañante que no lo reservó puede preguntar a quien gestiona el autobús in situ, pero las plazas son limitadas y no se pueden garantizar. Y el detalle que arruina una noche: puedes subir una maleta al autobús, pero no hay consigna dentro del autobús una vez que llegáis al recinto. El punto y la hora de embarque de vuelta te los dan al entregarte las entradas en el hotel.",
+        pitfall:
+          "Llevarte una maleta al concierto porque el autobús la dejó subir. En el recinto no hay dónde dejarla, y te la llevas a cuestas durante el espectáculo.",
+        takes: "—",
+      },
+      {
+        title: "Lee las respuestas sobre cancelación antes de reservar, porque son que no",
+        body: "Este es el paso que conviene tomarse en serio mientras el viaje sigue siendo un plan. NOL World publica respuestas a los dos casos más duros y las dos son negativas. Sobre el contagio: tras la rebaja en la clasificación de riesgo de la COVID-19, la cuarentena ya no es obligatoria, y en consecuencia no se aplica ninguna reducción de la comisión de cancelación aunque estés contagiada. Sobre el fallecimiento de un familiar y la hospitalización tras un accidente: no hay reembolsos por motivos personales, y las comisiones de cancelación se aplican según la política de cada producto. Se lea como duro o simplemente como claro, te dice dónde está el riesgo — contigo, desde el momento en que pagas. El instrumento pensado para soportarlo es un seguro de viaje contratado antes de salir, y lo que cubre de verdad depende de la póliza que compres, así que lee ese documento en lugar de darlo por hecho.",
+        pitfall:
+          "Cargar con el riesgo sin seguro suponiendo que un motivo lo bastante grave se aceptará. NOL World ya ha publicado su respuesta a los dos motivos más graves que hay.",
+        takes: "30 minutos con una póliza de seguro",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Puedo comprar el paquete y no usar el hotel?",
+        a: "Puedes renunciar a alojarte, pero NOL World declara que la parte de hotel no es reembolsable y que la reserva no se puede transferir a nadie. Usar menos noches de las que contiene el paquete y reclamar la diferencia también se rechaza, porque el número de noches no se puede modificar.",
+      },
+      {
+        q: "¿Puedo alargar la estancia, acortarla, mover las fechas o cambiar de hotel?",
+        a: "Las noches no se pueden modificar, las fechas de entrada y salida del paquete no se pueden cambiar, y no se permiten cambios de hotel. Tampoco se pueden añadir noches en la compra — la instrucción de NOL World es contactar directamente con el hotel por disponibilidad y precio, y puede que no sea posible. Una mejora de habitación es lo mismo: pregunta al hotel, y págale directamente al llegar.",
+      },
+      {
+        q: "¿Cuándo me entero de mi asiento?",
+        a: "Cuando recoges la entrada en el hotel el día de la función. El paquete garantiza una categoría; dentro de esa categoría, NOL World asigna secciones y asientos de forma aleatoria. No estar contenta con el resultado no es motivo de reembolso.",
+      },
+      {
+        q: "¿Puede alguien recoger las entradas por mí, o asistir en mi lugar?",
+        a: "No. NOL World dice que las entradas se entregan exclusivamente a quien figura en la reserva y deben recogerse en persona, y que solo esa persona puede recogerlas y usarlas, sin excepciones. En un paquete para dos, las dos personas tienen que estar en el mostrador, y la acompañante también debe mostrar documento para confirmar su edad.",
+      },
+      {
+        q: "No he recibido un correo de confirmación del hotel.",
+        a: "No hay ninguno. NOL World dice que las confirmaciones de hotel no se envían por separado, y que un pago correcto significa que la reserva del hotel está confirmada. Dice además que los datos de la reserva llegan al hotel solo unas dos semanas antes de la entrada, así que la confirmación directa solo es posible después de eso.",
+      },
+      {
+        q: "Llamé al hotel y no encuentran mi reserva.",
+        a: "Es lo previsible si llamaste pronto. NOL World dice que los datos se envían al hotel unas dos semanas antes de la estancia y que la confirmación solo es posible después, y que una reserva de paquete completada y pagada correctamente significa que la reserva de hotel está asegurada. No vuelvas a reservar.",
+      },
+      {
+        q: "Di positivo, o tuve una emergencia familiar. ¿Me perdonarán la comisión de cancelación?",
+        a: "La respuesta publicada de NOL World es no en los dos casos. Dice que, al no ser ya obligatoria la cuarentena por COVID-19, no se aplica ninguna reducción de la comisión de cancelación aunque estés contagiada; y que no hay reembolsos por motivos personales, incluidos el fallecimiento de un familiar o la hospitalización tras un accidente, aplicándose las comisiones según la política de cada producto. Un seguro de viaje contratado antes de viajar es el mecanismo para este riesgo — lo que cubre depende de la póliza, así que léela.",
+      },
+      {
+        q: "¿Tengo que usar el autobús, y puedo subir una maleta?",
+        a: "Es opcional, y no usarlo no reembolsa nada. Una maleta puede subir al autobús, pero NOL World advierte de que no hay consigna dentro del autobús una vez que llegáis al recinto — así que una maleta que llevas es una maleta que cargas. No hay vehículos de refuerzo si pierdes la salida, y el punto y la hora de embarque de vuelta se entregan con las entradas en el hotel.",
+      },
+    ],
+    labels: ES_LABELS,
   },
 ];
 

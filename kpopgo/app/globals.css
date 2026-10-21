@@ -1140,6 +1140,27 @@ h4 {
 }
 
 /*
+ * Spanish gets the same wrapping rule, for the mildest version of the reason.
+ * Its words are not welded like German's or stacked like Indonesian's, but it
+ * spends them where English compounds — "cuenta de venta de entradas" for
+ * "ticketing account" — so a step card at 320px holds fewer phrases per line
+ * and the few genuinely long words it does carry
+ * (identificación, correspondientes, verificación) have nowhere to go without
+ * this. Cheaper to apply the rule than to find out which noun breaks a page.
+ *
+ * It needs no font: Latin script, and Archivo's latin subset already carries
+ * the accented vowels, the ñ and the inverted ¿ and ¡ at U+00BF and U+00A1.
+ */
+[lang="es"] .t,
+[lang="es"] .t-lg,
+[lang="es"] .t-sm,
+[lang="es"] p,
+[lang="es"] li {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/*
  * A footer column heading.
  *
  * These were `.data dim`, which put them at 46% ink above a list of links at

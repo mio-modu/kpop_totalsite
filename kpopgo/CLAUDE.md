@@ -71,10 +71,32 @@ taught everyone reading the weekly report to skip that line, and then the next
 one like it. The site sets a session cookie and redirects once; a client that
 does not keep the cookie is sent back to the same URL forever, which is what
 the redirect counter was really showing. `scripts/watch.mjs` now carries a
-cookie jar, and korea.net answers 200 with 757 words. YES24's storefront was
-the same bug wearing different clothes — 26 words of shell, enough to trip the
-brand check — and is now read in full. Two standing alarms, one missing curl
-flag.
+cookie jar, and korea.net answers 200 with 757 words — confirmed on a GitHub
+runner too, where that `✗` is now gone.
+
+**YES24 was not the same bug, and claiming it was is the mistake worth keeping
+written down.** Its storefront came back as 26 words of shell, the cookie jar
+turned that into 319 words from this container, and the obvious conclusion was
+wrong: on a GitHub runner, the same commit on the same day still gets 26
+words. The difference is the network, not the cookie. A fix verified in one
+environment and announced for both is how a false alarm gets re-badged as
+fixed.
+
+So the brand check stopped guessing. It read `r.body`, the raw HTML, where a
+name surviving inside a `<script>` blob counts as present and a page rendering
+it from JSON counts as renamed — neither is the question. It now reads the
+visible text, and refuses to judge a page that came back under the same
+40-word threshold the fingerprint comparison uses, saying it cannot judge
+rather than inventing a rename. `ticket.yes24.com` is exactly that page from
+some networks and not others.
+
+Two things that nearly shipped from this, both caught by running it rather
+than reading it: `visibleText()` lowercases, so comparing `"NOL"`, `"Weverse"`
+and `"YES24"` against it reported all three as renamed at once — one false
+alarm would have become three. And `BRAND_WATCH` still pointed at
+`concerts.weverse.io`, which 302s to the singular host; the guides were
+corrected for that earlier in the day and this list was not, because it is a
+different list.
 
 The same change retired a conditional that made this hard to see. The script
 used to pick curl behind a proxy and node's `fetch` otherwise, with a comment

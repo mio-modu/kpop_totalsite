@@ -90,7 +90,9 @@ async function shelfLife() {
 /** Pages whose brand name disappearing is itself the news. */
 const BRAND_WATCH = [
   { url: "https://world.nol.com/en/ticket", expect: "NOL" },
-  { url: "https://concerts.weverse.io/", expect: "Weverse" },
+  // Singular. `concerts.weverse.io` 302s here, and the guides were corrected
+  // for that earlier — this list was not, because it is a different list.
+  { url: "https://concert.weverse.io/", expect: "Weverse" },
   { url: "https://ticket.yes24.com/", expect: "YES24" },
 ];
 
@@ -435,7 +437,29 @@ async function brands() {
   for (const { url, expect } of BRAND_WATCH) {
     const r = await hit(url);
     if (!r.ok) continue; // already reported by links()
-    if (!r.body.includes(expect)) {
+
+    // Read what a reader reads. This used to test `r.body`, the raw HTML, so
+    // a brand name surviving only inside a <script> blob counted as present
+    // and a page that renders it from JSON counted as renamed. Neither is the
+    // question being asked.
+    const text = visibleText(r.body);
+    const words = text.split(" ").filter(Boolean).length;
+
+    // The same threshold the fingerprint path uses, for the same reason. A
+    // page that came back as a shell has not told us anything about its own
+    // branding, and `ticket.yes24.com` does exactly this from some networks
+    // and not others: 26 words on a GitHub runner, 319 words and the brand
+    // present from this container on the same day. Claiming it had been
+    // renamed was a false alarm invented by whichever network asked.
+    if (words < 40) {
+      note("info", `${url} — only ${words} words of text came back; cannot judge its branding.`);
+      continue;
+    }
+    // visibleText() lowercases, because the fingerprint comparison wants a
+    // case-insensitive diff. Comparing a brand name against it directly
+    // reported NOL, Weverse and YES24 as all renamed on the same run, which
+    // is how this nearly shipped as three false alarms instead of one.
+    if (!text.includes(expect.toLowerCase())) {
       note("warn", `${url} no longer contains "${expect}". These platforms have renamed twice; check whether it has happened again.`);
     }
   }

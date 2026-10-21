@@ -192,13 +192,13 @@ const LOCALE_ALIASES = {
     USD: ["dolar"],
     CNY: ["yuan"],
   },
-  // German welds a brand onto the noun it qualifies and hyphenates the join,
-  // so the card is an American-Express-Karte and the space inside the brand
-  // becomes a hyphen. The name is intact and correctly set; it is the space
-  // the plain check was looking for.
+  // German needs almost nothing listed by hand, because its one systematic
+  // difference is handled as a rule below: it welds a brand onto the noun it
+  // qualifies and hyphenates every join, so an American Express card is an
+  // American-Express-Karte and a NOL World ticket is a NOL-World-Ticket. The
+  // name is intact and correctly set; the space is what the plain check was
+  // looking for.
   de: {
-    "American Express": ["American-Express"],
-    Amex: ["American-Express"],
     UnionPay: ["China UnionPay", "UnionPay"],
   },
   es: {
@@ -225,9 +225,25 @@ const LOCALE_ALIASES = {
  */
 const PERIOD_THOUSANDS = new Set(["de", "id", "es"]);
 
+/**
+ * German hyphenates a multi-word name into the compound it forms.
+ *
+ * Enumerating the compounds was the first attempt and it was wrong in the way
+ * a table is always wrong: it listed American-Express because that page had
+ * been written, and said nothing about NOL-World until the next page failed.
+ * The difference is systematic, so it is a rule — every multi-word name gets
+ * its hyphenated form for free, which covers the names nobody has written yet.
+ */
+const hyphenated = (locale, noun) =>
+  locale === "de" && noun.includes(" ") ? [noun.replace(/ /g, "-")] : [];
+
 const aliasesFor = (locale, noun) => [
   ...ALIASES[noun],
   ...(LOCALE_ALIASES[locale]?.[noun] ?? []),
+  ...hyphenated(locale, noun),
+  // Amex and American Express are one name with two spellings, and German
+  // compounds the long one, so the short entry needs the long one's compound.
+  ...(locale === "de" && noun === "Amex" ? ["American-Express"] : []),
 ];
 
 const NOUNS = Object.keys(ALIASES);

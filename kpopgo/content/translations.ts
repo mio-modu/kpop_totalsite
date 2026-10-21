@@ -6779,6 +6779,430 @@ export const translations: Translation[] = [
     ],
     labels: DE_LABELS,
   },
+  {
+    locale: "de",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL facepass: wer Ihr Gesicht hält, und wofür es da ist",
+    summary:
+      "Einmal registrieren, und eine Kamera lässt Sie ohne Ticketprüfung ein. Das Gesicht liegt bei Toss und nicht bei NOL World, es lässt sich danach nicht mehr ändern, und eine Kündigung des Dienstes löscht das Foto und behält ein Jahr lang eine getrennte Kopie.",
+    scope:
+      "Behandelt, was NOL World zu NOL facepass veröffentlicht, einschließlich der angegebenen Aufbewahrungsfrist nach einer Kündigung: was es tut, wer die Gesichtsdaten speichert und worauf eine Registrierung Sie festlegt. Die Unterstützung gilt je Veranstaltung, und die Veranstaltungsseite entscheidet. Nichts hier ist eine rechtliche Einschätzung zu biometrischen Daten in Ihrem eigenen Land.",
+    intro: [
+      "Koreanische Veranstaltungsorte gehen an der Tür zur Gesichtserkennung über, und ein Fan aus dem Ausland begegnet ihr als Kästchen während der Buchung, mit sehr wenig Erklärung auf Englisch. Die Frage darunter ist nicht klein: Ein Unternehmen, mit dem Sie nie zu tun hatten, wird gleich Ihr Gesicht halten.",
+      "NOL World veröffentlicht durchaus Antworten. Sie sind konkret, sie sind beruhigender, als die meisten Unternehmen das hinbekommen, und sie gehören vor die Warteschlange gelesen statt hinein — darunter die zur Frage, was nach einer Kündigung mit den Daten geschieht, die nicht das sagt, was ein einzelnes Wort wie gelöscht nahelegt.",
+    ],
+    steps: [
+      {
+        title: "Verstehen Sie, was es ersetzt",
+        body: "NOL World beschreibt facepass als Weg, Aufwand und Zeit der Identitätsprüfung beim Einlass zu verringern. Ist die Gesichtsregistrierung abgeschlossen, scannt Sie eine Kamera an der Tür und Sie betreten den Ort ohne Ticketprüfung. Es ist ein Ersatz für die Dokumentenprüfung am Eingang und keine zusätzliche Schicht darüber.",
+        pitfall:
+          "Es nur als Komfortfunktion zu lesen. Die zweite Hälfte der Beschreibung von NOL World ist Durchsetzung, und davon handelt der nächste Schritt.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Kennen Sie den anderen Grund, warum es existiert",
+        body: "NOL World nennt den Zweck doppelt: die Identitätsprüfung zu vereinfachen und den illegalen Verkauf und Vertrieb von Tickets zu verhindern. Ein Gesicht, das zum Konto passen muss, das das Ticket gekauft hat, ist eine Weiterverkaufskontrolle, und es kommt in demselben Zeitraum wie eine Novelle des Aufführungsgesetzes, die den gewohnheitsmäßigen Weiterverkauf über Nennwert erfasst. Diese beiden Tatsachen gehören nebeneinander.",
+        pitfall:
+          "Anzunehmen, ein über einen Weiterverkaufsmarktplatz gekauftes Ticket funktioniere an einem facepass-Eingang schon irgendwie. Das System existiert, damit genau das nicht funktioniert.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wissen Sie, wohin das Gesicht tatsächlich geht",
+        body: "Das ist der Teil, den zu wissen sich am meisten lohnt. NOL World sagt, die Gesichtsinformationen — das Originalbild und die Merkmalsdaten — würden verschlüsselt und von Toss gespeichert, dem Fintech-Unternehmen hinter dem Dienst FaceAccess, und sie würden unter keinen Umständen an NOL World oder an Agenturen weitergegeben. Geteilt wird nur das Ergebnis der Authentifizierung, Erfolg oder Fehlschlag. NOL World sagt außerdem, die Daten würden zu keinem Zweck über die Erbringung des Dienstes hinaus verwendet, und verweist darauf, dass Toss über Zertifizierungen nach ISO 27701 und CBPR verfügt.",
+        pitfall:
+          "Das sind Aussagen von NOL World über einen Dritten und keine Prüfung. Sie sind für eine solche Seite ungewöhnlich konkret, was ein Grund ist, sie ernst zu nehmen, und keiner, mit dem Lesen aufzuhören.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Behandeln Sie die Registrierung als endgültig",
+        body: "Ist ein Gesicht einmal registriert, lässt es sich nicht mehr ändern. NOL World nennt den Grund unumwunden — es soll die missbräuchliche Nutzung des Dienstes verhindern. Eine schlechte Registrierung lässt sich später nicht korrigieren, also sind die Bedingungen, unter denen Sie registrieren, die Bedingungen, die Sie behalten: Licht, Brille, was die Kamera eben aufgenommen hat.",
+        pitfall:
+          "In der Warteschlange schnell zu registrieren, bei schlechtem Licht, mit der Absicht, es später ordentlich zu wiederholen. Es gibt kein Später.",
+        takes: "10 Minuten, mit Bedacht",
+      },
+      {
+        title: "Lassen Sie niemanden auf Ihrem Telefon oder Ihrem Konto registrieren",
+        body: "NOL World sagt es direkt: Stellen Sie sicher, dass niemand sonst Ihr Konto nutzt, und wenn jemand mit Ihrem Telefon oder Ihrem Konto Gesichtsinformationen registriert, haftet das Unternehmen nicht für die daraus entstehenden Probleme. Ein gemeinsam genutztes Gerät im Haushalt in dem Moment, in dem eine Tournee in den Verkauf geht, ist genau der Weg, auf dem das passiert, und das Konto ist das, was die Folge trägt.",
+        pitfall:
+          "Einer Freundin zu helfen, auf Ihrem angemeldeten Telefon zu registrieren. Das Gesicht, das nun an Ihrem Konto hängt, ist ihres, es lässt sich nicht ändern, und der Haftungsausschluss ist ausdrücklich.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Prüfen Sie, ob Ihre Veranstaltung es überhaupt unterstützt",
+        body: "Die Unterstützung gilt je Veranstaltung und nicht allgemein — NOL World führt eigens eine Frage dazu, wie man prüft, ob ein Konzert facepass unterstützt, und die existiert nur, weil die Antwort schwankt. Prüfen Sie die Veranstaltungsseite, bevor Sie den Einlass darum herum planen, und halten Sie den gewöhnlichen Weg bereit: Bestätigungsnummer und Ausweis an der Kasse.",
+        pitfall:
+          "Zu registrieren und dann an einem Veranstaltungsort anzukommen, der noch Dokumente prüft, während der Pass im Hotel liegt.",
+        takes: "3 Minuten",
+      },
+      {
+        title: "Lesen Sie die Antwort zur Löschung genau — es ist nicht einfach eine Löschung",
+        body: "NOL World beantwortet die Frage, ob Gesichtsinformationen bei einer Kündigung gelöscht werden, und die Antwort hat zwei Hälften. Die erste: Ihr Gesichtsfoto wird beim Kündigen des Dienstes gelöscht, und eine erneute Nutzung bedeutet erneutes Registrieren. Die zweite: Zum Zweck der Identitätsprüfung werden die Daten getrennt gespeichert und ab dem Zeitpunkt der Kündigung ein Jahr lang aufbewahrt — verwendet, so NOL World, nur zur Identitätsprüfung bei einer erneuten Registrierung, und nach dem Jahr vernichtet. Eine Kündigung löscht also das Foto und startet eine Uhr, statt eine anzuhalten. Das ist eine vertretbare Regelung und es ist nicht das, was das Wort gelöscht für sich genommen nahelegt, weshalb es sich lohnt, es vor der Registrierung in ihren Worten zu lesen.",
+        pitfall:
+          "Die Ein-Wort-Zusammenfassung irgendeines Dritten darüber zu übernehmen, was mit biometrischen Daten geschieht, unsere eingeschlossen. Lesen Sie den Satz zur Aufbewahrung und nicht die Überschrift.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Sieht NOL World mein Gesicht?",
+        a: "NOL World sagt nein. Gesichtsinformationen werden verschlüsselt und von Toss gehalten, und NOL World gibt an, sie würden unter keinen Umständen an NOL World oder Agenturen weitergegeben — geteilt wird nur, ob die Authentifizierung erfolgreich war oder nicht.",
+      },
+      {
+        q: "Kann ich mein Gesicht neu registrieren, wenn der erste Versuch schlecht war?",
+        a: "Nein. NOL World sagt, ein registriertes Gesicht lasse sich nicht ändern, um die missbräuchliche Nutzung des Dienstes zu verhindern. Registrieren Sie beim ersten Mal mit Bedacht.",
+      },
+      {
+        q: "Werden meine Gesichtsdaten gelöscht, wenn ich facepass kündige?",
+        a: "Teilweise, und dann mit einer Uhr. NOL World sagt, das Gesichtsfoto werde bei der Kündigung gelöscht und man müsse für eine weitere Nutzung erneut registrieren. Es sagt außerdem, dass die Daten zum Zweck der Identitätsprüfung getrennt gespeichert und ab der Kündigung ein Jahr lang aufbewahrt werden, nur zur Identitätsprüfung bei einer erneuten Registrierung verwendet und nach diesem Jahr vernichtet werden. Bis zum 20. Oktober 2026 stand auf dieser Seite, dass wir diese Antwort nicht gelesen hatten und sie nicht zusammenfassen wollten; sie ist jetzt oben zitiert und in unseren Korrekturen vermerkt.",
+      },
+      {
+        q: "Nutzt jedes Konzert facepass?",
+        a: "Nein. Die Unterstützung schwankt je Veranstaltung, und NOL World führt eine eigene Antwort dazu, wie man das prüft. Vergewissern Sie sich auf der Veranstaltungsseite Ihrer Veranstaltung und halten Sie den gewöhnlichen Abholweg bereit.",
+      },
+      {
+        q: "Was passiert, wenn jemand anderes sein Gesicht auf meinem Konto registriert?",
+        a: "NOL World sagt, das Unternehmen hafte nicht für Probleme, die daraus entstehen, und bittet Sie sicherzustellen, dass niemand sonst Ihr Konto nutzt. Da ein registriertes Gesicht nicht geändert werden kann, ist das auf gewöhnlichem Weg nicht behebbar.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Die Kasse von NOL World: Buchungsgebühr, Uhr und die Währung, in der Sie zahlen",
+    summary:
+      "Ein Konzertticket trägt eine Servicegebühr von 8.000 Won, Sie haben zehn Minuten für die Platzwahl und sieben zum Bezahlen, und das Zahlungsfenster bittet Sie, eine Währung zu wählen. Drei Geldentscheidungen und eine Uhr, alle veröffentlicht und keine davon offensichtlich.",
+    scope:
+      "Behandelt, was NOL World zu Kosten und Zeitablauf seiner Kasse veröffentlicht: die Servicegebühr nach Genre, die zweistufige Kaufuhr, die Währungswahl, Gutscheine und Grenzen je Bestellung. Gebühren und Uhren können je Veranstaltung gesetzt werden, und NOL World sagt das in beiden Fällen, Ihre Veranstaltungsseite geht dem hier also vor. Nichts hier ist eine Empfehlung, welche Währung für Ihre konkrete Karte günstiger ist.",
+    intro: [
+      "Das meiste, was an einer koreanischen Kasse schiefgeht, ist nicht die Karte. Es ist, dass die Seite drei Fragen mit Geld daran stellt, während eine Uhr läuft, und eine Käuferin aus dem Ausland allem davon zum ersten Mal mit etwa sieben Minuten Restzeit begegnet.",
+      "Alles davon ist veröffentlicht, und nichts davon steht auf der Produktseite, auf der Sie entschieden haben, dass das Ticket bezahlbar ist. Der Zweck dieser Seite ist also, die Überraschungen in die Woche davor zu verlegen.",
+    ],
+    steps: [
+      {
+        title: "Rechnen Sie die Servicegebühr dazu, bevor Sie das Ticket für bezahlbar halten",
+        body: "NOL World veröffentlicht seine Servicegebühr nach Genre. Musicals und Konzerte tragen 8.000 Won — ausgenommen bestimmte Produkte wie Online-Konzerte und Fanclub-Mitgliedschaften. Andere Aufführungen und Sport kosten 3.000 Won. Freizeit und Ausstellungen sind kostenlos. NOL World sagt außerdem, Gebühren könnten je Produkt abweichen und seien beim Kauf zu prüfen, behandeln Sie das also als veröffentlichten Ausgangswert und nicht als Zusage zu Ihrer Veranstaltung.",
+        pitfall:
+          "Einen koreanischen Ticketpreis mit einem Ticketpreis zu Hause zu vergleichen und zu vergessen, dass dies obendrauf kommt. Es ist nicht viel, und es ist genau die kleine Überraschung, die eine ganze Plattform im schlechtesten Moment unglaubwürdig wirken lässt.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wissen Sie, was die Gebühr tatsächlich kauft, denn eine Zeile davon zählt",
+        body: "NOL World listet auf, was die Servicegebühr abdeckt: Wartung der Website und zugehörige Kosten, Zahlungsabwicklung einschließlich der Betrugserkennung, Technikgebühren zur Verhinderung von Buchungen durch Bots und Makros, sowie Systemunterstützung für globale Reservierungen. Der dritte Punkt ist der interessante. Die Gebühr finanziert zum Teil die Maschinerie gegen Makros, was dieselbe Durchsetzungsrichtung ist wie die Identitätsprüfungen und die Novelle des Aufführungsgesetzes — und sie ist der Grund, warum sich die Warteschlange wie ein gegnerisches System anfühlt und nicht wie eine Reihe.",
+        pitfall:
+          "Die Gebühr als reine Marge und die Warteschlange als Unfähigkeit zu lesen. Die Plattform sagt Ihnen, dass sie die Gebühr dafür ausgibt, automatisierte Käufer draußen zu halten, und das ist auch der Grund, warum die Regeln, die sie Ihnen auferlegt, streng sind.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Verstehen Sie die Uhr: zehn Minuten zum Wählen, sieben zum Zahlen",
+        body: "Die Kaufuhr hat zwei Stufen, und NOL World nennt beide. Ab dem Betreten der Buchungsseite haben Sie bis zu zehn Minuten für die Platzwahl. Sobald Sie zum Preisschritt wechseln, werden Ihre Plätze sieben Minuten lang gehalten, während Sie die Zahlung abschließen, mit einer Uhr oben auf der Seite. Verpassen Sie sie, werden die Plätze automatisch freigegeben und Sie beginnen die Buchung von vorn. Auch Buchungen ohne Platzzuweisung oder mit freier Platzwahl bekommen die Zehn-Minuten-Grenze vor der Zahlung. NOL World ergänzt, dass die Grenzen je Veranstaltung abweichen können und manche Veranstaltungen keine haben.",
+        pitfall:
+          "Innerhalb der sieben Minuten die Banking-App zu öffnen, um eine Kartennummer zu suchen. Kartendaten, Rechnungsanschrift und die Freigabe-App Ihrer Bank sollten alle bereit sein, bevor Sie die Buchungsseite betreten, denn die Uhr nimmt keine Rücksicht darauf, dass Ihr Telefon Sie erneut zur Anmeldung auffordert.",
+        takes: "17 Minuten, wenn Sie alles ausschöpfen",
+      },
+      {
+        title: "Behandeln Sie die Währungsfrage als echte Entscheidung",
+        body: "NOL World unterstützt die Zahlung in 24 Währungen, darunter koreanischer Won, US-Dollar, Yen und Yuan, und die verfügbaren erscheinen, nachdem Sie Ihre Kartendaten eingegeben haben. Die angebotene Wahl liegt zwischen der Währung des Ausstellungslandes Ihrer Karte und koreanischem Won. Das sind zwei verschiedene Wechselkurse, gesetzt von zwei verschiedenen Parteien — einer von demjenigen, der auf der Zahlungsseite umrechnet, einer von Ihrem Kartennetzwerk und Ihrer Bank. Die eigene Währung zu wählen ist dynamische Währungsumrechnung, und die umrechnende Partei setzt den Kurs und nimmt eine Marge darauf, also ist die Zahlung in Won meist die günstigere der beiden. Meist, nicht immer: Die Fremdwährungsgebühr Ihrer eigenen Karte fällt ohnehin an, und eine schlechte Marge Ihrer Bank kann den Abstand schließen. Die Hälfte, die Sie vor dem Tag tatsächlich prüfen können, sind die Bedingungen Ihrer Bank, prüfen Sie also die.",
+        pitfall:
+          "Die heimische Währung zu wählen, weil die Zahl vertraut aussieht. Vertraut ist hier häufiger die teurere Variante, und das ist der eine Bildschirm, auf dem Sie wählen, wer die Umrechnung vornimmt.",
+        takes: "10 Minuten, mit Ihrer Bank, vorher",
+      },
+      {
+        title: "Lösen Sie den Gutschein ein, bevor Sie zahlen, denn ein Danach gibt es nicht",
+        body: "NOL World ist hier unumwunden: Ist die Zahlung abgeschlossen, können Sie keinen Gutschein mehr anwenden. Der einzige Weg, den es anbietet, ist, denselben Platz zu stornieren und mit angewendetem Gutschein neu zu buchen — und es warnt, dass Stornieren und Neubuchen Gebühren nach der Gebührenregelung der Veranstaltung auslösen können, prüfen Sie die also zuerst. Wägen Sie das ehrlich gegen den Wert des Gutscheins ab, und denken Sie daran, dass der freigegebene Platz während Ihrer Neubuchung nicht für Sie reserviert ist.",
+        pitfall:
+          "Einen Platz zu stornieren, den Sie tatsächlich haben, um einen Rabatt zu retten, den Sie vielleicht gar nicht einsetzen können. Der Gutschein ist weniger wert als das Ticket, und der Bestand wartet nicht.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Rechnen Sie mit einer Ticketgrenze, und damit, dass sie dem Veranstalter gehört",
+        body: "NOL World sagt, je nach Veranstalter könne es eine Grenze geben, wie viele Tickets je Bestellung oder je Mitglied für eine Aufführung reserviert werden können — und dass bei Konzerttickets, die zusammen mit einer Tour oder anderen Eintrittskarten verkauft werden, der Veranstalter zusätzlich eine Grenze je Mitglied setzen kann. Die Obergrenze ist also keine plattformweite Zahl zum Nachschlagen; sie wird je Veranstaltung gesetzt, manchmal je Person statt je Vorgang, und sie ist ein Grund, warum eine Gruppenbestellung im letzten Schritt scheitern kann.",
+        pitfall:
+          "Eine Bestellung für vier Personen um eine Grenze herum zu planen, die Sie bei einer anderen Veranstaltung gelesen haben. Eine Grenze je Mitglied lässt sich auch nicht dadurch lösen, dass Sie die Bestellung über Ihre eigenen Konten aufteilen — dieses Muster steht auf der veröffentlichten Liste missbräuchlicher Nutzung von NOL World.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Bestätigen Sie, dass die Buchung existiert, an der Stelle, die den Status zeigt",
+        body: "Öffnen Sie nach der Zahlung die Website oder App von NOL World und gehen Sie auf Account/My und dann My Reservations. NOL World sagt, grundlegende Reservierungsdaten und der Status seien sowohl in der Liste als auch auf der Detailseite der Buchung sichtbar. Tun Sie das einmal, solange Sie noch am Schreibtisch sitzen, statt anzunehmen, die Bestätigungsmail sei die ganze Wahrheit — die Reservierungsliste ist die Stelle, an der ein unerwarteter Status auftaucht, und es ist der Bildschirm, nach dem man Sie fragen wird, wenn Sie den Kundendienst kontaktieren.",
+        pitfall:
+          "Eine durchgegangene Zahlung als existierende Buchung zu behandeln. Meist ist beides dasselbe, und der ganze Sinn des Prüfens ist der Fall, in dem es das nicht ist.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wissen Sie, was fertig für das bedeutet, was Sie gekauft haben",
+        body: "Bei darstellender Kunst und Konzerten sagt NOL World, der Vorgang sei mit der Zahlung abgeschlossen und Sie holen an der Kasse des Veranstaltungsorts ab. Produkte aus Touren und Aktivitäten sind nicht einheitlich: Manche stellen einen QR- oder Barcode auf My Page oder per E-Mail aus, der direkt einlässt, und manche verlangen, dass Sie den Gutschein oder die Buchungsbestätigung an einem Schalter vor Ort gegen ein physisches Ticket eintauschen, bevor Sie eintreten. Die Anweisung von NOL World lautet, auf der Produktseite zu prüfen, welcher Fall gilt, denn der Unterschied entscheidet, ob Sie vor dem Eingang noch einen Schalter finden müssen.",
+        pitfall:
+          "Einen QR-Code in der E-Mail für eine Eintrittskarte zu halten. Bei einem Produkt zum Eintauschen ist er das, was Sie an einem Schalter tauschen, und der Schalter hat Öffnungszeiten.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Wie hoch ist die Buchungsgebühr bei einem Konzertticket?",
+        a: "NOL World veröffentlicht 8.000 Won für Musicals und Konzerte, ausgenommen bestimmte Produkte wie Online-Konzerte und Fanclub-Mitgliedschaften; 3.000 Won für andere Aufführungen und Sport; und nichts für Freizeit und Ausstellungen. Es sagt außerdem, Gebühren könnten je Produkt abweichen und seien beim Kauf zu prüfen, vergewissern Sie sich also bei Ihrer eigenen Veranstaltung.",
+      },
+      {
+        q: "Wie viel Zeit habe ich an der Kasse wirklich?",
+        a: "Zehn Minuten für die Platzwahl ab dem Betreten der Buchungsseite, dann eine Haltefrist von sieben Minuten, während Sie zahlen, mit einer Uhr oben auf der Seite. Überschreiten Sie sie, werden die Plätze freigegeben und Sie fangen von vorn an. Freie Platzwahl bekommt die zehn Minuten ebenfalls. NOL World sagt, die Grenzen könnten je Veranstaltung abweichen und manche Veranstaltungen hätten keine.",
+      },
+      {
+        q: "Soll ich in koreanischen Won oder in meiner eigenen Währung zahlen?",
+        a: "Meist in Won. NOL World unterstützt 24 Währungen und lässt Sie zwischen der Währung des Ausstellungslandes Ihrer Karte und koreanischem Won wählen, angezeigt nach Eingabe der Kartendaten. Die eigene Währung zu wählen ist dynamische Währungsumrechnung, bei der die umrechnende Partei den Kurs setzt und eine Marge aufschlägt — Won ist also in der Regel günstiger. Die Fremdwährungsgebühr Ihrer eigenen Karte fällt ohnehin an, und das ist der Teil, den Sie vor dem Tag bei Ihrer Bank prüfen sollten.",
+      },
+      {
+        q: "Ich habe meinen Gutschein vergessen. Kann ich ihn jetzt hinzufügen?",
+        a: "Nein. NOL World sagt, ein Gutschein könne nach abgeschlossener Zahlung nicht mehr angewendet werden. Der einzige angebotene Weg ist, denselben Platz zu stornieren und mit dem Gutschein neu zu buchen, und es warnt, dass Stornierung und Neubuchung Gebühren nach der Regelung der Veranstaltung tragen können. Prüfen Sie die Gebühr, bevor Sie einen Platz freigeben, den Sie bereits halten.",
+      },
+      {
+        q: "Warum kann ich nur zwei Tickets buchen, wenn meine Freundin vier gebucht hat?",
+        a: "Weil die Grenze dem Veranstalter gehört und nicht der Plattform. NOL World sagt, eine Aufführung könne Tickets je Bestellung oder je Mitglied begrenzen, und dass kombinierte Produkte aus Konzert und Tour zusätzlich eine Grenze je Mitglied tragen können. Eine andere Veranstaltung oder eine andere Verkaufsrunde kann eine andere Obergrenze haben.",
+      },
+      {
+        q: "Kann ich auf NOL World eine koreanische Kreditkarte verwenden?",
+        a: "Nein. NOL World akzeptiert nur außerhalb Koreas ausgestellte Karten; in Korea ausgestellte Karten gehören verifizierten inländischen Mitgliedern auf der koreanischen Seite. Eine hier abgelehnte koreanische Karte ist die Regel, die funktioniert, und kein Fehler.",
+      },
+      {
+        q: "Wo prüfe ich, dass meine Buchung durchgegangen ist?",
+        a: "Auf der Seite oder in der App von NOL World, unter Account/My und dann My Reservations. NOL World sagt, Reservierungsdaten und Status erschienen sowohl in der Liste als auch auf der Detailseite. Dieser Bildschirm zeigt den Status, nicht die Bestätigungsmail.",
+      },
+      {
+        q: "Ich habe gezahlt. Ist vor der Veranstaltung noch etwas zu tun?",
+        a: "Bei einem Konzert- oder Theaterticket nein — NOL World sagt, der Vorgang sei abgeschlossen und Sie holen an der Kasse des Veranstaltungsorts ab. Bei einem Produkt aus Tour oder Aktivität kommt es darauf an: Manche senden einen QR- oder Barcode, der direkt einlässt, andere verlangen, dass der Gutschein zuvor an einem Schalter vor Ort gegen ein physisches Ticket getauscht wird. Welcher Fall gilt, steht auf der Produktseite.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Ein NOL-World-Ticket stornieren: die Frist, die Gebühr und das Geld, das Sie trotzdem verlieren",
+    summary:
+      "Die Stornofrist ist der Nachmittag vor der Veranstaltung in koreanischer Zeit, samstags früher als an allen anderen Tagen, und ein vollständig erstattetes Ticket kann eine Karteninhaberin aus dem Ausland trotzdem Geld kosten. Außerdem: Das Ticket an eine Freundin zu senden nimmt Ihnen die Stornoschaltfläche weg.",
+    scope:
+      "Behandelt das Stornieren eines Veranstaltungstickets auf NOL World, so wie NOL World es dokumentiert: die Fristen, wo die Gebühr steht, wie die Erstattung auf eine ausländische Karte zurückkommt und was eine Stornierung unmöglich macht. NOL World veröffentlicht keine zentrale Gebührentabelle, und diese Seite erfindet keine. Produkte aus Touren und Aktivitäten folgen eigenen Regelungen und werden nur dort erwähnt, wo sie abweichen.",
+    intro: [
+      "Ein Fan aus dem Ausland storniert aus Gründen, die ein Fan im Inland selten hat: ein Visum, ein Anschlussflug, ein verschobener Dienstplan. Die Stornoregeln bedeuten diesem Publikum also mehr als dem, für das sie geschrieben wurden — und sie sind streng, an Zeitzonen gebunden und an zwei Stellen auf eine Weise unsymmetrisch, die niemand erraten würde.",
+      "Zwei der Tatsachen unten gehören vor die Buchung gelesen und nicht danach. Für Veranstaltungen am Samstag schließt die Stornierung sechs Stunden früher als an jedem anderen Tag. Und eine Stornierung, die NOL World vollständig abwickelt, kann eine Karteninhaberin aus dem Ausland trotzdem Geld kosten, was niemandes Fehler ist und auch niemandes Aufgabe, für Sie zu beheben.",
+    ],
+    steps: [
+      {
+        title: "Lernen Sie die Frist vor der Buchung, denn sie ist nicht der Veranstaltungstag",
+        body: "NOL World schließt Stornierungen für Veranstaltungen am Vortag und nicht am Tag selbst: 17 Uhr KST am Tag vor der Veranstaltung an Wochentagen und Feiertagen, und 11 Uhr KST am Vortag bei einer Veranstaltung am Samstag. Die Samstagsregel ist die, die Leute erwischt — sie liegt sechs Stunden früher als der Rest der Woche, und sie gilt für die Samstagsvorstellung, die Frist fällt also auf Freitagvormittag koreanischer Zeit.",
+        pitfall:
+          "„Den Tag davor“ in Ihrem eigenen Kalender auszurechnen. Für eine Samstagabendvorstellung in Seoul ist 11 Uhr KST am Freitag der Donnerstagabend in New York. Die Frist kann einen ganzen Tag früher liegen, als sie sich liest.",
+        takes: "5 Minuten, bevor Sie zahlen",
+      },
+      {
+        title: "Nutzen Sie das kostenlose Fenster, wenn Sie Zweifel bekommen",
+        body: "Es gibt eine gebührenfreie Frist, und sie ist kurz: NOL World sagt, bei Tickets falle keine Stornogebühr an, wenn Sie bis 23:59 Uhr am Tag Ihrer Reservierung stornieren. Die Entscheidung, die Sie kostenlos rückgängig machen können, ist also die, die Sie am selben Tag treffen, an dem Sie gebucht haben. Nach Mitternacht kostet sie etwas.",
+        pitfall:
+          "Anzunehmen, 23:59 Uhr sei Ihre eigene Mitternacht. NOL World nennt KST bei den anderen Stornofristen ausdrücklich und bei dieser keine Zone, die sichere Lesart ist also koreanische Zeit — und ohnehin ist eine Entscheidung in den letzten zehn Minuten eines Fensters eine zu spät getroffene Entscheidung.",
+        takes: "—",
+      },
+      {
+        title: "Wissen Sie, wo die Schaltfläche ist und was es heißt, wenn sie fehlt",
+        body: "Der Weg ist App oder Web, dann Account/My, dann My Reservations, dann Ticket Reservation List, dann die Reservierung, dann Cancel Reservation auf der Detailseite. Fehlt die Schaltfläche Cancel Reservation auf der Detailseite ganz, lautet die Anweisung von NOL World, den Kundendienst zu kontaktieren statt weiterzusuchen: Eine Mitarbeiterin klärt Stornierbarkeit, Gebühr und Erstattungsbetrag mit dem Anbieter und führt Sie dann. Den Vorgang verfolgen Sie auf der Detailseite der Reservierung, und nach Abschluss folgt eine Bestätigungsmail.",
+        pitfall:
+          "Eine fehlende Schaltfläche als Fehler der Website zu lesen und es eine Stunde lang erneut zu versuchen. Es ist ein Status, und die Uhr aus dem ersten Schritt läuft weiter, während Sie es erneut versuchen.",
+        takes: "15 Minuten, plus Zeit beim Kundendienst",
+      },
+      {
+        title: "Rechnen Sie mit keiner Gebührentabelle und holen Sie die Zahl aus Ihrer eigenen Reservierung",
+        body: "Es gibt keine veröffentlichte Gebührentabelle, mit der sich planen ließe. Auf die Frage nach der Höhe der Stornogebühr antwortet NOL World mit einem Pfad — Web/App, Account/My, My Reservations, Reservation Details — weil die Zahl eine Eigenschaft Ihrer Buchung ist und nicht der Plattform. Bei Produkten aus Touren und Aktivitäten werden Gebühr und Erstattungsbetrag angezeigt, wenn Sie Cancel Reservation drücken, vor der Bestätigung. Wir drucken hier keinen Prozentsatz, dem Ihre Reservierung womöglich widerspricht.",
+        pitfall:
+          "Mit einer Gebührentabelle aus einem Blogbeitrag zu planen. Jede Anleitung, die einen festen koreanischen Stornoprozentsatz für Ihre Veranstaltung nennt, zitiert etwas, das NOL World nicht veröffentlicht.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Prüfen Sie die Teilstornierung, solange Sie noch buchen",
+        body: "Zwei von vier Plätzen zu stornieren ist bei manchen Veranstaltungen möglich und bei anderen nicht, und die Anweisung von NOL World lautet, den Status der Teilstornierung während des Buchens zu prüfen — also bevor es das ist, was Sie brauchen. Produkte aus Touren und Aktivitäten erlauben sie überhaupt nicht: Dort heißt der Weg, die ganze Buchung zu stornieren und neu zu buchen, und NOL World warnt unumwunden, dass die Verfügbarkeit danach nicht garantiert ist und eine Neubuchung womöglich nicht möglich ist.",
+        pitfall:
+          "Vier Plätze in der Annahme zu buchen, die zwei unsicheren Freundinnen ließen sich später herausnehmen. Bei einer Veranstaltung ohne Teilstornierung wird daraus alle vier oder keiner.",
+        takes: "2 Minuten, beim Buchen",
+      },
+      {
+        title: "Verstehen Sie, dass eine volle Erstattung eine ausländische Karte trotzdem Geld kosten kann",
+        body: "Das ist der Teil, der für dieses Publikum geschrieben ist und auf Englisch fast nie erklärt wird. NOL World gibt an, dass bei Verwendung einer ausländischen Kreditkarte ein Währungsgewinn oder -verlust entstehen kann, wegen des Unterschieds zwischen dem Wechselkurs am Buchungstag und dem am Stornotag — und, davon getrennt, dass Gebühren für Auslandstransaktionen anfallen können, obwohl die Transaktion storniert wurde. Keines von beidem ist ein Abzug, den NOL World vornimmt. Beides ist Ihr Kartenherausgeber, und der Rat von NOL World lautet, bei ihm die genauen Kurse und Gebühren zu erfragen.",
+        pitfall:
+          "Einen Erstattungsbetrag, der kleiner ist als der belastete, als Fehler oder versteckte Gebühr zu lesen. Die Lücke kann der Wechselkurs zwischen zwei Daten sein, und wer sie erklären kann, ist Ihre Bank und nicht die Ticketplattform.",
+        takes: "Ein Anruf bei Ihrer Bank",
+      },
+      {
+        title: "Geben Sie der Erstattung die Zeit, die das Kartennetzwerk braucht",
+        body: "Hat die Transaktion Ihr Kreditkartenunternehmen noch nicht erreicht, ist die Stornierung laut NOL World sofort abgeschlossen. Hat sie es, und ist der Zahlbetrag abgerechnet, rechnen Sie mit etwa 5 bis 7 Tagen, bis das Kartenunternehmen sie zurückbucht, und damit, dass der stornierte Betrag von der Rechnung des Folgemonats abgezogen wird statt als Zahlung zurückzukommen. NOL World merkt an, dass sich die Erstattungsregeln zwischen Kartenunternehmen unterscheiden, Ihres ist also für sein eigenes Zeitmaß maßgeblich.",
+        pitfall:
+          "Bei Ihrer Bank eine Beanstandung zu eröffnen, während die Rückbuchung läuft. Ein Chargeback auf eine Transaktion, die ohnehin storniert wird, schafft ein zweites Problem auf einem Konto, mit dem Sie womöglich wieder buchen wollen.",
+        takes: "5-7 Tage",
+      },
+      {
+        title: "Senden Sie das mobile Ticket erst, wenn Sie sicher hingehen",
+        body: "Das ist die Falle, für die die ganze Seite sich lohnt. Das Teilen mobiler Tickets erlaubt es der Käuferin, ein Ticket an die Person zu senden, die hingeht — und NOL World gibt an, dass die Stornierung der Reservierung eingeschränkt ist, sobald das mobile Ticket erfolgreich gesendet wurde. Der Weg zurück gehört der Empfängerin: Hebt sie die Registrierung des Tickets auf, wird eine Stornierung wieder möglich. Vor der Registrierung gibt es sanftere Ausgänge — die Senderin kann Cancel Send drücken, solange das Ticket nicht registriert ist, und ein nicht registriertes Ticket kommt nach 24 Stunden oder bis zum Veranstaltungsdatum automatisch zurück.",
+        pitfall:
+          "Tickets in der Woche der Buchung an Freundinnen zu senden, weil das ordentlich wirkt. Die Stornoschaltfläche gehört nun faktisch ihnen, und sie zurückzubekommen heißt, sie zu bitten, das Ticket zuerst aufzugeben.",
+        takes: "—",
+      },
+      {
+        title: "Lesen Sie Regelungen für Touren und Aktivitäten getrennt",
+        body: "Ist Ihre Buchung eine Tour, ein Transfer oder eine Aktivität statt eines Veranstaltungstickets, ist nichts von alldem eine sichere Vorgabe. NOL World sagt, manche dieser Produkte könnten nach dem Kauf überhaupt nicht storniert werden, und dass eine Stornogebühr von 100% auch am Kauftag anfallen kann. Maßgeblich ist die Regelung auf der eigenen Detailseite des Produkts und auf dem Gutschein, und NOL World bittet Sie, sie zu lesen, bevor Sie eine Stornierung beantragen.",
+        pitfall:
+          "Die Ticketregeln auf ein Paket zu übertragen, das in derselben Sitzung gebucht wurde. Das kostenlose Fenster am selben Tag ist eine Regel für Veranstaltungstickets, und ein Tourprodukt kann ab dem Moment der Zahlung nicht erstattbar sein.",
+        takes: "10 Minuten je Produkt",
+      },
+    ],
+    faq: [
+      {
+        q: "Wie lautet die Stornofrist für eine Veranstaltung genau?",
+        a: "Der Tag vor der Veranstaltung, in koreanischer Zeit. NOL World nennt 17 Uhr KST am Vortag für Wochentage und Feiertage und 11 Uhr KST am Vortag für Samstagsvorstellungen. Rechnen Sie das sorgfältig gegen Ihr eigenes Datum um — eine Frist um 11 Uhr KST am Freitag ist in weiten Teilen Amerikas der Donnerstagabend.",
+      },
+      {
+        q: "Gibt es eine kostenlose Stornierung?",
+        a: "Bei Veranstaltungstickets ja, am Tag der Buchung: NOL World sagt, eine Stornierung bis 23:59 Uhr am Tag Ihrer Reservierung trage keine Stornogebühr. Es nennt bei dieser keine Zeitzone, während es bei den anderen KST nennt, behandeln Sie sie also als koreanische Zeit und reizen Sie sie nicht aus. Produkte aus Touren und Aktivitäten sind anders — manche berechnen 100% auch am selben Tag.",
+      },
+      {
+        q: "Wie hoch ist die Stornogebühr?",
+        a: "NOL World veröffentlicht keine Tabelle. Auf diese Frage gibt es stattdessen einen Pfad — Web oder App, Account/My, My Reservations, Reservation Details — weil die Zahl zu Ihrer Buchung gehört. Bei Produkten aus Touren und Aktivitäten zeigt das Drücken von Cancel Reservation Stornogebühr und Erstattungsbetrag vor der Bestätigung. Jede englische Anleitung, die für Ihre Veranstaltung einen festen Prozentsatz nennt, zitiert eine Zahl, die die Plattform nicht angibt.",
+      },
+      {
+        q: "Ich habe rechtzeitig storniert und weniger zurückbekommen, als ich gezahlt habe. Wo ist der Rest?",
+        a: "Vermutlich nicht bei NOL World. Es gibt an, dass eine ausländische Karte einen Währungsgewinn oder -verlust aus dem Unterschied zwischen dem Kurs am Buchungstag und dem am Stornotag erzeugen kann, und dass Gebühren für Auslandstransaktionen trotz der Stornierung anfallen können. Beides liegt bei Ihrem Kartenherausgeber, und NOL Worlds eigener Rat lautet, ihn nach den genauen Kursen und Gebühren zu fragen.",
+      },
+      {
+        q: "Wie lange dauert es, bis das Geld zurückkommt?",
+        a: "Hat die Transaktion Ihr Kartenunternehmen noch nicht erreicht, ist die Stornierung sofort abgeschlossen. Hat sie es, nennt NOL World etwa 5 bis 7 Tage, bis das Kartenunternehmen die Transaktion storniert, mit Abzug des Betrags von der Rechnung des Folgemonats. Kartenunternehmen unterscheiden sich, Ihres kann es Ihnen also sagen.",
+      },
+      {
+        q: "Ich habe das mobile Ticket schon an meine Freundin gesendet. Kann ich noch stornieren?",
+        a: "Nicht, solange sie es hält. NOL World sagt, die Stornierung der Reservierung sei eingeschränkt, sobald ein mobiles Ticket erfolgreich gesendet wurde, und werde wieder möglich, wenn die Empfängerin dessen Registrierung aufhebt. Ist das Ticket noch nicht registriert, haben Sie leichtere Ausgänge: Die Senderin kann Cancel Send drücken, und ein nicht registriertes Ticket kommt nach 24 Stunden oder bis zum Veranstaltungsdatum automatisch zurück.",
+      },
+      {
+        q: "Kann ich zwei meiner vier Plätze stornieren?",
+        a: "Das hängt von der Veranstaltung ab, und der Rat von NOL World lautet, den Status der Teilstornierung beim Buchen zu prüfen und nicht dann, wenn Sie sie brauchen. Produkte aus Touren und Aktivitäten unterstützen überhaupt keine Teilstornierung — dort würden Sie die ganze Buchung stornieren und neu buchen, ohne Gewähr, dass der Bestand noch da ist.",
+      },
+      {
+        q: "Die Schaltfläche Cancel Reservation ist auf meiner Reservierungsseite nicht da.",
+        a: "NOL World behandelt das als Fall für den Kundendienst und nicht als Fehler zum erneuten Versuchen. Eine Mitarbeiterin klärt zuerst Stornierbarkeit, Gebühr und Erstattungsbetrag mit dem Anbieter. Melden Sie sich früh, denn die Frist aus der ersten Antwort läuft weiter, während Sie warten.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Ihr mobiles Ticket bei NOL World: der QR-Code, die PIN und der Weg durch den Einlass",
+    summary:
+      "Das Ticket öffnet nur auf einem Telefon, es ist ausschließlich auf Englisch und die automatische Übersetzung Ihres Browsers verunstaltet es, ein gesendetes Ticket hat eine 24-Stunden-Uhr für die PIN, und zu spät zu kommen ist kein garantierter Einlass. Die letzten zwanzig Minuten des ganzen Vorgangs, der Reihe nach.",
+    scope:
+      "Behandelt das mobile Ticket von NOL World und den Einlass am Veranstaltungsort, so wie NOL World es dokumentiert: wo das Ticket öffnet, die zwei Browserzustände, die es verbergen, Senden und Empfangen mit der PIN-Uhr, die Abholung durch Dritte und das verspätete Eintreffen. Einlassregeln werden je Veranstaltung gesetzt, und der Veranstaltungsort entscheidet am Abend. Der Einlass per Gesichtserkennung ist ein eigener Ablauf mit einer eigenen Anleitung.",
+    intro: [
+      "Alles andere auf dieser Seite ist Vorbereitung. Das hier ist der Teil, in dem ein Flug, ein Hotel und ein Vorverkauf entweder zu einem Sitzplatz werden oder nicht, und er läuft auf einem Telefon, das Sie in einer Menge mit schlechtem Empfang halten.",
+      "Das meiste, was hier schiefgeht, ist nicht dramatisch. Es ist ein Browser im falschen Modus, der einen QR-Code zeigt, wo das Ticket sein sollte, eine Übersetzungserweiterung, die eine Einlassnummer umschreibt, eine PIN, die ablief, während eine Freundin schlief. Alle vier sind von NOL World dokumentiert und alle vier sind am Abend davor vermeidbar.",
+    ],
+    steps: [
+      {
+        title: "Wissen Sie, welche Art Ticket Sie tatsächlich halten",
+        body: "Die Zustellart wurde bei der Buchung entschieden, und sie bestimmt alles Weitere. Ein mobiles Ticket liegt in Ihrem Konto und wird von Ihrem Bildschirm gescannt. Abholung am Veranstaltungsort bedeutet ein Papierticket von der Kasse am Tag der Veranstaltung, und NOL World gibt diese nicht früher heraus — das Fenster öffnet eine Stunde vorher, und ein abgeholtes Ticket kann bei Verlust oder Diebstahl nicht neu ausgestellt werden. Prüfen Sie jetzt, welches Sie haben, und nicht am Veranstaltungsort.",
+        pitfall:
+          "Anzunehmen, jede Buchung sei ein mobiles Ticket, weil das letzte Konzert eines war. Es ist eine Eigenschaft der einzelnen Buchung, und die beiden Wege scheitern auf völlig verschiedene Weise.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Öffnen Sie das mobile Ticket auf dem Telefon, mit dem Sie hineingehen",
+        body: "NOL World gibt an, dass mobile Tickets nur in der App von NOL World oder im mobilen Web verfügbar sind. Der Einlass erfolgt über den QR-Code auf dem Ticket. Der Weg auf einem Telefon ist App oder mobiles Web, anmelden, Account/My, My Reservations, dann die Schaltfläche Mobile Ticket. Auf einem Rechner erzeugt dieselbe Schaltfläche einen QR-Code, der nicht Ihr Ticket ist — er ist eine Übergabe und soll mit dem Telefon gescannt werden, damit das Ticket dort öffnet.",
+        pitfall:
+          "Vom Ticket einen Screenshot als Sicherung zu machen und vorzuhaben, das Bild zu zeigen. Ein Ticket, das live in einem Konto erzeugt wird, ist nicht dasselbe wie ein Bild davon, und der Einlass ist nicht die Stelle, an der Sie den Unterschied entdecken wollen.",
+        takes: "10 Minuten, am Abend davor",
+      },
+      {
+        title: "Schalten Sie die Browserübersetzung aus, bevor Sie losgehen",
+        body: "NOL World sagt, mobile Tickets würden ausschließlich auf Englisch bereitgestellt, und wenn Sie andere Sprachen sehen, sei das die automatische Übersetzung Ihres Browsers — die Abhilfe ist, die Übersetzung auszuschalten und die Seite neu zu laden. Für dieses Publikum ist das der Normalzustand des Browsers und kein Sonderfall. Ein Übersetzer, der einen Einlass, einen Block oder eine Sitzreihe umschreibt, ist ein Problem, das Sie erst bemerken, wenn jemand an der Tür es Ihnen vorliest.",
+        pitfall:
+          "Die Übersetzung anzulassen, weil sie die ganze Reise über hilfreich war. Sie hat Ihnen koreanische Seiten übersetzt; hier ist die Seite bereits englisch, und das Einzige, was sie tun kann, ist Schaden anrichten.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Sehen Sie einen QR-Code, wo das Ticket sein sollte, stellen Sie den Browsermodus um",
+        body: "Das ist die häufigste Art, wie das Ticket zu fehlen scheint, und es ist kein Fehler. NOL World sagt, wenn Ihr Browser im Desktop-Modus ist, werde statt des mobilen Tickets ein QR-Code angezeigt — und dass es unter diesem QR-Code eine Schaltfläche View Tickets gibt, die das Ticket dennoch öffnet. Andernfalls stellen Sie den Browser auf den mobilen Modus um: in Chrome über das Drei-Punkte-Menü und View as mobile version; in Safari über die Sprachschaltfläche links der Adresszeile und Request Mobile Website; in Samsung Internet über das Drei-Striche-Menü und Mobile site.",
+        pitfall:
+          "Jemanden am Einlass diesen QR-Code scannen zu lassen. Es ist der Übergabecode für den Rechner und nicht Ihr Einlasscode, und das, was Sie brauchen, ist eine Berührung darunter.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Verstehen Sie, worauf das Senden eines Tickets Sie festlegt",
+        body: "Das Teilen mobiler Tickets geht in eine Richtung: Die Käuferin sendet an die Person, die hingeht, und NOL World gibt an, dass ein empfangenes Ticket nicht weitergesendet werden kann — nur gebuchte Tickets lassen sich senden. Das Senden bleibt bis zum Tag der Veranstaltung möglich. Nicht jedes Produkt bietet es an; wo der Verkäufer es zurückgehalten hat, ist die Schaltfläche zum Senden schlicht nicht da. Und der Preis des Sendens ist Ihr eigener Ausgang: Sobald ein Ticket erfolgreich gesendet wurde, schränkt NOL World die Stornierung der Reservierung ein, die erst wiederhergestellt wird, wenn die Empfängerin die Registrierung aufhebt.",
+        pitfall:
+          "Eine Gruppe zu organisieren, indem Sie in der Woche der Buchung allen ihr Ticket senden. Sie haben jeder Person gerade ein Vetorecht gegen die Stornierung dieser Reservierung gegeben.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Wenn Sie ein Ticket empfangen, behandeln Sie die PIN als 24-Stunden-Uhr",
+        body: "Ein empfangenes Ticket ist erst nutzbar, wenn es registriert ist, und das Fenster ist kurz. NOL World sagt, die PIN könne nur innerhalb von 24 Stunden nach dem Senden registriert werden, und ein nicht registriertes Ticket gehe danach an die Senderin zurück — oder wenn es bis zum Veranstaltungsdatum nicht registriert wurde. Die Registrierung läuft über die URL in der Nachricht oder E-Mail: Received Mobile Ticket, Ticket Register, dann die PIN aus der Nachricht. Danach liegt das Ticket unter My Page, Received Mobile Ticket, Booking History. Zurückgeben läuft über denselben Weg mit der Schaltfläche Return, und NOL World sagt, ein registriertes Ticket lasse sich weiterhin zurückgeben.",
+        pitfall:
+          "An eine Freundin in einer Zeitzone zu senden, in der diese 24 Stunden überwiegend Nacht sind. Das Ticket kommt still zu Ihnen zurück und die Reservierung gehört wieder Ihnen, was am Dienstag in Ordnung ist und am Morgen der Veranstaltung nicht.",
+        takes: "5 Minuten, innerhalb von 24 Stunden",
+      },
+      {
+        title: "Prüfen Sie die Veranstaltungsseite, bevor Sie annehmen, jemand anderes könne für Sie abholen",
+        body: "NOL World erlaubt die Abholung durch Nichtkäufer durchaus, mit echten Bedingungen daran. Der Ablauf unterscheidet sich je Veranstaltungsort, die Abholung durch Dritte kann je nach Art der Veranstaltung eingeschränkt sein, und die Anweisung von NOL World lautet, den Hinweis auf der Detailseite der gebuchten Veranstaltung zu prüfen. Was die andere Person braucht, sind die aus My Ticket ausgedruckten Buchungsdaten, die Bestätigungsnummer und ein Ausweis der Käuferin. Behandeln Sie diese letzte Anforderung als die Grenze, die sie ist: Bei einer Veranstaltung, deren Einlass an der verifizierten Identität der Käuferin hängt, planen Sie nicht mit einer Vertretung.",
+        pitfall:
+          "Die Abholung durch Dritte als allgemeines Recht zu lesen. Sie ist eine Erlaubnis je Veranstaltungsort und je Veranstaltung, und die Veranstaltungen, die sie am ehesten verweigern, sind genau die stark nachgefragten, für die Sie einen Vorverkauf brauchten.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Behandeln Sie verspätetes Eintreffen nicht als Platz, den Sie noch haben",
+        body: "NOL World sagt ausdrücklich, dass der Einlass nach Beginn von der Veranstaltung abhängt und manche Aufführungen ihn gar nicht erlauben — namentlich klassische Konzerte und Opern. Wo es den späten Einlass gibt, kann er bedeuten, auf die Pause zu warten und die zweite Hälfte zu sehen. Und selbst wenn Sie hereingelassen werden, sagt NOL World, dass Sie Ihren Platz womöglich erst in der Pause einnehmen können, ein verspätetes Eintreffen kann also heißen, durch genau den Teil, für den Sie gekommen sind, zu stehen oder woanders zu sitzen.",
+        pitfall:
+          "Die Ankunftszeit vom Beginn her zu planen. Planen Sie sie von der Einlassschlange, der Sicherheitskontrolle und dem Abholfenster her, die alle vor dem Beginn stattfinden und von denen keines wartet.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Da ist ein QR-Code, wo mein Ticket sein sollte. Ist meine Buchung kaputt?",
+        a: "Nein — Ihr Browser ist im Desktop-Modus. NOL World sagt, das erzeuge einen QR-Code anstelle des mobilen Tickets, und dass eine Schaltfläche View Tickets darunter das Ticket öffnet. Sie können den Browser auch auf den mobilen Modus umstellen: Das Drei-Punkte-Menü von Chrome hat View as mobile version, die Sprachschaltfläche von Safari bietet Request Mobile Website, und das Drei-Striche-Menü von Samsung Internet hat Mobile site.",
+      },
+      {
+        q: "Mein mobiles Ticket wird in der falschen Sprache angezeigt.",
+        a: "NOL World stellt mobile Tickets ausschließlich auf Englisch bereit, eine andere Sprache bedeutet also, dass Ihr Browser automatisch übersetzt. Schalten Sie die Übersetzung aus und laden Sie neu. Das sollte man vor der Reise erledigen und nicht am Einlass, denn eine übersetzte Einlassnummer oder Sitzreihe ist auf eine schwer erkennbare Weise falsch.",
+      },
+      {
+        q: "Kann ich das Ticket an der Tür von meinem Laptop zeigen?",
+        a: "NOL World sagt, mobile Tickets seien nur in der App oder im mobilen Web verfügbar. Auf einem Rechner gibt Ihnen die Schaltfläche Mobile Ticket einen QR-Code zum Scannen mit dem Telefon, auf dem dann das eigentliche Ticket öffnet. Planen Sie den Einlass mit einem Telefon.",
+      },
+      {
+        q: "Kann meine Freundin meine Tickets an der Kasse abholen?",
+        a: "Manchmal. NOL World sagt, Nichtkäufer könnten abholen, dass der Ablauf aber je Veranstaltungsort abweicht und die Abholung durch Dritte je nach Art der Veranstaltung eingeschränkt sein kann — maßgeblich ist also der Hinweis auf der Detailseite Ihrer Veranstaltung. Sie bräuchte die aus My Ticket ausgedruckten Buchungsdaten, die Bestätigungsnummer und einen Ausweis der Käuferin. Bei Veranstaltungen, die die Identität der Käuferin am Einlass prüfen, verlassen Sie sich nicht darauf.",
+      },
+      {
+        q: "Ich habe ein mobiles Ticket versehentlich gesendet. Kann ich es zurückholen?",
+        a: "Wenn die Empfängerin es noch nicht registriert hat, ja — NOL World sagt, die Senderin könne das Teilen mit der Schaltfläche Cancel Send abbrechen. Es kommt auch automatisch zurück, wenn die Empfängerin es nicht innerhalb von 24 Stunden oder bis zum Veranstaltungsdatum registriert. Nach der Registrierung ist die Rückgabe ihre Handlung: Sie gibt es über My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return zurück.",
+      },
+      {
+        q: "Was passiert, wenn meine Freundin das gesendete Ticket nie registriert?",
+        a: "Es kommt zu Ihnen zurück. NOL World sagt, ein nicht registriertes Ticket werde nach 24 Stunden automatisch an die Senderin zurückgegeben, oder wenn es bis zum Veranstaltungsdatum nicht registriert wurde. Das stellt Ihre Reservierung wieder her — nach den Stornoregeln einschließlich Ihrer Möglichkeit, sie zu stornieren — aber es ist ein stiller Vorgang, prüfen Sie es also, statt es anzunehmen.",
+      },
+      {
+        q: "Ich komme zwanzig Minuten zu spät. Lassen sie mich rein?",
+        a: "Das hängt von der Veranstaltung ab und niemand kann es zusagen. NOL World sagt, der Einlass nach Beginn hänge von der Aufführung ab und manche erlaubten ihn gar nicht, klassische Konzerte und Opern besonders; wo er erlaubt ist, müssen Sie womöglich auf die Pause warten, und bis dahin können Sie Ihren eigenen Platz womöglich nicht einnehmen.",
+      },
+      {
+        q: "Ist das mobile Ticket dasselbe wie der Einlass per Gesichtserkennung?",
+        a: "Nein. NOL facepass ist ein eigenes System, bei dem eine Kamera an der Tür Sie ohne Ticketprüfung einlässt, und die Unterstützung dafür wird je Veranstaltung gesetzt. Das mobile Ticket und sein QR-Code sind der gewöhnliche Weg, und der, den man funktionsfähig halten sollte, auch wenn man ein Gesicht registriert hat.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

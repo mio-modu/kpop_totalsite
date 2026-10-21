@@ -892,7 +892,7 @@ export const guides: Guide[] = [
       "Korea has no daylight saving and your country probably does, so the hour a Korean sale lands on your clock moves two to four times a year. Here is how to get it right for the date rather than for today.",
     glyph: "star",
     status: "sourced",
-    lastChecked: "2026-10-20",
+    lastChecked: "2026-10-21",
     scope:
       "Covers converting an announced Korean sale time to your own, and the clock the platforms run on afterwards. It does not cover how to win a queue, which is mostly allocation and luck. The official announcement for your show is the only authority on the time itself.",
     readMinutes: 6,
@@ -915,21 +915,21 @@ export const guides: Guide[] = [
       },
       {
         title: "Convert for the date of the sale, not for today",
-        body: "This is the whole guide in one line. Because Korea never shifts and you do, the local hour of a Korean sale depends on which side of your own daylight saving change the date falls on. At 20:00 KST, a sale lands at 06:00 in New York in January and 07:00 in July. Los Angeles moves 03:00 to 04:00, Toronto 06:00 to 07:00, London 11:00 to 12:00.",
+        body: "This is the whole guide in one line. Because Korea never shifts and you do, the local hour of a Korean sale depends on which side of your own daylight saving change the date falls on. At 20:00 KST, a sale lands at 06:00 in New York in January and 07:00 in July. Los Angeles moves 03:00 to 04:00, Toronto 06:00 to 07:00, London 11:00 to 12:00, Berlin and Madrid 12:00 to 13:00.",
         pitfall:
           "Converting in a search box today for a sale three weeks away. If a clock change falls in between, the answer you get is an hour wrong — and it is wrong in the direction of being late.",
         takes: "3 minutes",
       },
       {
         title: "If you are in Australia, the gap moves the other way",
-        body: "Southern hemisphere daylight saving runs opposite to northern. At 20:00 KST a sale is 22:00 in Sydney in January and 21:00 in July — the gap narrows in the northern summer rather than widening. Across a full year the Sydney offset swings an hour in the opposite direction to every North American and European figure above, so a conversion borrowed from a US fan is wrong by two hours.",
+        body: "Southern hemisphere daylight saving runs opposite to northern. At 20:00 KST a sale is 22:00 in Sydney in January and 21:00 in July — the gap narrows in the northern summer rather than widening. Santiago does the same, 08:00 in January and 07:00 in July, and it is the only capital in Spanish-speaking Latin America whose clocks move at all. Across a full year the Sydney offset swings an hour in the opposite direction to every North American and European figure above, so a conversion borrowed from a US fan is wrong by two hours.",
         pitfall:
           "Most guides for this are written for American readers. Australian and New Zealand fans inherit their arithmetic and arrive an hour or two late.",
         takes: "2 minutes",
       },
       {
         title: "Check whether a clock change falls between now and the sale",
-        body: "The changeover dates are not the same in each country, which creates short windows where the usual conversion is wrong even between two countries that both observe it. In 2027 New York changes on 14 March, London on 28 March, Sydney on 4 April. Mexico City and Manila do not change at all. If the sale date sits on the far side of your own changeover, set your alarm from the converted time for that date.",
+        body: "The changeover dates are not the same in each country, which creates short windows where the usual conversion is wrong even between two countries that both observe it. In 2027 New York changes on 14 March, London on 28 March, Sydney on 4 April; Berlin and Madrid change with London and go back on 31 October. Most of Spanish-speaking Latin America does not change at all \u2014 Bogot\u00e1, Lima and Buenos Aires hold a fixed gap to Korea alongside Mexico City, as does Manila. For those readers this step simply does not apply, which is worth knowing in itself. If the sale date sits on the far side of your own changeover, set your alarm from the converted time for that date.",
         pitfall:
           "The two-week gap between the North American and European changes in March is the one that catches people, because the familiar New York to London difference is briefly not what it normally is.",
         takes: "3 minutes",

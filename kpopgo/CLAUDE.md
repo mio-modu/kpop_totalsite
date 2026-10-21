@@ -187,6 +187,35 @@ that funnels into English is worse than one that stops honestly. Sources stay
 in their original language — a citation is only checkable in the words the
 source uses.
 
+`scripts/translations.test.mjs` is the net under a machine-assisted
+translation, and it exists because the errors that hurt a reader are not
+errors of style. A deadline that reads 17時 where the source says 11時, a fee
+of 3,000 against 8,000, a 2026 that became 2025 — each is a factual error
+wearing fluent prose, and reading it back does not catch them reliably. The
+checks are: every number of two digits or more survives into the Japanese,
+product names and currencies are not quietly renamed, no stray Hangul or
+Cyrillic or untranslated English, brackets balance, and no prose field is far
+outside the 0.3–0.9 length band that a real translation sits in.
+
+That last one earns its place. The number and name checks caught three
+invented intros only because those paragraphs happened to contain a year; one
+that did not would have passed. The ratio check is the smoke alarm for a
+field somebody wrote fresh instead of translating. Headings are excluded,
+because Japanese compresses a sixty-character English step title into a dozen
+characters and is right to.
+
+Two exclusions in the number check were earned by false positives rather than
+guessed at: a 12-hour clock time is correctly written as 24-hour in Japanese,
+so the converted hour is offered as an alternative rather than the check being
+dropped; and COVID-19 is 新型コロナウイルス and carries no 19, so the name is
+checked as a product name instead.
+
+**None of this makes a translation native-reviewed.** It makes the facts in it
+trustworthy. `review` stays at `machine-assisted` until a native speaker has
+actually read the page, for the same reason no guide is `verified` until a
+person has walked it, and these assertions must never be used to argue
+otherwise.
+
 **The real cost is maintenance, not translation.** Every source re-check now
 has N pages to follow, and a translation nobody follows becomes exactly the
 stale guide this site was built against. That is why this is one language at a

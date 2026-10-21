@@ -147,7 +147,7 @@ const JA_LABELS = {
  * Two guides are deliberately in no language but English, and this is the
  * reason rather than an oversight.
  *
- * All five editions carry the same set of the guides and skip the same two.
+ * Four editions skipped the same two guides; two of them now skip only one.
  * It was eighteen of twenty when they converged and is nineteen of
  * twenty-one now; the count moves with the English and the shape does not. Three arrived there without being planned to, written at
  * different times for different reasons; German was brought up to it once its
@@ -9563,6 +9563,178 @@ export const translations: Translation[] = [
       {
         q: "¿Comprar en Ktown4u cuenta para las listas coreanas?",
         a: "Esta guía no lo dice, porque Ktown4u no lo dice en las páginas leídas aquí. Aportar a las listas depende de que una tienda reporte sus ventas, y eso es algo que afirma la tienda y no algo que pueda deducir un tercero. Si es por eso por lo que compras, confírmalo en la página del producto o en el anuncio oficial del lado del artista para ese lanzamiento.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "de",
+    slug: "kpop-ticketing-day-timezone",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Wann ein koreanischer Ticketverkauf bei Ihnen öffnet",
+    summary:
+      "Korea hat keine Sommerzeit und Ihr Land vermutlich schon, also verschiebt sich die Stunde, zu der ein koreanischer Verkauf auf Ihrer Uhr landet, zwei- bis viermal im Jahr. Hier steht, wie Sie sie für das Datum richtig bekommen statt für heute.",
+    scope:
+      "Behandelt die Umrechnung einer angekündigten koreanischen Verkaufszeit in Ihre eigene und die Uhr, nach der die Plattformen danach laufen. Es behandelt nicht, wie man eine Warteschlange gewinnt, was überwiegend Kontingent und Glück ist. Die offizielle Ankündigung zu Ihrer Veranstaltung ist die einzige Autorität über die Zeit selbst.",
+    intro: [
+      "Jede Anleitung, die eine koreanische Verkaufszeit umrechnet, gibt Ihnen eine Zahl. „20 Uhr KST sind 6 Uhr an der US-Ostküste.“ Diese Zahl stimmt etwa vier Monate im Jahr und sonst nicht, weil Korea keine Sommerzeit kennt und die meisten Länder, aus denen dies gelesen wird, schon.",
+      "Die Zeiten unten wurden aus der IANA-Zeitzonendatenbank berechnet, Ausgabe 2026c — denselben Daten, die auch Ihr Betriebssystem nutzt. Es geht nicht darum, sie auswendig zu lernen. Es geht darum, für das Datum des Verkaufs umzurechnen, was selten dieselbe Antwort ist wie eine Umrechnung für heute.",
+    ],
+    steps: [
+      {
+        title: "Nehmen Sie die angekündigte Zeit als KST und rechnen Sie sie nicht um",
+        body: "Koreanische Verkäufe werden in koreanischer Zeit angekündigt, und die koreanische Zeit bewegt sich nicht: KST ist das ganze Jahr UTC+9, ohne Sommeranpassung. Ein allgemeiner Verkauf wird üblicherweise für 20:00 KST an einem Wochentag angekündigt, aber das ist eine Gewohnheit und keine Regel — 19:00 und 14:00 kommen beide vor, und Fanclub-Verifizierungsfenster öffnen oft früher am selben Tag nach ihrem eigenen Zeitplan. Die Ankündigung zu Ihrer Veranstaltung ist die einzige Autorität.",
+        pitfall:
+          "Eine Zeit von einer früheren Tournee zu übernehmen und anzunehmen, diese stimme überein. Die Plattform ist dieselbe, die Stunde oft nicht.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Rechnen Sie für das Datum des Verkaufs um, nicht für heute",
+        body: "Das ist die ganze Anleitung in einer Zeile. Weil Korea sich nie verschiebt und Sie schon, hängt die Ortszeit eines koreanischen Verkaufs davon ab, auf welcher Seite Ihrer eigenen Zeitumstellung das Datum liegt. Bei 20:00 KST landet ein Verkauf in New York im Januar um 06:00 und im Juli um 07:00. Los Angeles wandert von 03:00 auf 04:00, Toronto von 06:00 auf 07:00, London von 11:00 auf 12:00, Berlin und Madrid von 12:00 auf 13:00.",
+        pitfall:
+          "Heute in einem Suchfeld für einen Verkauf in drei Wochen umzurechnen. Fällt dazwischen eine Zeitumstellung, ist die Antwort eine Stunde falsch — und sie ist in die Richtung falsch, zu spät zu kommen.",
+        takes: "3 Minuten",
+      },
+      {
+        title: "In Australien verschiebt sich der Abstand in die andere Richtung",
+        body: "Die Sommerzeit der Südhalbkugel läuft entgegengesetzt zur nördlichen. Bei 20:00 KST ist ein Verkauf in Sydney im Januar um 22:00 und im Juli um 21:00 — der Abstand wird im nordischen Sommer kleiner statt größer. Santiago macht dasselbe, 08:00 im Januar und 07:00 im Juli, und es ist die einzige Hauptstadt im spanischsprachigen Lateinamerika, deren Uhren sich überhaupt bewegen. Über ein ganzes Jahr schwingt der Abstand zu Sydney um eine Stunde in die Gegenrichtung zu jeder nordamerikanischen und europäischen Zahl oben, eine von einem US-Fan übernommene Umrechnung liegt also zwei Stunden daneben.",
+        pitfall:
+          "Die meisten Anleitungen dazu sind für amerikanische Leserinnen geschrieben. Fans in Australien und Neuseeland erben deren Rechnung und kommen ein bis zwei Stunden zu spät.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Prüfen Sie, ob zwischen jetzt und dem Verkauf eine Zeitumstellung liegt",
+        body: "Die Umstellungstermine sind nicht in jedem Land dieselben, wodurch kurze Fenster entstehen, in denen die gewohnte Umrechnung selbst zwischen zwei Ländern falsch ist, die beide umstellen. 2027 stellt New York am 14. März um, London am 28. März, Sydney am 4. April; Berlin und Madrid stellen mit London um und am 31. Oktober zurück. Der größte Teil des spanischsprachigen Lateinamerikas stellt überhaupt nicht um — Bogotá, Lima und Buenos Aires halten wie Mexiko-Stadt einen festen Abstand zu Korea, ebenso Manila. Für diese Leserinnen gilt dieser Schritt schlicht nicht, was für sich genommen zu wissen lohnt. Liegt das Verkaufsdatum jenseits Ihrer eigenen Umstellung, stellen Sie den Wecker nach der für dieses Datum umgerechneten Zeit.",
+        pitfall:
+          "Die zwei Wochen zwischen der nordamerikanischen und der europäischen Umstellung im März sind die Lücke, die Leute erwischt, weil der vertraute Abstand zwischen New York und London kurzzeitig nicht der ist, der er sonst ist.",
+        takes: "3 Minuten",
+      },
+      {
+        title: "Notieren Sie das Datum ebenso wie die Stunde",
+        body: "Für den größten Teil Amerikas landet ein koreanischer Abendverkauf am selben Kalendertag, früh am Morgen. Für Sydney ist es derselbe Abend. Die Stunde ist der Teil, den Leute umrechnen, und das Datum ist der Teil, den sie voraussetzen, und ein Wecker auf die richtige Stunde am falschen Tag ist dasselbe wie kein Wecker.",
+        pitfall:
+          "Ein für einen Dienstagabend in Seoul angekündigter Verkauf ist ein Dienstagmorgen in New York. „Dienstag“ ohne die umgerechnete Zeit in den Kalender zu schreiben, ist der Weg, einen Tag danebenzuliegen.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Seien Sie vor dem Fenster angemeldet und verifiziert, nicht darin",
+        body: "Alles, was vorab erledigt werden kann, sollte erledigt sein, wenn die Stunde kommt: Konto angelegt, Verifizierung für Auslandskunden bearbeitet, Fanclub-Mitgliedschaft verknüpft, Zahlungsmittel für den internationalen Einsatz und für 3-D Secure freigeschaltet. Warteschlangensysteme geben üblicherweise ein kurzes Fenster, um Plätze zu wählen und zu zahlen, bevor sie die Reservierung freigeben, und nichts von dieser Zeit ist übrig.",
+        pitfall:
+          "Ein frisches privates Fenster „zur Sicherheit“ zu öffnen bedeutet, sich innerhalb der Warteschlange anzumelden und neu zu verifizieren, was mehr kostet, als es schützt.",
+        takes: "30 Minuten vor Öffnung",
+      },
+      {
+        title: "Kennen Sie auch die Schlussuhr, die eine andere ist",
+        body: "Die Öffnungszeit ist nicht die einzige Frist, die nach koreanischer Zeit läuft. Auf YES24 Global schließt die Buchung um 17 Uhr am Vortag einer Veranstaltung von Dienstag bis Samstag und um 11 Uhr am Samstag für eine Veranstaltung am Sonntag oder Montag, und die Stornierung läuft auf genau derselben Uhr. Auch das ist KST, und dieselbe Umrechnung gilt — in die andere Richtung, wenn es am meisten zählt.",
+        pitfall:
+          "Eine Stornierung vom Veranstaltungsdatum her zu planen statt von der Frist der Plattform. Ist sie vorbei, gibt es keine Stornierung, Änderung oder Erstattung mehr.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Nutzt Korea Sommerzeit?",
+        a: "Nein. KST ist das ganze Jahr UTC+9. Korea hatte 1987 und 1988 rund um die Olympischen Spiele in Seoul eine Sommerzeit und seither nicht mehr — die Zeitzonendatenbank zeigt in den vier Jahrzehnten danach keine Änderung des Abstands. Jede Verschiebung zwischen Korea und Ihrem Land kommt also von Ihrer Seite.",
+      },
+      {
+        q: "Wann öffnen koreanische Ticketverkäufe üblicherweise?",
+        a: "Ein allgemeiner Verkauf wird häufig für 20:00 KST an einem Wochentag angekündigt, oft ein bis drei Monate vor der Veranstaltung. Das ist eine Gewohnheit, keine Regel — andere Stunden kommen regelmäßig vor, und Fanclub-Vorverkäufe und Verifizierungsfenster laufen nach ihrem eigenen, früheren Zeitplan. Lesen Sie die Ankündigung.",
+      },
+      {
+        q: "Warum ändert sich meine Umrechnung immer wieder um eine Stunde?",
+        a: "Weil Ihr Land die Uhren umstellt und Korea nicht. Rechnen Sie für das Datum des Verkaufs um statt für heute, und prüfen Sie, ob Ihre eigene Umstellung dazwischenfällt.",
+      },
+      {
+        q: "Ich bin in Australien — kann ich die Umrechnung eines US-Fans nutzen?",
+        a: "Nein. Die Sommerzeit der Südhalbkugel läuft entgegengesetzt, der Abstand zu Sydney wird also kleiner, wenn der zu New York größer wird. Eine nördliche Umrechnung zu übernehmen bringt Sie bis zu zwei Stunden daneben.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "kpop-ticketing-day-timezone",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "A qué hora abre una venta de entradas coreana donde tú estás",
+    summary:
+      "Corea no tiene horario de verano y tu país quizá sí, así que la hora a la que una venta coreana cae en tu reloj se mueve dos o cuatro veces al año. Aquí tienes cómo acertarla para la fecha y no para hoy.",
+    scope:
+      "Cubre la conversión de una hora de venta coreana anunciada a la tuya, y el reloj con el que funcionan las plataformas después. No cubre cómo ganar una cola, que es sobre todo asignación y suerte. El anuncio oficial de tu espectáculo es la única autoridad sobre la hora en sí.",
+    intro: [
+      "Todas las guías que convierten una hora de venta coreana te dan un número. «Las 20:00 KST son las 6:00 en Nueva York.» Ese número es correcto unos cuatro meses al año y equivocado el resto, porque Corea no aplica horario de verano y la mayoría de los países desde los que se lee esto sí.",
+      "Las horas de abajo se calcularon con la base de datos de husos horarios de la IANA, versión 2026c — los mismos datos que usa tu sistema operativo. La idea no es memorizarlas. Es convertir para la fecha de la venta, que rara vez da la misma respuesta que convertir para hoy.",
+    ],
+    steps: [
+      {
+        title: "Toma la hora anunciada como KST y no la ajustes",
+        body: "Las ventas coreanas se anuncian en hora coreana, y la hora coreana no se mueve: KST es UTC+9 todo el año, sin ajuste de verano. Una venta general suele anunciarse para las 20:00 KST en un día laborable, pero eso es una costumbre y no una regla — las 19:00 y las 14:00 también aparecen, y las ventanas de verificación de los clubes de fans suelen abrir antes el mismo día con su propio calendario. El anuncio de tu espectáculo es la única autoridad.",
+        pitfall:
+          "Sacar una hora de una gira anterior y dar por hecho que esta coincide. La plataforma es la misma, la hora a menudo no.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Convierte para la fecha de la venta, no para hoy",
+        body: "Esta es la guía entera en una línea. Como Corea nunca se mueve y tú sí, la hora local de una venta coreana depende de a qué lado de tu propio cambio de hora cae la fecha. A las 20:00 KST, una venta cae a las 06:00 en Nueva York en enero y a las 07:00 en julio. Los Ángeles pasa de las 03:00 a las 04:00, Toronto de las 06:00 a las 07:00, Londres de las 11:00 a las 12:00, y Berlín y Madrid de las 12:00 a las 13:00.",
+        pitfall:
+          "Convertir hoy en un buscador para una venta que es dentro de tres semanas. Si en medio cae un cambio de hora, la respuesta que obtienes está una hora equivocada — y está equivocada en la dirección de llegar tarde.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Si estás en Australia, la diferencia se mueve al revés",
+        body: "El horario de verano del hemisferio sur funciona al contrario que el del norte. A las 20:00 KST una venta son las 22:00 en Sídney en enero y las 21:00 en julio — la diferencia se estrecha en el verano del norte en lugar de ensancharse. Santiago hace lo mismo, las 08:00 en enero y las 07:00 en julio, y es la única capital de la América Latina hispanohablante cuyos relojes se mueven. A lo largo de un año la diferencia con Sídney oscila una hora en dirección contraria a todas las cifras norteamericanas y europeas de arriba, así que una conversión tomada de un fan estadounidense se queda a dos horas.",
+        pitfall:
+          "Casi todas las guías sobre esto están escritas para lectores estadounidenses. Los fans de Australia y Nueva Zelanda heredan su aritmética y llegan una o dos horas tarde.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Mira si entre hoy y la venta cae un cambio de hora",
+        body: "Las fechas de cambio no son las mismas en cada país, lo que crea ventanas cortas en las que la conversión habitual está equivocada incluso entre dos países que ambos lo aplican. En 2027 Nueva York cambia el 14 de marzo, Londres el 28 de marzo, Sídney el 4 de abril; Berlín y Madrid cambian con Londres y vuelven atrás el 31 de octubre. La mayor parte de la América Latina hispanohablante no cambia en absoluto — Bogotá, Lima y Buenos Aires mantienen una diferencia fija con Corea igual que Ciudad de México, y Manila también. Para esos lectores este paso simplemente no aplica, y eso por sí solo vale la pena saberlo. Si la fecha de la venta queda al otro lado de tu propio cambio, pon la alarma desde la hora convertida para esa fecha.",
+        pitfall:
+          "Las dos semanas entre el cambio norteamericano y el europeo en marzo son las que pillan a la gente, porque la diferencia familiar entre Nueva York y Londres brevemente no es la que suele ser.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Apunta la fecha además de la hora",
+        body: "Para casi toda América una venta coreana de tarde cae en la misma fecha del calendario, de madrugada. Para Sídney es esa misma noche. La hora es la parte que la gente convierte y la fecha es la parte que da por hecha, y una alarma puesta a la hora correcta en el día equivocado es lo mismo que ninguna alarma.",
+        pitfall:
+          "Una venta anunciada para un martes por la tarde en Seúl es un martes por la mañana en Nueva York. Escribir «martes» en el calendario sin la hora convertida es como se acaba llegando con un día de diferencia.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ten la sesión iniciada y la verificación hecha antes de la ventana, no dentro",
+        body: "Todo lo que se pueda hacer con antelación debería estar hecho cuando llegue la hora: cuenta creada, verificación de cliente del extranjero procesada, membresía del club de fans vinculada, método de pago activado para uso internacional y para 3-D Secure. Los sistemas de cola suelen dar una ventana corta para elegir asientos y pagar antes de soltar la reserva, y nada de ese tiempo sobra.",
+        pitfall:
+          "Abrir una ventana privada nueva por seguridad significa iniciar sesión y volver a verificarte dentro de la cola, lo que cuesta más de lo que protege.",
+        takes: "30 minutos antes de la apertura",
+      },
+      {
+        title: "Conoce también el reloj de cierre, que es otro distinto",
+        body: "La hora de apertura no es el único plazo que corre en hora coreana. En YES24 Global la reserva cierra a las 17:00 del día anterior en espectáculos de martes a sábado y a las 11:00 del sábado para uno de domingo o lunes, y la cancelación corre con exactamente el mismo reloj. Eso también es KST, y se aplica la misma conversión — en la otra dirección, cuando más importa.",
+        pitfall:
+          "Planificar una cancelación desde la fecha del espectáculo en lugar de desde el plazo de la plataforma. Una vez pasado no hay cancelación, cambio ni reembolso.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Corea usa horario de verano?",
+        a: "No. KST es UTC+9 todo el año. Corea tuvo horario de verano en 1987 y 1988, alrededor de los Juegos Olímpicos de Seúl, y no lo ha vuelto a tener — la base de datos de husos horarios no muestra ningún cambio de diferencia en las cuatro décadas siguientes. Así que todo desplazamiento entre Corea y tu país viene de tu lado.",
+      },
+      {
+        q: "¿A qué hora suelen abrir las ventas de entradas coreanas?",
+        a: "Una venta general suele anunciarse para las 20:00 KST en un día laborable, a menudo entre uno y tres meses antes del espectáculo. Es una costumbre, no una regla — otras horas aparecen con regularidad, y las preventas de clubes de fans y sus ventanas de verificación van con su propio calendario, más temprano. Lee el anuncio.",
+      },
+      {
+        q: "¿Por qué mi conversión cambia una hora cada poco?",
+        a: "Porque tu país cambia los relojes y Corea no. Convierte para la fecha de la venta en lugar de para hoy, y comprueba si tu propio cambio de hora cae entre una fecha y la otra.",
+      },
+      {
+        q: "Estoy en Australia, ¿puedo usar la conversión de un fan estadounidense?",
+        a: "No. El horario de verano del hemisferio sur funciona al revés, así que la diferencia con Sídney se estrecha cuando la de Nueva York se ensancha. Tomar prestada una conversión del norte te deja hasta a dos horas de distancia.",
       },
     ],
     labels: ES_LABELS,

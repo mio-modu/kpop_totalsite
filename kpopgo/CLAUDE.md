@@ -144,18 +144,23 @@ the register, and the machinery landed before the first translated word, as it
 did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
-Five languages today — Japanese, Traditional Chinese, Indonesian, German and
-Spanish — each on the same 19 of the 21 guides, none native-reviewed. Each
+Five languages today, none native-reviewed: Japanese, Traditional Chinese and
+Indonesian on 19 of the 21 guides, German and Spanish on 20. Each
 language skips the guides it has no reader for rather than padding to a round
 number, and `content/translations.ts` records which and why at the top.
 
-All five sit on the same set, and the two they all refuse fail the same
-test: a page whose subject is a jurisdiction the reader is not in. That the
-set converged rather than being imposed is the interesting part — but do not
-read the convergence as the rule. The timezone guide is excluded from the
-three Asian editions because none of their readers observes daylight saving,
-and Germany and Spain do, so for those two it is a gap rather than a
-decision. The customs guide is a US and EU page. The
+They no longer sit on one set, and that is the system working rather than
+drifting. The customs guide is still refused everywhere, because its subject
+is a jurisdiction no reader of these five is in. The timezone guide used to
+be refused everywhere too — correctly for Japanese, Chinese and Indonesian,
+whose readers observe no daylight saving at all, and wrongly for German and
+Spanish, whose readers do. It is translated for those two now.
+
+Closing that gap meant editing the English first, which is the pattern worth
+keeping: the English page converted for New York, Los Angeles, Toronto,
+London and Sydney, so a German or Spanish edition could either carry American
+cities or change the numbers, and changing numbers is what the checks exist to
+stop. The cities belong in the English page, so that is where they went. The customs guide is a US and EU page. The
 timezone guide is really a daylight-saving guide, and none of Japan, Taiwan or
 Indonesia observes it — checked against the IANA database the guide itself
 cites, where Asia/Tokyo, Asia/Taipei and Asia/Jakarta have no transition in

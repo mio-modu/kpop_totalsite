@@ -7692,6 +7692,329 @@ export const translations: Translation[] = [
     ],
     labels: ES_LABELS,
   },
+  {
+    locale: "es",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Cómo comprar entradas de conciertos de K-pop desde fuera de Corea",
+    summary:
+      "El cuadro completo antes de empezar: en qué plataforma está tu espectáculo, qué comprobación de identidad usa, y qué tienes que tener listo antes de que abra la venta.",
+    scope:
+      "Cubre espectáculos celebrados en Corea del Sur y las plataformas de venta que usan las agencias coreanas. Las fechas de gira fuera de Corea las venden promotores locales y se tratan aparte — las reglas de abajo no se les aplican.",
+    intro: [
+      "Casi todas las guías que salen arriba para esta pregunta se escribieron antes de diciembre de 2025 y te mandan a una web que ya no existe con ese nombre. Esa es la razón principal de que exista esta página.",
+      "No hay una única web de entradas de K-pop. La plataforma la eligen la agencia y el promotor para cada gira, y se nombra en el anuncio oficial de ese espectáculo. Todo lo demás — qué comprobación de identidad te toca, si funciona una tarjeta extranjera, con cuánta antelación abre la preventa — se deduce de ese único dato.",
+      "Así que el orden es: primero encontrar el anuncio oficial, luego identificar la plataforma, y luego prepararte para los requisitos concretos de esa plataforma. Hacerlo al revés es como se acaba con una cuenta verificada en la web equivocada una hora antes de la venta.",
+    ],
+    steps: [
+      {
+        title: "Encuentra el anuncio oficial, no el repost de un fan",
+        body: "Ve a los canales oficiales de los artistas — la web de la agencia, la comunidad de Weverse de los artistas, y sus cuentas oficiales de X e Instagram. El anuncio nombra la plataforma de venta, las horas de preventa y venta general en KST, el nivel de membresía necesario para la preventa, y cualquier condición de residencia o verificación. Hazle una captura. Todo lo que hagas a partir de ahí depende de ese único documento.",
+        pitfall:
+          "Las cuentas de fans resumen y parafrasean, y se equivocan de plataforma con la frecuencia suficiente como para costarte la venta. Además rara vez actualizan cuando una fecha cambia.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Identifica tu plataforma — y no la deduzcas del sello",
+        body: "Los artistas de HYBE suelen pasar por la venta de entradas propia de Weverse. Otras giras coreanas usan con frecuencia NOL Ticket (la web en coreano) o NOL World (su equivalente para el extranjero), YES24 o Melon Ticket. Pero esto es una tendencia y no una regla: las agencias cambian de plataforma entre giras, y una misma gira puede repartir la venta coreana y la global entre dos webs distintas. Lee el anuncio.",
+        pitfall:
+          "Tratar la correspondencia como fija — «HYBE es Weverse, SM es YES24» — es el error más común de las guías que ya existen. Falla lo bastante a menudo como para importar.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Averigua qué comprobación de identidad te toca",
+        body: "Las webs de entradas en coreano suelen verificar la identidad contra un número de móvil coreano, que en la práctica exige un documento de residencia en Corea para conseguirlo. Si no lo tienes, la web en coreano no es tu camino. Las webs orientadas al extranjero existen precisamente para este caso y verifican por otros medios — normalmente datos del pasaporte cotejados con tu cuenta. Decide ahora qué web vas a usar, porque la cuenta que necesitas está en esa web.",
+        pitfall:
+          "Intentar forzar que la web en coreano funcione es esfuerzo perdido, y con los apaños que toman prestada la identidad de otra persona para la verificación no vamos a ayudar — ponen en riesgo tu entrada y tu cuenta.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Crea la cuenta con los datos del pasaporte exactos",
+        body: "Pon tu nombre legal tal como aparece en la zona de lectura mecánica de tu pasaporte, y tu fecha de nacimiento en el formato que espera la web. Si el espectáculo exige membresía de club de fans para la preventa, el nombre y la fecha de nacimiento de la membresía y de la cuenta de entradas tienen que ser los mismos. Los desajustes son una causa documentada de pedidos cancelados en la puerta o durante la verificación.",
+        pitfall:
+          "Los segundos nombres, los apellidos compuestos y el orden de los nombres son donde esto se rompe. Una membresía que dice «Maria Santos» y un pasaporte que dice «Maria Elena Santos Cruz» es un desajuste.",
+        takes: "20 minutos",
+      },
+      {
+        title: "Verifica tu método de pago días antes, no el mismo día",
+        body: "Las tarjetas emitidas en el extranjero suelen aceptarse, pero a menudo solo después de que tu cuenta esté verificada como cliente del extranjero. Aparte de eso, tu banco puede bloquear un primer cargo de un comercio coreano, y las verificaciones de 3-D Secure pueden fallar dentro del navegador de una aplicación. Llama a tu banco, activa las transacciones internacionales, y si la plataforma permite probarlo, haz antes una compra pequeña sin relación.",
+        pitfall:
+          "Una tarjeta que se rechaza en el paso del pago libera tu asiento de vuelta al montón en minutos. Es el fallo más caro de todo el proceso y es completamente evitable.",
+        takes: "1-3 días de margen",
+      },
+      {
+        title: "Prepárate para la venta en sí",
+        body: "Inicia sesión y completa todos los pasos de verificación al menos un día antes. El día de la venta, estate con la sesión iniciada bastante antes de la hora de apertura, con la hora oficial en KST como referencia y no con el reloj de tu dispositivo. Ten decididas de antemano tus preferencias de asiento — la mayoría de los sistemas de cola te dan una ventana corta para elegir y pagar antes de soltar tu reserva.",
+        pitfall:
+          "Abrir una ventana de incógnito nueva «por si acaso» significa iniciar sesión y volver a verificarte dentro de la cola. No lo hagas.",
+        takes: "30 minutos antes de la apertura",
+      },
+      {
+        title: "Conoce las reglas de reventa antes de planteártela",
+        body: "Corea del Sur endureció sus normas sobre reventa de entradas con una reforma de la Ley de Espectáculos que entró en vigor el 28 de agosto de 2026 — modificada en enero, promulgada en febrero, vigente desde finales de agosto. La información sobre el cambio describe una prohibición de la reventa habitual o comercial por encima del precio de compra, que alcanza también a comprar con intención de revender y que ya no se limita a las compras hechas con automatización. Las sanciones de las que se informa incluyen multas de hasta cincuenta veces el valor de la venta y el decomiso de lo obtenido. Da por descartada la reventa por encima del valor nominal en espectáculos coreanos, y usa la función oficial de reventa o transferencia de la plataforma si el espectáculo ofrece una.",
+        pitfall:
+          "Es una ley nueva, en vigor solo desde agosto de 2026, y el umbral de lo «habitual» todavía se está asentando en la práctica. Que exista un anuncio en un mercado de reventa internacional no te dice nada sobre si comprarlo o venderlo es seguro para ti.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Si mi membresía caduca antes de la preventa, ¿puedo renovarla a tiempo y ya está?",
+        a: "Solo si la renovación cae antes de la fecha límite de elegibilidad, y esa fecha suele ser anterior a la preventa. El pago automático de Weverse Shop, disponible desde el 3 de septiembre de 2026 en las membresías que lo admiten, cobra a un método registrado el último día del periodo de validez, lo que elimina el hueco por completo. Configúralo antes de que se anuncie una gira, no después.",
+      },
+      {
+        q: "¿Necesito un número de teléfono coreano para comprar entradas de conciertos de K-pop?",
+        a: "Para las webs de entradas en coreano, la verificación de identidad depende normalmente de un número de móvil coreano, y conseguir uno suele exigir documentación de residencia en Corea. Para las webs orientadas al extranjero, normalmente no — verifican a los clientes del extranjero por otros medios, habitualmente datos del pasaporte. Cuál te aplica depende de en qué plataforma se venda tu espectáculo concreto.",
+      },
+      {
+        q: "¿Puedo usar una tarjeta de crédito extranjera?",
+        a: "En las plataformas orientadas al extranjero normalmente sí, y a menudo solo después de que tu cuenta esté verificada como cliente del extranjero. Cuenta con que tu propio banco sea la otra mitad del problema: activa las transacciones internacionales con antelación y prepárate para una verificación de 3-D Secure.",
+      },
+      {
+        q: "¿Con cuánta antelación abre la preventa del club de fans?",
+        a: "Varía según el espectáculo, y el anuncio oficial es la única respuesta fiable. Las ventanas de preventa suelen ir un día o más por delante de la venta general, y la membresía normalmente tiene que estar activa antes de una fecha límite todavía anterior. No deduzcas los plazos de una gira anterior.",
+      },
+      {
+        q: "¿La web coreana y la global son la misma cola?",
+        a: "No necesariamente. Las asignaciones, la verificación y el reconocimiento del club de fans pueden gestionarse por separado entre una venta en coreano y una venta global del mismo espectáculo. Una membresía verificada en una no se reconoce automáticamente en la otra, así que mira en el anuncio cuál te aplica.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Entradas en NOL World: la web que era interpark Global",
+    summary:
+      "La web que antes se llamaba interpark Global. Cambió de nombre el 1 de diciembre de 2025, casi todas las guías te siguen mandando al nombre antiguo, y aquí tienes el camino actual paso a paso.",
+    scope:
+      "Cubre la plataforma orientada al extranjero para espectáculos coreanos. La web en coreano NOL Ticket es un producto distinto, con su propio sistema de cuentas y una comprobación de identidad más estricta.",
+    intro: [
+      "Hubo dos cambios de nombre seguidos y casi ninguna guía en inglés ha absorbido ninguno de los dos. Yanolja Core unificó sus marcas bajo el nombre NOL en abril de 2025, que es cuando Interpark Ticket pasó a ser NOL Ticket. Después, el 1 de diciembre de 2025, el interpark Global orientado al extranjero pasó a ser NOL World.",
+      "La consecuencia práctica: las guías que te mandan a «Interpark Global», con capturas de su interfaz antigua, describen un producto que ha cambiado de nombre y de diseño. Si sigues una de esas, navegas con un mapa caducado.",
+      "Esta página sigue el actual. La fecha de arriba es cuándo se comprobó por última vez.",
+    ],
+    steps: [
+      {
+        title: "Empieza en la web orientada al extranjero, no en la coreana",
+        body: "NOL World es la puerta de entrada para los fans de fuera. La web en coreano NOL Ticket ejecuta la comprobación de identidad nacional, más estricta, y en general no es tu camino salvo que tengas documentación de residencia en Corea. Son cuentas separadas: registrarte en una no te da la otra.",
+        pitfall:
+          "Los resultados de búsqueda y los marcadores antiguos siguen llevando a la marca anterior. Confirma que estás en la web para el extranjero antes de invertir tiempo en crear una cuenta.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Regístrate con los datos exactos del pasaporte",
+        body: "Usa tu nombre legal y tu fecha de nacimiento tal como están impresos en el pasaporte. Si el espectáculo que quieres tiene preventa de club de fans, estos datos tienen que coincidir también con tu registro de membresía. Arregla cualquier desajuste antes de que abra la ventana de preventa, no durante.",
+        pitfall:
+          "Cambiar después un nombre ya verificado es un trámite de atención al cliente y no un interruptor en los ajustes. Hazlo bien a la primera.",
+        takes: "20 minutos",
+      },
+      {
+        title: "Completa la verificación de cliente del extranjero antes de necesitarla",
+        body: "La verificación de cliente del extranjero es una acción única por cuenta, y NOL World indica que los datos verificados no pueden reutilizarse. Verifica en la cuenta con la que realmente vas a comprar — si tienes más de una, la verificación no se mueve entre ellas. Borrar una cuenta sí elimina su verificación y la libera para otra, pero una cuenta restringida por uso indebido no se puede borrar en absoluto. No hay límite de edad para la verificación en sí, aunque los eventos con restricción de edad pueden rechazar igualmente la reserva. La confirmación llega por correo, así que mira el spam antes de concluir que falló.",
+        pitfall:
+          "Descubrir en el paso del pago que la verificación sigue pendiente es la forma clásica de perder un asiento reservado.",
+        takes: "1-3 días incluido el procesamiento",
+      },
+      {
+        title: "Mira las condiciones concretas del espectáculo en su página",
+        body: "Los límites de asientos por cuenta, si hace falta una membresía, qué documento se exige en el recinto y si el espectáculo está abierto a compradores del extranjero se fijan por evento. Lee la página del evento y el anuncio oficial juntos — donde no coincidan, manda el anuncio oficial de tu espectáculo.",
+        pitfall:
+          "Algunos espectáculos reservan ciertos bloques de asientos o rondas de venta a compradores nacionales. Eso es por espectáculo y no se puede saber desde una guía general.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Lleva el documento correcto a la recogida",
+        body: "La recogida es en la taquilla del recinto el día del espectáculo y no antes — NOL World dice que las entradas no se pueden recoger un día anterior. La ventana abre una hora antes del espectáculo, y necesitas el número de confirmación junto con un documento de identidad. Cuenta con que haya cola en la propia taquilla. Una vez recogida, una entrada no se puede volver a emitir si se pierde o te la roban.",
+        pitfall:
+          "El nombre de la reserva, el del documento y el de la membresía tienen que coincidir todos. Un apodo en cualquier punto de esa cadena es un problema.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "¿NOL World es lo mismo que Interpark Global?",
+        a: "Es el mismo servicio de venta de entradas orientado al extranjero después de un cambio de marca. interpark Global pasó a llamarse NOL World el 1 de diciembre de 2025, tras la unificación de marcas de Yanolja Core bajo el nombre NOL en abril de 2025, cuando Interpark Ticket pasó a ser NOL Ticket.",
+      },
+      {
+        q: "¿Por qué mi marcador antiguo sigue diciendo Interpark?",
+        a: "Los cambios de marca tardan en propagarse por los resultados de búsqueda, las guías de terceros y las páginas en caché. Navega desde el anuncio oficial de tu espectáculo y no desde un enlace guardado o una entrada de blog.",
+      },
+      {
+        q: "¿NOL Global es lo mismo? ¿Y NOL Korea?",
+        a: "Son los nombres a los que recurre la gente cuando recuerda el cambio a medias, y vale la pena decirlos en voz alta porque son los que se teclean. Hay dos webs: NOL World, la orientada al extranjero, que fue interpark Global hasta el 1 de diciembre de 2025; y NOL Ticket, la que está en coreano, que fue Interpark Ticket hasta abril de 2025. Si te mandaron a «NOL Global», «NOL Korea» o «NOL KR», la web que buscas es casi con seguridad NOL World.",
+      },
+      {
+        q: "¿Puedo usar mi cuenta de NOL Ticket en NOL World?",
+        a: "Trátalas como cuentas separadas con verificaciones separadas. No des por hecho que un inicio de sesión o una verificación completada se traslada — compruébalo en la web desde la que realmente vas a comprar.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Preventa del club de fans: cómo calificar antes de que cierre",
+    summary:
+      "La membresía por sí sola no es acceso. Entre las dos hay un paso de verificación, tiene su propia fecha límite, y perdérselo es la forma más común de que un fan se quede sin preventa.",
+    scope:
+      "Cubre la forma general de calificar para las preventas de clubes de fans en espectáculos coreanos. Cada gira fija sus propios niveles, cortes y condiciones en el anuncio oficial, que manda sobre cualquier cosa general.",
+    intro: [
+      "El acceso a la preventa es una cadena de tres eslabones, y los fans suelen conocer solo el primero. Compras la membresía. Luego vinculas y verificas esa membresía contra la cuenta de entradas. Solo entonces consigues el derecho a la preventa.",
+      "Cada eslabón tiene su propia fecha límite, y la de la verificación suele ser bastante más temprana de lo que la gente espera — en algunos casos, días antes de la preventa en sí. Una membresía comprada la noche anterior puede llegar tarde aunque esté activa.",
+      "Trata el anuncio como la especificación y esta página como la lista de comprobación.",
+    ],
+    steps: [
+      {
+        title: "Lee la cláusula de elegibilidad, no el titular",
+        body: "El anuncio especifica qué producto y qué nivel de membresía califican, y la fecha para la que debe haberse comprado o estar activa. Son dos fechas distintas y las dos importan. Apúntalas en tu propia zona horaria junto a KST.",
+        pitfall:
+          "Una membresía que está activa pero se compró después del corte no califica en algunas giras. «Tengo la membresía» no es lo mismo que «califiqué».",
+        takes: "10 minutos",
+      },
+      {
+        title: "Compra la membresía bastante antes del corte",
+        body: "Compra en la tienda oficial de esos artistas. Guarda la confirmación del pedido y el número de membresía. Si la membresía es un kit físico con un código digital, cuenta con el tiempo de envío y activación del código, que no es inmediato. Desde el 3 de septiembre de 2026 Weverse Shop ofrece además pago automático en las membresías que lo admiten: la renovación se cobra a un método registrado el último día del periodo de validez, de modo que una membresía no puede caducar sin que lo notes justo en la semana en que se anuncia una gira. Se configura por categoría de membresía — Global, Japan y USA se gestionan por separado.",
+        pitfall:
+          "Los códigos de membresía revendidos o regalados fallan con frecuencia en la verificación porque el nombre registrado no coincidirá con tu cuenta de entradas. El pago automático elimina el riesgo de que caduque, no el riesgo del nombre: renueva exactamente la cuenta a la que está asociado.",
+        takes: "30 minutos",
+      },
+      {
+        title: "Vincula y verifica la membresía en la plataforma de entradas",
+        body: "Este es el paso que la gente se salta. En la plataforma de entradas hay una acción aparte para verificar tu condición de miembro del club de fans, y abre en una ventana — normalmente unos días antes de la preventa — y cierra antes de ella. Hazlo en la hora en que abre.",
+        pitfall:
+          "La verificación para una venta en coreano y para una venta global pueden gestionarse por separado en el mismo espectáculo. Completar una no concede necesariamente la otra.",
+        takes: "20 minutos, dentro de la ventana",
+      },
+      {
+        title: "Haz que los tres nombres sean idénticos",
+        body: "Pasaporte, membresía del club de fans y cuenta de entradas. Los tres. El mismo nombre legal, la misma fecha de nacimiento, el mismo orden. Si uno está mal, corrígelo antes de la ventana de verificación y no después.",
+        pitfall:
+          "Esta es la causa documentada más frecuente de que un derecho de preventa no llegue a aplicarse, y es invisible hasta el momento en que importa.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Confirma que el derecho llegó a aplicarse",
+        body: "Después de verificar, busca una confirmación explícita — una insignia, una línea de estado, un correo. Si no encuentras una confirmación positiva de que eres elegible, da por hecho que no lo eres y contacta con atención al cliente mientras la ventana siga abierta.",
+        pitfall:
+          "El silencio no es éxito. Un formulario enviado no es un derecho concedido.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Comprar una membresía garantiza el acceso a la preventa?",
+        a: "No. En la mayoría de las giras hay un paso de verificación aparte que vincula la membresía con tu cuenta de entradas, con su propia ventana que abre y cierra antes de la preventa. La membresía es un requisito previo, no el derecho en sí.",
+      },
+      {
+        q: "¿Puedo usar la membresía de otra persona?",
+        a: "En la práctica no, porque la verificación coteja el nombre registrado y la fecha de nacimiento contra tu cuenta de entradas y tu documento de identidad. Además de no funcionar, arriesga que te cancelen el pedido.",
+      },
+      {
+        q: "¿Con cuánta antelación abre la preventa respecto a la venta general?",
+        a: "Varía según la gira. Un día o más por delante es lo habitual, y el corte de la membresía queda todavía antes. El anuncio oficial de tu espectáculo es la única fuente fiable.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+  {
+    locale: "es",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "La cola de NOL World, y lo que reinicia tu puesto en ella",
+    summary:
+      "Actualizar borra tu posición. Un segundo dispositivo cierra tu primer número. Los asientos se actualizan sin recargar. Todo está en la propia FAQ de NOL World, y todo contradice lo que la gente hace por instinto.",
+    scope:
+      "Cubre cómo se comportan la cola, el mapa de asientos y la lista de espera de NOL World durante una venta. El registro y la verificación de cliente del extranjero ocurren antes de todo esto y están en la guía de NOL World. Todo lo de aquí sale de la FAQ publicada de NOL World.",
+    intro: [
+      "El instinto en una cola de entradas es actualizar, y abrir un segundo navegador por si el primero se ha quedado colgado. En NOL World las dos cosas te cuestan justo aquello que intentas proteger, y la plataforma lo dice en sus propias páginas de ayuda.",
+      "Esta es la parte de una venta que ninguna guía cubre, porque no se puede deducir desde fuera — solo la ves una vez, durante noventa segundos, mientras te entra el pánico.",
+    ],
+    steps: [
+      {
+        title: "No actualices. Actualizar reinicia tu posición",
+        body: "NOL World lo dice sin rodeos: no puedes saltarte la cola, y si actualizas la página tu posición en la cola se reinicia. No se vuelve a comprobar, no se vuelve a consultar — se reinicia. El número que tuvieras se va al final.",
+        pitfall:
+          "Una página de cola que parece congelada suele ser simplemente una página de cola. La única acción que se siente como hacer algo es la única acción que deshace la espera que ya llevas.",
+        takes: "Toda la cola",
+      },
+      {
+        title: "Una cuenta recibe un número, y un segundo intento mata el primero",
+        body: "Solo puedes recibir un número de cola por cuenta. Si intentas conseguir más — un segundo navegador, un móvil al lado del portátil — NOL World cierra el primer número que recibiste. Pulsar Reserve desde otro dispositivo mientras ya estás en la cola te pregunta si quieres conservar la cola existente o empezar una nueva, y elegir una nueva significa volver a esperar desde el principio en ese dispositivo.",
+        pitfall:
+          "Abrir un dispositivo de respaldo es la táctica de entradas más extendida en las comunidades de fans y aquí es estrictamente peor que no hacer nada. La pregunta que aparece no te ofrece una segunda oportunidad; te pregunta cuál quieres tirar.",
+        takes: "0 minutos, si te aguantas",
+      },
+      {
+        title: "Un número de cola no es una entrada",
+        body: "NOL World dice que una posición en la cola no garantiza una entrada, porque la disponibilidad es limitada y las entradas se emiten por orden. La cola decide cuándo te toca intentarlo, no si queda algo cuando llegues. La cola se aplica a todos los productos reservables en NOL World, no solo a los de mucha demanda.",
+        pitfall:
+          "Leer un número de cola bajo como un resultado. Es un turno, y el inventario puede haberse acabado antes de que llegue el tuyo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Deja de actualizar también el mapa de asientos — se actualiza solo",
+        body: "El sistema de reservas se reorganizó para que los asientos disponibles se actualicen en tiempo real sin recargar. Los asientos que otras personas retienen desaparecen y los cancelados vuelven por su cuenta. Si ves «este asiento ya ha sido seleccionado», significa que otra persona eligió el mismo asiento casi en el mismo instante, no que tu página esté desfasada.",
+        pitfall:
+          "Actualizar el mapa de asientos cuesta lo mismo que actualizar la cola. La costumbre que traes de webs de entradas más antiguas es exactamente la costumbre equivocada aquí.",
+        takes: "Durante la selección",
+      },
+      {
+        title: "Lee el porcentaje de entradas agotadas por lo que mide",
+        body: "Donde se muestra un porcentaje de agotado, solo aparece cuando el 90% o más de todos los asientos están pagados, y cuenta entradas pagadas y no seleccionables. Puede que no se muestre ningún recuento de asientos restantes: NOL World dice que lo decide el organizador, y que en los productos de mucha demanda hay un desfase entre lo que se muestra y lo que hay realmente disponible.",
+        pitfall:
+          "Tratar un porcentaje de agotado como inventario en vivo. Es una cifra de entradas pagadas con un suelo del 90%, y la distancia entre ella y la realidad es mayor justo cuando más te importa.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Si te llega un aviso de lista de espera, tienes seis horas",
+        body: "Si queda libre un asiento de la lista de espera y el pago no se completa en las seis horas siguientes al aviso, la reserva se cancela y se reembolsa automáticamente, y la oportunidad pasa a la siguiente persona de la lista. Seis horas parecen generosas hasta que recuerdas que el aviso llega en horario laboral coreano y que quien lee esto estará dormido durante parte de ellas.",
+        pitfall:
+          "Una ventana de seis horas que abre a las 3 de la madrugada en tu hora es una ventana de dos horas. Convierte la hora del aviso igual que convertiste la hora de la venta.",
+        takes: "Dentro de 6 horas",
+      },
+      {
+        title: "Ten claro que después no puedes cambiar el asiento",
+        body: "Una vez completada la reserva, los cambios de asiento no son posibles — el único camino es cancelar y volver a reservar, lo que te expone a la comisión de cancelación del evento y a que el asiento se lo lleve otra persona por el camino. Lo mismo vale para los cupones: un cupón no se puede aplicar después de pagar, y usarlo significa cancelar y volver a reservar el mismo asiento con la comisión que eso implique.",
+        pitfall:
+          "Reservar un asiento del que no estás segura pensando en arreglarlo luego. No hay luego.",
+        takes: "Antes de confirmar",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Actualizar me ayuda a pasar antes la cola de NOL World?",
+        a: "Al contrario. NOL World indica que actualizar la página reinicia tu posición en la cola, y que la cola no se puede saltar.",
+      },
+      {
+        q: "¿Puedo hacer cola en el móvil y en el portátil a la vez?",
+        a: "No. Una cuenta recibe un número de cola, e intentar conseguir más cierra el primero. Si pulsas Reserve en un segundo dispositivo, se te pregunta si conservas la cola existente o empiezas de cero en el nuevo.",
+      },
+      {
+        q: "¿Tengo que actualizar el mapa de asientos para ver asientos nuevos?",
+        a: "No. Los asientos se actualizan en tiempo real — los retenidos desaparecen y los cancelados vuelven sin recargar. Actualizar te cuesta lo mismo que actualizar la cola.",
+      },
+      {
+        q: "¿Qué significa realmente el porcentaje de agotado?",
+        a: "Solo aparece cuando el 90% o más de los asientos están pagados, y cuenta entradas pagadas y no asientos que pudieras seleccionar. En espectáculos de mucha demanda hay un desfase conocido entre la cifra y la disponibilidad real.",
+      },
+      {
+        q: "¿Cuánto tiempo tengo después de un aviso de lista de espera?",
+        a: "Seis horas. Si el pago no se completa en ese plazo, la reserva se cancela y se reembolsa automáticamente y el asiento pasa a la siguiente persona de la lista de espera.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

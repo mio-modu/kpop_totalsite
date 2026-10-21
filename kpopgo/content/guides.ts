@@ -679,6 +679,11 @@ export const guides: Guide[] = [
         pitfall:
           "This looks exactly like a scam or a bug, and it is the point where people abandon the order. The increase is the tax your own country charges, collected up front instead of by customs later.",
         takes: "1 minute",
+        see: {
+          slug: "weverse-data-leak-what-to-do",
+          text:
+            "Why a real payment request and a fake one now look alike, after the leak of Weverse purchase records",
+        },
       },
       {
         title: "Fill in the billing address, not just the shipping one",

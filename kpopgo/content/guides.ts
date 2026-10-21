@@ -211,6 +211,11 @@ export const guides: Guide[] = [
         pitfall:
           "Opening a fresh incognito window 'to be safe' means logging in and re-verifying inside the queue. Do not.",
         takes: "30 minutes before open",
+        see: {
+          slug: "nol-world-queue-and-seat-selection",
+          text:
+            "What the queue does when you refresh it, and what a second device costs you.",
+        },
       },
       {
         title: "Know the resale rules before you consider resale",

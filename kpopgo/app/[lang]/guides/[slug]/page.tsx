@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide } from "@/content/guides";
-import { translations, getTranslation } from "@/content/translations";
+import { translations, getTranslation, relatedTranslations } from "@/content/translations";
 import {
   LOCALES,
   localeFromSegment,
@@ -78,6 +78,7 @@ export default async function TranslatedGuide({
   if (!guide || !tr) notFound();
 
   const status = translatedDisplayStatus(guide, tr);
+  const related = relatedTranslations(slug, tr.locale);
 
   return (
     <article lang={LOCALES[tr.locale].tag}>
@@ -173,6 +174,26 @@ export default async function TranslatedGuide({
           ))}
         </ul>
       </div>
+
+      {/* Only guides that exist in this language. An empty list renders
+          nothing rather than a heading over three links into English. */}
+      {related.length > 0 && (
+        <nav className="wrap mt-14">
+          <p className="data dim">{tr.labels.related}</p>
+          <ul className="mt-3 grid gap-2">
+            {related.map((r) => (
+              <li key={r.slug} className="t-sm">
+                <Link
+                  href={`${LOCALES[tr.locale].prefix}/guides/${r.slug}`}
+                  className="tap foil-text hover:underline"
+                >
+                  {r.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
 
       <div className="wrap mt-12 pb-16">
         <Link href={`/guides/${guide.slug}`} className="btn px-5 py-3" hrefLang="en">

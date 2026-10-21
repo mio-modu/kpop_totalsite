@@ -55,6 +55,8 @@ export type Translation = TranslationMeta & {
     takes: string;
     sources: string;
     readEnglish: string;
+    /** Heading over the rail of other guides available in this language. */
+    related: string;
     /** "Translated with machine assistance; not reviewed by a native speaker." */
     reviewedMachine: string;
     /** "Translation reviewed by a native speaker." */
@@ -71,6 +73,7 @@ const ZH_LABELS = {
   takes: "所需時間：",
   sources: "資料來源",
   readEnglish: "閱讀英文版",
+  related: "本語言的其他指南",
   reviewedMachine:
     "本翻譯以機器翻譯為基礎，未經母語人士校閱。涉及重要判斷時，請以英文版與原始資料來源為準。",
   reviewedNative: "本翻譯已經母語人士校閱。",
@@ -85,6 +88,7 @@ const ID_LABELS = {
   takes: "Perkiraan waktu:",
   sources: "Sumber",
   readEnglish: "Baca versi bahasa Inggris",
+  related: "Panduan lain dalam bahasa ini",
   reviewedMachine:
     "Terjemahan ini dibuat dengan bantuan mesin dan belum diperiksa oleh penutur asli. Untuk keputusan penting, rujuk versi bahasa Inggris dan sumber aslinya.",
   reviewedNative: "Terjemahan ini telah diperiksa oleh penutur asli.",
@@ -99,6 +103,7 @@ const JA_LABELS = {
   takes: "所要：",
   sources: "出典",
   readEnglish: "英語版を読む",
+  related: "この言語で読める他のガイド",
   reviewedMachine:
     "機械翻訳をもとにした翻訳です。ネイティブによる校閲は受けていません。正確さが重要な判断には英語版と出典をご確認ください。",
   reviewedNative: "ネイティブによる校閲を受けた翻訳です。",
@@ -2914,6 +2919,904 @@ export const translations: Translation[] = [
     ],
     labels: ID_LABELS,
   },
+  {
+    locale: "zh-Hant",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "後援會先行販售：在截止之前取得資格",
+    summary:
+      "光有會員資格並不等於有購買權。兩者之間還有一道驗證手續，它有自己的截止時間，而錯過它是粉絲失去先行販售最常見的方式。",
+    scope:
+      "涵蓋韓國演出的後援會先行販售資格的一般樣貌。每一次巡迴都會在官方公告中設定自己的等級、截止時間與條件，而公告的效力高於任何一般性說明。",
+    intro: [
+      "先行販售的購買權是一條有三個環節的鏈，而粉絲通常只知道第一個。你買會員資格。然後你要把那份會員資格與售票帳號連結並完成驗證。只有到那時，你才取得先行販售的資格。",
+      "每一個環節都有自己的截止時間，而驗證的截止時間常常比人們預期的更早——某些情況下比先行販售本身早好幾天。前一晚才買的會員資格，即使是有效的，也可能已經太晚。",
+      "請把公告當成規格書，把本頁當成檢查清單。",
+    ],
+    steps: [
+      {
+        title: "讀資格條款，不要讀標題",
+        body: "公告會指明哪一種會員商品與哪一個等級符合資格，以及它必須在哪一個日期之前完成購買或處於有效狀態。這是兩個不同的日期，而且兩個都重要。請把它們連同 KST 一起寫下你自己時區的時間。",
+        pitfall:
+          "在某些巡迴中，雖然有效但購買時間在截止之後的會員資格並不符合資格。「我有會員資格」和「我取得了資格」不是同一件事。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "在截止之前好好提早買會員資格",
+        body: "請從該藝人的官方商店購買。保留訂單確認與會員編號。如果會員資格是附數位序號的實體組合包，請把序號的寄送與啟用時間算進去，那不是即時的。自 2026 年 9 月 3 日起，Weverse Shop 也在支援的會員資格上提供自動付款：續訂會在有效期間的最後一天向已登錄的付款方式扣款，所以會員資格不會在巡迴公布的那一週悄悄失效。它是按會員類別分別設定的——Global、Japan 與 USA 是分開管理的。",
+        pitfall:
+          "轉售或被贈送的會員序號經常無法通過驗證，因為登錄的姓名與你的售票帳號不符。自動付款消除了失效風險，但不消除姓名風險：它只會續訂它所綁定的那個帳號。",
+        takes: "30 分鐘",
+      },
+      {
+        title: "在售票平台上連結並驗證會員資格",
+        body: "這就是人們會漏掉的一步。在售票平台上有一個獨立的動作用來驗證你的後援會身分，它在一段期間內開放——通常是先行販售前幾天——並在先行販售之前關閉。請在它開放的那一小時就去做。",
+        pitfall:
+          "同一場演出，韓文販售與全球販售的驗證可能是分開處理的。完成其中一邊，不一定就取得另一邊。",
+        takes: "20 分鐘，在開放期間內",
+      },
+      {
+        title: "讓三個姓名完全一致",
+        body: "護照、後援會會員資格、售票帳號。三個都要。相同的法定姓名、相同的出生日期、相同的順序。如果其中一個是錯的，請在驗證期間開始之前更正，而不是之後。",
+        pitfall:
+          "這是先行販售資格無法生效最常被記錄的原因，而且在它真正重要的那一刻之前完全看不出來。",
+        takes: "15 分鐘",
+      },
+      {
+        title: "確認資格真的到手了",
+        body: "完成驗證之後，請找一個明確的確認——一個標記、一行狀態、一封電子郵件。如果你找不到「你符合資格」的正面確認，就當作你沒有，並在期間還開著的時候聯絡客服。",
+        pitfall:
+          "沒有消息不代表成功。送出表單不等於被授予資格。",
+        takes: "10 分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "買了會員資格就保證有先行販售購買權嗎？",
+        a: "不。在多數巡迴中，還有一道獨立的驗證手續，把會員資格連結到你的售票帳號，而它有自己的開放與關閉期間，都在先行販售之前。會員資格是前提條件，不是資格本身。",
+      },
+      {
+        q: "我可以用別人的會員資格嗎？",
+        a: "實務上不行，因為驗證會把登錄的姓名與出生日期比對你的售票帳號與你的身分證件。除了行不通之外，它還讓訂單面臨被取消的風險。",
+      },
+      {
+        q: "先行販售比一般販售早多久開放？",
+        a: "依巡迴而異。早一天以上很常見，而會員資格的截止時間又更早。你那一場的官方公告是唯一可靠的來源。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Presale fan club: cara memenuhi syarat sebelum tutup",
+    summary:
+      "Keanggotaan saja bukan akses. Ada satu langkah verifikasi di antara keduanya, langkah itu punya tenggatnya sendiri, dan melewatkannya adalah cara paling umum fan kehilangan presale.",
+    scope:
+      "Mencakup bentuk umum kualifikasi presale fan club untuk konser di Korea. Setiap tur menetapkan tingkat, batas waktu, dan syaratnya sendiri di pengumuman resmi, dan pengumuman itu mengalahkan keterangan umum apa pun.",
+    intro: [
+      "Akses presale adalah rantai dengan tiga mata, dan fan biasanya hanya tahu mata yang pertama. Anda membeli keanggotaannya. Lalu Anda menghubungkan dan memverifikasi keanggotaan itu terhadap akun tiket Anda. Baru setelah itu Anda mendapat hak presale.",
+      "Setiap mata rantai punya tenggatnya sendiri, dan tenggat verifikasi rutin jatuh lebih awal daripada perkiraan orang — dalam beberapa kasus beberapa hari sebelum presale itu sendiri. Keanggotaan yang dibeli malam sebelumnya bisa sudah terlambat meski statusnya aktif.",
+      "Perlakukan pengumumannya sebagai spesifikasi, dan halaman ini sebagai daftar periksa.",
+    ],
+    steps: [
+      {
+        title: "Baca klausul kelayakannya, bukan judulnya",
+        body: "Pengumuman akan menyebutkan produk dan tingkat keanggotaan mana yang memenuhi syarat, serta tanggal kapan keanggotaan itu harus sudah dibeli atau sudah aktif. Itu dua tanggal yang berbeda dan keduanya penting. Catat keduanya dalam zona waktu Anda sendiri berdampingan dengan KST.",
+        pitfall:
+          "Pada sebagian tur, keanggotaan yang aktif tetapi dibeli setelah batas waktu tidak memenuhi syarat. “Saya punya keanggotaannya” tidak sama dengan “Saya memenuhi syarat”.",
+        takes: "10 menit",
+      },
+      {
+        title: "Beli keanggotaannya jauh sebelum batas waktunya",
+        body: "Belilah dari toko resmi artis tersebut. Simpan konfirmasi pesanan dan nomor keanggotaannya. Jika keanggotaan itu berupa paket fisik dengan kode digital, perhitungkan waktu pengiriman dan aktivasi kodenya, yang tidak instan. Sejak 3 September 2026 Weverse Shop juga menyediakan Auto Payment pada keanggotaan yang mendukungnya: perpanjangannya ditagih ke metode terdaftar pada hari terakhir masa berlaku, sehingga keanggotaan tidak bisa berakhir tanpa disadari di pekan sebuah tur diumumkan. Ini disetel per kategori keanggotaan — Global, Japan, dan USA dikelola terpisah.",
+        pitfall:
+          "Kode keanggotaan hasil jual beli atau hadiah sering gagal verifikasi, karena nama terdaftarnya tidak akan cocok dengan akun tiket Anda. Auto Payment menghilangkan risiko kedaluwarsa tetapi bukan risiko nama: ia memperpanjang akun mana pun yang ia tempeli.",
+        takes: "30 menit",
+      },
+      {
+        title: "Hubungkan dan verifikasi keanggotaan di platform tiket",
+        body: "Inilah langkah yang orang lewatkan. Di platform tiket ada tindakan tersendiri untuk memverifikasi status fan club Anda, dan tindakan itu terbuka dalam satu jendela waktu — umumnya beberapa hari sebelum presale — dan tertutup sebelum presale. Lakukan pada jam ia dibuka.",
+        pitfall:
+          "Verifikasi pada penjualan berbahasa Korea dan pada penjualan global bisa ditangani terpisah untuk konser yang sama. Menyelesaikan yang satu tidak otomatis memberi Anda yang lain.",
+        takes: "20 menit, di dalam jendela waktunya",
+      },
+      {
+        title: "Buat ketiga nama itu sama persis",
+        body: "Paspor, keanggotaan fan club, dan akun tiket. Ketiganya. Nama resmi yang sama, tanggal lahir yang sama, urutan yang sama. Jika salah satu keliru, perbaiki sebelum jendela verifikasi, bukan sesudahnya.",
+        pitfall:
+          "Ini penyebab paling sering terdokumentasi atas gagalnya hak presale diterapkan, dan ia tidak terlihat sampai persis saat ia menentukan.",
+        takes: "15 menit",
+      },
+      {
+        title: "Pastikan haknya benar-benar masuk",
+        body: "Setelah memverifikasi, cari konfirmasi yang tegas — sebuah lencana, satu baris status, sebuah surel. Jika Anda tidak bisa menemukan konfirmasi positif bahwa Anda memenuhi syarat, anggap Anda tidak, dan hubungi layanan pelanggan selagi jendelanya masih terbuka.",
+        pitfall:
+          "Sunyi bukan berarti berhasil. Formulir yang terkirim bukan hak yang sudah diberikan.",
+        takes: "10 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah membeli keanggotaan menjamin akses presale?",
+        a: "Tidak. Pada sebagian besar tur ada langkah verifikasi tersendiri yang menghubungkan keanggotaan ke akun tiket Anda, dengan jendela waktunya sendiri yang terbuka dan tertutup sebelum presale. Keanggotaan adalah prasyarat, bukan haknya itu sendiri.",
+      },
+      {
+        q: "Bisakah saya memakai keanggotaan orang lain?",
+        a: "Dalam praktiknya tidak, karena verifikasi mencocokkan nama dan tanggal lahir terdaftar terhadap akun tiket Anda dan dokumen identitas Anda. Selain tidak berfungsi, itu membuat pesanan Anda berisiko dibatalkan.",
+      },
+      {
+        q: "Berapa lama presale dibuka lebih awal dibanding penjualan umum?",
+        a: "Berbeda-beda per tur. Sehari atau lebih lebih awal itu umum, dan batas waktu keanggotaan jatuh lebih awal lagi. Pengumuman resmi untuk konser Anda adalah satu-satunya sumber yang bisa dipercaya.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World 的排隊，以及什麼會讓你的順位歸零",
+    summary:
+      "重新整理會清掉你的順位。第二台裝置會關掉你的第一個號碼。座位會自己更新，不需要重新載入。這些全都寫在 NOL World 自己的 FAQ 裡，而且每一條都與人們的本能相反。",
+    scope:
+      "涵蓋 NOL World 的排隊、座位圖與候補在開賣期間的行為。註冊與海外顧客驗證都發生在這一切之前，收錄在 NOL World 指南中。本頁所有內容都出自 NOL World 公開的 FAQ。",
+    intro: [
+      "在購票排隊時，人的本能是重新整理，以及在第一個視窗卡住時再開一個瀏覽器。在 NOL World 上，這兩件事都會讓你失去你正想保護的東西，而平台在自己的說明頁面裡就是這麼寫的。",
+      "這是開賣過程中沒有任何指南談到的部分，因為它無法從外面推敲出來——你只會在慌亂之中、在九十秒內看到它一次。",
+    ],
+    steps: [
+      {
+        title: "不要重新整理。重新整理會讓你的順位歸零",
+        body: "NOL World 說得很直白：你無法跳過排隊，而且如果你重新整理頁面，你在隊伍中的順位將會被重設。不是重新確認，不是重新查詢——是重設。你原本握著的號碼，無論是幾號，都回到隊伍最後面。",
+        pitfall:
+          "一個看起來凍住的排隊頁面，通常就只是一個排隊頁面。那個讓你感覺自己在做點什麼的動作，正是會把你已經等過的時間一筆抹掉的動作。",
+        takes: "整段排隊期間",
+      },
+      {
+        title: "一個帳號拿一個排隊號碼，而第二次嘗試會殺掉第一個",
+        body: "每個帳號只能取得一個排隊號碼。如果你想拿更多——第二個瀏覽器、筆電旁邊再開手機——NOL World 會關閉你先取得的那個號碼。在已經排隊的狀態下從另一台裝置按下預約，系統會提示你保留既有的排隊或重新開始，而選擇重新開始就意味著在那台裝置上從頭再等一次。",
+        pitfall:
+          "開一台備用裝置是粉絲社群裡最常見的購票戰術，而在這裡它嚴格來說比什麼都不做更糟。跳出來的那個提示不是在給你第二次機會；它是在問你想丟掉哪一個。",
+        takes: "0 分鐘，只要你忍住",
+      },
+      {
+        title: "排隊號碼不是門票",
+        body: "NOL World 表示，排隊中的順位並不保證能拿到票，因為數量有限且門票是依序發出的。排隊決定的是你什麼時候可以嘗試，不是你輪到時還剩不剩東西。排隊適用於 NOL World 上所有可預約的商品，不只是高需求的那些。",
+        pitfall:
+          "把一個很前面的排隊號碼當成結果。它是一個順位，而庫存可能在你輪到之前就沒了。",
+        takes: "1 分鐘",
+      },
+      {
+        title: "座位圖也不要重新整理——它會自己更新",
+        body: "訂票系統經過重整，可選座位會即時更新而不需要重新載入。被其他使用者占住的座位會消失，被取消的座位會自己回來。如果你看到「此座位已被選擇」，意思是另一位使用者在幾乎同一瞬間選了同一個座位——不是你的頁面過期了。",
+        pitfall:
+          "重新整理座位圖的代價與重新整理排隊相同。從舊式售票網站帶來的習慣，在這裡正是完全相反的習慣。",
+        takes: "選位期間",
+      },
+      {
+        title: "把售完率理解成它實際在量的東西",
+        body: "在有顯示售完率的地方，它只會在全部座位中有 90% 以上已完成付款之後才出現，而且它計算的是已付款的門票，不是可選的座位。剩餘座位數可能根本不會顯示：NOL World 表示這由主辦單位決定，而對高需求商品而言，顯示的數字與實際可售的數量之間存在延遲。",
+        pitfall:
+          "把售完百分比當成即時庫存。它是一個有 90% 下限的已付款票數，而它與現實之間的落差，恰好在你最在意的時候最大。",
+        takes: "1 分鐘",
+      },
+      {
+        title: "如果你收到候補通知，你有六小時",
+        body: "如果候補的座位出現，而你沒有在通知後的六小時內完成付款，該預約會被自動取消並退款，機會則交給名單上的下一個人。六小時聽起來很寬裕，直到你想起通知是依韓國的上班時間發出的，而本頁多數讀者在其中一段時間裡正在睡覺。",
+        pitfall:
+          "一個在你當地凌晨三點開始的六小時視窗，實際上是兩小時的視窗。請用你換算開賣時間的方式，同樣去換算通知時間。",
+        takes: "6 小時內",
+      },
+      {
+        title: "要知道事後無法更換座位",
+        body: "預約一旦完成，就無法更換座位——唯一的路是取消後重新訂票，而那會讓你承擔該場次的取消手續費，以及座位在這期間被搶走的風險。優惠券也一樣：付款之後無法再套用優惠券，而要用它就意味著取消並以同一個座位重新訂票，並承擔隨之而來的手續費。",
+        pitfall:
+          "抱著「之後再改」的想法訂下一個你不確定的座位。沒有之後。",
+        takes: "在你確認之前",
+      },
+    ],
+    faq: [
+      {
+        q: "重新整理能讓我更快通過 NOL World 的排隊嗎？",
+        a: "正好相反。NOL World 表示重新整理頁面會重設你在隊伍中的順位，而且排隊無法被跳過。",
+      },
+      {
+        q: "我可以同時在手機和筆電上排隊嗎？",
+        a: "不行。一個帳號取得一個排隊號碼，而嘗試取得更多會關閉先取得的那一個。如果你在第二台裝置上按下預約，系統會問你要保留既有的排隊，還是在新裝置上從頭開始。",
+      },
+      {
+        q: "我需要重新整理座位圖才看得到新座位嗎？",
+        a: "不需要。座位會即時更新——被占住的座位會消失，被取消的座位會回來，都不需要重新載入。重新整理的代價和重新整理排隊一樣。",
+      },
+      {
+        q: "售完率實際上代表什麼？",
+        a: "它只在座位中有 90% 以上已完成付款時才出現，而且它計算的是已付款的門票，不是你可以選的座位。對高需求的場次而言，這個數字與實際可售數量之間存在已知的延遲。",
+      },
+      {
+        q: "收到候補通知之後我有多久時間？",
+        a: "六小時。如果沒有在那段時間內完成付款，該預約會被自動取消並退款，座位則交給候補名單上的下一個人。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Antrean NOL World, dan apa yang mengatur ulang posisi Anda di dalamnya",
+    summary:
+      "Menyegarkan halaman menghapus posisi Anda. Perangkat kedua menutup nomor pertama Anda. Kursi diperbarui tanpa perlu dimuat ulang. Semuanya ada di FAQ NOL World sendiri, dan semuanya berlawanan dengan apa yang orang lakukan secara naluriah.",
+    scope:
+      "Mencakup perilaku antrean, peta kursi, dan daftar tunggu NOL World selama penjualan. Pendaftaran dan verifikasi pelanggan luar negeri terjadi sebelum semua ini dan dibahas di panduan NOL World. Semua isi di sini berasal dari FAQ yang diterbitkan NOL World.",
+    intro: [
+      "Naluri dalam antrean tiket adalah menyegarkan halaman, dan membuka peramban kedua kalau-kalau yang pertama tersangkut. Di NOL World kedua tindakan itu justru merenggut hal yang sedang Anda coba lindungi, dan platformnya menyatakan itu di halaman bantuannya sendiri.",
+      "Ini bagian dari sebuah penjualan yang tidak dibahas panduan mana pun, karena ia tidak bisa disimpulkan dari luar — Anda hanya melihatnya sekali, selama sembilan puluh detik, sambil panik.",
+    ],
+    steps: [
+      {
+        title: "Jangan segarkan halaman. Menyegarkan mengatur ulang posisi Anda",
+        body: "NOL World menyatakannya terang-terangan: Anda tidak bisa melompati antrean, dan jika Anda menyegarkan halaman, posisi Anda di antrean akan diatur ulang. Bukan diperiksa ulang, bukan ditanyakan ulang — diatur ulang. Nomor berapa pun yang sedang Anda pegang kembali ke ujung belakang.",
+        pitfall:
+          "Halaman antrean yang terlihat membeku biasanya memang hanya halaman antrean. Satu tindakan yang terasa seperti melakukan sesuatu adalah satu tindakan yang membatalkan penantian yang sudah Anda jalani.",
+        takes: "Sepanjang antrean",
+      },
+      {
+        title: "Satu akun mendapat satu nomor antrean, dan percobaan kedua membunuh yang pertama",
+        body: "Anda hanya bisa menerima satu nomor antrean per akun. Jika Anda mencoba lebih — peramban kedua, ponsel di samping laptop — NOL World menutup nomor pertama yang Anda terima. Menekan Reserve dari perangkat lain selagi sudah mengantre akan memunculkan pilihan untuk mempertahankan antrean yang ada atau memulai yang baru, dan memilih yang baru berarti menunggu lagi dari awal di perangkat itu.",
+        pitfall:
+          "Membuka perangkat cadangan adalah taktik tiket yang paling umum di komunitas fan dan di sini ia jelas lebih buruk daripada tidak melakukan apa pun. Pilihan yang muncul itu bukan menawarkan kesempatan kedua; ia menanyakan mana yang mau Anda buang.",
+        takes: "0 menit, kalau Anda menahan diri",
+      },
+      {
+        title: "Nomor antrean bukan tiket",
+        body: "NOL World menyatakan posisi di antrean tidak menjamin tiket, karena ketersediaannya terbatas dan tiket dikeluarkan berurutan. Antrean menentukan kapan Anda boleh mencoba, bukan apakah masih ada sesuatu ketika giliran Anda datang. Antrean berlaku untuk setiap produk yang bisa dipesan di NOL World, bukan hanya yang permintaannya tinggi.",
+        pitfall:
+          "Membaca nomor antrean yang kecil sebagai hasil. Itu sebuah giliran, dan stoknya bisa habis sebelum giliran Anda tiba.",
+        takes: "1 menit",
+      },
+      {
+        title: "Berhenti menyegarkan peta kursi juga — ia memperbarui dirinya",
+        body: "Sistem pemesanannya ditata ulang sehingga kursi yang tersedia diperbarui secara langsung tanpa dimuat ulang. Kursi yang ditahan pengguna lain menghilang dan kursi yang dibatalkan kembali dengan sendirinya. Jika Anda melihat “kursi ini sudah dipilih”, artinya pengguna lain memilih kursi yang sama pada saat yang nyaris bersamaan — bukan bahwa halaman Anda kedaluwarsa.",
+        pitfall:
+          "Menyegarkan peta kursi membawa biaya yang sama dengan menyegarkan antrean. Kebiasaan dari situs tiket lama justru kebiasaan yang salah di sini.",
+        takes: "Selama pemilihan",
+      },
+      {
+        title: "Baca angka sold-out sebagai apa yang sebenarnya ia ukur",
+        body: "Di tempat angka sold-out ditampilkan, ia baru muncul setelah 90% atau lebih dari seluruh kursi sudah dibayar, dan ia menghitung tiket yang sudah dibayar, bukan kursi yang bisa dipilih. Jumlah kursi tersisa bisa jadi tidak ditampilkan sama sekali: NOL World menyatakan penyelenggaranya yang menentukan, dan bahwa untuk produk berpermintaan tinggi ada jeda antara apa yang ditampilkan dan apa yang sebenarnya tersedia.",
+        pitfall:
+          "Memperlakukan persentase sold-out sebagai stok langsung. Itu angka tiket terbayar dengan lantai 90%, dan jarak antara angka itu dan kenyataan paling lebar justru saat Anda paling peduli.",
+        takes: "1 menit",
+      },
+      {
+        title: "Kalau Anda dapat notifikasi daftar tunggu, Anda punya enam jam",
+        body: "Jika kursi daftar tunggu menjadi tersedia dan pembayaran tidak diselesaikan dalam enam jam sejak notifikasi, pemesanannya otomatis dibatalkan dan dikembalikan, dan kesempatannya berpindah ke orang berikutnya di daftar. Enam jam terasa lapang sampai Anda ingat notifikasinya datang pada jam kerja Korea dan sebagian besar pembaca halaman ini sedang tidur selama sebagian dari waktu itu.",
+        pitfall:
+          "Jendela enam jam yang terbuka pada pukul tiga pagi di tempat Anda adalah jendela dua jam. Konversikan waktu notifikasinya dengan cara yang sama seperti Anda mengonversi waktu penjualan.",
+        takes: "Dalam 6 jam",
+      },
+      {
+        title: "Pahami bahwa Anda tidak bisa mengganti kursi sesudahnya",
+        body: "Begitu pemesanan selesai, penggantian kursi tidak dimungkinkan — satu-satunya jalan adalah membatalkan dan memesan ulang, yang membuat Anda menanggung biaya pembatalan acara itu dan risiko kursinya diambil orang di sela-sela itu. Hal yang sama berlaku untuk kupon: kupon tidak bisa diterapkan setelah pembayaran, dan memakainya berarti membatalkan lalu memesan ulang kursi yang sama dengan biaya yang menyertainya.",
+        pitfall:
+          "Memesan kursi yang Anda tidak yakini dengan niat membetulkannya nanti. Tidak ada nanti.",
+        takes: "Sebelum Anda mengonfirmasi",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah menyegarkan halaman membantu saya melewati antrean NOL World lebih cepat?",
+        a: "Justru sebaliknya. NOL World menyatakan bahwa menyegarkan halaman mengatur ulang posisi Anda di antrean, dan bahwa antreannya tidak bisa dilompati.",
+      },
+      {
+        q: "Bisakah saya mengantre di ponsel dan laptop sekaligus?",
+        a: "Tidak. Satu akun menerima satu nomor antrean, dan mencoba mendapat lebih akan menutup yang pertama. Jika Anda menekan Reserve di perangkat kedua, Anda akan ditanya apakah mau mempertahankan antrean yang ada atau mulai dari awal di perangkat baru itu.",
+      },
+      {
+        q: "Apakah saya perlu menyegarkan peta kursi untuk melihat kursi baru?",
+        a: "Tidak. Kursi diperbarui secara langsung — kursi yang ditahan menghilang dan kursi yang dibatalkan kembali tanpa dimuat ulang. Menyegarkan memakan biaya yang sama dengan menyegarkan antrean.",
+      },
+      {
+        q: "Apa arti angka sold-out itu sebenarnya?",
+        a: "Ia baru muncul ketika 90% atau lebih kursi sudah dibayar, dan ia menghitung tiket yang sudah dibayar, bukan kursi yang bisa Anda pilih. Untuk konser berpermintaan tinggi ada jeda yang diketahui antara angka itu dan ketersediaan sebenarnya.",
+      },
+      {
+        q: "Berapa lama waktu saya setelah notifikasi daftar tunggu?",
+        a: "Enam jam. Jika pembayaran tidak diselesaikan dalam waktu itu, pemesanannya otomatis dibatalkan dan dikembalikan, dan kursinya berpindah ke orang berikutnya di daftar tunggu.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "取消 NOL World 的票：期限、手續費，以及你仍然會損失的錢",
+    summary:
+      "取消期限是韓國時間演出前一天的下午，星期六比一週中其他日子更早，而一張全額退款的票，仍然可能讓持海外卡的人花到錢。另外：把票傳給朋友，會讓取消按鈕從你手上消失。",
+    scope:
+      "涵蓋在 NOL World 上取消演出門票，依 NOL World 自己的說明：各項期限、手續費顯示在哪裡、退款如何回到海外卡，以及什麼會讓取消變成不可能。NOL World 沒有公布統一的手續費表，本頁也不會憑空編一份。旅遊與體驗類商品遵循自己的政策，只在有差異時註明。",
+    intro: [
+      "海外粉絲取消的理由，是國內粉絲很少遇到的：簽證、轉機航班、被改動的班表。所以取消規則對這群讀者的重要性，高於它們原本被寫給的那群人——而這些規則嚴格、綁定時區，並且在兩個地方以沒有人會猜到的方式不對稱。",
+      "以下其中兩個事實，值得在訂票之前就知道，而不是之後。星期六的演出，取消期限比其他每一天都早六小時。而一個被 NOL World 完整處理的取消，仍然可能讓持海外卡的人賠錢，那不是任何人的錯，也不是任何人有義務幫你解決的問題。",
+    ],
+    steps: [
+      {
+        title: "在訂票之前就搞清楚期限，因為它不是演出當天",
+        body: "NOL World 在前一天就關閉演出的取消，不是當天：平日與假日是演出前一天的 KST（韓國時間）下午5點，星期六的演出則是前一天的 KST 上午11點。星期六那條規則就是會害到人的那一條——它比一週中其他日子早六小時，而且它適用於星期六的那場演出，所以期限落在 KST 的星期五早上。",
+        pitfall:
+          "用你自己的日曆去推算「前一天」。對首爾一場星期六傍晚的演出來說，KST 星期五上午11點是紐約的星期四傍晚。期限可能比它讀起來的時間整整早一天。",
+        takes: "5 分鐘，在你付款之前",
+      },
+      {
+        title: "如果你有點後悔，就用免費期間",
+        body: "有一段不收手續費的期間，而且它很短：NOL World 表示就門票而言，在你預約當天的晚上11點59分之前取消，不收取消手續費。所以你能無代價反悔的決定，是你在訂票的同一天做的那個。過了午夜就要花錢。",
+        pitfall:
+          "以為那個晚上11點59分是你自己的午夜。NOL World 在其他取消期限上都明確寫出 KST，在這一條上沒有寫出時區，所以保險的讀法是韓國時間——而且不管怎樣，在一個期間的最後十分鐘做的決定，都是太晚做的決定。",
+        takes: "—",
+      },
+      {
+        title: "知道按鈕在哪裡，以及它不在時代表什麼",
+        body: "路徑是 App 或網頁，然後 Account/My，然後 My Reservations，然後 Ticket Reservation List，然後點進那筆預約，然後在詳細頁上按 Cancel Reservation。如果詳細頁上根本沒有 Cancel Reservation 這個按鈕，NOL World 的指示是聯絡客服，而不是繼續找：客服人員會與供應商確認取消資格、手續費與退款金額，然後引導你。你可以從預約詳細頁追蹤這項申請，完成後會收到確認的電子郵件。",
+        pitfall:
+          "把按鈕消失讀成網站故障，然後重試一小時。那是一種狀態，而你重試的時候，第一步裡的那個時鐘還在走。",
+        takes: "15 分鐘，加上客服處理時間",
+      },
+      {
+        title: "不要期待有手續費表，請從你自己的預約取得數字",
+        body: "沒有公開的手續費表可以用來規劃。被問到取消手續費是多少時，NOL World 回答的是一條路徑——Web/App、Account/My、My Reservations、Reservation Details——因為那個數字是你這筆訂單的屬性，不是平台的屬性。對旅遊與體驗類商品，手續費與退款金額會在你按下 Cancel Reservation 時、在你確認之前顯示給你。我們不會在這裡印一個你的預約可能並不同意的百分比。",
+        pitfall:
+          "照著某篇部落格文章的手續費表做規劃。任何為你那場演出引用固定韓國取消百分比的指南，引用的都是 NOL World 沒有公布的東西。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "在你還在訂票的時候就確認能不能部分取消",
+        body: "四個座位取消兩個，在某些演出可行、在某些不可行，而 NOL World 的指示是在你訂票的時候就確認部分取消的狀態——也就是說，在它變成你需要的東西之前。旅遊與體驗類商品則完全不允許：那裡的路是取消整筆訂單再重訂，而 NOL World 直白地警告，之後的可售狀況不受保證，重訂也可能無法成立。",
+        pitfall:
+          "抱著「那兩個還不確定的朋友之後可以退掉」的想法訂四個座位。對一場不支援部分取消的演出來說，選擇變成四個全要或一個都不要。",
+        takes: "2 分鐘，在訂票時",
+      },
+      {
+        title: "理解一次全額退款仍可能讓持海外卡的人花到錢",
+        body: "這是為這群讀者而寫、而且在英文裡幾乎從沒被解釋過的部分。NOL World 表示，在使用海外信用卡的情況下，可能因為訂票日的匯率與取消日的匯率之間的差異而產生匯兌上的收益或損失——另外，即使交易已被取消，國際交易手續費仍可能被收取。這兩項都不是 NOL World 扣下的。兩項都在你的發卡機構，而 NOL World 的建議是向發卡機構詢問確切的匯率與費用。",
+        pitfall:
+          "把退回的金額小於扣款金額讀成錯誤或隱藏費用。那個落差可能是兩個日期之間的匯率變動，而能解釋它的人是你的銀行，不是售票平台。",
+        takes: "打一通電話給你的銀行",
+      },
+      {
+        title: "給退款卡片組織需要的時間",
+        body: "如果這筆交易還沒送達你的信用卡公司，NOL World 表示取消會立即完成。如果已經送達，而且付款金額已經入帳，請預期卡片公司大約需要 5 到 7 天來沖銷它，而被取消的金額會從下個月的帳單中扣除，而不是以一筆退款的形式回來。NOL World 註明各卡片公司的退款政策不同，所以你的卡片公司才是它自己時程的權威。",
+        pitfall:
+          "在沖銷還在進行中的時候向銀行提出爭議。對一筆已經在被取消的交易提出爭議款，會在一個你可能還想拿來訂票的帳戶上製造第二個問題。",
+        takes: "5-7 天",
+      },
+      {
+        title: "在你確定要去之前，不要把電子票傳出去",
+        body: "這是值得這整頁的那個陷阱。電子票分享功能讓購買者把票傳給實際入場的人——而 NOL World 表示，電子票一旦成功傳送，該筆預約的取消就會受到限制。回頭的路在收件者手上：如果他們把票解除登錄，取消就又變成可行。在登錄之前還有比較溫和的退路——票還未被登錄時，傳送方可以按 Cancel Send，而一張未被登錄的票會在 24 小時後或在觀看日之前自動退回。",
+        pitfall:
+          "在訂票的那一週就把票傳給朋友，當作是井井有條的做法。取消按鈕實質上已經是他們的了，而要拿回來，得先請他們放棄那張票。",
+        takes: "—",
+      },
+      {
+        title: "旅遊與體驗類商品的政策要分開讀",
+        body: "如果你的訂單是旅遊、接送或體驗類商品，而不是演出門票，上面所有內容都不是安全的預設值。NOL World 表示其中有些商品一經購買就完全無法取消，而且即使在購買當天，也可能適用 100% 的取消手續費。有效的政策是該商品自己的詳細頁與憑證上的那一份，而 NOL World 要求你在送出取消申請之前先讀它。",
+        pitfall:
+          "把門票的規則套用到同一次下單中訂的套裝商品上。當天免費取消是演出門票的規則，而旅遊類商品可能從你付款的那一刻起就不可退。",
+        takes: "每個商品 10 分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "演出的取消期限究竟是什麼時候？",
+        a: "演出前一天，以 KST（韓國時間）計。NOL World 給的是平日與假日為前一天的 KST 下午5點，星期六的演出為前一天的 KST 上午11點。請小心地對照你自己的日期換算——KST 星期五上午11點的期限，在美洲大部分地區是星期四傍晚。",
+      },
+      {
+        q: "有任何免費取消嗎？",
+        a: "就演出門票而言有，在你訂票的那一天：NOL World 表示在預約當天的晚上11點59分之前取消不收取消手續費。它在這一條上沒有寫出時區，卻在其他條上寫出 KST，所以請當成韓國時間，並且不要壓線。旅遊與體驗類商品不同——有些即使在當天也收 100%。",
+      },
+      {
+        q: "取消手續費是多少？",
+        a: "NOL World 沒有公布費率表。被問到這個問題時，它給的是一條路徑——Web 或 App、Account/My、My Reservations、Reservation Details——因為那個數字屬於你這筆訂單。對旅遊與體驗類商品，按下 Cancel Reservation 會在你確認之前顯示取消手續費與退款金額。任何為你那場演出引用固定百分比的英文指南，引用的都是平台沒有說過的數字。",
+      },
+      {
+        q: "我及時取消了，拿回來的錢卻比付出去的少。剩下的去哪了？",
+        a: "大概不是去了 NOL World。它表示海外卡可能因為訂票日與取消日的匯率差異而產生匯兌上的收益或損失，而且即使交易已被取消，國際交易手續費仍可能照收。這兩項都在你的發卡機構那邊，而 NOL World 自己的建議就是向發卡機構詢問確切的匯率與費用。",
+      },
+      {
+        q: "錢要多久才會回來？",
+        a: "如果這筆交易還沒送達你的卡片公司，取消會立即完成。如果已經送達，NOL World 表示卡片公司大約需要 5 到 7 天來取消這筆交易，金額會從下個月的帳單中扣除。各卡片公司不同，所以能告訴你的是你自己的那一家。",
+      },
+      {
+        q: "我已經把電子票傳給朋友了。還能取消嗎？",
+        a: "在他們持有它的期間不行。NOL World 表示電子票一旦成功傳送，該筆預約的取消就會受到限制，而如果收件者將它解除登錄，取消就又變成可行。如果票還沒有被登錄，你有比較輕鬆的退路：傳送方可以按 Cancel Send，而一張未被登錄的票會在 24 小時後或在觀看日之前自動退回。",
+      },
+      {
+        q: "我可以只取消四個座位中的兩個嗎？",
+        a: "這要看演出，而 NOL World 的建議是在你訂票時就確認部分取消的狀態，而不是在你需要它的時候。旅遊與體驗類商品完全不支援部分取消——你得取消整筆訂單再重訂，而且不保證庫存還在。",
+      },
+      {
+        q: "我的預約頁面上沒有 Cancel Reservation 按鈕。",
+        a: "NOL World 把那視為要交給客服的情況，而不是一個該重試的故障。客服人員會先與供應商確認資格、手續費與退款金額。請早一點聯絡他們，因為你等待的時候，第一個答案裡的那個期限還在走。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Membatalkan tiket NOL World: tenggatnya, biayanya, dan uang yang tetap hilang",
+    summary:
+      "Tenggat pembatalan jatuh pada sore hari sebelum konser dalam waktu Korea, hari Sabtu lebih awal daripada hari lain, dan tiket yang direfund penuh masih bisa memakan uang pemegang kartu luar negeri. Satu lagi: mengirim tiket ke teman Anda mencabut tombol pembatalannya.",
+    scope:
+      "Mencakup pembatalan tiket pertunjukan di NOL World, sebagaimana NOL World mendokumentasikannya: tenggat-tenggatnya, di mana biayanya ditampilkan, bagaimana refund mencapai kartu luar negeri, dan apa yang membuat pembatalan tidak mungkin. NOL World tidak menerbitkan daftar biaya terpusat dan halaman ini tidak mengarang satu. Produk tur dan aktivitas mengikuti kebijakannya sendiri dan hanya dicatat di tempat ia berbeda.",
+    intro: [
+      "Fan dari luar negeri membatalkan karena alasan yang jarang dimiliki fan domestik: visa, penerbangan lanjutan, jadwal kerja yang bergeser. Jadi aturan pembatalan lebih penting bagi pembaca ini daripada bagi mereka yang aturan itu ditulis untuknya — dan aturannya ketat, terikat zona waktu, dan di dua tempat tidak simetris dengan cara yang tak akan diduga siapa pun.",
+      "Dua dari fakta di bawah ini layak diketahui sebelum Anda memesan, bukan sesudahnya. Konser hari Sabtu menutup pembatalan enam jam lebih awal daripada hari lain mana pun. Dan pembatalan yang diproses penuh oleh NOL World tetap bisa membuat pemegang kartu luar negeri kehilangan uang, yang bukan kesalahan siapa pun dan juga bukan masalah siapa pun untuk dibereskan bagi Anda.",
+    ],
+    steps: [
+      {
+        title: "Pelajari tenggatnya sebelum memesan, karena ia bukan hari konsernya",
+        body: "NOL World menutup pembatalan pertunjukan pada hari sebelumnya, bukan pada hari-H: pukul 17.00 KST pada hari sebelum konser untuk hari kerja dan hari libur, dan pukul 11.00 KST pada hari sebelumnya untuk konser hari Sabtu. Aturan Sabtu itulah yang menjerat orang — ia enam jam lebih awal daripada sisa pekan, dan ia berlaku untuk pertunjukan hari Sabtu, jadi tenggatnya jatuh pada Jumat pagi waktu Korea.",
+        pitfall:
+          "Menghitung “hari sebelumnya” di kalender Anda sendiri. Untuk konser Sabtu malam di Seoul, pukul 11.00 KST hari Jumat adalah Kamis malam di New York. Tenggatnya bisa jatuh satu hari penuh lebih awal daripada bacaan sederhananya.",
+        takes: "5 menit, sebelum Anda membayar",
+      },
+      {
+        title: "Pakai jendela gratisnya kalau Anda mulai ragu",
+        body: "Ada periode tanpa biaya, dan periode itu singkat: NOL World menyatakan bahwa untuk tiket, membatalkan sebelum pukul 23.59 pada hari pemesanan Anda berarti tanpa biaya pembatalan. Jadi keputusan yang bisa Anda tarik kembali tanpa biaya adalah keputusan yang Anda buat pada hari yang sama Anda memesan. Setelah tengah malam ia memakan biaya.",
+        pitfall:
+          "Menganggap pukul 23.59 itu tengah malam Anda sendiri. NOL World menyebut KST secara tegas pada tenggat pembatalan lainnya dan tidak menyebut zona apa pun pada yang satu ini, jadi bacaan yang aman adalah waktu Korea — dan bagaimanapun, keputusan yang dibuat pada sepuluh menit terakhir sebuah jendela adalah keputusan yang dibuat terlalu lambat.",
+        takes: "—",
+      },
+      {
+        title: "Tahu di mana tombolnya, dan apa artinya ketika ia tidak ada",
+        body: "Rutenya adalah App atau Web, lalu Account/My, lalu My Reservations, lalu Ticket Reservation List, lalu pemesanannya, lalu Cancel Reservation di halaman detail. Jika tombol Cancel Reservation sama sekali tidak ada di halaman detail, instruksi NOL World adalah menghubungi layanan pelanggan alih-alih terus mencari: seorang petugas memastikan kelayakan pembatalan, biayanya, dan jumlah refund bersama penyedianya, lalu memandu Anda. Anda bisa mengikuti permintaannya dari halaman detail pemesanan, dan surel konfirmasi menyusul ketika ia selesai.",
+        pitfall:
+          "Membaca tombol yang hilang sebagai kerusakan situs dan mencobanya ulang selama satu jam. Itu sebuah status, dan jam di langkah pertama masih berjalan selagi Anda mencoba ulang.",
+        takes: "15 menit, ditambah waktu layanan pelanggan",
+      },
+      {
+        title: "Jangan harapkan daftar biaya, dan ambil angkanya dari pemesanan Anda sendiri",
+        body: "Tidak ada tabel biaya yang diterbitkan untuk dijadikan dasar rencana. Ketika ditanya berapa biaya pembatalannya, NOL World menjawab dengan sebuah rute — Web/App, Account/My, My Reservations, Reservation Details — karena angkanya adalah sifat pemesanan Anda, bukan sifat platformnya. Untuk produk tur dan aktivitas, biayanya dan jumlah refundnya ditampilkan kepada Anda ketika Anda menekan Cancel Reservation, sebelum Anda mengonfirmasi. Kami tidak akan mencetak persentase di sini yang mungkin tidak disetujui pemesanan Anda.",
+        pitfall:
+          "Menyusun rencana di atas daftar biaya dari sebuah tulisan blog. Panduan mana pun yang mengutip persentase pembatalan Korea yang tetap untuk konser Anda sedang mengutip sesuatu yang tidak diterbitkan NOL World.",
+        takes: "5 menit",
+      },
+      {
+        title: "Periksa pembatalan sebagian selagi Anda masih memesan",
+        body: "Membatalkan dua kursi dari empat dimungkinkan untuk sebagian konser dan tidak untuk sebagian lainnya, dan instruksi NOL World adalah memeriksa status pembatalan sebagian selagi Anda memesan — artinya, sebelum ia menjadi hal yang Anda butuhkan. Produk tur dan aktivitas tidak mengizinkannya sama sekali: di sana rutenya adalah membatalkan seluruh pemesanan lalu memesan ulang, dan NOL World memperingatkan terang-terangan bahwa ketersediaannya tidak dijamin sesudahnya dan pemesanan ulang bisa jadi tidak mungkin.",
+        pitfall:
+          "Memesan empat kursi dengan asumsi dua teman yang belum pasti bisa dilepas nanti. Untuk konser tanpa pembatalan sebagian, pilihannya menjadi keempatnya atau tidak satu pun.",
+        takes: "2 menit, saat memesan",
+      },
+      {
+        title: "Pahami bahwa refund penuh tetap bisa memakan uang pemegang kartu luar negeri",
+        body: "Inilah bagian yang ditulis untuk pembaca ini dan hampir tidak pernah dijelaskan dalam bahasa Inggris. NOL World menyatakan bahwa ketika kartu kredit luar negeri dipakai, keuntungan atau kerugian selisih kurs bisa terjadi karena perbedaan antara kurs pada tanggal pemesanan dan kurs pada tanggal pembatalan — dan, secara terpisah, bahwa biaya transaksi internasional bisa tetap dikenakan meski transaksinya sudah dibatalkan. Keduanya bukan potongan yang dilakukan NOL World. Keduanya ada pada penerbit kartu Anda, dan saran NOL World adalah menanyakan kurs dan biaya yang tepat kepada penerbitnya.",
+        pitfall:
+          "Membaca jumlah refund yang lebih kecil daripada jumlah yang ditagih sebagai kesalahan atau biaya tersembunyi. Selisihnya bisa berupa kurs yang bergerak di antara dua tanggal, dan orang yang bisa menjelaskannya adalah bank Anda, bukan platform tiketnya.",
+        takes: "Satu panggilan telepon ke bank Anda",
+      },
+      {
+        title: "Beri refund itu waktu yang dibutuhkan jaringan kartu",
+        body: "Jika transaksinya belum mencapai perusahaan kartu kredit Anda, NOL World menyatakan pembatalannya selesai seketika. Jika sudah, dan jumlah pembayarannya sudah terselesaikan, perkirakan kira-kira 5 sampai 7 hari bagi perusahaan kartu untuk membalikkannya, dan jumlah yang dibatalkan dipotong dari tagihan bulan berikutnya alih-alih dikembalikan sebagai pembayaran. NOL World mencatat kebijakan refund berbeda antar perusahaan kartu, jadi perusahaan Anda yang berwenang atas waktunya sendiri.",
+        pitfall:
+          "Membuka sengketa dengan bank Anda selagi pembalikannya sedang berjalan. Sebuah chargeback atas transaksi yang sudah sedang dibatalkan menciptakan masalah kedua pada akun yang mungkin masih Anda butuhkan untuk memesan lagi.",
+        takes: "5-7 hari",
+      },
+      {
+        title: "Jangan kirim tiket selulernya sampai Anda yakin akan pergi",
+        body: "Inilah jebakan yang membuat seluruh halaman ini layak dibaca. Pembagian tiket seluler memungkinkan pembeli mengirim tiket kepada orang yang akan menghadiri — dan NOL World menyatakan bahwa begitu tiket seluler berhasil dikirim, pembatalan pemesanannya menjadi dibatasi. Jalan kembalinya ada pada penerimanya: jika mereka membatalkan pendaftaran tiket itu, pembatalan menjadi mungkin lagi. Sebelum pendaftaran ada jalan keluar yang lebih lembut — pengirim bisa menekan Cancel Send selagi tiketnya belum terdaftar, dan tiket yang belum terdaftar kembali otomatis setelah 24 jam atau pada tanggal menontonnya.",
+        pitfall:
+          "Mengirim tiket ke teman-teman di pekan Anda memesan, sebagai hal yang terasa rapi untuk dilakukan. Tombol pembatalannya sekarang praktis milik mereka, dan mengambilnya kembali berarti meminta mereka melepas tiketnya lebih dulu.",
+        takes: "—",
+      },
+      {
+        title: "Baca kebijakan tur dan aktivitas secara terpisah",
+        body: "Jika pemesanan Anda berupa tur, antar-jemput, atau aktivitas alih-alih tiket pertunjukan, tidak ada satu pun dari yang di atas yang menjadi asumsi aman. NOL World menyatakan sebagian produk ini sama sekali tidak bisa dibatalkan setelah dibeli, dan bahwa biaya pembatalan 100% bisa berlaku bahkan pada hari pembelian. Kebijakan yang berlaku adalah yang ada di halaman detail produk itu sendiri dan di vouchernya, dan NOL World meminta Anda membacanya sebelum mengajukan permintaan pembatalan.",
+        pitfall:
+          "Membawa aturan tiket ke sebuah paket yang dipesan dalam sesi yang sama. Jendela gratis hari yang sama adalah aturan tiket pertunjukan, dan produk tur bisa tidak bisa direfund sejak detik Anda membayar.",
+        takes: "10 menit per produk",
+      },
+    ],
+    faq: [
+      {
+        q: "Tepatnya, kapan tenggat pembatalan untuk sebuah pertunjukan?",
+        a: "Hari sebelum konsernya, dalam waktu Korea. NOL World memberi pukul 17.00 KST pada hari sebelumnya untuk hari kerja dan hari libur, dan pukul 11.00 KST pada hari sebelumnya untuk pertunjukan hari Sabtu. Konversikan dengan hati-hati terhadap tanggal Anda sendiri — tenggat pukul 11.00 KST hari Jumat adalah Kamis malam di sebagian besar Amerika.",
+      },
+      {
+        q: "Apakah ada pembatalan gratis?",
+        a: "Untuk tiket pertunjukan, ya, pada hari Anda memesan: NOL World menyatakan membatalkan sebelum pukul 23.59 pada hari pemesanan Anda tidak dikenai biaya pembatalan. NOL World tidak menyebut zona waktu pada yang satu itu sementara menyebut KST pada yang lain, jadi perlakukan sebagai waktu Korea dan jangan mepet. Produk tur dan aktivitas berbeda — sebagian menagih 100% bahkan pada hari yang sama.",
+      },
+      {
+        q: "Berapa biaya pembatalannya?",
+        a: "NOL World tidak menerbitkan daftarnya. Ketika ditanya begitu, ia memberi sebuah rute — Web atau App, Account/My, My Reservations, Reservation Details — karena angkanya milik pemesanan Anda. Untuk produk tur dan aktivitas, menekan Cancel Reservation menampilkan biaya pembatalan dan jumlah refund kepada Anda sebelum Anda mengonfirmasi. Panduan berbahasa Inggris mana pun yang mengutip persentase tetap untuk konser Anda sedang mengutip angka yang tidak dinyatakan platformnya.",
+      },
+      {
+        q: "Saya membatalkan tepat waktu dan menerima kembali lebih sedikit daripada yang saya bayar. Ke mana sisanya?",
+        a: "Kemungkinan bukan ke NOL World. NOL World menyatakan bahwa kartu luar negeri bisa menghasilkan keuntungan atau kerugian selisih kurs dari perbedaan antara kurs tanggal pemesanan dan tanggal pembatalan, dan bahwa biaya transaksi internasional bisa tetap dikenakan meski transaksinya dibatalkan. Keduanya ada pada penerbit kartu Anda, dan saran NOL World sendiri adalah menanyakan kurs dan biaya yang tepat kepada penerbitnya.",
+      },
+      {
+        q: "Berapa lama uangnya kembali?",
+        a: "Jika transaksinya belum mencapai perusahaan kartu Anda, pembatalannya selesai seketika. Jika sudah, NOL World menyatakan kira-kira 5 sampai 7 hari bagi perusahaan kartu untuk membatalkan transaksinya, dengan jumlahnya dipotong dari tagihan bulan berikutnya. Perusahaan kartu berbeda-beda, jadi perusahaan Anda yang bisa memberi tahu Anda.",
+      },
+      {
+        q: "Saya sudah mengirim tiket selulernya ke teman saya. Masih bisa membatalkan?",
+        a: "Tidak selagi mereka memegangnya. NOL World menyatakan pembatalan pemesanan menjadi dibatasi begitu tiket seluler berhasil dikirim, dan menjadi mungkin lagi jika penerimanya membatalkan pendaftarannya. Jika tiketnya belum terdaftar, Anda punya jalan keluar yang lebih mudah: pengirim bisa menekan Cancel Send, dan tiket yang belum terdaftar kembali otomatis setelah 24 jam atau pada tanggal menontonnya.",
+      },
+      {
+        q: "Bisakah saya membatalkan dua dari empat kursi saya?",
+        a: "Itu bergantung pada konsernya, dan saran NOL World adalah memeriksa status pembatalan sebagian saat Anda memesan alih-alih saat Anda membutuhkannya. Produk tur dan aktivitas tidak mendukung pembatalan sebagian sama sekali — Anda harus membatalkan seluruh pemesanan lalu memesan ulang, tanpa jaminan stoknya masih ada.",
+      },
+      {
+        q: "Tombol Cancel Reservation tidak ada di halaman pemesanan saya.",
+        a: "NOL World memperlakukan itu sebagai kasus untuk layanan pelanggan alih-alih kerusakan untuk dicoba ulang. Seorang petugas memastikan kelayakan, biaya, dan jumlah refundnya bersama penyedianya lebih dulu. Hubungi mereka lebih awal, karena tenggat di jawaban pertama terus berjalan selagi Anda menunggu.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "你的 NOL World 電子票：QR、PIN，以及順利通過入場閘口",
+    summary:
+      "票只在手機上開得起來，它只有英文，而你瀏覽器的自動翻譯會把它搞爛；傳出去的票有一個 24 小時的 PIN 時鐘，而遲到不保證進得去。整段流程的最後二十分鐘，按順序排好。",
+    scope:
+      "涵蓋 NOL World 的電子票與入場，依 NOL World 自己的說明：票在哪裡打開、哪兩種瀏覽器狀態會把它藏起來、傳送與接收以及 PIN 的時鐘、代理領取，還有遲到。入場規則按場次設定，而現場由場館在當晚決定。人臉辨識入場是另一條流程，有自己的指南。",
+    intro: [
+      "本站其他所有內容都是準備工作。這裡是機票、飯店與先行販售究竟會不會變成一個座位的那一段，而它跑在一支你在人群中、訊號很差的情況下握著的手機上。",
+      "這裡出錯的多數情況都不戲劇性。是一個處於錯誤模式的瀏覽器，在該出現票的地方顯示了一個 QR 碼；是一個翻譯擴充功能改寫了閘口號碼；是一個在朋友睡著時過期的 PIN。這四種 NOL World 都有記錄，而這四種都能在前一晚避免掉。",
+    ],
+    steps: [
+      {
+        title: "搞清楚你手上實際握著的是哪一種票",
+        body: "領取方式在你訂票時就決定了，而它決定了以下的一切。電子票存在你的帳號裡，從你的螢幕上被掃描。現場領取意味著在演出當天從售票口拿到一張紙本票，而 NOL World 不會提早發放——窗口在開演前一小時開放，而已領取的票若遺失或遭竊無法補發。現在就確認你是哪一種，不要到了場館才確認。",
+        pitfall:
+          "因為上一場演唱會用的是電子票，就假設每一筆訂單都是電子票。這是逐筆訂單的屬性，而這兩條路線的失敗方式完全不同。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "在你要用來入場的那支手機上打開電子票",
+        body: "NOL World 表示電子票只能在 NOL World App 或行動版網頁上取得。入場靠票上的 QR 碼。在手機上的路徑是 App 或行動版網頁、登入、Account/My、My Reservations，然後按 Mobile Ticket。在桌機上，同一個按鈕產生的 QR 碼並不是你的票——它是一個交接碼，設計上是要用你的手機掃描，讓票在手機上打開。",
+        pitfall:
+          "把票截圖當備份，打算出示那張圖片。一張在帳號中即時繪製出來的票，和一張票的照片不是同一個東西，而閘口不是你想發現這個差別的地方。",
+        takes: "10 分鐘，前一晚",
+      },
+      {
+        title: "出門前關掉瀏覽器翻譯",
+        body: "NOL World 表示電子票只以英文提供，而如果你看到其他語言，那是你瀏覽器的自動翻譯——解法是關掉翻譯並重新載入頁面。對這群讀者來說，那是瀏覽器的預設狀態，而不是罕見的例外。一個自動翻譯器改寫了閘口、區塊或座位排號，是一個你不會察覺的問題，直到門口的人把它讀回給你聽。",
+        pitfall:
+          "因為整趟旅程它都很有幫助，就讓翻譯一直開著。它一路在幫你翻譯韓文頁面；在這裡頁面本來就是英文，它唯一能做的事就是破壞。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "如果該出現票的地方出現 QR 碼，請修正瀏覽器模式",
+        body: "這是票看起來不見了最常見的單一原因，而它不是故障。NOL World 表示如果你的瀏覽器處於桌面模式，顯示的會是一個 QR 碼而不是電子票——而那個 QR 碼下方有一個 View Tickets 按鈕，按了照樣能打開票。否則就把瀏覽器切到行動模式：在 Chrome 裡，三點選單裡的「View as mobile version」；在 Safari 裡，網址欄左側的語言按鈕裡的「Request Mobile Website」；在 Samsung Internet 裡，三線選單裡的「Mobile site」。",
+        pitfall:
+          "讓閘口的人去掃那個 QR 碼。那是桌面版的交接碼，不是你的入場碼，而你需要的東西就在它下面一按之處。",
+        takes: "2 分鐘",
+      },
+      {
+        title: "了解把票傳出去意味著你承諾了什麼",
+        body: "電子票分享是單向的：購買者傳給實際入場的人，而 NOL World 表示收到的票無法再往下傳——只有自己訂的票可以傳送。傳送在活動當天之前都還可行。並非每個商品都提供它；在賣方沒有開放的地方，Send 按鈕就是不存在。而傳送的代價是你自己的退路：票一旦成功傳送，NOL World 就會限制該筆預約的取消，只有在收件者解除登錄時才恢復。",
+        pitfall:
+          "在訂票的那一週就把每個人的票都傳出去來組織團體。你剛剛交給了每一個人一張對取消那筆預約的否決權。",
+        takes: "5 分鐘",
+      },
+      {
+        title: "如果你是收票的人，把 PIN 當成一個 24 小時的時鐘",
+        body: "收到的票在被登錄之前不能使用，而那段期間很短。NOL World 表示 PIN 只能在傳送後的 24 小時內登錄，而未登錄的票在那之後會退回給傳送方——或者在觀看日之前仍未被登錄時也會退回。登錄從訊息或電子郵件裡的網址開始：Received Mobile Ticket、Ticket Register，然後輸入訊息裡的 PIN。之後票會存在 My Page、Received Mobile Ticket、Booking History 底下。退回是同一條路徑加上 Return 按鈕，而 NOL World 表示已登錄的票仍然可以退回。",
+        pitfall:
+          "傳給一個所在時區讓那 24 小時幾乎全是夜晚的朋友。票會無聲地彈回給你，而預約又變成你的了——這在星期二沒問題，在演出當天早上就有問題。",
+        takes: "5 分鐘，在 24 小時內",
+      },
+      {
+        title: "在假設別人可以幫你領票之前，先看場次頁面",
+        body: "NOL World 確實允許非購買者領票，但附帶實際的條件。流程依場館而異，代理領取可能依演出類型而受限，而 NOL World 的指示是去看你所訂那場演出詳細頁上的公告。對方需要的是從 My Ticket 列印出來的訂單明細、確認編號，以及購買者的身分證件。請把最後那項要求當成它本來的界限：在一場以購買者本人已驗證身分來管制入場的演出上，不要把計畫押在代理領取上。",
+        pitfall:
+          "把代理領取讀成一般性的權利。它是逐場館、逐場次的許可，而最可能拒絕它的演出，恰好就是那些你需要先行販售才搶得到的高需求場次。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "不要把遲到當成你還保有那個座位",
+        body: "NOL World 明確表示開演後能否入場視演出而定，而有些演出根本不允許——它特別點名古典音樂會與歌劇。在允許遲到入場的地方，它可能意味著等到中場休息，然後看下半場。而即使你被放進去了，NOL World 表示你可能要等到中場休息才能坐到自己的座位，所以遲到可能意味著在你專程來看的那一段裡站著，或坐在別的地方。",
+        pitfall:
+          "從開演時間回推你的抵達時間。請從入場排隊、安全檢查與領票窗口回推，這些全都發生在開演時間之前，而且沒有一個會等你。",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "該出現我的票的地方出現了一個 QR 碼。我的訂單壞了嗎？",
+        a: "沒有——你的瀏覽器處於桌面模式。NOL World 表示那會在電子票的位置產生一個 QR 碼，而它下方有一個 View Tickets 按鈕可以打開票。你也可以把瀏覽器切到行動模式：Chrome 的三點選單裡有「View as mobile version」，Safari 的語言按鈕提供「Request Mobile Website」，而 Samsung Internet 的三線選單裡有「Mobile site」。",
+      },
+      {
+        q: "我的電子票顯示的語言不對。",
+        a: "NOL World 只以英文提供電子票，所以出現其他語言意味著你的瀏覽器正在自動翻譯。請關掉翻譯並重新載入。這值得在出發前做，而不是在閘口做，因為被翻譯過的閘口號碼或座位排號，是一種很難察覺的錯。",
+      },
+      {
+        q: "我可以在門口用筆電出示票嗎？",
+        a: "NOL World 表示電子票只能在 App 或行動版網頁上取得。在桌機上，Mobile Ticket 按鈕給你的是一個要用手機掃描的 QR 碼，掃了之後票才會在手機上打開。請規劃用手機入場。",
+      },
+      {
+        q: "我朋友可以到售票口幫我領票嗎？",
+        a: "有時候可以。NOL World 表示非購買者可以領取，但流程依場館而異，而且代理領取可能依演出類型而受限——所以你那場演出詳細頁上的公告才是權威。對方需要從 My Ticket 列印出來的訂單明細、確認編號，以及購買者的身分證件。在入場時會驗證購買者身分的演出上，不要依賴它。",
+      },
+      {
+        q: "我不小心把電子票傳出去了。可以收回來嗎？",
+        a: "如果收件者還沒登錄它，可以——NOL World 表示傳送方可以用 Cancel Send 按鈕取消分享。如果收件者沒有在 24 小時內或在觀看日之前完成登錄，它也會自動退回。一旦被登錄，要拿回來就得靠他們的動作：他們從 My Page、Received Mobile Ticket、Booking History、Mobile Ticket、Return 退回。",
+      },
+      {
+        q: "如果我朋友一直沒有登錄我傳過去的票，會怎樣？",
+        a: "它會回到你這裡。NOL World 表示未登錄的票會在 24 小時後自動退回給傳送方，或者在觀看日之前仍未被登錄時退回。那會恢復你的預約——依它的取消規則，也包括你取消它的能力——但那是一個無聲的過程，所以請去確認，不要假設。",
+      },
+      {
+        q: "我會遲到二十分鐘。他們會讓我進去嗎？",
+        a: "這要看演出，而沒有人能保證。NOL World 表示開演後能否入場視演出而定，而有些根本不允許，尤其是古典音樂會與歌劇；在允許的地方，你可能必須等到中場休息，而且在那之前可能無法坐到自己的座位。",
+      },
+      {
+        q: "電子票和人臉辨識入場是同一回事嗎？",
+        a: "不是。NOL facepass 是另一套系統，門口的攝影機不經票券查驗就讓你進場，而對它的支援是逐場次設定的。電子票與它的 QR 碼是一般路線，而且即使你已經登錄了人臉，也是該保持能用的那一條。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+  {
+    locale: "id",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "Tiket seluler NOL World Anda: QR-nya, PIN-nya, dan melewati pintu masuk",
+    summary:
+      "Tiketnya hanya terbuka di ponsel, ia hanya berbahasa Inggris dan terjemahan otomatis peramban Anda akan mengacaukannya, tiket yang dikirim punya jam PIN 24 jam, dan datang terlambat bukan jaminan bisa masuk. Dua puluh menit terakhir dari seluruh proses, berurutan.",
+    scope:
+      "Mencakup tiket seluler dan masuk venue di NOL World sebagaimana NOL World mendokumentasikannya: di mana tiketnya terbuka, dua keadaan peramban yang menyembunyikannya, mengirim dan menerima beserta jam PIN-nya, pengambilan oleh orang lain, dan keterlambatan. Aturan masuk ditetapkan per konser dan venue yang memutuskan pada malam itu. Masuk dengan pengenalan wajah adalah alur terpisah dengan panduannya sendiri.",
+    intro: [
+      "Semua hal lain di situs ini adalah persiapan. Inilah bagian di mana sebuah penerbangan, sebuah hotel, dan sebuah presale berubah menjadi sebuah kursi atau tidak, dan ia berjalan di ponsel yang Anda pegang di tengah kerumunan dengan sinyal buruk.",
+      "Sebagian besar yang salah di sini tidak dramatis. Ia berupa peramban dalam mode yang salah yang menampilkan kode QR di tempat tiketnya seharusnya ada, sebuah ekstensi terjemahan yang menulis ulang nomor pintu, sebuah PIN yang kedaluwarsa selagi seorang teman tertidur. Keempatnya didokumentasikan NOL World dan keempatnya bisa dihindari pada malam sebelumnya.",
+    ],
+    steps: [
+      {
+        title: "Ketahui jenis tiket mana yang sebenarnya Anda pegang",
+        body: "Metode penyerahannya ditentukan ketika Anda memesan, dan metode itu menentukan segala hal di bawah ini. Tiket seluler ada di dalam akun Anda dan dipindai dari layar Anda. Pengambilan di venue berarti tiket kertas dari loket pada hari konsernya, dan NOL World tidak melepaskannya lebih awal — jendelanya terbuka satu jam sebelumnya, dan tiket yang sudah diambil tidak bisa diterbitkan ulang jika hilang atau dicuri. Periksa Anda punya yang mana sekarang, bukan di venue.",
+        pitfall:
+          "Mengira setiap pemesanan adalah tiket seluler karena itulah yang dipakai konser terakhir. Itu sifat per pemesanan, dan kedua rute itu gagal dengan cara yang sepenuhnya berbeda.",
+        takes: "5 menit",
+      },
+      {
+        title: "Buka tiket selulernya di ponsel yang akan Anda pakai masuk",
+        body: "NOL World menyatakan tiket seluler hanya tersedia di aplikasi NOL World atau web seluler. Masuk dilakukan dengan kode QR di tiketnya. Rutenya di ponsel adalah aplikasi atau web seluler, masuk ke akun, Account/My, My Reservations, lalu tombol Mobile Ticket. Di komputer, tombol yang sama menghasilkan kode QR yang bukan tiket Anda — itu sebuah penyerahan, dimaksudkan untuk dipindai dengan ponsel Anda agar tiketnya terbuka di sana.",
+        pitfall:
+          "Menangkap layar tiketnya sebagai cadangan dan berencana menunjukkan gambarnya. Tiket yang dirender langsung di dalam sebuah akun bukan benda yang sama dengan foto sebuah tiket, dan pintu masuk bukan tempat Anda ingin menemukan perbedaannya.",
+        takes: "10 menit, pada malam sebelumnya",
+      },
+      {
+        title: "Matikan terjemahan peramban sebelum Anda pergi",
+        body: "NOL World menyatakan tiket seluler disediakan hanya dalam bahasa Inggris, dan bahwa jika Anda melihat bahasa lain itu adalah terjemahan otomatis peramban Anda — dengan solusinya mematikan terjemahan lalu memuat ulang halamannya. Bagi pembaca ini, itu keadaan bawaan peramban, bukan kasus pinggiran. Penerjemah otomatis yang menulis ulang sebuah pintu, blok, atau baris kursi adalah masalah yang tidak akan Anda sadari sampai seseorang di pintu membacakannya kembali kepada Anda.",
+        pitfall:
+          "Membiarkan terjemahan menyala karena ia membantu sepanjang perjalanan. Ia sudah menerjemahkan halaman berbahasa Korea untuk Anda; di sini halamannya sudah berbahasa Inggris dan satu-satunya yang bisa ia lakukan adalah merusak.",
+        takes: "2 menit",
+      },
+      {
+        title: "Kalau Anda melihat kode QR di tempat tiketnya seharusnya ada, perbaiki mode peramban",
+        body: "Inilah cara paling umum sebuah tiket tampak hilang, dan itu bukan kerusakan. NOL World menyatakan bahwa jika peramban Anda dalam mode desktop, yang ditampilkan adalah kode QR alih-alih tiket selulernya — dan bahwa ada tombol View Tickets di bawah kode QR itu yang tetap membuka tiketnya. Kalau tidak, alihkan peramban ke mode seluler: di Chrome, menu tiga titik lalu View as mobile version; di Safari, tombol bahasa di sebelah kiri bilah alamat lalu Request Mobile Website; di Samsung Internet, menu tiga garis lalu Mobile site.",
+        pitfall:
+          "Membiarkan orang di pintu memindai kode QR itu. Itu kode penyerahan versi desktop, bukan kode masuk Anda, dan yang Anda butuhkan ada satu ketukan di bawahnya.",
+        takes: "2 menit",
+      },
+      {
+        title: "Pahami apa yang Anda ikat ketika mengirim sebuah tiket",
+        body: "Pembagian tiket seluler berjalan satu arah: pembeli mengirim kepada yang menghadiri, dan NOL World menyatakan tiket yang diterima tidak bisa dikirim lagi — hanya tiket yang dipesan sendiri yang bisa dikirim. Pengiriman tetap mungkin sampai hari acaranya. Tidak setiap produk menyediakannya; di tempat penjualnya menahannya, tombol Send memang tidak ada. Dan biaya dari mengirim adalah jalan keluar Anda sendiri: begitu sebuah tiket berhasil dikirim, NOL World membatasi pembatalan pemesanannya, yang hanya kembali jika penerimanya membatalkan pendaftaran.",
+        pitfall:
+          "Mengatur satu kelompok dengan mengirimkan tiket masing-masing orang di pekan Anda memesan. Anda baru saja menyerahkan hak veto atas pembatalan pemesanan itu kepada setiap orang.",
+        takes: "5 menit",
+      },
+      {
+        title: "Kalau Anda yang menerima tiket, perlakukan PIN-nya sebagai jam 24 jam",
+        body: "Tiket yang diterima belum bisa dipakai sampai ia didaftarkan, dan jendelanya singkat. NOL World menyatakan PIN hanya bisa didaftarkan dalam 24 jam sejak pengiriman, dan bahwa tiket yang belum terdaftar kembali kepada pengirimnya setelah itu — atau jika ia belum terdaftar pada tanggal menontonnya. Pendaftarannya berjalan dari URL di dalam pesan atau surel: Received Mobile Ticket, Ticket Register, lalu PIN dari pesannya. Sesudahnya tiketnya berada di bawah My Page, Received Mobile Ticket, Booking History. Mengembalikannya memakai jalur yang sama dengan tombol Return, dan NOL World menyatakan tiket yang sudah terdaftar masih bisa dikembalikan.",
+        pitfall:
+          "Mengirim kepada teman di zona waktu yang membuat 24 jam itu sebagian besar berupa malam. Tiketnya memantul kembali kepada Anda tanpa suara dan pemesanannya menjadi milik Anda lagi, yang tidak masalah pada hari Selasa dan sangat bermasalah pada pagi hari konsernya.",
+        takes: "5 menit, di dalam 24 jam",
+      },
+      {
+        title: "Periksa halaman konsernya sebelum mengira orang lain bisa mengambilkan untuk Anda",
+        body: "NOL World memang mengizinkan orang yang bukan pembeli mengambil tiket, dengan syarat yang nyata. Prosesnya berbeda menurut venue, pengambilan oleh orang lain bisa dibatasi tergantung jenis konsernya, dan instruksi NOL World adalah memeriksa pemberitahuan di halaman detail konser yang Anda pesan. Yang dibutuhkan orang itu adalah detail pemesanan yang dicetak dari My Ticket, nomor konfirmasinya, dan identitas pembelinya. Perlakukan syarat terakhir itu sebagai batas yang sebenarnya: pada konser yang mengatur masuk berdasarkan identitas terverifikasi pembelinya sendiri, jangan menyusun rencana di atas pengambilan oleh orang lain.",
+        pitfall:
+          "Membaca pengambilan oleh orang lain sebagai hak umum. Itu kelonggaran per venue dan per konser, dan konser yang paling mungkin menolaknya justru konser berpermintaan tinggi yang membuat Anda butuh presale.",
+        takes: "10 menit",
+      },
+      {
+        title: "Jangan anggap keterlambatan sebagai kursi yang masih Anda punya",
+        body: "NOL World tegas bahwa masuk setelah konser dimulai bergantung pada konsernya, dan bahwa sebagian pertunjukan sama sekali tidak mengizinkannya — menyebut konser klasik dan opera secara khusus. Di tempat masuk terlambat dimungkinkan, itu bisa berarti menunggu jeda istirahat dan menonton paruh kedua. Dan bahkan ketika Anda dipersilakan masuk, NOL World menyatakan Anda bisa jadi belum boleh menempati kursi Anda sampai jeda istirahat, sehingga keterlambatan bisa berarti berdiri atau duduk di tempat lain sepanjang bagian yang Anda datang untuk menontonnya.",
+        pitfall:
+          "Menghitung waktu kedatangan dari jam mulainya. Hitunglah dari antrean masuk, pemeriksaan keamanan, dan jendela pengambilan tiket, yang semuanya terjadi sebelum jam mulai dan tidak satu pun menunggu.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Ada kode QR di tempat tiket saya seharusnya ada. Apakah pemesanan saya rusak?",
+        a: "Tidak — peramban Anda dalam mode desktop. NOL World menyatakan itu menghasilkan kode QR sebagai ganti tiket selulernya, dan bahwa ada tombol View Tickets di bawahnya yang membuka tiketnya. Anda juga bisa mengalihkan peramban ke mode seluler: menu tiga titik Chrome punya View as mobile version, tombol bahasa Safari menawarkan Request Mobile Website, dan menu tiga garis Samsung Internet punya Mobile site.",
+      },
+      {
+        q: "Tiket seluler saya tampil dalam bahasa yang salah.",
+        a: "NOL World menyediakan tiket seluler hanya dalam bahasa Inggris, jadi bahasa lain berarti peramban Anda sedang menerjemahkan otomatis. Matikan terjemahannya lalu muat ulang. Layak dilakukan sebelum Anda berangkat alih-alih di pintu masuk, karena nomor pintu atau baris kursi yang diterjemahkan salah dengan cara yang sulit dikenali.",
+      },
+      {
+        q: "Bisakah saya menunjukkan tiketnya dari laptop di pintu?",
+        a: "NOL World menyatakan tiket seluler hanya tersedia di aplikasi atau web seluler. Di komputer, tombol Mobile Ticket memberi Anda kode QR untuk dipindai dengan ponsel, yang lalu membuka tiket sebenarnya di sana. Rencanakan untuk masuk dengan ponsel.",
+      },
+      {
+        q: "Bisakah teman saya mengambil tiket saya di loket?",
+        a: "Kadang bisa. NOL World menyatakan orang yang bukan pembeli bisa mengambil, tetapi prosesnya berbeda menurut venue dan pengambilan oleh orang lain bisa dibatasi tergantung jenis konsernya — jadi pemberitahuan di halaman detail konser Anda yang berwenang. Mereka akan membutuhkan detail pemesanan yang dicetak dari My Ticket, nomor konfirmasinya, dan identitas pembelinya. Pada konser yang memverifikasi identitas pembeli saat masuk, jangan mengandalkannya.",
+      },
+      {
+        q: "Saya mengirim tiket seluler karena keliru. Bisakah saya menariknya kembali?",
+        a: "Jika penerimanya belum mendaftarkannya, ya — NOL World menyatakan pengirim bisa membatalkan pembagiannya dengan tombol Cancel Send. Ia juga kembali otomatis jika penerimanya tidak mendaftar dalam 24 jam atau pada tanggal menontonnya. Begitu terdaftar, mengambilnya kembali adalah tindakan mereka: mereka mengembalikannya dari My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return.",
+      },
+      {
+        q: "Apa yang terjadi kalau teman saya tidak pernah mendaftarkan tiket yang saya kirim?",
+        a: "Ia kembali kepada Anda. NOL World menyatakan tiket yang belum terdaftar otomatis dikembalikan kepada pengirimnya setelah 24 jam, atau jika ia belum terdaftar pada tanggal menontonnya. Itu memulihkan pemesanan Anda — termasuk, menurut aturan pembatalannya, kemampuan Anda membatalkannya — tetapi itu proses yang tanpa suara, jadi periksalah alih-alih mengira.",
+      },
+      {
+        q: "Saya akan terlambat dua puluh menit. Apakah mereka akan membiarkan saya masuk?",
+        a: "Itu bergantung pada konsernya dan tidak ada yang bisa menjanjikannya. NOL World menyatakan masuk setelah konser dimulai bergantung pada pertunjukannya dan bahwa sebagian sama sekali tidak mengizinkannya, terutama konser klasik dan opera; di tempat ia diizinkan, Anda mungkin harus menunggu jeda istirahat, dan Anda mungkin belum boleh menempati kursi Anda sendiri sampai saat itu.",
+      },
+      {
+        q: "Apakah tiket seluler itu sama dengan masuk lewat pengenalan wajah?",
+        a: "Bukan. NOL facepass adalah sistem terpisah di mana kamera di pintu mempersilakan Anda masuk tanpa pemeriksaan tiket, dan dukungan untuknya ditetapkan per acara. Tiket seluler dan kode QR-nya adalah rute biasa, dan rute yang harus tetap berfungsi bahkan jika Anda sudah mendaftarkan wajah.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+  {
+    locale: "zh-Hant",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-21",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay：一個商品，而且幾乎沒有一處可以改",
+    summary:
+      "演唱會與飯店作為單一商品販售。你不能換飯店、不能改日期、不能改晚數；不去住飯店退不回任何錢；座位是隨機的，而且當天才公布；而票只會親手交給你本人，在飯店，在一段指定時間內。",
+    scope:
+      "涵蓋 NOL World 的 Play and Stay 演唱會加住宿套裝，依 NOL World 自己的說明：哪些是固定的、票怎麼領、身分與姓名的要求，以及它關於取消的回答實際上說了什麼。每一個套裝都有自己的取消政策與內容物，而商品頁的效力最高。接駁服務只在套裝含有時才註明。",
+    intro: [
+      "套裝看起來是輕鬆的選項：付一次錢、一間離場館近的飯店、保證的座位等級、不必跟排隊搏鬥。對一個只有一次機會成行的海外粉絲來說，那是一個真的很有吸引力的交換。",
+      "它同時也是這個平台上最僵硬的商品，而那份僵硬從商品頁上看不出來。把 NOL World 自己的回答一條一條連著讀，一個模式就浮出來了：這個套裝是一個不可分割的商品。不是一張票加一間你可以分別最佳化的飯店房間——是一個東西，買一次，幾乎哪裡都改不了。以下所有內容都是從這一個事實衍生出來的，包括那些在你真正需要時會覺得不公平的部分。",
+    ],
+    steps: [
+      {
+        title: "理解你買的是一個商品，不是兩筆訂單",
+        body: "這一步就是整份指南。NOL World 表示套裝中的住宿晚數無法變更，套裝所指定的入住與退房日期無法變更，而且不允許更換飯店。購買時也不能加晚數——額外的住宿是另外跟飯店談的事，按飯店的價格、受飯店的空房狀況限制。而且一個帳號只能買一個商品，所以這不是可以疊加的東西。",
+        pitfall:
+          "抱著「細節之後再整理」的想法訂下套裝：提前一天到、換到離朋友更近的飯店、把最後一晚砍掉。這每一項都是被明文記錄的「不行」。",
+        takes: "15 分鐘，在你付款之前",
+      },
+      {
+        title: "接受不去住飯店退不回任何錢",
+        body: "這個問題在 NOL World 的 FAQ 裡以兩種方式被問到，兩次都得到同樣的答案：你可以選擇不住那間飯店，但飯店部分不提供退款，而且該筆預約不可轉讓給他人。所以改住朋友家並不會換成退回來的錢，而你付過錢的那間房也不能轉給任何人。只住一晚然後要求退回其餘的晚數同樣被拒絕——晚數是固定的。",
+        pitfall:
+          "把飯店那一半當成可以一走了之的押金。那正是你不能轉售、不能送人、也不能要回來的那一半。",
+        takes: "—",
+      },
+      {
+        title: "預期一個隨機座位，並且預期當天才知道",
+        body: "套裝保證的是等級，不是位置。NOL World 表示除了你所選的分類之外，區域與分區內的座位是隨機分配的——而你的座位會在演出當天於飯店領票時才顯示給你。你在開演前幾小時之前都不會知道自己坐在哪裡。它也堵住了顯而易見的追問：對座位不滿意不構成退款理由，而且取消手續費仍然可能照收。",
+        pitfall:
+          "照著座位位置做規劃——為了應援企劃要某一側、為了鏡頭要某一排。等級是承諾；其餘的是你當天才看到的抽籤。",
+        takes: "—",
+      },
+      {
+        title: "在飯店櫃台、本人親自、在指定時間內領取",
+        body: "拿到這些票只有一種方式。NOL World 表示領票只能在飯店內的 NOL World 售票櫃台、只能在指定時段內，而且票只發給預約本人，必須由本人親自領取。被問到符合折扣資格的人能不能代為領取並代為入場時，它的回答是票只能由預約本人領取並使用，沒有例外。錯過指定時段，公開的答案就只是票僅在指定時間內提供。",
+        pitfall:
+          "把這一天的行程繞著場館安排。真正綁住你的約定在飯店櫃台，在別人訂下的一段時間裡，在演出當天。",
+        takes: "把整天繞著它安排",
+      },
+      {
+        title: "帶上櫃台實際會要求的文件",
+        body: "NOL World 寫得很具體：預約本人有效的身分證件正本，加上列印或存在手機裡的預約確認——沒有這些就無法領票。非韓國籍人士可接受的證件是護照或外國人登錄證。韓國籍人士的清單較長，包括居民登錄證、駕照、護照、青少年證，或透過 Government 24 或 PASS 核發的行動身分證。",
+        pitfall:
+          "因為櫃台就在同一棟樓裡，就把護照留在房間保險箱。打開票的是身分證件正本，而它的照片不在那份清單上。",
+        takes: "打包時 5 分鐘",
+      },
+      {
+        title: "雙人套裝，兩個人都必須到櫃台",
+        body: "這一條會打亂一整天的安排，而且很容易漏掉。NOL World 表示雙人套裝的預約本人與同行者都必須在場才能領票——而且同行者也必須出示身分證件，以確認他們符合入場的年齡條件。所以領票時段是一個需要兩個人、兩份證件的約定，不是其中一個人可以跑完的差事。",
+        pitfall:
+          "當天分頭行動——一個去領票，另一個去觀光或排周邊。櫃台不會只把票交給你們其中一個。",
+        takes: "—",
+      },
+      {
+        title: "現在就讓姓名與護照完全一致",
+        body: "NOL World 用一句話同時回答了兩個後果：如果訂票時提供的姓名與你的護照不符，領票與飯店入住都將無法進行。套裝的兩半，被同一個錯誤同時擋住。它所回答的那個問題點名了常見的元凶——拼錯、漏掉中間名、大小寫、空格。請拿護照那一頁本身去對照訂單，不要憑記憶對照。",
+        pitfall:
+          "以為因為套裝已經付過錢了，一點小差異就會被放過。「已付款」不是那兩個櫃台在查的東西。",
+        takes: "10 分鐘",
+      },
+      {
+        title: "不要等飯店的確認信，因為沒有這種東西",
+        body: "這會造成本來可以避免的恐慌，所以請事先知道。NOL World 表示飯店預約確認不會另外寄出，而且只要付款成功，飯店預約就是已確認且有效的。更有用的是：預約資料大約在住宿前兩週才會傳給飯店，所以在那之前飯店真的找不到你。如果你更早打去而他們從沒聽過你，那是被明文記錄的正常狀態。",
+        pitfall:
+          "因為六週前飯店說查不到預約，就另外訂一間備用房，或把套裝再買一次。本來什麼事都沒有，現在有兩筆訂單了。",
+        takes: "2 分鐘的安心",
+      },
+      {
+        title: "以購買者本人辦入住，並讀清楚那些小字的內容物",
+        body: "飯店入住被綁在與票相同的那個人身上：NOL World 表示入住只有在驗證預約本人的身分之後才能進行，所以同行者無法先辦入住再等你。如果你會晚到，它的指示是事先聯絡飯店——同時警告這依飯店而定，可能無法通融。另外兩個值得在訂票前就知道的細節：未成年人沒有法定監護人不得住宿，而且除非你那個特定套裝含早餐，否則不含早餐。",
+        pitfall:
+          "派朋友先去放行李、先開始住。房間是靠你的身分打開的，不是靠訂單編號。",
+        takes: "—",
+      },
+      {
+        title: "如果有接駁車，請把它當成只有一班、沒有第二次機會",
+        body: "在套裝含接駁車的情況下，NOL World 的回答毫不留情。使用它是選擇性的，而不使用退不回任何錢。沒有備援車輛，所以在上車地點遲到就等於車已經走了。只搭回程是可行的。沒有訂購的同行者可以問現場的接駁負責人，但座位有限且無法保證。還有那個會毀掉一個晚上的細節：你可以把行李箱帶上車，但抵達場館之後，車內不提供行李寄放。回程的上車地點與時間，會在飯店交票時一併給你。",
+        pitfall:
+          "因為巴士讓行李箱上車，就把行李箱帶去演唱會。到了場館沒有地方可以放，於是你會整場抱著它。",
+        takes: "—",
+      },
+      {
+        title: "在訂票之前讀取消的回答，因為答案是不行",
+        body: "這一步要在這趟旅行還只是個計畫的時候就認真對待。NOL World 公開了兩個最棘手情況的答案，而兩個都是拒絕。關於感染：隨著 COVID-19 風險等級調降，隔離已不再是強制的，因此即使你被感染，取消手續費也不予減免。關於親屬過世與事故後住院：因個人事由不提供退款，取消手續費依各商品自身的政策收取。無論這讀起來是嚴苛還是僅僅清楚，它都告訴你風險坐在哪裡——從你付款的那一刻起，坐在你身上。為承擔它而設計的工具是在出發前投保的旅遊保險，而它實際保什麼取決於你買的那張保單，所以請讀那份文件，不要憑假設。",
+        pitfall:
+          "在沒有保險的情況下自己扛風險，賭一個足夠嚴重的理由會被接受。NOL World 已經公開了它對世上最嚴重的那兩個理由的答案。",
+        takes: "30 分鐘，連同一份保單",
+      },
+    ],
+    faq: [
+      {
+        q: "我可以買套裝但不使用飯店嗎？",
+        a: "你可以選擇不住，但 NOL World 表示飯店部分不可退款，而且該筆預約不能轉讓給任何人。只使用比套裝所含更少的晚數並要求退回差額同樣被拒絕，因為晚數無法變更。",
+      },
+      {
+        q: "我可以延長、縮短、改日期，或換飯店嗎？",
+        a: "晚數無法變更，套裝中的入住與退房日期無法變更，而且不允許更換飯店。購買時也不能加晚數——NOL World 的指示是直接聯絡飯店詢問空房與價格，而且可能無法成立。升等房型也一樣：問飯店，並在抵達時直接付給飯店。",
+      },
+      {
+        q: "我什麼時候會知道我的座位？",
+        a: "在演出當天於飯店領票時。套裝保證的是等級；在那個等級之內，NOL World 隨機分配區域與座位。對結果不滿意不構成退款理由。",
+      },
+      {
+        q: "可以請人代我領票，或代我入場嗎？",
+        a: "不行。NOL World 表示票只發給預約本人且必須本人親自領取，而且票只能由預約本人領取並使用，沒有例外。雙人套裝的兩個人都必須在櫃台，而同行者也必須出示身分證件以供確認年齡。",
+      },
+      {
+        q: "我沒有收到飯店的確認信。",
+        a: "沒有這種信。NOL World 表示飯店確認不會另外寄出，而付款成功就意味著飯店預約已確認。它也表示預約資料大約在入住前兩週才會傳到飯店，所以直接向飯店確認要等到那之後才可能。",
+      },
+      {
+        q: "我打給飯店，他們查不到我的訂房。",
+        a: "如果你打得早，那是正常的。NOL World 表示資料大約在住宿前兩週才會送到飯店，確認也只有在那之後才可能，而一筆正確完成的套裝預約與付款就意味著飯店訂房是穩的。不要重新訂。",
+      },
+      {
+        q: "我確診了，或是家裡有急事。取消手續費會被免除嗎？",
+        a: "NOL World 公開的答案在兩種情況下都是不會。它表示隨著 COVID-19 隔離不再強制，即使你被感染，取消手續費也不予減免；而因個人事由，包括親屬過世或事故後住院，不提供退款，手續費依各商品的政策收取。在出發前購買的旅遊保險才是承擔這個風險的工具——它保什麼取決於保單，所以請讀它。",
+      },
+      {
+        q: "我一定要搭接駁車嗎？可以帶行李箱上車嗎？",
+        a: "搭不搭是選擇性的，而不搭退不回任何錢。行李箱可以帶上車，但 NOL World 警告抵達場館之後，車內不提供行李寄放——所以你帶上去的行李箱，就是你要自己扛的行李箱。如果你錯過發車，沒有備援車輛，而回程的上車地點與時間會在飯店交票時一併給出。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */
@@ -2926,6 +3829,57 @@ export function getTranslation(slug: string, locale: Locale): Translation | unde
 }
 
 /** The locales a given guide has been translated into. */
+/**
+ * Other guides a reader of this language can actually read.
+ *
+ * The translated template carried no related rail at all, and the reason was
+ * sound while a language had one or two pages: a rail would have been a list
+ * of links into English, and a translated page that funnels into English is
+ * worse than one that stops honestly. At six pages per language that reason
+ * inverts. Six pages with no links between them are six dead ends, and the
+ * only way Google finds the sixth is the sitemap — on a site whose single
+ * channel is search, that is the difference between a translated section and
+ * six orphans.
+ *
+ * The relationships are not computed from tags or platform overlap. They are
+ * the `see` cross-references already authored into the English guide's steps,
+ * because somebody decided those were the guides worth sending a reader to and
+ * a similarity score did not. Anything with no translation in this locale is
+ * dropped rather than linked in English, which is the original rule doing its
+ * job rather than being abandoned.
+ *
+ * They run **both ways**, outbound first in the order the steps mention them,
+ * then the guides that point back. A `see` is a statement that two guides
+ * belong together, and that is symmetric even though the field is not: read
+ * one-way, the albums guide had no rail at all despite three guides pointing
+ * at it, and the queue guide was an orphan in both directions because its one
+ * reference goes to the timezone guide, which is deliberately untranslated.
+ * The queue guide is also why the English gained a reference *to* it from the
+ * sale-day step of guide 01 — a page nothing links to is a gap in the English,
+ * not something for the rail to paper over.
+ */
+export function relatedTranslations(
+  slug: string,
+  locale: Locale,
+): { slug: string; title: string }[] {
+  const guide = guides.find((g) => g.slug === slug);
+  if (!guide) return [];
+  const seen = new Set<string>([slug]);
+  const out: { slug: string; title: string }[] = [];
+  const add = (target: string) => {
+    if (seen.has(target)) return;
+    seen.add(target);
+    const tr = getTranslation(target, locale);
+    if (tr) out.push({ slug: target, title: tr.title });
+  };
+  for (const step of guide.steps) if (step.see) add(step.see.slug);
+  for (const other of guides) {
+    if (other.slug === slug) continue;
+    if (other.steps.some((s) => s.see?.slug === slug)) add(other.slug);
+  }
+  return out;
+}
+
 export function translationsFor(slug: string): Translation[] {
   return translations.filter((t) => t.slug === slug);
 }

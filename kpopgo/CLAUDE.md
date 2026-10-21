@@ -144,8 +144,8 @@ the register, and the machinery landed before the first translated word, as it
 did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
-Three languages today: Japanese on 18 guides, Traditional Chinese on 6,
-Indonesian on 6, none native-reviewed. Each language skips the guides it has
+Three languages today: Japanese on 18 guides, Traditional Chinese on 11,
+Indonesian on 10, none native-reviewed. Each language skips the guides it has
 no reader for rather than padding to a round number, and
 `content/translations.ts` records which and why at the top — the timezone
 guide is daylight-saving arithmetic and none of these three countries observes
@@ -203,12 +203,29 @@ every Chinese page returning 404 from every link to it. `scripts/i18n.test.mjs`
 now asserts the route against the prefix, so never cast the segment to a
 `Locale`.
 
-The translated template renders **less** than the English one: no artwork, no
-booking graphic, no related-guide rail. Those carry English text or exist to
-pull a reader deeper into pages that are not translated, and a translated page
-that funnels into English is worse than one that stops honestly. Sources stay
-in their original language — a citation is only checkable in the words the
-source uses.
+The translated template renders **less** than the English one: no artwork and
+no booking graphic. Those carry English text, and a translated page that
+funnels into English is worse than one that stops honestly. Sources stay in
+their original language — a citation is only checkable in the words the source
+uses.
+
+It does now carry a **related rail, in its own language only**. That was
+excluded for the same reason as the rest, and the reason inverted once a
+language had several pages: six translated pages with no links between them
+are six dead ends whose only route in is the sitemap. `relatedTranslations`
+builds it from the `see` cross-references already authored into the English
+guide's steps — not from tags or platform overlap, because somebody decided
+those were the guides worth sending a reader to and a similarity score did
+not — and drops anything with no translation in that locale, which is the
+original rule working rather than being abandoned.
+
+It reads those references **both ways**. A `see` says two guides belong
+together and that is symmetric even though the field is not: one-way, the
+albums guide had no rail despite three guides pointing at it, and the queue
+guide was an orphan in both directions. `scripts/i18n.test.mjs` fails on any
+translated guide with no sibling in its own language, and the fix is usually
+in the English: the queue guide was an orphan because no English guide linked
+to it, so guide 01's sale-day step now does.
 
 `scripts/translations.test.mjs` is the net under a machine-assisted
 translation, and it exists because the errors that hurt a reader are not

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { guides, RESEARCH_DATE } from "@/content/guides";
 import { SHELF_LIFE, displayStatus, type DisplayStatus } from "@/lib/freshness";
+import { Contact } from "@/components/Contact";
 import { site } from "@/lib/site";
 
 // Derived status needs a daily rebuild — see the note in app/page.tsx.
@@ -192,7 +193,7 @@ export default function About() {
           <p className="t mt-3">
             Corrections are the most useful thing you can send. If a step has changed, or
             a guide cost you a sale, we want to know:{" "}
-            <span className="ju">hello@{site.host}</span>
+            <Contact what="A message" />
           </p>
           <p className="t mt-3">
             See also the <Link href="/privacy" className="ju underline underline-offset-4">privacy policy</Link>.

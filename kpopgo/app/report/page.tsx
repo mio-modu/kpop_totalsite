@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { guides } from "@/content/guides";
 import { QUESTIONS, REPORT_TO, reports } from "@/content/reports";
-import { site } from "@/lib/site";
+import { contact, contactWorks } from "@/lib/site";
+import { Contact, MailtoButton } from "@/components/Contact";
 
 /**
  * Where a reader who actually walked a flow can say what they saw.
@@ -21,16 +22,20 @@ export const metadata: Metadata = {
 };
 
 /**
- * The address reports go to.
+ * Where reports go.
  *
- * Falls back to the one /editorial-policy already publishes rather than
- * inventing a second: a site with two contact addresses has one nobody reads.
+ * One address for the whole site rather than a second one here: a site with
+ * two contact addresses has one nobody reads. REPORT_TO overrides it for the
+ * case where reports should land somewhere separate from corrections.
+ *
+ * Both routes are gated on the address having been tested. An untested
+ * mailbox is the worst of the three states — worse than no address, because
+ * the reader does the work of writing a report and believes it was received.
  */
-const to = REPORT_TO || `hello@${site.host}`;
+const to = REPORT_TO || contact.address;
 
 const SUBJECT = "Field report";
 const BODY = QUESTIONS.map((q) => `${q.ask}\n`).join("\n");
-const mailto = `mailto:${to}?subject=${encodeURIComponent(SUBJECT)}&body=${encodeURIComponent(BODY)}`;
 
 export default function ReportPage() {
   const reported = new Set(reports.map((r) => r.slug)).size;
@@ -95,14 +100,27 @@ export default function ReportPage() {
         </ol>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
-          <a href={mailto} className="btn px-5 py-3">
+          <MailtoButton subject={SUBJECT} body={BODY}>
             Send a field report
-          </a>
-          <p className="t-sm dim">
-            Opens your mail app with the questions filled in. Or write to{" "}
-            <span className="ju">{to}</span> any way you like.
-          </p>
+          </MailtoButton>
+          {contactWorks ? (
+            <p className="t-sm dim">
+              Opens your mail app with the questions filled in. Or write to{" "}
+              <span className="ju">{to}</span> any way you like.
+            </p>
+          ) : (
+            <p className="t-sm max-w-[62ch]">
+              <Contact what="A field report" />
+            </p>
+          )}
         </div>
+
+        {/* The template is useful with or without an inbox: it is the shape of
+            the thing, and a reader can keep it for when there is one. */}
+        <details className="obj mt-6 p-5 sm:p-6">
+          <summary className="data dim cursor-pointer">Copy the template</summary>
+          <pre className="t-sm mt-4 whitespace-pre-wrap">{BODY}</pre>
+        </details>
       </section>
 
       <section className="mt-14">

@@ -70,3 +70,31 @@ export const site = {
   verifyGoogle: process.env.NEXT_PUBLIC_VERIFY_GOOGLE ?? "",
   verifyNaver: process.env.NEXT_PUBLIC_VERIFY_NAVER ?? "",
 } as const;
+
+/**
+ * The address the site asks people to write to, and whether it works.
+ *
+ * Four pages print this — the privacy policy, the about page, the editorial
+ * policy and /report — and for all of them it was `hello@kpopgo.app`,
+ * assembled inline from the host. Registering a domain does not create a
+ * mailbox, so that address bounced, and four pages were inviting readers to
+ * write into nothing. A correction nobody receives is worse than no address
+ * at all: the reader believes they reported it.
+ *
+ * So the address carries the same burden of proof as everything else here.
+ * `confirmed` is the day somebody sent a message to it and watched it arrive,
+ * exactly as `lastChecked` is the day somebody read a source. Until that date
+ * exists the pages say the inbox is being set up rather than printing an
+ * address, because an untested mailbox is a claim like any other.
+ *
+ * To turn it on: point the address at a real inbox (MX records at the
+ * registrar, or a forwarder), send yourself a test, and put the date here.
+ */
+export const contact = {
+  address: `hello@${site.host}`,
+  /** YYYY-MM-DD a test message was sent and arrived. Empty means untested. */
+  confirmed: "",
+} as const;
+
+/** True only once a person has watched a test message arrive. */
+export const contactWorks = contact.confirmed !== "";

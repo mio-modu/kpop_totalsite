@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { RESEARCH_DATE } from "@/content/guides";
 import { site } from "@/lib/site";
+import { Contact } from "@/components/Contact";
 import { adsConfigured } from "@/lib/ads";
 
 export const metadata: Metadata = {
@@ -98,7 +99,7 @@ export default function Privacy() {
           <h2 className="pm">Contact</h2>
           <p className="t mt-3">
             Questions about this policy, a correction to a guide, or a takedown request:{" "}
-            <span className="ju">hello@{site.host}</span>
+            <Contact what="A privacy request" />
           </p>
         </section>
       </div>

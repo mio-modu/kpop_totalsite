@@ -232,7 +232,19 @@ const LOCALE_ALIASES = {
  * site where a four-digit money amount appears in prose, which is why this
  * surfaced on the twelfth German page rather than the first.
  */
-const PERIOD_THOUSANDS = new Set(["de", "id", "es"]);
+const PERIOD_THOUSANDS = new Set(["de", "id", "es", "pt-BR"]);
+
+/**
+ * French groups thousands with a space, not a period: 8 000, never 8.000.
+ *
+ * Which space varies and all three are correct in the wild — a plain space, a
+ * no-break space, or the narrow no-break space typography actually asks for —
+ * so all three are accepted rather than picking one and failing honest text.
+ * Without this the number check reads a correctly written French "8 000" as a
+ * missing 8,000 and fails every page that quotes a fee.
+ */
+const SPACE_THOUSANDS = new Set(["fr"]);
+const THOUSAND_SPACES = [" ", "\u00A0", "\u202F"];
 
 /**
  * German hyphenates a multi-word name into the compound it forms.
@@ -378,6 +390,9 @@ test("every number in the English survives into the translation", () => {
       if (PERIOD_THOUSANDS.has(p.locale) && n.includes(",")) {
         forms.push(n.replace(/,/g, "."));
       }
+      if (SPACE_THOUSANDS.has(p.locale) && n.includes(",")) {
+        for (const sp of THOUSAND_SPACES) forms.push(n.replace(/,/g, sp));
+      }
       if (!p.t.includes(n) && !forms.some((a) => p.t.includes(a))) {
         bad.push(`${at(p)}: "${n}" is in the English and not the translation`);
       }
@@ -434,6 +449,15 @@ const BAND = {
   // tighter than German, which also builds compounds, and looser than
   // Indonesian, which does not inflect.
   es: [0.85, 1.6],
+  // Brazilian Portuguese sits beside Spanish and very slightly wider. It
+  // spends the same prepositions ("conta de venda de ingressos"), and adds a
+  // little on top: mesoclisis is rare but the enclitic hyphens are not, and
+  // "você" where Spanish drops the pronoun entirely.
+  "pt-BR": [0.85, 1.7],
+  // French is the widest of the Latin set. It spends the prepositions
+  // Spanish spends and then adds its own: "de la", "à la", the obligatory
+  // subject pronoun, and a politeness register that does not contract.
+  fr: [0.9, 1.8],
 };
 
 test("no translated field is far longer or shorter than its source", () => {
@@ -541,6 +565,16 @@ const FORBIDDEN = {
 const QUOTES = {
   es: [[/[„“]/, "German quotation marks (use « » or “ ”)"]],
   de: [[/[«»]/, "Spanish angle quotes (use „ “)"]],
+  // Brazil sets quotation marks the way English does. The angle quotes are
+  // European Portuguese and the low opening mark is German; either one in a
+  // Brazilian page is a sign the text came from the wrong edition.
+  "pt-BR": [
+    [/[«»]/, "European Portuguese angle quotes (Brazil uses “ ”)"],
+    [/[„]/, "German opening quotation mark (Brazil uses “ ”)"],
+  ],
+  // French sets guillemets, so « » is correct here and is not flagged. The
+  // low opening mark is German and nothing else.
+  fr: [[/[„]/, "German opening quotation mark (French uses « »)"]],
 };
 
 test("quotation marks match the language", () => {

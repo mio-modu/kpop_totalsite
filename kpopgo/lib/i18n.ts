@@ -29,7 +29,7 @@
 import type { Guide } from "@/content/guides";
 import { displayStatus, type DisplayStatus } from "./freshness";
 
-export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de" | "es";
+export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de" | "es" | "pt-BR" | "fr";
 
 /** English is the canonical language and carries no path prefix. */
 export const DEFAULT_LOCALE: Locale = "en";
@@ -114,6 +114,56 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     english: "Spanish",
     tag: "es",
     prefix: "/es",
+  },
+  // Brazil, not Portuguese generally, and the region in the code is doing
+  // work rather than decorating it.
+  //
+  // Brazil is the other half of Latin America and the half Spanish does not
+  // reach. It is one of the largest K-pop markets outside Asia, and the
+  // reasoning that put Spanish ahead of German applies here with nothing
+  // subtracted: a fan in São Paulo flies to Seoul for everyone who never
+  // tours South America, which is almost everyone.
+  //
+  // The region matters because it decides a page. Brazil abolished daylight
+  // saving in 2019, so the timezone guide — which is really a daylight-saving
+  // guide — teaches arithmetic a Brazilian reader does not have to do.
+  // Checked against this container's zoneinfo rather than recalled:
+  // America/Sao_Paulo, America/Manaus and America/Recife all sit at the same
+  // offset in January and July, and 20:00 KST is 08:00 in São Paulo on both
+  // dates. That is the Tokyo and Jakarta situation, not the Madrid one.
+  //
+  // Portugal does observe it, so a generic `pt` edition would have to carry
+  // that guide for half its readers and waste it on the other half. `pt-BR`
+  // is the honest scope, and it is why the exclusion below is a decision
+  // rather than a gap.
+  "pt-BR": {
+    code: "pt-BR",
+    native: "Português (Brasil)",
+    english: "Portuguese (Brazil)",
+    tag: "pt-BR",
+    prefix: "/pt-br",
+  },
+  // French carries no region, and that is the honest scope rather than a
+  // shortcut. Its readers are spread across zones that disagree about almost
+  // nothing this site covers: Paris, Brussels and Montreal all observe
+  // daylight saving, and the one francophone zone that does not — Dakar — is
+  // not a market this site has a reader in. Where Brazil's region decided a
+  // page, France's would decide nothing, so there is no `fr-FR`.
+  //
+  // It sits with German and Spanish on both exclusions, on the same tests
+  // they were given rather than new ones. France observes daylight saving and
+  // Korea does not, so the timezone guide applies: checked against this
+  // container's zoneinfo, 20:00 KST is 12:00 in Paris in January and 13:00 in
+  // July, which is the Berlin and Madrid line the English page already
+  // converts for. And France is in the EU, so the customs guide is refused
+  // for the reason counted there: five of its ten steps are US law, and the
+  // one EU fact is already carried by the shipping guide.
+  fr: {
+    code: "fr",
+    native: "Français",
+    english: "French",
+    tag: "fr",
+    prefix: "/fr",
   },
 };
 

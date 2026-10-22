@@ -227,14 +227,57 @@ the register, and the machinery landed before the first translated word, as it
 did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
-Five languages today, none native-reviewed: Japanese, Traditional Chinese and
-Indonesian on 19 of the 21 guides, German and Spanish on 20. Each
-language skips the guides it has no reader for rather than padding to a round
-number, and `content/translations.ts` records which and why at the top.
+Seven languages today, none native-reviewed: Japanese, Traditional Chinese and
+Indonesian on 19 of the 21 guides, German and Spanish on 20, and Brazilian
+Portuguese and French **both in progress at 2**, of an intended 19 and 20
+respectively. Each language skips the guides it has no reader for rather than
+padding to a round number, and `content/translations.ts` records which and why
+at the top.
+
+**French carries no region, and that is the honest scope rather than a
+shortcut.** Brazil's region decided a page; France's would decide nothing. Its
+readers are spread across zones that agree on everything this site covers —
+Paris, Brussels and Montreal all observe daylight saving — and the one
+francophone zone that does not, Dakar, is not a market with a reader here. So
+`fr`, not `fr-FR`.
+
+It lands with German and Spanish on both exclusions, on the tests they were
+already given rather than new ones. France observes daylight saving and Korea
+does not, so the timezone guide applies: checked against this container's
+zoneinfo, 20:00 KST is 12:00 in Paris in January and 13:00 in July, which is
+exactly the Berlin and Madrid line the English page already converts for — no
+English edit needed, and therefore no re-sync cascade. France is in the EU, so
+the customs guide is refused for the reason counted there.
+
+French needed one check the other six did not. It groups thousands with a
+space rather than a period, so a correctly written `8 000` read as a missing
+`8,000` and would have failed every page quoting a fee. All three spaces that
+appear in honest French text are accepted — plain, no-break, and the narrow
+no-break one typography actually asks for — rather than picking one and
+failing the other two.
+
+**`pt-BR` is in progress and the register says so rather than implying a
+finished edition.** It landed at two guides because one is not allowed: the
+orphan check refuses a translated guide with no sibling in its own language,
+which is the right answer — a language with a single page is a dead end whose
+only route in is the sitemap. Two is the smallest honest increment, and the
+pair is the hub guide and the NOL World guide it links to.
+
+The region in the code is load-bearing rather than decorative. Brazil
+abolished daylight saving in 2019, so the timezone guide — which is really a
+daylight-saving guide — teaches arithmetic a Brazilian reader never has to do.
+Checked against this container's zoneinfo rather than recalled:
+America/Sao_Paulo, America/Manaus and America/Recife hold the same offset in
+January and July, and 20:00 KST is 08:00 in São Paulo on both dates. That is
+the Tokyo and Jakarta situation, not the Madrid one, so the exclusion is a
+decision and not a gap. Portugal does observe it, which is exactly why a
+generic `pt` edition would have to carry that guide for half its readers and
+waste it on the other half.
 
 They no longer sit on one set, and that is the system working rather than
 drifting. The customs guide is still refused everywhere, because its subject
-is a jurisdiction no reader of these five is in. The timezone guide used to
+is a jurisdiction no reader of these seven is in — Brazil included, which is
+why `pt-BR` refuses it on the same test rather than a new one. The timezone guide used to
 be refused everywhere too — correctly for Japanese, Chinese and Indonesian,
 whose readers observe no daylight saving at all, and wrongly for German and
 Spanish, whose readers do. It is translated for those two now.

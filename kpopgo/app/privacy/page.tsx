@@ -43,9 +43,21 @@ export default function Privacy() {
             address, approximate location, device and browser. We never see your identity
             and we do not try to work it out.
           </p>
+          {site.clarityId ? (
+            <p className="t mt-3">
+              We also use Microsoft Clarity, which is a different kind of measurement and
+              worth describing as one: it records a session — scrolling, clicks, and the
+              point in a ten-step guide where somebody stops — and replays it to us
+              anonymously. That is how we find the step that is written badly, which a
+              visit count cannot show. Microsoft says Clarity masks sensitive page content
+              by default, so what we see is the shape of a session rather than anything you
+              typed, and Microsoft processes the data under its own privacy statement.
+            </p>
+          ) : null}
           <p className="t mt-3">
             You can opt out for every site at once with Google&apos;s browser add-on, or
-            by blocking the scripts in your browser. The site works normally either way.
+            by blocking the scripts in your browser. The site works normally either way,
+            and blocking covers the session recording as well as the visit count.
           </p>
         </section>
 

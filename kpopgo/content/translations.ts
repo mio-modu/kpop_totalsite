@@ -10128,6 +10128,776 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pré-venda de fã-clube: como se habilitar antes de fechar",
+    summary:
+      "Ter assinatura não é ter acesso. Existe uma etapa de verificação entre as duas coisas, ela tem prazo próprio, e perdê-la é a forma mais comum de fãs perderem uma pré-venda.",
+    scope:
+      "Cobre o formato geral da habilitação para pré-venda de fã-clube em shows coreanos. Cada turnê define seus próprios níveis, cortes e condições no anúncio oficial, que prevalece sobre qualquer regra geral.",
+    intro: [
+      "O acesso à pré-venda é uma corrente de três elos, e os fãs costumam conhecer só o primeiro. Você compra a assinatura. Depois vincula e verifica essa assinatura na conta de venda de ingressos. Só então você recebe a habilitação para a pré-venda.",
+      "Cada elo tem prazo próprio, e o prazo da verificação é rotineiramente mais cedo do que as pessoas imaginam — em alguns casos dias antes da própria pré-venda. Uma assinatura comprada na véspera pode ser tarde demais, mesmo estando ativa.",
+      "Trate o anúncio como a especificação e esta página como a lista de conferência.",
+    ],
+    steps: [
+      {
+        title: "Leia a cláusula de elegibilidade, não a manchete",
+        body: "O anúncio vai especificar qual produto e qual nível de assinatura se habilitam, e a data até a qual ela precisa ter sido comprada ou estar ativa. São duas datas diferentes e as duas importam. Anote-as no seu próprio fuso horário ao lado do KST.",
+        pitfall:
+          "Uma assinatura que está ativa mas foi comprada depois do corte não se habilita em algumas turnês. “Eu tenho a assinatura” não é a mesma coisa que “eu me habilitei”.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Compre a assinatura bem antes do corte",
+        body: "Compre na loja oficial daquele artista. Guarde a confirmação do pedido e o número da assinatura. Se a assinatura for um kit físico com um código digital, considere o tempo de entrega e de ativação do código, que não é instantâneo. Desde 3 de setembro de 2026 o Weverse Shop também oferece Pagamento Automático nas assinaturas que o aceitam: a renovação é cobrada de um meio cadastrado no último dia do período de validade, então uma assinatura não vence sem que ninguém perceba justo na semana em que uma turnê é anunciada. Isso é definido por categoria de assinatura — Global, Japan e USA são gerenciadas separadamente.",
+        pitfall:
+          "Códigos de assinatura revendidos ou presenteados reprovam na verificação com frequência, porque o nome cadastrado não vai bater com a sua conta de venda. O Pagamento Automático elimina o risco de vencimento, mas não o risco do nome: ele renova a conta à qual está vinculado, seja qual for.",
+        takes: "30 minutos",
+      },
+      {
+        title: "Vincule e verifique a assinatura na plataforma de venda",
+        body: "Esta é a etapa que as pessoas pulam. Na plataforma de venda existe uma ação separada para verificar o seu status de fã-clube, e ela abre dentro de uma janela — comumente alguns dias antes da pré-venda — e fecha antes dela. Faça na hora em que abrir.",
+        pitfall:
+          "A verificação de uma venda em coreano e a de uma venda global podem ser tratadas separadamente para o mesmo show. Concluir uma não garante necessariamente a outra.",
+        takes: "20 minutos, dentro da janela",
+      },
+      {
+        title: "Deixe os três nomes idênticos",
+        body: "Passaporte, assinatura de fã-clube e conta de venda de ingressos. Os três. Mesmo nome legal, mesma data de nascimento, mesma ordem. Se um estiver errado, corrija antes da janela de verificação, e não depois.",
+        pitfall:
+          "Esta é a causa documentada mais frequente de uma habilitação de pré-venda não se aplicar, e ela é invisível até o momento em que importa.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Confirme que a habilitação entrou",
+        body: "Depois de verificar, procure uma confirmação explícita — um selo, uma linha de status, um e-mail. Se você não encontrar uma confirmação positiva de que está elegível, presuma que não está e procure o suporte enquanto a janela ainda estiver aberta.",
+        pitfall:
+          "Silêncio não é sucesso. Um formulário enviado não é uma habilitação concedida.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Comprar a assinatura garante acesso à pré-venda?",
+        a: "Não. Na maioria das turnês existe uma etapa separada de verificação ligando a assinatura à sua conta de venda, com janela própria que abre e fecha antes da pré-venda. A assinatura é um pré-requisito, não a habilitação em si.",
+      },
+      {
+        q: "Posso usar a assinatura de outra pessoa?",
+        a: "Na prática não, porque a verificação confere o nome cadastrado e a data de nascimento contra a sua conta de venda e o seu documento de identidade. Além de não funcionar, isso arrisca o cancelamento do pedido.",
+      },
+      {
+        q: "Com quanta antecedência a pré-venda abre em relação à venda geral?",
+        a: "Varia por turnê. Um dia ou mais antes é comum, e o corte da assinatura fica ainda mais cedo. O anúncio oficial do seu show é a única fonte confiável.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Prévente fan-club : comment être éligible avant la fermeture",
+    summary:
+      "L'abonnement seul ne vaut pas accès. Il y a une étape de vérification entre les deux, elle a sa propre échéance, et la manquer est la façon la plus courante de perdre une prévente.",
+    scope:
+      "Couvre la forme générale de l'éligibilité à une prévente fan-club pour les concerts coréens. Chaque tournée fixe ses propres niveaux, dates limites et conditions dans l'annonce officielle, qui prime sur toute règle générale.",
+    intro: [
+      "L'accès à la prévente est une chaîne de trois maillons, et les fans ne connaissent généralement que le premier. Vous achetez l'abonnement. Ensuite vous rattachez et vérifiez cet abonnement sur le compte de billetterie. Alors seulement vous obtenez le droit d'accès à la prévente.",
+      "Chaque maillon a sa propre échéance, et celle de la vérification tombe couramment plus tôt qu'on ne l'imagine — parfois plusieurs jours avant la prévente elle-même. Un abonnement acheté la veille peut être trop tard alors même qu'il est actif.",
+      "Traitez l'annonce comme le cahier des charges et cette page comme la liste de contrôle.",
+    ],
+    steps: [
+      {
+        title: "Lisez la clause d'éligibilité, pas le titre",
+        body: "L'annonce précisera quel produit et quel niveau d'abonnement sont éligibles, et la date à laquelle il doit avoir été acheté ou être actif. Ce sont deux dates différentes et les deux comptent. Notez-les dans votre propre fuseau horaire à côté du KST.",
+        pitfall:
+          "Un abonnement actif mais acheté après la date limite n'est pas éligible sur certaines tournées. « J'ai l'abonnement » n'est pas la même chose que « j'étais éligible ».",
+        takes: "10 minutes",
+      },
+      {
+        title: "Achetez l'abonnement bien avant la date limite",
+        body: "Achetez sur la boutique officielle de l'artiste. Conservez la confirmation de commande et le numéro d'abonnement. Si l'abonnement est un coffret physique avec un code numérique, prévoyez le délai de livraison et d'activation du code, qui n'est pas instantané. Depuis le 3 septembre 2026, Weverse Shop propose aussi le Paiement Automatique sur les abonnements qui le prennent en charge : le renouvellement est débité d'un moyen enregistré le dernier jour de la période de validité, de sorte qu'un abonnement ne peut pas expirer sans qu'on le remarque la semaine où une tournée est annoncée. Cela se règle par catégorie d'abonnement — Global, Japan et USA sont gérées séparément.",
+        pitfall:
+          "Les codes d'abonnement revendus ou offerts échouent fréquemment à la vérification, parce que le nom enregistré ne correspondra pas à votre compte de billetterie. Le Paiement Automatique supprime le risque d'expiration, pas le risque de nom : il renouvelle le compte auquel il est rattaché, quel qu'il soit.",
+        takes: "30 minutes",
+      },
+      {
+        title: "Rattachez et vérifiez l'abonnement sur la plateforme de billetterie",
+        body: "C'est l'étape que les gens sautent. Sur la plateforme de billetterie, il existe une action distincte pour faire vérifier votre statut de fan-club, et elle s'ouvre dans une fenêtre — couramment quelques jours avant la prévente — et se referme avant celle-ci. Faites-le à l'heure où elle ouvre.",
+        pitfall:
+          "La vérification pour une vente en coréen et celle pour une vente mondiale peuvent être traitées séparément pour le même concert. En terminer une n'accorde pas nécessairement l'autre.",
+        takes: "20 minutes, dans la fenêtre",
+      },
+      {
+        title: "Rendez les trois noms identiques",
+        body: "Passeport, abonnement fan-club et compte de billetterie. Les trois. Même nom légal, même date de naissance, même ordre. Si l'un est erroné, corrigez-le avant la fenêtre de vérification plutôt qu'après.",
+        pitfall:
+          "C'est la cause documentée la plus fréquente d'un droit de prévente qui ne s'applique pas, et elle reste invisible jusqu'au moment où elle compte.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Confirmez que le droit d'accès est bien arrivé",
+        body: "Après la vérification, cherchez une confirmation explicite — un badge, une ligne de statut, un e-mail. Si vous ne trouvez pas de confirmation positive de votre éligibilité, supposez que vous ne l'êtes pas et contactez le support pendant que la fenêtre est encore ouverte.",
+        pitfall:
+          "Le silence n'est pas une réussite. Un formulaire envoyé n'est pas un droit accordé.",
+        takes: "10 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Acheter un abonnement garantit-il l'accès à la prévente ?",
+        a: "Non. Sur la plupart des tournées, il existe une étape de vérification distincte qui relie l'abonnement à votre compte de billetterie, avec sa propre fenêtre qui s'ouvre et se referme avant la prévente. L'abonnement est un prérequis, pas le droit d'accès lui-même.",
+      },
+      {
+        q: "Puis-je utiliser l'abonnement de quelqu'un d'autre ?",
+        a: "En pratique non, parce que la vérification compare le nom et la date de naissance enregistrés avec votre compte de billetterie et votre pièce d'identité. Au-delà du fait que cela ne marche pas, cela expose la commande à une annulation.",
+      },
+      {
+        q: "Combien de temps avant la vente générale la prévente ouvre-t-elle ?",
+        a: "Cela varie selon la tournée. Un jour ou plus à l'avance est courant, et la date limite de l'abonnement se situe encore plus tôt. L'annonce officielle de votre concert est la seule source fiable.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Por que o seu cartão foi recusado num site coreano de ingressos",
+    summary:
+      "Três sistemas diferentes podem recusar o mesmo pagamento — a plataforma, a bandeira do seu cartão e o seu banco. Cada um tem uma solução diferente e só uma delas é rápida.",
+    scope:
+      "Cobre pagamentos com cartões emitidos fora da Coreia em plataformas coreanas de venda de ingressos. Não é orientação financeira e não pode cobrir as regras específicas do seu banco.",
+    intro: [
+      "Um cartão recusado na etapa do pagamento é a falha mais cara de toda a venda de ingressos de K-pop, porque um assento reservado volta para o estoque geral em poucos minutos. Quase tudo isso é evitável com antecedência.",
+      "Parece aleatório porque três sistemas independentes podem recusar a mesma transação, e a mensagem de erro que você vê raramente diz qual deles recusou. Percorra-os na ordem do tempo que cada solução leva.",
+    ],
+    steps: [
+      {
+        title: "Verifique se a validação da sua conta está realmente concluída",
+        body: "Em várias plataformas, cartões emitidos fora da Coreia só funcionam depois que a conta é validada como cliente do exterior. Se essa validação ainda estiver pendente, o cartão vai falhar por mais saudável que esteja. Esta é a solução mais lenta, e é por isso que vem primeiro.",
+        pitfall:
+          "O erro do pagamento não vai dizer “sua validação está pendente”. Vai parecer um problema do cartão.",
+        takes: "1 a 3 dias",
+      },
+      {
+        title: "Avise o seu banco antes da venda, não depois",
+        body: "Libere transações internacionais e online e, se o seu banco permitir, autorize antecipadamente a faixa de valor e o país. Uma primeira cobrança de um estabelecimento coreano num horário incomum é exatamente o perfil que um sistema antifraude bloqueia.",
+        pitfall:
+          "Bloqueios antifraude automáticos geralmente são silenciosos do seu lado: nenhum SMS, nenhum aviso no aplicativo. Você só descobre pela recusa genérica do estabelecimento.",
+        takes: "1 dia",
+      },
+      {
+        title: "Não faça a etapa do pagamento dentro do navegador de um aplicativo",
+        body: "O 3-D Secure e as senhas de uso único do banco falham com frequência dentro do navegador embutido num aplicativo de rede social ou de mensagens. Use um navegador comum, de celular ou de computador, e confirme que consegue receber a mensagem de validação do seu banco no mesmo aparelho.",
+        pitfall:
+          "O redirecionamento pode parecer ter dado certo e depois descartar a autorização em silêncio, o que chega até você como uma recusa.",
+        takes: "0 minutos, só faça do jeito certo",
+      },
+      {
+        title: "Tenha uma reserva de verdade, não um cartão irmão",
+        body: "Um segundo cartão do mesmo emissor costuma falhar pelo mesmo motivo. Outro emissor, outra bandeira, ou o método alternativo que a plataforma ofereça, é que é uma reserva de verdade. As duas plataformas voltadas ao exterior também recusam coisas opostas, e vale saber disso antes de culpar o cartão: a NOL World aceita VISA, MasterCard, AMEX, JCB e UnionPay, mas só quando emitidos fora da Coreia, e recusa de saída os cartões emitidos na Coreia. A YES24 Global faz o contrário em dois deles, excluindo o American Express emitido fora da Coreia e o UnionPay inteiramente. Um cartão recusado numa delas pode ser o cartão certo na outra.",
+        pitfall:
+          "Dois cartões do mesmo banco são um só cartão para efeito de uma regra antifraude.",
+        takes: "30 minutos para preparar",
+      },
+      {
+        title: "Confira a moeda e o valor antes de confirmar",
+        body: "Veja se a cobrança é em KRW ou num valor convertido, e saiba qual é a tarifa de transação internacional do seu cartão. Uma conversão que empurre o total acima de um limite que você mesmo definiu também pode causar uma recusa.",
+        pitfall:
+          "A conversão dinâmica de moeda acrescenta custo discretamente. Pagar em KRW costuma ser a opção mais barata.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Por que o meu cartão foi recusado mesmo tendo saldo?",
+        a: "Quase sempre por um destes três motivos: a sua conta na plataforma não terminou a validação de cliente do exterior, o sistema antifraude do seu banco bloqueou um estabelecimento estrangeiro desconhecido, ou uma etapa do 3-D Secure falhou — comumente porque rodou dentro do navegador de um aplicativo. A mensagem de recusa em geral não distingue entre eles.",
+      },
+      {
+        q: "O PayPal funciona?",
+        a: "Algumas plataformas voltadas ao exterior aceitam métodos de pagamento alternativos em alguns shows. Isso é definido por plataforma e por evento, e não de forma geral, então confira as opções de pagamento listadas na página do seu evento antes de contar com isso.",
+      },
+      {
+        q: "Devo pagar em KRW ou na minha própria moeda?",
+        a: "Pagar na moeda do estabelecimento sai em geral mais barato do que deixar a página de pagamento converter para você, porque a conversão dinâmica de moeda acrescenta uma margem. A tarifa de transação internacional do seu próprio cartão continua valendo nos dois casos.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pourquoi votre carte a été refusée sur un site de billetterie coréen",
+    summary:
+      "Trois systèmes différents peuvent refuser le même paiement — la plateforme, le réseau de votre carte et votre banque. Chacun a une solution différente et une seule est rapide.",
+    scope:
+      "Couvre les paiements par carte émise hors de Corée sur les plateformes de billetterie coréennes. Ce n'est pas un conseil financier et cela ne peut pas couvrir les règles propres à votre banque.",
+    intro: [
+      "Une carte refusée à l'étape du paiement est l'échec le plus coûteux de toute la billetterie K-pop, parce qu'une place mise de côté retourne au stock en quelques minutes. Presque tout cela s'évite en s'y prenant à l'avance.",
+      "Cela paraît aléatoire parce que trois systèmes indépendants peuvent refuser la même transaction, et le message d'erreur que vous voyez dit rarement lequel l'a fait. Parcourez-les dans l'ordre du temps que chaque correctif demande.",
+    ],
+    steps: [
+      {
+        title: "Vérifiez si la validation de votre compte est réellement terminée",
+        body: "Sur plusieurs plateformes, les cartes émises hors de Corée ne fonctionnent qu'une fois le compte validé comme client étranger. Si cette validation est encore en attente, la carte échouera quel que soit son état. C'est le correctif le plus lent, et c'est pourquoi il vient en premier.",
+        pitfall:
+          "L'erreur de paiement ne vous dira pas « votre validation est en attente ». Cela ressemblera à un problème de carte.",
+        takes: "1 à 3 jours",
+      },
+      {
+        title: "Prévenez votre banque avant la vente, pas après",
+        body: "Activez les transactions internationales et en ligne et, si votre banque le permet, autorisez à l'avance la plage de montant et le pays. Un tout premier débit chez un commerçant coréen à une heure inhabituelle correspond exactement au profil qu'un système antifraude bloque.",
+        pitfall:
+          "Les blocages antifraude automatiques sont souvent silencieux de votre côté : aucun SMS, aucune alerte dans l'application. Vous ne l'apprenez que par le refus générique du commerçant.",
+        takes: "1 jour",
+      },
+      {
+        title: "Ne faites pas l'étape du paiement dans le navigateur d'une application",
+        body: "Le 3-D Secure et les mots de passe à usage unique des banques échouent fréquemment dans le navigateur intégré à une application sociale ou de messagerie. Utilisez un navigateur ordinaire, sur mobile ou sur ordinateur, et assurez-vous de pouvoir recevoir le message de validation de votre banque sur le même appareil.",
+        pitfall:
+          "La redirection peut sembler réussir puis abandonner l'autorisation sans rien dire, ce qui vous parvient comme un refus.",
+        takes: "0 minute, faites-le simplement comme il faut",
+      },
+      {
+        title: "Ayez une vraie solution de secours, pas une carte jumelle",
+        body: "Une deuxième carte du même émetteur échouera généralement pour la même raison. Un autre émetteur, un autre réseau, ou le moyen alternatif que propose la plateforme : voilà une vraie solution de secours. Les deux plateformes tournées vers l'étranger refusent par ailleurs des choses opposées, et cela vaut d'être su avant d'accuser la carte : NOL World accepte VISA, MasterCard, AMEX, JCB et UnionPay, mais seulement émises hors de Corée, et refuse d'emblée les cartes émises en Corée. YES24 Global fait l'inverse sur deux d'entre elles, en excluant American Express émise hors de Corée et UnionPay entièrement. Une carte refusée sur l'une peut être la bonne carte sur l'autre.",
+        pitfall:
+          "Deux cartes de la même banque ne font qu'une seule carte au regard d'une règle antifraude.",
+        takes: "30 minutes à préparer",
+      },
+      {
+        title: "Contrôlez la devise et le montant avant de confirmer",
+        body: "Regardez si vous êtes débité en KRW ou d'un montant converti, et sachez quels frais de transaction à l'étranger votre carte applique. Une conversion qui pousse le total au-delà d'un plafond que vous avez vous-même fixé peut aussi provoquer un refus.",
+        pitfall:
+          "La conversion dynamique de devise ajoute un coût sans bruit. Payer en KRW est généralement l'option la moins chère.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Pourquoi ma carte a-t-elle été refusée alors qu'elle est approvisionnée ?",
+        a: "Le plus souvent pour l'une de ces trois raisons : votre compte sur la plateforme n'a pas terminé la validation de client étranger, le système antifraude de votre banque a bloqué un commerçant étranger inconnu, ou une étape de 3-D Secure a échoué — couramment parce qu'elle s'est déroulée dans le navigateur d'une application. Le message de refus ne fait généralement pas la différence entre elles.",
+      },
+      {
+        q: "Est-ce que PayPal fonctionne ?",
+        a: "Certaines plateformes tournées vers l'étranger acceptent des moyens de paiement alternatifs sur certains concerts. Cela se décide par plateforme et par événement plutôt qu'universellement : vérifiez donc les options de paiement indiquées sur la page de votre événement avant de bâtir un plan dessus.",
+      },
+      {
+        q: "Faut-il payer en KRW ou dans ma propre devise ?",
+        a: "Payer dans la devise du commerçant revient généralement moins cher que de laisser la page de paiement convertir à votre place, parce que la conversion dynamique de devise ajoute une marge. Les frais de transaction à l'étranger de votre propre carte s'appliquent de toute façon dans les deux cas.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Ingressos na YES24 Global: as regras que não estão na página em inglês",
+    summary:
+      "A sua conta YES24 atual não vai funcionar. O PayPal só aparece se o show estiver longe o bastante. Dois tipos de cartão são recusados de saída, e o local confere o seu passaporte contra o nome com que você se cadastrou.",
+    scope:
+      "Cobre o site YES24 TICKET em inglês usado por compradores do exterior. O site YES24 em coreano roda outro sistema de contas e outra verificação de identidade. As condições de cada show na página do evento prevalecem sobre tudo que está aqui, e a própria YES24 diz isso.",
+    intro: [
+      "A YES24 publica as suas regras para o exterior num guia de compra e num FAQ em inglês, e quase nada do que está neles aparece nos guias que ranqueiam para isso. São regras específicas, são incomuns, e várias delas encerram a sua compra no dia se você as encontrar pela primeira vez no checkout.",
+      "Tudo abaixo vem dessas duas páginas, lidas em 20 de outubro de 2026. Onde a YES24 se contradiz — e ela se contradiz, uma vez, numa taxa — esta página diz isso em vez de escolher o número conveniente.",
+    ],
+    steps: [
+      {
+        title: "Cadastre-se de novo, mesmo que você já tenha conta na YES24",
+        body: "A YES24 afirma com todas as letras: membros já existentes da YES24 que quiserem usar o site Global YES24 TICKET precisam se cadastrar de novo. Ela também avisa que o site global de ingressos é uma coisa diferente do global.yes24.com, a livraria, e que os dois não compartilham dados de membro. Não-membros não podem comprar de jeito nenhum, então este é o primeiro passo e não uma formalidade.",
+        pitfall:
+          "Três propriedades da YES24 com nomes parecidos e nenhum login compartilhado. Descobrir isso numa fila é descobrir tarde demais — a conta precisa existir dias antes de qualquer forma, por causa da conferência de nome abaixo.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Cadastre o nome exatamente como está no seu passaporte",
+        body: "Este é o único lugar em que uma plataforma diz em voz alta a parte que ninguém diz. O FAQ da YES24: se o nome da sua conta YES24 for diferente do nome do seu passaporte, você pode ter problemas para retirar o ingresso comprado no local do evento. Ingressos para retirada só podem ser retirados pelo titular, e a retirada exige um documento de identidade físico e válido — um passaporte — junto com o registro da compra.",
+        pitfall:
+          "Um nome do meio omitido, uma romanização escolhida anos atrás, a ordem com o primeiro nome na frente. O local está comparando dois documentos, não julgando se é obviamente você.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Veja se o PayPal é sequer oferecido para o seu show",
+        body: "O PayPal na YES24 Global só está disponível quando há mais de 180 dias entre a data da compra e a data do show. Para a maioria dos shows de K-pop, anunciados um ou dois meses antes, isso significa que o PayPal simplesmente não é uma opção e o cartão é o único caminho. Há também uma taxa de 10 centavos do PayPal que não é devolvida nem se você cancelar.",
+        pitfall:
+          "Planejar tudo em torno do PayPal porque um guia disse que ele era aceito e depois encontrar só um campo de cartão no checkout. A regra dos 180 dias é o motivo — não é um erro, e não é algo que o suporte possa dispensar.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Saiba quais cartões são recusados antes de tentar um",
+        body: "O guia de compra exclui os cartões American Express emitidos fora da Coreia e os cartões China UnionPay inteiramente. Todo o resto passa como pagamento por cartão — e a YES24 afirma que a autenticação 3-D Secure é obrigatória no site global, então o cartão precisa estar habilitado para ela no seu banco.",
+        pitfall:
+          "Um Amex que funciona em todos os outros sites é recusado aqui por onde foi emitido, e não por nada relativo ao cartão. Essa falha parece idêntica a um bloqueio do banco, então as pessoas passam a venda inteira ligando para o banco por causa do problema errado.",
+        takes: "10 minutos, com o seu banco",
+      },
+      {
+        title: "Escolha retirada no local ou entrega internacional na hora da compra",
+        body: "As duas existem, mas a entrega internacional é por show e não universal: a YES24 diz que a disponibilidade varia por apresentação e que a taxa varia por destino, e que a página do evento é onde isso está informado. Mudar a forma de entrega depois só é possível até 20 dias úteis antes do show — quatro semanas de trabalho, não quatro dias.",
+        pitfall:
+          "Vinte dias úteis são mais ou menos um mês de calendário. Comprar com duas semanas de antecedência significa que a forma que você escolheu na fila é a forma com que você vai ficar.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Leia o relógio da compra e do cancelamento, que não é a data do show",
+        body: "A compra fecha às 17h do dia anterior num show de terça a sábado, e às 11h do sábado para um show de domingo ou segunda. O cancelamento roda exatamente no mesmo relógio, e depois que ele passa não há cancelamento, alteração nem reembolso. O cancelamento é gratuito dentro de 7 dias da compra; depois disso é uma taxa por ingresso que sobe para 10%, 20% e 30% do valor pago conforme o show se aproxima. O limite é de 10 ingressos por pessoa por vez.",
+        pitfall:
+          "A taxa de serviço é onde a YES24 se contradiz: o FAQ diz 2.000 KRW numa linha e logo depois anuncia a mudança para 3.000 KRW por ingresso a partir de 14 de agosto de 2023 na linha seguinte. Considere 3.000 como atual. De um jeito ou de outro ela só é reembolsável até 23:59 do dia da compra, e não dentro da janela de 7 dias que cobre o ingresso em si.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Leve o passaporte e o registro da compra ao local do evento",
+        body: "A retirada exige um documento de identidade físico e válido — a YES24 nomeia o passaporte — junto com o registro da confirmação da compra. O guia de compra também manda imprimir os detalhes da compra e entregá-los na bilheteria. A política de cada show na página do evento prevalece sobre isso, e a YES24 diz que a página do evento é que vale, então leia-a mesmo que você já tenha retirado ingresso naquele local antes.",
+        pitfall:
+          "Uma foto da confirmação no celular não é o que está descrito. Imprima, e leve o passaporte com que você se cadastrou em vez de qualquer outro documento.",
+        takes: "No local do evento",
+      },
+    ],
+    faq: [
+      {
+        q: "Posso usar a minha conta YES24 atual no site em inglês?",
+        a: "Não. A YES24 diz que membros já existentes precisam se cadastrar de novo para o site Global YES24 TICKET, e que ele é separado do global.yes24.com, sem dados de membro compartilhados.",
+      },
+      {
+        q: "Por que o PayPal não aparece no checkout?",
+        a: "O PayPal só é oferecido quando há mais de 180 dias entre a data da compra e a data do show. A maioria das compras de show fica bem dentro desse prazo, então o cartão é o único caminho.",
+      },
+      {
+        q: "Quais cartões a YES24 Global recusa?",
+        a: "Cartões American Express emitidos fora da Coreia do Sul e cartões China UnionPay. Outros cartões são aceitos, mas precisam passar pelo 3-D Secure, que o site exige.",
+      },
+      {
+        q: "Outra pessoa pode retirar o meu ingresso?",
+        a: "Não. Ingressos para retirada só podem ser retirados pelo titular, com um passaporte físico e o registro da compra — a não ser que o show em questão diga outra coisa na própria página.",
+      },
+      {
+        q: "Quanto tempo leva um reembolso?",
+        a: "Reembolsos no cartão são informados como 3 a 7 dias, com a política da própria administradora decidindo, e até 30 dias. Reembolsos do PayPal voltam para o saldo do PayPal dentro de 5 dias úteis — pela taxa de câmbio da data do reembolso, incluindo o spread da conversão, então o valor devolvido pode ser menor que o valor pago.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Billetterie YES24 Global : les règles qui ne sont pas sur la page en anglais",
+    summary:
+      "Votre compte YES24 actuel ne fonctionnera pas. PayPal n'apparaît que si le concert est assez loin. Deux types de carte sont refusés d'emblée, et la salle compare votre passeport au nom sous lequel vous vous êtes inscrit.",
+    scope:
+      "Couvre le site YES24 TICKET en anglais utilisé par les acheteurs de l'étranger. Le site YES24 en coréen fonctionne avec un autre système de comptes et une autre vérification d'identité. Les conditions propres à un concert sur sa page d'événement priment sur tout ce qui est ici, et YES24 le dit elle-même.",
+    intro: [
+      "YES24 publie ses règles pour l'étranger dans un guide d'achat et une FAQ en anglais, et presque rien de ce qu'ils contiennent n'apparaît dans les guides qui se classent sur le sujet. Ces règles sont précises, elles sont inhabituelles, et plusieurs d'entre elles mettront fin à votre réservation le jour même si vous les découvrez au moment de payer.",
+      "Tout ce qui suit vient de ces deux pages, lues le 20 octobre 2026. Là où YES24 se contredit — et elle le fait, une fois, sur des frais — cette page le signale plutôt que de retenir le chiffre qui arrange.",
+    ],
+    steps: [
+      {
+        title: "Inscrivez-vous à nouveau, même si vous avez déjà un compte YES24",
+        body: "YES24 l'écrit noir sur blanc : les membres YES24 existants qui veulent utiliser le site Global YES24 TICKET doivent s'inscrire à nouveau. Elle précise aussi que le site mondial de billetterie est autre chose que global.yes24.com, la librairie, et que les deux ne partagent aucune donnée de membre. Les non-membres ne peuvent pas réserver du tout : c'est donc la première étape et non une formalité.",
+        pitfall:
+          "Trois services YES24 aux noms voisins et aucun identifiant commun. Le découvrir dans une file d'attente, c'est le découvrir trop tard — le compte doit de toute façon exister plusieurs jours avant, à cause du contrôle de nom ci-dessous.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Enregistrez le nom exactement tel qu'il figure sur votre passeport",
+        body: "C'est le seul endroit où une plateforme dit tout haut ce que les autres taisent. La FAQ de YES24 : si le nom de votre compte YES24 diffère du nom de votre passeport, vous risquez d'avoir du mal à retirer le billet réservé à la salle. Les billets à retirer sur place ne peuvent l'être que par leur titulaire, et le retrait exige une pièce d'identité physique et valide — un passeport — en plus du justificatif de réservation.",
+        pitfall:
+          "Un deuxième prénom omis, une romanisation choisie il y a des années, l'ordre prénom-nom inversé. La salle compare deux documents, elle ne juge pas s'il s'agit à l'évidence de vous.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Vérifiez si PayPal est même proposé pour votre concert",
+        body: "PayPal sur YES24 Global n'est disponible que lorsqu'il y a plus de 180 jours entre la date de réservation et la date du concert. Pour la plupart des concerts de K-pop, annoncés un ou deux mois à l'avance, cela veut dire que PayPal n'est tout simplement pas une option et que la carte est la seule voie. Il existe aussi des frais PayPal de 10 cents qui ne sont pas remboursés, même en cas d'annulation.",
+        pitfall:
+          "Bâtir son plan sur PayPal parce qu'un guide le disait accepté, puis ne trouver qu'un champ de carte au paiement. La règle des 180 jours en est la raison — ce n'est pas une erreur, et le support ne peut pas y déroger.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Sachez quelles cartes sont refusées avant d'en essayer une",
+        body: "Le guide d'achat exclut les cartes American Express émises hors de Corée, ainsi que les cartes China UnionPay dans leur totalité. Tout le reste passe en paiement par carte — et YES24 indique que l'authentification 3-D Secure est obligatoire sur le site mondial, donc la carte doit y être inscrite auprès de votre banque.",
+        pitfall:
+          "Une Amex qui marche sur tous les autres sites est refusée ici pour son lieu d'émission, et non pour quoi que ce soit qui tienne à la carte. Cet échec ressemble trait pour trait à un blocage bancaire, alors les gens passent la vente au téléphone avec leur banque pour le mauvais problème.",
+        takes: "10 minutes, avec votre banque",
+      },
+      {
+        title: "Choisissez le retrait sur place ou la livraison à l'étranger au moment de réserver",
+        body: "Les deux existent, mais la livraison à l'étranger se décide par concert et non universellement : YES24 indique que la disponibilité varie selon la représentation, que les frais varient selon la destination, et que c'est la page de l'événement qui le précise. Changer de mode de remise ensuite n'est possible que jusqu'à 20 jours ouvrés avant le concert — quatre semaines de travail, pas quatre jours.",
+        pitfall:
+          "Vingt jours ouvrés font environ un mois de calendrier. Réserver quinze jours avant, c'est garder le mode choisi dans la file d'attente.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Lisez l'horloge de la réservation et de l'annulation, qui n'est pas la date du concert",
+        body: "La réservation ferme à 17h la veille pour un concert du mardi au samedi, et à 11h le samedi pour un concert du dimanche ou du lundi. L'annulation suit exactement la même horloge, et une fois celle-ci passée il n'y a ni annulation, ni modification, ni remboursement. L'annulation est gratuite dans les 7 jours suivant l'achat ; ensuite ce sont des frais par billet qui montent à 10%, 20% puis 30% du montant payé à mesure que le concert approche. La limite est de 10 billets par personne à la fois.",
+        pitfall:
+          "Les frais de réservation sont l'endroit où YES24 se contredit : la FAQ indique 2 000 KRW sur une ligne puis annonce, à la ligne suivante, le passage à 3 000 KRW par billet à compter du 14 août 2023. Retenez 3 000 comme le montant actuel. Dans les deux cas ils ne sont remboursables que jusqu'à 23h59 le jour de l'achat, et non dans la fenêtre de 7 jours qui couvre le billet lui-même.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Apportez le passeport et le justificatif de réservation à la salle",
+        body: "Le retrait exige une pièce d'identité physique et valide — YES24 nomme le passeport — accompagnée du justificatif de confirmation de réservation. Le guide d'achat vous demande aussi d'imprimer le détail de l'achat et de le remettre au guichet. La politique propre au concert, sur la page de l'événement, prime là-dessus, et YES24 dit que c'est la page de l'événement qui l'emporte : lisez-la donc même si vous avez déjà retiré un billet dans cette salle.",
+        pitfall:
+          "Une photo de la confirmation sur un téléphone n'est pas ce qui est décrit. Imprimez-la, et emportez le passeport sous lequel vous vous êtes inscrit plutôt qu'une autre pièce d'identité.",
+        takes: "À la salle",
+      },
+    ],
+    faq: [
+      {
+        q: "Puis-je utiliser mon compte YES24 existant sur le site en anglais ?",
+        a: "Non. YES24 indique que les membres existants doivent s'inscrire à nouveau pour le site Global YES24 TICKET, et qu'il est distinct de global.yes24.com, sans partage des données de membre.",
+      },
+      {
+        q: "Pourquoi PayPal est-il absent au moment de payer ?",
+        a: "PayPal n'est proposé que lorsqu'il y a plus de 180 jours entre la date de réservation et la date du concert. La plupart des réservations de concert tombent largement en dessous, donc la carte est la seule voie.",
+      },
+      {
+        q: "Quelles cartes YES24 Global refuse-t-elle ?",
+        a: "Les cartes American Express émises hors de Corée du Sud, et les cartes China UnionPay. Les autres cartes sont acceptées mais doivent passer le 3-D Secure, que le site exige.",
+      },
+      {
+        q: "Quelqu'un d'autre peut-il retirer mon billet ?",
+        a: "Non. Les billets à retirer sur place ne peuvent l'être que par leur titulaire, avec un passeport physique et le justificatif de réservation — sauf si le concert en question indique autre chose sur sa propre page.",
+      },
+      {
+        q: "Combien de temps prend un remboursement ?",
+        a: "Les remboursements par carte sont annoncés entre 3 et 7 jours, la politique de l'émetteur de la carte décidant, et jusqu'à 30 jours. Les remboursements PayPal reviennent sur le solde PayPal dans les 5 jours ouvrés — au taux de change de la date de remboursement, marge de conversion comprise, de sorte que le montant rendu peut être inférieur au montant payé.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Comprando no Weverse Shop de fora da Coreia",
+    summary:
+      "Em qual loja você está, por que o preço muda no checkout, quais formas de pagamento a sua moeda realmente recebe, e os países para os quais a Coreia não consegue enviar.",
+    scope:
+      "Cobre as compras no Weverse Shop de produtos físicos e álbuns enviados da Coreia. Compras de assinatura e de ingressos são tratadas separadamente e estão no guia de pré-venda. As regras aqui vêm dos próprios avisos do Weverse Shop e mudam sem muito aviso prévio.",
+    intro: [
+      "Quase todo guia em inglês sobre o Weverse Shop ainda diz que a loja global aceita PayPal ou Eximbay e nada mais. Isso era verdade anos atrás. A lista de pagamentos é mais longa hoje, ela é definida pela moeda em que a sua conta está e não pelo país onde você mora, e desde fevereiro de 2026 o preço na página do produto não é o preço que você paga.",
+      "Nada disso está escondido — está nos avisos da própria loja, que é de onde vem tudo abaixo. É só que ninguém que escreve esses guias foi lê-los.",
+    ],
+    steps: [
+      {
+        title: "Descubra em qual Weverse Shop você está de fato",
+        body: "O Weverse Shop não é uma loja só. Existe uma loja GLOBAL e existem lojas regionais, e elas têm estoques diferentes, janelas de pré-venda diferentes e enviam de lugares diferentes. Um item que você viu outra pessoa comprar pode simplesmente não existir na sua loja. Veja em qual você está antes de planejar algo em torno de uma data de lançamento, porque o prazo final de pré-venda de uma loja não diz nada sobre as outras.",
+        pitfall:
+          "Um link que alguém compartilha numa comunidade de fãs abre a loja dessa pessoa, não a sua. Se a página carrega mas o item não entra no carrinho, em geral você está na loja errada e não atrasado.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Defina a sua moeda antes de olhar qualquer coisa",
+        body: "A sua moeda padrão decide quais formas de pagamento são oferecidas a você. O Weverse informa estas por moeda: USD recebe PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay e Grab Pay. JPY recebe a mesma lista sem o Grab Pay. CNY perde o PayPal. MXN é só PayPal e Apple Pay. KRW acrescenta os cartões coreanos e as carteiras coreanas — Toss, NAVER Pay, Kakao Pay, PAYCO. MXN é a mais curta das quatro listas não coreanas e a que vale planejar com antecedência: duas formas, as duas digitais, nenhuma opção em dinheiro. Se nenhuma das duas estiver configurada, não existe um terceiro botão no checkout.",
+        pitfall:
+          "Não existe um simples “pagar com Visa” nas moedas que não são KRW. O seu cartão passa pelo PayPal ou pelo Eximbay, que é uma transação diferente para o seu banco do que uma cobrança de estabelecimento coreano — e é por isso que um cartão que funciona em outros lugares pode falhar aqui.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Espere o preço subir no checkout, e saiba por quê",
+        body: "Desde 3 de fevereiro de 2026, o Weverse calcula o imposto a partir do seu endereço de entrega e de cobrança. Pedidos com destino à Coreia mostram preços com imposto incluído do começo ao fim. Pedidos para qualquer outro lugar mostram o preço da página do produto sem imposto, e o imposto do destino é acrescentado no checkout quando você informa um endereço. O número na página do produto não é o número que você paga, e isso é intencional e não um defeito.",
+        pitfall:
+          "Isso parece exatamente um golpe ou um bug, e é o ponto em que as pessoas abandonam o pedido. O aumento é o imposto que o seu próprio país cobra, recolhido na frente em vez de pela aduana depois.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Preencha o endereço de cobrança, não só o de entrega",
+        body: "A mesma mudança de fevereiro de 2026 acrescentou um campo de endereço de cobrança no checkout, porque o cálculo do imposto precisa dele. Para alguns produtos intangíveis — itens digitais e conteúdo — o endereço de cobrança pode ser obrigatório em vez de opcional. Preencha com precisão: é dele que a alíquota é calculada, e um endereço errado não é algo que você possa corrigir discretamente depois.",
+        pitfall:
+          "Copiar o endereço de entrega para o campo de cobrança sem pensar está certo quando os dois coincidem e errado quando não. Se o seu cartão está registrado em outro endereço, use esse.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Confira o idioma do endereço contra o destino",
+        body: "O Weverse pede aos clientes internacionais que confirmem em qual idioma o país de destino precisa do endereço antes de digitá-lo. A regra é mais clara no sentido inverso: um pedido com entrega na Coreia do Sul tem de levar o endereço em coreano, porque as transportadoras podem não aceitar ou processar errado um endereço em inglês. Para todos os outros lugares, escreva o endereço como o seu próprio serviço postal nacional espera.",
+        pitfall:
+          "Transliterar um endereço coreano para o inglês é a causa mais comum de uma entrega atrasada ou fracassada em pedidos com destino à Coreia.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Confirme se a Coreia pode enviar para você",
+        body: "O envio a partir da Coreia do Sul está indisponível para uma lista de países e regiões que o Weverse mantém e atualiza. Na revisão de 15 de julho de 2026 ela abrange Mianmar, a República Democrática do Congo, o Iraque, o Irã, o Líbano, o Mali, a Rússia, Andorra, a Ucrânia, Belarus, o Afeganistão, as Antilhas Neerlandesas, Israel e a Turquia. A lista muda, então consulte o aviso em vez desta página.",
+        pitfall:
+          "A lista é descrita como uma interrupção temporária e não como política, o que significa que um país pode sair dela assim como pode entrar. Nem um pedido anterior bem-sucedido nem o pedido de um amigo no ano passado resolvem se você pode comprar hoje.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Compre dentro da janela de pré-venda se os brindes importam",
+        body: "Os benefícios de pré-venda — os pôsteres, photocards e brindes de primeira tiragem que normalmente são o motivo de comprar na loja oficial em vez de em algum lugar mais barato — estão amarrados à janela de pré-venda, não ao álbum. Quando a janela fecha, o mesmo álbum é enviado sem eles. Se os brindes são o ponto, o prazo é o que se deve planejar, e não a data de lançamento.",
+        pitfall:
+          "As janelas de pré-venda fecham num horário coreano, que é a noite anterior ou a madrugada onde mora a maior parte dos leitores deste site.",
+        takes: "Antes do prazo final",
+      },
+    ],
+    faq: [
+      {
+        q: "Posso pagar com Visa ou Mastercard no Weverse Shop?",
+        a: "Não como opção direta de cartão fora da configuração em moeda coreana. Em USD, JPY, CNY e MXN o cartão passa pelo PayPal ou pelo Eximbay. Isso ainda chega ao seu cartão, mas o seu banco vê um tipo diferente de transação, então vale liberar pagamentos internacionais com antecedência.",
+      },
+      {
+        q: "Por que o preço subiu quando eu informei o meu endereço?",
+        a: "Desde 3 de fevereiro de 2026, os preços fora da Coreia são mostrados na página do produto sem imposto, e o imposto do seu destino é acrescentado no checkout. É o imposto que o seu próprio país cobra, recolhido na compra em vez de na entrega.",
+      },
+      {
+        q: "Vou ser cobrado pela aduana quando chegar?",
+        a: "O Weverse agora paga antecipadamente tributos e impostos no checkout nos pedidos aplicáveis, o que, segundo ele, reduz a necessidade de pagamento adicional durante o desembaraço. Ele afirma que isso não vale para todo país ou região, então é uma expectativa razoável e não uma garantia.",
+      },
+      {
+        q: "Eu estou no México. Quais formas de pagamento eu recebo de fato?",
+        a: "Duas. O aviso de pagamentos do Weverse lista MXN como PayPal e Apple Pay — a mais curta das quatro listas de moedas não coreanas, e as duas digitais. Não há opção em dinheiro nem um terceiro botão, então configure uma das duas antes de uma janela de pré-venda e não dentro dela.",
+      },
+      {
+        q: "O Weverse Shop envia para o meu país?",
+        a: "Em geral sim, mas há uma lista mantida de países e regiões que não podem receber envios da Coreia do Sul no momento. Consulte esse aviso para ver a lista atual antes de comprar — ela é revisada conforme as condições mudam.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Commander sur Weverse Shop depuis l'étranger",
+    summary:
+      "Dans quelle boutique vous êtes, pourquoi le prix change au moment de payer, quels moyens de paiement votre devise obtient réellement, et les pays vers lesquels la Corée ne peut pas expédier.",
+    scope:
+      "Couvre les commandes sur Weverse Shop de produits physiques et d'albums expédiés depuis la Corée. Les achats d'abonnement et la billetterie sont traités à part et figurent dans le guide de prévente. Les règles exposées ici viennent des avis publiés par Weverse Shop lui-même et changent sans grand préavis.",
+    intro: [
+      "Presque tous les guides en anglais consacrés à Weverse Shop affirment encore que la boutique mondiale accepte PayPal ou Eximbay et rien d'autre. C'était vrai il y a des années. La liste des paiements est plus longue aujourd'hui, elle est déterminée par la devise de votre compte plutôt que par le pays où vous vivez, et depuis février 2026 le prix affiché sur la fiche produit n'est pas le prix que vous payez.",
+      "Rien de tout cela n'est caché — c'est dans les avis de la boutique elle-même, d'où vient tout ce qui suit. C'est simplement que personne parmi les auteurs de ces guides n'est allé les lire.",
+    ],
+    steps: [
+      {
+        title: "Déterminez dans quel Weverse Shop vous vous trouvez réellement",
+        body: "Weverse Shop n'est pas une boutique unique. Il y a une boutique GLOBAL et il y a des boutiques régionales, qui ont des stocks différents, des fenêtres de précommande différentes et expédient depuis des endroits différents. Un article que vous avez vu quelqu'un d'autre commander peut tout simplement ne pas exister dans votre boutique. Vérifiez dans laquelle vous êtes avant de bâtir un plan autour d'une date de sortie, parce qu'une date limite de précommande dans une boutique ne vous apprend rien sur les autres.",
+        pitfall:
+          "Un lien partagé par quelqu'un dans une communauté de fans ouvre sa boutique, pas la vôtre. Si la page s'affiche mais que l'article refuse d'aller au panier, c'est généralement que vous êtes dans la mauvaise boutique, et non que vous êtes en retard.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Réglez votre devise avant de regarder quoi que ce soit",
+        body: "Votre devise par défaut décide des moyens de paiement qui vous sont proposés. Weverse les indique par devise : l'USD donne PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay et Grab Pay. Le JPY donne la même liste sans Grab Pay. Le CNY perd PayPal. Le MXN, c'est uniquement PayPal et Apple Pay. Le KRW ajoute les cartes coréennes et les portefeuilles coréens — Toss, NAVER Pay, Kakao Pay, PAYCO. Le MXN est la plus courte des quatre listes non coréennes et celle qu'il faut anticiper : deux moyens, tous deux numériques, aucune option en espèces. Si aucun des deux n'est en place, il n'y a pas de troisième bouton au moment de payer.",
+        pitfall:
+          "Il n'existe pas de simple « payer avec Visa » sur les devises autres que le KRW. Votre carte passe par PayPal ou Eximbay, ce qui est pour votre banque une transaction différente d'un débit chez un commerçant coréen — et c'est la raison pour laquelle une carte qui marche ailleurs peut malgré tout échouer ici.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Attendez-vous à ce que le prix monte au moment de payer, et sachez pourquoi",
+        body: "Depuis le 3 février 2026, Weverse calcule la taxe à partir de votre adresse de livraison et de facturation. Les commandes à destination de la Corée affichent des prix taxe comprise d'un bout à l'autre. Les commandes vers n'importe où ailleurs affichent le prix de la fiche produit hors taxe, et la taxe de la destination est ajoutée au moment de payer, dès que vous saisissez une adresse. Le chiffre de la fiche produit n'est pas le chiffre que vous payez, et c'est délibéré plutôt qu'un défaut.",
+        pitfall:
+          "Cela ressemble trait pour trait à une arnaque ou à un bug, et c'est le moment où les gens abandonnent leur commande. L'augmentation est la taxe que votre propre pays prélève, encaissée d'emblée au lieu de l'être par la douane plus tard.",
+        takes: "1 minute",
+      },
+      {
+        title: "Renseignez l'adresse de facturation, pas seulement celle de livraison",
+        body: "Le même changement de février 2026 a ajouté un champ d'adresse de facturation au moment de payer, parce que le calcul de la taxe en a besoin. Pour certains produits immatériels — articles numériques et contenus — l'adresse de facturation peut être obligatoire plutôt qu'optionnelle. Saisissez-la correctement : c'est d'elle que le taux de taxe est calculé, et une adresse fausse n'est pas quelque chose que vous pourrez corriger discrètement ensuite.",
+        pitfall:
+          "Recopier l'adresse de livraison dans le champ de facturation sans réfléchir est juste quand les deux coïncident et faux quand elles diffèrent. Si votre carte est rattachée à une autre adresse, utilisez celle-là.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Vérifiez la langue de l'adresse par rapport à la destination",
+        body: "Weverse demande à ses clients internationaux de vérifier dans quelle langue le pays de destination attend l'adresse avant de la saisir. La règle est plus nette dans l'autre sens : une commande livrée en Corée du Sud doit porter l'adresse en coréen, parce que les transporteurs peuvent refuser ou mal traiter une adresse en anglais. Partout ailleurs, écrivez l'adresse comme votre propre service postal national l'attend.",
+        pitfall:
+          "Translittérer une adresse coréenne en anglais est à elle seule la cause la plus fréquente d'une livraison retardée ou manquée sur les commandes à destination de la Corée.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Confirmez que la Corée peut expédier jusqu'à chez vous",
+        body: "L'expédition depuis la Corée du Sud est indisponible vers une liste de pays et de régions que Weverse tient à jour. Dans la révision du 15 juillet 2026, elle couvre le Myanmar, la République démocratique du Congo, l'Irak, l'Iran, le Liban, le Mali, la Russie, l'Andorre, l'Ukraine, le Bélarus, l'Afghanistan, les Antilles néerlandaises, Israël et la Turquie. La liste bouge : consultez donc l'avis plutôt que cette page.",
+        pitfall:
+          "La liste est présentée comme une perturbation temporaire et non comme une politique, ce qui veut dire qu'un pays peut en sortir autant qu'il peut y entrer. Ni une commande passée avec succès auparavant, ni celle d'un ami l'an dernier ne tranchent la question de savoir si vous pouvez commander aujourd'hui.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Commandez dans la fenêtre de précommande si les bonus comptent",
+        body: "Les avantages de précommande — les affiches, photocards et bonus de premier tirage qui sont en général la raison de commander sur la boutique officielle plutôt qu'ailleurs à meilleur prix — sont liés à la fenêtre de précommande, pas à l'album. Une fois la fenêtre refermée, le même album est expédié sans eux. Si ce sont les bonus qui comptent, c'est la date limite qu'il faut anticiper, et non la date de sortie.",
+        pitfall:
+          "Les fenêtres de précommande se referment à une heure coréenne, c'est-à-dire la veille au soir ou au milieu de la nuit là où vit la plupart des lecteurs de ce site.",
+        takes: "Avant la date limite",
+      },
+    ],
+    faq: [
+      {
+        q: "Puis-je payer avec une Visa ou une Mastercard sur Weverse Shop ?",
+        a: "Pas en tant qu'option de carte directe hors du réglage en devise coréenne. En USD, JPY, CNY et MXN, la carte passe par PayPal ou Eximbay à la place. Cela atteint quand même votre carte, mais votre banque voit un autre type de transaction : il vaut donc la peine d'activer les paiements internationaux à l'avance.",
+      },
+      {
+        q: "Pourquoi le prix a-t-il augmenté quand j'ai saisi mon adresse ?",
+        a: "Depuis le 3 février 2026, les prix hors de Corée sont affichés sur la fiche produit hors taxe, et la taxe de votre destination est ajoutée au moment de payer. C'est la taxe que votre propre pays prélève, encaissée à l'achat plutôt qu'à la livraison.",
+      },
+      {
+        q: "Vais-je payer la douane à l'arrivée ?",
+        a: "Weverse prépaie désormais droits et taxes au moment de payer pour les commandes concernées, ce qui, selon lui, réduit le besoin d'un paiement supplémentaire lors du dédouanement. Il précise que cela ne s'applique pas à tous les pays ou régions : c'est donc une attente raisonnable et non une garantie.",
+      },
+      {
+        q: "Je suis au Mexique. Quels moyens de paiement ai-je réellement ?",
+        a: "Deux. L'avis de paiement de Weverse indique pour le MXN PayPal et Apple Pay — la plus courte des quatre listes de devises non coréennes, et les deux sont numériques. Il n'y a pas d'option en espèces ni de troisième bouton : mettez donc l'un des deux en place avant une fenêtre de précommande, et non pendant.",
+      },
+      {
+        q: "Weverse Shop expédie-t-il dans mon pays ?",
+        a: "En général oui, mais une liste tenue à jour de pays et de régions ne peut pas recevoir d'expédition depuis la Corée du Sud à l'heure actuelle. Consultez cet avis pour la liste du moment avant de commander — il est révisé à mesure que les conditions changent.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Como comprar álbuns de K-pop do exterior para que eles contem",
+    summary:
+      "Onde você compra decide se a sua compra é contabilizada, quanto você paga de frete e se você recebe os brindes de pré-venda. Veja como escolher.",
+    scope:
+      "Cobre a compra de álbuns físicos e produtos oficiais com entrega fora da Coreia. Não cobre sites de revenda nem produtos não oficiais.",
+    intro: [
+      "Esta é a pergunta que corre o ano inteiro, ao contrário dos ingressos — e é por isso que ela fica ao lado deles. E, ao contrário dos ingressos, ela tem uma resposta errada que não custa nada visível: o seu álbum chega, só não foi contabilizado.",
+      "Três coisas variam conforme o lugar onde você compra: se a venda é reportada às paradas coreanas, se os brindes de pré-venda vêm com ela, e o custo real na sua porta depois de somar frete e aduana. Elas não andam juntas, então a opção mais barata é com frequência a que não conta para nada.",
+    ],
+    steps: [
+      {
+        title: "Decida o que você realmente quer da compra",
+        body: "Contribuição nas paradas, o álbum físico, os brindes de pré-venda, ou o menor preço. Essas coisas puxam para lados diferentes. Escolha a prioridade antes de escolher a loja, porque a loja vem depois dela.",
+        pitfall:
+          "Comprar num site genérico de vendas para economizar e depois descobrir que não contou é a versão padrão desse erro.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Veja se o vendedor reporta às paradas coreanas",
+        body: "A Hanteo publica a lista, então isso é verificável em vez de ser uma questão de confiança. As suas lojas Family certificadas podem ser pesquisadas em hanteochart.com em inglês e espanhol além do coreano, cada uma com um código de família: a Ktown4U é HF0082KTU001 e a Weverse é HF0082BTS001. A Hanteo também exige que toda loja Family online exiba a marca Family no seu rodapé, com link de volta para hanteochart.com — então o rodapé é a conferência de trinta segundos em qualquer loja, e o registro é a confirmação. A instrução da própria Hanteo aos compradores é conferir tanto o código quanto o selo de certificação, que é reemitido todo ano.",
+        pitfall:
+          "O registro lista a maioria dos nomes de loja em coreano mesmo na página em inglês, então uma loja pode estar nele e parecer ausente numa busca em inglês. E o anúncio de um álbum genuíno num site de vendas de terceiros é o escape mais comum: o álbum é real, o vendedor não é uma loja Family, e a contribuição não está ali.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Compre dentro da janela de pré-venda para ter os brindes",
+        body: "Os benefícios de pré-venda — pôsteres, photocards extras, inscrições em eventos — estão amarrados a comprar dentro de uma janela, e muitas vezes àquele vendedor específico. A janela fecha antes do dia do lançamento, e não nele.",
+        pitfall:
+          "Brindes exclusivos de um vendedor não são intercambiáveis. Comprar o mesmo álbum em outro lugar rende outro conjunto ou nenhum.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Calcule o frete e a exposição à aduana, não o álbum",
+        body: "O frete da Coreia pode passar do preço do álbum, e se você paga encargos de importação por cima depende das regras do seu próprio país. Confira quais são elas agora em vez de supor: os Estados Unidos suspenderam o seu limite de 800 dólares em agosto de 2025 e a União Europeia removeu o de 150 euros em 1º de julho de 2026, então, para quem lê daqui ou de lá, já não existe um valor pequeno o bastante para chegar sem cobrança. Compras em grupo reduzem o frete por item. Faça a conta do custo na sua porta antes de se comprometer.",
+        pitfall:
+          "Planejar em torno de uma isenção que já não existe onde você mora. Onde ainda existe uma, juntar vários álbuns num só pacote pode empurrar o valor declarado acima dela e custar mais que enviá-los separadamente — faça as duas contas.",
+        takes: "20 minutos",
+      },
+      {
+        title: "Guarde o registro do pedido até ele chegar",
+        body: "Salve a confirmação, o código de rastreio e o valor declarado. Para qualquer coisa que der errado — um pacote danificado, uma consulta da aduana, um brinde faltando — é isso que o vendedor vai pedir a você.",
+        pitfall:
+          "O suporte dos vendedores coreanos trabalha muitas vezes por número de pedido e não por busca de e-mail. Sem o número, a conversa é lenta.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Álbuns comprados fora da Coreia contam para as paradas coreanas?",
+        a: "“As paradas coreanas” são duas coisas diferentes e só uma delas tem a ver com a sua compra. A Hanteo conta as vendas reportadas pelas suas lojas Family certificadas, então quem decide é a loja e não a sua localização — confira contra o registro. A Circle Chart é construída ao contrário: ela define a sua Album Chart como unidades remetidas no atacado aos varejistas, menos devoluções, o que significa que aquele álbum foi contado quando saiu do distribuidor e que o seu pedido não a move. A Circle mantém uma Retail Album Chart separada que de fato conta vendas no varejo, em tempo real. O que nenhuma das duas publica é uma regra dizendo que um pedido do exterior numa loja listada é tratado igual a um pedido doméstico, então comprar numa loja listada é o mais longe que você consegue conferir, não uma garantia.",
+      },
+      {
+        q: "Vale a pena uma compra em grupo?",
+        a: "Em geral sim pelo frete, porque o custo por item cai muito. Pese isso contra as regras de importação do seu país — onde ainda existe uma isenção, um único pacote de valor alto pode atrair encargos que vários pacotes menores não atrairiam. Nos Estados Unidos e na União Europeia essa conta mudou: os dois removeram as suas isenções de baixo valor, então não resta limite algum para ficar abaixo.",
+      },
+      {
+        q: "Por que os benefícios de pré-venda são diferentes entre as lojas?",
+        a: "Os vendedores negociam os seus próprios brindes exclusivos, então o mesmo álbum leva extras diferentes conforme o lugar onde foi pré-comprado. Se é um brinde específico que você quer, você tem de comprar na loja que o oferece, dentro da janela dela.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Comment acheter des albums de K-pop depuis l'étranger pour qu'ils comptent",
+    summary:
+      "Le lieu d'achat décide si votre achat est comptabilisé, ce que vous payez en frais de port, et si vous recevez les bonus de précommande. Voici comment choisir.",
+    scope:
+      "Couvre l'achat d'albums physiques et de produits officiels livrés hors de Corée. Ne couvre ni les places de revente ni les produits non officiels.",
+    intro: [
+      "C'est la question qui tourne toute l'année, contrairement aux billets — et c'est pour cela qu'elle figure juste à côté d'eux. Et contrairement aux billets, elle a une mauvaise réponse qui ne vous coûte rien de visible : votre album arrive, il n'a simplement pas été comptabilisé.",
+      "Trois choses varient selon le lieu d'achat : si la vente est déclarée aux classements coréens, si les bonus de précommande l'accompagnent, et le coût réel rendu chez vous une fois les frais de port et la douane intégrés. Elles ne se déplacent pas ensemble, de sorte que l'option la moins chère est fréquemment celle qui ne compte pour rien.",
+    ],
+    steps: [
+      {
+        title: "Décidez ce que vous attendez réellement de cet achat",
+        body: "Une contribution au classement, l'album physique, les bonus de précommande, ou le prix le plus bas. Ces objectifs tirent dans des directions différentes. Choisissez la priorité avant de choisir la boutique, parce que la boutique en découle.",
+        pitfall:
+          "Acheter sur une place de marché généraliste pour économiser, puis découvrir que cela n'a pas compté : c'est la version standard de cette erreur.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Vérifiez si le vendeur déclare aux classements coréens",
+        body: "Hanteo publie la liste, donc la chose est vérifiable au lieu de reposer sur la confiance. Ses boutiques Family certifiées sont consultables sur hanteochart.com en anglais et en espagnol en plus du coréen, chacune portant un code de famille : Ktown4U est HF0082KTU001 et Weverse est HF0082BTS001. Hanteo exige en outre que toute boutique Family en ligne affiche la marque Family dans son pied de page, avec un lien renvoyant vers hanteochart.com — le pied de page est donc la vérification de trente secondes sur n'importe quelle boutique, et le registre en est la confirmation. La consigne de Hanteo elle-même aux acheteurs est de contrôler à la fois le code et le sceau de certification, qui est réémis chaque année.",
+        pitfall:
+          "Le registre liste la plupart des noms de boutique en coréen même sur la page en anglais : une boutique peut donc y figurer et paraître absente à une recherche en anglais. Et l'annonce d'un album authentique sur une place de marché tierce est la méprise courante : l'album est réel, le vendeur n'est pas une boutique Family, et la contribution n'est pas là.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Commandez dans la fenêtre de précommande pour avoir les bonus",
+        body: "Les avantages de précommande — affiches, photocards supplémentaires, inscriptions à des événements — sont liés au fait de commander dans une fenêtre, et souvent à ce vendeur précis. La fenêtre se referme avant le jour de la sortie, et non le jour même.",
+        pitfall:
+          "Les bonus exclusifs à un vendeur ne sont pas interchangeables. Commander le même album ailleurs vous donne un autre lot, ou aucun.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Chiffrez les frais de port et l'exposition à la douane, pas l'album",
+        body: "L'expédition depuis la Corée peut dépasser le prix de l'album, et savoir si vous payez des frais d'importation par-dessus dépend des règles de votre propre pays. Vérifiez lesquelles s'appliquent maintenant plutôt que de le supposer : les États-Unis ont suspendu leur seuil de 800 dollars en août 2025 et l'Union européenne a supprimé celui de 150 euros le 1er juillet 2026, de sorte que pour les lecteurs de l'un ou de l'autre, il n'existe plus de valeur assez faible pour arriver sans frais. Les commandes groupées réduisent le port par article. Faites le calcul du coût rendu chez vous avant de vous engager.",
+        pitfall:
+          "Bâtir un plan sur une franchise qui n'existe plus là où vous vivez. Là où il en reste une, regrouper plusieurs albums dans un seul colis peut pousser la valeur déclarée au-delà et coûter plus cher que de les expédier séparément — faites les deux calculs.",
+        takes: "20 minutes",
+      },
+      {
+        title: "Conservez le justificatif de commande jusqu'à l'arrivée",
+        body: "Gardez la confirmation, le numéro de suivi et la valeur déclarée. Pour tout ce qui peut aller de travers — un colis abîmé, une question de la douane, un bonus manquant — c'est ce que le vendeur vous demandera.",
+        pitfall:
+          "Le support des vendeurs coréens travaille souvent par numéro de commande plutôt que par recherche d'e-mail. Sans le numéro, l'échange est lent.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Les albums achetés hors de Corée comptent-ils pour les classements coréens ?",
+        a: "« Les classements coréens » désignent deux choses différentes, et une seule a quelque chose à voir avec votre achat. Hanteo compte les ventes déclarées par ses boutiques Family certifiées : c'est donc la boutique qui décide, pas votre localisation — vérifiez-la dans le registre. Circle Chart est construit à l'inverse : il définit son Album Chart comme les unités expédiées en gros aux détaillants, moins les retours, ce qui veut dire que cet album a été compté en quittant le distributeur et que votre commande ne le fait pas bouger. Circle tient un Retail Album Chart distinct qui, lui, compte les ventes au détail, en temps réel. Ce que ni l'un ni l'autre ne publie, c'est une règle disant qu'une commande depuis l'étranger dans une boutique listée est traitée comme une commande nationale : acheter dans une boutique listée est donc le plus loin que vous puissiez vérifier, pas une garantie.",
+      },
+      {
+        q: "Une commande groupée en vaut-elle la peine ?",
+        a: "En général oui pour les frais de port, parce que le coût par article baisse fortement. Mettez cela en balance avec les règles d'importation de votre pays — là où une franchise subsiste, un unique colis de valeur élevée peut attirer des frais que plusieurs colis plus petits éviteraient. Aux États-Unis et dans l'Union européenne, ce calcul a changé : tous deux ont supprimé leurs exonérations de faible valeur, et il ne reste donc aucun seuil sous lequel se tenir.",
+      },
+      {
+        q: "Pourquoi les avantages de précommande diffèrent-ils d'une boutique à l'autre ?",
+        a: "Les vendeurs négocient leurs propres bonus exclusifs, de sorte que le même album porte des suppléments différents selon l'endroit où il a été précommandé. Si c'est un bonus précis que vous voulez, vous devez commander dans la boutique qui le propose, pendant sa fenêtre.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

@@ -685,6 +685,62 @@ Export cut-outs as **PNG with alpha**. Recovery from a flattened checkerboard
 is in `public/img/README.md` along with the case it fails on — a bone-white
 part touching the checker — which is why guides 03 and 04 are still fallbacks.
 
+## Venue pages
+
+Two guides cover Gocheok Sky Dome, because a reader fails at two different
+points: getting there, and finding the seat once there. The second is not a
+footnote to the first — somebody lost at 18:40 is lost about the building, not
+about the train.
+
+**The seat guide teaches a system, not a map.** The venue publishes one flat
+JPEG with 123 block numbers on it, drawn for baseball, dugouts included. It
+answers the question a reader has at home and not the one they have standing
+against a concrete wall with somebody else's number on it. The system under it
+is four facts — the hundreds digit is the level, the other two digits run one
+way round, the loop has exactly one break, and the gate letters run the same
+way as the numbers — and those four work from any entrance without a compass,
+which the venue does not publish anyway.
+
+The honest line is drawn at the concrete. Blocks are poured and painted, so a
+concert ticket naming 304 means that 304. Everything else about the night is
+the promoter's and set per show: which blocks are sold at all, what the floor
+is called, which gate admits you, when doors open. The page says that twice,
+in the scope and in its last step, because it is the sentence a reader will
+act against.
+
+**`diagram` on a guide replaces the booking-screen graphic.** Every guide used
+to get the same three stacked screens with the same caption about a name that
+does not match the fan club record. Right for the eleven guides about buying
+something; wrong for a guide about a building, where somebody who came to find
+block 417 was shown a payment screen. It is a small closed union in the content
+layer with the mapping to a component in the route, so the content stays data.
+
+`components/VenuePlan.tsx` draws the plan in theme tokens and computes its
+geometry from bearings rather than hard-coded points, for the reason the
+band's hairlines left their inline styles. Nothing in it is traced — it is a
+diagram of the rule at this site's own proportions, and the caption says
+schematic, because a reader who needs to know whether 417 or 418 is the one
+beside gate D has to open the venue's chart. Two things it took a second pass
+to get right, both only visible rendered: the four range labels set at one
+bearing stack into a block that reads as a list standing in front of the
+drawing, worst at phone width, so `labelAt` fans them apart; and a band tone
+that inverts between themes puts dark text on a dark band in light mode, so
+each label sits on a plate of `--paper`.
+
+**The station rows were wrong, and the shape of the error is what is worth
+keeping.** The venue prints its transit information twice — a four-column
+table and a turn-by-turn list under it — and the first version of the
+getting-there guide read the table one column out, handing Guro's exit and
+walking time to Gaebong and Sindorim's bus routes to Guro. Every individual
+fact on the page was a real fact from the real source. Nothing in the suite
+could see it, because no check knows which row a fact came from. Re-reading
+the source caught it; re-reading the guide never would have.
+
+The same source disagrees with itself, and the page now says so rather than
+choosing: the table gives Guro as exit 1 while the turn-by-turn directions and
+the venue's own area map both say exit 2. An official source with two answers
+is reported as two answers.
+
 ## Advertising
 
 Slots live in `components/AdSlot.tsx` and render nothing until their ids are

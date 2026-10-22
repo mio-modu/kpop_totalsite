@@ -118,6 +118,21 @@ export type Guide = {
   readMinutes: number;
   /** Platforms this guide touches, for cross-linking and filtering. */
   platforms: string[];
+  /**
+   * What goes above the scope box, in place of the booking-screen graphic.
+   *
+   * Every guide used to get the same three stacked booking screens, with a
+   * caption about a name that does not match the fan club record. That is the
+   * right graphic for the eleven guides about buying something and the wrong
+   * one for a guide about a building: a reader who came to find block 417 was
+   * shown a payment screen and a warning that has nothing to do with the page
+   * they are on. A guide that sets this renders its own diagram instead.
+   *
+   * It is deliberately a small closed union rather than a component slot,
+   * because the content layer is data and stays data — the mapping from this
+   * key to a component lives in the route that renders it.
+   */
+  diagram?: "gocheok-bowl";
   intro: string[];
   steps: Step[];
   /** Rendered as FAQPage structured data as well as on-page. */
@@ -2920,12 +2935,16 @@ export const guides: Guide[] = [
         pitfall:
           "Reading \u0022Dome\u0022 and assuming there is only one. Two of Seoul\u0027s biggest halls have Dome in the name, they are on opposite sides of the city, and a fan who learns this at 18:00 does not make the show.",
         takes: "2 minutes",
+        see: {
+          slug: "gocheok-sky-dome-finding-your-seat",
+          text: "And what the block number on that ticket is telling you",
+        },
       },
       {
         title: "Know the nearest station, and that it is three minutes away",
-        body: "Line 1, Guil Station, exit 2, and the venue gives the walk as three minutes. That is the closest approach and it is genuinely short. The other three routes the venue publishes are longer: Guro Station on Line 1, exit 1, by bus — route 160 and nine others; Gaebong Station on Line 1, exit 1, a twenty-minute walk or buses 5712 and 5626; and Sindorim on Lines 1 and 2, community bus 06 towards Gocheok Bridge, about fifteen minutes.",
+        body: "Line 1, Guil Station, exit 2: about 150 metres straight ahead, which the venue gives as a three-minute walk. That is the closest approach and it is genuinely short. The other three routes it publishes are longer. Gaebong Station on Line 1, exit 2 — 200 metres straight, right, then 650 metres, and the dome is on your right: about fifteen minutes, or village bus 06 towards Gocheok Bridge. Guro Station on Line 1 — left out of the exit, a kilometre straight, over Gocheok Bridge and the dome is on your left: about twenty minutes, or buses 5712 and 5626. Sindorim on Lines 1 and 2 — bus from exit 1, three stops, ten routes running, the 160 among them.",
         pitfall:
-          "Taking the three-minute walk as the obvious answer. It is the shortest route and the next step is the venue explaining why it may be the wrong one.",
+          "Taking the three-minute walk as the obvious answer. It is the shortest route and the next step is the venue explaining why it may be the wrong one. One number on that page also disagrees with itself: the station table gives Guro as exit 1, while the turn-by-turn directions printed below it and the venue\u0027s own area map both say exit 2. Two sources out of three say 2, and both exits are inside the same station, so the cost of guessing wrong is a minute.",
         takes: "5 minutes",
       },
       {
@@ -2964,7 +2983,7 @@ export const guides: Guide[] = [
     faq: [
       {
         q: "Which station is Gocheok Sky Dome?",
-        a: "Guil Station on Line 1, exit 2, which the venue gives as a three-minute walk. It also publishes three longer routes: Guro Station exit 1 by bus (route 160 and nine others), Gaebong Station exit 1 on foot in about twenty minutes or by buses 5712 and 5626, and Sindorim on Lines 1 and 2 with community bus 06 towards Gocheok Bridge, about fifteen minutes.",
+        a: "Guil Station on Line 1, exit 2, about 150 metres and a three-minute walk. It also publishes three longer routes: Gaebong Station exit 2, about fifteen minutes on foot or village bus 06 towards Gocheok Bridge; Guro Station, about twenty minutes on foot across Gocheok Bridge or buses 5712 and 5626; and Sindorim on Lines 1 and 2, three stops by bus from exit 1 with ten routes running, the 160 among them. The venue\u0027s own table and its turn-by-turn directions disagree on whether Guro is exit 1 or exit 2; the directions and the area map both say 2.",
       },
       {
         q: "If Guil is three minutes away, why would I get off anywhere else?",
@@ -3004,6 +3023,135 @@ export const guides: Guide[] = [
       {
         label: "서울시설공단 고척스카이돔 — 이용안내: the 25,000 cultural-event capacity",
         url: "https://www.sisul.or.kr/open_content/skydome/guidance/dome.jsp",
+      },
+    ],
+  },
+  {
+    slug: "gocheok-sky-dome-finding-your-seat",
+    ko: "좌석",
+    art: "guide-tickets",
+    name: "Gocheok seats",
+    koLine: "고척스카이돔 좌석번호 — 한 방향으로 돌아갑니다",
+    title: "Finding your seat at Gocheok Sky Dome: what the block number on your ticket means",
+    summary:
+      "Four levels, one direction, and a single break in the loop. Three digits read correctly will walk you to your block from any entrance, without a map and without knowing which way is north.",
+    glyph: "ticket",
+    diagram: "gocheok-bowl",
+    status: "sourced",
+    lastChecked: "2026-10-22",
+    scope:
+      "Covers how Gocheok Sky Dome numbers its permanent seating, read off the Seoul Facilities Corporation's own chart and facility pages: the four levels, which direction the numbers run, where the sequence breaks, and where the gates and ticket offices sit relative to it. The chart it is read from is drawn for baseball — it has dugouts on it. The bowl blocks are poured concrete and do not move, so a concert ticket naming block 304 means this 304; but which blocks are sold, what sits on the floor, which gate your ticket admits you through and when doors open are the promoter's, set per show, and nothing here replaces the chart on your own booking page. One venue. KSPO Dome and Inspire Arena number themselves differently and need their own pages.",
+    readMinutes: 7,
+    platforms: ["Gocheok Sky Dome"],
+    intro: [
+      "A seating chart is drawn for somebody who already knows how the building is organised. It is a flat picture of 123 numbers, and it answers the question you have at home — is this a good seat — rather than the question you have at 18:40 standing against a concrete wall with a number on it that is not yours.",
+      "That second question has a short answer, because the numbering is a system rather than a list. Four levels, one direction, one break. Learn those three things and you stop needing the chart.",
+    ],
+    steps: [
+      {
+        title: "Decide first whether your seat is in the building or on the floor",
+        body: "Three digits between 101 and 435 mean a permanent block in the bowl, and the rest of this page locates it. Anything else — a letter on its own, FLOOR, 플로어, a standing zone, a table or box name — is on the field, which has no permanent seats at all. The field is bare floor that the promoter covers, divides and names for each show, so only that show's own chart places it.",
+        pitfall:
+          "Matching a letter on your ticket to a letter on the venue's chart. There are three different alphabets on this one building: the seven gates are lettered A to G, the chart prints field-level baseball zones in T, S and D series, and a concert's floor blocks are lettered by the promoter. A letter is only meaningful next to the thing that issued it.",
+        takes: "2 minutes",
+      },
+      {
+        title: "The first digit is the level, and there are four of them",
+        body: "101 to 132 is the lowest ring, closest to the floor. 201 to 222 is a short second tier. 301 to 334 is the third. 401 to 435 is the top. That matches the building the venue describes — four storeys above ground over two basement levels — so the hundreds digit is a floor number, not a zone name. A 4 is as high as the building goes.",
+        pitfall:
+          "Expecting the 200 level to behave like the others. It is the shortest, 22 blocks against 32, 34 and 35, and it is the only one with holes in the middle of it: the chart shows stretches along the far side of the building carrying no 200-level seating at all. Consecutive numbers there are not necessarily neighbours on the ground.",
+        takes: "1 minute",
+      },
+      {
+        title: "The other two digits are a position on a loop that turns one way",
+        body: "Inside a level the numbers run in a single direction all the way round — clockwise, on the chart as the venue prints it — and every level starts from the same side of the building. So the step from 401 to 405 is the same rotation as the step from 301 to 305, in the same direction, at a different height. There is no left half and right half to learn, and no odd and even side.",
+        pitfall:
+          "Expecting the levels to stack block for block. They hold 32, 22, 34 and 35 blocks, so they drift apart as they go round: only the line they start from is shared. 417 is not above 317, and a friend in 210 is not below you in 310.",
+        takes: "2 minutes",
+      },
+      {
+        title: "The loop has exactly one break, and there is no gate in it",
+        body: "The seating does not close into a full circle. On the side the chart draws at the right there is a wedge of building with no seats at any level, and that is where the numbering restarts — 132 and 101 face each other across it, and so do 435 and 401. The seven gates run clockwise in the same direction the numbers do: A, B, C, D and E along the near side, then F and G across the far one. A is the first gate after the break; G is the last one before it. Gate letters and block numbers are one scale, which is the whole reason the building can be navigated without a compass.",
+        pitfall:
+          "Assuming a gate you can see is a gate you may use. The venue's own chart marks gate C, the one at the centre, as an entrance reserved for R.d-club and skybox season-ticket holders rather than a general one. The nearest door is not always yours.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Arrive on a side you can work with",
+        body: "Guil Station on Line 1, exit 2, is about 150 metres and three minutes from the venue, and on a concert night the operator publishes advice to get off a stop earlier — Guro if you boarded from Seoul or the Suwon and Anyang direction, Gaebong if you came from Incheon or Bucheon. Which you take changes which part of the perimeter you reach first, and therefore how far round you walk. It does not change the rule in the next step, which works from any entrance.",
+        pitfall:
+          "Planning the walk to the building and not the walk around it. Twenty-five thousand people arrive at a ring roughly 600 metres round, and the last two hundred of your metres are the ones with a crowd in them.",
+        takes: "5 minutes, before the day",
+        see: {
+          slug: "gocheok-sky-dome-getting-there",
+          text: "The stations, the exits, and why the nearest is not the right one",
+        },
+      },
+      {
+        title: "At the wall, read two block numbers and you know which way to walk",
+        body: "You do not need to know which compass direction the chart's top points to, and the venue does not publish it. You need two numbers in a row. Read a block number where you are standing, walk a few metres, read the next one. Now you know which way the sequence rises. If yours is higher, keep going; if lower, turn round. Because the loop turns one way at every level, the answer you get on the outside of the building is still true on the stairs and still true on the concourse.",
+        pitfall:
+          "Steering by the floor instead of by the signs. A dome has no view out of it and every stretch of concourse looks like every other stretch; the block numbers are the only thing in the building that tells you where you are. The one place the two-number rule fails is the break, and the break announces itself, because the numbers stop.",
+        takes: "5 minutes on the night",
+      },
+      {
+        title: "Know which half of this the promoter decides",
+        body: "The building fixes the block numbers, the four levels, the gate letters and the ticket offices — the chart marks three, numbered 2, 3 and 4, with the infield one beside gate E and the two outfield ones flanking gates F and G. The promoter fixes everything that changes per show: which blocks are sold at all, because a stage against one end of the floor kills the blocks behind it; what the floor sections are called; which gate your ticket admits you through; and when the doors open. Where your ticket and this page disagree, your ticket is right.",
+        pitfall:
+          "Treating the venue's chart as your show's chart. It is drawn for baseball and has dugouts on it. It is the authority on where 304 is and on nothing else about your night.",
+        takes: "5 minutes",
+        see: {
+          slug: "nol-world-mobile-ticket-and-entry",
+          text: "What the ticket itself has to do at the gate",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "What does a block number like 304 actually tell me?",
+        a: "Two things. The 3 is the level — the third of four, counting the lowest ring as 1. The 04 is a position on a loop that runs one direction all the way round that level, starting from a fixed side of the building. So 304 is low-numbered, which puts it near where the numbering begins, a short walk clockwise from the break in the seating.",
+      },
+      {
+        q: "Which direction do the numbers run?",
+        a: "Clockwise, on the venue's chart as printed, and the same way at every level. The gate letters run the same way: A, B, C, D, E along the near side and F, G across the far side. That means letters and numbers rise together — if you pass gate D on your way to gate E, your block numbers are rising too.",
+      },
+      {
+        q: "Is block 417 directly above block 317?",
+        a: "No. The levels hold different numbers of blocks — 32, 22, 34 and 35 from the bottom up — so they share only the line their numbering starts from and drift apart from there. Use the level you are actually on to navigate, not the one your friend is on.",
+      },
+      {
+        q: "Why do the numbers stop and start again?",
+        a: "Because the seating is a horseshoe, not a ring. There is a wedge of the building with no seats in it at any level, and the numbering restarts there: 132 faces 101 across it, 435 faces 401. It is also the one stretch of the perimeter with no gate in it, which makes it easy to recognise.",
+      },
+      {
+        q: "Can I go in through whichever gate is closest?",
+        a: "Not necessarily. Gate access is set per event by the promoter and printed on your ticket, and at least one gate is not general even on an ordinary day — the venue's chart marks the centre gate as an entrance for R.d-club and skybox season-ticket holders. Read your ticket, then find that gate.",
+      },
+      {
+        q: "The chart on the venue site looks like a baseball stadium. Is it the right one?",
+        a: "It is the right chart for the question this page answers and the wrong one for most others. It is drawn for baseball, dugouts included, and the venue seats 16,601 for a match against about 25,000 for a concert — so a concert is a different arrangement of the same building. What does not change is the concrete: the numbered blocks are permanent, so the chart tells you where 304 is. It cannot tell you whether 304 is sold for your show, or what is on the floor.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "서울시설공단 고척스카이돔 — 좌석배치도: the seating chart the block ranges, gate letters and ticket offices are read from",
+        url: "https://www.sisul.or.kr/open_content/skydome/introduce/seat.jsp",
+      },
+      {
+        label:
+          "서울시설공단 고척스카이돔 — 시설안내: four storeys above ground over two basement levels, and 16,601 seats",
+        url: "https://www.sisul.or.kr/open_content/skydome/introduce/facility.jsp",
+      },
+      {
+        label:
+          "서울시설공단 고척스카이돔 — 이용안내: the 25,000 cultural-event capacity the concert configuration is drawn against",
+        url: "https://www.sisul.or.kr/open_content/skydome/guidance/dome.jsp",
+      },
+      {
+        label:
+          "서울시설공단 고척스카이돔 — 찾아오시는길: the stations, exits and walking distances",
+        url: "https://www.sisul.or.kr/open_content/skydome/introduce/location.jsp",
       },
     ],
   },

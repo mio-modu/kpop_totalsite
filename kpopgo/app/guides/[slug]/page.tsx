@@ -9,6 +9,7 @@ import { LOCALES } from "@/lib/i18n";
 import { LanguageLinks } from "@/components/LanguageLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { StackedScreens, SingleScreen, StepObject } from "@/components/Objects";
+import { GocheokBowl } from "@/components/VenuePlan";
 import { Artwork } from "@/components/Artwork";
 import { VerifiedBadge, StatusNotice } from "@/components/Badges";
 import { PaidDisclosure, AffiliateLink } from "@/components/Affiliate";
@@ -123,19 +124,41 @@ export default async function GuidePage({
         />
       </div>
 
-      {/* ─────────── T21: the booking screens ─────────── */}
-      <div className="wrap mt-10">
-        <div className="sm:hidden">
-          <SingleScreen />
+      {/* ─────────── T21: the booking screens, or the guide's own diagram ───────────
+          The screens are right for a guide about buying something and wrong for
+          a guide about a building, which is what `diagram` exists to say. */}
+      {guide.diagram === "gocheok-bowl" ? (
+        <div className="wrap mt-10">
+          <div className="flex justify-center">
+            <GocheokBowl />
+          </div>
+          <p className="t-sm dim mt-4 max-w-[62ch]">
+            Four levels, numbered outward from the floor. The red arrow is the
+            direction every level counts in; the red dashes are the break where the
+            seating stops and the numbering starts again. Cyan circles are the seven
+            gates, A to G. Red squares are the ticket offices, which the chart marks
+            2, 3 and 4.
+          </p>
+          <p className="data-sm dim mt-2.5 max-w-[62ch]">
+            Schematic, drawn from the venue&rsquo;s own chart rather than traced from
+            it. Which block sits beside which gate to a single number is a question
+            for that chart, linked at the foot of this page.
+          </p>
         </div>
-        <div className="hidden sm:block">
-          <StackedScreens />
+      ) : (
+        <div className="wrap mt-10">
+          <div className="sm:hidden">
+            <SingleScreen />
+          </div>
+          <div className="hidden sm:block">
+            <StackedScreens />
+          </div>
+          <p className="data-sm dim mt-3.5 max-w-[62ch]">
+            Real values, and a real warning: the name does not match the fan club record.
+            That is the failure these guides exist to prevent.
+          </p>
         </div>
-        <p className="data-sm dim mt-3.5 max-w-[62ch]">
-          Real values, and a real warning: the name does not match the fan club record.
-          That is the failure these guides exist to prevent.
-        </p>
-      </div>
+      )}
 
       {/* ─────────── Scope + draft notice ─────────── */}
       <div className="wrap mt-8 grid gap-3">

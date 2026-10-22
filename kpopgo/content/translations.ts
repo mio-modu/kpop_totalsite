@@ -12584,6 +12584,252 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "O vazamento de dados da Weverse: o que vazou de fato, e o único risco que isso cria",
+    summary:
+      "422.584 contas, confirmadas pela própria Weverse. Sem nomes, sem dados de contato, sem números de cartão — um identificador interno e o seu histórico de compras. Essa combinação não é uma conta esvaziada; é a matéria-prima para uma mensagem que sabe o que você comprou.",
+    scope:
+      "Cobre o que a Weverse Company publicou sobre o vazamento que confirmou em setembro de 2026, lido nas versões em inglês e em coreano do aviso. Não somos auditores de segurança e isto não é orientação jurídica: tudo atribuído à Weverse é declaração dela, não uma constatação que verificamos. Um caso de segurança pode evoluir, e esta página carrega a data em que a checamos pela última vez.",
+    intro: [
+      "Em setembro de 2026 o presidente da Weverse Company publicou um aviso confirmando que informações pessoais de clientes haviam vazado. Todo leitor deste site tem uma conta Weverse, então a pergunta não é se isso importa, mas o que isso muda de fato — e a resposta é mais estreita e mais específica do que um dar de ombros ou um pânico.",
+      "O que vem a seguir é o aviso lido com atenção, nos dois idiomas em que foi publicado. A parte útil não é o número. É que a combinação específica de dados que saiu é quase inútil para roubar de você e extraordinariamente boa para convencer você.",
+    ],
+    steps: [
+      {
+        title: "Leia as duas listas, porque a diferença decide tudo",
+        body: "A Weverse discrimina o que vazou sob dois títulos. Como informação pessoal: informação de identificação interna — um número único gerado para identificação do usuário quando você se cadastrou. Como informação geral que ela classifica como não pessoal: tipo de compra, ou seja, forma de pagamento, o nome do gateway de pagamento, a moeda, o valor da compra, o valor do cancelamento, a data e a hora da compra, o status da compra, e a data e a hora do reembolso onde um pedido foi cancelado. A escala é de 422.584 casos contados em unidades de ID de conta. O que não está em nenhuma das duas listas é o ponto: nenhum nome, nenhum dado de contato, nenhum número de cartão ou credencial de pagamento.",
+        pitfall:
+          "Ler 422.584 e preencher o resto com lembranças de outros vazamentos. A resposta a um vazamento de credenciais e a resposta a este são diferentes, então a lista discriminada vale mais que a manchete.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pese a tranquilização da Weverse com justiça, inclusive o limite dela",
+        body: "A Weverse afirma que o identificador interno vazado não é informação que identifique diretamente uma pessoa, como nome ou dados de contato; que é um valor usado apenas dentro dos sistemas internos da Weverse Company e que não pode ser usado externamente; e que falsificação de pagamento ou transferências não autorizadas são improváveis a partir desses itens de dados sozinhos. À primeira vista esse raciocínio se sustenta — um número de linha interno não é uma identidade, e nenhum desses campos é uma credencial. O limite honesto é que um identificador interno passa a identificar no instante em que é cruzado com outro conjunto de dados que também o contenha, e ninguém de fora da empresa consegue medir a probabilidade disso. Essa é a exposição que resta: correlação, não roubo.",
+        pitfall:
+          "Tratar uma tranquilização razoável como garantia, ou tratá-la como lorota. É uma afirmação específica sobre campos específicos, e ela é mais forte justamente onde é mais estreita.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Entenda o risco de verdade: uma mensagem que sabe o que você comprou",
+        body: "Olhe os campos vazados em conjunto — forma de pagamento, gateway, moeda, valor, data, status, data do reembolso. Isso não é o equipamento para cobrar no seu cartão. É o equipamento para escrever uma mensagem que passa no único teste que a maioria das pessoas aplica a um e-mail suspeito, que é se o remetente sabe detalhes reais de um pedido real. Uma mensagem citando o seu valor de compra real, na data real, na moeda real, pelo provedor de pagamento real, é muito mais convincente do que qualquer coisa que um golpista aleatório conseguiria compor.",
+        pitfall:
+          "Usar “eles sabem os detalhes do meu pedido” como prova de que uma mensagem é genuína. Depois deste vazamento esse teste parou de funcionar, e é o teste que quase todo mundo usa.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Saiba por que isso cai em cima de um processo real",
+        body: "Isso importa mais para este público do que para a maioria, porque estranhos legítimos já pedem dinheiro a clientes da Weverse. O Weverse Shop avisa compradores da União Europeia de que eles podem receber instruções de pagamento separadas da aduana local ou da transportadora, e de que não pagar pode atrasar ou impedir a entrega. Então a experiência genuína e a fraudulenta agora se parecem: uma empresa com a qual você não tem relação, citando um pedido que você de fato fez, pedindo um pagamento antes de o seu pacote andar. O vazamento não criou essa sobreposição, mas afiou.",
+        pitfall:
+          "Resolver a ambiguidade pagando, ou ignorando tudo. Um perde dinheiro e o outro perde o pacote.",
+        takes: "—",
+      },
+      {
+        title: "Use uma conferência que não dependa do que a mensagem sabe",
+        body: "O caminho é parar de avaliar a mensagem e começar a avaliar a afirmação. Tire dela o código de rastreio ou a referência do pedido, e então vá você mesmo até a transportadora ou até o Weverse Shop — endereço digitado ou favorito salvo, nunca um link da mensagem — e veja se aquela referência corresponde a um pedido seu e se há de fato algo devido. Se a mensagem for real, a mesma informação está do outro lado. Se não for, não há nada, e você descobriu isso sem clicar em nada.",
+        pitfall:
+          "Seguir o link porque os detalhes estavam certos. Os detalhes estarem certos é agora o estado esperado de uma falsificação.",
+        takes: "5 minutos por mensagem",
+      },
+      {
+        title: "Não confunda trocar a senha com a solução",
+        body: "O reflexo depois de qualquer vazamento é trocar a senha, e aqui isso resolve quase nada: o que foi exposto foi um identificador e metadados de compra por uma API de informações de pagamento, não credenciais de login. Rotacionar a senha não custa nada e não faz mal, então faça se isso acalmar a sua cabeça — mas faça sabendo que é higiene e não remédio, e que o que de fato protege você é o hábito de verificação do passo anterior. Ativar a verificação em duas etapas que o seu provedor de login oferecer vale por princípio geral, e também não é uma resposta a este vazamento.",
+        pitfall:
+          "Trocar a senha, sentir que terminou, e depois confiar na próxima mensagem que citar o seu pedido. Conselho reflexo é confortável e ocupa o lugar do conselho que funciona.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Descubra se você foi afetado pela conta, e não por um guia",
+        body: "A Weverse diz que executou um procedimento separado, conforme os critérios definidos pelas leis e regulamentos aplicáveis, para notificar os clientes cujos dados estavam no vazamento. Então a resposta está na sua própria conta: o endereço de e-mail cadastrado nela e as suas notificações no aplicativo. Nenhum guia pode dizer a você, este inclusive, e qualquer terceiro que diga conferir se você estava no vazamento é motivo de suspeita e não um serviço.",
+        pitfall:
+          "Procurar uma ferramenta de consulta que diga se você foi afetado. Num vazamento de identificadores internos não há nada de relevante que tal ferramenta pudesse conferir, e a própria busca é o que uma página de phishing está esperando.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Anote o que a empresa diz que fez, e o que continua sendo promessa",
+        body: "O relato da Weverse sobre a sua resposta, nas palavras dela: reforçou o controle de acesso na API de processamento de informações de pagamento e removeu dela o identificador interno para que os dados não ficassem expostos externamente; em 4 de setembro protocolou um relatório de incidente de violação junto à Korea Internet & Security Agency; e notificou os clientes afetados. Os planos declarados são uma investigação completa de todas as APIs expostas externamente, controle de acesso mais rígido e informação exposta minimizada, controle mais rígido dos processos de implantação, e monitoramento de segurança mais sensível. Ela também diz ter pedido ao agente externo que acessou os dados que os devolva, e que pretende buscar responsabilização legal. Mantenha as duas categorias separadas: o primeiro grupo são afirmações sobre trabalho concluído que ninguém de fora pode auditar, e o segundo são intenções.",
+        pitfall:
+          "Ler uma lista de melhorias planejadas como uma lista de correções já em funcionamento. O aviso não afirma isso, e um resumo dele também não deveria.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Dê o devido crédito à condução, na medida certa",
+        body: "A linha do tempo que a Weverse descreve é curta: contatada pela KISA em 3 de setembro, depois que um denunciante externo revelou uma vulnerabilidade; inspeção interna imediata e resposta emergencial; relatório de violação protocolado junto à KISA em 4 de setembro; e um aviso público em nome do presidente discriminando o que saiu — inclusive os campos que ela argumenta não serem informação pessoal na lei, que ela não precisava enumerar. Lemos o original em coreano contra o inglês e os dois dizem a mesma coisa, o que é um pequeno sinal em si. Nada disso desfaz um vazamento. Mas um site que só reporta incidentes como escândalos não ensina nada aos seus leitores sobre o que é uma condução competente, e esta está mais perto disso que a maioria.",
+        pitfall:
+          "Concluir de uma avaliação calma que não aconteceu nada. 422.584 contas são uma falha real que uma divulgação rápida não cancela.",
+        takes: "—",
+      },
+      {
+        title: "Pense duas vezes antes de apagar a conta, e saiba o que a exclusão não é",
+        body: "Apagar a conta é o outro reflexo, e é uma decisão maior do que parece. O Weverse Shop e a NOL World amarram coisas reais a uma conta: histórico de pedidos e reservas, endereços salvos, uma assinatura paga, e do lado dos ingressos uma validação de identidade concluída. O ponto decisivo, porém, é mais simples. A exclusão remove os seus dados do serviço daqui para a frente; ela não retrata dados que já saíram. O que estava neste vazamento já estava antes de você decidir qualquer coisa, e fechar a conta depois não alcança isso.",
+        pitfall:
+          "Apagar uma conta como resposta a um vazamento. É uma coisa razoável de se querer e não é um remédio para isto, e custa a você o histórico de que precisaria se alguma compra fosse contestada.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "O meu nome, endereço ou número de cartão vazaram?",
+        a: "Não, segundo a própria discriminação da Weverse. O que ela lista é um número de identificação interna mais metadados de compra — forma de pagamento, nome do gateway de pagamento, moeda, valores de compra e de cancelamento, data e hora da compra, status da compra, e data e hora do reembolso. Nomes, dados de contato e credenciais de pagamento não estão na lista.",
+      },
+      {
+        q: "Devo trocar a minha senha da Weverse?",
+        a: "Não vai fazer mal, e não é a solução. A exposição foi de um identificador e de metadados de compra por uma API de informações de pagamento, e não de credenciais de login, então uma senha nova não resolve isso. Faça se ajudar você a ficar tranquilo, e depois gaste o esforço de verdade em verificar pedidos de pagamento de forma independente, que é o que realmente protege você aqui.",
+      },
+      {
+        q: "Como eu sei se eu fui um dos 422.584?",
+        a: "Pela sua própria conta. A Weverse diz que executou um procedimento separado de notificação aos clientes afetados conforme as leis aplicáveis, então confira o e-mail cadastrado na conta e as suas notificações no aplicativo. Nenhuma ferramenta externa pode dizer a você, e qualquer coisa que anuncie que pode deve ser tratada como tentativa de phishing.",
+      },
+      {
+        q: "Alguém pode usar isso para cobrar no meu cartão?",
+        a: "A Weverse diz que falsificação de pagamento ou transferências não autorizadas são improváveis a partir desses itens sozinhos, e pela cara da lista isso é consistente — nenhum dos campos vazados é um número de cartão ou uma credencial. O risco realista não é uma cobrança direta, e sim uma mensagem convincente que persuada você a fazer um pagamento por conta própria.",
+      },
+      {
+        q: "Se não é informação pessoal, por que isso importa?",
+        a: "Porque utilidade para um atacante e classificação jurídica são perguntas diferentes. Valores de compra, datas, formas de pagamento e moedas são exatamente o que torna uma mensagem fraudulenta crível — e o jeito habitual de as pessoas julgarem um e-mail suspeito é se o remetente sabe detalhes reais de um pedido real. Esse teste já não funciona para ninguém que esteja neste vazamento.",
+      },
+      {
+        q: "Devo apagar a minha conta Weverse?",
+        a: "É uma escolha defensável e não é um remédio. A exclusão interrompe a coleta futura; ela não retrata dados que já saíram, o que inclui tudo o que estava neste vazamento. Ela também custa a você histórico de pedidos e reservas, endereços salvos, qualquer assinatura paga, e do lado dos ingressos uma validação de identidade concluída — então decida pelo fato de você ainda querer o serviço, e não como resposta a isto.",
+      },
+      {
+        q: "O que a Weverse fez de fato?",
+        a: "Pelo relato dela: reforçou o controle de acesso na API de informações de pagamento e removeu dela o identificador interno, protocolou um relatório de incidente de violação junto à KISA em 4 de setembro de 2026, e notificou os clientes afetados. Ela também lista trabalho planejado — auditar todas as APIs expostas externamente, apertar os controles de implantação, elevar a sensibilidade do monitoramento — e diz ter pedido a devolução dos dados ao agente envolvido e pretender buscar responsabilização legal. Os itens concluídos são afirmações dela, e não constatações auditadas.",
+      },
+      {
+        q: "Existe algo mais recente que isto?",
+        a: "Não até a data no topo desta página, que é quando lemos pela última vez a lista de avisos do Weverse Shop. Um assunto de segurança pode evoluir, então essa lista é a versão viva — se existir um aviso posterior, ele estará lá antes de estar aqui.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "La fuite de données Weverse : ce qui a réellement fuité, et le seul risque que cela crée",
+    summary:
+      "422 584 comptes, confirmés par Weverse elle-même. Aucun nom, aucune coordonnée, aucun numéro de carte — un identifiant interne et votre historique d'achats. Cette combinaison n'est pas un compte vidé ; c'est la matière première d'un message qui sait ce que vous avez acheté.",
+    scope:
+      "Couvre ce que Weverse Company a publié sur la fuite qu'elle a confirmée en septembre 2026, lu dans les versions anglaise et coréenne de son avis. Nous ne sommes pas auditeurs en sécurité et ceci n'est pas un conseil juridique : tout ce qui est attribué à Weverse est sa propre déclaration, non une constatation que nous aurions vérifiée. Une affaire de sécurité peut évoluer, et cette page porte la date de notre dernière vérification.",
+    intro: [
+      "En septembre 2026, le président de Weverse Company a publié un avis confirmant que des informations personnelles de clients avaient fuité. Tout lecteur de ce site a un compte Weverse : la question n'est donc pas de savoir si cela compte, mais ce que cela change réellement — et la réponse est plus étroite et plus précise qu'un haussement d'épaules ou qu'une panique.",
+      "Ce qui suit est cet avis lu de près, dans les deux langues où il a paru. La partie utile n'est pas le chiffre. C'est que la combinaison particulière de données qui est sortie est à peu près inutile pour vous voler et singulièrement efficace pour vous convaincre.",
+    ],
+    steps: [
+      {
+        title: "Lisez les deux listes, car c'est leur différence qui décide de tout",
+        body: "Weverse détaille ce qui a fuité sous deux intitulés. Comme information personnelle : une information d'identification interne — un numéro unique généré pour identifier l'utilisateur lors de son inscription. Comme information générale qu'elle classe comme non personnelle : le type d'achat, c'est-à-dire le moyen de paiement, le nom de la passerelle de paiement, la devise, le montant de l'achat, le montant de l'annulation, la date et l'heure de l'achat, le statut de l'achat, et la date et l'heure du remboursement lorsqu'une commande a été annulée. L'ampleur est de 422 584 cas comptés en unités d'identifiant de compte. Ce qui ne figure sur aucune des deux listes est l'essentiel : aucun nom, aucune coordonnée, aucun numéro de carte ni identifiant de paiement.",
+        pitfall:
+          "Lire 422 584 et compléter le reste avec les souvenirs d'autres fuites. La réponse à une fuite d'identifiants de connexion et la réponse à celle-ci sont différentes : la liste détaillée vaut donc davantage que le titre.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Pesez honnêtement la réassurance de Weverse, y compris sa limite",
+        body: "Weverse affirme que l'identifiant interne qui a fuité n'est pas une information identifiant directement une personne, comme un nom ou des coordonnées ; que c'est une valeur utilisée uniquement dans les systèmes internes de Weverse Company et inexploitable à l'extérieur ; et qu'une falsification de paiement ou des virements non autorisés sont peu probables à partir de ces seuls éléments. À première vue ce raisonnement tient — un numéro de ligne interne n'est pas une identité, et aucun de ces champs n'est un identifiant de connexion. La limite honnête est qu'un identifiant interne devient identifiant dès l'instant où il est recoupé avec un autre jeu de données qui le contient aussi, et personne hors de l'entreprise ne peut mesurer la probabilité d'un tel recoupement. C'est l'exposition qui subsiste : la corrélation, pas le vol.",
+        pitfall:
+          "Prendre une réassurance raisonnable pour une garantie, ou la prendre pour de la communication. C'est une affirmation précise sur des champs précis, et elle est la plus solide là précisément où elle est la plus étroite.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Comprenez le vrai risque : un message qui sait ce que vous avez acheté",
+        body: "Regardez les champs qui ont fuité ensemble — moyen de paiement, passerelle, devise, montant, date, statut, date de remboursement. Ce n'est pas l'outillage pour débiter votre carte. C'est l'outillage pour écrire un message qui passe le seul test que la plupart des gens appliquent à un e-mail suspect : le fait que l'expéditeur connaisse de vrais détails d'une vraie commande. Un message citant votre montant d'achat réel, à la date réelle, dans la devise réelle, via le prestataire de paiement réel, est bien plus convaincant que tout ce qu'un escroc au hasard pourrait composer.",
+        pitfall:
+          "Se servir de « ils connaissent les détails de ma commande » comme preuve qu'un message est authentique. Depuis cette fuite, ce test a cessé de fonctionner, et c'est le test que presque tout le monde emploie.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Sachez pourquoi cela tombe sur un processus bien réel",
+        body: "Cela compte davantage pour ce public que pour la plupart, parce que des inconnus légitimes demandent déjà de l'argent aux clients de Weverse. Weverse Shop prévient les acheteurs de l'Union européenne qu'ils peuvent recevoir des instructions de paiement distinctes de la douane locale ou du transporteur, et que ne pas payer peut retarder ou empêcher la livraison. L'expérience authentique et la frauduleuse se ressemblent donc désormais : une entreprise avec laquelle vous n'avez aucune relation, citant une commande que vous avez réellement passée, réclamant un paiement avant que votre colis n'avance. La fuite n'a pas créé ce recouvrement, mais elle l'a aiguisé.",
+        pitfall:
+          "Trancher l'ambiguïté en payant, ou en ignorant tout. L'un perd de l'argent et l'autre perd le colis.",
+        takes: "—",
+      },
+      {
+        title: "Utilisez une vérification qui ne dépend pas de ce que le message sait",
+        body: "La sortie consiste à cesser d'évaluer le message et à commencer à évaluer son affirmation. Extrayez-en le numéro de suivi ou la référence de commande, puis allez vous-même chez le transporteur ou sur Weverse Shop — adresse tapée ou favori enregistré, jamais un lien contenu dans le message — et voyez si cette référence correspond à une de vos commandes et si quelque chose est réellement dû. Si le message est vrai, la même information se trouve de l'autre côté. Sinon, il n'y a rien, et vous l'avez appris sans cliquer sur quoi que ce soit.",
+        pitfall:
+          "Suivre le lien parce que les détails étaient justes. Des détails justes sont désormais l'état attendu d'un faux.",
+        takes: "5 minutes par message",
+      },
+      {
+        title: "Ne confondez pas un changement de mot de passe avec la solution",
+        body: "Le réflexe après toute fuite est de changer le mot de passe, et ici cela ne règle presque rien : ce qui a été exposé est un identifiant et des métadonnées d'achat via une API d'informations de paiement, non des identifiants de connexion. Changer le mot de passe ne coûte rien et ne nuit en rien : faites-le si cela vous apaise — mais faites-le en sachant que c'est de l'hygiène et non un remède, et que ce qui vous protège vraiment est l'habitude de vérification de l'étape précédente. Activer la double authentification que propose votre fournisseur de connexion vaut par principe général, et ce n'est pas davantage une réponse à cette fuite.",
+        pitfall:
+          "Changer le mot de passe, se sentir quitte, puis faire confiance au message suivant qui citera votre commande. Le conseil réflexe est confortable et il prend la place du conseil qui marche.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Découvrez si vous êtes concerné depuis le compte, et non depuis un guide",
+        body: "Weverse indique avoir mené une procédure distincte, conformément aux critères fixés par les lois et règlements applicables, pour notifier les clients dont les données figuraient dans la fuite. La réponse est donc dans votre propre compte : l'adresse e-mail qui y est enregistrée, et vos notifications dans l'application. Aucun guide ne peut vous le dire, celui-ci compris, et tout tiers prétendant vérifier si vous étiez dans la fuite est un motif de méfiance plutôt qu'un service.",
+        pitfall:
+          "Chercher un outil de consultation qui dirait si vous êtes concerné. Pour une fuite d'identifiants internes, un tel outil n'aurait rien de significatif à vérifier, et c'est cette recherche même qu'attend une page d'hameçonnage.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Notez ce que l'entreprise dit avoir fait, et ce qui reste une promesse",
+        body: "Le récit que Weverse fait de sa réponse, dans ses mots : elle a renforcé le contrôle d'accès sur l'API de traitement des informations de paiement et en a retiré l'identifiant interne pour que ces données ne soient pas exposées à l'extérieur ; le 4 septembre elle a déposé un rapport d'incident auprès de la Korea Internet & Security Agency ; et elle a notifié les clients concernés. Ses projets annoncés sont un audit complet de toutes les API exposées à l'extérieur, un contrôle d'accès resserré et une information exposée minimisée, un contrôle plus strict des processus de déploiement, et une surveillance de sécurité plus sensible. Elle indique aussi avoir demandé à l'acteur externe ayant accédé aux données de les restituer, et vouloir engager sa responsabilité juridique. Gardez les deux catégories séparées : le premier groupe est fait d'affirmations sur un travail achevé que personne à l'extérieur ne peut auditer, et le second d'intentions.",
+        pitfall:
+          "Lire une liste d'améliorations prévues comme une liste de correctifs déjà en place. L'avis ne le prétend pas, et un résumé de cet avis ne devrait pas davantage.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Reconnaissez ce que la gestion mérite, à sa juste mesure",
+        body: "La chronologie décrite par Weverse est courte : contactée par la KISA le 3 septembre après qu'un déclarant externe a signalé une vulnérabilité, inspection interne immédiate et réponse d'urgence, rapport d'incident déposé auprès de la KISA le 4 septembre, et un avis public signé du dirigeant détaillant ce qui est sorti — y compris les champs dont elle soutient qu'ils ne sont pas des informations personnelles au sens de la loi, qu'elle n'était pas tenue d'énumérer. Nous avons lu l'original coréen en regard de l'anglais et les deux disent la même chose, ce qui est en soi un petit signal. Rien de cela n'annule une fuite. Mais un site qui ne rapporte jamais un incident que comme un scandale n'apprend rien à ses lecteurs sur ce à quoi ressemble une gestion compétente, et celle-ci en est plus proche que la plupart.",
+        pitfall:
+          "Conclure d'une évaluation posée qu'il ne s'est rien passé. 422 584 comptes sont un échec réel qu'une divulgation rapide n'efface pas.",
+        takes: "—",
+      },
+      {
+        title: "Réfléchissez à deux fois avant de supprimer le compte, et sachez ce que la suppression n'est pas",
+        body: "Supprimer le compte est l'autre réflexe, et c'est une décision plus lourde qu'il n'y paraît. Weverse Shop et NOL World rattachent toutes deux des choses réelles à un compte : historique de commandes et de réservations, adresses enregistrées, un abonnement payant, et du côté billetterie une vérification d'identité achevée. Le point décisif est pourtant plus simple. La suppression retire vos données du service pour l'avenir ; elle ne rappelle pas des données déjà sorties. Ce qui figurait dans cette fuite y figurait avant que vous ne décidiez quoi que ce soit, et fermer le compte après coup ne peut pas l'atteindre.",
+        pitfall:
+          "Supprimer un compte en réponse à une fuite. C'est une envie légitime et ce n'est pas un remède à ceci, et cela vous coûte l'historique dont vous auriez besoin si un achat était un jour contesté.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Mon nom, mon adresse ou mon numéro de carte ont-ils fuité ?",
+        a: "Pas selon le détail donné par Weverse elle-même. Ce qu'elle énumère est un numéro d'identification interne plus des métadonnées d'achat — moyen de paiement, nom de la passerelle de paiement, devise, montants d'achat et d'annulation, date et heure de l'achat, statut de l'achat, et date et heure du remboursement. Les noms, les coordonnées et les identifiants de paiement ne figurent pas sur la liste.",
+      },
+      {
+        q: "Dois-je changer mon mot de passe Weverse ?",
+        a: "Cela ne fera pas de mal, et ce n'est pas la solution. L'exposition portait sur un identifiant et des métadonnées d'achat via une API d'informations de paiement, et non sur des identifiants de connexion : un nouveau mot de passe n'y répond donc pas. Faites-le si cela vous rassure, puis consacrez l'effort réel à vérifier les demandes de paiement de façon indépendante, ce qui est ce qui vous protège vraiment ici.",
+      },
+      {
+        q: "Comment savoir si j'étais l'un des 422 584 ?",
+        a: "Par votre propre compte. Weverse indique avoir mené une procédure de notification distincte pour les clients concernés au titre des lois applicables : vérifiez donc l'adresse e-mail enregistrée sur le compte et vos notifications dans l'application. Aucun outil externe ne peut vous le dire, et tout ce qui prétend le pouvoir est à traiter comme une tentative d'hameçonnage.",
+      },
+      {
+        q: "Quelqu'un peut-il s'en servir pour débiter ma carte ?",
+        a: "Weverse indique qu'une falsification de paiement ou des virements non autorisés sont peu probables à partir de ces seuls éléments, et au vu de la liste cela se tient — aucun des champs sortis n'est un numéro de carte ni un identifiant. Le risque réaliste n'est pas un débit direct mais un message convaincant qui vous persuade de payer vous-même.",
+      },
+      {
+        q: "Si ce ne sont pas des informations personnelles, pourquoi est-ce grave ?",
+        a: "Parce que l'utilité pour un attaquant et la qualification juridique sont deux questions différentes. Des montants d'achat, des dates, des moyens de paiement et des devises sont exactement ce qui rend un message frauduleux crédible — et la façon habituelle dont on juge un e-mail suspect est de voir si l'expéditeur connaît de vrais détails d'une vraie commande. Ce test ne fonctionne plus pour quiconque figure dans cette fuite.",
+      },
+      {
+        q: "Dois-je supprimer mon compte Weverse ?",
+        a: "C'est un choix défendable et ce n'est pas un remède. La suppression arrête la collecte future ; elle ne peut pas rappeler des données déjà sorties, ce qui inclut tout ce qui figurait dans cette fuite. Elle vous coûte aussi l'historique de commandes et de réservations, les adresses enregistrées, tout abonnement payant, et du côté billetterie une vérification d'identité achevée — décidez donc selon que vous voulez encore le service, et non en réponse à ceci.",
+      },
+      {
+        q: "Qu'a réellement fait Weverse ?",
+        a: "De son propre aveu : elle a renforcé le contrôle d'accès sur l'API d'informations de paiement et en a retiré l'identifiant interne, déposé un rapport d'incident auprès de la KISA le 4 septembre 2026, et notifié les clients concernés. Elle énumère aussi un travail à venir — auditer toutes les API exposées à l'extérieur, resserrer les contrôles de déploiement, accroître la sensibilité de la surveillance — et dit avoir demandé la restitution des données à l'acteur concerné et vouloir engager sa responsabilité juridique. Les éléments présentés comme achevés sont ses affirmations, non des constats audités.",
+      },
+      {
+        q: "Y a-t-il quelque chose de plus récent que ceci ?",
+        a: "Pas à la date figurant en haut de cette page, celle de notre dernière lecture de la liste d'avis de Weverse Shop. Une affaire de sécurité peut évoluer : cette liste est donc la version vivante — s'il existe un avis postérieur, il y sera avant d'être ici.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

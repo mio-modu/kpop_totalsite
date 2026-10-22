@@ -15074,6 +15074,546 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Hàng chờ NOL World, và những gì xóa sạch vị trí của bạn trong đó",
+    summary:
+      "Tải lại trang sẽ xóa vị trí của bạn. Một thiết bị thứ hai sẽ đóng số thứ tự đầu tiên của bạn. Ghế tự cập nhật mà không cần tải lại. Tất cả đều nằm trong chính FAQ của NOL World, và tất cả đều trái ngược với điều người ta làm theo bản năng.",
+    scope:
+      "Nói về cách hàng chờ, sơ đồ ghế và danh sách chờ của NOL World vận hành trong một đợt mở bán. Việc đăng ký và xác minh khách ở nước ngoài diễn ra trước tất cả những điều này và nằm trong hướng dẫn NOL World. Mọi thứ ở đây lấy từ FAQ đã công bố của NOL World.",
+    intro: [
+      "Bản năng khi đứng trong hàng chờ mua vé là tải lại trang, và mở thêm một trình duyệt thứ hai phòng khi cái đầu bị treo. Trên NOL World, cả hai việc đó đều lấy đi của bạn đúng thứ bạn đang cố bảo vệ, và chính nền tảng nói vậy trong trang trợ giúp của họ.",
+      "Đây là phần của một đợt mở bán mà không hướng dẫn nào nói tới, vì không thể suy ra nó từ bên ngoài — bạn chỉ thấy nó đúng một lần, trong chín mươi giây, khi đang hoảng.",
+    ],
+    steps: [
+      {
+        title: "Đừng tải lại trang. Tải lại sẽ đặt lại vị trí của bạn",
+        body: "NOL World nói rõ ràng: bạn không thể bỏ qua hàng chờ, và nếu bạn tải lại trang thì vị trí của bạn trong hàng chờ sẽ bị đặt lại. Không phải kiểm tra lại, không phải truy vấn lại — mà là đặt lại. Số thứ tự bạn đang giữ, dù là bao nhiêu, sẽ quay về cuối hàng.",
+        pitfall:
+          "Một trang hàng chờ trông như bị treo thì thường chỉ là một trang hàng chờ. Hành động duy nhất khiến bạn thấy như mình đang làm gì đó chính là hành động duy nhất xóa đi khoảng chờ bạn đã bỏ ra.",
+        takes: "Suốt cả hàng chờ",
+      },
+      {
+        title: "Một tài khoản nhận một số thứ tự, và lần thử thứ hai giết chết lần đầu",
+        body: "Bạn chỉ có thể nhận một số thứ tự cho mỗi tài khoản. Nếu bạn cố lấy thêm — một trình duyệt thứ hai, một chiếc điện thoại bên cạnh máy tính — NOL World sẽ đóng số thứ tự đầu tiên bạn đã nhận. Bấm Đặt chỗ từ một thiết bị khác trong khi đang xếp hàng sẽ hỏi bạn muốn giữ hàng chờ hiện có hay bắt đầu một hàng mới, và chọn cái mới nghĩa là chờ lại từ đầu trên thiết bị đó.",
+        pitfall:
+          "Mở một thiết bị dự phòng là chiến thuật mua vé phổ biến nhất trong các cộng đồng fan, và ở đây nó tệ hơn hẳn việc không làm gì cả. Hộp thoại hiện lên không mời bạn một cơ hội thứ hai; nó đang hỏi bạn muốn vứt bỏ cái nào.",
+        takes: "0 phút, nếu bạn kìm được",
+      },
+      {
+        title: "Một số thứ tự không phải là một tấm vé",
+        body: "NOL World nói rằng một vị trí trong hàng chờ không bảo đảm có vé, vì số lượng có hạn và vé được phát theo thứ tự. Hàng chờ quyết định khi nào bạn được thử, chứ không quyết định còn gì hay không khi đến lượt bạn. Hàng chờ áp dụng cho mọi sản phẩm có thể đặt trên NOL World, không riêng những sản phẩm có nhu cầu cao.",
+        pitfall:
+          "Đọc một số thứ tự nhỏ như thể đó là kết quả. Đó là một lượt, và hàng có thể hết trước khi tới lượt bạn.",
+        takes: "1 phút",
+      },
+      {
+        title: "Đừng tải lại sơ đồ ghế nữa — nó tự cập nhật",
+        body: "Hệ thống đặt chỗ đã được sắp xếp lại để các ghế còn trống cập nhật theo thời gian thực mà không cần tải lại. Ghế đang được người khác giữ sẽ biến mất và ghế bị hủy sẽ tự quay lại. Nếu bạn thấy dòng “ghế này đã được chọn”, nghĩa là một người dùng khác đã chọn đúng ghế đó gần như cùng lúc — chứ không phải trang của bạn bị cũ.",
+        pitfall:
+          "Tải lại sơ đồ ghế trả giá đúng như tải lại hàng chờ. Thói quen mang từ các trang bán vé đời cũ chính là thói quen sai ở đây.",
+        takes: "Trong lúc chọn ghế",
+      },
+      {
+        title: "Hãy đọc tỷ lệ bán hết đúng với cái mà nó đo",
+        body: "Ở nơi có hiển thị tỷ lệ bán hết, nó chỉ xuất hiện khi 90% trở lên tổng số ghế đã được thanh toán, và nó đếm vé đã trả tiền chứ không đếm ghế có thể chọn. Số ghế còn lại có thể không được hiển thị chút nào: NOL World nói rằng nhà tổ chức là bên quyết định, và với những sản phẩm có nhu cầu cao thì có độ trễ giữa thứ được hiển thị và thứ thực sự còn.",
+        pitfall:
+          "Coi một tỷ lệ bán hết như tồn kho thời gian thực. Đó là con số vé đã trả tiền với sàn 90%, và khoảng cách giữa nó với thực tế rộng nhất đúng vào lúc bạn quan tâm nhất.",
+        takes: "1 phút",
+      },
+      {
+        title: "Nếu bạn nhận được thông báo từ danh sách chờ, bạn có sáu tiếng",
+        body: "Nếu một ghế trong danh sách chờ trống ra và việc thanh toán không hoàn tất trong vòng sáu tiếng kể từ thông báo, đơn đặt sẽ tự động bị hủy và hoàn tiền, và cơ hội chuyển sang người kế tiếp trong danh sách. Sáu tiếng nghe rộng rãi cho tới khi bạn nhớ ra rằng thông báo đến trong giờ hành chính Hàn Quốc và phần lớn người đọc trang này sẽ ngủ mất một phần của khoảng đó.",
+        pitfall:
+          "Một khung sáu tiếng bắt đầu lúc 3 giờ sáng giờ bạn thực ra là một khung hai tiếng. Hãy quy đổi giờ của thông báo đúng như cách bạn đã quy đổi giờ mở bán.",
+        takes: "Trong vòng 6 tiếng",
+      },
+      {
+        title: "Biết rằng bạn không đổi được ghế sau đó",
+        body: "Khi đơn đặt đã hoàn tất, việc đổi ghế là không thể — con đường duy nhất là hủy rồi đặt lại, việc này khiến bạn chịu phí hủy của sự kiện và chịu rủi ro ghế bị người khác lấy mất ở giữa. Điều tương tự áp dụng cho mã giảm giá: không thể áp mã sau khi đã thanh toán, và dùng một mã nghĩa là hủy rồi đặt lại đúng chiếc ghế đó cùng khoản phí đi kèm.",
+        pitfall:
+          "Đặt một chiếc ghế mà bạn còn phân vân, với ý định sửa sau. Không có cái sau nào cả.",
+        takes: "Trước khi bạn xác nhận",
+      },
+    ],
+    faq: [
+      {
+        q: "Tải lại trang có giúp tôi qua hàng chờ NOL World nhanh hơn không?",
+        a: "Ngược lại. NOL World nói rằng tải lại trang sẽ đặt lại vị trí của bạn trong hàng chờ, và rằng hàng chờ không thể bỏ qua được.",
+      },
+      {
+        q: "Tôi xếp hàng trên điện thoại và máy tính cùng lúc được không?",
+        a: "Không. Một tài khoản nhận một số thứ tự, và việc cố lấy thêm sẽ đóng số đầu tiên. Nếu bạn bấm Đặt chỗ trên thiết bị thứ hai, bạn sẽ được hỏi là giữ hàng chờ hiện có hay bắt đầu lại trên thiết bị mới.",
+      },
+      {
+        q: "Tôi có cần tải lại sơ đồ ghế để thấy ghế mới không?",
+        a: "Không. Ghế cập nhật theo thời gian thực — ghế đang bị giữ sẽ biến mất và ghế bị hủy sẽ quay lại mà không cần tải lại. Tải lại khiến bạn trả giá đúng như tải lại hàng chờ.",
+      },
+      {
+        q: "Tỷ lệ bán hết thực sự có nghĩa là gì?",
+        a: "Nó chỉ xuất hiện khi 90% trở lên số ghế đã được thanh toán, và nó đếm vé đã trả tiền chứ không đếm những ghế bạn có thể chọn. Với các show có nhu cầu cao, có một độ trễ đã được biết tới giữa con số đó và lượng còn thật sự.",
+      },
+      {
+        q: "Sau khi có thông báo từ danh sách chờ, tôi có bao nhiêu thời gian?",
+        a: "Sáu tiếng. Nếu việc thanh toán không hoàn tất trong khoảng đó, đơn đặt sẽ tự động bị hủy và hoàn tiền, và chiếc ghế chuyển sang người kế tiếp trong danh sách chờ.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "คิวของ NOL World และสิ่งที่รีเซ็ตลำดับของคุณ",
+    summary:
+      "การรีเฟรชล้างลำดับของคุณ เครื่องที่สองปิดหมายเลขคิวแรกของคุณ ที่นั่งอัปเดตเองโดยไม่ต้องโหลดใหม่ ทั้งหมดนี้อยู่ใน FAQ ของ NOL World เอง และทั้งหมดขัดกับสิ่งที่คนทำโดยสัญชาตญาณ",
+    scope:
+      "ครอบคลุมพฤติกรรมของคิว ผังที่นั่ง และรายชื่อสำรองของ NOL World ระหว่างรอบขาย การสมัครและการยืนยันลูกค้าต่างประเทศเกิดขึ้นก่อนทั้งหมดนี้และอยู่ในคู่มือ NOL World ทุกอย่างในหน้านี้มาจาก FAQ ที่ NOL World เผยแพร่",
+    intro: [
+      "สัญชาตญาณเวลาอยู่ในคิวซื้อบัตรคือกดรีเฟรช และเปิดเบราว์เซอร์ที่สองเผื่ออันแรกค้าง บน NOL World ทั้งสองอย่างนั้นทำให้คุณเสียสิ่งที่คุณกำลังพยายามปกป้อง และแพลตฟอร์มก็บอกไว้เองในหน้าช่วยเหลือ",
+      "นี่คือช่วงของรอบขายที่ไม่มีคู่มือเล่มไหนพูดถึง เพราะมันคิดเอาจากภายนอกไม่ได้ คุณจะเห็นมันเพียงครั้งเดียว นานเก้าสิบวินาที ขณะที่กำลังตื่นตระหนก",
+    ],
+    steps: [
+      {
+        title: "อย่ารีเฟรช การรีเฟรชจะรีเซ็ตลำดับของคุณ",
+        body: "NOL World บอกไว้ตรง ๆ ว่าคุณข้ามคิวไม่ได้ และถ้าคุณรีเฟรชหน้า ลำดับของคุณในคิวจะถูกรีเซ็ต ไม่ใช่ตรวจซ้ำ ไม่ใช่สอบถามใหม่ แต่คือรีเซ็ต หมายเลขที่คุณถืออยู่ไม่ว่าจะเท่าไร จะกลับไปอยู่ท้ายแถว",
+        pitfall:
+          "หน้าคิวที่ดูเหมือนค้างมักเป็นแค่หน้าคิวธรรมดา การกระทำเดียวที่ให้ความรู้สึกว่าได้ทำอะไรบางอย่าง คือการกระทำเดียวที่ลบการรอที่คุณทำไปแล้วทิ้ง",
+        takes: "ตลอดทั้งคิว",
+      },
+      {
+        title: "หนึ่งบัญชีได้หนึ่งหมายเลขคิว และความพยายามครั้งที่สองฆ่าครั้งแรก",
+        body: "คุณรับหมายเลขคิวได้เพียงหนึ่งหมายเลขต่อหนึ่งบัญชี ถ้าคุณพยายามเอาเพิ่ม — เบราว์เซอร์ที่สอง โทรศัพท์วางคู่กับแล็ปท็อป — NOL World จะปิดหมายเลขแรกที่คุณได้รับ การกดจองจากอีกเครื่องขณะที่อยู่ในคิวแล้วจะขึ้นให้เลือกว่าจะเก็บคิวเดิมไว้หรือเริ่มคิวใหม่ และการเลือกคิวใหม่หมายถึงการรอใหม่ตั้งแต่ต้นบนเครื่องนั้น",
+        pitfall:
+          "การเปิดเครื่องสำรองคือกลยุทธ์ซื้อบัตรที่พบบ่อยที่สุดในหมู่แฟนคลับ และที่นี่มันแย่กว่าการไม่ทำอะไรเลยอย่างชัดเจน ข้อความที่ขึ้นมาไม่ได้เสนอโอกาสที่สองให้คุณ มันกำลังถามว่าคุณอยากทิ้งอันไหน",
+        takes: "0 นาที ถ้าคุณอดใจไหว",
+      },
+      {
+        title: "หมายเลขคิวไม่ใช่บัตร",
+        body: "NOL World บอกว่าลำดับในคิวไม่ได้รับประกันว่าจะได้บัตร เพราะจำนวนมีจำกัดและบัตรถูกออกตามลำดับ คิวเป็นตัวกำหนดว่าคุณจะได้ลองเมื่อไร ไม่ได้กำหนดว่ายังเหลืออะไรตอนถึงตาคุณ คิวใช้กับทุกสินค้าที่จองได้บน NOL World ไม่เฉพาะสินค้าที่มีความต้องการสูง",
+        pitfall:
+          "การอ่านหมายเลขคิวต่ำ ๆ ว่าเป็นผลลัพธ์ มันคือตาของคุณ และของอาจหมดก่อนที่ตาคุณจะมาถึง",
+        takes: "1 นาที",
+      },
+      {
+        title: "เลิกรีเฟรชผังที่นั่งด้วย มันอัปเดตเอง",
+        body: "ระบบจองถูกจัดใหม่ให้ที่นั่งว่างอัปเดตแบบเรียลไทม์โดยไม่ต้องโหลดใหม่ ที่นั่งที่ผู้ใช้อื่นถืออยู่จะหายไป และที่นั่งที่ถูกยกเลิกจะกลับมาเอง ถ้าคุณเห็นข้อความว่า “ที่นั่งนี้ถูกเลือกไปแล้ว” แปลว่าผู้ใช้อีกคนเลือกที่นั่งเดียวกันในเวลาเกือบจะพร้อมกัน ไม่ใช่ว่าหน้าของคุณเก่า",
+        pitfall:
+          "การรีเฟรชผังที่นั่งแลกมาด้วยราคาเดียวกับการรีเฟรชคิว นิสัยที่ติดมาจากเว็บขายบัตรรุ่นเก่าคือนิสัยที่ผิดพอดีสำหรับที่นี่",
+        takes: "ระหว่างเลือกที่นั่ง",
+      },
+      {
+        title: "อ่านอัตราบัตรหมดตามสิ่งที่มันวัดจริง",
+        body: "ที่ใดมีการแสดงอัตราบัตรหมด มันจะปรากฏก็ต่อเมื่อที่นั่งทั้งหมดถูกชำระเงินแล้วตั้งแต่ 90% ขึ้นไป และมันนับบัตรที่จ่ายเงินแล้วไม่ใช่ที่นั่งที่เลือกได้ จำนวนที่นั่งคงเหลืออาจไม่ถูกแสดงเลย NOL World บอกว่าผู้จัดเป็นผู้ตัดสิน และสำหรับสินค้าที่มีความต้องการสูงจะมีความล่าช้าระหว่างสิ่งที่แสดงกับสิ่งที่เหลืออยู่จริง",
+        pitfall:
+          "การถือว่าเปอร์เซ็นต์บัตรหมดคือสต็อกแบบสด ๆ มันเป็นตัวเลขบัตรที่จ่ายเงินแล้วซึ่งมีพื้นอยู่ที่ 90% และช่องว่างระหว่างมันกับความจริงกว้างที่สุดในตอนที่คุณใส่ใจที่สุดพอดี",
+        takes: "1 นาที",
+      },
+      {
+        title: "ถ้าคุณได้รับแจ้งจากรายชื่อสำรอง คุณมีหกชั่วโมง",
+        body: "ถ้าที่นั่งในรายชื่อสำรองว่างขึ้นมาและการชำระเงินไม่เสร็จภายในหกชั่วโมงนับจากการแจ้ง การจองจะถูกยกเลิกและคืนเงินโดยอัตโนมัติ และโอกาสจะส่งต่อไปยังคนถัดไปในรายชื่อ หกชั่วโมงฟังดูใจกว้าง จนกระทั่งคุณนึกได้ว่าการแจ้งมาถึงในเวลาทำการของเกาหลี และผู้อ่านส่วนใหญ่ของหน้านี้จะหลับไปบางส่วนของช่วงนั้น",
+        pitfall:
+          "ช่วงหกชั่วโมงที่เริ่มตอนตี 3 ตามเวลาคุณ แท้จริงคือช่วงสองชั่วโมง แปลงเวลาของการแจ้งเตือนด้วยวิธีเดียวกับที่คุณแปลงเวลารอบขาย",
+        takes: "ภายใน 6 ชั่วโมง",
+      },
+      {
+        title: "รู้ไว้ว่าคุณเปลี่ยนที่นั่งทีหลังไม่ได้",
+        body: "เมื่อการจองเสร็จสมบูรณ์แล้ว การเปลี่ยนที่นั่งทำไม่ได้ ทางเดียวคือยกเลิกแล้วจองใหม่ ซึ่งทำให้คุณต้องเจอค่าธรรมเนียมยกเลิกของงานนั้นและเสี่ยงที่ที่นั่งจะถูกคนอื่นคว้าไประหว่างนั้น เรื่องเดียวกันใช้กับคูปอง: ใช้คูปองหลังชำระเงินแล้วไม่ได้ และการจะใช้หมายถึงต้องยกเลิกแล้วจองที่นั่งเดิมใหม่พร้อมค่าธรรมเนียมที่ตามมา",
+        pitfall:
+          "การจองที่นั่งที่คุณยังไม่แน่ใจโดยคิดว่าจะแก้ทีหลัง ไม่มีทีหลัง",
+        takes: "ก่อนกดยืนยัน",
+      },
+    ],
+    faq: [
+      {
+        q: "การรีเฟรชช่วยให้ผ่านคิว NOL World เร็วขึ้นไหม",
+        a: "ตรงกันข้าม NOL World ระบุว่าการรีเฟรชหน้าจะรีเซ็ตลำดับของคุณในคิว และว่าคิวนั้นข้ามไม่ได้",
+      },
+      {
+        q: "ต่อคิวบนโทรศัพท์และแล็ปท็อปพร้อมกันได้ไหม",
+        a: "ไม่ได้ หนึ่งบัญชีได้รับหนึ่งหมายเลขคิว และการพยายามเอาเพิ่มจะปิดหมายเลขแรก ถ้าคุณกดจองบนเครื่องที่สอง ระบบจะถามว่าจะเก็บคิวเดิมไว้หรือเริ่มใหม่บนเครื่องใหม่",
+      },
+      {
+        q: "ต้องรีเฟรชผังที่นั่งเพื่อดูที่นั่งใหม่ไหม",
+        a: "ไม่ต้อง ที่นั่งอัปเดตแบบเรียลไทม์ ที่นั่งที่ถูกถือไว้จะหายไปและที่นั่งที่ถูกยกเลิกจะกลับมาโดยไม่ต้องโหลดใหม่ การรีเฟรชแลกมาด้วยราคาเดียวกับการรีเฟรชคิว",
+      },
+      {
+        q: "อัตราบัตรหมดหมายความว่าอะไรกันแน่",
+        a: "มันปรากฏก็ต่อเมื่อที่นั่งถูกชำระเงินแล้วตั้งแต่ 90% ขึ้นไป และมันนับบัตรที่จ่ายเงินแล้วไม่ใช่ที่นั่งที่คุณเลือกได้ สำหรับงานที่มีความต้องการสูงมีความล่าช้าที่รู้กันอยู่ระหว่างตัวเลขนั้นกับจำนวนที่เหลือจริง",
+      },
+      {
+        q: "หลังได้รับแจ้งจากรายชื่อสำรอง ฉันมีเวลาเท่าไร",
+        a: "หกชั่วโมง ถ้าการชำระเงินไม่เสร็จในเวลานั้น การจองจะถูกยกเลิกและคืนเงินโดยอัตโนมัติ และที่นั่งจะส่งต่อให้คนถัดไปในรายชื่อสำรอง",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Ang pila sa NOL World, at kung ano ang bumubura sa puwesto mo rito",
+    summary:
+      "Binubura ng pag-refresh ang puwesto mo. Isinasara ng pangalawang device ang unang numero mo. Nag-a-update ang mga upuan nang hindi naglo-load muli. Nasa mismong FAQ ng NOL World ang lahat ng ito, at ang lahat ng ito ay salungat sa likas na ginagawa ng mga tao.",
+    scope:
+      "Sakop nito kung paano kumikilos ang pila, ang mapa ng upuan at ang waitlist ng NOL World habang may benta. Nauuna sa lahat ng ito ang pagpaparehistro at ang pagpapatunay bilang customer mula sa ibang bansa, at nasa gabay ng NOL World ang mga iyon. Lahat ng narito ay mula sa inilathalang FAQ ng NOL World.",
+    intro: [
+      "Ang likas na gawi sa isang pila ng tiket ay mag-refresh, at magbukas ng pangalawang browser sakaling naipit ang una. Sa NOL World, ang dalawang iyon ay nagkakait sa iyo ng mismong bagay na pinoprotektahan mo, at sinasabi mismo ito ng plataporma sa mga pahina nito ng tulong.",
+      "Ito ang bahagi ng isang benta na walang gabay na sumasaklaw, dahil hindi ito mahihinuha mula sa labas — minsan mo lang ito nakikita, sa loob ng siyamnapung segundo, habang nataranta ka.",
+    ],
+    steps: [
+      {
+        title: "Huwag mag-refresh. Ini-reset ng pag-refresh ang puwesto mo",
+        body: "Malinaw ang sinasabi ng NOL World: hindi mo malalaktawan ang pila, at kapag nag-refresh ka ng pahina ay ire-reset ang puwesto mo sa pila. Hindi muling sinusuri, hindi muling tinatanong — ire-reset. Anuman ang numerong hawak mo ay babalik sa dulo.",
+        pitfall:
+          "Ang pahina ng pilang mukhang nanigas ay karaniwang pahina lamang ng pila. Ang iisang kilos na nagpaparamdam na may ginagawa ka ang siya ring iisang kilos na bumubura sa paghihintay na natapos mo na.",
+        takes: "Buong pila",
+      },
+      {
+        title: "Isang account, isang numero ng pila, at pinapatay ng ikalawang pagsubok ang una",
+        body: "Isang numero lamang ng pila ang matatanggap mo kada account. Kung susubukan mong kumuha pa — pangalawang browser, telepono katabi ng laptop — isasara ng NOL World ang unang numerong natanggap mo. Ang pagpindot ng Reserve mula sa ibang device habang nakapila ka ay magtatanong kung pananatilihin ang kasalukuyang pila o magsisimula ng bago, at ang pagpili ng bago ay nangangahulugang maghihintay kang muli mula sa umpisa sa device na iyon.",
+        pitfall:
+          "Ang pagbukas ng pang-reserbang device ang pinakakaraniwang taktika sa tiket sa mga komunidad ng fan at mas masahol pa ito kaysa sa walang gawin dito. Hindi nag-aalok ng pangalawang pagkakataon ang mensaheng lalabas; tinatanong ka nito kung alin ang gusto mong itapon.",
+        takes: "0 minuto, kung makakapagpigil ka",
+      },
+      {
+        title: "Ang numero ng pila ay hindi tiket",
+        body: "Sinasabi ng NOL World na ang puwesto sa pila ay hindi nagagarantiya ng tiket, dahil limitado ang bilang at inilalabas ang mga tiket ayon sa pagkakasunod. Ang pila ang nagpapasya kung kailan ka makakasubok, hindi kung may matitira pa pagdating mo. Umiiral ang pila sa bawat produktong maaaring ireserba sa NOL World, hindi lamang sa mga mataas ang hinihingi.",
+        pitfall:
+          "Ang pagbasa sa mababang numero ng pila bilang isang resulta. Isa itong pagkakataong sumubok, at maaaring maubos ang stock bago dumating ang turn mo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Itigil din ang pag-refresh sa mapa ng upuan — kusa itong nag-a-update",
+        body: "Inayos muli ang sistema ng pagbu-book para mag-update ang mga bakanteng upuan sa tunay na oras nang hindi naglo-load muli. Nawawala ang mga upuang hawak ng ibang user at kusang bumabalik ang mga kinanselang upuan. Kung makikita mo ang “napili na ang upuang ito”, ibig sabihin ay may ibang user na pumili ng parehong upuan halos sabay sa iyo — hindi na luma ang pahina mo.",
+        pitfall:
+          "Ang pag-refresh ng mapa ng upuan ay may kaparehong halaga ng pag-refresh ng pila. Ang ugaling galing sa mas lumang mga site ng tiket ang eksaktong maling ugali rito.",
+        takes: "Habang pumipili",
+      },
+      {
+        title: "Basahin ang tantos ng pagkaubos ayon sa talagang sinusukat nito",
+        body: "Kung saan ipinapakita ang tantos ng pagkaubos, lumalabas lamang ito kapag 90% o higit pa ng lahat ng upuan ang nabayaran na, at binibilang nito ang mga bayad nang tiket at hindi ang mga mapipiling upuan. Maaaring hindi ipakita ang bilang ng natitirang upuan: sinasabi ng NOL World na ang organisador ang nagpapasya, at na sa mga produktong mataas ang hinihingi ay may pagkahuli sa pagitan ng ipinapakita at ng talagang available.",
+        pitfall:
+          "Ang pagturing sa porsiyento ng pagkaubos bilang buhay na imbentaryo. Isa itong bilang ng bayad nang tiket na may sahig na 90%, at pinakamalaki ang agwat nito sa katotohanan sa mismong sandaling pinakamahalaga sa iyo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Kung makakatanggap ka ng abiso mula sa waitlist, anim na oras ang meron ka",
+        body: "Kung may mabakanteng upuan sa waitlist at hindi natapos ang bayad sa loob ng anim na oras mula sa abiso, awtomatikong kinakansela at isinasauli ang booking, at napupunta ang pagkakataon sa susunod na tao sa listahan. Mukhang maluwag ang anim na oras hanggang sa maalala mong dumarating ang abiso sa oras ng negosyo sa Korea at tulog ang karamihan ng babasa nito sa bahagi niyon.",
+        pitfall:
+          "Ang anim na oras na nagbubukas ng alas-3 ng madaling-araw sa oras mo ay dalawang oras lamang. Ikonberte ang oras ng abiso gaya ng pagkonberte mo sa oras ng benta.",
+        takes: "Sa loob ng 6 na oras",
+      },
+      {
+        title: "Alamin na hindi mo na mababago ang upuan pagkatapos",
+        body: "Kapag kumpleto na ang reserbasyon, hindi na posible ang pagpapalit ng upuan — ang tanging ruta ay kanselahin at mag-book muli, na maglalantad sa iyo sa bayad sa pagkansela ng event at sa panganib na makuha ng iba ang upuan sa pagitan. Gayundin sa mga kupon: hindi na magagamit ang kupon pagkatapos magbayad, at ang paggamit nito ay nangangahulugan ng pagkansela at muling pagbu-book ng parehong upuan kasama ang bayad na kaakibat nito.",
+        pitfall:
+          "Ang pagbu-book ng upuang hindi ka sigurado sa balak na ayusin ito mamaya. Walang mamaya.",
+        takes: "Bago ka kumpirmahin",
+      },
+    ],
+    faq: [
+      {
+        q: "Nakakatulong ba ang pag-refresh para mas mabilis akong makadaan sa pila ng NOL World?",
+        a: "Kabaligtaran. Sinasabi ng NOL World na ini-reset ng pag-refresh ng pahina ang puwesto mo sa pila, at na hindi malalaktawan ang pila.",
+      },
+      {
+        q: "Puwede ba akong pumila sa telepono at sa laptop nang sabay?",
+        a: "Hindi. Isang numero ng pila ang natatanggap ng isang account, at isinasara ng pagtatangkang kumuha pa ang una. Kung pipindutin mo ang Reserve sa pangalawang device, tatanungin ka kung pananatilihin ang kasalukuyang pila o magsisimula muli sa bago.",
+      },
+      {
+        q: "Kailangan ko bang i-refresh ang mapa ng upuan para makita ang bagong upuan?",
+        a: "Hindi. Nag-a-update ang mga upuan sa tunay na oras — nawawala ang mga hawak nang upuan at bumabalik ang mga kinansela nang hindi naglo-load muli. Katumbas ng pag-refresh ng pila ang halaga ng pag-refresh dito.",
+      },
+      {
+        q: "Ano ba talaga ang ibig sabihin ng tantos ng pagkaubos?",
+        a: "Lumalabas lamang ito kapag 90% o higit pa ng mga upuan ang nabayaran na, at binibilang nito ang bayad nang tiket at hindi ang mga upuang mapipili mo. Para sa mga palabas na mataas ang hinihingi, may kilalang pagkahuli sa pagitan ng bilang at ng tunay na available.",
+      },
+      {
+        q: "Gaano katagal ang meron ako pagkatapos ng abiso mula sa waitlist?",
+        a: "Anim na oras. Kung hindi natapos ang bayad sa panahong iyon, awtomatikong kinakansela at isinasauli ang booking at napupunta ang upuan sa susunod na tao sa waitlist.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Mua vé trên YES24 Global: những quy định không có trên trang tiếng Anh",
+    summary:
+      "Tài khoản YES24 hiện có của bạn sẽ không dùng được. PayPal chỉ hiện ra nếu show còn đủ xa. Hai loại thẻ bị từ chối thẳng, và nơi tổ chức sẽ đối chiếu hộ chiếu của bạn với cái tên bạn đã đăng ký.",
+    scope:
+      "Nói về trang YES24 TICKET bằng tiếng Anh dành cho người mua ở nước ngoài. Trang YES24 tiếng Hàn chạy một hệ thống tài khoản khác và một khâu xác minh danh tính khác. Điều kiện riêng của từng show trên trang sự kiện đè lên mọi thứ ở đây, và chính YES24 nói vậy.",
+    intro: [
+      "YES24 công bố các quy định dành cho người ở nước ngoài trong một hướng dẫn mua hàng và một FAQ bằng tiếng Anh, và gần như không có gì trong đó xuất hiện ở các bài hướng dẫn đang xếp hạng cao cho chủ đề này. Chúng rất cụ thể, rất khác thường, và vài điều trong đó sẽ kết thúc đơn hàng của bạn ngay hôm ấy nếu bạn gặp chúng lần đầu ở bước thanh toán.",
+      "Mọi thứ dưới đây lấy từ hai trang đó, đọc ngày 20 tháng 10 năm 2026. Chỗ nào YES24 tự mâu thuẫn — và họ có mâu thuẫn, một lần, ở một khoản phí — trang này sẽ nói ra thay vì chọn con số tiện lợi.",
+    ],
+    steps: [
+      {
+        title: "Hãy đăng ký lại, dù bạn đã có tài khoản YES24",
+        body: "YES24 nói rõ: những thành viên YES24 hiện có muốn dùng trang Global YES24 TICKET phải đăng ký lại. Họ cũng cảnh báo rằng trang vé toàn cầu là một thứ khác với global.yes24.com, tức hiệu sách, và hai bên không chia sẻ thông tin thành viên. Người không phải thành viên thì không đặt vé được, nên đây là bước đầu tiên chứ không phải thủ tục cho có.",
+        pitfall:
+          "Ba dịch vụ YES24 với những cái tên na ná nhau và không dùng chung đăng nhập. Phát hiện ra điều này trong hàng chờ là phát hiện quá muộn — tài khoản dù sao cũng phải tồn tại từ vài ngày trước, vì khâu kiểm tra tên ở dưới.",
+        takes: "15 phút",
+      },
+      {
+        title: "Đăng ký tên đúng y như trên hộ chiếu",
+        body: "Đây là chỗ duy nhất một nền tảng nói thẳng ra cái phần mà người ta hay giấu. FAQ của YES24: nếu tên trên tài khoản YES24 của bạn khác với tên trên hộ chiếu, bạn có thể gặp rắc rối khi nhận vé đã đặt tại nơi tổ chức. Vé nhận tại chỗ chỉ có thể được nhận bởi chính người sở hữu vé, và việc nhận vé cần một giấy tờ tùy thân bản gốc còn hiệu lực — hộ chiếu — cùng với hồ sơ đặt vé.",
+        pitfall:
+          "Một tên đệm bị bỏ đi, một cách phiên âm chọn từ nhiều năm trước, một thứ tự đặt tên riêng lên trước. Nơi tổ chức đang đối chiếu hai tờ giấy, chứ không phán đoán xem có rõ ràng là bạn hay không.",
+        takes: "10 phút",
+      },
+      {
+        title: "Xem PayPal có được cung cấp cho show của bạn không",
+        body: "PayPal trên YES24 Global chỉ khả dụng khi khoảng cách giữa ngày đặt và ngày diễn lớn hơn 180 ngày. Với phần lớn concert K-pop, vốn được công bố trước một hai tháng, điều đó nghĩa là PayPal đơn giản không phải một lựa chọn và thẻ là con đường duy nhất. Ngoài ra còn có khoản phí PayPal 10 xu không được hoàn lại ngay cả khi bạn hủy.",
+        pitfall:
+          "Lên kế hoạch dựa vào PayPal vì một bài hướng dẫn nói nó được chấp nhận, rồi tới bước thanh toán chỉ thấy ô nhập thẻ. Quy định 180 ngày là lý do — không phải lỗi, và không phải thứ bộ phận hỗ trợ có thể miễn cho bạn.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết những loại thẻ nào bị từ chối trước khi thử một chiếc",
+        body: "Hướng dẫn mua hàng loại trừ thẻ American Express phát hành ngoài Hàn Quốc, và loại trừ hoàn toàn thẻ China UnionPay. Mọi thứ còn lại đều đi qua như một khoản thanh toán bằng thẻ — và YES24 nói rằng xác thực 3-D Secure là bắt buộc trên trang toàn cầu, nên chiếc thẻ phải được ngân hàng của bạn đăng ký cho tính năng đó.",
+        pitfall:
+          "Một chiếc Amex vẫn chạy tốt ở mọi trang khác lại bị từ chối ở đây vì nơi nó được phát hành, chứ không vì bất cứ điều gì thuộc về chiếc thẻ. Thất bại đó trông y hệt một lệnh chặn của ngân hàng, nên người ta dành cả đợt mở bán để gọi điện cho ngân hàng về sai vấn đề.",
+        takes: "10 phút, cùng ngân hàng của bạn",
+      },
+      {
+        title: "Chọn nhận tại chỗ hay giao ra nước ngoài ngay lúc đặt vé",
+        body: "Cả hai đều có, nhưng việc giao ra nước ngoài là theo từng show chứ không phổ quát: YES24 nói rằng tính khả dụng thay đổi theo từng buổi diễn và mức phí thay đổi theo điểm đến, và rằng trang sự kiện là nơi ghi điều đó. Việc đổi phương thức giao nhận sau này chỉ có thể làm cho tới 20 ngày làm việc trước buổi diễn — tức bốn tuần làm việc, không phải bốn ngày.",
+        pitfall:
+          "Hai mươi ngày làm việc là khoảng một tháng theo lịch. Đặt vé trước hai tuần nghĩa là phương thức bạn chọn trong hàng chờ cũng là phương thức bạn giữ.",
+        takes: "5 phút",
+      },
+      {
+        title: "Đọc đồng hồ đặt vé và hủy vé, vốn không phải ngày diễn",
+        body: "Việc đặt vé đóng lúc 17h ngày hôm trước với các buổi diễn từ thứ Ba đến thứ Bảy, và lúc 11h sáng thứ Bảy với buổi diễn Chủ nhật hoặc thứ Hai. Việc hủy chạy đúng trên cùng chiếc đồng hồ đó, và khi nó qua đi thì không còn hủy, đổi hay hoàn tiền nữa. Hủy là miễn phí trong vòng 7 ngày kể từ khi mua; sau đó là một khoản phí trên mỗi vé, tăng dần lên 10%, 20% rồi 30% số tiền đã trả khi buổi diễn tới gần. Giới hạn là 10 vé mỗi người mỗi lần.",
+        pitfall:
+          "Phí đặt vé là chỗ YES24 tự mâu thuẫn: FAQ ghi 2.000 KRW ở một dòng rồi ngay dòng sau lại thông báo đổi thành 3.000 KRW mỗi vé từ ngày 14 tháng 8 năm 2023. Hãy coi 3.000 là con số hiện hành. Dù thế nào thì nó cũng chỉ được hoàn cho tới 23:59 của đúng ngày bạn mua, chứ không nằm trong khung 7 ngày áp dụng cho chính tấm vé.",
+        takes: "5 phút",
+      },
+      {
+        title: "Mang hộ chiếu và hồ sơ đặt vé tới nơi tổ chức",
+        body: "Việc nhận vé đòi hỏi một giấy tờ tùy thân bản gốc còn hiệu lực — YES24 nêu đích danh hộ chiếu — cùng với hồ sơ xác nhận đặt vé. Hướng dẫn mua hàng còn bảo bạn in chi tiết đơn hàng ra và nộp tại quầy vé. Chính sách riêng của từng show trên trang sự kiện đè lên điều này, và YES24 nói rằng trang sự kiện thắng, nên hãy đọc nó ngay cả khi bạn từng nhận vé ở địa điểm đó trước đây.",
+        pitfall:
+          "Một tấm ảnh chụp màn hình xác nhận trên điện thoại không phải thứ được mô tả. Hãy in ra, và mang theo đúng cuốn hộ chiếu bạn đã đăng ký chứ không phải giấy tờ nào khác.",
+        takes: "Tại nơi tổ chức",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi dùng tài khoản YES24 hiện có trên trang tiếng Anh được không?",
+        a: "Không. YES24 nói rằng thành viên hiện có phải đăng ký lại cho trang Global YES24 TICKET, và rằng nó tách biệt với global.yes24.com, không chia sẻ thông tin thành viên.",
+      },
+      {
+        q: "Vì sao không thấy PayPal ở bước thanh toán?",
+        a: "PayPal chỉ được cung cấp khi khoảng cách giữa ngày đặt và ngày diễn lớn hơn 180 ngày. Phần lớn các đơn đặt vé concert nằm sâu bên trong khoảng đó, nên thẻ là con đường duy nhất.",
+      },
+      {
+        q: "YES24 Global từ chối những loại thẻ nào?",
+        a: "Thẻ American Express phát hành ngoài Hàn Quốc, và thẻ China UnionPay. Các thẻ khác được chấp nhận nhưng phải qua được 3-D Secure, điều mà trang này bắt buộc.",
+      },
+      {
+        q: "Người khác nhận vé hộ tôi được không?",
+        a: "Không. Vé nhận tại chỗ chỉ có thể được nhận bởi chính người sở hữu vé, cùng với hộ chiếu bản gốc và hồ sơ đặt vé — trừ khi buổi diễn cụ thể đó nói khác trên trang của chính nó.",
+      },
+      {
+        q: "Hoàn tiền mất bao lâu?",
+        a: "Hoàn tiền qua thẻ được nêu là 3 đến 7 ngày, với chính sách của công ty thẻ là bên quyết định, và có thể lên tới 30 ngày. Hoàn tiền qua PayPal quay về số dư PayPal trong vòng 5 ngày làm việc — theo tỷ giá của ngày hoàn tiền, gồm cả chênh lệch quy đổi, nên số tiền trả lại có thể ít hơn số tiền đã trả.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ซื้อบัตรบน YES24 Global: กฎที่ไม่ได้อยู่บนหน้าภาษาอังกฤษ",
+    summary:
+      "บัญชี YES24 เดิมของคุณใช้ไม่ได้ PayPal จะโผล่มาก็ต่อเมื่องานอยู่ไกลพอ บัตรสองประเภทถูกปฏิเสธทันที และสถานที่จัดงานจะตรวจหนังสือเดินทางของคุณเทียบกับชื่อที่คุณสมัครไว้",
+    scope:
+      "ครอบคลุมเว็บ YES24 TICKET ภาษาอังกฤษที่ผู้ซื้อจากต่างประเทศใช้ เว็บ YES24 ภาษาเกาหลีใช้ระบบบัญชีคนละระบบและการยืนยันตัวตนคนละแบบ เงื่อนไขเฉพาะของแต่ละงานบนหน้าอีเวนต์มีผลเหนือทุกอย่างในหน้านี้ และ YES24 ก็บอกไว้เอง",
+    intro: [
+      "YES24 เผยแพร่กฎสำหรับผู้อยู่ต่างประเทศไว้ในคู่มือการซื้อและ FAQ ภาษาอังกฤษ และแทบไม่มีอะไรในนั้นปรากฏอยู่ในคู่มือที่ติดอันดับเรื่องนี้เลย กฎเหล่านั้นเฉพาะเจาะจง ผิดจากที่คุ้นเคย และหลายข้อจะจบการจองของคุณในวันนั้นทันทีถ้าคุณเพิ่งมาเจอครั้งแรกตอนชำระเงิน",
+      "ทุกอย่างด้านล่างมาจากสองหน้านั้น อ่านเมื่อวันที่ 20 ตุลาคม 2026 ตรงไหนที่ YES24 ขัดแย้งกันเอง — และมันขัดจริง หนึ่งครั้ง ในเรื่องค่าธรรมเนียม — หน้านี้จะบอกไว้ แทนที่จะเลือกตัวเลขที่สะดวก",
+    ],
+    steps: [
+      {
+        title: "สมัครใหม่ แม้ว่าคุณจะมีบัญชี YES24 อยู่แล้ว",
+        body: "YES24 บอกไว้ชัดเจนว่าสมาชิก YES24 เดิมที่ต้องการใช้เว็บ Global YES24 TICKET ต้องสมัครใหม่ ทางเว็บยังเตือนว่าเว็บบัตรโกลบอลเป็นคนละอย่างกับ global.yes24.com ซึ่งเป็นร้านหนังสือ และทั้งสองไม่ได้แบ่งปันข้อมูลสมาชิกกัน ผู้ที่ไม่เป็นสมาชิกจองไม่ได้เลย นี่จึงเป็นขั้นตอนแรก ไม่ใช่พิธีการ",
+        pitfall:
+          "บริการของ YES24 สามอย่างที่ชื่อคล้ายกันและไม่ใช้ล็อกอินร่วมกัน การมารู้เรื่องนี้ตอนอยู่ในคิวคือการรู้ช้าเกินไป เพราะบัญชีต้องมีอยู่ก่อนหลายวันอยู่แล้ว ด้วยเหตุผลเรื่องการตรวจชื่อข้างล่าง",
+        takes: "15 นาที",
+      },
+      {
+        title: "ลงทะเบียนชื่อให้ตรงกับหนังสือเดินทางเป๊ะ",
+        body: "นี่คือจุดเดียวที่แพลตฟอร์มพูดส่วนที่คนอื่นเงียบออกมาดัง ๆ FAQ ของ YES24 ระบุว่า ถ้าชื่อในบัญชี YES24 ของคุณต่างจากชื่อในหนังสือเดินทาง คุณอาจมีปัญหาในการรับบัตรที่จองไว้ที่สถานที่จัดงาน บัตรแบบรับหน้างานรับได้โดยเจ้าของบัตรเท่านั้น และการรับต้องใช้เอกสารแสดงตนตัวจริงที่ยังไม่หมดอายุ — หนังสือเดินทาง — ควบคู่กับหลักฐานการจอง",
+        pitfall:
+          "ชื่อกลางที่หายไป การสะกดเป็นอักษรโรมันที่เลือกไว้เมื่อหลายปีก่อน ลำดับที่เอาชื่อต้นขึ้นก่อน สถานที่จัดงานกำลังเทียบเอกสารสองใบ ไม่ได้ตัดสินว่ามันเป็นคุณอย่างชัดเจนหรือไม่",
+        takes: "10 นาที",
+      },
+      {
+        title: "ตรวจว่ามี PayPal ให้ใช้กับงานของคุณหรือเปล่า",
+        body: "PayPal บน YES24 Global ใช้ได้เฉพาะเมื่อระยะห่างระหว่างวันที่จองกับวันแสดงมากกว่า 180 วัน สำหรับคอนเสิร์ต K-pop ส่วนใหญ่ที่ประกาศล่วงหน้าหนึ่งถึงสองเดือน นั่นแปลว่า PayPal ไม่ใช่ตัวเลือกเลย และบัตรคือทางเดียว นอกจากนี้ยังมีค่าธรรมเนียม PayPal 10 เซนต์ที่ไม่ได้รับคืนแม้คุณจะยกเลิก",
+        pitfall:
+          "การวางแผนโดยอิง PayPal เพราะคู่มือเล่มหนึ่งบอกว่ารับ แล้วพอถึงหน้าชำระเงินกลับเจอแต่ช่องกรอกบัตร กฎ 180 วันคือเหตุผล ไม่ใช่ข้อผิดพลาด และไม่ใช่สิ่งที่ฝ่ายบริการจะยกเว้นให้ได้",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่าบัตรแบบไหนถูกปฏิเสธก่อนจะลองใช้",
+        body: "คู่มือการซื้อตัดบัตร American Express ที่ออกนอกเกาหลีออก และตัดบัตร China UnionPay ออกทั้งหมด ที่เหลือทั้งหมดผ่านได้ในฐานะการชำระด้วยบัตร และ YES24 ระบุว่าการยืนยันตัวตนด้วย 3-D Secure เป็นข้อบังคับบนเว็บโกลบอล บัตรจึงต้องลงทะเบียนกับธนาคารของคุณสำหรับระบบนี้ไว้ด้วย",
+        pitfall:
+          "บัตร Amex ที่ใช้ได้กับทุกเว็บอื่นกลับถูกปฏิเสธที่นี่เพราะที่ที่มันถูกออก ไม่ใช่เพราะอะไรเกี่ยวกับตัวบัตร ความล้มเหลวแบบนั้นดูเหมือนการถูกธนาคารบล็อกไม่มีผิด คนจึงเสียเวลาทั้งรอบขายไปกับการโทรหาธนาคารเรื่องปัญหาที่ผิด",
+        takes: "10 นาที พร้อมธนาคารของคุณ",
+      },
+      {
+        title: "เลือกรับหน้างานหรือส่งไปต่างประเทศตั้งแต่ตอนจอง",
+        body: "มีทั้งสองแบบ แต่การส่งไปต่างประเทศเป็นเรื่องรายงานไม่ใช่มีทุกงาน YES24 บอกว่าความพร้อมให้บริการต่างกันไปตามรอบการแสดง ค่าธรรมเนียมต่างกันตามปลายทาง และหน้าอีเวนต์คือที่ที่ระบุไว้ การเปลี่ยนวิธีรับบัตรภายหลังทำได้ถึง 20 วันทำการก่อนการแสดงเท่านั้น — สี่สัปดาห์ทำงาน ไม่ใช่สี่วัน",
+        pitfall:
+          "ยี่สิบวันทำการคือราวหนึ่งเดือนตามปฏิทิน การจองล่วงหน้าสองสัปดาห์แปลว่าวิธีที่คุณเลือกตอนอยู่ในคิวคือวิธีที่คุณต้องอยู่กับมัน",
+        takes: "5 นาที",
+      },
+      {
+        title: "อ่านนาฬิกาของการจองและการยกเลิก ซึ่งไม่ใช่วันแสดง",
+        body: "การจองปิดเวลา 17:00 ของวันก่อนหน้าสำหรับการแสดงวันอังคารถึงวันเสาร์ และเวลา 11:00 ของวันเสาร์สำหรับการแสดงวันอาทิตย์หรือวันจันทร์ การยกเลิกเดินบนนาฬิกาเรือนเดียวกันเป๊ะ และเมื่อเลยไปแล้วก็ไม่มีการยกเลิก เปลี่ยนแปลง หรือคืนเงิน การยกเลิกฟรีภายใน 7 วันนับจากวันซื้อ หลังจากนั้นเป็นค่าธรรมเนียมต่อใบที่ไต่ขึ้นเป็น 10%, 20% และ 30% ของยอดที่จ่ายเมื่อใกล้วันแสดงเข้ามา ขีดจำกัดคือ 10 ใบต่อคนต่อครั้ง",
+        pitfall:
+          "ค่าธรรมเนียมการจองคือจุดที่ YES24 ขัดแย้งกันเอง FAQ เขียนว่า 2,000 KRW ในบรรทัดหนึ่ง แล้วบรรทัดถัดมาก็ประกาศการเปลี่ยนเป็น 3,000 KRW ต่อใบตั้งแต่วันที่ 14 สิงหาคม 2023 ให้ถือว่า 3,000 คือตัวเลขปัจจุบัน ไม่ว่าทางไหน มันคืนได้แค่ถึง 23:59 ของวันที่คุณซื้อเท่านั้น ไม่ได้อยู่ในกรอบ 7 วันที่ครอบคลุมตัวบัตร",
+        takes: "5 นาที",
+      },
+      {
+        title: "พกหนังสือเดินทางและหลักฐานการจองไปที่สถานที่จัดงาน",
+        body: "การรับบัตรต้องใช้เอกสารแสดงตนตัวจริงที่ยังไม่หมดอายุ — YES24 ระบุชื่อหนังสือเดินทาง — ควบคู่กับหลักฐานยืนยันการจอง คู่มือการซื้อยังบอกให้พิมพ์รายละเอียดการซื้อออกมาและยื่นที่ห้องจำหน่ายบัตร นโยบายเฉพาะของแต่ละงานบนหน้าอีเวนต์มีผลเหนือข้อนี้ และ YES24 บอกว่าหน้าอีเวนต์เป็นฝ่ายชนะ จึงควรอ่านแม้คุณเคยรับบัตรที่สถานที่นั้นมาก่อน",
+        pitfall:
+          "ภาพถ่ายหน้าจอยืนยันบนโทรศัพท์ไม่ใช่สิ่งที่เขาอธิบายไว้ พิมพ์ออกมา และพกหนังสือเดินทางเล่มที่คุณใช้ลงทะเบียน ไม่ใช่เอกสารอื่น",
+        takes: "ที่สถานที่จัดงาน",
+      },
+    ],
+    faq: [
+      {
+        q: "ใช้บัญชี YES24 เดิมบนเว็บภาษาอังกฤษได้ไหม",
+        a: "ไม่ได้ YES24 บอกว่าสมาชิกเดิมต้องสมัครใหม่สำหรับเว็บ Global YES24 TICKET และว่ามันแยกจาก global.yes24.com โดยไม่มีการแบ่งปันข้อมูลสมาชิก",
+      },
+      {
+        q: "ทำไมไม่มี PayPal ตอนชำระเงิน",
+        a: "PayPal ถูกเสนอให้ก็ต่อเมื่อระยะห่างระหว่างวันจองกับวันแสดงมากกว่า 180 วัน การจองคอนเสิร์ตส่วนใหญ่อยู่ในระยะที่สั้นกว่านั้นมาก บัตรจึงเป็นทางเดียว",
+      },
+      {
+        q: "YES24 Global ปฏิเสธบัตรแบบไหน",
+        a: "บัตร American Express ที่ออกนอกเกาหลีใต้ และบัตร China UnionPay บัตรอื่นได้รับการยอมรับแต่ต้องผ่าน 3-D Secure ซึ่งเว็บกำหนดไว้",
+      },
+      {
+        q: "ให้คนอื่นไปรับบัตรแทนได้ไหม",
+        a: "ไม่ได้ บัตรแบบรับหน้างานรับได้โดยเจ้าของบัตรเท่านั้น พร้อมหนังสือเดินทางตัวจริงและหลักฐานการจอง เว้นแต่งานนั้น ๆ จะระบุเป็นอย่างอื่นบนหน้าของตัวเอง",
+      },
+      {
+        q: "การคืนเงินใช้เวลานานแค่ไหน",
+        a: "การคืนเงินเข้าบัตรระบุไว้ที่ 3 ถึง 7 วัน โดยนโยบายของบริษัทบัตรเป็นผู้ตัดสิน และอาจถึง 30 วัน การคืนเงินผ่าน PayPal กลับเข้ายอดคงเหลือ PayPal ภายใน 5 วันทำการ โดยใช้อัตราแลกเปลี่ยนของวันที่คืนเงินรวมส่วนต่างการแปลงสกุล จำนวนที่ได้คืนจึงอาจน้อยกว่าจำนวนที่จ่ายไป",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Tiket sa YES24 Global: ang mga tuntuning wala sa pahinang Ingles",
+    summary:
+      "Hindi gagana ang kasalukuyan mong YES24 account. Lumalabas lang ang PayPal kung sapat ang layo ng palabas. Dalawang uri ng kard ang tinatanggihan nang tuwiran, at tinitingnan ng venue ang pasaporte mo laban sa pangalang ipinangrehistro mo.",
+    scope:
+      "Sakop nito ang site na YES24 TICKET sa Ingles na ginagamit ng mga bumibili mula sa ibang bansa. Ang site na YES24 sa wikang Koreano ay nagpapatakbo ng ibang sistema ng account at ibang pagpapatunay ng pagkakakilanlan. Nananaig sa lahat ng narito ang mga kondisyon kada palabas sa pahina ng event, at sinasabi mismo ito ng YES24.",
+    intro: [
+      "Inilalathala ng YES24 ang mga tuntunin nito para sa ibang bansa sa isang gabay sa pagbili at FAQ sa Ingles, at halos wala sa laman ng mga iyon ang lumalabas sa mga gabay na nangunguna rito. Tiyak ang mga ito, hindi karaniwan, at ilan sa kanila ang magwawakas sa booking mo sa mismong araw kung doon mo lang sila unang makikita sa checkout.",
+      "Lahat ng nasa ibaba ay mula sa dalawang pahinang iyon, binasa noong 20 Oktubre 2026. Kung saan nagkakasalungat ang YES24 — at nagkakasalungat ito, minsan, sa isang bayarin — sinasabi ito ng pahinang ito sa halip na piliin ang maginhawang numero.",
+    ],
+    steps: [
+      {
+        title: "Magparehistrong muli, kahit may YES24 account ka na",
+        body: "Malinaw ang sinasabi ng YES24: ang mga dati nang miyembro ng YES24 na gustong gumamit ng site na Global YES24 TICKET ay kailangang magparehistrong muli. Nagbabala rin ito na ang pandaigdigang site ng tiket ay ibang bagay sa global.yes24.com, ang tindahan ng libro, at hindi sila nagbabahagi ng impormasyon ng miyembro. Hindi makakapag-book ang hindi miyembro, kaya ito ang unang hakbang at hindi pormalidad.",
+        pitfall:
+          "Tatlong serbisyo ng YES24 na magkakahawig ang pangalan at walang magkasanib na login. Ang pagkatuklas nito habang nakapila ay huli na — kailangan nang umiral ang account ilang araw bago pa man, dahil sa pagsusuri ng pangalan sa ibaba.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Irehistro ang pangalan nang eksaktong gaya sa pasaporte mo",
+        body: "Ito ang iisang lugar kung saan hayagang sinasabi ng isang plataporma ang bagay na tinatago ng iba. Mula sa FAQ ng YES24: kung iba ang pangalan sa YES24 account mo kaysa sa pangalan sa pasaporte mo, maaari kang mahirapang kunin ang nabook na tiket sa venue. Ang mga tiket na kukunin sa venue ay makukuha lamang ng may-ari ng tiket, at kailangan ng pisikal at wastong ID — isang pasaporte — kasama ang talaan ng booking.",
+        pitfall:
+          "Isang gitnang pangalang naiwan, isang romanisasyong pinili ilang taon na ang nakararaan, isang pagkakasunod na nauuna ang pangalan. Naghahambing ang venue ng dalawang dokumento, hindi humuhusga kung halata bang ikaw iyon.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Tingnan kung inaalok ba ang PayPal para sa palabas mo",
+        body: "Available lamang ang PayPal sa YES24 Global kapag may higit sa 180 araw sa pagitan ng petsa ng booking at ng petsa ng palabas. Para sa karamihan ng konsiyerto ng K-pop, na inianunsiyo isa o dalawang buwan bago, ibig sabihin ay hindi talaga opsiyon ang PayPal at ang kard na lamang ang ruta. May bayad ding 10 sentimo ang PayPal na hindi isinasauli kahit magkansela ka.",
+        pitfall:
+          "Ang pagplano batay sa PayPal dahil may gabay na nagsabing tinatanggap ito, at pagkatapos ay patlang lang ng kard ang makikita sa checkout. Ang tuntuning 180 araw ang dahilan — hindi ito error, at hindi ito maipapatawad ng suporta.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin kung aling kard ang tinatanggihan bago ka sumubok",
+        body: "Hindi tinatanggap ng gabay sa pagbili ang mga American Express na inisyu sa labas ng Korea, at ang mga China UnionPay nang tuluyan. Dumaraan ang lahat ng iba bilang bayad sa kard — at sinasabi ng YES24 na kailangan ang 3-D Secure sa pandaigdigang site, kaya dapat nakarehistro ang kard sa bangko mo para dito.",
+        pitfall:
+          "Ang Amex na gumagana sa lahat ng ibang site ay tinatanggihan dito dahil sa kung saan ito inisyu, hindi dahil sa anumang bagay tungkol sa kard. Kamukhang-kamukha ng isang blokeo ng bangko ang pagkabigong iyon, kaya ginugugol ng mga tao ang buong benta sa pagtawag sa bangko tungkol sa maling problema.",
+        takes: "10 minuto, kasama ang bangko mo",
+      },
+      {
+        title: "Pumili ng pagkuha sa venue o paghahatid sa ibang bansa sa oras ng booking",
+        body: "Umiiral ang dalawa, ngunit ang paghahatid sa ibang bansa ay kada palabas at hindi pangkalahatan: sinasabi ng YES24 na nag-iiba ang availability kada pagtatanghal at nag-iiba ang bayad kada destinasyon, at ang pahina ng event ang nagsasaad nito. Ang pagpapalit ng paraan ng paghahatid pagkatapos ay posible lamang hanggang 20 araw ng negosyo bago ang palabas — apat na linggo ng trabaho, hindi apat na araw.",
+        pitfall:
+          "Ang dalawampung araw ng negosyo ay tinatayang isang buwan sa kalendaryo. Ang pag-book na dalawang linggo bago ay nangangahulugang ang paraang pinili mo sa pila ang paraang mananatili sa iyo.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Basahin ang orasan ng booking at ng pagkansela, na hindi ang petsa ng palabas",
+        body: "Nagsasara ang booking nang alas-5 ng hapon sa araw bago ang palabas na Martes hanggang Sabado, at alas-11 ng umaga tuwing Sabado para sa palabas na Linggo o Lunes. Tumatakbo ang pagkansela sa eksaktong parehong orasan, at kapag lumipas ito ay wala nang pagkansela, pagbabago o pagsasauli. Libre ang pagkansela sa loob ng 7 araw mula sa pagbili; pagkatapos niyon ay isang bayad kada tiket na umaakyat sa 10%, 20% at 30% ng halagang binayaran habang papalapit ang palabas. Ang limitasyon ay 10 tiket kada tao sa bawat pagkakataon.",
+        pitfall:
+          "Sa bayad sa booking nagkakasalungat ang YES24: sinasabi ng FAQ na 2,000 KRW sa isang linya at pagkatapos ay inianunsiyo nito sa susunod ang pagbabago tungo sa 3,000 KRW kada tiket mula 14 Agosto 2023. Ituring mong 3,000 ang kasalukuyan. Alinman doon, naisasauli lamang ito hanggang 23:59 sa mismong araw ng pagbili mo, at hindi sa loob ng 7 araw na sumasaklaw sa tiket mismo.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Dalhin ang pasaporte at ang talaan ng booking sa venue",
+        body: "Nangangailangan ang pagkuha ng pisikal at wastong ID — pasaporte ang pinapangalanan ng YES24 — kasama ang talaan ng kumpirmasyon ng booking. Sinasabi rin ng gabay sa pagbili na i-print ang detalye ng pagbili at iabot ito sa box office. Nananaig dito ang patakaran kada palabas sa pahina ng event, at sinasabi ng YES24 na ang pahina ng event ang panalo, kaya basahin ito kahit nakakuha ka na sa venue na iyon dati.",
+        pitfall:
+          "Hindi ang larawan ng kumpirmasyon sa telepono ang inilalarawan dito. I-print ito, at dalhin ang pasaporteng ipinangrehistro mo sa halip na ibang ID.",
+        takes: "Sa venue",
+      },
+    ],
+    faq: [
+      {
+        q: "Puwede ko bang gamitin ang kasalukuyang YES24 account ko sa site na Ingles?",
+        a: "Hindi. Sinasabi ng YES24 na kailangang magparehistrong muli ang mga dating miyembro para sa site na Global YES24 TICKET, at na hiwalay ito sa global.yes24.com na walang magkasanib na impormasyon ng miyembro.",
+      },
+      {
+        q: "Bakit walang PayPal sa checkout?",
+        a: "Inaalok lamang ang PayPal kapag may higit sa 180 araw sa pagitan ng petsa ng booking at ng petsa ng palabas. Karamihan ng booking sa konsiyerto ay nasa loob nito, kaya ang kard ang tanging ruta.",
+      },
+      {
+        q: "Aling mga kard ang tinatanggihan ng YES24 Global?",
+        a: "Ang mga American Express na inisyu sa labas ng South Korea, at ang mga China UnionPay. Tinatanggap ang ibang kard ngunit kailangang makapasa sa 3-D Secure, na hinihingi ng site.",
+      },
+      {
+        q: "Puwede bang iba ang kumuha ng tiket ko?",
+        a: "Hindi. Ang mga tiket na kukunin sa venue ay makukuha lamang ng may-ari ng tiket, dala ang pisikal na pasaporte at ang talaan ng booking — maliban kung may ibang sinasabi ang mismong palabas sa sarili nitong pahina.",
+      },
+      {
+        q: "Gaano katagal ang pagsasauli ng bayad?",
+        a: "Nakasaad ang pagsasauli sa kard sa 3 hanggang 7 araw, kung saan ang patakaran mismo ng kompanya ng kard ang nagpapasya, at hanggang 30 araw. Bumabalik ang pagsasauli sa PayPal sa balanse ng PayPal sa loob ng 5 araw ng negosyo — sa palitang umiiral sa petsa ng pagsasauli kasama ang pagitan ng konbersiyon, kaya maaaring mas mababa ang halagang ibinalik kaysa sa halagang binayaran.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

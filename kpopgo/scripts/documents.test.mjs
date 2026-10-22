@@ -128,3 +128,69 @@ test("every reproduced document names its credit, licence and source", () => {
     );
   }
 });
+
+/**
+ * The two conditions 공공누리 제1유형 actually attaches, read off the licence
+ * page on 22 October 2026 rather than remembered.
+ *
+ * The licence was quoted in this repo as "free commercial use and
+ * modification with attribution", which is true and is not all of it. Its
+ * 개별조건 carry two obligations that code can break silently, and until the
+ * licence page was finally fetched — it had never been swept, being a
+ * `licenceUrl` rather than a `url:` — nothing here had been checked against
+ * either of them.
+ */
+
+/**
+ * "온라인에서 출처 웹사이트에 대한 하이퍼링크를 제공하는 것이 가능한 경우에는
+ * 링크를 제공하여야 합니다."
+ *
+ * Providing the link is not good manners under this licence, it is a term of
+ * it, and it is possible here. The component renders the credit from the
+ * register, so the fields cannot go missing — but nothing stopped somebody
+ * rendering them as plain text, which would satisfy every assertion above and
+ * breach the licence.
+ */
+test("the source and the licence are rendered as links, which Type 1 requires", async () => {
+  const component = await readFile(new URL("components/SourceDocument.tsx", root), "utf8");
+  for (const field of ["sourceUrl", "licenceUrl"]) {
+    assert.match(
+      component,
+      new RegExp(`href=\\{doc\\.${field}\\}`),
+      `SourceDocument does not render doc.${field} as an href. 공공누리 제1유형 ` +
+        `requires a hyperlink to the source where one is possible online, so ` +
+        `rendering this as text is a licence breach rather than a style choice.`,
+    );
+  }
+});
+
+/**
+ * "이용자는 공공기관이 이용자를 후원한다거나 공공기관과 이용자가 특수한 관계에
+ * 있는 것처럼 제3자가 오인하게 하는 표시를 해서는 안됩니다."
+ *
+ * An ad unit directly beneath 서울시설공단's own drawing, with the credit line
+ * between the two, is that impression. It is also the kind of thing that
+ * returns the moment a section is added here, which is why the order is
+ * asserted rather than left to the comment in the route.
+ */
+test("no ad slot renders below a reproduced document", async () => {
+  const route = await readFile(new URL("app/guides/[slug]/page.tsx", root), "utf8");
+  const doc = route.indexOf("<SourceDocument");
+  const ads = [...route.matchAll(/<AdSlot\s+placement="(\w+)"/g)];
+
+  assert.ok(doc > 0, "The guide route no longer renders <SourceDocument>.");
+  assert.ok(ads.length > 0, "The guide route no longer renders an <AdSlot>.");
+
+  for (const ad of ads) {
+    // `foot` is the page footer, below the FAQ and everything else; it is not
+    // adjacent to the document and is not what this guards.
+    if (ad[1] === "foot") continue;
+    assert.ok(
+      ad.index < doc,
+      `<AdSlot placement="${ad[1]}"> renders after the reproduced document. ` +
+        `공공누리 제1유형 forbids presenting anything that would have a third ` +
+        `party mistake the institution for a sponsor, and an ad under the ` +
+        `agency's own chart is exactly that. Put the slot above the document.`,
+    );
+  }
+});

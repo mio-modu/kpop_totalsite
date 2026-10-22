@@ -61,24 +61,24 @@ appear in `main` under different ones:
 
 ## Waiting on the owner
 
-- **Three hosts are missing from the allowlist: `www.kogl.or.kr`,
-  `www.clarity.ms`, `www.ksponco.or.kr`.** All three answer 403 at the
-  gateway, so they are absent from the field rather than broken, and the other
-  43 answer. The first is the 공공누리 licence page the Gocheok chart is
-  reproduced under — a host the *content* cites — and the weekly sweep now
-  reports it as a `✗` naming the allowlist. Supply the block from
-  `npm run hosts` **inside a fenced code block**, because pasting bare
-  hostnames has twice come back markdown-linkified, and paste it whole:
-  editing the field replaces it, which is how hosts go dark three at a time.
-- **An allowlist edit does not reach a container that is already running.**
-  Checked on 22 October 2026: the three hosts above were added, and all three
-  still answered 403 at the gateway in this session afterwards. So the venue
-  work that needs `www.ksponco.or.kr` has to start in a **new session**, not
-  in the one where the paste happened. Worth knowing before concluding that a
-  paste failed and re-doing it.
-- **The KOGL licence page needs a `--record-new` once it is reachable.** Its
-  first sweep returned the allowlist failure rather than a baseline, so it is
-  collected and not yet fingerprinted.
+- **`www.ksponco.or.kr` is still missing from the allowlist**, and it is the
+  only thing the next venue guide waits on. Of the three hosts added on 22
+  October it is the one that did not arrive: `www.kogl.or.kr` and
+  `www.clarity.ms` both answer 200 now, this one still answers 403 at the
+  gateway. Supply it **inside a fenced code block**, since pasting bare
+  hostnames has twice come back markdown-linkified, and paste the whole block
+  from `npm run hosts`: editing the field replaces it, which is how hosts go
+  dark three at a time.
+- **An allowlist edit does reach a running container — it just is not
+  instant.** An earlier version of this file said the opposite, and said it
+  from one measurement: the three hosts were pasted, all three still answered
+  403 a minute later, and that was written down as "needs a new session". Two
+  of them answered 200 on a retry some minutes afterwards. The wrong half of
+  that conclusion is the expensive half, because it sends the next session to
+  open a new one for nothing. **Re-probe a denied host after a few minutes
+  before concluding anything about the paste** — and note the shape of the
+  error: one measurement, written up as a rule, in a session whose whole
+  subject was that exact mistake.
 - **Inspire Arena needs a live hostname, and that is the whole blocker.**
   `www.inspirekorea.com` was recorded here for weeks as blocked by the
   allowlist. It was never blocked: the gateway answers **502** to CONNECT for

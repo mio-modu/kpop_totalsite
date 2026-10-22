@@ -231,6 +231,28 @@ export default async function GuidePage({
         </ol>
       </section>
 
+      {/*
+        The in-article ad sits here, above the reproduced document rather than
+        below it, and that ordering is a licence condition rather than taste.
+
+        공공누리 제1유형 permits the chart on two conditions, and the second one
+        is easy to miss: the user must not present anything that would make a
+        third party mistakenly believe the public institution sponsors them or
+        has a special relationship with them. An ad unit rendered immediately
+        under 서울시설공단's own drawing, with its credit line between them, is
+        exactly that impression — and it only happened on document guides,
+        because the document section is the only thing that comes between the
+        steps and this slot.
+
+        Moving the slot changes nothing for the other guides: steps, ad, FAQ,
+        as before. On a document guide the chart is now followed by the FAQ.
+        `scripts/documents.test.mjs` asserts the order, because the next person
+        to add a section here will not know this paragraph exists.
+      */}
+      <div className="wrap">
+        <AdSlot placement="article" />
+      </div>
+
       {guide.document ? (
         <section className="wrap mt-14">
           <h2 className="pl">The chart itself</h2>
@@ -240,10 +262,6 @@ export default async function GuidePage({
           </div>
         </section>
       ) : null}
-
-      <div className="wrap">
-        <AdSlot placement="article" />
-      </div>
 
       {/* ─────────── FAQ ─────────── */}
       <section className="wrap mt-16">

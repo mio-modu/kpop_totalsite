@@ -756,6 +756,36 @@ exactly, and the only thing that makes that allowed is the licence. The chart
 page carries `공공누리 제1유형 · 출처표시` — KOGL Type 1, free commercial use
 and modification with attribution — declared on the page itself.
 
+**That licence has two conditions beyond attribution, and neither was checked
+until the licence page was finally read on 22 October 2026.** It had never
+been fetched by anything — see the `licenceUrl` note below — so "free
+commercial use and modification with attribution" was quoted here from the
+mark rather than from the terms. It is true and it is not all of them:
+
+- **The hyperlink is a term, not manners.** 제1유형's 개별조건 say that where a
+  hyperlink to the source is possible online, it must be provided. The fields
+  render from the register so they cannot go missing, but nothing stopped them
+  being rendered as plain text — which would satisfy every other check and
+  breach the licence. `scripts/documents.test.mjs` now asserts the component
+  renders `sourceUrl` and `licenceUrl` as `href`s.
+- **Nothing may suggest the institution sponsors us.** The same conditions
+  forbid any presentation that would have a third party mistake the public
+  body for a sponsor or a partner. The in-article ad slot was rendering
+  *directly beneath* 서울시설공단's own chart, with the credit line between
+  them, and only on document guides — the document section was the one thing
+  that came between the steps and that slot. The slot moved above the
+  document, which changes nothing on every other guide, and the order is
+  asserted rather than left to a comment in the route.
+
+Both assertions were proved by planting the violation: the licence link
+rendered as a `<span>`, and the ad slot put back below the document. Both go
+red, and green again on restore.
+
+The no-crop decision is a licence matter too, not only taste: 제1유형 asks that
+a modified work respect the author's moral rights, and gives cropping a
+photograph so that it differs markedly from the author's intent as its own
+example. The chart is served whole, and the untouched original is linked.
+
 So the terms are **data, not a thing anybody remembers**. `ReproducedDocument`
 in `content/guides.ts` carries the file, the credit, the licence, its URL, the
 page it came from and the day the copy was taken; `components/SourceDocument.tsx`

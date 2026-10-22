@@ -15962,6 +15962,276 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL facepass: ai đang giữ khuôn mặt bạn, và nó dùng để làm gì",
+    summary:
+      "Đăng ký một lần và một chiếc camera cho bạn vào mà không cần kiểm tra vé. Khuôn mặt do Toss giữ chứ không phải NOL World, nó không thể thay đổi về sau, và hủy dịch vụ sẽ xóa tấm ảnh nhưng vẫn giữ một bản sao riêng trong một năm.",
+    scope:
+      "Nói về những gì NOL World công bố về NOL facepass, gồm cả thời hạn lưu trữ mà họ nêu sau khi hủy: nó làm gì, ai lưu dữ liệu khuôn mặt, và việc đăng ký ràng buộc bạn vào điều gì. Việc hỗ trợ là theo từng show, và trang sự kiện là nơi quyết định. Không có gì ở đây là ý kiến pháp lý về dữ liệu sinh trắc học ở nước bạn.",
+    intro: [
+      "Các địa điểm tổ chức ở Hàn Quốc đang chuyển sang nhận diện khuôn mặt ở cửa, và một fan ở nước ngoài gặp nó dưới dạng một ô tích trong lúc đặt vé, với rất ít giải thích bằng tiếng Anh. Câu hỏi nằm bên dưới không hề nhỏ: một công ty bạn chưa từng giao dịch sắp giữ khuôn mặt của bạn.",
+      "NOL World có công bố câu trả lời. Chúng cụ thể, chúng khiến người ta yên tâm hơn phần lớn các công ty khác làm được, và chúng đáng đọc trước khi vào hàng chờ chứ không phải trong lúc đang chờ — kể cả câu trả lời về điều xảy ra với dữ liệu sau khi bạn hủy, vốn không nói đúng cái mà một từ đơn lẻ như “đã xóa” gợi ra.",
+    ],
+    steps: [
+      {
+        title: "Hiểu nó thay thế cho cái gì",
+        body: "NOL World mô tả facepass như một cách cắt bớt thủ tục và thời gian mà việc xác minh danh tính chiếm ở cửa vào. Khi việc đăng ký khuôn mặt hoàn tất, một chiếc camera quét bạn ở cửa và bạn vào mà không cần kiểm tra vé. Đây là thứ thay thế cho khâu kiểm tra giấy tờ ở cổng, chứ không phải một lớp thêm vào bên trên nó.",
+        pitfall:
+          "Đọc nó như một tính năng tiện lợi và chỉ vậy. Nửa sau trong chính mô tả của NOL World là chuyện kiểm soát, và đó là bước kế tiếp.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết lý do còn lại khiến nó tồn tại",
+        body: "NOL World nêu mục đích hai lần: tinh giản việc xác minh danh tính, và ngăn chặn việc bán và phân phối vé bất hợp pháp. Một khuôn mặt buộc phải khớp với tài khoản đã mua vé chính là một biện pháp kiểm soát bán lại, và nó xuất hiện cùng thời kỳ với một Luật Biểu diễn sửa đổi vươn tới việc bán lại có tính thường xuyên cao hơn mệnh giá. Hai dữ kiện đó thuộc về nhau.",
+        pitfall:
+          "Cho rằng một tấm vé mua qua sàn bán lại sẽ cứ thế chạy được ở cổng facepass. Hệ thống tồn tại để đúng việc đó không chạy được.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết khuôn mặt thực sự đi đâu",
+        body: "Đây là phần đáng biết nhất. NOL World nói rằng thông tin khuôn mặt — ảnh gốc và dữ liệu đặc trưng — được mã hóa và lưu bởi Toss, công ty fintech đứng sau dịch vụ FaceAccess, và rằng nó không được cung cấp cho NOL World hay cho các cơ quan trong bất kỳ trường hợp nào. Chỉ kết quả xác thực, thành công hay thất bại, được chia sẻ. NOL World cũng nói dữ liệu không được dùng cho bất kỳ mục đích nào ngoài việc cung cấp dịch vụ, và dẫn việc Toss nắm chứng nhận ISO 27701 và CBPR.",
+        pitfall:
+          "Đây là các tuyên bố của NOL World về một bên thứ ba, không phải một cuộc kiểm toán. Chúng cụ thể một cách khác thường so với loại trang này, đó là lý do nên xem trọng chúng chứ không phải lý do để ngừng đọc.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy coi việc đăng ký là vĩnh viễn",
+        body: "Một khi khuôn mặt đã được đăng ký thì không thể sửa. NOL World nêu lý do rõ ràng — là để ngăn việc sử dụng dịch vụ một cách gian lận. Không có chuyện sửa một lần đăng ký tệ về sau, nên những điều kiện bạn đăng ký trong đó cũng là những điều kiện bạn giữ lại: ánh sáng, kính mắt, bất cứ thứ gì camera đã bắt được.",
+        pitfall:
+          "Đăng ký vội trong hàng chờ, dưới ánh sáng xấu, với ý định làm lại cho tử tế sau. Không có cái sau nào cả.",
+        takes: "10 phút, làm thong thả",
+      },
+      {
+        title: "Đừng bao giờ để ai đăng ký trên điện thoại hay tài khoản của bạn",
+        body: "NOL World nói thẳng: hãy đảm bảo không ai khác dùng tài khoản của bạn, và nếu ai đó đăng ký thông tin khuôn mặt bằng điện thoại hoặc tài khoản của bạn, công ty không chịu trách nhiệm cho bất kỳ vấn đề nào phát sinh. Một chiếc máy dùng chung trong nhà vào đúng lúc một tour mở bán chính là cách chuyện này xảy ra, và tài khoản mới là thứ gánh hậu quả.",
+        pitfall:
+          "Giúp một người bạn đăng ký trên chiếc điện thoại đang đăng nhập tài khoản bạn. Khuôn mặt giờ gắn với tài khoản của bạn là của họ, nó không sửa được, và lời miễn trừ trách nhiệm thì rành mạch.",
+        takes: "1 phút",
+      },
+      {
+        title: "Xem show của bạn có hỗ trợ nó không đã",
+        body: "Việc hỗ trợ là theo từng sự kiện chứ không phổ quát — NOL World duy trì hẳn một câu hỏi về cách kiểm tra xem một buổi diễn có hỗ trợ facepass hay không, câu hỏi đó chỉ tồn tại vì câu trả lời thay đổi. Hãy xem trang sự kiện của show bạn trước khi lên kế hoạch vào cửa quanh nó, và chuẩn bị sẵn lối đi thông thường: mã xác nhận và giấy tờ tùy thân tại quầy vé.",
+        pitfall:
+          "Đăng ký xong rồi tới một địa điểm vẫn còn kiểm tra giấy tờ, với cuốn hộ chiếu bỏ lại khách sạn.",
+        takes: "3 phút",
+      },
+      {
+        title: "Đọc kỹ câu trả lời về việc xóa — nó không đơn thuần là xóa",
+        body: "NOL World trả lời câu hỏi liệu thông tin khuôn mặt có bị xóa nếu bạn hủy đăng ký hay không, và câu trả lời có hai nửa. Nửa đầu: tấm ảnh khuôn mặt của bạn bị xóa khi bạn hủy dịch vụ, và muốn dùng lại thì phải đăng ký lại. Nửa sau: để phục vụ mục đích xác minh danh tính, dữ liệu được lưu riêng và giữ trong một năm kể từ thời điểm hủy — được dùng, theo lời NOL World, chỉ cho việc xác minh danh tính khi đăng ký lại, và bị loại bỏ sau năm đó. Vậy nên hủy đăng ký là xóa tấm ảnh và bật một chiếc đồng hồ đếm, chứ không phải tắt một chiếc. Đó là một chính sách có thể biện hộ được, và nó không phải điều mà chữ “đã xóa” tự nó gợi ra, nên đáng đọc bằng chính lời của họ trước khi bạn đăng ký.",
+        pitfall:
+          "Chấp nhận bản tóm tắt một chữ của bất kỳ bên thứ ba nào về điều xảy ra với dữ liệu sinh trắc học, kể cả của chúng tôi. Hãy đọc câu về thời hạn lưu trữ, đừng đọc cái tiêu đề.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World có nhìn thấy khuôn mặt tôi không?",
+        a: "NOL World nói là không. Thông tin khuôn mặt được mã hóa và do Toss giữ, và NOL World khẳng định nó không được cung cấp cho NOL World hay cho các cơ quan trong bất kỳ trường hợp nào — chỉ việc xác thực thành công hay thất bại mới được chia sẻ.",
+      },
+      {
+        q: "Tôi đăng ký lại khuôn mặt được không nếu lần đầu chụp xấu?",
+        a: "Không. NOL World nói rằng một khuôn mặt đã đăng ký không thể sửa, nhằm ngăn việc sử dụng dịch vụ một cách gian lận. Hãy đăng ký thật thong thả ngay lần đầu.",
+      },
+      {
+        q: "Dữ liệu khuôn mặt của tôi có bị xóa nếu tôi hủy facepass không?",
+        a: "Một phần, và rồi theo một chiếc đồng hồ đếm. NOL World nói rằng tấm ảnh khuôn mặt bị xóa khi bạn hủy đăng ký, và rằng bạn sẽ phải đăng ký lại để dùng dịch vụ. Họ cũng nói rằng vì mục đích xác minh danh tính, dữ liệu được lưu riêng và giữ trong một năm kể từ khi hủy, chỉ dùng cho việc xác minh danh tính nếu bạn đăng ký lại, và bị loại bỏ sau năm đó. Cho tới ngày 20 tháng 10 năm 2026, trang này còn ghi rằng chúng tôi chưa đọc câu trả lời đó và từ chối tóm tắt nó; giờ nó được trích ở trên và được ghi vào mục đính chính của chúng tôi.",
+      },
+      {
+        q: "Có phải mọi buổi diễn đều dùng facepass không?",
+        a: "Không. Việc hỗ trợ thay đổi theo từng sự kiện, và NOL World giữ một câu trả lời riêng về cách kiểm tra. Hãy xác nhận trên trang sự kiện của show bạn, và giữ sẵn lối nhận vé thông thường.",
+      },
+      {
+        q: "Chuyện gì xảy ra nếu người khác đăng ký khuôn mặt họ trên tài khoản tôi?",
+        a: "NOL World nói rằng công ty không chịu trách nhiệm cho những vấn đề phát sinh từ đó, và đề nghị bạn đảm bảo không ai khác dùng tài khoản của bạn. Vì một khuôn mặt đã đăng ký thì không đổi được, chuyện này không khắc phục được theo cách thông thường.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL facepass: ใครถือใบหน้าของคุณ และมันมีไว้ทำอะไร",
+    summary:
+      "ลงทะเบียนครั้งเดียวแล้วกล้องจะให้คุณเข้างานโดยไม่ต้องตรวจบัตร ใบหน้าถูกเก็บโดย Toss ไม่ใช่ NOL World เปลี่ยนภายหลังไม่ได้ และการยกเลิกบริการจะลบรูปถ่ายแต่ยังเก็บสำเนาแยกไว้อีกหนึ่งปี",
+    scope:
+      "ครอบคลุมสิ่งที่ NOL World เผยแพร่เกี่ยวกับ NOL facepass รวมถึงระยะเวลาเก็บรักษาที่ระบุไว้หลังการยกเลิก: มันทำอะไร ใครเก็บข้อมูลใบหน้า และการลงทะเบียนผูกมัดคุณกับอะไร การรองรับเป็นรายงาน และหน้าอีเวนต์เป็นผู้ตัดสิน ไม่มีอะไรในหน้านี้เป็นความเห็นทางกฎหมายเกี่ยวกับข้อมูลชีวมาตรในประเทศของคุณ",
+    intro: [
+      "สถานที่จัดงานในเกาหลีกำลังเปลี่ยนไปใช้การจดจำใบหน้าที่ประตู และแฟนจากต่างประเทศเจอมันในรูปของช่องติ๊กระหว่างการจอง พร้อมคำอธิบายภาษาอังกฤษน้อยมาก คำถามที่อยู่ข้างใต้นั้นไม่ใช่เรื่องเล็ก: บริษัทที่คุณไม่เคยติดต่อด้วยกำลังจะถือใบหน้าของคุณไว้",
+      "NOL World เผยแพร่คำตอบไว้จริง คำตอบเหล่านั้นเฉพาะเจาะจง ให้ความมั่นใจมากกว่าที่บริษัทส่วนใหญ่ทำได้ และควรอ่านก่อนเข้าคิวมากกว่าอ่านตอนอยู่ในคิว รวมถึงคำตอบเรื่องสิ่งที่เกิดขึ้นกับข้อมูลหลังคุณยกเลิก ซึ่งไม่ได้พูดอย่างที่คำเดียวโดด ๆ อย่าง “ลบแล้ว” ชวนให้เข้าใจ",
+    ],
+    steps: [
+      {
+        title: "เข้าใจว่ามันมาแทนอะไร",
+        body: "NOL World อธิบาย facepass ว่าเป็นวิธีตัดขั้นตอนและเวลาที่การยืนยันตัวตนกินไปตอนเข้างาน เมื่อการลงทะเบียนใบหน้าเสร็จสมบูรณ์ กล้องจะสแกนคุณที่ประตูและคุณเข้าได้โดยไม่ต้องตรวจบัตร มันเป็นสิ่งที่มาแทนการตรวจเอกสารที่ประตู ไม่ใช่ชั้นเพิ่มเติมที่วางซ้อนทับ",
+        pitfall:
+          "การอ่านมันเป็นเพียงฟีเจอร์เพื่อความสะดวก ครึ่งหลังของคำอธิบายของ NOL World เองคือการบังคับใช้ ซึ่งเป็นหัวข้อถัดไป",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้เหตุผลอีกข้อที่มันมีอยู่",
+        body: "NOL World ระบุวัตถุประสงค์ไว้สองชั้น: ทำให้การยืนยันตัวตนลื่นไหลขึ้น และป้องกันการขายและกระจายบัตรอย่างผิดกฎหมาย ใบหน้าที่ต้องตรงกับบัญชีที่ซื้อบัตรคือมาตรการควบคุมการขายต่อ และมันมาถึงในช่วงเดียวกับกฎหมายการแสดงฉบับแก้ไขที่ครอบคลุมการขายต่อเป็นปกติวิสัยในราคาสูงกว่าหน้าบัตร ข้อเท็จจริงสองข้อนี้ควรอยู่ข้างกัน",
+        pitfall:
+          "การคิดว่าบัตรที่ซื้อผ่านตลาดขายต่อจะใช้ได้เฉย ๆ ที่ประตู facepass ระบบนี้มีอยู่เพื่อให้สิ่งนั้นใช้ไม่ได้พอดี",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่าใบหน้าไปอยู่ที่ไหนจริง ๆ",
+        body: "นี่คือส่วนที่ควรรู้ที่สุด NOL World บอกว่าข้อมูลใบหน้า — ทั้งภาพต้นฉบับและข้อมูลลักษณะเด่น — ถูกเข้ารหัสและจัดเก็บโดย Toss บริษัทฟินเทคที่อยู่เบื้องหลังบริการ FaceAccess และว่ามันไม่ได้ถูกส่งให้ NOL World หรือหน่วยงานใดไม่ว่ากรณีใด มีเพียงผลการยืนยันตัวตน สำเร็จหรือไม่สำเร็จ เท่านั้นที่ถูกแบ่งปัน NOL World ยังบอกว่าข้อมูลไม่ได้ถูกใช้เพื่อวัตถุประสงค์ใดนอกเหนือจากการให้บริการ และอ้างว่า Toss ถือใบรับรอง ISO 27701 และ CBPR",
+        pitfall:
+          "สิ่งเหล่านี้เป็นคำแถลงของ NOL World เกี่ยวกับบุคคลที่สาม ไม่ใช่การตรวจสอบบัญชี มันเฉพาะเจาะจงผิดปกติสำหรับหน้าแบบนี้ ซึ่งเป็นเหตุผลให้รับฟังอย่างจริงจัง ไม่ใช่เหตุผลให้หยุดอ่าน",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถือว่าการลงทะเบียนเป็นการถาวร",
+        body: "เมื่อใบหน้าถูกลงทะเบียนแล้วจะแก้ไขไม่ได้ NOL World ให้เหตุผลตรง ๆ ว่าเพื่อป้องกันการใช้บริการโดยฉ้อฉล ไม่มีการแก้การลงทะเบียนที่แย่ในภายหลัง สภาพที่คุณลงทะเบียนจึงเป็นสภาพที่คุณต้องอยู่กับมัน ทั้งแสง แว่นตา และอะไรก็ตามที่กล้องจับได้",
+        pitfall:
+          "การลงทะเบียนอย่างรีบร้อนขณะอยู่ในคิว ใต้แสงไม่ดี โดยตั้งใจจะกลับมาทำให้เรียบร้อยทีหลัง ไม่มีทีหลัง",
+        takes: "10 นาที อย่างตั้งใจ",
+      },
+      {
+        title: "อย่าให้ใครลงทะเบียนบนโทรศัพท์หรือบัญชีของคุณเด็ดขาด",
+        body: "NOL World บอกไว้ตรง ๆ ว่าให้แน่ใจว่าไม่มีใครอื่นใช้บัญชีของคุณ และถ้ามีคนลงทะเบียนข้อมูลใบหน้าโดยใช้โทรศัพท์หรือบัญชีของคุณ บริษัทไม่รับผิดชอบต่อปัญหาใด ๆ ที่ตามมา เครื่องที่ใช้ร่วมกันในบ้านในจังหวะที่ทัวร์เปิดขายคือวิธีที่เรื่องนี้เกิดขึ้นพอดี และบัญชีคือสิ่งที่แบกผลที่ตามมา",
+        pitfall:
+          "การช่วยเพื่อนลงทะเบียนบนโทรศัพท์ที่ล็อกอินบัญชีคุณค้างไว้ ใบหน้าที่ตอนนี้ผูกกับบัญชีของคุณคือของเขา แก้ไขไม่ได้ และข้อความปฏิเสธความรับผิดก็ชัดเจน",
+        takes: "1 นาที",
+      },
+      {
+        title: "ตรวจก่อนว่างานของคุณรองรับมันหรือเปล่า",
+        body: "การรองรับเป็นรายอีเวนต์ไม่ใช่ทุกงาน NOL World มีคำถามเฉพาะเรื่องวิธีตรวจว่าคอนเสิร์ตหนึ่งรองรับ facepass หรือไม่ ซึ่งมีอยู่ก็เพราะคำตอบไม่เหมือนกัน ตรวจหน้าอีเวนต์ของงานคุณก่อนวางแผนการเข้างานรอบ ๆ มัน และเตรียมเส้นทางปกติไว้ด้วย: หมายเลขยืนยันและเอกสารแสดงตนที่ห้องจำหน่ายบัตร",
+        pitfall:
+          "ลงทะเบียนเสร็จแล้วไปถึงสถานที่ที่ยังตรวจเอกสารอยู่ โดยทิ้งหนังสือเดินทางไว้ที่โรงแรม",
+        takes: "3 นาที",
+      },
+      {
+        title: "อ่านคำตอบเรื่องการลบให้ดี มันไม่ใช่การลบเฉย ๆ",
+        body: "NOL World ตอบคำถามว่าข้อมูลใบหน้าจะถูกลบหรือไม่ถ้าคุณยกเลิกการสมัคร และคำตอบมีสองครึ่ง ครึ่งแรก: รูปถ่ายใบหน้าของคุณถูกลบเมื่อคุณยกเลิกบริการ และการใช้อีกครั้งหมายถึงต้องลงทะเบียนใหม่ ครึ่งที่สอง: เพื่อวัตถุประสงค์ของการยืนยันตัวตน ข้อมูลถูกจัดเก็บแยกต่างหากและเก็บรักษาไว้หนึ่งปีนับจากจุดที่ยกเลิก โดย NOL World บอกว่าใช้เฉพาะเพื่อการยืนยันตัวตนตอนลงทะเบียนใหม่ และถูกทำลายหลังจากปีนั้น ดังนั้นการยกเลิกการสมัครคือการลบรูปถ่ายและเริ่มเดินนาฬิกา ไม่ใช่การหยุดนาฬิกา นั่นเป็นนโยบายที่แก้ต่างได้ และมันไม่ใช่สิ่งที่คำว่า “ลบแล้ว” โดด ๆ สื่อถึง จึงควรอ่านด้วยถ้อยคำของเขาเองก่อนคุณจะลงทะเบียน",
+        pitfall:
+          "การรับเอาบทสรุปคำเดียวของบุคคลที่สามคนใดก็ตามเกี่ยวกับสิ่งที่เกิดกับข้อมูลชีวมาตร รวมถึงของเราด้วย อ่านประโยคเรื่องการเก็บรักษา ไม่ใช่อ่านหัวเรื่อง",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World เห็นใบหน้าของฉันไหม",
+        a: "NOL World บอกว่าไม่ ข้อมูลใบหน้าถูกเข้ารหัสและเก็บโดย Toss และ NOL World ระบุว่ามันไม่ได้ถูกส่งให้ NOL World หรือหน่วยงานใดไม่ว่ากรณีใด มีเพียงความสำเร็จหรือความล้มเหลวของการยืนยันตัวตนเท่านั้นที่ถูกแบ่งปัน",
+      },
+      {
+        q: "ลงทะเบียนใบหน้าใหม่ได้ไหมถ้าครั้งแรกออกมาไม่ดี",
+        a: "ไม่ได้ NOL World บอกว่าใบหน้าที่ลงทะเบียนแล้วแก้ไขไม่ได้ เพื่อป้องกันการใช้บริการโดยฉ้อฉล ลงทะเบียนอย่างตั้งใจตั้งแต่ครั้งแรก",
+      },
+      {
+        q: "ข้อมูลใบหน้าของฉันจะถูกลบไหมถ้าฉันยกเลิก facepass",
+        a: "บางส่วน แล้วจึงนับถอยหลัง NOL World บอกว่ารูปถ่ายใบหน้าถูกลบเมื่อคุณยกเลิกการสมัคร และว่าคุณจะต้องลงทะเบียนใหม่เพื่อใช้บริการ เขายังบอกว่าเพื่อวัตถุประสงค์ของการยืนยันตัวตน ข้อมูลถูกจัดเก็บแยกและเก็บรักษาไว้หนึ่งปีนับจากการยกเลิก ใช้เฉพาะเพื่อการยืนยันตัวตนหากคุณลงทะเบียนใหม่ และถูกทำลายหลังจากปีนั้น จนถึงวันที่ 20 ตุลาคม 2026 หน้านี้เคยเขียนว่าเรายังไม่ได้อ่านคำตอบนั้นและปฏิเสธที่จะสรุปมัน ตอนนี้มันถูกยกมาไว้ข้างบนและบันทึกไว้ในรายการแก้ไขของเราแล้ว",
+      },
+      {
+        q: "ทุกคอนเสิร์ตใช้ facepass ไหม",
+        a: "ไม่ การรองรับต่างกันไปตามอีเวนต์ และ NOL World เก็บคำตอบแยกไว้เรื่องวิธีตรวจสอบ ยืนยันบนหน้าอีเวนต์ของงานคุณ และคงเส้นทางรับบัตรแบบปกติไว้ให้ใช้ได้",
+      },
+      {
+        q: "ถ้ามีคนอื่นลงทะเบียนใบหน้าของเขาบนบัญชีฉันจะเกิดอะไรขึ้น",
+        a: "NOL World บอกว่าบริษัทไม่รับผิดชอบต่อปัญหาที่เกิดจากเรื่องนั้น และขอให้คุณแน่ใจว่าไม่มีใครอื่นใช้บัญชีของคุณ เนื่องจากใบหน้าที่ลงทะเบียนแล้วเปลี่ยนไม่ได้ เรื่องนี้จึงกู้คืนด้วยวิธีปกติไม่ได้",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL facepass: sino ang may hawak ng mukha mo, at para saan ito",
+    summary:
+      "Magparehistro nang minsan at papapasukin ka ng isang kamera nang walang pagsusuri ng tiket. Ang mukha ay hawak ng Toss at hindi ng NOL World, hindi na ito mababago pagkatapos, at ang pagkansela ng serbisyo ay nagbubura sa larawan ngunit nagtatago ng hiwalay na kopya sa loob ng isang taon.",
+    scope:
+      "Sakop nito ang inilalathala ng NOL World tungkol sa NOL facepass, pati na ang nakasaad nitong panahon ng pag-iingat pagkatapos ng pagkansela: kung ano ang ginagawa nito, sino ang nag-iimbak ng datos ng mukha, at kung saan ka itinatali ng pagpaparehistro. Kada palabas ang suporta, at ang pahina ng event ang nagpapasya. Walang anuman dito ang legal na opinyon tungkol sa biometrikong datos sa sarili mong bansa.",
+    intro: [
+      "Lumilipat ang mga Koreanong venue sa pagkilala ng mukha sa pintuan, at nakakaharap ito ng isang fan mula sa ibang bansa bilang isang checkbox habang nagbu-book, na may napakakaunting paliwanag sa Ingles. Hindi maliit ang tanong na nasa ilalim nito: isang kompanyang hindi mo pa nakakatransaksiyon ang malapit nang humawak sa mukha mo.",
+      "May inilalathalang sagot ang NOL World. Tiyak ang mga ito, mas nakapagpapanatag kaysa sa nagagawa ng karamihan ng kompanya, at sulit basahin bago ang pila sa halip na habang nasa pila — kasama na ang tungkol sa kung ano ang nangyayari sa datos pagkatapos mong magkansela, na hindi tumutugma sa ipinahihiwatig ng isang salitang gaya ng “binura”.",
+    ],
+    steps: [
+      {
+        title: "Unawain kung ano ang pinapalitan nito",
+        body: "Inilalarawan ng NOL World ang facepass bilang paraan para paikliin ang proseso at ang oras na kinakain ng pagpapatunay ng pagkakakilanlan sa pagpasok. Kapag kumpleto na ang pagpaparehistro ng mukha, isang kamera ang mag-i-scan sa iyo sa pintuan at papasok ka nang walang pagsusuri ng tiket. Kapalit ito ng pagsusuri ng dokumento sa gate, hindi dagdag na patong dito.",
+        pitfall:
+          "Ang pagbasa rito bilang tampok lamang para sa kaginhawahan. Ang ikalawang kalahati ng mismong paglalarawan ng NOL World ay tungkol sa pagpapatupad, na siyang susunod na hakbang.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin ang isa pang dahilan ng pag-iral nito",
+        body: "Dalawang beses isinasaad ng NOL World ang layunin: ang pagpapadali sa pagpapatunay ng pagkakakilanlan, at ang pagpigil sa iligal na pagbebenta at pamamahagi ng tiket. Ang mukhang kailangang tumugma sa account na bumili ng tiket ay isang kontrol laban sa muling pagbebenta, at dumarating ito sa panahong kapareho ng isang binagong Performances Act na umaabot sa paulit-ulit na muling pagbebenta lampas sa nakalimbag na presyo. Magkatabi dapat ang dalawang katotohanang iyon.",
+        pitfall:
+          "Ang pag-aakalang gagana na lang ang tiket na binili sa isang palengke ng muling pagbebenta sa isang gate na may facepass. Umiiral ang sistema mismo para hindi iyon gumana.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin kung saan talaga napupunta ang mukha",
+        body: "Ito ang bahaging pinakasulit malaman. Sinasabi ng NOL World na ang impormasyon ng mukha — ang orihinal na larawan at ang datos ng katangian — ay naka-encrypt at iniimbak ng Toss, ang fintech na nasa likod ng serbisyong FaceAccess, at na hindi ito ibinibigay sa NOL World o sa mga ahensiya sa anumang pagkakataon. Ang resulta lamang ng pagpapatunay, tagumpay o kabiguan, ang ibinabahagi. Sinasabi rin ng NOL World na hindi ginagamit ang datos para sa anumang layunin bukod sa pagbibigay ng serbisyo, at binabanggit nito ang hawak ng Toss na sertipikasyong ISO 27701 at CBPR.",
+        pitfall:
+          "Mga pahayag ito ng NOL World tungkol sa ibang partido, hindi isang pag-awdit. Hindi karaniwang tiyak ang mga ito para sa ganitong uri ng pahina, na dahilan para seryosohin ang mga ito at hindi dahilan para itigil ang pagbabasa.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Ituring na permanente ang pagpaparehistro",
+        body: "Kapag nakarehistro na ang isang mukha ay hindi na ito mababago. Malinaw ang ibinibigay na dahilan ng NOL World — para maiwasan ang mapandayang paggamit ng serbisyo. Walang pagtatama ng masamang pagpaparehistro sa kalaunan, kaya ang mga kalagayang pinagrehistruhan mo ang mga kalagayang mananatili sa iyo: ang ilaw, ang salamin sa mata, anuman ang nakuha ng kamera.",
+        pitfall:
+          "Ang mabilisang pagpaparehistro habang nasa pila, sa madilim na ilaw, na may balak gawing maayos mamaya. Walang mamaya.",
+        takes: "10 minuto, sinasadya",
+      },
+      {
+        title: "Huwag hayaang magparehistro ang sinuman sa telepono o account mo",
+        body: "Tuwirang sinasabi ito ng NOL World: tiyaking walang ibang gumagamit ng account mo, at kung may magparehistro ng impormasyon ng mukha gamit ang telepono o account mo, hindi mananagot ang kompanya sa anumang problemang magmumula roon. Ang device na pinagsasaluhan sa bahay sa sandaling ibinebenta ang isang tour ang eksaktong paraan kung paano ito nangyayari, at ang account ang nagdadala ng kahihinatnan.",
+        pitfall:
+          "Ang pagtulong sa kaibigang magparehistro sa teleponong naka-log in ka. Ang mukhang nakakabit na ngayon sa account mo ay sa kaniya, hindi ito mababago, at hayagan ang paalalang hindi sila mananagot.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Tingnan kung sinusuportahan ba ito ng palabas mo",
+        body: "Kada event ang suporta at hindi pangkalahatan — may itinatagong tanong ang NOL World na partikular tungkol sa kung paano tingnan kung sinusuportahan ng isang konsiyerto ang facepass, na umiiral lamang dahil nag-iiba ang sagot. Tingnan ang pahina ng event para sa palabas mo bago ka magplano ng pagpasok batay dito, at ihanda ang karaniwang ruta: numero ng kumpirmasyon at pagkakakilanlan sa box office.",
+        pitfall:
+          "Ang magparehistro, at pagkatapos ay dumating sa isang venue na nagsusuri pa rin ng dokumento, na naiwan sa hotel ang pasaporte.",
+        takes: "3 minuto",
+      },
+      {
+        title: "Basahing mabuti ang sagot tungkol sa pagbura — hindi ito basta pagbura",
+        body: "Sinasagot ng NOL World kung binubura ba ang impormasyon ng mukha kapag nag-unsubscribe ka, at may dalawang kalahati ang sagot. Ang una: binubura ang larawan ng mukha mo kapag kinansela mo ang serbisyo, at ang paggamit muli nito ay nangangahulugan ng muling pagpaparehistro. Ang pangalawa: para sa layunin ng pagpapatunay ng pagkakakilanlan, hiwalay na iniimbak at iniingatan ang datos sa loob ng isang taon mula sa puntong kinansela — ginagamit, ayon sa NOL World, para lamang sa pagpapatunay ng pagkakakilanlan kapag nagparehistro kang muli, at itinatapon pagkatapos ng taong iyon. Kaya ang pag-unsubscribe ay nagbubura ng larawan at nagsisimula ng orasan sa halip na magpatigil nito. Isa itong patakarang maipagtatanggol at hindi ito ang ipinahihiwatig ng salitang “binura” nang mag-isa, kaya sulit itong basahin sa sarili nilang salita bago ka magparehistro.",
+        pitfall:
+          "Ang pagtanggap sa isang-salitang buod ng sinumang ibang partido tungkol sa nangyayari sa biometrikong datos, pati na ang sa amin. Basahin ang pangungusap tungkol sa pag-iingat, hindi ang ulong balita.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Nakikita ba ng NOL World ang mukha ko?",
+        a: "Sinasabi ng NOL World na hindi. Naka-encrypt at hawak ng Toss ang impormasyon ng mukha, at isinasaad ng NOL World na hindi ito ibinibigay sa NOL World o sa mga ahensiya sa anumang pagkakataon — ang tagumpay o kabiguan lamang ng pagpapatunay ang ibinabahagi.",
+      },
+      {
+        q: "Puwede ko bang irehistrong muli ang mukha ko kung masama ang unang pagtatangka?",
+        a: "Hindi. Sinasabi ng NOL World na hindi mababago ang nakarehistrong mukha, upang maiwasan ang mapandayang paggamit ng serbisyo. Magparehistro nang sinasadya sa unang pagkakataon.",
+      },
+      {
+        q: "Buburahin ba ang datos ng mukha ko kung kakanselahin ko ang facepass?",
+        a: "Bahagya, at pagkatapos ay may orasan. Sinasabi ng NOL World na binubura ang larawan ng mukha kapag nag-unsubscribe ka, at na kailangan mong magparehistrong muli para magamit ang serbisyo. Sinasabi rin nitong para sa mga layunin ng pagpapatunay ng pagkakakilanlan ay hiwalay na iniimbak at iniingatan ang datos sa loob ng isang taon mula sa pagkansela, ginagamit lamang para sa pagpapatunay kung magparehistro kang muli, at itinatapon pagkatapos ng taong iyon. Hanggang 20 Oktubre 2026 ay sinasabi ng pahinang ito na hindi pa namin nababasa ang sagot na iyon at tumatangging buurin ito; sinipi na ito sa itaas at naitala na sa aming mga pagwawasto.",
+      },
+      {
+        q: "Gumagamit ba ng facepass ang bawat konsiyerto?",
+        a: "Hindi. Nag-iiba ang suporta kada event, at may hiwalay na sagot ang NOL World tungkol sa kung paano ito tingnan. Kumpirmahin sa pahina ng event para sa palabas mo, at panatilihing available ang karaniwang ruta ng pagkuha.",
+      },
+      {
+        q: "Ano ang mangyayari kung may ibang magparehistro ng mukha niya sa account ko?",
+        a: "Sinasabi ng NOL World na hindi mananagot ang kompanya sa mga problemang magmumula roon, at hinihiling nitong tiyakin mong walang ibang gumagamit ng account mo. Dahil hindi mapapalitan ang nakarehistrong mukha, hindi ito naaayos sa karaniwang paraan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

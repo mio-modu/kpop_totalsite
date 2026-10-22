@@ -86,6 +86,51 @@ export type Step = {
   partner?: { id: string; text: string };
 };
 
+/**
+ * A document from somebody else, reproduced on the page.
+ *
+ * Everything else pictured on this site was drawn or rendered for it, which
+ * is the artwork rule and is about portrait and copyright risk. This is the
+ * deliberate exception and it needs its own rules, because the risk is a
+ * different one: an authoritative document is worth reproducing exactly, and
+ * reproducing somebody else's work exactly is only allowed on terms.
+ *
+ * So the terms are data rather than a thing somebody remembers — the same
+ * shape as the paid-link register and for the same reason. A reproduced
+ * document that cannot name its licence and its source does not render, and
+ * the check at the bottom of this file fails the build rather than letting it
+ * ship with the credit missing from exactly the page that gets screenshotted.
+ *
+ * `upstream` is the file at the operator's own address, and it is separate
+ * from `sourceUrl` on purpose: the page can stay up while the image under it
+ * is replaced. `scripts/watch.mjs` fingerprints that file by hash, because the
+ * fingerprinting everywhere else in this repo compares visible text and would
+ * see nothing at all here. The failure it prevents is this site's own premise
+ * turned against it — a stale copy of an official document, served with
+ * confidence, which is precisely what the guides this site replaces are.
+ */
+export type ReproducedDocument = {
+  /** Path under public/, served as-is so the original stays downloadable. */
+  file: string;
+  width: number;
+  height: number;
+  /** Written here, in English. The source's own alt text is Korean. */
+  alt: string;
+  /** One line saying what the document is. */
+  caption: string;
+  /** Who made it. Required by every licence worth reproducing under. */
+  credit: string;
+  /** The licence, named the way the licence names itself. */
+  licence: string;
+  licenceUrl: string;
+  /** The page it was published on, which must be among the guide's sources. */
+  sourceUrl: string;
+  /** The file itself at the operator's address. Watched by hash. */
+  upstream: string;
+  /** The day this copy was taken. */
+  taken: string;
+};
+
 export type Guide = {
   slug: string;
   /** Short label for cards and nav. */
@@ -133,6 +178,8 @@ export type Guide = {
    * key to a component lives in the route that renders it.
    */
   diagram?: "gocheok-bowl";
+  /** An official document reproduced on the page, under a named licence. */
+  document?: ReproducedDocument;
   intro: string[];
   steps: Step[];
   /** Rendered as FAQPage structured data as well as on-page. */
@@ -3037,6 +3084,20 @@ export const guides: Guide[] = [
       "Four levels, one direction, and a single break in the loop. Three digits read correctly will walk you to your block from any entrance, without a map and without knowing which way is north.",
     glyph: "ticket",
     diagram: "gocheok-bowl",
+    document: {
+      file: "docs/gocheok-seat-2026.jpg",
+      width: 653,
+      height: 954,
+      alt: "The venue's seating chart: four rings of numbered blocks around a baseball field, lettered gates A to G outside them, and ticket offices marked 2, 3 and 4.",
+      caption:
+        "The chart this page is read from. It is drawn for baseball — the dugouts are on it — and it is the authority on where a numbered block is, not on what is sold for your show.",
+      credit: "서울시설공단 (Seoul Facilities Corporation)",
+      licence: "공공누리 제1유형: 출처표시 (KOGL Type 1: Attribution)",
+      licenceUrl: "https://www.kogl.or.kr/info/license.do",
+      sourceUrl: "https://www.sisul.or.kr/open_content/skydome/introduce/seat.jsp",
+      upstream: "https://www.sisul.or.kr/open_content/skydome/images/seat2026.jpg",
+      taken: "2026-10-22",
+    },
     status: "sourced",
     lastChecked: "2026-10-22",
     scope:
@@ -3064,14 +3125,14 @@ export const guides: Guide[] = [
       },
       {
         title: "The other two digits are a position on a loop that turns one way",
-        body: "Inside a level the numbers run in a single direction all the way round — clockwise, on the chart as the venue prints it — and every level starts from the same side of the building. So the step from 401 to 405 is the same rotation as the step from 301 to 305, in the same direction, at a different height. There is no left half and right half to learn, and no odd and even side.",
+        body: "Inside a level the numbers run in a single direction all the way round, and that is the venue's own word for it rather than something measured off the picture: the description published with the chart says the blocks run 시계방향 — clockwise — starting from the bottom right of the infield side, and then lists them in that order. Every level starts from the same side of the building. So the step from 401 to 405 is the same rotation as the step from 301 to 305, in the same direction, at a different height. There is no left half and right half to learn, and no odd and even side.",
         pitfall:
           "Expecting the levels to stack block for block. They hold 32, 22, 34 and 35 blocks, so they drift apart as they go round: only the line they start from is shared. 417 is not above 317, and a friend in 210 is not below you in 310.",
         takes: "2 minutes",
       },
       {
         title: "The loop has exactly one break, and there is no gate in it",
-        body: "The seating does not close into a full circle. On the side the chart draws at the right there is a wedge of building with no seats at any level, and that is where the numbering restarts — 132 and 101 face each other across it, and so do 435 and 401. The seven gates run clockwise in the same direction the numbers do: A, B, C, D and E along the near side, then F and G across the far one. A is the first gate after the break; G is the last one before it. Gate letters and block numbers are one scale, which is the whole reason the building can be navigated without a compass.",
+        body: "The seating does not close into a full circle. On the side the chart draws at the right there is a wedge of building with no seats at any level, and that is where the numbering restarts — 132 and 101 face each other across it, and so do 435 and 401. That break is not one width: measured off the chart it is about 44 degrees at the 100 level, 71 at the 200, 91 at the 300 and 96 at the 400, because the upper decks stop short of that corner while the lowest ring nearly closes around it. The seating is a horseshoe that opens as it rises. The seven gates run clockwise in the same direction the numbers do: A, B, C, D and E along the near side, then F and G across the far one. A is the first gate after the break; G is the last one before it. Gate letters and block numbers are one scale, which is the whole reason the building can be navigated without a compass.",
         pitfall:
           "Assuming a gate you can see is a gate you may use. The venue's own chart marks gate C, the one at the centre, as an entrance reserved for R.d-club and skybox season-ticket holders rather than a general one. The nearest door is not always yours.",
         takes: "3 minutes",
@@ -3113,7 +3174,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Which direction do the numbers run?",
-        a: "Clockwise, on the venue's chart as printed, and the same way at every level. The gate letters run the same way: A, B, C, D, E along the near side and F, G across the far side. That means letters and numbers rise together — if you pass gate D on your way to gate E, your block numbers are rising too.",
+        a: "Clockwise, and the venue says so itself: the description published with its chart reads 시계방향, starting from the bottom right of the infield side, and the block ranges it then lists match the picture on both sides. The same direction at every level. The gate letters run the same way: A, B, C, D, E along the near side and F, G across the far side. That means letters and numbers rise together — if you pass gate D on your way to gate E, your block numbers are rising too.",
       },
       {
         q: "Is block 417 directly above block 317?",
@@ -3121,7 +3182,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Why do the numbers stop and start again?",
-        a: "Because the seating is a horseshoe, not a ring. There is a wedge of the building with no seats in it at any level, and the numbering restarts there: 132 faces 101 across it, 435 faces 401. It is also the one stretch of the perimeter with no gate in it, which makes it easy to recognise.",
+        a: "Because the seating is a horseshoe, not a ring. There is a wedge of the building with no seats in it at any level, and the numbering restarts there: 132 faces 101 across it, 435 faces 401. It is also the one stretch of the perimeter with no gate in it, which makes it easy to recognise. It is wider the higher you are — about 44 degrees of the circle at the 100 level against 96 at the 400 — so on the top level more of the ring is missing and walking the long way round costs more.",
       },
       {
         q: "Can I go in through whichever gate is closest?",
@@ -3135,7 +3196,7 @@ export const guides: Guide[] = [
     sources: [
       {
         label:
-          "서울시설공단 고척스카이돔 — 좌석배치도: the seating chart the block ranges, gate letters and ticket offices are read from",
+          "서울시설공단 고척스카이돔 — 좌석배치도: the seating chart, and the text description published with it, which states the clockwise direction and lists every block range on each side",
         url: "https://www.sisul.or.kr/open_content/skydome/introduce/seat.jsp",
       },
       {
@@ -3182,6 +3243,44 @@ for (const guide of guides) {
           `content/affiliates.ts, which is what /editorial-policy publishes.`,
       );
     }
+  }
+}
+
+/**
+ * A reproduced document renders its credit or it does not render.
+ *
+ * This is the paid-link rule applied to somebody else's copyright: a credit
+ * that a person has to remember is one that will be missing from the page
+ * that gets screenshotted, and here the cost of that is not an awkward
+ * conversation but a licence breach. Every field is required, `file` is a
+ * path under public/ rather than a remote URL so the copy is the one that was
+ * checked, and the page it came from has to be among the guide's own sources
+ * — a document reproduced from somewhere the guide does not cite is a claim
+ * with no trail back to it.
+ */
+for (const guide of guides) {
+  const doc = guide.document;
+  if (!doc) continue;
+  for (const [key, value] of Object.entries(doc)) {
+    if (typeof value === "string" ? value.trim() === "" : !(value > 0)) {
+      throw new Error(
+        `${guide.slug} reproduces a document with an empty "${key}". Every ` +
+          `field is required: the licence and the credit are the terms the ` +
+          `copy is allowed to exist on.`,
+      );
+    }
+  }
+  if (doc.file.startsWith("/") || doc.file.includes("..")) {
+    throw new Error(
+      `${guide.slug} document.file must be a path under public/img, not ` +
+        `"${doc.file}".`,
+    );
+  }
+  if (!guide.sources.some((x) => x.url === doc.sourceUrl)) {
+    throw new Error(
+      `${guide.slug} reproduces a document from ${doc.sourceUrl}, which is ` +
+        `not among its sources. Cite the page before reproducing what is on it.`,
+    );
   }
 }
 

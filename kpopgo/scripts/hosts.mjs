@@ -68,8 +68,20 @@ const FIXED = [
   // the ticketing coverage this site already replaced. These are the operators
   // of record for the halls K-pop tours actually play, and nothing can be
   // written about a venue without reading its own pages first.
-  ["www.kspo.or.kr", "KSPO Dome operator — the main Seoul K-pop arena"],
-  ["kspo.or.kr", "KSPO Dome, apex"],
+  // KSPO DOME took two hosts to get right, and the wrong one was declared for
+  // weeks as "the operator". kspo.or.kr is the foundation that owns the park
+  // (서울올림픽기념국민체육진흥공단) and its site is corporate — it answers 302
+  // to a main.do and has no seating chart on it. The venue's own pages are
+  // published by the operating company, 한국체육산업개발, under
+  // ksponco.or.kr/olympicpark, which is where the KSPO-DOME page, its seating
+  // chart and the rental guidance live. Both stay: the foundation is the body
+  // a policy or a closure notice comes from, the company is the venue of
+  // record. Declared from search results rather than from the pages
+  // themselves, because the company's host is not reachable from here yet —
+  // read it before writing a word of the guide.
+  ["www.ksponco.or.kr", "한국체육산업개발 — operates Olympic Park, publishes the KSPO DOME pages"],
+  ["www.kspo.or.kr", "KSPO, the foundation that owns Olympic Park — corporate, not the venue"],
+  ["kspo.or.kr", "KSPO, apex"],
   ["www.sisul.or.kr", "Seoul Facilities Corporation — Gocheok Sky Dome and Jamsil"],
   ["www.inspirekorea.com", "Inspire Arena, Incheon — the newest large venue"],
   ["www.kintex.com", "KINTEX, Goyang — hosts arena-scale concerts and fan events"],

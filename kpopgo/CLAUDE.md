@@ -988,6 +988,45 @@ browser *inside* the container, so excluding them would have the layout check
 render a page no reader gets. `schema.org` is deliberately absent: it is a
 JSON-LD namespace and nothing fetches it.
 
+**A denied host and a broken host both read as `000`, and the gateway knows
+which is which.** `curl` reports `000` either way, so a host missing from the
+allowlist is indistinguishable from a site that will not answer — which is how
+`www.inspirekorea.com` spent weeks recorded as "blocked, waiting on the
+allowlist" while the allowlist was not its problem at all. The proxy keeps the
+verdict:
+
+```bash
+curl -sS "$HTTPS_PROXY/__agentproxy/status" | python3 -c \
+  "import sys,json;[print(f['host'],f['detail']) for f in json.load(sys.stdin)['recentRelayFailures']]"
+```
+
+**`403` to CONNECT is the policy refusing the host — add it to the allowlist.
+`502` is the policy allowing it and the fetch failing anyway — the allowlist
+will never fix that one.** Checked on 22 October 2026: `www.kogl.or.kr`,
+`www.ksponco.or.kr` and the apex `inspirekorea.com` answer 403, so they are
+simply absent from the field; `www.inspirekorea.com` answers 502 on every
+attempt, so it is declared, permitted, and failing upstream. The 403 list is
+also the proof that the field is a partial paste again — `www.kogl.or.kr` is
+*cited by the content*, and it is the licence page the Gocheok chart is
+reproduced under.
+
+There is a third verdict and it is the one that is nobody's to fix here:
+`tunnel closed (code 1006) after Ns` means the host was permitted, the gateway
+reached it, and the site dropped the exchange. `circlechart.kr`,
+`badeuldon.co.kr` and `unipass.customs.go.kr` all answer that way, which is why
+the first of them is written down as a dead citation rather than as a blocked
+one. Sweeping all 46 declared hosts on 22 October 2026 put eight at `000` and
+those eight into exactly these three groups — three denied, two permitted and
+failing upstream, three dropped by the site — and one more,
+`www.seoulmetro.co.kr`, that answered `000` once and `200` on the retry, which
+is the reason to re-probe a single failure before recording it.
+
+Do not use container DNS to tell these apart. `getent hosts` resolves some
+allowlisted hosts and not others — `www.ktown4u.com` resolves,
+`www.kogl.or.kr` does not, and both are declared — because the gateway does the
+resolving for some of them. A blank from `getent` says nothing about whether a
+domain exists.
+
 ## Commands
 
 ```bash

@@ -61,11 +61,21 @@ appear in `main` under different ones:
 
 ## Waiting on the owner
 
-- **`www.inspirekorea.com` is still blocked.** Pasting it into the proxy
-  allowlist has twice been converted to a markdown link
-  (`[www.inspirekorea.com](https://...)`) by the client, which makes the entry
-  invalid. Supply the list from `npm run hosts` **inside a fenced code block**
-  and have them paste the whole thing. The Inspire Arena guide waits on this.
+- **The allowlist is a partial paste again, and `www.kogl.or.kr` is one of the
+  missing ones.** That is a host the *content* cites — the licence page the
+  Gocheok chart is reproduced under — so the field needs the whole block from
+  `npm run hosts`, supplied **inside a fenced code block** because pasting bare
+  hostnames has twice come back markdown-linkified. Editing the field replaces
+  it, so a partial paste is how hosts go dark.
+- **`www.inspirekorea.com` is not an allowlist problem, and the previous note
+  here was wrong about it.** The gateway answers **502** to CONNECT for it on
+  every attempt, where a host missing from the field answers **403** — checked
+  against the apex `inspirekorea.com`, which does answer 403. So it is already
+  declared and permitted, and the fetch fails upstream: pasting the list again
+  will not move it. CLAUDE.md now carries the 403-vs-502 reading under
+  **Outbound hosts**. What it needs next is somebody establishing whether the
+  host serves at all from outside this container, because nothing here can see
+  past the gateway. The Inspire Arena guide waits on that, not on a paste.
 - **GA4** — confirm the `scroll` key event and the internal-traffic filter are
   set to 사용 rather than 테스트.
 - **Klook** — the accommodation commission rate is still unknown.

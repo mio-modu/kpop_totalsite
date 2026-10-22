@@ -16829,6 +16829,333 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Thanh toán trên NOL World: phí đặt vé, chiếc đồng hồ, và loại tiền bạn trả",
+    summary:
+      "Một tấm vé concert mang theo khoản phí dịch vụ 8.000 won, bạn có mười phút để chọn ghế và bảy phút để trả tiền, và cửa sổ thanh toán yêu cầu bạn chọn một loại tiền. Ba quyết định về tiền và một chiếc đồng hồ, tất cả đều được công bố và không cái nào hiển nhiên.",
+    scope:
+      "Nói về những gì NOL World công bố liên quan tới chi phí và thời gian của bước thanh toán: phí dịch vụ theo thể loại, chiếc đồng hồ mua hàng hai giai đoạn, việc chọn loại tiền, mã giảm giá, và giới hạn theo từng đơn. Phí và đồng hồ có thể được đặt theo từng sự kiện và NOL World nói vậy trong cả hai trường hợp, nên trang sự kiện của bạn đè lên trang này. Không có gì ở đây là lời khuyên về việc loại tiền nào rẻ hơn cho chiếc thẻ cụ thể của bạn.",
+    intro: [
+      "Phần lớn những gì hỏng ở bước thanh toán của một trang Hàn Quốc không phải là chiếc thẻ. Đó là việc trang web đang hỏi ba câu hỏi có tiền đính kèm trong lúc một chiếc đồng hồ đang chạy, còn một người mua ở nước ngoài thì gặp toàn bộ chuyện đó lần đầu tiên với chừng bảy phút còn lại.",
+      "Tất cả đều được công bố, và không gì trong đó nằm trên trang sản phẩm nơi bạn đã quyết định rằng tấm vé vừa túi tiền. Nên mục đích của trang này là dời những bất ngờ ấy về tuần trước đó.",
+    ],
+    steps: [
+      {
+        title: "Cộng phí dịch vụ vào trước khi kết luận tấm vé vừa túi tiền",
+        body: "NOL World công bố phí dịch vụ theo thể loại. Nhạc kịch và concert mang phí 8.000 won — trừ một số sản phẩm nhất định như concert trực tuyến và tư cách thành viên fan club. Các buổi biểu diễn khác và thể thao là 3.000 won. Giải trí và triển lãm thì miễn phí. NOL World cũng nói rằng phí có thể thay đổi theo sản phẩm và nên kiểm tra lúc mua, nên hãy coi những con số này là mức nền đã công bố chứ không phải một lời hứa về sự kiện của bạn.",
+        pitfall:
+          "So giá vé Hàn Quốc với giá vé ở nước bạn mà quên rằng khoản này nằm chồng lên trên. Nó không lớn, và nó đúng là kiểu bất ngờ nhỏ khiến cả một nền tảng trở nên kém tin cậy vào đúng thời điểm tệ nhất.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết khoản phí đó thực sự mua cái gì, vì một dòng trong đó rất đáng chú ý",
+        body: "NOL World liệt kê những gì phí dịch vụ chi trả: bảo trì trang web và các chi phí liên quan, xử lý thanh toán nuôi hệ thống phát hiện gian lận của họ, phí công nghệ để ngăn những lượt đặt gian lận bằng bot và macro, và hỗ trợ hệ thống cho việc đặt chỗ toàn cầu. Hạng mục thứ ba mới là cái đáng chú ý. Khoản phí đang tài trợ một phần cho bộ máy chống macro, vốn cùng một hướng thực thi với các khâu kiểm tra danh tính và Luật Biểu diễn sửa đổi — và đó là lý do hàng chờ hành xử như một hệ thống đối kháng chứ không như một hàng người.",
+        pitfall:
+          "Đọc khoản phí như lợi nhuận thuần và đọc hàng chờ như sự kém cỏi. Nền tảng đang nói với bạn rằng họ tiêu khoản phí đó để giữ những người mua tự động ở ngoài, và đó cũng là lý do các quy định họ áp lên bạn thì nghiêm.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hiểu chiếc đồng hồ: mười phút để chọn, bảy phút để trả",
+        body: "Chiếc đồng hồ mua hàng có hai giai đoạn và NOL World nêu cả hai. Từ lúc vào trang đặt vé, bạn có tối đa mười phút để chọn ghế. Khi bạn chuyển sang bước giá, ghế của bạn được giữ trong bảy phút trong lúc bạn hoàn tất thanh toán, với một chiếc đồng hồ ở đầu trang. Để lỡ nó thì ghế tự động được nhả ra và bạn đặt lại từ đầu. Các đơn đặt không chọn ghế hoặc vé đứng vẫn có giới hạn mười phút trước khi thanh toán. NOL World nói thêm rằng các giới hạn có thể thay đổi theo sự kiện và một số sự kiện không có giới hạn nào.",
+        pitfall:
+          "Mở ứng dụng ngân hàng để tìm một số thẻ ngay trong bảy phút đó. Thông tin thẻ, địa chỉ thanh toán và ứng dụng duyệt lệnh của ngân hàng bạn đều phải sẵn sàng trước khi bạn vào trang đặt vé, vì chiếc đồng hồ không quan tâm rằng điện thoại của bạn đang bắt bạn đăng nhập lại.",
+        takes: "17 phút, nếu bạn dùng hết",
+      },
+      {
+        title: "Hãy coi câu hỏi về loại tiền là một quyết định thật sự",
+        body: "NOL World hỗ trợ thanh toán bằng 24 loại tiền, gồm won Hàn Quốc, đô la Mỹ, yên và nhân dân tệ, và những loại khả dụng hiện ra sau khi bạn nhập thông tin thẻ. Lựa chọn họ đưa ra là giữa loại tiền của nước phát hành thẻ và won Hàn Quốc. Đó là hai tỷ giá khác nhau do hai bên khác nhau đặt ra — một bên là bên quy đổi tại trang thanh toán, bên kia là mạng lưới thẻ và tổ chức phát hành thẻ của bạn. Chọn loại tiền của chính bạn là quy đổi tiền tệ động, và bên thực hiện quy đổi đặt ra tỷ giá rồi lấy một khoản biên trên đó, nên trả bằng won thường là lựa chọn rẻ hơn trong hai cái. Thường, chứ không phải luôn luôn: phí giao dịch nước ngoài của chính thẻ bạn vẫn áp dụng trong cả hai trường hợp, và một khoản biên tệ từ tổ chức phát hành có thể xóa đi khoảng cách đó. Nửa mà bạn thực sự kiểm tra được trước ngày mua là điều khoản của tổ chức phát hành thẻ, nên hãy kiểm tra chúng.",
+        pitfall:
+          "Chọn loại tiền nước mình vì con số trông quen thuộc. Ở đây cái quen thuộc là lựa chọn đắt hơn nhiều hơn là không, và đây là màn hình duy nhất bạn được chọn ai sẽ thực hiện việc quy đổi.",
+        takes: "10 phút, cùng ngân hàng, trước đó",
+      },
+      {
+        title: "Hãy áp mã giảm giá trước khi trả tiền, vì không có cái sau nào cả",
+        body: "NOL World nói thẳng: một khi thanh toán đã hoàn tất thì bạn không thể áp mã giảm giá. Con đường duy nhất họ đưa ra là hủy chính chiếc ghế đó rồi đặt lại với mã đã áp — và họ cảnh báo rằng việc hủy rồi đặt lại có thể phát sinh phí theo chính sách phí của sự kiện, nên hãy kiểm tra những khoản đó trước. Hãy cân nhắc điều đó một cách thành thật so với giá trị của mã, và nhớ rằng chiếc ghế bạn nhả ra không được giữ lại cho bạn trong lúc bạn đặt lại.",
+        pitfall:
+          "Hủy một chiếc ghế bạn đang thực sự có, để tiết kiệm một khoản giảm giá mà bạn có thể không dùng được. Mã giảm giá đáng giá ít hơn tấm vé, và kho vé thì không đợi.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy lường trước một giới hạn số vé, và lường rằng nó là của nhà tổ chức",
+        body: "NOL World nói rằng tùy nhà tổ chức, có thể có giới hạn về số vé được đặt trên mỗi đơn hoặc trên mỗi thành viên cho một buổi diễn nhất định — và rằng ở nơi vé concert được bán kèm với một tour hay các loại vé vào cửa khác, nhà tổ chức cũng có thể áp một giới hạn theo từng thành viên. Vậy nên cái trần đó không phải một con số chung cho cả nền tảng mà bạn có thể tra cứu; nó được đặt theo từng show, đôi khi theo từng người chứ không theo từng giao dịch, và nó là lý do một đơn đặt theo nhóm có thể hỏng ở bước cuối.",
+        pitfall:
+          "Lên kế hoạch một đơn đặt cho bốn người dựa vào giới hạn bạn đọc ở một show khác. Một giới hạn theo thành viên cũng không giải quyết được bằng cách chia đơn ra nhiều tài khoản của chính bạn — mô thức đó nằm trong danh sách sử dụng gian lận mà NOL World đã công bố.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy xác nhận đơn đặt có tồn tại, ở nơi hiển thị trạng thái",
+        body: "Sau khi thanh toán, hãy mở trang web hoặc ứng dụng NOL World và vào Account/My, rồi My Reservations. NOL World nói rằng các chi tiết cơ bản của đơn đặt và trạng thái đều hiện ra cả trong danh sách lẫn trên trang chi tiết đơn. Hãy làm việc đó một lần khi bạn còn đang ngồi ở bàn, thay vì cho rằng email xác nhận là toàn bộ sự thật — danh sách đơn đặt là nơi một trạng thái khác với điều bạn mong đợi sẽ hiện ra, và đó là màn hình bạn sẽ bị hỏi tới nếu liên hệ bộ phận hỗ trợ.",
+        pitfall:
+          "Coi một lần thanh toán đã đi qua là một đơn đặt đang tồn tại. Thường thì chúng là một, và toàn bộ ý nghĩa của việc kiểm tra nằm ở cái lần chúng không phải một.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết “xong” nghĩa là gì với thứ bạn vừa mua",
+        body: "Với nghệ thuật biểu diễn và concert, NOL World nói quá trình hoàn tất ngay khi thanh toán và bạn nhận vé ở quầy vé tại địa điểm. Các sản phẩm tour và hoạt động thì không đồng nhất: một số phát một mã QR hoặc mã vạch vào My Page hoặc email của bạn và nó cho bạn vào thẳng, một số đòi bạn xuất trình voucher hoặc xác nhận đơn đặt tại một quầy ở hiện trường để đổi lấy vé giấy trước khi vào. Chỉ dẫn của NOL World là xem trang sản phẩm để biết loại nào áp dụng, vì sự khác biệt đó quyết định việc bạn có phải tìm một cái quầy trước khi tới cửa vào hay không.",
+        pitfall:
+          "Cho rằng một mã QR trong email là một tấm vé vào cửa. Với một sản phẩm thuộc loại phải đổi, nó là thứ bạn mang đi đổi ở quầy, và cái quầy thì có giờ làm việc.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Phí đặt vé của một tấm vé concert là bao nhiêu?",
+        a: "NOL World công bố 8.000 won cho nhạc kịch và concert, trừ một số sản phẩm nhất định như concert trực tuyến và tư cách thành viên fan club; 3.000 won cho các buổi biểu diễn khác và thể thao; và không mất gì cho giải trí và triển lãm. Họ cũng nói rằng phí có thể thay đổi theo sản phẩm và nên kiểm tra lúc mua, nên hãy xác nhận trên chính sự kiện của bạn.",
+      },
+      {
+        q: "Thực sự tôi có bao nhiêu thời gian ở bước thanh toán?",
+        a: "Mười phút để chọn ghế tính từ lúc vào trang đặt vé, rồi một lần giữ chỗ bảy phút trong lúc bạn trả tiền, với một chiếc đồng hồ hiện ở đầu trang. Vượt quá thì ghế được nhả ra và bạn bắt đầu lại. Vé đứng vẫn có mười phút đó. NOL World nói các giới hạn có thể thay đổi theo sự kiện và một số sự kiện không có giới hạn nào.",
+      },
+      {
+        q: "Tôi nên trả bằng won Hàn Quốc hay bằng tiền nước mình?",
+        a: "Thường là won. NOL World hỗ trợ 24 loại tiền và cho bạn chọn giữa loại tiền của nước phát hành thẻ và won Hàn Quốc, hiện ra sau khi bạn nhập thông tin thẻ. Chọn loại tiền của chính bạn là quy đổi tiền tệ động, trong đó bên quy đổi đặt tỷ giá và cộng thêm một khoản biên — nên won nhìn chung rẻ hơn. Phí giao dịch nước ngoài của chính thẻ bạn vẫn áp dụng trong cả hai trường hợp, và đó là phần cần hỏi tổ chức phát hành thẻ trước ngày mua.",
+      },
+      {
+        q: "Tôi quên dùng mã giảm giá. Thêm vào bây giờ được không?",
+        a: "Không. NOL World nói rằng không thể áp mã giảm giá khi thanh toán đã hoàn tất. Con đường duy nhất họ đưa ra là hủy chính chiếc ghế đó rồi đặt lại kèm mã, và họ cảnh báo rằng việc hủy và đặt lại có thể mang theo phí theo chính sách của sự kiện. Hãy kiểm tra khoản phí đó trước khi nhả ra một chiếc ghế bạn đang có.",
+      },
+      {
+        q: "Vì sao tôi chỉ đặt được hai vé trong khi bạn tôi đặt được bốn?",
+        a: "Vì giới hạn thuộc về nhà tổ chức chứ không thuộc về nền tảng. NOL World nói một buổi diễn có thể giới hạn số vé theo đơn hoặc theo thành viên, và rằng các sản phẩm gộp concert cộng tour cũng có thể mang theo một giới hạn theo thành viên. Một show khác, hay một đợt bán khác, có thể có một cái trần khác.",
+      },
+      {
+        q: "Tôi dùng thẻ tín dụng Hàn Quốc trên NOL World được không?",
+        a: "Không. NOL World chỉ nhận thẻ phát hành ngoài Hàn Quốc; thẻ phát hành tại Hàn thuộc về các thành viên trong nước đã xác minh trên trang tiếng Hàn. Một chiếc thẻ Hàn Quốc bị từ chối ở đây là quy định đang vận hành đúng, chứ không phải một lỗi.",
+      },
+      {
+        q: "Tôi kiểm tra đơn đặt có thành công hay không ở đâu?",
+        a: "Trên trang web hoặc ứng dụng NOL World, trong Account/My rồi My Reservations. NOL World nói chi tiết đơn đặt và trạng thái đều hiện ra cả trong danh sách lẫn trên trang chi tiết. Chính màn hình đó, chứ không phải email xác nhận, mới là thứ cho thấy trạng thái.",
+      },
+      {
+        q: "Tôi đã trả tiền rồi. Còn việc gì phải làm trước buổi diễn không?",
+        a: "Với một tấm vé concert hay nghệ thuật biểu diễn thì không — NOL World nói quá trình đã hoàn tất và bạn nhận vé ở quầy vé tại địa điểm. Với một sản phẩm tour hay hoạt động thì còn tùy: một số gửi một mã QR hoặc mã vạch cho bạn vào thẳng, một số cần voucher được đổi lấy vé giấy ở một quầy tại hiện trường trước. Trang sản phẩm sẽ nói rõ là loại nào.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "การชำระเงินบน NOL World: ค่าธรรมเนียมการจอง นาฬิกา และสกุลเงินที่คุณจ่าย",
+    summary:
+      "บัตรคอนเสิร์ตมีค่าบริการ 8,000 วอนติดมาด้วย คุณมีสิบนาทีในการเลือกที่นั่งและเจ็ดนาทีในการจ่าย และหน้าชำระเงินขอให้คุณเลือกสกุลเงิน สามการตัดสินใจเรื่องเงินกับนาฬิกาหนึ่งเรือน ทั้งหมดถูกเผยแพร่ไว้และไม่มีข้อไหนชัดเจนในตัวเอง",
+    scope:
+      "ครอบคลุมสิ่งที่ NOL World เผยแพร่เกี่ยวกับต้นทุนและจังหวะเวลาของการชำระเงิน: ค่าบริการตามประเภทงาน นาฬิกาการซื้อสองช่วง การเลือกสกุลเงิน คูปอง และขีดจำกัดต่อคำสั่งซื้อ ค่าธรรมเนียมและนาฬิกากำหนดเป็นรายอีเวนต์ได้และ NOL World บอกไว้ทั้งสองกรณี หน้าอีเวนต์ของคุณจึงมีผลเหนือหน้านี้ ไม่มีอะไรในนี้เป็นคำแนะนำว่าสกุลเงินใดถูกกว่าสำหรับบัตรใบหนึ่ง ๆ ของคุณ",
+    intro: [
+      "สิ่งที่ผิดพลาดตอนชำระเงินบนเว็บเกาหลีส่วนใหญ่ไม่ใช่ตัวบัตร แต่เป็นการที่หน้าเว็บกำลังถามสามคำถามซึ่งมีเงินผูกอยู่ขณะที่นาฬิกาเดินอยู่ และผู้ซื้อจากต่างประเทศเจอทั้งหมดนั้นเป็นครั้งแรกโดยเหลือเวลาราวเจ็ดนาที",
+      "ทั้งหมดถูกเผยแพร่ไว้ และไม่มีข้อไหนอยู่บนหน้าสินค้าที่คุณใช้ตัดสินว่าบัตรราคาพอรับไหว จุดประสงค์ของหน้านี้จึงคือการย้ายความประหลาดใจเหล่านั้นไปไว้ที่สัปดาห์ก่อนหน้า",
+    ],
+    steps: [
+      {
+        title: "บวกค่าบริการก่อนจะตัดสินว่าบัตรราคาพอรับไหว",
+        body: "NOL World เผยแพร่ค่าบริการตามประเภทงาน ละครเพลงและคอนเสิร์ตมีค่าบริการ 8,000 วอน ยกเว้นสินค้าบางอย่างเช่นคอนเสิร์ตออนไลน์และสมาชิกแฟนคลับ การแสดงอื่นและกีฬาอยู่ที่ 3,000 วอน สันทนาการและนิทรรศการไม่มีค่าบริการ NOL World ยังบอกว่าค่าธรรมเนียมอาจต่างกันตามสินค้าและให้ตรวจตอนซื้อ จึงควรถือว่าตัวเลขเหล่านี้เป็นฐานที่เผยแพร่ไว้ ไม่ใช่คำสัญญาเกี่ยวกับงานของคุณ",
+        pitfall:
+          "การเทียบราคาบัตรเกาหลีกับราคาบัตรที่บ้านคุณแล้วลืมว่าส่วนนี้ซ้อนอยู่ข้างบน มันไม่ใช่จำนวนมาก และเป็นความประหลาดใจเล็ก ๆ ชนิดที่ทำให้ทั้งแพลตฟอร์มดูไม่น่าไว้ใจในจังหวะที่แย่ที่สุด",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่าค่าธรรมเนียมนั้นซื้ออะไรจริง ๆ เพราะมีบรรทัดหนึ่งที่สำคัญ",
+        body: "NOL World แจกแจงว่าค่าบริการครอบคลุมอะไรบ้าง: การบำรุงรักษาเว็บไซต์และต้นทุนที่เกี่ยวข้อง การประมวลผลการชำระเงินที่หนุนระบบตรวจจับการฉ้อโกงของเขา ค่าธรรมเนียมทางเทคโนโลยีเพื่อป้องกันการจองโดยฉ้อฉลผ่านบอตและมาโคร และการสนับสนุนระบบสำหรับการจองจากทั่วโลก รายการที่สามนั่นแหละที่น่าสนใจ ค่าธรรมเนียมนี้กำลังอุดหนุนเครื่องจักรต่อต้านมาโครอยู่บางส่วน ซึ่งเป็นทิศทางการบังคับใช้เดียวกับการตรวจตัวตนและกฎหมายการแสดงฉบับแก้ไข และนั่นคือเหตุผลที่คิวทำตัวเหมือนระบบที่สู้กับคุณมากกว่าเป็นแถวคอย",
+        pitfall:
+          "การอ่านค่าธรรมเนียมว่าเป็นกำไรล้วนและอ่านคิวว่าเป็นความไร้ฝีมือ แพลตฟอร์มกำลังบอกคุณว่ามันใช้ค่าธรรมเนียมนั้นกันผู้ซื้ออัตโนมัติออกไป ซึ่งก็เป็นเหตุผลที่กฎซึ่งมันบังคับกับคุณนั้นเข้มงวด",
+        takes: "2 นาที",
+      },
+      {
+        title: "เข้าใจนาฬิกา: สิบนาทีเพื่อเลือก เจ็ดนาทีเพื่อจ่าย",
+        body: "นาฬิกาการซื้อมีสองช่วงและ NOL World ระบุไว้ทั้งคู่ นับจากที่คุณเข้าหน้าจอง คุณมีเวลาถึงสิบนาทีในการเลือกที่นั่ง เมื่อคุณไปถึงขั้นราคา ที่นั่งของคุณจะถูกกันไว้เจ็ดนาทีระหว่างที่คุณชำระเงินให้เสร็จ โดยมีนาฬิกาอยู่ด้านบนของหน้า พลาดไปแล้วที่นั่งจะถูกปล่อยโดยอัตโนมัติและคุณเริ่มจองใหม่ การจองแบบไม่ระบุที่นั่งหรือแบบยืนก็ยังได้ขีดจำกัดสิบนาทีก่อนชำระเงิน NOL World เสริมว่าขีดจำกัดอาจต่างกันตามอีเวนต์และบางอีเวนต์ไม่มีเลย",
+        pitfall:
+          "การเปิดแอปธนาคารเพื่อหาเลขบัตรภายในเจ็ดนาทีนั้น ข้อมูลบัตร ที่อยู่เรียกเก็บเงิน และแอปอนุมัติของธนาคารคุณควรพร้อมหมดก่อนคุณเข้าหน้าจอง เพราะนาฬิกาไม่สนใจว่าโทรศัพท์ของคุณกำลังให้คุณล็อกอินใหม่",
+        takes: "17 นาที ถ้าใช้หมด",
+      },
+      {
+        title: "ถือว่าคำถามเรื่องสกุลเงินเป็นการตัดสินใจจริง",
+        body: "NOL World รองรับการชำระเงิน 24 สกุล รวมถึงวอนเกาหลี ดอลลาร์สหรัฐ เยน และหยวน และสกุลที่ใช้ได้จะปรากฏหลังคุณกรอกข้อมูลบัตร ตัวเลือกที่เขาให้คือระหว่างสกุลเงินของประเทศที่ออกบัตรให้คุณกับวอนเกาหลี นั่นคืออัตราแลกเปลี่ยนสองอัตราที่ตั้งโดยสองฝ่าย — ฝ่ายหนึ่งคือใครก็ตามที่แปลงสกุลที่หน้าชำระเงิน อีกฝ่ายคือเครือข่ายบัตรและผู้ออกบัตรของคุณ การเลือกสกุลเงินของตัวเองคือการแปลงสกุลเงินแบบไดนามิก และฝ่ายที่แปลงเป็นผู้ตั้งอัตราและกินส่วนต่างจากมัน การจ่ายเป็นวอนจึงมักเป็นทางที่ถูกกว่าในสองทาง มักเป็น ไม่ใช่เสมอไป: ค่าธรรมเนียมธุรกรรมต่างประเทศของบัตรคุณเองยังถูกคิดอยู่ดีทั้งสองทาง และส่วนต่างที่แย่ของผู้ออกบัตรอาจปิดช่องว่างนั้นได้ ครึ่งที่คุณตรวจได้จริงก่อนถึงวันคือเงื่อนไขของผู้ออกบัตรคุณ จึงควรไปตรวจส่วนนั้น",
+        pitfall:
+          "การเลือกสกุลเงินบ้านเกิดเพราะตัวเลขดูคุ้นตา ที่นี่ของที่คุ้นตาคือทางเลือกที่แพงกว่าบ่อยกว่าไม่แพงกว่า และนี่เป็นหน้าจอเดียวที่คุณได้เลือกว่าใครเป็นคนแปลงสกุลเงิน",
+        takes: "10 นาที กับธนาคารของคุณ ล่วงหน้า",
+      },
+      {
+        title: "ใช้คูปองก่อนจ่าย เพราะไม่มีทีหลัง",
+        body: "NOL World พูดตรง ๆ ว่าเมื่อชำระเงินเสร็จแล้วคุณใช้คูปองไม่ได้ ทางเดียวที่เขาเสนอคือยกเลิกที่นั่งเดิมแล้วจองใหม่พร้อมใช้คูปอง และเขาเตือนว่าการยกเลิกแล้วจองใหม่อาจมีค่าธรรมเนียมตามนโยบายของงานนั้น ให้ตรวจก่อน ชั่งเรื่องนี้อย่างตรงไปตรงมากับมูลค่าของคูปอง และจำไว้ว่าที่นั่งที่คุณปล่อยออกไปไม่ได้ถูกกันไว้ให้คุณระหว่างที่จองใหม่",
+        pitfall:
+          "การยกเลิกที่นั่งที่คุณมีอยู่จริง เพื่อประหยัดส่วนลดที่คุณอาจไม่ได้ใช้ คูปองมีค่าน้อยกว่าบัตร และสต็อกไม่รอ",
+        takes: "5 นาที",
+      },
+      {
+        title: "คาดไว้ว่าจะมีขีดจำกัดจำนวนบัตร และคาดว่ามันเป็นของผู้จัด",
+        body: "NOL World บอกว่าขึ้นอยู่กับผู้จัด อาจมีขีดจำกัดว่าจองบัตรได้กี่ใบต่อคำสั่งซื้อหรือต่อสมาชิกหนึ่งคนสำหรับการแสดงหนึ่ง ๆ และว่าในกรณีที่บัตรคอนเสิร์ตถูกขายรวมกับทัวร์หรือบัตรเข้าชมอื่น ผู้จัดอาจกำหนดขีดจำกัดต่อสมาชิกด้วย เพดานนั้นจึงไม่ใช่ตัวเลขของทั้งแพลตฟอร์มที่คุณไปเปิดดูได้ มันถูกตั้งเป็นรายงาน บางครั้งเป็นรายคนไม่ใช่รายธุรกรรม และเป็นเหตุผลที่คำสั่งซื้อแบบกลุ่มอาจล้มเหลวในขั้นสุดท้าย",
+        pitfall:
+          "การวางแผนคำสั่งซื้อสำหรับสี่คนโดยอิงขีดจำกัดที่คุณอ่านจากอีกงานหนึ่ง ขีดจำกัดต่อสมาชิกก็แก้ไม่ได้ด้วยการกระจายคำสั่งซื้อไปตามบัญชีของตัวเองเช่นกัน รูปแบบนั้นอยู่ในรายการการใช้งานโดยฉ้อฉลที่ NOL World เผยแพร่ไว้",
+        takes: "5 นาที",
+      },
+      {
+        title: "ยืนยันว่าการจองมีอยู่จริง ในที่ที่แสดงสถานะ",
+        body: "หลังชำระเงิน ให้เปิดเว็บไซต์หรือแอป NOL World แล้วไปที่ Account/My จากนั้น My Reservations NOL World บอกว่ารายละเอียดการจองพื้นฐานและสถานะมองเห็นได้ทั้งในรายการและบนหน้ารายละเอียดการจอง ทำสักครั้งขณะที่คุณยังอยู่หน้าโต๊ะ แทนที่จะคิดว่าอีเมลยืนยันคือความจริงทั้งหมด รายการการจองคือที่ที่สถานะซึ่งไม่ตรงกับที่คุณคาดจะปรากฏ และเป็นหน้าจอที่คุณจะถูกถามถึงถ้าติดต่อฝ่ายบริการ",
+        pitfall:
+          "การถือว่าการชำระเงินที่ผ่านไปแล้วคือการจองที่มีอยู่ ส่วนใหญ่มันเป็นสิ่งเดียวกัน และความหมายทั้งหมดของการตรวจอยู่ที่ครั้งที่มันไม่ใช่",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่า “เสร็จแล้ว” หมายถึงอะไรสำหรับสิ่งที่คุณซื้อ",
+        body: "สำหรับศิลปะการแสดงและคอนเสิร์ต NOL World บอกว่ากระบวนการเสร็จสมบูรณ์ตอนชำระเงินและคุณไปรับบัตรที่ห้องจำหน่ายบัตรของสถานที่ สินค้าประเภททัวร์และกิจกรรมไม่เหมือนกันหมด บางอย่างออกคิวอาร์หรือบาร์โค้ดไปยัง My Page หรืออีเมลของคุณซึ่งให้คุณเข้าได้โดยตรง และบางอย่างต้องให้คุณแสดงวอเชอร์หรือใบยืนยันการจองที่เคาน์เตอร์หน้างานเพื่อแลกเป็นบัตรจริงก่อนเข้า คำสั่งของ NOL World คือให้ดูหน้าสินค้าว่าเป็นแบบไหน เพราะความต่างนั้นตัดสินว่าคุณต้องไปหาเคาน์เตอร์ก่อนถึงทางเข้าหรือไม่",
+        pitfall:
+          "การคิดว่าคิวอาร์โค้ดในอีเมลคือบัตรผ่านเข้างาน สำหรับสินค้าประเภทที่ต้องแลก มันคือสิ่งที่คุณเอาไปแลกที่เคาน์เตอร์ และเคาน์เตอร์มีเวลาทำการ",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ค่าธรรมเนียมการจองของบัตรคอนเสิร์ตเท่าไร",
+        a: "NOL World เผยแพร่ไว้ที่ 8,000 วอนสำหรับละครเพลงและคอนเสิร์ต ยกเว้นสินค้าบางอย่างเช่นคอนเสิร์ตออนไลน์และสมาชิกแฟนคลับ 3,000 วอนสำหรับการแสดงอื่นและกีฬา และไม่มีค่าใช้จ่ายสำหรับสันทนาการและนิทรรศการ เขายังบอกว่าค่าธรรมเนียมอาจต่างกันตามสินค้าและให้ตรวจตอนซื้อ จึงควรยืนยันกับงานของคุณเอง",
+      },
+      {
+        q: "ตอนชำระเงินฉันมีเวลาเท่าไรจริง ๆ",
+        a: "สิบนาทีในการเลือกที่นั่งนับจากเข้าหน้าจอง จากนั้นเป็นการกันที่นั่งเจ็ดนาทีระหว่างที่คุณจ่าย โดยมีนาฬิกาแสดงอยู่ด้านบน เกินไปแล้วที่นั่งจะถูกปล่อยและคุณเริ่มใหม่ แบบยืนก็ยังได้สิบนาทีเช่นกัน NOL World บอกว่าขีดจำกัดอาจต่างกันตามอีเวนต์และบางอีเวนต์ไม่มีเลย",
+      },
+      {
+        q: "ควรจ่ายเป็นวอนเกาหลีหรือสกุลเงินของตัวเอง",
+        a: "โดยทั่วไปเป็นวอน NOL World รองรับ 24 สกุลเงินและให้คุณเลือกระหว่างสกุลเงินของประเทศที่ออกบัตรกับวอนเกาหลี ซึ่งแสดงหลังคุณกรอกข้อมูลบัตร การเลือกสกุลเงินของตัวเองคือการแปลงสกุลเงินแบบไดนามิก ซึ่งฝ่ายที่แปลงตั้งอัตราและบวกส่วนต่างเข้าไป วอนจึงถูกกว่าโดยทั่วไป ค่าธรรมเนียมธุรกรรมต่างประเทศของบัตรคุณเองถูกคิดอยู่ดีทั้งสองทาง และนั่นคือส่วนที่ต้องไปตรวจกับผู้ออกบัตรก่อนถึงวัน",
+      },
+      {
+        q: "ฉันลืมใช้คูปอง เพิ่มตอนนี้ได้ไหม",
+        a: "ไม่ได้ NOL World บอกว่าใช้คูปองไม่ได้เมื่อชำระเงินเสร็จแล้ว ทางเดียวที่เขาให้คือยกเลิกที่นั่งเดิมแล้วจองใหม่พร้อมคูปอง และเขาเตือนว่าการยกเลิกและจองใหม่อาจมีค่าธรรมเนียมตามนโยบายของงาน ตรวจค่าธรรมเนียมก่อนจะปล่อยที่นั่งที่คุณถืออยู่แล้ว",
+      },
+      {
+        q: "ทำไมฉันจองได้แค่สองใบขณะที่เพื่อนจองได้สี่ใบ",
+        a: "เพราะขีดจำกัดเป็นของผู้จัด ไม่ใช่ของแพลตฟอร์ม NOL World บอกว่าการแสดงหนึ่งอาจจำกัดจำนวนบัตรต่อคำสั่งซื้อหรือต่อสมาชิก และว่าสินค้าที่รวมคอนเสิร์ตกับทัวร์อาจมีขีดจำกัดต่อสมาชิกด้วย งานอื่นหรือรอบขายอื่นอาจมีเพดานต่างกัน",
+      },
+      {
+        q: "ใช้บัตรเครดิตเกาหลีบน NOL World ได้ไหม",
+        a: "ไม่ได้ NOL World รับเฉพาะบัตรที่ออกนอกเกาหลี บัตรที่ออกในเกาหลีเป็นของสมาชิกในประเทศที่ยืนยันตัวตนแล้วบนเว็บภาษาเกาหลี บัตรเกาหลีที่ถูกปฏิเสธที่นี่คือกฎที่ทำงานอยู่ ไม่ใช่ความผิดพลาด",
+      },
+      {
+        q: "ฉันตรวจว่าการจองผ่านหรือไม่ได้ที่ไหน",
+        a: "ที่เว็บไซต์หรือแอป NOL World ใน Account/My แล้ว My Reservations NOL World บอกว่ารายละเอียดการจองและสถานะปรากฏทั้งในรายการและบนหน้ารายละเอียด หน้าจอนั้น ไม่ใช่อีเมลยืนยัน คือสิ่งที่แสดงสถานะ",
+      },
+      {
+        q: "ฉันจ่ายแล้ว เหลืออะไรต้องทำก่อนงานไหม",
+        a: "สำหรับบัตรคอนเสิร์ตหรือศิลปะการแสดง ไม่เหลือ NOL World บอกว่ากระบวนการเสร็จสมบูรณ์แล้วและคุณไปรับบัตรที่ห้องจำหน่ายบัตรของสถานที่ สำหรับสินค้าประเภททัวร์หรือกิจกรรมขึ้นอยู่กับกรณี บางอย่างส่งคิวอาร์หรือบาร์โค้ดที่ให้คุณเข้าได้โดยตรง บางอย่างต้องเอาวอเชอร์ไปแลกเป็นบัตรจริงที่เคาน์เตอร์หน้างานก่อน หน้าสินค้าจะบอกว่าเป็นแบบไหน",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Checkout sa NOL World: ang bayad sa booking, ang orasan, at ang perang ipinambabayad mo",
+    summary:
+      "May 8,000 won na service fee ang tiket sa konsiyerto, sampung minuto ang ibinibigay sa iyo para pumili ng upuan at pito para magbayad, at hinihiling ng pahina ng bayad na pumili ka ng pera. Tatlong desisyon tungkol sa pera at isang timer, pawang inilathala at walang isa mang halata.",
+    scope:
+      "Sakop nito ang inilalathala ng NOL World tungkol sa halaga at sa oras ng checkout nito: ang service fee kada genre, ang dalawang-yugtong timer ng pagbili, ang pagpili ng pera, ang mga kupon, at ang limitasyon kada order. Maaaring itakda kada event ang mga bayad at timer at sinasabi iyon ng NOL World sa dalawang kaso, kaya nananaig ang pahina ng event mo rito. Walang narito na payo kung aling pera ang mas mura para sa partikular mong kard.",
+    intro: [
+      "Karamihan sa nagkakamali sa isang Koreanong checkout ay hindi ang kard. Ang nangyayari ay nagtatanong ang pahina ng tatlong tanong na may nakakabit na pera habang tumatakbo ang isang timer, at nakakaharap ng isang mamimili mula sa ibang bansa ang lahat ng iyon sa unang pagkakataon na may natitirang mga pitong minuto.",
+      "Lahat ng ito ay inilathala, at wala ni isa sa kanila sa pahina ng produkto kung saan mo napagpasyahang kaya mong bilhin ang tiket. Kaya ang punto ng pahinang ito ay ilipat ang mga sorpresa sa linggo bago.",
+    ],
+    steps: [
+      {
+        title: "Idagdag ang service fee bago mo pagpasyahang kaya mo ang tiket",
+        body: "Inilalathala ng NOL World ang service fee nito kada genre. May 8,000 won ang mga musical at konsiyerto — maliban sa ilang produkto gaya ng online na konsiyerto at membership sa fan club. Ang ibang pagtatanghal at ang isports ay 3,000 won. Libre ang leisure at mga eksibisyon. Sinasabi rin ng NOL World na maaaring mag-iba ang bayad kada produkto at tingnan ito sa oras ng pagbili, kaya ituring ang mga ito bilang inilathalang panimula at hindi bilang pangako tungkol sa event mo.",
+        pitfall:
+          "Ang paghahambing ng presyo ng Koreanong tiket sa presyo ng tiket sa bansa mo at ang pagkalimot na nakapatong ito. Hindi ito malaki, at ito ang uri ng maliit na sorpresang nagpaparamdam na hindi mapagkakatiwalaan ang buong plataporma sa pinakamasamang sandali.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin kung ano talaga ang binibili ng bayad, dahil may isang linya rito na mahalaga",
+        body: "Isa-isang inilalahad ng NOL World ang sakop ng service fee: ang pagpapanatili ng website at mga kaugnay na gastos, ang pagproseso ng bayad na sumusuporta sa sistema nito laban sa pandaraya, ang mga bayad sa teknolohiya para pigilan ang mapandayang booking ng bot at macro, at ang suportang pang-sistema para sa pandaigdigang reserbasyon. Ang pangatlong bagay na iyon ang kawili-wili. Bahagyang pinopondohan ng bayad ang makinaryang laban sa macro, na kaparehong direksiyon ng pagpapatupad gaya ng pagsusuri ng pagkakakilanlan at ng binagong Performances Act — at iyan ang dahilan kung bakit kumikilos ang pila na parang sistemang kalaban sa halip na isang hanay.",
+        pitfall:
+          "Ang pagbasa sa bayad bilang purong tubo at sa pila bilang kawalan ng kakayahan. Sinasabi sa iyo ng plataporma na ginagastos nito ang bayad sa pagpigil sa mga awtomatikong mamimili, na siya ring dahilan kung bakit mahigpit ang mga tuntuning ipinapataw nito sa iyo.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Unawain ang orasan: sampung minuto para pumili, pito para magbayad",
+        body: "Dalawang yugto ang timer ng pagbili at isinasaad ng NOL World ang dalawa. Mula sa pagpasok sa pahina ng booking ay may hanggang sampung minuto ka para pumili ng upuan. Kapag lumipat ka sa yugto ng presyo ay hawak ang mga upuan mo nang pitong minuto habang kinukumpleto mo ang bayad, na may timer sa itaas ng pahina. Lagpasan ito at awtomatikong binibitawan ang mga upuan at magsisimula kang muli. Ang mga booking na walang nakatakdang upuan o general admission ay may limitasyon pa ring sampung minuto bago magbayad. Dagdag ng NOL World, maaaring mag-iba ang mga limitasyon kada event at may mga event na wala nito.",
+        pitfall:
+          "Ang pagbukas ng banking app para maghanap ng numero ng kard sa loob ng pitong minuto. Ang detalye ng kard, ang address ng pagsingil at ang app ng pag-apruba ng bangko mo ay dapat handa na bago ka pumasok sa pahina ng booking, dahil walang pakialam ang orasan na hinihingan ka ng telepono mong mag-log in muli.",
+        takes: "17 minuto, kung gagamitin lahat",
+      },
+      {
+        title: "Ituring ang tanong tungkol sa pera bilang tunay na desisyon",
+        body: "Sinusuportahan ng NOL World ang bayad sa 24 na pera kabilang ang Korean won, US dollar, yen at yuan, at lumalabas ang mga available pagkatapos mong ilagay ang detalye ng kard mo. Ang pagpiling inaalok nito ay sa pagitan ng pera ng bansang nag-isyu ng kard mo at ng Korean won. Dalawang magkaibang palitan iyon na itinakda ng dalawang magkaibang panig — isa ng sinumang nagkokonberte sa pahina ng bayad, isa ng network at nag-isyu ng kard mo. Ang pagpili ng sarili mong pera ay dynamic currency conversion, at ang panig na nagkokonberte ang nagtatakda ng palitan at kumukuha ng margin doon, kaya ang pagbabayad sa won ang karaniwang mas mura sa dalawa. Karaniwan, hindi palagi: napapataw pa rin ang bayad ng sarili mong kard sa dayuhang transaksiyon sa alinmang paraan, at puwedeng isara ng masamang margin ng nag-isyu ang agwat. Ang kalahating masusuri mo talaga bago ang araw ay ang mga tuntunin ng nag-isyu sa iyo, kaya suriin ang mga iyon.",
+        pitfall:
+          "Ang pagpili ng perang pang-bahay dahil pamilyar ang numero. Mas madalas na ang pamilyar ang mas mahal na pagpipilian dito, at ito ang iisang screen kung saan pinipili mo kung sino ang magkokonberte.",
+        takes: "10 minuto, kasama ang bangko mo, nang maaga",
+      },
+      {
+        title: "Gamitin ang kupon bago magbayad, dahil walang pagkatapos",
+        body: "Tuwiran ang NOL World tungkol dito: kapag kumpleto na ang bayad ay hindi mo na magagamit ang kupon. Ang tanging ruta na inaalok nito ay kanselahin ang parehong upuan at mag-book muli kasama ang kupon — at nagbabala ito na ang pagkansela at muling pag-book ay maaaring magkaroon ng bayad sa ilalim ng patakaran ng mismong event, kaya tingnan muna ang mga iyon. Timbangin iyan nang tapat laban sa halaga ng kupon, at tandaang hindi nakareserba para sa iyo ang upuang binitawan mo habang nagbu-book kang muli.",
+        pitfall:
+          "Ang pagkansela ng upuang hawak mo talaga, para makatipid ng diskuwentong baka hindi mo magamit. Mas mababa ang halaga ng kupon kaysa sa tiket, at hindi naghihintay ang stock.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Asahan ang limitasyon sa tiket, at asahang sa organisador ito",
+        body: "Sinasabi ng NOL World na depende sa organisador ay maaaring may limitasyon kung ilang tiket ang maaaring ireserba kada order o kada miyembro para sa isang pagtatanghal — at na kung saan ipinagbibili ang tiket sa konsiyerto kasama ang isang tour o ibang tiket sa pagpasok, maaari ring magpataw ang organisador ng limitasyon kada miyembro. Kaya hindi ang kisame ay isang numerong pang-buong plataporma na matitingnan mo; itinatakda ito kada palabas, minsan kada tao sa halip na kada transaksiyon, at dahilan ito kung bakit maaaring bumagsak ang group order sa huling hakbang.",
+        pitfall:
+          "Ang pagplano ng order para sa apat na tao batay sa limitasyong nabasa mo sa ibang palabas. Hindi rin malulutas ang limitasyon kada miyembro sa pamamagitan ng paghahati ng order sa sarili mong mga account — nasa inilathalang listahan ng mapandayang paggamit ng NOL World ang pattern na iyon.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Kumpirmahing umiiral ang booking, sa lugar na nagpapakita ng katayuan",
+        body: "Pagkatapos magbayad, buksan ang website o app ng NOL World at pumunta sa Account/My, at saka My Reservations. Sinasabi ng NOL World na nakikita ang pangunahing detalye at katayuan ng reserbasyon kapwa sa listahan at sa pahina ng detalye ng booking. Gawin iyon nang isang beses habang nasa harap ka pa ng mesa sa halip na ipagpalagay na ang email ng kumpirmasyon ang buong katotohanan — ang listahan ng reserbasyon ang lugar kung saan lumalabas ang katayuang hindi mo inaasahan, at iyon ang screen na itatanong sa iyo kapag nakipag-ugnayan ka sa suporta.",
+        pitfall:
+          "Ang pagturing sa bayad na tumuloy bilang booking na umiiral. Karaniwan silang magkapareho at ang buong punto ng pagsuri ay ang pagkakataong hindi sila magkapareho.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin kung ano ang ibig sabihin ng tapos para sa binili mo",
+        body: "Para sa performing arts at konsiyerto, sinasabi ng NOL World na kumpleto ang proseso sa pagbabayad at kukunin mo ito sa box office ng venue. Hindi pare-pareho ang mga produktong tour at aktibidad: may naglalabas ng QR o barcode sa My Page mo o sa email na tuwirang nagpapapasok sa iyo, at may nangangailangang iharap mo ang voucher o kumpirmasyon ng booking sa isang counter sa lugar para ipalit sa pisikal na tiket bago pumasok. Ang bilin ng NOL World ay tingnan sa pahina ng produkto kung alin ang umiiral, dahil ang pagkakaiba ang nagpapasya kung kailangan mong maghanap ng counter bago ang pintuan.",
+        pitfall:
+          "Ang pag-aakalang ang QR code sa email mo ay pass sa pagpasok. Para sa produktong ipinapalit, ito ang ipinapalit mo sa isang counter, at may oras ng pagbubukas ang counter.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Magkano ang bayad sa booking ng isang tiket sa konsiyerto?",
+        a: "Inilalathala ng NOL World ang 8,000 won para sa musical at konsiyerto, maliban sa ilang produkto gaya ng online na konsiyerto at membership sa fan club; 3,000 won para sa ibang pagtatanghal at isports; at wala para sa leisure at eksibisyon. Sinasabi rin nitong maaaring mag-iba ang bayad kada produkto at tingnan sa pagbili, kaya kumpirmahin sa sarili mong event.",
+      },
+      {
+        q: "Gaano katagal talaga ang meron ako sa checkout?",
+        a: "Sampung minuto para pumili ng upuan mula sa pagpasok sa pahina ng booking, at saka pitong minutong paghawak habang nagbabayad ka, na may timer sa itaas. Lagpasan ito at bibitawan ang mga upuan at magsisimula kang muli. May sampung minuto pa rin ang general admission. Sinasabi ng NOL World na maaaring mag-iba ang limitasyon kada event at may mga event na wala nito.",
+      },
+      {
+        q: "Dapat ba akong magbayad sa Korean won o sa sarili kong pera?",
+        a: "Karaniwan ay won. Sinusuportahan ng NOL World ang 24 na pera at pinapapili ka nito sa pagitan ng pera ng bansang nag-isyu ng kard mo at ng Korean won, na ipinapakita pagkatapos mong ilagay ang detalye ng kard. Ang pagpili ng sarili mong pera ay dynamic currency conversion, kung saan itinatakda ng nagkokonberteng panig ang palitan at nagdaragdag ng margin — kaya karaniwang mas mura ang won. Napapataw pa rin ang bayad ng kard mo sa dayuhang transaksiyon sa alinmang paraan, at iyan ang bahaging dapat suriin sa nag-isyu bago ang araw.",
+      },
+      {
+        q: "Nakalimutan kong gamitin ang kupon ko. Puwede ko pa bang idagdag ngayon?",
+        a: "Hindi. Sinasabi ng NOL World na hindi na magagamit ang kupon kapag kumpleto na ang bayad. Ang tanging ruta na ibinibigay nito ay ang pagkansela ng parehong upuan at muling pag-book kasama ang kupon, at nagbababala itong maaaring magdala ng bayad ang pagkansela at muling pag-book sa ilalim ng patakaran ng event. Tingnan ang bayad bago mo bitawan ang upuang hawak mo na.",
+      },
+      {
+        q: "Bakit dalawang tiket lang ang nabu-book ko samantalang apat ang nabook ng kaibigan ko?",
+        a: "Dahil sa organisador ang limitasyon, hindi sa plataporma. Sinasabi ng NOL World na maaaring limitahan ng isang pagtatanghal ang tiket kada order o kada miyembro, at na ang mga pinagsamang produktong konsiyerto at tour ay maaari ring magdala ng limitasyon kada miyembro. Ibang palabas, o ibang round ng benta, ay puwedeng may ibang kisame.",
+      },
+      {
+        q: "Puwede ba akong gumamit ng Koreanong credit card sa NOL World?",
+        a: "Hindi. Tumatanggap lamang ang NOL World ng mga kard na inisyu sa labas ng Korea; sa mga napatunayang lokal na miyembro sa Koreanong site nauukol ang mga kard na inisyu sa Korea. Ang Koreanong kard na tinanggihan dito ay ang tuntuning gumagana, hindi isang depekto.",
+      },
+      {
+        q: "Saan ko titingnan kung natuloy ang booking ko?",
+        a: "Sa site o app ng NOL World, sa ilalim ng Account/My at saka My Reservations. Sinasabi ng NOL World na lumalabas ang detalye at katayuan ng reserbasyon kapwa sa listahan at sa pahina ng detalye. Ang screen na iyon, at hindi ang email ng kumpirmasyon, ang nagpapakita ng katayuan.",
+      },
+      {
+        q: "Nakabayad na ako. May natitira pa bang gawin bago ang palabas?",
+        a: "Para sa tiket sa konsiyerto o performing arts, wala — sinasabi ng NOL World na kumpleto na ang proseso at kukunin mo ito sa box office ng venue. Para sa produktong tour o aktibidad ay depende: may nagpapadala ng QR o barcode na tuwirang nagpapapasok sa iyo, may nangangailangang ipalit muna ang voucher sa pisikal na tiket sa isang counter sa lugar. Sinasabi ng pahina ng produkto kung alin.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

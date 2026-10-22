@@ -426,7 +426,16 @@ function isFixedDocument(url) {
   // 공공누리 제1유형 permits it, so a change to that page's wording is the one
   // source change on this site with a legal consequence rather than an
   // editorial one. `license.do` matches no other word in this list.
-  if (/\/(notice|news|press|article|view|blog|release|guide|faq|help|terms|policy|support|licen[cs]e)/i.test(path))
+  // `transport` joined this list the day a guide started quoting taxi fares off
+  // Seoul's tourism transport page. It is worth being honest about what that
+  // means: this heuristic reads the URL, and the question it is standing in for
+  // is "does a guide quote figures from this page?" — which a path cannot
+  // answer. The two agree often enough to be useful and will disagree again.
+  // **When you add a source you quote a number from, check the next sweep
+  // compares it rather than reporting it link-checked only.** A storefront
+  // whose wording is meant to move is the case this list exists to exclude;
+  // a page you took a fare, a deadline or a fee from is never that.
+  if (/\/(notice|news|press|article|view|blog|release|guide|faq|help|terms|policy|support|licen[cs]e|transport)/i.test(path))
     return true;
   // A numeric id deep in the path is an article by another name.
   return /\/[^/]*\d{4,}/.test(path);

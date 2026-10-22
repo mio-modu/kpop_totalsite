@@ -891,6 +891,31 @@ choosing: the table gives Guro as exit 1 while the turn-by-turn directions and
 the venue's own area map both say exit 2. An official source with two answers
 is reported as two answers.
 
+**The accommodation guide names no hotels, and that refusal is the guide.**
+`where-to-stay-seoul-concert-night` teaches one rule — find the venue's subway
+line, stay on it, check the last train for your own station, price the taxi —
+and the worked example is Gocheok, off the operator's own access page and
+Seoul's published subway hours and taxi fares. What it will not do is list
+hotels or carry ratings, for three reasons that are one reason: nobody here has
+stayed in them, a star average belongs to the platform that collected it, and a
+hotel is the fastest-rotting claim this site could make. Twenty hotels would be
+twenty re-checks a cycle, and a list nobody re-checks is precisely the stale
+guide this site exists to replace. A line and a last train do not rot.
+
+It also prints no train times, deliberately, and says so on the page. A
+timetable copied into a guide stays confident after it stops being true, and a
+reader stranded on a platform is a worse place to meet a stale fact than a
+renamed website is. The page teaches where to look instead.
+
+**It carries no paid link**, though it is the most obviously monetisable page
+on the site and the register already holds a hotel partner. The rule says a
+link goes where the thing would have been named anyway, and the Play&Stay link
+qualifies because that guide creates a specific gap — nights the package will
+not contain. This guide creates no such gap; it argues that no one here can
+responsibly point at a hotel. A booking link underneath that argument would be
+taking the position the page just declined to take, which costs more than the
+commission is worth.
+
 ## Advertising
 
 Slots live in `components/AdSlot.tsx` and render nothing until their ids are
@@ -910,8 +935,12 @@ application the slower path.
 
 ## Paid links
 
-`content/affiliates.ts` is the register, and it is empty: this site carries no
-paid link today. The machinery exists first on purpose, because knowing a
+`content/affiliates.ts` is the register. It held nothing for a long time and
+this section said so for longer — it now holds **Klook**, and the site carries
+**one** paid link, on Play&Stay step 1. The sentence claiming the register was
+empty survived the link going in, which is the ordinary way a document starts
+lying: nothing edited it, and nothing could fail because of it. The machinery
+exists first on purpose, because knowing a
 section may one day hold a paid link changes how it is written now — a guide
 that already names the real trade-offs can carry a link honestly, and one that
 would have to grow a section to fit a link reads exactly like what it is.

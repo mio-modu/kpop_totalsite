@@ -18590,6 +18590,333 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Đặt hàng từ Ktown4u: cái đồng hồ sáu tiếng và những khoản phí không ai nhắc",
+    summary:
+      "Một đơn chưa trả tiền bị hủy sau sáu tiếng, không phải hai mươi bốn tiếng. Các gói hàng đi Mỹ có thể mang theo một khoản 12 USD thu tại cửa nhà bạn. Phí vận chuyển quốc tế tăng 7% vào tháng 2 năm 2026, và hai nước châu Âu âm thầm mất hẳn một phương thức vận chuyển.",
+    scope:
+      "Trang này bao gồm việc đặt album và đồ vật lý từ Ktown4u để giao ra ngoài Hàn Quốc, lấy từ chính các thông báo của Ktown4u: cái đồng hồ thanh toán, các mức phí và phương thức vận chuyển, các đợt tạm dừng vào dịp lễ, và giờ làm của bộ phận hỗ trợ. Việc một lần mua ở Ktown4u có được tính vào các bảng xếp hạng album Hàn Quốc hay không thì được trả lời từ chính danh bạ các cửa hàng được chứng nhận của Hanteo chứ không từ Ktown4u. Các thông báo được phát lại và bị thay thế, nên danh sách thông báo là bản sống.",
+    intro: [
+      "Ktown4u là nơi một phần lớn người hâm mộ quốc tế thực sự mua album, và gần như không điều gì về cách nó hoạt động được viết ra bằng tiếng Anh ngoài chính trang thông báo của nó — trang đó bằng tiếng Anh, có ghi ngày, và không ai đọc cho tới khi một gói hàng tới muộn.",
+      "Đây là trang đó đọc gọn trong một lần. Mục đầu tiên là mục làm người ta mất đơn hàng, và nó đã thay đổi trong năm 2025 mà phần lớn người mua không để ý.",
+    ],
+    steps: [
+      {
+        title: "Biết rằng một đơn chưa trả tiền chết trong sáu tiếng, không phải một ngày",
+        body: "Đây là sự thật đáng biết trước khi bạn đặt bất cứ thứ gì. Ktown4u từng giữ các đơn chưa trả tiền trong 24 giờ và đã cắt xuống còn 6, có hiệu lực từ ngày 19 tháng 2 năm 2025 theo KST, với các đơn chưa trả tiền bị hủy tự động sáu tiếng sau khi được đặt. Với một người hâm mộ đặt hàng vào lúc nửa đêm ở châu Âu hay châu Mỹ, sáu tiếng Hàn Quốc có thể trôi qua trọn vẹn trong lúc bạn ngủ — và một đơn đặt trước được đặt mà không trả tiền là một đơn chưa từng được đặt.",
+        pitfall:
+          "Giữ chỗ món hàng ngay bây giờ rồi trả tiền khi thẻ hoặc ngày lương của bạn cho phép. Chuyện đó hiệu quả dưới cửa sổ cũ và không hiệu quả dưới cửa sổ này.",
+        takes: "Hãy trả tiền ngay lúc bạn đặt",
+      },
+      {
+        title: "Nếu bạn ở Mỹ, hãy dự trù một khoản thu tại cửa nhà bạn",
+        body: "Từ ngày 2 tháng 6 năm 2025, Ktown4u áp một chính sách phí UPS cho các lô hàng đi Mỹ: khi có thuế hải quan, thuế hay các khoản thu khác của nhà nước phải trả, thì thêm 12 USD được thu nếu các khoản thuế đó chưa được trả trước bằng phương thức điện tử trước khi giao. Ktown4u gọi nó là phí International Collect on Delivery, và nói nó được lập hóa đơn cho người nhận ở Mỹ vào thời điểm giao hàng. Đường ra cũng được công bố — hãy trả thuế trước qua hệ thống UPS Import Prepaid Duties and Taxes, mà họ nói là nhận Apple Pay, Google Pay, hoặc một thẻ Visa, Mastercard hay Discover.",
+        pitfall:
+          "Coi tổng tiền lúc thanh toán là tổng tiền. Khoản phí này không do Ktown4u thu lúc mua; nó đến cùng với gói hàng, và nó là mười hai đô la trên đầu bất cứ khoản thuế nào thật sự phải trả.",
+        takes: "10 phút, trước khi gói hàng được gửi",
+      },
+      {
+        title: "Hãy tính phí vận chuyển theo mức hiện hành, không theo mức năm ngoái",
+        body: "Ktown4u đã tăng phí vận chuyển quốc tế thêm 7%, có hiệu lực từ ngày 1 tháng 2 năm 2026 lúc 00:00 KST, điều họ quy cho một lần điều chỉnh giá định kỳ của các hãng vận chuyển. Con số đó nhỏ với mỗi gói hàng và lớn khi tính cho một đơn đặt theo nhóm, và nó là loại thay đổi làm cho một con số dự tính phí vận chuyển lấy từ một bài blog cũ một năm trở nên âm thầm sai. Con số đáng tính là con số giỏ hàng hiện ra cho bạn vào đúng lúc bạn đặt.",
+        pitfall:
+          "Lập dự toán cho một đơn đặt theo nhóm từ một bảng tính ai đó làm mùa trước. Việc điều chỉnh giá là định kỳ, nghĩa là sẽ còn một lần nữa.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy kiểm tra nước bạn còn phương thức vận chuyển bạn mong đợi hay không",
+        body: "Các phương thức vận chuyển bị rút theo từng nước, không phải chỉ bị chậm. Ktown4u đã dừng dịch vụ K-Packet đi Đức và Tây Ban Nha từ ngày 17 tháng 1 năm 2025, bởi các nhà khai thác bưu chính Đức và Tây Ban Nha rút khỏi thỏa thuận Prime Group mà dịch vụ ấy chạy trên đó. Cách xử lý họ nêu là gửi email cho những khách hàng bị ảnh hưởng về việc chuyển sang một dịch vụ vận chuyển khác và về khoản chi phí thêm — nên một đơn đã đặt vẫn có thể đổi giá sau khi đã đặt. Phương thức bạn dùng lần trước không phải phương thức bạn vẫn còn.",
+        pitfall:
+          "Chọn phương thức rẻ nhất theo quán tính rồi không đọc email tiếp sau. Cái email mới là nơi dịch vụ thay thế và khoản chi phí thêm của nó được nêu tên.",
+        takes: "5 phút, lúc thanh toán",
+      },
+      {
+        title: "Hãy đọc các thông báo gián đoạn theo từng nước, chúng cụ thể một cách khác thường",
+        body: "Ktown4u công bố các gián đoạn giao hàng tới từng mã bưu chính. Thông báo EMS của họ cho Slovakia ngày 4 tháng 4 năm 2025 nêu tên các mã bưu chính bị ảnh hưởng — 930 07, 930 06, 930 04, 930 03 và 900 68 — cùng nguyên nhân, một đợt bùng phát bệnh lở miệng long móng ở tây nam Slovakia và một tình trạng khẩn cấp từ ngày 25 tháng 3 năm 2025, với các gói hàng được giữ tại bưu cục địa phương và người nhận được thông báo. Mức chi tiết chính là điểm chính: khi việc tra cứu dừng lại ở khu vực của bạn, trang thông báo thường nói vì sao, và đó là một tình huống khác với một gói hàng bị mất.",
+        pitfall:
+          "Mở khiếu nại mất hàng trong một đợt gián đoạn vốn đã được công bố và giải thích. Hãy xem danh sách thông báo cho nước của bạn trước khi bạn mất cả buổi chiều cho một khiếu nại.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy coi một dịp lễ Hàn Quốc như một tuần không gửi hàng và không có hỗ trợ",
+        body: "Ktown4u tạm dừng cả hai nửa hoạt động của mình trong các dịp lễ Hàn Quốc, và công bố các mốc ngày mỗi lần. Với Tết Nguyên đán 2026, việc giao hàng tạm dừng từ ngày 14 đến 18 tháng 2 với các chuyến giao hoạt động lại lần lượt kể từ ngày 19 tháng 2, và bộ phận hỗ trợ khách hàng không có mặt suốt những ngày đó. Với Chuseok 2025, đợt dừng chạy từ ngày 3 đến 9 tháng 10 với cả hai hoạt động lại vào ngày 10. Mỗi lần họ đều cảnh báo rằng các chậm trễ có thể kéo quá ngày hoạt động lại vì lượng đơn đã dồn lại phía sau.",
+        pitfall:
+          "Đọc ngày hoạt động lại như một ngày giao hàng. Đó là ngày cái hàng đợi bắt đầu nhúc nhích, và đơn của bạn thì nằm đâu đó trong hàng.",
+        takes: "10 phút trước một đơn đặt vào dịp lễ",
+      },
+      {
+        title: "Hãy viết cho bộ phận hỗ trợ trong đúng khung giờ họ thật sự làm",
+        body: "Ktown4u đã chuyển kênh chăm sóc khách hàng của mình sang các ngày trong tuần, từ 10:00 đến 17:00 KST, kể từ ngày 1 tháng 11 năm 2023, với một giờ nghỉ trưa từ 12:30 đến 13:30. Đó là một cửa sổ năm tiếng rưỡi, vào các ngày làm việc ở Hàn Quốc, mà với phần lớn người đọc trang này thì rơi vào giữa đêm. Nó quan trọng nhất khi đặt cạnh cái đồng hồ thanh toán sáu tiếng: một đơn đặt vào tối thứ Sáu ở châu Âu có thể hết hạn trước khi có ai ở bàn làm việc để mà hỏi.",
+        pitfall:
+          "Chờ một câu trả lời trước khi hành động. Hãy quy đổi những giờ đó sang giờ của bạn một lần, ghi lại, và đừng giả định gì ngoài khung đó.",
+        takes: "5 phút, một lần",
+      },
+      {
+        title: "Ktown4u là một cửa hàng được Hanteo chứng nhận, và bạn tự kiểm tra được",
+        body: "Hướng dẫn này từng nói rằng câu hỏi đó không trả lời được, bởi Ktown4u không nêu điều đó trong các thông báo của chính mình. Nó trả lời được từ đầu kia: Hanteo công bố các cửa hàng Family được chứng nhận của mình, và Ktown4U có trên danh bạ đó với mã family HF0082KTU001. Hanteo yêu cầu mọi cửa hàng Family trực tuyến phải hiện dấu Family có liên kết trở lại hanteochart.com, và chính mặt tiền cửa hàng của Ktown4u liên kết tới cùng danh bạ đó — nên cửa hàng và bảng xếp hạng khớp nhau, từ cả hai đầu. Hãy tự kiểm tra chứ đừng lấy từ đây: các danh bạ có thay đổi, và chỉ dẫn của Hanteo là xác nhận mã và dấu chứng nhận, thứ được phát lại mỗi năm.",
+        pitfall:
+          "Đọc điều này thành “đơn của tôi sẽ xuất hiện trên mọi bảng xếp hạng Hàn Quốc”. Hanteo đếm những lượng bán mà các cửa hàng Family của nó báo lên; bảng Album Chart chính của Circle Chart lại đếm lượng hàng bán buôn chuyển cho các nhà bán lẻ, nên không đơn bán lẻ nào làm nó nhúc nhích. Và cả hai đều không công bố một quy tắc về việc một đơn từ nước ngoài có được đối xử như một đơn trong nước hay không.",
+        takes: "15 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi có bao lâu để trả tiền cho một đơn Ktown4u?",
+        a: "Sáu tiếng. Ktown4u đã cắt thời gian giữ các đơn chưa trả tiền từ 24 giờ xuống còn 6, có hiệu lực từ ngày 19 tháng 2 năm 2025 theo KST, và nói các đơn chưa trả tiền bị hủy tự động sáu tiếng sau khi đặt. Hãy trả tiền ngay lúc bạn đặt chứ đừng tính quay lại sau.",
+      },
+      {
+        q: "Khoản 12 USD trên lần giao hàng ở Mỹ của tôi là gì?",
+        a: "Đó là phí International Collect on Delivery của Ktown4u cho các lô hàng UPS đi Mỹ, có hiệu lực từ ngày 2 tháng 6 năm 2025. Nó áp khi có thuế hải quan, thuế hay các khoản thu khác của nhà nước phải trả mà chưa được trả trước bằng phương thức điện tử trước khi giao, và nó được lập hóa đơn cho người nhận lúc giao hàng. Việc trả trước qua hệ thống UPS Import Prepaid Duties and Taxes tránh được nó — Ktown4u liệt Apple Pay, Google Pay và Visa, Mastercard hay Discover là các cách làm việc đó.",
+      },
+      {
+        q: "Vì sao phí vận chuyển đắt hơn trước?",
+        a: "Ktown4u đã tăng phí vận chuyển quốc tế thêm 7% từ ngày 1 tháng 2 năm 2026 lúc 00:00 KST, quy điều đó cho một lần điều chỉnh giá định kỳ của các hãng vận chuyển. Định kỳ nghĩa là sẽ còn một lần nữa, nên hãy tính giá một đơn đặt theo nhóm từ giỏ hàng chứ không từ một con số dự tính cũ.",
+      },
+      {
+        q: "Phương thức vận chuyển quen dùng của tôi biến mất. Đã xảy ra chuyện gì?",
+        a: "Các phương thức bị rút theo từng nước. Ktown4u đã dừng K-Packet đi Đức và Tây Ban Nha từ ngày 17 tháng 1 năm 2025 sau khi các nhà khai thác bưu chính Đức và Tây Ban Nha rút khỏi thỏa thuận Prime Group, và nói họ sẽ gửi email cho những khách hàng bị ảnh hưởng về việc đổi dịch vụ và về khoản chi phí thêm. Nếu một đơn đã được đặt thì cái email đó là nơi phương thức mới và giá của nó được nêu tên.",
+      },
+      {
+        q: "Việc tra cứu vận đơn của tôi không nhúc nhích. Gói hàng mất rồi sao?",
+        a: "Hãy xem danh sách thông báo cho nước của bạn trước. Ktown4u công bố các gián đoạn với mức chi tiết khác thường — thông báo EMS cho Slovakia ngày 4 tháng 4 năm 2025 nêu tên năm mã bưu chính bị ảnh hưởng và các biện pháp kiểm dịch phía sau sự chậm trễ, và nói các gói hàng sẽ được giữ tại bưu cục địa phương với người nhận được thông báo. Một gián đoạn đã công bố là một vấn đề khác với một gói hàng bị mất.",
+      },
+      {
+        q: "Đơn của tôi sẽ thế nào trong một dịp lễ Hàn Quốc?",
+        a: "Cả việc gửi hàng và bộ phận hỗ trợ đều dừng. Với Tết Nguyên đán 2026, việc giao hàng dừng từ ngày 14 đến 18 tháng 2, hoạt động lại lần lượt kể từ ngày 19, với bộ phận hỗ trợ không có mặt trong cùng những ngày đó; Chuseok 2025 chạy từ ngày 3 đến 9 tháng 10 với cả hai hoạt động lại vào ngày 10. Mỗi lần Ktown4u đều cảnh báo rằng lượng đơn dồn lại có thể đẩy các chuyến giao quá ngày hoạt động lại.",
+      },
+      {
+        q: "Khi nào tôi thật sự liên hệ được với bộ phận chăm sóc khách hàng?",
+        a: "Các ngày trong tuần, từ 10:00 đến 17:00 KST, với một giờ nghỉ trưa từ 12:30 đến 13:30, như được đặt ra từ ngày 1 tháng 11 năm 2023. Hãy quy đổi khung đó sang múi giờ của bạn trước khi bạn cần tới nó, vì khi đặt cạnh cái đồng hồ thanh toán sáu tiếng thì một đơn hàng có thể hết hạn ngoài những giờ ấy.",
+      },
+      {
+        q: "Mua từ Ktown4u có được tính vào các bảng xếp hạng Hàn Quốc không?",
+        a: "Ktown4U là một cửa hàng Family được Hanteo chứng nhận, có trên danh bạ với mã HF0082KTU001, nên với Hanteo thì cửa hàng này là một cửa hàng có báo số — và đó là xa nhất mà một nguồn công khai đi tới. Hanteo không công bố một quy tắc về việc một đơn từ nước ngoài có được đối xử như một đơn trong nước hay không, và Circle Chart lại là một câu hỏi riêng: bảng Album Chart chính của nó đếm lượng hàng bán buôn chuyển cho các nhà bán lẻ chứ không đếm lượng bán lẻ, nên một đơn ở đó không thay đổi gì theo chiều nào. Nếu một bản phát hành cụ thể mới là điểm chính, thì thông báo của chính nghệ sĩ thường nêu tên các nhà bán lẻ tham gia cho bản đó.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "การสั่งของจาก Ktown4u: นาฬิกาจ่ายเงินหกชั่วโมงและค่าธรรมเนียมที่ไม่มีใครเอ่ยถึง",
+    summary:
+      "ออเดอร์ที่ยังไม่จ่ายจะถูกยกเลิกหลังหกชั่วโมง ไม่ใช่ยี่สิบสี่ชั่วโมง พัสดุไปสหรัฐอาจมีค่าธรรมเนียม 12 USD ที่เก็บกันที่หน้าประตูบ้านคุณ ค่าส่งระหว่างประเทศขึ้น 7% ในเดือนกุมภาพันธ์ 2026 และสองประเทศในยุโรปก็เสียวิธีจัดส่งไปทั้งวิธีอย่างเงียบ ๆ",
+    scope:
+      "หน้านี้ครอบคลุมการสั่งอัลบั้มและสินค้าที่เป็นวัตถุจาก Ktown4u เพื่อส่งออกนอกเกาหลี โดยอ้างจากประกาศของ Ktown4u เอง ได้แก่ นาฬิกาการชำระเงิน ค่าส่งและวิธีจัดส่ง การหยุดในช่วงวันหยุด และเวลาทำการของฝ่ายบริการลูกค้า ส่วนคำถามว่าการซื้อจาก Ktown4u นับเข้าชาร์ตอัลบั้มเกาหลีไหม ตอบจากทะเบียนร้านที่ได้รับการรับรองของ Hanteo เอง ไม่ใช่จาก Ktown4u ประกาศถูกออกใหม่และถูกแทนที่ ดังนั้นรายการประกาศคือฉบับที่ยังมีชีวิต",
+    intro: [
+      "Ktown4u คือที่ที่แฟนต่างชาติจำนวนมากซื้ออัลบั้มกันจริง ๆ และแทบไม่มีอะไรเกี่ยวกับวิธีทำงานของมันที่เขียนไว้เป็นภาษาอังกฤษนอกจากหน้าประกาศของมันเอง ซึ่งเป็นภาษาอังกฤษ ลงวันที่ และไม่มีใครอ่านจนกระทั่งพัสดุมาช้า",
+      "นี่คือหน้านั้นที่อ่านรวดเดียวจบ ข้อแรกคือข้อที่ทำให้คนเสียออเดอร์ และมันเปลี่ยนไปในปี 2025 โดยที่ผู้ซื้อส่วนใหญ่ไม่ทันสังเกต",
+    ],
+    steps: [
+      {
+        title: "รู้ไว้ว่าออเดอร์ที่ยังไม่จ่ายตายในหกชั่วโมง ไม่ใช่หนึ่งวัน",
+        body: "นี่คือข้อเท็จจริงที่ควรรู้ก่อนที่คุณจะสั่งอะไร Ktown4u เคยถือออเดอร์ที่ยังไม่จ่ายไว้ 24 ชั่วโมง และตัดลงเป็น 6 ชั่วโมง มีผลตั้งแต่วันที่ 19 กุมภาพันธ์ 2025 ตามเวลา KST โดยออเดอร์ที่ยังไม่จ่ายจะถูกยกเลิกอัตโนมัติหกชั่วโมงหลังสั่ง สำหรับแฟนที่สั่งตอนเที่ยงคืนในยุโรปหรืออเมริกา หกชั่วโมงเกาหลีผ่านไปจนหมดได้ระหว่างที่คุณหลับ และพรีออเดอร์ที่สั่งแล้วไม่จ่ายก็คือพรีออเดอร์ที่ไม่เคยถูกสั่ง",
+        pitfall:
+          "การจองของไว้ตอนนี้แล้วจ่ายตอนที่บัตรหรือวันเงินเดือนของคุณเอื้อ วิธีนั้นใช้ได้ภายใต้ช่วงเวลาแบบเก่า และใช้ไม่ได้ภายใต้แบบนี้",
+        takes: "จ่ายในเวลาที่คุณสั่ง",
+      },
+      {
+        title: "ถ้าคุณอยู่ในสหรัฐ ให้กันงบไว้สำหรับค่าธรรมเนียมที่เก็บกันที่หน้าประตู",
+        body: "ตั้งแต่วันที่ 2 มิถุนายน 2025 Ktown4u ใช้นโยบายค่าธรรมเนียมของ UPS กับการส่งไปสหรัฐ คือในกรณีที่มีภาษีศุลกากร ภาษี หรือค่าธรรมเนียมอื่นของรัฐที่ต้องชำระ จะมีการเก็บเพิ่ม 12 USD ถ้าภาษีเหล่านั้นไม่ได้ชำระล่วงหน้าทางอิเล็กทรอนิกส์ก่อนการส่งมอบ Ktown4u เรียกมันว่าค่าธรรมเนียม International Collect on Delivery และบอกว่ามันถูกเรียกเก็บจากผู้รับในสหรัฐในเวลาที่ส่งมอบ ทางออกก็ประกาศไว้ด้วย คือชำระภาษีล่วงหน้าผ่านระบบ UPS Import Prepaid Duties and Taxes ซึ่งมันบอกว่ารับ Apple Pay, Google Pay หรือบัตร Visa, Mastercard หรือ Discover",
+        pitfall:
+          "การถือว่ายอดรวมตอนเช็กเอาต์คือยอดรวมทั้งหมด ค่าธรรมเนียมนี้ไม่ได้ถูกเก็บโดย Ktown4u ตอนซื้อ มันมาพร้อมพัสดุ และมันคือสิบสองดอลลาร์ที่ทับอยู่บนภาษีเท่าไรก็ตามที่ต้องจ่ายจริง",
+        takes: "10 นาที ก่อนพัสดุถูกส่งออก",
+      },
+      {
+        title: "คิดค่าส่งตามอัตราปัจจุบัน ไม่ใช่อัตราของปีที่แล้ว",
+        body: "Ktown4u ขึ้นค่าส่งระหว่างประเทศ 7% มีผลตั้งแต่วันที่ 1 กุมภาพันธ์ 2026 เวลา 00:00 KST ซึ่งมันระบุว่ามาจากการปรับอัตราตามปกติของผู้ให้บริการขนส่ง นั่นเป็นจำนวนเล็กต่อพัสดุหนึ่งชิ้นและเป็นจำนวนใหญ่เมื่อรวมทั้งออเดอร์กลุ่ม และมันเป็นการเปลี่ยนแปลงประเภทที่ทำให้ตัวเลขประมาณค่าส่งจากบล็อกโพสต์อายุหนึ่งปีผิดไปอย่างเงียบ ๆ ตัวเลขที่นับคือตัวเลขที่ตะกร้าแสดงให้คุณเห็นในวินาทีที่คุณสั่ง",
+        pitfall:
+          "การตั้งงบออเดอร์กลุ่มจากสเปรดชีตที่ใครทำไว้เมื่อซีซันก่อน การปรับอัตราเป็นเรื่องปกติ ซึ่งหมายความว่าจะมีอีกครั้ง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ตรวจว่าประเทศของคุณยังมีวิธีจัดส่งที่คุณคาดไว้อยู่ไหม",
+        body: "วิธีจัดส่งถูกถอนออกเป็นรายประเทศ ไม่ใช่แค่ล่าช้า Ktown4u ระงับบริการ K-Packet ไปเยอรมนีและสเปนตั้งแต่วันที่ 17 มกราคม 2025 เพราะผู้ให้บริการไปรษณีย์ของเยอรมนีและสเปนถอนตัวจากข้อตกลง Prime Group ที่บริการนั้นทำงานอยู่บนนั้น วิธีจัดการที่มันระบุคือส่งอีเมลหาลูกค้าที่ได้รับผลกระทบเรื่องการย้ายไปใช้บริการจัดส่งอื่นและเรื่องค่าใช้จ่ายส่วนเพิ่ม ดังนั้นออเดอร์ที่สั่งไปแล้วเปลี่ยนราคาได้ภายหลัง วิธีที่คุณใช้ครั้งก่อนไม่ใช่วิธีที่คุณยังมีอยู่",
+        pitfall:
+          "การเลือกวิธีที่ถูกที่สุดตามความเคยชินแล้วไม่อ่านอีเมลที่ตามมา อีเมลนั้นคือที่ที่บริการแทนและค่าใช้จ่ายส่วนเพิ่มของมันถูกระบุชื่อไว้",
+        takes: "5 นาที ตอนเช็กเอาต์",
+      },
+      {
+        title: "อ่านประกาศการสะดุดรายประเทศ ซึ่งเจาะจงอย่างไม่ปกติ",
+        body: "Ktown4u ประกาศการสะดุดของการจัดส่งละเอียดลงไปถึงรหัสไปรษณีย์ ประกาศ EMS ของมันสำหรับสโลวาเกียลงวันที่ 4 เมษายน 2025 ระบุรหัสไปรษณีย์ที่ได้รับผลกระทบไว้ คือ 930 07, 930 06, 930 04, 930 03 และ 900 68 พร้อมสาเหตุ คือการระบาดของโรคปากและเท้าเปื่อยในสโลวาเกียตะวันตกเฉียงใต้และสถานการณ์ฉุกเฉินตั้งแต่วันที่ 25 มีนาคม 2025 โดยพัสดุถูกเก็บไว้ที่ไปรษณีย์ท้องถิ่นและผู้รับได้รับแจ้ง ความละเอียดนั้นคือประเด็น เมื่อการติดตามพัสดุหยุดเดินในภูมิภาคของคุณ หน้าประกาศมักบอกว่าเพราะอะไร และนั่นเป็นสถานการณ์ที่ต่างจากพัสดุที่หายไป",
+        pitfall:
+          "การเปิดเคลมพัสดุหายในช่วงการสะดุดที่ถูกประกาศและอธิบายไว้แล้ว ดูรายการประกาศของประเทศคุณก่อนจะเสียเวลาทั้งบ่ายไปกับการเคลม",
+        takes: "10 นาที",
+      },
+      {
+        title: "ถือว่าวันหยุดเกาหลีคือหนึ่งสัปดาห์ที่ไม่มีการส่งออกและไม่มีฝ่ายบริการ",
+        body: "Ktown4u หยุดทั้งสองซีกของการทำงานในช่วงวันหยุดเกาหลี และประกาศวันที่ไว้ทุกครั้ง สำหรับตรุษจีน 2026 การจัดส่งพัสดุหยุดตั้งแต่วันที่ 14 ถึง 18 กุมภาพันธ์ โดยการจัดส่งกลับมาเดินเรียงตามลำดับตั้งแต่วันที่ 19 กุมภาพันธ์ และฝ่ายบริการลูกค้าไม่ให้บริการในวันเดียวกันนั้น สำหรับชูซอก 2025 การหยุดกินตั้งแต่วันที่ 3 ถึง 9 ตุลาคม โดยทั้งสองอย่างกลับมาในวันที่ 10 มันเตือนทุกครั้งว่าความล่าช้าลากยาวเกินวันที่กลับมาเปิดได้ เพราะปริมาณออเดอร์ที่กองสะสมอยู่ข้างหลัง",
+        pitfall:
+          "การอ่านวันที่กลับมาเปิดว่าเป็นวันที่ได้รับของ มันคือวันที่คิวเริ่มขยับ และออเดอร์ของคุณก็อยู่ที่ไหนที่หนึ่งในคิวนั้น",
+        takes: "10 นาที ก่อนสั่งในช่วงวันหยุด",
+      },
+      {
+        title: "เขียนไปหาฝ่ายบริการภายในเวลาที่เขาเปิดจริง",
+        body: "Ktown4u ย้ายช่องทางบริการลูกค้าของตัวเองไปเป็นวันธรรมดา 10:00 ถึง 17:00 KST ตั้งแต่วันที่ 1 พฤศจิกายน 2023 โดยมีพักกลางวัน 12:30 ถึง 13:30 นั่นคือหน้าต่างห้าชั่วโมงครึ่ง ในวันทำงานของเกาหลี ซึ่งสำหรับผู้อ่านเว็บนี้ส่วนใหญ่ตกอยู่กลางดึก มันสำคัญที่สุดเมื่อวางคู่กับนาฬิกาจ่ายเงินหกชั่วโมง คือออเดอร์ที่สั่งเย็นวันศุกร์ในยุโรปหมดอายุได้ก่อนที่จะมีใครนั่งอยู่ที่โต๊ะให้ถาม",
+        pitfall:
+          "การคาดว่าจะได้คำตอบก่อนลงมือ แปลงเวลาเหล่านั้นเป็นเวลาของคุณเสียครั้งหนึ่ง จดไว้ และอย่าสันนิษฐานอะไรนอกช่วงนั้น",
+        takes: "5 นาที ครั้งเดียว",
+      },
+      {
+        title: "Ktown4u เป็นร้านที่ Hanteo รับรอง และคุณตรวจเองได้",
+        body: "ไกด์นี้เคยบอกว่าคำถามข้อนี้ตอบไม่ได้ เพราะ Ktown4u ไม่ได้ระบุไว้ในประกาศของตัวเอง มันตอบได้จากปลายอีกด้าน คือ Hanteo ประกาศรายชื่อร้าน Family ที่ได้รับการรับรองของตัวเองไว้ และ Ktown4U ก็อยู่ในทะเบียนนั้นด้วยรหัสแฟมิลี HF0082KTU001 Hanteo กำหนดให้ร้าน Family ออนไลน์ทุกร้านแสดงเครื่องหมาย Family ที่ลิงก์กลับไปที่ hanteochart.com และหน้าร้านของ Ktown4u เองก็ลิงก์ไปที่ทะเบียนเดียวกันนั้น ดังนั้นร้านกับชาร์ตก็ตรงกัน จากทั้งสองปลาย ตรวจเองเถอะ แทนที่จะรับไปจากที่นี่ ทะเบียนเปลี่ยนได้ และคำสั่งของ Hanteo คือให้ยืนยันรหัสและเครื่องหมายการรับรอง ซึ่งออกใหม่ทุกปี",
+        pitfall:
+          "การอ่านข้อนี้ว่าออเดอร์ของฉันจะไปปรากฏบนชาร์ตเกาหลีทุกชาร์ต Hanteo นับยอดขายที่ร้าน Family ของมันรายงานเข้ามา ส่วน Album Chart หลักของ Circle Chart นับยอดส่งขายส่งไปยังร้านค้าปลีกแทน ดังนั้นไม่มีออเดอร์ค้าปลีกใดขยับมันได้เลย และทั้งสองเจ้าก็ไม่ได้ประกาศกฎว่าออเดอร์จากต่างประเทศถูกนับเหมือนออเดอร์ในประเทศหรือไม่",
+        takes: "15 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ฉันมีเวลาจ่ายเงินสำหรับออเดอร์ Ktown4u นานแค่ไหน",
+        a: "หกชั่วโมง Ktown4u ตัดเวลาถือออเดอร์ที่ยังไม่จ่ายจาก 24 ชั่วโมงลงเป็น 6 ชั่วโมง มีผลตั้งแต่วันที่ 19 กุมภาพันธ์ 2025 ตามเวลา KST และบอกว่าออเดอร์ที่ยังไม่จ่ายถูกยกเลิกอัตโนมัติหกชั่วโมงหลังสั่ง ให้จ่ายในเวลาที่คุณสั่ง แทนที่จะวางแผนกลับมาจ่ายทีหลัง",
+      },
+      {
+        q: "ค่าธรรมเนียม 12 USD บนการส่งไปสหรัฐของฉันคืออะไร",
+        a: "คือค่าธรรมเนียม International Collect on Delivery ของ Ktown4u สำหรับการส่งด้วย UPS ไปสหรัฐ มีผลตั้งแต่วันที่ 2 มิถุนายน 2025 มันใช้ในกรณีที่มีภาษีศุลกากร ภาษี หรือค่าธรรมเนียมอื่นของรัฐที่ต้องชำระและไม่ได้ชำระล่วงหน้าทางอิเล็กทรอนิกส์ก่อนการส่งมอบ และถูกเรียกเก็บจากผู้รับตอนส่งมอบ การชำระล่วงหน้าผ่านระบบ UPS Import Prepaid Duties and Taxes เลี่ยงมันได้ โดย Ktown4u ไล่เรียงวิธีไว้ว่าเป็น Apple Pay, Google Pay และบัตร Visa, Mastercard หรือ Discover",
+      },
+      {
+        q: "ทำไมค่าส่งแพงกว่าเดิม",
+        a: "Ktown4u ขึ้นค่าส่งระหว่างประเทศ 7% ตั้งแต่วันที่ 1 กุมภาพันธ์ 2026 เวลา 00:00 KST โดยระบุว่ามาจากการปรับอัตราตามปกติของผู้ให้บริการขนส่ง ตามปกติหมายความว่าจะมีอีกครั้ง ดังนั้นให้คิดราคาออเดอร์กลุ่มจากตะกร้า ไม่ใช่จากตัวเลขประมาณของเก่า",
+      },
+      {
+        q: "วิธีจัดส่งที่ฉันใช้ประจำหายไป เกิดอะไรขึ้น",
+        a: "วิธีจัดส่งถูกถอนเป็นรายประเทศ Ktown4u ระงับ K-Packet ไปเยอรมนีและสเปนตั้งแต่วันที่ 17 มกราคม 2025 หลังผู้ให้บริการไปรษณีย์ของเยอรมนีและสเปนถอนตัวจากข้อตกลง Prime Group และบอกว่าจะส่งอีเมลหาลูกค้าที่ได้รับผลกระทบเรื่องการเปลี่ยนบริการและค่าใช้จ่ายส่วนเพิ่ม ถ้าออเดอร์ถูกสั่งไปแล้ว อีเมลนั้นคือที่ที่วิธีใหม่และราคาถูกระบุไว้",
+      },
+      {
+        q: "การติดตามพัสดุของฉันไม่ขยับ พัสดุหายไหม",
+        a: "ดูรายการประกาศของประเทศคุณก่อน Ktown4u ประกาศการสะดุดอย่างละเอียดผิดปกติ ประกาศ EMS สำหรับสโลวาเกียลงวันที่ 4 เมษายน 2025 ระบุรหัสไปรษณีย์ที่ได้รับผลกระทบทั้งห้ารหัสและมาตรการกักกันที่อยู่เบื้องหลังความล่าช้า และบอกว่าพัสดุจะถูกเก็บไว้ที่ไปรษณีย์ท้องถิ่นโดยผู้รับได้รับแจ้ง การสะดุดที่ประกาศไว้เป็นปัญหาที่ต่างจากพัสดุที่หายไป",
+      },
+      {
+        q: "ออเดอร์ของฉันจะเป็นอย่างไรในช่วงวันหยุดเกาหลี",
+        a: "ทั้งการส่งออกและฝ่ายบริการลูกค้าหยุดทั้งคู่ สำหรับตรุษจีน 2026 การจัดส่งพัสดุหยุดตั้งแต่วันที่ 14 ถึง 18 กุมภาพันธ์ และกลับมาเดินเรียงตามลำดับตั้งแต่วันที่ 19 โดยฝ่ายบริการไม่เปิดในวันเดียวกัน ส่วนชูซอก 2025 กินตั้งแต่วันที่ 3 ถึง 9 ตุลาคม โดยทั้งสองอย่างกลับมาในวันที่ 10 Ktown4u เตือนทุกครั้งว่างานที่กองค้างดันการจัดส่งให้เลยวันที่กลับมาเปิดได้",
+      },
+      {
+        q: "ฉันติดต่อฝ่ายบริการลูกค้าได้ตอนไหนจริง ๆ",
+        a: "วันธรรมดา 10:00 ถึง 17:00 KST โดยมีพักกลางวัน 12:30 ถึง 13:30 ตามที่กำหนดไว้ตั้งแต่วันที่ 1 พฤศจิกายน 2023 แปลงช่วงนั้นเป็นเขตเวลาของคุณก่อนที่คุณจะต้องใช้ เพราะเมื่อรวมกับนาฬิกาจ่ายเงินหกชั่วโมง ออเดอร์หมดอายุนอกเวลาเหล่านั้นได้",
+      },
+      {
+        q: "การซื้อจาก Ktown4u นับเข้าชาร์ตเกาหลีไหม",
+        a: "Ktown4U เป็นร้าน Family ที่ Hanteo รับรอง ขึ้นทะเบียนไว้ด้วยรหัส HF0082KTU001 ดังนั้นสำหรับ Hanteo ร้านนี้เป็นร้านที่รายงานยอด ซึ่งนั่นคือไกลสุดที่แหล่งข้อมูลสาธารณะไปถึง Hanteo ไม่ได้ประกาศกฎว่าออเดอร์จากต่างประเทศถูกนับเหมือนออเดอร์ในประเทศไหม และ Circle Chart ก็เป็นคำถามแยกอีกข้อ คือ Album Chart หลักของมันนับยอดส่งขายส่งไปยังร้านค้าปลีก ไม่ใช่ยอดขายปลีก ดังนั้นออเดอร์ที่นั่นไม่เปลี่ยนอะไรทั้งสองทาง ถ้าประเด็นอยู่ที่งานออกชุดหนึ่งโดยเฉพาะ ประกาศของศิลปินเองมักระบุชื่อร้านค้าปลีกที่เข้าร่วมสำหรับงานนั้นไว้",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pag-order sa Ktown4u: ang anim na oras na orasan ng bayad at ang bayaring walang bumabanggit",
+    summary:
+      "Kinakansela ang hindi nabayarang order matapos ang anim na oras, hindi ang dalawampu't apat. Puwedeng may 12 USD na bayaring kinokolekta sa pintuan mo ang parselang papuntang US. Tumaas ng 7% ang padalang pandaigdig noong Pebrero 2026, at tahimik na nawalan ng isang buong paraan ng padala ang dalawang bansa sa Europa.",
+    scope:
+      "Sakop nito ang pag-order ng pisikal na album at paninda sa Ktown4u para ihatid sa labas ng Korea, mula sa sariling abiso ng Ktown4u: ang orasan ng bayad, ang bayarin at paraan ng padala, ang mga paghinto tuwing pista, at ang oras ng suporta sa customer. Kung nag-uulat ba sa mga Koreanong album chart ang isang pagbiling Ktown4u ay sinasagot mula sa sariling talaan ng mga tindahang sertipikado ng Hanteo at hindi mula sa Ktown4u. Inilalabas muli at napapalitan ang mga abiso, kaya ang listahan ng abiso ang buhay na bersiyon.",
+    intro: [
+      "Ang Ktown4u ang talagang pinagbibilhan ng album ng malaking bahagi ng mga tagahangang pandaigdig, at halos walang nakasulat sa Ingles tungkol sa kung paano ito gumagana maliban sa sariling pahina ng abiso nito — na nasa Ingles, may petsa, at walang nagbabasa hangga't hindi huli ang isang parsela.",
+      "Ito ang pahinang iyon na binasa sa isang upuan. Ang unang bagay ang nagpapaubos ng order sa mga tao, at nagbago ito noong 2025 nang hindi napapansin ng karamihan ng namimili.",
+    ],
+    steps: [
+      {
+        title: "Alaming namamatay ang hindi nabayarang order sa anim na oras, hindi sa isang araw",
+        body: "Ito ang katotohanang mabuting malaman bago ka magpasa ng anuman. Hinahawakan ng Ktown4u ang hindi nabayarang order nang 24 oras at ibinawas ito sa 6, na may bisa noong 19 Pebrero 2025 KST, at kusang kinakansela ang hindi nabayarang order anim na oras matapos itong ipasa. Para sa tagahangang nag-order nang hatinggabi sa Europa o sa Amerika, puwedeng lubos na lumipas ang anim na oras ng Korea habang natutulog ka — at ang pre-order na ipinasa at hindi nabayaran ay pre-order na hindi kahit kailan ipinasa.",
+        pitfall:
+          "Ang pagreserba ng bagay ngayon at ang pagbabayad kapag pinapayagan ng kard mo o ng araw ng sueldo mo. Gumana iyon sa ilalim ng dating bintana at hindi gumagana sa ilalim nito.",
+        takes: "Magbayad sa oras na mag-order ka",
+      },
+      {
+        title: "Kung nasa US ka, magtabi para sa bayaring kinokolekta sa pintuan mo",
+        body: "Mula 2 Hunyo 2025 ay nag-aaplay ang Ktown4u ng patakaran sa bayad ng UPS sa kargamentong papuntang US: kung saan may utang na buwis sa customs, buwis o ibang bayad ng pamahalaan, may dagdag na 12 USD na kinokolekta kung hindi naunang bayaran ang mga buwis na iyon nang elektroniko bago ang paghahatid. Pinapangalanan ito ng Ktown4u na bayaring International Collect on Delivery, at sinasabi nitong ibinibill ito sa tatanggap sa US sa oras ng paghahatid. Nakalathala rin ang daan palabas — bayaran nang patiuna ang buwis sa sistemang UPS Import Prepaid Duties and Taxes, na sinasabi nitong tumatanggap ng Apple Pay, Google Pay, o ng isang kard na Visa, Mastercard o Discover.",
+        pitfall:
+          "Ang pagturing sa kabuuan sa checkout bilang ang kabuuan. Hindi kinokolekta ng Ktown4u ang bayaring ito sa pagbili; dumarating ito kasama ang parsela, at labindalawang dolyar ito sa ibabaw ng anumang buwis na talagang utang.",
+        takes: "10 minuto, bago maipadala ang parsela",
+      },
+      {
+        title: "Presyuhan ang padala laban sa kasalukuyang halaga, hindi sa nakaraang taon",
+        body: "Itinaas ng Ktown4u ang bayad sa pandaigdigang padala ng 7%, may bisa noong 1 Pebrero 2026 nang 00:00 KST, na iniuugnay nito sa karaniwang pagsasaayos ng halaga ng mga tagahatid. Maliit iyon kada parsela at malaki sa buong order ng grupo, at ito ang uri ng pagbabagong tahimik na nagpapamali sa tantiyang padala mula sa isang blog na isang taon nang luma. Ang bilang na binibilang ay ang ipinapakita sa iyo ng kart sa sandaling mag-order ka.",
+        pitfall:
+          "Ang pagbabadyet ng order ng grupo mula sa spreadsheet na ginawa ng isang tao noong nakaraang panahon. Karaniwan ang pagsasaayos ng halaga, at ang ibig sabihin niyon ay may isa pang darating.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tingnan kung mayroon pa ang bansa mo ng paraan ng padalang inaasahan mo",
+        body: "Inuurong ang paraan ng padala kada bansa, hindi lamang ipinapaantala. Itinigil ng Ktown4u ang serbisyong K-Packet sa Alemanya at Espanya mula 17 Enero 2025, dahil umurong ang mga operador ng koreo ng Alemanya at Espanya sa kasunduang Prime Group na pinatatakbuhan nito. Ang isinasaad nitong paghawak ay i-email ang naapektuhang customer tungkol sa paglipat sa ibang serbisyo ng padala at tungkol sa dagdag na gastos — kaya puwedeng magbago ang presyo ng isang orderng naipasa na pagkatapos. Ang paraang ginamit mo noong huli ay hindi paraang mayroon ka pa.",
+        pitfall:
+          "Ang pagpili sa pinakamurang paraan dahil sa ugali at ang hindi pagbasa sa kasunod na email. Ang email ang pinangangalanan ng kapalit na serbisyo at ng dagdag na gastos nito.",
+        takes: "5 minuto, sa checkout",
+      },
+      {
+        title: "Basahin ang abiso ng pagkaabala kada bansa, na hindi pangkaraniwang tiyak",
+        body: "Naglalathala ang Ktown4u ng pagkaabala sa paghahatid hanggang sa antas ng postal code. Pinapangalanan ng abiso nitong EMS para sa Slovakia noong 4 Abril 2025 ang mga apektadong postal code — 930 07, 930 06, 930 04, 930 03 at 900 68 — at ang sanhi, isang pagsiklab ng foot-and-mouth sa timog-kanlurang Slovakia at isang kalagayan ng emerhensiya mula 25 Marso 2025, kung saan hinahawakan ang parsela sa lokal na post office at inaabisuhan ang tatanggap. Ang detalye ang punto: kapag tumigil ang tracking para sa rehiyon mo, karaniwang sinasabi ng pahina ng abiso kung bakit, at ibang kalagayan iyon sa isang nawawalang parsela.",
+        pitfall:
+          "Ang pagbukas ng habol sa nawawalang parsela sa panahon ng pagkaabalang nakalathala at ipinaliwanag. Tingnan ang listahan ng abiso para sa bansa mo bago mo gugulin ang hapon sa isang habol.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Ituring ang pistang Koreano bilang linggong walang padala at walang suporta",
+        body: "Ipinapahinto ng Ktown4u ang dalawang kalahati ng operasyon nito tuwing pistang Koreano, at inilalathala nito ang mga petsa sa bawat pagkakataon. Para sa Lunar New Year 2026 ay huminto ang paghahatid ng parsela mula 14 hanggang 18 Pebrero at nagpatuloy ang paghahatid nang sunod-sunod mula 19 Pebrero, at wala ang suporta sa customer sa parehong mga araw. Para sa Chuseok 2025 ay tumakbo ang paghinto mula 3 hanggang 9 Oktubre at nagpatuloy ang dalawa sa ika-10. Nagbabala ito sa bawat pagkakataon na puwedeng lumagpas sa petsa ng pagpapatuloy ang pagkaantala dahil sa dami ng orderng naipon sa likod nito.",
+        pitfall:
+          "Ang pagbasa sa petsa ng pagpapatuloy bilang petsa ng paghahatid. Ito ang araw na nagsisimulang gumalaw ang pila, at nasa loob nito kung saan ang order mo.",
+        takes: "10 minuto bago mag-order sa pista",
+      },
+      {
+        title: "Sumulat sa suporta sa loob ng oras na talagang hinahawakan nito",
+        body: "Inilipat ng Ktown4u ang channel ng serbisyo sa customer nito sa karaniwang araw nang 10:00 hanggang 17:00 KST mula 1 Nobyembre 2023, na may pananghalian mula 12:30 hanggang 13:30. Isa iyong bintanang limang oras at kalahati, sa karaniwang araw sa Korea, na para sa karamihan ng mambabasa ng site na ito ay bumabagsak sa gitna ng gabi. Pinakamahalaga ito kasama ang anim na oras na orasan ng bayad: ang orderng ipinasa nang Biyernes ng gabi sa Europa ay puwedeng mapaso bago may nakaupo sa mesang matatanong.",
+        pitfall:
+          "Ang paghihintay ng sagot bago ka kumilos. Ikonberte ang mga oras na iyon sa sarili mo nang isang beses, isulat ito, at huwag ipagpalagay ang anuman sa labas nito.",
+        takes: "5 minuto, isang beses",
+      },
+      {
+        title: "Tindahang sertipikado ng Hanteo ang Ktown4u, at matitingnan mo iyon mismo",
+        body: "Sinasabi noon ng gabay na ito na hindi masasagot ang tanong, dahil hindi isinasaad ito ng Ktown4u sa sariling abiso nito. Masasagot ito mula sa kabilang dulo: inilalathala ng Hanteo ang sertipikadong tindahang Family nito, at nasa talaang iyon ang Ktown4U na may family code na HF0082KTU001. Hinihingi ng Hanteo sa bawat online na tindahang Family na ipakita ang markang Family na nakakawing pabalik sa hanteochart.com, at ang sariling storefront ng Ktown4u ay nakakawing sa parehong talaan — kaya sang-ayon ang tindahan at ang chart, mula sa dalawang dulo. Tingnan ito kaysa kunin ito mula rito: nagbabago ang talaan, at ang bilin ng Hanteo ay kumpirmahin ang code at ang markang sertipikasyon, na inilalabas muli bawat taon.",
+        pitfall:
+          "Ang pagbasa nito bilang “lalabas ang order ko sa bawat Koreanong chart”. Binibilang ng Hanteo ang bentang iniuulat ng tindahang Family nito; ang pangunahing Album Chart ng Circle Chart ay binibilang naman ang pakyawang kargamento sa mga tindahan, kaya walang orderng tingi na gumagalaw dito. At walang isa man sa kanilang naglalathala ng tuntunin kung itinuturing bang katulad ng isang lokal na order ang isang orderng galing sa ibang bansa.",
+        takes: "15 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Gaano katagal ang ibinibigay sa akin para bayaran ang isang order sa Ktown4u?",
+        a: "Anim na oras. Ibinawas ng Ktown4u ang panahon ng paghawak sa hindi nabayarang order mula 24 oras patungong 6, may bisa noong 19 Pebrero 2025 KST, at sinasabi nitong kusang kinakansela ang hindi nabayarang order anim na oras matapos ipasa. Magbayad sa oras na mag-order ka kaysa magplanong bumalik dito.",
+      },
+      {
+        q: "Ano ang 12 USD na bayarin sa paghahatid ko sa US?",
+        a: "Ang bayaring International Collect on Delivery ng Ktown4u para sa kargamentong UPS papuntang US, na may bisa mula 2 Hunyo 2025. Nauukol ito kung saan may utang na buwis sa customs, buwis o ibang bayad ng pamahalaan at hindi naunang bayaran nang elektroniko bago ang paghahatid, at ibinibill ito sa tatanggap sa paghahatid. Nailalagpasan ito ng paunang pagbabayad sa sistemang UPS Import Prepaid Duties and Taxes — inililista ng Ktown4u ang Apple Pay, Google Pay at Visa, Mastercard o Discover bilang paraan niyon.",
+      },
+      {
+        q: "Bakit mas mahal ang padala kaysa dati?",
+        a: "Itinaas ng Ktown4u ang bayad sa pandaigdigang padala ng 7% mula 1 Pebrero 2026 nang 00:00 KST, na iniuugnay nito sa karaniwang pagsasaayos ng halaga ng mga tagahatid. Ang karaniwan ay nangangahulugang may isa pang darating, kaya presyuhan ang order ng grupo mula sa kart at hindi mula sa lumang tantiya.",
+      },
+      {
+        q: "Nawala ang karaniwang paraan ng padala ko. Ano ang nangyari?",
+        a: "Inuurong ang paraan kada bansa. Itinigil ng Ktown4u ang K-Packet sa Alemanya at Espanya mula 17 Enero 2025 matapos umurong ang mga operador ng koreo ng Alemanya at Espanya sa kasunduang Prime Group, at sinabi nitong i-email nito ang naapektuhang customer tungkol sa paglipat ng serbisyo at sa dagdag na gastos. Kung naipasa na ang order, ang email na iyon ang pinangangalanan ng bagong paraan at presyo.",
+      },
+      {
+        q: "Hindi gumagalaw ang tracking ko. Nawala na ba ang parsela?",
+        a: "Tingnan muna ang listahan ng abiso para sa bansa mo. Naglalathala ang Ktown4u ng pagkaabala nang hindi pangkaraniwang detalyado — pinapangalanan ng abiso nitong EMS para sa Slovakia noong 4 Abril 2025 ang limang apektadong postal code at ang hakbang na kuwarentenas sa likod ng pagkaantala, at sinabi nitong hahawakan ang parsela sa lokal na post office at aabisuhan ang tatanggap. Ibang problema ang nakalathalang pagkaabala sa isang nawawalang parsela.",
+      },
+      {
+        q: "Ano ang mangyayari sa order ko tuwing pistang Koreano?",
+        a: "Tumitigil kapwa ang padala at ang suporta sa customer. Para sa Lunar New Year 2026 ay huminto ang paghahatid ng parsela mula 14 hanggang 18 Pebrero at nagpatuloy nang sunod-sunod mula ika-19, at wala ang suporta sa parehong mga araw; tumakbo ang Chuseok 2025 mula 3 hanggang 9 Oktubre at nagpatuloy ang dalawa sa ika-10. Nagbabala ang Ktown4u sa bawat pagkakataon na puwedeng itulak ng naipong trabaho ang paghahatid lagpas sa petsa ng pagpapatuloy.",
+      },
+      {
+        q: "Kailan ko talaga maaabot ang serbisyo sa customer?",
+        a: "Karaniwang araw nang 10:00 hanggang 17:00 KST, na may pananghalian nang 12:30 hanggang 13:30, gaya ng itinakda mula 1 Nobyembre 2023. Ikonberte iyon sa sariling sona mo bago mo kailanganin, dahil kasama ang anim na oras na orasan ng bayad ay puwedeng mapaso ang isang order sa labas ng mga oras na iyon.",
+      },
+      {
+        q: "Nabibilang ba sa mga Koreanong chart ang pagbili sa Ktown4u?",
+        a: "Sertipikadong tindahang Family ng Hanteo ang Ktown4U, nakalista sa code na HF0082KTU001, kaya para sa Hanteo ay nag-uulat na tindahan ito — at iyon ang pinakamalayong naabot ng isang pampublikong pinagmulan. Hindi naglalathala ang Hanteo ng tuntunin kung itinuturing bang katulad ng isang lokal na order ang isang orderng galing sa ibang bansa, at ibang tanong na muli ang Circle Chart: binibilang ng pangunahing Album Chart nito ang pakyawang kargamento sa mga tindahan at hindi ang bentang tingi, kaya walang binabago ang isang order doon sa anumang panig. Kung isang partikular na release ang punto, karaniwang pinapangalanan ng sariling anunsiyo ng artist ang mga kalahok na tindahan para dito.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

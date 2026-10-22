@@ -86,13 +86,23 @@ does, and a baseline taken today drifts tomorrow. Re-sourcing to the PR
 Newswire original is the fix; re-baselining is not. A warning that no
 re-baseline can clear is a signal about the citation, not about the page.
 
-**Doing what that warning asked found something much worse than drift**, and
-it is recorded in `HANDOFF.md` rather than here because it needs a decision:
-the site dates the NOL World rename to 1 December 2025 in six places, and the
-cited page carries no 1 December date anywhere — Yahoo's byline is the 2nd and
-the press release's own dateline is the 3rd. Twenty-plus translation strings
-carry the date too. Every fact on the page real, one of them in the wrong
-place, nothing in the suite able to see it: the station rows again. Note the asymmetry is real: that run
+**Doing what that warning asked found a sourcing gap under the site's
+most-repeated date.** The rename is dated 1 December 2025 in six places here
+and in twenty-plus translation strings, and the page cited for it carries no
+1 December date at all — Yahoo's byline is the 2nd, the press release's own
+dateline the 3rd, because it announces a change that had already happened.
+The date itself survived checking and stands; what does not is the citation.
+Details and the page to cite instead are in `HANDOFF.md`.
+
+**The useful part is the order those two things were established in.** The
+tempting move on finding a cited page that does not support its claim is to
+correct the claim — which here would have been wrong, and would have rewritten
+a date across ten editions. The second tempting move, having confirmed the
+date from several places, is to consider it sourced; but a convergent reading
+of search results is not a source this site accepts, and the distinction is
+the entire premise. So the claim stands, the labels that misdescribed the page
+are fixed, and the gap is written down as a gap rather than closed with the
+evidence that happened to be reachable. Note the asymmetry is real: that run
 reported `1 needing action, 1 worth a look` **after** writing, because leaving
 a warning standing is what it is for.
 

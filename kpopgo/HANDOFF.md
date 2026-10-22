@@ -118,28 +118,32 @@ appear in `main` under different ones:
   fix is to re-source to the PR Newswire original the page is a syndication
   of, which needs `prnewswire.com` on the allowlist first — do not declare it
   before somebody can read it.
-- **⚠ The site says the rename happened on 1 December 2025 and the cited
-  source does not say that.** Found by doing what the drift warning asks —
-  re-reading the page against the guides that cite it. The page carries no
-  1 December date at all: Yahoo's byline is 2 December 2025 and the press
-  release's own dateline is **SEOUL … Dec. 3, 2025 /PRNewswire/**. The two
-  source *labels* claimed "1 Dec 2025" for the announcement, which is
-  unambiguously wrong about the page they point at, and they are corrected.
+- **1 December 2025 is right, and nothing we cite says so. That is the open
+  item — a sourcing gap, not a factual error.** Found by doing what the drift
+  warning asks: re-reading the page against the guides citing it. The Yahoo
+  page carries no 1 December date anywhere — its byline is 2 December 2025 and
+  the press release's own dateline is **SEOUL … Dec. 3, 2025 /PRNewswire/**.
 
-  The factual claim is **not** corrected and needs a decision, because it is
-  asserted in six places in `content/guides.ts` — including a guide's own
-  description and two FAQ answers — and carried in **twenty-plus translation
-  strings across at least five languages** (`2025년 12월 1일`, `12月1日`,
-  `1 de diciembre de 2025`, `1 Desember 2025`, `ngày 1 tháng 12`,
-  `1 ธันวาคม`). `CLAUDE.md`'s own rename table says 1 December too.
+  The site asserts 1 December in six places in `content/guides.ts` and in
+  twenty-plus translation strings across at least five languages, so it was
+  worth settling rather than guessing. It is settled, and the date stands:
+  NOL World's own account announced the change as taking effect 1 December,
+  its site ran a rebranding giveaway from 1 to 24 December, 디지털데일리 and
+  파이낸셜뉴스 reported the 개편 on 2 December, and 나무위키 records 1 December.
+  The press release is the announcement of a change that had already
+  happened, which is why its dateline is later. Both source *labels* claimed
+  "1 Dec 2025" for that announcement and are corrected to the date it
+  actually carries.
 
-  Either the rebrand took effect on 1 December and was announced on the 3rd —
-  in which case the claim may be right and this source does not support it, so
-  it needs one that does — or the date is simply wrong and every one of those
-  strings is. Do not guess between those: the one source that would settle it
-  is NOL World's own announcement, and `world.nol.com` 403s from CloudFront
-  here. This is exactly the station-rows shape: every fact real, one of them
-  in the wrong place, and no check in the suite can see it.
+  **What is left is a citation that states the date.** The convergent evidence
+  above came from search results, not from a page anybody here read, and that
+  is not what this site counts as a source. The one to cite is NOL World's own
+  rebranding article —
+  `world.nol.com/en/content/articles/46e54f60-eb89-4f75-b1de-d33536f3b1f3`
+  ("We're rebranding") — which cannot be read from this container, since
+  `world.nol.com` 403s from CloudFront. Read it, confirm it gives 1 December,
+  and add it to both guides' `sources`. Until then the site's most-repeated
+  date rests on a page that does not contain it.
 - **KSPO DOME's host is found: `www.ksponco.or.kr`.** It was declared for
   weeks as `www.kspo.or.kr` under the comment "KSPO Dome operator", which is
   the foundation that *owns* the park — a corporate site that answers 302 to a

@@ -11490,6 +11490,238 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Cancelando um ingresso da NOL World: o prazo, a taxa e o dinheiro que você perde mesmo assim",
+    summary:
+      "O prazo de cancelamento é a tarde do dia anterior ao show no horário coreano, os sábados são mais cedo que o resto da semana, e um ingresso integralmente reembolsado ainda pode custar dinheiro a quem usa cartão estrangeiro. E mais: enviar o ingresso para o seu amigo tira de você o botão de cancelar.",
+    scope:
+      "Cobre o cancelamento de um ingresso de espetáculo na NOL World, como a NOL World o documenta: os prazos, onde a taxa é mostrada, como o reembolso chega a um cartão estrangeiro, e o que torna o cancelamento impossível. A NOL World não publica uma tabela central de taxas e esta página não inventa uma. Produtos de turismo e atividades seguem políticas próprias e só são citados onde diferem.",
+    intro: [
+      "Um fã do exterior cancela por motivos que um fã local raramente tem: um visto, um voo de conexão, uma escala de trabalho que mudou. Então as regras de cancelamento importam mais para este público do que para aquele para o qual foram escritas — e elas são rígidas, presas a um fuso horário, e em dois pontos assimétricas de um jeito que ninguém adivinharia.",
+      "Dois dos fatos abaixo vale saber antes de comprar, e não depois. Shows de sábado fecham para cancelamento seis horas mais cedo que em qualquer outro dia. E um cancelamento que a NOL World processa integralmente ainda pode deixar quem usa cartão estrangeiro no prejuízo, o que não é erro de ninguém e também não é problema de ninguém resolver para você.",
+    ],
+    steps: [
+      {
+        title: "Aprenda o prazo antes de comprar, porque ele não é o dia do show",
+        body: "A NOL World fecha os cancelamentos de espetáculo no dia anterior, e não no dia: 17h KST do dia anterior ao show em dias de semana e feriados, e 11h KST do dia anterior num show de sábado. A regra do sábado é a que pega as pessoas — é seis horas mais cedo que no resto da semana, e vale para a apresentação de sábado, então o prazo cai na manhã de sexta no horário coreano.",
+        pitfall:
+          "Calcular “o dia anterior” no seu próprio calendário. Para um show de sábado à noite em Seul, 11h KST da sexta é quinta à noite em Nova York. O prazo pode cair um dia inteiro antes do que parece.",
+        takes: "5 minutos, antes de pagar",
+      },
+      {
+        title: "Use a janela gratuita se você está em dúvida",
+        body: "Existe um período sem taxa, e ele é curto: a NOL World diz que, para ingressos, cancelar até 23:59 do dia da sua reserva significa nenhuma taxa de cancelamento. Então a decisão que você pode reverter de graça é a que você toma no mesmo dia em que comprou. Depois da meia-noite, custa algo.",
+        pitfall:
+          "Supor que 23:59 é a sua própria meia-noite. A NOL World nomeia o KST explicitamente nos outros prazos de cancelamento e não nomeia fuso neste, então a leitura segura é horário coreano — e, de todo modo, uma decisão tomada nos últimos dez minutos de uma janela é uma decisão tomada tarde demais.",
+        takes: "—",
+      },
+      {
+        title: "Saiba onde fica o botão, e o que significa quando ele não está lá",
+        body: "O caminho é App ou Web, depois Account/My, depois My Reservations, depois Ticket Reservation List, depois a reserva, depois Cancel Reservation na página de detalhes. Se o botão Cancel Reservation não estiver na página de detalhes de jeito nenhum, a instrução da NOL World é procurar o atendimento ao cliente em vez de continuar procurando: um atendente confirma com o fornecedor a elegibilidade do cancelamento, a taxa e o valor do reembolso, e depois orienta você. Você pode acompanhar o pedido na página de detalhes da reserva, e um e-mail de confirmação chega quando ele se conclui.",
+        pitfall:
+          "Ler um botão ausente como defeito do site e tentar de novo por uma hora. É um status, e o relógio do primeiro passo continua correndo enquanto você tenta.",
+        takes: "15 minutos, mais o tempo do atendimento",
+      },
+      {
+        title: "Não espere tabela de taxas; tire o número da sua própria reserva",
+        body: "Não existe tabela de taxas publicada para se planejar. Perguntada quanto é a taxa de cancelamento, a NOL World responde com um caminho — Web/App, Account/My, My Reservations, Reservation Details — porque o valor é uma propriedade da sua compra, e não da plataforma. Em produtos de turismo e atividades, a taxa e o valor do reembolso são mostrados a você quando você aperta Cancel Reservation, antes de confirmar. Não vamos imprimir aqui uma porcentagem com a qual a sua reserva pode não concordar.",
+        pitfall:
+          "Planejar com base numa tabela de taxas de um post de blog. Qualquer guia que cite uma porcentagem fixa de cancelamento coreana para o seu show está citando algo que a NOL World não publica.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Confira o cancelamento parcial enquanto você ainda está comprando",
+        body: "Cancelar dois assentos de quatro é possível em alguns shows e não em outros, e a instrução da NOL World é conferir o status de cancelamento parcial enquanto você está comprando — ou seja, antes de ser aquilo de que você precisa. Produtos de turismo e atividades não o permitem de jeito nenhum: ali o caminho é cancelar a compra inteira e comprar de novo, e a NOL World avisa com clareza que a disponibilidade não é garantida depois e que comprar de novo pode não ser possível.",
+        pitfall:
+          "Comprar quatro assentos na suposição de que os dois amigos incertos podem ser retirados depois. Num show sem cancelamento parcial, a escolha passa a ser todos os quatro ou nenhum.",
+        takes: "2 minutos, na compra",
+      },
+      {
+        title: "Entenda que um reembolso integral ainda pode custar dinheiro a quem usa cartão estrangeiro",
+        body: "Esta é a parte escrita para este público e quase nunca explicada em inglês. A NOL World afirma que, onde um cartão de crédito estrangeiro foi usado, pode ocorrer um ganho ou uma perda de câmbio por causa da diferença entre a taxa de câmbio da data da compra e a taxa da data do cancelamento — e, separadamente, que tarifas de transação internacional podem ser aplicadas mesmo tendo a transação sido cancelada. Nenhuma das duas é um desconto que a NOL World faz. As duas são da administradora do seu cartão, e a orientação da NOL World é perguntar a ela as taxas e tarifas exatas.",
+        pitfall:
+          "Ler um valor reembolsado menor que o valor cobrado como erro ou taxa oculta. A diferença pode ser a cotação se movendo entre duas datas, e quem pode explicar isso é o seu banco, não a plataforma de ingressos.",
+        takes: "Uma ligação para o seu banco",
+      },
+      {
+        title: "Dê ao reembolso o tempo que a rede do cartão precisa",
+        body: "Se a transação ainda não chegou à administradora do seu cartão, a NOL World diz que o cancelamento se conclui de imediato. Se chegou, e o valor do pagamento já foi liquidado, espere algo em torno de 5 a 7 dias para a administradora reverter, e que o valor cancelado seja descontado da fatura do mês seguinte em vez de devolvido como um pagamento. A NOL World observa que as políticas de reembolso diferem entre administradoras, então a sua é a autoridade sobre o próprio prazo.",
+        pitfall:
+          "Abrir uma contestação no seu banco enquanto a reversão está em curso. Um chargeback numa transação que já está sendo cancelada cria um segundo problema numa conta com a qual você talvez queira comprar de novo.",
+        takes: "5 a 7 dias",
+      },
+      {
+        title: "Não envie o ingresso digital até ter certeza de que você vai",
+        body: "Esta é a armadilha que justifica a página inteira. O compartilhamento de ingresso digital permite que o comprador envie um ingresso à pessoa que vai assistir — e a NOL World afirma que, uma vez que o ingresso digital tenha sido enviado com sucesso, o cancelamento da reserva fica restringido. O caminho de volta é do destinatário: se ele descadastrar o ingresso, o cancelamento volta a ser possível. Antes do cadastro existem saídas mais suaves — quem enviou pode apertar Cancel Send enquanto o ingresso está sem cadastro, e um ingresso sem cadastro volta automaticamente depois de 24 horas ou até a data da apresentação.",
+        pitfall:
+          "Enviar os ingressos para os amigos na semana da compra, como a atitude organizada a tomar. O botão de cancelar passa na prática a ser deles, e recuperá-lo significa pedir a eles que abram mão do ingresso primeiro.",
+        takes: "—",
+      },
+      {
+        title: "Leia as políticas de turismo e atividades separadamente",
+        body: "Se a sua compra é um tour, um traslado ou uma atividade e não um ingresso de espetáculo, nada do que está acima é um padrão seguro. A NOL World diz que alguns desses produtos não podem ser cancelados de jeito nenhum depois de comprados, e que uma taxa de cancelamento de 100% pode ser aplicada mesmo no dia da compra. A política que vale é a da própria página de detalhes do produto e do voucher, e a NOL World pede que você a leia antes de enviar um pedido de cancelamento.",
+        pitfall:
+          "Levar as regras do ingresso para um pacote comprado na mesma sessão. A janela gratuita do mesmo dia é uma regra de ingresso de espetáculo, e um produto de turismo pode ser não reembolsável desde o instante em que você paga.",
+        takes: "10 minutos por produto",
+      },
+    ],
+    faq: [
+      {
+        q: "Qual é exatamente o prazo de cancelamento de um espetáculo?",
+        a: "O dia anterior ao show, no horário coreano. A NOL World informa 17h KST do dia anterior para dias de semana e feriados, e 11h KST do dia anterior para apresentações de sábado. Converta com cuidado contra a sua própria data — um prazo de 11h KST na sexta é quinta à noite em boa parte das Américas.",
+      },
+      {
+        q: "Existe algum cancelamento gratuito?",
+        a: "Para ingressos de espetáculo, sim, no dia da compra: a NOL World diz que cancelar até 23:59 do dia da sua reserva não tem taxa de cancelamento. Ela não nomeia fuso horário nesse caso enquanto nomeia o KST nos outros, então trate como horário coreano e não deixe para o limite. Produtos de turismo e atividades são diferentes — alguns cobram 100% mesmo no mesmo dia.",
+      },
+      {
+        q: "Quanto é a taxa de cancelamento?",
+        a: "A NOL World não publica uma tabela. Perguntada isso, ela dá um caminho — Web ou App, Account/My, My Reservations, Reservation Details — porque o valor pertence à sua compra. Em produtos de turismo e atividades, apertar Cancel Reservation mostra a você a taxa de cancelamento e o valor do reembolso antes de confirmar. Qualquer guia em inglês que cite uma porcentagem fixa para o seu show está citando um número que a plataforma não declara.",
+      },
+      {
+        q: "Cancelei dentro do prazo e recebi menos do que paguei. Para onde foi o resto?",
+        a: "Provavelmente não para a NOL World. Ela afirma que um cartão estrangeiro pode produzir um ganho ou uma perda de câmbio pela diferença entre as cotações da data da compra e da data do cancelamento, e que tarifas de transação internacional ainda podem ser aplicadas mesmo tendo a transação sido cancelada. As duas coisas são da administradora do seu cartão, e a própria orientação da NOL World é perguntar a ela as taxas e tarifas exatas.",
+      },
+      {
+        q: "Quanto tempo o dinheiro leva para voltar?",
+        a: "Se a transação ainda não chegou à administradora do seu cartão, o cancelamento se conclui de imediato. Se chegou, a NOL World diz cerca de 5 a 7 dias para a administradora cancelar a transação, com o valor descontado da fatura do mês seguinte. As administradoras diferem, então a sua é quem pode informar você.",
+      },
+      {
+        q: "Eu já enviei o ingresso digital para o meu amigo. Ainda posso cancelar?",
+        a: "Não enquanto ele estiver com o ingresso. A NOL World diz que o cancelamento da reserva fica restringido quando um ingresso digital foi enviado com sucesso, e volta a ser possível se o destinatário o descadastrar. Se o ingresso ainda não foi cadastrado, você tem saídas mais fáceis: quem enviou pode apertar Cancel Send, e um ingresso sem cadastro volta automaticamente depois de 24 horas ou até a data da apresentação.",
+      },
+      {
+        q: "Posso cancelar dois dos meus quatro assentos?",
+        a: "Depende do show, e a orientação da NOL World é conferir o status de cancelamento parcial na hora da compra e não na hora em que você precisa. Produtos de turismo e atividades não têm cancelamento parcial de jeito nenhum — você cancelaria a compra inteira e compraria de novo, sem garantia de que o estoque ainda está lá.",
+      },
+      {
+        q: "O botão Cancel Reservation não está na minha página de reserva.",
+        a: "A NOL World trata isso como um caso para o atendimento ao cliente e não como um defeito para tentar de novo. Um atendente confirma primeiro com o fornecedor a elegibilidade, a taxa e o valor do reembolso. Procure-os logo, porque o prazo da primeira resposta continua correndo enquanto você espera.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Annuler un billet NOL World : la date limite, les frais, et l'argent que vous perdez quand même",
+    summary:
+      "La date limite d'annulation est l'après-midi de la veille du concert, heure coréenne, les samedis tombent plus tôt que le reste de la semaine, et un billet intégralement remboursé peut tout de même coûter de l'argent au titulaire d'une carte étrangère. Et puis : envoyer le billet à votre ami vous retire le bouton d'annulation.",
+    scope:
+      "Couvre l'annulation d'un billet de spectacle sur NOL World, telle que NOL World la documente : les dates limites, où les frais sont affichés, comment le remboursement atteint une carte étrangère, et ce qui rend l'annulation impossible. NOL World ne publie pas de barème central de frais et cette page n'en invente pas un. Les produits de tourisme et d'activités suivent leurs propres règles et ne sont signalés que là où elles diffèrent.",
+    intro: [
+      "Un fan de l'étranger annule pour des raisons qu'un fan local a rarement : un visa, un vol en correspondance, un planning de travail qui a bougé. Les règles d'annulation comptent donc davantage pour ce public que pour celui auquel elles étaient destinées — et elles sont strictes, rattachées à un fuseau horaire, et asymétriques en deux endroits d'une manière que personne ne devinerait.",
+      "Deux des faits ci-dessous valent d'être connus avant de réserver plutôt qu'après. Les concerts du samedi ferment à l'annulation six heures plus tôt que tous les autres jours. Et une annulation que NOL World traite intégralement peut tout de même laisser le titulaire d'une carte étrangère de sa poche, ce qui n'est la faute de personne et n'est pas non plus à personne de réparer pour vous.",
+    ],
+    steps: [
+      {
+        title: "Apprenez la date limite avant de réserver, car ce n'est pas le jour du concert",
+        body: "NOL World ferme les annulations de spectacle la veille, et non le jour même : 17h KST la veille du concert pour les jours de semaine et les jours fériés, et 11h KST la veille pour un concert du samedi. La règle du samedi est celle qui piège : elle tombe six heures plus tôt que le reste de la semaine, et elle s'applique à la représentation du samedi, de sorte que la date limite tombe le vendredi matin heure coréenne.",
+        pitfall:
+          "Calculer « la veille » sur votre propre calendrier. Pour un concert du samedi soir à Séoul, 11h KST le vendredi, c'est le jeudi soir à New York. La date limite peut tomber un jour entier plus tôt qu'elle n'en a l'air.",
+        takes: "5 minutes, avant de payer",
+      },
+      {
+        title: "Servez-vous de la fenêtre gratuite si vous hésitez",
+        body: "Il existe une période sans frais, et elle est courte : NOL World indique que pour les billets, annuler avant 23h59 le jour de votre réservation n'entraîne aucuns frais d'annulation. La décision que vous pouvez revenir gratuitement est donc celle que vous prenez le jour même de la réservation. Après minuit, cela coûte quelque chose.",
+        pitfall:
+          "Supposer que 23h59 est votre propre minuit. NOL World nomme explicitement le KST sur les autres dates limites d'annulation et ne nomme aucun fuseau sur celle-ci : la lecture prudente est donc l'heure coréenne — et de toute façon, une décision prise dans les dix dernières minutes d'une fenêtre est une décision prise trop tard.",
+        takes: "—",
+      },
+      {
+        title: "Sachez où se trouve le bouton, et ce que veut dire son absence",
+        body: "Le chemin est App ou Web, puis Account/My, puis My Reservations, puis Ticket Reservation List, puis la réservation, puis Cancel Reservation sur la page de détail. Si le bouton Cancel Reservation n'est pas du tout sur la page de détail, la consigne de NOL World est de contacter le service client au lieu de continuer à chercher : un conseiller confirme auprès du fournisseur l'éligibilité à l'annulation, les frais et le montant du remboursement, puis vous guide. Vous pouvez suivre la demande depuis la page de détail de la réservation, et un e-mail de confirmation arrive quand elle aboutit.",
+        pitfall:
+          "Prendre un bouton absent pour une panne du site et réessayer pendant une heure. C'est un statut, et l'horloge de la première étape continue de tourner pendant que vous réessayez.",
+        takes: "15 minutes, plus le temps du service client",
+      },
+      {
+        title: "N'attendez pas de barème ; tirez le chiffre de votre propre réservation",
+        body: "Il n'existe pas de tableau de frais publié sur lequel bâtir un plan. Interrogée sur le montant des frais d'annulation, NOL World répond par un chemin — Web/App, Account/My, My Reservations, Reservation Details — parce que le chiffre est une propriété de votre réservation et non de la plateforme. Pour les produits de tourisme et d'activités, les frais et le montant du remboursement vous sont affichés quand vous appuyez sur Cancel Reservation, avant de confirmer. Nous n'allons pas imprimer ici un pourcentage avec lequel votre réservation pourrait ne pas être d'accord.",
+        pitfall:
+          "Bâtir un plan sur un barème trouvé dans un billet de blog. Tout guide citant un pourcentage d'annulation coréen fixe pour votre concert cite quelque chose que NOL World ne publie pas.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Vérifiez l'annulation partielle pendant que vous réservez encore",
+        body: "Annuler deux places sur quatre est possible pour certains concerts et pas pour d'autres, et la consigne de NOL World est de vérifier l'état de l'annulation partielle pendant que vous réservez — c'est-à-dire avant que ce soit ce dont vous avez besoin. Les produits de tourisme et d'activités ne la permettent pas du tout : là, la voie est d'annuler toute la réservation et de recommencer, et NOL World avertit clairement que la disponibilité n'est pas garantie ensuite et qu'une nouvelle réservation peut se révéler impossible.",
+        pitfall:
+          "Réserver quatre places en supposant que les deux amis incertains pourront être retirés plus tard. Pour un concert sans annulation partielle, le choix devient les quatre ou aucune.",
+        takes: "2 minutes, à la réservation",
+      },
+      {
+        title: "Comprenez qu'un remboursement intégral peut tout de même coûter de l'argent à une carte étrangère",
+        body: "C'est la partie écrite pour ce public et presque jamais expliquée en anglais. NOL World indique que lorsqu'une carte de crédit étrangère a été utilisée, un gain ou une perte de change peut survenir du fait de l'écart entre le taux de change à la date de réservation et celui à la date d'annulation — et, séparément, que des frais de transaction internationale peuvent être appliqués bien que la transaction ait été annulée. Ni l'un ni l'autre n'est une retenue faite par NOL World. Les deux viennent de l'émetteur de votre carte, et le conseil de NOL World est de lui demander les taux et frais exacts.",
+        pitfall:
+          "Lire un montant remboursé inférieur au montant débité comme une erreur ou des frais cachés. L'écart peut être le taux de change qui a bougé entre deux dates, et la personne qui peut l'expliquer est votre banque, pas la plateforme de billetterie.",
+        takes: "Un appel à votre banque",
+      },
+      {
+        title: "Laissez au remboursement le temps qu'il faut au réseau de la carte",
+        body: "Si la transaction n'a pas encore atteint l'émetteur de votre carte, NOL World indique que l'annulation aboutit immédiatement. Si elle l'a atteint et que le montant du paiement a été réglé, comptez environ 5 à 7 jours pour que l'émetteur la contrepasse, et le montant annulé sera déduit du relevé du mois suivant plutôt que rendu sous forme de versement. NOL World note que les politiques de remboursement diffèrent d'un émetteur à l'autre : le vôtre fait donc autorité sur ses propres délais.",
+        pitfall:
+          "Ouvrir un litige auprès de votre banque pendant que la contrepassation est en cours. Une contestation sur une transaction déjà en cours d'annulation crée un second problème sur un compte avec lequel vous voudrez peut-être réserver à nouveau.",
+        takes: "5 à 7 jours",
+      },
+      {
+        title: "N'envoyez pas le billet mobile avant d'être certain d'y aller",
+        body: "C'est le piège qui justifie la page entière. Le partage de billet mobile permet à l'acheteur d'envoyer un billet à la personne qui assiste au concert — et NOL World précise qu'une fois le billet mobile envoyé avec succès, l'annulation de la réservation est bloquée. Le chemin du retour appartient au destinataire : s'il désenregistre le billet, l'annulation redevient possible. Avant l'enregistrement, il existe des sorties plus douces — l'expéditeur peut appuyer sur Cancel Send tant que le billet n'est pas enregistré, et un billet non enregistré revient automatiquement au bout de 24 heures ou à la date de la représentation.",
+        pitfall:
+          "Envoyer les billets aux amis la semaine de la réservation, par souci d'organisation. Le bouton d'annulation est désormais le leur dans les faits, et le récupérer suppose de leur demander d'abord de renoncer au billet.",
+        takes: "—",
+      },
+      {
+        title: "Lisez séparément les règles de tourisme et d'activités",
+        body: "Si votre réservation est un circuit, un transfert ou une activité plutôt qu'un billet de spectacle, rien de ce qui précède n'est un réglage par défaut fiable. NOL World indique que certains de ces produits ne peuvent pas être annulés du tout une fois achetés, et que des frais d'annulation de 100% peuvent s'appliquer même le jour de l'achat. La règle qui s'impose est celle de la page de détail du produit et de son bon, et NOL World vous demande de la lire avant de soumettre une demande d'annulation.",
+        pitfall:
+          "Transposer les règles du billet à un forfait réservé dans la même session. La fenêtre gratuite du jour même est une règle de billet de spectacle, et un produit de tourisme peut être non remboursable dès l'instant où vous payez.",
+        takes: "10 minutes par produit",
+      },
+    ],
+    faq: [
+      {
+        q: "Quelle est exactement la date limite d'annulation pour un spectacle ?",
+        a: "La veille du concert, heure coréenne. NOL World donne 17h KST la veille pour les jours de semaine et les jours fériés, et 11h KST la veille pour les représentations du samedi. Convertissez-la soigneusement par rapport à votre propre date — une date limite à 11h KST le vendredi, c'est le jeudi soir dans une grande partie des Amériques.",
+      },
+      {
+        q: "Existe-t-il une annulation gratuite ?",
+        a: "Pour les billets de spectacle, oui, le jour de la réservation : NOL World indique qu'annuler avant 23h59 le jour de votre réservation n'entraîne aucuns frais d'annulation. Elle ne nomme pas de fuseau horaire sur ce point alors qu'elle nomme le KST sur les autres : traitez-le donc comme l'heure coréenne et ne jouez pas la limite. Les produits de tourisme et d'activités sont différents — certains facturent 100% même le jour même.",
+      },
+      {
+        q: "À combien s'élèvent les frais d'annulation ?",
+        a: "NOL World ne publie pas de barème. Interrogée là-dessus, elle donne un chemin — Web ou App, Account/My, My Reservations, Reservation Details — parce que le chiffre appartient à votre réservation. Pour les produits de tourisme et d'activités, appuyer sur Cancel Reservation vous affiche les frais d'annulation et le montant du remboursement avant confirmation. Tout guide en anglais citant un pourcentage fixe pour votre concert cite un chiffre que la plateforme n'énonce pas.",
+      },
+      {
+        q: "J'ai annulé dans les délais et j'ai récupéré moins que ce que j'avais payé. Où est passé le reste ?",
+        a: "Probablement pas chez NOL World. Elle indique qu'une carte étrangère peut produire un gain ou une perte de change du fait de l'écart entre les taux de la date de réservation et de la date d'annulation, et que des frais de transaction internationale peuvent s'appliquer malgré l'annulation de la transaction. Les deux relèvent de l'émetteur de votre carte, et le conseil de NOL World elle-même est de lui demander les taux et frais exacts.",
+      },
+      {
+        q: "Combien de temps l'argent met-il à revenir ?",
+        a: "Si la transaction n'a pas encore atteint l'émetteur de votre carte, l'annulation aboutit immédiatement. Si elle l'a atteint, NOL World indique environ 5 à 7 jours pour que l'émetteur annule la transaction, le montant étant déduit du relevé du mois suivant. Les émetteurs diffèrent : le vôtre est celui qui peut vous renseigner.",
+      },
+      {
+        q: "J'ai déjà envoyé le billet mobile à mon ami. Puis-je encore annuler ?",
+        a: "Pas tant qu'il le détient. NOL World indique que l'annulation de la réservation est bloquée dès qu'un billet mobile a été envoyé avec succès, et qu'elle redevient possible si le destinataire le désenregistre. Si le billet n'a pas encore été enregistré, vous avez des sorties plus simples : l'expéditeur peut appuyer sur Cancel Send, et un billet non enregistré revient automatiquement au bout de 24 heures ou à la date de la représentation.",
+      },
+      {
+        q: "Puis-je annuler deux de mes quatre places ?",
+        a: "Cela dépend du concert, et le conseil de NOL World est de vérifier l'état de l'annulation partielle au moment de réserver plutôt qu'au moment où vous en avez besoin. Les produits de tourisme et d'activités ne prennent pas du tout en charge l'annulation partielle — il faudrait annuler toute la réservation et recommencer, sans garantie que les places soient encore là.",
+      },
+      {
+        q: "Le bouton Cancel Reservation n'est pas sur ma page de réservation.",
+        a: "NOL World traite cela comme un cas pour le service client et non comme une panne à réessayer. Un conseiller confirme d'abord auprès du fournisseur l'éligibilité, les frais et le montant du remboursement. Contactez-les tôt, car la date limite de la première réponse continue de courir pendant que vous attendez.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

@@ -81,6 +81,7 @@ const FIXED = [
   // them keeps the layout check rendering the page a reader actually gets.
   ["www.googletagmanager.com", "GA4, loaded client-side"],
   ["pagead2.googlesyndication.com", "AdSense, loaded client-side once ids are set"],
+  ["www.clarity.ms", "Microsoft Clarity, loaded client-side once the id is set"],
 ];
 
 /**

@@ -51,6 +51,20 @@ export const site = {
   /** Set NEXT_PUBLIC_GA_ID in the environment to switch GA4 on. */
   gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
   /**
+   * Microsoft Clarity, set the same way and for the question GA4 cannot
+   * answer: GA4 says a page was read, Clarity shows where the reader stopped
+   * reading it. On a site whose pages are ten-step procedures, the step
+   * somebody abandons is the step that is wrong.
+   *
+   * The id sits in the source rather than in the environment, which is the
+   * opposite of gaId above and deliberate: a Clarity project id is served to
+   * every visitor inside the tag itself, so an environment variable would
+   * hide nothing and would add a step that a future deployment can forget.
+   * The override exists for a second project — a staging site that should not
+   * pollute the real recordings.
+   */
+  clarityId: process.env.NEXT_PUBLIC_CLARITY_ID ?? "z1g2ydetvp",
+  /**
    * Search engine ownership tokens.
    *
    * Google and Naver both verify a site by looking for a meta tag in the

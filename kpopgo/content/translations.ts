@@ -21,6 +21,11 @@
  * here per guide, and accepting that every source re-check now has N pages to
  * follow. That last part is the real cost and it is why this is one language
  * at a time rather than all of them at once.
+ *
+ * At ten, it is why there is no eleventh. CLAUDE.md records the decision and
+ * the two edits that measured it — a one-word change costing three
+ * translations, a one-sentence change costing ten, neither visible to any
+ * check in the suite. Read that before adding a locale here.
  */
 import { guides } from "./guides";
 import { LOCALES, type Locale, type ReviewLevel, type TranslationMeta } from "@/lib/i18n";

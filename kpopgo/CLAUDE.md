@@ -256,6 +256,33 @@ spent most of its life in progress and will be again the next time a language
 is added. A count that has stopped moving and a count nobody is moving look
 identical from outside.
 
+**Ten is the ceiling. Do not add an eleventh**, decided 22 October 2026 with
+the cost measured rather than estimated. Two edits that same day are the
+evidence, and neither was a translation job:
+
+- Adding the word *Paris* to one line of the timezone guide meant editing
+  three translations of that step.
+- Adding one sentence to Play&Stay step 1, so a paid link had somewhere
+  honest to sit, meant editing **ten**.
+
+Neither is visible to any assertion in the suite. The step and FAQ counts
+catch a translation that is short an *item*; a body string that grew a
+sentence is invisible to every check there is, so the multiplication is
+carried by a person who has to remember. The register already says the real
+cost is maintenance rather than translation — this is the number that
+sentence was missing.
+
+The benefit side does not argue back. The next candidates on the arrivals
+list are markets an existing edition or English already reaches, so an
+eleventh language would multiply every future edit by eleven to reach readers
+who are not currently unreached.
+
+**The precondition for ever raising it** is a check that fails when an
+English field changes and its translations do not — a stored fingerprint per
+translated field, the same shape as `sourceChecked` but for the text rather
+than for the source. Until that exists, adding a language adds a maintenance
+burden no test can see, and ten is the number.
+
 **Vietnamese, Thai and Filipino were chosen from arrivals data, not from a
 sense of which markets feel large** — because that sense is exactly what put
 Europe first. Korea received about 15.05 million international visitors from

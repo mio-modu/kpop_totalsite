@@ -201,7 +201,14 @@ export default async function TranslatedGuide({
         </nav>
       )}
 
-      <div className="wrap mt-12 pb-16">
+      {/* The language's own index first, the English page second, and in that
+          order on purpose: the rail above lists only the guides this page
+          cross-references, so for most pages the index is the only way to see
+          what else the language has. */}
+      <div className="wrap mt-12 flex flex-wrap gap-3 pb-16">
+        <Link href={LOCALES[tr.locale].prefix} className="btn px-5 py-3">
+          {tr.labels.hubHeading}
+        </Link>
         <Link href={`/guides/${guide.slug}`} className="btn px-5 py-3" hrefLang="en">
           {tr.labels.readEnglish}
         </Link>

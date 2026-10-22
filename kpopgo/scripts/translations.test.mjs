@@ -232,7 +232,11 @@ const LOCALE_ALIASES = {
  * site where a four-digit money amount appears in prose, which is why this
  * surfaced on the twelfth German page rather than the first.
  */
-const PERIOD_THOUSANDS = new Set(["de", "id", "es", "pt-BR"]);
+// Vietnamese joins this set: 8.000 is how a Vietnamese page writes 8,000,
+// and the decimal mark inverts with it. Thai and Filipino both group with a
+// comma exactly as English does, so neither needs an entry — which is worth
+// saying out loud, because "no entry" and "nobody checked" look the same.
+const PERIOD_THOUSANDS = new Set(["de", "id", "es", "pt-BR", "vi"]);
 
 /**
  * French groups thousands with a space, not a period: 8 000, never 8.000.
@@ -458,6 +462,29 @@ const BAND = {
   // Spanish spends and then adds its own: "de la", "à la", the obligatory
   // subject pronoun, and a politeness register that does not contract.
   fr: [0.9, 1.8],
+  // Vietnamese runs longer than English for a reason none of the others
+  // share: it is written in separate syllables, so a word English sets solid
+  // arrives here as two or three space-separated pieces. "Ticketing account"
+  // is "tai khoan ban ve" — four of them. The diacritics cost nothing in a
+  // character count, being combined into the letters, so the whole excess is
+  // the syllable spacing and the prepositions.
+  vi: [0.8, 1.7],
+  // Thai is the first non-spacing script here that is not CJK, and it sits
+  // between the two groups. It compresses like Chinese does — no spaces at
+  // all, and a cluster of marks riding one base letter — but each syllable
+  // is still several characters where a Han character is one. Observed
+  // around 0.7; the band is wide because the compression varies a lot with
+  // how many loanwords a passage carries, and a page about NOL World and
+  // 3-D Secure carries many.
+  th: [0.45, 1.2],
+  // Filipino is the widest band on the list, and earns it twice over. It
+  // spends the particles English does not write at all — "ang", "ng", "sa"
+  // in front of nearly every noun — and then builds verbs by stacking
+  // affixes and reduplicating syllables onto a root, so "to be able to
+  // collect" becomes one long word rather than four short ones. Those two
+  // pull in opposite directions, which is exactly why the band is loose:
+  // neither effect is reliable enough to narrow it around.
+  fil: [0.9, 1.9],
 };
 
 test("no translated field is far longer or shorter than its source", () => {
@@ -530,6 +557,41 @@ const FORBIDDEN = {
     [/[Ѐ-ӿ]/, "Cyrillic"],
     [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a Spanish field)"],
   ],
+  // pt-BR and fr were added without entries here, which was a gap rather
+  // than a decision: every other Latin-script locale on the list carries
+  // these three, and the whole point of the table is that it covers every
+  // locale in the register. Filled in with the rest rather than separately,
+  // because a check that is only remembered when somebody is already editing
+  // it is a check that will be forgotten again.
+  "pt-BR": [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a Portuguese field)"],
+  ],
+  fr: [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a French field)"],
+  ],
+  // Thai is now a script on this site, so every other locale has to be able
+  // to say it does not belong there. The reverse direction is the next test.
+  vi: [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a Vietnamese field)"],
+    [/[\u0E00-\u0E7F]/, "Thai (Thai text in a Vietnamese field)"],
+  ],
+  th: [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a Thai field)"],
+  ],
+  fil: [
+    [/[가-힣]/, "Hangul"],
+    [/[Ѐ-ӿ]/, "Cyrillic"],
+    [/[぀-ゟ゠-ヿ一-鿿]/, "CJK (East Asian text in a Filipino field)"],
+    [/[\u0E00-\u0E7F]/, "Thai (Thai text in a Filipino field)"],
+  ],
 };
 
 /**
@@ -575,6 +637,19 @@ const QUOTES = {
   // French sets guillemets, so « » is correct here and is not flagged. The
   // low opening mark is German and nothing else.
   fr: [[/[„]/, "German opening quotation mark (French uses « »)"]],
+  // The three new editions all set the ordinary curly pair. Vietnamese does
+  // use guillemets in some formal registers, so « » is left alone there and
+  // only the German low mark is flagged; Thai and Filipino use neither, so
+  // both marks are a sign the field was written alongside a European one.
+  vi: [[/[„]/, "German opening quotation mark (Vietnamese uses “ ”)"]],
+  th: [
+    [/[„]/, "German opening quotation mark (Thai uses “ ”)"],
+    [/[«»]/, "French angle quotes (Thai uses “ ”)"],
+  ],
+  fil: [
+    [/[„]/, "German opening quotation mark (Filipino uses “ ”)"],
+    [/[«»]/, "French angle quotes (Filipino uses “ ”)"],
+  ],
 };
 
 test("quotation marks match the language", () => {
@@ -657,6 +732,39 @@ test("no field was left in English", () => {
   for (const p of allPairs()) {
     if (p.en.length < 40) continue;
     if (p.t.trim() === p.en.trim()) bad.push(`${at(p)}: identical to the English`);
+  }
+  assert.deepEqual(bad, [], `\n${bad.join("\n")}\n`);
+});
+
+/**
+ * The same question asked from the other side, for Thai.
+ *
+ * The check above catches a field copied from the English verbatim. It does
+ * not catch one that was edited a little, or one that is a different
+ * language's text pasted into the wrong locale — and for the Latin-script
+ * editions nothing can, which is why that check is as far as it goes there.
+ *
+ * Thai is the first locale on this site where the opposite assertion is
+ * available and cheap: a Thai field has to contain Thai. The ja and zh-Hant
+ * entries have had this implicitly all along, because a field with no kana
+ * or Han in it would be obvious to anyone glancing at the file; Thai is
+ * newer here and nobody's eye is trained on it yet, so it is asserted rather
+ * than assumed.
+ *
+ * Short fields are skipped on the same threshold the English check uses,
+ * because a `takes` field is legitimately "15 นาที" or, occasionally, a bare
+ * dash.
+ */
+const THAI = /[\u0E00-\u0E7F]/;
+
+test("Thai fields are actually written in Thai", () => {
+  const bad = [];
+  for (const p of allPairs()) {
+    if (p.locale !== "th") continue;
+    if (p.en.length < 40) continue;
+    if (!THAI.test(p.t)) {
+      bad.push(`${at(p)}: no Thai characters at all — "${p.t.slice(0, 70)}"`);
+    }
   }
   assert.deepEqual(bad, [], `\n${bad.join("\n")}\n`);
 });

@@ -45,6 +45,18 @@
      pages avoid by not inheriting the Korean poster face. */
   --font-zh-hant: var(--font-archivo), "PingFang TC", "Microsoft JhengHei",
     "Noto Sans TC", "Hiragino Sans CNS", ui-sans-serif, system-ui, sans-serif;
+  /* Thai takes system faces for the same reason Japanese and Chinese do, and
+     the reason is worth stating because it is the opposite of the one that
+     applies to Vietnamese. A Thai webfont subset is genuinely feasible — the
+     script is under a hundred glyphs, not eleven thousand — so this is a
+     choice rather than a constraint. It is made the same way anyway: the
+     system faces are well made on every platform a reader of this site is
+     on, they are already installed, they cost no request and no outbound
+     host, and the page's voice is carried by its Latin face, which is still
+     Archivo. Adding a webfont here would buy a slightly different Thai and
+     spend a round trip on the slowest connection in the audience. */
+  --font-th: var(--font-archivo), "Noto Sans Thai", "Leelawadee UI",
+    "Thonburi", "Sukhumvit Set", ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Dark is the resting state now. Cream paper reads as an editorial magazine,
@@ -1100,6 +1112,40 @@ h4 {
   word-break: normal;
   overflow-wrap: anywhere;
   line-break: strict;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Thai pages
+   Same scoping rule again, confined to [lang="th"].
+   ═══════════════════════════════════════════════════════════════ */
+[lang="th"],
+[lang="th"] .t,
+[lang="th"] .t-lg,
+[lang="th"] .t-sm,
+[lang="th"] .pm,
+[lang="th"] .pl,
+[lang="th"] h1,
+[lang="th"] h2,
+[lang="th"] h3,
+[lang="th"] p,
+[lang="th"] li {
+  font-family: var(--font-th);
+}
+
+/* Thai sets no spaces between words, like Japanese and Chinese, so it needs
+   the same permission to break. The leading is looser than either, and for a
+   reason neither has: Thai stacks vowel and tone marks above and below the
+   base letter, two deep in both directions, so lines set at a Latin leading
+   collide. This is the one place the three non-spacing scripts on this site
+   do not share a number. */
+[lang="th"] .t,
+[lang="th"] .t-lg,
+[lang="th"] .t-sm,
+[lang="th"] p,
+[lang="th"] li {
+  line-height: 2;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 /*

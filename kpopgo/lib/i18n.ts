@@ -29,7 +29,18 @@
 import type { Guide } from "@/content/guides";
 import { displayStatus, type DisplayStatus } from "./freshness";
 
-export type Locale = "en" | "ja" | "zh-Hant" | "id" | "de" | "es" | "pt-BR" | "fr";
+export type Locale =
+  | "en"
+  | "ja"
+  | "zh-Hant"
+  | "id"
+  | "de"
+  | "es"
+  | "pt-BR"
+  | "fr"
+  | "vi"
+  | "th"
+  | "fil";
 
 /** English is the canonical language and carries no path prefix. */
 export const DEFAULT_LOCALE: Locale = "en";
@@ -164,6 +175,62 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     english: "French",
     tag: "fr",
     prefix: "/fr",
+  },
+  // The three Southeast Asian editions were chosen from arrivals rather than
+  // from a sense of which markets feel large, because that sense is what put
+  // Europe first in the first place.
+  //
+  // Korea received about 15.05 million international visitors in January to
+  // August 2026, and the Southeast Asian source markets ranked: Philippines
+  // 454,000 (the fastest growing at 16.1%), Vietnam 407,000, Indonesia
+  // 295,000, Singapore 243,000, Thailand 230,000, Malaysia 207,000.
+  //
+  // Indonesia was already covered. Singapore is skipped because English is a
+  // working language there, and Malaysia is skipped because Malay and
+  // Indonesian are close enough that the `id` edition largely reaches those
+  // readers — translating it again would be the padding this register
+  // refuses everywhere else. That leaves the top three uncovered markets,
+  // and they are exactly these.
+  //
+  // All three refuse the timezone guide on the same test the Asian editions
+  // and pt-BR use, verified against this container's zoneinfo rather than
+  // recalled: Asia/Ho_Chi_Minh, Asia/Bangkok and Asia/Manila hold identical
+  // offsets in January and July, so 20:00 KST is 18:00 in Hanoi and Bangkok
+  // and 19:00 in Manila on both dates, permanently. The arithmetic that
+  // guide exists to teach does not exist for these readers.
+  vi: {
+    code: "vi",
+    native: "Tiếng Việt",
+    english: "Vietnamese",
+    tag: "vi",
+    prefix: "/vi",
+  },
+  th: {
+    code: "th",
+    native: "ภาษาไทย",
+    english: "Thai",
+    tag: "th",
+    prefix: "/th",
+  },
+  // `fil` rather than `tl`. Filipino is the standardised national language
+  // and the tag hreflang expects; Tagalog is the language it is built on and
+  // a narrower claim than this edition makes.
+  //
+  // This is the one edition whose value is argued rather than obvious, and
+  // the argument is recorded so it can be checked later: English is an
+  // official language of the Philippines, so unlike a Vietnamese or Thai
+  // reader, a Filipino reader can already read the English pages. What the
+  // arrivals number says is that this is the largest and fastest-growing
+  // source market in the region, and the bet is that a procedure read under
+  // time pressure is read more carefully in a first language. If these pages
+  // draw nothing, that bet was wrong — and this note is here so the next
+  // person knows it was a bet rather than an oversight.
+  fil: {
+    code: "fil",
+    native: "Filipino",
+    english: "Filipino",
+    tag: "fil",
+    prefix: "/fil",
   },
 };
 

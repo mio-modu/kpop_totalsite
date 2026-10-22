@@ -65,6 +65,20 @@ export type Translation = TranslationMeta & {
     sourceMoved: string;
     /** Shown when the English page has passed its shelf life. */
     sourceStale: string;
+    /**
+     * The four below are the language's own index page, not a guide.
+     *
+     * `reviewedMachine` could not be reused for it: every locale writes that
+     * sentence about *this translation*, singular, which is right on a guide
+     * and wrong on a page that is a list of them. A disclaimer that does not
+     * grammatically cover what it is disclaiming is the one place not to
+     * save four strings.
+     */
+    hubHeading: string;
+    hubIntro: string;
+    hubReview: string;
+    /** Link out to the English index, which has guides this language lacks. */
+    englishIndex: string;
   };
 };
 
@@ -81,6 +95,12 @@ const DE_LABELS = {
     "Die englische Fassung wurde nach dieser Übersetzung erneut geprüft. Bei Abweichungen gilt die englische Fassung.",
   sourceStale:
     "Die englische Fassung, auf der diese Übersetzung beruht, hat ihre Gültigkeitsdauer überschritten. Bitte prüfen Sie den aktuellen Stand in der englischen Fassung und in den Quellen.",
+  hubHeading: "KPOPGO auf Deutsch",
+  hubIntro:
+    "Die Anleitungen, die auf Deutsch vorliegen. Jede ist ein Verfahren, das sich von Anfang bis Ende durchgehen lässt, und an jedem Schritt steht, was dabei tatsächlich schiefgeht.",
+  hubReview:
+    "Diese Übersetzungen wurden maschinell erstellt und nicht von einer Person mit deutscher Muttersprache geprüft. Bei wichtigen Entscheidungen gelten die englische Fassung und die Originalquellen.",
+  englishIndex: "Alle Anleitungen auf Englisch",
 };
 
 const ZH_LABELS = {
@@ -96,6 +116,12 @@ const ZH_LABELS = {
     "英文版在本翻譯完成之後曾再次查核。若內容有出入，以英文版為準。",
   sourceStale:
     "本翻譯所依據的英文版已超過有效期限。請以英文版與資料來源確認目前的狀況。",
+  hubHeading: "KPOPGO 繁體中文版",
+  hubIntro:
+    "目前已有繁體中文版的指南。每一篇都是一套可以從頭跟到尾的流程，並在每個步驟指出實際上最常出錯的地方。",
+  hubReview:
+    "這些翻譯以機器翻譯為基礎，未經母語人士校閱。涉及重要判斷時，請以英文版與原始資料來源為準。",
+  englishIndex: "查看英文版的全部指南",
 };
 
 const ES_LABELS = {
@@ -111,6 +137,12 @@ const ES_LABELS = {
     "La versión en inglés se volvió a verificar después de hacer esta traducción. Si hay discrepancias, la versión en inglés es la que vale.",
   sourceStale:
     "La versión en inglés en la que se basa esta traducción ha superado su plazo de vigencia. Consulte la versión en inglés y sus fuentes para saber cómo están las cosas ahora.",
+  hubHeading: "KPOPGO en español",
+  hubIntro:
+    "Las guías que ya existen en español. Cada una es un procedimiento que se puede seguir de principio a fin, y en cada paso se señala lo que de verdad sale mal.",
+  hubReview:
+    "Estas traducciones se hicieron con ayuda automática y no las ha revisado un hablante nativo de español. Para decisiones importantes, consulta la versión en inglés y las fuentes originales.",
+  englishIndex: "Todas las guías en inglés",
 };
 
 const FR_LABELS = {
@@ -126,6 +158,75 @@ const FR_LABELS = {
     "La version anglaise a été revérifiée après la réalisation de cette traduction. En cas de divergence, c\u0027est la version anglaise qui fait foi.",
   sourceStale:
     "La version anglaise sur laquelle repose cette traduction a dépassé sa durée de validité. Consultez la version anglaise et ses sources pour savoir où en sont les choses aujourd\u0027hui.",
+  hubHeading: "KPOPGO en français",
+  hubIntro:
+    "Les guides qui existent déjà en français. Chacun est une procédure que l\u0027on peut suivre du début à la fin, et à chaque étape est signalé ce qui se passe mal en pratique.",
+  hubReview:
+    "Ces traductions ont été réalisées avec l\u0027aide de la machine et n\u0027ont pas été relues par une personne de langue maternelle française. Pour les décisions importantes, reportez-vous à la version anglaise et aux sources d\u0027origine.",
+  englishIndex: "Tous les guides en anglais",
+};
+
+const VI_LABELS = {
+  pitfall: "Lỗi thường gặp",
+  takes: "Thời gian ước tính:",
+  sources: "Nguồn",
+  readEnglish: "Đọc bản tiếng Anh",
+  related: "Các hướng dẫn khác bằng ngôn ngữ này",
+  reviewedMachine:
+    "Bản dịch này được thực hiện với sự hỗ trợ của máy và chưa được người bản ngữ tiếng Việt hiệu đính. Với những quyết định quan trọng, hãy đối chiếu bản tiếng Anh và các nguồn gốc.",
+  reviewedNative: "Một người bản ngữ tiếng Việt đã hiệu đính bản dịch này.",
+  sourceMoved:
+    "Bản tiếng Anh đã được kiểm tra lại sau khi bản dịch này được thực hiện. Nếu có khác biệt, bản tiếng Anh là bản đúng.",
+  sourceStale:
+    "Bản tiếng Anh mà bản dịch này dựa vào đã quá hạn kiểm tra. Hãy xem bản tiếng Anh và các nguồn của nó để biết tình hình hiện nay.",
+  hubHeading: "KPOPGO bằng tiếng Việt",
+  hubIntro:
+    "Các hướng dẫn đã có bản tiếng Việt. Mỗi bản là một quy trình bạn theo được từ đầu đến cuối, và ở mỗi bước đều nêu đúng chỗ người ta thật sự vướng.",
+  hubReview:
+    "Các bản dịch này được thực hiện với sự hỗ trợ của máy và chưa được người bản ngữ tiếng Việt hiệu đính. Với những quyết định quan trọng, hãy đối chiếu bản tiếng Anh và các nguồn gốc.",
+  englishIndex: "Toàn bộ hướng dẫn bằng tiếng Anh",
+};
+
+const TH_LABELS = {
+  pitfall: "ข้อผิดพลาดที่พบบ่อย",
+  takes: "เวลาที่ใช้โดยประมาณ:",
+  sources: "แหล่งข้อมูล",
+  readEnglish: "อ่านฉบับภาษาอังกฤษ",
+  related: "คู่มืออื่นในภาษานี้",
+  reviewedMachine:
+    "คำแปลนี้จัดทำโดยมีเครื่องช่วย และยังไม่ผ่านการตรวจทานจากเจ้าของภาษาไทย สำหรับการตัดสินใจที่สำคัญ โปรดตรวจสอบกับฉบับภาษาอังกฤษและแหล่งข้อมูลต้นทาง",
+  reviewedNative: "เจ้าของภาษาไทยได้ตรวจทานคำแปลนี้แล้ว",
+  sourceMoved:
+    "ฉบับภาษาอังกฤษได้รับการตรวจสอบใหม่หลังจากจัดทำคำแปลนี้ หากข้อความขัดแย้งกัน ให้ยึดฉบับภาษาอังกฤษเป็นหลัก",
+  sourceStale:
+    "ฉบับภาษาอังกฤษที่คำแปลนี้อ้างอิงอยู่เลยกำหนดอายุการตรวจสอบแล้ว โปรดดูฉบับภาษาอังกฤษและแหล่งข้อมูลเพื่อทราบสถานะปัจจุบัน",
+  hubHeading: "KPOPGO ภาษาไทย",
+  hubIntro:
+    "คู่มือที่มีฉบับภาษาไทยแล้ว แต่ละฉบับเป็นขั้นตอนที่ทำตามได้ตั้งแต่ต้นจนจบ และบอกไว้ทุกขั้นว่าจุดที่คนพลาดกันจริง ๆ คือจุดไหน",
+  hubReview:
+    "คำแปลเหล่านี้จัดทำโดยมีเครื่องช่วย และยังไม่ผ่านการตรวจทานจากเจ้าของภาษาไทย สำหรับการตัดสินใจที่สำคัญ โปรดตรวจสอบกับฉบับภาษาอังกฤษและแหล่งข้อมูลต้นทาง",
+  englishIndex: "คู่มือทั้งหมดในภาษาอังกฤษ",
+};
+
+const FIL_LABELS = {
+  pitfall: "Karaniwang pagkakamali",
+  takes: "Tinatayang oras:",
+  sources: "Mga pinagkunan",
+  readEnglish: "Basahin ang bersyong Ingles",
+  related: "Iba pang gabay sa wikang ito",
+  reviewedMachine:
+    "Ginawa ang pagsasaling ito nang may tulong ng makina at hindi pa ito nasusuri ng isang katutubong nagsasalita ng Filipino. Para sa mahahalagang desisyon, tingnan ang bersyong Ingles at ang mga orihinal na pinagkunan.",
+  reviewedNative: "Sinuri ng isang katutubong nagsasalita ng Filipino ang pagsasaling ito.",
+  sourceMoved:
+    "Muling sinuri ang bersyong Ingles matapos gawin ang pagsasaling ito. Kung magkaiba sila, ang bersyong Ingles ang susundin.",
+  sourceStale:
+    "Lumipas na ang panahon ng pagsusuri ng bersyong Ingles na pinagbatayan ng pagsasaling ito. Tingnan ang bersyong Ingles at ang mga pinagkunan nito para sa kasalukuyang kalagayan.",
+  hubHeading: "KPOPGO sa Filipino",
+  hubIntro:
+    "Ang mga gabay na mayroon nang bersyong Filipino. Bawat isa ay isang prosesong masusundan mula simula hanggang dulo, at sa bawat hakbang ay pinapangalanan ang talagang nasisira.",
+  hubReview:
+    "Ginawa ang mga pagsasaling ito nang may tulong ng makina at hindi pa sinusuri ng isang katutubong nagsasalita ng Filipino. Para sa mahahalagang desisyon, tingnan ang bersyong Ingles at ang mga orihinal na pinagkunan.",
+  englishIndex: "Lahat ng gabay sa Ingles",
 };
 
 const PT_LABELS = {
@@ -141,6 +242,12 @@ const PT_LABELS = {
     "A versão em inglês foi verificada novamente depois que esta tradução foi feita. Havendo divergência, vale a versão em inglês.",
   sourceStale:
     "A versão em inglês em que esta tradução se baseia passou do prazo de validade. Consulte a versão em inglês e suas fontes para saber como está a situação agora.",
+  hubHeading: "KPOPGO em português",
+  hubIntro:
+    "Os guias que já existem em português. Cada um é um procedimento que você segue do início ao fim, e em cada passo está apontado o que de fato dá errado.",
+  hubReview:
+    "Estas traduções foram feitas com apoio de máquina e não passaram pela revisão de um falante nativo de português. Para decisões importantes, consulte a versão em inglês e as fontes originais.",
+  englishIndex: "Todos os guias em inglês",
 };
 
 const ID_LABELS = {
@@ -156,6 +263,12 @@ const ID_LABELS = {
     "Versi bahasa Inggris telah diperiksa ulang setelah terjemahan ini dibuat. Jika ada perbedaan, versi bahasa Inggris yang berlaku.",
   sourceStale:
     "Versi bahasa Inggris yang menjadi dasar terjemahan ini sudah melewati masa berlakunya. Periksa versi bahasa Inggris dan sumbernya untuk keadaan terkini.",
+  hubHeading: "KPOPGO dalam bahasa Indonesia",
+  hubIntro:
+    "Panduan yang sudah tersedia dalam bahasa Indonesia. Masing-masing adalah prosedur yang bisa diikuti dari awal sampai akhir, dan di setiap langkah disebut hal yang benar-benar sering salah.",
+  hubReview:
+    "Terjemahan ini dibuat dengan bantuan mesin dan belum diperiksa oleh penutur asli. Untuk keputusan penting, rujuk versi bahasa Inggris dan sumber aslinya.",
+  englishIndex: "Semua panduan dalam bahasa Inggris",
 };
 
 const JA_LABELS = {
@@ -171,25 +284,40 @@ const JA_LABELS = {
     "この翻訳を作成したあとに英語版が再確認されています。内容が食い違う場合は英語版が正です。",
   sourceStale:
     "この翻訳のもとになった英語版は有効期限を過ぎています。現在の状況は英語版と出典でご確認ください。",
+  hubHeading: "日本語で読むKPOPGO",
+  hubIntro:
+    "日本語版がそろっているガイドです。どれも最初から最後まで通してたどれる手順で、各ステップで実際につまずく箇所を挙げています。",
+  hubReview:
+    "これらの翻訳は機械翻訳をもとにしており、ネイティブによる校閲は受けていません。正確さが重要な判断には英語版と出典をご確認ください。",
+  englishIndex: "英語版のガイド一覧",
 };
 
 /**
  * One guide is deliberately in no language but English, and a second is in
- * three of the seven. Both are decisions with reasons, not oversights, and
+ * three of the ten. Both are decisions with reasons, not oversights, and
  * the reasons are here because the counts will keep moving and the reasoning
  * should not have to be reconstructed each time.
  *
  * Where it stands against twenty-one English guides:
  *
- *   ja, zh-Hant, id   19/21   skip the timezone guide and the customs guide
- *   pt-BR             19/21   skip the timezone guide and the customs guide
- *   de, es, fr        20/21   skip the customs guide only
+ *   ja, zh-Hant, id        19/21   skip the timezone guide and the customs guide
+ *   vi, th, fil            19/21   skip the timezone guide and the customs guide
+ *   pt-BR                  19/21   skip the timezone guide and the customs guide
+ *   de, es, fr             20/21   skip the customs guide only
  *
- * All seven are complete at their intended counts as of 2026-10-22. That
+ * All ten are complete at their intended counts as of 2026-10-22. That
  * sentence is worth dating, because "in progress" is the state this file was
  * in for most of its life and the state it will be in again the next time a
  * language is added — a count that has stopped moving looks identical to a
  * count nobody is moving.
+ *
+ * Vietnamese, Thai and Filipino arrived together and landed on exactly the
+ * set the Asian three carry — the same nineteen slugs, not nineteen that
+ * happen to count the same. That is a result rather than a convention: both
+ * exclusions were re-tested against the three new readerships, and both
+ * survived for the reasons below. Where a shared answer is reached by
+ * applying the test rather than by copying the previous edition, it is worth
+ * saying so, because the next language will be tempted to copy instead.
  *
  * `pt-BR` sits with the Asian three rather than with the European ones, and
  * the region in its code is what makes that decidable instead of arguable.
@@ -243,16 +371,28 @@ const JA_LABELS = {
  * Asia/Jakarta across the next decade, and identical January and July offsets
  * in each:
  *
- *   Asia/Seoul   UTC+9    Asia/Tokyo    UTC+9   — no conversion at all
- *   Asia/Taipei  UTC+8    KST minus 1, permanently
- *   Asia/Jakarta UTC+7    KST minus 2, permanently
+ *   Asia/Seoul        UTC+9    Asia/Tokyo    UTC+9   — no conversion at all
+ *   Asia/Taipei       UTC+8    KST minus 1, permanently
+ *   Asia/Jakarta      UTC+7    KST minus 2, permanently
+ *   Asia/Ho_Chi_Minh  UTC+7    KST minus 2, permanently
+ *   Asia/Bangkok      UTC+7    KST minus 2, permanently
+ *   Asia/Manila       UTC+8    KST minus 1, permanently
  *
- * So for a Japanese reader there is nothing to convert, and for a Taiwanese or
- * Indonesian one the gap is a fixed hour or two that never moves. Translating
- * it would hand all three a page mostly about New York's March clock change.
+ * So for a Japanese reader there is nothing to convert, and for everyone else
+ * on that list the gap is a fixed hour or two that never moves. Translating
+ * it would hand all six a page mostly about New York's March clock change.
  * The parts that do apply — be verified before the window opens, and the
  * checkout clock is a separate deadline — are already in guides 01 and 12,
- * which are translated into all three.
+ * which are translated into all six.
+ *
+ * The three new zones were checked the same way rather than assumed from
+ * their neighbours: `zdump -v` on Asia/Ho_Chi_Minh, Asia/Bangkok and
+ * Asia/Manila prints nothing but the two sentinel rows at each end of time,
+ * so there is no transition in the table at all, and January and July hold
+ * the same offset in each. Worth doing properly, because the Philippines has
+ * legislated daylight saving three times in its history and could again —
+ * the claim here is about today's zoneinfo, not about the idea that tropical
+ * countries never move their clocks.
  *
  * `kpop-album-customs-duty-overseas` is the one guide no edition takes, and
  * the reason differs by language, so both halves are recorded.
@@ -262,13 +402,22 @@ const JA_LABELS = {
  * guessed at: of ten steps, five are US-specific — CBP, the executive
  * orders, US tariff chapters — one is EU-specific, and four carry no region.
  *
- * For Japanese, Chinese and Indonesian readers, neither jurisdiction is
- * theirs. Worse, the page would read as though it covered them: a translated
- * customs guide is exactly the kind of page a reader trusts on the one
- * subject where being wrong costs money at a border. Each would need its own
- * national source — and for Japanese, customs.go.jp and japanpost.jp are both
- * outside this container's outbound allowlist, so it cannot be written from
- * here today even if the appetite were there.
+ * For Japanese, Chinese, Indonesian, Vietnamese, Thai and Filipino readers,
+ * neither jurisdiction is theirs. Worse, the page would read as though it
+ * covered them: a translated customs guide is exactly the kind of page a
+ * reader trusts on the one subject where being wrong costs money at a
+ * border. Each would need its own national source — and for Japanese,
+ * customs.go.jp and japanpost.jp are both outside this container's outbound
+ * allowlist, so it cannot be written from here today even if the appetite
+ * were there.
+ *
+ * The three newest editions make that worse rather than better, which is why
+ * they were checked rather than waved through. A Filipino reader's parcel
+ * clears through the Bureau of Customs under a de minimis of its own, and a
+ * Thai or Vietnamese reader's through thresholds that have moved in the last
+ * few years; a page explaining CBP's executive orders to any of them is not
+ * merely useless, it is confidently about the wrong country. Until there is
+ * a primary source per jurisdiction, no translation of this page is honest.
  *
  * German and Spanish are the harder case, because Germany and Spain are in
  * the EU and the guide covers the EU. That is the same shape as the
@@ -9679,7 +9828,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Rechnen Sie für das Datum des Verkaufs um, nicht für heute",
-        body: "Das ist die ganze Anleitung in einer Zeile. Weil Korea sich nie verschiebt und Sie schon, hängt die Ortszeit eines koreanischen Verkaufs davon ab, auf welcher Seite Ihrer eigenen Zeitumstellung das Datum liegt. Bei 20:00 KST landet ein Verkauf in New York im Januar um 06:00 und im Juli um 07:00. Los Angeles wandert von 03:00 auf 04:00, Toronto von 06:00 auf 07:00, London von 11:00 auf 12:00, Berlin und Madrid von 12:00 auf 13:00.",
+        body: "Das ist die ganze Anleitung in einer Zeile. Weil Korea sich nie verschiebt und Sie schon, hängt die Ortszeit eines koreanischen Verkaufs davon ab, auf welcher Seite Ihrer eigenen Zeitumstellung das Datum liegt. Bei 20:00 KST landet ein Verkauf in New York im Januar um 06:00 und im Juli um 07:00. Los Angeles wandert von 03:00 auf 04:00, Toronto von 06:00 auf 07:00, London von 11:00 auf 12:00, Berlin, Madrid und Paris von 12:00 auf 13:00.",
         pitfall:
           "Heute in einem Suchfeld für einen Verkauf in drei Wochen umzurechnen. Fällt dazwischen eine Zeitumstellung, ist die Antwort eine Stunde falsch — und sie ist in die Richtung falsch, zu spät zu kommen.",
         takes: "3 Minuten",
@@ -9693,7 +9842,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Prüfen Sie, ob zwischen jetzt und dem Verkauf eine Zeitumstellung liegt",
-        body: "Die Umstellungstermine sind nicht in jedem Land dieselben, wodurch kurze Fenster entstehen, in denen die gewohnte Umrechnung selbst zwischen zwei Ländern falsch ist, die beide umstellen. 2027 stellt New York am 14. März um, London am 28. März, Sydney am 4. April; Berlin und Madrid stellen mit London um und am 31. Oktober zurück. Der größte Teil des spanischsprachigen Lateinamerikas stellt überhaupt nicht um — Bogotá, Lima und Buenos Aires halten wie Mexiko-Stadt einen festen Abstand zu Korea, ebenso Manila. Für diese Leserinnen gilt dieser Schritt schlicht nicht, was für sich genommen zu wissen lohnt. Liegt das Verkaufsdatum jenseits Ihrer eigenen Umstellung, stellen Sie den Wecker nach der für dieses Datum umgerechneten Zeit.",
+        body: "Die Umstellungstermine sind nicht in jedem Land dieselben, wodurch kurze Fenster entstehen, in denen die gewohnte Umrechnung selbst zwischen zwei Ländern falsch ist, die beide umstellen. 2027 stellt New York am 14. März um, London am 28. März, Sydney am 4. April; Berlin, Madrid und Paris stellen mit London um und am 31. Oktober zurück. Der größte Teil des spanischsprachigen Lateinamerikas stellt überhaupt nicht um — Bogotá, Lima und Buenos Aires halten wie Mexiko-Stadt einen festen Abstand zu Korea, ebenso Manila. Für diese Leserinnen gilt dieser Schritt schlicht nicht, was für sich genommen zu wissen lohnt. Liegt das Verkaufsdatum jenseits Ihrer eigenen Umstellung, stellen Sie den Wecker nach der für dieses Datum umgerechneten Zeit.",
         pitfall:
           "Die zwei Wochen zwischen der nordamerikanischen und der europäischen Umstellung im März sind die Lücke, die Leute erwischt, weil der vertraute Abstand zwischen New York und London kurzzeitig nicht der ist, der er sonst ist.",
         takes: "3 Minuten",
@@ -9765,7 +9914,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Convierte para la fecha de la venta, no para hoy",
-        body: "Esta es la guía entera en una línea. Como Corea nunca se mueve y tú sí, la hora local de una venta coreana depende de a qué lado de tu propio cambio de hora cae la fecha. A las 20:00 KST, una venta cae a las 06:00 en Nueva York en enero y a las 07:00 en julio. Los Ángeles pasa de las 03:00 a las 04:00, Toronto de las 06:00 a las 07:00, Londres de las 11:00 a las 12:00, y Berlín y Madrid de las 12:00 a las 13:00.",
+        body: "Esta es la guía entera en una línea. Como Corea nunca se mueve y tú sí, la hora local de una venta coreana depende de a qué lado de tu propio cambio de hora cae la fecha. A las 20:00 KST, una venta cae a las 06:00 en Nueva York en enero y a las 07:00 en julio. Los Ángeles pasa de las 03:00 a las 04:00, Toronto de las 06:00 a las 07:00, Londres de las 11:00 a las 12:00, y Berlín, Madrid y París de las 12:00 a las 13:00.",
         pitfall:
           "Convertir hoy en un buscador para una venta que es dentro de tres semanas. Si en medio cae un cambio de hora, la respuesta que obtienes está una hora equivocada — y está equivocada en la dirección de llegar tarde.",
         takes: "3 minutos",
@@ -9779,7 +9928,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Mira si entre hoy y la venta cae un cambio de hora",
-        body: "Las fechas de cambio no son las mismas en cada país, lo que crea ventanas cortas en las que la conversión habitual está equivocada incluso entre dos países que ambos lo aplican. En 2027 Nueva York cambia el 14 de marzo, Londres el 28 de marzo, Sídney el 4 de abril; Berlín y Madrid cambian con Londres y vuelven atrás el 31 de octubre. La mayor parte de la América Latina hispanohablante no cambia en absoluto — Bogotá, Lima y Buenos Aires mantienen una diferencia fija con Corea igual que Ciudad de México, y Manila también. Para esos lectores este paso simplemente no aplica, y eso por sí solo vale la pena saberlo. Si la fecha de la venta queda al otro lado de tu propio cambio, pon la alarma desde la hora convertida para esa fecha.",
+        body: "Las fechas de cambio no son las mismas en cada país, lo que crea ventanas cortas en las que la conversión habitual está equivocada incluso entre dos países que ambos lo aplican. En 2027 Nueva York cambia el 14 de marzo, Londres el 28 de marzo, Sídney el 4 de abril; Berlín, Madrid y París cambian con Londres y vuelven atrás el 31 de octubre. La mayor parte de la América Latina hispanohablante no cambia en absoluto — Bogotá, Lima y Buenos Aires mantienen una diferencia fija con Corea igual que Ciudad de México, y Manila también. Para esos lectores este paso simplemente no aplica, y eso por sí solo vale la pena saberlo. Si la fecha de la venta queda al otro lado de tu propio cambio, pon la alarma desde la hora convertida para esa fecha.",
         pitfall:
           "Las dos semanas entre el cambio norteamericano y el europeo en marzo son las que pillan a la gente, porque la diferencia familiar entre Nueva York y Londres brevemente no es la que suele ser.",
         takes: "3 minutos",
@@ -13591,7 +13740,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Convertissez pour la date de la vente, pas pour aujourd'hui",
-        body: "C'est tout le guide en une phrase. Comme la Corée ne bouge jamais et que vous bougez, l'heure locale d'une vente coréenne dépend du côté de votre propre changement d'heure où tombe la date. À 20:00 KST, une vente tombe à 06:00 à New York en janvier et à 07:00 en juillet. Los Angeles passe de 03:00 à 04:00, Toronto de 06:00 à 07:00, Londres de 11:00 à 12:00, Berlin et Madrid de 12:00 à 13:00.",
+        body: "C'est tout le guide en une phrase. Comme la Corée ne bouge jamais et que vous bougez, l'heure locale d'une vente coréenne dépend du côté de votre propre changement d'heure où tombe la date. À 20:00 KST, une vente tombe à 06:00 à New York en janvier et à 07:00 en juillet. Los Angeles passe de 03:00 à 04:00, Toronto de 06:00 à 07:00, Londres de 11:00 à 12:00, Berlin, Madrid et Paris de 12:00 à 13:00.",
         pitfall:
           "Faire la conversion aujourd'hui dans un moteur de recherche pour une vente dans trois semaines. Si un changement d'heure tombe entre-temps, la réponse obtenue est fausse d'une heure — et fausse dans le sens où l'on arrive en retard.",
         takes: "3 minutes",
@@ -13605,7 +13754,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Vérifiez si un changement d'heure tombe entre aujourd'hui et la vente",
-        body: "Les dates de bascule ne sont pas les mêmes d'un pays à l'autre, ce qui crée de courtes périodes où la conversion habituelle est fausse même entre deux pays qui l'observent tous les deux. En 2027, New York change le 14 mars, Londres le 28 mars, Sydney le 4 avril ; Berlin et Madrid changent en même temps que Londres et reviennent en arrière le 31 octobre. La majeure partie de l'Amérique latine hispanophone ne change pas du tout — Bogotá, Lima et Buenos Aires conservent un écart fixe avec la Corée, tout comme Mexico, et Manille également. Pour ces lecteurs, cette étape ne s'applique tout simplement pas, ce qui mérite d'être su en soi. Si la date de la vente se situe de l'autre côté de votre propre bascule, réglez votre réveil sur l'heure convertie pour cette date-là.",
+        body: "Les dates de bascule ne sont pas les mêmes d'un pays à l'autre, ce qui crée de courtes périodes où la conversion habituelle est fausse même entre deux pays qui l'observent tous les deux. En 2027, New York change le 14 mars, Londres le 28 mars, Sydney le 4 avril ; Berlin, Madrid et Paris changent en même temps que Londres et reviennent en arrière le 31 octobre. La majeure partie de l'Amérique latine hispanophone ne change pas du tout — Bogotá, Lima et Buenos Aires conservent un écart fixe avec la Corée, tout comme Mexico, et Manille également. Pour ces lecteurs, cette étape ne s'applique tout simplement pas, ce qui mérite d'être su en soi. Si la date de la vente se situe de l'autre côté de votre propre bascule, réglez votre réveil sur l'heure convertie pour cette date-là.",
         pitfall:
           "Les deux semaines d'écart entre la bascule nord-américaine et l'européenne en mars sont le piège classique, parce que la différence familière entre New York et Londres n'est brièvement pas celle qu'elle est d'habitude.",
         takes: "3 minutes",
@@ -13651,6 +13800,5616 @@ export const translations: Translation[] = [
       },
     ],
     labels: FR_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Cách mua vé concert K-pop từ ngoài Hàn Quốc",
+    summary:
+      "Toàn cảnh trước khi bắt đầu: show của bạn bán trên nền tảng nào, nền tảng đó xác minh danh tính ra sao, và bạn cần chuẩn bị sẵn những gì trước giờ mở bán.",
+    scope:
+      "Áp dụng cho các show diễn ra tại Hàn Quốc và những nền tảng bán vé mà các công ty quản lý Hàn Quốc sử dụng. Các điểm diễn trong tour nước ngoài do nhà tổ chức địa phương bán và được nói riêng — những quy tắc dưới đây không áp dụng cho chúng.",
+    intro: [
+      "Gần như mọi bài hướng dẫn đang xếp hạng cao cho câu hỏi này đều được viết trước tháng 12 năm 2025, và chúng chỉ bạn tới một trang web không còn tồn tại dưới cái tên đó nữa. Đó là lý do chính khiến trang này có mặt.",
+      "Không có một trang bán vé K-pop duy nhất. Nền tảng được công ty quản lý và nhà tổ chức chọn riêng cho từng tour, và được nêu rõ trong thông báo chính thức của show đó. Mọi thứ còn lại — bạn phải qua kiểu xác minh danh tính nào, thẻ nước ngoài có dùng được không, bán trước mở sớm bao nhiêu — đều bắt nguồn từ một dữ kiện đó.",
+      "Vậy nên thứ tự là: tìm thông báo chính thức trước, xác định nền tảng, rồi mới chuẩn bị theo yêu cầu riêng của nền tảng ấy. Làm ngược lại chính là cách người ta có một tài khoản đã xác minh trên trang sai, một tiếng trước giờ mở bán.",
+    ],
+    steps: [
+      {
+        title: "Tìm thông báo chính thức, không phải bài đăng lại của fan",
+        body: "Hãy vào các kênh chính thức của nghệ sĩ — trang của công ty quản lý, cộng đồng Weverse của nghệ sĩ, và tài khoản X/Instagram chính thức. Thông báo sẽ nêu nền tảng bán vé, giờ bán trước và giờ mở bán chung theo giờ KST, hạng thành viên cần có để được bán trước, cùng mọi điều kiện về nơi cư trú hay xác minh. Hãy chụp màn hình lại. Mọi việc bạn làm sau đó đều dựa trên đúng một văn bản này.",
+        pitfall:
+          "Các tài khoản fan tổng hợp và diễn giải lại, và họ nhầm nền tảng đủ thường xuyên để khiến bạn mất suất mua. Họ cũng hiếm khi cập nhật khi ngày giờ thay đổi.",
+        takes: "10 phút",
+      },
+      {
+        title: "Xác định nền tảng — và đừng suy ra từ tên công ty quản lý",
+        body: "Nghệ sĩ của HYBE nhìn chung bán qua hệ thống vé của chính Weverse. Các tour Hàn Quốc khác thường dùng NOL Ticket (trang tiếng Hàn) hoặc NOL World (trang dành cho người ở nước ngoài), YES24, hay Melon Ticket. Nhưng đây là xu hướng chứ không phải quy tắc: các công ty đổi nền tảng giữa các tour, và một tour có thể tách đợt bán trong nước với đợt bán toàn cầu sang hai trang khác nhau. Hãy đọc thông báo.",
+        pitfall:
+          "Coi sự tương ứng đó là cố định — “HYBE thì Weverse, SM thì YES24” — là lỗi phổ biến nhất trong các bài hướng dẫn hiện có. Nó sai đủ thường xuyên để gây hậu quả.",
+        takes: "5 phút",
+      },
+      {
+        title: "Xác định xem bạn phải qua kiểu xác minh danh tính nào",
+        body: "Các trang bán vé tiếng Hàn nhìn chung xác minh danh tính dựa trên số điện thoại di động Hàn Quốc, mà trên thực tế muốn có số đó thì cần giấy tờ cư trú tại Hàn. Nếu bạn không có, trang tiếng Hàn không phải con đường của bạn. Các trang dành cho người ở nước ngoài tồn tại đúng cho trường hợp này và xác minh bằng cách khác — thường là đối chiếu thông tin hộ chiếu với tài khoản của bạn. Hãy quyết định ngay bây giờ bạn dùng trang nào, vì tài khoản bạn cần nằm trên trang đó.",
+        pitfall:
+          "Cố ép trang tiếng Hàn hoạt động cho mình là phí công, và những cách mượn danh tính của người khác để qua xác minh thì chúng tôi không hỗ trợ — chúng đặt cả tấm vé lẫn tài khoản của bạn vào vòng rủi ro.",
+        takes: "15 phút",
+      },
+      {
+        title: "Tạo tài khoản đúng y như thông tin trên hộ chiếu",
+        body: "Hãy nhập tên pháp lý đúng như nó hiện ra ở vùng đọc máy của hộ chiếu, và ngày sinh theo định dạng trang web yêu cầu. Nếu show đòi tư cách thành viên fan club để được mua trước, thì tên và ngày sinh trên tư cách thành viên và trên tài khoản bán vé phải trùng nhau. Sai lệch là nguyên nhân đã được ghi nhận khiến đơn hàng bị hủy ở cửa soát vé hoặc trong lúc xác minh.",
+        pitfall:
+          "Tên đệm, họ có dấu gạch nối và thứ tự tên là chỗ hỏng. Tư cách thành viên ghi “Maria Santos” trong khi hộ chiếu ghi “Maria Elena Santos Cruz” là một sai lệch.",
+        takes: "20 phút",
+      },
+      {
+        title: "Kiểm tra phương thức thanh toán trước vài ngày, đừng để đến hôm đó",
+        body: "Thẻ phát hành ở nước ngoài thường được chấp nhận, nhưng nhiều khi chỉ sau khi tài khoản của bạn đã được xác minh là khách hàng ở nước ngoài. Ngoài ra, ngân hàng của bạn có thể chặn một giao dịch đầu tiên với đơn vị bán hàng Hàn Quốc, và bước xác thực 3-D Secure có thể thất bại bên trong trình duyệt nhúng của ứng dụng. Hãy gọi cho ngân hàng, bật giao dịch quốc tế, và nếu nền tảng có luồng nào thử được thì hãy chạy thử một giao dịch nhỏ không liên quan trước.",
+        pitfall:
+          "Một chiếc thẻ bị từ chối ở bước thanh toán sẽ trả ghế của bạn về kho chung trong vài phút. Đây là thất bại tốn kém nhất trong toàn bộ quy trình, và hoàn toàn có thể phòng tránh.",
+        takes: "Cần 1-3 ngày chuẩn bị",
+      },
+      {
+        title: "Chuẩn bị cho chính buổi mở bán",
+        body: "Hãy đăng nhập và hoàn tất mọi bước xác minh trước ít nhất một ngày. Đúng hôm đó, hãy đăng nhập sẵn từ sớm trước giờ mở, lấy giờ KST chính thức làm mốc chứ không lấy đồng hồ trên máy của bạn. Hãy quyết định trước bạn muốn ngồi khu nào — phần lớn hệ thống xếp hàng chỉ cho bạn một khoảng thời gian ngắn để chọn và thanh toán trước khi nhả chỗ đang giữ.",
+        pitfall:
+          "Mở một cửa sổ ẩn danh mới “cho chắc” nghĩa là bạn phải đăng nhập và xác minh lại ngay trong hàng chờ. Đừng làm vậy.",
+        takes: "30 phút trước giờ mở",
+      },
+      {
+        title: "Biết luật bán lại trước khi nghĩ đến chuyện bán lại",
+        body: "Hàn Quốc đã siết quy định về bán lại vé bằng một bản sửa đổi Luật Biểu diễn có hiệu lực từ ngày 28 tháng 8 năm 2026 — sửa đổi hồi tháng 1, công bố tháng 2, và có hiệu lực từ cuối tháng 8. Báo chí mô tả bản sửa đổi này cấm việc bán lại có tính thường xuyên hoặc có tính thương mại với giá cao hơn giá mua, bao gồm cả việc mua với ý định bán lại chứ không chỉ việc bán, và không còn giới hạn ở các giao dịch mua bằng công cụ tự động. Mức phạt được nêu lên tới năm mươi lần giá trị giao dịch, kèm tịch thu khoản thu lợi. Hãy coi việc bán lại cao hơn mệnh giá cho các show ở Hàn Quốc là chuyện không bàn tới, và dùng chức năng bán lại hoặc chuyển nhượng chính thức của nền tảng nếu show đó có.",
+        pitfall:
+          "Đây là luật mới, mới có hiệu lực từ tháng 8 năm 2026, và ngưỡng thế nào là “thường xuyên” vẫn đang được định hình trên thực tế. Việc một tin rao vẫn tồn tại trên một sàn bán lại quốc tế không nói lên điều gì về chuyện mua hay bán nó có an toàn cho bạn hay không.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Nếu tư cách thành viên của tôi hết hạn trước đợt bán trước, tôi gia hạn kịp có được không?",
+        a: "Chỉ khi việc gia hạn rơi vào trước hạn chót xét điều kiện, mà hạn chót đó thường sớm hơn chính đợt bán trước. Tính năng Thanh toán Tự động của Weverse Shop, có từ ngày 3 tháng 9 năm 2026 trên những gói thành viên hỗ trợ nó, sẽ trừ tiền từ phương thức đã đăng ký vào ngày cuối cùng của kỳ hiệu lực, nhờ đó không còn khoảng trống nào. Hãy thiết lập nó trước khi một tour được công bố chứ đừng đợi sau đó.",
+      },
+      {
+        q: "Tôi có cần số điện thoại Hàn Quốc để mua vé concert K-pop không?",
+        a: "Với các trang bán vé tiếng Hàn, việc xác minh danh tính nhìn chung phụ thuộc vào số di động Hàn Quốc, và muốn có số đó thường phải có giấy tờ cư trú tại Hàn. Với các trang dành cho người ở nước ngoài thì nhìn chung là không — họ xác minh khách ở nước ngoài bằng cách khác, thường là thông tin hộ chiếu. Điều nào áp dụng cho bạn phụ thuộc vào việc show cụ thể của bạn được bán trên nền tảng nào.",
+      },
+      {
+        q: "Tôi dùng thẻ tín dụng nước ngoài được không?",
+        a: "Thường là được trên các nền tảng dành cho người ở nước ngoài, và nhiều khi chỉ sau khi tài khoản của bạn đã được xác minh là khách ở nước ngoài. Hãy lường trước rằng chính ngân hàng của bạn là nửa còn lại của vấn đề: hãy bật giao dịch quốc tế từ trước và sẵn sàng cho bước xác thực 3-D Secure.",
+      },
+      {
+        q: "Đợt bán trước cho fan club mở sớm bao lâu?",
+        a: "Tùy từng show, và thông báo chính thức là câu trả lời đáng tin duy nhất. Các khung bán trước thường diễn ra trước đợt bán chung một ngày trở lên, và tư cách thành viên thường phải còn hiệu lực trước một hạn chót còn sớm hơn nữa. Đừng suy ra thời điểm từ một tour trước đó.",
+      },
+      {
+        q: "Trang Hàn Quốc và trang toàn cầu có chung một hàng chờ không?",
+        a: "Không hẳn. Việc phân bổ vé, xác minh và công nhận tư cách fan club có thể được xử lý riêng giữa đợt bán tiếng Hàn và đợt bán toàn cầu của cùng một show. Tư cách thành viên đã xác minh ở bên này không mặc nhiên được công nhận ở bên kia, nên hãy xem thông báo để biết điều nào áp dụng cho bạn.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "วิธีซื้อบัตรคอนเสิร์ต K-pop จากนอกประเทศเกาหลี",
+    summary:
+      "ภาพรวมทั้งหมดก่อนเริ่ม: งานของคุณขายบัตรบนแพลตฟอร์มไหน แพลตฟอร์มนั้นตรวจสอบตัวตนอย่างไร และคุณต้องเตรียมอะไรไว้ก่อนเปิดขาย",
+    scope:
+      "ครอบคลุมงานที่จัดในเกาหลีใต้และแพลตฟอร์มขายบัตรที่ค่ายเพลงเกาหลีใช้ รอบทัวร์ต่างประเทศขายโดยผู้จัดในท้องถิ่นและแยกกันคนละเรื่อง กฎด้านล่างนี้ใช้กับรอบเหล่านั้นไม่ได้",
+    intro: [
+      "คู่มือเกือบทุกฉบับที่ติดอันดับสำหรับคำถามนี้เขียนขึ้นก่อนเดือนธันวาคม 2025 และบอกให้คุณไปใช้เว็บไซต์ที่ไม่มีอยู่ในชื่อนั้นแล้ว นั่นคือเหตุผลหลักที่หน้านี้มีอยู่",
+      "ไม่มีเว็บขายบัตร K-pop เพียงเว็บเดียว แพลตฟอร์มถูกเลือกเป็นรายทัวร์โดยค่ายและผู้จัด และถูกระบุไว้ในประกาศอย่างเป็นทางการของงานนั้น ทุกอย่างที่เหลือ — คุณต้องผ่านการยืนยันตัวตนแบบไหน บัตรต่างประเทศใช้ได้หรือไม่ รอบพรีเซลเปิดล่วงหน้านานแค่ไหน — ล้วนตามมาจากข้อเท็จจริงข้อเดียวนี้",
+      "ลำดับจึงเป็นแบบนี้: หาประกาศอย่างเป็นทางการก่อน ระบุแพลตฟอร์มให้ได้ แล้วค่อยเตรียมตัวตามข้อกำหนดเฉพาะของแพลตฟอร์มนั้น การทำสลับลำดับคือสาเหตุที่คนมีบัญชีซึ่งยืนยันตัวตนแล้วอยู่ผิดเว็บ ก่อนเปิดขายหนึ่งชั่วโมง",
+    ],
+    steps: [
+      {
+        title: "หาประกาศอย่างเป็นทางการ ไม่ใช่โพสต์ที่แฟนแชร์ต่อ",
+        body: "เข้าไปที่ช่องทางทางการของศิลปิน — เว็บไซต์ของค่าย คอมมูนิตี้ Weverse ของศิลปิน และบัญชี X หรือ Instagram ทางการ ประกาศจะระบุแพลตฟอร์มขายบัตร เวลาพรีเซลและเวลาเปิดขายรอบทั่วไปเป็นเวลา KST ระดับสมาชิกที่ต้องมีเพื่อเข้าพรีเซล รวมถึงเงื่อนไขเรื่องถิ่นที่อยู่หรือการยืนยันตัวตน แคปหน้าจอเก็บไว้ ทุกอย่างที่คุณทำหลังจากนี้ขึ้นอยู่กับเอกสารชิ้นเดียวนี้",
+        pitfall:
+          "บัญชีแฟนคลับรวบรวมและเรียบเรียงใหม่ และระบุแพลตฟอร์มผิดบ่อยพอที่จะทำให้คุณพลาดรอบขาย อีกทั้งแทบไม่เคยอัปเดตเมื่อวันเวลาเปลี่ยน",
+        takes: "10 นาที",
+      },
+      {
+        title: "ระบุแพลตฟอร์มให้ได้ — และอย่าเดาจากชื่อค่าย",
+        body: "ศิลปินในเครือ HYBE โดยทั่วไปขายผ่านระบบบัตรของ Weverse เอง ทัวร์เกาหลีอื่น ๆ มักใช้ NOL Ticket (เว็บภาษาเกาหลี) หรือ NOL World (เว็บสำหรับผู้อยู่ต่างประเทศ) YES24 หรือ Melon Ticket แต่นี่เป็นแนวโน้ม ไม่ใช่กฎ ค่ายเปลี่ยนแพลตฟอร์มระหว่างทัวร์ได้ และทัวร์เดียวอาจแยกรอบขายในเกาหลีกับรอบขายทั่วโลกไปคนละเว็บ อ่านประกาศ",
+        pitfall:
+          "การยึดการจับคู่นั้นเป็นตายตัว — “HYBE ต้อง Weverse, SM ต้อง YES24” — คือข้อผิดพลาดที่พบบ่อยที่สุดในคู่มือที่มีอยู่ มันผิดบ่อยพอที่จะสร้างความเสียหาย",
+        takes: "5 นาที",
+      },
+      {
+        title: "ดูให้ออกว่าคุณต้องผ่านการยืนยันตัวตนแบบไหน",
+        body: "เว็บขายบัตรภาษาเกาหลีโดยทั่วไปยืนยันตัวตนด้วยเบอร์มือถือเกาหลี ซึ่งในทางปฏิบัติต้องมีเอกสารถิ่นที่อยู่ในเกาหลีจึงจะขอได้ ถ้าคุณไม่มี เว็บภาษาเกาหลีไม่ใช่ทางของคุณ เว็บสำหรับผู้อยู่ต่างประเทศมีไว้สำหรับกรณีนี้โดยเฉพาะ และยืนยันด้วยวิธีอื่น โดยทั่วไปคือข้อมูลหนังสือเดินทางที่ผูกกับบัญชีของคุณ ตัดสินใจตอนนี้เลยว่าจะใช้เว็บไหน เพราะบัญชีที่คุณต้องมีอยู่บนเว็บนั้น",
+        pitfall:
+          "การพยายามฝืนใช้เว็บภาษาเกาหลีให้ได้คือการเสียแรงเปล่า และการจัดแจงที่ยืมตัวตนของคนอื่นมาผ่านการยืนยัน เราไม่ช่วย เพราะมันทำให้ทั้งบัตรและบัญชีของคุณเสี่ยง",
+        takes: "15 นาที",
+      },
+      {
+        title: "สร้างบัญชีด้วยข้อมูลหนังสือเดินทางให้ตรงเป๊ะ",
+        body: "กรอกชื่อตามกฎหมายให้ตรงกับที่ปรากฏในแถบอ่านด้วยเครื่องของหนังสือเดินทาง และกรอกวันเกิดตามรูปแบบที่เว็บกำหนด ถ้างานนั้นต้องเป็นสมาชิกแฟนคลับจึงจะเข้าพรีเซลได้ ชื่อและวันเกิดบนสมาชิกภาพกับบนบัญชีขายบัตรต้องตรงกัน ความไม่ตรงกันเป็นสาเหตุที่มีบันทึกไว้ว่าทำให้คำสั่งซื้อถูกยกเลิกที่หน้างานหรือระหว่างการยืนยันตัวตน",
+        pitfall:
+          "ชื่อกลาง นามสกุลที่มีขีดกลาง และลำดับชื่อ คือจุดที่พัง สมาชิกภาพที่เขียนว่า “Maria Santos” ขณะที่หนังสือเดินทางเขียนว่า “Maria Elena Santos Cruz” ถือว่าไม่ตรงกัน",
+        takes: "20 นาที",
+      },
+      {
+        title: "ตรวจวิธีชำระเงินล่วงหน้าหลายวัน ไม่ใช่วันงาน",
+        body: "บัตรที่ออกในต่างประเทศมักใช้ได้ แต่บ่อยครั้งใช้ได้ก็ต่อเมื่อบัญชีของคุณผ่านการยืนยันว่าเป็นลูกค้าต่างประเทศแล้ว นอกจากนี้ ธนาคารของคุณอาจบล็อกการตัดเงินครั้งแรกจากร้านค้าเกาหลี และขั้นตอน 3-D Secure อาจล้มเหลวเมื่อทำในเบราว์เซอร์ที่ฝังอยู่ในแอป โทรหาธนาคาร เปิดใช้ธุรกรรมระหว่างประเทศ และถ้าแพลตฟอร์มมีขั้นตอนที่ลองได้ ให้ลองจ่ายรายการเล็ก ๆ ที่ไม่เกี่ยวข้องก่อนสักครั้ง",
+        pitfall:
+          "บัตรที่ถูกปฏิเสธในขั้นชำระเงินจะทำให้ที่นั่งของคุณกลับคืนสู่ระบบภายในไม่กี่นาที นี่คือความล้มเหลวที่แพงที่สุดในกระบวนการทั้งหมด และเป็นความล้มเหลวที่ป้องกันได้ทั้งหมดเช่นกัน",
+        takes: "ต้องเผื่อเวลา 1-3 วัน",
+      },
+      {
+        title: "เตรียมตัวสำหรับตัวรอบขายเอง",
+        body: "ล็อกอินและทำทุกขั้นตอนการยืนยันให้เสร็จอย่างน้อยหนึ่งวันล่วงหน้า ในวันนั้นให้ล็อกอินค้างไว้ก่อนเวลาเปิดนาน ๆ โดยยึดเวลา KST อย่างเป็นทางการเป็นหลัก ไม่ใช่นาฬิกาในเครื่องของคุณ ตัดสินใจเรื่องโซนที่นั่งที่ต้องการไว้ล่วงหน้า ระบบคิวส่วนใหญ่ให้เวลาคุณสั้น ๆ ในการเลือกและจ่ายเงินก่อนจะปล่อยที่นั่งที่จองไว้",
+        pitfall:
+          "การเปิดหน้าต่างไม่ระบุตัวตนอันใหม่ “เผื่อไว้” หมายถึงการต้องล็อกอินและยืนยันตัวตนใหม่ขณะอยู่ในคิว อย่าทำ",
+        takes: "30 นาทีก่อนเปิดขาย",
+      },
+      {
+        title: "รู้กฎเรื่องการขายต่อก่อนจะคิดเรื่องขายต่อ",
+        body: "เกาหลีใต้เข้มงวดกับการขายบัตรต่อมากขึ้นผ่านการแก้ไขกฎหมายการแสดงที่มีผลบังคับใช้วันที่ 28 สิงหาคม 2026 — แก้ไขในเดือนมกราคม ประกาศใช้ในเดือนกุมภาพันธ์ และมีผลตั้งแต่ปลายเดือนสิงหาคม รายงานข่าวเกี่ยวกับการแก้ไขนี้อธิบายว่าเป็นการห้ามขายต่อในลักษณะทำเป็นปกติวิสัยหรือเชิงพาณิชย์ในราคาสูงกว่าราคาที่ซื้อมา ครอบคลุมถึงการซื้อโดยมีเจตนาขายต่อ ไม่ใช่เฉพาะการขาย และไม่จำกัดอยู่แค่การซื้อด้วยระบบอัตโนมัติอีกต่อไป บทลงโทษที่มีรายงานรวมถึงค่าปรับสูงสุดห้าสิบเท่าของมูลค่าการขายและการริบผลประโยชน์ที่ได้มา ให้ถือว่าการขายต่อสูงกว่าราคาหน้าบัตรสำหรับงานในเกาหลีเป็นเรื่องที่ไม่ต้องคิดถึง และใช้ฟังก์ชันขายต่อหรือโอนบัตรอย่างเป็นทางการของแพลตฟอร์มหากงานนั้นมีให้",
+        pitfall:
+          "นี่เป็นกฎหมายใหม่ที่เพิ่งมีผลตั้งแต่เดือนสิงหาคม 2026 และเส้นแบ่งว่าอย่างไรคือ “ทำเป็นปกติวิสัย” ยังกำลังก่อตัวในทางปฏิบัติ การที่ประกาศขายยังอยู่บนตลาดขายต่อระหว่างประเทศไม่ได้บอกอะไรเลยว่าการซื้อหรือขายมันปลอดภัยสำหรับคุณหรือไม่",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ถ้าสมาชิกภาพของฉันหมดอายุก่อนรอบพรีเซล ต่ออายุทันไหม",
+        a: "ทันก็ต่อเมื่อการต่ออายุเกิดขึ้นก่อนเส้นตายของการพิจารณาสิทธิ์ ซึ่งเส้นตายนั้นมักมาก่อนตัวรอบพรีเซลเสียอีก ระบบชำระเงินอัตโนมัติของ Weverse Shop ซึ่งมีให้ใช้ตั้งแต่วันที่ 3 กันยายน 2026 บนสมาชิกภาพที่รองรับ จะตัดเงินจากวิธีชำระที่ลงทะเบียนไว้ในวันสุดท้ายของช่วงที่ยังมีผล ทำให้ไม่เหลือช่องว่างเลย ตั้งค่ามันไว้ก่อนที่ทัวร์จะประกาศ ไม่ใช่หลังจากนั้น",
+      },
+      {
+        q: "ต้องมีเบอร์โทรศัพท์เกาหลีถึงจะซื้อบัตรคอนเสิร์ต K-pop ได้ไหม",
+        a: "สำหรับเว็บขายบัตรภาษาเกาหลี การยืนยันตัวตนโดยทั่วไปขึ้นอยู่กับเบอร์มือถือเกาหลี และการขอเบอร์นั้นตามปกติต้องมีเอกสารถิ่นที่อยู่ในเกาหลี สำหรับเว็บที่รองรับผู้อยู่ต่างประเทศ โดยทั่วไปไม่ต้อง เพราะยืนยันลูกค้าต่างประเทศด้วยวิธีอื่น ซึ่งมักเป็นข้อมูลหนังสือเดินทาง ข้อไหนใช้กับคุณขึ้นอยู่กับว่างานของคุณขายบนแพลตฟอร์มใด",
+      },
+      {
+        q: "ใช้บัตรเครดิตต่างประเทศได้ไหม",
+        a: "โดยทั่วไปได้บนแพลตฟอร์มที่รองรับผู้อยู่ต่างประเทศ และบ่อยครั้งได้ก็ต่อเมื่อบัญชีของคุณผ่านการยืนยันว่าเป็นลูกค้าต่างประเทศแล้ว ให้เตรียมใจว่าธนาคารของคุณเองคืออีกครึ่งหนึ่งของปัญหา เปิดใช้ธุรกรรมระหว่างประเทศไว้ล่วงหน้า และเตรียมพร้อมสำหรับขั้นตอน 3-D Secure",
+      },
+      {
+        q: "รอบพรีเซลของแฟนคลับเปิดล่วงหน้านานแค่ไหน",
+        a: "แล้วแต่งาน และประกาศอย่างเป็นทางการคือคำตอบเดียวที่เชื่อถือได้ ช่วงพรีเซลมักเกิดก่อนรอบขายทั่วไปหนึ่งวันขึ้นไป และสมาชิกภาพมักต้องยังมีผลก่อนเส้นตายที่เร็วกว่านั้นอีก อย่าอนุมานเวลาจากทัวร์ครั้งก่อน",
+      },
+      {
+        q: "เว็บเกาหลีกับเว็บทั่วโลกใช้คิวเดียวกันไหม",
+        a: "ไม่จำเป็น การจัดสรรบัตร การยืนยันตัวตน และการรับรองสมาชิกแฟนคลับอาจถูกจัดการแยกกันระหว่างรอบขายภาษาเกาหลีกับรอบขายทั่วโลกของงานเดียวกัน สมาชิกภาพที่ยืนยันแล้วบนฝั่งหนึ่งไม่ได้ถูกรับรองโดยอัตโนมัติบนอีกฝั่ง จึงควรดูประกาศว่าข้อไหนใช้กับคุณ",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Paano bumili ng tiket sa konsiyerto ng K-pop mula sa labas ng Korea",
+    summary:
+      "Ang buong larawan bago ka magsimula: kung saang plataporma ibinebenta ang konsiyerto mo, kung anong pagpapatunay ng pagkakakilanlan ang hinihingi nito, at kung ano ang dapat handa na bago magbukas ang benta.",
+    scope:
+      "Sakop nito ang mga palabas na ginaganap sa South Korea at ang mga plataporma ng tiket na ginagamit ng mga ahensiyang Koreano. Ang mga petsa ng tour sa ibang bansa ay ibinebenta ng lokal na promoter at hiwalay ang usapan — hindi sa kanila tumutukoy ang mga tuntunin sa ibaba.",
+    intro: [
+      "Halos lahat ng gabay na lumalabas sa tuktok para sa tanong na ito ay isinulat bago ang Disyembre 2025, at itinuturo ka ng mga ito sa isang site na wala na sa pangalang iyon. Iyan ang pangunahing dahilan kung bakit umiiral ang pahinang ito.",
+      "Walang iisang site ng tiket para sa K-pop. Pinipili ang plataporma kada tour ng ahensiya at ng promoter, at pinangangalanan ito sa opisyal na anunsiyo ng palabas na iyon. Ang lahat ng iba pa — kung anong pagpapatunay ng pagkakakilanlan ang haharapin mo, kung gumagana ang dayuhang kard, kung gaano kaaga magbubukas ang presale — ay sumusunod sa isang bagay na iyon.",
+      "Kaya ganito ang pagkakasunod-sunod: hanapin muna ang opisyal na anunsiyo, tukuyin ang plataporma, saka maghanda para sa mga tiyak na kahilingan ng plataporma. Ang pagbaligtad nito ang dahilan kung bakit may mga taong may napatunayang account sa maling site isang oras bago magbukas ang benta.",
+    ],
+    steps: [
+      {
+        title: "Hanapin ang opisyal na anunsiyo, hindi ang repost ng fan",
+        body: "Pumunta sa mga opisyal na channel ng artist — ang site ng ahensiya, ang Weverse community ng artist, at ang opisyal nilang X o Instagram. Nakasaad sa anunsiyo ang plataporma ng tiket, ang oras ng presale at ng pangkalahatang benta sa KST, ang antas ng membership na kailangan para sa presale, at anumang kondisyon sa paninirahan o pagpapatunay. I-screenshot mo ito. Ang lahat ng gagawin mo pagkatapos ay nakasalalay sa iisang dokumentong ito.",
+        pitfall:
+          "Ang mga fan account ay nagtitipon at nagpapaliwanag sa sarili nilang salita, at madalas silang magkamali sa plataporma nang sapat para ikaw ay mawalan ng pagkakataong makabili. Bihira rin silang mag-update kapag inilipat ang petsa.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Tukuyin ang plataporma — at huwag hulaan ito mula sa pangalan ng ahensiya",
+        body: "Ang mga artist ng HYBE ay karaniwang dumadaan sa sariling sistema ng tiket ng Weverse. Ang ibang tour sa Korea ay karaniwang gumagamit ng NOL Ticket (ang site sa wikang Koreano) o NOL World (ang katapat nito para sa mga nasa ibang bansa), YES24, o Melon Ticket. Pero ugali lang ito at hindi tuntunin: nagpapalit ng plataporma ang mga ahensiya sa pagitan ng mga tour, at kayang hatiin ng isang tour ang benta sa Korea at ang pandaigdigang benta sa dalawang magkaibang site. Basahin ang anunsiyo.",
+        pitfall:
+          "Ang pagturing sa pagtutumbas na iyon bilang tiyak — “HYBE ay Weverse, SM ay YES24” — ang pinakakaraniwang pagkakamali sa mga umiiral na gabay. Mali ito nang sapat na kadalasan para magdulot ng pinsala.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Alamin kung anong pagpapatunay ng pagkakakilanlan ang haharapin mo",
+        body: "Ang mga site ng tiket sa wikang Koreano ay karaniwang nagpapatunay ng pagkakakilanlan laban sa isang numero ng cellphone na Koreano, na sa praktika ay nangangailangan ng dokumento ng paninirahan sa Korea. Kung wala ka niyan, hindi ang site na Koreano ang ruta mo. Ang mga site para sa nasa ibang bansa ay umiiral mismo para sa ganitong kaso at nagpapatunay sa ibang paraan — karaniwan ay mga detalye ng pasaporte na itinutugma sa account mo. Magpasya ka na ngayon kung aling site ang gagamitin mo, dahil nasa site na iyon ang account na kailangan mo.",
+        pitfall:
+          "Ang pagpupumilit na paganahin ang site na Koreano ay sayang na pagod, at ang mga kaayusang humihiram ng pagkakakilanlan ng iba para makapasa sa pagpapatunay ay hindi namin tutulungan — inilalagay ng mga ito sa panganib ang tiket at ang account mo.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Gawin ang account gamit ang eksaktong detalye ng pasaporte mo",
+        body: "Ilagay ang legal na pangalan mo gaya ng nakalimbag sa machine-readable zone ng pasaporte, at ang petsa ng kapanganakan sa format na hinihingi ng site. Kung kailangan ng membership sa fan club para sa presale, kailangang pareho ang pangalan at petsa ng kapanganakan sa membership at sa account ng tiket. Ang hindi pagtutugma ay nakatalang dahilan ng mga kanseladong order sa pintuan o habang nagpapatunay.",
+        pitfall:
+          "Ang gitnang pangalan, ang apelyidong may gitling at ang pagkakasunod-sunod ng pangalan ang mga puntong nasisira. Ang membership na nakasulat na “Maria Santos” habang ang pasaporte ay “Maria Elena Santos Cruz” ay hindi magkatugma.",
+        takes: "20 minuto",
+      },
+      {
+        title: "Suriin ang paraan ng pagbabayad ilang araw bago, hindi sa mismong araw",
+        body: "Karaniwang tinatanggap ang mga kard na inisyu sa ibang bansa, pero madalas ay pagkatapos lamang mapatunayan ang account mo bilang customer mula sa ibang bansa. Hiwalay doon, maaaring harangin ng bangko mo ang unang singil mula sa isang Koreanong merchant, at maaaring mabigo ang 3-D Secure sa loob ng browser ng isang app. Tawagan ang bangko, buksan ang mga internasyonal na transaksiyon, at kung may masusubukang daloy ang plataporma, subukan muna ang isang maliit at walang kaugnayang pagbili.",
+        pitfall:
+          "Ang kard na tinanggihan sa hakbang ng pagbabayad ay nagbabalik ng upuan mo sa pool sa loob ng ilang minuto. Ito ang pinakamahal na pagkabigo sa buong proseso, at ito rin ang lubos na maiiwasan.",
+        takes: "1-3 araw na paghahanda",
+      },
+      {
+        title: "Maghanda para sa mismong benta",
+        body: "Mag-log in at tapusin ang bawat hakbang ng pagpapatunay nang hindi bababa sa isang araw bago. Sa mismong araw, naka-sign in ka na nang maaga bago ang oras ng pagbubukas, at ang opisyal na oras na KST ang sundin mo sa halip na ang orasan ng device mo. Napagpasyahan mo na dapat ang nais mong upuan — karaniwang maikli lang ang ibinibigay ng mga sistema ng pila para pumili at magbayad bago nila bitawan ang hawak mong upuan.",
+        pitfall:
+          "Ang pagbukas ng bagong incognito window “para sigurado” ay nangangahulugang mag-lo-log in at magpapatunay kang muli sa loob mismo ng pila. Huwag.",
+        takes: "30 minuto bago magbukas",
+      },
+      {
+        title: "Alamin ang tuntunin sa muling pagbebenta bago mo isipin ang muling pagbebenta",
+        body: "Hinigpitan ng South Korea ang mga tuntunin sa muling pagbebenta ng tiket sa pamamagitan ng isang pagbabago sa Performances Act na nagkabisa noong 28 Agosto 2026 — binago noong Enero, inilathala noong Pebrero, at may bisa mula huling bahagi ng Agosto. Inilalarawan ng mga ulat ang pagbabago bilang pagbabawal sa paulit-ulit o komersiyal na muling pagbebenta nang mas mataas sa presyong binilhan, sakop pati ang pagbili nang may balak na ibenta muli at hindi lamang ang pagbebenta, at hindi na limitado sa mga pagbiling ginawa gamit ang automation. Kabilang sa mga naiulat na parusa ang multang umaabot sa limampung beses ng halaga ng benta at pagsamsam sa napagbentahan. Ituring mong wala sa talahanayan ang muling pagbebenta nang lampas sa nakalimbag na presyo para sa mga palabas sa Korea, at gamitin ang opisyal na resale o transfer na tampok ng plataporma kung mayroon ang palabas.",
+        pitfall:
+          "Bago ang batas na ito, may bisa lamang mula Agosto 2026, at hinuhubog pa sa praktika ang hangganan ng “paulit-ulit”. Ang pag-iral ng isang listing sa isang internasyonal na resale marketplace ay walang sinasabi tungkol sa kung ligtas para sa iyo ang bumili o magbenta nito.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Kung mag-e-expire ang membership ko bago ang presale, puwede ko pa bang i-renew sa oras?",
+        a: "Kung ang pag-renew ay bago ang hangganan ng pagiging kuwalipikado, at mas maaga ang hangganang iyon kaysa sa mismong presale. Ang Auto Payment ng Weverse Shop, na magagamit mula 3 Setyembre 2026 sa mga membership na sumusuporta rito, ay naniningil sa nakarehistrong paraan ng pagbabayad sa huling araw ng panahon ng bisa, kaya tuluyan nitong inaalis ang puwang. Itakda mo ito bago ianunsiyo ang isang tour, hindi pagkatapos.",
+      },
+      {
+        q: "Kailangan ko ba ng numerong Koreano para makabili ng tiket sa konsiyerto ng K-pop?",
+        a: "Para sa mga site ng tiket sa wikang Koreano, ang pagpapatunay ng pagkakakilanlan ay karaniwang nakasalalay sa isang numero ng cellphone na Koreano, at ang pagkuha nito ay karaniwang nangangailangan ng dokumento ng paninirahan sa Korea. Para sa mga site na nakaharap sa ibang bansa, karaniwan ay hindi — nagpapatunay sila ng mga customer mula sa ibang bansa sa ibang paraan, kadalasan sa pamamagitan ng mga detalye ng pasaporte. Kung alin ang tumutukoy sa iyo ay nakadepende sa kung saang plataporma ibinebenta ang tiyak mong palabas.",
+      },
+      {
+        q: "Puwede ba akong gumamit ng dayuhang credit card?",
+        a: "Karaniwang oo sa mga plataporma para sa nasa ibang bansa, at madalas ay pagkatapos lamang mapatunayan ang account mo bilang customer mula sa ibang bansa. Asahan mong ang sarili mong bangko ang kalahati pa ng problema: buksan nang maaga ang mga internasyonal na transaksiyon at maghanda para sa isang hakbang na 3-D Secure.",
+      },
+      {
+        q: "Gaano kaaga nagbubukas ang presale ng fan club?",
+        a: "Nag-iiba ito kada palabas, at ang opisyal na anunsiyo lamang ang maaasahang sagot. Karaniwang nangyayari ang mga presale nang isang araw o higit pa bago ang pangkalahatang benta, at karaniwang kailangang may bisa pa ang membership bago ang isang hangganang mas maaga pa doon. Huwag mong hulaan ang oras batay sa nakaraang tour.",
+      },
+      {
+        q: "Iisang pila ba ang site na Koreano at ang pandaigdigang site?",
+        a: "Hindi palagi. Ang paglalaan ng tiket, ang pagpapatunay, at ang pagkilala sa membership ng fan club ay maaaring hawakan nang magkahiwalay sa pagitan ng bentang Koreano at ng pandaigdigang benta para sa iisang palabas. Ang membership na napatunayan sa isa ay hindi awtomatikong kinikilala sa isa pa, kaya tingnan ang anunsiyo kung alin ang tumutukoy sa iyo.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vé NOL World: trang web từng là Interpark Global",
+    summary:
+      "Trang web trước đây là interpark Global. Nó được đổi tên vào ngày 1 tháng 12 năm 2025, phần lớn các bài hướng dẫn vẫn chỉ bạn tới cái tên cũ, và đây là lộ trình hiện tại theo từng bước.",
+    scope:
+      "Nói về nền tảng dành cho người ở nước ngoài để mua vé các show tại Hàn Quốc. Trang NOL Ticket bằng tiếng Hàn là một sản phẩm riêng, có hệ thống tài khoản riêng và khâu xác minh danh tính chặt hơn.",
+    intro: [
+      "Hai lần đổi tên diễn ra gần nhau và gần như không bài hướng dẫn tiếng Anh nào trên mạng tiếp nhận được lần nào. Yanolja Core gom các thương hiệu của mình về dưới tên NOL vào tháng 4 năm 2025, đó là lúc Interpark Ticket trở thành NOL Ticket. Rồi đến ngày 1 tháng 12 năm 2025, interpark Global hướng tới người ở nước ngoài trở thành NOL World.",
+      "Hệ quả thực tế: những bài hướng dẫn bảo bạn vào “Interpark Global”, cùng ảnh chụp giao diện cũ của nó, đang mô tả một sản phẩm đã được đổi tên và thiết kế lại. Nếu bạn đang đi theo một bài như vậy, bạn đang dò đường bằng một tấm bản đồ lỗi thời.",
+      "Trang này bám theo bản hiện tại. Ngày ghi ở đầu trang là lần kiểm tra gần nhất.",
+    ],
+    steps: [
+      {
+        title: "Bắt đầu từ trang dành cho người ở nước ngoài, không phải trang tiếng Hàn",
+        body: "NOL World là cửa chính dành cho fan ở nước ngoài. Trang NOL Ticket tiếng Hàn chạy khâu xác minh danh tính trong nước chặt hơn và nhìn chung không phải lối đi của bạn, trừ khi bạn có giấy tờ cư trú tại Hàn Quốc. Đây là hai tài khoản riêng biệt — đăng ký bên này không cho bạn bên kia.",
+        pitfall:
+          "Kết quả tìm kiếm và các dấu trang cũ vẫn dẫn về thương hiệu trước đây. Hãy xác nhận bạn đang ở trang dành cho người ở nước ngoài trước khi bỏ công lập tài khoản.",
+        takes: "5 phút",
+      },
+      {
+        title: "Đăng ký bằng thông tin đúng y hộ chiếu",
+        body: "Hãy dùng tên pháp lý và ngày sinh đúng như in trên hộ chiếu. Nếu show bạn muốn có đợt bán trước cho fan club, những thông tin này còn phải khớp với hồ sơ thành viên của bạn. Hãy sửa mọi sai lệch trước khi khung bán trước mở ra, đừng sửa trong lúc nó đang diễn ra.",
+        pitfall:
+          "Đổi một cái tên đã xác minh về sau là quy trình gửi yêu cầu hỗ trợ, không phải một nút gạt trong phần cài đặt. Hãy làm đúng ngay từ đầu.",
+        takes: "20 phút",
+      },
+      {
+        title: "Hoàn tất xác minh khách ở nước ngoài trước khi cần đến nó",
+        body: "Xác minh khách ở nước ngoài là thao tác chỉ làm một lần cho mỗi tài khoản, và NOL World nói rõ rằng thông tin đã xác minh không thể dùng lại. Hãy xác minh trên chính tài khoản bạn định mua bằng nó — nếu bạn có nhiều tài khoản, phần xác minh không chuyển qua lại giữa chúng. Xóa một tài khoản thì đúng là xóa luôn phần xác minh của nó và giải phóng cho tài khoản khác, nhưng một tài khoản đang bị hạn chế vì sử dụng sai thì không thể xóa được. Bản thân việc xác minh không giới hạn độ tuổi, dù những sự kiện có giới hạn tuổi vẫn có thể từ chối đơn mua. Xác nhận sẽ được gửi qua email, nên hãy kiểm tra cả thư rác trước khi kết luận là thất bại.",
+        pitfall:
+          "Phát hiện ở bước thanh toán rằng phần xác minh vẫn đang chờ xử lý là cách kinh điển để mất chiếc ghế đang giữ.",
+        takes: "1-3 ngày tính cả thời gian xử lý",
+      },
+      {
+        title: "Kiểm tra điều kiện riêng của từng show trên trang sự kiện",
+        body: "Giới hạn số ghế mỗi tài khoản, có cần tư cách thành viên hay không, yêu cầu giấy tờ tại địa điểm, và cả việc show đó có mở cho người mua ở nước ngoài hay không — tất cả đều được đặt riêng theo từng sự kiện. Hãy đọc trang sự kiện cùng với thông báo chính thức; chỗ nào hai bên mâu thuẫn thì thông báo chính thức của show đó thắng.",
+        pitfall:
+          "Một số show giới hạn những khu ghế hoặc những đợt bán nhất định cho người mua trong nước. Điều này tùy từng show và không thể biết được từ một bài hướng dẫn chung.",
+        takes: "10 phút",
+      },
+      {
+        title: "Mang đúng giấy tờ khi đi nhận vé",
+        body: "Việc nhận vé diễn ra tại quầy vé ở địa điểm tổ chức vào đúng ngày diễn chứ không sớm hơn — NOL World nói rằng không thể nhận vé vào một ngày trước đó. Khung nhận vé mở trước giờ diễn một tiếng, và bạn cần mã xác nhận cùng với giấy tờ tùy thân. Hãy tính cả thời gian xếp hàng ngay tại quầy vé. Một khi đã nhận, vé không được cấp lại nếu bị mất hay bị lấy cắp.",
+        pitfall:
+          "Tên trên đơn đặt, tên trên giấy tờ và tên trên tư cách thành viên đều phải khớp nhau. Một biệt danh ở bất kỳ mắt xích nào trong chuỗi đó đều là rắc rối.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World có phải là Interpark Global không?",
+        a: "Đó vẫn là dịch vụ bán vé dành cho người ở nước ngoài, sau khi đổi thương hiệu. interpark Global được đổi tên thành NOL World vào ngày 1 tháng 12 năm 2025, tiếp nối việc Yanolja Core gom các thương hiệu về dưới tên NOL vào tháng 4 năm 2025, khi Interpark Ticket trở thành NOL Ticket.",
+      },
+      {
+        q: "Vì sao dấu trang cũ của tôi vẫn ghi Interpark?",
+        a: "Việc đổi thương hiệu cần thời gian để lan ra kết quả tìm kiếm, các bài hướng dẫn của bên thứ ba và những trang đã lưu đệm. Hãy đi từ thông báo chính thức của show bạn quan tâm, thay vì từ một liên kết đã lưu hay một bài blog.",
+      },
+      {
+        q: "NOL Global có phải cùng một thứ không? Còn NOL Korea thì sao?",
+        a: "Đó là những cái tên người ta buột miệng khi nhớ mang máng về lần đổi tên, và đáng nói ra vì chúng là thứ thực sự được gõ vào ô tìm kiếm. Có hai trang: NOL World, trang dành cho người ở nước ngoài, vốn là interpark Global cho tới ngày 1 tháng 12 năm 2025; và NOL Ticket, trang tiếng Hàn, vốn là Interpark Ticket cho tới tháng 4 năm 2025. Nếu ai đó chỉ bạn tới “NOL Global”, “NOL Korea” hay “NOL KR”, thì trang bạn đang tìm gần như chắc chắn là NOL World.",
+      },
+      {
+        q: "Tôi dùng tài khoản NOL Ticket trên NOL World được không?",
+        a: "Hãy coi chúng là hai tài khoản riêng với hai phần xác minh riêng. Đừng cho rằng một lần đăng nhập hay một phần xác minh đã hoàn tất sẽ theo bạn sang bên kia — hãy xác nhận ngay trên trang mà bạn sẽ thực sự mua vé.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "บัตร NOL World: เว็บที่เคยชื่อ Interpark Global",
+    summary:
+      "เว็บที่เคยเป็น interpark Global ถูกเปลี่ยนชื่อเมื่อวันที่ 1 ธันวาคม 2025 คู่มือส่วนใหญ่ยังส่งคุณไปที่ชื่อเดิม และนี่คือเส้นทางปัจจุบันแบบทีละขั้น",
+    scope:
+      "ครอบคลุมแพลตฟอร์มสำหรับผู้อยู่ต่างประเทศที่ใช้ซื้อบัตรงานในเกาหลี เว็บ NOL Ticket ภาษาเกาหลีเป็นผลิตภัณฑ์คนละตัว มีระบบบัญชีแยกต่างหากและการยืนยันตัวตนที่เข้มกว่า",
+    intro: [
+      "การเปลี่ยนชื่อสองครั้งเกิดขึ้นห่างกันไม่นาน และคู่มือภาษาอังกฤษบนอินเทอร์เน็ตแทบไม่มีฉบับใดรับรู้ทั้งสองครั้ง Yanolja Core รวมแบรนด์ของตนไว้ภายใต้ชื่อ NOL เมื่อเดือนเมษายน 2025 ซึ่งเป็นตอนที่ Interpark Ticket กลายเป็น NOL Ticket จากนั้นวันที่ 1 ธันวาคม 2025 interpark Global ที่ให้บริการผู้อยู่ต่างประเทศก็กลายเป็น NOL World",
+      "ผลในทางปฏิบัติคือ คู่มือที่บอกให้คุณไปที่ “Interpark Global” พร้อมภาพหน้าจอของอินเทอร์เฟซเก่า กำลังอธิบายผลิตภัณฑ์ที่ถูกเปลี่ยนชื่อและออกแบบใหม่ไปแล้ว ถ้าคุณกำลังทำตามคู่มือแบบนั้น คุณกำลังเดินทางด้วยแผนที่ที่ล้าสมัย",
+      "หน้านี้ตามฉบับปัจจุบัน วันที่ด้านบนคือวันที่ตรวจสอบล่าสุด",
+    ],
+    steps: [
+      {
+        title: "เริ่มที่เว็บสำหรับผู้อยู่ต่างประเทศ ไม่ใช่เว็บภาษาเกาหลี",
+        body: "NOL World คือประตูหน้าสำหรับแฟนที่อยู่ต่างประเทศ เว็บ NOL Ticket ภาษาเกาหลีใช้การยืนยันตัวตนสำหรับคนในประเทศซึ่งเข้มกว่า และโดยทั่วไปไม่ใช่ทางของคุณ เว้นแต่คุณมีเอกสารถิ่นที่อยู่ในเกาหลี ทั้งสองเป็นบัญชีแยกกัน การสมัครที่หนึ่งไม่ได้ทำให้คุณมีอีกที่หนึ่ง",
+        pitfall:
+          "ผลการค้นหาและบุ๊กมาร์กเก่ายังชี้ไปที่แบรนด์เดิมอยู่ ยืนยันให้แน่ว่าคุณอยู่บนเว็บสำหรับผู้อยู่ต่างประเทศก่อนจะเสียเวลาสร้างบัญชี",
+        takes: "5 นาที",
+      },
+      {
+        title: "สมัครด้วยข้อมูลที่ตรงกับหนังสือเดินทางเป๊ะ",
+        body: "ใช้ชื่อตามกฎหมายและวันเกิดตามที่พิมพ์อยู่ในหนังสือเดินทางของคุณ ถ้างานที่คุณต้องการมีรอบพรีเซลสำหรับแฟนคลับ ข้อมูลเหล่านี้ต้องตรงกับประวัติสมาชิกของคุณด้วย แก้ความไม่ตรงกันให้เสร็จก่อนที่ช่วงพรีเซลจะเปิด ไม่ใช่ระหว่างที่มันกำลังเปิดอยู่",
+        pitfall:
+          "การเปลี่ยนชื่อที่ยืนยันไปแล้วในภายหลังเป็นกระบวนการยื่นเรื่องกับฝ่ายบริการ ไม่ใช่ปุ่มสลับในหน้าตั้งค่า ทำให้ถูกตั้งแต่ครั้งแรก",
+        takes: "20 นาที",
+      },
+      {
+        title: "ทำการยืนยันลูกค้าต่างประเทศให้เสร็จก่อนที่จะต้องใช้",
+        body: "การยืนยันลูกค้าต่างประเทศเป็นการกระทำครั้งเดียวต่อหนึ่งบัญชี และ NOL World ระบุว่าข้อมูลที่ยืนยันแล้วไม่สามารถนำกลับมาใช้ซ้ำได้ ให้ยืนยันบนบัญชีที่คุณตั้งใจจะใช้ซื้อจริง ๆ ถ้าคุณมีมากกว่าหนึ่งบัญชี การยืนยันจะไม่ย้ายระหว่างกัน การลบบัญชีนั้นลบข้อมูลการยืนยันของมันจริงและปล่อยให้บัญชีอื่นใช้ได้ แต่บัญชีที่ถูกจำกัดเพราะใช้งานโดยมิชอบจะลบไม่ได้เลย ตัวการยืนยันเองไม่มีข้อจำกัดเรื่องอายุ แม้ว่างานที่จำกัดอายุอาจยังปฏิเสธการจองอยู่ดี คำยืนยันจะมาทางอีเมล จึงควรเช็กกล่องสแปมก่อนจะสรุปว่าล้มเหลว",
+        pitfall:
+          "การมารู้ตอนขั้นชำระเงินว่าการยืนยันยังรอดำเนินการอยู่ คือวิธีคลาสสิกในการเสียที่นั่งที่กำลังจองไว้",
+        takes: "1-3 วันรวมเวลาดำเนินการ",
+      },
+      {
+        title: "ตรวจเงื่อนไขเฉพาะของแต่ละงานบนหน้าอีเวนต์",
+        body: "จำนวนที่นั่งสูงสุดต่อบัญชี การต้องเป็นสมาชิกหรือไม่ ข้อกำหนดเรื่องเอกสารที่หน้างาน และแม้แต่ว่างานนั้นเปิดให้ผู้ซื้อจากต่างประเทศหรือไม่ ล้วนถูกกำหนดเป็นรายอีเวนต์ อ่านหน้าอีเวนต์ควบคู่กับประกาศอย่างเป็นทางการ หากทั้งสองขัดกัน ให้ยึดประกาศอย่างเป็นทางการของงานนั้น",
+        pitfall:
+          "บางงานจำกัดโซนที่นั่งหรือรอบขายบางรอบไว้ให้ผู้ซื้อในประเทศเท่านั้น เรื่องนี้ขึ้นกับแต่ละงานและไม่อาจรู้ได้จากคู่มือทั่วไป",
+        takes: "10 นาที",
+      },
+      {
+        title: "พกเอกสารที่ถูกต้องไปรับบัตร",
+        body: "การรับบัตรทำที่ห้องจำหน่ายบัตรของสถานที่จัดงานในวันแสดงเท่านั้น ไม่ใช่ก่อนหน้านั้น — NOL World ระบุว่าไม่สามารถรับบัตรในวันก่อนหน้าได้ ช่วงรับบัตรเปิดหนึ่งชั่วโมงก่อนการแสดง และคุณต้องมีหมายเลขยืนยันพร้อมเอกสารแสดงตน เผื่อเวลาสำหรับการต่อแถวที่ห้องจำหน่ายบัตรด้วย เมื่อรับบัตรไปแล้ว หากสูญหายหรือถูกขโมย จะไม่มีการออกบัตรใหม่ให้",
+        pitfall:
+          "ชื่อบนการจอง ชื่อบนเอกสาร และชื่อบนสมาชิกภาพ ต้องตรงกันทั้งหมด ชื่อเล่นที่โผล่มาในจุดใดจุดหนึ่งของห่วงโซ่นี้คือปัญหา",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World คืออันเดียวกับ Interpark Global ไหม",
+        a: "เป็นบริการขายบัตรสำหรับผู้อยู่ต่างประเทศเดิมที่เปลี่ยนแบรนด์ interpark Global ถูกเปลี่ยนชื่อเป็น NOL World เมื่อวันที่ 1 ธันวาคม 2025 ต่อเนื่องจากการที่ Yanolja Core รวมแบรนด์ไว้ใต้ชื่อ NOL เมื่อเดือนเมษายน 2025 ซึ่งเป็นตอนที่ Interpark Ticket กลายเป็น NOL Ticket",
+      },
+      {
+        q: "ทำไมบุ๊กมาร์กเก่าของฉันยังขึ้นว่า Interpark",
+        a: "การเปลี่ยนแบรนด์ต้องใช้เวลากว่าจะแพร่ไปถึงผลการค้นหา คู่มือของบุคคลที่สาม และหน้าที่ถูกแคชไว้ ให้เริ่มจากประกาศอย่างเป็นทางการของงานที่คุณสนใจ แทนที่จะเริ่มจากลิงก์ที่บันทึกไว้หรือบทความบล็อก",
+      },
+      {
+        q: "NOL Global คืออันเดียวกันไหม แล้ว NOL Korea ล่ะ",
+        a: "ชื่อเหล่านั้นคือสิ่งที่คนนึกออกเวลาจำการเปลี่ยนชื่อได้ครึ่ง ๆ กลาง ๆ และควรพูดถึงเพราะมันคือสิ่งที่ถูกพิมพ์ลงไปจริง ๆ มีสองเว็บ: NOL World สำหรับผู้อยู่ต่างประเทศ ซึ่งเคยเป็น interpark Global จนถึงวันที่ 1 ธันวาคม 2025 และ NOL Ticket เว็บภาษาเกาหลี ซึ่งเคยเป็น Interpark Ticket จนถึงเดือนเมษายน 2025 ถ้ามีคนส่งคุณไปที่ “NOL Global” “NOL Korea” หรือ “NOL KR” เว็บที่คุณกำลังหาแทบจะแน่นอนว่าคือ NOL World",
+      },
+      {
+        q: "ฉันใช้บัญชี NOL Ticket บน NOL World ได้ไหม",
+        a: "ให้ถือว่าเป็นคนละบัญชีที่มีการยืนยันตัวตนแยกกัน อย่าคิดเอาเองว่าการล็อกอินหรือการยืนยันที่เสร็จแล้วจะติดตามข้ามไป ให้ยืนยันบนเว็บที่คุณจะซื้อจริงเท่านั้น",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Mga tiket sa NOL World: ang site na dating Interpark Global",
+    summary:
+      "Ang site na dating interpark Global. Pinalitan ito ng pangalan noong 1 Disyembre 2025, karamihan sa mga gabay ay nagtuturo pa rin sa lumang pangalan, at narito ang kasalukuyang ruta nang hakbang-hakbang.",
+    scope:
+      "Sakop nito ang platapormang nakaharap sa ibang bansa para sa mga palabas sa Korea. Ang site na NOL Ticket sa wikang Koreano ay hiwalay na produkto na may hiwalay na sistema ng account at mas mahigpit na pagpapatunay ng pagkakakilanlan.",
+    intro: [
+      "Dalawang pagpapalit ng pangalan ang naganap nang magkalapit at halos walang gabay sa Ingles sa internet ang nakahabol sa alinman sa dalawa. Pinagsama ng Yanolja Core ang mga brand nito sa ilalim ng pangalang NOL noong Abril 2025, at doon naging NOL Ticket ang Interpark Ticket. Pagkatapos, noong 1 Disyembre 2025, naging NOL World ang interpark Global na nakaharap sa ibang bansa.",
+      "Ang praktikal na bunga: ang mga gabay na nagsasabing pumunta ka sa “Interpark Global”, kasama ang mga screenshot ng lumang interface nito, ay naglalarawan ng isang produktong pinalitan na ng pangalan at idinisenyong muli. Kung sinusunod mo ang isa sa mga iyon, naglalakbay ka gamit ang mapang luma na.",
+      "Sinusubaybayan ng pahinang ito ang kasalukuyan. Ang petsa sa itaas ay kung kailan ito huling sinuri.",
+    ],
+    steps: [
+      {
+        title: "Magsimula sa site para sa nasa ibang bansa, hindi sa Koreano",
+        body: "Ang NOL World ang pintuang-harap para sa mga fan sa labas ng Korea. Ang site na NOL Ticket sa wikang Koreano ay nagpapatakbo ng mas mahigpit na lokal na pagpapatunay ng pagkakakilanlan at karaniwang hindi ito ang ruta mo maliban kung may hawak kang dokumento ng paninirahan sa Korea. Magkahiwalay ang mga account — ang pagparehistro sa isa ay hindi nagbibigay sa iyo ng isa pa.",
+        pitfall:
+          "Ang mga resulta ng paghahanap at mga lumang bookmark ay patungo pa rin sa dating pangalan. Tiyaking nasa site ka para sa nasa ibang bansa bago ka gumugol ng oras sa paggawa ng account.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Magparehistro gamit ang detalyeng eksaktong katulad ng pasaporte",
+        body: "Gamitin ang legal mong pangalan at petsa ng kapanganakan gaya ng nakalimbag sa pasaporte mo. Kung may presale para sa fan club ang palabas na gusto mo, kailangang tumugma rin ang mga detalyeng ito sa talaan ng membership mo. Ayusin ang anumang hindi pagtutugma bago magbukas ang bintana ng presale, hindi habang bukas ito.",
+        pitfall:
+          "Ang pagpapalit ng napatunayang pangalan sa kalaunan ay isang prosesong dumadaan sa suporta, hindi isang switch sa settings. Itama mo ito sa unang pagkakataon.",
+        takes: "20 minuto",
+      },
+      {
+        title: "Tapusin ang pagpapatunay bilang customer mula sa ibang bansa bago mo ito kailanganin",
+        body: "Ang pagpapatunay bilang customer mula sa ibang bansa ay isang beses lamang kada account, at sinasabi ng NOL World na hindi maaaring magamit muli ang napatunayang impormasyon. Magpatunay sa account na talagang gagamitin mo sa pagbili — kung mahigit isa ang account mo, hindi lumilipat ang pagpapatunay sa pagitan ng mga ito. Ang pagbura ng account ay talagang nagbubura sa pagpapatunay nito at nagpapalaya nito para sa iba, ngunit ang account na pinigilan dahil sa maling paggamit ay hindi mabubura kahit kailan. Walang limitasyon sa edad ang mismong pagpapatunay, bagaman maaari pa ring tanggihan ng mga palabas na may hangganan sa edad ang pagbu-book. Dumarating ang kumpirmasyon sa email, kaya tingnan ang spam bago magpasyang nabigo ito.",
+        pitfall:
+          "Ang pagkatuklas sa hakbang ng pagbabayad na nakabinbin pa ang pagpapatunay ang klasikong paraan ng pagkawala ng hawak mong upuan.",
+        takes: "1-3 araw kasama ang pagproseso",
+      },
+      {
+        title: "Tingnan ang mga kondisyon ng bawat palabas sa pahina ng event",
+        body: "Ang limitasyon sa upuan kada account, kung kailangan ba ng membership, ang kahilingan sa pagkakakilanlan sa venue, at kung bukas ba ang palabas sa mga bumibili mula sa ibang bansa ay itinatakda kada event. Basahin ang pahina ng event kasabay ng opisyal na anunsiyo — kung magkasalungat sila, ang opisyal na anunsiyo para sa palabas mo ang mananaig.",
+        pitfall:
+          "May mga palabas na naglilimita ng ilang bloke ng upuan o ilang round ng benta sa mga bumibili sa loob ng bansa. Nakadepende ito sa palabas at hindi matutuklasan mula sa isang pangkalahatang gabay.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Dalhin ang tamang dokumento sa pagkuha ng tiket",
+        body: "Ang pagkuha ay sa box office ng venue sa mismong araw ng palabas at hindi mas maaga — sinasabi ng NOL World na hindi maaaring kunin ang tiket sa naunang araw. Nagbubukas ang bintana isang oras bago ang palabas, at kailangan mo ang numero ng kumpirmasyon kasama ang isang pagkakakilanlan. Maglaan ng oras para sa pila sa mismong box office. Kapag nakuha na, hindi na muling maibibigay ang tiket kung mawala o manakaw ito.",
+        pitfall:
+          "Ang pangalan sa booking, ang pangalan sa dokumento at ang pangalan sa membership ay dapat magkatugma lahat. Ang isang palayaw saanman sa tanikalang iyon ay isang problema.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Pareho ba ang NOL World at ang Interpark Global?",
+        a: "Iisa pa rin itong serbisyo ng tiket para sa nasa ibang bansa, matapos ang pagpapalit ng brand. Pinalitan ang pangalan ng interpark Global tungo sa NOL World noong 1 Disyembre 2025, kasunod ng pagsasama ng Yanolja Core sa mga brand nito sa ilalim ng pangalang NOL noong Abril 2025, nang maging NOL Ticket ang Interpark Ticket.",
+      },
+      {
+        q: "Bakit Interpark pa rin ang nakasulat sa lumang bookmark ko?",
+        a: "Matagal bago kumalat ang pagpapalit ng brand sa mga resulta ng paghahanap, sa mga gabay ng ibang tao, at sa mga naka-cache na pahina. Magsimula sa opisyal na anunsiyo para sa palabas mo sa halip na sa isang naka-save na link o sa isang blog.",
+      },
+      {
+        q: "Pareho rin ba ang NOL Global? Paano naman ang NOL Korea?",
+        a: "Iyan ang mga pangalang naiisip ng mga tao kapag kalahati lang ang natatandaan nila sa pagpapalit, at sulit silang banggitin dahil iyan ang talagang tinatype. May dalawang site: ang NOL World, ang nakaharap sa ibang bansa, na interpark Global hanggang 1 Disyembre 2025; at ang NOL Ticket, ang nasa wikang Koreano, na Interpark Ticket hanggang Abril 2025. Kung pinapunta ka sa “NOL Global”, “NOL Korea” o “NOL KR”, halos tiyak na NOL World ang hinahanap mo.",
+      },
+      {
+        q: "Magagamit ko ba ang NOL Ticket account ko sa NOL World?",
+        a: "Ituring silang magkahiwalay na account na may magkahiwalay na pagpapatunay. Huwag ipagpalagay na dadala ang isang login o isang natapos na pagpapatunay — tiyakin ito sa site na talagang pagbibilhan mo.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Bán trước cho fan club: làm sao đủ điều kiện trước khi đóng",
+    summary:
+      "Có tư cách thành viên không đồng nghĩa với có quyền mua. Giữa hai thứ đó còn một bước xác minh, bước này có hạn chót riêng, và bỏ lỡ nó là cách phổ biến nhất khiến fan mất suất bán trước.",
+    scope:
+      "Nói về hình hài chung của việc đủ điều kiện mua trước cho fan club với các show Hàn Quốc. Mỗi tour tự đặt hạng thành viên, hạn chót và điều kiện riêng trong thông báo chính thức, và thông báo đó đè lên mọi quy tắc chung.",
+    intro: [
+      "Quyền mua trước là một chuỗi ba mắt xích, và fan thường chỉ biết mắt xích đầu tiên. Bạn mua tư cách thành viên. Rồi bạn liên kết và xác minh tư cách đó với tài khoản bán vé. Chỉ khi ấy bạn mới có quyền mua trước.",
+      "Mỗi mắt xích có hạn chót riêng, và hạn chót của bước xác minh thường sớm hơn người ta tưởng — có trường hợp sớm hơn chính đợt bán trước vài ngày. Một tư cách thành viên mua vào tối hôm trước có thể đã quá muộn, dù nó vẫn đang có hiệu lực.",
+      "Hãy coi thông báo là bản đặc tả, còn trang này là danh sách kiểm tra.",
+    ],
+    steps: [
+      {
+        title: "Đọc điều khoản về điều kiện, đừng đọc tiêu đề",
+        body: "Thông báo sẽ nêu rõ sản phẩm thành viên nào và hạng nào thì đủ điều kiện, cùng mốc thời gian mà nó phải đã được mua hoặc phải còn hiệu lực. Đó là hai ngày khác nhau và cả hai đều quan trọng. Hãy ghi chúng lại theo múi giờ của bạn, đặt cạnh giờ KST.",
+        pitfall:
+          "Một tư cách thành viên đang có hiệu lực nhưng được mua sau hạn chót thì ở một số tour là không đủ điều kiện. “Tôi có tư cách thành viên” không giống với “Tôi đã đủ điều kiện”.",
+        takes: "10 phút",
+      },
+      {
+        title: "Mua tư cách thành viên sớm hơn hạn chót thật nhiều",
+        body: "Hãy mua ở cửa hàng chính thức của nghệ sĩ đó. Giữ lại xác nhận đơn hàng và số thành viên. Nếu tư cách thành viên là một bộ sản phẩm vật lý kèm mã điện tử, hãy tính cả thời gian giao hàng và thời gian kích hoạt mã, vốn không diễn ra tức thì. Từ ngày 3 tháng 9 năm 2026, Weverse Shop còn có Thanh toán Tự động trên những gói thành viên hỗ trợ: khoản gia hạn được trừ vào phương thức đã đăng ký vào ngày cuối cùng của kỳ hiệu lực, nên một tư cách thành viên không thể âm thầm hết hạn đúng vào tuần một tour được công bố. Thiết lập này theo từng nhóm thành viên — Global, Japan và USA được quản lý riêng.",
+        pitfall:
+          "Mã thành viên bán lại hoặc được tặng thường trượt ở khâu xác minh, vì tên đăng ký sẽ không khớp với tài khoản bán vé của bạn. Thanh toán Tự động loại bỏ rủi ro hết hạn, nhưng không loại bỏ rủi ro về tên: nó gia hạn đúng tài khoản mà nó được gắn vào, bất kể đó là tài khoản nào.",
+        takes: "30 phút",
+      },
+      {
+        title: "Liên kết và xác minh tư cách thành viên trên nền tảng bán vé",
+        body: "Đây là bước người ta hay bỏ sót. Trên nền tảng bán vé có một thao tác riêng để xác minh tư cách fan club của bạn, và nó mở trong một khung thời gian — thường là vài ngày trước đợt bán trước — rồi đóng lại trước đợt đó. Hãy làm ngay giờ nó mở.",
+        pitfall:
+          "Việc xác minh cho một đợt bán bằng tiếng Hàn và cho một đợt bán toàn cầu có thể được xử lý riêng cho cùng một show. Hoàn tất bên này không nhất thiết cho bạn bên kia.",
+        takes: "20 phút, trong khung thời gian đó",
+      },
+      {
+        title: "Làm cho ba cái tên giống hệt nhau",
+        body: "Hộ chiếu, tư cách thành viên fan club và tài khoản bán vé. Cả ba. Cùng một tên pháp lý, cùng một ngày sinh, cùng một thứ tự. Nếu một chỗ sai, hãy sửa nó trước khung xác minh chứ đừng sửa sau.",
+        pitfall:
+          "Đây là nguyên nhân được ghi nhận thường gặp nhất khiến quyền mua trước không có hiệu lực, và nó vô hình cho tới đúng lúc nó quan trọng.",
+        takes: "15 phút",
+      },
+      {
+        title: "Xác nhận rằng quyền mua trước đã về tới nơi",
+        body: "Sau khi xác minh, hãy tìm một xác nhận rõ ràng — một huy hiệu, một dòng trạng thái, một email. Nếu bạn không tìm thấy xác nhận khẳng định rằng bạn đủ điều kiện, hãy coi như bạn không đủ và liên hệ bộ phận hỗ trợ khi khung thời gian còn mở.",
+        pitfall:
+          "Im lặng không phải là thành công. Một biểu mẫu đã gửi không phải là một quyền đã được cấp.",
+        takes: "10 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Mua tư cách thành viên có bảo đảm được quyền mua trước không?",
+        a: "Không. Ở phần lớn các tour có một bước xác minh riêng để nối tư cách thành viên với tài khoản bán vé của bạn, với khung thời gian riêng mở ra rồi đóng lại trước đợt bán trước. Tư cách thành viên là điều kiện cần, không phải chính cái quyền đó.",
+      },
+      {
+        q: "Tôi dùng tư cách thành viên của người khác được không?",
+        a: "Trên thực tế là không, vì khâu xác minh đối chiếu tên đăng ký và ngày sinh với tài khoản bán vé và giấy tờ tùy thân của bạn. Ngoài việc không chạy được, nó còn khiến đơn hàng có nguy cơ bị hủy.",
+      },
+      {
+        q: "Đợt bán trước mở sớm hơn đợt bán chung bao lâu?",
+        a: "Tùy từng tour. Sớm hơn một ngày trở lên là chuyện thường, và hạn chót của tư cách thành viên còn sớm hơn nữa. Thông báo chính thức của show bạn quan tâm là nguồn đáng tin duy nhất.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "พรีเซลแฟนคลับ: ทำอย่างไรให้มีสิทธิ์ก่อนรอบจะปิด",
+    summary:
+      "การเป็นสมาชิกอย่างเดียวไม่ใช่สิทธิ์เข้าซื้อ ระหว่างสองอย่างนั้นมีขั้นตอนยืนยันคั่นอยู่ ขั้นตอนนั้นมีเส้นตายของตัวเอง และการพลาดมันคือสาเหตุที่แฟน ๆ เสียสิทธิ์พรีเซลบ่อยที่สุด",
+    scope:
+      "ครอบคลุมรูปแบบทั่วไปของการมีสิทธิ์พรีเซลแฟนคลับสำหรับงานในเกาหลี แต่ละทัวร์กำหนดระดับสมาชิก เส้นตาย และเงื่อนไขของตัวเองไว้ในประกาศอย่างเป็นทางการ ซึ่งมีผลเหนือกฎทั่วไปใด ๆ",
+    intro: [
+      "สิทธิ์พรีเซลเป็นโซ่สามข้อต่อ และแฟน ๆ มักรู้จักเพียงข้อแรก คุณซื้อสมาชิกภาพ จากนั้นคุณผูกและยืนยันสมาชิกภาพนั้นกับบัญชีขายบัตร แล้วคุณจึงจะได้สิทธิ์พรีเซล",
+      "แต่ละข้อต่อมีเส้นตายของตัวเอง และเส้นตายของการยืนยันมักมาเร็วกว่าที่คนคาดเสมอ บางกรณีเร็วกว่าตัวรอบพรีเซลหลายวัน สมาชิกภาพที่ซื้อตอนคืนก่อนหน้าอาจสายเกินไปแล้ว ทั้งที่มันยังมีผลอยู่",
+      "ให้ถือว่าประกาศคือข้อกำหนด และหน้านี้คือรายการตรวจสอบ",
+    ],
+    steps: [
+      {
+        title: "อ่านข้อกำหนดคุณสมบัติ ไม่ใช่อ่านพาดหัว",
+        body: "ประกาศจะระบุว่าสมาชิกภาพรุ่นใดและระดับใดจึงมีสิทธิ์ และวันที่ซึ่งต้องซื้อไว้แล้วหรือยังต้องมีผลอยู่ นี่คือสองวันที่ต่างกันและสำคัญทั้งคู่ จดไว้ตามเขตเวลาของคุณเองควบคู่กับเวลา KST",
+        pitfall:
+          "สมาชิกภาพที่ยังมีผลแต่ซื้อหลังเส้นตายนั้น ในบางทัวร์ถือว่าไม่มีสิทธิ์ “ฉันเป็นสมาชิกอยู่” ไม่เท่ากับ “ฉันมีสิทธิ์แล้ว”",
+        takes: "10 นาที",
+      },
+      {
+        title: "ซื้อสมาชิกภาพล่วงหน้าเส้นตายให้มาก",
+        body: "ซื้อจากร้านค้าอย่างเป็นทางการของศิลปินคนนั้น เก็บใบยืนยันคำสั่งซื้อและหมายเลขสมาชิกไว้ ถ้าสมาชิกภาพมาในรูปชุดสินค้าจริงพร้อมรหัสดิจิทัล ให้เผื่อเวลาจัดส่งและเวลาเปิดใช้รหัสด้วย เพราะไม่ได้เกิดขึ้นทันที ตั้งแต่วันที่ 3 กันยายน 2026 Weverse Shop ยังมีระบบชำระเงินอัตโนมัติบนสมาชิกภาพที่รองรับ โดยค่าต่ออายุจะถูกตัดจากวิธีชำระที่ลงทะเบียนไว้ในวันสุดท้ายของช่วงที่มีผล ทำให้สมาชิกภาพไม่หมดอายุอย่างเงียบ ๆ ในสัปดาห์ที่มีการประกาศทัวร์พอดี การตั้งค่านี้แยกตามหมวดสมาชิก — Global, Japan และ USA บริหารแยกกัน",
+        pitfall:
+          "รหัสสมาชิกที่ขายต่อหรือได้รับเป็นของขวัญมักไม่ผ่านการยืนยัน เพราะชื่อที่ลงทะเบียนจะไม่ตรงกับบัญชีขายบัตรของคุณ ระบบชำระเงินอัตโนมัติขจัดความเสี่ยงเรื่องหมดอายุ แต่ไม่ขจัดความเสี่ยงเรื่องชื่อ มันต่ออายุให้บัญชีที่มันผูกอยู่ ไม่ว่าบัญชีนั้นจะเป็นของใคร",
+        takes: "30 นาที",
+      },
+      {
+        title: "ผูกและยืนยันสมาชิกภาพบนแพลตฟอร์มขายบัตร",
+        body: "นี่คือขั้นที่คนมองข้าม บนแพลตฟอร์มขายบัตรมีการกระทำแยกต่างหากเพื่อยืนยันสถานะแฟนคลับของคุณ และมันเปิดเป็นช่วงเวลา โดยทั่วไปคือไม่กี่วันก่อนพรีเซล แล้วปิดก่อนพรีเซลจะเริ่ม ทำทันทีในชั่วโมงที่มันเปิด",
+        pitfall:
+          "การยืนยันสำหรับรอบขายภาษาเกาหลีกับรอบขายทั่วโลกอาจถูกจัดการแยกกันสำหรับงานเดียวกัน การทำเสร็จฝั่งหนึ่งไม่จำเป็นต้องให้สิทธิ์อีกฝั่ง",
+        takes: "20 นาที ภายในช่วงเวลานั้น",
+      },
+      {
+        title: "ทำให้ชื่อทั้งสามเหมือนกันทุกตัวอักษร",
+        body: "หนังสือเดินทาง สมาชิกภาพแฟนคลับ และบัญชีขายบัตร ครบทั้งสาม ชื่อตามกฎหมายเดียวกัน วันเกิดเดียวกัน ลำดับเดียวกัน ถ้ามีจุดใดผิด ให้แก้ก่อนช่วงยืนยัน ไม่ใช่หลังจากนั้น",
+        pitfall:
+          "นี่คือสาเหตุที่มีบันทึกไว้บ่อยที่สุดที่ทำให้สิทธิ์พรีเซลใช้ไม่ได้ และมันมองไม่เห็นเลยจนถึงวินาทีที่มันสำคัญ",
+        takes: "15 นาที",
+      },
+      {
+        title: "ยืนยันว่าสิทธิ์เข้ามาจริง",
+        body: "หลังยืนยันแล้ว ให้มองหาคำยืนยันที่ชัดเจน — ตราสัญลักษณ์ บรรทัดสถานะ หรืออีเมล ถ้าคุณหาคำยืนยันเชิงบวกว่าคุณมีสิทธิ์ไม่เจอ ให้ถือว่าคุณไม่มี แล้วติดต่อฝ่ายบริการขณะที่ช่วงเวลายังเปิดอยู่",
+        pitfall:
+          "ความเงียบไม่ใช่ความสำเร็จ แบบฟอร์มที่ส่งไปแล้วไม่ใช่สิทธิ์ที่ได้รับแล้ว",
+        takes: "10 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "การซื้อสมาชิกภาพรับประกันสิทธิ์พรีเซลไหม",
+        a: "ไม่ ในทัวร์ส่วนใหญ่มีขั้นตอนยืนยันแยกต่างหากที่เชื่อมสมาชิกภาพเข้ากับบัญชีขายบัตรของคุณ พร้อมช่วงเวลาของตัวเองที่เปิดและปิดก่อนพรีเซล สมาชิกภาพเป็นเงื่อนไขเบื้องต้น ไม่ใช่ตัวสิทธิ์เอง",
+      },
+      {
+        q: "ใช้สมาชิกภาพของคนอื่นได้ไหม",
+        a: "ในทางปฏิบัติไม่ได้ เพราะการยืนยันจะเทียบชื่อที่ลงทะเบียนและวันเกิดกับบัญชีขายบัตรและเอกสารแสดงตนของคุณ นอกจากใช้ไม่ได้แล้ว ยังเสี่ยงให้คำสั่งซื้อถูกยกเลิกด้วย",
+      },
+      {
+        q: "พรีเซลเปิดก่อนรอบขายทั่วไปนานแค่ไหน",
+        a: "แล้วแต่ทัวร์ หนึ่งวันขึ้นไปเป็นเรื่องปกติ และเส้นตายของสมาชิกภาพยังมาก่อนหน้านั้นอีก ประกาศอย่างเป็นทางการของงานคุณคือแหล่งเดียวที่เชื่อถือได้",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Presale ng fan club: paano maging kuwalipikado bago ito magsara",
+    summary:
+      "Hindi pa akses ang membership mag-isa. May hakbang ng pagpapatunay sa pagitan ng dalawa, may sarili itong hangganan, at ang pagkaligta rito ang pinakakaraniwang dahilan ng pagkawala ng presale sa mga fan.",
+    scope:
+      "Sakop nito ang pangkalahatang hugis ng pagiging kuwalipikado sa presale ng fan club para sa mga palabas sa Korea. Bawat tour ay nagtatakda ng sarili nitong antas, hangganan at kondisyon sa opisyal na anunsiyo, na nananaig sa anumang pangkalahatang tuntunin.",
+    intro: [
+      "Ang akses sa presale ay tanikala ng tatlong kawing, at karaniwang ang una lamang ang alam ng mga fan. Bumibili ka ng membership. Pagkatapos ay iniuugnay at pinapatunayan mo ang membership na iyon sa account ng tiket. Saka ka lamang magkakaroon ng karapatan sa presale.",
+      "May sariling hangganan ang bawat kawing, at ang hangganan ng pagpapatunay ay palaging mas maaga kaysa sa inaasahan ng mga tao — sa ilang pagkakataon ay ilang araw bago ang mismong presale. Ang membership na binili kagabi ay maaaring huli na kahit may bisa pa ito.",
+      "Ituring ang anunsiyo bilang ang espesipikasyon at ang pahinang ito bilang ang listahan ng dapat suriin.",
+    ],
+    steps: [
+      {
+        title: "Basahin ang sugnay tungkol sa pagiging kuwalipikado, hindi ang ulong balita",
+        body: "Tutukuyin ng anunsiyo kung aling produkto at antas ng membership ang kuwalipikado, at ang petsa kung kailan dapat nabili na ito o may bisa pa ito. Dalawang magkaibang petsa ang mga ito at mahalaga pareho. Isulat mo ang mga ito sa sarili mong time zone katabi ng KST.",
+        pitfall:
+          "Ang membership na may bisa pero binili pagkatapos ng hangganan ay hindi kuwalipikado sa ilang tour. Ang “may membership ako” ay hindi katumbas ng “naging kuwalipikado ako”.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Bumili ng membership nang mas maaga sa hangganan",
+        body: "Bumili sa opisyal na tindahan ng artist na iyon. Itago ang kumpirmasyon ng order at ang numero ng membership. Kung ang membership ay isang pisikal na kit na may digital code, maglaan ng oras para sa paghahatid at pag-activate ng code, na hindi agaran. Mula 3 Setyembre 2026, nag-aalok din ang Weverse Shop ng Auto Payment sa mga membership na sumusuporta rito: sinisingil ang pag-renew sa isang nakarehistrong paraan ng pagbabayad sa huling araw ng panahon ng bisa, kaya hindi basta mapapaso ang isang membership nang hindi napapansin sa mismong linggong inianunsiyo ang isang tour. Itinatakda ito kada kategorya ng membership — magkahiwalay na pinamamahalaan ang Global, Japan at USA.",
+        pitfall:
+          "Ang mga membership code na muling ibinenta o iniregalo ay madalas bumabagsak sa pagpapatunay, dahil hindi tutugma ang nakarehistrong pangalan sa account mo ng tiket. Inaalis ng Auto Payment ang panganib ng pagkapaso ngunit hindi ang panganib sa pangalan: nire-renew nito ang alinmang account na nakakabit dito.",
+        takes: "30 minuto",
+      },
+      {
+        title: "Iugnay at patunayan ang membership sa plataporma ng tiket",
+        body: "Ito ang hakbang na nalalaktawan ng mga tao. Sa plataporma ng tiket ay may hiwalay na aksiyon para mapatunayan ang katayuan mo sa fan club, at nagbubukas ito sa loob ng isang bintana — karaniwan ay ilang araw bago ang presale — at nagsasara bago nito. Gawin mo ito sa mismong oras ng pagbubukas.",
+        pitfall:
+          "Ang pagpapatunay para sa isang bentang Koreano at para sa isang pandaigdigang benta ay maaaring hawakan nang hiwalay para sa iisang palabas. Ang pagtatapos sa isa ay hindi awtomatikong nagkakaloob ng isa pa.",
+        takes: "20 minuto, sa loob ng bintana",
+      },
+      {
+        title: "Gawing magkapareho ang tatlong pangalan",
+        body: "Pasaporte, membership sa fan club at account ng tiket. Lahat ng tatlo. Iisang legal na pangalan, iisang petsa ng kapanganakan, iisang pagkakasunod-sunod. Kung may mali sa isa, itama ito bago ang bintana ng pagpapatunay at hindi pagkatapos.",
+        pitfall:
+          "Ito ang pinakamadalas na nakatalang dahilan kung bakit hindi nagagamit ang karapatan sa presale, at hindi ito nakikita hanggang sa sandaling mahalaga na ito.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Tiyakin na dumating ang karapatan",
+        body: "Pagkatapos magpatunay, maghanap ng malinaw na kumpirmasyon — isang badge, isang linya ng katayuan, isang email. Kung hindi ka makakita ng positibong kumpirmasyon na kuwalipikado ka, ipagpalagay mong hindi ka at makipag-ugnayan sa suporta habang bukas pa ang bintana.",
+        pitfall:
+          "Hindi tagumpay ang katahimikan. Ang naipasang form ay hindi isang ipinagkaloob na karapatan.",
+        takes: "10 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Ginagarantiya ba ng pagbili ng membership ang akses sa presale?",
+        a: "Hindi. Sa karamihan ng tour ay may hiwalay na hakbang ng pagpapatunay na nag-uugnay sa membership sa account mo ng tiket, na may sarili nitong bintanang nagbubukas at nagsasara bago ang presale. Ang membership ay isang kinakailangan, hindi ang mismong karapatan.",
+      },
+      {
+        q: "Puwede ko bang gamitin ang membership ng iba?",
+        a: "Sa praktika ay hindi, dahil itinutugma ng pagpapatunay ang nakarehistrong pangalan at petsa ng kapanganakan sa account mo ng tiket at sa dokumento mo ng pagkakakilanlan. Bukod sa hindi ito gumagana, inilalagay nito sa panganib na makansela ang order.",
+      },
+      {
+        q: "Gaano kaaga nagbubukas ang presale kumpara sa pangkalahatang benta?",
+        a: "Nag-iiba ito kada tour. Karaniwan ang isang araw o higit pa, at mas maaga pa ang hangganan ng membership. Ang opisyal na anunsiyo para sa palabas mo ang tanging maaasahang pinagkukunan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vì sao thẻ của bạn bị từ chối trên trang bán vé Hàn Quốc",
+    summary:
+      "Ba hệ thống khác nhau có thể từ chối cùng một giao dịch — nền tảng, mạng lưới thẻ của bạn và ngân hàng của bạn. Mỗi bên có một cách khắc phục riêng và chỉ một trong số đó là nhanh.",
+    scope:
+      "Nói về việc thanh toán bằng thẻ phát hành ở nước ngoài trên các nền tảng bán vé Hàn Quốc. Đây không phải lời khuyên tài chính, và nó không thể bao quát quy định riêng của ngân hàng bạn.",
+    intro: [
+      "Thẻ bị từ chối ở bước thanh toán là thất bại tốn kém nhất trong việc mua vé K-pop, vì một chiếc ghế đang giữ sẽ quay lại kho chung chỉ trong vài phút. Gần như toàn bộ chuyện này có thể phòng tránh được nếu chuẩn bị sớm.",
+      "Lý do nó có vẻ ngẫu nhiên là vì ba hệ thống độc lập đều có thể từ chối cùng một giao dịch, và thông báo lỗi bạn thấy hiếm khi cho biết bên nào đã từ chối. Hãy rà soát chúng theo thứ tự thời gian cần để sửa.",
+    ],
+    steps: [
+      {
+        title: "Kiểm tra xem phần xác minh tài khoản của bạn đã thực sự hoàn tất chưa",
+        body: "Trên một vài nền tảng, thẻ phát hành ở nước ngoài chỉ dùng được sau khi tài khoản đã được xác minh là khách hàng ở nước ngoài. Nếu phần xác minh đó còn đang chờ xử lý, thẻ sẽ hỏng bất kể nó khỏe mạnh đến đâu. Đây là cách khắc phục chậm nhất, nên nó đứng đầu tiên.",
+        pitfall:
+          "Thông báo lỗi thanh toán sẽ không nói “phần xác minh của bạn đang chờ xử lý”. Nó sẽ trông như một vấn đề của thẻ.",
+        takes: "1-3 ngày",
+      },
+      {
+        title: "Báo ngân hàng trước buổi mở bán, đừng báo sau",
+        body: "Hãy bật giao dịch quốc tế và trực tuyến, và nếu ngân hàng của bạn cho phép, hãy đăng ký trước khoảng số tiền và quốc gia. Một khoản chi lần đầu tiên từ một đơn vị bán hàng Hàn Quốc vào giờ bất thường chính là hồ sơ mà hệ thống chống gian lận sẽ chặn.",
+        pitfall:
+          "Các lệnh chặn gian lận tự động thường im lặng ở phía bạn — không tin nhắn, không thông báo trong ứng dụng. Bạn chỉ biết qua thông báo từ chối chung chung của đơn vị bán hàng.",
+        takes: "1 ngày",
+      },
+      {
+        title: "Đừng thực hiện bước thanh toán trong trình duyệt nhúng của ứng dụng",
+        body: "Luồng 3-D Secure và mật khẩu dùng một lần của ngân hàng thường hỏng bên trong trình duyệt được nhúng trong ứng dụng mạng xã hội hay nhắn tin. Hãy dùng trình duyệt thông thường trên điện thoại hoặc máy tính, và đảm bảo bạn nhận được tin nhắn xác thực của ngân hàng trên cùng thiết bị đó.",
+        pitfall:
+          "Bước chuyển hướng có thể trông như thành công rồi âm thầm đánh rơi phần ủy quyền, và bạn chỉ thấy đó là một lần bị từ chối.",
+        takes: "0 phút, chỉ cần làm đúng cách",
+      },
+      {
+        title: "Hãy có một phương án dự phòng thực sự khác, không phải thẻ cùng nhà",
+        body: "Một chiếc thẻ thứ hai của cùng tổ chức phát hành thường sẽ hỏng vì đúng lý do đó. Một tổ chức phát hành khác, một mạng lưới thẻ khác, hoặc phương thức thay thế mà nền tảng hỗ trợ nếu có, mới là phương án dự phòng thật. Hai nền tảng dành cho người ở nước ngoài còn từ chối những thứ ngược nhau, điều đáng biết trước khi bạn đổ lỗi cho chiếc thẻ: NOL World chấp nhận VISA, MasterCard, AMEX, JCB và UnionPay nhưng chỉ khi được phát hành ngoài Hàn Quốc, và từ chối thẳng thừng thẻ phát hành tại Hàn. YES24 Global làm ngược lại ở hai trong số đó, loại trừ American Express phát hành ngoài Hàn Quốc và loại trừ UnionPay hoàn toàn. Một chiếc thẻ bị từ chối bên này có thể là chiếc thẻ đúng ở bên kia.",
+        pitfall:
+          "Hai chiếc thẻ của cùng một ngân hàng, đối với một quy tắc chống gian lận, chỉ là một chiếc thẻ.",
+        takes: "30 phút để chuẩn bị",
+      },
+      {
+        title: "Kiểm tra loại tiền và số tiền trước khi xác nhận",
+        body: "Hãy đọc xem bạn bị tính bằng KRW hay bằng một số tiền đã quy đổi, và nắm rõ phí giao dịch nước ngoài của thẻ mình. Một lần quy đổi đẩy tổng số tiền vượt quá hạn mức mà chính bạn đặt ra cũng có thể gây ra việc bị từ chối.",
+        pitfall:
+          "Quy đổi tiền tệ động lặng lẽ làm tăng chi phí. Trả bằng KRW thường là lựa chọn rẻ hơn.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Vì sao thẻ của tôi bị từ chối dù trong thẻ vẫn còn tiền?",
+        a: "Thường là một trong ba điều: tài khoản của bạn trên nền tảng chưa hoàn tất xác minh khách hàng ở nước ngoài, hệ thống chống gian lận của ngân hàng đã chặn một đơn vị bán hàng nước ngoài lạ, hoặc một bước 3-D Secure thất bại — thường vì nó chạy trong trình duyệt nhúng của ứng dụng. Thông báo từ chối thường không phân biệt được ba trường hợp này.",
+      },
+      {
+        q: "PayPal có dùng được không?",
+        a: "Một số nền tảng dành cho người ở nước ngoài có hỗ trợ các phương thức thanh toán thay thế ở một số show. Điều này được đặt theo từng nền tảng và từng sự kiện chứ không áp dụng chung, nên hãy xem danh sách phương thức thanh toán trên trang sự kiện của bạn trước khi tính toán dựa vào nó.",
+      },
+      {
+        q: "Tôi nên trả bằng KRW hay bằng tiền nước mình?",
+        a: "Trả bằng tiền của đơn vị bán hàng nhìn chung rẻ hơn là để trang thanh toán quy đổi giúp bạn, vì quy đổi tiền tệ động cộng thêm một khoản biên. Phí giao dịch nước ngoài của chính thẻ bạn vẫn áp dụng trong cả hai trường hợp.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ทำไมบัตรของคุณถูกปฏิเสธบนเว็บขายบัตรเกาหลี",
+    summary:
+      "ระบบที่ต่างกันสามระบบสามารถปฏิเสธการชำระเงินรายการเดียวกันได้ — แพลตฟอร์ม เครือข่ายบัตรของคุณ และธนาคารของคุณ แต่ละอย่างมีวิธีแก้ต่างกัน และมีเพียงอย่างเดียวที่แก้ได้เร็ว",
+    scope:
+      "ครอบคลุมการชำระเงินด้วยบัตรที่ออกในต่างประเทศบนแพลตฟอร์มขายบัตรของเกาหลี ไม่ใช่คำแนะนำทางการเงิน และไม่อาจครอบคลุมกฎเฉพาะของธนาคารคุณได้",
+    intro: [
+      "บัตรที่ถูกปฏิเสธในขั้นชำระเงินคือความล้มเหลวที่แพงที่สุดในการซื้อบัตร K-pop เพราะที่นั่งที่จองไว้จะกลับคืนสู่ระบบภายในไม่กี่นาที เกือบทั้งหมดของเรื่องนี้ป้องกันได้ถ้าเผื่อเวลาไว้",
+      "เหตุที่มันดูเหมือนเกิดขึ้นแบบสุ่ม เพราะมีระบบอิสระสามระบบที่ปฏิเสธรายการเดียวกันได้ และข้อความแสดงข้อผิดพลาดที่คุณเห็นแทบไม่เคยบอกว่าระบบไหนเป็นคนปฏิเสธ ให้ไล่ตรวจตามลำดับเวลาที่แต่ละอย่างใช้ในการแก้",
+    ],
+    steps: [
+      {
+        title: "ตรวจว่าการยืนยันบัญชีของคุณเสร็จสมบูรณ์จริงหรือยัง",
+        body: "บนหลายแพลตฟอร์ม บัตรที่ออกในต่างประเทศจะใช้ได้ก็ต่อเมื่อบัญชีผ่านการยืนยันว่าเป็นลูกค้าต่างประเทศแล้ว ถ้าการยืนยันนั้นยังรอดำเนินการอยู่ บัตรจะล้มเหลวไม่ว่าบัตรจะสมบูรณ์แค่ไหน นี่เป็นวิธีแก้ที่ช้าที่สุด จึงมาเป็นข้อแรก",
+        pitfall:
+          "ข้อความแสดงข้อผิดพลาดจะไม่บอกว่า “การยืนยันของคุณยังรอดำเนินการ” มันจะดูเหมือนปัญหาของบัตร",
+        takes: "1-3 วัน",
+      },
+      {
+        title: "บอกธนาคารก่อนรอบขาย ไม่ใช่หลังจากนั้น",
+        body: "เปิดใช้ธุรกรรมระหว่างประเทศและธุรกรรมออนไลน์ และถ้าธนาคารของคุณรองรับ ให้แจ้งอนุมัติล่วงหน้าทั้งช่วงจำนวนเงินและประเทศปลายทาง การถูกเรียกเก็บเงินครั้งแรกจากร้านค้าเกาหลีในเวลาที่ผิดปกติ คือรูปแบบที่ระบบป้องกันการฉ้อโกงจะบล็อกพอดี",
+        pitfall:
+          "การบล็อกอัตโนมัติเพื่อป้องกันการฉ้อโกงมักเงียบในฝั่งของคุณ ไม่มี SMS ไม่มีการแจ้งเตือนในแอป คุณจะรู้ก็จากข้อความปฏิเสธกลาง ๆ ของร้านค้าเท่านั้น",
+        takes: "1 วัน",
+      },
+      {
+        title: "อย่าทำขั้นชำระเงินในเบราว์เซอร์ที่ฝังอยู่ในแอป",
+        body: "ขั้นตอน 3-D Secure และรหัสผ่านครั้งเดียวของธนาคารมักพังเมื่อทำในเบราว์เซอร์ที่ฝังอยู่ในแอปโซเชียลหรือแอปแชต ให้ใช้เบราว์เซอร์ปกติบนมือถือหรือคอมพิวเตอร์ และตรวจให้แน่ใจว่าคุณรับข้อความยืนยันจากธนาคารบนเครื่องเดียวกันได้",
+        pitfall:
+          "การเปลี่ยนหน้าอาจดูเหมือนสำเร็จแล้วปล่อยการอนุมัติหลุดไปเงียบ ๆ ซึ่งคุณจะอ่านว่าเป็นการถูกปฏิเสธ",
+        takes: "0 นาที แค่ทำให้ถูกวิธี",
+      },
+      {
+        title: "มีบัตรสำรองที่ต่างกันจริง ไม่ใช่บัตรพี่น้องกัน",
+        body: "บัตรใบที่สองจากผู้ออกบัตรรายเดียวกันมักล้มเหลวด้วยเหตุผลเดียวกัน ผู้ออกบัตรรายอื่น เครือข่ายอื่น หรือวิธีชำระทางเลือกที่แพลตฟอร์มรองรับหากมี จึงจะนับเป็นตัวสำรองจริง สองแพลตฟอร์มสำหรับผู้อยู่ต่างประเทศยังปฏิเสธคนละอย่างกัน ซึ่งควรรู้ก่อนจะโทษบัตร: NOL World รับ VISA, MasterCard, AMEX, JCB และ UnionPay แต่เฉพาะที่ออกนอกเกาหลี และปฏิเสธบัตรที่ออกในเกาหลีทันที ส่วน YES24 Global ทำตรงข้ามในสองรายการ โดยตัด American Express ที่ออกนอกเกาหลี และตัด UnionPay ทั้งหมด บัตรที่ถูกปฏิเสธบนเว็บหนึ่งอาจเป็นบัตรที่ถูกต้องบนอีกเว็บหนึ่ง",
+        pitfall:
+          "บัตรสองใบจากธนาคารเดียวกัน ในสายตาของกฎป้องกันการฉ้อโกงถือเป็นบัตรใบเดียว",
+        takes: "30 นาทีในการเตรียม",
+      },
+      {
+        title: "ตรวจสกุลเงินและจำนวนเงินก่อนกดยืนยัน",
+        body: "อ่านให้ชัดว่าคุณถูกเรียกเก็บเป็น KRW หรือเป็นจำนวนที่แปลงแล้ว และรู้ว่าบัตรของคุณคิดค่าธรรมเนียมธุรกรรมต่างประเทศเท่าไร การแปลงสกุลเงินที่ดันยอดรวมเกินวงเงินที่คุณตั้งไว้เองก็ทำให้ถูกปฏิเสธได้เช่นกัน",
+        pitfall:
+          "การแปลงสกุลเงินแบบไดนามิกเพิ่มต้นทุนอย่างเงียบ ๆ การจ่ายเป็น KRW มักเป็นทางเลือกที่ถูกกว่า",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ทำไมบัตรถูกปฏิเสธทั้งที่มีเงินพอ",
+        a: "ส่วนใหญ่เป็นหนึ่งในสามอย่าง: บัญชีของคุณบนแพลตฟอร์มยังยืนยันความเป็นลูกค้าต่างประเทศไม่เสร็จ ระบบป้องกันการฉ้อโกงของธนาคารบล็อกร้านค้าต่างประเทศที่ไม่คุ้นเคย หรือขั้นตอน 3-D Secure ล้มเหลว ซึ่งมักเกิดเพราะทำในเบราว์เซอร์ที่ฝังในแอป ข้อความปฏิเสธมักไม่แยกแยะระหว่างสามกรณีนี้",
+      },
+      {
+        q: "PayPal ใช้ได้ไหม",
+        a: "แพลตฟอร์มสำหรับผู้อยู่ต่างประเทศบางแห่งรองรับวิธีชำระเงินทางเลือกในบางงาน เรื่องนี้กำหนดเป็นรายแพลตฟอร์มและรายอีเวนต์ ไม่ใช่ใช้ได้ทั่วไป จึงควรดูตัวเลือกการชำระเงินที่ระบุไว้บนหน้าอีเวนต์ของคุณก่อนจะวางแผนโดยอาศัยมัน",
+      },
+      {
+        q: "ควรจ่ายเป็น KRW หรือสกุลเงินของตัวเอง",
+        a: "การจ่ายเป็นสกุลเงินของร้านค้าโดยทั่วไปถูกกว่าการปล่อยให้หน้าชำระเงินแปลงให้คุณ เพราะการแปลงสกุลเงินแบบไดนามิกบวกส่วนต่างเข้าไป ค่าธรรมเนียมธุรกรรมต่างประเทศของบัตรคุณเองยังคงถูกคิดอยู่ดีทั้งสองทาง",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Bakit tinanggihan ang kard mo sa isang Koreanong site ng tiket",
+    summary:
+      "Tatlong magkaibang sistema ang puwedeng tumanggi sa iisang bayad — ang plataporma, ang network ng kard mo, at ang bangko mo. Magkaiba ang lunas sa bawat isa at isa lamang sa kanila ang mabilis.",
+    scope:
+      "Sakop nito ang mga bayad gamit ang kard na inisyu sa labas ng Korea sa mga Koreanong plataporma ng tiket. Hindi ito payo sa pananalapi, at hindi nito masasakop ang tiyak na mga patakaran ng bangko mo.",
+    intro: [
+      "Ang tinanggihang kard sa hakbang ng pagbabayad ang pinakamahal na pagkabigo sa buong pagbili ng tiket sa K-pop, dahil bumabalik sa pool ang hawak mong upuan sa loob ng ilang minuto. Halos lahat nito ay maiiwasan kung may sapat kang paghahanda.",
+      "Pakiramdam mo ay pabigla-bigla ito dahil tatlong magkahiwalay na sistema ang puwedeng tumanggi sa iisang transaksiyon, at bihirang sabihin ng mensahe ng error kung alin sa kanila ang tumanggi. Dumaan ka sa kanila ayon sa haba ng panahong kailangan para ayusin ang bawat isa.",
+    ],
+    steps: [
+      {
+        title: "Tingnan kung talagang tapos na ang pagpapatunay ng account mo",
+        body: "Sa ilang plataporma, gumagana lamang ang mga kard na inisyu sa labas ng Korea kapag napatunayan na ang account bilang customer mula sa ibang bansa. Kung nakabinbin pa ang pagpapatunay na iyon, babagsak ang kard gaano man ito kaayos. Ito ang pinakamabagal na lunas, kaya ito ang nauuna.",
+        pitfall:
+          "Hindi sasabihin ng error sa pagbabayad na “nakabinbin pa ang pagpapatunay mo”. Magmumukha itong problema ng kard.",
+        takes: "1-3 araw",
+      },
+      {
+        title: "Sabihan ang bangko mo bago ang benta, hindi pagkatapos",
+        body: "Buksan ang mga internasyonal at online na transaksiyon, at kung sinusuportahan ito ng bangko mo, paunang aprubahan ang saklaw ng halaga at ang bansa. Ang kauna-unahang singil mula sa isang Koreanong merchant sa isang di-karaniwang oras ang eksaktong hugis na hinaharangan ng isang sistemang laban sa pandaraya.",
+        pitfall:
+          "Madalas tahimik sa panig mo ang awtomatikong pagharang laban sa pandaraya — walang SMS, walang abiso sa app. Malalaman mo lang ito mula sa pangkalahatang pagtanggi ng merchant.",
+        takes: "1 araw",
+      },
+      {
+        title: "Huwag gawin ang hakbang ng pagbabayad sa loob ng browser ng isang app",
+        body: "Madalas masira ang 3-D Secure at ang mga daloy ng isahang password ng bangko sa loob ng browser na nakabaon sa isang social o messaging app. Gumamit ng karaniwang browser sa telepono o kompyuter, at tiyaking matatanggap mo ang mensahe ng pagpapatunay ng bangko mo sa iisang device.",
+        pitfall:
+          "Maaaring magmukhang matagumpay ang redirect at pagkatapos ay tahimik nitong bitawan ang awtorisasyon, na babasahin mo bilang isang pagtanggi.",
+        takes: "0 minuto, gawin lang nang tama",
+      },
+      {
+        title: "Magkaroon ng tunay na ibang panghalili, hindi kapatid na kard",
+        body: "Ang pangalawang kard mula sa iisang nag-isyu ay karaniwang babagsak sa parehong dahilan. Ang ibang nag-isyu, ang ibang network, o ang suportadong alternatibong paraan ng plataporma kung mayroon, ang tunay na panghalili. Magkasalungat din ang tinatanggihan ng dalawang platapormang nakaharap sa ibang bansa, at sulit itong malaman bago mo sisihin ang kard: tumatanggap ang NOL World ng VISA, MasterCard, AMEX, JCB at UnionPay ngunit kapag inisyu lamang sa labas ng Korea, at tinatanggihan nito nang tuwiran ang mga kard na inisyu sa Korea. Ginagawa naman ng YES24 Global ang kabaligtaran sa dalawa sa mga ito, hindi tinatanggap ang American Express na inisyu sa labas ng Korea at ang UnionPay nang tuluyan. Ang kard na tinanggihan sa isa ay maaaring siyang tamang kard sa isa pa.",
+        pitfall:
+          "Ang dalawang kard mula sa iisang bangko ay iisang kard sa paningin ng isang tuntunin laban sa pandaraya.",
+        takes: "30 minuto para ihanda",
+      },
+      {
+        title: "Tingnan ang pera at ang halaga bago kumpirmahin",
+        body: "Basahin kung sinisingil ka ba sa KRW o sa isang halagang kinonberte, at alamin ang bayad ng kard mo sa dayuhang transaksiyon. Ang isang konbersiyong nagtutulak sa kabuuan nang lampas sa limitasyong ikaw mismo ang nagtakda ay puwede ring maging dahilan ng pagtanggi.",
+        pitfall:
+          "Tahimik na nagdaragdag ng gastos ang dynamic currency conversion. Karaniwang mas mura ang magbayad sa KRW.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Bakit tinanggihan ang kard ko gayong may pondo naman ito?",
+        a: "Kadalasan ay isa sa tatlong bagay: hindi pa natatapos ng account mo sa plataporma ang pagpapatunay bilang customer mula sa ibang bansa, hinarangan ng sistema laban sa pandaraya ng bangko mo ang isang di-pamilyar na dayuhang merchant, o nabigo ang isang hakbang na 3-D Secure — karaniwan dahil tumakbo ito sa loob ng browser ng isang app. Karaniwang hindi pinagkaiba ng mensahe ng pagtanggi ang tatlong ito.",
+      },
+      {
+        q: "Gumagana ba ang PayPal?",
+        a: "May ilang platapormang nakaharap sa ibang bansa na sumusuporta sa mga alternatibong paraan ng pagbabayad sa ilang palabas. Itinatakda ito kada plataporma at kada event sa halip na pangkalahatan, kaya tingnan ang mga opsiyon sa pagbabayad na nakalista sa pahina ng event mo bago ka magplano batay dito.",
+      },
+      {
+        q: "Dapat ba akong magbayad sa KRW o sa sarili kong pera?",
+        a: "Karaniwang mas mura ang magbayad sa pera ng merchant kaysa hayaang ikonberte ito ng pahina ng pagbabayad para sa iyo, dahil nagdaragdag ng margin ang dynamic currency conversion. Napapataw pa rin ang bayad ng sarili mong kard sa dayuhang transaksiyon sa alinmang paraan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Mua album K-pop từ nước ngoài sao cho được tính",
+    summary:
+      "Nơi bạn mua quyết định việc đơn hàng của bạn có được tính hay không, bạn trả bao nhiêu tiền ship, và bạn có nhận được quà pre-order hay không. Đây là cách chọn.",
+    scope:
+      "Nói về việc mua album vật lý và hàng hóa chính hãng giao ra ngoài Hàn Quốc. Không nói về các sàn bán lại hay hàng không chính thức.",
+    intro: [
+      "Đây là câu hỏi chạy suốt cả năm, khác với vé — và đó là lý do nó nằm ngay cạnh vé. Khác với vé, nó có một đáp án sai mà bạn không mất gì trông thấy được: album của bạn vẫn về tới nơi, chỉ là nó không được tính.",
+      "Ba thứ thay đổi tùy nơi bạn mua: đơn hàng có được báo lên các bảng xếp hạng Hàn Quốc hay không, quà pre-order có đi kèm hay không, và chi phí thật tới tay bạn sau khi cộng tiền ship và thuế. Ba thứ đó không đi cùng nhau, nên lựa chọn rẻ nhất thường là lựa chọn chẳng tính vào đâu cả.",
+    ],
+    steps: [
+      {
+        title: "Xác định bạn thực sự muốn gì từ đơn hàng này",
+        body: "Đóng góp cho bảng xếp hạng, bản album vật lý, quà pre-order, hay giá thấp nhất. Những thứ đó kéo về các hướng khác nhau. Hãy chọn ưu tiên trước khi chọn cửa hàng, vì cửa hàng là hệ quả của ưu tiên đó.",
+        pitfall:
+          "Mua trên một sàn thương mại điện tử thông thường để tiết kiệm rồi phát hiện nó không được tính — đó là phiên bản tiêu chuẩn của sai lầm này.",
+        takes: "5 phút",
+      },
+      {
+        title: "Kiểm tra xem người bán có báo cáo lên bảng xếp hạng Hàn Quốc không",
+        body: "Hanteo công bố danh sách, nên đây là chuyện kiểm chứng được chứ không phải chuyện tin tưởng. Các cửa hàng Family đã được chứng nhận của họ có thể tra tại hanteochart.com bằng tiếng Anh và tiếng Tây Ban Nha cũng như tiếng Hàn, mỗi cửa hàng mang một mã family: Ktown4U là HF0082KTU001 và Weverse là HF0082BTS001. Hanteo còn yêu cầu mọi cửa hàng Family trực tuyến phải hiển thị dấu Family ở chân trang, có liên kết ngược về hanteochart.com — nên chân trang là bước kiểm tra ba mươi giây với bất kỳ cửa hàng nào, còn danh bạ là phần xác nhận. Chính Hanteo hướng dẫn người mua kiểm tra cả mã lẫn dấu chứng nhận, vốn được cấp lại hằng năm.",
+        pitfall:
+          "Danh bạ ghi phần lớn tên cửa hàng bằng tiếng Hàn ngay cả trên trang tiếng Anh, nên một cửa hàng có thể đang nằm trong đó mà tìm bằng tiếng Anh lại tưởng là không có. Và một tin rao album thật trên sàn của bên thứ ba là chỗ hay bị bỏ sót: album là thật, người bán không phải cửa hàng Family, và phần đóng góp thì không có.",
+        takes: "15 phút",
+      },
+      {
+        title: "Đặt trong khung pre-order để lấy quà kèm",
+        body: "Quyền lợi pre-order — poster, photocard thêm, suất tham dự sự kiện — gắn với việc đặt trong một khung thời gian, và thường gắn với đúng nhà bán lẻ đó. Khung này đóng lại trước ngày phát hành chứ không phải vào ngày phát hành.",
+        pitfall:
+          "Quà độc quyền của từng nhà bán lẻ không thể hoán đổi cho nhau. Đặt cùng album đó ở nơi khác sẽ cho bạn một bộ khác, hoặc không có gì.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy tính tiền ship và rủi ro thuế, đừng chỉ tính giá album",
+        body: "Cước vận chuyển từ Hàn Quốc có thể vượt cả giá album, và việc bạn có phải trả thêm phí nhập khẩu hay không phụ thuộc vào quy định của chính nước bạn. Hãy kiểm tra ngay bây giờ thay vì phỏng đoán: Hoa Kỳ đã tạm dừng ngưỡng 800 đô la của mình vào tháng 8 năm 2025 và Liên minh châu Âu đã bỏ ngưỡng 150 euro vào ngày 1 tháng 7 năm 2026, nên với độc giả ở một trong hai nơi, không còn mức giá trị nào nhỏ đến mức hàng về mà không mất phí. Mua gộp theo nhóm làm giảm cước cho mỗi món. Hãy tính chi phí tới tay trước khi quyết định.",
+        pitfall:
+          "Lên kế hoạch dựa vào một mức miễn thuế không còn tồn tại ở nơi bạn sống. Ở nơi nó còn tồn tại, gộp nhiều album vào một kiện có thể đẩy trị giá khai báo vượt ngưỡng và tốn hơn cả gửi riêng — hãy tính cả hai con số.",
+        takes: "20 phút",
+      },
+      {
+        title: "Giữ hồ sơ đơn hàng cho tới khi hàng về",
+        body: "Hãy lưu lại xác nhận đơn, mã vận đơn và trị giá khai báo. Với bất cứ chuyện gì trục trặc — kiện hàng bị hỏng, hải quan hỏi, thiếu quà kèm — đó chính là những thứ nhà bán lẻ sẽ hỏi bạn.",
+        pitfall:
+          "Bộ phận hỗ trợ của các nhà bán lẻ Hàn Quốc thường làm việc theo số đơn hàng chứ không tra theo email. Không có số đơn, cuộc trao đổi sẽ rất chậm.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Album mua ngoài Hàn Quốc có được tính vào các bảng xếp hạng Hàn Quốc không?",
+        a: "“Các bảng xếp hạng Hàn Quốc” là hai thứ khác nhau, và chỉ một trong hai có liên quan tới đơn hàng của bạn. Hanteo đếm doanh số do các cửa hàng Family đã chứng nhận của họ báo lên, nên người quyết định là cửa hàng chứ không phải vị trí của bạn — hãy đối chiếu với danh bạ. Circle Chart được dựng theo chiều ngược lại: nó định nghĩa Album Chart của mình là số đơn vị xuất buôn tới các nhà bán lẻ, trừ đi hàng trả về, nghĩa là album đó đã được đếm khi rời nhà phân phối và đơn của bạn không làm nó xê dịch. Circle có một Retail Album Chart riêng, đếm doanh số bán lẻ theo thời gian thực. Điều mà cả hai đều không công bố là một quy tắc nói rằng đơn đặt từ nước ngoài ở một cửa hàng có trong danh sách được xử lý giống như đơn trong nước, nên mua ở một cửa hàng có trong danh sách là xa nhất bạn có thể kiểm chứng, chứ không phải một bảo đảm.",
+      },
+      {
+        q: "Mua gộp theo nhóm có đáng không?",
+        a: "Thường là đáng xét về tiền ship, vì chi phí cho mỗi món giảm mạnh. Hãy cân nhắc nó với quy định nhập khẩu nước bạn — nơi nào vẫn còn mức miễn thuế, một kiện hàng giá trị cao có thể bị thu phí trong khi nhiều kiện nhỏ tách riêng thì không. Ở Hoa Kỳ và Liên minh châu Âu, phép tính đó đã thay đổi: cả hai đều đã bỏ mức miễn trừ giá trị thấp, nên không còn ngưỡng nào để nằm dưới nữa.",
+      },
+      {
+        q: "Vì sao quyền lợi pre-order khác nhau giữa các cửa hàng?",
+        a: "Các nhà bán lẻ tự thương lượng quà độc quyền của riêng mình, nên cùng một album sẽ mang theo những món kèm khác nhau tùy nơi bạn đặt trước. Nếu bạn muốn một món kèm cụ thể, bạn phải đặt ở đúng cửa hàng có món đó, trong khung thời gian của họ.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "วิธีซื้ออัลบั้ม K-pop จากต่างประเทศให้นับยอด",
+    summary:
+      "ที่ที่คุณซื้อเป็นตัวตัดสินว่ายอดของคุณถูกนับหรือไม่ คุณจ่ายค่าส่งเท่าไร และคุณจะได้ของแถมพรีออเดอร์หรือเปล่า นี่คือวิธีเลือก",
+    scope:
+      "ครอบคลุมการซื้ออัลบั้มและสินค้าอย่างเป็นทางการแบบมีตัวตนจริงเพื่อจัดส่งออกนอกเกาหลี ไม่ครอบคลุมตลาดขายต่อหรือสินค้าที่ไม่เป็นทางการ",
+    intro: [
+      "นี่คือคำถามที่เดินอยู่ตลอดทั้งปี ต่างจากเรื่องบัตร ซึ่งเป็นเหตุผลที่มันอยู่ถัดจากกัน และต่างจากบัตรตรงที่มันมีคำตอบผิดซึ่งไม่ทำให้คุณเสียอะไรที่มองเห็นได้ อัลบั้มของคุณมาถึง เพียงแต่มันไม่ถูกนับ",
+      "สามสิ่งเปลี่ยนไปตามที่ที่คุณซื้อ: ยอดขายถูกรายงานไปยังชาร์ตเกาหลีหรือไม่ ของแถมพรีออเดอร์มาด้วยหรือไม่ และต้นทุนจริงเมื่อรวมค่าส่งและภาษีแล้ว ทั้งสามไม่ได้ขยับไปด้วยกัน ตัวเลือกที่ถูกที่สุดจึงมักเป็นตัวเลือกที่ไม่ถูกนับเข้าที่ไหนเลย",
+    ],
+    steps: [
+      {
+        title: "ตัดสินใจว่าคุณต้องการอะไรจากการซื้อครั้งนี้จริง ๆ",
+        body: "การมีส่วนในชาร์ต ตัวอัลบั้มจริง ของแถมพรีออเดอร์ หรือราคาต่ำที่สุด สิ่งเหล่านี้ดึงไปคนละทาง เลือกลำดับความสำคัญก่อนเลือกร้าน เพราะร้านเป็นผลตามมาจากมัน",
+        pitfall:
+          "การซื้อบนมาร์เก็ตเพลสทั่วไปเพื่อประหยัดเงินแล้วมาพบว่ามันไม่ถูกนับ คือรูปแบบมาตรฐานของความผิดพลาดนี้",
+        takes: "5 นาที",
+      },
+      {
+        title: "ตรวจว่าผู้ขายรายงานยอดไปยังชาร์ตเกาหลีหรือไม่",
+        body: "Hanteo เผยแพร่รายชื่อไว้ เรื่องนี้จึงตรวจสอบได้ ไม่ใช่เรื่องของความไว้ใจ ร้าน Family ที่ได้รับการรับรองของเขาค้นได้ที่ hanteochart.com ทั้งภาษาอังกฤษและสเปนนอกเหนือจากภาษาเกาหลี แต่ละร้านมีรหัส family กำกับ: Ktown4U คือ HF0082KTU001 และ Weverse คือ HF0082BTS001 Hanteo ยังกำหนดให้ร้าน Family ออนไลน์ทุกร้านแสดงเครื่องหมาย Family ไว้ที่ส่วนท้ายของเว็บ พร้อมลิงก์กลับไปที่ hanteochart.com ส่วนท้ายเว็บจึงเป็นการตรวจสามสิบวินาทีกับร้านใดก็ได้ และทะเบียนคือการยืนยัน คำแนะนำของ Hanteo เองต่อผู้ซื้อคือให้ตรวจทั้งรหัสและเครื่องหมายรับรอง ซึ่งออกใหม่ทุกปี",
+        pitfall:
+          "ทะเบียนแสดงชื่อร้านส่วนใหญ่เป็นภาษาเกาหลีแม้บนหน้าภาษาอังกฤษ ร้านหนึ่งจึงอาจอยู่ในทะเบียนแต่ดูเหมือนไม่มีเมื่อค้นด้วยภาษาอังกฤษ และประกาศขายอัลบั้มของแท้บนมาร์เก็ตเพลสของบุคคลที่สามคือจุดที่พลาดกันบ่อย อัลบั้มเป็นของจริง ผู้ขายไม่ใช่ร้าน Family และยอดนั้นไม่ได้ถูกนับ",
+        takes: "15 นาที",
+      },
+      {
+        title: "สั่งภายในช่วงพรีออเดอร์เพื่อให้ได้ของแถม",
+        body: "สิทธิประโยชน์พรีออเดอร์ — โปสเตอร์ การ์ดเพิ่ม สิทธิ์เข้าร่วมอีเวนต์ — ผูกกับการสั่งภายในช่วงเวลาหนึ่ง และมักผูกกับร้านนั้นโดยเฉพาะ ช่วงนี้ปิดก่อนวันวางจำหน่าย ไม่ใช่ปิดในวันวางจำหน่าย",
+        pitfall:
+          "ของแถมเฉพาะร้านไม่สามารถสลับกันได้ การสั่งอัลบั้มเดียวกันจากที่อื่นจะได้ชุดอื่นหรือไม่ได้อะไรเลย",
+        takes: "10 นาที",
+      },
+      {
+        title: "คิดค่าส่งและความเสี่ยงด้านศุลกากร ไม่ใช่คิดแค่ราคาอัลบั้ม",
+        body: "ค่าส่งจากเกาหลีอาจแพงกว่าราคาอัลบั้ม และคุณจะต้องจ่ายค่าภาษีนำเข้าเพิ่มหรือไม่ ขึ้นอยู่กับกฎของประเทศคุณเอง ตรวจดูตอนนี้แทนที่จะคาดเดา: สหรัฐฯ ระงับเกณฑ์ 800 ดอลลาร์ของตนเมื่อเดือนสิงหาคม 2025 และสหภาพยุโรปยกเลิกเกณฑ์ 150 ยูโรเมื่อวันที่ 1 กรกฎาคม 2026 สำหรับผู้อ่านในสองเขตนี้จึงไม่มีมูลค่าใดเล็กพอที่จะมาถึงโดยไม่เสียค่าใช้จ่ายอีกต่อไป การสั่งรวมกลุ่มช่วยลดค่าส่งต่อชิ้น คำนวณต้นทุนถึงมือให้เสร็จก่อนตัดสินใจ",
+        pitfall:
+          "การวางแผนโดยอิงกับสิทธิ์ยกเว้นภาษีที่ไม่มีอยู่แล้วในประเทศที่คุณอยู่ ส่วนที่ไหนยังมีอยู่ การรวมหลายอัลบั้มไว้ในพัสดุเดียวอาจดันมูลค่าที่สำแดงให้เกินเกณฑ์และแพงกว่าการแยกส่ง ลองคำนวณทั้งสองแบบ",
+        takes: "20 นาที",
+      },
+      {
+        title: "เก็บหลักฐานการสั่งซื้อไว้จนกว่าของจะถึง",
+        body: "บันทึกใบยืนยัน หมายเลขติดตามพัสดุ และมูลค่าที่สำแดงไว้ เมื่อมีอะไรผิดพลาด — พัสดุเสียหาย ศุลกากรสอบถาม ของแถมหาย — นี่คือสิ่งที่ร้านจะขอจากคุณ",
+        pitfall:
+          "ฝ่ายบริการของร้านเกาหลีมักทำงานด้วยหมายเลขคำสั่งซื้อมากกว่าการค้นจากอีเมล ถ้าไม่มีหมายเลข การพูดคุยจะช้ามาก",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "อัลบั้มที่ซื้อนอกเกาหลีนับเข้าชาร์ตเกาหลีไหม",
+        a: "“ชาร์ตเกาหลี” คือสองสิ่งที่ต่างกัน และมีเพียงอย่างเดียวที่เกี่ยวกับการซื้อของคุณ Hanteo นับยอดขายที่ร้าน Family ที่ได้รับการรับรองของตนรายงานเข้ามา ผู้ตัดสินจึงเป็นร้าน ไม่ใช่ตำแหน่งที่คุณอยู่ ตรวจกับทะเบียนได้ ส่วน Circle Chart สร้างขึ้นในทางกลับกัน: นิยาม Album Chart ของตนว่าเป็นหน่วยที่ส่งขายส่งให้ร้านค้าปลีกหักยอดคืน ซึ่งแปลว่าอัลบั้มนั้นถูกนับไปแล้วตอนออกจากผู้จัดจำหน่าย และคำสั่งซื้อของคุณไม่ได้ขยับมัน Circle มี Retail Album Chart แยกต่างหากที่นับยอดขายปลีกแบบเรียลไทม์ สิ่งที่ทั้งสองไม่ได้ประกาศคือกฎที่บอกว่าคำสั่งซื้อจากต่างประเทศที่ร้านในทะเบียนจะถูกปฏิบัติเหมือนคำสั่งซื้อในประเทศ การซื้อจากร้านในทะเบียนจึงเป็นที่ไกลที่สุดที่คุณตรวจสอบได้ ไม่ใช่การรับประกัน",
+      },
+      {
+        q: "การสั่งรวมกลุ่มคุ้มไหม",
+        a: "โดยทั่วไปคุ้มในแง่ค่าส่ง เพราะต้นทุนต่อชิ้นลดลงมาก ให้ชั่งกับกฎนำเข้าของประเทศคุณ ที่ไหนยังมีสิทธิ์ยกเว้นภาษีอยู่ พัสดุมูลค่าสูงชิ้นเดียวอาจโดนเก็บค่าใช้จ่ายขณะที่พัสดุเล็กหลายชิ้นแยกกันไม่โดน ในสหรัฐฯ และสหภาพยุโรป การคำนวณนี้เปลี่ยนไปแล้ว ทั้งสองยกเลิกการยกเว้นสำหรับมูลค่าต่ำ จึงไม่เหลือเกณฑ์ให้อยู่ใต้มันอีก",
+      },
+      {
+        q: "ทำไมสิทธิประโยชน์พรีออเดอร์ต่างกันในแต่ละร้าน",
+        a: "ร้านค้าปลีกเจรจาของแถมเฉพาะของตนเอง อัลบั้มเดียวกันจึงมาพร้อมของแถมต่างกันขึ้นอยู่กับว่าพรีออเดอร์ที่ไหน ถ้าคุณต้องการของแถมชิ้นใดเป็นการเฉพาะ คุณต้องสั่งจากร้านที่เสนอของชิ้นนั้น ภายในช่วงเวลาของร้านนั้น",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Paano bumili ng mga album ng K-pop mula sa ibang bansa nang mabilang ang mga ito",
+    summary:
+      "Ang pinagbilhan mo ang nagpapasya kung mabibilang ba ang binili mo, kung magkano ang babayaran mo sa padala, at kung makukuha mo ba ang mga kasamang pre-order. Narito kung paano pumili.",
+    scope:
+      "Sakop nito ang pagbili ng opisyal na pisikal na album at paninda para ipadala sa labas ng Korea. Hindi nito sakop ang mga palengke ng muling pagbebenta o ang hindi opisyal na merchandise.",
+    intro: [
+      "Ito ang tanong na tumatakbo buong taon, hindi tulad ng tiket — at iyan ang dahilan kung bakit magkatabi sila. At hindi tulad ng tiket, may maling sagot ito na walang nakikitang halagang ibinabayad mo: dumarating ang album mo, hindi lang ito nabilang.",
+      "Tatlong bagay ang nag-iiba ayon sa pinagbilhan: kung iniuulat ba ang benta sa mga Koreanong chart, kung kasama ba ang mga pre-order na dagdag, at ang tunay na gastos hanggang sa pintuan mo kapag kasama na ang padala at ang adwana. Hindi sila sabay gumagalaw, kaya madalas ang pinakamurang pagpipilian ang siyang hindi nabibilang kahit saan.",
+    ],
+    steps: [
+      {
+        title: "Pagpasyahan kung ano talaga ang gusto mo mula sa pagbiling ito",
+        body: "Ambag sa chart, ang pisikal na album, ang mga kasamang pre-order, o ang pinakamababang presyo. Magkakaiba ang hila ng mga ito. Piliin ang prayoridad bago piliin ang tindahan, dahil ang tindahan ay bunga nito.",
+        pitfall:
+          "Ang pagbili sa isang pangkalahatang palengke para makatipid at pagkatapos ay matuklasang hindi ito nabilang ang karaniwang anyo ng pagkakamaling ito.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tingnan kung nag-uulat ba ang nagbebenta sa mga Koreanong chart",
+        body: "Inilalathala ng Hanteo ang listahan, kaya nasusuri ito at hindi usapin ng tiwala. Mahahanap ang mga sertipikadong Family store nito sa hanteochart.com sa Ingles at Espanyol bukod sa Koreano, at may family code ang bawat isa: ang Ktown4U ay HF0082KTU001 at ang Weverse ay HF0082BTS001. Hinihiling din ng Hanteo sa bawat online na Family store na ipakita ang markang Family sa footer nito, na naka-link pabalik sa hanteochart.com — kaya ang footer ang tatlumpung segundong pagsusuri sa kahit anong tindahan, at ang talaan ang kumpirmasyon. Ang mismong bilin ng Hanteo sa mga mamimili ay suriin pareho ang code at ang markang sertipikasyon, na muling inilalabas taun-taon.",
+        pitfall:
+          "Nakalista sa talaan ang karamihan ng pangalan ng tindahan sa Koreano kahit sa pahinang Ingles, kaya may tindahang nasa listahan na mukhang wala kapag hinanap sa Ingles. At ang listing ng tunay na album sa isang palengke ng ibang partido ang karaniwang nalalampasan: totoo ang album, hindi Family store ang nagbebenta, at wala ang ambag.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Mag-order sa loob ng bintana ng pre-order para sa mga kasama",
+        body: "Ang mga benepisyo sa pre-order — poster, dagdag na photocard, pasok sa event — ay nakatali sa pag-order sa loob ng isang bintana, at madalas sa partikular na tindahang iyon. Nagsasara ang bintana bago ang araw ng paglabas, hindi sa mismong araw.",
+        pitfall:
+          "Hindi mapagpapalit ang mga kasamang eksklusibo sa isang tindahan. Ang pag-order ng parehong album sa ibang lugar ay magbibigay sa iyo ng ibang set o wala.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Presyuhan ang padala at ang panganib sa adwana, hindi ang album",
+        body: "Maaaring lumampas sa presyo ng album ang padala mula sa Korea, at kung magbabayad ka ba ng singil sa pag-aangkat bukod doon ay nakadepende sa mga tuntunin ng sarili mong bansa. Suriin kung ano ang mga iyon ngayon sa halip na ipagpalagay: sinuspinde ng Estados Unidos ang hangganan nitong 800 dolyar noong Agosto 2025 at inalis ng European Union ang 150 euro nito noong 1 Hulyo 2026, kaya para sa mga mambabasa sa alinman sa dalawa, wala nang halagang sapat na maliit para makarating nang libre. Binababa ng mga group order ang padala kada item. Kalkulahin ang gastos hanggang sa pintuan mo bago ka magpasya.",
+        pitfall:
+          "Ang pagplano batay sa isang exemption sa buwis na wala na kung saan ka nakatira. Kung saan may natitira pa, ang pagsasama ng ilang album sa iisang parsela ay maaaring magtulak sa idineklarang halaga lampas doon at magastos nang higit sa paghiwa-hiwalay ng padala — kalkulahin ang dalawang bilang.",
+        takes: "20 minuto",
+      },
+      {
+        title: "Itago ang talaan ng order hanggang dumating ito",
+        body: "I-save ang kumpirmasyon, ang numero ng pagsubaybay at ang idineklarang halaga. Para sa anumang magkamali — sirang parsela, tanong ng adwana, nawawalang kasama — ito ang hihingin sa iyo ng tindahan.",
+        pitfall:
+          "Ang suporta ng mga Koreanong tindahan ay madalas gumagana sa mga numero ng order sa halip na sa paghahanap sa email. Kung wala ang numero, mabagal ang usapan.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Nabibilang ba sa mga Koreanong chart ang mga album na binili sa labas ng Korea?",
+        a: "Ang “mga Koreanong chart” ay dalawang magkaibang bagay at isa lamang sa kanila ang may kinalaman sa binili mo. Binibilang ng Hanteo ang mga bentang iniuulat ng mga sertipikadong Family store nito, kaya ang tindahan ang nagpapasya at hindi ang kinaroroonan mo — tingnan ito sa talaan. Baligtad ang pagkakabuo ng Circle Chart: tinutukoy nito ang Album Chart nito bilang mga yunit na ipinadala nang pakyawan sa mga tindahan, bawas ang mga ibinalik, na ibig sabihin ay nabilang na ang album na iyon noong umalis ito sa distributor at hindi ito maigagalaw ng order mo. Nagpapatakbo ang Circle ng hiwalay na Retail Album Chart na bumibilang ng tingiang benta, sa tunay na oras. Ang hindi inilalathala ng dalawa ay isang tuntuning nagsasabing ang order mula sa ibang bansa sa isang nakalistang tindahan ay itinuturing na kapareho ng order sa loob ng bansa, kaya ang pagbili sa isang nakalistang tindahan ang pinakamalayong masusuri mo, hindi isang garantiya.",
+      },
+      {
+        q: "Sulit ba ang group order?",
+        a: "Karaniwang oo pagdating sa padala, dahil bumababa nang malaki ang gastos kada item. Timbangin ito laban sa mga tuntunin ng bansa mo sa pag-aangkat — kung saan may exemption pa sa buwis, ang iisang parselang mataas ang halaga ay puwedeng singilin samantalang ang hiwa-hiwalay na maliliit ay hindi. Sa Estados Unidos at sa European Union ay nagbago ang kalkulasyong iyon: inalis ng dalawa ang kanilang exemption sa mababang halaga, kaya wala nang hangganang mapagtataguan.",
+      },
+      {
+        q: "Bakit magkaiba ang mga benepisyo sa pre-order sa bawat tindahan?",
+        a: "Ang mga tindahan ay nakikipagkasundo para sa sarili nilang eksklusibong kasama, kaya ang parehong album ay may iba't ibang dagdag depende sa kung saan ito pinre-order. Kung tiyak na kasama ang gusto mo, kailangan mong mag-order mula sa tindahang nag-aalok nito, sa loob ng bintana nito.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Đặt hàng trên Weverse Shop từ ngoài Hàn Quốc",
+    summary:
+      "Bạn đang ở cửa hàng nào, vì sao giá thay đổi ở bước thanh toán, loại tiền của bạn thực sự được những phương thức thanh toán nào, và những nước mà Hàn Quốc không gửi hàng tới được.",
+    scope:
+      "Nói về việc đặt hàng trên Weverse Shop với hàng hóa vật lý và album gửi đi từ Hàn Quốc. Việc mua tư cách thành viên và mua vé được xử lý riêng và nằm trong hướng dẫn về bán trước. Các quy định ở đây lấy từ chính thông báo của Weverse Shop và thay đổi mà không báo trước nhiều.",
+    intro: [
+      "Gần như mọi bài hướng dẫn tiếng Anh về Weverse Shop vẫn nói rằng cửa hàng toàn cầu chỉ nhận PayPal hoặc Eximbay chứ không gì khác. Điều đó đúng từ nhiều năm trước. Danh sách thanh toán bây giờ dài hơn, nó được quyết định bởi loại tiền tài khoản bạn đang đặt chứ không phải bởi nước bạn sống, và từ tháng 2 năm 2026, giá trên trang sản phẩm không phải là giá bạn trả.",
+      "Không có gì trong số đó bị giấu — tất cả nằm trong thông báo của chính cửa hàng, và đó là nơi mọi thứ dưới đây bắt nguồn. Chỉ là không ai viết những bài hướng dẫn ấy chịu đi đọc chúng.",
+    ],
+    steps: [
+      {
+        title: "Xác định bạn đang ở Weverse Shop nào",
+        body: "Weverse Shop không phải một cửa hàng duy nhất. Có cửa hàng GLOBAL và có các cửa hàng theo khu vực, chúng có hàng khác nhau, chạy khung pre-order khác nhau và gửi đi từ những nơi khác nhau. Một món bạn thấy người khác đặt có thể đơn giản là không tồn tại trong cửa hàng của bạn. Hãy xem mình đang ở cửa hàng nào trước khi lên kế hoạch quanh một ngày phát hành, vì hạn chót pre-order ở cửa hàng này chẳng nói lên điều gì về các cửa hàng khác.",
+        pitfall:
+          "Một đường dẫn ai đó chia sẻ trong cộng đồng fan sẽ mở cửa hàng của họ, không phải của bạn. Nếu trang vẫn tải được nhưng món hàng không thêm được vào giỏ, thường là bạn đang ở sai cửa hàng chứ không phải đã muộn.",
+        takes: "2 phút",
+      },
+      {
+        title: "Đặt loại tiền của bạn trước khi nhìn bất cứ thứ gì",
+        body: "Loại tiền mặc định của bạn quyết định những phương thức thanh toán nào được đưa ra cho bạn. Weverse nêu rõ theo từng loại tiền: USD có PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay và Grab Pay. JPY có đúng danh sách đó trừ Grab Pay. CNY mất PayPal. MXN chỉ có PayPal và Apple Pay. KRW thêm thẻ Hàn Quốc và các ví Hàn Quốc — Toss, NAVER Pay, Kakao Pay, PAYCO. MXN là danh sách ngắn nhất trong bốn danh sách ngoài tiếng Hàn và là danh sách đáng chuẩn bị trước nhất: hai phương thức, cả hai đều là kỹ thuật số, không có lựa chọn tiền mặt. Nếu không thiết lập cái nào, sẽ không có nút thứ ba nào ở bước thanh toán.",
+        pitfall:
+          "Không có nút “trả bằng Visa” đơn thuần trên các loại tiền không phải KRW. Thẻ của bạn đi qua PayPal hoặc Eximbay, và với ngân hàng của bạn đó là một giao dịch khác hẳn so với khoản chi cho một đơn vị bán hàng Hàn Quốc — đó cũng là lý do một chiếc thẻ hoạt động tốt ở nơi khác vẫn có thể hỏng ở đây.",
+        takes: "3 phút",
+      },
+      {
+        title: "Hãy chờ giá tăng lên ở bước thanh toán, và hiểu vì sao",
+        body: "Từ ngày 3 tháng 2 năm 2026, Weverse tính thuế dựa trên địa chỉ giao hàng và địa chỉ thanh toán của bạn. Đơn hàng gửi tới Hàn Quốc hiển thị giá đã gồm thuế suốt cả quá trình. Đơn hàng đi tới bất kỳ nơi nào khác hiển thị giá trang sản phẩm chưa gồm thuế, và thuế của nơi nhận được cộng vào ở bước thanh toán khi bạn nhập địa chỉ. Con số trên trang sản phẩm không phải con số bạn trả, và đó là chủ ý chứ không phải lỗi.",
+        pitfall:
+          "Chuyện này trông y hệt một vụ lừa đảo hoặc một lỗi kỹ thuật, và đó là điểm người ta bỏ dở đơn hàng. Phần tăng thêm là khoản thuế mà chính nước bạn thu, được thu trước thay vì để hải quan thu sau.",
+        takes: "1 phút",
+      },
+      {
+        title: "Điền cả địa chỉ thanh toán, không chỉ địa chỉ giao hàng",
+        body: "Cùng thay đổi tháng 2 năm 2026 đó đã thêm ô địa chỉ thanh toán ở bước trả tiền, vì phép tính thuế cần nó. Với một số sản phẩm phi vật thể — hàng kỹ thuật số và nội dung — địa chỉ thanh toán có thể là bắt buộc chứ không phải tùy chọn. Hãy điền chính xác: đó là thứ mà mức thuế được tính ra từ nó, và một địa chỉ sai không phải thứ bạn có thể lặng lẽ sửa về sau.",
+        pitfall:
+          "Chép địa chỉ giao hàng sang ô thanh toán mà không nghĩ thì ổn khi hai cái trùng nhau và sai khi chúng khác nhau. Nếu thẻ của bạn đăng ký ở một địa chỉ khác, hãy dùng địa chỉ đó.",
+        takes: "2 phút",
+      },
+      {
+        title: "Kiểm tra ngôn ngữ của địa chỉ so với nơi nhận",
+        body: "Weverse đề nghị khách hàng quốc tế xác nhận xem nước nhận cần địa chỉ viết bằng ngôn ngữ nào trước khi nhập. Quy tắc rõ hơn ở chiều ngược lại: một đơn hàng giao tới Hàn Quốc phải mang địa chỉ bằng tiếng Hàn, vì các hãng vận chuyển có thể không nhận hoặc xử lý sai một địa chỉ tiếng Anh. Với mọi nơi khác, hãy viết địa chỉ theo cách bưu chính nước bạn mong đợi.",
+        pitfall:
+          "Phiên âm một địa chỉ Hàn Quốc sang tiếng Anh là nguyên nhân phổ biến nhất khiến đơn hàng giao tới Hàn Quốc bị chậm hoặc giao thất bại.",
+        takes: "5 phút",
+      },
+      {
+        title: "Xác nhận rằng Hàn Quốc gửi hàng tới chỗ bạn được",
+        body: "Việc gửi hàng từ Hàn Quốc không khả dụng với một danh sách các nước và vùng lãnh thổ mà Weverse duy trì và cập nhật. Theo bản sửa đổi ngày 15 tháng 7 năm 2026, danh sách này gồm Myanmar, Cộng hòa Dân chủ Congo, Iraq, Iran, Liban, Mali, Nga, Andorra, Ukraine, Belarus, Afghanistan, Antille thuộc Hà Lan, Israel và Thổ Nhĩ Kỳ. Danh sách này thay đổi, nên hãy xem thông báo thay vì xem trang này.",
+        pitfall:
+          "Danh sách được mô tả là gián đoạn tạm thời chứ không phải chính sách, nghĩa là một nước có thể rời khỏi nó cũng như có thể bị thêm vào. Một đơn hàng thành công trước đây hay đơn hàng của một người bạn năm ngoái đều không trả lời được việc hôm nay bạn có đặt được hay không.",
+        takes: "2 phút",
+      },
+      {
+        title: "Đặt trong khung pre-order nếu quà kèm là điều quan trọng",
+        body: "Quyền lợi pre-order — những poster, photocard và quà kèm của lần in đầu, vốn thường là lý do người ta đặt ở cửa hàng chính thức thay vì nơi nào rẻ hơn — gắn với khung pre-order, chứ không gắn với album. Khi khung đó đóng lại, vẫn album ấy được gửi đi mà không có chúng. Nếu quà kèm mới là điều quan trọng, thứ cần lên kế hoạch quanh nó là hạn chót, không phải ngày phát hành.",
+        pitfall:
+          "Các khung pre-order đóng lại vào một giờ Hàn Quốc, tức là tối hôm trước hoặc rạng sáng ở nơi phần lớn độc giả của trang này đang sống.",
+        takes: "Trước hạn chót",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi trả bằng Visa hay Mastercard trên Weverse Shop được không?",
+        a: "Không phải dưới dạng lựa chọn thẻ trực tiếp, nếu nằm ngoài thiết lập tiền Hàn Quốc. Với USD, JPY, CNY và MXN, chiếc thẻ sẽ đi qua PayPal hoặc Eximbay. Tiền vẫn trừ vào thẻ bạn, nhưng ngân hàng của bạn nhìn thấy một loại giao dịch khác, nên bật thanh toán quốc tế từ trước là việc đáng làm.",
+      },
+      {
+        q: "Vì sao giá tăng lên khi tôi nhập địa chỉ?",
+        a: "Từ ngày 3 tháng 2 năm 2026, giá ngoài Hàn Quốc được hiển thị trên trang sản phẩm chưa gồm thuế, và thuế của nơi bạn nhận được cộng vào ở bước thanh toán. Đó là khoản thuế mà chính nước bạn thu, được thu lúc mua thay vì lúc giao hàng.",
+      },
+      {
+        q: "Khi hàng tới tôi có bị thu thuế hải quan không?",
+        a: "Weverse hiện đã trả trước thuế và các khoản thu ở bước thanh toán với những đơn hàng áp dụng được, và họ nói điều đó làm giảm nhu cầu phải trả thêm trong lúc thông quan. Họ nêu rõ rằng điều này không áp dụng cho mọi nước hay vùng lãnh thổ, nên đây là một kỳ vọng hợp lý chứ không phải một bảo đảm.",
+      },
+      {
+        q: "Tôi ở Mexico. Tôi thực sự được những phương thức thanh toán nào?",
+        a: "Hai. Thông báo về thanh toán của Weverse ghi MXN có PayPal và Apple Pay — danh sách ngắn nhất trong bốn danh sách của các loại tiền ngoài tiếng Hàn, và cả hai đều là kỹ thuật số. Không có lựa chọn tiền mặt và không có nút thứ ba, nên hãy thiết lập một trong hai trước khung pre-order chứ đừng làm trong lúc nó đang mở.",
+      },
+      {
+        q: "Weverse Shop có gửi hàng tới nước tôi không?",
+        a: "Thường là có, nhưng có một danh sách được duy trì gồm các nước và vùng lãnh thổ hiện không thể nhận hàng gửi từ Hàn Quốc. Hãy xem thông báo đó để biết danh sách hiện hành trước khi đặt — nó được sửa lại khi điều kiện thay đổi.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "สั่งของจาก Weverse Shop จากนอกเกาหลี",
+    summary:
+      "คุณอยู่ในร้านไหน ทำไมราคาถึงเปลี่ยนตอนชำระเงิน สกุลเงินของคุณได้วิธีชำระเงินอะไรบ้างจริง ๆ และประเทศใดที่เกาหลีส่งของไปไม่ได้",
+    scope:
+      "ครอบคลุมการสั่งซื้อสินค้าและอัลบั้มที่เป็นของจริงบน Weverse Shop ซึ่งจัดส่งจากเกาหลี การซื้อสมาชิกภาพและการซื้อบัตรแยกกันคนละเรื่องและอยู่ในคู่มือพรีเซล กฎในหน้านี้มาจากประกาศของ Weverse Shop เอง และเปลี่ยนโดยแทบไม่บอกล่วงหน้า",
+    intro: [
+      "คู่มือภาษาอังกฤษเกี่ยวกับ Weverse Shop เกือบทุกฉบับยังบอกว่าร้านโกลบอลรับแค่ PayPal หรือ Eximbay เท่านั้น นั่นจริงเมื่อหลายปีก่อน ตอนนี้รายการวิธีชำระเงินยาวกว่านั้น มันถูกกำหนดโดยสกุลเงินที่บัญชีของคุณตั้งไว้ ไม่ใช่โดยประเทศที่คุณอาศัยอยู่ และตั้งแต่เดือนกุมภาพันธ์ 2026 ราคาบนหน้าสินค้าไม่ใช่ราคาที่คุณจ่าย",
+      "ไม่มีอะไรในนี้ถูกซ่อนไว้เลย ทั้งหมดอยู่ในประกาศของร้านเอง ซึ่งเป็นที่มาของทุกอย่างด้านล่าง เพียงแต่ไม่มีใครที่เขียนคู่มือเหล่านั้นไปอ่านมัน",
+    ],
+    steps: [
+      {
+        title: "ดูให้ออกว่าคุณอยู่ใน Weverse Shop ร้านไหน",
+        body: "Weverse Shop ไม่ใช่ร้านเดียว มีร้าน GLOBAL และมีร้านรายภูมิภาค ซึ่งมีสินค้าต่างกัน เปิดช่วงพรีออเดอร์ต่างกัน และจัดส่งจากคนละที่ สินค้าที่คุณเห็นคนอื่นสั่งอาจไม่มีอยู่ในร้านของคุณเลย ตรวจว่าคุณอยู่ร้านไหนก่อนจะวางแผนรอบวันวางจำหน่าย เพราะกำหนดปิดพรีออเดอร์ของร้านหนึ่งไม่ได้บอกอะไรเกี่ยวกับร้านอื่น",
+        pitfall:
+          "ลิงก์ที่ใครสักคนแชร์ในคอมมูนิตี้แฟนคลับจะเปิดร้านของเขา ไม่ใช่ร้านของคุณ ถ้าหน้าโหลดได้แต่ใส่สินค้าลงตะกร้าไม่ได้ โดยทั่วไปคุณอยู่ผิดร้าน ไม่ใช่มาช้าเกินไป",
+        takes: "2 นาที",
+      },
+      {
+        title: "ตั้งสกุลเงินของคุณก่อนจะดูอะไรทั้งนั้น",
+        body: "สกุลเงินเริ่มต้นของคุณเป็นตัวกำหนดว่าคุณจะได้รับวิธีชำระเงินแบบใดบ้าง Weverse ระบุไว้ตามสกุลเงิน: USD ได้ PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay และ Grab Pay JPY ได้รายการเดียวกันแต่ไม่มี Grab Pay CNY ไม่มี PayPal MXN มีแค่ PayPal และ Apple Pay ส่วน KRW เพิ่มบัตรเกาหลีและกระเป๋าเงินเกาหลี — Toss, NAVER Pay, Kakao Pay, PAYCO MXN เป็นรายการที่สั้นที่สุดในบรรดาสี่รายการที่ไม่ใช่เกาหลี และเป็นรายการที่ควรวางแผนล่วงหน้าที่สุด: สองวิธี ทั้งคู่เป็นดิจิทัล ไม่มีตัวเลือกเงินสด ถ้าไม่ได้ตั้งค่าไว้สักอย่าง จะไม่มีปุ่มที่สามในขั้นชำระเงิน",
+        pitfall:
+          "ไม่มีปุ่ม “จ่ายด้วย Visa” ตรง ๆ บนสกุลเงินที่ไม่ใช่ KRW บัตรของคุณเดินผ่าน PayPal หรือ Eximbay ซึ่งสำหรับธนาคารของคุณนับเป็นธุรกรรมคนละแบบกับการถูกเรียกเก็บจากร้านค้าเกาหลี และนั่นคือเหตุผลที่บัตรซึ่งใช้ได้ที่อื่นยังอาจล้มเหลวที่นี่",
+        takes: "3 นาที",
+      },
+      {
+        title: "เตรียมใจว่าราคาจะสูงขึ้นตอนชำระเงิน และรู้ว่าทำไม",
+        body: "ตั้งแต่วันที่ 3 กุมภาพันธ์ 2026 Weverse คำนวณภาษีจากที่อยู่จัดส่งและที่อยู่เรียกเก็บเงินของคุณ คำสั่งซื้อที่ส่งไปเกาหลีจะแสดงราคารวมภาษีตลอดทั้งกระบวนการ คำสั่งซื้อที่ส่งไปที่อื่นจะแสดงราคาบนหน้าสินค้าแบบยังไม่รวมภาษี และภาษีของปลายทางจะถูกบวกเพิ่มในขั้นชำระเงินเมื่อคุณกรอกที่อยู่ ตัวเลขบนหน้าสินค้าจึงไม่ใช่ตัวเลขที่คุณจ่าย และนั่นเป็นความตั้งใจ ไม่ใช่ความผิดพลาด",
+        pitfall:
+          "เรื่องนี้ดูเหมือนการโกงหรือข้อบกพร่องของระบบเป๊ะ ๆ และเป็นจุดที่คนล้มเลิกคำสั่งซื้อ ส่วนที่เพิ่มขึ้นคือภาษีที่ประเทศของคุณเองเรียกเก็บ โดยเก็บไว้ล่วงหน้าแทนที่จะให้ศุลกากรเก็บทีหลัง",
+        takes: "1 นาที",
+      },
+      {
+        title: "กรอกที่อยู่เรียกเก็บเงินด้วย ไม่ใช่แค่ที่อยู่จัดส่ง",
+        body: "การเปลี่ยนแปลงเดือนกุมภาพันธ์ 2026 เดียวกันนี้เพิ่มช่องที่อยู่เรียกเก็บเงินในขั้นชำระเงิน เพราะการคำนวณภาษีต้องใช้มัน สำหรับสินค้าที่จับต้องไม่ได้บางรายการ — สินค้าดิจิทัลและคอนเทนต์ — ที่อยู่เรียกเก็บเงินอาจเป็นข้อบังคับแทนที่จะเป็นทางเลือก กรอกให้ถูกต้อง เพราะอัตราภาษีคำนวณจากมัน และที่อยู่ผิดไม่ใช่สิ่งที่คุณจะแก้เงียบ ๆ ทีหลังได้",
+        pitfall:
+          "การคัดลอกที่อยู่จัดส่งไปใส่ช่องเรียกเก็บเงินโดยไม่คิดนั้นถูกเมื่อทั้งสองตรงกัน และผิดเมื่อมันไม่ตรง ถ้าบัตรของคุณผูกกับที่อยู่อื่น ให้ใช้ที่อยู่นั้น",
+        takes: "2 นาที",
+      },
+      {
+        title: "ตรวจภาษาของที่อยู่ให้ตรงกับปลายทาง",
+        body: "Weverse ขอให้ลูกค้าต่างประเทศตรวจก่อนกรอกว่าประเทศปลายทางต้องการที่อยู่เป็นภาษาใด กฎชัดกว่าในทิศทางตรงข้าม: คำสั่งซื้อที่ส่งไปเกาหลีใต้ต้องมีที่อยู่เป็นภาษาเกาหลี เพราะบริษัทขนส่งอาจไม่รับหรืออาจประมวลผลที่อยู่ภาษาอังกฤษผิด สำหรับที่อื่นทั้งหมด ให้เขียนที่อยู่ตามแบบที่ไปรษณีย์ของประเทศคุณคาดหวัง",
+        pitfall:
+          "การถอดที่อยู่เกาหลีเป็นภาษาอังกฤษคือสาเหตุเดียวที่พบบ่อยที่สุดของการจัดส่งล่าช้าหรือล้มเหลวในคำสั่งซื้อที่ส่งไปเกาหลี",
+        takes: "5 นาที",
+      },
+      {
+        title: "ยืนยันว่าเกาหลีส่งของมาถึงคุณได้",
+        body: "การจัดส่งจากเกาหลีใต้ใช้ไม่ได้กับรายชื่อประเทศและเขตแดนที่ Weverse ดูแลและปรับปรุงอยู่ ตามฉบับแก้ไขวันที่ 15 กรกฎาคม 2026 รายการนี้ครอบคลุมเมียนมา สาธารณรัฐประชาธิปไตยคองโก อิรัก อิหร่าน เลบานอน มาลี รัสเซีย อันดอร์รา ยูเครน เบลารุส อัฟกานิสถาน เนเธอร์แลนด์แอนทิลลิส อิสราเอล และตุรกี รายการนี้ขยับได้ จึงควรดูประกาศแทนที่จะดูหน้านี้",
+        pitfall:
+          "รายการนี้ถูกอธิบายว่าเป็นการหยุดชะงักชั่วคราวไม่ใช่นโยบาย ซึ่งแปลว่าประเทศหนึ่งหลุดออกจากรายการได้พอ ๆ กับที่ถูกเพิ่มเข้าไปได้ ทั้งคำสั่งซื้อที่เคยสำเร็จก่อนหน้านี้และคำสั่งซื้อของเพื่อนเมื่อปีที่แล้วต่างก็ไม่ได้ตอบว่าวันนี้คุณสั่งได้หรือไม่",
+        takes: "2 นาที",
+      },
+      {
+        title: "สั่งภายในช่วงพรีออเดอร์ถ้าของแถมสำคัญ",
+        body: "สิทธิประโยชน์พรีออเดอร์ — โปสเตอร์ การ์ด และของแถมรอบพิมพ์แรก ซึ่งมักเป็นเหตุผลที่คนสั่งจากร้านอย่างเป็นทางการแทนที่จะสั่งจากที่ถูกกว่า — ผูกกับช่วงพรีออเดอร์ ไม่ได้ผูกกับตัวอัลบั้ม เมื่อช่วงนั้นปิดลง อัลบั้มเดียวกันจะถูกส่งโดยไม่มีของเหล่านั้น ถ้าของแถมคือประเด็น สิ่งที่ต้องวางแผนรอบ ๆ คือเส้นตาย ไม่ใช่วันวางจำหน่าย",
+        pitfall:
+          "ช่วงพรีออเดอร์ปิดตามเวลาเกาหลี ซึ่งตรงกับช่วงเย็นของวันก่อนหน้าหรือตอนดึกในที่ที่ผู้อ่านส่วนใหญ่ของเว็บนี้อาศัยอยู่",
+        takes: "ก่อนเส้นตาย",
+      },
+    ],
+    faq: [
+      {
+        q: "จ่ายด้วย Visa หรือ Mastercard บน Weverse Shop ได้ไหม",
+        a: "ไม่ได้ในฐานะตัวเลือกบัตรโดยตรง หากอยู่นอกการตั้งค่าสกุลเงินเกาหลี บน USD, JPY, CNY และ MXN บัตรจะเดินผ่าน PayPal หรือ Eximbay แทน เงินยังถูกตัดจากบัตรคุณอยู่ดี แต่ธนาคารของคุณเห็นเป็นธุรกรรมคนละแบบ การเปิดใช้การชำระเงินระหว่างประเทศไว้ล่วงหน้าจึงคุ้มค่าที่จะทำ",
+      },
+      {
+        q: "ทำไมราคาถึงสูงขึ้นตอนฉันกรอกที่อยู่",
+        a: "ตั้งแต่วันที่ 3 กุมภาพันธ์ 2026 ราคานอกเกาหลีถูกแสดงบนหน้าสินค้าแบบยังไม่รวมภาษี และภาษีของปลายทางคุณถูกบวกเพิ่มในขั้นชำระเงิน มันคือภาษีที่ประเทศของคุณเองเรียกเก็บ โดยเก็บตอนซื้อแทนที่จะเก็บตอนส่งของ",
+      },
+      {
+        q: "ของมาถึงแล้วฉันจะโดนเก็บภาษีศุลกากรไหม",
+        a: "ตอนนี้ Weverse จ่ายอากรและภาษีล่วงหน้าในขั้นชำระเงินสำหรับคำสั่งซื้อที่เข้าเงื่อนไข ซึ่งทางร้านบอกว่าช่วยลดความจำเป็นในการจ่ายเพิ่มระหว่างพิธีการศุลกากร ร้านระบุว่าเรื่องนี้ไม่ได้ใช้กับทุกประเทศหรือทุกเขตแดน จึงเป็นความคาดหมายที่สมเหตุสมผล ไม่ใช่การรับประกัน",
+      },
+      {
+        q: "ฉันอยู่เม็กซิโก ได้วิธีชำระเงินอะไรบ้างจริง ๆ",
+        a: "สองอย่าง ประกาศเรื่องการชำระเงินของ Weverse ระบุว่า MXN มี PayPal และ Apple Pay ซึ่งเป็นรายการที่สั้นที่สุดในบรรดาสี่สกุลเงินที่ไม่ใช่เกาหลี และทั้งคู่เป็นดิจิทัล ไม่มีตัวเลือกเงินสดและไม่มีปุ่มที่สาม จึงควรตั้งค่าอย่างใดอย่างหนึ่งก่อนช่วงพรีออเดอร์ ไม่ใช่ตอนที่มันเปิดอยู่แล้ว",
+      },
+      {
+        q: "Weverse Shop ส่งของมาประเทศฉันไหม",
+        a: "โดยทั่วไปส่ง แต่มีรายชื่อประเทศและเขตแดนที่ดูแลไว้ซึ่งขณะนี้ไม่สามารถรับการจัดส่งจากเกาหลีใต้ได้ ตรวจประกาศนั้นเพื่อดูรายการปัจจุบันก่อนสั่งซื้อ เพราะมันถูกแก้ไขเมื่อสถานการณ์เปลี่ยน",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pag-order sa Weverse Shop mula sa labas ng Korea",
+    summary:
+      "Kung aling tindahan ang kinaroroonan mo, bakit nagbabago ang presyo sa checkout, aling mga paraan ng pagbabayad ang talagang nakukuha ng pera mo, at ang mga bansang hindi mapapadalhan ng Korea.",
+    scope:
+      "Sakop nito ang pag-order sa Weverse Shop ng pisikal na paninda at album na ipinapadala mula sa Korea. Hiwalay na hinahawakan ang pagbili ng membership at ang tiket, at nasa gabay ng presale ang mga iyon. Ang mga tuntunin dito ay galing sa mismong mga abiso ng Weverse Shop at nagbabago nang walang gaanong paunang babala.",
+    intro: [
+      "Halos lahat ng gabay sa Ingles tungkol sa Weverse Shop ay nagsasabi pa ring PayPal o Eximbay lamang ang tinatanggap ng pandaigdigang tindahan. Totoo iyon noong mga nakaraang taon. Mas mahaba na ngayon ang listahan ng pagbabayad, itinatakda ito ng perang nakatakda sa account mo at hindi ng bansang tinitirhan mo, at mula Pebrero 2026 ang presyo sa pahina ng produkto ay hindi ang presyong babayaran mo.",
+      "Wala sa mga iyan ang itinatago — nasa sariling mga abiso ng tindahan ang lahat, at doon galing ang bawat bagay sa ibaba. Walang sumulat lang ng mga gabay na iyon ang nagtiyagang basahin ang mga ito.",
+    ],
+    steps: [
+      {
+        title: "Alamin kung aling Weverse Shop ang talagang kinaroroonan mo",
+        body: "Hindi iisang tindahan ang Weverse Shop. May tindahang GLOBAL at may mga tindahan kada rehiyon, at magkakaiba ang paninda nila, magkakaiba ang bintana ng pre-order, at magkakaiba ang pinagpapadalhan. Ang item na nakita mong inorder ng iba ay maaaring hindi talaga umiiral sa tindahan mo. Tingnan kung nasaan ka bago ka magplano batay sa petsa ng paglabas, dahil ang hangganan ng pre-order sa isang tindahan ay walang sinasabi tungkol sa iba.",
+        pitfall:
+          "Ang link na ibinahagi ng isang tao sa isang komunidad ng fan ay nagbubukas ng tindahan niya, hindi sa iyo. Kung bumubukas ang pahina pero ayaw pumasok ng item sa cart, karaniwang nasa maling tindahan ka at hindi huli na.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Itakda ang pera mo bago ka tumingin ng kahit ano",
+        body: "Ang default mong pera ang nagpapasya kung aling paraan ng pagbabayad ang iaalok sa iyo. Inilalahad ito ng Weverse kada pera: ang USD ay may PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay at Grab Pay. Ang JPY ay may parehong listahan maliban sa Grab Pay. Nawawalan ng PayPal ang CNY. Ang MXN ay PayPal at Apple Pay lamang. Nagdaragdag ang KRW ng mga Koreanong kard at ng mga Koreanong wallet — Toss, NAVER Pay, Kakao Pay, PAYCO. Ang MXN ang pinakamaikli sa apat na listahang hindi Koreano at ang pinakadapat paghandaan: dalawang paraan, parehong digital, walang opsiyong cash. Kung wala ni isa sa dalawang naitakda, walang ikatlong pindutan sa checkout.",
+        pitfall:
+          "Walang simpleng “magbayad gamit ang Visa” sa mga perang hindi KRW. Dumaraan ang kard mo sa PayPal o Eximbay, na ibang uri ng transaksiyon para sa bangko mo kaysa sa singil ng isang Koreanong merchant — at iyan ang dahilan kung bakit ang kard na gumagana saanman ay puwede pa ring bumagsak dito.",
+        takes: "3 minuto",
+      },
+      {
+        title: "Asahan mong tataas ang presyo sa checkout, at alamin kung bakit",
+        body: "Mula 3 Pebrero 2026, kinakalkula ng Weverse ang buwis mula sa iyong address ng padala at ng pagsingil. Ang mga order na papuntang Korea ay nagpapakita ng presyong kasama na ang buwis mula simula hanggang dulo. Ang mga order na papunta saanman pa ay nagpapakita ng presyo sa pahina ng produkto nang walang buwis, at idinaragdag ang buwis ng destinasyon sa checkout kapag naglagay ka ng address. Ang numero sa pahina ng produkto ay hindi ang numerong babayaran mo, at sinadya iyon at hindi isang depekto.",
+        pitfall:
+          "Mukha itong eksaktong scam o bug, at dito nag-iiwan ng order ang mga tao. Ang itinaas ay ang buwis na sinisingil ng sarili mong bansa, na kinokolekta nang maaga sa halip na ng adwana sa bandang huli.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Punan ang address ng pagsingil, hindi lang ang address ng padala",
+        body: "Ang parehong pagbabago noong Pebrero 2026 ay nagdagdag ng patlang para sa address ng pagsingil sa checkout, dahil kailangan ito ng kalkulasyon ng buwis. Para sa ilang produktong hindi nahahawakan — mga digital na item at nilalaman — maaaring kailangan ang address ng pagsingil sa halip na opsiyonal. Ilagay ito nang tumpak: dito kinakalkula ang tantos ng buwis, at ang maling address ay hindi isang bagay na matahimik mong maitatama sa kalaunan.",
+        pitfall:
+          "Ang pagkopya ng address ng padala sa patlang ng pagsingil nang hindi nag-iisip ay tama kapag magkatugma sila at mali kapag hindi. Kung nakarehistro ang kard mo sa ibang address, gamitin iyon.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Tingnan ang wika ng address kontra sa destinasyon",
+        body: "Hinihiling ng Weverse sa mga internasyonal na customer na tiyakin kung anong wika ang kailangan ng bansang destinasyon para sa address bago ito ilagay. Mas malinaw ang tuntunin sa kabilang direksiyon: ang order na ipapadala sa South Korea ay kailangang may address sa Koreano, dahil maaaring hindi tanggapin o maling maproseso ng mga courier ang Ingles. Para saanman pa, isulat ang address sa paraang inaasahan ng sariling serbisyong postal ng bansa mo.",
+        pitfall:
+          "Ang pagsasalin ng isang Koreanong address sa Ingles ang pinakakaraniwang dahilan ng naantala o nabigong paghahatid sa mga order na papuntang Korea.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tiyaking kaya kang padalhan ng Korea",
+        body: "Hindi magagamit ang pagpapadala mula sa South Korea para sa isang listahan ng mga bansa at rehiyon na pinananatili at ina-update ng Weverse. Sa rebisyon noong 15 Hulyo 2026, sakop nito ang Myanmar, ang Demokratikong Republika ng Congo, Iraq, Iran, Lebanon, Mali, Russia, Andorra, Ukraine, Belarus, Afghanistan, ang Netherlands Antilles, Israel at Turkey. Gumagalaw ang listahan, kaya tingnan ang abiso sa halip na ang pahinang ito.",
+        pitfall:
+          "Inilalarawan ang listahan bilang pansamantalang kaguluhan at hindi bilang patakaran, kaya kayang makaalis ng isang bansa rito gaya ng kaya nitong mapasama. Hindi natatapos ng dating matagumpay na order o ng order ng kaibigan mo noong isang taon ang tanong kung makakapag-order ka ngayon.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Mag-order sa loob ng bintana ng pre-order kung mahalaga ang mga kasama",
+        body: "Ang mga benepisyo sa pre-order — ang mga poster, photocard at kasamang unang limbag na karaniwang dahilan ng pag-order sa opisyal na tindahan sa halip na sa mas murang lugar — ay nakatali sa bintana ng pre-order, hindi sa album. Kapag nagsara ang bintana, ipinapadala ang parehong album nang wala ang mga ito. Kung ang mga kasama ang punto, ang hangganan ang dapat paghandaan at hindi ang petsa ng paglabas.",
+        pitfall:
+          "Nagsasara ang mga bintana ng pre-order sa isang oras na Koreano, na gabi ng nakaraang araw o madaling-araw sa kinatitirhan ng karamihan ng mambabasa ng site na ito.",
+        takes: "Bago ang hangganan",
+      },
+    ],
+    faq: [
+      {
+        q: "Puwede ba akong magbayad gamit ang Visa o Mastercard sa Weverse Shop?",
+        a: "Hindi bilang tuwirang opsiyon ng kard sa labas ng setting na Koreanong pera. Sa USD, JPY, CNY at MXN ay dumaraan ang kard sa PayPal o Eximbay. Umaabot pa rin ito sa kard mo, pero ibang uri ng transaksiyon ang nakikita ng bangko mo, kaya sulit na buksan nang maaga ang mga internasyonal na pagbabayad.",
+      },
+      {
+        q: "Bakit tumaas ang presyo nang ilagay ko ang address ko?",
+        a: "Mula 3 Pebrero 2026, ipinapakita ang mga presyo sa labas ng Korea sa pahina ng produkto nang walang buwis, at idinaragdag sa checkout ang buwis para sa destinasyon mo. Ito ang buwis na sinisingil ng sarili mong bansa, na kinokolekta sa pagbili sa halip na sa paghahatid.",
+      },
+      {
+        q: "Sisingilin ba ako ng adwana pagdating nito?",
+        a: "Pauna nang binabayaran ngayon ng Weverse ang mga tungkulin at buwis sa checkout para sa mga saklaw na order, na aniya ay nagpapababa sa pangangailangan ng dagdag na bayad habang nagkakaroon ng clearance. Sinasabi nitong hindi ito umiiral sa bawat bansa o rehiyon, kaya makatwirang asahan ito at hindi isang garantiya.",
+      },
+      {
+        q: "Nasa Mexico ako. Aling mga paraan ng pagbabayad ang talagang nakukuha ko?",
+        a: "Dalawa. Nakalista sa abiso ng Weverse tungkol sa pagbabayad na ang MXN ay PayPal at Apple Pay — ang pinakamaikli sa apat na listahan ng perang hindi Koreano, at parehong digital. Walang opsiyong cash at walang ikatlong pindutan, kaya ihanda ang isa sa dalawa bago ang bintana ng pre-order at hindi sa loob nito.",
+      },
+      {
+        q: "Nagpapadala ba ang Weverse Shop sa bansa ko?",
+        a: "Karaniwang oo, pero may pinananatiling listahan ng mga bansa at rehiyon na hindi makatatanggap ng padala mula sa South Korea sa kasalukuyan. Tingnan ang abisong iyon para sa kasalukuyang listahan bago mag-order — nirerebisa ito habang nagbabago ang mga kalagayan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Hàng chờ NOL World, và những gì xóa sạch vị trí của bạn trong đó",
+    summary:
+      "Tải lại trang sẽ xóa vị trí của bạn. Một thiết bị thứ hai sẽ đóng số thứ tự đầu tiên của bạn. Ghế tự cập nhật mà không cần tải lại. Tất cả đều nằm trong chính FAQ của NOL World, và tất cả đều trái ngược với điều người ta làm theo bản năng.",
+    scope:
+      "Nói về cách hàng chờ, sơ đồ ghế và danh sách chờ của NOL World vận hành trong một đợt mở bán. Việc đăng ký và xác minh khách ở nước ngoài diễn ra trước tất cả những điều này và nằm trong hướng dẫn NOL World. Mọi thứ ở đây lấy từ FAQ đã công bố của NOL World.",
+    intro: [
+      "Bản năng khi đứng trong hàng chờ mua vé là tải lại trang, và mở thêm một trình duyệt thứ hai phòng khi cái đầu bị treo. Trên NOL World, cả hai việc đó đều lấy đi của bạn đúng thứ bạn đang cố bảo vệ, và chính nền tảng nói vậy trong trang trợ giúp của họ.",
+      "Đây là phần của một đợt mở bán mà không hướng dẫn nào nói tới, vì không thể suy ra nó từ bên ngoài — bạn chỉ thấy nó đúng một lần, trong chín mươi giây, khi đang hoảng.",
+    ],
+    steps: [
+      {
+        title: "Đừng tải lại trang. Tải lại sẽ đặt lại vị trí của bạn",
+        body: "NOL World nói rõ ràng: bạn không thể bỏ qua hàng chờ, và nếu bạn tải lại trang thì vị trí của bạn trong hàng chờ sẽ bị đặt lại. Không phải kiểm tra lại, không phải truy vấn lại — mà là đặt lại. Số thứ tự bạn đang giữ, dù là bao nhiêu, sẽ quay về cuối hàng.",
+        pitfall:
+          "Một trang hàng chờ trông như bị treo thì thường chỉ là một trang hàng chờ. Hành động duy nhất khiến bạn thấy như mình đang làm gì đó chính là hành động duy nhất xóa đi khoảng chờ bạn đã bỏ ra.",
+        takes: "Suốt cả hàng chờ",
+      },
+      {
+        title: "Một tài khoản nhận một số thứ tự, và lần thử thứ hai giết chết lần đầu",
+        body: "Bạn chỉ có thể nhận một số thứ tự cho mỗi tài khoản. Nếu bạn cố lấy thêm — một trình duyệt thứ hai, một chiếc điện thoại bên cạnh máy tính — NOL World sẽ đóng số thứ tự đầu tiên bạn đã nhận. Bấm Đặt chỗ từ một thiết bị khác trong khi đang xếp hàng sẽ hỏi bạn muốn giữ hàng chờ hiện có hay bắt đầu một hàng mới, và chọn cái mới nghĩa là chờ lại từ đầu trên thiết bị đó.",
+        pitfall:
+          "Mở một thiết bị dự phòng là chiến thuật mua vé phổ biến nhất trong các cộng đồng fan, và ở đây nó tệ hơn hẳn việc không làm gì cả. Hộp thoại hiện lên không mời bạn một cơ hội thứ hai; nó đang hỏi bạn muốn vứt bỏ cái nào.",
+        takes: "0 phút, nếu bạn kìm được",
+      },
+      {
+        title: "Một số thứ tự không phải là một tấm vé",
+        body: "NOL World nói rằng một vị trí trong hàng chờ không bảo đảm có vé, vì số lượng có hạn và vé được phát theo thứ tự. Hàng chờ quyết định khi nào bạn được thử, chứ không quyết định còn gì hay không khi đến lượt bạn. Hàng chờ áp dụng cho mọi sản phẩm có thể đặt trên NOL World, không riêng những sản phẩm có nhu cầu cao.",
+        pitfall:
+          "Đọc một số thứ tự nhỏ như thể đó là kết quả. Đó là một lượt, và hàng có thể hết trước khi tới lượt bạn.",
+        takes: "1 phút",
+      },
+      {
+        title: "Đừng tải lại sơ đồ ghế nữa — nó tự cập nhật",
+        body: "Hệ thống đặt chỗ đã được sắp xếp lại để các ghế còn trống cập nhật theo thời gian thực mà không cần tải lại. Ghế đang được người khác giữ sẽ biến mất và ghế bị hủy sẽ tự quay lại. Nếu bạn thấy dòng “ghế này đã được chọn”, nghĩa là một người dùng khác đã chọn đúng ghế đó gần như cùng lúc — chứ không phải trang của bạn bị cũ.",
+        pitfall:
+          "Tải lại sơ đồ ghế trả giá đúng như tải lại hàng chờ. Thói quen mang từ các trang bán vé đời cũ chính là thói quen sai ở đây.",
+        takes: "Trong lúc chọn ghế",
+      },
+      {
+        title: "Hãy đọc tỷ lệ bán hết đúng với cái mà nó đo",
+        body: "Ở nơi có hiển thị tỷ lệ bán hết, nó chỉ xuất hiện khi 90% trở lên tổng số ghế đã được thanh toán, và nó đếm vé đã trả tiền chứ không đếm ghế có thể chọn. Số ghế còn lại có thể không được hiển thị chút nào: NOL World nói rằng nhà tổ chức là bên quyết định, và với những sản phẩm có nhu cầu cao thì có độ trễ giữa thứ được hiển thị và thứ thực sự còn.",
+        pitfall:
+          "Coi một tỷ lệ bán hết như tồn kho thời gian thực. Đó là con số vé đã trả tiền với sàn 90%, và khoảng cách giữa nó với thực tế rộng nhất đúng vào lúc bạn quan tâm nhất.",
+        takes: "1 phút",
+      },
+      {
+        title: "Nếu bạn nhận được thông báo từ danh sách chờ, bạn có sáu tiếng",
+        body: "Nếu một ghế trong danh sách chờ trống ra và việc thanh toán không hoàn tất trong vòng sáu tiếng kể từ thông báo, đơn đặt sẽ tự động bị hủy và hoàn tiền, và cơ hội chuyển sang người kế tiếp trong danh sách. Sáu tiếng nghe rộng rãi cho tới khi bạn nhớ ra rằng thông báo đến trong giờ hành chính Hàn Quốc và phần lớn người đọc trang này sẽ ngủ mất một phần của khoảng đó.",
+        pitfall:
+          "Một khung sáu tiếng bắt đầu lúc 3 giờ sáng giờ bạn thực ra là một khung hai tiếng. Hãy quy đổi giờ của thông báo đúng như cách bạn đã quy đổi giờ mở bán.",
+        takes: "Trong vòng 6 tiếng",
+      },
+      {
+        title: "Biết rằng bạn không đổi được ghế sau đó",
+        body: "Khi đơn đặt đã hoàn tất, việc đổi ghế là không thể — con đường duy nhất là hủy rồi đặt lại, việc này khiến bạn chịu phí hủy của sự kiện và chịu rủi ro ghế bị người khác lấy mất ở giữa. Điều tương tự áp dụng cho mã giảm giá: không thể áp mã sau khi đã thanh toán, và dùng một mã nghĩa là hủy rồi đặt lại đúng chiếc ghế đó cùng khoản phí đi kèm.",
+        pitfall:
+          "Đặt một chiếc ghế mà bạn còn phân vân, với ý định sửa sau. Không có cái sau nào cả.",
+        takes: "Trước khi bạn xác nhận",
+      },
+    ],
+    faq: [
+      {
+        q: "Tải lại trang có giúp tôi qua hàng chờ NOL World nhanh hơn không?",
+        a: "Ngược lại. NOL World nói rằng tải lại trang sẽ đặt lại vị trí của bạn trong hàng chờ, và rằng hàng chờ không thể bỏ qua được.",
+      },
+      {
+        q: "Tôi xếp hàng trên điện thoại và máy tính cùng lúc được không?",
+        a: "Không. Một tài khoản nhận một số thứ tự, và việc cố lấy thêm sẽ đóng số đầu tiên. Nếu bạn bấm Đặt chỗ trên thiết bị thứ hai, bạn sẽ được hỏi là giữ hàng chờ hiện có hay bắt đầu lại trên thiết bị mới.",
+      },
+      {
+        q: "Tôi có cần tải lại sơ đồ ghế để thấy ghế mới không?",
+        a: "Không. Ghế cập nhật theo thời gian thực — ghế đang bị giữ sẽ biến mất và ghế bị hủy sẽ quay lại mà không cần tải lại. Tải lại khiến bạn trả giá đúng như tải lại hàng chờ.",
+      },
+      {
+        q: "Tỷ lệ bán hết thực sự có nghĩa là gì?",
+        a: "Nó chỉ xuất hiện khi 90% trở lên số ghế đã được thanh toán, và nó đếm vé đã trả tiền chứ không đếm những ghế bạn có thể chọn. Với các show có nhu cầu cao, có một độ trễ đã được biết tới giữa con số đó và lượng còn thật sự.",
+      },
+      {
+        q: "Sau khi có thông báo từ danh sách chờ, tôi có bao nhiêu thời gian?",
+        a: "Sáu tiếng. Nếu việc thanh toán không hoàn tất trong khoảng đó, đơn đặt sẽ tự động bị hủy và hoàn tiền, và chiếc ghế chuyển sang người kế tiếp trong danh sách chờ.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "คิวของ NOL World และสิ่งที่รีเซ็ตลำดับของคุณ",
+    summary:
+      "การรีเฟรชล้างลำดับของคุณ เครื่องที่สองปิดหมายเลขคิวแรกของคุณ ที่นั่งอัปเดตเองโดยไม่ต้องโหลดใหม่ ทั้งหมดนี้อยู่ใน FAQ ของ NOL World เอง และทั้งหมดขัดกับสิ่งที่คนทำโดยสัญชาตญาณ",
+    scope:
+      "ครอบคลุมพฤติกรรมของคิว ผังที่นั่ง และรายชื่อสำรองของ NOL World ระหว่างรอบขาย การสมัครและการยืนยันลูกค้าต่างประเทศเกิดขึ้นก่อนทั้งหมดนี้และอยู่ในคู่มือ NOL World ทุกอย่างในหน้านี้มาจาก FAQ ที่ NOL World เผยแพร่",
+    intro: [
+      "สัญชาตญาณเวลาอยู่ในคิวซื้อบัตรคือกดรีเฟรช และเปิดเบราว์เซอร์ที่สองเผื่ออันแรกค้าง บน NOL World ทั้งสองอย่างนั้นทำให้คุณเสียสิ่งที่คุณกำลังพยายามปกป้อง และแพลตฟอร์มก็บอกไว้เองในหน้าช่วยเหลือ",
+      "นี่คือช่วงของรอบขายที่ไม่มีคู่มือเล่มไหนพูดถึง เพราะมันคิดเอาจากภายนอกไม่ได้ คุณจะเห็นมันเพียงครั้งเดียว นานเก้าสิบวินาที ขณะที่กำลังตื่นตระหนก",
+    ],
+    steps: [
+      {
+        title: "อย่ารีเฟรช การรีเฟรชจะรีเซ็ตลำดับของคุณ",
+        body: "NOL World บอกไว้ตรง ๆ ว่าคุณข้ามคิวไม่ได้ และถ้าคุณรีเฟรชหน้า ลำดับของคุณในคิวจะถูกรีเซ็ต ไม่ใช่ตรวจซ้ำ ไม่ใช่สอบถามใหม่ แต่คือรีเซ็ต หมายเลขที่คุณถืออยู่ไม่ว่าจะเท่าไร จะกลับไปอยู่ท้ายแถว",
+        pitfall:
+          "หน้าคิวที่ดูเหมือนค้างมักเป็นแค่หน้าคิวธรรมดา การกระทำเดียวที่ให้ความรู้สึกว่าได้ทำอะไรบางอย่าง คือการกระทำเดียวที่ลบการรอที่คุณทำไปแล้วทิ้ง",
+        takes: "ตลอดทั้งคิว",
+      },
+      {
+        title: "หนึ่งบัญชีได้หนึ่งหมายเลขคิว และความพยายามครั้งที่สองฆ่าครั้งแรก",
+        body: "คุณรับหมายเลขคิวได้เพียงหนึ่งหมายเลขต่อหนึ่งบัญชี ถ้าคุณพยายามเอาเพิ่ม — เบราว์เซอร์ที่สอง โทรศัพท์วางคู่กับแล็ปท็อป — NOL World จะปิดหมายเลขแรกที่คุณได้รับ การกดจองจากอีกเครื่องขณะที่อยู่ในคิวแล้วจะขึ้นให้เลือกว่าจะเก็บคิวเดิมไว้หรือเริ่มคิวใหม่ และการเลือกคิวใหม่หมายถึงการรอใหม่ตั้งแต่ต้นบนเครื่องนั้น",
+        pitfall:
+          "การเปิดเครื่องสำรองคือกลยุทธ์ซื้อบัตรที่พบบ่อยที่สุดในหมู่แฟนคลับ และที่นี่มันแย่กว่าการไม่ทำอะไรเลยอย่างชัดเจน ข้อความที่ขึ้นมาไม่ได้เสนอโอกาสที่สองให้คุณ มันกำลังถามว่าคุณอยากทิ้งอันไหน",
+        takes: "0 นาที ถ้าคุณอดใจไหว",
+      },
+      {
+        title: "หมายเลขคิวไม่ใช่บัตร",
+        body: "NOL World บอกว่าลำดับในคิวไม่ได้รับประกันว่าจะได้บัตร เพราะจำนวนมีจำกัดและบัตรถูกออกตามลำดับ คิวเป็นตัวกำหนดว่าคุณจะได้ลองเมื่อไร ไม่ได้กำหนดว่ายังเหลืออะไรตอนถึงตาคุณ คิวใช้กับทุกสินค้าที่จองได้บน NOL World ไม่เฉพาะสินค้าที่มีความต้องการสูง",
+        pitfall:
+          "การอ่านหมายเลขคิวต่ำ ๆ ว่าเป็นผลลัพธ์ มันคือตาของคุณ และของอาจหมดก่อนที่ตาคุณจะมาถึง",
+        takes: "1 นาที",
+      },
+      {
+        title: "เลิกรีเฟรชผังที่นั่งด้วย มันอัปเดตเอง",
+        body: "ระบบจองถูกจัดใหม่ให้ที่นั่งว่างอัปเดตแบบเรียลไทม์โดยไม่ต้องโหลดใหม่ ที่นั่งที่ผู้ใช้อื่นถืออยู่จะหายไป และที่นั่งที่ถูกยกเลิกจะกลับมาเอง ถ้าคุณเห็นข้อความว่า “ที่นั่งนี้ถูกเลือกไปแล้ว” แปลว่าผู้ใช้อีกคนเลือกที่นั่งเดียวกันในเวลาเกือบจะพร้อมกัน ไม่ใช่ว่าหน้าของคุณเก่า",
+        pitfall:
+          "การรีเฟรชผังที่นั่งแลกมาด้วยราคาเดียวกับการรีเฟรชคิว นิสัยที่ติดมาจากเว็บขายบัตรรุ่นเก่าคือนิสัยที่ผิดพอดีสำหรับที่นี่",
+        takes: "ระหว่างเลือกที่นั่ง",
+      },
+      {
+        title: "อ่านอัตราบัตรหมดตามสิ่งที่มันวัดจริง",
+        body: "ที่ใดมีการแสดงอัตราบัตรหมด มันจะปรากฏก็ต่อเมื่อที่นั่งทั้งหมดถูกชำระเงินแล้วตั้งแต่ 90% ขึ้นไป และมันนับบัตรที่จ่ายเงินแล้วไม่ใช่ที่นั่งที่เลือกได้ จำนวนที่นั่งคงเหลืออาจไม่ถูกแสดงเลย NOL World บอกว่าผู้จัดเป็นผู้ตัดสิน และสำหรับสินค้าที่มีความต้องการสูงจะมีความล่าช้าระหว่างสิ่งที่แสดงกับสิ่งที่เหลืออยู่จริง",
+        pitfall:
+          "การถือว่าเปอร์เซ็นต์บัตรหมดคือสต็อกแบบสด ๆ มันเป็นตัวเลขบัตรที่จ่ายเงินแล้วซึ่งมีพื้นอยู่ที่ 90% และช่องว่างระหว่างมันกับความจริงกว้างที่สุดในตอนที่คุณใส่ใจที่สุดพอดี",
+        takes: "1 นาที",
+      },
+      {
+        title: "ถ้าคุณได้รับแจ้งจากรายชื่อสำรอง คุณมีหกชั่วโมง",
+        body: "ถ้าที่นั่งในรายชื่อสำรองว่างขึ้นมาและการชำระเงินไม่เสร็จภายในหกชั่วโมงนับจากการแจ้ง การจองจะถูกยกเลิกและคืนเงินโดยอัตโนมัติ และโอกาสจะส่งต่อไปยังคนถัดไปในรายชื่อ หกชั่วโมงฟังดูใจกว้าง จนกระทั่งคุณนึกได้ว่าการแจ้งมาถึงในเวลาทำการของเกาหลี และผู้อ่านส่วนใหญ่ของหน้านี้จะหลับไปบางส่วนของช่วงนั้น",
+        pitfall:
+          "ช่วงหกชั่วโมงที่เริ่มตอนตี 3 ตามเวลาคุณ แท้จริงคือช่วงสองชั่วโมง แปลงเวลาของการแจ้งเตือนด้วยวิธีเดียวกับที่คุณแปลงเวลารอบขาย",
+        takes: "ภายใน 6 ชั่วโมง",
+      },
+      {
+        title: "รู้ไว้ว่าคุณเปลี่ยนที่นั่งทีหลังไม่ได้",
+        body: "เมื่อการจองเสร็จสมบูรณ์แล้ว การเปลี่ยนที่นั่งทำไม่ได้ ทางเดียวคือยกเลิกแล้วจองใหม่ ซึ่งทำให้คุณต้องเจอค่าธรรมเนียมยกเลิกของงานนั้นและเสี่ยงที่ที่นั่งจะถูกคนอื่นคว้าไประหว่างนั้น เรื่องเดียวกันใช้กับคูปอง: ใช้คูปองหลังชำระเงินแล้วไม่ได้ และการจะใช้หมายถึงต้องยกเลิกแล้วจองที่นั่งเดิมใหม่พร้อมค่าธรรมเนียมที่ตามมา",
+        pitfall:
+          "การจองที่นั่งที่คุณยังไม่แน่ใจโดยคิดว่าจะแก้ทีหลัง ไม่มีทีหลัง",
+        takes: "ก่อนกดยืนยัน",
+      },
+    ],
+    faq: [
+      {
+        q: "การรีเฟรชช่วยให้ผ่านคิว NOL World เร็วขึ้นไหม",
+        a: "ตรงกันข้าม NOL World ระบุว่าการรีเฟรชหน้าจะรีเซ็ตลำดับของคุณในคิว และว่าคิวนั้นข้ามไม่ได้",
+      },
+      {
+        q: "ต่อคิวบนโทรศัพท์และแล็ปท็อปพร้อมกันได้ไหม",
+        a: "ไม่ได้ หนึ่งบัญชีได้รับหนึ่งหมายเลขคิว และการพยายามเอาเพิ่มจะปิดหมายเลขแรก ถ้าคุณกดจองบนเครื่องที่สอง ระบบจะถามว่าจะเก็บคิวเดิมไว้หรือเริ่มใหม่บนเครื่องใหม่",
+      },
+      {
+        q: "ต้องรีเฟรชผังที่นั่งเพื่อดูที่นั่งใหม่ไหม",
+        a: "ไม่ต้อง ที่นั่งอัปเดตแบบเรียลไทม์ ที่นั่งที่ถูกถือไว้จะหายไปและที่นั่งที่ถูกยกเลิกจะกลับมาโดยไม่ต้องโหลดใหม่ การรีเฟรชแลกมาด้วยราคาเดียวกับการรีเฟรชคิว",
+      },
+      {
+        q: "อัตราบัตรหมดหมายความว่าอะไรกันแน่",
+        a: "มันปรากฏก็ต่อเมื่อที่นั่งถูกชำระเงินแล้วตั้งแต่ 90% ขึ้นไป และมันนับบัตรที่จ่ายเงินแล้วไม่ใช่ที่นั่งที่คุณเลือกได้ สำหรับงานที่มีความต้องการสูงมีความล่าช้าที่รู้กันอยู่ระหว่างตัวเลขนั้นกับจำนวนที่เหลือจริง",
+      },
+      {
+        q: "หลังได้รับแจ้งจากรายชื่อสำรอง ฉันมีเวลาเท่าไร",
+        a: "หกชั่วโมง ถ้าการชำระเงินไม่เสร็จในเวลานั้น การจองจะถูกยกเลิกและคืนเงินโดยอัตโนมัติ และที่นั่งจะส่งต่อให้คนถัดไปในรายชื่อสำรอง",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Ang pila sa NOL World, at kung ano ang bumubura sa puwesto mo rito",
+    summary:
+      "Binubura ng pag-refresh ang puwesto mo. Isinasara ng pangalawang device ang unang numero mo. Nag-a-update ang mga upuan nang hindi naglo-load muli. Nasa mismong FAQ ng NOL World ang lahat ng ito, at ang lahat ng ito ay salungat sa likas na ginagawa ng mga tao.",
+    scope:
+      "Sakop nito kung paano kumikilos ang pila, ang mapa ng upuan at ang waitlist ng NOL World habang may benta. Nauuna sa lahat ng ito ang pagpaparehistro at ang pagpapatunay bilang customer mula sa ibang bansa, at nasa gabay ng NOL World ang mga iyon. Lahat ng narito ay mula sa inilathalang FAQ ng NOL World.",
+    intro: [
+      "Ang likas na gawi sa isang pila ng tiket ay mag-refresh, at magbukas ng pangalawang browser sakaling naipit ang una. Sa NOL World, ang dalawang iyon ay nagkakait sa iyo ng mismong bagay na pinoprotektahan mo, at sinasabi mismo ito ng plataporma sa mga pahina nito ng tulong.",
+      "Ito ang bahagi ng isang benta na walang gabay na sumasaklaw, dahil hindi ito mahihinuha mula sa labas — minsan mo lang ito nakikita, sa loob ng siyamnapung segundo, habang nataranta ka.",
+    ],
+    steps: [
+      {
+        title: "Huwag mag-refresh. Ini-reset ng pag-refresh ang puwesto mo",
+        body: "Malinaw ang sinasabi ng NOL World: hindi mo malalaktawan ang pila, at kapag nag-refresh ka ng pahina ay ire-reset ang puwesto mo sa pila. Hindi muling sinusuri, hindi muling tinatanong — ire-reset. Anuman ang numerong hawak mo ay babalik sa dulo.",
+        pitfall:
+          "Ang pahina ng pilang mukhang nanigas ay karaniwang pahina lamang ng pila. Ang iisang kilos na nagpaparamdam na may ginagawa ka ang siya ring iisang kilos na bumubura sa paghihintay na natapos mo na.",
+        takes: "Buong pila",
+      },
+      {
+        title: "Isang account, isang numero ng pila, at pinapatay ng ikalawang pagsubok ang una",
+        body: "Isang numero lamang ng pila ang matatanggap mo kada account. Kung susubukan mong kumuha pa — pangalawang browser, telepono katabi ng laptop — isasara ng NOL World ang unang numerong natanggap mo. Ang pagpindot ng Reserve mula sa ibang device habang nakapila ka ay magtatanong kung pananatilihin ang kasalukuyang pila o magsisimula ng bago, at ang pagpili ng bago ay nangangahulugang maghihintay kang muli mula sa umpisa sa device na iyon.",
+        pitfall:
+          "Ang pagbukas ng pang-reserbang device ang pinakakaraniwang taktika sa tiket sa mga komunidad ng fan at mas masahol pa ito kaysa sa walang gawin dito. Hindi nag-aalok ng pangalawang pagkakataon ang mensaheng lalabas; tinatanong ka nito kung alin ang gusto mong itapon.",
+        takes: "0 minuto, kung makakapagpigil ka",
+      },
+      {
+        title: "Ang numero ng pila ay hindi tiket",
+        body: "Sinasabi ng NOL World na ang puwesto sa pila ay hindi nagagarantiya ng tiket, dahil limitado ang bilang at inilalabas ang mga tiket ayon sa pagkakasunod. Ang pila ang nagpapasya kung kailan ka makakasubok, hindi kung may matitira pa pagdating mo. Umiiral ang pila sa bawat produktong maaaring ireserba sa NOL World, hindi lamang sa mga mataas ang hinihingi.",
+        pitfall:
+          "Ang pagbasa sa mababang numero ng pila bilang isang resulta. Isa itong pagkakataong sumubok, at maaaring maubos ang stock bago dumating ang turn mo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Itigil din ang pag-refresh sa mapa ng upuan — kusa itong nag-a-update",
+        body: "Inayos muli ang sistema ng pagbu-book para mag-update ang mga bakanteng upuan sa tunay na oras nang hindi naglo-load muli. Nawawala ang mga upuang hawak ng ibang user at kusang bumabalik ang mga kinanselang upuan. Kung makikita mo ang “napili na ang upuang ito”, ibig sabihin ay may ibang user na pumili ng parehong upuan halos sabay sa iyo — hindi na luma ang pahina mo.",
+        pitfall:
+          "Ang pag-refresh ng mapa ng upuan ay may kaparehong halaga ng pag-refresh ng pila. Ang ugaling galing sa mas lumang mga site ng tiket ang eksaktong maling ugali rito.",
+        takes: "Habang pumipili",
+      },
+      {
+        title: "Basahin ang tantos ng pagkaubos ayon sa talagang sinusukat nito",
+        body: "Kung saan ipinapakita ang tantos ng pagkaubos, lumalabas lamang ito kapag 90% o higit pa ng lahat ng upuan ang nabayaran na, at binibilang nito ang mga bayad nang tiket at hindi ang mga mapipiling upuan. Maaaring hindi ipakita ang bilang ng natitirang upuan: sinasabi ng NOL World na ang organisador ang nagpapasya, at na sa mga produktong mataas ang hinihingi ay may pagkahuli sa pagitan ng ipinapakita at ng talagang available.",
+        pitfall:
+          "Ang pagturing sa porsiyento ng pagkaubos bilang buhay na imbentaryo. Isa itong bilang ng bayad nang tiket na may sahig na 90%, at pinakamalaki ang agwat nito sa katotohanan sa mismong sandaling pinakamahalaga sa iyo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Kung makakatanggap ka ng abiso mula sa waitlist, anim na oras ang meron ka",
+        body: "Kung may mabakanteng upuan sa waitlist at hindi natapos ang bayad sa loob ng anim na oras mula sa abiso, awtomatikong kinakansela at isinasauli ang booking, at napupunta ang pagkakataon sa susunod na tao sa listahan. Mukhang maluwag ang anim na oras hanggang sa maalala mong dumarating ang abiso sa oras ng negosyo sa Korea at tulog ang karamihan ng babasa nito sa bahagi niyon.",
+        pitfall:
+          "Ang anim na oras na nagbubukas ng alas-3 ng madaling-araw sa oras mo ay dalawang oras lamang. Ikonberte ang oras ng abiso gaya ng pagkonberte mo sa oras ng benta.",
+        takes: "Sa loob ng 6 na oras",
+      },
+      {
+        title: "Alamin na hindi mo na mababago ang upuan pagkatapos",
+        body: "Kapag kumpleto na ang reserbasyon, hindi na posible ang pagpapalit ng upuan — ang tanging ruta ay kanselahin at mag-book muli, na maglalantad sa iyo sa bayad sa pagkansela ng event at sa panganib na makuha ng iba ang upuan sa pagitan. Gayundin sa mga kupon: hindi na magagamit ang kupon pagkatapos magbayad, at ang paggamit nito ay nangangahulugan ng pagkansela at muling pagbu-book ng parehong upuan kasama ang bayad na kaakibat nito.",
+        pitfall:
+          "Ang pagbu-book ng upuang hindi ka sigurado sa balak na ayusin ito mamaya. Walang mamaya.",
+        takes: "Bago ka kumpirmahin",
+      },
+    ],
+    faq: [
+      {
+        q: "Nakakatulong ba ang pag-refresh para mas mabilis akong makadaan sa pila ng NOL World?",
+        a: "Kabaligtaran. Sinasabi ng NOL World na ini-reset ng pag-refresh ng pahina ang puwesto mo sa pila, at na hindi malalaktawan ang pila.",
+      },
+      {
+        q: "Puwede ba akong pumila sa telepono at sa laptop nang sabay?",
+        a: "Hindi. Isang numero ng pila ang natatanggap ng isang account, at isinasara ng pagtatangkang kumuha pa ang una. Kung pipindutin mo ang Reserve sa pangalawang device, tatanungin ka kung pananatilihin ang kasalukuyang pila o magsisimula muli sa bago.",
+      },
+      {
+        q: "Kailangan ko bang i-refresh ang mapa ng upuan para makita ang bagong upuan?",
+        a: "Hindi. Nag-a-update ang mga upuan sa tunay na oras — nawawala ang mga hawak nang upuan at bumabalik ang mga kinansela nang hindi naglo-load muli. Katumbas ng pag-refresh ng pila ang halaga ng pag-refresh dito.",
+      },
+      {
+        q: "Ano ba talaga ang ibig sabihin ng tantos ng pagkaubos?",
+        a: "Lumalabas lamang ito kapag 90% o higit pa ng mga upuan ang nabayaran na, at binibilang nito ang bayad nang tiket at hindi ang mga upuang mapipili mo. Para sa mga palabas na mataas ang hinihingi, may kilalang pagkahuli sa pagitan ng bilang at ng tunay na available.",
+      },
+      {
+        q: "Gaano katagal ang meron ako pagkatapos ng abiso mula sa waitlist?",
+        a: "Anim na oras. Kung hindi natapos ang bayad sa panahong iyon, awtomatikong kinakansela at isinasauli ang booking at napupunta ang upuan sa susunod na tao sa waitlist.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Mua vé trên YES24 Global: những quy định không có trên trang tiếng Anh",
+    summary:
+      "Tài khoản YES24 hiện có của bạn sẽ không dùng được. PayPal chỉ hiện ra nếu show còn đủ xa. Hai loại thẻ bị từ chối thẳng, và nơi tổ chức sẽ đối chiếu hộ chiếu của bạn với cái tên bạn đã đăng ký.",
+    scope:
+      "Nói về trang YES24 TICKET bằng tiếng Anh dành cho người mua ở nước ngoài. Trang YES24 tiếng Hàn chạy một hệ thống tài khoản khác và một khâu xác minh danh tính khác. Điều kiện riêng của từng show trên trang sự kiện đè lên mọi thứ ở đây, và chính YES24 nói vậy.",
+    intro: [
+      "YES24 công bố các quy định dành cho người ở nước ngoài trong một hướng dẫn mua hàng và một FAQ bằng tiếng Anh, và gần như không có gì trong đó xuất hiện ở các bài hướng dẫn đang xếp hạng cao cho chủ đề này. Chúng rất cụ thể, rất khác thường, và vài điều trong đó sẽ kết thúc đơn hàng của bạn ngay hôm ấy nếu bạn gặp chúng lần đầu ở bước thanh toán.",
+      "Mọi thứ dưới đây lấy từ hai trang đó, đọc ngày 20 tháng 10 năm 2026. Chỗ nào YES24 tự mâu thuẫn — và họ có mâu thuẫn, một lần, ở một khoản phí — trang này sẽ nói ra thay vì chọn con số tiện lợi.",
+    ],
+    steps: [
+      {
+        title: "Hãy đăng ký lại, dù bạn đã có tài khoản YES24",
+        body: "YES24 nói rõ: những thành viên YES24 hiện có muốn dùng trang Global YES24 TICKET phải đăng ký lại. Họ cũng cảnh báo rằng trang vé toàn cầu là một thứ khác với global.yes24.com, tức hiệu sách, và hai bên không chia sẻ thông tin thành viên. Người không phải thành viên thì không đặt vé được, nên đây là bước đầu tiên chứ không phải thủ tục cho có.",
+        pitfall:
+          "Ba dịch vụ YES24 với những cái tên na ná nhau và không dùng chung đăng nhập. Phát hiện ra điều này trong hàng chờ là phát hiện quá muộn — tài khoản dù sao cũng phải tồn tại từ vài ngày trước, vì khâu kiểm tra tên ở dưới.",
+        takes: "15 phút",
+      },
+      {
+        title: "Đăng ký tên đúng y như trên hộ chiếu",
+        body: "Đây là chỗ duy nhất một nền tảng nói thẳng ra cái phần mà người ta hay giấu. FAQ của YES24: nếu tên trên tài khoản YES24 của bạn khác với tên trên hộ chiếu, bạn có thể gặp rắc rối khi nhận vé đã đặt tại nơi tổ chức. Vé nhận tại chỗ chỉ có thể được nhận bởi chính người sở hữu vé, và việc nhận vé cần một giấy tờ tùy thân bản gốc còn hiệu lực — hộ chiếu — cùng với hồ sơ đặt vé.",
+        pitfall:
+          "Một tên đệm bị bỏ đi, một cách phiên âm chọn từ nhiều năm trước, một thứ tự đặt tên riêng lên trước. Nơi tổ chức đang đối chiếu hai tờ giấy, chứ không phán đoán xem có rõ ràng là bạn hay không.",
+        takes: "10 phút",
+      },
+      {
+        title: "Xem PayPal có được cung cấp cho show của bạn không",
+        body: "PayPal trên YES24 Global chỉ khả dụng khi khoảng cách giữa ngày đặt và ngày diễn lớn hơn 180 ngày. Với phần lớn concert K-pop, vốn được công bố trước một hai tháng, điều đó nghĩa là PayPal đơn giản không phải một lựa chọn và thẻ là con đường duy nhất. Ngoài ra còn có khoản phí PayPal 10 xu không được hoàn lại ngay cả khi bạn hủy.",
+        pitfall:
+          "Lên kế hoạch dựa vào PayPal vì một bài hướng dẫn nói nó được chấp nhận, rồi tới bước thanh toán chỉ thấy ô nhập thẻ. Quy định 180 ngày là lý do — không phải lỗi, và không phải thứ bộ phận hỗ trợ có thể miễn cho bạn.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết những loại thẻ nào bị từ chối trước khi thử một chiếc",
+        body: "Hướng dẫn mua hàng loại trừ thẻ American Express phát hành ngoài Hàn Quốc, và loại trừ hoàn toàn thẻ China UnionPay. Mọi thứ còn lại đều đi qua như một khoản thanh toán bằng thẻ — và YES24 nói rằng xác thực 3-D Secure là bắt buộc trên trang toàn cầu, nên chiếc thẻ phải được ngân hàng của bạn đăng ký cho tính năng đó.",
+        pitfall:
+          "Một chiếc Amex vẫn chạy tốt ở mọi trang khác lại bị từ chối ở đây vì nơi nó được phát hành, chứ không vì bất cứ điều gì thuộc về chiếc thẻ. Thất bại đó trông y hệt một lệnh chặn của ngân hàng, nên người ta dành cả đợt mở bán để gọi điện cho ngân hàng về sai vấn đề.",
+        takes: "10 phút, cùng ngân hàng của bạn",
+      },
+      {
+        title: "Chọn nhận tại chỗ hay giao ra nước ngoài ngay lúc đặt vé",
+        body: "Cả hai đều có, nhưng việc giao ra nước ngoài là theo từng show chứ không phổ quát: YES24 nói rằng tính khả dụng thay đổi theo từng buổi diễn và mức phí thay đổi theo điểm đến, và rằng trang sự kiện là nơi ghi điều đó. Việc đổi phương thức giao nhận sau này chỉ có thể làm cho tới 20 ngày làm việc trước buổi diễn — tức bốn tuần làm việc, không phải bốn ngày.",
+        pitfall:
+          "Hai mươi ngày làm việc là khoảng một tháng theo lịch. Đặt vé trước hai tuần nghĩa là phương thức bạn chọn trong hàng chờ cũng là phương thức bạn giữ.",
+        takes: "5 phút",
+      },
+      {
+        title: "Đọc đồng hồ đặt vé và hủy vé, vốn không phải ngày diễn",
+        body: "Việc đặt vé đóng lúc 17h ngày hôm trước với các buổi diễn từ thứ Ba đến thứ Bảy, và lúc 11h sáng thứ Bảy với buổi diễn Chủ nhật hoặc thứ Hai. Việc hủy chạy đúng trên cùng chiếc đồng hồ đó, và khi nó qua đi thì không còn hủy, đổi hay hoàn tiền nữa. Hủy là miễn phí trong vòng 7 ngày kể từ khi mua; sau đó là một khoản phí trên mỗi vé, tăng dần lên 10%, 20% rồi 30% số tiền đã trả khi buổi diễn tới gần. Giới hạn là 10 vé mỗi người mỗi lần.",
+        pitfall:
+          "Phí đặt vé là chỗ YES24 tự mâu thuẫn: FAQ ghi 2.000 KRW ở một dòng rồi ngay dòng sau lại thông báo đổi thành 3.000 KRW mỗi vé từ ngày 14 tháng 8 năm 2023. Hãy coi 3.000 là con số hiện hành. Dù thế nào thì nó cũng chỉ được hoàn cho tới 23:59 của đúng ngày bạn mua, chứ không nằm trong khung 7 ngày áp dụng cho chính tấm vé.",
+        takes: "5 phút",
+      },
+      {
+        title: "Mang hộ chiếu và hồ sơ đặt vé tới nơi tổ chức",
+        body: "Việc nhận vé đòi hỏi một giấy tờ tùy thân bản gốc còn hiệu lực — YES24 nêu đích danh hộ chiếu — cùng với hồ sơ xác nhận đặt vé. Hướng dẫn mua hàng còn bảo bạn in chi tiết đơn hàng ra và nộp tại quầy vé. Chính sách riêng của từng show trên trang sự kiện đè lên điều này, và YES24 nói rằng trang sự kiện thắng, nên hãy đọc nó ngay cả khi bạn từng nhận vé ở địa điểm đó trước đây.",
+        pitfall:
+          "Một tấm ảnh chụp màn hình xác nhận trên điện thoại không phải thứ được mô tả. Hãy in ra, và mang theo đúng cuốn hộ chiếu bạn đã đăng ký chứ không phải giấy tờ nào khác.",
+        takes: "Tại nơi tổ chức",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi dùng tài khoản YES24 hiện có trên trang tiếng Anh được không?",
+        a: "Không. YES24 nói rằng thành viên hiện có phải đăng ký lại cho trang Global YES24 TICKET, và rằng nó tách biệt với global.yes24.com, không chia sẻ thông tin thành viên.",
+      },
+      {
+        q: "Vì sao không thấy PayPal ở bước thanh toán?",
+        a: "PayPal chỉ được cung cấp khi khoảng cách giữa ngày đặt và ngày diễn lớn hơn 180 ngày. Phần lớn các đơn đặt vé concert nằm sâu bên trong khoảng đó, nên thẻ là con đường duy nhất.",
+      },
+      {
+        q: "YES24 Global từ chối những loại thẻ nào?",
+        a: "Thẻ American Express phát hành ngoài Hàn Quốc, và thẻ China UnionPay. Các thẻ khác được chấp nhận nhưng phải qua được 3-D Secure, điều mà trang này bắt buộc.",
+      },
+      {
+        q: "Người khác nhận vé hộ tôi được không?",
+        a: "Không. Vé nhận tại chỗ chỉ có thể được nhận bởi chính người sở hữu vé, cùng với hộ chiếu bản gốc và hồ sơ đặt vé — trừ khi buổi diễn cụ thể đó nói khác trên trang của chính nó.",
+      },
+      {
+        q: "Hoàn tiền mất bao lâu?",
+        a: "Hoàn tiền qua thẻ được nêu là 3 đến 7 ngày, với chính sách của công ty thẻ là bên quyết định, và có thể lên tới 30 ngày. Hoàn tiền qua PayPal quay về số dư PayPal trong vòng 5 ngày làm việc — theo tỷ giá của ngày hoàn tiền, gồm cả chênh lệch quy đổi, nên số tiền trả lại có thể ít hơn số tiền đã trả.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ซื้อบัตรบน YES24 Global: กฎที่ไม่ได้อยู่บนหน้าภาษาอังกฤษ",
+    summary:
+      "บัญชี YES24 เดิมของคุณใช้ไม่ได้ PayPal จะโผล่มาก็ต่อเมื่องานอยู่ไกลพอ บัตรสองประเภทถูกปฏิเสธทันที และสถานที่จัดงานจะตรวจหนังสือเดินทางของคุณเทียบกับชื่อที่คุณสมัครไว้",
+    scope:
+      "ครอบคลุมเว็บ YES24 TICKET ภาษาอังกฤษที่ผู้ซื้อจากต่างประเทศใช้ เว็บ YES24 ภาษาเกาหลีใช้ระบบบัญชีคนละระบบและการยืนยันตัวตนคนละแบบ เงื่อนไขเฉพาะของแต่ละงานบนหน้าอีเวนต์มีผลเหนือทุกอย่างในหน้านี้ และ YES24 ก็บอกไว้เอง",
+    intro: [
+      "YES24 เผยแพร่กฎสำหรับผู้อยู่ต่างประเทศไว้ในคู่มือการซื้อและ FAQ ภาษาอังกฤษ และแทบไม่มีอะไรในนั้นปรากฏอยู่ในคู่มือที่ติดอันดับเรื่องนี้เลย กฎเหล่านั้นเฉพาะเจาะจง ผิดจากที่คุ้นเคย และหลายข้อจะจบการจองของคุณในวันนั้นทันทีถ้าคุณเพิ่งมาเจอครั้งแรกตอนชำระเงิน",
+      "ทุกอย่างด้านล่างมาจากสองหน้านั้น อ่านเมื่อวันที่ 20 ตุลาคม 2026 ตรงไหนที่ YES24 ขัดแย้งกันเอง — และมันขัดจริง หนึ่งครั้ง ในเรื่องค่าธรรมเนียม — หน้านี้จะบอกไว้ แทนที่จะเลือกตัวเลขที่สะดวก",
+    ],
+    steps: [
+      {
+        title: "สมัครใหม่ แม้ว่าคุณจะมีบัญชี YES24 อยู่แล้ว",
+        body: "YES24 บอกไว้ชัดเจนว่าสมาชิก YES24 เดิมที่ต้องการใช้เว็บ Global YES24 TICKET ต้องสมัครใหม่ ทางเว็บยังเตือนว่าเว็บบัตรโกลบอลเป็นคนละอย่างกับ global.yes24.com ซึ่งเป็นร้านหนังสือ และทั้งสองไม่ได้แบ่งปันข้อมูลสมาชิกกัน ผู้ที่ไม่เป็นสมาชิกจองไม่ได้เลย นี่จึงเป็นขั้นตอนแรก ไม่ใช่พิธีการ",
+        pitfall:
+          "บริการของ YES24 สามอย่างที่ชื่อคล้ายกันและไม่ใช้ล็อกอินร่วมกัน การมารู้เรื่องนี้ตอนอยู่ในคิวคือการรู้ช้าเกินไป เพราะบัญชีต้องมีอยู่ก่อนหลายวันอยู่แล้ว ด้วยเหตุผลเรื่องการตรวจชื่อข้างล่าง",
+        takes: "15 นาที",
+      },
+      {
+        title: "ลงทะเบียนชื่อให้ตรงกับหนังสือเดินทางเป๊ะ",
+        body: "นี่คือจุดเดียวที่แพลตฟอร์มพูดส่วนที่คนอื่นเงียบออกมาดัง ๆ FAQ ของ YES24 ระบุว่า ถ้าชื่อในบัญชี YES24 ของคุณต่างจากชื่อในหนังสือเดินทาง คุณอาจมีปัญหาในการรับบัตรที่จองไว้ที่สถานที่จัดงาน บัตรแบบรับหน้างานรับได้โดยเจ้าของบัตรเท่านั้น และการรับต้องใช้เอกสารแสดงตนตัวจริงที่ยังไม่หมดอายุ — หนังสือเดินทาง — ควบคู่กับหลักฐานการจอง",
+        pitfall:
+          "ชื่อกลางที่หายไป การสะกดเป็นอักษรโรมันที่เลือกไว้เมื่อหลายปีก่อน ลำดับที่เอาชื่อต้นขึ้นก่อน สถานที่จัดงานกำลังเทียบเอกสารสองใบ ไม่ได้ตัดสินว่ามันเป็นคุณอย่างชัดเจนหรือไม่",
+        takes: "10 นาที",
+      },
+      {
+        title: "ตรวจว่ามี PayPal ให้ใช้กับงานของคุณหรือเปล่า",
+        body: "PayPal บน YES24 Global ใช้ได้เฉพาะเมื่อระยะห่างระหว่างวันที่จองกับวันแสดงมากกว่า 180 วัน สำหรับคอนเสิร์ต K-pop ส่วนใหญ่ที่ประกาศล่วงหน้าหนึ่งถึงสองเดือน นั่นแปลว่า PayPal ไม่ใช่ตัวเลือกเลย และบัตรคือทางเดียว นอกจากนี้ยังมีค่าธรรมเนียม PayPal 10 เซนต์ที่ไม่ได้รับคืนแม้คุณจะยกเลิก",
+        pitfall:
+          "การวางแผนโดยอิง PayPal เพราะคู่มือเล่มหนึ่งบอกว่ารับ แล้วพอถึงหน้าชำระเงินกลับเจอแต่ช่องกรอกบัตร กฎ 180 วันคือเหตุผล ไม่ใช่ข้อผิดพลาด และไม่ใช่สิ่งที่ฝ่ายบริการจะยกเว้นให้ได้",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่าบัตรแบบไหนถูกปฏิเสธก่อนจะลองใช้",
+        body: "คู่มือการซื้อตัดบัตร American Express ที่ออกนอกเกาหลีออก และตัดบัตร China UnionPay ออกทั้งหมด ที่เหลือทั้งหมดผ่านได้ในฐานะการชำระด้วยบัตร และ YES24 ระบุว่าการยืนยันตัวตนด้วย 3-D Secure เป็นข้อบังคับบนเว็บโกลบอล บัตรจึงต้องลงทะเบียนกับธนาคารของคุณสำหรับระบบนี้ไว้ด้วย",
+        pitfall:
+          "บัตร Amex ที่ใช้ได้กับทุกเว็บอื่นกลับถูกปฏิเสธที่นี่เพราะที่ที่มันถูกออก ไม่ใช่เพราะอะไรเกี่ยวกับตัวบัตร ความล้มเหลวแบบนั้นดูเหมือนการถูกธนาคารบล็อกไม่มีผิด คนจึงเสียเวลาทั้งรอบขายไปกับการโทรหาธนาคารเรื่องปัญหาที่ผิด",
+        takes: "10 นาที พร้อมธนาคารของคุณ",
+      },
+      {
+        title: "เลือกรับหน้างานหรือส่งไปต่างประเทศตั้งแต่ตอนจอง",
+        body: "มีทั้งสองแบบ แต่การส่งไปต่างประเทศเป็นเรื่องรายงานไม่ใช่มีทุกงาน YES24 บอกว่าความพร้อมให้บริการต่างกันไปตามรอบการแสดง ค่าธรรมเนียมต่างกันตามปลายทาง และหน้าอีเวนต์คือที่ที่ระบุไว้ การเปลี่ยนวิธีรับบัตรภายหลังทำได้ถึง 20 วันทำการก่อนการแสดงเท่านั้น — สี่สัปดาห์ทำงาน ไม่ใช่สี่วัน",
+        pitfall:
+          "ยี่สิบวันทำการคือราวหนึ่งเดือนตามปฏิทิน การจองล่วงหน้าสองสัปดาห์แปลว่าวิธีที่คุณเลือกตอนอยู่ในคิวคือวิธีที่คุณต้องอยู่กับมัน",
+        takes: "5 นาที",
+      },
+      {
+        title: "อ่านนาฬิกาของการจองและการยกเลิก ซึ่งไม่ใช่วันแสดง",
+        body: "การจองปิดเวลา 17:00 ของวันก่อนหน้าสำหรับการแสดงวันอังคารถึงวันเสาร์ และเวลา 11:00 ของวันเสาร์สำหรับการแสดงวันอาทิตย์หรือวันจันทร์ การยกเลิกเดินบนนาฬิกาเรือนเดียวกันเป๊ะ และเมื่อเลยไปแล้วก็ไม่มีการยกเลิก เปลี่ยนแปลง หรือคืนเงิน การยกเลิกฟรีภายใน 7 วันนับจากวันซื้อ หลังจากนั้นเป็นค่าธรรมเนียมต่อใบที่ไต่ขึ้นเป็น 10%, 20% และ 30% ของยอดที่จ่ายเมื่อใกล้วันแสดงเข้ามา ขีดจำกัดคือ 10 ใบต่อคนต่อครั้ง",
+        pitfall:
+          "ค่าธรรมเนียมการจองคือจุดที่ YES24 ขัดแย้งกันเอง FAQ เขียนว่า 2,000 KRW ในบรรทัดหนึ่ง แล้วบรรทัดถัดมาก็ประกาศการเปลี่ยนเป็น 3,000 KRW ต่อใบตั้งแต่วันที่ 14 สิงหาคม 2023 ให้ถือว่า 3,000 คือตัวเลขปัจจุบัน ไม่ว่าทางไหน มันคืนได้แค่ถึง 23:59 ของวันที่คุณซื้อเท่านั้น ไม่ได้อยู่ในกรอบ 7 วันที่ครอบคลุมตัวบัตร",
+        takes: "5 นาที",
+      },
+      {
+        title: "พกหนังสือเดินทางและหลักฐานการจองไปที่สถานที่จัดงาน",
+        body: "การรับบัตรต้องใช้เอกสารแสดงตนตัวจริงที่ยังไม่หมดอายุ — YES24 ระบุชื่อหนังสือเดินทาง — ควบคู่กับหลักฐานยืนยันการจอง คู่มือการซื้อยังบอกให้พิมพ์รายละเอียดการซื้อออกมาและยื่นที่ห้องจำหน่ายบัตร นโยบายเฉพาะของแต่ละงานบนหน้าอีเวนต์มีผลเหนือข้อนี้ และ YES24 บอกว่าหน้าอีเวนต์เป็นฝ่ายชนะ จึงควรอ่านแม้คุณเคยรับบัตรที่สถานที่นั้นมาก่อน",
+        pitfall:
+          "ภาพถ่ายหน้าจอยืนยันบนโทรศัพท์ไม่ใช่สิ่งที่เขาอธิบายไว้ พิมพ์ออกมา และพกหนังสือเดินทางเล่มที่คุณใช้ลงทะเบียน ไม่ใช่เอกสารอื่น",
+        takes: "ที่สถานที่จัดงาน",
+      },
+    ],
+    faq: [
+      {
+        q: "ใช้บัญชี YES24 เดิมบนเว็บภาษาอังกฤษได้ไหม",
+        a: "ไม่ได้ YES24 บอกว่าสมาชิกเดิมต้องสมัครใหม่สำหรับเว็บ Global YES24 TICKET และว่ามันแยกจาก global.yes24.com โดยไม่มีการแบ่งปันข้อมูลสมาชิก",
+      },
+      {
+        q: "ทำไมไม่มี PayPal ตอนชำระเงิน",
+        a: "PayPal ถูกเสนอให้ก็ต่อเมื่อระยะห่างระหว่างวันจองกับวันแสดงมากกว่า 180 วัน การจองคอนเสิร์ตส่วนใหญ่อยู่ในระยะที่สั้นกว่านั้นมาก บัตรจึงเป็นทางเดียว",
+      },
+      {
+        q: "YES24 Global ปฏิเสธบัตรแบบไหน",
+        a: "บัตร American Express ที่ออกนอกเกาหลีใต้ และบัตร China UnionPay บัตรอื่นได้รับการยอมรับแต่ต้องผ่าน 3-D Secure ซึ่งเว็บกำหนดไว้",
+      },
+      {
+        q: "ให้คนอื่นไปรับบัตรแทนได้ไหม",
+        a: "ไม่ได้ บัตรแบบรับหน้างานรับได้โดยเจ้าของบัตรเท่านั้น พร้อมหนังสือเดินทางตัวจริงและหลักฐานการจอง เว้นแต่งานนั้น ๆ จะระบุเป็นอย่างอื่นบนหน้าของตัวเอง",
+      },
+      {
+        q: "การคืนเงินใช้เวลานานแค่ไหน",
+        a: "การคืนเงินเข้าบัตรระบุไว้ที่ 3 ถึง 7 วัน โดยนโยบายของบริษัทบัตรเป็นผู้ตัดสิน และอาจถึง 30 วัน การคืนเงินผ่าน PayPal กลับเข้ายอดคงเหลือ PayPal ภายใน 5 วันทำการ โดยใช้อัตราแลกเปลี่ยนของวันที่คืนเงินรวมส่วนต่างการแปลงสกุล จำนวนที่ได้คืนจึงอาจน้อยกว่าจำนวนที่จ่ายไป",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "yes24-global-ticketing-guide",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Tiket sa YES24 Global: ang mga tuntuning wala sa pahinang Ingles",
+    summary:
+      "Hindi gagana ang kasalukuyan mong YES24 account. Lumalabas lang ang PayPal kung sapat ang layo ng palabas. Dalawang uri ng kard ang tinatanggihan nang tuwiran, at tinitingnan ng venue ang pasaporte mo laban sa pangalang ipinangrehistro mo.",
+    scope:
+      "Sakop nito ang site na YES24 TICKET sa Ingles na ginagamit ng mga bumibili mula sa ibang bansa. Ang site na YES24 sa wikang Koreano ay nagpapatakbo ng ibang sistema ng account at ibang pagpapatunay ng pagkakakilanlan. Nananaig sa lahat ng narito ang mga kondisyon kada palabas sa pahina ng event, at sinasabi mismo ito ng YES24.",
+    intro: [
+      "Inilalathala ng YES24 ang mga tuntunin nito para sa ibang bansa sa isang gabay sa pagbili at FAQ sa Ingles, at halos wala sa laman ng mga iyon ang lumalabas sa mga gabay na nangunguna rito. Tiyak ang mga ito, hindi karaniwan, at ilan sa kanila ang magwawakas sa booking mo sa mismong araw kung doon mo lang sila unang makikita sa checkout.",
+      "Lahat ng nasa ibaba ay mula sa dalawang pahinang iyon, binasa noong 20 Oktubre 2026. Kung saan nagkakasalungat ang YES24 — at nagkakasalungat ito, minsan, sa isang bayarin — sinasabi ito ng pahinang ito sa halip na piliin ang maginhawang numero.",
+    ],
+    steps: [
+      {
+        title: "Magparehistrong muli, kahit may YES24 account ka na",
+        body: "Malinaw ang sinasabi ng YES24: ang mga dati nang miyembro ng YES24 na gustong gumamit ng site na Global YES24 TICKET ay kailangang magparehistrong muli. Nagbabala rin ito na ang pandaigdigang site ng tiket ay ibang bagay sa global.yes24.com, ang tindahan ng libro, at hindi sila nagbabahagi ng impormasyon ng miyembro. Hindi makakapag-book ang hindi miyembro, kaya ito ang unang hakbang at hindi pormalidad.",
+        pitfall:
+          "Tatlong serbisyo ng YES24 na magkakahawig ang pangalan at walang magkasanib na login. Ang pagkatuklas nito habang nakapila ay huli na — kailangan nang umiral ang account ilang araw bago pa man, dahil sa pagsusuri ng pangalan sa ibaba.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Irehistro ang pangalan nang eksaktong gaya sa pasaporte mo",
+        body: "Ito ang iisang lugar kung saan hayagang sinasabi ng isang plataporma ang bagay na tinatago ng iba. Mula sa FAQ ng YES24: kung iba ang pangalan sa YES24 account mo kaysa sa pangalan sa pasaporte mo, maaari kang mahirapang kunin ang nabook na tiket sa venue. Ang mga tiket na kukunin sa venue ay makukuha lamang ng may-ari ng tiket, at kailangan ng pisikal at wastong ID — isang pasaporte — kasama ang talaan ng booking.",
+        pitfall:
+          "Isang gitnang pangalang naiwan, isang romanisasyong pinili ilang taon na ang nakararaan, isang pagkakasunod na nauuna ang pangalan. Naghahambing ang venue ng dalawang dokumento, hindi humuhusga kung halata bang ikaw iyon.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Tingnan kung inaalok ba ang PayPal para sa palabas mo",
+        body: "Available lamang ang PayPal sa YES24 Global kapag may higit sa 180 araw sa pagitan ng petsa ng booking at ng petsa ng palabas. Para sa karamihan ng konsiyerto ng K-pop, na inianunsiyo isa o dalawang buwan bago, ibig sabihin ay hindi talaga opsiyon ang PayPal at ang kard na lamang ang ruta. May bayad ding 10 sentimo ang PayPal na hindi isinasauli kahit magkansela ka.",
+        pitfall:
+          "Ang pagplano batay sa PayPal dahil may gabay na nagsabing tinatanggap ito, at pagkatapos ay patlang lang ng kard ang makikita sa checkout. Ang tuntuning 180 araw ang dahilan — hindi ito error, at hindi ito maipapatawad ng suporta.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin kung aling kard ang tinatanggihan bago ka sumubok",
+        body: "Hindi tinatanggap ng gabay sa pagbili ang mga American Express na inisyu sa labas ng Korea, at ang mga China UnionPay nang tuluyan. Dumaraan ang lahat ng iba bilang bayad sa kard — at sinasabi ng YES24 na kailangan ang 3-D Secure sa pandaigdigang site, kaya dapat nakarehistro ang kard sa bangko mo para dito.",
+        pitfall:
+          "Ang Amex na gumagana sa lahat ng ibang site ay tinatanggihan dito dahil sa kung saan ito inisyu, hindi dahil sa anumang bagay tungkol sa kard. Kamukhang-kamukha ng isang blokeo ng bangko ang pagkabigong iyon, kaya ginugugol ng mga tao ang buong benta sa pagtawag sa bangko tungkol sa maling problema.",
+        takes: "10 minuto, kasama ang bangko mo",
+      },
+      {
+        title: "Pumili ng pagkuha sa venue o paghahatid sa ibang bansa sa oras ng booking",
+        body: "Umiiral ang dalawa, ngunit ang paghahatid sa ibang bansa ay kada palabas at hindi pangkalahatan: sinasabi ng YES24 na nag-iiba ang availability kada pagtatanghal at nag-iiba ang bayad kada destinasyon, at ang pahina ng event ang nagsasaad nito. Ang pagpapalit ng paraan ng paghahatid pagkatapos ay posible lamang hanggang 20 araw ng negosyo bago ang palabas — apat na linggo ng trabaho, hindi apat na araw.",
+        pitfall:
+          "Ang dalawampung araw ng negosyo ay tinatayang isang buwan sa kalendaryo. Ang pag-book na dalawang linggo bago ay nangangahulugang ang paraang pinili mo sa pila ang paraang mananatili sa iyo.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Basahin ang orasan ng booking at ng pagkansela, na hindi ang petsa ng palabas",
+        body: "Nagsasara ang booking nang alas-5 ng hapon sa araw bago ang palabas na Martes hanggang Sabado, at alas-11 ng umaga tuwing Sabado para sa palabas na Linggo o Lunes. Tumatakbo ang pagkansela sa eksaktong parehong orasan, at kapag lumipas ito ay wala nang pagkansela, pagbabago o pagsasauli. Libre ang pagkansela sa loob ng 7 araw mula sa pagbili; pagkatapos niyon ay isang bayad kada tiket na umaakyat sa 10%, 20% at 30% ng halagang binayaran habang papalapit ang palabas. Ang limitasyon ay 10 tiket kada tao sa bawat pagkakataon.",
+        pitfall:
+          "Sa bayad sa booking nagkakasalungat ang YES24: sinasabi ng FAQ na 2,000 KRW sa isang linya at pagkatapos ay inianunsiyo nito sa susunod ang pagbabago tungo sa 3,000 KRW kada tiket mula 14 Agosto 2023. Ituring mong 3,000 ang kasalukuyan. Alinman doon, naisasauli lamang ito hanggang 23:59 sa mismong araw ng pagbili mo, at hindi sa loob ng 7 araw na sumasaklaw sa tiket mismo.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Dalhin ang pasaporte at ang talaan ng booking sa venue",
+        body: "Nangangailangan ang pagkuha ng pisikal at wastong ID — pasaporte ang pinapangalanan ng YES24 — kasama ang talaan ng kumpirmasyon ng booking. Sinasabi rin ng gabay sa pagbili na i-print ang detalye ng pagbili at iabot ito sa box office. Nananaig dito ang patakaran kada palabas sa pahina ng event, at sinasabi ng YES24 na ang pahina ng event ang panalo, kaya basahin ito kahit nakakuha ka na sa venue na iyon dati.",
+        pitfall:
+          "Hindi ang larawan ng kumpirmasyon sa telepono ang inilalarawan dito. I-print ito, at dalhin ang pasaporteng ipinangrehistro mo sa halip na ibang ID.",
+        takes: "Sa venue",
+      },
+    ],
+    faq: [
+      {
+        q: "Puwede ko bang gamitin ang kasalukuyang YES24 account ko sa site na Ingles?",
+        a: "Hindi. Sinasabi ng YES24 na kailangang magparehistrong muli ang mga dating miyembro para sa site na Global YES24 TICKET, at na hiwalay ito sa global.yes24.com na walang magkasanib na impormasyon ng miyembro.",
+      },
+      {
+        q: "Bakit walang PayPal sa checkout?",
+        a: "Inaalok lamang ang PayPal kapag may higit sa 180 araw sa pagitan ng petsa ng booking at ng petsa ng palabas. Karamihan ng booking sa konsiyerto ay nasa loob nito, kaya ang kard ang tanging ruta.",
+      },
+      {
+        q: "Aling mga kard ang tinatanggihan ng YES24 Global?",
+        a: "Ang mga American Express na inisyu sa labas ng South Korea, at ang mga China UnionPay. Tinatanggap ang ibang kard ngunit kailangang makapasa sa 3-D Secure, na hinihingi ng site.",
+      },
+      {
+        q: "Puwede bang iba ang kumuha ng tiket ko?",
+        a: "Hindi. Ang mga tiket na kukunin sa venue ay makukuha lamang ng may-ari ng tiket, dala ang pisikal na pasaporte at ang talaan ng booking — maliban kung may ibang sinasabi ang mismong palabas sa sarili nitong pahina.",
+      },
+      {
+        q: "Gaano katagal ang pagsasauli ng bayad?",
+        a: "Nakasaad ang pagsasauli sa kard sa 3 hanggang 7 araw, kung saan ang patakaran mismo ng kompanya ng kard ang nagpapasya, at hanggang 30 araw. Bumabalik ang pagsasauli sa PayPal sa balanse ng PayPal sa loob ng 5 araw ng negosyo — sa palitang umiiral sa petsa ng pagsasauli kasama ang pagitan ng konbersiyon, kaya maaaring mas mababa ang halagang ibinalik kaysa sa halagang binayaran.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Verified Member của NOL World: vượt qua eKYC từ nước ngoài",
+    summary:
+      "Một số show sẽ không cho bạn đặt vé cho tới khi hộ chiếu của bạn được xác minh. Khâu kiểm tra là một lần chụp trực tiếp hộ chiếu và khuôn mặt, không thể làm lại một cách tùy tiện, và hướng dẫn duy nhất NOL World đưa ra về thời điểm lại là thứ phần lớn mọi người bỏ qua.",
+    scope:
+      "Nói về khâu kiểm tra danh tính Verified Member Only trên NOL World, đúng như NOL World ghi: khi nào nó áp dụng, phần chụp cần những gì, điều gì xảy ra với cái tên nó lưu lại, và điều gì xóa bỏ hoặc hạn chế nó. Người có hộ chiếu Hàn Quốc được chỉ sang NOL Ticket, đó là một khâu kiểm tra khác trên một trang khác. Không có gì ở đây là cách lách qua một lần xác minh.",
+    intro: [
+      "Một show Verified Member Only là show bạn không thể đặt vé cho tới khi danh tính của bạn được xác minh. Không phải một cảnh báo ở bước thanh toán — chỗ đặt đơn giản là không hiện ra với một tài khoản chưa xác minh. Fan phát hiện ra điều này đúng vào lúc mở bán, tức là thời điểm tệ nhất có thể, vì phần xác minh là một lần chụp trực tiếp hộ chiếu và khuôn mặt bạn, và nó mất bao lâu thì mất bấy lâu.",
+      "NOL World giải thích dịch vụ này là cách hạn chế quyền truy cập cho những mục đích không được phép, chẳng hạn bán lại vé. Điều đó đáng tin theo đúng nghĩa đen: khâu kiểm tra tồn tại để buộc một người vào một tài khoản, và gần như mọi quy tắc dưới đây đều bắt nguồn từ đó.",
+    ],
+    steps: [
+      {
+        title: "Xem show của bạn có cần nó không, và bạn có đang ở đúng trang không",
+        body: "Verified Member Only được đặt theo từng sản phẩm chứ không theo tài khoản — NOL World nói rằng chỉ những thành viên đã hoàn tất xác minh danh tính trên trang sản phẩm mới có thể đặt chỗ. Vậy câu hỏi đầu tiên là show của bạn có mang dấu đó hay không. Câu thứ hai là bạn có nên ở trên NOL World hay không: NOL World bảo người có hộ chiếu Hàn Quốc dùng trang NOL Ticket, nơi chạy một khâu kiểm tra hoàn toàn khác.",
+        pitfall:
+          "Cho rằng khâu kiểm tra danh tính là một việc vặt làm một lần mà trang web sẽ nhắc bạn. Với một show Verified Member Only thì không có lời nhắc nào — chỗ đặt đơn giản là không có ở đó.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy làm trước một đến hai ngày so với lúc mở bán",
+        body: "Đây là hướng dẫn của chính NOL World và là dữ kiện hữu ích nhất trên trang này: hãy hoàn tất xác minh ít nhất trước một đến hai ngày, vì thử làm gần giờ mở bán vé nghĩa là lưu lượng truy cập cao có thể gây trục trặc. Khi đã xong, bạn có thể đặt bất kỳ show Verified Member Only nào mà không phải xác minh lại. Cái giá của việc làm sớm là một buổi tối. Cái giá của việc làm muộn là cả cái show.",
+        pitfall:
+          "Bắt đầu chụp trong mười phút trước một đợt bán trước. Một lần xác minh hỏng vì lưu lượng thì không thể hối thúc, còn hàng chờ thì không đợi.",
+        takes: "30 phút, trước hai ngày",
+      },
+      {
+        title: "Hãy xác minh đúng tài khoản bạn sẽ dùng để mua",
+        body: "Việc xác minh chỉ làm một lần cho mỗi tài khoản, và NOL World nói rõ rằng thông tin đã xác minh không thể dùng lại — một hộ chiếu xác minh một tài khoản. Nếu bạn có nhiều hơn một tài khoản, đây là lúc quyết định cái nào là thật, vì sau đó phần xác minh không chuyển đi đâu được. NOL World nói thêm rằng xóa một tài khoản sẽ xóa thông tin đã xác minh của nó và giải phóng cho tài khoản khác, nhưng một tài khoản bị hạn chế vì sử dụng sai thì không thể xóa được.",
+        pitfall:
+          "Xác minh trên tài khoản mà bạn tình cờ đang đăng nhập, rồi lại mua bằng tài khoản kia. Tài khoản thứ hai chưa xác minh, còn show thì là Verified Member Only.",
+        takes: "5 phút để quyết định",
+      },
+      {
+        title: "Hãy có hộ chiếu bản gốc, còn hiệu lực và chưa hết hạn",
+        body: "Chỉ hộ chiếu còn hiệu lực được chấp nhận, và NOL World nói thẳng rằng ảnh chụp hay bản sao thì không: không phải bản quét đã in ra, không phải ảnh chụp màn hình, không phải ảnh chụp trang hộ chiếu trên một màn hình khác. Nếu hộ chiếu của bạn đã hết hạn thì bạn phải làm lại trước khi có thể xác minh — trên NOL World không có lối đi bằng giấy tờ thay thế cho người không mang hộ chiếu Hàn Quốc.",
+        pitfall:
+          "Với lấy tấm ảnh hộ chiếu vốn đã nằm sẵn trong thư viện ảnh điện thoại vì cuốn thật đang trong két an toàn khách sạn. Lần thử đó được ghi lại là một lần thử bằng bản sao.",
+        takes: "—",
+      },
+      {
+        title: "Hãy qua được phần chụp ngay lần đầu",
+        body: "NOL World công bố những gì khiến phần chụp thất bại, và danh sách ấy đọc như một danh sách những việc người ta làm khi vội. Hãy căn hộ chiếu và khuôn mặt bạn theo khung dẫn trên màn hình. Giữ cho không có lóa và phản chiếu trên cả trang hộ chiếu lẫn khuôn mặt bạn. Khuôn mặt bạn phải khớp với ảnh trong hộ chiếu. Giữ thiết bị thật yên ít nhất năm giây trong lúc nó chụp. Và nếu thiết bị cấu hình thấp hoặc mạng không ổn định, dữ liệu có thể không được lưu đúng ngay cả khi phần chụp trông ổn. Khi nó hỏng, màn hình sẽ nêu lý do — hãy đọc nó thay vì thử lại trong vô thức.",
+        pitfall:
+          "Làm việc này bằng một tay, vào ban đêm, dưới bóng đèn trần hắt lên lớp nhựa ép. Ánh sáng từ trên xuống rọi vào trang hộ chiếu là lý do phổ biến nhất khiến một lần chụp không đọc được.",
+        takes: "15 phút",
+      },
+      {
+        title: "Hãy kiểm tra cái tên đã thực sự được lưu",
+        body: "Chỉ tên viết bằng tiếng Anh được chấp nhận. NOL World nói rằng nếu tên trên hộ chiếu của bạn không phải tiếng Anh hoặc chứa ký tự đặc biệt thì việc đặt chỗ không thể tiến hành, và rằng bạn có thể bị chuyển hướng sang một yêu cầu sửa tên — đó là một đơn gửi đi, không phải một thay đổi trong phần cài đặt. Tên đã lưu hiện ra ở My Page, và đó là nơi để kiểm tra thay vì phỏng đoán. Điều này quan trọng ngay bây giờ vì sau khi xác minh bạn hoàn toàn không thể sửa tên, ngày sinh hay địa chỉ email của mình: việc đặt chỗ chỉ có thể thực hiện bằng thông tin đã xác minh.",
+        pitfall:
+          "Bỏ qua việc kiểm tra tên vì phần xác minh báo thành công. Thành công và lưu đúng ký tự là hai chuyện khác nhau, và một trong hai thì không còn sửa được nữa.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hiểu về thứ tự tên — và điều gì mới thực sự quan trọng ở cửa soát vé",
+        body: "NOL World đã đổi thứ tự tên được lưu vào ngày 16 tháng 4 năm 2025. Thành viên xác minh trước ngày đó giữ Tên + (Tên đệm) + Họ; thành viên xác minh sau đó giữ Họ + Tên + (Tên đệm). NOL World nói thẳng rằng ngay cả khi thứ tự khác với hộ chiếu của bạn, việc kiểm tra vé và vào cửa tại nơi tổ chức vẫn thực hiện được — việc kiểm tra tại chỗ chỉ bị hạn chế nếu chính cái tên khác với tên trên hộ chiếu. Thành viên xác minh trước ngày 16 tháng 4 năm 2025 sẽ được áp dụng định dạng mới khi họ xác minh lại sau khi hộ chiếu hết hạn.",
+        pitfall:
+          "Gửi yêu cầu sửa tên vì thấy thứ tự trông sai. NOL World nói rằng thứ tự không phải vấn đề; một cái tên khác mới là vấn đề. Đúng ký tự, không phải đúng trình tự.",
+        takes: "5 phút",
+      },
+      {
+        title: "Biết điều gì có thể xóa bỏ một lần xác minh bạn đã qua",
+        body: "Một lần xác minh đã hoàn tất vẫn có thể bị hủy về sau. NOL World nêu hai nguyên nhân: thử xác minh bằng giấy tờ giả mạo hoặc bị sửa đổi — mà họ định nghĩa là bao gồm cả bản sao đã in và ảnh chụp màn hình — và việc hộ chiếu dùng để xác minh hết hạn. Nếu của bạn bị hủy, hãy xác minh lại bằng chính tài khoản hiện có. NOL World cảnh báo cụ thể rằng thử bằng một tài khoản mới có thể dẫn tới lỗi hệ thống lặp đi lặp lại, và rằng một lần xác minh bị phát hiện là có được bằng thủ đoạn gian lận có thể khiến bạn mất quyền dùng các dịch vụ đặt vé.",
+        pitfall:
+          "Mở một tài khoản mới để thoát khỏi một lần bị hủy. Việc hủy đi theo giấy tờ chứ không theo tài khoản, và tài khoản mới thừa hưởng cả vấn đề lẫn sự nghi ngờ.",
+        takes: "—",
+      },
+      {
+        title: "Biết nền tảng coi điều gì là gian lận, và nó trả giá bao nhiêu",
+        body: "Lý do khâu kiểm tra nghiêm ngặt đến vậy nằm trong chính sách chống gian lận của NOL World, và hậu quả thì được công bố. Dùng giấy tờ tùy thân bị đánh cắp hoặc giả mạo để xác minh được liệt là sử dụng gian lận. Việc đặt nhiều vé vượt quá nhu cầu thông thường bằng thông tin cá nhân giống hoặc tương tự nhau cũng vậy — cùng thông tin liên hệ, cùng địa chỉ giao hàng hoặc cùng thông tin thanh toán trên nhiều tài khoản. Hình phạt chạy từ việc bị hạn chế đặt vé ba tháng trở lên cho tới đình chỉ tài khoản vĩnh viễn và hủy mọi vé đã đặt. Nhà tổ chức sự kiện có thể thêm hình phạt riêng, kể cả khai trừ khỏi fan club. Có cơ chế khiếu nại, và ở nơi việc buôn bán gian lận được xác nhận rõ ràng thì không có.",
+        pitfall:
+          "Xác minh vài tài khoản của người nhà từ một chiếc điện thoại, một địa chỉ và một chiếc thẻ để tăng cơ hội trong một đợt bán trước. Mô thức đó nằm trong danh sách đã công bố, và hình phạt được nêu vươn tới mọi tấm vé trên mỗi tài khoản trong số đó.",
+        takes: "10 phút đọc",
+      },
+    ],
+    faq: [
+      {
+        q: "Verified Member Only thực sự có nghĩa gì trên một trang sự kiện?",
+        a: "Nghĩa là show đó đóng với các tài khoản chưa xác minh. NOL World mô tả nó là một dịch vụ cho phép thành viên xác minh danh tính trước khi mua, trong đó chỉ những thành viên đã hoàn tất xác minh trên trang sản phẩm mới có thể đặt chỗ. Họ nêu mục đích là hạn chế quyền truy cập cho những mục đích không được phép, chẳng hạn bán lại vé. Hãy có sẵn hộ chiếu và điện thoại thông minh, vì khâu kiểm tra cần cả hai.",
+      },
+      {
+        q: "Tôi mang hộ chiếu Hàn Quốc. Tôi cứ xác minh trên NOL World được không?",
+        a: "NOL World bảo người mang hộ chiếu Hàn Quốc dùng trang vé NOL. Đó là một trang khác với một khâu kiểm tra danh tính khác — thường là xác thực qua di động Hàn Quốc hoặc I-PIN — và một tài khoản riêng.",
+      },
+      {
+        q: "Tôi là công dân Hàn Quốc sống ở nước ngoài và không có số di động Hàn Quốc. Vậy thì sao?",
+        a: "NOL World công bố một lối đi bằng giấy tờ. Họ chỉ công dân Hàn Quốc cư trú ở nước ngoài sang NOL Ticket, nơi danh tính có thể được xác minh bằng xác thực di động hoặc I-PIN; nơi không có số đăng ký cư trú Hàn Quốc và không dùng được xác thực di động, họ chấp nhận giấy tờ chứng minh tư cách người Hàn ở nước ngoài — Giấy chứng nhận Đăng ký Người Hàn ở Nước ngoài kèm hộ chiếu Hàn Quốc, nộp qua biểu mẫu hỗ trợ khách hàng kèm ID tài khoản của bạn. Họ nói giấy chứng nhận có thể xin trực tuyến qua Cơ quan Người Hàn ở Nước ngoài, và rằng Thẻ Đăng ký Người Nước ngoài có thể được chấp nhận thay thế ở nơi khó xin giấy chứng nhận. Họ cũng cảnh báo rằng giấy tờ giả mạo đồng nghĩa với việc bị hạn chế ngay lập tức.",
+      },
+      {
+        q: "Có giới hạn độ tuổi tối thiểu để xác minh danh tính không?",
+        a: "NOL World nói rằng bản thân việc xác minh không giới hạn độ tuổi, nhưng bạn vẫn có thể không đặt hay không vào được những sản phẩm có giới hạn tuổi. Xác minh không giống với việc đủ điều kiện cho một show cụ thể.",
+      },
+      {
+        q: "Tên tôi trên My Page có thứ tự khác với hộ chiếu. Tôi có bị chặn không?",
+        a: "NOL World nói là không. Họ đã đổi thứ tự lưu trữ vào ngày 16 tháng 4 năm 2025 và khẳng định rằng việc kiểm tra vé và vào cửa vẫn thực hiện được ngay cả khi thứ tự khác với hộ chiếu. Việc kiểm tra tại chỗ chỉ bị hạn chế nếu chính cái tên khác đi — nên hãy kiểm tra chính tả và ký tự, không phải trình tự.",
+      },
+      {
+        q: "Hộ chiếu của tôi hết hạn sau khi tôi đã xác minh. Tôi có phải làm gì không?",
+        a: "Có. NOL World liệt việc hộ chiếu hết hạn là một nguyên nhân khiến một lần xác minh đã hoàn tất bị hủy, nên làm lại hộ chiếu nghĩa là phải xác minh lại — trên tài khoản hiện có, không phải một tài khoản mới. Nếu bạn đã xác minh trước ngày 16 tháng 4 năm 2025, đây cũng là lúc thứ tự tên mới được áp dụng vào hồ sơ của bạn.",
+      },
+      {
+        q: "Tôi dùng hộ chiếu của người nhà để xác minh được không, nếu hộ chiếu tôi đã hết hạn?",
+        a: "Không, và đây là câu hỏi duy nhất có một hậu quả được công bố chứ không phải một ý kiến. NOL World liệt việc dùng giấy tờ bị đánh cắp hoặc giả mạo để xác minh vào nhóm hành vi mà họ coi là sử dụng gian lận, và các hình phạt được nêu chạy tới đình chỉ tài khoản vĩnh viễn và hủy mọi vé đã đặt. Họ cũng nói rằng việc xác minh danh tính có thể được thực hiện tại nơi tổ chức và đề nghị bạn đặt vé bằng chính tên và tài khoản của mình, mang theo giấy tờ tùy thân có ảnh còn hiệu lực. Một tấm vé không sống sót qua cánh cửa thì không phải là một tấm vé.",
+      },
+      {
+        q: "Tài khoản của tôi bị hạn chế. Có khiếu nại được không?",
+        a: "NOL World có công bố một quy trình. Họ nói rằng người dùng nhìn chung được dành ít nhất một ngày để trình bày lý do, và rằng đơn khiếu nại nên là một bản trình bày chi tiết gồm ID tài khoản bị hạn chế, họ tên đầy đủ và thông tin liên hệ, không bắt buộc theo định dạng hay mẫu nào, gửi qua biểu mẫu hỗ trợ khách hàng. Việc xem xét mất khoảng 10 đến 15 ngày và kết quả đến qua email. Họ cũng nêu giới hạn: quá hạn hoặc không giải tỏa được nghi ngờ thì các đơn đặt sẽ bị hủy cưỡng chế, và ở nơi việc buôn bán gian lận được xác nhận rõ ràng thì vé có thể bị hủy mà không có khiếu nại nào cả.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Verified Member ของ NOL World: ผ่าน eKYC จากต่างประเทศ",
+    summary:
+      "บางงานไม่ให้คุณจองเลยจนกว่าหนังสือเดินทางของคุณจะได้รับการยืนยัน การตรวจคือการถ่ายหนังสือเดินทางและใบหน้าแบบสด ทำใหม่ตามใจไม่ได้ และคำแนะนำข้อเดียวที่ NOL World ให้เรื่องจังหวะเวลา คือข้อที่คนส่วนใหญ่มองข้าม",
+    scope:
+      "ครอบคลุมการตรวจตัวตนแบบ Verified Member Only บน NOL World ตามที่ NOL World บันทึกไว้: ใช้เมื่อไร การถ่ายต้องการอะไร เกิดอะไรขึ้นกับชื่อที่มันบันทึก และอะไรที่ล้างหรือจำกัดมัน ผู้ถือหนังสือเดินทางเกาหลีถูกส่งไปที่ NOL Ticket ซึ่งเป็นการตรวจคนละแบบบนเว็บคนละเว็บ ไม่มีอะไรในหน้านี้เป็นวิธีเลี่ยงการยืนยันตัวตน",
+    intro: [
+      "งานแบบ Verified Member Only คืองานที่คุณจองไม่ได้เลยจนกว่าตัวตนของคุณจะได้รับการยืนยัน ไม่ใช่คำเตือนตอนชำระเงิน แต่คือการจองนั้นไม่ปรากฏให้บัญชีที่ยังไม่ยืนยันเห็นเลย แฟน ๆ มักรู้เรื่องนี้ตอนที่การจองเปิดพอดี ซึ่งเป็นจังหวะที่แย่ที่สุดเท่าที่จะเป็นไปได้ เพราะการยืนยันคือการถ่ายหนังสือเดินทางและใบหน้าของคุณแบบสด และมันใช้เวลาเท่าที่มันใช้",
+      "NOL World อธิบายบริการนี้ว่าเป็นวิธีจำกัดการเข้าถึงเพื่อวัตถุประสงค์ที่ไม่ได้รับอนุญาต เช่น การขายบัตรต่อ เรื่องนี้ควรเชื่อตามตัวอักษร การตรวจมีอยู่เพื่อผูกคนหนึ่งคนเข้ากับบัญชีหนึ่งบัญชี และกฎเกือบทุกข้อด้านล่างล้วนตามมาจากจุดนั้น",
+    ],
+    steps: [
+      {
+        title: "ตรวจว่างานของคุณต้องใช้ไหม และคุณอยู่บนเว็บที่ถูกต้องหรือเปล่า",
+        body: "Verified Member Only ถูกกำหนดเป็นรายสินค้าไม่ใช่รายบัญชี NOL World บอกว่าเฉพาะสมาชิกที่ทำการยืนยันตัวตนบนหน้าสินค้าเสร็จแล้วเท่านั้นที่จองได้ คำถามแรกจึงคืองานของคุณมีป้ายนี้หรือไม่ คำถามที่สองคือคุณควรอยู่บน NOL World หรือเปล่า NOL World บอกให้ผู้ถือหนังสือเดินทางเกาหลีไปใช้เว็บ NOL Ticket แทน ซึ่งใช้การตรวจคนละแบบโดยสิ้นเชิง",
+        pitfall:
+          "การคิดว่าการตรวจตัวตนเป็นงานจุกจิกครั้งเดียวที่เว็บจะเตือนคุณเอง สำหรับงาน Verified Member Only ไม่มีคำเตือนใด ๆ การจองแค่ไม่อยู่ตรงนั้น",
+        takes: "10 นาที",
+      },
+      {
+        title: "ทำก่อนการจองเปิดหนึ่งถึงสองวัน",
+        body: "นี่คือคำสั่งของ NOL World เองและเป็นข้อเท็จจริงที่มีประโยชน์ที่สุดในหน้านี้: ทำการยืนยันให้เสร็จล่วงหน้าอย่างน้อยหนึ่งถึงสองวัน เพราะการพยายามทำใกล้เวลาเปิดจำหน่ายบัตรหมายความว่าปริมาณการใช้งานที่สูงอาจทำให้เกิดปัญหา เมื่อทำเสร็จแล้ว คุณจองงาน Verified Member Only ใดก็ได้โดยไม่ต้องยืนยันซ้ำ ราคาของการทำแต่เนิ่น ๆ คือหนึ่งเย็น ราคาของการทำช้าคือทั้งงาน",
+        pitfall:
+          "การเริ่มถ่ายในสิบนาทีก่อนรอบพรีเซล การยืนยันที่ล้มเหลวเพราะปริมาณการใช้งานนั้นเร่งไม่ได้ และคิวก็ไม่รอ",
+        takes: "30 นาที ล่วงหน้าสองวัน",
+      },
+      {
+        title: "ยืนยันบัญชีที่คุณจะใช้ซื้อจริง ๆ",
+        body: "การยืนยันทำได้ครั้งเดียวต่อหนึ่งบัญชี และ NOL World ระบุว่าข้อมูลที่ยืนยันแล้วนำกลับมาใช้ซ้ำไม่ได้ หนังสือเดินทางหนึ่งเล่มยืนยันได้หนึ่งบัญชี ถ้าคุณมีมากกว่าหนึ่งบัญชี นี่คือจังหวะที่ต้องตัดสินใจว่าบัญชีไหนคือของจริง เพราะหลังจากนั้นการยืนยันจะย้ายไม่ได้ NOL World เสริมว่าการลบบัญชีจะลบข้อมูลที่ยืนยันแล้วของบัญชีนั้นและปล่อยให้บัญชีอื่นใช้ได้ แต่บัญชีที่ถูกจำกัดเพราะใช้งานโดยมิชอบจะลบไม่ได้เลย",
+        pitfall:
+          "การยืนยันบนบัญชีที่บังเอิญล็อกอินค้างอยู่ แล้วไปซื้อบนอีกบัญชีหนึ่ง บัญชีที่สองยังไม่ได้ยืนยัน และงานนั้นเป็น Verified Member Only",
+        takes: "5 นาทีในการตัดสินใจ",
+      },
+      {
+        title: "ต้องมีหนังสือเดินทางเล่มจริง ที่ใช้ได้และยังไม่หมดอายุ",
+        body: "รับเฉพาะหนังสือเดินทางที่ยังใช้ได้ และ NOL World ระบุชัดว่ารูปถ่ายหรือสำเนาไม่นับ ไม่ว่าจะเป็นไฟล์สแกนที่พิมพ์ออกมา ภาพหน้าจอ หรือรูปถ่ายของหน้าหนังสือเดินทางบนจออีกเครื่อง ถ้าหนังสือเดินทางของคุณหมดอายุแล้ว คุณต้องทำใหม่ก่อนจึงจะยืนยันได้ บน NOL World ไม่มีเส้นทางเอกสารทางเลือกสำหรับผู้ที่ไม่ได้ถือหนังสือเดินทางเกาหลี",
+        pitfall:
+          "การหยิบรูปหนังสือเดินทางที่มีอยู่แล้วในคลังภาพในโทรศัพท์มาใช้ เพราะเล่มจริงอยู่ในตู้เซฟโรงแรม ความพยายามครั้งนั้นถูกบันทึกไว้ว่าเป็นความพยายามด้วยสำเนา",
+        takes: "—",
+      },
+      {
+        title: "ผ่านการถ่ายให้ได้ตั้งแต่ครั้งแรก",
+        body: "NOL World เผยแพร่สิ่งที่ทำให้การถ่ายล้มเหลว และรายการนั้นอ่านเหมือนรายการสิ่งที่คนทำเวลารีบ จัดหนังสือเดินทางและใบหน้าของคุณให้ตรงกับกรอบนำบนหน้าจอ อย่าให้มีแสงสะท้อนบนทั้งหน้าหนังสือเดินทางและใบหน้าคุณ ใบหน้าของคุณต้องตรงกับรูปในหนังสือเดินทาง ถือเครื่องให้นิ่งอย่างน้อยห้าวินาทีระหว่างที่มันถ่าย และถ้าเครื่องสเปกต่ำหรือเครือข่ายไม่เสถียร ข้อมูลอาจบันทึกไม่ถูกต้องแม้การถ่ายจะดูเรียบร้อย เมื่อมันล้มเหลว หน้าจอจะบอกเหตุผล อ่านมันแทนที่จะลองใหม่แบบมืดบอด",
+        pitfall:
+          "การทำเรื่องนี้ด้วยมือเดียวตอนกลางคืนใต้ไฟเพดานที่สะท้อนบนแผ่นเคลือบ แสงจากด้านบนตกบนหน้าหนังสือเดินทางคือเหตุผลที่พบบ่อยที่สุดที่ทำให้การถ่ายอ่านไม่ออก",
+        takes: "15 นาที",
+      },
+      {
+        title: "ตรวจชื่อที่ถูกบันทึกไว้จริง",
+        body: "รับเฉพาะชื่อที่เป็นภาษาอังกฤษ NOL World บอกว่าถ้าชื่อในหนังสือเดินทางของคุณไม่ได้เป็นภาษาอังกฤษหรือมีอักขระพิเศษ การจองจะดำเนินต่อไม่ได้ และคุณอาจถูกส่งไปยังคำร้องขอแก้ไขชื่อ ซึ่งเป็นการยื่นเรื่อง ไม่ใช่การเปลี่ยนค่าในหน้าตั้งค่า ชื่อที่บันทึกไว้ดูได้ที่ My Page และนั่นคือที่ที่ควรไปตรวจแทนการเดาเอา เรื่องนี้สำคัญตั้งแต่ตอนนี้ เพราะหลังการยืนยันคุณจะแก้ชื่อ วันเกิด หรืออีเมลของตัวเองไม่ได้เลย การจองทำได้ด้วยข้อมูลที่ยืนยันแล้วเท่านั้น",
+        pitfall:
+          "การไม่ตรวจชื่อเพราะระบบแจ้งว่าการยืนยันสำเร็จ การสำเร็จกับการบันทึกอักขระที่ถูกต้องเป็นคนละเรื่อง และหนึ่งในสองนั้นแก้ไม่ได้อีกแล้ว",
+        takes: "5 นาที",
+      },
+      {
+        title: "เข้าใจลำดับชื่อ และเข้าใจว่าอะไรสำคัญจริงที่หน้าประตู",
+        body: "NOL World เปลี่ยนลำดับชื่อที่จัดเก็บเมื่อวันที่ 16 เมษายน 2025 สมาชิกที่ยืนยันก่อนวันนั้นจะเก็บเป็น ชื่อต้น + (ชื่อกลาง) + นามสกุล ส่วนสมาชิกที่ยืนยันหลังจากนั้นจะเก็บเป็น นามสกุล + ชื่อต้น + (ชื่อกลาง) NOL World ระบุตรง ๆ ว่าแม้ลำดับจะต่างจากในหนังสือเดินทางของคุณ การตรวจบัตรและการเข้างานที่สถานที่จัดงานก็ยังทำได้ การตรวจที่หน้างานจะถูกจำกัดก็ต่อเมื่อตัวชื่อเองต่างจากชื่อในหนังสือเดินทาง สมาชิกที่ยืนยันก่อนวันที่ 16 เมษายน 2025 จะได้รูปแบบใหม่เมื่อยืนยันซ้ำหลังหนังสือเดินทางหมดอายุ",
+        pitfall:
+          "การยื่นคำร้องขอแก้ไขชื่อเพราะเห็นว่าลำดับดูผิด NOL World บอกว่าลำดับไม่ใช่ปัญหา ชื่อที่ต่างออกไปต่างหากที่เป็น อักขระต้องถูก ไม่ใช่ลำดับต้องถูก",
+        takes: "5 นาที",
+      },
+      {
+        title: "รู้ว่าอะไรล้มล้างการยืนยันที่คุณผ่านไปแล้วได้",
+        body: "การยืนยันที่เสร็จแล้วถูกยกเลิกภายหลังได้ NOL World ระบุสองสาเหตุ: การพยายามยืนยันด้วยเอกสารแสดงตนที่ปลอมแปลงหรือถูกแก้ไข ซึ่งเขานิยามว่ารวมถึงสำเนาที่พิมพ์ออกมาและภาพหน้าจอ และการที่หนังสือเดินทางที่ใช้ยืนยันหมดอายุ ถ้าของคุณถูกยกเลิก ให้ยืนยันใหม่โดยใช้บัญชีเดิม NOL World เตือนเป็นการเฉพาะว่าการลองใช้บัญชีใหม่แทนอาจนำไปสู่ความล้มเหลวของระบบซ้ำ ๆ และว่าการยืนยันที่พบว่าได้มาโดยวิธีฉ้อฉลอาจทำให้คุณเสียสิทธิ์เข้าถึงบริการจองบัตร",
+        pitfall:
+          "การเปิดบัญชีใหม่เพื่อหนีการถูกล้างสถานะ การล้างนั้นตามเอกสารไป ไม่ได้ตามบัญชี และบัญชีใหม่จะรับทั้งปัญหาและความสงสัยมาด้วย",
+        takes: "—",
+      },
+      {
+        title: "รู้ว่าแพลตฟอร์มนับอะไรเป็นการฉ้อโกง และมันแลกมาด้วยอะไร",
+        body: "เหตุผลที่การตรวจเข้มขนาดนี้อยู่ในนโยบายต่อต้านการฉ้อโกงของ NOL World และผลที่ตามมาก็ถูกเผยแพร่ไว้ การใช้เอกสารแสดงตนที่ขโมยมาหรือปลอมเพื่อยืนยันตัวตนถูกระบุว่าเป็นการใช้งานโดยฉ้อฉล การจองบัตรหลายใบเกินการใช้งานปกติด้วยข้อมูลส่วนบุคคลที่เหมือนหรือคล้ายกันก็เช่นกัน — ข้อมูลติดต่อ ที่อยู่จัดส่ง หรือข้อมูลการชำระเงินเดียวกันข้ามหลายบัญชี บทลงโทษไล่ตั้งแต่การจำกัดการจองสามเดือนขึ้นไป ไปจนถึงการระงับบัญชีถาวรและการยกเลิกบัตรทุกใบที่จองไว้ ผู้จัดงานอาจเพิ่มบทลงโทษของตนเองรวมถึงการขับออกจากแฟนคลับ มีช่องทางอุทธรณ์อยู่ และที่ใดการค้าขายโดยฉ้อฉลได้รับการยืนยันชัดเจน ที่นั่นก็ไม่มี",
+        pitfall:
+          "การยืนยันบัญชีของคนในครอบครัวหลายบัญชีจากโทรศัพท์เครื่องเดียว ที่อยู่เดียว และบัตรใบเดียวเพื่อเพิ่มโอกาสในรอบพรีเซล รูปแบบนั้นอยู่ในรายการที่เผยแพร่ไว้ และบทลงโทษที่ระบุไว้ไปถึงบัตรทุกใบในทุกบัญชีเหล่านั้น",
+        takes: "อ่าน 10 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "Verified Member Only บนหน้าอีเวนต์หมายความว่าอะไรกันแน่",
+        a: "หมายความว่างานนั้นปิดสำหรับบัญชีที่ยังไม่ยืนยันตัวตน NOL World อธิบายว่าเป็นบริการที่ให้สมาชิกยืนยันตัวตนก่อนซื้อ โดยเฉพาะสมาชิกที่ทำการยืนยันบนหน้าสินค้าเสร็จแล้วเท่านั้นที่จองได้ เขาระบุวัตถุประสงค์ว่าเพื่อจำกัดการเข้าถึงสำหรับวัตถุประสงค์ที่ไม่ได้รับอนุญาต เช่น การขายบัตรต่อ เตรียมหนังสือเดินทางและสมาร์ตโฟนไว้ให้พร้อม เพราะการตรวจต้องใช้ทั้งสองอย่าง",
+      },
+      {
+        q: "ฉันถือหนังสือเดินทางเกาหลี ยืนยันบน NOL World เลยได้ไหม",
+        a: "NOL World บอกให้ผู้ถือหนังสือเดินทางเกาหลีไปใช้เว็บบัตร NOL แทน นั่นเป็นเว็บคนละเว็บที่มีการตรวจตัวตนคนละแบบ — โดยทั่วไปคือการยืนยันผ่านมือถือเกาหลีหรือ I-PIN — และเป็นบัญชีแยกต่างหาก",
+      },
+      {
+        q: "ฉันเป็นคนสัญชาติเกาหลีที่อยู่ต่างประเทศและไม่มีเบอร์มือถือเกาหลี แล้วยังไงต่อ",
+        a: "NOL World เผยแพร่เส้นทางเอกสารไว้ เขาส่งพลเมืองเกาหลีใต้ที่พำนักในต่างประเทศไปที่ NOL Ticket ซึ่งยืนยันตัวตนได้ด้วยการยืนยันผ่านมือถือหรือ I-PIN ในกรณีที่ไม่มีเลขทะเบียนผู้พำนักเกาหลีและใช้การยืนยันผ่านมือถือไม่ได้ เขารับเอกสารประกอบที่พิสูจน์สถานะคนเกาหลีในต่างประเทศ — หนังสือรับรองการลงทะเบียนคนเกาหลีโพ้นทะเลพร้อมหนังสือเดินทางเกาหลีใต้ ยื่นผ่านแบบฟอร์มสอบถามฝ่ายบริการลูกค้าพร้อม ID บัญชีของคุณ เขาบอกว่าหนังสือรับรองขอออนไลน์ได้ผ่านหน่วยงานคนเกาหลีโพ้นทะเล และว่าบัตรประจำตัวคนต่างด้าวอาจใช้แทนได้ในกรณีที่ขอหนังสือรับรองได้ยาก เขายังเตือนด้วยว่าเอกสารปลอมแปลงหมายถึงการถูกจำกัดทันที",
+      },
+      {
+        q: "มีอายุขั้นต่ำสำหรับการยืนยันตัวตนไหม",
+        a: "NOL World บอกว่าตัวการยืนยันเองไม่มีข้อจำกัดเรื่องอายุ แต่คุณอาจยังจองหรือเข้าร่วมสินค้าที่มีข้อจำกัดด้านอายุไม่ได้อยู่ดี การยืนยันตัวตนไม่เท่ากับการมีคุณสมบัติสำหรับงานใดงานหนึ่ง",
+      },
+      {
+        q: "ชื่อของฉันใน My Page เรียงลำดับต่างจากหนังสือเดินทาง ฉันจะถูกปฏิเสธไหม",
+        a: "NOL World บอกว่าไม่ เขาเปลี่ยนลำดับที่จัดเก็บเมื่อวันที่ 16 เมษายน 2025 และระบุว่าการตรวจบัตรและการเข้างานทำได้แม้ลำดับจะต่างจากหนังสือเดินทาง การตรวจที่หน้างานจะถูกจำกัดก็ต่อเมื่อตัวชื่อเองต่างออกไป ดังนั้นให้ตรวจการสะกดและอักขระ ไม่ใช่ลำดับ",
+      },
+      {
+        q: "หนังสือเดินทางของฉันหมดอายุหลังจากยืนยันไปแล้ว ต้องทำอะไรไหม",
+        a: "ต้อง NOL World ระบุว่าการหมดอายุของหนังสือเดินทางเป็นสาเหตุให้การยืนยันที่เสร็จแล้วถูกยกเลิก การทำเล่มใหม่จึงหมายถึงการยืนยันซ้ำ บนบัญชีเดิม ไม่ใช่บัญชีใหม่ ถ้าคุณยืนยันก่อนวันที่ 16 เมษายน 2025 นี่ก็เป็นจังหวะที่ลำดับชื่อแบบใหม่ถูกนำมาใช้กับระเบียนของคุณด้วย",
+      },
+      {
+        q: "ใช้หนังสือเดินทางของคนในครอบครัวยืนยันแทนได้ไหม ถ้าของฉันหมดอายุ",
+        a: "ไม่ได้ และนี่เป็นคำถามเดียวที่มีผลตามมาซึ่งถูกเผยแพร่ไว้แทนที่จะเป็นความเห็น NOL World ระบุการใช้เอกสารแสดงตนที่ขโมยมาหรือปลอมเพื่อยืนยันไว้ในกลุ่มพฤติกรรมที่เขาถือว่าเป็นการใช้งานโดยฉ้อฉล และบทลงโทษที่ระบุไว้ไปถึงการระงับบัญชีถาวรและการยกเลิกบัตรทุกใบที่จองไว้ เขายังบอกว่าการยืนยันตัวตนอาจทำที่สถานที่จัดงาน และขอให้คุณจองในชื่อและบัญชีของตัวเองพร้อมพกบัตรประจำตัวที่มีรูปถ่ายซึ่งยังใช้ได้ บัตรที่รอดผ่านประตูไม่ได้ก็ไม่ใช่บัตร",
+      },
+      {
+        q: "บัญชีของฉันถูกจำกัด อุทธรณ์ได้ไหม",
+        a: "NOL World เผยแพร่ช่องทางไว้ เขาบอกว่าโดยทั่วไปผู้ใช้จะได้รับเวลาอย่างน้อยหนึ่งวันเพื่อชี้แจง และว่าคำอุทธรณ์ควรเป็นคำชี้แจงโดยละเอียดที่ประกอบด้วย ID บัญชีที่ถูกจำกัด ชื่อเต็ม และข้อมูลติดต่อ โดยไม่มีรูปแบบหรือแม่แบบที่บังคับ ส่งผ่านแบบฟอร์มสอบถามฝ่ายบริการลูกค้า การพิจารณาใช้เวลาราว 10 ถึง 15 วัน และผลจะมาทางอีเมล เขายังระบุข้อจำกัดไว้ด้วย: พลาดกำหนดเวลาหรือคลายความสงสัยไม่ได้ การจองจะถูกยกเลิกโดยบังคับ และที่ใดการค้าขายโดยฉ้อฉลได้รับการยืนยันชัดเจน บัตรอาจถูกยกเลิกโดยไม่มีการอุทธรณ์ใด ๆ เลย",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Verified Member sa NOL World: pagpasa sa eKYC mula sa ibang bansa",
+    summary:
+      "May mga palabas na hindi ka papayagang mag-book hangga't hindi napapatunayan ang pasaporte mo. Ang pagsusuri ay isang live na pagkuha ng pasaporte at mukha, hindi ito basta-basta nauulit, at ang iisang bilin ng NOL World tungkol sa timing ang siyang hindi pinapansin ng karamihan.",
+    scope:
+      "Sakop nito ang pagsusuri ng pagkakakilanlang Verified Member Only sa NOL World, ayon sa pagkakatala ng NOL World: kailan ito umiiral, ano ang kailangan ng pagkuha, ano ang nangyayari sa pangalang itinatala nito, at ano ang bumubura o naglilimita rito. Ang may hawak ng pasaporteng Koreano ay ipinapadala sa NOL Ticket, na ibang pagsusuri sa ibang site. Walang anuman dito ang paraan para lusutan ang isang pagpapatunay.",
+    intro: [
+      "Ang palabas na Verified Member Only ay isang palabas na hindi mo talaga mabu-book hangga't hindi napapatunayan ang pagkakakilanlan mo. Hindi ito babala sa checkout — basta hindi lang available ang reserbasyon sa account na hindi napatunayan. Nalalaman ito ng mga fan sa mismong sandaling nagbubukas ang booking, na siyang pinakamasamang sandali, dahil ang pagpapatunay ay isang live na pagkuha ng pasaporte at mukha mo at tumatagal ito ng kung gaano katagal ito tumagal.",
+      "Ipinapaliwanag ng NOL World ang serbisyo bilang paraan para limitahan ang akses para sa mga layuning walang pahintulot gaya ng muling pagbebenta ng tiket. Sulit itong tanggapin sa literal na kahulugan: umiiral ang pagsusuri para itali ang isang tao sa isang account, at halos lahat ng tuntunin sa ibaba ay sumusunod dito.",
+    ],
+    steps: [
+      {
+        title: "Tingnan kung kailangan ito ng palabas mo, at kung nasa tamang site ka",
+        body: "Itinatakda ang Verified Member Only kada produkto at hindi kada account — sinasabi ng NOL World na ang mga miyembro lamang na nakatapos ng pagpapatunay ng pagkakakilanlan sa pahina ng produkto ang makakapagreserba. Kaya ang unang tanong ay kung may ganitong marka ba ang palabas mo. Ang pangalawa ay kung dapat ka bang nasa NOL World: sinasabi ng NOL World sa mga may hawak ng pasaporteng Koreano na gamitin ang site na NOL Ticket, na nagpapatakbo ng ganap na ibang pagsusuri.",
+        pitfall:
+          "Ang pag-aakalang ang pagsusuri ng pagkakakilanlan ay isang beses na gawaing ipapaalala sa iyo ng site. Para sa palabas na Verified Member Only ay walang paalala — wala lang talaga ang booking doon.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Gawin ito isa hanggang dalawang araw bago magbukas ang booking",
+        body: "Ito ang mismong bilin ng NOL World at ang pinakakapaki-pakinabang na katotohanan sa pahinang ito: tapusin ang pagpapatunay nang hindi bababa sa isa hanggang dalawang araw na mas maaga, dahil ang pagtatangka nito malapit sa oras ng pagbubukas ng tiket ay nangangahulugang maaaring magdulot ng hirap ang mataas na trapiko. Kapag tapos na ito, maaari kang mag-book ng kahit anong palabas na Verified Member Only nang hindi na nagpapatunay muli. Ang halaga ng paggawa nito nang maaga ay isang gabi. Ang halaga ng paggawa nito nang huli ay ang palabas.",
+        pitfall:
+          "Ang pagsisimula ng pagkuha sa sampung minuto bago ang presale. Ang pagpapatunay na bumabagsak dahil sa trapiko ay hindi mamamadali, at hindi naghihintay ang pila.",
+        takes: "30 minuto, dalawang araw nang maaga",
+      },
+      {
+        title: "Patunayan ang account na talagang gagamitin mo sa pagbili",
+        body: "Isang beses lamang ang pagpapatunay kada account, at sinasabi ng NOL World na hindi magagamit muli ang napatunayang impormasyon — isang pasaporte, isang account. Kung mahigit isa ang account mo, ngayon ang sandaling magpasya kung alin ang totoo, dahil hindi na lumilipat ang pagpapatunay pagkatapos. Dagdag pa ng NOL World, binubura ng pagtanggal ng account ang napatunayang impormasyon nito at pinapalaya ito para sa iba, ngunit ang account na nilimitahan dahil sa maling paggamit ay hindi matatanggal kahit kailan.",
+        pitfall:
+          "Ang pagpapatunay sa account na nagkataong naka-log in ka, at pagkatapos ay pagbili sa isa pa. Hindi napatunayan ang pangalawang account, at Verified Member Only ang palabas.",
+        takes: "5 minuto ng pagpapasya",
+      },
+      {
+        title: "Magdala ng orihinal na pasaporte, wasto at hindi pa expired",
+        body: "Wastong pasaporte lamang ang tinatanggap, at malinaw ang NOL World na hindi tinatanggap ang larawan o kopya: hindi ang naka-print na scan, hindi ang screenshot, hindi ang larawan ng pahina sa ibang screen. Kung expired na ang pasaporte mo, kailangan mo itong baguhin bago ka makapagpatunay — walang alternatibong ruta ng dokumento sa NOL World para sa hindi may hawak ng pasaporteng Koreano.",
+        pitfall:
+          "Ang pag-abot sa larawan ng pasaporteng nasa camera roll na ng telepono mo dahil nasa hotel safe ang totoo. Naitatala ang pagtatangkang iyon bilang pagtatangka gamit ang kopya.",
+        takes: "—",
+      },
+      {
+        title: "Makapasa sa pagkuha sa unang pagtatangka",
+        body: "Inilalathala ng NOL World kung ano ang nagpapabagsak sa pagkuha, at ang listahan ay parang listahan ng mga ginagawa ng tao kapag nagmamadali. Ihanay ang pasaporte at ang mukha mo sa mga gabay sa screen. Iwasan ang silaw at repleksiyon sa pahina ng pasaporte at sa mukha mo. Kailangang tumugma ang mukha mo sa larawan sa pasaporte. Panatilihing matatag ang device nang hindi bababa sa limang segundo habang kumukuha ito. At kung mababa ang spec ng device o hindi matatag ang network, maaaring hindi tamang ma-save ang datos kahit mukhang maayos ang pagkuha. Kapag bumagsak ito, sinasabi ng screen ang dahilan — basahin iyon sa halip na bulag na sumubok muli.",
+        pitfall:
+          "Ang paggawa nito nang isang kamay, sa gabi, sa ilalim ng ilaw sa kisame na sumasalamin sa laminado. Ang ilaw mula sa itaas sa isang pahina ng pasaporte ang pinakakaraniwang dahilan kung bakit hindi nababasa ang isang pagkuha.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Suriin ang pangalang talagang na-save",
+        body: "Mga pangalang Ingles lamang ang tinatanggap. Sinasabi ng NOL World na kung ang pangalan sa pasaporte mo ay hindi nasa Ingles o may mga espesyal na karakter, hindi makakatuloy ang reserbasyon, at maaari kang ilipat sa isang kahilingan sa pagtatama ng pangalan — isang pagsusumite, hindi isang pagbabago sa settings. Makikita ang na-save na pangalan sa My Page, at doon ito dapat suriin sa halip na ipagpalagay. Mahalaga ito ngayon dahil pagkatapos ng pagpapatunay ay hindi mo na mababago ang pangalan, petsa ng kapanganakan o email address mo: ang mga reserbasyon ay magagawa lamang gamit ang napatunayang impormasyon.",
+        pitfall:
+          "Ang pag-iwan sa pangalan nang hindi sinusuri dahil sinabi ng pagpapatunay na nagtagumpay ito. Magkaiba ang pagtatagumpay at ang pag-save ng tamang mga karakter, at ang isa sa mga iyon ay hindi na nababago.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Unawain ang pagkakasunod ng pangalan — at kung ano ang talagang mahalaga sa pintuan",
+        body: "Binago ng NOL World ang nakatalang pagkakasunod ng pangalan noong 16 Abril 2025. Ang mga miyembrong napatunayan bago ang petsang iyon ay may Pangalan + (Gitnang Pangalan) + Apelyido; ang mga napatunayan pagkatapos ay may Apelyido + Pangalan + (Gitnang Pangalan). Malinaw ang sinasabi ng NOL World na kahit iba ang pagkakasunod sa pasaporte mo, posible pa rin ang pagsusuri ng tiket at ang pagpasok sa venue — nililimitahan lamang ang pagsusuri sa lugar kung ang mismong pangalan ang iba sa pangalan sa pasaporte. Ang mga miyembrong napatunayan bago ang 16 Abril 2025 ay binibigyan ng bagong format kapag nagpatunay silang muli matapos mag-expire ang pasaporte.",
+        pitfall:
+          "Ang paghahain ng kahilingan sa pagtatama ng pangalan dahil mukhang mali ang pagkakasunod. Sinasabi ng NOL World na hindi ang pagkakasunod ang problema; ang ibang pangalan ang problema. Tamang mga karakter, hindi tamang pagkakasunod.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Alamin kung ano ang makakabura sa pagpapatunay na naipasa mo na",
+        body: "Maaaring kanselahin pagkatapos ang isang natapos nang pagpapatunay. Dalawang sanhi ang pinapangalanan ng NOL World: ang pagtatangkang magpatunay gamit ang pekeng o binagong ID — na tinutukoy nitong kasama ang mga naka-print na kopya at screenshot — at ang pag-expire ng pasaporteng ginamit sa pagpapatunay. Kung nakansela ang sa iyo, magpatunay muli gamit ang umiiral na account. Partikular na nagbabala ang NOL World na ang pagsubok ng bagong account sa halip ay maaaring humantong sa paulit-ulit na pagpalya ng sistema, at na ang pagpapatunay na natuklasang nakuha sa pamamagitan ng mapandayang paraan ay puwedeng magkait sa iyo ng akses sa mga serbisyo ng booking.",
+        pitfall:
+          "Ang pagbukas ng bagong account para makatakas sa isang pagbura. Sumunod ang pagbura sa dokumento, hindi sa account, at minamana ng bagong account ang problema at ang hinala.",
+        takes: "—",
+      },
+      {
+        title: "Alamin kung ano ang itinuturing ng plataporma na pandaraya, at kung magkano ang halaga nito",
+        body: "Nasa patakaran ng NOL World laban sa pandaraya ang dahilan kung bakit ganito kahigpit ang pagsusuri, at inilathala ang mga kahihinatnan. Ang paggamit ng ninakaw o pekeng ID sa pagpapatunay ay nakalista bilang mapandayang paggamit. Gayundin ang pagbu-book ng maraming tiket lampas sa karaniwang paggamit gamit ang magkatulad o magkahawig na personal na impormasyon — parehong detalye ng kontak, address ng padala o impormasyon sa pagbabayad sa magkakaibang account. Umaabot ang mga parusa mula sa limitasyon sa booking na tatlong buwan o higit pa hanggang sa permanenteng pagsuspinde ng account at pagkansela ng bawat tiket na nabook. Maaaring magdagdag ang organisador ng event ng sariling parusa, kabilang ang pagpapatalsik sa fan club. May apela, at kung saan malinaw na napatunayan ang mapandayang pangangalakal ay wala.",
+        pitfall:
+          "Ang pagpapatunay ng ilang account ng pamilya mula sa iisang telepono, iisang address at iisang kard para itaas ang tsansa sa isang presale. Nasa inilathalang listahan ang pattern na iyon, at inaabot ng nakasaad na parusa ang bawat tiket sa bawat isa sa mga account na iyon.",
+        takes: "10 minuto ng pagbabasa",
+      },
+    ],
+    faq: [
+      {
+        q: "Ano ba talaga ang ibig sabihin ng Verified Member Only sa pahina ng event?",
+        a: "Na sarado ang palabas sa mga account na hindi napatunayan. Inilalarawan ito ng NOL World bilang serbisyong nagpapahintulot sa mga miyembrong patunayan ang pagkakakilanlan bago bumili, kung saan ang mga miyembro lamang na nakatapos ng pagpapatunay sa pahina ng produkto ang makakapagreserba. Isinasaad nitong layunin ang paglilimita ng akses para sa mga layuning walang pahintulot gaya ng muling pagbebenta ng tiket. Ihanda ang pasaporte at smartphone mo, dahil kailangan ng pagsusuri ang dalawa.",
+      },
+      {
+        q: "May hawak akong pasaporteng Koreano. Puwede ba akong magpatunay sa NOL World?",
+        a: "Sinasabi ng NOL World sa mga may hawak ng pasaporteng Koreano na gamitin ang site ng tiket na NOL. Ibang site iyon na may ibang pagsusuri ng pagkakakilanlan — karaniwan ay Koreanong mobile authentication o I-PIN — at hiwalay na account.",
+      },
+      {
+        q: "Mamamayang Koreano ako na nakatira sa ibang bansa at walang numerong Koreano. Ano ngayon?",
+        a: "Naglathala ang NOL World ng ruta ng dokumento. Ipinapadala nito ang mga mamamayang South Korean na naninirahan sa ibang bansa sa NOL Ticket, kung saan mapapatunayan ang pagkakakilanlan sa pamamagitan ng mobile authentication o I-PIN; kung walang Koreanong resident registration number at hindi magagamit ang mobile authentication, tinatanggap nito ang mga sumusuportang dokumentong nagpapatunay ng katayuan bilang Koreanong nasa ibang bansa — isang Certificate of Overseas Korean Registration kasama ang pasaporteng South Korean, na isinusumite sa pamamagitan ng form ng customer support kasama ang ID ng account mo. Sinasabi nitong makukuha ang sertipiko online sa pamamagitan ng Overseas Koreans Agency, at na maaaring tanggapin ang Foreign Registration Card bilang kapalit kung saan mahirap makuha ang sertipiko. Nagbabala rin itong ang pinekeng dokumento ay nangangahulugan ng agarang paglilimita.",
+      },
+      {
+        q: "May pinakamababang edad ba para sa pagpapatunay ng pagkakakilanlan?",
+        a: "Sinasabi ng NOL World na walang limitasyon sa edad para sa mismong pagpapatunay, ngunit maaari ka pa ring hindi makapag-book o makadalo sa mga produktong may limitasyon sa edad. Ang pagpapatunay ay hindi kapareho ng pagiging kuwalipikado para sa isang partikular na palabas.",
+      },
+      {
+        q: "Iba ang pagkakasunod ng pangalan ko sa My Page kaysa sa pasaporte ko. Pagbabawalan ba ako?",
+        a: "Sinasabi ng NOL World na hindi. Binago nito ang nakatalang pagkakasunod noong 16 Abril 2025 at isinasaad na posible ang pagsusuri ng tiket at ang pagpasok kahit iba ang pagkakasunod sa pasaporte. Nililimitahan lamang ang pagsusuri sa lugar kung ang mismong pangalan ang iba — kaya suriin ang baybay at ang mga karakter, hindi ang pagkakasunod.",
+      },
+      {
+        q: "Nag-expire ang pasaporte ko pagkatapos kong magpatunay. May dapat ba akong gawin?",
+        a: "Oo. Nakalista sa NOL World ang pag-expire ng pasaporte bilang sanhi ng pagkansela ng natapos nang pagpapatunay, kaya ang pagpapalit ay nangangahulugan ng muling pagpapatunay — sa umiiral na account, hindi sa bago. Kung napatunayan ka bago ang 16 Abril 2025, dito rin ilalapat ang bagong pagkakasunod ng pangalan sa talaan mo.",
+      },
+      {
+        q: "Puwede ba akong magpatunay gamit ang pasaporte ng kapamilya kung expired na ang akin?",
+        a: "Hindi, at ito ang iisang tanong na may inilathalang kahihinatnan sa halip na opinyon. Nakalista sa NOL World ang paggamit ng ninakaw o pekeng ID sa pagpapatunay bilang isa sa mga gawaing itinuturing nitong mapandayang paggamit, at umaabot ang nakasaad na mga parusa sa permanenteng pagsuspinde ng account at pagkansela ng bawat tiket na nabook. Sinasabi rin nitong maaaring isagawa ang pagpapatunay ng pagkakakilanlan sa venue at hinihiling nitong mag-book ka sa sarili mong pangalan at account at magdala ng wastong ID na may larawan. Ang tiket na hindi makakalusot sa pintuan ay hindi tiket.",
+      },
+      {
+        q: "Nilimitahan ang account ko. May apela ba?",
+        a: "Naglathala ang NOL World ng isa. Sinasabi nitong karaniwang binibigyan ang mga user ng panahong hindi bababa sa isang araw para magbigay ng paliwanag, at na ang apela ay dapat isang detalyadong pahayag kasama ang ID ng nilimitahang account, buong pangalan at impormasyon sa pakikipag-ugnayan, nang walang hinihinging format o template, na ipinadadala sa pamamagitan ng form ng customer support. Umaabot ng mga 10 hanggang 15 araw ang pagsusuri at dumarating ang resulta sa email. Isinasaad din nito ang mga hangganan: kung malalampasan ang takdang panahon o hindi malilinis ang hinala ay sapilitang kinakansela ang mga booking, at kung saan malinaw na napatunayan ang mapandayang pangangalakal ay maaaring kanselahin ang mga tiket nang walang apela.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL facepass: ai đang giữ khuôn mặt bạn, và nó dùng để làm gì",
+    summary:
+      "Đăng ký một lần và một chiếc camera cho bạn vào mà không cần kiểm tra vé. Khuôn mặt do Toss giữ chứ không phải NOL World, nó không thể thay đổi về sau, và hủy dịch vụ sẽ xóa tấm ảnh nhưng vẫn giữ một bản sao riêng trong một năm.",
+    scope:
+      "Nói về những gì NOL World công bố về NOL facepass, gồm cả thời hạn lưu trữ mà họ nêu sau khi hủy: nó làm gì, ai lưu dữ liệu khuôn mặt, và việc đăng ký ràng buộc bạn vào điều gì. Việc hỗ trợ là theo từng show, và trang sự kiện là nơi quyết định. Không có gì ở đây là ý kiến pháp lý về dữ liệu sinh trắc học ở nước bạn.",
+    intro: [
+      "Các địa điểm tổ chức ở Hàn Quốc đang chuyển sang nhận diện khuôn mặt ở cửa, và một fan ở nước ngoài gặp nó dưới dạng một ô tích trong lúc đặt vé, với rất ít giải thích bằng tiếng Anh. Câu hỏi nằm bên dưới không hề nhỏ: một công ty bạn chưa từng giao dịch sắp giữ khuôn mặt của bạn.",
+      "NOL World có công bố câu trả lời. Chúng cụ thể, chúng khiến người ta yên tâm hơn phần lớn các công ty khác làm được, và chúng đáng đọc trước khi vào hàng chờ chứ không phải trong lúc đang chờ — kể cả câu trả lời về điều xảy ra với dữ liệu sau khi bạn hủy, vốn không nói đúng cái mà một từ đơn lẻ như “đã xóa” gợi ra.",
+    ],
+    steps: [
+      {
+        title: "Hiểu nó thay thế cho cái gì",
+        body: "NOL World mô tả facepass như một cách cắt bớt thủ tục và thời gian mà việc xác minh danh tính chiếm ở cửa vào. Khi việc đăng ký khuôn mặt hoàn tất, một chiếc camera quét bạn ở cửa và bạn vào mà không cần kiểm tra vé. Đây là thứ thay thế cho khâu kiểm tra giấy tờ ở cổng, chứ không phải một lớp thêm vào bên trên nó.",
+        pitfall:
+          "Đọc nó như một tính năng tiện lợi và chỉ vậy. Nửa sau trong chính mô tả của NOL World là chuyện kiểm soát, và đó là bước kế tiếp.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết lý do còn lại khiến nó tồn tại",
+        body: "NOL World nêu mục đích hai lần: tinh giản việc xác minh danh tính, và ngăn chặn việc bán và phân phối vé bất hợp pháp. Một khuôn mặt buộc phải khớp với tài khoản đã mua vé chính là một biện pháp kiểm soát bán lại, và nó xuất hiện cùng thời kỳ với một Luật Biểu diễn sửa đổi vươn tới việc bán lại có tính thường xuyên cao hơn mệnh giá. Hai dữ kiện đó thuộc về nhau.",
+        pitfall:
+          "Cho rằng một tấm vé mua qua sàn bán lại sẽ cứ thế chạy được ở cổng facepass. Hệ thống tồn tại để đúng việc đó không chạy được.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết khuôn mặt thực sự đi đâu",
+        body: "Đây là phần đáng biết nhất. NOL World nói rằng thông tin khuôn mặt — ảnh gốc và dữ liệu đặc trưng — được mã hóa và lưu bởi Toss, công ty fintech đứng sau dịch vụ FaceAccess, và rằng nó không được cung cấp cho NOL World hay cho các cơ quan trong bất kỳ trường hợp nào. Chỉ kết quả xác thực, thành công hay thất bại, được chia sẻ. NOL World cũng nói dữ liệu không được dùng cho bất kỳ mục đích nào ngoài việc cung cấp dịch vụ, và dẫn việc Toss nắm chứng nhận ISO 27701 và CBPR.",
+        pitfall:
+          "Đây là các tuyên bố của NOL World về một bên thứ ba, không phải một cuộc kiểm toán. Chúng cụ thể một cách khác thường so với loại trang này, đó là lý do nên xem trọng chúng chứ không phải lý do để ngừng đọc.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy coi việc đăng ký là vĩnh viễn",
+        body: "Một khi khuôn mặt đã được đăng ký thì không thể sửa. NOL World nêu lý do rõ ràng — là để ngăn việc sử dụng dịch vụ một cách gian lận. Không có chuyện sửa một lần đăng ký tệ về sau, nên những điều kiện bạn đăng ký trong đó cũng là những điều kiện bạn giữ lại: ánh sáng, kính mắt, bất cứ thứ gì camera đã bắt được.",
+        pitfall:
+          "Đăng ký vội trong hàng chờ, dưới ánh sáng xấu, với ý định làm lại cho tử tế sau. Không có cái sau nào cả.",
+        takes: "10 phút, làm thong thả",
+      },
+      {
+        title: "Đừng bao giờ để ai đăng ký trên điện thoại hay tài khoản của bạn",
+        body: "NOL World nói thẳng: hãy đảm bảo không ai khác dùng tài khoản của bạn, và nếu ai đó đăng ký thông tin khuôn mặt bằng điện thoại hoặc tài khoản của bạn, công ty không chịu trách nhiệm cho bất kỳ vấn đề nào phát sinh. Một chiếc máy dùng chung trong nhà vào đúng lúc một tour mở bán chính là cách chuyện này xảy ra, và tài khoản mới là thứ gánh hậu quả.",
+        pitfall:
+          "Giúp một người bạn đăng ký trên chiếc điện thoại đang đăng nhập tài khoản bạn. Khuôn mặt giờ gắn với tài khoản của bạn là của họ, nó không sửa được, và lời miễn trừ trách nhiệm thì rành mạch.",
+        takes: "1 phút",
+      },
+      {
+        title: "Xem show của bạn có hỗ trợ nó không đã",
+        body: "Việc hỗ trợ là theo từng sự kiện chứ không phổ quát — NOL World duy trì hẳn một câu hỏi về cách kiểm tra xem một buổi diễn có hỗ trợ facepass hay không, câu hỏi đó chỉ tồn tại vì câu trả lời thay đổi. Hãy xem trang sự kiện của show bạn trước khi lên kế hoạch vào cửa quanh nó, và chuẩn bị sẵn lối đi thông thường: mã xác nhận và giấy tờ tùy thân tại quầy vé.",
+        pitfall:
+          "Đăng ký xong rồi tới một địa điểm vẫn còn kiểm tra giấy tờ, với cuốn hộ chiếu bỏ lại khách sạn.",
+        takes: "3 phút",
+      },
+      {
+        title: "Đọc kỹ câu trả lời về việc xóa — nó không đơn thuần là xóa",
+        body: "NOL World trả lời câu hỏi liệu thông tin khuôn mặt có bị xóa nếu bạn hủy đăng ký hay không, và câu trả lời có hai nửa. Nửa đầu: tấm ảnh khuôn mặt của bạn bị xóa khi bạn hủy dịch vụ, và muốn dùng lại thì phải đăng ký lại. Nửa sau: để phục vụ mục đích xác minh danh tính, dữ liệu được lưu riêng và giữ trong một năm kể từ thời điểm hủy — được dùng, theo lời NOL World, chỉ cho việc xác minh danh tính khi đăng ký lại, và bị loại bỏ sau năm đó. Vậy nên hủy đăng ký là xóa tấm ảnh và bật một chiếc đồng hồ đếm, chứ không phải tắt một chiếc. Đó là một chính sách có thể biện hộ được, và nó không phải điều mà chữ “đã xóa” tự nó gợi ra, nên đáng đọc bằng chính lời của họ trước khi bạn đăng ký.",
+        pitfall:
+          "Chấp nhận bản tóm tắt một chữ của bất kỳ bên thứ ba nào về điều xảy ra với dữ liệu sinh trắc học, kể cả của chúng tôi. Hãy đọc câu về thời hạn lưu trữ, đừng đọc cái tiêu đề.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World có nhìn thấy khuôn mặt tôi không?",
+        a: "NOL World nói là không. Thông tin khuôn mặt được mã hóa và do Toss giữ, và NOL World khẳng định nó không được cung cấp cho NOL World hay cho các cơ quan trong bất kỳ trường hợp nào — chỉ việc xác thực thành công hay thất bại mới được chia sẻ.",
+      },
+      {
+        q: "Tôi đăng ký lại khuôn mặt được không nếu lần đầu chụp xấu?",
+        a: "Không. NOL World nói rằng một khuôn mặt đã đăng ký không thể sửa, nhằm ngăn việc sử dụng dịch vụ một cách gian lận. Hãy đăng ký thật thong thả ngay lần đầu.",
+      },
+      {
+        q: "Dữ liệu khuôn mặt của tôi có bị xóa nếu tôi hủy facepass không?",
+        a: "Một phần, và rồi theo một chiếc đồng hồ đếm. NOL World nói rằng tấm ảnh khuôn mặt bị xóa khi bạn hủy đăng ký, và rằng bạn sẽ phải đăng ký lại để dùng dịch vụ. Họ cũng nói rằng vì mục đích xác minh danh tính, dữ liệu được lưu riêng và giữ trong một năm kể từ khi hủy, chỉ dùng cho việc xác minh danh tính nếu bạn đăng ký lại, và bị loại bỏ sau năm đó. Cho tới ngày 20 tháng 10 năm 2026, trang này còn ghi rằng chúng tôi chưa đọc câu trả lời đó và từ chối tóm tắt nó; giờ nó được trích ở trên và được ghi vào mục đính chính của chúng tôi.",
+      },
+      {
+        q: "Có phải mọi buổi diễn đều dùng facepass không?",
+        a: "Không. Việc hỗ trợ thay đổi theo từng sự kiện, và NOL World giữ một câu trả lời riêng về cách kiểm tra. Hãy xác nhận trên trang sự kiện của show bạn, và giữ sẵn lối nhận vé thông thường.",
+      },
+      {
+        q: "Chuyện gì xảy ra nếu người khác đăng ký khuôn mặt họ trên tài khoản tôi?",
+        a: "NOL World nói rằng công ty không chịu trách nhiệm cho những vấn đề phát sinh từ đó, và đề nghị bạn đảm bảo không ai khác dùng tài khoản của bạn. Vì một khuôn mặt đã đăng ký thì không đổi được, chuyện này không khắc phục được theo cách thông thường.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL facepass: ใครถือใบหน้าของคุณ และมันมีไว้ทำอะไร",
+    summary:
+      "ลงทะเบียนครั้งเดียวแล้วกล้องจะให้คุณเข้างานโดยไม่ต้องตรวจบัตร ใบหน้าถูกเก็บโดย Toss ไม่ใช่ NOL World เปลี่ยนภายหลังไม่ได้ และการยกเลิกบริการจะลบรูปถ่ายแต่ยังเก็บสำเนาแยกไว้อีกหนึ่งปี",
+    scope:
+      "ครอบคลุมสิ่งที่ NOL World เผยแพร่เกี่ยวกับ NOL facepass รวมถึงระยะเวลาเก็บรักษาที่ระบุไว้หลังการยกเลิก: มันทำอะไร ใครเก็บข้อมูลใบหน้า และการลงทะเบียนผูกมัดคุณกับอะไร การรองรับเป็นรายงาน และหน้าอีเวนต์เป็นผู้ตัดสิน ไม่มีอะไรในหน้านี้เป็นความเห็นทางกฎหมายเกี่ยวกับข้อมูลชีวมาตรในประเทศของคุณ",
+    intro: [
+      "สถานที่จัดงานในเกาหลีกำลังเปลี่ยนไปใช้การจดจำใบหน้าที่ประตู และแฟนจากต่างประเทศเจอมันในรูปของช่องติ๊กระหว่างการจอง พร้อมคำอธิบายภาษาอังกฤษน้อยมาก คำถามที่อยู่ข้างใต้นั้นไม่ใช่เรื่องเล็ก: บริษัทที่คุณไม่เคยติดต่อด้วยกำลังจะถือใบหน้าของคุณไว้",
+      "NOL World เผยแพร่คำตอบไว้จริง คำตอบเหล่านั้นเฉพาะเจาะจง ให้ความมั่นใจมากกว่าที่บริษัทส่วนใหญ่ทำได้ และควรอ่านก่อนเข้าคิวมากกว่าอ่านตอนอยู่ในคิว รวมถึงคำตอบเรื่องสิ่งที่เกิดขึ้นกับข้อมูลหลังคุณยกเลิก ซึ่งไม่ได้พูดอย่างที่คำเดียวโดด ๆ อย่าง “ลบแล้ว” ชวนให้เข้าใจ",
+    ],
+    steps: [
+      {
+        title: "เข้าใจว่ามันมาแทนอะไร",
+        body: "NOL World อธิบาย facepass ว่าเป็นวิธีตัดขั้นตอนและเวลาที่การยืนยันตัวตนกินไปตอนเข้างาน เมื่อการลงทะเบียนใบหน้าเสร็จสมบูรณ์ กล้องจะสแกนคุณที่ประตูและคุณเข้าได้โดยไม่ต้องตรวจบัตร มันเป็นสิ่งที่มาแทนการตรวจเอกสารที่ประตู ไม่ใช่ชั้นเพิ่มเติมที่วางซ้อนทับ",
+        pitfall:
+          "การอ่านมันเป็นเพียงฟีเจอร์เพื่อความสะดวก ครึ่งหลังของคำอธิบายของ NOL World เองคือการบังคับใช้ ซึ่งเป็นหัวข้อถัดไป",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้เหตุผลอีกข้อที่มันมีอยู่",
+        body: "NOL World ระบุวัตถุประสงค์ไว้สองชั้น: ทำให้การยืนยันตัวตนลื่นไหลขึ้น และป้องกันการขายและกระจายบัตรอย่างผิดกฎหมาย ใบหน้าที่ต้องตรงกับบัญชีที่ซื้อบัตรคือมาตรการควบคุมการขายต่อ และมันมาถึงในช่วงเดียวกับกฎหมายการแสดงฉบับแก้ไขที่ครอบคลุมการขายต่อเป็นปกติวิสัยในราคาสูงกว่าหน้าบัตร ข้อเท็จจริงสองข้อนี้ควรอยู่ข้างกัน",
+        pitfall:
+          "การคิดว่าบัตรที่ซื้อผ่านตลาดขายต่อจะใช้ได้เฉย ๆ ที่ประตู facepass ระบบนี้มีอยู่เพื่อให้สิ่งนั้นใช้ไม่ได้พอดี",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่าใบหน้าไปอยู่ที่ไหนจริง ๆ",
+        body: "นี่คือส่วนที่ควรรู้ที่สุด NOL World บอกว่าข้อมูลใบหน้า — ทั้งภาพต้นฉบับและข้อมูลลักษณะเด่น — ถูกเข้ารหัสและจัดเก็บโดย Toss บริษัทฟินเทคที่อยู่เบื้องหลังบริการ FaceAccess และว่ามันไม่ได้ถูกส่งให้ NOL World หรือหน่วยงานใดไม่ว่ากรณีใด มีเพียงผลการยืนยันตัวตน สำเร็จหรือไม่สำเร็จ เท่านั้นที่ถูกแบ่งปัน NOL World ยังบอกว่าข้อมูลไม่ได้ถูกใช้เพื่อวัตถุประสงค์ใดนอกเหนือจากการให้บริการ และอ้างว่า Toss ถือใบรับรอง ISO 27701 และ CBPR",
+        pitfall:
+          "สิ่งเหล่านี้เป็นคำแถลงของ NOL World เกี่ยวกับบุคคลที่สาม ไม่ใช่การตรวจสอบบัญชี มันเฉพาะเจาะจงผิดปกติสำหรับหน้าแบบนี้ ซึ่งเป็นเหตุผลให้รับฟังอย่างจริงจัง ไม่ใช่เหตุผลให้หยุดอ่าน",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถือว่าการลงทะเบียนเป็นการถาวร",
+        body: "เมื่อใบหน้าถูกลงทะเบียนแล้วจะแก้ไขไม่ได้ NOL World ให้เหตุผลตรง ๆ ว่าเพื่อป้องกันการใช้บริการโดยฉ้อฉล ไม่มีการแก้การลงทะเบียนที่แย่ในภายหลัง สภาพที่คุณลงทะเบียนจึงเป็นสภาพที่คุณต้องอยู่กับมัน ทั้งแสง แว่นตา และอะไรก็ตามที่กล้องจับได้",
+        pitfall:
+          "การลงทะเบียนอย่างรีบร้อนขณะอยู่ในคิว ใต้แสงไม่ดี โดยตั้งใจจะกลับมาทำให้เรียบร้อยทีหลัง ไม่มีทีหลัง",
+        takes: "10 นาที อย่างตั้งใจ",
+      },
+      {
+        title: "อย่าให้ใครลงทะเบียนบนโทรศัพท์หรือบัญชีของคุณเด็ดขาด",
+        body: "NOL World บอกไว้ตรง ๆ ว่าให้แน่ใจว่าไม่มีใครอื่นใช้บัญชีของคุณ และถ้ามีคนลงทะเบียนข้อมูลใบหน้าโดยใช้โทรศัพท์หรือบัญชีของคุณ บริษัทไม่รับผิดชอบต่อปัญหาใด ๆ ที่ตามมา เครื่องที่ใช้ร่วมกันในบ้านในจังหวะที่ทัวร์เปิดขายคือวิธีที่เรื่องนี้เกิดขึ้นพอดี และบัญชีคือสิ่งที่แบกผลที่ตามมา",
+        pitfall:
+          "การช่วยเพื่อนลงทะเบียนบนโทรศัพท์ที่ล็อกอินบัญชีคุณค้างไว้ ใบหน้าที่ตอนนี้ผูกกับบัญชีของคุณคือของเขา แก้ไขไม่ได้ และข้อความปฏิเสธความรับผิดก็ชัดเจน",
+        takes: "1 นาที",
+      },
+      {
+        title: "ตรวจก่อนว่างานของคุณรองรับมันหรือเปล่า",
+        body: "การรองรับเป็นรายอีเวนต์ไม่ใช่ทุกงาน NOL World มีคำถามเฉพาะเรื่องวิธีตรวจว่าคอนเสิร์ตหนึ่งรองรับ facepass หรือไม่ ซึ่งมีอยู่ก็เพราะคำตอบไม่เหมือนกัน ตรวจหน้าอีเวนต์ของงานคุณก่อนวางแผนการเข้างานรอบ ๆ มัน และเตรียมเส้นทางปกติไว้ด้วย: หมายเลขยืนยันและเอกสารแสดงตนที่ห้องจำหน่ายบัตร",
+        pitfall:
+          "ลงทะเบียนเสร็จแล้วไปถึงสถานที่ที่ยังตรวจเอกสารอยู่ โดยทิ้งหนังสือเดินทางไว้ที่โรงแรม",
+        takes: "3 นาที",
+      },
+      {
+        title: "อ่านคำตอบเรื่องการลบให้ดี มันไม่ใช่การลบเฉย ๆ",
+        body: "NOL World ตอบคำถามว่าข้อมูลใบหน้าจะถูกลบหรือไม่ถ้าคุณยกเลิกการสมัคร และคำตอบมีสองครึ่ง ครึ่งแรก: รูปถ่ายใบหน้าของคุณถูกลบเมื่อคุณยกเลิกบริการ และการใช้อีกครั้งหมายถึงต้องลงทะเบียนใหม่ ครึ่งที่สอง: เพื่อวัตถุประสงค์ของการยืนยันตัวตน ข้อมูลถูกจัดเก็บแยกต่างหากและเก็บรักษาไว้หนึ่งปีนับจากจุดที่ยกเลิก โดย NOL World บอกว่าใช้เฉพาะเพื่อการยืนยันตัวตนตอนลงทะเบียนใหม่ และถูกทำลายหลังจากปีนั้น ดังนั้นการยกเลิกการสมัครคือการลบรูปถ่ายและเริ่มเดินนาฬิกา ไม่ใช่การหยุดนาฬิกา นั่นเป็นนโยบายที่แก้ต่างได้ และมันไม่ใช่สิ่งที่คำว่า “ลบแล้ว” โดด ๆ สื่อถึง จึงควรอ่านด้วยถ้อยคำของเขาเองก่อนคุณจะลงทะเบียน",
+        pitfall:
+          "การรับเอาบทสรุปคำเดียวของบุคคลที่สามคนใดก็ตามเกี่ยวกับสิ่งที่เกิดกับข้อมูลชีวมาตร รวมถึงของเราด้วย อ่านประโยคเรื่องการเก็บรักษา ไม่ใช่อ่านหัวเรื่อง",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World เห็นใบหน้าของฉันไหม",
+        a: "NOL World บอกว่าไม่ ข้อมูลใบหน้าถูกเข้ารหัสและเก็บโดย Toss และ NOL World ระบุว่ามันไม่ได้ถูกส่งให้ NOL World หรือหน่วยงานใดไม่ว่ากรณีใด มีเพียงความสำเร็จหรือความล้มเหลวของการยืนยันตัวตนเท่านั้นที่ถูกแบ่งปัน",
+      },
+      {
+        q: "ลงทะเบียนใบหน้าใหม่ได้ไหมถ้าครั้งแรกออกมาไม่ดี",
+        a: "ไม่ได้ NOL World บอกว่าใบหน้าที่ลงทะเบียนแล้วแก้ไขไม่ได้ เพื่อป้องกันการใช้บริการโดยฉ้อฉล ลงทะเบียนอย่างตั้งใจตั้งแต่ครั้งแรก",
+      },
+      {
+        q: "ข้อมูลใบหน้าของฉันจะถูกลบไหมถ้าฉันยกเลิก facepass",
+        a: "บางส่วน แล้วจึงนับถอยหลัง NOL World บอกว่ารูปถ่ายใบหน้าถูกลบเมื่อคุณยกเลิกการสมัคร และว่าคุณจะต้องลงทะเบียนใหม่เพื่อใช้บริการ เขายังบอกว่าเพื่อวัตถุประสงค์ของการยืนยันตัวตน ข้อมูลถูกจัดเก็บแยกและเก็บรักษาไว้หนึ่งปีนับจากการยกเลิก ใช้เฉพาะเพื่อการยืนยันตัวตนหากคุณลงทะเบียนใหม่ และถูกทำลายหลังจากปีนั้น จนถึงวันที่ 20 ตุลาคม 2026 หน้านี้เคยเขียนว่าเรายังไม่ได้อ่านคำตอบนั้นและปฏิเสธที่จะสรุปมัน ตอนนี้มันถูกยกมาไว้ข้างบนและบันทึกไว้ในรายการแก้ไขของเราแล้ว",
+      },
+      {
+        q: "ทุกคอนเสิร์ตใช้ facepass ไหม",
+        a: "ไม่ การรองรับต่างกันไปตามอีเวนต์ และ NOL World เก็บคำตอบแยกไว้เรื่องวิธีตรวจสอบ ยืนยันบนหน้าอีเวนต์ของงานคุณ และคงเส้นทางรับบัตรแบบปกติไว้ให้ใช้ได้",
+      },
+      {
+        q: "ถ้ามีคนอื่นลงทะเบียนใบหน้าของเขาบนบัญชีฉันจะเกิดอะไรขึ้น",
+        a: "NOL World บอกว่าบริษัทไม่รับผิดชอบต่อปัญหาที่เกิดจากเรื่องนั้น และขอให้คุณแน่ใจว่าไม่มีใครอื่นใช้บัญชีของคุณ เนื่องจากใบหน้าที่ลงทะเบียนแล้วเปลี่ยนไม่ได้ เรื่องนี้จึงกู้คืนด้วยวิธีปกติไม่ได้",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL facepass: sino ang may hawak ng mukha mo, at para saan ito",
+    summary:
+      "Magparehistro nang minsan at papapasukin ka ng isang kamera nang walang pagsusuri ng tiket. Ang mukha ay hawak ng Toss at hindi ng NOL World, hindi na ito mababago pagkatapos, at ang pagkansela ng serbisyo ay nagbubura sa larawan ngunit nagtatago ng hiwalay na kopya sa loob ng isang taon.",
+    scope:
+      "Sakop nito ang inilalathala ng NOL World tungkol sa NOL facepass, pati na ang nakasaad nitong panahon ng pag-iingat pagkatapos ng pagkansela: kung ano ang ginagawa nito, sino ang nag-iimbak ng datos ng mukha, at kung saan ka itinatali ng pagpaparehistro. Kada palabas ang suporta, at ang pahina ng event ang nagpapasya. Walang anuman dito ang legal na opinyon tungkol sa biometrikong datos sa sarili mong bansa.",
+    intro: [
+      "Lumilipat ang mga Koreanong venue sa pagkilala ng mukha sa pintuan, at nakakaharap ito ng isang fan mula sa ibang bansa bilang isang checkbox habang nagbu-book, na may napakakaunting paliwanag sa Ingles. Hindi maliit ang tanong na nasa ilalim nito: isang kompanyang hindi mo pa nakakatransaksiyon ang malapit nang humawak sa mukha mo.",
+      "May inilalathalang sagot ang NOL World. Tiyak ang mga ito, mas nakapagpapanatag kaysa sa nagagawa ng karamihan ng kompanya, at sulit basahin bago ang pila sa halip na habang nasa pila — kasama na ang tungkol sa kung ano ang nangyayari sa datos pagkatapos mong magkansela, na hindi tumutugma sa ipinahihiwatig ng isang salitang gaya ng “binura”.",
+    ],
+    steps: [
+      {
+        title: "Unawain kung ano ang pinapalitan nito",
+        body: "Inilalarawan ng NOL World ang facepass bilang paraan para paikliin ang proseso at ang oras na kinakain ng pagpapatunay ng pagkakakilanlan sa pagpasok. Kapag kumpleto na ang pagpaparehistro ng mukha, isang kamera ang mag-i-scan sa iyo sa pintuan at papasok ka nang walang pagsusuri ng tiket. Kapalit ito ng pagsusuri ng dokumento sa gate, hindi dagdag na patong dito.",
+        pitfall:
+          "Ang pagbasa rito bilang tampok lamang para sa kaginhawahan. Ang ikalawang kalahati ng mismong paglalarawan ng NOL World ay tungkol sa pagpapatupad, na siyang susunod na hakbang.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin ang isa pang dahilan ng pag-iral nito",
+        body: "Dalawang beses isinasaad ng NOL World ang layunin: ang pagpapadali sa pagpapatunay ng pagkakakilanlan, at ang pagpigil sa iligal na pagbebenta at pamamahagi ng tiket. Ang mukhang kailangang tumugma sa account na bumili ng tiket ay isang kontrol laban sa muling pagbebenta, at dumarating ito sa panahong kapareho ng isang binagong Performances Act na umaabot sa paulit-ulit na muling pagbebenta lampas sa nakalimbag na presyo. Magkatabi dapat ang dalawang katotohanang iyon.",
+        pitfall:
+          "Ang pag-aakalang gagana na lang ang tiket na binili sa isang palengke ng muling pagbebenta sa isang gate na may facepass. Umiiral ang sistema mismo para hindi iyon gumana.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin kung saan talaga napupunta ang mukha",
+        body: "Ito ang bahaging pinakasulit malaman. Sinasabi ng NOL World na ang impormasyon ng mukha — ang orihinal na larawan at ang datos ng katangian — ay naka-encrypt at iniimbak ng Toss, ang fintech na nasa likod ng serbisyong FaceAccess, at na hindi ito ibinibigay sa NOL World o sa mga ahensiya sa anumang pagkakataon. Ang resulta lamang ng pagpapatunay, tagumpay o kabiguan, ang ibinabahagi. Sinasabi rin ng NOL World na hindi ginagamit ang datos para sa anumang layunin bukod sa pagbibigay ng serbisyo, at binabanggit nito ang hawak ng Toss na sertipikasyong ISO 27701 at CBPR.",
+        pitfall:
+          "Mga pahayag ito ng NOL World tungkol sa ibang partido, hindi isang pag-awdit. Hindi karaniwang tiyak ang mga ito para sa ganitong uri ng pahina, na dahilan para seryosohin ang mga ito at hindi dahilan para itigil ang pagbabasa.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Ituring na permanente ang pagpaparehistro",
+        body: "Kapag nakarehistro na ang isang mukha ay hindi na ito mababago. Malinaw ang ibinibigay na dahilan ng NOL World — para maiwasan ang mapandayang paggamit ng serbisyo. Walang pagtatama ng masamang pagpaparehistro sa kalaunan, kaya ang mga kalagayang pinagrehistruhan mo ang mga kalagayang mananatili sa iyo: ang ilaw, ang salamin sa mata, anuman ang nakuha ng kamera.",
+        pitfall:
+          "Ang mabilisang pagpaparehistro habang nasa pila, sa madilim na ilaw, na may balak gawing maayos mamaya. Walang mamaya.",
+        takes: "10 minuto, sinasadya",
+      },
+      {
+        title: "Huwag hayaang magparehistro ang sinuman sa telepono o account mo",
+        body: "Tuwirang sinasabi ito ng NOL World: tiyaking walang ibang gumagamit ng account mo, at kung may magparehistro ng impormasyon ng mukha gamit ang telepono o account mo, hindi mananagot ang kompanya sa anumang problemang magmumula roon. Ang device na pinagsasaluhan sa bahay sa sandaling ibinebenta ang isang tour ang eksaktong paraan kung paano ito nangyayari, at ang account ang nagdadala ng kahihinatnan.",
+        pitfall:
+          "Ang pagtulong sa kaibigang magparehistro sa teleponong naka-log in ka. Ang mukhang nakakabit na ngayon sa account mo ay sa kaniya, hindi ito mababago, at hayagan ang paalalang hindi sila mananagot.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Tingnan kung sinusuportahan ba ito ng palabas mo",
+        body: "Kada event ang suporta at hindi pangkalahatan — may itinatagong tanong ang NOL World na partikular tungkol sa kung paano tingnan kung sinusuportahan ng isang konsiyerto ang facepass, na umiiral lamang dahil nag-iiba ang sagot. Tingnan ang pahina ng event para sa palabas mo bago ka magplano ng pagpasok batay dito, at ihanda ang karaniwang ruta: numero ng kumpirmasyon at pagkakakilanlan sa box office.",
+        pitfall:
+          "Ang magparehistro, at pagkatapos ay dumating sa isang venue na nagsusuri pa rin ng dokumento, na naiwan sa hotel ang pasaporte.",
+        takes: "3 minuto",
+      },
+      {
+        title: "Basahing mabuti ang sagot tungkol sa pagbura — hindi ito basta pagbura",
+        body: "Sinasagot ng NOL World kung binubura ba ang impormasyon ng mukha kapag nag-unsubscribe ka, at may dalawang kalahati ang sagot. Ang una: binubura ang larawan ng mukha mo kapag kinansela mo ang serbisyo, at ang paggamit muli nito ay nangangahulugan ng muling pagpaparehistro. Ang pangalawa: para sa layunin ng pagpapatunay ng pagkakakilanlan, hiwalay na iniimbak at iniingatan ang datos sa loob ng isang taon mula sa puntong kinansela — ginagamit, ayon sa NOL World, para lamang sa pagpapatunay ng pagkakakilanlan kapag nagparehistro kang muli, at itinatapon pagkatapos ng taong iyon. Kaya ang pag-unsubscribe ay nagbubura ng larawan at nagsisimula ng orasan sa halip na magpatigil nito. Isa itong patakarang maipagtatanggol at hindi ito ang ipinahihiwatig ng salitang “binura” nang mag-isa, kaya sulit itong basahin sa sarili nilang salita bago ka magparehistro.",
+        pitfall:
+          "Ang pagtanggap sa isang-salitang buod ng sinumang ibang partido tungkol sa nangyayari sa biometrikong datos, pati na ang sa amin. Basahin ang pangungusap tungkol sa pag-iingat, hindi ang ulong balita.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Nakikita ba ng NOL World ang mukha ko?",
+        a: "Sinasabi ng NOL World na hindi. Naka-encrypt at hawak ng Toss ang impormasyon ng mukha, at isinasaad ng NOL World na hindi ito ibinibigay sa NOL World o sa mga ahensiya sa anumang pagkakataon — ang tagumpay o kabiguan lamang ng pagpapatunay ang ibinabahagi.",
+      },
+      {
+        q: "Puwede ko bang irehistrong muli ang mukha ko kung masama ang unang pagtatangka?",
+        a: "Hindi. Sinasabi ng NOL World na hindi mababago ang nakarehistrong mukha, upang maiwasan ang mapandayang paggamit ng serbisyo. Magparehistro nang sinasadya sa unang pagkakataon.",
+      },
+      {
+        q: "Buburahin ba ang datos ng mukha ko kung kakanselahin ko ang facepass?",
+        a: "Bahagya, at pagkatapos ay may orasan. Sinasabi ng NOL World na binubura ang larawan ng mukha kapag nag-unsubscribe ka, at na kailangan mong magparehistrong muli para magamit ang serbisyo. Sinasabi rin nitong para sa mga layunin ng pagpapatunay ng pagkakakilanlan ay hiwalay na iniimbak at iniingatan ang datos sa loob ng isang taon mula sa pagkansela, ginagamit lamang para sa pagpapatunay kung magparehistro kang muli, at itinatapon pagkatapos ng taong iyon. Hanggang 20 Oktubre 2026 ay sinasabi ng pahinang ito na hindi pa namin nababasa ang sagot na iyon at tumatangging buurin ito; sinipi na ito sa itaas at naitala na sa aming mga pagwawasto.",
+      },
+      {
+        q: "Gumagamit ba ng facepass ang bawat konsiyerto?",
+        a: "Hindi. Nag-iiba ang suporta kada event, at may hiwalay na sagot ang NOL World tungkol sa kung paano ito tingnan. Kumpirmahin sa pahina ng event para sa palabas mo, at panatilihing available ang karaniwang ruta ng pagkuha.",
+      },
+      {
+        q: "Ano ang mangyayari kung may ibang magparehistro ng mukha niya sa account ko?",
+        a: "Sinasabi ng NOL World na hindi mananagot ang kompanya sa mga problemang magmumula roon, at hinihiling nitong tiyakin mong walang ibang gumagamit ng account mo. Dahil hindi mapapalitan ang nakarehistrong mukha, hindi ito naaayos sa karaniwang paraan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Gia hạn tư cách thành viên Weverse từ nước ngoài",
+    summary:
+      "Thanh toán Tự động chạy vào ngày cuối cùng của kỳ hạn, đúng giờ bạn đã trả lần đầu, bằng một loại tiền phải khớp, và nếu nó hỏng sau khi khung gia hạn khép lại thì không còn đường nào ngoài mua lại.",
+    scope:
+      "Nói về việc giữ cho một tư cách thành viên Weverse Official Membership hiện có tiếp tục chạy, và cái giá của một khoảng trống. Việc lần đầu gia nhập fan club, và việc đủ điều kiện cho một đợt bán trước cụ thể, là những câu hỏi riêng nằm trong hướng dẫn về bán trước. Mọi thứ ở đây lấy từ thông báo ngày 3 tháng 9 năm 2026 của Weverse Shop và các trang sản phẩm mà nó dẫn tới.",
+    intro: [
+      "Một tư cách thành viên hết hạn vào đúng tuần dở nhất không lấy đi của bạn một khoản thuê bao. Nó lấy đi của bạn đợt bán trước, vì điều kiện được xét dựa trên một tư cách thành viên đang hoạt động trước một mốc chặn, và việc mua lại sau đó bao nhiêu lần cũng không dời được cái mốc ấy.",
+      "Weverse bổ sung Thanh toán Tự động vào ngày 3 tháng 9 năm 2026, qua đó loại bỏ cách hết hạn thông thường. Nó cũng mang theo bốn quy tắc dễ làm sai, và một điểm không quay đầu được.",
+    ],
+    steps: [
+      {
+        title: "Tìm xem bạn đang ở nhóm thành viên nào",
+        body: "Weverse vận hành tư cách thành viên theo ba nhóm — Global, Japan và USA — và chúng được quản lý riêng. Phương thức thanh toán, loại tiền và thiết lập Thanh toán Tự động đều theo từng nhóm, và mỗi nhóm có thể lưu tới năm phương thức thanh toán với một phương thức được đánh dấu là chính. Bạn ở nhóm nào không phải thứ bạn chọn bừa; đó là nơi tư cách thành viên của bạn vốn đã nằm.",
+        pitfall:
+          "Thiết lập Thanh toán Tự động trên nhóm mà bạn không dùng. Màn hình trông y hệt nhau, còn tư cách thành viên được gia hạn lại là cái kia.",
+        takes: "5 phút",
+      },
+      {
+        title: "Kiểm tra loại tiền của bạn có phải loại nhóm đó thực sự nhận không",
+        body: "Tính đến ngày 3 tháng 9 năm 2026: một Global Membership nhận thẻ ghi nợ hoặc tín dụng Hàn Quốc cho KRW, và thẻ đã đăng ký với PayPal cho JPY, USD hoặc MXN. Một Japan Membership nhận thẻ tín dụng cho JPY. Một US Membership nhận thẻ đã đăng ký với PayPal cho USD. Với một fan ở nước ngoài dùng Global Membership trả bằng USD, điều đó nghĩa là chiếc thẻ đi qua PayPal — không có lựa chọn thẻ trực tiếp.",
+        pitfall:
+          "Trông đợi đăng ký thẳng một chiếc Visa trên một Global Membership bằng USD. Cùng mô thức đó chạy xuyên suốt Weverse Shop, và nó là lý do một chiếc thẻ hoạt động tốt ở mọi nơi khác vẫn có thể hỏng ở đây.",
+        takes: "10 phút",
+      },
+      {
+        title: "Cho loại tiền lúc mua khớp với phương thức chính",
+        body: "Weverse nói thẳng: loại tiền thanh toán dùng để mua tư cách thành viên phải khớp với loại tiền thanh toán của phương thức Thanh toán Tự động chính của bạn. Một sự lệch nhau không được xử lý có lợi cho bạn vào lúc gia hạn — nó là một lần gia hạn không đi qua được.",
+        pitfall:
+          "Mua tư cách thành viên bằng một loại tiền rồi sau đó thêm một phương thức chính bằng loại tiền khác, chuyện trông ổn trên cả hai màn hình và chỉ hỏng vào đúng ngày nó quan trọng.",
+        takes: "3 phút",
+      },
+      {
+        title: "Biết chính xác khoảnh khắc nó gia hạn",
+        body: "Thanh toán Tự động chạy vào ngày cuối cùng của kỳ hiệu lực hiện tại, vào đúng giờ trong ngày mà bạn đã trả tiền lần đầu. Giờ đó được đặt trên một máy chủ Hàn Quốc, nên với phần lớn người đọc nó rơi vào đâu đó trong đêm hoặc sáng sớm. Nếu nó hỏng, Weverse gửi một email và một thông báo đẩy rồi thử lại mỗi ngày một lần vào đúng giờ đó, kéo dài suốt khung gia hạn.",
+        pitfall:
+          "Một chiếc thẻ hết hạn giữa kỳ, hay một ngân hàng chặn khoản trừ tiền, biến thành một thông báo đến vào bốn giờ sáng giờ bạn. Việc thử lại là mỗi ngày chứ không phải mỗi giờ — một ngày không nhìn thấy email là một ngày của khung gia hạn trôi đi.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hiểu điều mà việc hủy Thanh toán Tự động không làm",
+        body: "Hủy Thanh toán Tự động sẽ dừng các lần gia hạn trong tương lai. Nó không hủy và không hoàn tiền tư cách thành viên bạn đang giữ, và bạn vẫn dùng bình thường cho tới khi kỳ hiệu lực kết thúc. Việc hủy và hoàn tiền chính tư cách thành viên là chuyện riêng, do trang sản phẩm của tư cách thành viên đó điều chỉnh.",
+        pitfall:
+          "Hủy Thanh toán Tự động mà mong được trả lại tiền, và tách biệt với điều đó: hủy nó để “tạm dừng” trong lúc có tin đồn về một tour, tức đúng cái tuần bạn ít muốn việc gia hạn dừng lại nhất.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hãy coi lúc khung gia hạn kết thúc là điểm không quay đầu được",
+        body: "Nếu bạn đã hủy Thanh toán Tự động thì bạn có thể kích hoạt lại — nhưng chỉ khi khung gia hạn vẫn đang chạy. Khi khung đó kết thúc, việc kích hoạt lại không còn khả dụng và con đường duy nhất là mua lại tư cách thành viên. Weverse cũng cho hai nút thủ công bên trong khung đó: Pay Now để gia hạn ngay, và Retry Now nếu một lần thanh toán đã hỏng trên một phương thức mà từ đó bạn đã sửa.",
+        pitfall:
+          "Ngồi chờ xem các lần thử lại có thành công không. Retry Now và Pay Now tồn tại đúng để bạn không phải chờ, và cả hai biến mất khi khung đóng lại.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy gia hạn thay vì mua lại, vì hồ sơ được mang theo",
+        body: "Khi một tư cách thành viên gia hạn qua Thanh toán Tự động, thông tin thành viên đã đăng ký trên tư cách hiện có sẽ được giữ lại trên tư cách tiếp theo. Chính hồ sơ đó — đặc biệt là cái tên trên nó — là thứ mà một lần xét điều kiện bán trước chạy đối chiếu. Mua một tư cách thành viên mới sau một khoảng trống sẽ mở một hồ sơ mới và một ngày bắt đầu mới, và đó mới là phần khiến bạn mất một đợt bán trước chứ không phải mất một khoản phí thuê bao.",
+        pitfall:
+          "Cho rằng tính liên tục là chuyện của lòng trung thành. Nó là chuyện của một ngày tháng và một cái tên trên một hồ sơ, và một khoảng hở ở bất kỳ cái nào cũng là thứ mà khâu xét duyệt nhìn thấy.",
+        takes: "2 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi trả tiền cho Global Membership bằng Visa hay Mastercard của mình được không?",
+        a: "Không trực tiếp, nếu nằm ngoài KRW. Một Global Membership nhận thẻ Hàn Quốc cho KRW, và thẻ đã đăng ký với PayPal cho JPY, USD hoặc MXN — nên chiếc thẻ của bạn tới được Weverse thông qua PayPal chứ không phải dưới dạng một khoản thanh toán thẻ trực tiếp.",
+      },
+      {
+        q: "Chính xác thì Thanh toán Tự động trừ tiền tôi khi nào?",
+        a: "Vào ngày cuối cùng của kỳ hiệu lực hiện tại, vào đúng giờ trong ngày mà bạn đã trả lần đầu. Giờ đó được đặt theo đồng hồ Hàn Quốc, nên hãy quy đổi sang giờ của bạn.",
+      },
+      {
+        q: "Nếu Thanh toán Tự động hỏng, tôi có bao nhiêu cơ hội?",
+        a: "Weverse báo cho bạn qua email và thông báo đẩy, rồi thử lại mỗi ngày một lần vào đúng giờ đó trong phần còn lại của khung gia hạn. Bạn cũng có thể dùng Retry Now sau khi sửa phương thức thanh toán, hoặc Pay Now để gia hạn ngay.",
+      },
+      {
+        q: "Tôi đã hủy Thanh toán Tự động. Bật lại được không?",
+        a: "Được, khi khung gia hạn vẫn còn mở — có hẳn một nút kích hoạt lại đúng cho việc đó. Sau khi khung gia hạn kết thúc thì bạn không thể, và lựa chọn duy nhất là mua lại tư cách thành viên.",
+      },
+      {
+        q: "Tư cách thành viên của tôi hở vài ngày thì có sao không?",
+        a: "Có thể còn quan trọng hơn cả giá tiền. Việc gia hạn giữ lại thông tin thành viên từ tư cách hiện có; việc mua lại mở một hồ sơ mới với một ngày mới. Điều kiện bán trước được xét dựa trên hồ sơ đó và mốc chặn của nó, chứ không dựa trên việc bạn đã là fan bao lâu.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ต่ออายุสมาชิก Weverse จากต่างประเทศ",
+    summary:
+      "ระบบชำระเงินอัตโนมัติทำงานในวันสุดท้ายของรอบสมาชิกของคุณ ในเวลาเดียวกับที่คุณจ่ายครั้งแรก ด้วยสกุลเงินที่ต้องตรงกัน และถ้ามันล้มเหลวหลังช่วงต่ออายุผ่านไป ก็ไม่มีทางกลับนอกจากซื้อใหม่",
+    scope:
+      "ครอบคลุมการรักษาสมาชิก Weverse Official Membership ที่มีอยู่ให้เดินต่อไป และราคาของการปล่อยให้ขาดช่วง การเข้าร่วมแฟนคลับครั้งแรก และการมีคุณสมบัติสำหรับพรีเซลงานใดงานหนึ่ง เป็นคนละคำถามซึ่งอยู่ในคู่มือพรีเซล ทุกอย่างในหน้านี้มาจากประกาศของ Weverse Shop วันที่ 3 กันยายน 2026 และหน้าสินค้าที่ประกาศนั้นชี้ไป",
+    intro: [
+      "สมาชิกภาพที่ขาดช่วงในสัปดาห์ที่ผิดไม่ได้ทำให้คุณเสียค่าสมาชิก มันทำให้คุณเสียรอบพรีเซล เพราะคุณสมบัติถูกตรวจกับสมาชิกภาพที่ยังมีผลก่อนเส้นตายหนึ่ง และการซื้อใหม่ภายหลังกี่ครั้งก็ไม่ขยับวันนั้น",
+      "Weverse เพิ่มระบบชำระเงินอัตโนมัติเมื่อวันที่ 3 กันยายน 2026 ซึ่งตัดวิธีขาดช่วงแบบธรรมดาออกไป มันยังนำกฎสี่ข้อที่เข้าใจผิดได้ง่ายมาด้วย และจุดหนึ่งที่ย้อนกลับไม่ได้",
+    ],
+    steps: [
+      {
+        title: "ดูว่าคุณอยู่ในหมวดสมาชิกใด",
+        body: "Weverse เปิดสมาชิกภาพเป็นสามหมวด — Global, Japan และ USA — และบริหารแยกกัน วิธีชำระเงิน สกุลเงิน และการตั้งค่าชำระเงินอัตโนมัติ ล้วนแยกตามหมวด และแต่ละหมวดเก็บวิธีชำระเงินได้ถึงห้าวิธีโดยมีหนึ่งวิธีถูกทำเครื่องหมายเป็นวิธีหลัก คุณอยู่หมวดใดไม่ใช่เรื่องที่เลือกเล่น ๆ มันคือที่ที่สมาชิกภาพของคุณอยู่แล้ว",
+        pitfall:
+          "การตั้งค่าชำระเงินอัตโนมัติบนหมวดที่คุณไม่ได้ใช้ หน้าจอดูเหมือนกันเป๊ะ แต่สมาชิกภาพที่ถูกต่ออายุคืออีกอันหนึ่ง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ตรวจว่าสกุลเงินของคุณเป็นสกุลที่หมวดนั้นรับจริง",
+        body: "ณ วันที่ 3 กันยายน 2026: Global Membership รับบัตรเดบิตหรือเครดิตของเกาหลีใต้สำหรับ KRW และรับบัตรที่ลงทะเบียนกับ PayPal สำหรับ JPY, USD หรือ MXN Japan Membership รับบัตรเครดิตสำหรับ JPY US Membership รับบัตรที่ลงทะเบียนกับ PayPal สำหรับ USD สำหรับแฟนที่อยู่ต่างประเทศซึ่งใช้ Global Membership จ่ายเป็น USD นั่นแปลว่าบัตรเดินผ่าน PayPal ไม่มีตัวเลือกบัตรโดยตรง",
+        pitfall:
+          "การคาดหวังว่าจะลงทะเบียนบัตร Visa ตรง ๆ บน Global Membership ที่เป็น USD รูปแบบเดียวกันนี้เดินทะลุทั้ง Weverse Shop และเป็นเหตุผลที่บัตรซึ่งใช้ได้ทุกที่ยังล้มเหลวที่นี่ได้",
+        takes: "10 นาที",
+      },
+      {
+        title: "ทำให้สกุลเงินตอนซื้อตรงกับวิธีชำระเงินหลัก",
+        body: "Weverse บอกตรง ๆ ว่าสกุลเงินที่ใช้ซื้อสมาชิกภาพต้องตรงกับสกุลเงินของวิธีชำระเงินอัตโนมัติหลักของคุณ ความไม่ตรงกันจะไม่ถูกตัดสินให้เข้าข้างคุณในเวลาต่ออายุ มันคือการต่ออายุที่ไม่ผ่าน",
+        pitfall:
+          "การซื้อสมาชิกภาพด้วยสกุลเงินหนึ่งแล้วค่อยเพิ่มวิธีหลักเป็นอีกสกุลเงินหนึ่งในภายหลัง ซึ่งดูเรียบร้อยทั้งสองหน้าจอและพังเฉพาะวันที่มันสำคัญ",
+        takes: "3 นาที",
+      },
+      {
+        title: "รู้จังหวะที่มันต่ออายุให้แม่น",
+        body: "ระบบชำระเงินอัตโนมัติทำงานในวันสุดท้ายของช่วงที่สมาชิกภาพปัจจุบันยังมีผล ในเวลาเดียวกับที่คุณจ่ายครั้งแรก เวลานั้นถูกตั้งบนเซิร์ฟเวอร์เกาหลี สำหรับผู้อ่านส่วนใหญ่มันจึงตกอยู่ที่ไหนสักแห่งในตอนกลางคืนหรือเช้ามืด ถ้ามันล้มเหลว Weverse จะส่งอีเมลและการแจ้งเตือนแบบพุช แล้วลองใหม่วันละครั้งในเวลาเดิม ตลอดช่วงที่การต่ออายุยังเปิดอยู่",
+        pitfall:
+          "บัตรที่หมดอายุกลางรอบ หรือธนาคารที่บล็อกการเรียกเก็บ กลายเป็นการแจ้งเตือนที่มาถึงตอนตีสี่ตามเวลาคุณ การลองใหม่เป็นรายวันไม่ใช่รายชั่วโมง หนึ่งวันที่ไม่เห็นอีเมลคือหนึ่งวันของช่วงเวลาที่ถูกใช้ไป",
+        takes: "2 นาที",
+      },
+      {
+        title: "เข้าใจว่าการยกเลิกระบบชำระเงินอัตโนมัติไม่ได้ทำอะไร",
+        body: "การยกเลิกระบบชำระเงินอัตโนมัติหยุดการต่ออายุในอนาคต มันไม่ได้ยกเลิกหรือคืนเงินสมาชิกภาพที่คุณถืออยู่แล้ว และคุณยังใช้งานได้ตามปกติจนกว่าช่วงที่มีผลจะสิ้นสุด การยกเลิกและคืนเงินตัวสมาชิกภาพเองเป็นคนละเรื่อง และอยู่ภายใต้หน้าสินค้าของสมาชิกภาพนั้น",
+        pitfall:
+          "การยกเลิกระบบชำระเงินอัตโนมัติโดยหวังจะได้เงินคืน และอีกกรณีหนึ่ง: การยกเลิกเพื่อ “พักไว้ก่อน” ในช่วงที่มีข่าวลือเรื่องทัวร์ ซึ่งเป็นสัปดาห์ที่คุณอยากให้การต่ออายุหยุดน้อยที่สุด",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถือว่าจุดสิ้นสุดของช่วงต่ออายุคือจุดที่ย้อนกลับไม่ได้",
+        body: "ถ้าคุณยกเลิกระบบชำระเงินอัตโนมัติไปแล้ว คุณเปิดใช้ใหม่ได้ แต่เฉพาะตอนที่ช่วงต่ออายุยังเดินอยู่ เมื่อช่วงนั้นสิ้นสุดลง การเปิดใช้ใหม่จะไม่มีให้ และทางเดียวคือซื้อสมาชิกภาพอีกครั้ง Weverse ยังให้ปุ่มควบคุมด้วยมือสองปุ่มภายในช่วงนั้น: Pay Now เพื่อต่ออายุทันที และ Retry Now ถ้าการชำระเงินล้มเหลวบนวิธีที่คุณแก้ไขแล้ว",
+        pitfall:
+          "การรอดูว่าการลองใหม่จะสำเร็จไหม Retry Now และ Pay Now มีอยู่เพื่อที่คุณจะได้ไม่ต้องรอ และทั้งคู่หายไปเมื่อช่วงเวลาปิดลง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ต่ออายุแทนการซื้อใหม่ เพราะระเบียนถูกยกไปด้วย",
+        body: "เมื่อสมาชิกภาพต่ออายุผ่านระบบชำระเงินอัตโนมัติ ข้อมูลสมาชิกที่ลงทะเบียนไว้บนสมาชิกภาพเดิมจะถูกคงไว้บนอันถัดไป ระเบียนนั้น — โดยเฉพาะชื่อที่อยู่บนมัน — คือสิ่งที่การตรวจคุณสมบัติพรีเซลใช้เทียบ การซื้อสมาชิกภาพใหม่หลังการขาดช่วงจะเริ่มระเบียนใหม่และวันเริ่มต้นใหม่ และนั่นคือส่วนที่ทำให้คุณเสียรอบพรีเซล ไม่ใช่เสียแค่ค่าสมาชิก",
+        pitfall:
+          "การคิดว่าความต่อเนื่องเป็นเรื่องของความภักดี มันเป็นเรื่องของวันที่และชื่อบนระเบียน และช่องว่างในอย่างใดอย่างหนึ่งคือสิ่งที่การตรวจมองเห็น",
+        takes: "2 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "จ่ายค่า Global Membership ด้วยบัตร Visa หรือ Mastercard ของตัวเองได้ไหม",
+        a: "ไม่ได้โดยตรงถ้าอยู่นอก KRW Global Membership รับบัตรเกาหลีสำหรับ KRW และรับบัตรที่ลงทะเบียนกับ PayPal สำหรับ JPY, USD หรือ MXN บัตรของคุณจึงไปถึง Weverse ผ่าน PayPal แทนที่จะเป็นการชำระด้วยบัตรโดยตรง",
+      },
+      {
+        q: "ระบบชำระเงินอัตโนมัติเรียกเก็บเงินฉันตอนไหนกันแน่",
+        a: "ในวันสุดท้ายของช่วงที่สมาชิกภาพปัจจุบันของคุณมีผล ในเวลาเดียวกับที่คุณจ่ายครั้งแรก เวลานั้นถูกตั้งตามนาฬิกาเกาหลี จึงควรแปลงเป็นเวลาของคุณเอง",
+      },
+      {
+        q: "ถ้าระบบชำระเงินอัตโนมัติล้มเหลว ฉันมีกี่โอกาส",
+        a: "Weverse แจ้งคุณทางอีเมลและการแจ้งเตือนแบบพุช แล้วลองใหม่วันละครั้งในเวลาเดิมตลอดช่วงต่ออายุที่เหลือ คุณยังใช้ Retry Now ได้หลังแก้วิธีชำระเงินแล้ว หรือใช้ Pay Now เพื่อต่ออายุทันที",
+      },
+      {
+        q: "ฉันยกเลิกระบบชำระเงินอัตโนมัติไปแล้ว เปิดกลับได้ไหม",
+        a: "ได้ ตอนที่ช่วงต่ออายุยังเปิดอยู่ มีปุ่มเปิดใช้ใหม่สำหรับเรื่องนี้โดยเฉพาะ หลังช่วงต่ออายุสิ้นสุดแล้วคุณทำไม่ได้ และตัวเลือกเดียวคือซื้อสมาชิกภาพใหม่",
+      },
+      {
+        q: "สมาชิกภาพของฉันขาดไปไม่กี่วันจะเป็นไรไหม",
+        a: "อาจสำคัญกว่าราคาเสียอีก การต่ออายุคงข้อมูลสมาชิกจากสมาชิกภาพเดิมไว้ ส่วนการซื้อใหม่เริ่มระเบียนใหม่พร้อมวันที่ใหม่ คุณสมบัติพรีเซลถูกตรวจกับระเบียนนั้นและเส้นตายของมัน ไม่ได้ตรวจว่าคุณเป็นแฟนมานานแค่ไหน",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pag-renew ng membership sa Weverse mula sa ibang bansa",
+    summary:
+      "Tumatakbo ang Auto Payment sa huling araw ng termino mo sa oras na una kang nagbayad, sa isang perang kailangang magtugma, at kung bumagsak ito pagkalipas ng bintana ng pag-renew ay wala nang balikan maliban sa muling pagbili.",
+    scope:
+      "Sakop nito ang pagpapanatiling buhay ng umiiral nang Weverse Official Membership, at kung ano ang halaga ng isang pagkaputol. Ang unang pagsali sa isang fan club, at ang pagiging kuwalipikado sa isang tiyak na presale, ay magkahiwalay na tanong na nasa gabay ng presale. Lahat ng narito ay mula sa abiso ng Weverse Shop noong 3 Setyembre 2026 at sa mga pahina ng produktong tinutukoy nito.",
+    intro: [
+      "Ang membership na napaso sa maling linggo ay hindi nagkakahalaga sa iyo ng isang subscription. Nagkakahalaga ito sa iyo ng presale, dahil sinusuri ang pagiging kuwalipikado laban sa isang membership na may bisa bago ang isang hangganan, at gaano ka man kadalas bumili muli pagkatapos ay hindi nito maigagalaw ang petsang iyon.",
+      "Idinagdag ng Weverse ang Auto Payment noong 3 Setyembre 2026, na nag-aalis ng karaniwang paraan ng pagkapaso. Nagdala rin ito ng apat na tuntuning madaling mapagkamalan, at isang puntong hindi na mababalikan.",
+    ],
+    steps: [
+      {
+        title: "Alamin kung aling kategorya ng membership ang nasa iyo",
+        body: "Pinapatakbo ng Weverse ang mga membership sa tatlong kategorya — Global, Japan at USA — at hiwalay silang pinamamahalaan. Ang mga paraan ng pagbabayad, ang pera at ang mga setting ng Auto Payment ay pawang kada kategorya, at hanggang limang paraan ng pagbabayad ang maiimbak sa bawat isa kung saan may isang minarkahan bilang pangunahin. Hindi basta pinipili ang kategoryang kinaroroonan mo; iyon ang kinalalagyan na ng membership mo.",
+        pitfall:
+          "Ang pagtatakda ng Auto Payment sa kategoryang hindi mo ginagamit. Magkamukhang-magkamukha ang screen, at ang membership na nagre-renew ay ang isa pa.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tingnan kung talagang tinatanggap ba ng kategorya ang pera mo",
+        body: "Noong 3 Setyembre 2026: tumatanggap ang Global Membership ng South Korean debit o credit card para sa KRW, at ng mga kard na nakarehistro sa PayPal para sa JPY, USD o MXN. Tumatanggap ang Japan Membership ng credit card para sa JPY. Tumatanggap ang US Membership ng mga kard na nakarehistro sa PayPal para sa USD. Para sa fan sa ibang bansang nasa Global Membership na nagbabayad sa USD, ibig sabihin ay dumaraan ang kard sa PayPal — walang tuwirang opsiyon ng kard.",
+        pitfall:
+          "Ang pag-asang makapagrehistro ng Visa nang tuwiran sa isang Global Membership na USD. Tumatakbo ang parehong pattern sa buong Weverse Shop, at iyan ang dahilan kung bakit ang kard na gumagana saanman ay puwede pa ring bumagsak dito.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Itugma ang perang ipinambili sa pangunahing paraan",
+        body: "Tuwirang sinasabi ito ng Weverse: ang perang ginamit sa pagbili ng Membership ay kailangang tumugma sa perang gamit ng pangunahin mong paraan ng Auto Payment. Hindi nilulutas pabor sa iyo ang pagkakaiba sa oras ng pag-renew — isa itong pag-renew na hindi tumutuloy.",
+        pitfall:
+          "Ang pagbili ng membership sa isang pera at ang pagdaragdag mamaya ng pangunahing paraan sa iba, na mukhang maayos sa dalawang screen at bumabagsak lamang sa araw na mahalaga ito.",
+        takes: "3 minuto",
+      },
+      {
+        title: "Alamin ang eksaktong sandali ng pag-renew",
+        body: "Tumatakbo ang Auto Payment sa huling araw ng panahon ng bisa ng kasalukuyang membership, sa parehong oras ng araw na una kang nagbayad. Itinakda ang oras na iyon sa isang Koreanong server, kaya para sa karamihan ng mambabasa ay tumatapat ito sa gabi o maagang umaga. Kung bumagsak ito, nagpapadala ang Weverse ng email at push notification at sumusubok muli minsan sa isang araw sa parehong oras, hangga't tumatagal ang panahon ng pag-renew.",
+        pitfall:
+          "Ang kard na nag-e-expire sa gitna ng termino, o ang bangkong humaharang sa singil, ay nagiging isang abisong dumarating ng alas-kuwatro ng madaling-araw sa oras mo. Araw-araw ang pagsubok muli, hindi oras-oras — ang isang araw na hindi mo nakita ang email ay isang araw ng bintanang nagamit na.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Unawain kung ano ang hindi ginagawa ng pagkansela ng Auto Payment",
+        body: "Hinihinto ng pagkansela ng Auto Payment ang mga susunod na pag-renew. Hindi nito kinakansela o isinasauli ang membership na hawak mo na, at patuloy mo itong gagamitin nang normal hanggang matapos ang panahon ng bisa. Ang pagkansela at pagsasauli ng mismong membership ay hiwalay na usapin na pinamamahalaan ng pahina ng produkto ng membership na iyon.",
+        pitfall:
+          "Ang pagkansela ng Auto Payment sa pag-asang may ibabalik na pera at, bukod doon: ang pagkansela nito para “i-pause” habang may tsismis na tour, na siyang linggong pinakaayaw mong tumigil ang pag-renew.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Ituring na puntong hindi na mababalikan ang katapusan ng panahon ng pag-renew",
+        body: "Kung kinansela mo ang Auto Payment ay maaari mo itong buhayin muli — ngunit habang tumatakbo pa ang panahon ng pag-renew. Kapag natapos na ang panahong iyon, hindi na available ang muling pagbuhay at ang tanging ruta ay bilhin muli ang membership. Nagbibigay din ang Weverse ng dalawang manual na kontrol sa loob ng bintana: ang Pay Now para mag-renew kaagad, at ang Retry Now kung bumagsak ang bayad sa isang paraang naayos mo na.",
+        pitfall:
+          "Ang paghihintay kung magtatagumpay ba ang mga pagsubok muli. Umiiral ang Retry Now at Pay Now nang eksakto para hindi mo na kailangang maghintay, at nawawala silang dalawa kapag nagsara ang bintana.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Mag-renew sa halip na bumili muli, dahil dinadala ang talaan",
+        body: "Kapag nag-renew ang membership sa pamamagitan ng Auto Payment, pinapanatili sa susunod ang impormasyon ng miyembrong nakarehistro sa umiiral na membership. Ang talaang iyon — lalo na ang pangalan dito — ang pinagbabatayan ng pagsusuri ng pagiging kuwalipikado sa presale. Ang pagbili ng bagong membership pagkatapos ng isang pagkaputol ay nagsisimula ng bagong talaan at bagong petsa ng simula, at iyan ang bahaging nagkakahalaga ng isang presale sa halip na isang bayad sa subscription.",
+        pitfall:
+          "Ang pag-aakalang tungkol sa katapatan ang pagpapatuloy. Tungkol ito sa isang petsa at isang pangalan sa isang talaan, at ang puwang sa alinman sa dalawa ang nakikita ng pagsusuri.",
+        takes: "2 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Puwede ko bang bayaran ang Global Membership gamit ang sarili kong Visa o Mastercard?",
+        a: "Hindi nang tuwiran, sa labas ng KRW. Tumatanggap ang Global Membership ng mga Koreanong kard para sa KRW, at ng mga kard na nakarehistro sa PayPal para sa JPY, USD o MXN — kaya umaabot ang kard mo sa Weverse sa pamamagitan ng PayPal at hindi bilang tuwirang bayad sa kard.",
+      },
+      {
+        q: "Kailan ba talaga ako sinisingil ng Auto Payment?",
+        a: "Sa huling araw ng panahon ng bisa ng kasalukuyan mong membership, sa parehong oras ng araw na una kang nagbayad. Itinakda ang oras na iyon sa isang Koreanong orasan, kaya ikonberte ito para sa sarili mo.",
+      },
+      {
+        q: "Kung bumagsak ang Auto Payment, ilang pagkakataon ang meron ako?",
+        a: "Inaabisuhan ka ng Weverse sa email at push, at pagkatapos ay sumusubok muli minsan sa isang araw sa parehong oras sa natitirang panahon ng pag-renew. Magagamit mo rin ang Retry Now pagkatapos ayusin ang paraan ng pagbabayad, o ang Pay Now para mag-renew kaagad.",
+      },
+      {
+        q: "Kinansela ko ang Auto Payment. Puwede ko ba itong buksan muli?",
+        a: "Oo, habang bukas pa ang panahon ng pag-renew — may kontrol sa muling pagbuhay nang eksakto para doon. Pagkatapos matapos ang panahon ng pag-renew ay hindi mo na kaya, at ang tanging opsiyon ay bilhin muli ang membership.",
+      },
+      {
+        q: "Mahalaga ba kung mapaso ang membership ko nang ilang araw?",
+        a: "Maaaring mas mahalaga pa ito kaysa sa presyo. Pinapanatili ng pag-renew ang impormasyon ng miyembro mula sa umiiral na membership; nagsisimula ang muling pagbili ng bagong talaan na may bagong petsa. Sinusuri ang pagiging kuwalipikado sa presale laban sa talaang iyon at sa hangganan nito, hindi laban sa kung gaano ka na katagal na fan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vé điện tử NOL World của bạn: mã QR, mã PIN, và chuyện qua được cổng",
+    summary:
+      "Tấm vé chỉ mở trên điện thoại, nó chỉ có tiếng Anh và tính năng dịch tự động của trình duyệt sẽ làm nó biến dạng, một tấm vé đã gửi đi có đồng hồ PIN 24 tiếng, và đến muộn không phải là vào cửa chắc chắn. Hai mươi phút cuối của cả quá trình, theo thứ tự.",
+    scope:
+      "Nói về vé điện tử NOL World và việc vào cửa đúng như NOL World ghi: tấm vé mở ở đâu, hai trạng thái trình duyệt che mất nó, việc gửi và nhận cùng đồng hồ PIN, việc nhận hộ, và chuyện đến muộn. Quy định vào cửa được đặt theo từng show và nơi tổ chức là bên quyết định vào tối hôm đó. Vào cửa bằng nhận diện khuôn mặt là một luồng riêng có hướng dẫn riêng.",
+    intro: [
+      "Mọi thứ khác trên trang này là sự chuẩn bị. Đây là phần mà một chuyến bay, một khách sạn và một đợt bán trước hoặc biến thành một chiếc ghế hoặc không, và nó chạy trên chiếc điện thoại bạn đang cầm giữa đám đông với sóng yếu.",
+      "Phần lớn những gì hỏng ở đây không hề kịch tính. Đó là một trình duyệt ở sai chế độ hiển thị mã QR chỗ đáng lẽ là tấm vé, một tiện ích dịch viết lại số cổng, một mã PIN hết hạn trong lúc một người bạn đang ngủ. Cả bốn đều được NOL World ghi lại và cả bốn đều tránh được từ đêm hôm trước.",
+    ],
+    steps: [
+      {
+        title: "Biết bạn đang cầm loại vé nào",
+        body: "Phương thức nhận vé đã được quyết định lúc bạn đặt, và nó quyết định mọi thứ dưới đây. Một tấm vé điện tử sống trong tài khoản của bạn và được quét từ màn hình bạn. Nhận tại địa điểm nghĩa là một tấm vé giấy lấy ở quầy vé vào đúng ngày diễn, và NOL World không phát sớm — khung nhận vé mở trước một tiếng, và một tấm vé đã nhận thì không được cấp lại nếu mất hay bị lấy cắp. Hãy kiểm tra bạn có loại nào ngay bây giờ, chứ không phải ở địa điểm tổ chức.",
+        pitfall:
+          "Cho rằng mọi đơn đặt đều là vé điện tử vì buổi diễn trước đã như vậy. Đó là thuộc tính của từng đơn đặt, và hai lối đi hỏng theo những cách hoàn toàn khác nhau.",
+        takes: "5 phút",
+      },
+      {
+        title: "Mở vé điện tử trên chính chiếc điện thoại bạn sẽ vào cửa",
+        body: "NOL World khẳng định vé điện tử chỉ có trên ứng dụng NOL World hoặc web di động. Việc vào cửa là bằng mã QR trên tấm vé. Lối đi trên điện thoại là ứng dụng hoặc web di động, đăng nhập, Account/My, My Reservations, rồi nút Mobile Ticket. Trên máy tính, chính nút đó tạo ra một mã QR không phải vé của bạn — nó là một bước chuyển giao, để bạn quét bằng điện thoại cho tấm vé mở ra ở đó.",
+        pitfall:
+          "Chụp màn hình tấm vé để dự phòng rồi tính đưa ảnh ra cho người ta xem. Một tấm vé được dựng trực tiếp trong một tài khoản không phải cùng một thứ với một bức ảnh chụp nó, và cổng vào không phải nơi bạn muốn phát hiện ra sự khác biệt đó.",
+        takes: "10 phút, từ đêm hôm trước",
+      },
+      {
+        title: "Tắt tính năng dịch của trình duyệt trước khi đi",
+        body: "NOL World nói vé điện tử chỉ được cung cấp bằng tiếng Anh, và rằng nếu bạn đang thấy ngôn ngữ khác thì đó là bản dịch tự động của trình duyệt — cách sửa là tắt dịch và tải lại trang. Với nhóm độc giả này, đó là trạng thái mặc định của trình duyệt chứ không phải một trường hợp hiếm. Một trình dịch tự động viết lại một cái cổng, một khu hay một dãy ghế là vấn đề bạn sẽ không nhận ra cho tới khi ai đó ở cửa đọc nó lại cho bạn nghe.",
+        pitfall:
+          "Để dịch tự động bật vì nó đã hữu ích suốt chuyến đi. Nó đã dịch các trang tiếng Hàn giúp bạn; ở đây trang vốn đã là tiếng Anh và điều duy nhất nó có thể làm là gây hại.",
+        takes: "2 phút",
+      },
+      {
+        title: "Nếu bạn thấy mã QR chỗ đáng lẽ là tấm vé, hãy sửa chế độ trình duyệt",
+        body: "Đây là cách phổ biến nhất khiến tấm vé trông như biến mất, và nó không phải lỗi. NOL World nói rằng nếu trình duyệt của bạn ở chế độ máy tính thì một mã QR sẽ hiện ra thay cho vé điện tử — và rằng có một nút View Tickets ngay dưới mã QR đó vẫn mở được tấm vé. Nếu không, hãy chuyển trình duyệt sang chế độ di động: ở Chrome là menu ba chấm rồi View as mobile version; ở Safari là nút ngôn ngữ bên trái thanh địa chỉ rồi Request Mobile Website; ở Samsung Internet là menu ba gạch rồi Mobile site.",
+        pitfall:
+          "Để ai đó ở cổng quét cái mã QR ấy. Đó là mã chuyển giao của máy tính, không phải mã vào cửa của bạn, và thứ bạn cần nằm cách nó đúng một cú chạm xuống dưới.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hiểu việc gửi một tấm vé ràng buộc bạn vào điều gì",
+        body: "Việc chia sẻ vé điện tử đi một chiều: người mua gửi cho người đi xem, và NOL World khẳng định rằng một tấm vé đã nhận thì không thể gửi tiếp — chỉ vé đã đặt mới gửi được. Việc gửi vẫn làm được cho tới ngày diễn ra sự kiện. Không phải sản phẩm nào cũng có; ở nơi bên bán đã tắt nó, nút gửi đơn giản là không có ở đó. Và cái giá của việc gửi là chính lối thoát của bạn: một khi tấm vé đã được gửi thành công, NOL World hạn chế việc hủy đơn đặt, và điều đó chỉ được khôi phục nếu người nhận hủy đăng ký vé.",
+        pitfall:
+          "Tổ chức một nhóm bằng cách gửi vé cho từng người ngay trong tuần bạn đặt. Bạn vừa trao cho mỗi người một quyền phủ quyết đối với việc hủy đơn đặt đó.",
+        takes: "5 phút",
+      },
+      {
+        title: "Nếu bạn là người nhận vé, hãy coi mã PIN là một chiếc đồng hồ 24 tiếng",
+        body: "Một tấm vé đã nhận chưa dùng được cho tới khi nó được đăng ký, và khung thời gian thì ngắn. NOL World nói mã PIN chỉ có thể đăng ký trong vòng 24 tiếng kể từ lúc gửi, và rằng một tấm vé chưa đăng ký sẽ quay về với người gửi sau đó — hoặc nếu nó chưa được đăng ký tính đến ngày diễn. Việc đăng ký bắt đầu từ đường dẫn trong tin nhắn hoặc email: Received Mobile Ticket, Ticket Register, rồi nhập mã PIN trong tin nhắn. Sau đó tấm vé nằm trong My Page, Received Mobile Ticket, Booking History. Trả lại một tấm vé cũng đi cùng đường đó với nút Return, và NOL World nói một tấm vé đã đăng ký vẫn trả lại được.",
+        pitfall:
+          "Gửi cho một người bạn ở múi giờ mà 24 tiếng đó phần lớn là ban đêm. Tấm vé lặng lẽ bật về chỗ bạn và đơn đặt lại là của bạn, điều đó không sao vào một ngày thứ Ba và rất có sao vào sáng ngày diễn.",
+        takes: "5 phút, trong vòng 24 tiếng",
+      },
+      {
+        title: "Xem trang của show trước khi cho rằng người khác nhận vé hộ bạn được",
+        body: "NOL World có cho phép người không phải người mua đi nhận vé, kèm những điều kiện thực sự. Quy trình khác nhau theo từng địa điểm, việc nhận hộ có thể bị hạn chế tùy loại hình buổi diễn, và chỉ dẫn của NOL World là xem thông báo trên trang chi tiết của show bạn đã đặt. Thứ người kia cần là chi tiết đơn đặt in ra từ My Ticket, mã xác nhận, và giấy tờ tùy thân của người mua. Hãy coi yêu cầu cuối cùng đó đúng như giới hạn mà nó là: với một show chặn cửa bằng chính danh tính đã xác minh của người mua, đừng lên kế hoạch dựa vào người nhận hộ.",
+        pitfall:
+          "Đọc việc nhận hộ như một quyền chung. Đó là một sự cho phép theo từng địa điểm, từng show, và những show nhiều khả năng từ chối nó nhất chính là những show nhu cầu cao mà bạn đã phải cần tới một đợt bán trước.",
+        takes: "10 phút",
+      },
+      {
+        title: "Đừng coi việc đến muộn như một chiếc ghế bạn vẫn còn giữ",
+        body: "NOL World nói rõ rằng việc vào cửa sau khi đã bắt đầu tùy thuộc vào từng show, và rằng một số buổi diễn không cho phép điều đó chút nào — họ nêu đích danh hòa nhạc cổ điển và opera. Ở nơi có cho vào muộn, điều đó có thể nghĩa là chờ tới giờ nghỉ giải lao và xem nửa sau. Và ngay cả khi bạn được cho vào, NOL World nói bạn có thể chưa ngồi được vào ghế của mình cho tới giờ giải lao, nên đến muộn có thể nghĩa là đứng hoặc ngồi chỗ khác suốt đúng cái phần bạn đã tới để xem.",
+        pitfall:
+          "Tính giờ đến dựa trên giờ bắt đầu. Hãy tính từ hàng chờ vào cửa, khâu kiểm tra an ninh và khung nhận vé, tất cả đều diễn ra trước giờ bắt đầu và không cái nào chịu đợi.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Có một mã QR chỗ đáng lẽ là vé của tôi. Đơn đặt của tôi hỏng à?",
+        a: "Không — trình duyệt của bạn đang ở chế độ máy tính. NOL World nói điều đó tạo ra một mã QR thay cho vé điện tử, và rằng một nút View Tickets ngay bên dưới sẽ mở tấm vé. Bạn cũng có thể chuyển trình duyệt sang chế độ di động: menu ba chấm của Chrome có View as mobile version, nút ngôn ngữ của Safari có Request Mobile Website, và menu ba gạch của Samsung Internet có Mobile site.",
+      },
+      {
+        q: "Vé điện tử của tôi hiển thị sai ngôn ngữ.",
+        a: "NOL World chỉ cung cấp vé điện tử bằng tiếng Anh, nên một ngôn ngữ khác nghĩa là trình duyệt của bạn đang dịch tự động. Hãy tắt dịch và tải lại trang. Nên làm trước khi đi chứ không phải ở cổng vào, vì một số cổng hay một dãy ghế bị dịch là thứ sai theo cách rất khó nhận ra.",
+      },
+      {
+        q: "Tôi đưa vé từ máy tính xách tay ở cửa được không?",
+        a: "NOL World nói vé điện tử chỉ có trên ứng dụng hoặc web di động. Trên máy tính, nút Mobile Ticket cho bạn một mã QR để quét bằng điện thoại, và tấm vé thật sẽ mở ra ở đó. Hãy tính vào cửa bằng một chiếc điện thoại.",
+      },
+      {
+        q: "Bạn tôi nhận vé hộ tôi ở quầy vé được không?",
+        a: "Đôi khi. NOL World nói người không phải người mua có thể nhận, nhưng quy trình thay đổi theo địa điểm và việc nhận hộ có thể bị hạn chế tùy loại hình buổi diễn — nên thông báo trên trang chi tiết của show bạn mới là nơi có thẩm quyền. Người đó sẽ cần chi tiết đơn đặt in ra từ My Ticket, mã xác nhận và giấy tờ tùy thân của người mua. Với những show xác minh danh tính người mua ở cửa vào, đừng trông cậy vào cách này.",
+      },
+      {
+        q: "Tôi lỡ gửi một tấm vé điện tử. Lấy lại được không?",
+        a: "Nếu người nhận chưa đăng ký nó thì được — NOL World nói người gửi có thể hủy việc chia sẻ bằng nút Cancel Send. Nó cũng tự quay về nếu người nhận không đăng ký trong vòng 24 tiếng hoặc tính đến ngày diễn. Khi đã đăng ký rồi thì việc lấy lại là hành động của họ: họ trả vé từ My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return.",
+      },
+      {
+        q: "Chuyện gì xảy ra nếu bạn tôi không bao giờ đăng ký tấm vé tôi gửi?",
+        a: "Nó quay về với bạn. NOL World nói một tấm vé chưa đăng ký sẽ tự động được trả về cho người gửi sau 24 tiếng, hoặc nếu nó chưa được đăng ký tính đến ngày diễn. Điều đó khôi phục đơn đặt của bạn — kể cả, theo các quy định hủy của họ, khả năng bạn hủy nó — nhưng đây là một quá trình lặng lẽ, nên hãy kiểm tra thay vì phỏng đoán.",
+      },
+      {
+        q: "Tôi sẽ đến muộn hai mươi phút. Họ có cho tôi vào không?",
+        a: "Tùy từng show và không ai hứa được. NOL World nói việc vào cửa sau khi đã bắt đầu tùy thuộc vào buổi diễn và rằng một số buổi không cho phép chút nào, đặc biệt là hòa nhạc cổ điển và opera; ở nơi được phép, bạn có thể phải chờ tới giờ giải lao, và có thể chưa ngồi được vào ghế của chính mình cho tới lúc đó.",
+      },
+      {
+        q: "Vé điện tử có phải là cùng một thứ với vào cửa bằng nhận diện khuôn mặt không?",
+        a: "Không. NOL facepass là một hệ thống riêng, nơi một chiếc camera ở cửa cho bạn vào mà không cần kiểm tra vé, và việc hỗ trợ nó được đặt theo từng sự kiện. Vé điện tử cùng mã QR của nó là lối đi thông thường, và là lối cần giữ cho hoạt động được ngay cả khi bạn đã đăng ký khuôn mặt.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "บัตรมือถือ NOL World ของคุณ: คิวอาร์ รหัส PIN และการผ่านประตู",
+    summary:
+      "บัตรเปิดได้บนโทรศัพท์เท่านั้น มันเป็นภาษาอังกฤษล้วนและระบบแปลอัตโนมัติของเบราว์เซอร์จะทำให้มันเพี้ยน บัตรที่ส่งออกไปมีนาฬิกา PIN 24 ชั่วโมง และการมาสายไม่ใช่การรับประกันว่าจะได้เข้า ยี่สิบนาทีสุดท้ายของกระบวนการทั้งหมด เรียงตามลำดับ",
+    scope:
+      "ครอบคลุมบัตรมือถือของ NOL World และการเข้างานตามที่ NOL World บันทึกไว้: บัตรเปิดที่ไหน สองสถานะของเบราว์เซอร์ที่ซ่อนมันไว้ การส่งและการรับพร้อมนาฬิกา PIN การรับแทน และการมาสาย กฎการเข้างานกำหนดเป็นรายงานและสถานที่จัดงานเป็นผู้ตัดสินในคืนนั้น การเข้างานด้วยการจดจำใบหน้าเป็นกระบวนการแยกที่มีคู่มือของตัวเอง",
+    intro: [
+      "ทุกอย่างที่เหลือบนเว็บนี้คือการเตรียมตัว นี่คือช่วงที่ตั๋วเครื่องบิน โรงแรม และรอบพรีเซลจะกลายเป็นที่นั่งหรือไม่กลายเป็น และมันทำงานบนโทรศัพท์ที่คุณถืออยู่ท่ามกลางฝูงชนที่สัญญาณไม่ดี",
+      "เรื่องที่ผิดพลาดตรงนี้ส่วนใหญ่ไม่ได้ดราม่าอะไร มันคือเบราว์เซอร์ที่อยู่ผิดโหมดแล้วแสดงคิวอาร์โค้ดตรงที่ควรเป็นบัตร ส่วนขยายแปลภาษาที่เขียนหมายเลขประตูใหม่ รหัส PIN ที่หมดอายุระหว่างที่เพื่อนคนหนึ่งหลับอยู่ ทั้งสี่เรื่องถูกบันทึกโดย NOL World และทั้งสี่เรื่องเลี่ยงได้ตั้งแต่คืนก่อนหน้า",
+    ],
+    steps: [
+      {
+        title: "รู้ว่าคุณถือบัตรแบบไหนอยู่",
+        body: "วิธีรับบัตรถูกตัดสินไปแล้วตอนคุณจอง และมันกำหนดทุกอย่างที่อยู่ข้างล่างนี้ บัตรมือถืออยู่ในบัญชีของคุณและถูกสแกนจากหน้าจอคุณ การรับที่สถานที่จัดงานหมายถึงบัตรกระดาษจากห้องจำหน่ายบัตรในวันแสดง และ NOL World ไม่ปล่อยให้รับก่อน ช่วงรับเปิดหนึ่งชั่วโมงก่อนงาน และบัตรที่รับไปแล้วจะไม่ออกใหม่ให้ถ้าหายหรือถูกขโมย ตรวจว่าคุณมีแบบไหนตั้งแต่ตอนนี้ ไม่ใช่ที่หน้างาน",
+        pitfall:
+          "การคิดว่าทุกการจองเป็นบัตรมือถือเพราะคอนเสิร์ตที่แล้วเป็นแบบนั้น มันเป็นคุณสมบัติของแต่ละการจอง และสองเส้นทางนี้ล้มเหลวคนละแบบโดยสิ้นเชิง",
+        takes: "5 นาที",
+      },
+      {
+        title: "เปิดบัตรมือถือบนโทรศัพท์เครื่องที่คุณจะใช้เข้างาน",
+        body: "NOL World ระบุว่าบัตรมือถือมีให้ใช้เฉพาะบนแอป NOL World หรือเว็บมือถือเท่านั้น การเข้างานใช้คิวอาร์โค้ดบนบัตร เส้นทางบนโทรศัพท์คือแอปหรือเว็บมือถือ ล็อกอิน Account/My, My Reservations แล้วปุ่ม Mobile Ticket บนคอมพิวเตอร์ ปุ่มเดียวกันจะสร้างคิวอาร์โค้ดที่ไม่ใช่บัตรของคุณ มันคือการส่งต่อ มีไว้ให้สแกนด้วยโทรศัพท์เพื่อให้บัตรเปิดที่นั่น",
+        pitfall:
+          "การแคปหน้าจอบัตรไว้เผื่อแล้วคิดว่าจะยื่นภาพนั้นให้ดู บัตรที่ถูกเรนเดอร์สด ๆ ในบัญชีไม่ใช่สิ่งเดียวกับรูปถ่ายของมัน และประตูทางเข้าไม่ใช่ที่ที่คุณอยากค้นพบความต่างนี้",
+        takes: "10 นาที ตั้งแต่คืนก่อนหน้า",
+      },
+      {
+        title: "ปิดการแปลภาษาของเบราว์เซอร์ก่อนออกเดินทาง",
+        body: "NOL World บอกว่าบัตรมือถือให้บริการเป็นภาษาอังกฤษเท่านั้น และถ้าคุณเห็นภาษาอื่นแปลว่าเป็นการแปลอัตโนมัติของเบราว์เซอร์คุณ ทางแก้คือปิดการแปลแล้วโหลดหน้าใหม่ สำหรับผู้อ่านกลุ่มนี้ นั่นคือสถานะเริ่มต้นของเบราว์เซอร์ ไม่ใช่กรณียกเว้น ตัวแปลอัตโนมัติที่เขียนประตู โซน หรือแถวที่นั่งใหม่คือปัญหาที่คุณจะไม่สังเกตจนกระทั่งมีคนที่ประตูอ่านมันกลับมาให้คุณฟัง",
+        pitfall:
+          "การปล่อยให้การแปลเปิดอยู่เพราะมันช่วยมาตลอดทั้งทริป มันแปลหน้าภาษาเกาหลีให้คุณ แต่ตรงนี้หน้าเว็บเป็นภาษาอังกฤษอยู่แล้ว และสิ่งเดียวที่มันทำได้คือทำให้เสียหาย",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถ้าคุณเห็นคิวอาร์โค้ดตรงที่ควรเป็นบัตร ให้แก้โหมดเบราว์เซอร์",
+        body: "นี่คือวิธีที่พบบ่อยที่สุดที่ทำให้บัตรดูเหมือนหายไป และมันไม่ใช่ความผิดพลาดของระบบ NOL World บอกว่าถ้าเบราว์เซอร์ของคุณอยู่ในโหมดเดสก์ท็อป คิวอาร์โค้ดจะถูกแสดงแทนบัตรมือถือ และว่ามีปุ่ม View Tickets อยู่ใต้คิวอาร์โค้ดนั้นซึ่งเปิดบัตรได้อยู่ดี มิฉะนั้นให้สลับเบราว์เซอร์เป็นโหมดมือถือ: ใน Chrome คือเมนูสามจุดแล้ว View as mobile version ใน Safari คือปุ่มภาษาทางซ้ายของแถบที่อยู่แล้ว Request Mobile Website ใน Samsung Internet คือเมนูสามขีดแล้ว Mobile site",
+        pitfall:
+          "การปล่อยให้คนที่ประตูสแกนคิวอาร์โค้ดนั้น มันคือโค้ดส่งต่อของเดสก์ท็อป ไม่ใช่โค้ดเข้างานของคุณ และสิ่งที่คุณต้องการอยู่ต่ำลงไปแค่หนึ่งแตะ",
+        takes: "2 นาที",
+      },
+      {
+        title: "เข้าใจว่าการส่งบัตรผูกมัดคุณกับอะไร",
+        body: "การแบ่งปันบัตรมือถือไปทางเดียว: ผู้ซื้อส่งให้ผู้เข้าชม และ NOL World ระบุว่าบัตรที่รับมาแล้วส่งต่อไม่ได้ ส่งได้เฉพาะบัตรที่จองไว้เท่านั้น การส่งยังทำได้จนถึงวันงาน ไม่ใช่ทุกสินค้าจะมีให้ ที่ใดผู้ขายปิดไว้ ปุ่มส่งก็ไม่มีอยู่เฉย ๆ และราคาของการส่งคือทางออกของคุณเอง เมื่อบัตรถูกส่งสำเร็จแล้ว NOL World จะจำกัดการยกเลิกการจอง ซึ่งจะคืนกลับก็ต่อเมื่อผู้รับยกเลิกการลงทะเบียนบัตร",
+        pitfall:
+          "การจัดกลุ่มด้วยการส่งบัตรให้ทุกคนตั้งแต่สัปดาห์ที่คุณจอง คุณเพิ่งมอบสิทธิ์ยับยั้งการยกเลิกการจองนั้นให้แต่ละคนไป",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถ้าคุณเป็นผู้รับบัตร ให้ถือว่า PIN คือนาฬิกา 24 ชั่วโมง",
+        body: "บัตรที่รับมาใช้ไม่ได้จนกว่าจะลงทะเบียน และช่วงเวลานั้นสั้น NOL World บอกว่า PIN ลงทะเบียนได้ภายใน 24 ชั่วโมงนับจากการส่งเท่านั้น และว่าบัตรที่ยังไม่ลงทะเบียนจะกลับไปหาผู้ส่งหลังจากนั้น หรือถ้ายังไม่ลงทะเบียนภายในวันแสดง การลงทะเบียนเริ่มจาก URL ในข้อความหรืออีเมล: Received Mobile Ticket, Ticket Register แล้วใส่ PIN จากข้อความ หลังจากนั้นบัตรจะอยู่ใน My Page, Received Mobile Ticket, Booking History การคืนบัตรใช้เส้นทางเดียวกันกับปุ่ม Return และ NOL World บอกว่าบัตรที่ลงทะเบียนแล้วก็ยังคืนได้",
+        pitfall:
+          "การส่งให้เพื่อนในเขตเวลาที่ 24 ชั่วโมงนั้นส่วนใหญ่เป็นเวลากลางคืน บัตรจะเด้งกลับมาหาคุณอย่างเงียบ ๆ และการจองก็เป็นของคุณอีกครั้ง ซึ่งไม่เป็นไรในวันอังคาร และเป็นเรื่องใหญ่ในเช้าวันแสดง",
+        takes: "5 นาที ภายใน 24 ชั่วโมง",
+      },
+      {
+        title: "ดูหน้าของงานก่อนจะคิดว่าคนอื่นรับบัตรแทนคุณได้",
+        body: "NOL World อนุญาตให้คนที่ไม่ใช่ผู้ซื้อรับบัตรได้จริง พร้อมเงื่อนไขที่เป็นจริงจัง กระบวนการต่างกันไปตามสถานที่ การรับแทนอาจถูกจำกัดขึ้นอยู่กับประเภทของงาน และคำสั่งของ NOL World คือให้ดูประกาศบนหน้ารายละเอียดของงานที่คุณจอง สิ่งที่อีกฝ่ายต้องมีคือรายละเอียดการจองที่พิมพ์ออกมาจาก My Ticket หมายเลขยืนยัน และเอกสารแสดงตนของผู้ซื้อ ให้ถือว่าข้อสุดท้ายนั้นคือขีดจำกัดตามที่มันเป็น: สำหรับงานที่กั้นประตูด้วยตัวตนที่ยืนยันแล้วของผู้ซื้อเอง อย่าวางแผนโดยอาศัยการรับแทน",
+        pitfall:
+          "การอ่านการรับแทนว่าเป็นสิทธิ์ทั่วไป มันเป็นการอนุญาตรายสถานที่และรายงาน และงานที่มีแนวโน้มจะปฏิเสธมากที่สุดคืองานความต้องการสูงที่คุณต้องใช้รอบพรีเซลพอดี",
+        takes: "10 นาที",
+      },
+      {
+        title: "อย่าถือว่าการมาสายคือที่นั่งที่คุณยังมีอยู่",
+        body: "NOL World บอกชัดว่าการเข้างานหลังเริ่มแล้วขึ้นอยู่กับแต่ละงาน และว่าบางการแสดงไม่อนุญาตเลย โดยระบุคอนเสิร์ตคลาสสิกและอุปรากรเป็นพิเศษ ที่ใดมีการเข้าสาย มันอาจหมายถึงการรอจนถึงช่วงพักแล้วดูครึ่งหลัง และแม้คุณจะได้เข้า NOL World บอกว่าคุณอาจยังนั่งที่ของตัวเองไม่ได้จนถึงช่วงพัก การมาสายจึงอาจหมายถึงการยืนหรือนั่งที่อื่นตลอดช่วงที่คุณตั้งใจมาดู",
+        pitfall:
+          "การคำนวณเวลามาถึงจากเวลาเริ่มงาน ให้คำนวณจากคิวเข้างาน การตรวจความปลอดภัย และช่วงรับบัตร ซึ่งทั้งหมดเกิดก่อนเวลาเริ่มงานและไม่มีอันไหนรอคุณ",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "มีคิวอาร์โค้ดอยู่ตรงที่ควรเป็นบัตรของฉัน การจองของฉันพังหรือเปล่า",
+        a: "ไม่ เบราว์เซอร์ของคุณอยู่ในโหมดเดสก์ท็อป NOL World บอกว่านั่นทำให้เกิดคิวอาร์โค้ดแทนที่บัตรมือถือ และว่ามีปุ่ม View Tickets อยู่ใต้มันซึ่งเปิดบัตรได้ คุณยังสลับเบราว์เซอร์เป็นโหมดมือถือได้ด้วย: เมนูสามจุดของ Chrome มี View as mobile version ปุ่มภาษาของ Safari มี Request Mobile Website และเมนูสามขีดของ Samsung Internet มี Mobile site",
+      },
+      {
+        q: "บัตรมือถือของฉันแสดงผิดภาษา",
+        a: "NOL World ให้บริการบัตรมือถือเป็นภาษาอังกฤษเท่านั้น ภาษาอื่นจึงแปลว่าเบราว์เซอร์ของคุณกำลังแปลอัตโนมัติ ปิดการแปลแล้วโหลดใหม่ ควรทำก่อนออกเดินทางมากกว่าทำที่ประตู เพราะหมายเลขประตูหรือแถวที่นั่งที่ถูกแปลนั้นผิดในแบบที่สังเกตยาก",
+      },
+      {
+        q: "แสดงบัตรจากแล็ปท็อปที่ประตูได้ไหม",
+        a: "NOL World บอกว่าบัตรมือถือมีให้ใช้เฉพาะบนแอปหรือเว็บมือถือ บนคอมพิวเตอร์ ปุ่ม Mobile Ticket จะให้คิวอาร์โค้ดเพื่อสแกนด้วยโทรศัพท์ของคุณ ซึ่งจะเปิดบัตรจริงที่นั่น วางแผนเข้างานด้วยโทรศัพท์",
+      },
+      {
+        q: "เพื่อนไปรับบัตรให้ฉันที่ห้องจำหน่ายบัตรได้ไหม",
+        a: "บางครั้งได้ NOL World บอกว่าคนที่ไม่ใช่ผู้ซื้อรับได้ แต่กระบวนการต่างกันไปตามสถานที่ และการรับแทนอาจถูกจำกัดขึ้นอยู่กับประเภทของงาน ประกาศบนหน้ารายละเอียดของงานคุณจึงเป็นที่ที่มีอำนาจตัดสิน เขาจะต้องมีรายละเอียดการจองที่พิมพ์จาก My Ticket หมายเลขยืนยัน และเอกสารแสดงตนของผู้ซื้อ สำหรับงานที่ตรวจตัวตนของผู้ซื้อตอนเข้า อย่าไปพึ่งวิธีนี้",
+      },
+      {
+        q: "ฉันเผลอส่งบัตรมือถือไป เอากลับได้ไหม",
+        a: "ถ้าผู้รับยังไม่ได้ลงทะเบียนก็ได้ NOL World บอกว่าผู้ส่งยกเลิกการแบ่งปันได้ด้วยปุ่ม Cancel Send มันยังกลับมาเองโดยอัตโนมัติถ้าผู้รับไม่ลงทะเบียนภายใน 24 ชั่วโมงหรือภายในวันแสดง เมื่อลงทะเบียนแล้ว การเอากลับเป็นการกระทำของเขา เขาคืนจาก My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return",
+      },
+      {
+        q: "จะเกิดอะไรขึ้นถ้าเพื่อนไม่เคยลงทะเบียนบัตรที่ฉันส่งไป",
+        a: "มันกลับมาหาคุณ NOL World บอกว่าบัตรที่ยังไม่ลงทะเบียนจะถูกคืนให้ผู้ส่งโดยอัตโนมัติหลัง 24 ชั่วโมง หรือถ้ายังไม่ลงทะเบียนภายในวันแสดง นั่นคืนการจองของคุณกลับมา รวมถึงความสามารถในการยกเลิกตามกฎการยกเลิกของเขาด้วย แต่มันเป็นกระบวนการเงียบ ๆ จึงควรตรวจแทนการคาดเอา",
+      },
+      {
+        q: "ฉันจะไปสายยี่สิบนาที เขาจะให้เข้าไหม",
+        a: "ขึ้นอยู่กับงานและไม่มีใครรับประกันได้ NOL World บอกว่าการเข้างานหลังเริ่มแล้วขึ้นอยู่กับการแสดง และว่าบางการแสดงไม่อนุญาตเลย โดยเฉพาะคอนเสิร์ตคลาสสิกและอุปรากร ที่ใดอนุญาต คุณอาจต้องรอถึงช่วงพัก และอาจยังนั่งที่ของตัวเองไม่ได้จนกว่าจะถึงตอนนั้น",
+      },
+      {
+        q: "บัตรมือถือเป็นอันเดียวกับการเข้างานด้วยการจดจำใบหน้าไหม",
+        a: "ไม่ NOL facepass เป็นระบบแยกที่กล้องตรงประตูให้คุณเข้าโดยไม่ตรวจบัตร และการรองรับมันถูกกำหนดเป็นรายอีเวนต์ บัตรมือถือและคิวอาร์โค้ดของมันคือเส้นทางปกติ และเป็นเส้นทางที่ควรรักษาให้ใช้ได้แม้คุณจะลงทะเบียนใบหน้าไว้แล้ว",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Ang mobile ticket mo sa NOL World: ang QR, ang PIN, at ang pagdaan sa gate",
+    summary:
+      "Bumubukas lamang ang tiket sa telepono, Ingles lamang ito at sisirain ito ng auto-translate ng browser mo, may 24-oras na orasan ng PIN ang tiket na naipadala, at hindi garantisadong pagpasok ang pagdating nang huli. Ang huling dalawampung minuto ng buong proseso, ayon sa pagkakasunod.",
+    scope:
+      "Sakop nito ang mobile ticket ng NOL World at ang pagpasok sa venue ayon sa pagkakatala ng NOL World: kung saan bumubukas ang tiket, ang dalawang kalagayan ng browser na nagtatago nito, ang pagpapadala at pagtanggap kasama ang orasan ng PIN, ang pagkuha ng ibang tao, at ang pagdating nang huli. Itinatakda kada palabas ang mga tuntunin sa pagpasok at ang venue ang nagpapasya sa gabing iyon. Hiwalay na daloy ang pagpasok sa pamamagitan ng pagkilala ng mukha at may sarili itong gabay.",
+    intro: [
+      "Paghahanda ang lahat ng iba pa sa site na ito. Ito ang bahaging kung saan ang isang flight, isang hotel at isang presale ay nagiging upuan o hindi, at tumatakbo ito sa isang teleponong hawak mo sa gitna ng maraming tao at mahinang signal.",
+      "Karamihan sa nagkakamali rito ay hindi madrama. Isang browser na nasa maling mode na nagpapakita ng QR code kung saan dapat nasa tiket, isang extension ng pagsasalin na nagre-rewrite ng numero ng gate, isang PIN na nag-expire habang tulog ang isang kaibigan. Nakatala ng NOL World ang apat na iyon at ang apat na iyon ay maiiwasan noong gabi pa lamang.",
+    ],
+    steps: [
+      {
+        title: "Alamin kung anong uri ng tiket ang talagang hawak mo",
+        body: "Napagpasyahan ang paraan ng pagkuha noong nag-book ka, at itinatakda nito ang lahat ng nasa ibaba. Ang mobile ticket ay nasa account mo at ina-scan mula sa screen mo. Ang pagkuha sa venue ay nangangahulugan ng papel na tiket mula sa box office sa araw ng palabas, at hindi ito inilalabas nang maaga ng NOL World — nagbubukas ang bintana isang oras bago, at hindi na muling maibibigay ang nakuhang tiket kung mawala o manakaw ito. Tingnan kung alin ang nasa iyo ngayon, hindi sa venue.",
+        pitfall:
+          "Ang pag-aakalang mobile ticket ang bawat booking dahil iyon ang ginamit ng nakaraang konsiyerto. Katangian ito kada booking, at magkaiba ang paraan ng pagkabigo ng dalawang ruta.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Buksan ang mobile ticket sa teleponong gagamitin mo sa pagpasok",
+        body: "Isinasaad ng NOL World na available lamang ang mobile ticket sa app ng NOL World o sa mobile web. Ang pagpasok ay sa pamamagitan ng QR code sa tiket. Ang ruta sa telepono ay app o mobile web, mag-log in, Account/My, My Reservations, at ang pindutang Mobile Ticket. Sa kompyuter, ang parehong pindutan ay gumagawa ng QR code na hindi ang tiket mo — isa itong paghahabilin, na dapat i-scan gamit ang telepono mo para doon bumukas ang tiket.",
+        pitfall:
+          "Ang pag-screenshot ng tiket bilang backup at ang balak na ipakita ang larawan. Ang tiket na buhay na ina-render sa isang account ay hindi kaparehong bagay ng larawan nito, at hindi ang gate ang lugar na gusto mong matuklasan ang pagkakaiba.",
+        takes: "10 minuto, noong gabi bago",
+      },
+      {
+        title: "Patayin ang pagsasalin ng browser bago ka umalis",
+        body: "Sinasabi ng NOL World na ibinibigay ang mobile ticket sa Ingles lamang, at kung nakikita mo ang ibang wika ay awtomatikong pagsasalin iyon ng browser mo — at ang lunas ay patayin ang pagsasalin at i-refresh ang pahina. Para sa madlang ito, iyon ang default na kalagayan ng browser at hindi isang bihirang kaso. Ang auto-translator na nagre-rewrite ng gate, bloke o hanay ng upuan ay isang problemang hindi mo mapapansin hanggang basahin ito pabalik sa iyo ng isang tao sa pintuan.",
+        pitfall:
+          "Ang pag-iwan sa pagsasaling naka-on dahil nakatulong ito sa buong biyahe. Nagsasalin ito ng mga pahinang Koreano para sa iyo; dito ay Ingles na ang pahina at ang tanging magagawa nito ay sumira.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Kung may QR code kung saan dapat nasa tiket, ayusin ang mode ng browser",
+        body: "Ito ang pinakakaraniwang paraan kung paano nagmumukhang nawawala ang tiket, at hindi ito depekto. Sinasabi ng NOL World na kung nasa desktop mode ang browser mo, isang QR code ang ipinapakita sa halip na ang mobile ticket — at na may pindutang View Tickets sa ilalim ng QR na iyon na nagbubukas pa rin sa tiket. Kung hindi, ilipat ang browser sa mobile mode: sa Chrome ay ang tatlong-tuldok na menu at View as mobile version; sa Safari ay ang pindutan ng wika sa kaliwa ng address bar at Request Mobile Website; sa Samsung Internet ay ang tatlong-guhit na menu at Mobile site.",
+        pitfall:
+          "Ang pagpapa-scan ng QR code na iyon sa gate. Ito ang handoff code ng desktop, hindi ang entry code mo, at ang kailangan mo ay isang tap lamang sa ilalim nito.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Unawain kung saan ka itinatali ng pagpapadala ng tiket",
+        body: "Isang direksiyon lamang ang pagbabahagi ng mobile ticket: ang bumili ang nagpapadala sa dadalo, at isinasaad ng NOL World na ang natanggap na tiket ay hindi na maipapasa pa — ang mga nabook na tiket lamang ang maipapadala. Posible ang pagpapadala hanggang sa araw ng event. Hindi lahat ng produkto ay may ganito; kung saan tinanggal ito ng nagbebenta, basta wala lang doon ang pindutan ng pagpapadala. At ang halaga ng pagpapadala ay ang sarili mong labasan: kapag naipadala nang matagumpay ang tiket, nililimitahan ng NOL World ang pagkansela ng reserbasyon, na naibabalik lamang kung tatanggalin ng tumanggap ang pagkakarehistro nito.",
+        pitfall:
+          "Ang pag-oorganisa ng grupo sa pamamagitan ng pagpapadala sa lahat ng tiket nila sa linggong nag-book ka. Kaka-abot mo lang sa bawat isa ng beto sa pagkansela ng reserbasyong iyon.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Kung tumatanggap ka ng tiket, ituring ang PIN bilang 24-oras na orasan",
+        body: "Hindi magagamit ang natanggap na tiket hangga't hindi ito nairerehistro, at maikli ang bintana. Sinasabi ng NOL World na mairerehistro lamang ang PIN sa loob ng 24 oras mula sa pagpapadala, at na ang hindi nairehistrong tiket ay bumabalik sa nagpadala pagkatapos niyon — o kung hindi ito nairehistro bago ang petsa ng panonood. Nagsisimula ang pagpaparehistro mula sa URL sa mensahe o email: Received Mobile Ticket, Ticket Register, at saka ang PIN mula sa mensahe. Pagkatapos ay nasa My Page, Received Mobile Ticket, Booking History ang tiket. Ang pagsasauli nito ay parehong ruta gamit ang pindutang Return, at sinasabi ng NOL World na maisasauli pa rin ang nairehistrong tiket.",
+        pitfall:
+          "Ang pagpapadala sa kaibigang nasa time zone kung saan karamihan sa 24 oras na iyon ay gabi. Tahimik na bumabalik sa iyo ang tiket at sa iyo na muli ang reserbasyon, na walang problema sa Martes at malaking problema sa umaga ng palabas.",
+        takes: "5 minuto, sa loob ng 24 oras",
+      },
+      {
+        title: "Tingnan ang pahina ng palabas bago ipagpalagay na may ibang makakakuha para sa iyo",
+        body: "Pinapayagan nga ng NOL World ang hindi bumili na kumuha ng tiket, may kasamang tunay na kondisyon. Nag-iiba ang proseso kada venue, maaaring limitado ang pagkuha ng ibang tao depende sa uri ng palabas, at ang bilin ng NOL World ay tingnan ang abiso sa pahina ng detalye ng palabas na nabook mo. Ang kailangan ng ibang tao ay ang detalye ng booking na naka-print mula sa My Ticket, ang numero ng kumpirmasyon, at ang pagkakakilanlan ng bumili. Ituring ang huling kahilingang iyon bilang hangganang talagang ito: sa isang palabas na nagbabantay sa pintuan batay sa napatunayang pagkakakilanlan ng mismong bumili, huwag magplano batay sa isang kinatawan.",
+        pitfall:
+          "Ang pagbasa sa pagkuha ng ibang tao bilang pangkalahatang karapatan. Isa itong pahintulot kada venue at kada palabas, at ang mga palabas na malamang tumanggi rito ay mismong ang mga mataas ang hinihingi na kinailangan mo ng presale.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Huwag ituring ang pagdating nang huli bilang upuang hawak mo pa",
+        body: "Malinaw ang NOL World na ang pagpasok matapos magsimula ay nakadepende sa palabas, at na may mga pagtatanghal na hindi talaga ito pinapayagan — binabanggit nito ang mga klasikong konsiyerto at opera sa partikular. Kung saan may huling pagpasok, maaaring ibig sabihin nito ay maghintay sa interval at panoorin ang ikalawang kalahati. At kahit papasukin ka, sinasabi ng NOL World na maaaring hindi mo maangkin ang upuan mo hanggang sa interval, kaya ang pagdating nang huli ay maaaring mangahulugan ng pagtayo o pag-upo sa ibang lugar sa buong bahaging pinuntahan mo.",
+        pitfall:
+          "Ang pagtutuos ng oras ng pagdating mula sa oras ng pagsisimula. Ituos ito mula sa pila sa pagpasok, sa pagsusuri sa seguridad at sa bintana ng pagkuha, na pawang nangyayari bago ang oras ng pagsisimula at wala ni isa sa kanila ang naghihintay.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "May QR code kung saan dapat nasa tiket ko. Sira ba ang booking ko?",
+        a: "Hindi — nasa desktop mode ang browser mo. Sinasabi ng NOL World na gumagawa iyon ng QR code kapalit ng mobile ticket, at na may pindutang View Tickets sa ilalim nito na nagbubukas ng tiket. Maaari mo ring ilipat ang browser sa mobile mode: may View as mobile version ang tatlong-tuldok na menu ng Chrome, nag-aalok ng Request Mobile Website ang pindutan ng wika sa Safari, at may Mobile site ang tatlong-guhit na menu ng Samsung Internet.",
+      },
+      {
+        q: "Mali ang wikang ipinapakita ng mobile ticket ko.",
+        a: "Ibinibigay ng NOL World ang mobile ticket sa Ingles lamang, kaya ang ibang wika ay nangangahulugang nagsasalin nang awtomatiko ang browser mo. Patayin ang pagsasalin at mag-refresh. Sulit itong gawin bago ka maglakbay sa halip na sa gate, dahil ang naisaling numero ng gate o hanay ng upuan ay mali sa paraang mahirap mapansin.",
+      },
+      {
+        q: "Puwede ko bang ipakita ang tiket mula sa laptop ko sa pintuan?",
+        a: "Sinasabi ng NOL World na available lamang ang mobile ticket sa app o sa mobile web. Sa kompyuter, binibigyan ka ng pindutang Mobile Ticket ng QR code na ise-scan mo gamit ang telepono mo, na doon magbubukas ng totoong tiket. Magplanong pumasok gamit ang telepono.",
+      },
+      {
+        q: "Puwede bang ang kaibigan ko ang kumuha ng tiket ko sa box office?",
+        a: "Minsan. Sinasabi ng NOL World na puwedeng kumuha ang hindi bumili, ngunit nag-iiba ang proseso kada venue at maaaring limitado ang pagkuha ng ibang tao depende sa uri ng palabas — kaya ang abiso sa pahina ng detalye ng palabas mo ang may hawak ng pasya. Kakailanganin niya ang detalye ng booking na naka-print mula sa My Ticket, ang numero ng kumpirmasyon at ang pagkakakilanlan ng bumili. Sa mga palabas na nagpapatunay ng pagkakakilanlan ng bumili sa pagpasok, huwag kang umasa rito.",
+      },
+      {
+        q: "Napadala ko ang mobile ticket nang hindi sinasadya. Mababawi ko ba ito?",
+        a: "Kung hindi pa ito nairerehistro ng tumanggap, oo — sinasabi ng NOL World na makakakansela ang nagpadala ng pagbabahagi gamit ang pindutang Cancel Send. Awtomatiko rin itong bumabalik kung hindi magparehistro ang tumanggap sa loob ng 24 oras o bago ang petsa ng panonood. Kapag nairehistro na, siya na ang may gawa sa pagbabalik: isinasauli niya ito mula sa My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return.",
+      },
+      {
+        q: "Ano ang mangyayari kung hindi kailanman irehistro ng kaibigan ko ang tiket na ipinadala ko?",
+        a: "Babalik ito sa iyo. Sinasabi ng NOL World na awtomatikong isinasauli sa nagpadala ang hindi nairehistrong tiket pagkatapos ng 24 oras, o kung hindi ito nairehistro bago ang petsa ng panonood. Ibinabalik niyan ang reserbasyon mo — kasama na, ayon sa mga tuntunin nito sa pagkansela, ang kakayahan mong kanselahin ito — ngunit tahimik itong proseso, kaya tingnan sa halip na ipagpalagay.",
+      },
+      {
+        q: "Male-late ako nang dalawampung minuto. Papapasukin ba nila ako?",
+        a: "Depende sa palabas at walang makakapangako. Sinasabi ng NOL World na nakadepende sa pagtatanghal ang pagpasok matapos magsimula at na may mga hindi talaga pumapayag, lalo na ang mga klasikong konsiyerto at opera; kung saan pinapayagan, maaaring kailangan mong maghintay sa interval, at maaaring hindi mo maangkin ang sarili mong upuan hanggang doon.",
+      },
+      {
+        q: "Pareho ba ang mobile ticket at ang pagpasok sa pamamagitan ng pagkilala ng mukha?",
+        a: "Hindi. Hiwalay na sistema ang NOL facepass kung saan papapasukin ka ng kamera sa pintuan nang walang pagsusuri ng tiket, at itinatakda kada event ang suporta rito. Ang mobile ticket at ang QR code nito ang karaniwang ruta, at ito ang dapat panatilihing gumagana kahit nakapagrehistro ka na ng mukha.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Thanh toán trên NOL World: phí đặt vé, chiếc đồng hồ, và loại tiền bạn trả",
+    summary:
+      "Một tấm vé concert mang theo khoản phí dịch vụ 8.000 won, bạn có mười phút để chọn ghế và bảy phút để trả tiền, và cửa sổ thanh toán yêu cầu bạn chọn một loại tiền. Ba quyết định về tiền và một chiếc đồng hồ, tất cả đều được công bố và không cái nào hiển nhiên.",
+    scope:
+      "Nói về những gì NOL World công bố liên quan tới chi phí và thời gian của bước thanh toán: phí dịch vụ theo thể loại, chiếc đồng hồ mua hàng hai giai đoạn, việc chọn loại tiền, mã giảm giá, và giới hạn theo từng đơn. Phí và đồng hồ có thể được đặt theo từng sự kiện và NOL World nói vậy trong cả hai trường hợp, nên trang sự kiện của bạn đè lên trang này. Không có gì ở đây là lời khuyên về việc loại tiền nào rẻ hơn cho chiếc thẻ cụ thể của bạn.",
+    intro: [
+      "Phần lớn những gì hỏng ở bước thanh toán của một trang Hàn Quốc không phải là chiếc thẻ. Đó là việc trang web đang hỏi ba câu hỏi có tiền đính kèm trong lúc một chiếc đồng hồ đang chạy, còn một người mua ở nước ngoài thì gặp toàn bộ chuyện đó lần đầu tiên với chừng bảy phút còn lại.",
+      "Tất cả đều được công bố, và không gì trong đó nằm trên trang sản phẩm nơi bạn đã quyết định rằng tấm vé vừa túi tiền. Nên mục đích của trang này là dời những bất ngờ ấy về tuần trước đó.",
+    ],
+    steps: [
+      {
+        title: "Cộng phí dịch vụ vào trước khi kết luận tấm vé vừa túi tiền",
+        body: "NOL World công bố phí dịch vụ theo thể loại. Nhạc kịch và concert mang phí 8.000 won — trừ một số sản phẩm nhất định như concert trực tuyến và tư cách thành viên fan club. Các buổi biểu diễn khác và thể thao là 3.000 won. Giải trí và triển lãm thì miễn phí. NOL World cũng nói rằng phí có thể thay đổi theo sản phẩm và nên kiểm tra lúc mua, nên hãy coi những con số này là mức nền đã công bố chứ không phải một lời hứa về sự kiện của bạn.",
+        pitfall:
+          "So giá vé Hàn Quốc với giá vé ở nước bạn mà quên rằng khoản này nằm chồng lên trên. Nó không lớn, và nó đúng là kiểu bất ngờ nhỏ khiến cả một nền tảng trở nên kém tin cậy vào đúng thời điểm tệ nhất.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết khoản phí đó thực sự mua cái gì, vì một dòng trong đó rất đáng chú ý",
+        body: "NOL World liệt kê những gì phí dịch vụ chi trả: bảo trì trang web và các chi phí liên quan, xử lý thanh toán nuôi hệ thống phát hiện gian lận của họ, phí công nghệ để ngăn những lượt đặt gian lận bằng bot và macro, và hỗ trợ hệ thống cho việc đặt chỗ toàn cầu. Hạng mục thứ ba mới là cái đáng chú ý. Khoản phí đang tài trợ một phần cho bộ máy chống macro, vốn cùng một hướng thực thi với các khâu kiểm tra danh tính và Luật Biểu diễn sửa đổi — và đó là lý do hàng chờ hành xử như một hệ thống đối kháng chứ không như một hàng người.",
+        pitfall:
+          "Đọc khoản phí như lợi nhuận thuần và đọc hàng chờ như sự kém cỏi. Nền tảng đang nói với bạn rằng họ tiêu khoản phí đó để giữ những người mua tự động ở ngoài, và đó cũng là lý do các quy định họ áp lên bạn thì nghiêm.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hiểu chiếc đồng hồ: mười phút để chọn, bảy phút để trả",
+        body: "Chiếc đồng hồ mua hàng có hai giai đoạn và NOL World nêu cả hai. Từ lúc vào trang đặt vé, bạn có tối đa mười phút để chọn ghế. Khi bạn chuyển sang bước giá, ghế của bạn được giữ trong bảy phút trong lúc bạn hoàn tất thanh toán, với một chiếc đồng hồ ở đầu trang. Để lỡ nó thì ghế tự động được nhả ra và bạn đặt lại từ đầu. Các đơn đặt không chọn ghế hoặc vé đứng vẫn có giới hạn mười phút trước khi thanh toán. NOL World nói thêm rằng các giới hạn có thể thay đổi theo sự kiện và một số sự kiện không có giới hạn nào.",
+        pitfall:
+          "Mở ứng dụng ngân hàng để tìm một số thẻ ngay trong bảy phút đó. Thông tin thẻ, địa chỉ thanh toán và ứng dụng duyệt lệnh của ngân hàng bạn đều phải sẵn sàng trước khi bạn vào trang đặt vé, vì chiếc đồng hồ không quan tâm rằng điện thoại của bạn đang bắt bạn đăng nhập lại.",
+        takes: "17 phút, nếu bạn dùng hết",
+      },
+      {
+        title: "Hãy coi câu hỏi về loại tiền là một quyết định thật sự",
+        body: "NOL World hỗ trợ thanh toán bằng 24 loại tiền, gồm won Hàn Quốc, đô la Mỹ, yên và nhân dân tệ, và những loại khả dụng hiện ra sau khi bạn nhập thông tin thẻ. Lựa chọn họ đưa ra là giữa loại tiền của nước phát hành thẻ và won Hàn Quốc. Đó là hai tỷ giá khác nhau do hai bên khác nhau đặt ra — một bên là bên quy đổi tại trang thanh toán, bên kia là mạng lưới thẻ và tổ chức phát hành thẻ của bạn. Chọn loại tiền của chính bạn là quy đổi tiền tệ động, và bên thực hiện quy đổi đặt ra tỷ giá rồi lấy một khoản biên trên đó, nên trả bằng won thường là lựa chọn rẻ hơn trong hai cái. Thường, chứ không phải luôn luôn: phí giao dịch nước ngoài của chính thẻ bạn vẫn áp dụng trong cả hai trường hợp, và một khoản biên tệ từ tổ chức phát hành có thể xóa đi khoảng cách đó. Nửa mà bạn thực sự kiểm tra được trước ngày mua là điều khoản của tổ chức phát hành thẻ, nên hãy kiểm tra chúng.",
+        pitfall:
+          "Chọn loại tiền nước mình vì con số trông quen thuộc. Ở đây cái quen thuộc là lựa chọn đắt hơn nhiều hơn là không, và đây là màn hình duy nhất bạn được chọn ai sẽ thực hiện việc quy đổi.",
+        takes: "10 phút, cùng ngân hàng, trước đó",
+      },
+      {
+        title: "Hãy áp mã giảm giá trước khi trả tiền, vì không có cái sau nào cả",
+        body: "NOL World nói thẳng: một khi thanh toán đã hoàn tất thì bạn không thể áp mã giảm giá. Con đường duy nhất họ đưa ra là hủy chính chiếc ghế đó rồi đặt lại với mã đã áp — và họ cảnh báo rằng việc hủy rồi đặt lại có thể phát sinh phí theo chính sách phí của sự kiện, nên hãy kiểm tra những khoản đó trước. Hãy cân nhắc điều đó một cách thành thật so với giá trị của mã, và nhớ rằng chiếc ghế bạn nhả ra không được giữ lại cho bạn trong lúc bạn đặt lại.",
+        pitfall:
+          "Hủy một chiếc ghế bạn đang thực sự có, để tiết kiệm một khoản giảm giá mà bạn có thể không dùng được. Mã giảm giá đáng giá ít hơn tấm vé, và kho vé thì không đợi.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy lường trước một giới hạn số vé, và lường rằng nó là của nhà tổ chức",
+        body: "NOL World nói rằng tùy nhà tổ chức, có thể có giới hạn về số vé được đặt trên mỗi đơn hoặc trên mỗi thành viên cho một buổi diễn nhất định — và rằng ở nơi vé concert được bán kèm với một tour hay các loại vé vào cửa khác, nhà tổ chức cũng có thể áp một giới hạn theo từng thành viên. Vậy nên cái trần đó không phải một con số chung cho cả nền tảng mà bạn có thể tra cứu; nó được đặt theo từng show, đôi khi theo từng người chứ không theo từng giao dịch, và nó là lý do một đơn đặt theo nhóm có thể hỏng ở bước cuối.",
+        pitfall:
+          "Lên kế hoạch một đơn đặt cho bốn người dựa vào giới hạn bạn đọc ở một show khác. Một giới hạn theo thành viên cũng không giải quyết được bằng cách chia đơn ra nhiều tài khoản của chính bạn — mô thức đó nằm trong danh sách sử dụng gian lận mà NOL World đã công bố.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy xác nhận đơn đặt có tồn tại, ở nơi hiển thị trạng thái",
+        body: "Sau khi thanh toán, hãy mở trang web hoặc ứng dụng NOL World và vào Account/My, rồi My Reservations. NOL World nói rằng các chi tiết cơ bản của đơn đặt và trạng thái đều hiện ra cả trong danh sách lẫn trên trang chi tiết đơn. Hãy làm việc đó một lần khi bạn còn đang ngồi ở bàn, thay vì cho rằng email xác nhận là toàn bộ sự thật — danh sách đơn đặt là nơi một trạng thái khác với điều bạn mong đợi sẽ hiện ra, và đó là màn hình bạn sẽ bị hỏi tới nếu liên hệ bộ phận hỗ trợ.",
+        pitfall:
+          "Coi một lần thanh toán đã đi qua là một đơn đặt đang tồn tại. Thường thì chúng là một, và toàn bộ ý nghĩa của việc kiểm tra nằm ở cái lần chúng không phải một.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết “xong” nghĩa là gì với thứ bạn vừa mua",
+        body: "Với nghệ thuật biểu diễn và concert, NOL World nói quá trình hoàn tất ngay khi thanh toán và bạn nhận vé ở quầy vé tại địa điểm. Các sản phẩm tour và hoạt động thì không đồng nhất: một số phát một mã QR hoặc mã vạch vào My Page hoặc email của bạn và nó cho bạn vào thẳng, một số đòi bạn xuất trình voucher hoặc xác nhận đơn đặt tại một quầy ở hiện trường để đổi lấy vé giấy trước khi vào. Chỉ dẫn của NOL World là xem trang sản phẩm để biết loại nào áp dụng, vì sự khác biệt đó quyết định việc bạn có phải tìm một cái quầy trước khi tới cửa vào hay không.",
+        pitfall:
+          "Cho rằng một mã QR trong email là một tấm vé vào cửa. Với một sản phẩm thuộc loại phải đổi, nó là thứ bạn mang đi đổi ở quầy, và cái quầy thì có giờ làm việc.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Phí đặt vé của một tấm vé concert là bao nhiêu?",
+        a: "NOL World công bố 8.000 won cho nhạc kịch và concert, trừ một số sản phẩm nhất định như concert trực tuyến và tư cách thành viên fan club; 3.000 won cho các buổi biểu diễn khác và thể thao; và không mất gì cho giải trí và triển lãm. Họ cũng nói rằng phí có thể thay đổi theo sản phẩm và nên kiểm tra lúc mua, nên hãy xác nhận trên chính sự kiện của bạn.",
+      },
+      {
+        q: "Thực sự tôi có bao nhiêu thời gian ở bước thanh toán?",
+        a: "Mười phút để chọn ghế tính từ lúc vào trang đặt vé, rồi một lần giữ chỗ bảy phút trong lúc bạn trả tiền, với một chiếc đồng hồ hiện ở đầu trang. Vượt quá thì ghế được nhả ra và bạn bắt đầu lại. Vé đứng vẫn có mười phút đó. NOL World nói các giới hạn có thể thay đổi theo sự kiện và một số sự kiện không có giới hạn nào.",
+      },
+      {
+        q: "Tôi nên trả bằng won Hàn Quốc hay bằng tiền nước mình?",
+        a: "Thường là won. NOL World hỗ trợ 24 loại tiền và cho bạn chọn giữa loại tiền của nước phát hành thẻ và won Hàn Quốc, hiện ra sau khi bạn nhập thông tin thẻ. Chọn loại tiền của chính bạn là quy đổi tiền tệ động, trong đó bên quy đổi đặt tỷ giá và cộng thêm một khoản biên — nên won nhìn chung rẻ hơn. Phí giao dịch nước ngoài của chính thẻ bạn vẫn áp dụng trong cả hai trường hợp, và đó là phần cần hỏi tổ chức phát hành thẻ trước ngày mua.",
+      },
+      {
+        q: "Tôi quên dùng mã giảm giá. Thêm vào bây giờ được không?",
+        a: "Không. NOL World nói rằng không thể áp mã giảm giá khi thanh toán đã hoàn tất. Con đường duy nhất họ đưa ra là hủy chính chiếc ghế đó rồi đặt lại kèm mã, và họ cảnh báo rằng việc hủy và đặt lại có thể mang theo phí theo chính sách của sự kiện. Hãy kiểm tra khoản phí đó trước khi nhả ra một chiếc ghế bạn đang có.",
+      },
+      {
+        q: "Vì sao tôi chỉ đặt được hai vé trong khi bạn tôi đặt được bốn?",
+        a: "Vì giới hạn thuộc về nhà tổ chức chứ không thuộc về nền tảng. NOL World nói một buổi diễn có thể giới hạn số vé theo đơn hoặc theo thành viên, và rằng các sản phẩm gộp concert cộng tour cũng có thể mang theo một giới hạn theo thành viên. Một show khác, hay một đợt bán khác, có thể có một cái trần khác.",
+      },
+      {
+        q: "Tôi dùng thẻ tín dụng Hàn Quốc trên NOL World được không?",
+        a: "Không. NOL World chỉ nhận thẻ phát hành ngoài Hàn Quốc; thẻ phát hành tại Hàn thuộc về các thành viên trong nước đã xác minh trên trang tiếng Hàn. Một chiếc thẻ Hàn Quốc bị từ chối ở đây là quy định đang vận hành đúng, chứ không phải một lỗi.",
+      },
+      {
+        q: "Tôi kiểm tra đơn đặt có thành công hay không ở đâu?",
+        a: "Trên trang web hoặc ứng dụng NOL World, trong Account/My rồi My Reservations. NOL World nói chi tiết đơn đặt và trạng thái đều hiện ra cả trong danh sách lẫn trên trang chi tiết. Chính màn hình đó, chứ không phải email xác nhận, mới là thứ cho thấy trạng thái.",
+      },
+      {
+        q: "Tôi đã trả tiền rồi. Còn việc gì phải làm trước buổi diễn không?",
+        a: "Với một tấm vé concert hay nghệ thuật biểu diễn thì không — NOL World nói quá trình đã hoàn tất và bạn nhận vé ở quầy vé tại địa điểm. Với một sản phẩm tour hay hoạt động thì còn tùy: một số gửi một mã QR hoặc mã vạch cho bạn vào thẳng, một số cần voucher được đổi lấy vé giấy ở một quầy tại hiện trường trước. Trang sản phẩm sẽ nói rõ là loại nào.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "การชำระเงินบน NOL World: ค่าธรรมเนียมการจอง นาฬิกา และสกุลเงินที่คุณจ่าย",
+    summary:
+      "บัตรคอนเสิร์ตมีค่าบริการ 8,000 วอนติดมาด้วย คุณมีสิบนาทีในการเลือกที่นั่งและเจ็ดนาทีในการจ่าย และหน้าชำระเงินขอให้คุณเลือกสกุลเงิน สามการตัดสินใจเรื่องเงินกับนาฬิกาหนึ่งเรือน ทั้งหมดถูกเผยแพร่ไว้และไม่มีข้อไหนชัดเจนในตัวเอง",
+    scope:
+      "ครอบคลุมสิ่งที่ NOL World เผยแพร่เกี่ยวกับต้นทุนและจังหวะเวลาของการชำระเงิน: ค่าบริการตามประเภทงาน นาฬิกาการซื้อสองช่วง การเลือกสกุลเงิน คูปอง และขีดจำกัดต่อคำสั่งซื้อ ค่าธรรมเนียมและนาฬิกากำหนดเป็นรายอีเวนต์ได้และ NOL World บอกไว้ทั้งสองกรณี หน้าอีเวนต์ของคุณจึงมีผลเหนือหน้านี้ ไม่มีอะไรในนี้เป็นคำแนะนำว่าสกุลเงินใดถูกกว่าสำหรับบัตรใบหนึ่ง ๆ ของคุณ",
+    intro: [
+      "สิ่งที่ผิดพลาดตอนชำระเงินบนเว็บเกาหลีส่วนใหญ่ไม่ใช่ตัวบัตร แต่เป็นการที่หน้าเว็บกำลังถามสามคำถามซึ่งมีเงินผูกอยู่ขณะที่นาฬิกาเดินอยู่ และผู้ซื้อจากต่างประเทศเจอทั้งหมดนั้นเป็นครั้งแรกโดยเหลือเวลาราวเจ็ดนาที",
+      "ทั้งหมดถูกเผยแพร่ไว้ และไม่มีข้อไหนอยู่บนหน้าสินค้าที่คุณใช้ตัดสินว่าบัตรราคาพอรับไหว จุดประสงค์ของหน้านี้จึงคือการย้ายความประหลาดใจเหล่านั้นไปไว้ที่สัปดาห์ก่อนหน้า",
+    ],
+    steps: [
+      {
+        title: "บวกค่าบริการก่อนจะตัดสินว่าบัตรราคาพอรับไหว",
+        body: "NOL World เผยแพร่ค่าบริการตามประเภทงาน ละครเพลงและคอนเสิร์ตมีค่าบริการ 8,000 วอน ยกเว้นสินค้าบางอย่างเช่นคอนเสิร์ตออนไลน์และสมาชิกแฟนคลับ การแสดงอื่นและกีฬาอยู่ที่ 3,000 วอน สันทนาการและนิทรรศการไม่มีค่าบริการ NOL World ยังบอกว่าค่าธรรมเนียมอาจต่างกันตามสินค้าและให้ตรวจตอนซื้อ จึงควรถือว่าตัวเลขเหล่านี้เป็นฐานที่เผยแพร่ไว้ ไม่ใช่คำสัญญาเกี่ยวกับงานของคุณ",
+        pitfall:
+          "การเทียบราคาบัตรเกาหลีกับราคาบัตรที่บ้านคุณแล้วลืมว่าส่วนนี้ซ้อนอยู่ข้างบน มันไม่ใช่จำนวนมาก และเป็นความประหลาดใจเล็ก ๆ ชนิดที่ทำให้ทั้งแพลตฟอร์มดูไม่น่าไว้ใจในจังหวะที่แย่ที่สุด",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่าค่าธรรมเนียมนั้นซื้ออะไรจริง ๆ เพราะมีบรรทัดหนึ่งที่สำคัญ",
+        body: "NOL World แจกแจงว่าค่าบริการครอบคลุมอะไรบ้าง: การบำรุงรักษาเว็บไซต์และต้นทุนที่เกี่ยวข้อง การประมวลผลการชำระเงินที่หนุนระบบตรวจจับการฉ้อโกงของเขา ค่าธรรมเนียมทางเทคโนโลยีเพื่อป้องกันการจองโดยฉ้อฉลผ่านบอตและมาโคร และการสนับสนุนระบบสำหรับการจองจากทั่วโลก รายการที่สามนั่นแหละที่น่าสนใจ ค่าธรรมเนียมนี้กำลังอุดหนุนเครื่องจักรต่อต้านมาโครอยู่บางส่วน ซึ่งเป็นทิศทางการบังคับใช้เดียวกับการตรวจตัวตนและกฎหมายการแสดงฉบับแก้ไข และนั่นคือเหตุผลที่คิวทำตัวเหมือนระบบที่สู้กับคุณมากกว่าเป็นแถวคอย",
+        pitfall:
+          "การอ่านค่าธรรมเนียมว่าเป็นกำไรล้วนและอ่านคิวว่าเป็นความไร้ฝีมือ แพลตฟอร์มกำลังบอกคุณว่ามันใช้ค่าธรรมเนียมนั้นกันผู้ซื้ออัตโนมัติออกไป ซึ่งก็เป็นเหตุผลที่กฎซึ่งมันบังคับกับคุณนั้นเข้มงวด",
+        takes: "2 นาที",
+      },
+      {
+        title: "เข้าใจนาฬิกา: สิบนาทีเพื่อเลือก เจ็ดนาทีเพื่อจ่าย",
+        body: "นาฬิกาการซื้อมีสองช่วงและ NOL World ระบุไว้ทั้งคู่ นับจากที่คุณเข้าหน้าจอง คุณมีเวลาถึงสิบนาทีในการเลือกที่นั่ง เมื่อคุณไปถึงขั้นราคา ที่นั่งของคุณจะถูกกันไว้เจ็ดนาทีระหว่างที่คุณชำระเงินให้เสร็จ โดยมีนาฬิกาอยู่ด้านบนของหน้า พลาดไปแล้วที่นั่งจะถูกปล่อยโดยอัตโนมัติและคุณเริ่มจองใหม่ การจองแบบไม่ระบุที่นั่งหรือแบบยืนก็ยังได้ขีดจำกัดสิบนาทีก่อนชำระเงิน NOL World เสริมว่าขีดจำกัดอาจต่างกันตามอีเวนต์และบางอีเวนต์ไม่มีเลย",
+        pitfall:
+          "การเปิดแอปธนาคารเพื่อหาเลขบัตรภายในเจ็ดนาทีนั้น ข้อมูลบัตร ที่อยู่เรียกเก็บเงิน และแอปอนุมัติของธนาคารคุณควรพร้อมหมดก่อนคุณเข้าหน้าจอง เพราะนาฬิกาไม่สนใจว่าโทรศัพท์ของคุณกำลังให้คุณล็อกอินใหม่",
+        takes: "17 นาที ถ้าใช้หมด",
+      },
+      {
+        title: "ถือว่าคำถามเรื่องสกุลเงินเป็นการตัดสินใจจริง",
+        body: "NOL World รองรับการชำระเงิน 24 สกุล รวมถึงวอนเกาหลี ดอลลาร์สหรัฐ เยน และหยวน และสกุลที่ใช้ได้จะปรากฏหลังคุณกรอกข้อมูลบัตร ตัวเลือกที่เขาให้คือระหว่างสกุลเงินของประเทศที่ออกบัตรให้คุณกับวอนเกาหลี นั่นคืออัตราแลกเปลี่ยนสองอัตราที่ตั้งโดยสองฝ่าย — ฝ่ายหนึ่งคือใครก็ตามที่แปลงสกุลที่หน้าชำระเงิน อีกฝ่ายคือเครือข่ายบัตรและผู้ออกบัตรของคุณ การเลือกสกุลเงินของตัวเองคือการแปลงสกุลเงินแบบไดนามิก และฝ่ายที่แปลงเป็นผู้ตั้งอัตราและกินส่วนต่างจากมัน การจ่ายเป็นวอนจึงมักเป็นทางที่ถูกกว่าในสองทาง มักเป็น ไม่ใช่เสมอไป: ค่าธรรมเนียมธุรกรรมต่างประเทศของบัตรคุณเองยังถูกคิดอยู่ดีทั้งสองทาง และส่วนต่างที่แย่ของผู้ออกบัตรอาจปิดช่องว่างนั้นได้ ครึ่งที่คุณตรวจได้จริงก่อนถึงวันคือเงื่อนไขของผู้ออกบัตรคุณ จึงควรไปตรวจส่วนนั้น",
+        pitfall:
+          "การเลือกสกุลเงินบ้านเกิดเพราะตัวเลขดูคุ้นตา ที่นี่ของที่คุ้นตาคือทางเลือกที่แพงกว่าบ่อยกว่าไม่แพงกว่า และนี่เป็นหน้าจอเดียวที่คุณได้เลือกว่าใครเป็นคนแปลงสกุลเงิน",
+        takes: "10 นาที กับธนาคารของคุณ ล่วงหน้า",
+      },
+      {
+        title: "ใช้คูปองก่อนจ่าย เพราะไม่มีทีหลัง",
+        body: "NOL World พูดตรง ๆ ว่าเมื่อชำระเงินเสร็จแล้วคุณใช้คูปองไม่ได้ ทางเดียวที่เขาเสนอคือยกเลิกที่นั่งเดิมแล้วจองใหม่พร้อมใช้คูปอง และเขาเตือนว่าการยกเลิกแล้วจองใหม่อาจมีค่าธรรมเนียมตามนโยบายของงานนั้น ให้ตรวจก่อน ชั่งเรื่องนี้อย่างตรงไปตรงมากับมูลค่าของคูปอง และจำไว้ว่าที่นั่งที่คุณปล่อยออกไปไม่ได้ถูกกันไว้ให้คุณระหว่างที่จองใหม่",
+        pitfall:
+          "การยกเลิกที่นั่งที่คุณมีอยู่จริง เพื่อประหยัดส่วนลดที่คุณอาจไม่ได้ใช้ คูปองมีค่าน้อยกว่าบัตร และสต็อกไม่รอ",
+        takes: "5 นาที",
+      },
+      {
+        title: "คาดไว้ว่าจะมีขีดจำกัดจำนวนบัตร และคาดว่ามันเป็นของผู้จัด",
+        body: "NOL World บอกว่าขึ้นอยู่กับผู้จัด อาจมีขีดจำกัดว่าจองบัตรได้กี่ใบต่อคำสั่งซื้อหรือต่อสมาชิกหนึ่งคนสำหรับการแสดงหนึ่ง ๆ และว่าในกรณีที่บัตรคอนเสิร์ตถูกขายรวมกับทัวร์หรือบัตรเข้าชมอื่น ผู้จัดอาจกำหนดขีดจำกัดต่อสมาชิกด้วย เพดานนั้นจึงไม่ใช่ตัวเลขของทั้งแพลตฟอร์มที่คุณไปเปิดดูได้ มันถูกตั้งเป็นรายงาน บางครั้งเป็นรายคนไม่ใช่รายธุรกรรม และเป็นเหตุผลที่คำสั่งซื้อแบบกลุ่มอาจล้มเหลวในขั้นสุดท้าย",
+        pitfall:
+          "การวางแผนคำสั่งซื้อสำหรับสี่คนโดยอิงขีดจำกัดที่คุณอ่านจากอีกงานหนึ่ง ขีดจำกัดต่อสมาชิกก็แก้ไม่ได้ด้วยการกระจายคำสั่งซื้อไปตามบัญชีของตัวเองเช่นกัน รูปแบบนั้นอยู่ในรายการการใช้งานโดยฉ้อฉลที่ NOL World เผยแพร่ไว้",
+        takes: "5 นาที",
+      },
+      {
+        title: "ยืนยันว่าการจองมีอยู่จริง ในที่ที่แสดงสถานะ",
+        body: "หลังชำระเงิน ให้เปิดเว็บไซต์หรือแอป NOL World แล้วไปที่ Account/My จากนั้น My Reservations NOL World บอกว่ารายละเอียดการจองพื้นฐานและสถานะมองเห็นได้ทั้งในรายการและบนหน้ารายละเอียดการจอง ทำสักครั้งขณะที่คุณยังอยู่หน้าโต๊ะ แทนที่จะคิดว่าอีเมลยืนยันคือความจริงทั้งหมด รายการการจองคือที่ที่สถานะซึ่งไม่ตรงกับที่คุณคาดจะปรากฏ และเป็นหน้าจอที่คุณจะถูกถามถึงถ้าติดต่อฝ่ายบริการ",
+        pitfall:
+          "การถือว่าการชำระเงินที่ผ่านไปแล้วคือการจองที่มีอยู่ ส่วนใหญ่มันเป็นสิ่งเดียวกัน และความหมายทั้งหมดของการตรวจอยู่ที่ครั้งที่มันไม่ใช่",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่า “เสร็จแล้ว” หมายถึงอะไรสำหรับสิ่งที่คุณซื้อ",
+        body: "สำหรับศิลปะการแสดงและคอนเสิร์ต NOL World บอกว่ากระบวนการเสร็จสมบูรณ์ตอนชำระเงินและคุณไปรับบัตรที่ห้องจำหน่ายบัตรของสถานที่ สินค้าประเภททัวร์และกิจกรรมไม่เหมือนกันหมด บางอย่างออกคิวอาร์หรือบาร์โค้ดไปยัง My Page หรืออีเมลของคุณซึ่งให้คุณเข้าได้โดยตรง และบางอย่างต้องให้คุณแสดงวอเชอร์หรือใบยืนยันการจองที่เคาน์เตอร์หน้างานเพื่อแลกเป็นบัตรจริงก่อนเข้า คำสั่งของ NOL World คือให้ดูหน้าสินค้าว่าเป็นแบบไหน เพราะความต่างนั้นตัดสินว่าคุณต้องไปหาเคาน์เตอร์ก่อนถึงทางเข้าหรือไม่",
+        pitfall:
+          "การคิดว่าคิวอาร์โค้ดในอีเมลคือบัตรผ่านเข้างาน สำหรับสินค้าประเภทที่ต้องแลก มันคือสิ่งที่คุณเอาไปแลกที่เคาน์เตอร์ และเคาน์เตอร์มีเวลาทำการ",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ค่าธรรมเนียมการจองของบัตรคอนเสิร์ตเท่าไร",
+        a: "NOL World เผยแพร่ไว้ที่ 8,000 วอนสำหรับละครเพลงและคอนเสิร์ต ยกเว้นสินค้าบางอย่างเช่นคอนเสิร์ตออนไลน์และสมาชิกแฟนคลับ 3,000 วอนสำหรับการแสดงอื่นและกีฬา และไม่มีค่าใช้จ่ายสำหรับสันทนาการและนิทรรศการ เขายังบอกว่าค่าธรรมเนียมอาจต่างกันตามสินค้าและให้ตรวจตอนซื้อ จึงควรยืนยันกับงานของคุณเอง",
+      },
+      {
+        q: "ตอนชำระเงินฉันมีเวลาเท่าไรจริง ๆ",
+        a: "สิบนาทีในการเลือกที่นั่งนับจากเข้าหน้าจอง จากนั้นเป็นการกันที่นั่งเจ็ดนาทีระหว่างที่คุณจ่าย โดยมีนาฬิกาแสดงอยู่ด้านบน เกินไปแล้วที่นั่งจะถูกปล่อยและคุณเริ่มใหม่ แบบยืนก็ยังได้สิบนาทีเช่นกัน NOL World บอกว่าขีดจำกัดอาจต่างกันตามอีเวนต์และบางอีเวนต์ไม่มีเลย",
+      },
+      {
+        q: "ควรจ่ายเป็นวอนเกาหลีหรือสกุลเงินของตัวเอง",
+        a: "โดยทั่วไปเป็นวอน NOL World รองรับ 24 สกุลเงินและให้คุณเลือกระหว่างสกุลเงินของประเทศที่ออกบัตรกับวอนเกาหลี ซึ่งแสดงหลังคุณกรอกข้อมูลบัตร การเลือกสกุลเงินของตัวเองคือการแปลงสกุลเงินแบบไดนามิก ซึ่งฝ่ายที่แปลงตั้งอัตราและบวกส่วนต่างเข้าไป วอนจึงถูกกว่าโดยทั่วไป ค่าธรรมเนียมธุรกรรมต่างประเทศของบัตรคุณเองถูกคิดอยู่ดีทั้งสองทาง และนั่นคือส่วนที่ต้องไปตรวจกับผู้ออกบัตรก่อนถึงวัน",
+      },
+      {
+        q: "ฉันลืมใช้คูปอง เพิ่มตอนนี้ได้ไหม",
+        a: "ไม่ได้ NOL World บอกว่าใช้คูปองไม่ได้เมื่อชำระเงินเสร็จแล้ว ทางเดียวที่เขาให้คือยกเลิกที่นั่งเดิมแล้วจองใหม่พร้อมคูปอง และเขาเตือนว่าการยกเลิกและจองใหม่อาจมีค่าธรรมเนียมตามนโยบายของงาน ตรวจค่าธรรมเนียมก่อนจะปล่อยที่นั่งที่คุณถืออยู่แล้ว",
+      },
+      {
+        q: "ทำไมฉันจองได้แค่สองใบขณะที่เพื่อนจองได้สี่ใบ",
+        a: "เพราะขีดจำกัดเป็นของผู้จัด ไม่ใช่ของแพลตฟอร์ม NOL World บอกว่าการแสดงหนึ่งอาจจำกัดจำนวนบัตรต่อคำสั่งซื้อหรือต่อสมาชิก และว่าสินค้าที่รวมคอนเสิร์ตกับทัวร์อาจมีขีดจำกัดต่อสมาชิกด้วย งานอื่นหรือรอบขายอื่นอาจมีเพดานต่างกัน",
+      },
+      {
+        q: "ใช้บัตรเครดิตเกาหลีบน NOL World ได้ไหม",
+        a: "ไม่ได้ NOL World รับเฉพาะบัตรที่ออกนอกเกาหลี บัตรที่ออกในเกาหลีเป็นของสมาชิกในประเทศที่ยืนยันตัวตนแล้วบนเว็บภาษาเกาหลี บัตรเกาหลีที่ถูกปฏิเสธที่นี่คือกฎที่ทำงานอยู่ ไม่ใช่ความผิดพลาด",
+      },
+      {
+        q: "ฉันตรวจว่าการจองผ่านหรือไม่ได้ที่ไหน",
+        a: "ที่เว็บไซต์หรือแอป NOL World ใน Account/My แล้ว My Reservations NOL World บอกว่ารายละเอียดการจองและสถานะปรากฏทั้งในรายการและบนหน้ารายละเอียด หน้าจอนั้น ไม่ใช่อีเมลยืนยัน คือสิ่งที่แสดงสถานะ",
+      },
+      {
+        q: "ฉันจ่ายแล้ว เหลืออะไรต้องทำก่อนงานไหม",
+        a: "สำหรับบัตรคอนเสิร์ตหรือศิลปะการแสดง ไม่เหลือ NOL World บอกว่ากระบวนการเสร็จสมบูรณ์แล้วและคุณไปรับบัตรที่ห้องจำหน่ายบัตรของสถานที่ สำหรับสินค้าประเภททัวร์หรือกิจกรรมขึ้นอยู่กับกรณี บางอย่างส่งคิวอาร์หรือบาร์โค้ดที่ให้คุณเข้าได้โดยตรง บางอย่างต้องเอาวอเชอร์ไปแลกเป็นบัตรจริงที่เคาน์เตอร์หน้างานก่อน หน้าสินค้าจะบอกว่าเป็นแบบไหน",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Checkout sa NOL World: ang bayad sa booking, ang orasan, at ang perang ipinambabayad mo",
+    summary:
+      "May 8,000 won na service fee ang tiket sa konsiyerto, sampung minuto ang ibinibigay sa iyo para pumili ng upuan at pito para magbayad, at hinihiling ng pahina ng bayad na pumili ka ng pera. Tatlong desisyon tungkol sa pera at isang timer, pawang inilathala at walang isa mang halata.",
+    scope:
+      "Sakop nito ang inilalathala ng NOL World tungkol sa halaga at sa oras ng checkout nito: ang service fee kada genre, ang dalawang-yugtong timer ng pagbili, ang pagpili ng pera, ang mga kupon, at ang limitasyon kada order. Maaaring itakda kada event ang mga bayad at timer at sinasabi iyon ng NOL World sa dalawang kaso, kaya nananaig ang pahina ng event mo rito. Walang narito na payo kung aling pera ang mas mura para sa partikular mong kard.",
+    intro: [
+      "Karamihan sa nagkakamali sa isang Koreanong checkout ay hindi ang kard. Ang nangyayari ay nagtatanong ang pahina ng tatlong tanong na may nakakabit na pera habang tumatakbo ang isang timer, at nakakaharap ng isang mamimili mula sa ibang bansa ang lahat ng iyon sa unang pagkakataon na may natitirang mga pitong minuto.",
+      "Lahat ng ito ay inilathala, at wala ni isa sa kanila sa pahina ng produkto kung saan mo napagpasyahang kaya mong bilhin ang tiket. Kaya ang punto ng pahinang ito ay ilipat ang mga sorpresa sa linggo bago.",
+    ],
+    steps: [
+      {
+        title: "Idagdag ang service fee bago mo pagpasyahang kaya mo ang tiket",
+        body: "Inilalathala ng NOL World ang service fee nito kada genre. May 8,000 won ang mga musical at konsiyerto — maliban sa ilang produkto gaya ng online na konsiyerto at membership sa fan club. Ang ibang pagtatanghal at ang isports ay 3,000 won. Libre ang leisure at mga eksibisyon. Sinasabi rin ng NOL World na maaaring mag-iba ang bayad kada produkto at tingnan ito sa oras ng pagbili, kaya ituring ang mga ito bilang inilathalang panimula at hindi bilang pangako tungkol sa event mo.",
+        pitfall:
+          "Ang paghahambing ng presyo ng Koreanong tiket sa presyo ng tiket sa bansa mo at ang pagkalimot na nakapatong ito. Hindi ito malaki, at ito ang uri ng maliit na sorpresang nagpaparamdam na hindi mapagkakatiwalaan ang buong plataporma sa pinakamasamang sandali.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin kung ano talaga ang binibili ng bayad, dahil may isang linya rito na mahalaga",
+        body: "Isa-isang inilalahad ng NOL World ang sakop ng service fee: ang pagpapanatili ng website at mga kaugnay na gastos, ang pagproseso ng bayad na sumusuporta sa sistema nito laban sa pandaraya, ang mga bayad sa teknolohiya para pigilan ang mapandayang booking ng bot at macro, at ang suportang pang-sistema para sa pandaigdigang reserbasyon. Ang pangatlong bagay na iyon ang kawili-wili. Bahagyang pinopondohan ng bayad ang makinaryang laban sa macro, na kaparehong direksiyon ng pagpapatupad gaya ng pagsusuri ng pagkakakilanlan at ng binagong Performances Act — at iyan ang dahilan kung bakit kumikilos ang pila na parang sistemang kalaban sa halip na isang hanay.",
+        pitfall:
+          "Ang pagbasa sa bayad bilang purong tubo at sa pila bilang kawalan ng kakayahan. Sinasabi sa iyo ng plataporma na ginagastos nito ang bayad sa pagpigil sa mga awtomatikong mamimili, na siya ring dahilan kung bakit mahigpit ang mga tuntuning ipinapataw nito sa iyo.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Unawain ang orasan: sampung minuto para pumili, pito para magbayad",
+        body: "Dalawang yugto ang timer ng pagbili at isinasaad ng NOL World ang dalawa. Mula sa pagpasok sa pahina ng booking ay may hanggang sampung minuto ka para pumili ng upuan. Kapag lumipat ka sa yugto ng presyo ay hawak ang mga upuan mo nang pitong minuto habang kinukumpleto mo ang bayad, na may timer sa itaas ng pahina. Lagpasan ito at awtomatikong binibitawan ang mga upuan at magsisimula kang muli. Ang mga booking na walang nakatakdang upuan o general admission ay may limitasyon pa ring sampung minuto bago magbayad. Dagdag ng NOL World, maaaring mag-iba ang mga limitasyon kada event at may mga event na wala nito.",
+        pitfall:
+          "Ang pagbukas ng banking app para maghanap ng numero ng kard sa loob ng pitong minuto. Ang detalye ng kard, ang address ng pagsingil at ang app ng pag-apruba ng bangko mo ay dapat handa na bago ka pumasok sa pahina ng booking, dahil walang pakialam ang orasan na hinihingan ka ng telepono mong mag-log in muli.",
+        takes: "17 minuto, kung gagamitin lahat",
+      },
+      {
+        title: "Ituring ang tanong tungkol sa pera bilang tunay na desisyon",
+        body: "Sinusuportahan ng NOL World ang bayad sa 24 na pera kabilang ang Korean won, US dollar, yen at yuan, at lumalabas ang mga available pagkatapos mong ilagay ang detalye ng kard mo. Ang pagpiling inaalok nito ay sa pagitan ng pera ng bansang nag-isyu ng kard mo at ng Korean won. Dalawang magkaibang palitan iyon na itinakda ng dalawang magkaibang panig — isa ng sinumang nagkokonberte sa pahina ng bayad, isa ng network at nag-isyu ng kard mo. Ang pagpili ng sarili mong pera ay dynamic currency conversion, at ang panig na nagkokonberte ang nagtatakda ng palitan at kumukuha ng margin doon, kaya ang pagbabayad sa won ang karaniwang mas mura sa dalawa. Karaniwan, hindi palagi: napapataw pa rin ang bayad ng sarili mong kard sa dayuhang transaksiyon sa alinmang paraan, at puwedeng isara ng masamang margin ng nag-isyu ang agwat. Ang kalahating masusuri mo talaga bago ang araw ay ang mga tuntunin ng nag-isyu sa iyo, kaya suriin ang mga iyon.",
+        pitfall:
+          "Ang pagpili ng perang pang-bahay dahil pamilyar ang numero. Mas madalas na ang pamilyar ang mas mahal na pagpipilian dito, at ito ang iisang screen kung saan pinipili mo kung sino ang magkokonberte.",
+        takes: "10 minuto, kasama ang bangko mo, nang maaga",
+      },
+      {
+        title: "Gamitin ang kupon bago magbayad, dahil walang pagkatapos",
+        body: "Tuwiran ang NOL World tungkol dito: kapag kumpleto na ang bayad ay hindi mo na magagamit ang kupon. Ang tanging ruta na inaalok nito ay kanselahin ang parehong upuan at mag-book muli kasama ang kupon — at nagbabala ito na ang pagkansela at muling pag-book ay maaaring magkaroon ng bayad sa ilalim ng patakaran ng mismong event, kaya tingnan muna ang mga iyon. Timbangin iyan nang tapat laban sa halaga ng kupon, at tandaang hindi nakareserba para sa iyo ang upuang binitawan mo habang nagbu-book kang muli.",
+        pitfall:
+          "Ang pagkansela ng upuang hawak mo talaga, para makatipid ng diskuwentong baka hindi mo magamit. Mas mababa ang halaga ng kupon kaysa sa tiket, at hindi naghihintay ang stock.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Asahan ang limitasyon sa tiket, at asahang sa organisador ito",
+        body: "Sinasabi ng NOL World na depende sa organisador ay maaaring may limitasyon kung ilang tiket ang maaaring ireserba kada order o kada miyembro para sa isang pagtatanghal — at na kung saan ipinagbibili ang tiket sa konsiyerto kasama ang isang tour o ibang tiket sa pagpasok, maaari ring magpataw ang organisador ng limitasyon kada miyembro. Kaya hindi ang kisame ay isang numerong pang-buong plataporma na matitingnan mo; itinatakda ito kada palabas, minsan kada tao sa halip na kada transaksiyon, at dahilan ito kung bakit maaaring bumagsak ang group order sa huling hakbang.",
+        pitfall:
+          "Ang pagplano ng order para sa apat na tao batay sa limitasyong nabasa mo sa ibang palabas. Hindi rin malulutas ang limitasyon kada miyembro sa pamamagitan ng paghahati ng order sa sarili mong mga account — nasa inilathalang listahan ng mapandayang paggamit ng NOL World ang pattern na iyon.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Kumpirmahing umiiral ang booking, sa lugar na nagpapakita ng katayuan",
+        body: "Pagkatapos magbayad, buksan ang website o app ng NOL World at pumunta sa Account/My, at saka My Reservations. Sinasabi ng NOL World na nakikita ang pangunahing detalye at katayuan ng reserbasyon kapwa sa listahan at sa pahina ng detalye ng booking. Gawin iyon nang isang beses habang nasa harap ka pa ng mesa sa halip na ipagpalagay na ang email ng kumpirmasyon ang buong katotohanan — ang listahan ng reserbasyon ang lugar kung saan lumalabas ang katayuang hindi mo inaasahan, at iyon ang screen na itatanong sa iyo kapag nakipag-ugnayan ka sa suporta.",
+        pitfall:
+          "Ang pagturing sa bayad na tumuloy bilang booking na umiiral. Karaniwan silang magkapareho at ang buong punto ng pagsuri ay ang pagkakataong hindi sila magkapareho.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin kung ano ang ibig sabihin ng tapos para sa binili mo",
+        body: "Para sa performing arts at konsiyerto, sinasabi ng NOL World na kumpleto ang proseso sa pagbabayad at kukunin mo ito sa box office ng venue. Hindi pare-pareho ang mga produktong tour at aktibidad: may naglalabas ng QR o barcode sa My Page mo o sa email na tuwirang nagpapapasok sa iyo, at may nangangailangang iharap mo ang voucher o kumpirmasyon ng booking sa isang counter sa lugar para ipalit sa pisikal na tiket bago pumasok. Ang bilin ng NOL World ay tingnan sa pahina ng produkto kung alin ang umiiral, dahil ang pagkakaiba ang nagpapasya kung kailangan mong maghanap ng counter bago ang pintuan.",
+        pitfall:
+          "Ang pag-aakalang ang QR code sa email mo ay pass sa pagpasok. Para sa produktong ipinapalit, ito ang ipinapalit mo sa isang counter, at may oras ng pagbubukas ang counter.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Magkano ang bayad sa booking ng isang tiket sa konsiyerto?",
+        a: "Inilalathala ng NOL World ang 8,000 won para sa musical at konsiyerto, maliban sa ilang produkto gaya ng online na konsiyerto at membership sa fan club; 3,000 won para sa ibang pagtatanghal at isports; at wala para sa leisure at eksibisyon. Sinasabi rin nitong maaaring mag-iba ang bayad kada produkto at tingnan sa pagbili, kaya kumpirmahin sa sarili mong event.",
+      },
+      {
+        q: "Gaano katagal talaga ang meron ako sa checkout?",
+        a: "Sampung minuto para pumili ng upuan mula sa pagpasok sa pahina ng booking, at saka pitong minutong paghawak habang nagbabayad ka, na may timer sa itaas. Lagpasan ito at bibitawan ang mga upuan at magsisimula kang muli. May sampung minuto pa rin ang general admission. Sinasabi ng NOL World na maaaring mag-iba ang limitasyon kada event at may mga event na wala nito.",
+      },
+      {
+        q: "Dapat ba akong magbayad sa Korean won o sa sarili kong pera?",
+        a: "Karaniwan ay won. Sinusuportahan ng NOL World ang 24 na pera at pinapapili ka nito sa pagitan ng pera ng bansang nag-isyu ng kard mo at ng Korean won, na ipinapakita pagkatapos mong ilagay ang detalye ng kard. Ang pagpili ng sarili mong pera ay dynamic currency conversion, kung saan itinatakda ng nagkokonberteng panig ang palitan at nagdaragdag ng margin — kaya karaniwang mas mura ang won. Napapataw pa rin ang bayad ng kard mo sa dayuhang transaksiyon sa alinmang paraan, at iyan ang bahaging dapat suriin sa nag-isyu bago ang araw.",
+      },
+      {
+        q: "Nakalimutan kong gamitin ang kupon ko. Puwede ko pa bang idagdag ngayon?",
+        a: "Hindi. Sinasabi ng NOL World na hindi na magagamit ang kupon kapag kumpleto na ang bayad. Ang tanging ruta na ibinibigay nito ay ang pagkansela ng parehong upuan at muling pag-book kasama ang kupon, at nagbababala itong maaaring magdala ng bayad ang pagkansela at muling pag-book sa ilalim ng patakaran ng event. Tingnan ang bayad bago mo bitawan ang upuang hawak mo na.",
+      },
+      {
+        q: "Bakit dalawang tiket lang ang nabu-book ko samantalang apat ang nabook ng kaibigan ko?",
+        a: "Dahil sa organisador ang limitasyon, hindi sa plataporma. Sinasabi ng NOL World na maaaring limitahan ng isang pagtatanghal ang tiket kada order o kada miyembro, at na ang mga pinagsamang produktong konsiyerto at tour ay maaari ring magdala ng limitasyon kada miyembro. Ibang palabas, o ibang round ng benta, ay puwedeng may ibang kisame.",
+      },
+      {
+        q: "Puwede ba akong gumamit ng Koreanong credit card sa NOL World?",
+        a: "Hindi. Tumatanggap lamang ang NOL World ng mga kard na inisyu sa labas ng Korea; sa mga napatunayang lokal na miyembro sa Koreanong site nauukol ang mga kard na inisyu sa Korea. Ang Koreanong kard na tinanggihan dito ay ang tuntuning gumagana, hindi isang depekto.",
+      },
+      {
+        q: "Saan ko titingnan kung natuloy ang booking ko?",
+        a: "Sa site o app ng NOL World, sa ilalim ng Account/My at saka My Reservations. Sinasabi ng NOL World na lumalabas ang detalye at katayuan ng reserbasyon kapwa sa listahan at sa pahina ng detalye. Ang screen na iyon, at hindi ang email ng kumpirmasyon, ang nagpapakita ng katayuan.",
+      },
+      {
+        q: "Nakabayad na ako. May natitira pa bang gawin bago ang palabas?",
+        a: "Para sa tiket sa konsiyerto o performing arts, wala — sinasabi ng NOL World na kumpleto na ang proseso at kukunin mo ito sa box office ng venue. Para sa produktong tour o aktibidad ay depende: may nagpapadala ng QR o barcode na tuwirang nagpapapasok sa iyo, may nangangailangang ipalit muna ang voucher sa pisikal na tiket sa isang counter sa lugar. Sinasabi ng pahina ng produkto kung alin.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Hủy vé NOL World: thời hạn, phí hủy, và khoản tiền bạn vẫn mất",
+    summary:
+      "Thời hạn hủy là buổi chiều của ngày trước đêm diễn theo giờ Hàn Quốc, các suất thứ Bảy đóng sớm hơn mọi ngày khác trong tuần, và một chiếc vé được hoàn tiền đầy đủ vẫn có thể làm chủ thẻ nước ngoài mất tiền. Thêm nữa: gửi vé cho bạn mình là lấy đi luôn cái nút hủy của bạn.",
+    scope:
+      "Trang này bao gồm việc hủy một vé biểu diễn trên NOL World, đúng như NOL World công bố: các thời hạn, nơi hiển thị phí hủy, cách tiền hoàn về một chiếc thẻ nước ngoài, và những điều khiến việc hủy trở nên bất khả thi. NOL World không công bố một bảng phí tập trung và trang này không tự bày ra một bảng như vậy. Các sản phẩm tour và hoạt động đi theo chính sách riêng của chúng và chỉ được nhắc tới ở những chỗ khác biệt.",
+    intro: [
+      "Một người hâm mộ ở nước ngoài hủy vé vì những lý do mà người hâm mộ trong nước ít khi có: một tấm visa, một chuyến bay nối chuyến, một lịch làm việc vừa bị đổi. Vậy nên các quy định hủy vé quan trọng với nhóm khán giả này hơn là với nhóm mà chúng được viết ra cho — và chúng nghiêm ngặt, gắn chặt vào múi giờ, và ở hai điểm thì bất đối xứng theo cách không ai đoán nổi.",
+      "Hai trong số những sự thật dưới đây đáng biết trước khi mua vé chứ không phải sau. Các suất thứ Bảy đóng cửa hủy vé sớm hơn mọi ngày khác sáu tiếng. Và một lần hủy mà NOL World xử lý trọn vẹn vẫn có thể để chủ thẻ nước ngoài bị hụt tiền, điều không phải lỗi của ai và cũng không phải việc của ai để sửa giúp bạn.",
+    ],
+    steps: [
+      {
+        title: "Nắm thời hạn trước khi mua, vì nó không phải ngày diễn",
+        body: "NOL World đóng cửa hủy vé biểu diễn vào ngày trước đó, không phải ngày diễn: 5 giờ chiều KST của ngày hôm trước đối với ngày thường và ngày lễ, và 11 giờ sáng KST của ngày hôm trước đối với suất thứ Bảy. Quy định thứ Bảy là thứ bẫy người ta — nó sớm hơn phần còn lại của tuần sáu tiếng, và nó áp cho suất diễn thứ Bảy, nên thời hạn rơi vào sáng thứ Sáu theo giờ Hàn Quốc.",
+        pitfall:
+          "Tự tính “ngày hôm trước” trên lịch của chính bạn. Với một suất diễn tối thứ Bảy ở Seoul, 11 giờ sáng KST thứ Sáu là tối thứ Năm ở New York. Thời hạn có thể rơi sớm hơn hẳn một ngày so với cách nó đọc ra.",
+        takes: "5 phút, trước khi trả tiền",
+      },
+      {
+        title: "Dùng cửa sổ miễn phí nếu bạn đang đổi ý",
+        body: "Có một khoảng thời gian không mất phí, và nó ngắn: NOL World nói rằng với vé, hủy trước 11:59 tối của chính ngày bạn đặt thì không có phí hủy. Vậy nên quyết định bạn có thể đảo ngược miễn phí là quyết định bạn đưa ra cùng ngày đã mua. Sau nửa đêm thì nó có giá.",
+        pitfall:
+          "Cho rằng 11:59 tối là nửa đêm của riêng bạn. NOL World nêu rõ KST ở các thời hạn hủy khác và không nêu múi giờ ở cái này, nên cách đọc an toàn là giờ Hàn Quốc — và dù thế nào, một quyết định đưa ra trong mười phút cuối của một cửa sổ là một quyết định đưa ra quá muộn.",
+        takes: "—",
+      },
+      {
+        title: "Biết cái nút ở đâu, và biết nó nghĩa gì khi nó không có ở đó",
+        body: "Đường đi là App hoặc Web, rồi Account/My, rồi My Reservations, rồi Ticket Reservation List, rồi chọn đơn đặt, rồi Cancel Reservation trên trang chi tiết. Nếu nút Cancel Reservation không hề có trên trang chi tiết, hướng dẫn của NOL World là liên hệ bộ phận hỗ trợ khách hàng thay vì tìm tiếp: một nhân viên sẽ xác nhận với nhà cung cấp về điều kiện hủy, mức phí và số tiền hoàn, rồi hướng dẫn bạn. Bạn có thể theo dõi yêu cầu từ trang chi tiết đơn đặt, và một email xác nhận sẽ đến khi nó hoàn tất.",
+        pitfall:
+          "Đọc một cái nút thiếu như lỗi của website rồi thử lại suốt một tiếng. Đó là một trạng thái, và cái đồng hồ ở bước một vẫn đang chạy trong lúc bạn thử lại.",
+        takes: "15 phút, cộng thời gian của bộ phận hỗ trợ",
+      },
+      {
+        title: "Đừng mong có bảng phí, hãy lấy con số từ chính đơn đặt của bạn",
+        body: "Không có bảng phí công bố nào để lên kế hoạch dựa vào. Khi được hỏi phí hủy là bao nhiêu, NOL World trả lời bằng một đường đi — Web/App, Account/My, My Reservations, Reservation Details — bởi con số là thuộc tính của đơn đặt của bạn, chứ không phải của nền tảng. Với sản phẩm tour và hoạt động, phí hủy và số tiền hoàn được hiện cho bạn khi bạn bấm Cancel Reservation, trước khi bạn xác nhận. Chúng tôi sẽ không in ra đây một tỷ lệ phần trăm mà đơn đặt của bạn có thể không đồng ý.",
+        pitfall:
+          "Lên kế hoạch quanh một bảng phí lấy từ một bài blog. Bất kỳ hướng dẫn nào dẫn ra một tỷ lệ hủy cố định của Hàn Quốc cho suất diễn của bạn là đang dẫn ra thứ NOL World không công bố.",
+        takes: "5 phút",
+      },
+      {
+        title: "Kiểm tra việc hủy một phần ngay khi còn đang đặt",
+        body: "Hủy hai chỗ trong bốn chỗ là được với một số suất và không được với suất khác, và hướng dẫn của NOL World là kiểm tra tình trạng hủy một phần ngay trong lúc bạn đang đặt — nghĩa là trước khi nó trở thành thứ bạn cần. Sản phẩm tour và hoạt động thì không cho phép điều đó chút nào: ở đó đường đi là hủy toàn bộ đơn rồi đặt lại, và NOL World cảnh báo thẳng rằng chỗ trống sau đó không được bảo đảm và việc đặt lại có thể là không thể.",
+        pitfall:
+          "Đặt bốn chỗ với giả định rằng hai người bạn còn chưa chắc có thể bỏ ra sau. Với một suất diễn không cho hủy một phần, lựa chọn trở thành cả bốn hoặc không chỗ nào.",
+        takes: "2 phút, lúc đặt vé",
+      },
+      {
+        title: "Hiểu rằng hoàn tiền đầy đủ vẫn có thể làm chủ thẻ nước ngoài mất tiền",
+        body: "Đây là phần được viết cho nhóm khán giả này và gần như không bao giờ được giải thích bằng tiếng Anh. NOL World nêu rằng khi một thẻ tín dụng nước ngoài được dùng, một khoản lãi hay lỗ tỷ giá có thể phát sinh vì chênh lệch giữa tỷ giá ngày đặt và tỷ giá ngày hủy — và, riêng biệt với điều đó, phí giao dịch quốc tế vẫn có thể bị áp dù giao dịch đã bị hủy. Không khoản nào trong hai khoản ấy là do NOL World trừ. Cả hai đều thuộc về đơn vị phát hành thẻ của bạn, và lời khuyên của NOL World là hỏi đơn vị phát hành về tỷ giá và phí chính xác.",
+        pitfall:
+          "Đọc một số tiền hoàn nhỏ hơn số đã bị trừ như một lỗi hay một khoản phí ẩn. Khoảng cách đó có thể là tỷ giá đã dịch chuyển giữa hai ngày, và người giải thích được chuyện đó là ngân hàng của bạn, không phải nền tảng bán vé.",
+        takes: "Một cuộc gọi cho ngân hàng của bạn",
+      },
+      {
+        title: "Cho tiền hoàn đúng khoảng thời gian mà mạng thẻ cần",
+        body: "Nếu giao dịch còn chưa tới công ty thẻ tín dụng của bạn, NOL World nói việc hủy hoàn tất ngay lập tức. Nếu nó đã tới, và số tiền thanh toán đã được quyết toán, hãy chờ khoảng 5 đến 7 ngày để công ty thẻ đảo ngược giao dịch, và số tiền bị hủy sẽ được trừ vào hóa đơn của tháng sau chứ không được trả lại như một lần chi. NOL World lưu ý rằng chính sách hoàn tiền khác nhau giữa các công ty thẻ, nên công ty của bạn mới là nơi có quyền nói về thời gian của chính nó.",
+        pitfall:
+          "Mở tranh chấp với ngân hàng trong lúc việc đảo ngược đang chạy. Một yêu cầu chargeback trên một giao dịch vốn đã đang bị hủy tạo ra vấn đề thứ hai trên một tài khoản mà có thể bạn còn muốn dùng để đặt vé lần sau.",
+        takes: "5-7 ngày",
+      },
+      {
+        title: "Đừng gửi vé điện thoại cho tới khi bạn chắc chắn là mình sẽ đi",
+        body: "Đây là cái bẫy đáng giá cả trang này. Tính năng chia sẻ vé điện thoại cho phép người mua gửi một vé cho người sẽ đi xem — và NOL World nêu rằng một khi vé điện thoại đã được gửi thành công, việc hủy đơn đặt bị hạn chế. Đường về nằm ở phía người nhận: nếu họ hủy đăng ký vé, việc hủy đơn lại trở thành có thể. Trước khi vé được đăng ký thì có những lối ra nhẹ hơn — người gửi có thể bấm Cancel Send trong lúc vé chưa được đăng ký, và một vé chưa đăng ký sẽ tự quay về sau 24 giờ hoặc tới ngày xem.",
+        pitfall:
+          "Gửi vé cho bạn bè ngay tuần bạn mua, như một việc ngăn nắp nên làm. Cái nút hủy giờ thực chất là của họ, và lấy nó về nghĩa là phải nhờ họ nhả vé ra trước.",
+        takes: "—",
+      },
+      {
+        title: "Đọc chính sách tour và hoạt động một cách riêng biệt",
+        body: "Nếu đơn của bạn là một tour, một chuyến đưa đón hay một hoạt động chứ không phải vé biểu diễn, thì không điều nào ở trên là một mặc định an toàn. NOL World nói rằng một số sản phẩm trong nhóm này hoàn toàn không thể hủy sau khi đã mua, và rằng phí hủy 100% có thể được áp ngay cả trong ngày mua. Chính sách có hiệu lực là chính sách trên trang chi tiết và trên voucher của chính sản phẩm đó, và NOL World đề nghị bạn đọc nó trước khi gửi yêu cầu hủy.",
+        pitfall:
+          "Mang quy định của vé sang một gói được đặt trong cùng một lần. Cửa sổ miễn phí trong ngày là quy định của vé biểu diễn, còn một sản phẩm tour có thể không hoàn tiền kể từ giây bạn trả tiền.",
+        takes: "10 phút mỗi sản phẩm",
+      },
+    ],
+    faq: [
+      {
+        q: "Thời hạn hủy của một suất biểu diễn chính xác là khi nào?",
+        a: "Ngày trước đêm diễn, theo giờ Hàn Quốc. NOL World đưa ra 5 giờ chiều KST của ngày hôm trước cho ngày thường và ngày lễ, và 11 giờ sáng KST của ngày hôm trước cho các suất thứ Bảy. Hãy quy đổi nó theo ngày của riêng bạn một cách cẩn thận — một thời hạn 11 giờ sáng KST thứ Sáu là tối thứ Năm ở phần lớn châu Mỹ.",
+      },
+      {
+        q: "Có hủy miễn phí nào không?",
+        a: "Với vé biểu diễn thì có, trong ngày bạn đặt: NOL World nói hủy trước 11:59 tối của chính ngày đặt thì không mang phí hủy. Nó không nêu múi giờ ở điều đó trong khi có nêu KST ở các điều khác, nên hãy coi đó là giờ Hàn Quốc và đừng cắt sát. Sản phẩm tour và hoạt động thì khác — một số thu 100% ngay cả trong cùng ngày.",
+      },
+      {
+        q: "Phí hủy là bao nhiêu?",
+        a: "NOL World không công bố bảng phí. Khi được hỏi câu đó, nó đưa ra một đường đi thay vì con số — Web hoặc App, Account/My, My Reservations, Reservation Details — bởi con số thuộc về đơn đặt của bạn. Với sản phẩm tour và hoạt động, bấm Cancel Reservation sẽ hiện phí hủy và số tiền hoàn trước khi bạn xác nhận. Bất kỳ hướng dẫn tiếng Anh nào dẫn ra một tỷ lệ cố định cho suất diễn của bạn là đang dẫn ra con số mà nền tảng không nêu.",
+      },
+      {
+        q: "Tôi đã hủy đúng hạn mà nhận lại ít hơn số đã trả. Phần còn lại đi đâu?",
+        a: "Có lẽ không đi về NOL World. Nó nêu rằng một chiếc thẻ nước ngoài có thể tạo ra lãi hay lỗ tỷ giá từ chênh lệch giữa tỷ giá ngày đặt và tỷ giá ngày hủy, và rằng phí giao dịch quốc tế vẫn có thể bị áp dù giao dịch đã bị hủy. Cả hai nằm ở đơn vị phát hành thẻ của bạn, và lời khuyên của chính NOL World là hỏi đơn vị phát hành về tỷ giá và phí chính xác.",
+      },
+      {
+        q: "Tiền mất bao lâu để về?",
+        a: "Nếu giao dịch còn chưa tới công ty thẻ của bạn, việc hủy hoàn tất ngay. Nếu nó đã tới, NOL World nói khoảng 5 đến 7 ngày để công ty thẻ hủy giao dịch, với số tiền được trừ vào hóa đơn tháng sau. Các công ty thẻ khác nhau, nên công ty của bạn mới là nơi nói được cho bạn.",
+      },
+      {
+        q: "Tôi đã gửi vé điện thoại cho bạn tôi rồi. Tôi còn hủy được không?",
+        a: "Không, trong lúc họ còn giữ nó. NOL World nói việc hủy đơn đặt bị hạn chế một khi vé điện thoại đã được gửi thành công, và trở lại khả thi nếu người nhận hủy đăng ký nó. Nếu vé còn chưa được đăng ký thì bạn có lối ra dễ hơn: người gửi có thể bấm Cancel Send, và một vé chưa đăng ký sẽ tự quay về sau 24 giờ hoặc tới ngày xem.",
+      },
+      {
+        q: "Tôi hủy hai trong bốn chỗ của mình được không?",
+        a: "Điều đó tùy suất diễn, và lời khuyên của NOL World là kiểm tra tình trạng hủy một phần lúc bạn đặt chứ không phải lúc bạn cần. Sản phẩm tour và hoạt động hoàn toàn không hỗ trợ hủy một phần — bạn sẽ phải hủy cả đơn rồi đặt lại, không có bảo đảm nào rằng chỗ vẫn còn đó.",
+      },
+      {
+        q: "Nút Cancel Reservation không có trên trang đơn đặt của tôi.",
+        a: "NOL World coi đó là một ca dành cho bộ phận hỗ trợ khách hàng chứ không phải một lỗi để thử lại. Một nhân viên sẽ xác nhận trước với nhà cung cấp về điều kiện, mức phí và số tiền hoàn. Hãy liên hệ sớm, vì thời hạn ở câu trả lời đầu tiên vẫn chạy trong lúc bạn chờ.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "การยกเลิกตั๋ว NOL World: เส้นตาย ค่าธรรมเนียม และเงินที่คุณยังเสียไปอยู่ดี",
+    summary:
+      "เส้นตายของการยกเลิกคือบ่ายของวันก่อนวันแสดงตามเวลาเกาหลี รอบวันเสาร์ปิดเร็วกว่าวันอื่นในสัปดาห์ และตั๋วที่ได้เงินคืนเต็มจำนวนก็ยังทำให้ผู้ถือบัตรจากต่างประเทศเสียเงินได้ อีกอย่าง การส่งตั๋วให้เพื่อนเท่ากับพาปุ่มยกเลิกไปจากมือคุณ",
+    scope:
+      "หน้านี้ครอบคลุมการยกเลิกตั๋วการแสดงบน NOL World ตามที่ NOL World ประกาศไว้เอง ได้แก่ เส้นตายต่าง ๆ ที่ที่ค่าธรรมเนียมแสดงออกมา วิธีที่เงินคืนเดินทางไปถึงบัตรต่างประเทศ และสิ่งที่ทำให้การยกเลิกเป็นไปไม่ได้ NOL World ไม่ได้ประกาศตารางค่าธรรมเนียมกลาง และหน้านี้ก็ไม่คิดตารางขึ้นมาเอง สินค้าประเภททัวร์และกิจกรรมมีนโยบายของตัวเองและถูกกล่าวถึงเฉพาะจุดที่ต่างออกไป",
+    intro: [
+      "แฟนจากต่างประเทศยกเลิกตั๋วด้วยเหตุผลที่แฟนในประเทศแทบไม่มี เช่น วีซ่า เที่ยวบินต่อเครื่อง หรือตารางงานที่ถูกเลื่อน กฎการยกเลิกจึงสำคัญกับผู้อ่านกลุ่มนี้มากกว่ากลุ่มที่กฎถูกเขียนขึ้นเพื่อ และกฎเหล่านั้นเข้มงวด ผูกกับเขตเวลา และในสองจุดก็ไม่สมมาตรในแบบที่ไม่มีใครเดาได้",
+      "ข้อเท็จจริงสองข้อด้านล่างควรรู้ก่อนจองมากกว่ารู้ทีหลัง รอบวันเสาร์ปิดการยกเลิกเร็วกว่าวันอื่นหกชั่วโมง และการยกเลิกที่ NOL World ดำเนินการให้ครบถ้วนก็ยังทำให้ผู้ถือบัตรต่างประเทศขาดเงินได้ ซึ่งไม่ใช่ความผิดของใคร และก็ไม่ใช่ปัญหาที่ใครจะมาแก้ให้คุณเช่นกัน",
+    ],
+    steps: [
+      {
+        title: "รู้เส้นตายก่อนจอง เพราะมันไม่ใช่วันแสดง",
+        body: "NOL World ปิดการยกเลิกตั๋วการแสดงในวันก่อนหน้า ไม่ใช่วันแสดง คือ 5 โมงเย็น KST ของวันก่อนการแสดงสำหรับวันธรรมดาและวันหยุดนักขัตฤกษ์ และ 11 นาฬิกา KST ของวันก่อนหน้าสำหรับรอบวันเสาร์ กฎวันเสาร์คือข้อที่ดักคนมากที่สุด เพราะเร็วกว่าวันอื่นในสัปดาห์หกชั่วโมง และใช้กับรอบการแสดงวันเสาร์ ดังนั้นเส้นตายจึงตกในเช้าวันศุกร์ตามเวลาเกาหลี",
+        pitfall:
+          "การคำนวณ “วันก่อนหน้า” บนปฏิทินของตัวเอง สำหรับรอบค่ำวันเสาร์ในโซล 11 นาฬิกา KST ของวันศุกร์คือค่ำวันพฤหัสบดีที่นิวยอร์ก เส้นตายอาจตกเร็วกว่าที่อ่านได้เต็มหนึ่งวัน",
+        takes: "5 นาที ก่อนจ่ายเงิน",
+      },
+      {
+        title: "ใช้ช่วงยกเลิกฟรีถ้าคุณเริ่มลังเล",
+        body: "มีช่วงที่ไม่เสียค่าธรรมเนียมอยู่จริง และมันสั้น NOL World บอกว่าสำหรับตั๋ว การยกเลิกภายใน 11:59 PM ของวันที่คุณจองหมายถึงไม่มีค่าธรรมเนียมการยกเลิก ดังนั้นการตัดสินใจที่คุณย้อนกลับได้ฟรีคือการตัดสินใจในวันเดียวกับที่คุณจอง หลังเที่ยงคืนไปแล้วมันมีราคา",
+        pitfall:
+          "การเหมาว่า 11:59 PM คือเที่ยงคืนของคุณเอง NOL World ระบุ KST ไว้ชัดในเส้นตายการยกเลิกข้ออื่น และไม่ระบุเขตเวลาในข้อนี้ การอ่านที่ปลอดภัยจึงคือเวลาเกาหลี และไม่ว่าทางไหน การตัดสินใจในสิบนาทีสุดท้ายของช่วงเวลาหนึ่งก็คือการตัดสินใจที่สายไปแล้ว",
+        takes: "—",
+      },
+      {
+        title: "รู้ว่าปุ่มอยู่ที่ไหน และรู้ว่ามันหมายความว่าอะไรเมื่อมันไม่อยู่",
+        body: "เส้นทางคือ App หรือ Web แล้วไป Account/My แล้ว My Reservations แล้ว Ticket Reservation List แล้วเลือกการจอง แล้วกด Cancel Reservation บนหน้ารายละเอียด ถ้าปุ่ม Cancel Reservation ไม่อยู่บนหน้ารายละเอียดเลย คำแนะนำของ NOL World คือให้ติดต่อฝ่ายบริการลูกค้าแทนที่จะหาต่อไป เจ้าหน้าที่จะยืนยันเงื่อนไขการยกเลิก ค่าธรรมเนียม และยอดเงินคืนกับผู้ให้บริการ แล้วจึงแนะนำคุณ คุณติดตามคำขอได้จากหน้ารายละเอียดการจอง และอีเมลยืนยันจะตามมาเมื่อเรื่องเสร็จ",
+        pitfall:
+          "การอ่านปุ่มที่หายไปว่าเป็นความเสียของเว็บไซต์แล้วลองใหม่อยู่เป็นชั่วโมง นั่นคือสถานะหนึ่ง และนาฬิกาในขั้นแรกก็ยังเดินอยู่ระหว่างที่คุณลองใหม่",
+        takes: "15 นาที บวกเวลาของฝ่ายบริการ",
+      },
+      {
+        title: "อย่าคาดหวังตารางค่าธรรมเนียม ให้เอาตัวเลขจากการจองของคุณเอง",
+        body: "ไม่มีตารางค่าธรรมเนียมที่ประกาศไว้ให้วางแผนล่วงหน้า เมื่อถูกถามว่าค่าธรรมเนียมการยกเลิกเท่าไร NOL World ตอบด้วยเส้นทาง คือ Web/App แล้ว Account/My แล้ว My Reservations แล้ว Reservation Details เพราะตัวเลขนั้นเป็นคุณสมบัติของการจองของคุณ ไม่ใช่ของแพลตฟอร์ม สำหรับสินค้าประเภททัวร์และกิจกรรม ค่าธรรมเนียมและยอดเงินคืนจะแสดงให้คุณเห็นเมื่อกด Cancel Reservation ก่อนที่คุณจะยืนยัน เราจะไม่พิมพ์เปอร์เซ็นต์ลงที่นี่ให้เป็นตัวเลขที่การจองของคุณอาจไม่เห็นด้วย",
+        pitfall:
+          "การวางแผนรอบตารางค่าธรรมเนียมจากบล็อกโพสต์หนึ่ง ไกด์ใดที่อ้างเปอร์เซ็นต์การยกเลิกแบบคงที่ของเกาหลีสำหรับรอบของคุณ คือการอ้างสิ่งที่ NOL World ไม่ได้ประกาศ",
+        takes: "5 นาที",
+      },
+      {
+        title: "ตรวจเรื่องการยกเลิกบางส่วนตอนที่ยังจองอยู่",
+        body: "การยกเลิกสองที่นั่งจากสี่ที่นั่งทำได้ในบางรอบและทำไม่ได้ในบางรอบ และคำแนะนำของ NOL World คือให้ตรวจสถานะการยกเลิกบางส่วนตอนที่คุณกำลังจอง นั่นคือก่อนที่มันจะกลายเป็นสิ่งที่คุณต้องใช้ สินค้าประเภททัวร์และกิจกรรมไม่อนุญาตเลย เส้นทางที่นั่นคือยกเลิกการจองทั้งก้อนแล้วจองใหม่ และ NOL World เตือนตรง ๆ ว่าที่ว่างหลังจากนั้นไม่มีการรับประกัน และการจองใหม่อาจเป็นไปไม่ได้",
+        pitfall:
+          "การจองสี่ที่นั่งบนสมมติฐานว่าเพื่อนสองคนที่ยังไม่แน่นอนจะตัดออกทีหลังได้ สำหรับรอบที่ไม่มีการยกเลิกบางส่วน ตัวเลือกจะเหลือสี่ที่นั่งทั้งหมดหรือไม่เอาเลย",
+        takes: "2 นาที ตอนจอง",
+      },
+      {
+        title: "เข้าใจว่าเงินคืนเต็มจำนวนก็ยังทำให้ผู้ถือบัตรต่างประเทศเสียเงินได้",
+        body: "นี่คือส่วนที่เขียนขึ้นเพื่อผู้อ่านกลุ่มนี้และแทบไม่เคยถูกอธิบายเป็นภาษาอังกฤษ NOL World ระบุว่าเมื่อใช้บัตรเครดิตต่างประเทศ กำไรหรือขาดทุนจากอัตราแลกเปลี่ยนเกิดขึ้นได้เพราะส่วนต่างระหว่างอัตราในวันจองกับอัตราในวันยกเลิก และแยกอีกข้อหนึ่งว่าค่าธรรมเนียมธุรกรรมต่างประเทศอาจถูกเรียกเก็บได้แม้ธุรกรรมจะถูกยกเลิกแล้ว ทั้งสองอย่างไม่ใช่ยอดที่ NOL World หักไว้ ทั้งสองอย่างเป็นเรื่องของผู้ออกบัตรของคุณ และคำแนะนำของ NOL World คือให้ถามผู้ออกบัตรถึงอัตราและค่าธรรมเนียมที่แน่นอน",
+        pitfall:
+          "การอ่านยอดเงินคืนที่น้อยกว่ายอดที่ถูกตัดไปว่าเป็นความผิดพลาดหรือค่าธรรมเนียมแอบแฝง ช่องว่างนั้นอาจเป็นอัตราแลกเปลี่ยนที่ขยับระหว่างสองวัน และคนที่อธิบายได้คือธนาคารของคุณ ไม่ใช่แพลตฟอร์มขายตั๋ว",
+        takes: "โทรหาธนาคารของคุณครั้งหนึ่ง",
+      },
+      {
+        title: "ให้เวลาเงินคืนเท่าที่เครือข่ายบัตรต้องใช้",
+        body: "ถ้าธุรกรรมยังไม่ไปถึงบริษัทบัตรเครดิตของคุณ NOL World บอกว่าการยกเลิกเสร็จสิ้นทันที ถ้าไปถึงแล้วและยอดชำระถูกตัดบัญชีเรียบร้อย ให้คาดไว้ราว 5 ถึง 7 วันที่บริษัทบัตรจะกลับรายการ และยอดที่ถูกยกเลิกจะถูกหักออกจากบิลของเดือนถัดไปแทนที่จะคืนมาเป็นเงินก้อน NOL World ตั้งข้อสังเกตว่านโยบายการคืนเงินต่างกันไปตามบริษัทบัตร ดังนั้นบริษัทของคุณคือผู้มีอำนาจเรื่องเวลาของตัวเอง",
+        pitfall:
+          "การเปิดข้อพิพาทกับธนาคารระหว่างที่การกลับรายการกำลังดำเนินอยู่ การขอ chargeback บนธุรกรรมที่กำลังถูกยกเลิกอยู่แล้วสร้างปัญหาที่สองบนบัญชีที่คุณอาจยังอยากใช้จองอีก",
+        takes: "5-7 วัน",
+      },
+      {
+        title: "อย่าส่งตั๋วมือถือจนกว่าคุณจะมั่นใจว่าคุณไป",
+        body: "นี่คือกับดักที่คุ้มค่าทั้งหน้านี้ การแชร์ตั๋วมือถือให้ผู้ซื้อส่งตั๋วไปให้คนที่จะเข้าชมได้ และ NOL World ระบุว่าเมื่อตั๋วมือถือถูกส่งสำเร็จแล้ว การยกเลิกการจองจะถูกจำกัด ทางกลับอยู่ในมือผู้รับ ถ้าเขายกเลิกการลงทะเบียนตั๋ว การยกเลิกการจองก็กลับมาทำได้อีก ก่อนการลงทะเบียนยังมีทางออกที่นุ่มกว่า ผู้ส่งกดปุ่ม Cancel Send ได้ขณะที่ตั๋วยังไม่ถูกลงทะเบียน และตั๋วที่ยังไม่ลงทะเบียนจะกลับมาเองหลัง 24 ชั่วโมงหรือเมื่อถึงวันเข้าชม",
+        pitfall:
+          "การส่งตั๋วให้เพื่อนในสัปดาห์ที่คุณจอง ด้วยความรู้สึกว่านี่คือเรื่องที่คนเป็นระเบียบทำ ปุ่มยกเลิกกลายเป็นของเขาไปแล้วในทางปฏิบัติ และการเอามันกลับมาหมายถึงต้องขอให้เขาปล่อยตั๋วก่อน",
+        takes: "—",
+      },
+      {
+        title: "อ่านนโยบายของทัวร์และกิจกรรมแยกออกมา",
+        body: "ถ้าการจองของคุณเป็นทัวร์ รถรับส่ง หรือกิจกรรม ไม่ใช่ตั๋วการแสดง ไม่มีข้อใดข้างบนเป็นค่าตั้งต้นที่ปลอดภัย NOL World บอกว่าสินค้าบางอย่างในกลุ่มนี้ยกเลิกไม่ได้เลยเมื่อซื้อแล้ว และค่าธรรมเนียมการยกเลิก 100% อาจถูกเรียกเก็บได้แม้ในวันที่ซื้อ นโยบายที่มีผลคือนโยบายบนหน้ารายละเอียดและบนวอชเชอร์ของสินค้านั้นเอง และ NOL World ขอให้คุณอ่านมันก่อนส่งคำขอยกเลิก",
+        pitfall:
+          "การยกกฎของตั๋วไปใช้กับแพ็กเกจที่จองในการนั่งคราวเดียวกัน ช่วงยกเลิกฟรีในวันเดียวกันเป็นกฎของตั๋วการแสดง ส่วนสินค้าทัวร์อาจคืนเงินไม่ได้ตั้งแต่วินาทีที่คุณจ่าย",
+        takes: "10 นาทีต่อสินค้าหนึ่งอย่าง",
+      },
+    ],
+    faq: [
+      {
+        q: "เส้นตายการยกเลิกของการแสดงคือเมื่อไรกันแน่",
+        a: "วันก่อนวันแสดง ตามเวลาเกาหลี NOL World ให้ไว้ว่า 5 โมงเย็น KST ของวันก่อนหน้าสำหรับวันธรรมดาและวันหยุดนักขัตฤกษ์ และ 11 นาฬิกา KST ของวันก่อนหน้าสำหรับรอบวันเสาร์ แปลงเทียบกับวันที่ของคุณเองอย่างระวัง เส้นตาย 11 นาฬิกา KST ของวันศุกร์คือค่ำวันพฤหัสบดีในพื้นที่ส่วนใหญ่ของทวีปอเมริกา",
+      },
+      {
+        q: "มีการยกเลิกแบบฟรีอยู่ไหม",
+        a: "สำหรับตั๋วการแสดงมี ในวันที่คุณจอง NOL World บอกว่าการยกเลิกภายใน 11:59 PM ของวันที่จองไม่มีค่าธรรมเนียมการยกเลิก มันไม่ระบุเขตเวลาในข้อนั้นขณะที่ระบุ KST ในข้ออื่น ดังนั้นให้ถือเป็นเวลาเกาหลีและอย่าเฉียดเส้น สินค้าประเภททัวร์และกิจกรรมต่างออกไป บางอย่างเก็บ 100% แม้ในวันเดียวกัน",
+      },
+      {
+        q: "ค่าธรรมเนียมการยกเลิกเท่าไร",
+        a: "NOL World ไม่ประกาศตาราง เมื่อถูกถามคำนั้นมันให้เส้นทางแทน คือ Web หรือ App แล้ว Account/My แล้ว My Reservations แล้ว Reservation Details เพราะตัวเลขเป็นของการจองของคุณ สำหรับสินค้าทัวร์และกิจกรรม การกด Cancel Reservation จะแสดงค่าธรรมเนียมการยกเลิกและยอดเงินคืนให้เห็นก่อนยืนยัน ไกด์ภาษาอังกฤษใดที่อ้างเปอร์เซ็นต์คงที่สำหรับรอบของคุณ คือการอ้างตัวเลขที่แพลตฟอร์มไม่ได้พูด",
+      },
+      {
+        q: "ฉันยกเลิกทันเวลาแต่ได้คืนน้อยกว่าที่จ่ายไป ส่วนที่เหลือไปไหน",
+        a: "น่าจะไม่ได้ไปที่ NOL World มันระบุว่าบัตรต่างประเทศทำให้เกิดกำไรหรือขาดทุนจากอัตราแลกเปลี่ยนได้จากส่วนต่างระหว่างอัตราวันจองกับอัตราวันยกเลิก และว่าค่าธรรมเนียมธุรกรรมต่างประเทศยังอาจถูกเรียกเก็บได้แม้ธุรกรรมจะถูกยกเลิก ทั้งสองอย่างอยู่ที่ผู้ออกบัตรของคุณ และคำแนะนำของ NOL World เองคือให้ถามผู้ออกบัตรถึงอัตราและค่าธรรมเนียมที่แน่นอน",
+      },
+      {
+        q: "เงินใช้เวลานานแค่ไหนจะกลับมา",
+        a: "ถ้าธุรกรรมยังไม่ไปถึงบริษัทบัตรของคุณ การยกเลิกเสร็จสิ้นทันที ถ้าไปถึงแล้ว NOL World บอกว่าราว 5 ถึง 7 วันที่บริษัทบัตรจะยกเลิกธุรกรรม โดยยอดจะถูกหักออกจากบิลเดือนถัดไป บริษัทบัตรต่างกันไป ดังนั้นบริษัทของคุณคือที่ที่บอกคุณได้",
+      },
+      {
+        q: "ฉันส่งตั๋วมือถือให้เพื่อนไปแล้ว ยังยกเลิกได้ไหม",
+        a: "ไม่ได้ ระหว่างที่เขายังถือมันอยู่ NOL World บอกว่าการยกเลิกการจองถูกจำกัดเมื่อตั๋วมือถือถูกส่งสำเร็จแล้ว และกลับมาทำได้อีกถ้าผู้รับยกเลิกการลงทะเบียน ถ้าตั๋วยังไม่ถูกลงทะเบียน คุณมีทางออกที่ง่ายกว่า ผู้ส่งกด Cancel Send ได้ และตั๋วที่ยังไม่ลงทะเบียนจะกลับมาเองหลัง 24 ชั่วโมงหรือเมื่อถึงวันเข้าชม",
+      },
+      {
+        q: "ฉันยกเลิกสองที่นั่งจากสี่ที่นั่งได้ไหม",
+        a: "ขึ้นกับรอบการแสดง และคำแนะนำของ NOL World คือให้ตรวจสถานะการยกเลิกบางส่วนตอนที่คุณจอง ไม่ใช่ตอนที่คุณต้องใช้ สินค้าประเภททัวร์และกิจกรรมไม่รองรับการยกเลิกบางส่วนเลย คุณจะต้องยกเลิกการจองทั้งก้อนแล้วจองใหม่ โดยไม่มีการรับประกันว่าที่ว่างยังอยู่",
+      },
+      {
+        q: "ปุ่ม Cancel Reservation ไม่อยู่บนหน้าการจองของฉัน",
+        a: "NOL World ถือว่านั่นเป็นเคสของฝ่ายบริการลูกค้า ไม่ใช่ความเสียที่จะลองใหม่ เจ้าหน้าที่จะยืนยันเงื่อนไข ค่าธรรมเนียม และยอดเงินคืนกับผู้ให้บริการก่อน ติดต่อเสียแต่เนิ่น ๆ เพราะเส้นตายในคำตอบข้อแรกยังเดินอยู่ระหว่างที่คุณรอ",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pagkansela ng tiket sa NOL World: ang takdang oras, ang bayad, at ang perang nawawala sa iyo pa rin",
+    summary:
+      "Hapon ng araw bago ang palabas, oras ng Korea, ang takdang oras ng pagkansela; mas maaga ang Sabado kaysa sa buong linggo; at puwede pa ring magastusan ang may kard mula sa ibang bansa sa isang tiket na lubos na naibalik ang bayad. Isa pa: inaalis ng pagpapadala ng tiket sa kaibigan mo ang pindutan ng pagkansela sa iyo.",
+    scope:
+      "Sakop nito ang pagkansela ng tiket sa pagtatanghal sa NOL World ayon sa inilalathala ng NOL World: ang mga takdang oras, kung saan ipinapakita ang bayad, kung paano nakakarating ang refund sa isang dayuhang kard, at ano ang gumagawang imposible ang pagkansela. Hindi naglalathala ng sentral na talaan ng bayad ang NOL World at hindi gumagawa ng isa ang pahinang ito. May sariling patakaran ang mga produktong tour at aktibidad at nababanggit lamang sila kung saan nagkakaiba.",
+    intro: [
+      "Kinakansela ng tagahangang mula sa ibang bansa ang booking dahil sa mga dahilang bihira sa isang tagahangang nasa Korea: isang visa, isang konektadong flight, isang iskedyul ng trabahong nagbago. Kaya mas mabigat ang mga tuntunin ng pagkansela sa mambabasang ito kaysa sa pinagsulatan nila — at mahigpit sila, nakatali sa oras ng Korea, at sa dalawang punto ay hindi simetriko sa paraang walang maghuhula.",
+      "Dalawa sa mga katotohanang nasa ibaba ay mas mabuting malaman bago ka mag-book kaysa pagkatapos. Anim na oras na mas maaga kaysa sa lahat ng ibang araw ang pagsasara ng pagkansela para sa palabas na Sabado. At ang isang pagkanselang lubos na pinoproseso ng NOL World ay puwede pa ring maglabas ng pera sa may dayuhang kard, na walang kasalanan ninuman at walang trabaho rin ninuman na ayusin para sa iyo.",
+    ],
+    steps: [
+      {
+        title: "Alamin ang takdang oras bago mag-book, dahil hindi ito ang araw ng palabas",
+        body: "Isinasara ng NOL World ang pagkansela ng tiket sa pagtatanghal sa araw bago, hindi sa araw mismo: 5pm KST sa araw bago ang palabas para sa karaniwang araw at pista opisyal, at 11am KST sa araw bago para sa palabas na Sabado. Ang tuntuning Sabado ang nakakahuli sa mga tao — anim na oras ito na mas maaga kaysa sa buong linggo, at sa pagtatanghal ng Sabado ito nauukol, kaya sa umaga ng Biyernes sa oras ng Korea bumabagsak ang takdang oras.",
+        pitfall:
+          "Ang pagkuwenta ng “araw bago” sa sarili mong kalendaryo. Para sa palabas ng Sabado ng gabi sa Seoul, ang 11am KST ng Biyernes ay Huwebes ng gabi sa New York. Puwedeng bumagsak ang takdang oras ng isang buong araw na mas maaga kaysa sa pakiwari mo.",
+        takes: "5 minuto, bago ka magbayad",
+      },
+      {
+        title: "Gamitin ang walang-bayad na bintana kung nag-iisip ka pang muli",
+        body: "May panahong walang bayad, at maikli ito: sinasabi ng NOL World na para sa tiket, ang pagkansela bago ang 11:59 PM sa araw ng reserbasyon mo ay walang bayad sa pagkansela. Kaya ang desisyong mababaligtad mo nang walang halaga ay ang desisyong ginawa mo sa parehong araw na nag-book ka. Pagkatapos ng hatinggabi ay may presyo na ito.",
+        pitfall:
+          "Ang pag-aakalang ang 11:59 PM ay ang sariling hatinggabi mo. Tahasang pinapangalanan ng NOL World ang KST sa ibang takdang oras ng pagkansela at walang pinapangalanang sona rito, kaya ang matiwasay na pagbasa ay oras ng Korea — at sa alinmang paraan, ang desisyong ginawa sa huling sampung minuto ng isang bintana ay desisyong huli na.",
+        takes: "—",
+      },
+      {
+        title: "Alamin kung nasaan ang pindutan, at ano ang kahulugan kapag wala ito",
+        body: "Ang ruta ay App o Web, saka Account/My, saka My Reservations, saka Ticket Reservation List, saka ang reserbasyon, saka Cancel Reservation sa pahina ng detalye. Kung wala talaga ang pindutang Cancel Reservation sa pahina ng detalye, ang bilin ng NOL World ay makipag-ugnayan sa suporta sa customer sa halip na maghanap pa: kinukumpirma ng isang kinatawan sa supplier ang pagiging karapat-dapat, ang bayad at ang halaga ng refund, at saka ka inaakay. Masusubaybayan mo ang kahilingan mula sa pahina ng detalye ng reserbasyon, at may email ng kumpirmasyong sumusunod kapag kumpleto na ito.",
+        pitfall:
+          "Ang pagbasa sa nawawalang pindutan bilang depekto ng website at ang pagsubok nitong muli nang isang oras. Isa itong katayuan, at tumatakbo pa rin ang orasan sa unang hakbang habang nagsusubok ka.",
+        takes: "15 minuto, kasama ang oras ng suporta",
+      },
+      {
+        title: "Huwag asahan ang talaan ng bayad, at kunin ang numero sa sarili mong reserbasyon",
+        body: "Walang inilathalang talaan ng bayad na mapagpaplanuhan. Nang tanungin kung magkano ang bayad sa pagkansela, isang ruta ang isinagot ng NOL World — Web/App, Account/My, My Reservations, Reservation Details — dahil pag-aari ng booking mo ang bilang at hindi ng plataporma. Para sa produktong tour at aktibidad, ipinapakita sa iyo ang bayad at ang halaga ng refund kapag pinindot mo ang Cancel Reservation, bago ka magkumpirma. Hindi kami maglilimbag dito ng porsiyentong baka hindi sang-ayunan ng reserbasyon mo.",
+        pitfall:
+          "Ang pagplano sa paligid ng talaan ng bayad na galing sa isang blog. Anumang gabay na sumisipi ng nakapirming Koreanong porsiyento ng pagkansela para sa palabas mo ay sumisipi ng isang bagay na hindi inilalathala ng NOL World.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tingnan ang bahagyang pagkansela habang nagbu-book ka pa",
+        body: "Posible sa ilang palabas at hindi sa iba ang pagkansela ng dalawa sa apat na upuan, at ang bilin ng NOL World ay tingnan ang katayuan ng bahagyang pagkansela habang nagbu-book ka — ibig sabihin, bago ito ang bagay na kailangan mo. Hindi ito pinapayagan nang tuluyan sa produktong tour at aktibidad: doon ang ruta ay kanselahin ang buong booking at mag-book muli, at tahasang nagbabala ang NOL World na hindi garantisado ang bakante pagkatapos at maaaring hindi na posible ang muling pag-book.",
+        pitfall:
+          "Ang pag-book ng apat na upuan sa pag-aakalang maibababa pa ang dalawang kaibigang hindi pa tiyak. Para sa palabas na walang bahagyang pagkansela, ang pagpipilian ay nagiging lahat ng apat o wala.",
+        takes: "2 minuto, sa pag-book",
+      },
+      {
+        title: "Unawain na ang buong refund ay puwede pa ring magastos sa may dayuhang kard",
+        body: "Ito ang bahaging isinulat para sa mambabasang ito at halos hindi ipinapaliwanag sa Ingles. Isinasaad ng NOL World na kapag dayuhang credit card ang ginamit, puwedeng mangyari ang tubo o lugi sa palitan ng pera dahil sa pagkakaiba ng palitan sa araw ng booking at ng palitan sa araw ng pagkansela — at, hiwalay dito, na puwede pa ring ipataw ang bayad sa dayuhang transaksiyon kahit kinansela na ang transaksiyon. Hindi bawas ng NOL World ang alinman sa dalawa. Nasa nag-isyu ng kard mo ang dalawa, at ang payo ng NOL World ay tanungin ang nag-isyu tungkol sa eksaktong palitan at bayad.",
+        pitfall:
+          "Ang pagbasa sa halagang naibalik na mas maliit kaysa sa halagang kinaltas bilang mali o bilang tagong bayad. Puwedeng ang agwat ay ang palitang gumalaw sa pagitan ng dalawang araw, at ang makapagpapaliwanag nito ay ang bangko mo, hindi ang plataporma ng tiket.",
+        takes: "Isang tawag sa bangko mo",
+      },
+      {
+        title: "Bigyan ang refund ng panahong kailangan ng network ng kard",
+        body: "Kung hindi pa narating ng transaksiyon ang kompanya ng credit card mo, sinasabi ng NOL World na kumpleto agad ang pagkansela. Kung narating na nito, at naiayos na ang halaga ng bayad, asahan ang humigit-kumulang 5 hanggang 7 araw para ibaligtad ito ng kompanya ng kard, at ang kinanselang halaga ay ibabawas sa bill ng kasunod na buwan sa halip na ibalik bilang bayad. Pansin ng NOL World na magkakaiba ang patakaran sa refund kada kompanya ng kard, kaya ang sa iyo ang may say sa sariling takdang panahon nito.",
+        pitfall:
+          "Ang pagbukas ng disputa sa bangko mo habang umuusad ang pagbaligtad. Ang isang chargeback sa transaksiyong kinakansela na ay gumagawa ng pangalawang problema sa isang account na baka gusto mo pang gamitin sa pag-book.",
+        takes: "5-7 araw",
+      },
+      {
+        title: "Huwag ipadala ang mobile ticket hangga't hindi ka tiyak na pupunta ka",
+        body: "Ito ang bitag na katumbas ng buong pahina. Pinapayagan ng pagbabahagi ng mobile ticket ang bumili na ipadala ang tiket sa taong dadalo — at isinasaad ng NOL World na kapag matagumpay nang naipadala ang mobile ticket ay pinaghihigpitan ang pagkansela ng reserbasyon. Sa tatanggap ang daan pabalik: kung aalisin niya ang pagpapatala ng tiket ay posible nang muli ang pagkansela. Bago ang pagpapatala ay may mas malumanay na labasan — mapipindot ng nagpadala ang Cancel Send habang hindi pa nakapatala ang tiket, at bumabalik nang kusa ang tiketang hindi nakapatala pagkalipas ng 24 oras o pagsapit ng araw ng panonood.",
+        pitfall:
+          "Ang pagpapadala ng tiket sa mga kaibigan sa linggong nag-book ka, bilang ang maayos na bagay na gawin. Kanila na ang pindutan ng pagkansela sa katunayan, at ang pagbawi nito ay ang paghiling sa kanilang bitawan muna ang tiket.",
+        takes: "—",
+      },
+      {
+        title: "Basahin nang hiwalay ang patakaran ng tour at aktibidad",
+        body: "Kung ang booking mo ay isang tour, isang transfer o isang aktibidad at hindi tiket sa pagtatanghal, wala sa itaas ang matiwasay na palagay. Sinasabi ng NOL World na may mga produkto rito na hindi na makakansela matapos mabili, at na puwedeng ipataw ang 100% na bayad sa pagkansela kahit sa araw ng pagbili. Ang patakarang nananaig ay ang nasa sariling pahina ng detalye at voucher ng produkto, at hinihiling ng NOL World na basahin mo ito bago magpasa ng kahilingan ng pagkansela.",
+        pitfall:
+          "Ang paglipat ng tuntunin ng tiket sa isang pakete na binook sa parehong pagkakataon. Tuntunin ng tiket sa pagtatanghal ang walang-bayad na bintana sa araw mismo, at puwedeng hindi na maibalik ang bayad sa produktong tour mula sa sandaling magbayad ka.",
+        takes: "10 minuto kada produkto",
+      },
+    ],
+    faq: [
+      {
+        q: "Ano nga ba ang takdang oras ng pagkansela para sa isang pagtatanghal?",
+        a: "Ang araw bago ang palabas, sa oras ng Korea. Ibinibigay ng NOL World ang 5pm KST sa araw bago para sa karaniwang araw at pista opisyal, at 11am KST sa araw bago para sa pagtatanghal na Sabado. Ikonberte ito laban sa sarili mong petsa nang maingat — ang takdang 11am KST ng Biyernes ay Huwebes ng gabi sa malaking bahagi ng Amerika.",
+      },
+      {
+        q: "May libreng pagkansela ba?",
+        a: "Para sa tiket sa pagtatanghal, oo, sa araw na nag-book ka: sinasabi ng NOL World na ang pagkansela bago ang 11:59 PM sa araw ng reserbasyon mo ay walang bayad sa pagkansela. Hindi ito nagpapangalan ng sona sa isang iyon samantalang pinapangalanan ang KST sa iba, kaya ituring itong oras ng Korea at huwag ipagsapalaran. Iba ang produktong tour at aktibidad — may humihingi ng 100% kahit sa parehong araw.",
+      },
+      {
+        q: "Magkano ang bayad sa pagkansela?",
+        a: "Hindi naglalathala ng talaan ang NOL World. Nang tanungin iyon ay isang ruta ang ibinigay nito — Web o App, Account/My, My Reservations, Reservation Details — dahil sa booking mo nabibilang ang numero. Para sa produktong tour at aktibidad, ipinapakita ng pagpindot sa Cancel Reservation ang bayad sa pagkansela at ang halaga ng refund bago ka magkumpirma. Anumang gabay sa Ingles na sumisipi ng nakapirming porsiyento para sa palabas mo ay sumisipi ng numerong hindi isinasaad ng plataporma.",
+      },
+      {
+        q: "Nakansela ako sa oras at mas maliit ang nakuha ko kaysa sa binayad ko. Saan napunta ang iba?",
+        a: "Malamang hindi sa NOL World. Isinasaad nitong puwedeng maglikha ang dayuhang kard ng tubo o lugi sa palitan ng pera mula sa pagkakaiba ng palitan sa araw ng booking at sa araw ng pagkansela, at na puwede pa ring ipataw ang bayad sa dayuhang transaksiyon kahit kinansela ang transaksiyon. Nasa nag-isyu ng kard mo ang dalawa, at ang payo ng NOL World mismo ay tanungin ang nag-isyu tungkol sa eksaktong palitan at bayad.",
+      },
+      {
+        q: "Gaano katagal bago bumalik ang pera?",
+        a: "Kung hindi pa narating ng transaksiyon ang kompanya ng kard mo, kumpleto agad ang pagkansela. Kung narating na, sinasabi ng NOL World na mga 5 hanggang 7 araw para kanselahin ng kompanya ng kard ang transaksiyon, at ibabawas ang halaga sa bill ng kasunod na buwan. Magkakaiba ang kompanya ng kard, kaya ang sa iyo ang makapagsasabi sa iyo.",
+      },
+      {
+        q: "Naipadala ko na ang mobile ticket sa kaibigan ko. Makakansela pa ba ako?",
+        a: "Hindi habang hawak nila ito. Sinasabi ng NOL World na pinaghihigpitan ang pagkansela ng reserbasyon kapag matagumpay nang naipadala ang mobile ticket, at nagiging posible itong muli kung aalisin ng tatanggap ang pagpapatala nito. Kung hindi pa naipapatala ang tiket ay may mas madaling labasan ka: mapipindot ng nagpadala ang Cancel Send, at bumabalik nang kusa ang tiketang hindi nakapatala pagkalipas ng 24 oras o pagsapit ng araw ng panonood.",
+      },
+      {
+        q: "Makakansela ko ba ang dalawa sa apat na upuan ko?",
+        a: "Depende sa palabas, at ang payo ng NOL World ay tingnan ang katayuan ng bahagyang pagkansela sa pag-book at hindi sa oras na kailangan mo ito. Hindi talaga sinusuportahan ng produktong tour at aktibidad ang bahagyang pagkansela — kanselahin mo ang buong booking at mag-book muli, nang walang garantiyang nasa stock pa ito.",
+      },
+      {
+        q: "Wala ang pindutang Cancel Reservation sa pahina ng reserbasyon ko.",
+        a: "Itinuturing ito ng NOL World na kaso para sa suporta sa customer at hindi isang depektong susubukang muli. Kinukumpirma muna ng isang kinatawan sa supplier ang pagiging karapat-dapat, ang bayad at ang halaga ng refund. Makipag-ugnayan nang maaga, dahil tumatakbo ang takdang oras sa unang sagot habang naghihintay ka.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Bị khóa ngoài NOL World: tìm lại tài khoản, và sửa cái trang không mở",
+    summary:
+      "Bạn đã dùng kiểu đăng nhập nào sẽ quyết định mọi con đường khôi phục, việc đặt lại mật khẩu chỉ tồn tại với người đăng ký bằng email, và một email chưa xác thực có thể làm tài khoản gần như không thể tìm thấy. Thêm vào đó là những lỗi trang đặt vé mà thực ra không phải lỗi.",
+    scope:
+      "Trang này bao gồm việc khôi phục tài khoản, xóa tài khoản và những sự cố trang đặt vé mà NOL World có công bố: yêu cầu về trình duyệt và ứng dụng, sơ đồ chỗ ngồi trên di động, và những cửa sổ bật lên trông như lỗi. Cơ chế xếp hàng nằm ở hướng dẫn riêng của nó. Không điều gì ở đây giúp ai đó vào một tài khoản không phải của họ.",
+    intro: [
+      "Có hai thứ hỏng trên một trang bán vé mà chẳng liên quan gì tới vé. Bạn không vào được tài khoản, hoặc cái trang đơn giản là không làm điều nó phải làm — và cả hai đều xảy ra vào sáng ngày mở bán, lúc không còn thời gian để đọc gì cả.",
+      "Gần như toàn bộ chuyện này được quyết định bởi một lựa chọn bạn đã làm từ nhiều tháng trước mà không nghĩ gì: bạn đăng ký bằng địa chỉ email hay bằng Google, Apple hoặc Line. Chỉ riêng sự thật đó đã quyết định liệu việc đặt lại mật khẩu có tồn tại với bạn hay không, nên đó là chỗ để bắt đầu.",
+    ],
+    steps: [
+      {
+        title: "Tìm ra bạn thực sự có kiểu đăng nhập nào",
+        body: "Tài khoản NOL World được tạo bằng một địa chỉ email hoặc qua đăng nhập mạng xã hội — Google, Apple hoặc Line, cùng những cái khác. Hệ quả sắc hơn vẻ ngoài của nó: NOL World nêu rằng việc khôi phục mật khẩu chỉ có sẵn cho người dùng đã đăng ký bằng địa chỉ email. Nếu bạn dùng đăng nhập mạng xã hội thì không có mật khẩu NOL World nào để đặt lại, vì chưa từng có một mật khẩu nào. Hãy xác định ngay bây giờ bạn thuộc kiểu nào, lúc chưa có gì gấp.",
+        pitfall:
+          "Cho rằng mình có tài khoản email vì nhớ là đã gõ một địa chỉ email. Đăng nhập mạng xã hội cũng hiện email của bạn, và các con đường khôi phục thì hoàn toàn khác nhau.",
+        takes: "5 phút",
+      },
+      {
+        title: "Xác thực email của bạn, vì đây là thứ không thể làm lại",
+        body: "Chính câu kết của NOL World về khôi phục tài khoản là câu quan trọng nhất trong vùng này: có thể sẽ khó tìm được những tài khoản chưa được xác thực qua email. Mọi thứ khác ở đây là một quy trình có kết quả. Cái này là một cánh cửa có thể đơn giản là không mở — bộ phận hỗ trợ đang khớp bạn với một bản ghi, và một email chưa xác thực là mối khớp mạnh nhất họ có. Nếu bạn đang đọc trang này với một tài khoản còn dùng được, hãy kiểm tra email trên đó đã được xác thực và cứ để nó như vậy.",
+        pitfall:
+          "Bỏ qua thư xác thực lúc đăng ký vì đang gấp để kịp một buổi mở bán. Nó không tốn gì trong ngày hôm đó và nó là khoảng cách giữa một tài khoản khôi phục được và một tài khoản đã mất.",
+        takes: "3 phút, ngay bây giờ",
+      },
+      {
+        title: "Với đăng nhập mạng xã hội, hãy tìm ở phía nhà cung cấp trước",
+        body: "Nếu bạn không nhớ được mình có từng có tài khoản NOL World hay không, nhà cung cấp thì biết. NOL World công bố chỗ cần xem: ở Google, vào Google Account rồi Security rồi phần kết nối của bạn với ứng dụng và dịch vụ của bên thứ ba. Ở Apple, vào Settings, tên bạn và Apple ID, rồi Sign-In & Security, rồi Sign in with Apple. Ở Line, vào Settings rồi Account rồi Authorized apps. Nếu NOL World được liệt ở đó thì tài khoản có tồn tại và bạn biết nhà cung cấp nào mở nó.",
+        pitfall:
+          "Thử lần lượt từng nút mạng xã hội trên trang đăng nhập để xem cái nào chạy. Việc đó có thể tạo ra tài khoản thứ hai chứ không tìm ra cái thứ nhất, và giờ thì có hai cái — một trong số đó đang giữ các đơn đặt của bạn.",
+        takes: "10 phút",
+      },
+      {
+        title: "Nếu cách đó thất bại, hãy gửi cho bộ phận hỗ trợ năm thứ họ yêu cầu",
+        body: "NOL World sẽ tìm giúp một tài khoản, và nó nêu rõ cần gì: địa chỉ email bạn có thể đã dùng, kiểu đăng nhập (Google, Line, Apple hay email), nickname của bạn, và loại sản phẩm bạn đã đặt cùng với các số đơn đặt. Nó còn nói cho bạn chỗ tìm cái cuối ấy — số đơn đặt nằm trong email voucher gửi lúc bạn đặt. Hãy thu đủ tất cả trước khi viết, bởi một yêu cầu thiếu số đơn đặt là một yêu cầu đề nghị họ đoán.",
+        pitfall:
+          "Xóa các email xác nhận đặt vé cũ vì thấy chúng lộn xộn. Chúng giữ các số đơn đặt, thứ nhận dạng mạnh nhất bạn có thể đưa ra khi chính tài khoản là thứ bạn đã mất.",
+        takes: "20 phút",
+      },
+      {
+        title: "Điện thoại mới không làm mất đơn đặt của bạn — một tài khoản khác thì có",
+        body: "Đây là báo động giả phổ biến nhất và NOL World trả lời thẳng: đổi điện thoại hay đăng nhập lại không xóa lịch sử của bạn. Điều nó đề nghị bạn kiểm tra là liệu bạn đang đăng nhập bằng một tài khoản khác với tài khoản bạn dùng ban đầu hay không. Đó gần như luôn là nguyên nhân thật, và đăng nhập mạng xã hội là lý do — một chiếc điện thoại mới sẽ mời nhà cung cấp nào tiện nhất, và bấm sai một cái là bạn rơi vào một tài khoản thứ hai trống trơn nhưng hoàn toàn hợp lệ.",
+        pitfall:
+          "Kết luận rằng đơn đặt đã mất rồi đi mua lại. Vé đang ở trong tài khoản kia, và lần mua thứ hai là một lần mua thật.",
+        takes: "5 phút",
+      },
+      {
+        title: "Dùng trình duyệt mà trang đặt vé mong đợi, và chỉ các kênh chính thức",
+        body: "NOL World nói nó được xây theo chuẩn web và khuyến nghị Google Chrome hoặc Microsoft Edge trên cả máy tính và di động. Nếu cửa sổ đặt vé không mở, hướng dẫn của nó rất cụ thể: cập nhật trình duyệt lên bản mới nhất, xóa cache, và thử lại. Với ứng dụng, hãy cập nhật từ App Store hoặc Google Play. Và nó nêu rõ chỗ duy nhất mua được vé — website NOL World tại world.nol.com/ticket và ứng dụng NOL World, không chỗ nào khác.",
+        pitfall:
+          "Chẩn lỗi trên một trình duyệt chưa bao giờ được hỗ trợ, trong một webview mở ra từ một liên kết mạng xã hội. Hãy mở trang đặt vé trực tiếp trong Chrome hoặc Edge trước khi kết luận rằng trang bị hỏng.",
+        takes: "15 phút, hôm trước",
+      },
+      {
+        title: "Nếu sơ đồ chỗ ngồi không chạy trên web di động, hãy chuyển sang ứng dụng",
+        body: "Đây là một vấn đề thiết bị có ghi nhận chứ không phải một vấn đề chung. NOL World nói rằng trên một số thiết bị, môi trường web di động phóng to cả trình duyệt khi bạn thu nhỏ và phóng to, và điều đó làm việc chọn chỗ trở nên bất khả thi — và con đường vượt qua là tải ứng dụng NOL World. Nó nêu tên thiết bị đã được xác nhận tới giờ: Galaxy Fold. Nếu bạn dùng một màn hình gập hay có tỷ lệ khác thường, hãy cài ứng dụng trước buổi mở bán thay vì phát hiện chuyện này bên trong một cửa sổ thanh toán bảy phút.",
+        pitfall:
+          "Chụm hai ngón để phóng to sơ đồ chỗ ngồi nhằm tìm một ghế cụ thể. Trên các thiết bị bị ảnh hưởng, chính cử chỉ đó là thứ làm hỏng việc chọn chỗ.",
+        takes: "10 phút, trước đó",
+      },
+      {
+        title: "Biết cửa sổ bật lên nào không phải là lỗi",
+        body: "Có hai thông báo đọc ra như lỗi mà không phải. NOL World nói rằng cửa sổ bật lên báo ghế này đã được chọn xuất hiện khi bạn chọn cùng một ghế vào gần như cùng một thời điểm với người dùng khác — phiên của bạn không có gì sai, chỉ là có ai đó nhanh hơn một giây. Và nó nói rằng số ghế còn trống tự cập nhật mà không cần tải lại, nên một sơ đồ chỗ ngồi trông như đóng băng thường là một sơ đồ đang chạy. Hãy coi cả hai là thông tin chứ không phải thứ phải sửa.",
+        pitfall:
+          "Tải lại trang để xóa một cửa sổ bật lên. Trong một buổi bán có xếp hàng, đó chính là hành động làm bạn mất chỗ.",
+        takes: "—",
+      },
+      {
+        title: "Đọc lời khuyên về nhiều tab trong thế đối chiếu với chính sách chống gian lận",
+        body: "NOL World yêu cầu một thiết bị cho một tài khoản, và nói rằng truy cập đồng thời từ nhiều thiết bị trên cùng một tài khoản có thể làm hạn chế việc đặt vé của bạn. Rồi nó đưa lời khuyên kỹ thuật cho những người đặt vé song song — rằng nhiều tab gây xung đột phiên, và nên dùng các trình duyệt hoàn toàn tách biệt như Chrome và Edge, hoặc các thiết bị khác nhau. Hãy đọc kỹ chỗ đó, vì chính sách chống gian lận của nó liệt việc đặt vé qua nhiều tài khoản dùng thông tin cá nhân giống hoặc tương tự nhau là hành vi gian lận. Cách đọc an toàn của lời khuyên ấy là về các nền tảng tách biệt: NOL World ở một trình duyệt trong khi một trang bán vé khác chạy ở trình duyệt kia. Nó không phải sự cho phép để chạy nhiều tài khoản của chính bạn cùng lúc.",
+        pitfall:
+          "Lấy một mẹo về xung đột phiên làm chiến lược được chuẩn thuận cho nhiều tài khoản. Hai trang đó nằm cạnh nhau một cách khó xử, và trang có kèm hình phạt được công bố là chính sách chống gian lận.",
+        takes: "5 phút",
+      },
+      {
+        title: "Nếu bạn xóa tài khoản, hãy biết chính xác cái gì mất và cái gì ở lại",
+        body: "Việc xóa là không thể đảo ngược và NOL World liệt từng mục. Bị xóa: tài khoản và thông tin hồ sơ của bạn, lịch sử đơn đặt của bạn, các chuyến đi của bạn, và danh sách những nơi bạn đã thích. Được giữ lại: các bài đánh giá và ảnh bạn đã để lại cho một địa điểm. Trên website, bất kỳ phương thức đăng nhập nào cũng xóa được tài khoản. Trong ứng dụng với đăng nhập email, đường đi là My Account, Settings, Delete Account, rồi mật khẩu của bạn; với đăng nhập mạng xã hội thì cùng đường đi nhưng bạn xác thực qua Google, Line hoặc Apple thay vì mật khẩu. Hai điều từ chỗ khác trong tài liệu của nó đáng nằm cạnh điều này: việc xóa sẽ hủy luôn phần xác minh danh tính của bạn và giải phóng nó cho một tài khoản khác, và một tài khoản đang bị hạn chế vì sử dụng sai thì hoàn toàn không xóa được.",
+        pitfall:
+          "Xóa tài khoản để dọn một vấn đề với nó. Một tài khoản bị hạn chế thì không xóa được, còn một tài khoản đã xác minh thì mang theo cả phần xác minh của bạn — lịch sử đơn đặt thì mất mà các bài đánh giá thì không.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi không nhớ mật khẩu. Đặt lại thế nào?",
+        a: "Chỉ khi bạn đăng ký bằng địa chỉ email — NOL World nói việc khôi phục mật khẩu chỉ có cho người đăng ký bằng email. Đường đi là màn hình đăng nhập, Find Password, nhập email đã đăng ký, rồi theo liên kết đặt lại được gửi tới. Nếu bạn dùng Google, Apple hay Line thì không có mật khẩu NOL World nào; bạn đăng nhập qua nhà cung cấp.",
+      },
+      {
+        q: "Tôi còn không biết mình đã dùng tài khoản nào.",
+        a: "Hãy kiểm tra phía nhà cung cấp trước. NOL World công bố các đường đi: Google Account rồi Security rồi phần kết nối của bạn với ứng dụng và dịch vụ của bên thứ ba; Settings của Apple rồi Apple ID của bạn rồi Sign-In & Security rồi Sign in with Apple; Settings của Line rồi Account rồi Authorized apps. Nếu NOL World hiện ra, đó chính là tài khoản.",
+      },
+      {
+        q: "Không cách nào trong đó chạy. Bộ phận hỗ trợ có tìm ra không?",
+        a: "Họ sẽ tìm, bằng những gì bạn đưa: email bạn có thể đã dùng, kiểu đăng nhập, nickname của bạn, và các loại sản phẩm bạn đã đặt kèm số đơn đặt của chúng — thứ mà NOL World nói nằm trong email voucher gửi lúc bạn đặt. Nó cũng cảnh báo rằng những tài khoản chưa từng được xác thực qua email có thể khó tìm, nên hãy gửi tất cả những gì bạn có.",
+      },
+      {
+        q: "Tôi đổi điện thoại và các đơn đặt của tôi biến mất.",
+        a: "Gần như chắc chắn là không. NOL World nói việc đổi điện thoại hay đăng nhập lại không xóa lịch sử, và đề nghị bạn kiểm tra xem bạn có đang đăng nhập bằng một tài khoản khác với tài khoản ban đầu hay không. Với đăng nhập mạng xã hội, chuyện đó rất dễ xảy ra ngoài ý muốn — một điện thoại mới mời nhà cung cấp tiện nhất, không nhất thiết là cái bạn đã dùng.",
+      },
+      {
+        q: "Cửa sổ đặt vé hoàn toàn không mở.",
+        a: "Các bước của chính NOL World: dùng một trình duyệt chuẩn, và nó nêu tên Chrome và Edge; cập nhật nó lên bản mới nhất; xóa cache; thử lại. Với ứng dụng, cập nhật lên bản mới nhất từ App Store hoặc Google Play. Nó cũng nêu rằng vé chỉ mua được tại world.nol.com/ticket hoặc trong ứng dụng NOL World.",
+      },
+      {
+        q: "Tôi không chọn được ghế trên trình duyệt điện thoại.",
+        a: "Có một vấn đề thiết bị đã biết. NOL World nói rằng trên một số thiết bị, việc thu nhỏ và phóng to làm phóng to cả trình duyệt di động, khiến việc chọn chỗ trở nên bất khả thi, và rằng câu trả lời là dùng ứng dụng NOL World. Thiết bị nó nêu tên như đã xác nhận là Galaxy Fold. Hãy cài ứng dụng trước buổi mở bán chứ không phải trong lúc đang bán.",
+      },
+      {
+        q: "Tôi mở hai tab để tăng cơ hội được không?",
+        a: "Không, và NOL World yêu cầu một thiết bị cho một tài khoản — nó nói truy cập đồng thời từ nhiều thiết bị trên cùng một tài khoản có thể làm hạn chế việc đặt vé của bạn. Lời khuyên của nó về các trình duyệt tách biệt là về xung đột phiên khi bạn thực sự đang dùng hai nền tảng bán vé khác nhau, không phải sự tán thành việc chạy nhiều tài khoản của chính bạn. Việc đặt vé qua nhiều tài khoản trên thông tin cá nhân tương tự nằm trong danh sách hành vi gian lận đã công bố của nó.",
+      },
+      {
+        q: "Dữ liệu của tôi sẽ thế nào nếu tôi xóa tài khoản?",
+        a: "NOL World nói việc xóa không thể hoàn lại, và liệt những gì mất: tài khoản và thông tin hồ sơ, lịch sử đơn đặt, các chuyến đi, và những nơi đã thích. Các bài đánh giá và ảnh bạn để lại cho một địa điểm thì được giữ. Ở chỗ khác nó nói việc xóa cũng hủy phần xác minh danh tính của bạn, giải phóng nó cho một tài khoản khác, và rằng một tài khoản bị hạn chế vì sử dụng sai thì không xóa được.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ถูกล็อกอยู่นอก NOL World: การหาบัญชีให้เจอ และการแก้หน้าที่ไม่ยอมเปิด",
+    summary:
+      "คุณใช้การเข้าสู่ระบบแบบไหนเป็นตัวตัดสินเส้นทางการกู้คืนทุกเส้น การตั้งรหัสผ่านใหม่มีอยู่เฉพาะกับคนที่สมัครด้วยอีเมล และอีเมลที่ไม่ได้ยืนยันอาจทำให้บัญชีหายากถึงขั้นหาไม่เจอ รวมถึงข้อผิดพลาดบนหน้าจองที่จริง ๆ ไม่ใช่ข้อผิดพลาด",
+    scope:
+      "หน้านี้ครอบคลุมการกู้คืนบัญชี การลบบัญชี และความล้มเหลวบนหน้าจองที่ NOL World ประกาศไว้ ได้แก่ ข้อกำหนดของเบราว์เซอร์และแอป ผังที่นั่งบนมือถือ และป็อปอัปที่ดูเหมือนข้อผิดพลาด กลไกการต่อคิวอยู่ในไกด์ของตัวเอง ไม่มีอะไรในหน้านี้ที่ช่วยใครเข้าบัญชีที่ไม่ใช่ของตัวเอง",
+    intro: [
+      "มีสองอย่างที่พังบนเว็บขายตั๋วซึ่งไม่เกี่ยวกับตั๋วเลย คุณเข้าบัญชีไม่ได้ หรือหน้าเว็บก็แค่ไม่ทำสิ่งที่มันควรทำ และทั้งสองอย่างเกิดในเช้าวันเปิดขาย ตอนที่ไม่มีเวลาอ่านอะไรแล้ว",
+      "เกือบทั้งหมดของเรื่องนี้ถูกตัดสินด้วยทางเลือกเดียวที่คุณทำไปหลายเดือนก่อนโดยไม่คิด คือคุณสมัครด้วยที่อยู่อีเมล หรือด้วย Google, Apple หรือ Line ข้อเท็จจริงข้อเดียวนั้นกำหนดว่าการตั้งรหัสผ่านใหม่มีอยู่สำหรับคุณหรือไม่ จึงเป็นจุดที่ควรเริ่ม",
+    ],
+    steps: [
+      {
+        title: "หาให้ได้ว่าคุณมีการเข้าสู่ระบบแบบไหนจริง ๆ",
+        body: "บัญชี NOL World ถูกสร้างด้วยที่อยู่อีเมล หรือผ่านการเข้าสู่ระบบด้วยโซเชียล ได้แก่ Google, Apple หรือ Line และอื่น ๆ ผลที่ตามมาคมกว่าที่ฟัง NOL World ระบุว่าการกู้คืนรหัสผ่านมีให้เฉพาะผู้ใช้ที่สมัครด้วยที่อยู่อีเมล ถ้าคุณใช้การเข้าสู่ระบบด้วยโซเชียล ก็ไม่มีรหัสผ่าน NOL World ให้ตั้งใหม่ เพราะไม่เคยมีมาตั้งแต่ต้น หาให้ออกตอนนี้ว่าคุณเป็นแบบไหน ในขณะที่ยังไม่มีอะไรเร่งด่วน",
+        pitfall:
+          "การเหมาว่าตัวเองมีบัญชีแบบอีเมลเพราะจำได้ว่าพิมพ์ที่อยู่อีเมลลงไป การเข้าสู่ระบบด้วยโซเชียลก็แสดงอีเมลของคุณเหมือนกัน และเส้นทางการกู้คืนต่างกันโดยสิ้นเชิง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ยืนยันอีเมลของคุณ เพราะนี่คือข้อที่ย้อนกลับไม่ได้",
+        body: "ประโยคปิดท้ายของ NOL World เรื่องการกู้คืนบัญชีคือประโยคสำคัญที่สุดในเรื่องนี้ คืออาจเป็นเรื่องยากที่จะหาบัญชีที่ไม่ได้ยืนยันผ่านอีเมล ทุกอย่างที่เหลือในหน้านี้เป็นขั้นตอนที่มีผลลัพธ์ แต่ข้อนี้เป็นประตูที่อาจไม่เปิดเลย ฝ่ายบริการกำลังจับคู่คุณกับระเบียนหนึ่ง และอีเมลที่ไม่ได้ยืนยันคือการจับคู่ที่แข็งแรงที่สุดที่เขามี ถ้าคุณกำลังอ่านสิ่งนี้ด้วยบัญชีที่ยังใช้ได้ ตรวจว่าอีเมลบนบัญชีนั้นยืนยันแล้ว และปล่อยให้มันยืนยันอยู่อย่างนั้น",
+        pitfall:
+          "การข้ามเมลยืนยันตอนสมัครเพราะกำลังรีบไปให้ทันรอบขาย มันไม่มีค่าใช้จ่ายในวันนั้น และมันคือความต่างระหว่างบัญชีที่กู้คืนได้กับบัญชีที่หายไป",
+        takes: "3 นาที ตอนนี้",
+      },
+      {
+        title: "ถ้าเป็นการเข้าสู่ระบบด้วยโซเชียล ให้ดูที่ฝั่งผู้ให้บริการก่อน",
+        body: "ถ้าคุณจำไม่ได้ว่าเคยมีบัญชี NOL World หรือไม่ ผู้ให้บริการรู้ NOL World ประกาศที่ที่ต้องดูไว้ ใน Google ให้ไปที่ Google Account แล้ว Security แล้วส่วนการเชื่อมต่อของคุณกับแอปและบริการของบุคคลที่สาม ใน Apple ให้ไปที่ Settings ชื่อของคุณและ Apple ID แล้ว Sign-In & Security แล้ว Sign in with Apple ใน Line ให้ไปที่ Settings แล้ว Account แล้ว Authorized apps ถ้า NOL World อยู่ในรายการนั้น บัญชีมีอยู่จริง และคุณรู้แล้วว่าผู้ให้บริการรายไหนเปิดมันได้",
+        pitfall:
+          "การไล่กดปุ่มโซเชียลทีละอันบนหน้าเข้าสู่ระบบเพื่อดูว่าอันไหนใช้ได้ นั่นอาจสร้างบัญชีที่สองขึ้นมาแทนที่จะหาอันแรกเจอ และตอนนี้ก็มีสองบัญชี โดยอันหนึ่งถือการจองของคุณอยู่",
+        takes: "10 นาที",
+      },
+      {
+        title: "ถ้าวิธีนั้นไม่ได้ผล ให้ส่งห้าอย่างที่ฝ่ายบริการขอ",
+        body: "NOL World จะค้นหาบัญชีให้ และมันระบุว่าต้องการอะไร คือที่อยู่อีเมลที่คุณอาจใช้ ประเภทการเข้าสู่ระบบ (Google, Line, Apple หรืออีเมล) ชื่อเล่นของคุณ และประเภทสินค้าที่คุณจองพร้อมหมายเลขการจอง มันยังบอกที่ที่หาข้อสุดท้ายนั้นด้วย คือหมายเลขการจองอยู่ในอีเมลวอชเชอร์ที่ส่งมาตอนจอง รวบรวมทั้งหมดก่อนเขียนไป เพราะคำขอที่ขาดหมายเลขการจองคือคำขอที่กำลังขอให้เขาเดา",
+        pitfall:
+          "การลบอีเมลยืนยันการจองเก่าทิ้งเพราะเห็นว่ารกกล่อง มันเก็บหมายเลขการจองไว้ ซึ่งเป็นตัวระบุที่แข็งแรงที่สุดที่คุณยื่นได้ตอนที่ของที่หายไปคือตัวบัญชีเอง",
+        takes: "20 นาที",
+      },
+      {
+        title: "เครื่องใหม่ไม่ทำให้การจองหาย แต่บัญชีคนละอันทำ",
+        body: "นี่คือสัญญาณเตือนผิดที่พบบ่อยที่สุด และ NOL World ตอบตรง ๆ ว่าการเปลี่ยนเครื่องหรือเข้าสู่ระบบใหม่ไม่ได้ลบประวัติของคุณ สิ่งที่มันขอให้คุณตรวจคือคุณกำลังเข้าสู่ระบบด้วยบัญชีที่ต่างจากบัญชีที่ใช้ตอนแรกหรือไม่ นั่นแทบจะเป็นสาเหตุจริงเสมอ และการเข้าสู่ระบบด้วยโซเชียลคือเหตุผล เครื่องใหม่จะเสนอผู้ให้บริการรายที่สะดวกที่สุด และการกดผิดรายก็พาคุณไปลงบัญชีที่สองที่ว่างเปล่าแต่ใช้งานได้สมบูรณ์",
+        pitfall:
+          "การสรุปว่าการจองหายไปแล้วไปซื้อใหม่ ตั๋วอยู่ในบัญชีอีกอัน และการซื้อครั้งที่สองเป็นการซื้อจริง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ใช้เบราว์เซอร์ที่หน้าจองคาดหวัง และใช้แต่ช่องทางอย่างเป็นทางการ",
+        body: "NOL World บอกว่าตัวเองสร้างตามมาตรฐานเว็บ และแนะนำ Google Chrome หรือ Microsoft Edge ทั้งบนเดสก์ท็อปและมือถือ ถ้าหน้าต่างการจองไม่ยอมเปิด คำแนะนำของมันเจาะจง คืออัปเดตเบราว์เซอร์เป็นเวอร์ชันล่าสุด ล้างแคช แล้วลองอีกครั้ง ส่วนแอปให้อัปเดตจาก App Store หรือ Google Play และมันระบุว่าซื้อตั๋วได้ที่ไหน คือเว็บไซต์ NOL World ที่ world.nol.com/ticket และแอป NOL World ไม่มีที่อื่น",
+        pitfall:
+          "การไล่แก้ปัญหาบนเบราว์เซอร์ที่ไม่เคยถูกรองรับ ในเว็บวิวที่เปิดจากลิงก์โซเชียลมีเดีย เปิดหน้าจองใน Chrome หรือ Edge โดยตรงก่อนจะสรุปว่าเว็บเสีย",
+        takes: "15 นาที ในวันก่อนหน้า",
+      },
+      {
+        title: "ถ้าผังที่นั่งใช้บนเว็บมือถือไม่ได้ ให้ย้ายไปใช้แอป",
+        body: "นี่เป็นปัญหาของอุปกรณ์ที่มีบันทึกไว้ ไม่ใช่ปัญหาทั่วไป NOL World บอกว่าบนอุปกรณ์บางรุ่น สภาพแวดล้อมเว็บมือถือจะขยายเบราว์เซอร์ทั้งตัวเมื่อคุณซูมเข้าออก ซึ่งทำให้การเลือกที่นั่งเป็นไปไม่ได้ และทางออกคือดาวน์โหลดแอป NOL World มันระบุชื่ออุปกรณ์ที่ยืนยันแล้วถึงตอนนี้ไว้ด้วย คือ Galaxy Fold ถ้าคุณใช้จอพับหรือจอที่มีสัดส่วนไม่ปกติ ให้ติดตั้งแอปก่อนรอบขาย แทนที่จะมาค้นพบเรื่องนี้ภายในหน้าต่างชำระเงินเจ็ดนาที",
+        pitfall:
+          "การจีบนิ้วซูมผังที่นั่งเพื่อหาที่นั่งเฉพาะที่หนึ่ง บนอุปกรณ์ที่ได้รับผลกระทบ ท่าทางนั้นเองคือสิ่งที่ทำให้การเลือกพัง",
+        takes: "10 นาที ล่วงหน้า",
+      },
+      {
+        title: "รู้ว่าป็อปอัปไหนไม่ใช่ความเสีย",
+        body: "มีสองข้อความที่อ่านเหมือนข้อผิดพลาดแต่ไม่ใช่ NOL World บอกว่าป็อปอัปที่บอกคุณว่าที่นั่งนี้ถูกเลือกไปแล้วจะขึ้นเมื่อคุณเลือกที่นั่งเดียวกันในจังหวะใกล้กันกับผู้ใช้อีกคน เซสชันของคุณไม่มีอะไรผิด มีแค่ใครคนหนึ่งเร็วกว่าหนึ่งวินาที และมันบอกว่าจำนวนที่นั่งว่างอัปเดตเองโดยไม่ต้องรีเฟรช ดังนั้นผังที่นั่งที่ดูเหมือนค้างมักคือผังที่นั่งที่กำลังทำงาน ให้ถือทั้งสองอย่างเป็นข้อมูล ไม่ใช่สิ่งที่ต้องไปแก้",
+        pitfall:
+          "การโหลดหน้าใหม่เพื่อไล่ป็อปอัป ในรอบขายที่มีคิว นั่นคือการกระทำเดียวที่ทำให้คุณเสียคิว",
+        takes: "—",
+      },
+      {
+        title: "อ่านคำแนะนำเรื่องหลายแท็บเทียบกับนโยบายต่อต้านการทุจริต",
+        body: "NOL World ขอหนึ่งอุปกรณ์ต่อหนึ่งบัญชี และบอกว่าการเข้าใช้พร้อมกันจากหลายอุปกรณ์บนบัญชีเดียวอาจทำให้การจองของคุณถูกจำกัด แล้วมันให้คำแนะนำทางเทคนิคสำหรับคนที่จองพร้อมกันหลายที่ ว่าหลายแท็บทำให้เซสชันชนกัน และให้ใช้เบราว์เซอร์ที่แยกกันโดยสิ้นเชิงอย่าง Chrome กับ Edge หรือใช้อุปกรณ์ต่างเครื่อง อ่านตรงนั้นให้ดี เพราะนโยบายต่อต้านการทุจริตของมันเองระบุว่าการจองข้ามหลายบัญชีโดยใช้ข้อมูลส่วนบุคคลที่เหมือนหรือใกล้เคียงกันเป็นการใช้งานโดยทุจริต การอ่านคำแนะนำนั้นอย่างปลอดภัยคืออ่านว่าหมายถึงแพลตฟอร์มที่แยกกัน คือ NOL World ในเบราว์เซอร์หนึ่งขณะที่เว็บขายตั๋วอีกเจ้าเปิดอยู่ในอีกเบราว์เซอร์ มันไม่ใช่การอนุญาตให้รันหลายบัญชีของตัวเองพร้อมกัน",
+        pitfall:
+          "การเอาเคล็ดเรื่องเซสชันชนกันไปใช้เป็นกลยุทธ์ที่ได้รับอนุญาตสำหรับหลายบัญชี สองหน้านั้นวางอยู่ด้วยกันอย่างกระอักกระอ่วน และหน้าที่มีบทลงโทษประกาศแนบมาด้วยคือนโยบายต่อต้านการทุจริต",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถ้าคุณจะลบบัญชี ให้รู้ให้แน่ว่าอะไรหายและอะไรอยู่",
+        body: "การลบย้อนกลับไม่ได้ และ NOL World แจกแจงไว้เป็นข้อ สิ่งที่ถูกลบ คือบัญชีและข้อมูลโปรไฟล์ของคุณ ประวัติการจองของคุณ ทริปของคุณ และรายการสถานที่ที่คุณกดถูกใจ สิ่งที่ถูกเก็บไว้ คือรีวิวและรูปที่คุณฝากไว้ให้สถานที่หนึ่ง บนเว็บไซต์ วิธีเข้าสู่ระบบแบบไหนก็ลบบัญชีได้ ในแอปที่เข้าสู่ระบบด้วยอีเมล เส้นทางคือ My Account แล้ว Settings แล้ว Delete Account แล้วรหัสผ่านของคุณ ถ้าเข้าสู่ระบบด้วยโซเชียลก็เส้นทางเดียวกัน แต่คุณยืนยันผ่าน Google, Line หรือ Apple แทน มีสองข้อจากที่อื่นในเอกสารของมันที่ควรวางไว้ข้างกัน คือการลบจะลบการยืนยันตัวตนของคุณไปด้วยและปล่อยมันให้บัญชีอื่นใช้ได้ และบัญชีที่ถูกจำกัดเพราะใช้งานผิดนั้นลบไม่ได้เลย",
+        pitfall:
+          "การลบบัญชีเพื่อเคลียร์ปัญหาของบัญชีนั้น บัญชีที่ถูกจำกัดลบไม่ได้ และบัญชีที่ยืนยันตัวตนแล้วก็พาการยืนยันของคุณไปด้วย ประวัติการจองหายไป ส่วนรีวิวไม่หาย",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "ฉันจำรหัสผ่านไม่ได้ ตั้งใหม่อย่างไร",
+        a: "ได้เฉพาะถ้าคุณสมัครด้วยที่อยู่อีเมล NOL World บอกว่าการกู้คืนรหัสผ่านมีให้เฉพาะผู้สมัครด้วยอีเมล เส้นทางคือหน้าเข้าสู่ระบบ แล้ว Find Password ใส่อีเมลที่สมัคร แล้วตามลิงก์ตั้งรหัสใหม่ที่ส่งมา ถ้าคุณใช้ Google, Apple หรือ Line ก็ไม่มีรหัสผ่าน NOL World คุณเข้าสู่ระบบผ่านผู้ให้บริการ",
+      },
+      {
+        q: "ฉันไม่รู้ด้วยซ้ำว่าใช้บัญชีไหน",
+        a: "ตรวจฝั่งผู้ให้บริการก่อน NOL World ประกาศเส้นทางไว้ คือ Google Account แล้ว Security แล้วส่วนการเชื่อมต่อของคุณกับแอปและบริการของบุคคลที่สาม Settings ของ Apple แล้ว Apple ID ของคุณ แล้ว Sign-In & Security แล้ว Sign in with Apple และ Settings ของ Line แล้ว Account แล้ว Authorized apps ถ้า NOL World ปรากฏ นั่นคือบัญชีนั้น",
+      },
+      {
+        q: "ไม่มีวิธีไหนได้ผลเลย ฝ่ายบริการจะหาเจอไหม",
+        a: "เขาจะหา ด้วยสิ่งที่คุณให้ คืออีเมลที่คุณอาจใช้ ประเภทการเข้าสู่ระบบ ชื่อเล่นของคุณ และประเภทสินค้าที่คุณจองพร้อมหมายเลขการจองของมัน ซึ่ง NOL World บอกว่าอยู่ในอีเมลวอชเชอร์ที่ส่งมาตอนคุณจอง มันยังเตือนว่าบัญชีที่ไม่เคยยืนยันผ่านอีเมลอาจหายาก ดังนั้นส่งทุกอย่างที่คุณมีไป",
+      },
+      {
+        q: "ฉันเปลี่ยนเครื่องแล้วการจองหายไป",
+        a: "แทบจะแน่นอนว่าไม่หาย NOL World บอกว่าการเปลี่ยนเครื่องหรือเข้าสู่ระบบใหม่ไม่ลบประวัติ และขอให้คุณตรวจว่าคุณกำลังเข้าสู่ระบบด้วยบัญชีที่ต่างจากบัญชีเดิมหรือไม่ ด้วยการเข้าสู่ระบบแบบโซเชียล เรื่องนั้นเกิดโดยไม่ตั้งใจได้ง่าย เครื่องใหม่เสนอผู้ให้บริการที่สะดวกที่สุด ไม่จำเป็นว่าเป็นรายที่คุณใช้",
+      },
+      {
+        q: "หน้าต่างการจองไม่เปิดเลย",
+        a: "ขั้นตอนของ NOL World เองคือ ใช้เบราว์เซอร์มาตรฐาน และมันระบุชื่อ Chrome กับ Edge อัปเดตเป็นเวอร์ชันล่าสุด ล้างแคช แล้วลองอีกครั้ง ส่วนแอปให้อัปเดตเป็นเวอร์ชันล่าสุดจาก App Store หรือ Google Play มันยังระบุว่าซื้อตั๋วได้เฉพาะที่ world.nol.com/ticket หรือในแอป NOL World",
+      },
+      {
+        q: "ฉันเลือกที่นั่งบนเบราว์เซอร์มือถือไม่ได้",
+        a: "มีปัญหาของอุปกรณ์ที่รู้กันอยู่ NOL World บอกว่าบนอุปกรณ์บางรุ่น การซูมเข้าออกจะขยายเบราว์เซอร์มือถือทั้งตัว ซึ่งทำให้การเลือกที่นั่งเป็นไปไม่ได้ และคำตอบคือให้ใช้แอป NOL World อุปกรณ์ที่มันระบุว่ายืนยันแล้วคือ Galaxy Fold ติดตั้งแอปไว้ก่อนรอบขาย ไม่ใช่ระหว่างรอบขาย",
+      },
+      {
+        q: "ฉันเปิดสองแท็บเพื่อเพิ่มโอกาสได้ไหม",
+        a: "ไม่ได้ และ NOL World ขอหนึ่งอุปกรณ์ต่อหนึ่งบัญชี มันบอกว่าการเข้าใช้พร้อมกันจากหลายอุปกรณ์บนบัญชีเดียวอาจทำให้การจองของคุณถูกจำกัด คำแนะนำของมันเรื่องเบราว์เซอร์ที่แยกกันเป็นเรื่องเซสชันชนกันตอนที่คุณใช้แพลตฟอร์มขายตั๋วสองเจ้าจริง ๆ ไม่ใช่การรับรองการรันหลายบัญชีของตัวเอง การจองข้ามบัญชีด้วยข้อมูลส่วนตัวที่ใกล้เคียงกันอยู่ในรายการการใช้งานโดยทุจริตที่มันประกาศไว้",
+      },
+      {
+        q: "ข้อมูลของฉันจะเป็นอย่างไรถ้าฉันลบบัญชี",
+        a: "NOL World บอกว่าการลบย้อนกลับไม่ได้ และแจกแจงสิ่งที่หายไว้ คือบัญชีและข้อมูลโปรไฟล์ ประวัติการจอง ทริป และสถานที่ที่กดถูกใจ รีวิวและรูปที่คุณฝากไว้ให้สถานที่หนึ่งจะถูกเก็บไว้ ที่อื่นมันบอกว่าการลบจะลบการยืนยันตัวตนของคุณด้วย ปล่อยมันให้บัญชีอื่นใช้ได้ และบัญชีที่ถูกจำกัดเพราะใช้งานผิดนั้นลบไม่ได้",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Nakasara sa labas ng NOL World: ang paghanap sa account, at ang pagkumpuni sa pahinang ayaw magbukas",
+    summary:
+      "Kung aling login ang ginamit mo ang nagpapasya sa lahat ng rutang pambawi, may pagpapalit ng password lamang para sa nagsign-up sa email, at puwedeng gawing napakahirap mahanap ng isang hindi beripikadong email ang buong account. Dagdag pa: ang mga error sa pahina ng booking na hindi naman error.",
+    scope:
+      "Sakop nito ang pagbawi ng account, ang pagbura ng account at ang mga pagkabigo sa pahina ng booking na inilalathala ng NOL World: ang mga kailangan sa browser at app, ang mapa ng upuan sa telepono, at ang mga pop-up na mukhang depekto. Nasa sariling gabay ang mekanika ng pila. Walang narito na tumutulong sa kaninuman na makapasok sa account na hindi kanya.",
+    intro: [
+      "May dalawang bagay na nasisira sa isang site ng tiket na walang kinalaman sa tiket. Hindi ka makapasok sa account, o ayaw na lang gawin ng pahina ang dapat nitong gawin — at pareho silang nangyayari sa umaga ng benta, kung kailan wala nang panahong magbasa ng anuman.",
+      "Halos lahat nito ay napagpasyahan ng isang pili mong ginawa buwan bago, nang hindi nag-iisip: nag-sign up ka ba sa isang email address, o sa Google, Apple o Line. Ang isang katotohanang iyon ang nagtatakda kung umiiral man para sa iyo ang pagpapalit ng password, kaya iyon ang panimula.",
+    ],
+    steps: [
+      {
+        title: "Alamin kung aling uri ng login ang talagang hawak mo",
+        body: "Ang account sa NOL World ay nagagawa sa pamamagitan ng isang email address o sa pamamagitan ng social login — Google, Apple o Line, bukod sa iba. Mas matalas ang kahihinatnan kaysa sa tunog nito: isinasaad ng NOL World na ang pagbawi ng password ay para lamang sa mga gumamit na nag-sign up sa isang email address. Kung social login ang ginamit mo ay walang password sa NOL World na papalitan, dahil wala ni isa kahit kailan. Alamin ngayon kung alin ka, habang walang nagmamadali.",
+        pitfall:
+          "Ang pag-aakalang email account ang hawak mo dahil natatandaan mong nagtipa ka ng isang email address. Ipinapakita rin ng social login ang email mo, at tuluyang magkaiba ang mga rutang pambawi.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Beripikahin ang email mo, dahil ito ang hindi na mababawi",
+        body: "Ang sariling huling linya ng NOL World tungkol sa pagbawi ng account ang pinakamahalagang pangungusap sa larangang ito: maaaring mahirap mahanap ang mga account na hindi bineripika sa email. Ang lahat ng iba pa rito ay isang proseso na may kalalabasan. Ito ay isang pintuang maaaring hindi talaga magbukas — itinutugma ka ng suporta sa isang talaan, at ang hindi beripikadong email ang pinakamalakas na tugmang hawak nila. Kung binabasa mo ito gamit ang account na gumagana, tingnan kung beripikado ang email dito at hayaan itong beripikado.",
+        pitfall:
+          "Ang paglagpas sa sulat ng beripikasyon sa pag-sign up dahil nagmamadali kang makaabot sa isang benta. Walang halaga ito sa araw mismo at ito ang pagkakaiba ng isang account na mababawi at isang nawala.",
+        takes: "3 minuto, ngayon",
+      },
+      {
+        title: "Para sa social login, tingnan muna ang panig ng provider",
+        body: "Kung hindi mo matandaan kung nagkaroon ka man ng account sa NOL World, alam ng provider. Inilalathala ng NOL World kung saan titingin: sa Google, sa ilalim ng Google Account saka Security saka ang mga koneksiyon mo sa app at serbisyo ng ibang panig. Sa Apple, sa ilalim ng Settings, ng pangalan mo at Apple ID, saka Sign-In & Security, saka Sign in with Apple. Sa Line, sa ilalim ng Settings saka Account saka Authorized apps. Kung nakalista roon ang NOL World ay umiiral ang account at alam mo na kung aling provider ang nagbubukas nito.",
+        pitfall:
+          "Ang pagsubok sa bawat pindutang social sa pahina ng login para tingnan kung alin ang gumagana. Puwede iyong magbuo ng pangalawang account sa halip na mahanap ang una, at mayroon nang dalawa — at isa sa kanila ang may hawak ng mga booking mo.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Kung mabigo iyon, ipadala sa suporta ang limang bagay na hinihingi nito",
+        body: "Hahanapin ng NOL World ang isang account, at pinapangalanan nito ang kailangan: ang email address na maaaring ginamit mo, ang uri ng login (Google, Line, Apple o email), ang nickname mo, at ang uri ng produktong binook mo kasama ang mga numero ng reserbasyon. Sinasabi rin nito kung saan hanapin ang huli — nasa email voucher na ipinadala noong nag-book ka ang numero ng reserbasyon. Tipunin lahat bago ka magsulat, dahil ang kahilingang walang numero ng reserbasyon ay kahilingang nagpapahula sa kanila.",
+        pitfall:
+          "Ang pagbura sa lumang email ng kumpirmasyon ng booking dahil kalat ito. Hawak nila ang mga numero ng reserbasyon, ang pinakamalakas na pantukoy na maiaalok mo kapag ang account mismo ang bagay na nawala.",
+        takes: "20 minuto",
+      },
+      {
+        title: "Hindi nawawala ang booking mo sa bagong telepono — sa ibang account nawawala",
+        body: "Ito ang pinakakaraniwang maling alarma at tuwirang sinasagot ito ng NOL World: hindi binubura ng pagpapalit ng telepono o ng muling pag-log in ang kasaysayan mo. Ang ipinapatingin nito ay kung naka-log in ka sa ibang account kaysa sa orihinal na ginamit mo. Halos palagi iyon ang tunay na sanhi, at ang social login ang dahilan — iniaalok ng bagong telepono ang provider na pinakamadali, at ang pagpindot sa maling isa ay naghahatid sa iyo sa isang walang laman ngunit lubos na tunay na pangalawang account.",
+        pitfall:
+          "Ang paghinuhang wala na ang booking at ang pagbili nitong muli. Nasa kabilang account ang tiket, at tunay na pagbili ang pangalawang pagbili.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Gumamit ng browser na inaasahan ng pahina ng booking, at ng opisyal na channel lamang",
+        body: "Sinasabi ng NOL World na itinatayo nito ang sarili ayon sa pamantayan ng web at inirerekomenda nito ang Google Chrome o Microsoft Edge sa desktop at sa telepono. Kung ayaw magbukas ng bintana ng booking ay tiyak ang bilin nito: i-update ang browser sa pinakabagong bersiyon, linisin ang cache, at muling subukan. Para sa app, i-update ito mula sa App Store o Google Play. At isinasaad nito kung saan talaga mabibili ang tiket — ang website ng NOL World sa world.nol.com/ticket at ang app ng NOL World, at wala nang iba.",
+        pitfall:
+          "Ang pag-troubleshoot sa browser na hindi kahit kailan sinuportahan, sa loob ng isang webview na binuksan mula sa link ng social media. Buksan ang pahina ng booking sa Chrome o Edge nang tuwiran bago mo ipasyang sira ang site.",
+        takes: "15 minuto, sa araw bago",
+      },
+      {
+        title: "Kung ayaw gumana ng mapa ng upuan sa mobile web, lumipat sa app",
+        body: "May nakadokumentong problema sa aparato, hindi isang pangkalahatang problema. Sinasabi ng NOL World na sa ilang aparato ay pinalalaki ng mobile web ang buong browser kapag nag-zoom ka papasok at palabas, at iyon ang gumagawang imposible ang pagpili ng upuan — at ang daan palabas ay i-download ang app ng NOL World. Pinapangalanan nito ang aparatong nakumpirma sa ngayon: ang Galaxy Fold. Kung nasa tiklop o sa hindi pangkaraniwang hugis na screen ka, iluklok ang app bago ang benta sa halip na matuklasan ito sa loob ng pitong minutong bintana ng bayad.",
+        pitfall:
+          "Ang pagkurot papasok sa mapa ng upuan para hanapin ang isang partikular na upuan. Sa mga apektadong aparato, ang galaw na iyon mismo ang sumisira sa pagpili.",
+        takes: "10 minuto, nang maaga",
+      },
+      {
+        title: "Alamin kung aling pop-up ang hindi depekto",
+        body: "May dalawang mensaheng nagmumukhang error at hindi naman. Sinasabi ng NOL World na lumalabas ang pop-up na nagsasabing napili na ang upuang ito kapag pinili mo ang parehong upuan nang halos sabay ng ibang gumagamit — walang mali sa session mo, may isang taong mas mabilis ng isang segundo. At sinasabi nitong kusang nag-a-update ang bakanteng upuan nang walang refresh, kaya ang mapa ng upuang mukhang nakapirmi ay karaniwang mapa ng upuang gumagana. Ituring ang dalawa bilang impormasyon at hindi bilang bagay na aayusin.",
+        pitfall:
+          "Ang muling pag-load ng pahina para paalisin ang isang pop-up. Sa bentang may pila, iyon ang isang kilos na nagpapaubos ng puwesto mo.",
+        takes: "—",
+      },
+      {
+        title: "Basahin ang payo tungkol sa maraming tab laban sa patakaran sa pandaraya",
+        body: "Humihingi ang NOL World ng isang aparato kada account, at sinasabi nitong maaaring limitahan ang booking mo ng sabay na pagpasok mula sa maraming aparato sa parehong account. Pagkatapos ay nagbibigay ito ng teknikal na payo para sa mga nagbu-book nang sabay-sabay — na ang maraming tab ay nagdudulot ng salungatan ng session, at gumamit ng ganap na magkahiwalay na browser gaya ng Chrome at Edge, o ng magkaibang aparato. Basahin iyon nang maingat, dahil nakalista sa sarili nitong patakaran laban sa pandaraya ang pag-book sa iba-ibang account gamit ang magkatulad o magkahawig na personal na impormasyon bilang mapandayang paggamit. Ang matiwasay na pagbasa ng payo ay tungkol sa magkahiwalay na plataporma: NOL World sa isang browser habang ibang site ng tiket ang tumatakbo sa isa. Hindi ito pahintulot na patakbuhin nang sabay ang maraming account mo.",
+        pitfall:
+          "Ang pagturing sa tip tungkol sa salungatan ng session bilang isang pinahihintulutang taktika para sa maraming account. Hindi magkasundong nakaupo ang dalawang pahina, at ang may nakalathalang parusa ay ang patakaran sa pandaraya.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Kung buburahin mo ang account, alamin nang eksakto kung ano ang aalis at ano ang mananatili",
+        body: "Hindi mababawi ang pagbura at isa-isang inilalahad ito ng NOL World. Nabubura: ang account at ang impormasyon ng profile mo, ang kasaysayan ng reserbasyon mo, ang mga lakad mo, at ang listahan ng mga lugar na nagustuhan mo. Nananatili: ang review at larawang iniwan mo para sa isang lugar. Sa website ay anumang paraan ng login ay makakabura ng account. Sa app na may email login ang ruta ay My Account, Settings, Delete Account, saka ang password mo; sa social login ay parehong ruta pero sa Google, Line o Apple ka magpapatunay. Dalawang bagay mula sa ibang bahagi ng dokumentasyon nito ang nabibilang dito: binubura rin ng pagbura ang beripikasyon ng pagkakakilanlan mo at pinapalaya ito para sa ibang account, at ang account na nililimitahan dahil sa maling paggamit ay hindi mabubura kahit kailan.",
+        pitfall:
+          "Ang pagbura ng account para alisin ang isang problema nito. Hindi mabubura ang account na nililimitahan, at kasama ng beripikadong account ang beripikasyon mo pag-alis — umaalis ang kasaysayan ng reserbasyon at hindi ang mga review.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Hindi ko matandaan ang password ko. Paano ko ito papalitan?",
+        a: "Kung nag-sign up ka sa isang email address lamang — sinasabi ng NOL World na ang pagbawi ng password ay para sa nag-sign up sa email lamang. Ang ruta ay ang screen ng login, Find Password, ilagay ang email ng pag-sign up, saka sundan ang link ng pagpapalit na darating. Kung Google, Apple o Line ang ginamit mo ay walang password sa NOL World; sa provider ka nagsa-sign in.",
+      },
+      {
+        q: "Hindi ko nga alam kung aling account ang ginamit ko.",
+        a: "Tingnan muna ang panig ng provider. Inilalathala ng NOL World ang mga ruta: Google Account saka Security saka ang mga koneksiyon mo sa app at serbisyo ng ibang panig; ang Settings ng Apple saka ang Apple ID mo saka Sign-In & Security saka Sign in with Apple; ang Settings ng Line saka Account saka Authorized apps. Kung lumabas ang NOL World, iyon ang account.",
+      },
+      {
+        q: "Walang gumana sa mga iyon. Mahahanap kaya ito ng suporta?",
+        a: "Titingnan nila, sa pamamagitan ng ibibigay mo: ang email na maaaring ginamit mo, ang uri ng login, ang nickname mo, at ang uri ng produktong binook mo kasama ang numero ng reserbasyon nila — na nasa email voucher na ipinadala noong nag-book ka, ayon sa NOL World. Nagbabala rin itong maaaring mahirap mahanap ang account na hindi kahit kailan bineripika sa email, kaya ipadala lahat ng hawak mo.",
+      },
+      {
+        q: "Nagpalit ako ng telepono at wala na ang mga booking ko.",
+        a: "Halos tiyak na naroon pa. Sinasabi ng NOL World na hindi binubura ng pagpapalit ng telepono o ng muling pag-log in ang kasaysayan, at ipinapatingin nito kung naka-sign in ka sa ibang account kaysa sa orihinal. Sa social login ay madali iyong mangyari nang hindi sinasadya — iniaalok ng bagong telepono ang pinakamadaling provider, hindi laging ang ginamit mo.",
+      },
+      {
+        q: "Ayaw magbukas ng bintana ng booking kahit kailan.",
+        a: "Ang sariling hakbang ng NOL World: gumamit ng karaniwang browser, at pinapangalanan nito ang Chrome at Edge; i-update ito sa pinakabagong bersiyon; linisin ang cache; subukan muli. Para sa app, i-update sa pinakabagong bersiyon mula sa App Store o Google Play. Isinasaad din nitong mabibili lamang ang tiket sa world.nol.com/ticket o sa app ng NOL World.",
+      },
+      {
+        q: "Hindi ako makapili ng upuan sa browser ng telepono ko.",
+        a: "May kilalang isyu sa aparato. Sinasabi ng NOL World na sa ilang aparato ay pinalalaki ng pag-zoom papasok at palabas ang buong mobile browser, na gumagawang imposible ang pagpili ng upuan, at na ang sagot ay gamitin ang app ng NOL World. Ang aparatong pinapangalanan nitong nakumpirma ay ang Galaxy Fold. Iluklok ang app bago ang benta, hindi sa gitna nito.",
+      },
+      {
+        q: "Puwede ba akong magbukas ng dalawang tab para lumaki ang tsansa ko?",
+        a: "Hindi, at humihingi ang NOL World ng isang aparato kada account — sinasabi nitong maaaring limitahan ang booking mo ng sabay na pagpasok mula sa maraming aparato sa parehong account. Ang payo nito tungkol sa magkahiwalay na browser ay tungkol sa salungatan ng session kapag tunay na dalawang magkaibang plataporma ng tiket ang ginagamit mo, hindi isang pag-endorso sa pagpapatakbo ng maraming account mo. Nasa inilathalang listahan nito ng mapandayang paggamit ang pag-book sa iba-ibang account gamit ang magkahawig na personal na detalye.",
+      },
+      {
+        q: "Ano ang mangyayari sa datos ko kung buburahin ko ang account ko?",
+        a: "Sinasabi ng NOL World na hindi mababawi ang pagbura, at inililista nito ang aalis: ang account at impormasyon ng profile, ang kasaysayan ng reserbasyon, ang mga lakad, at ang mga nagustuhang lugar. Nananatili ang review at larawang iniwan mo para sa isang lugar. Sa ibang bahagi ay sinasabi nitong binubura rin ng pagbura ang beripikasyon ng pagkakakilanlan mo, na pinapalaya ito para sa ibang account, at na hindi mabubura ang account na nililimitahan dahil sa maling paggamit.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vì sao đơn Weverse Shop của bạn tới muộn, và khi nào bạn còn hủy được",
+    summary:
+      "Cái nút hủy biến mất khi trạng thái thay đổi chứ không theo một thời hạn, EU đã bỏ mức miễn thuế 150 euro, Mỹ thêm một chế độ kiểm tra thứ hai bên cạnh chế độ thuế, và một dịp lễ Hàn Quốc có giờ chốt đơn tính đến từng phút.",
+    scope:
+      "Trang này bao gồm những gì xảy ra sau khi một đơn Weverse Shop được đặt, lấy từ chính các thông báo của Weverse Shop: cửa sổ hủy đơn, những thay đổi hải quan mà họ đã cảnh báo cho EU và Mỹ, các chậm trễ do dịp lễ và do vận chuyển, và bạn thực sự đang mua từ ai. Các mốc ngày lễ là của năm 2026 và sẽ sai vào năm sau — trang thông báo mới là bản sống. Bản thân việc đặt hàng có hướng dẫn riêng.",
+    intro: [
+      "Weverse Shop đăng một dòng thông báo đều đặn về chuyện giao hàng, và gần như không ai đọc chúng cho tới khi một gói hàng tới muộn. Chúng chính là nơi những câu trả lời thật nằm: thay đổi hải quan nào áp cho bạn, dịp lễ nào ăn mất bốn ngày, và cái phút chính xác mà một đơn hàng thôi còn hủy được.",
+      "Đây là dòng thông báo đó, đọc gọn trong một lần. Hai trong số các mục dưới đây là những quy định mới thật sự chứ không phải chậm trễ theo mùa, và một trong số đó là thời điểm tiền của bạn thôi còn hoàn lại được.",
+    ],
+    steps: [
+      {
+        title: "Biết rằng cửa sổ hủy đóng theo một trạng thái, không theo một cái đồng hồ",
+        body: "Đây là điều đáng biết trước khi có gì sai. Weverse Shop đưa đường hủy là ứng dụng Weverse, rồi More, rồi My Orders, rồi Order Details, rồi Cancel Order — và nêu rằng một khi trạng thái đơn của bạn chuyển thành Shipping Soon hoặc In Transit, bạn sẽ không thể hủy đơn. Không có khoảng ân hạn nào được nêu và không có quy định tính theo số giờ sau khi đặt. Cửa sổ còn mở cho tới khi một nhà kho đổi một trạng thái, điều có thể xảy ra sớm hơn bạn tưởng với một bản phát hành được săn.",
+        pitfall:
+          "Để qua đêm mới quyết định có giữ một đơn đặt trước mua theo cảm xúc hay không. Thời hạn không phải một giờ bạn tra ra được — nó là một sự kiện bạn không điều khiển, và nó có thể trôi qua lúc bạn đang ngủ.",
+        takes: "5 phút, ngay lập tức",
+      },
+      {
+        title: "Nếu bạn ở EU, mức miễn 150 euro đã không còn",
+        body: "Thông báo của chính Weverse Shop thì cụ thể ở chỗ các bài báo chung còn mơ hồ. Từ ngày 1 tháng 7 năm 2026, EU đã sửa quy định với hàng nhập giá trị thấp: trước đó các đơn dưới 150 euro được miễn thuế hải quan, và mức miễn đó đã bị xóa bỏ, nên thuế giờ áp bất kể số tiền mua. Chi tiết quan trọng nhất là căn cứ — Weverse nói nó áp cho các lô hàng thông quan tại địa phương từ ngày 1 tháng 7 năm 2026, theo ngày thông quan địa phương chứ không theo ngày đặt. Một đơn đặt trước khi thay đổi vẫn có thể bị nó bắt.",
+        pitfall:
+          "Cho rằng một đơn nhỏ thì quá rẻ để phải chịu thuế. Không còn mức sàn nào nữa, và cái ngày quyết định chuyện đó là ngày bạn không thấy được từ trang đơn hàng.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy chờ hải quan, hoặc đơn vị chuyển phát, đòi tiền bạn trực tiếp",
+        body: "Weverse Shop nói các đơn EU có thể phát sinh thuế trong lúc thông quan địa phương, rằng bạn có thể nhận hướng dẫn thanh toán riêng từ hải quan địa phương hoặc từ đơn vị chuyển phát, và rằng việc không trả các khoản thuế đó có thể làm chậm hoặc chặn việc giao hàng. Đó là một trải nghiệm khác với một khoản thu lúc thanh toán: một tin nhắn đến từ một công ty bạn chẳng có quan hệ gì, đòi tiền trước khi một gói hàng bạn đã trả tiền chịu nhúc nhích. Nó không mặc định là lừa đảo — nhưng nó cũng đúng là thứ mà lừa đảo bắt chước, nên hãy đối chiếu số vận đơn với đơn hàng của bạn thay vì bấm theo một liên kết trong tin nhắn.",
+        pitfall:
+          "Bỏ qua một yêu cầu thanh toán của hải quan hay của đơn vị chuyển phát vì cho là lừa đảo rồi để gói hàng nằm đó. Việc không trả là một trong những cách có ghi nhận khiến một đơn hàng đơn giản là không bao giờ tới.",
+        takes: "—",
+      },
+      {
+        title: "Nếu bạn ở Mỹ, hãy biết có hai thay đổi riêng biệt, không phải một",
+        body: "Thay đổi về thuế được nói tới nhiều nhất và nó không phải thứ duy nhất làm chậm các gói hàng đi Mỹ. Weverse Shop cảnh báo riêng rằng từ ngày 8 tháng 7 năm 2026, Ủy ban An toàn Sản phẩm Tiêu dùng Hoa Kỳ thực thi một chính sách eFiling bắt buộc, kéo theo việc kiểm tra hải quan địa phương nghiêm hơn với mọi hàng hóa nhập vào Mỹ, và rằng việc thông quan dự kiến mất lâu hơn khung thời gian giao hàng chuẩn vài ngày. Đó là một chế độ khai báo an toàn sản phẩm chứ không phải một mức thuế — nên một đơn đi Mỹ có thể chậm vì một lý do chẳng liên quan gì tới số thuế phải trả.",
+        pitfall:
+          "Đọc mọi chậm trễ ở Mỹ như là thay đổi về mức miễn thuế rồi chờ một hóa đơn thuế không bao giờ tới. Một trong hai thay đổi này tốn tiền, cái còn lại tốn ngày.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy coi một dịp lễ Hàn Quốc như một giờ chốt tính theo phút",
+        body: "Weverse Shop đăng một lịch chốt đơn cho mỗi dịp lễ Hàn Quốc, và các mốc giờ thì chính xác. Với Chuseok 2026, giờ chốt đơn cho các địa chỉ ngoài Hàn Quốc là ngày 23 tháng 9 lúc 11:00 KST, với chuyển phát nhanh hoạt động lại từ ngày 28 tháng 9; với địa chỉ trong Hàn Quốc, giờ chốt của đơn vị chuyển phát là ngày 22 tháng 9 lúc 11:00 KST, hoạt động lại trong cùng ngày. Các đơn đặt sau giờ chốt sẽ được gửi lần lượt kể từ ngày hoạt động lại. Weverse thêm hai lưu ý: hàng gửi đúng ngày chốt vẫn có thể tới sau dịp lễ tùy khu vực, và lịch này đến từ đơn vị chuyển phát nên có thể thay đổi.",
+        pitfall:
+          "Đọc những mốc ngày đó như là của năm nay. Chúng là các con số của Chuseok 2026, còn cái khuôn — một giờ chốt lúc 11:00 KST một hai ngày trước, hoạt động lại khoảng một tuần sau — mới là phần truyền lại được. Bản thân các mốc ngày thì phải tra lại mỗi lần.",
+        takes: "10 phút trước một đơn đặt vào dịp lễ",
+      },
+      {
+        title: "Nếu địa chỉ của bạn ở Trung Quốc, một lịch nghỉ thứ hai sẽ áp",
+        body: "Weverse Shop ra các thông báo riêng cho dịp lễ Trung Quốc, ảnh hưởng tới các đơn có địa chỉ nhận ở Trung Quốc, bởi các cơ quan hải quan Trung Quốc đóng cửa và việc thông quan dừng lại. Với Trung thu 2026 từ ngày 25 đến 27 tháng 9 và Quốc khánh từ ngày 1 đến 7 tháng 10, họ nói các đơn đã thanh toán đủ trước ngày 15 tháng 9 lúc 11:00 KST có khả năng được giao trong dịp Quốc khánh, còn các đơn thanh toán sau đó sẽ bắt đầu được gửi khi dịp lễ kết thúc vào ngày 8 tháng 10. Lưu ý rằng điều được tính là việc thanh toán đã hoàn tất, không phải việc đơn đã được đặt.",
+        pitfall:
+          "Một đơn đặt trước mà việc thanh toán hoàn tất muộn hơn bạn nghĩ. Khi giờ chốt được định bằng việc trả đủ tiền, một đơn còn đang chưa trả là một đơn nằm ở bên kia của một khoảng trống ba tuần.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy tách một gián đoạn vận chuyển khỏi một gói hàng bị mất",
+        body: "Có những chậm trễ không phải hải quan mà cũng không phải dịp lễ. Tháng 4 năm 2026, Weverse Shop thông báo với khách về việc giao hàng chậm ở toàn bộ châu Âu và một số nước Trung Đông, do biến động của các tuyến vận chuyển toàn cầu và của lịch vận tải hàng không và đường biển, ảnh hưởng tới các đơn gửi sau ngày 1 tháng 4 năm 2026 đang trên đường quốc tế. Phần hữu ích là điều họ nói về việc theo dõi vận đơn: vì phải đổi tuyến, các cập nhật tra cứu và việc hàng tới địa phương có thể lâu hơn bình thường, và gói hàng vẫn đang trên đường. Một vận đơn im lặng trong một gián đoạn đã biết là triệu chứng được dự liệu, không phải bằng chứng của việc mất hàng.",
+        pitfall:
+          "Mở khiếu nại mất hàng vì vận đơn không nhúc nhích suốt một tuần. Hãy xem trang thông báo tìm một gián đoạn đang có hiệu lực bao trùm khu vực của bạn trước — một khiếu nại nộp cho một gói hàng chỉ đang bị đổi tuyến làm tốn đúng khoảng thời gian bạn sẽ cần cho một khiếu nại thật.",
+        takes: "10 phút",
+      },
+      {
+        title: "Kiểm tra xem Weverse có thực sự là người bán hay không",
+        body: "Weverse Shop nêu trên chính các trang của mình rằng một số sản phẩm được chào bán bởi những người bán bên thứ ba riêng lẻ, rằng trong những trường hợp đó Weverse Company chỉ hoạt động như một trung gian thương mại điện tử và không phải một bên của giao dịch, và rằng họ không nhận trách nhiệm nào về thông tin sản phẩm hay về các giao dịch do những người bán đó thực hiện. Điều đó thay đổi việc bạn đang làm việc với ai khi có gì sai — với một mặt hàng của bên thứ ba, đối tác của bạn là người bán, không phải Weverse. Đáng xác định trước khi bạn cần khiếu nại chứ không phải trong lúc đang khiếu nại.",
+        pitfall:
+          "Cho rằng mọi thứ trong cửa hàng đều có cùng một sự bảo đảm vì chúng nằm sau cùng một trang thanh toán. Lời miễn trách trung gian là có công bố, và nó quyết định ai nợ bạn một cách giải quyết.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy tự đọc các thông báo, vì trang này sẽ cũ đi nhanh hơn phần lớn các trang khác",
+        body: "Mọi điều ở trên đến từ trang thông báo của Weverse Shop, và trang đó là bản sống. Các thay đổi hải quan thì bền; các lịch nghỉ lễ, các gián đoạn vận chuyển và các giờ chốt của đơn vị chuyển phát thì không — chúng được phát lại cho từng dịp và bị thay thế mà thông báo cũ không hề đổi. Trước một đơn đặt vào dịp lễ hoặc khi một gói hàng tới muộn, hãy đọc danh sách thông báo chứ đừng tin các mốc ngày của bất kỳ hướng dẫn nào, kể cả hướng dẫn này. Ngày ở đầu trang này là lần cuối chúng tôi làm việc đó.",
+        pitfall:
+          "Tin một giờ chốt lấy từ một hướng dẫn viết năm ngoái. Cái cấu trúc thì lặp lại còn các con số thì không.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi còn hủy được đơn của mình không?",
+        a: "Chỉ khi trạng thái còn cho phép. Đường đi của Weverse Shop là ứng dụng Weverse, More, My Orders, Order Details, Cancel Order — và họ nêu rằng một khi trạng thái chuyển thành Shipping Soon hoặc In Transit thì việc hủy không còn khả thi. Không có khoảng ân hạn nào được công bố, nên câu trả lời phụ thuộc vào đơn hàng chứ không vào cái đồng hồ.",
+      },
+      {
+        q: "Tôi ở EU và đơn của tôi có một hóa đơn hải quan. Như vậy có đúng không?",
+        a: "Có lẽ đúng. Weverse Shop nói rằng từ ngày 1 tháng 7 năm 2026, EU đã xóa bỏ mức miễn thuế trước đây bao các đơn dưới 150 euro, nên thuế giờ áp bất kể số tiền, căn cứ theo các lô hàng thông quan địa phương từ ngày đó. Họ cũng cảnh báo bạn có thể nhận hướng dẫn thanh toán riêng từ hải quan hoặc đơn vị chuyển phát, và rằng việc không trả có thể làm chậm hoặc chặn việc giao hàng.",
+      },
+      {
+        q: "Vì sao đơn đi Mỹ của tôi chậm nếu không có thuế nào phải trả?",
+        a: "Vì có hai thay đổi. Bên cạnh các quy định về thuế, Weverse Shop cảnh báo rằng từ ngày 8 tháng 7 năm 2026, Ủy ban An toàn Sản phẩm Tiêu dùng Hoa Kỳ thực thi eFiling bắt buộc, kéo theo việc kiểm tra nghiêm hơn với mọi hàng hóa nhập vào Mỹ, với việc thông quan dự kiến mất lâu hơn vài ngày. Thay đổi đó tốn thời gian chứ không tốn tiền.",
+      },
+      {
+        q: "Tôi nhận được một tin nhắn đòi tôi trả tiền hải quan. Đó có phải lừa đảo không?",
+        a: "Nó hoàn toàn có thể là thật — Weverse Shop nói khách ở EU có thể nhận hướng dẫn thanh toán riêng từ hải quan địa phương hoặc từ đơn vị chuyển phát. Nó cũng đúng là thứ mà lừa đảo bắt chước. Hãy xác minh bằng cách khớp số vận đơn với đơn hàng của chính bạn và tự vào trang của đơn vị chuyển phát thay vì bấm theo một liên kết trong tin nhắn.",
+      },
+      {
+        q: "Giờ chốt đơn cho một đơn đặt vào dịp lễ Hàn Quốc là khi nào?",
+        a: "Weverse Shop đăng một giờ chốt cho mỗi dịp lễ, tới từng phút. Với Chuseok 2026, giờ chốt cho các địa chỉ ngoài Hàn Quốc là ngày 23 tháng 9 lúc 11:00 KST, với chuyển phát nhanh hoạt động lại ngày 28 tháng 9. Họ cảnh báo lịch này đến từ đơn vị chuyển phát và có thể thay đổi, và rằng hàng gửi đúng ngày chốt vẫn có thể tới sau dịp lễ. Hãy tra giờ chốt hiện hành chứ đừng dùng lại các mốc ngày này.",
+      },
+      {
+        q: "Vận đơn của tôi một tuần rồi không cập nhật. Gói hàng của tôi mất rồi sao?",
+        a: "Hãy xem trang thông báo tìm một gián đoạn bao trùm khu vực của bạn trước. Khi Weverse Shop thông báo chậm giao cho châu Âu và Trung Đông vào tháng 4 năm 2026, họ nói việc đổi tuyến khiến các cập nhật tra cứu và việc hàng tới địa phương lâu hơn bình thường và gói hàng vẫn đang trên đường — nên một vận đơn bất động trong một gián đoạn đã biết là triệu chứng chứ không phải vấn đề.",
+      },
+      {
+        q: "Có gì không ổn với mặt hàng của tôi. Tôi làm việc với Weverse chứ?",
+        a: "Không phải lúc nào cũng vậy. Weverse Shop nêu rằng một số sản phẩm được bán bởi những người bán bên thứ ba riêng lẻ, rằng Weverse Company khi đó chỉ hoạt động như một trung gian và không phải một bên của giao dịch, và rằng họ không nhận trách nhiệm về thông tin sản phẩm hay giao dịch của những người bán đó. Hãy xem bạn đã mua loại mặt hàng nào trước khi quyết định tìm ai.",
+      },
+      {
+        q: "Lịch nghỉ lễ Trung Quốc có ảnh hưởng tới tôi nếu tôi không ở Trung Quốc không?",
+        a: "Các thông báo nói những lịch đó áp cho các đơn có địa chỉ nhận ở Trung Quốc, bởi các cơ quan hải quan Trung Quốc đóng cửa trong dịp lễ. Nếu địa chỉ của bạn ở nơi khác thì các giờ chốt dịp lễ Hàn Quốc và bất kỳ gián đoạn vận chuyển đang có hiệu lực mới là thứ cần theo.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ทำไมออเดอร์ Weverse Shop ของคุณมาช้า และเมื่อไรที่คุณยังยกเลิกได้",
+    summary:
+      "ปุ่มยกเลิกหายไปตอนสถานะเปลี่ยน ไม่ใช่ตอนครบกำหนดเวลา สหภาพยุโรปยกเลิกเพดานปลอดภาษี 150 ยูโรไปแล้ว สหรัฐเพิ่มระบบตรวจสอบชุดที่สองซ้อนบนระบบภาษี และวันหยุดเกาหลีมีเวลาปิดรับออเดอร์ที่วัดกันถึงระดับนาที",
+    scope:
+      "หน้านี้ครอบคลุมสิ่งที่เกิดขึ้นหลังสั่งซื้อบน Weverse Shop โดยอ้างจากประกาศของ Weverse Shop เอง ได้แก่ ช่วงเวลาที่ยกเลิกได้ การเปลี่ยนแปลงด้านพิธีการศุลกากรที่มันเตือนไว้สำหรับสหภาพยุโรปและสหรัฐ ความล่าช้าจากวันหยุดและจากการขนส่ง และคนที่คุณกำลังซื้อจากเขาจริง ๆ วันหยุดที่อ้างเป็นของปี 2026 และจะผิดในปีหน้า หน้าประกาศคือฉบับที่ยังมีชีวิต ส่วนการสั่งซื้อเองมีไกด์ของตัวเอง",
+    intro: [
+      "Weverse Shop ปล่อยประกาศเรื่องการจัดส่งออกมาเรื่อย ๆ และแทบไม่มีใครอ่านจนกระทั่งพัสดุมาช้า ประกาศเหล่านั้นคือที่ที่คำตอบจริงอยู่ ว่าการเปลี่ยนแปลงทางศุลกากรข้อไหนใช้กับคุณ วันหยุดไหนกินไปสี่วัน และนาทีที่ออเดอร์หนึ่งหยุดเป็นออเดอร์ที่ยกเลิกได้",
+      "นี่คือสายประกาศนั้น อ่านรวดเดียวจบ สองข้อด้านล่างเป็นกฎใหม่จริง ๆ ไม่ใช่ความล่าช้าตามฤดูกาล และข้อหนึ่งในนั้นคือจุดที่เงินของคุณหยุดเป็นเงินที่ขอคืนได้",
+    ],
+    steps: [
+      {
+        title: "รู้ไว้ว่าช่วงยกเลิกปิดด้วยสถานะ ไม่ใช่ด้วยนาฬิกา",
+        body: "นี่คือข้อเท็จจริงที่ควรรู้ก่อนที่อะไรจะผิดพลาด Weverse Shop ให้เส้นทางการยกเลิกเป็นแอป Weverse แล้ว More แล้ว My Orders แล้ว Order Details แล้ว Cancel Order และระบุว่าเมื่อสถานะออเดอร์ของคุณเปลี่ยนเป็น Shipping Soon หรือ In Transit คุณจะยกเลิกออเดอร์ไม่ได้ ไม่มีช่วงผ่อนผันที่ระบุไว้ และไม่มีกฎแบบนับชั่วโมงหลังสั่ง ช่วงเวลานั้นเปิดอยู่จนกว่าคลังสินค้าจะเปลี่ยนสถานะ ซึ่งเกิดเร็วกว่าที่คุณคาดได้ในสินค้าที่คนแย่งกัน",
+        pitfall:
+          "การเก็บไว้ค้างคืนก่อนตัดสินใจว่าจะเก็บพรีออเดอร์ที่สั่งด้วยอารมณ์ไว้ไหม เส้นตายไม่ใช่เวลาที่คุณเปิดดูได้ มันเป็นเหตุการณ์ที่คุณไม่ได้ควบคุม และมันผ่านไปได้ระหว่างที่คุณหลับ",
+        takes: "5 นาที ทันที",
+      },
+      {
+        title: "ถ้าคุณอยู่ในสหภาพยุโรป การยกเว้นที่ 150 ยูโรหมดไปแล้ว",
+        body: "ประกาศของ Weverse Shop เองเจาะจงในจุดที่ข่าวทั่วไปคลุมเครือ ตั้งแต่วันที่ 1 กรกฎาคม 2026 สหภาพยุโรปแก้กฎสำหรับสินค้านำเข้ามูลค่าต่ำ ก่อนหน้านี้ออเดอร์ที่ต่ำกว่า 150 ยูโรได้รับการยกเว้นภาษีศุลกากร และการยกเว้นนั้นถูกยกเลิกไปแล้ว ดังนั้นภาษีจึงใช้โดยไม่สนยอดซื้อ รายละเอียดที่สำคัญที่สุดคือเกณฑ์ Weverse บอกว่าใช้กับการขนส่งที่ผ่านพิธีการศุลกากรท้องถิ่นตั้งแต่วันที่ 1 กรกฎาคม 2026 โดยนับตามวันที่ผ่านพิธีการท้องถิ่น ไม่ใช่วันที่สั่งซื้อ ออเดอร์ที่สั่งก่อนการเปลี่ยนแปลงก็ยังถูกจับได้",
+        pitfall:
+          "การเหมาว่าออเดอร์เล็ก ๆ ถูกเกินกว่าจะต้องเสียภาษี ไม่มีพื้นขั้นต่ำอีกแล้ว และวันที่ตัดสินเรื่องนี้ก็เป็นวันที่คุณมองไม่เห็นจากหน้าออเดอร์",
+        takes: "10 นาที",
+      },
+      {
+        title: "คาดไว้ว่าศุลกากรหรือบริษัทขนส่งจะมาเก็บเงินกับคุณโดยตรง",
+        body: "Weverse Shop บอกว่าออเดอร์ของสหภาพยุโรปอาจมีภาษีเกิดขึ้นระหว่างพิธีการท้องถิ่น ว่าคุณอาจได้รับคำสั่งชำระเงินแยกจากศุลกากรท้องถิ่นหรือจากบริษัทขนส่ง และว่าการไม่จ่ายภาษีเหล่านั้นอาจทำให้การส่งล่าช้าหรือส่งไม่ได้ นั่นเป็นประสบการณ์ที่ต่างจากการถูกเก็บตอนเช็กเอาต์ คือมีข้อความมาจากบริษัทที่คุณไม่มีความสัมพันธ์ด้วย ขอเงินก่อนที่พัสดุที่คุณจ่ายไปแล้วจะขยับ มันไม่ใช่การหลอกลวงโดยปริยาย แต่มันก็เป็นสิ่งที่การหลอกลวงเลียนแบบเป๊ะ ๆ ดังนั้นให้เทียบเลขติดตามพัสดุกับออเดอร์ของคุณ ไม่ใช่กดลิงก์ในข้อความนั้น",
+        pitfall:
+          "การเมินคำขอชำระเงินจากศุลกากรหรือบริษัทขนส่งว่าเป็นฟิชชิง แล้วปล่อยพัสดุค้างไว้ การไม่จ่ายเป็นหนึ่งในวิธีที่มีบันทึกไว้ว่าทำให้ออเดอร์ไม่มาถึงเลย",
+        takes: "—",
+      },
+      {
+        title: "ถ้าคุณอยู่ในสหรัฐ ให้รู้ว่ามีการเปลี่ยนแปลงสองเรื่องแยกกัน ไม่ใช่เรื่องเดียว",
+        body: "เรื่องภาษีได้พื้นที่ข่าวทั้งหมด และมันไม่ใช่สิ่งเดียวที่ทำให้พัสดุไปสหรัฐช้า Weverse Shop เตือนแยกอีกข้อว่าตั้งแต่วันที่ 8 กรกฎาคม 2026 คณะกรรมการความปลอดภัยสินค้าอุปโภคบริโภคของสหรัฐบังคับใช้นโยบาย eFiling แบบบังคับ ซึ่งนำมาสู่การตรวจของศุลกากรท้องถิ่นที่เข้มขึ้นกับสินค้าทุกชิ้นที่นำเข้าสหรัฐ และคาดว่าพิธีการจะใช้เวลานานกว่ากรอบการจัดส่งมาตรฐานอีกไม่กี่วัน นั่นเป็นระบบการยื่นข้อมูลความปลอดภัยสินค้า ไม่ใช่อัตราภาษี ดังนั้นออเดอร์ไปสหรัฐช้าได้ด้วยเหตุผลที่ไม่เกี่ยวกับว่าต้องเสียภาษีเท่าไร",
+        pitfall:
+          "การอ่านความล่าช้าในสหรัฐทุกครั้งว่าเป็นเรื่องการเปลี่ยนเพดานปลอดภาษี แล้วรอใบเก็บภาษีที่ไม่เคยมา การเปลี่ยนแปลงข้อหนึ่งในสองข้อนี้กินเงิน อีกข้อกินวัน",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถือว่าวันหยุดเกาหลีคือเวลาปิดรับที่วัดเป็นนาที",
+        body: "Weverse Shop ประกาศตารางเวลาปิดรับสำหรับวันหยุดเกาหลีแต่ละครั้ง และเวลานั้นแม่นยำ สำหรับชูซอก 2026 เวลาปิดรับออเดอร์สำหรับที่อยู่นอกเกาหลีใต้คือวันที่ 23 กันยายน เวลา 11:00 KST โดยการส่งด่วนกลับมาเริ่มวันที่ 28 กันยายน ส่วนที่อยู่ในเกาหลี เวลาปิดรับของบริษัทขนส่งคือวันที่ 22 กันยายน เวลา 11:00 KST และกลับมาเริ่มในวันเดียวกัน ออเดอร์ที่สั่งหลังเวลาปิดรับจะถูกส่งเรียงตามลำดับนับจากวันที่กลับมาเริ่ม Weverse เพิ่มข้อแม้สองข้อ คือของที่ส่งในวันปิดรับก็ยังอาจถึงหลังวันหยุดได้ขึ้นกับพื้นที่ และตารางนี้มาจากบริษัทขนส่งจึงเปลี่ยนได้",
+        pitfall:
+          "การอ่านวันที่เหล่านั้นว่าเป็นของปีนี้ มันเป็นตัวเลขของชูซอก 2026 ส่วนรูปแบบ คือเวลาปิดรับที่ 11:00 KST หนึ่งถึงสองวันก่อน และกลับมาเริ่มราวหนึ่งสัปดาห์ถัดมา คือส่วนที่ส่งทอดกันได้ ตัววันที่เองต้องเปิดดูใหม่ทุกครั้ง",
+        takes: "10 นาที ก่อนสั่งในช่วงวันหยุด",
+      },
+      {
+        title: "ถ้าที่อยู่ของคุณอยู่ในจีน จะมีปฏิทินวันหยุดชุดที่สองเข้ามาใช้",
+        body: "Weverse Shop ออกประกาศแยกสำหรับวันหยุดจีน ซึ่งมีผลกับออเดอร์ที่มีที่อยู่จัดส่งในจีน เพราะสำนักงานศุลกากรจีนปิดและพิธีการหยุดเดิน สำหรับเทศกาลไหว้พระจันทร์ 2026 วันที่ 25 ถึง 27 กันยายน และวันชาติตั้งแต่วันที่ 1 ถึง 7 ตุลาคม มันบอกว่าออเดอร์ที่ชำระเงินครบภายในวันที่ 15 กันยายน เวลา 11:00 KST มีแนวโน้มจะได้รับการจัดส่งในช่วงวันหยุดวันชาติ และออเดอร์ที่ชำระหลังจากนั้นจะเริ่มส่งเมื่อวันหยุดจบลงในวันที่ 8 ตุลาคม สังเกตว่าสิ่งที่นับคือการชำระเงินที่ครบถ้วน ไม่ใช่การที่ออเดอร์ถูกสั่ง",
+        pitfall:
+          "พรีออเดอร์ที่การชำระเงินเสร็จช้ากว่าที่คุณคิด เมื่อเวลาปิดรับถูกนิยามด้วยการชำระเงินครบ ออเดอร์ที่ยังไม่จ่ายก็เป็นออเดอร์ที่อยู่อีกฝั่งของช่องว่างสามสัปดาห์",
+        takes: "10 นาที",
+      },
+      {
+        title: "แยกการสะดุดของการขนส่งออกจากพัสดุที่หายไป",
+        body: "ความล่าช้าบางอย่างไม่ใช่ทั้งศุลกากรและวันหยุด ในเดือนเมษายน 2026 Weverse Shop แจ้งลูกค้าเรื่องการจัดส่งล่าช้าทั่วยุโรปและในบางประเทศตะวันออกกลาง ซึ่งเกิดจากความผันผวนของเส้นทางขนส่งทั่วโลกและของตารางขนส่งทางอากาศและทางเรือ มีผลกับออเดอร์ที่ส่งหลังวันที่ 1 เมษายน 2026 ซึ่งอยู่ระหว่างการขนส่งระหว่างประเทศ ส่วนที่ใช้ประโยชน์ได้คือสิ่งที่มันบอกเรื่องการติดตามพัสดุ คือเพราะมีการเปลี่ยนเส้นทาง การอัปเดตการติดตามและการถึงปลายทางท้องถิ่นอาจใช้เวลานานกว่าปกติ และพัสดุยังอยู่ระหว่างขนส่ง การติดตามที่เงียบอยู่ในช่วงการสะดุดที่รู้กันอยู่คืออาการที่คาดไว้แล้ว ไม่ใช่หลักฐานว่าของหาย",
+        pitfall:
+          "การเปิดเคลมพัสดุหายเพราะการติดตามไม่ขยับมาหนึ่งสัปดาห์ ดูหน้าประกาศก่อนว่ามีการสะดุดที่ยังมีผลครอบคลุมภูมิภาคของคุณไหม เคลมที่ยื่นกับพัสดุที่แค่ถูกเปลี่ยนเส้นทางกินเวลาที่คุณจะต้องใช้กับเคลมจริง",
+        takes: "10 นาที",
+      },
+      {
+        title: "ตรวจว่า Weverse เป็นผู้ขายจริงหรือไม่",
+        body: "Weverse Shop ระบุไว้บนหน้าของตัวเองว่าสินค้าบางรายการเสนอขายโดยผู้ขายบุคคลที่สามแต่ละราย ว่าในกรณีเหล่านั้น Weverse Company ทำหน้าที่เพียงเป็นคนกลางด้านอีคอมเมิร์ซและไม่ใช่คู่สัญญาในธุรกรรม และว่ามันไม่รับผิดชอบต่อข้อมูลสินค้าหรือต่อธุรกรรมที่ผู้ขายเหล่านั้นทำ นั่นเปลี่ยนว่าคุณกำลังติดต่อกับใครเมื่อมีอะไรผิดพลาด สำหรับสินค้าของบุคคลที่สาม คู่กรณีของคุณคือผู้ขาย ไม่ใช่ Weverse ควรรู้ให้ชัดก่อนที่คุณจะต้องร้องเรียน ไม่ใช่ตอนกำลังร้องเรียน",
+        pitfall:
+          "การเหมาว่าทุกอย่างในร้านมีการค้ำประกันเหมือนกันเพราะมันอยู่หลังระบบเช็กเอาต์เดียวกัน ข้อสงวนเรื่องการเป็นคนกลางถูกประกาศไว้ และมันตัดสินว่าใครเป็นคนที่ต้องเยียวยาคุณ",
+        takes: "5 นาที",
+      },
+      {
+        title: "อ่านประกาศด้วยตัวเอง เพราะหน้านี้จะเก่าเร็วกว่าหน้าอื่นส่วนใหญ่",
+        body: "ทุกอย่างข้างบนมาจากหน้าประกาศของ Weverse Shop และหน้านั้นคือฉบับที่ยังมีชีวิต การเปลี่ยนแปลงทางศุลกากรนั้นอยู่ยาว ส่วนตารางวันหยุด การสะดุดของการขนส่ง และเวลาปิดรับของบริษัทขนส่งนั้นไม่อยู่ยาว มันถูกออกใหม่ทุกครั้งที่มีโอกาส และถูกแทนที่โดยที่ประกาศเก่าไม่ได้เปลี่ยนอะไรเลย ก่อนสั่งของช่วงวันหยุดหรือเมื่อพัสดุมาช้า ให้อ่านรายการประกาศ แทนที่จะเชื่อวันที่ของไกด์ใด ๆ รวมถึงไกด์นี้ วันที่ด้านบนของหน้านี้คือครั้งสุดท้ายที่เราทำอย่างนั้น",
+        pitfall:
+          "การเชื่อเวลาปิดรับจากไกด์ที่เขียนไว้เมื่อปีก่อน โครงสร้างนั้นซ้ำเดิม ตัวเลขนั้นไม่ซ้ำ",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ฉันยังยกเลิกออเดอร์ได้ไหม",
+        a: "ได้เฉพาะตอนที่สถานะยังอนุญาต เส้นทางของ Weverse Shop คือแอป Weverse แล้ว More แล้ว My Orders แล้ว Order Details แล้ว Cancel Order และมันระบุว่าเมื่อสถานะเปลี่ยนเป็น Shipping Soon หรือ In Transit การยกเลิกจะทำไม่ได้อีก ไม่มีช่วงผ่อนผันที่ประกาศไว้ ดังนั้นคำตอบขึ้นกับตัวออเดอร์ ไม่ใช่นาฬิกา",
+      },
+      {
+        q: "ฉันอยู่ในสหภาพยุโรปและออเดอร์ของฉันมีใบเก็บภาษีศุลกากร อย่างนั้นถูกไหม",
+        a: "น่าจะถูก Weverse Shop บอกว่าตั้งแต่วันที่ 1 กรกฎาคม 2026 สหภาพยุโรปยกเลิกการยกเว้นภาษีที่เคยคุ้มออเดอร์ต่ำกว่า 150 ยูโร ดังนั้นภาษีจึงใช้โดยไม่สนยอด โดยนับจากการขนส่งที่ผ่านพิธีการท้องถิ่นตั้งแต่วันนั้น มันยังเตือนว่าคุณอาจได้รับคำสั่งชำระเงินแยกจากศุลกากรหรือบริษัทขนส่ง และว่าการไม่จ่ายอาจทำให้ส่งล่าช้าหรือส่งไม่ได้",
+      },
+      {
+        q: "ทำไมออเดอร์ไปสหรัฐของฉันช้า ถ้าไม่มีภาษีต้องจ่าย",
+        a: "เพราะมีการเปลี่ยนแปลงสองเรื่อง นอกจากกฎภาษี Weverse Shop เตือนว่าตั้งแต่วันที่ 8 กรกฎาคม 2026 คณะกรรมการความปลอดภัยสินค้าอุปโภคบริโภคของสหรัฐบังคับใช้ eFiling แบบบังคับ ซึ่งนำมาสู่การตรวจที่เข้มขึ้นกับสินค้าทุกชิ้นที่นำเข้าสหรัฐ และคาดว่าพิธีการจะใช้เวลานานขึ้นอีกไม่กี่วัน เรื่องนั้นกินเวลา ไม่ใช่กินเงิน",
+      },
+      {
+        q: "ฉันได้ข้อความขอให้จ่ายค่าภาษีศุลกากร นั่นเป็นการหลอกลวงไหม",
+        a: "มันเป็นของจริงได้โดยชอบ Weverse Shop บอกว่าลูกค้าในสหภาพยุโรปอาจได้รับคำสั่งชำระเงินแยกจากศุลกากรท้องถิ่นหรือจากบริษัทขนส่ง และมันก็เป็นสิ่งที่การหลอกลวงเลียนแบบเป๊ะ ๆ ด้วย ให้ตรวจโดยเทียบเลขติดตามพัสดุกับออเดอร์ของคุณเอง และเข้าเว็บบริษัทขนส่งด้วยตัวเอง แทนที่จะกดลิงก์ในข้อความ",
+      },
+      {
+        q: "เวลาปิดรับสำหรับออเดอร์ช่วงวันหยุดเกาหลีคือเมื่อไร",
+        a: "Weverse Shop ประกาศไว้วันหยุดละหนึ่งครั้ง ละเอียดถึงนาที สำหรับชูซอก 2026 เวลาปิดรับสำหรับที่อยู่นอกเกาหลีคือวันที่ 23 กันยายน เวลา 11:00 KST และการส่งด่วนกลับมาเริ่มวันที่ 28 กันยายน มันเตือนว่าตารางมาจากบริษัทขนส่งและเปลี่ยนได้ และว่าของที่ส่งในวันปิดรับก็ยังอาจถึงหลังวันหยุด ให้เปิดดูตารางปัจจุบันแทนที่จะใช้วันที่เหล่านี้ซ้ำ",
+      },
+      {
+        q: "การติดตามพัสดุของฉันไม่อัปเดตมาหนึ่งสัปดาห์ พัสดุของฉันหายไหม",
+        a: "ดูหน้าประกาศก่อนว่ามีการสะดุดที่ครอบคลุมภูมิภาคของคุณไหม เมื่อ Weverse Shop แจ้งความล่าช้าสำหรับยุโรปและตะวันออกกลางในเดือนเมษายน 2026 มันบอกว่าการเปลี่ยนเส้นทางทำให้การอัปเดตการติดตามและการถึงปลายทางท้องถิ่นใช้เวลานานกว่าปกติ และพัสดุยังอยู่ระหว่างขนส่ง ดังนั้นการติดตามที่นิ่งอยู่ในช่วงการสะดุดที่รู้กันคืออาการ ไม่ใช่ตัวปัญหา",
+      },
+      {
+        q: "สินค้าของฉันมีปัญหา ฉันต้องติดต่อ Weverse ไหม",
+        a: "ไม่เสมอไป Weverse Shop ระบุว่าสินค้าบางรายการขายโดยผู้ขายบุคคลที่สามแต่ละราย ว่า Weverse Company จึงทำหน้าที่เพียงเป็นคนกลางและไม่ใช่คู่สัญญาในธุรกรรม และว่ามันไม่รับผิดชอบต่อข้อมูลสินค้าหรือธุรกรรมของผู้ขายเหล่านั้น ตรวจก่อนว่าคุณซื้อสินค้าแบบไหน ก่อนตัดสินใจว่าจะไปหาใคร",
+      },
+      {
+        q: "ตารางวันหยุดจีนมีผลกับฉันไหมถ้าฉันไม่ได้อยู่ในจีน",
+        a: "ประกาศบอกว่าตารางเหล่านั้นใช้กับออเดอร์ที่มีที่อยู่จัดส่งในจีน เพราะสำนักงานศุลกากรจีนปิดในช่วงวันหยุด ถ้าที่อยู่ของคุณอยู่ที่อื่น สิ่งที่ต้องจับตาคือเวลาปิดรับของวันหยุดเกาหลีและการสะดุดของการขนส่งที่ยังมีผลอยู่",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Bakit huli ang order mo sa Weverse Shop, at kailan mo pa ito makakansela",
+    summary:
+      "Nawawala ang pindutan ng pagkansela sa pagbabago ng katayuan at hindi sa isang takdang oras, binuwag ng EU ang 150 euro nitong hangganang walang buwis, nagdagdag ang US ng pangalawang rehimen ng inspeksiyon sa ibabaw ng sa buwis, at may hangganang sinusukat sa minuto ang isang pistang Koreano.",
+    scope:
+      "Sakop nito ang nangyayari matapos maipasa ang isang order sa Weverse Shop, mula sa sariling abiso ng Weverse Shop: ang bintana ng pagkansela, ang mga pagbabago sa customs na binalaan nito para sa EU at US, ang mga pagkaantala dahil sa pista at sa lohistika, at kung kanino ka talaga bumibili. Taong 2026 ang mga petsa ng pista at mali na sila sa susunod na taon — ang pahina ng abiso ang buhay na bersiyon. May sariling gabay ang pag-order mismo.",
+    intro: [
+      "Naglalabas ang Weverse Shop ng tuloy-tuloy na abiso tungkol sa paghahatid, at halos walang nagbabasa nito hangga't hindi huli ang isang parsela. Doon nakatira ang tunay na sagot: aling pagbabago sa customs ang nauukol sa iyo, aling pista ang kumain ng apat na araw, at ang eksaktong minutong tumigil ang isang order sa pagiging makakansela.",
+      "Ito ang agos na iyon, binasa sa isang upuan. Dalawa sa mga bagay sa ibaba ay tunay na mga bagong tuntunin at hindi pana-panahong pagkaantala, at isa sa kanila ang sandaling tumitigil ang pera mo sa pagiging maibabalik.",
+    ],
+    steps: [
+      {
+        title: "Alamin na ang bintana ng pagkansela ay nagsasara sa isang katayuan, hindi sa isang orasan",
+        body: "Ito ang katotohanang mabuting malaman bago may masira. Ibinibigay ng Weverse Shop ang rutang pangkansela bilang ang app ng Weverse, saka More, saka My Orders, saka Order Details, saka Cancel Order — at isinasaad nitong kapag nagbago na ang katayuan ng order mo sa Shipping Soon o In Transit, hindi mo na makakansela ang order. Walang isinasaad na panahon ng palugit at walang tuntuning nakabatay sa oras pagkatapos mag-order. Bukas ang bintana hanggang baguhin ng isang bodega ang isang katayuan, at nangyayari iyon nang mas maaga kaysa sa inaasahan mo sa isang sikat na release.",
+        pitfall:
+          "Ang pagpapasya kinabukasan kung itatago ba ang isang biglaang pre-order. Hindi oras na matitingnan mo ang takdang panahon — isa itong pangyayaring wala sa kontrol mo, at puwede itong lumipas habang natutulog ka.",
+        takes: "5 minuto, agad",
+      },
+      {
+        title: "Kung nasa EU ka, wala na ang eksempsiyong 150 euro",
+        body: "Tiyak ang sariling abiso ng Weverse Shop kung saan malabo ang pangkalahatang balita. Mula 1 Hulyo 2026 ay binago ng EU ang tuntunin nito sa mga angkat na mababa ang halaga: dati ay walang buwis sa customs ang order na mababa sa 150 euro, at binuwag na ang eksempsiyong iyon, kaya nauukol na ngayon ang buwis kahit magkano ang halaga ng pinamili. Ang detalyeng pinakamahalaga ay ang batayan — sinasabi ng Weverse na nauukol ito sa mga kargamentong dumadaan sa lokal na customs mula 1 Hulyo 2026, ayon sa petsa ng lokal na clearance at hindi sa petsa ng order. Puwede pa ring mahuli nito ang orderng ipinasa bago ang pagbabago.",
+        pitfall:
+          "Ang pag-aakalang masyadong mura ang isang maliit na order para mabuwisan. Wala nang sahig, at ang petsang nagpapasya nito ay hindi nakikita mula sa pahina ng order.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Asahang hihingan ka ng pera nang tuwiran ng customs, o ng courier",
+        body: "Sinasabi ng Weverse Shop na puwedeng magkaroon ng buwis ang order sa EU habang nasa lokal na clearance, na puwede kang makatanggap ng hiwalay na tagubilin sa pagbabayad mula sa lokal na customs o sa courier, at na ang pagkabigong bayaran ang mga buwis na iyon ay maaaring magpaantala o magpigil sa paghahatid. Ibang karanasan iyon sa isang bayad sa checkout: may mensaheng dumarating mula sa isang kompanyang wala kang relasyon, na humihingi ng pera bago gumalaw ang parselang binayaran mo na. Hindi ito scam bilang panuntunan — ngunit eksakto rin itong ginagaya ng isang scam, kaya itugma ang tracking number sa order mo sa halip na sundan ang isang link sa mensahe.",
+        pitfall:
+          "Ang pagwawalang-bahala sa kahilingan ng customs o courier na pagbabayad bilang phishing at ang pagpapaupo sa parsela. Isa ang hindi pagbabayad sa mga nadokumentong paraan kung paanong hindi na lang dumarating ang isang order.",
+        takes: "—",
+      },
+      {
+        title: "Kung nasa US ka, alaming dalawang hiwalay na pagbabago ito, hindi isa",
+        body: "Nakukuha ng pagbabago sa buwis ang lahat ng balita at hindi lamang iyon ang nagpapabagal sa parselang papuntang US. Hiwalay na nagbabala ang Weverse Shop na mula 8 Hulyo 2026 ay ipinapatupad ng US Consumer Product Safety Commission ang isang sapilitang patakarang eFiling, na nagdadala ng mas mahigpit na inspeksiyon ng lokal na customs sa lahat ng paninda na iniaangkat sa US, at na inaasahang mas matatagal ang clearance kaysa sa karaniwang panahon ng paghahatid ng ilang araw. Rehimen iyon ng paghahain para sa kaligtasan ng produkto at hindi isang taripa — kaya puwedeng mabagal ang isang order sa US dahil sa isang dahilang walang kinalaman sa kung magkano ang buwis.",
+        pitfall:
+          "Ang pagbasa sa bawat pagkaantala sa US bilang ang pagbabago sa hangganan ng buwis at ang paghihintay sa bill ng buwis na hindi dumarating. Pera ang halaga ng isa sa dalawang pagbabagong ito at araw ang halaga ng isa.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Ituring ang isang pistang Koreano bilang hangganang sinusukat sa minuto",
+        body: "Naglalathala ang Weverse Shop ng talaan ng hangganan para sa bawat pistang Koreano, at tumpak ang mga oras. Para sa Chuseok 2026 ang hangganan ng order para sa address sa labas ng South Korea ay 23 Setyembre nang 11:00 KST, at muling nagpatuloy ang express delivery sa 28 Setyembre; para sa address sa Korea ang hangganan ng courier ay 22 Setyembre nang 11:00 KST, na nagpatuloy sa parehong araw. Ipinapadala nang sunod-sunod ang order na ipinasa matapos ang hangganan mula sa araw ng pagpapatuloy. Dalawang babala ang idinagdag ng Weverse: puwede pa ring dumating matapos ang pista ang bagay na ipinadala sa araw ng hangganan, depende sa lugar, at galing sa courier ang talaan kaya maaari itong magbago.",
+        pitfall:
+          "Ang pagbasa sa mga petsang iyon bilang sa taong ito. Mga bilang sila ng Chuseok 2026, at ang padron — isang hangganan nang 11:00 KST isa o dalawang araw bago, at pagpapatuloy mga isang linggo pagkatapos — ang bahaging nananatili. Ang mga petsa mismo ay kailangang hanapin sa bawat pagkakataon.",
+        takes: "10 minuto bago mag-order sa pista",
+      },
+      {
+        title: "Kung nasa Tsina ang address mo, isang pangalawang kalendaryo ng pista ang nauukol",
+        body: "Naglalabas ang Weverse Shop ng hiwalay na abiso para sa mga pistang Tsino, na nakakaapekto sa order na may address ng paghahatid sa Tsina, dahil nagsasara ang tanggapan ng customs ng Tsina at tumitigil ang clearance. Para sa Mid-Autumn Festival ng 2026 sa 25 hanggang 27 Setyembre at sa National Day mula 1 hanggang 7 Oktubre, sinabi nitong ang orderng lubos na nabayaran bago ang 15 Setyembre nang 11:00 KST ay malamang maihatid sa panahon ng pista ng National Day, at ang orderng nabayaran matapos iyon ay magsisimulang ipadala kapag natapos na ang pista sa 8 Oktubre. Pansinin na ang pagiging kumpleto ng bayad ang binibilang, hindi ang pagkakapasa ng order.",
+        pitfall:
+          "Isang pre-order na natatapos ang bayad nang mas huli kaysa sa pag-aakala mo. Kung saan tinutukoy ng buong bayad ang hangganan, ang orderng nakaupong hindi nababayaran ay orderng nasa kabilang panig ng isang tatlong-linggong bitak.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Ihiwalay ang pagkaabala sa kargamento sa isang nawawalang parsela",
+        body: "May mga pagkaantalang hindi customs at hindi pista. Noong Abril 2026 ay ibinalita ng Weverse Shop sa mga customer ang pagkaantala ng paghahatid sa buong Europa at sa piling bansa sa Gitnang Silangan, na dulot ng pagbabago-bago sa mga pandaigdigang ruta ng lohistika at sa talaan ng kargamento sa himpapawid at dagat, na nakaapekto sa orderng ipinadala matapos ang 1 Abril 2026 na nasa internasyonal na transito. Ang kapaki-pakinabang na bahagi ay ang sinasabi nito tungkol sa tracking: dahil sa muling pagruta, puwedeng tumagal nang mas matagal kaysa sa dati ang pag-update ng tracking at ang pagdating sa lokal, at nasa transito pa rin ang pakete. Ang tahimik na tracking sa panahon ng isang kilalang pagkaabala ay ang inaasahang sintomas at hindi katibayan ng pagkawala.",
+        pitfall:
+          "Ang pagbukas ng habol sa nawawalang parsela dahil hindi gumalaw ang tracking nang isang linggo. Tingnan muna sa pahina ng abiso kung may aktibong pagkaabalang sumasaklaw sa rehiyon mo — ang habol na inihain laban sa parselang muling niruta lamang ay nag-aaksaya ng oras na kakailanganin mo para sa isang tunay.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Tingnan kung ang Weverse nga ang nagtitinda",
+        body: "Isinasaad ng Weverse Shop sa sariling pahina nito na may mga produktong iniaalok ng mga indibidwal na nagtitindang ibang panig, na sa mga kasong iyon ay gumagawi ang Weverse Company bilang tagapamagitan lamang sa e-commerce at hindi panig sa transaksiyon, at na wala itong inaakong responsibilidad sa impormasyon ng produkto o sa transaksiyong isinasagawa ng mga nagtitindang iyon. Binabago niyon kung kanino ka nakikipag-usap kapag may mali — para sa bagay ng ibang panig, ang nagtitinda ang kabila at hindi ang Weverse. Mabuting matiyak bago mo kailanganing magreklamo kaysa habang nagrereklamo.",
+        pitfall:
+          "Ang pag-aakalang may parehong panindigan ang lahat sa tindahan dahil nasa likod sila ng parehong checkout. Nakalathala ang pagtatatwa ng pamamagitan, at ito ang nagpapasya kung sino ang may utang sa iyo ng lunas.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Basahin mo mismo ang mga abiso, dahil mas mabilis maluluma ang pahinang ito kaysa sa karamihan",
+        body: "Lahat ng nasa itaas ay galing sa pahina ng abiso ng Weverse Shop, at ang pahinang iyon ang buhay na bersiyon. Matibay ang mga pagbabago sa customs; hindi matibay ang talaan ng pista, ang pagkaabala sa kargamento at ang hangganan ng courier — inilalabas silang muli sa bawat pagkakataon at napapalitan nang hindi nagbabago ang lumang abiso. Bago mag-order sa pista o kapag huli ang isang parsela, basahin ang listahan ng abiso kaysa pagkatiwalaan ang petsa ng anumang gabay, kasama ang gabay na ito. Ang petsa sa itaas ng pahinang ito ay kung kailan huling ginawa namin iyon.",
+        pitfall:
+          "Ang pagkatiwala sa isang oras ng hangganan mula sa gabay na isinulat noong isang taon. Umuulit ang balangkas at hindi umuulit ang mga bilang.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Makakansela ko pa ba ang order ko?",
+        a: "Habang pinapayagan lamang ng katayuan. Ang ruta ng Weverse Shop ay ang app ng Weverse, More, My Orders, Order Details, Cancel Order — at isinasaad nitong kapag nagbago na ang katayuan sa Shipping Soon o In Transit ay hindi na posible ang pagkansela. Walang inilathalang panahon ng palugit, kaya nasa order ang sagot at hindi sa orasan.",
+      },
+      {
+        q: "Nasa EU ako at may bill ng customs ang order ko. Tama ba iyon?",
+        a: "Malamang. Sinasabi ng Weverse Shop na mula 1 Hulyo 2026 ay binuwag ng EU ang eksempsiyon sa buwis na dating sumasaklaw sa orderng mababa sa 150 euro, kaya nauukol na ngayon ang buwis kahit magkano, batay sa kargamentong dumadaan sa lokal na customs mula sa petsang iyon. Nagbabala rin itong puwede kang makatanggap ng hiwalay na tagubilin sa pagbabayad mula sa customs o sa courier, at na ang hindi pagbabayad ay makakaantala o makakapigil sa paghahatid.",
+      },
+      {
+        q: "Bakit mabagal ang order ko sa US kung walang buwis na babayaran?",
+        a: "Dahil dalawa ang pagbabago. Sa tabi ng tuntunin sa buwis, nagbabala ang Weverse Shop na mula 8 Hulyo 2026 ay ipinapatupad ng US Consumer Product Safety Commission ang sapilitang eFiling, na nagdadala ng mas mahigpit na inspeksiyon sa lahat ng paninda na iniaangkat sa US, at inaasahang mas matatagal ang clearance ng ilang araw. Oras ang halaga ng isang iyon at hindi pera.",
+      },
+      {
+        q: "Nakatanggap ako ng mensaheng nagpapabayad sa akin ng customs. Scam ba ito?",
+        a: "Puwede itong tunay nang lehitimo — sinasabi ng Weverse Shop na puwedeng makatanggap ang customer sa EU ng hiwalay na tagubilin sa pagbabayad mula sa lokal na customs o sa courier. Eksakto rin itong ginagaya ng isang scam. Patunayan sa pamamagitan ng pagtutugma ng tracking number sa sariling order mo at ng pagpunta mismo sa site ng courier kaysa sa pagsunod sa link sa mensahe.",
+      },
+      {
+        q: "Ano ang hangganan para sa isang order sa pistang Koreano?",
+        a: "Naglalathala ang Weverse Shop ng isa kada pista, hanggang sa minuto. Para sa Chuseok 2026 ang hangganan para sa address sa labas ng Korea ay 23 Setyembre nang 11:00 KST, at nagpatuloy ang express delivery sa 28 Setyembre. Nagbabala itong galing sa courier ang talaan at puwedeng magbago, at na puwede pa ring dumating matapos ang pista ang ipinadala sa araw ng hangganan. Hanapin ang kasalukuyan kaysa gamiting muli ang mga petsang ito.",
+      },
+      {
+        q: "Isang linggo nang hindi nag-update ang tracking ko. Nawala na ba ang parsela ko?",
+        a: "Tingnan muna sa pahina ng abiso kung may pagkaabalang sumasaklaw sa rehiyon mo. Noong ibinalita ng Weverse Shop ang pagkaantala para sa Europa at Gitnang Silangan noong Abril 2026, sinabi nitong dahil sa muling pagruta ay tumatagal nang mas matagal kaysa sa dati ang pag-update ng tracking at ang pagdating sa lokal at nasa transito pa rin ang pakete — kaya ang hindi gumagalaw na tracking sa panahon ng kilalang pagkaabala ay sintomas at hindi ang problema.",
+      },
+      {
+        q: "May mali sa bagay na binili ko. Sa Weverse ba ako makikipag-usap?",
+        a: "Hindi palagi. Isinasaad ng Weverse Shop na may mga produktong ipinagbibili ng indibidwal na nagtitindang ibang panig, na gumagawi noon ang Weverse Company bilang tagapamagitan lamang at hindi panig sa transaksiyon, at na wala itong inaakong responsibilidad sa impormasyon ng produkto o sa transaksiyon ng mga nagtitindang iyon. Tingnan kung aling uri ng bagay ang binili mo bago magpasya kung kanino lalapit.",
+      },
+      {
+        q: "Nakakaapekto ba sa akin ang talaan ng pistang Tsino kung hindi ako nasa Tsina?",
+        a: "Sinasabi ng mga abiso na nauukol ang mga talaang iyon sa orderng may address ng paghahatid sa Tsina, dahil nagsasara ang tanggapan ng customs ng Tsina tuwing pista. Kung nasa iba ang address mo, ang hangganan ng pistang Koreano at anumang aktibong pagkaabala sa kargamento ang dapat tingnan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vụ rò rỉ dữ liệu Weverse: thực sự đã rò ra cái gì, và một rủi ro nó tạo ra",
+    summary:
+      "422.584 tài khoản, do chính Weverse xác nhận. Không có tên, không có thông tin liên lạc, không có số thẻ — chỉ một mã nhận dạng nội bộ và lịch sử mua hàng của bạn. Tổ hợp đó không phải một tài khoản bị rút cạn; nó là nguyên liệu thô cho một tin nhắn biết bạn đã mua gì.",
+    scope:
+      "Trang này bao gồm những gì Weverse Company đã công bố về vụ rò rỉ mà họ xác nhận vào tháng 9 năm 2026, đọc ở cả bản tiếng Anh và bản tiếng Hàn của thông báo. Chúng tôi không phải kiểm toán viên an ninh và đây không phải tư vấn pháp lý: mọi điều quy cho Weverse là phát ngôn của chính họ, không phải một phát hiện chúng tôi đã kiểm chứng. Một câu chuyện an ninh có thể còn diễn tiến, và trang này mang ngày chúng tôi kiểm tra lần cuối.",
+    intro: [
+      "Tháng 9 năm 2026, chủ tịch Weverse Company công bố một thông báo xác nhận rằng thông tin cá nhân của khách hàng đã bị rò rỉ. Mọi người đọc trang web này đều có một tài khoản Weverse, nên câu hỏi không phải là nó có quan trọng hay không mà là nó thực sự thay đổi điều gì — và câu trả lời hẹp hơn và cụ thể hơn cả một cái nhún vai lẫn một cơn hoảng.",
+      "Những gì tiếp theo là thông báo đó đọc kỹ, ở cả hai ngôn ngữ nó được công bố. Phần hữu ích không phải con số. Nó là chuyện cái tổ hợp dữ liệu cụ thể đã rời đi gần như vô dụng cho việc lấy tiền của bạn và tốt một cách khác thường cho việc thuyết phục bạn.",
+    ],
+    steps: [
+      {
+        title: "Hãy đọc hai danh sách, vì khác biệt giữa chúng quyết định mọi thứ",
+        body: "Weverse liệt từng mục đã rò rỉ dưới hai đề mục. Là thông tin cá nhân: thông tin nhận dạng nội bộ — một số nội bộ duy nhất được sinh ra để nhận dạng người dùng khi bạn đăng ký. Là thông tin chung mà họ xếp vào loại không phải thông tin cá nhân: loại giao dịch tức phương thức thanh toán, tên cổng thanh toán, loại tiền, số tiền mua, số tiền hủy, ngày và giờ mua, trạng thái giao dịch, và ngày giờ hoàn tiền với các đơn đã hủy. Quy mô là 422.584 trường hợp tính theo đơn vị ID tài khoản. Điều không nằm trên cả hai danh sách mới là điểm chính: không có tên, không có thông tin liên lạc, không có số thẻ hay thông tin xác thực thanh toán.",
+        pitfall:
+          "Đọc con số 422.584 rồi tự điền phần còn lại từ ký ức về những vụ rò rỉ khác. Phản ứng với một vụ rò thông tin đăng nhập và phản ứng với vụ này là khác nhau, nên danh sách liệt từng mục có giá trị hơn cái tiêu đề.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy cân lời bảo đảm của Weverse một cách công bằng, kể cả giới hạn của nó",
+        body: "Weverse nêu rằng mã nhận dạng nội bộ bị rò không phải thông tin trực tiếp nhận dạng một cá nhân, như tên hay thông tin liên lạc; rằng nó là một giá trị chỉ dùng bên trong các hệ thống nội bộ của Weverse Company và không thể dùng ở bên ngoài; và rằng việc làm giả thanh toán hay chuyển tiền trái phép khó xảy ra chỉ từ những hạng mục dữ liệu này. Nhìn bề ngoài, lập luận đó đứng được — một số dòng nội bộ không phải một danh tính, và không trường nào trong số đó là một thông tin xác thực. Giới hạn thật thà là một mã nhận dạng nội bộ trở thành thứ nhận dạng được ngay khi nó được nối với một tập dữ liệu khác cũng chứa nó, và không ai ngoài công ty đo được khả năng đó cao tới đâu. Đó là phần phơi lộ còn lại: sự liên kết, không phải sự trộm.",
+        pitfall:
+          "Coi một lời bảo đảm hợp lý như một bảo chứng, hoặc coi nó như lời tô vẽ. Nó là một khẳng định cụ thể về những trường cụ thể, và nó mạnh nhất đúng ở chỗ nó hẹp nhất.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hiểu rủi ro thật: một tin nhắn biết bạn đã mua gì",
+        body: "Hãy nhìn các trường bị rò cùng nhau — phương thức thanh toán, cổng thanh toán, loại tiền, số tiền, ngày, trạng thái, ngày hoàn tiền. Đó không phải thiết bị để trừ tiền thẻ của bạn. Đó là thiết bị để viết một tin nhắn vượt qua bài kiểm tra duy nhất mà phần lớn người ta áp cho một email đáng ngờ, là liệu người gửi có biết chi tiết thật về một đơn hàng thật hay không. Một lời nhắn dẫn ra đúng số tiền bạn đã mua, vào đúng ngày, bằng đúng loại tiền, qua đúng nhà cung cấp thanh toán, thì thuyết phục hơn nhiều bất cứ thứ gì một kẻ lừa đảo ngẫu nhiên có thể soạn ra.",
+        pitfall:
+          "Lấy chuyện “họ biết chi tiết đơn hàng của tôi” làm bằng chứng rằng một tin nhắn là thật. Sau vụ rò rỉ này, bài kiểm tra đó đã thôi hoạt động, và nó là bài kiểm tra mà gần như mọi người dùng.",
+        takes: "5 phút",
+      },
+      {
+        title: "Biết vì sao chuyện này rơi đúng lên một quy trình thật",
+        body: "Điều này quan trọng với nhóm đọc này hơn với phần lớn người khác, bởi những người lạ hợp pháp vốn đã đòi tiền khách hàng Weverse. Weverse Shop cảnh báo người mua ở EU rằng họ có thể nhận hướng dẫn thanh toán riêng từ hải quan địa phương hoặc từ đơn vị chuyển phát, và rằng việc không trả có thể làm chậm hoặc chặn việc giao hàng. Vậy nên trải nghiệm thật và trải nghiệm gian giờ trông giống nhau: một công ty bạn chẳng có quan hệ gì, dẫn ra một đơn hàng bạn thật sự đã đặt, đòi một khoản thanh toán trước khi gói hàng của bạn nhúc nhích. Vụ rò rỉ không tạo ra sự chồng lấn đó, nhưng nó làm nó sắc hơn.",
+        pitfall:
+          "Giải quyết sự nhập nhằng bằng cách trả tiền, hoặc bằng cách bỏ qua tất cả. Một cách thì mất tiền, cách còn lại thì mất gói hàng.",
+        takes: "—",
+      },
+      {
+        title: "Hãy dùng một cách kiểm tra không phụ thuộc vào việc tin nhắn biết những gì",
+        body: "Con đường vượt qua là ngừng đánh giá tin nhắn và bắt đầu đánh giá lời tuyên bố trong đó. Lấy số vận đơn hay mã đơn hàng ra khỏi tin nhắn, rồi tự vào trang của đơn vị chuyển phát hoặc của Weverse Shop — tự gõ địa chỉ hoặc dùng dấu trang đã lưu, tuyệt đối không phải một liên kết trong tin nhắn — và xem mã đó có khớp với một đơn của bạn hay không và có thật có khoản nào phải trả hay không. Nếu tin nhắn là thật thì cùng thông tin đó nằm ở phía bên kia. Nếu không thì chẳng có gì cả, và bạn đã biết được điều đó mà không phải bấm vào đâu.",
+        pitfall:
+          "Bấm theo liên kết vì các chi tiết đều đúng. Việc các chi tiết đều đúng giờ là trạng thái dự liệu của một tin giả.",
+        takes: "5 phút cho mỗi tin nhắn",
+      },
+      {
+        title: "Đừng nhầm việc đổi mật khẩu với cách giải quyết",
+        body: "Phản xạ sau bất kỳ vụ rò rỉ nào là đổi mật khẩu, và ở đây nó gần như không giải quyết gì: thứ bị phơi lộ là một mã nhận dạng và dữ liệu đặc tả về giao dịch, thông qua một API thông tin thanh toán, không phải thông tin đăng nhập. Việc đổi mật khẩu không tốn gì và không gây hại gì, nên hãy làm nếu nó làm bạn an tâm — nhưng hãy làm với ý thức rằng đó là vệ sinh chứ không phải một phương thuốc, và rằng thứ thật sự bảo vệ bạn là thói quen xác minh ở bước trước. Bật bất cứ tùy chọn hai yếu tố nào mà nhà cung cấp đăng nhập của bạn có là điều đáng làm trên nguyên tắc chung, và nó cũng không phải một phản ứng với vụ rò rỉ này.",
+        pitfall:
+          "Đổi mật khẩu, thấy xong việc, rồi tin ngay tin nhắn kế tiếp dẫn ra đơn hàng của bạn. Lời khuyên theo phản xạ thì dễ chịu và nó chen chỗ của lời khuyên có tác dụng.",
+        takes: "10 phút",
+      },
+      {
+        title: "Tìm ra bạn có bị ảnh hưởng hay không, từ tài khoản chứ không từ một hướng dẫn",
+        body: "Weverse nói họ đã thực hiện một quy trình riêng, theo các tiêu chí mà luật và quy định liên quan đặt ra, để thông báo cho những khách hàng có dữ liệu nằm trong vụ rò rỉ. Vậy nên câu trả lời nằm trong tài khoản của chính bạn: địa chỉ email đã đăng ký trên đó, và các thông báo trong ứng dụng. Không hướng dẫn nào nói được cho bạn, kể cả hướng dẫn này, và bất kỳ bên thứ ba nào tuyên bố kiểm tra giúp bạn có nằm trong vụ rò rỉ hay không đều là lý do để nghi ngờ chứ không phải một dịch vụ.",
+        pitfall:
+          "Đi tìm một công cụ tra cứu sẽ cho bạn biết bạn có bị ảnh hưởng hay không. Với một vụ rò rỉ các mã nhận dạng nội bộ, không có gì có ý nghĩa mà một công cụ như vậy kiểm tra được, và chính việc tìm kiếm đó là thứ một trang lừa đảo đang chờ đợi.",
+        takes: "10 phút",
+      },
+      {
+        title: "Ghi nhận điều công ty nói họ đã làm, và điều còn là một lời hứa",
+        body: "Phần tường thuật của Weverse về cách họ xử lý, theo lời họ: họ đã siết kiểm soát truy cập trên API xử lý thông tin thanh toán và loại mã nhận dạng nội bộ ra khỏi API đó để dữ liệu không bị phơi lộ ra bên ngoài; ngày 4 tháng 9 họ đã nộp báo cáo sự cố rò rỉ cho Cơ quan An toàn Internet Hàn Quốc KISA; và họ đã thông báo cho các khách hàng bị ảnh hưởng. Các kế hoạch họ nêu là điều tra toàn bộ các API phơi lộ ra bên ngoài, siết kiểm soát truy cập và giảm thiểu thông tin bị phơi lộ, siết kiểm soát các quy trình triển khai, và giám sát an ninh nhạy hơn. Họ cũng nói đã yêu cầu bên ngoài đã truy cập dữ liệu trả lại nó, và dự định truy cứu trách nhiệm pháp lý. Hãy giữ hai loại đó tách nhau: nhóm thứ nhất là những khẳng định về việc đã làm mà không ai bên ngoài kiểm toán được, còn nhóm thứ hai là các ý định.",
+        pitfall:
+          "Đọc một danh sách cải thiện dự kiến như một danh sách đã sửa xong. Thông báo không khẳng định điều đó, và một bản tóm tắt nó cũng không nên khẳng định.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy ghi nhận cách xử lý một cách đúng mức",
+        body: "Dòng thời gian mà Weverse mô tả thì ngắn: được KISA liên hệ ngày 3 tháng 9 sau khi một người báo cáo bên ngoài công bố một lỗ hổng, kiểm tra nội bộ và ứng phó khẩn cấp ngay lập tức, một báo cáo rò rỉ nộp cho KISA ngày 4 tháng 9, và một thông báo công khai dưới tên người đứng đầu, liệt từng mục đã rời đi — kể cả những trường mà họ lập luận là không phải thông tin cá nhân theo luật, những trường họ không bắt buộc phải kể ra. Chúng tôi đã đọc bản tiếng Hàn gốc đối chiếu với bản tiếng Anh và chúng nói cùng một điều, bản thân đó là một tín hiệu nhỏ. Không điều nào trong đó làm vụ rò rỉ không còn. Nhưng một trang web chỉ biết tường thuật sự cố như những vụ bê bối thì chẳng dạy người đọc điều gì về việc xử lý có năng lực trông như thế nào, và cái này thì gần với nó hơn phần lớn.",
+        pitfall:
+          "Từ một đánh giá bình tĩnh mà kết luận rằng chẳng có gì xảy ra. 422.584 tài khoản là một thất bại thật mà việc công bố kịp thời không hủy bỏ được.",
+        takes: "—",
+      },
+      {
+        title: "Hãy nghĩ hai lần trước khi xóa tài khoản, và biết việc xóa không phải là gì",
+        body: "Xóa tài khoản là phản xạ còn lại, và nó là một quyết định lớn hơn vẻ ngoài. Weverse Shop và NOL World đều gắn những thứ thật vào một tài khoản: lịch sử đơn hàng và đơn đặt, các địa chỉ đã lưu, một membership đã trả tiền, và ở phía bán vé là một lần xác minh danh tính đã hoàn tất. Dù vậy điểm quyết định thì đơn giản hơn. Việc xóa loại dữ liệu của bạn ra khỏi dịch vụ kể từ đó trở đi; nó không rút lại dữ liệu đã rời đi rồi. Bất cứ thứ gì nằm trong vụ rò rỉ này đã nằm trong đó trước khi bạn quyết định bất cứ điều gì, và việc đóng tài khoản sau đó không chạm tới được nó.",
+        pitfall:
+          "Xóa một tài khoản như một phản ứng với một vụ rò rỉ. Đó là điều hợp lý để muốn và nó không phải phương thuốc cho chuyện này, và nó lấy đi của bạn phần lịch sử bạn sẽ cần nếu một giao dịch có lúc nào bị tranh chấp.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Tên, địa chỉ hay số thẻ của tôi có bị rò không?",
+        a: "Không, theo chính phần liệt kê của Weverse. Thứ họ liệt là một số nhận dạng nội bộ cộng với dữ liệu đặc tả về giao dịch — phương thức thanh toán, tên cổng thanh toán, loại tiền, số tiền mua và số tiền hủy, ngày và giờ mua, trạng thái giao dịch, và ngày giờ hoàn tiền. Tên, thông tin liên lạc và thông tin xác thực thanh toán không nằm trên danh sách.",
+      },
+      {
+        q: "Tôi có nên đổi mật khẩu Weverse không?",
+        a: "Nó không gây hại, và nó không phải cách giải quyết. Thứ bị phơi lộ là một mã nhận dạng và dữ liệu đặc tả về giao dịch qua một API thông tin thanh toán chứ không phải thông tin đăng nhập, nên một mật khẩu mới không xử lý được nó. Hãy làm nếu nó giúp bạn an tâm, rồi dành công sức thật cho việc xác minh các yêu cầu thanh toán một cách độc lập, đó mới là thứ thật sự bảo vệ bạn ở đây.",
+      },
+      {
+        q: "Làm sao tôi biết mình có phải một trong 422.584 người đó?",
+        a: "Qua tài khoản của chính bạn. Weverse nói họ đã chạy một quy trình thông báo riêng cho các khách hàng bị ảnh hưởng theo các luật liên quan, nên hãy kiểm tra email đã đăng ký với tài khoản và các thông báo trong ứng dụng. Không công cụ bên ngoài nào nói được cho bạn, và bất cứ thứ gì quảng cáo rằng nó làm được thì nên bị coi là một nỗ lực lừa đảo.",
+      },
+      {
+        q: "Có ai dùng được chuyện này để trừ tiền thẻ của tôi không?",
+        a: "Weverse nói việc làm giả thanh toán hay chuyển tiền trái phép khó xảy ra chỉ từ những hạng mục này, và nhìn vào danh sách thì điều đó có lý — không trường nào bị rò là một số thẻ hay một thông tin xác thực. Rủi ro thực tế không phải một lần trừ tiền trực tiếp mà là một tin nhắn thuyết phục khiến bạn tự đi thanh toán.",
+      },
+      {
+        q: "Nếu nó không phải thông tin cá nhân thì sao lại quan trọng?",
+        a: "Vì tính hữu dụng với một kẻ tấn công và việc phân loại theo luật là hai câu hỏi khác nhau. Số tiền mua, các mốc ngày, phương thức thanh toán và loại tiền đúng là thứ làm cho một tin nhắn gian trở nên đáng tin — và cách người ta thường đánh giá một email đáng ngờ là xem người gửi có biết chi tiết thật về một đơn hàng thật hay không. Bài kiểm tra đó không còn hoạt động với bất cứ ai nằm trong vụ rò rỉ này.",
+      },
+      {
+        q: "Tôi có nên xóa tài khoản Weverse không?",
+        a: "Đó là một lựa chọn bảo vệ được và nó không phải một phương thuốc. Việc xóa chặn việc thu thập trong tương lai; nó không rút lại được dữ liệu đã rời đi, bao gồm bất cứ thứ gì trong vụ rò rỉ này. Nó cũng lấy đi lịch sử đơn hàng và đơn đặt, các địa chỉ đã lưu, bất kỳ membership đã trả tiền, và ở phía bán vé là một lần xác minh danh tính đã hoàn tất — nên hãy quyết định dựa trên việc bạn còn muốn dùng dịch vụ hay không, chứ không như một phản ứng với chuyện này.",
+      },
+      {
+        q: "Weverse thực sự đã làm gì?",
+        a: "Theo lời của chính họ: siết kiểm soát truy cập trên API thông tin thanh toán và loại mã nhận dạng nội bộ ra khỏi nó, nộp báo cáo sự cố rò rỉ cho KISA ngày 4 tháng 9 năm 2026, và thông báo cho các khách hàng bị ảnh hưởng. Họ cũng liệt các việc dự kiến — kiểm tra toàn bộ các API phơi lộ ra bên ngoài, siết kiểm soát triển khai, nâng độ nhạy của việc giám sát — và nói họ đã yêu cầu bên liên quan trả lại dữ liệu và dự định truy cứu trách nhiệm pháp lý. Các hạng mục đã làm là khẳng định của họ chứ không phải phát hiện đã được kiểm toán.",
+      },
+      {
+        q: "Có gì mới hơn cái này không?",
+        a: "Không, tính tới ngày ở đầu trang này, là lần cuối chúng tôi đọc danh sách thông báo của Weverse Shop. Một chuyện an ninh có thể còn diễn tiến, nên danh sách đó là bản sống — nếu có một thông báo tiếp theo, nó sẽ nằm ở đó trước khi nằm ở đây.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "เหตุข้อมูลรั่วของ Weverse: อะไรรั่วออกไปจริง และความเสี่ยงหนึ่งข้อที่มันสร้างขึ้น",
+    summary:
+      "422,584 บัญชี ยืนยันโดย Weverse เอง ไม่มีชื่อ ไม่มีข้อมูลติดต่อ ไม่มีเลขบัตร มีแต่รหัสระบุตัวภายในและประวัติการซื้อของคุณ ส่วนผสมนั้นไม่ใช่บัญชีที่ถูกดูดเงินออก มันเป็นวัตถุดิบของข้อความที่รู้ว่าคุณซื้ออะไรไป",
+    scope:
+      "หน้านี้ครอบคลุมสิ่งที่ Weverse Company ประกาศเรื่องการรั่วไหลที่มันยืนยันในเดือนกันยายน 2026 โดยอ่านทั้งฉบับภาษาอังกฤษและภาษาเกาหลีของประกาศนั้น เราไม่ใช่ผู้ตรวจสอบด้านความปลอดภัย และนี่ไม่ใช่คำแนะนำทางกฎหมาย ทุกอย่างที่ยกมาว่าเป็นของ Weverse คือคำแถลงของมันเอง ไม่ใช่ข้อค้นพบที่เราตรวจสอบเอง เรื่องความปลอดภัยคลี่คลายต่อได้ และหน้านี้ระบุวันที่เราตรวจครั้งล่าสุดไว้",
+    intro: [
+      "ในเดือนกันยายน 2026 ประธานของ Weverse Company ออกประกาศยืนยันว่าข้อมูลส่วนบุคคลของลูกค้ารั่วไหลออกไป ผู้อ่านเว็บนี้ทุกคนมีบัญชี Weverse ดังนั้นคำถามไม่ใช่ว่ามันสำคัญไหม แต่คือมันเปลี่ยนอะไรจริง ๆ และคำตอบนั้นแคบกว่าและเจาะจงกว่าทั้งการยักไหล่และการตื่นตระหนก",
+      "ที่ตามมาคือประกาศนั้นที่อ่านอย่างละเอียด ในทั้งสองภาษาที่มันถูกเผยแพร่ ส่วนที่ใช้ประโยชน์ได้ไม่ใช่ตัวเลข มันคือเรื่องที่ว่าชุดข้อมูลชุดนั้นที่หลุดออกไปแทบไร้ประโยชน์ต่อการขโมยเงินจากคุณ และดีอย่างผิดธรรมดาต่อการโน้มน้าวคุณ",
+    ],
+    steps: [
+      {
+        title: "อ่านทั้งสองรายการ เพราะความต่างระหว่างมันตัดสินทุกอย่าง",
+        body: "Weverse แจกแจงสิ่งที่รั่วออกไว้ใต้สองหัวข้อ ในฐานะข้อมูลส่วนบุคคล คือข้อมูลระบุตัวภายใน ซึ่งเป็นหมายเลขภายในเฉพาะที่ถูกสร้างขึ้นเพื่อระบุตัวผู้ใช้ตอนที่คุณลงทะเบียน ในฐานะข้อมูลทั่วไปที่มันจัดว่าไม่ใช่ข้อมูลส่วนบุคคล คือประเภทการซื้อซึ่งหมายถึงวิธีชำระเงิน ชื่อเกตเวย์การชำระเงิน สกุลเงิน ยอดซื้อ ยอดยกเลิก วันและเวลาที่ซื้อ สถานะการซื้อ และวันเวลาที่คืนเงินในกรณีที่ออเดอร์ถูกยกเลิก ขนาดของเหตุคือ 422,584 รายการ นับเป็นหน่วยไอดีบัญชี สิ่งที่ไม่อยู่ในทั้งสองรายการคือประเด็น คือไม่มีชื่อ ไม่มีข้อมูลติดต่อ ไม่มีเลขบัตรหรือข้อมูลรับรองการชำระเงิน",
+        pitfall:
+          "การอ่านเลข 422,584 แล้วเติมส่วนที่เหลือเองจากความจำเรื่องการรั่วไหลครั้งอื่น การตอบสนองต่อการรั่วของข้อมูลรับรองกับการตอบสนองต่อเรื่องนี้ต่างกัน ดังนั้นรายการที่แจกแจงไว้มีค่ามากกว่าพาดหัว",
+        takes: "5 นาที",
+      },
+      {
+        title: "ชั่งคำปลอบของ Weverse อย่างเป็นธรรม รวมถึงขีดจำกัดของมัน",
+        body: "Weverse ระบุว่ารหัสระบุตัวภายในที่รั่วไปไม่ใช่ข้อมูลที่ระบุตัวบุคคลได้โดยตรง อย่างชื่อหรือข้อมูลติดต่อ ว่ามันเป็นค่าที่ใช้เฉพาะภายในระบบภายในของ Weverse Company และใช้จากภายนอกไม่ได้ และว่าการปลอมแปลงการชำระเงินหรือการโอนเงินโดยไม่ได้รับอนุญาตไม่น่าเกิดขึ้นได้จากข้อมูลชุดนี้เพียงลำพัง เมื่อดูผิวหน้า เหตุผลนั้นยืนได้ หมายเลขแถวภายในไม่ใช่ตัวตน และไม่มีฟิลด์ใดในนี้เป็นข้อมูลรับรอง ขีดจำกัดอย่างซื่อสัตย์คือรหัสระบุตัวภายในกลายเป็นสิ่งที่ระบุตัวได้ในวินาทีที่มันถูกเชื่อมกับชุดข้อมูลอื่นที่มีมันอยู่ด้วย และไม่มีใครนอกบริษัทวัดได้ว่าโอกาสนั้นมากเท่าไร นั่นคือการเปิดเผยที่ยังเหลืออยู่ คือการเชื่อมโยง ไม่ใช่การขโมย",
+        pitfall:
+          "การถือคำปลอบที่สมเหตุสมผลเป็นการรับประกัน หรือการถือว่ามันเป็นการแก้ตัว มันเป็นข้ออ้างเจาะจงเกี่ยวกับฟิลด์เจาะจง และมันแข็งแรงที่สุดตรงจุดที่มันแคบที่สุดพอดี",
+        takes: "5 นาที",
+      },
+      {
+        title: "เข้าใจความเสี่ยงจริง คือข้อความที่รู้ว่าคุณซื้ออะไร",
+        body: "ดูฟิลด์ที่รั่วไปพร้อมกันทั้งชุด คือวิธีชำระเงิน เกตเวย์ สกุลเงิน ยอดเงิน วันที่ สถานะ วันคืนเงิน นั่นไม่ใช่อุปกรณ์สำหรับตัดเงินบัตรของคุณ มันเป็นอุปกรณ์สำหรับเขียนข้อความที่ผ่านบททดสอบเดียวที่คนส่วนใหญ่ใช้กับอีเมลที่น่าสงสัย คือผู้ส่งรู้รายละเอียดจริงเกี่ยวกับออเดอร์จริงหรือไม่ ข้อความที่ยกยอดซื้อจริงของคุณขึ้นมา ในวันที่จริง ในสกุลเงินจริง ผ่านผู้ให้บริการชำระเงินจริง น่าเชื่อกว่าอะไรที่นักหลอกลวงสุ่ม ๆ จะแต่งขึ้นได้มาก",
+        pitfall:
+          "การใช้ประโยคที่ว่าเขารู้รายละเอียดออเดอร์ของฉันเป็นหลักฐานว่าข้อความนั้นจริง หลังการรั่วไหลครั้งนี้ บททดสอบนั้นเลิกทำงานแล้ว และมันคือบททดสอบที่แทบทุกคนใช้",
+        takes: "5 นาที",
+      },
+      {
+        title: "รู้ว่าทำไมเรื่องนี้ลงมาทับกระบวนการที่มีอยู่จริง",
+        body: "เรื่องนี้สำคัญกับผู้อ่านกลุ่มนี้มากกว่ากลุ่มอื่นส่วนใหญ่ เพราะคนแปลกหน้าที่ถูกต้องตามกฎหมายก็ขอเงินจากลูกค้า Weverse อยู่แล้ว Weverse Shop เตือนผู้ซื้อในสหภาพยุโรปว่าเขาอาจได้รับคำสั่งชำระเงินแยกจากศุลกากรท้องถิ่นหรือจากบริษัทขนส่ง และว่าการไม่จ่ายอาจทำให้การส่งล่าช้าหรือส่งไม่ได้ ดังนั้นประสบการณ์ของจริงกับของปลอมจึงดูเหมือนกันแล้ว คือบริษัทที่คุณไม่มีความสัมพันธ์ด้วย อ้างออเดอร์ที่คุณสั่งจริง ขอให้ชำระเงินก่อนพัสดุของคุณจะขยับ การรั่วไหลไม่ได้สร้างการทับซ้อนนั้น แต่มันทำให้มันคมขึ้น",
+        pitfall:
+          "การคลี่คลายความคลุมเครือด้วยการจ่าย หรือด้วยการเมินทุกอย่าง ทางหนึ่งเสียเงิน อีกทางเสียพัสดุ",
+        takes: "—",
+      },
+      {
+        title: "ใช้วิธีตรวจที่ไม่ขึ้นกับว่าข้อความรู้อะไรบ้าง",
+        body: "ทางออกคือหยุดประเมินข้อความ แล้วเริ่มประเมินข้ออ้างในนั้น ดึงเลขติดตามพัสดุหรือเลขอ้างอิงออเดอร์ออกมาจากข้อความ แล้วเข้าเว็บบริษัทขนส่งหรือ Weverse Shop ด้วยตัวเอง โดยพิมพ์ที่อยู่เองหรือใช้บุ๊กมาร์กที่บันทึกไว้ ไม่ใช่ลิงก์ในข้อความ แล้วดูว่าเลขอ้างอิงนั้นตรงกับออเดอร์ของคุณไหม และมีอะไรที่ต้องจ่ายจริงไหม ถ้าข้อความนั้นจริง ข้อมูลเดียวกันก็อยู่ที่ฝั่งนั้นด้วย ถ้าไม่จริง ก็ไม่มีอะไรอยู่ที่นั่น และคุณก็ได้รู้โดยไม่ต้องกดอะไรเลย",
+        pitfall:
+          "การกดลิงก์เพราะรายละเอียดถูกต้อง การที่รายละเอียดถูกต้องคือสภาพที่คาดไว้ของของปลอมไปแล้ว",
+        takes: "5 นาทีต่อข้อความหนึ่งฉบับ",
+      },
+      {
+        title: "อย่าเข้าใจผิดว่าการเปลี่ยนรหัสผ่านคือการแก้",
+        body: "ปฏิกิริยาสะท้อนหลังเหตุรั่วไหลครั้งใดก็คือเปลี่ยนรหัสผ่าน และในกรณีนี้มันแก้อะไรแทบไม่ได้ สิ่งที่หลุดออกไปคือรหัสระบุตัวและข้อมูลกำกับการซื้อผ่าน API ข้อมูลการชำระเงิน ไม่ใช่ข้อมูลเข้าสู่ระบบ การเปลี่ยนรหัสผ่านไม่มีต้นทุนและไม่เป็นอันตราย ดังนั้นทำได้ถ้ามันทำให้ใจคุณสงบ แต่ทำโดยรู้ว่ามันเป็นสุขอนามัย ไม่ใช่ยารักษา และสิ่งที่คุ้มครองคุณจริงคือนิสัยการตรวจสอบในขั้นก่อนหน้า การเปิดตัวเลือกยืนยันสองชั้นอะไรก็ได้ที่ผู้ให้บริการเข้าสู่ระบบของคุณมีนั้นควรทำโดยหลักการทั่วไป และมันก็ไม่ใช่การตอบสนองต่อการรั่วไหลครั้งนี้เช่นกัน",
+        pitfall:
+          "การเปลี่ยนรหัสผ่าน รู้สึกว่าเสร็จแล้ว แล้วไปเชื่อข้อความฉบับถัดไปที่ยกออเดอร์ของคุณมาอ้าง คำแนะนำแบบปฏิกิริยาสะท้อนนั้นสบายใจ และมันเบียดที่ของคำแนะนำที่ได้ผล",
+        takes: "10 นาที",
+      },
+      {
+        title: "หาให้รู้ว่าคุณได้รับผลกระทบไหม จากบัญชีของคุณ ไม่ใช่จากไกด์",
+        body: "Weverse บอกว่ามันดำเนินกระบวนการแยกอีกชุด ตามหลักเกณฑ์ที่กฎหมายและระเบียบที่เกี่ยวข้องกำหนด เพื่อแจ้งลูกค้าที่ข้อมูลอยู่ในเหตุรั่วไหล ดังนั้นคำตอบอยู่ในบัญชีของคุณเอง คืออีเมลที่ลงทะเบียนไว้กับบัญชี และการแจ้งเตือนในแอป ไม่มีไกด์ไหนบอกคุณได้ รวมถึงไกด์นี้ และบุคคลที่สามรายใดที่อ้างว่าจะตรวจให้ว่าคุณอยู่ในเหตุรั่วไหลไหม คือเหตุให้สงสัย ไม่ใช่บริการ",
+        pitfall:
+          "การไปหาเครื่องมือค้นที่จะบอกว่าคุณได้รับผลกระทบไหม สำหรับการรั่วของรหัสระบุตัวภายใน ไม่มีอะไรที่มีความหมายให้เครื่องมืออย่างนั้นตรวจได้ และตัวการค้นหานั้นเองคือสิ่งที่หน้าฟิชชิงกำลังรออยู่",
+        takes: "10 นาที",
+      },
+      {
+        title: "จดไว้ว่าบริษัทบอกว่าทำอะไรไปแล้ว และอะไรที่ยังเป็นคำสัญญา",
+        body: "คำบอกเล่าของ Weverse เรื่องการรับมือ ตามคำของมันเอง คือมันเพิ่มความเข้มของการควบคุมการเข้าถึง API ประมวลผลข้อมูลการชำระเงิน และเอารหัสระบุตัวภายในออกจาก API นั้นเพื่อให้ข้อมูลไม่ถูกเปิดเผยออกภายนอก วันที่ 4 กันยายน มันยื่นรายงานเหตุข้อมูลรั่วต่อสำนักงานอินเทอร์เน็ตและความมั่นคงแห่งเกาหลี KISA และมันแจ้งลูกค้าที่ได้รับผลกระทบ แผนที่มันระบุคือการตรวจสอบ API ทุกตัวที่เปิดออกภายนอกอย่างเต็มรูปแบบ การควบคุมการเข้าถึงที่เข้มขึ้นและข้อมูลที่เปิดเผยน้อยที่สุด การควบคุมกระบวนการนำขึ้นระบบที่เข้มขึ้น และการเฝ้าระวังด้านความปลอดภัยที่ไวขึ้น มันยังบอกว่าได้ขอให้ผู้กระทำภายนอกที่เข้าถึงข้อมูลส่งคืนข้อมูลนั้น และตั้งใจจะเอาความรับผิดทางกฎหมาย ให้แยกสองหมวดนี้ออกจากกัน กลุ่มแรกเป็นข้ออ้างเรื่องงานที่เสร็จแล้วซึ่งคนนอกตรวจสอบไม่ได้ และกลุ่มที่สองเป็นความตั้งใจ",
+        pitfall:
+          "การอ่านรายการการปรับปรุงที่วางแผนไว้ว่าเป็นรายการสิ่งที่แก้เสร็จแล้ว ประกาศไม่ได้อ้างอย่างนั้น และบทสรุปของประกาศก็ไม่ควรอ้าง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ให้เครดิตการรับมืออย่างพอเหมาะ",
+        body: "ไทม์ไลน์ที่ Weverse บรรยายไว้นั้นสั้น คือถูก KISA ติดต่อวันที่ 3 กันยายน หลังผู้รายงานจากภายนอกเปิดเผยช่องโหว่ ตามด้วยการตรวจสอบภายในและการรับมือฉุกเฉินทันที การยื่นรายงานเหตุรั่วไหลต่อ KISA วันที่ 4 กันยายน และประกาศสาธารณะในชื่อของผู้บริหารสูงสุด ที่แจกแจงสิ่งที่หลุดออกไป รวมถึงฟิลด์ที่มันให้เหตุผลว่าไม่ใช่ข้อมูลส่วนบุคคลตามกฎหมาย ซึ่งมันไม่จำเป็นต้องไล่เรียงด้วยซ้ำ เราอ่านต้นฉบับภาษาเกาหลีเทียบกับภาษาอังกฤษ และทั้งสองพูดเรื่องเดียวกัน ซึ่งนั่นก็เป็นสัญญาณเล็ก ๆ ในตัวมันเอง ไม่มีข้อไหนในนั้นที่ย้อนการรั่วไหลได้ แต่เว็บที่รายงานเหตุการณ์เป็นเรื่องอื้อฉาวอย่างเดียวนั้นไม่ได้สอนผู้อ่านเลยว่าการรับมืออย่างมีความสามารถหน้าตาเป็นอย่างไร และกรณีนี้ใกล้เคียงกับมันมากกว่าหลายกรณี",
+        pitfall:
+          "การสรุปจากการประเมินอย่างใจเย็นว่าไม่มีอะไรเกิดขึ้น 422,584 บัญชีคือความล้มเหลวจริงที่การเปิดเผยอย่างรวดเร็วไม่ได้ลบล้าง",
+        takes: "—",
+      },
+      {
+        title: "คิดสองรอบก่อนลบบัญชี และรู้ว่าการลบไม่ใช่อะไร",
+        body: "การลบบัญชีคือปฏิกิริยาสะท้อนอีกอย่าง และมันเป็นการตัดสินใจที่ใหญ่กว่าที่เห็น ทั้ง Weverse Shop และ NOL World ผูกของจริงไว้กับบัญชี คือประวัติออเดอร์และการจอง ที่อยู่ที่บันทึกไว้ สมาชิกภาพที่จ่ายเงินแล้ว และทางฝั่งตั๋วคือการยืนยันตัวตนที่ทำเสร็จแล้ว แต่จุดชี้ขาดง่ายกว่านั้น การลบเอาข้อมูลของคุณออกจากบริการนับจากนี้ไป มันไม่ได้ถอนข้อมูลที่หลุดออกไปแล้วกลับมา อะไรที่อยู่ในเหตุรั่วไหลครั้งนี้อยู่ในนั้นก่อนที่คุณจะตัดสินใจอะไรทั้งนั้น และการปิดบัญชีทีหลังก็เอื้อมไปถึงมันไม่ได้",
+        pitfall:
+          "การลบบัญชีเพื่อเป็นการตอบสนองต่อการรั่วไหล มันเป็นสิ่งที่สมเหตุสมผลที่จะอยากทำ และมันไม่ใช่ยารักษาเรื่องนี้ และมันทำให้คุณเสียประวัติที่คุณจะต้องใช้ถ้ามีการโต้แย้งเรื่องการซื้อขึ้นมาวันหนึ่ง",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "ชื่อ ที่อยู่ หรือเลขบัตรของฉันรั่วไปไหม",
+        a: "ไม่ ตามการแจกแจงของ Weverse เอง สิ่งที่มันไล่เรียงคือหมายเลขระบุตัวภายในบวกข้อมูลกำกับการซื้อ คือวิธีชำระเงิน ชื่อเกตเวย์การชำระเงิน สกุลเงิน ยอดซื้อและยอดยกเลิก วันและเวลาที่ซื้อ สถานะการซื้อ และวันเวลาที่คืนเงิน ชื่อ ข้อมูลติดต่อ และข้อมูลรับรองการชำระเงินไม่อยู่ในรายการ",
+      },
+      {
+        q: "ฉันควรเปลี่ยนรหัสผ่าน Weverse ไหม",
+        a: "มันไม่เสียหาย และมันไม่ใช่การแก้ สิ่งที่หลุดคือรหัสระบุตัวและข้อมูลกำกับการซื้อผ่าน API ข้อมูลการชำระเงิน ไม่ใช่ข้อมูลเข้าสู่ระบบ ดังนั้นรหัสผ่านใหม่ไม่ได้แก้มัน ทำถ้ามันช่วยให้คุณสบายใจ แล้วทุ่มแรงจริงไปที่การตรวจสอบคำขอชำระเงินด้วยช่องทางของตัวเอง ซึ่งเป็นสิ่งที่คุ้มครองคุณจริงในเรื่องนี้",
+      },
+      {
+        q: "ฉันจะรู้ได้อย่างไรว่าฉันเป็นหนึ่งใน 422,584 รายนั้น",
+        a: "ผ่านบัญชีของคุณเอง Weverse บอกว่ามันเดินกระบวนการแจ้งแยกสำหรับลูกค้าที่ได้รับผลกระทบตามกฎหมายที่เกี่ยวข้อง ดังนั้นตรวจอีเมลที่ลงทะเบียนไว้กับบัญชีและการแจ้งเตือนในแอป ไม่มีเครื่องมือภายนอกบอกคุณได้ และอะไรที่โฆษณาว่าทำได้ควรถือเป็นความพยายามฟิชชิง",
+      },
+      {
+        q: "มีใครใช้สิ่งนี้ตัดเงินบัตรฉันได้ไหม",
+        a: "Weverse บอกว่าการปลอมแปลงการชำระเงินหรือการโอนโดยไม่ได้รับอนุญาตไม่น่าเกิดจากข้อมูลชุดนี้เพียงลำพัง และเมื่อดูจากรายการก็ฟังขึ้น ไม่มีฟิลด์ที่รั่วไปไหนเป็นเลขบัตรหรือข้อมูลรับรอง ความเสี่ยงที่เป็นจริงไม่ใช่การตัดเงินโดยตรง แต่เป็นข้อความที่น่าเชื่อซึ่งโน้มน้าวให้คุณไปจ่ายเงินเอง",
+      },
+      {
+        q: "ถ้ามันไม่ใช่ข้อมูลส่วนบุคคล แล้วทำไมมันจึงสำคัญ",
+        a: "เพราะความมีประโยชน์ต่อผู้โจมตีกับการจัดประเภทตามกฎหมายเป็นคำถามสองข้อที่ต่างกัน ยอดซื้อ วันที่ วิธีชำระเงิน และสกุลเงินคือสิ่งที่ทำให้ข้อความหลอกลวงน่าเชื่อถือพอดี และวิธีที่คนมักตัดสินอีเมลที่น่าสงสัยก็คือดูว่าผู้ส่งรู้รายละเอียดจริงเกี่ยวกับออเดอร์จริงไหม บททดสอบนั้นเลิกทำงานไปแล้วสำหรับทุกคนที่อยู่ในเหตุรั่วไหลครั้งนี้",
+      },
+      {
+        q: "ฉันควรลบบัญชี Weverse ไหม",
+        a: "เป็นทางเลือกที่พอมีเหตุผลรองรับ และมันไม่ใช่ยารักษา การลบหยุดการเก็บข้อมูลในอนาคต มันถอนข้อมูลที่หลุดไปแล้วกลับมาไม่ได้ ซึ่งรวมถึงอะไรที่อยู่ในเหตุรั่วไหลครั้งนี้ มันยังทำให้คุณเสียประวัติออเดอร์และการจอง ที่อยู่ที่บันทึกไว้ สมาชิกภาพที่จ่ายเงินแล้ว และทางฝั่งตั๋วคือการยืนยันตัวตนที่ทำเสร็จแล้ว ดังนั้นให้ตัดสินจากว่าคุณยังอยากใช้บริการนี้ไหม ไม่ใช่ตัดสินเป็นการตอบสนองต่อเรื่องนี้",
+      },
+      {
+        q: "Weverse ทำอะไรไปแล้วจริง ๆ",
+        a: "ตามคำบอกเล่าของมันเอง คือเพิ่มความเข้มของการควบคุมการเข้าถึง API ข้อมูลการชำระเงินและเอารหัสระบุตัวภายในออกจากมัน ยื่นรายงานเหตุข้อมูลรั่วต่อ KISA วันที่ 4 กันยายน 2026 และแจ้งลูกค้าที่ได้รับผลกระทบ มันยังไล่เรียงงานที่วางแผนไว้ คือการตรวจ API ทุกตัวที่เปิดออกภายนอก การรัดการควบคุมการนำขึ้นระบบ การยกระดับความไวของการเฝ้าระวัง และบอกว่าได้ขอให้ผู้กระทำที่เกี่ยวข้องส่งข้อมูลคืนและตั้งใจจะเอาความรับผิดทางกฎหมาย รายการที่ทำเสร็จแล้วเป็นข้ออ้างของมัน ไม่ใช่ข้อค้นพบที่ผ่านการตรวจสอบ",
+      },
+      {
+        q: "มีอะไรใหม่กว่านี้ไหม",
+        a: "ไม่มี ณ วันที่ที่อยู่ด้านบนของหน้านี้ ซึ่งเป็นครั้งสุดท้ายที่เราอ่านรายการประกาศของ Weverse Shop เรื่องความปลอดภัยคลี่คลายต่อได้ ดังนั้นรายการนั้นคือฉบับที่ยังมีชีวิต ถ้ามีประกาศติดตามผล มันจะอยู่ที่นั่นก่อนจะมาอยู่ที่นี่",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Ang pagtagas ng datos sa Weverse: ano talaga ang tumagas, at ang isang panganib na binubuo nito",
+    summary:
+      "422,584 account, kinumpirma ng Weverse mismo. Walang pangalan, walang detalye ng pakikipag-ugnayan, walang numero ng kard — isang panloob na pantukoy at ang kasaysayan ng pamimili mo. Hindi isang naubusang account ang kombinasyong iyon; hilaw na materyales ito para sa isang mensaheng alam ang binili mo.",
+    scope:
+      "Sakop nito ang inilathala ng Weverse Company tungkol sa pagtagas na kinumpirma nito noong Setyembre 2026, binasa sa Ingles at sa Koreanong bersiyon ng abiso nito. Hindi kami auditor sa seguridad at hindi ito payong legal: lahat ng iniuugnay sa Weverse ay sariling pahayag nito, hindi isang natuklasang bineripika namin. Puwedeng umusad ang isang kuwento sa seguridad, at taglay ng pahinang ito ang petsang huling tiningnan namin ito.",
+    intro: [
+      "Noong Setyembre 2026 ay naglathala ang presidente ng Weverse Company ng abisong kumukumpirma na tumagas ang personal na impormasyon ng customer. May account sa Weverse ang bawat mambabasa ng site na ito, kaya ang tanong ay hindi kung mahalaga ito kundi kung ano talaga ang binabago nito — at mas makitid at mas tiyak ang sagot kaysa sa isang pagkibit o isang pag-aalboroto.",
+      "Ang sumusunod ay ang abisong iyon na binasa nang maingat, sa dalawang wikang pinaglathalaan nito. Hindi ang bilang ang kapaki-pakinabang na bahagi. Ito ay na ang partikular na kombinasyon ng datos na umalis ay halos walang silbi para pagnakawan ka at hindi pangkaraniwang mainam para kumbinsihin ka.",
+    ],
+    steps: [
+      {
+        title: "Basahin ang dalawang listahan, dahil ang pagkakaiba nila ang nagpapasya sa lahat",
+        body: "Isa-isang inilalahad ng Weverse ang tumagas sa ilalim ng dalawang pamuhatan. Bilang personal na impormasyon: panloob na impormasyon ng pagkakakilanlan — isang tanging panloob na numerong nabuo para sa pagtukoy sa gumagamit noong nagpatala ka. Bilang pangkalahatang impormasyong iniuuri nitong hindi personal: ang uri ng pagbili na ang ibig sabihin ay paraan ng bayad, ang pangalan ng payment gateway, ang pera, ang halaga ng pinamili, ang halaga ng kinansela, ang petsa at oras ng pagbili, ang katayuan ng pagbili, at ang petsa at oras ng refund kung saan kinansela ang order. Ang laki ay 422,584 kaso, binilang sa yunit ng account ID. Ang wala sa dalawang listahan ang punto: walang pangalan, walang detalye ng pakikipag-ugnayan, walang numero ng kard o kredensiyal ng bayad.",
+        pitfall:
+          "Ang pagbasa sa 422,584 at ang pagpuno sa iba pa mula sa alaala ng ibang paglabag. Magkaiba ang tugon sa pagtagas ng kredensiyal at ang tugon dito, kaya mas malaki ang halaga ng inilahad na listahan kaysa sa pamuhatan.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Timbangin nang patas ang panunumbalik-loob ng Weverse, kasama ang hangganan nito",
+        body: "Isinasaad ng Weverse na ang tumagas na panloob na pantukoy ay hindi impormasyong tuwirang kumikilala sa isang indibidwal, gaya ng pangalan o detalye ng pakikipag-ugnayan; na isa itong halagang ginagamit lamang sa loob ng panloob na sistema ng Weverse Company at hindi magagamit sa labas; at na malabong mangyari ang pamemeke ng bayad o ang hindi awtorisadong paglilipat ng pondo mula sa mga hanay na ito lamang. Sa harap nito ay humahawak ang pangangatwirang iyon — hindi isang pagkakakilanlan ang panloob na numero ng hanay, at wala sa mga patlang na ito ang isang kredensiyal. Ang tapat na hangganan ay nagiging kumikilala ang isang panloob na pantukoy sa sandaling isugpong ito sa ibang pangkat ng datos na mayroon rin nito, at walang nasa labas ng kompanya na makakatantiya kung gaano kalaki ang posibilidad niyon. Iyon ang natitirang pagkalantad: ang pag-uugnay, hindi ang pagnanakaw.",
+        pitfall:
+          "Ang pagturing sa isang mahinahong panunumbalik-loob bilang garantiya, o ang pagturing dito bilang pampaganda. Isa itong tiyak na pagsasaad tungkol sa tiyak na mga patlang, at pinakamalakas ito sa eksaktong puntong pinakamakitid ito.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Unawain ang tunay na panganib: isang mensaheng alam ang binili mo",
+        body: "Tingnan ang tumagas na mga patlang nang sama-sama — paraan ng bayad, gateway, pera, halaga, petsa, katayuan, petsa ng refund. Hindi iyon ang kasangkapan para kaltasan ang kard mo. Kasangkapan iyon para sumulat ng mensaheng pumapasa sa isang pagsusulit lamang na iniaaplay ng karamihan sa isang kahina-hinalang email, na kung alam ba ng nagpadala ang mga tunay na detalye tungkol sa isang tunay na order. Ang isang notang sumisipi sa tunay na halaga ng pinamili mo, sa tunay na petsa, sa tunay na pera, sa tunay na provider ng bayad, ay higit na mapanghikayat kaysa sa maisusulat ng isang basta-bastang manloloko.",
+        pitfall:
+          "Ang paggamit sa “alam nila ang detalye ng order ko” bilang katibayang tunay ang isang mensahe. Matapos ang pagtagas na ito ay tumigil na sa paggana ang pagsusulit na iyon, at ito ang pagsusulit na ginagamit ng halos lahat.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Alamin kung bakit dumadapo ito sa ibabaw ng isang tunay na proseso",
+        body: "Mas mabigat ito para sa mambabasang ito kaysa sa karamihan, dahil may mga lehitimong estranghero nang humihingi ng pera sa customer ng Weverse. Nagbabala ang Weverse Shop sa namimili sa EU na puwede silang makatanggap ng hiwalay na tagubilin sa pagbabayad mula sa lokal na customs o sa courier, at na ang hindi pagbabayad ay makakaantala o makakapigil sa paghahatid. Kaya magkamukha na ngayon ang tunay na karanasan at ang mapandaya: isang kompanyang wala kang relasyon, na tumutukoy sa isang orderng talagang ipinasa mo, at humihingi ng bayad bago gumalaw ang parsela mo. Hindi binuo ng pagtagas ang pagsalikop na iyon, ngunit hinasa nito.",
+        pitfall:
+          "Ang pagwawakas sa kalabuan sa pamamagitan ng pagbabayad, o ng pagwawalang-bahala sa lahat. Nawawalan ng pera ang isa at nawawalan ng parsela ang isa.",
+        takes: "—",
+      },
+      {
+        title: "Gumamit ng pagsusuring hindi nakasalalay sa alam ng mensahe",
+        body: "Ang daan palabas ay tumigil sa pagtimbang sa mensahe at magsimulang timbangin ang sinasabi nito. Hanguin dito ang tracking number o ang sanggunian ng order, saka pumunta mismo sa courier o sa Weverse Shop — itinipang address o nakasaveng bookmark, kahit kailan hindi isang link sa mensahe — at tingnan kung tumutugma ang sangguniang iyon sa isang order mo at kung may talagang utang. Kung tunay ang mensahe ay naroon din ang parehong impormasyon sa kabilang panig. Kung hindi, wala, at natutuhan mo iyon nang walang pinipindot.",
+        pitfall:
+          "Ang pagsunod sa link dahil tama ang mga detalye. Ang pagiging tama ng mga detalye ang inaasahan nang kalagayan ng isang peke.",
+        takes: "5 minuto kada mensahe",
+      },
+      {
+        title: "Huwag ipagkamaling ang pagpapalit ng password ang lunas",
+        body: "Ang pumapasok sa isip matapos ang anumang paglabag ay palitan ang password, at halos walang natutugunan nito rito: ang nalantad ay isang pantukoy at ang datos tungkol sa pagbili, sa pamamagitan ng isang API ng impormasyon ng bayad, at hindi ang kredensiyal ng login. Walang halaga at walang pinsala ang pagpapalit ng password, kaya gawin kung pinapanatag ka nito — ngunit gawin ito nang alam na kalinisan ito at hindi lunas, at na ang tunay na nagsasanggalang sa iyo ay ang hábit ng pagpapatunay sa nakaraang hakbang. Ang pagbukas ng anumang opsiyon sa dalawang hakbang na pagpapatunay na mayroon ang provider ng login mo ay mabuting gawin sa pangkalahatang prinsipyo, at hindi rin ito isang tugon sa pagtagas na ito.",
+        pitfall:
+          "Ang pagpalit ng password, ang pakiramdam na tapos na, at saka ang pagtitiwala sa susunod na mensaheng sumisipi sa order mo. Komportable ang payong hango sa ugali at ipinupuwera nito ang payong gumagana.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Alamin kung naapektuhan ka, mula sa account at hindi mula sa isang gabay",
+        body: "Sinasabi ng Weverse na nagsagawa ito ng hiwalay na proseso, alinsunod sa panukat na itinakda ng nauukol na batas at regulasyon, para abisuhan ang mga customer na nasa pagtagas ang datos. Kaya nasa sariling account mo ang sagot: ang email address na nakapatala rito, at ang abiso sa loob ng app. Walang gabay na makapagsasabi sa iyo, kasama ang gabay na ito, at ang anumang ibang panig na nagsasabing titingnan nito kung nasa pagtagas ka ay dahilan para maghinala at hindi isang serbisyo.",
+        pitfall:
+          "Ang paghahanap ng kasangkapang panghanap na magsasabi sa iyo kung naapektuhan ka. Para sa pagtagas ng panloob na pantukoy ay walang makabuluhang matitingnan ang gayong kasangkapan, at ang paghahanap mismo ang hinihintay ng isang pahina ng phishing.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Tandaan ang sinasabi ng kompanyang nagawa nito, at ang nananatiling pangako",
+        body: "Ang salaysay ng Weverse tungkol sa tugon nito, sa sariling salita: pinalakas nito ang kontrol sa pag-access sa API ng pagproseso ng impormasyon ng bayad at inalis dito ang panloob na pantukoy para hindi malantad sa labas ang datos; noong 4 Setyembre ay naghain ito ng ulat ng pangyayaring paglabag sa Korea Internet & Security Agency na KISA; at inabisuhan nito ang mga naapektuhang customer. Ang isinasaad nitong balak ay isang buong pagsisiyasat sa lahat ng API na nalantad sa labas, mas mahigpit na kontrol sa pag-access at pinakaliit na nalantad na impormasyon, mas mahigpit na kontrol sa proseso ng deployment, at mas sensitibong pagsubaybay sa seguridad. Sinasabi rin nitong hiniling nito sa panlabas na aktor na pumasok sa datos na ibalik ito, at nagnanais nitong habulin ang legal na responsibilidad. Ihiwalay ang dalawang uri: pagsasaad tungkol sa natapos na gawain ang unang pangkat, na walang nasa labas na makakaaudit, at hangarin ang pangalawa.",
+        pitfall:
+          "Ang pagbasa sa listahan ng binabalak na pagpapabuti bilang listahan ng naayos na. Hindi iyon ang sinasabi ng abiso, at hindi rin dapat sabihin ng isang pagbubuod nito.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Ibigay ang nararapat sa paghawak, nang may proporsiyon",
+        body: "Maikli ang takbo ng panahong inilalarawan ng Weverse: nakipag-ugnayan ang KISA noong 3 Setyembre matapos ihayag ng isang panlabas na nag-ulat ang isang kahinaan, agarang panloob na inspeksiyon at pang-emerhensiyang tugon, isang ulat ng paglabag na inihain sa KISA noong 4 Setyembre, at isang pampublikong abiso sa ilalim ng pangalan ng pangunahing pinuno na isa-isang inilahad ang umalis — kasama ang mga patlang na pinapangatwiranan nitong hindi legal na personal na impormasyon, na hindi naman nito kailangang isa-isahin. Binasa namin ang Koreanong orihinal laban sa Ingles at pareho ang sinasabi nila, na isa ring maliit na senyales. Wala sa mga iyon ang nagbabalik sa isang pagtagas. Ngunit ang site na laging nag-uulat ng pangyayari bilang eskandalo lamang ay walang itinuturo sa mambabasa nito tungkol sa kung ano ang hitsura ng maayos na paghawak, at mas malapit dito ito kaysa sa karamihan.",
+        pitfall:
+          "Ang paghinuha mula sa isang mahinahong pagtimbang na walang nangyari. Tunay na pagkabigo ang 422,584 na account na hindi kinakansela ng isang mabilis na paghahayag.",
+        takes: "—",
+      },
+      {
+        title: "Mag-isip nang dalawang beses bago burahin ang account, at alamin kung ano ang hindi pagbura",
+        body: "Ang pagbura ng account ang kabilang ugali, at mas malaking desisyon ito kaysa sa tingin. Kapwa ang Weverse Shop at ang NOL World ay nagtatali ng tunay na bagay sa isang account: ang kasaysayan ng order at reserbasyon, ang mga nakasaveng address, isang bayad na membership, at sa panig ng tiket ay isang natapos na beripikasyon ng pagkakakilanlan. Mas simple naman ang mapagpasyang punto. Inaalis ng pagbura ang datos mo sa serbisyo pasulong; hindi nito binabawi ang datos na umalis na. Anumang nasa pagtagas na ito ay naroon na bago ka magpasya ng anuman, at hindi maaabot ito ng pagsasara ng account pagkatapos.",
+        pitfall:
+          "Ang pagbura ng account bilang tugon sa isang pagtagas. Mahinahong bagay itong naisin at hindi ito lunas dito, at nawawala sa iyo ang kasaysayang kakailanganin mo kung may pagbiling pinagtalunan man.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Tumagas ba ang pangalan, address o numero ng kard ko?",
+        a: "Hindi, ayon sa sariling paglalahad ng Weverse. Ang inililista nito ay isang panloob na numero ng pagkakakilanlan kasama ang datos tungkol sa pagbili — paraan ng bayad, pangalan ng payment gateway, pera, halaga ng pinamili at ng kinansela, petsa at oras ng pagbili, katayuan ng pagbili, at petsa at oras ng refund. Wala sa listahan ang pangalan, ang detalye ng pakikipag-ugnayan at ang kredensiyal ng bayad.",
+      },
+      {
+        q: "Dapat ko bang palitan ang password ko sa Weverse?",
+        a: "Hindi ito makakasama, at hindi ito ang lunas. Isang pantukoy at datos tungkol sa pagbili sa pamamagitan ng isang API ng impormasyon ng bayad ang nalantad at hindi kredensiyal ng login, kaya hindi ito tinutugunan ng bagong password. Gawin kung nakakapanatag ito sa iyo, saka ilagay ang tunay na pagsisikap sa hiwalay na pagpapatunay ng kahilingan sa pagbabayad, na ang talagang nagsasanggalang sa iyo dito.",
+      },
+      {
+        q: "Paano ko malalaman kung isa ako sa 422,584?",
+        a: "Sa pamamagitan ng sariling account mo. Sinasabi ng Weverse na nagpatakbo ito ng hiwalay na proseso ng pag-abiso para sa naapektuhang customer sa ilalim ng nauukol na batas, kaya tingnan ang email na nakapatala sa account at ang abiso sa loob ng app. Walang panlabas na kasangkapang makapagsasabi sa iyo, at anumang nag-aanunsiyong kaya nito ay dapat ituring na pagtatangkang phishing.",
+      },
+      {
+        q: "May makakakaltas ba sa kard ko gamit ito?",
+        a: "Sinasabi ng Weverse na malabong mangyari ang pamemeke ng bayad o ang hindi awtorisadong paglilipat mula sa mga bagay na ito lamang, at sa harap ng listahan ay matino iyon — wala sa tumagas na patlang ang isang numero ng kard o isang kredensiyal. Ang makatotohanang panganib ay hindi isang tuwirang kaltas kundi isang mapanghikayat na mensaheng nagpapabayad sa iyo nang ikaw mismo.",
+      },
+      {
+        q: "Kung hindi ito personal na impormasyon, bakit mahalaga?",
+        a: "Dahil magkaibang tanong ang pagiging kapaki-pakinabang sa isang umaatake at ang legal na pag-uuri. Ang halaga ng pinamili, ang petsa, ang paraan ng bayad at ang pera ang eksaktong gumagawang kapani-paniwala sa isang mapandayang mensahe — at ang karaniwang paraan ng paghusga sa isang kahina-hinalang email ay kung alam ba ng nagpadala ang tunay na detalye tungkol sa isang tunay na order. Hindi na gumagana ang pagsusulit na iyon para sa sinumang nasa pagtagas na ito.",
+      },
+      {
+        q: "Dapat ko bang burahin ang account ko sa Weverse?",
+        a: "Maipagtatanggol na pili ito at hindi ito lunas. Pinapatigil ng pagbura ang pangangalap sa hinaharap; hindi nito mababawi ang datos na umalis na, at kasama roon ang anumang nasa pagtagas na ito. Nagkakahalaga rin ito sa iyo ng kasaysayan ng order at reserbasyon, ng mga nakasaveng address, ng anumang bayad na membership, at sa panig ng tiket ng isang natapos na beripikasyon ng pagkakakilanlan — kaya ipasya ito ayon sa kung gusto mo pa ang serbisyo, hindi bilang tugon dito.",
+      },
+      {
+        q: "Ano talaga ang nagawa ng Weverse?",
+        a: "Sa sariling salaysay nito: pinalakas ang kontrol sa pag-access sa API ng impormasyon ng bayad at inalis dito ang panloob na pantukoy, naghain ng ulat ng pangyayaring paglabag sa KISA noong 4 Setyembre 2026, at inabisuhan ang mga naapektuhang customer. Inililista rin nito ang binabalak na gawain — ang pag-audit sa lahat ng API na nalantad sa labas, ang paghihigpit sa kontrol ng deployment, ang pagtataas ng sensitibidad ng pagsubaybay — at sinasabi nitong hiniling nito sa aktor na kasangkot na ibalik ang datos at nagnanais nitong habulin ang legal na responsibilidad. Pagsasaad nito ang mga natapos na bagay at hindi natuklasang naaudit.",
+      },
+      {
+        q: "May bago pa ba kaysa rito?",
+        a: "Wala, sa petsang nasa itaas ng pahinang ito, na kung kailan huling binasa namin ang listahan ng abiso ng Weverse Shop. Puwedeng umusad ang isang bagay sa seguridad, kaya ang listahang iyon ang buhay na bersiyon — kung may kasunod na abiso, naroon ito bago narito.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Đặt hàng từ Ktown4u: cái đồng hồ sáu tiếng và những khoản phí không ai nhắc",
+    summary:
+      "Một đơn chưa trả tiền bị hủy sau sáu tiếng, không phải hai mươi bốn tiếng. Các gói hàng đi Mỹ có thể mang theo một khoản 12 USD thu tại cửa nhà bạn. Phí vận chuyển quốc tế tăng 7% vào tháng 2 năm 2026, và hai nước châu Âu âm thầm mất hẳn một phương thức vận chuyển.",
+    scope:
+      "Trang này bao gồm việc đặt album và đồ vật lý từ Ktown4u để giao ra ngoài Hàn Quốc, lấy từ chính các thông báo của Ktown4u: cái đồng hồ thanh toán, các mức phí và phương thức vận chuyển, các đợt tạm dừng vào dịp lễ, và giờ làm của bộ phận hỗ trợ. Việc một lần mua ở Ktown4u có được tính vào các bảng xếp hạng album Hàn Quốc hay không thì được trả lời từ chính danh bạ các cửa hàng được chứng nhận của Hanteo chứ không từ Ktown4u. Các thông báo được phát lại và bị thay thế, nên danh sách thông báo là bản sống.",
+    intro: [
+      "Ktown4u là nơi một phần lớn người hâm mộ quốc tế thực sự mua album, và gần như không điều gì về cách nó hoạt động được viết ra bằng tiếng Anh ngoài chính trang thông báo của nó — trang đó bằng tiếng Anh, có ghi ngày, và không ai đọc cho tới khi một gói hàng tới muộn.",
+      "Đây là trang đó đọc gọn trong một lần. Mục đầu tiên là mục làm người ta mất đơn hàng, và nó đã thay đổi trong năm 2025 mà phần lớn người mua không để ý.",
+    ],
+    steps: [
+      {
+        title: "Biết rằng một đơn chưa trả tiền chết trong sáu tiếng, không phải một ngày",
+        body: "Đây là sự thật đáng biết trước khi bạn đặt bất cứ thứ gì. Ktown4u từng giữ các đơn chưa trả tiền trong 24 giờ và đã cắt xuống còn 6, có hiệu lực từ ngày 19 tháng 2 năm 2025 theo KST, với các đơn chưa trả tiền bị hủy tự động sáu tiếng sau khi được đặt. Với một người hâm mộ đặt hàng vào lúc nửa đêm ở châu Âu hay châu Mỹ, sáu tiếng Hàn Quốc có thể trôi qua trọn vẹn trong lúc bạn ngủ — và một đơn đặt trước được đặt mà không trả tiền là một đơn chưa từng được đặt.",
+        pitfall:
+          "Giữ chỗ món hàng ngay bây giờ rồi trả tiền khi thẻ hoặc ngày lương của bạn cho phép. Chuyện đó hiệu quả dưới cửa sổ cũ và không hiệu quả dưới cửa sổ này.",
+        takes: "Hãy trả tiền ngay lúc bạn đặt",
+      },
+      {
+        title: "Nếu bạn ở Mỹ, hãy dự trù một khoản thu tại cửa nhà bạn",
+        body: "Từ ngày 2 tháng 6 năm 2025, Ktown4u áp một chính sách phí UPS cho các lô hàng đi Mỹ: khi có thuế hải quan, thuế hay các khoản thu khác của nhà nước phải trả, thì thêm 12 USD được thu nếu các khoản thuế đó chưa được trả trước bằng phương thức điện tử trước khi giao. Ktown4u gọi nó là phí International Collect on Delivery, và nói nó được lập hóa đơn cho người nhận ở Mỹ vào thời điểm giao hàng. Đường ra cũng được công bố — hãy trả thuế trước qua hệ thống UPS Import Prepaid Duties and Taxes, mà họ nói là nhận Apple Pay, Google Pay, hoặc một thẻ Visa, Mastercard hay Discover.",
+        pitfall:
+          "Coi tổng tiền lúc thanh toán là tổng tiền. Khoản phí này không do Ktown4u thu lúc mua; nó đến cùng với gói hàng, và nó là mười hai đô la trên đầu bất cứ khoản thuế nào thật sự phải trả.",
+        takes: "10 phút, trước khi gói hàng được gửi",
+      },
+      {
+        title: "Hãy tính phí vận chuyển theo mức hiện hành, không theo mức năm ngoái",
+        body: "Ktown4u đã tăng phí vận chuyển quốc tế thêm 7%, có hiệu lực từ ngày 1 tháng 2 năm 2026 lúc 00:00 KST, điều họ quy cho một lần điều chỉnh giá định kỳ của các hãng vận chuyển. Con số đó nhỏ với mỗi gói hàng và lớn khi tính cho một đơn đặt theo nhóm, và nó là loại thay đổi làm cho một con số dự tính phí vận chuyển lấy từ một bài blog cũ một năm trở nên âm thầm sai. Con số đáng tính là con số giỏ hàng hiện ra cho bạn vào đúng lúc bạn đặt.",
+        pitfall:
+          "Lập dự toán cho một đơn đặt theo nhóm từ một bảng tính ai đó làm mùa trước. Việc điều chỉnh giá là định kỳ, nghĩa là sẽ còn một lần nữa.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy kiểm tra nước bạn còn phương thức vận chuyển bạn mong đợi hay không",
+        body: "Các phương thức vận chuyển bị rút theo từng nước, không phải chỉ bị chậm. Ktown4u đã dừng dịch vụ K-Packet đi Đức và Tây Ban Nha từ ngày 17 tháng 1 năm 2025, bởi các nhà khai thác bưu chính Đức và Tây Ban Nha rút khỏi thỏa thuận Prime Group mà dịch vụ ấy chạy trên đó. Cách xử lý họ nêu là gửi email cho những khách hàng bị ảnh hưởng về việc chuyển sang một dịch vụ vận chuyển khác và về khoản chi phí thêm — nên một đơn đã đặt vẫn có thể đổi giá sau khi đã đặt. Phương thức bạn dùng lần trước không phải phương thức bạn vẫn còn.",
+        pitfall:
+          "Chọn phương thức rẻ nhất theo quán tính rồi không đọc email tiếp sau. Cái email mới là nơi dịch vụ thay thế và khoản chi phí thêm của nó được nêu tên.",
+        takes: "5 phút, lúc thanh toán",
+      },
+      {
+        title: "Hãy đọc các thông báo gián đoạn theo từng nước, chúng cụ thể một cách khác thường",
+        body: "Ktown4u công bố các gián đoạn giao hàng tới từng mã bưu chính. Thông báo EMS của họ cho Slovakia ngày 4 tháng 4 năm 2025 nêu tên các mã bưu chính bị ảnh hưởng — 930 07, 930 06, 930 04, 930 03 và 900 68 — cùng nguyên nhân, một đợt bùng phát bệnh lở miệng long móng ở tây nam Slovakia và một tình trạng khẩn cấp từ ngày 25 tháng 3 năm 2025, với các gói hàng được giữ tại bưu cục địa phương và người nhận được thông báo. Mức chi tiết chính là điểm chính: khi việc tra cứu dừng lại ở khu vực của bạn, trang thông báo thường nói vì sao, và đó là một tình huống khác với một gói hàng bị mất.",
+        pitfall:
+          "Mở khiếu nại mất hàng trong một đợt gián đoạn vốn đã được công bố và giải thích. Hãy xem danh sách thông báo cho nước của bạn trước khi bạn mất cả buổi chiều cho một khiếu nại.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy coi một dịp lễ Hàn Quốc như một tuần không gửi hàng và không có hỗ trợ",
+        body: "Ktown4u tạm dừng cả hai nửa hoạt động của mình trong các dịp lễ Hàn Quốc, và công bố các mốc ngày mỗi lần. Với Tết Nguyên đán 2026, việc giao hàng tạm dừng từ ngày 14 đến 18 tháng 2 với các chuyến giao hoạt động lại lần lượt kể từ ngày 19 tháng 2, và bộ phận hỗ trợ khách hàng không có mặt suốt những ngày đó. Với Chuseok 2025, đợt dừng chạy từ ngày 3 đến 9 tháng 10 với cả hai hoạt động lại vào ngày 10. Mỗi lần họ đều cảnh báo rằng các chậm trễ có thể kéo quá ngày hoạt động lại vì lượng đơn đã dồn lại phía sau.",
+        pitfall:
+          "Đọc ngày hoạt động lại như một ngày giao hàng. Đó là ngày cái hàng đợi bắt đầu nhúc nhích, và đơn của bạn thì nằm đâu đó trong hàng.",
+        takes: "10 phút trước một đơn đặt vào dịp lễ",
+      },
+      {
+        title: "Hãy viết cho bộ phận hỗ trợ trong đúng khung giờ họ thật sự làm",
+        body: "Ktown4u đã chuyển kênh chăm sóc khách hàng của mình sang các ngày trong tuần, từ 10:00 đến 17:00 KST, kể từ ngày 1 tháng 11 năm 2023, với một giờ nghỉ trưa từ 12:30 đến 13:30. Đó là một cửa sổ năm tiếng rưỡi, vào các ngày làm việc ở Hàn Quốc, mà với phần lớn người đọc trang này thì rơi vào giữa đêm. Nó quan trọng nhất khi đặt cạnh cái đồng hồ thanh toán sáu tiếng: một đơn đặt vào tối thứ Sáu ở châu Âu có thể hết hạn trước khi có ai ở bàn làm việc để mà hỏi.",
+        pitfall:
+          "Chờ một câu trả lời trước khi hành động. Hãy quy đổi những giờ đó sang giờ của bạn một lần, ghi lại, và đừng giả định gì ngoài khung đó.",
+        takes: "5 phút, một lần",
+      },
+      {
+        title: "Ktown4u là một cửa hàng được Hanteo chứng nhận, và bạn tự kiểm tra được",
+        body: "Hướng dẫn này từng nói rằng câu hỏi đó không trả lời được, bởi Ktown4u không nêu điều đó trong các thông báo của chính mình. Nó trả lời được từ đầu kia: Hanteo công bố các cửa hàng Family được chứng nhận của mình, và Ktown4U có trên danh bạ đó với mã family HF0082KTU001. Hanteo yêu cầu mọi cửa hàng Family trực tuyến phải hiện dấu Family có liên kết trở lại hanteochart.com, và chính mặt tiền cửa hàng của Ktown4u liên kết tới cùng danh bạ đó — nên cửa hàng và bảng xếp hạng khớp nhau, từ cả hai đầu. Hãy tự kiểm tra chứ đừng lấy từ đây: các danh bạ có thay đổi, và chỉ dẫn của Hanteo là xác nhận mã và dấu chứng nhận, thứ được phát lại mỗi năm.",
+        pitfall:
+          "Đọc điều này thành “đơn của tôi sẽ xuất hiện trên mọi bảng xếp hạng Hàn Quốc”. Hanteo đếm những lượng bán mà các cửa hàng Family của nó báo lên; bảng Album Chart chính của Circle Chart lại đếm lượng hàng bán buôn chuyển cho các nhà bán lẻ, nên không đơn bán lẻ nào làm nó nhúc nhích. Và cả hai đều không công bố một quy tắc về việc một đơn từ nước ngoài có được đối xử như một đơn trong nước hay không.",
+        takes: "15 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi có bao lâu để trả tiền cho một đơn Ktown4u?",
+        a: "Sáu tiếng. Ktown4u đã cắt thời gian giữ các đơn chưa trả tiền từ 24 giờ xuống còn 6, có hiệu lực từ ngày 19 tháng 2 năm 2025 theo KST, và nói các đơn chưa trả tiền bị hủy tự động sáu tiếng sau khi đặt. Hãy trả tiền ngay lúc bạn đặt chứ đừng tính quay lại sau.",
+      },
+      {
+        q: "Khoản 12 USD trên lần giao hàng ở Mỹ của tôi là gì?",
+        a: "Đó là phí International Collect on Delivery của Ktown4u cho các lô hàng UPS đi Mỹ, có hiệu lực từ ngày 2 tháng 6 năm 2025. Nó áp khi có thuế hải quan, thuế hay các khoản thu khác của nhà nước phải trả mà chưa được trả trước bằng phương thức điện tử trước khi giao, và nó được lập hóa đơn cho người nhận lúc giao hàng. Việc trả trước qua hệ thống UPS Import Prepaid Duties and Taxes tránh được nó — Ktown4u liệt Apple Pay, Google Pay và Visa, Mastercard hay Discover là các cách làm việc đó.",
+      },
+      {
+        q: "Vì sao phí vận chuyển đắt hơn trước?",
+        a: "Ktown4u đã tăng phí vận chuyển quốc tế thêm 7% từ ngày 1 tháng 2 năm 2026 lúc 00:00 KST, quy điều đó cho một lần điều chỉnh giá định kỳ của các hãng vận chuyển. Định kỳ nghĩa là sẽ còn một lần nữa, nên hãy tính giá một đơn đặt theo nhóm từ giỏ hàng chứ không từ một con số dự tính cũ.",
+      },
+      {
+        q: "Phương thức vận chuyển quen dùng của tôi biến mất. Đã xảy ra chuyện gì?",
+        a: "Các phương thức bị rút theo từng nước. Ktown4u đã dừng K-Packet đi Đức và Tây Ban Nha từ ngày 17 tháng 1 năm 2025 sau khi các nhà khai thác bưu chính Đức và Tây Ban Nha rút khỏi thỏa thuận Prime Group, và nói họ sẽ gửi email cho những khách hàng bị ảnh hưởng về việc đổi dịch vụ và về khoản chi phí thêm. Nếu một đơn đã được đặt thì cái email đó là nơi phương thức mới và giá của nó được nêu tên.",
+      },
+      {
+        q: "Việc tra cứu vận đơn của tôi không nhúc nhích. Gói hàng mất rồi sao?",
+        a: "Hãy xem danh sách thông báo cho nước của bạn trước. Ktown4u công bố các gián đoạn với mức chi tiết khác thường — thông báo EMS cho Slovakia ngày 4 tháng 4 năm 2025 nêu tên năm mã bưu chính bị ảnh hưởng và các biện pháp kiểm dịch phía sau sự chậm trễ, và nói các gói hàng sẽ được giữ tại bưu cục địa phương với người nhận được thông báo. Một gián đoạn đã công bố là một vấn đề khác với một gói hàng bị mất.",
+      },
+      {
+        q: "Đơn của tôi sẽ thế nào trong một dịp lễ Hàn Quốc?",
+        a: "Cả việc gửi hàng và bộ phận hỗ trợ đều dừng. Với Tết Nguyên đán 2026, việc giao hàng dừng từ ngày 14 đến 18 tháng 2, hoạt động lại lần lượt kể từ ngày 19, với bộ phận hỗ trợ không có mặt trong cùng những ngày đó; Chuseok 2025 chạy từ ngày 3 đến 9 tháng 10 với cả hai hoạt động lại vào ngày 10. Mỗi lần Ktown4u đều cảnh báo rằng lượng đơn dồn lại có thể đẩy các chuyến giao quá ngày hoạt động lại.",
+      },
+      {
+        q: "Khi nào tôi thật sự liên hệ được với bộ phận chăm sóc khách hàng?",
+        a: "Các ngày trong tuần, từ 10:00 đến 17:00 KST, với một giờ nghỉ trưa từ 12:30 đến 13:30, như được đặt ra từ ngày 1 tháng 11 năm 2023. Hãy quy đổi khung đó sang múi giờ của bạn trước khi bạn cần tới nó, vì khi đặt cạnh cái đồng hồ thanh toán sáu tiếng thì một đơn hàng có thể hết hạn ngoài những giờ ấy.",
+      },
+      {
+        q: "Mua từ Ktown4u có được tính vào các bảng xếp hạng Hàn Quốc không?",
+        a: "Ktown4U là một cửa hàng Family được Hanteo chứng nhận, có trên danh bạ với mã HF0082KTU001, nên với Hanteo thì cửa hàng này là một cửa hàng có báo số — và đó là xa nhất mà một nguồn công khai đi tới. Hanteo không công bố một quy tắc về việc một đơn từ nước ngoài có được đối xử như một đơn trong nước hay không, và Circle Chart lại là một câu hỏi riêng: bảng Album Chart chính của nó đếm lượng hàng bán buôn chuyển cho các nhà bán lẻ chứ không đếm lượng bán lẻ, nên một đơn ở đó không thay đổi gì theo chiều nào. Nếu một bản phát hành cụ thể mới là điểm chính, thì thông báo của chính nghệ sĩ thường nêu tên các nhà bán lẻ tham gia cho bản đó.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "การสั่งของจาก Ktown4u: นาฬิกาจ่ายเงินหกชั่วโมงและค่าธรรมเนียมที่ไม่มีใครเอ่ยถึง",
+    summary:
+      "ออเดอร์ที่ยังไม่จ่ายจะถูกยกเลิกหลังหกชั่วโมง ไม่ใช่ยี่สิบสี่ชั่วโมง พัสดุไปสหรัฐอาจมีค่าธรรมเนียม 12 USD ที่เก็บกันที่หน้าประตูบ้านคุณ ค่าส่งระหว่างประเทศขึ้น 7% ในเดือนกุมภาพันธ์ 2026 และสองประเทศในยุโรปก็เสียวิธีจัดส่งไปทั้งวิธีอย่างเงียบ ๆ",
+    scope:
+      "หน้านี้ครอบคลุมการสั่งอัลบั้มและสินค้าที่เป็นวัตถุจาก Ktown4u เพื่อส่งออกนอกเกาหลี โดยอ้างจากประกาศของ Ktown4u เอง ได้แก่ นาฬิกาการชำระเงิน ค่าส่งและวิธีจัดส่ง การหยุดในช่วงวันหยุด และเวลาทำการของฝ่ายบริการลูกค้า ส่วนคำถามว่าการซื้อจาก Ktown4u นับเข้าชาร์ตอัลบั้มเกาหลีไหม ตอบจากทะเบียนร้านที่ได้รับการรับรองของ Hanteo เอง ไม่ใช่จาก Ktown4u ประกาศถูกออกใหม่และถูกแทนที่ ดังนั้นรายการประกาศคือฉบับที่ยังมีชีวิต",
+    intro: [
+      "Ktown4u คือที่ที่แฟนต่างชาติจำนวนมากซื้ออัลบั้มกันจริง ๆ และแทบไม่มีอะไรเกี่ยวกับวิธีทำงานของมันที่เขียนไว้เป็นภาษาอังกฤษนอกจากหน้าประกาศของมันเอง ซึ่งเป็นภาษาอังกฤษ ลงวันที่ และไม่มีใครอ่านจนกระทั่งพัสดุมาช้า",
+      "นี่คือหน้านั้นที่อ่านรวดเดียวจบ ข้อแรกคือข้อที่ทำให้คนเสียออเดอร์ และมันเปลี่ยนไปในปี 2025 โดยที่ผู้ซื้อส่วนใหญ่ไม่ทันสังเกต",
+    ],
+    steps: [
+      {
+        title: "รู้ไว้ว่าออเดอร์ที่ยังไม่จ่ายตายในหกชั่วโมง ไม่ใช่หนึ่งวัน",
+        body: "นี่คือข้อเท็จจริงที่ควรรู้ก่อนที่คุณจะสั่งอะไร Ktown4u เคยถือออเดอร์ที่ยังไม่จ่ายไว้ 24 ชั่วโมง และตัดลงเป็น 6 ชั่วโมง มีผลตั้งแต่วันที่ 19 กุมภาพันธ์ 2025 ตามเวลา KST โดยออเดอร์ที่ยังไม่จ่ายจะถูกยกเลิกอัตโนมัติหกชั่วโมงหลังสั่ง สำหรับแฟนที่สั่งตอนเที่ยงคืนในยุโรปหรืออเมริกา หกชั่วโมงเกาหลีผ่านไปจนหมดได้ระหว่างที่คุณหลับ และพรีออเดอร์ที่สั่งแล้วไม่จ่ายก็คือพรีออเดอร์ที่ไม่เคยถูกสั่ง",
+        pitfall:
+          "การจองของไว้ตอนนี้แล้วจ่ายตอนที่บัตรหรือวันเงินเดือนของคุณเอื้อ วิธีนั้นใช้ได้ภายใต้ช่วงเวลาแบบเก่า และใช้ไม่ได้ภายใต้แบบนี้",
+        takes: "จ่ายในเวลาที่คุณสั่ง",
+      },
+      {
+        title: "ถ้าคุณอยู่ในสหรัฐ ให้กันงบไว้สำหรับค่าธรรมเนียมที่เก็บกันที่หน้าประตู",
+        body: "ตั้งแต่วันที่ 2 มิถุนายน 2025 Ktown4u ใช้นโยบายค่าธรรมเนียมของ UPS กับการส่งไปสหรัฐ คือในกรณีที่มีภาษีศุลกากร ภาษี หรือค่าธรรมเนียมอื่นของรัฐที่ต้องชำระ จะมีการเก็บเพิ่ม 12 USD ถ้าภาษีเหล่านั้นไม่ได้ชำระล่วงหน้าทางอิเล็กทรอนิกส์ก่อนการส่งมอบ Ktown4u เรียกมันว่าค่าธรรมเนียม International Collect on Delivery และบอกว่ามันถูกเรียกเก็บจากผู้รับในสหรัฐในเวลาที่ส่งมอบ ทางออกก็ประกาศไว้ด้วย คือชำระภาษีล่วงหน้าผ่านระบบ UPS Import Prepaid Duties and Taxes ซึ่งมันบอกว่ารับ Apple Pay, Google Pay หรือบัตร Visa, Mastercard หรือ Discover",
+        pitfall:
+          "การถือว่ายอดรวมตอนเช็กเอาต์คือยอดรวมทั้งหมด ค่าธรรมเนียมนี้ไม่ได้ถูกเก็บโดย Ktown4u ตอนซื้อ มันมาพร้อมพัสดุ และมันคือสิบสองดอลลาร์ที่ทับอยู่บนภาษีเท่าไรก็ตามที่ต้องจ่ายจริง",
+        takes: "10 นาที ก่อนพัสดุถูกส่งออก",
+      },
+      {
+        title: "คิดค่าส่งตามอัตราปัจจุบัน ไม่ใช่อัตราของปีที่แล้ว",
+        body: "Ktown4u ขึ้นค่าส่งระหว่างประเทศ 7% มีผลตั้งแต่วันที่ 1 กุมภาพันธ์ 2026 เวลา 00:00 KST ซึ่งมันระบุว่ามาจากการปรับอัตราตามปกติของผู้ให้บริการขนส่ง นั่นเป็นจำนวนเล็กต่อพัสดุหนึ่งชิ้นและเป็นจำนวนใหญ่เมื่อรวมทั้งออเดอร์กลุ่ม และมันเป็นการเปลี่ยนแปลงประเภทที่ทำให้ตัวเลขประมาณค่าส่งจากบล็อกโพสต์อายุหนึ่งปีผิดไปอย่างเงียบ ๆ ตัวเลขที่นับคือตัวเลขที่ตะกร้าแสดงให้คุณเห็นในวินาทีที่คุณสั่ง",
+        pitfall:
+          "การตั้งงบออเดอร์กลุ่มจากสเปรดชีตที่ใครทำไว้เมื่อซีซันก่อน การปรับอัตราเป็นเรื่องปกติ ซึ่งหมายความว่าจะมีอีกครั้ง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ตรวจว่าประเทศของคุณยังมีวิธีจัดส่งที่คุณคาดไว้อยู่ไหม",
+        body: "วิธีจัดส่งถูกถอนออกเป็นรายประเทศ ไม่ใช่แค่ล่าช้า Ktown4u ระงับบริการ K-Packet ไปเยอรมนีและสเปนตั้งแต่วันที่ 17 มกราคม 2025 เพราะผู้ให้บริการไปรษณีย์ของเยอรมนีและสเปนถอนตัวจากข้อตกลง Prime Group ที่บริการนั้นทำงานอยู่บนนั้น วิธีจัดการที่มันระบุคือส่งอีเมลหาลูกค้าที่ได้รับผลกระทบเรื่องการย้ายไปใช้บริการจัดส่งอื่นและเรื่องค่าใช้จ่ายส่วนเพิ่ม ดังนั้นออเดอร์ที่สั่งไปแล้วเปลี่ยนราคาได้ภายหลัง วิธีที่คุณใช้ครั้งก่อนไม่ใช่วิธีที่คุณยังมีอยู่",
+        pitfall:
+          "การเลือกวิธีที่ถูกที่สุดตามความเคยชินแล้วไม่อ่านอีเมลที่ตามมา อีเมลนั้นคือที่ที่บริการแทนและค่าใช้จ่ายส่วนเพิ่มของมันถูกระบุชื่อไว้",
+        takes: "5 นาที ตอนเช็กเอาต์",
+      },
+      {
+        title: "อ่านประกาศการสะดุดรายประเทศ ซึ่งเจาะจงอย่างไม่ปกติ",
+        body: "Ktown4u ประกาศการสะดุดของการจัดส่งละเอียดลงไปถึงรหัสไปรษณีย์ ประกาศ EMS ของมันสำหรับสโลวาเกียลงวันที่ 4 เมษายน 2025 ระบุรหัสไปรษณีย์ที่ได้รับผลกระทบไว้ คือ 930 07, 930 06, 930 04, 930 03 และ 900 68 พร้อมสาเหตุ คือการระบาดของโรคปากและเท้าเปื่อยในสโลวาเกียตะวันตกเฉียงใต้และสถานการณ์ฉุกเฉินตั้งแต่วันที่ 25 มีนาคม 2025 โดยพัสดุถูกเก็บไว้ที่ไปรษณีย์ท้องถิ่นและผู้รับได้รับแจ้ง ความละเอียดนั้นคือประเด็น เมื่อการติดตามพัสดุหยุดเดินในภูมิภาคของคุณ หน้าประกาศมักบอกว่าเพราะอะไร และนั่นเป็นสถานการณ์ที่ต่างจากพัสดุที่หายไป",
+        pitfall:
+          "การเปิดเคลมพัสดุหายในช่วงการสะดุดที่ถูกประกาศและอธิบายไว้แล้ว ดูรายการประกาศของประเทศคุณก่อนจะเสียเวลาทั้งบ่ายไปกับการเคลม",
+        takes: "10 นาที",
+      },
+      {
+        title: "ถือว่าวันหยุดเกาหลีคือหนึ่งสัปดาห์ที่ไม่มีการส่งออกและไม่มีฝ่ายบริการ",
+        body: "Ktown4u หยุดทั้งสองซีกของการทำงานในช่วงวันหยุดเกาหลี และประกาศวันที่ไว้ทุกครั้ง สำหรับตรุษจีน 2026 การจัดส่งพัสดุหยุดตั้งแต่วันที่ 14 ถึง 18 กุมภาพันธ์ โดยการจัดส่งกลับมาเดินเรียงตามลำดับตั้งแต่วันที่ 19 กุมภาพันธ์ และฝ่ายบริการลูกค้าไม่ให้บริการในวันเดียวกันนั้น สำหรับชูซอก 2025 การหยุดกินตั้งแต่วันที่ 3 ถึง 9 ตุลาคม โดยทั้งสองอย่างกลับมาในวันที่ 10 มันเตือนทุกครั้งว่าความล่าช้าลากยาวเกินวันที่กลับมาเปิดได้ เพราะปริมาณออเดอร์ที่กองสะสมอยู่ข้างหลัง",
+        pitfall:
+          "การอ่านวันที่กลับมาเปิดว่าเป็นวันที่ได้รับของ มันคือวันที่คิวเริ่มขยับ และออเดอร์ของคุณก็อยู่ที่ไหนที่หนึ่งในคิวนั้น",
+        takes: "10 นาที ก่อนสั่งในช่วงวันหยุด",
+      },
+      {
+        title: "เขียนไปหาฝ่ายบริการภายในเวลาที่เขาเปิดจริง",
+        body: "Ktown4u ย้ายช่องทางบริการลูกค้าของตัวเองไปเป็นวันธรรมดา 10:00 ถึง 17:00 KST ตั้งแต่วันที่ 1 พฤศจิกายน 2023 โดยมีพักกลางวัน 12:30 ถึง 13:30 นั่นคือหน้าต่างห้าชั่วโมงครึ่ง ในวันทำงานของเกาหลี ซึ่งสำหรับผู้อ่านเว็บนี้ส่วนใหญ่ตกอยู่กลางดึก มันสำคัญที่สุดเมื่อวางคู่กับนาฬิกาจ่ายเงินหกชั่วโมง คือออเดอร์ที่สั่งเย็นวันศุกร์ในยุโรปหมดอายุได้ก่อนที่จะมีใครนั่งอยู่ที่โต๊ะให้ถาม",
+        pitfall:
+          "การคาดว่าจะได้คำตอบก่อนลงมือ แปลงเวลาเหล่านั้นเป็นเวลาของคุณเสียครั้งหนึ่ง จดไว้ และอย่าสันนิษฐานอะไรนอกช่วงนั้น",
+        takes: "5 นาที ครั้งเดียว",
+      },
+      {
+        title: "Ktown4u เป็นร้านที่ Hanteo รับรอง และคุณตรวจเองได้",
+        body: "ไกด์นี้เคยบอกว่าคำถามข้อนี้ตอบไม่ได้ เพราะ Ktown4u ไม่ได้ระบุไว้ในประกาศของตัวเอง มันตอบได้จากปลายอีกด้าน คือ Hanteo ประกาศรายชื่อร้าน Family ที่ได้รับการรับรองของตัวเองไว้ และ Ktown4U ก็อยู่ในทะเบียนนั้นด้วยรหัสแฟมิลี HF0082KTU001 Hanteo กำหนดให้ร้าน Family ออนไลน์ทุกร้านแสดงเครื่องหมาย Family ที่ลิงก์กลับไปที่ hanteochart.com และหน้าร้านของ Ktown4u เองก็ลิงก์ไปที่ทะเบียนเดียวกันนั้น ดังนั้นร้านกับชาร์ตก็ตรงกัน จากทั้งสองปลาย ตรวจเองเถอะ แทนที่จะรับไปจากที่นี่ ทะเบียนเปลี่ยนได้ และคำสั่งของ Hanteo คือให้ยืนยันรหัสและเครื่องหมายการรับรอง ซึ่งออกใหม่ทุกปี",
+        pitfall:
+          "การอ่านข้อนี้ว่าออเดอร์ของฉันจะไปปรากฏบนชาร์ตเกาหลีทุกชาร์ต Hanteo นับยอดขายที่ร้าน Family ของมันรายงานเข้ามา ส่วน Album Chart หลักของ Circle Chart นับยอดส่งขายส่งไปยังร้านค้าปลีกแทน ดังนั้นไม่มีออเดอร์ค้าปลีกใดขยับมันได้เลย และทั้งสองเจ้าก็ไม่ได้ประกาศกฎว่าออเดอร์จากต่างประเทศถูกนับเหมือนออเดอร์ในประเทศหรือไม่",
+        takes: "15 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ฉันมีเวลาจ่ายเงินสำหรับออเดอร์ Ktown4u นานแค่ไหน",
+        a: "หกชั่วโมง Ktown4u ตัดเวลาถือออเดอร์ที่ยังไม่จ่ายจาก 24 ชั่วโมงลงเป็น 6 ชั่วโมง มีผลตั้งแต่วันที่ 19 กุมภาพันธ์ 2025 ตามเวลา KST และบอกว่าออเดอร์ที่ยังไม่จ่ายถูกยกเลิกอัตโนมัติหกชั่วโมงหลังสั่ง ให้จ่ายในเวลาที่คุณสั่ง แทนที่จะวางแผนกลับมาจ่ายทีหลัง",
+      },
+      {
+        q: "ค่าธรรมเนียม 12 USD บนการส่งไปสหรัฐของฉันคืออะไร",
+        a: "คือค่าธรรมเนียม International Collect on Delivery ของ Ktown4u สำหรับการส่งด้วย UPS ไปสหรัฐ มีผลตั้งแต่วันที่ 2 มิถุนายน 2025 มันใช้ในกรณีที่มีภาษีศุลกากร ภาษี หรือค่าธรรมเนียมอื่นของรัฐที่ต้องชำระและไม่ได้ชำระล่วงหน้าทางอิเล็กทรอนิกส์ก่อนการส่งมอบ และถูกเรียกเก็บจากผู้รับตอนส่งมอบ การชำระล่วงหน้าผ่านระบบ UPS Import Prepaid Duties and Taxes เลี่ยงมันได้ โดย Ktown4u ไล่เรียงวิธีไว้ว่าเป็น Apple Pay, Google Pay และบัตร Visa, Mastercard หรือ Discover",
+      },
+      {
+        q: "ทำไมค่าส่งแพงกว่าเดิม",
+        a: "Ktown4u ขึ้นค่าส่งระหว่างประเทศ 7% ตั้งแต่วันที่ 1 กุมภาพันธ์ 2026 เวลา 00:00 KST โดยระบุว่ามาจากการปรับอัตราตามปกติของผู้ให้บริการขนส่ง ตามปกติหมายความว่าจะมีอีกครั้ง ดังนั้นให้คิดราคาออเดอร์กลุ่มจากตะกร้า ไม่ใช่จากตัวเลขประมาณของเก่า",
+      },
+      {
+        q: "วิธีจัดส่งที่ฉันใช้ประจำหายไป เกิดอะไรขึ้น",
+        a: "วิธีจัดส่งถูกถอนเป็นรายประเทศ Ktown4u ระงับ K-Packet ไปเยอรมนีและสเปนตั้งแต่วันที่ 17 มกราคม 2025 หลังผู้ให้บริการไปรษณีย์ของเยอรมนีและสเปนถอนตัวจากข้อตกลง Prime Group และบอกว่าจะส่งอีเมลหาลูกค้าที่ได้รับผลกระทบเรื่องการเปลี่ยนบริการและค่าใช้จ่ายส่วนเพิ่ม ถ้าออเดอร์ถูกสั่งไปแล้ว อีเมลนั้นคือที่ที่วิธีใหม่และราคาถูกระบุไว้",
+      },
+      {
+        q: "การติดตามพัสดุของฉันไม่ขยับ พัสดุหายไหม",
+        a: "ดูรายการประกาศของประเทศคุณก่อน Ktown4u ประกาศการสะดุดอย่างละเอียดผิดปกติ ประกาศ EMS สำหรับสโลวาเกียลงวันที่ 4 เมษายน 2025 ระบุรหัสไปรษณีย์ที่ได้รับผลกระทบทั้งห้ารหัสและมาตรการกักกันที่อยู่เบื้องหลังความล่าช้า และบอกว่าพัสดุจะถูกเก็บไว้ที่ไปรษณีย์ท้องถิ่นโดยผู้รับได้รับแจ้ง การสะดุดที่ประกาศไว้เป็นปัญหาที่ต่างจากพัสดุที่หายไป",
+      },
+      {
+        q: "ออเดอร์ของฉันจะเป็นอย่างไรในช่วงวันหยุดเกาหลี",
+        a: "ทั้งการส่งออกและฝ่ายบริการลูกค้าหยุดทั้งคู่ สำหรับตรุษจีน 2026 การจัดส่งพัสดุหยุดตั้งแต่วันที่ 14 ถึง 18 กุมภาพันธ์ และกลับมาเดินเรียงตามลำดับตั้งแต่วันที่ 19 โดยฝ่ายบริการไม่เปิดในวันเดียวกัน ส่วนชูซอก 2025 กินตั้งแต่วันที่ 3 ถึง 9 ตุลาคม โดยทั้งสองอย่างกลับมาในวันที่ 10 Ktown4u เตือนทุกครั้งว่างานที่กองค้างดันการจัดส่งให้เลยวันที่กลับมาเปิดได้",
+      },
+      {
+        q: "ฉันติดต่อฝ่ายบริการลูกค้าได้ตอนไหนจริง ๆ",
+        a: "วันธรรมดา 10:00 ถึง 17:00 KST โดยมีพักกลางวัน 12:30 ถึง 13:30 ตามที่กำหนดไว้ตั้งแต่วันที่ 1 พฤศจิกายน 2023 แปลงช่วงนั้นเป็นเขตเวลาของคุณก่อนที่คุณจะต้องใช้ เพราะเมื่อรวมกับนาฬิกาจ่ายเงินหกชั่วโมง ออเดอร์หมดอายุนอกเวลาเหล่านั้นได้",
+      },
+      {
+        q: "การซื้อจาก Ktown4u นับเข้าชาร์ตเกาหลีไหม",
+        a: "Ktown4U เป็นร้าน Family ที่ Hanteo รับรอง ขึ้นทะเบียนไว้ด้วยรหัส HF0082KTU001 ดังนั้นสำหรับ Hanteo ร้านนี้เป็นร้านที่รายงานยอด ซึ่งนั่นคือไกลสุดที่แหล่งข้อมูลสาธารณะไปถึง Hanteo ไม่ได้ประกาศกฎว่าออเดอร์จากต่างประเทศถูกนับเหมือนออเดอร์ในประเทศไหม และ Circle Chart ก็เป็นคำถามแยกอีกข้อ คือ Album Chart หลักของมันนับยอดส่งขายส่งไปยังร้านค้าปลีก ไม่ใช่ยอดขายปลีก ดังนั้นออเดอร์ที่นั่นไม่เปลี่ยนอะไรทั้งสองทาง ถ้าประเด็นอยู่ที่งานออกชุดหนึ่งโดยเฉพาะ ประกาศของศิลปินเองมักระบุชื่อร้านค้าปลีกที่เข้าร่วมสำหรับงานนั้นไว้",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pag-order sa Ktown4u: ang anim na oras na orasan ng bayad at ang bayaring walang bumabanggit",
+    summary:
+      "Kinakansela ang hindi nabayarang order matapos ang anim na oras, hindi ang dalawampu't apat. Puwedeng may 12 USD na bayaring kinokolekta sa pintuan mo ang parselang papuntang US. Tumaas ng 7% ang padalang pandaigdig noong Pebrero 2026, at tahimik na nawalan ng isang buong paraan ng padala ang dalawang bansa sa Europa.",
+    scope:
+      "Sakop nito ang pag-order ng pisikal na album at paninda sa Ktown4u para ihatid sa labas ng Korea, mula sa sariling abiso ng Ktown4u: ang orasan ng bayad, ang bayarin at paraan ng padala, ang mga paghinto tuwing pista, at ang oras ng suporta sa customer. Kung nag-uulat ba sa mga Koreanong album chart ang isang pagbiling Ktown4u ay sinasagot mula sa sariling talaan ng mga tindahang sertipikado ng Hanteo at hindi mula sa Ktown4u. Inilalabas muli at napapalitan ang mga abiso, kaya ang listahan ng abiso ang buhay na bersiyon.",
+    intro: [
+      "Ang Ktown4u ang talagang pinagbibilhan ng album ng malaking bahagi ng mga tagahangang pandaigdig, at halos walang nakasulat sa Ingles tungkol sa kung paano ito gumagana maliban sa sariling pahina ng abiso nito — na nasa Ingles, may petsa, at walang nagbabasa hangga't hindi huli ang isang parsela.",
+      "Ito ang pahinang iyon na binasa sa isang upuan. Ang unang bagay ang nagpapaubos ng order sa mga tao, at nagbago ito noong 2025 nang hindi napapansin ng karamihan ng namimili.",
+    ],
+    steps: [
+      {
+        title: "Alaming namamatay ang hindi nabayarang order sa anim na oras, hindi sa isang araw",
+        body: "Ito ang katotohanang mabuting malaman bago ka magpasa ng anuman. Hinahawakan ng Ktown4u ang hindi nabayarang order nang 24 oras at ibinawas ito sa 6, na may bisa noong 19 Pebrero 2025 KST, at kusang kinakansela ang hindi nabayarang order anim na oras matapos itong ipasa. Para sa tagahangang nag-order nang hatinggabi sa Europa o sa Amerika, puwedeng lubos na lumipas ang anim na oras ng Korea habang natutulog ka — at ang pre-order na ipinasa at hindi nabayaran ay pre-order na hindi kahit kailan ipinasa.",
+        pitfall:
+          "Ang pagreserba ng bagay ngayon at ang pagbabayad kapag pinapayagan ng kard mo o ng araw ng sueldo mo. Gumana iyon sa ilalim ng dating bintana at hindi gumagana sa ilalim nito.",
+        takes: "Magbayad sa oras na mag-order ka",
+      },
+      {
+        title: "Kung nasa US ka, magtabi para sa bayaring kinokolekta sa pintuan mo",
+        body: "Mula 2 Hunyo 2025 ay nag-aaplay ang Ktown4u ng patakaran sa bayad ng UPS sa kargamentong papuntang US: kung saan may utang na buwis sa customs, buwis o ibang bayad ng pamahalaan, may dagdag na 12 USD na kinokolekta kung hindi naunang bayaran ang mga buwis na iyon nang elektroniko bago ang paghahatid. Pinapangalanan ito ng Ktown4u na bayaring International Collect on Delivery, at sinasabi nitong ibinibill ito sa tatanggap sa US sa oras ng paghahatid. Nakalathala rin ang daan palabas — bayaran nang patiuna ang buwis sa sistemang UPS Import Prepaid Duties and Taxes, na sinasabi nitong tumatanggap ng Apple Pay, Google Pay, o ng isang kard na Visa, Mastercard o Discover.",
+        pitfall:
+          "Ang pagturing sa kabuuan sa checkout bilang ang kabuuan. Hindi kinokolekta ng Ktown4u ang bayaring ito sa pagbili; dumarating ito kasama ang parsela, at labindalawang dolyar ito sa ibabaw ng anumang buwis na talagang utang.",
+        takes: "10 minuto, bago maipadala ang parsela",
+      },
+      {
+        title: "Presyuhan ang padala laban sa kasalukuyang halaga, hindi sa nakaraang taon",
+        body: "Itinaas ng Ktown4u ang bayad sa pandaigdigang padala ng 7%, may bisa noong 1 Pebrero 2026 nang 00:00 KST, na iniuugnay nito sa karaniwang pagsasaayos ng halaga ng mga tagahatid. Maliit iyon kada parsela at malaki sa buong order ng grupo, at ito ang uri ng pagbabagong tahimik na nagpapamali sa tantiyang padala mula sa isang blog na isang taon nang luma. Ang bilang na binibilang ay ang ipinapakita sa iyo ng kart sa sandaling mag-order ka.",
+        pitfall:
+          "Ang pagbabadyet ng order ng grupo mula sa spreadsheet na ginawa ng isang tao noong nakaraang panahon. Karaniwan ang pagsasaayos ng halaga, at ang ibig sabihin niyon ay may isa pang darating.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tingnan kung mayroon pa ang bansa mo ng paraan ng padalang inaasahan mo",
+        body: "Inuurong ang paraan ng padala kada bansa, hindi lamang ipinapaantala. Itinigil ng Ktown4u ang serbisyong K-Packet sa Alemanya at Espanya mula 17 Enero 2025, dahil umurong ang mga operador ng koreo ng Alemanya at Espanya sa kasunduang Prime Group na pinatatakbuhan nito. Ang isinasaad nitong paghawak ay i-email ang naapektuhang customer tungkol sa paglipat sa ibang serbisyo ng padala at tungkol sa dagdag na gastos — kaya puwedeng magbago ang presyo ng isang orderng naipasa na pagkatapos. Ang paraang ginamit mo noong huli ay hindi paraang mayroon ka pa.",
+        pitfall:
+          "Ang pagpili sa pinakamurang paraan dahil sa ugali at ang hindi pagbasa sa kasunod na email. Ang email ang pinangangalanan ng kapalit na serbisyo at ng dagdag na gastos nito.",
+        takes: "5 minuto, sa checkout",
+      },
+      {
+        title: "Basahin ang abiso ng pagkaabala kada bansa, na hindi pangkaraniwang tiyak",
+        body: "Naglalathala ang Ktown4u ng pagkaabala sa paghahatid hanggang sa antas ng postal code. Pinapangalanan ng abiso nitong EMS para sa Slovakia noong 4 Abril 2025 ang mga apektadong postal code — 930 07, 930 06, 930 04, 930 03 at 900 68 — at ang sanhi, isang pagsiklab ng foot-and-mouth sa timog-kanlurang Slovakia at isang kalagayan ng emerhensiya mula 25 Marso 2025, kung saan hinahawakan ang parsela sa lokal na post office at inaabisuhan ang tatanggap. Ang detalye ang punto: kapag tumigil ang tracking para sa rehiyon mo, karaniwang sinasabi ng pahina ng abiso kung bakit, at ibang kalagayan iyon sa isang nawawalang parsela.",
+        pitfall:
+          "Ang pagbukas ng habol sa nawawalang parsela sa panahon ng pagkaabalang nakalathala at ipinaliwanag. Tingnan ang listahan ng abiso para sa bansa mo bago mo gugulin ang hapon sa isang habol.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Ituring ang pistang Koreano bilang linggong walang padala at walang suporta",
+        body: "Ipinapahinto ng Ktown4u ang dalawang kalahati ng operasyon nito tuwing pistang Koreano, at inilalathala nito ang mga petsa sa bawat pagkakataon. Para sa Lunar New Year 2026 ay huminto ang paghahatid ng parsela mula 14 hanggang 18 Pebrero at nagpatuloy ang paghahatid nang sunod-sunod mula 19 Pebrero, at wala ang suporta sa customer sa parehong mga araw. Para sa Chuseok 2025 ay tumakbo ang paghinto mula 3 hanggang 9 Oktubre at nagpatuloy ang dalawa sa ika-10. Nagbabala ito sa bawat pagkakataon na puwedeng lumagpas sa petsa ng pagpapatuloy ang pagkaantala dahil sa dami ng orderng naipon sa likod nito.",
+        pitfall:
+          "Ang pagbasa sa petsa ng pagpapatuloy bilang petsa ng paghahatid. Ito ang araw na nagsisimulang gumalaw ang pila, at nasa loob nito kung saan ang order mo.",
+        takes: "10 minuto bago mag-order sa pista",
+      },
+      {
+        title: "Sumulat sa suporta sa loob ng oras na talagang hinahawakan nito",
+        body: "Inilipat ng Ktown4u ang channel ng serbisyo sa customer nito sa karaniwang araw nang 10:00 hanggang 17:00 KST mula 1 Nobyembre 2023, na may pananghalian mula 12:30 hanggang 13:30. Isa iyong bintanang limang oras at kalahati, sa karaniwang araw sa Korea, na para sa karamihan ng mambabasa ng site na ito ay bumabagsak sa gitna ng gabi. Pinakamahalaga ito kasama ang anim na oras na orasan ng bayad: ang orderng ipinasa nang Biyernes ng gabi sa Europa ay puwedeng mapaso bago may nakaupo sa mesang matatanong.",
+        pitfall:
+          "Ang paghihintay ng sagot bago ka kumilos. Ikonberte ang mga oras na iyon sa sarili mo nang isang beses, isulat ito, at huwag ipagpalagay ang anuman sa labas nito.",
+        takes: "5 minuto, isang beses",
+      },
+      {
+        title: "Tindahang sertipikado ng Hanteo ang Ktown4u, at matitingnan mo iyon mismo",
+        body: "Sinasabi noon ng gabay na ito na hindi masasagot ang tanong, dahil hindi isinasaad ito ng Ktown4u sa sariling abiso nito. Masasagot ito mula sa kabilang dulo: inilalathala ng Hanteo ang sertipikadong tindahang Family nito, at nasa talaang iyon ang Ktown4U na may family code na HF0082KTU001. Hinihingi ng Hanteo sa bawat online na tindahang Family na ipakita ang markang Family na nakakawing pabalik sa hanteochart.com, at ang sariling storefront ng Ktown4u ay nakakawing sa parehong talaan — kaya sang-ayon ang tindahan at ang chart, mula sa dalawang dulo. Tingnan ito kaysa kunin ito mula rito: nagbabago ang talaan, at ang bilin ng Hanteo ay kumpirmahin ang code at ang markang sertipikasyon, na inilalabas muli bawat taon.",
+        pitfall:
+          "Ang pagbasa nito bilang “lalabas ang order ko sa bawat Koreanong chart”. Binibilang ng Hanteo ang bentang iniuulat ng tindahang Family nito; ang pangunahing Album Chart ng Circle Chart ay binibilang naman ang pakyawang kargamento sa mga tindahan, kaya walang orderng tingi na gumagalaw dito. At walang isa man sa kanilang naglalathala ng tuntunin kung itinuturing bang katulad ng isang lokal na order ang isang orderng galing sa ibang bansa.",
+        takes: "15 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Gaano katagal ang ibinibigay sa akin para bayaran ang isang order sa Ktown4u?",
+        a: "Anim na oras. Ibinawas ng Ktown4u ang panahon ng paghawak sa hindi nabayarang order mula 24 oras patungong 6, may bisa noong 19 Pebrero 2025 KST, at sinasabi nitong kusang kinakansela ang hindi nabayarang order anim na oras matapos ipasa. Magbayad sa oras na mag-order ka kaysa magplanong bumalik dito.",
+      },
+      {
+        q: "Ano ang 12 USD na bayarin sa paghahatid ko sa US?",
+        a: "Ang bayaring International Collect on Delivery ng Ktown4u para sa kargamentong UPS papuntang US, na may bisa mula 2 Hunyo 2025. Nauukol ito kung saan may utang na buwis sa customs, buwis o ibang bayad ng pamahalaan at hindi naunang bayaran nang elektroniko bago ang paghahatid, at ibinibill ito sa tatanggap sa paghahatid. Nailalagpasan ito ng paunang pagbabayad sa sistemang UPS Import Prepaid Duties and Taxes — inililista ng Ktown4u ang Apple Pay, Google Pay at Visa, Mastercard o Discover bilang paraan niyon.",
+      },
+      {
+        q: "Bakit mas mahal ang padala kaysa dati?",
+        a: "Itinaas ng Ktown4u ang bayad sa pandaigdigang padala ng 7% mula 1 Pebrero 2026 nang 00:00 KST, na iniuugnay nito sa karaniwang pagsasaayos ng halaga ng mga tagahatid. Ang karaniwan ay nangangahulugang may isa pang darating, kaya presyuhan ang order ng grupo mula sa kart at hindi mula sa lumang tantiya.",
+      },
+      {
+        q: "Nawala ang karaniwang paraan ng padala ko. Ano ang nangyari?",
+        a: "Inuurong ang paraan kada bansa. Itinigil ng Ktown4u ang K-Packet sa Alemanya at Espanya mula 17 Enero 2025 matapos umurong ang mga operador ng koreo ng Alemanya at Espanya sa kasunduang Prime Group, at sinabi nitong i-email nito ang naapektuhang customer tungkol sa paglipat ng serbisyo at sa dagdag na gastos. Kung naipasa na ang order, ang email na iyon ang pinangangalanan ng bagong paraan at presyo.",
+      },
+      {
+        q: "Hindi gumagalaw ang tracking ko. Nawala na ba ang parsela?",
+        a: "Tingnan muna ang listahan ng abiso para sa bansa mo. Naglalathala ang Ktown4u ng pagkaabala nang hindi pangkaraniwang detalyado — pinapangalanan ng abiso nitong EMS para sa Slovakia noong 4 Abril 2025 ang limang apektadong postal code at ang hakbang na kuwarentenas sa likod ng pagkaantala, at sinabi nitong hahawakan ang parsela sa lokal na post office at aabisuhan ang tatanggap. Ibang problema ang nakalathalang pagkaabala sa isang nawawalang parsela.",
+      },
+      {
+        q: "Ano ang mangyayari sa order ko tuwing pistang Koreano?",
+        a: "Tumitigil kapwa ang padala at ang suporta sa customer. Para sa Lunar New Year 2026 ay huminto ang paghahatid ng parsela mula 14 hanggang 18 Pebrero at nagpatuloy nang sunod-sunod mula ika-19, at wala ang suporta sa parehong mga araw; tumakbo ang Chuseok 2025 mula 3 hanggang 9 Oktubre at nagpatuloy ang dalawa sa ika-10. Nagbabala ang Ktown4u sa bawat pagkakataon na puwedeng itulak ng naipong trabaho ang paghahatid lagpas sa petsa ng pagpapatuloy.",
+      },
+      {
+        q: "Kailan ko talaga maaabot ang serbisyo sa customer?",
+        a: "Karaniwang araw nang 10:00 hanggang 17:00 KST, na may pananghalian nang 12:30 hanggang 13:30, gaya ng itinakda mula 1 Nobyembre 2023. Ikonberte iyon sa sariling sona mo bago mo kailanganin, dahil kasama ang anim na oras na orasan ng bayad ay puwedeng mapaso ang isang order sa labas ng mga oras na iyon.",
+      },
+      {
+        q: "Nabibilang ba sa mga Koreanong chart ang pagbili sa Ktown4u?",
+        a: "Sertipikadong tindahang Family ng Hanteo ang Ktown4U, nakalista sa code na HF0082KTU001, kaya para sa Hanteo ay nag-uulat na tindahan ito — at iyon ang pinakamalayong naabot ng isang pampublikong pinagmulan. Hindi naglalathala ang Hanteo ng tuntunin kung itinuturing bang katulad ng isang lokal na order ang isang orderng galing sa ibang bansa, at ibang tanong na muli ang Circle Chart: binibilang ng pangunahing Album Chart nito ang pakyawang kargamento sa mga tindahan at hindi ang bentang tingi, kaya walang binabago ang isang order doon sa anumang panig. Kung isang partikular na release ang punto, karaniwang pinapangalanan ng sariling anunsiyo ng artist ang mga kalahok na tindahan para dito.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: một sản phẩm, và gần như không gì trong đó thay đổi được",
+    summary:
+      "Một buổi diễn và một khách sạn bán ra như một mặt hàng duy nhất. Bạn không đổi được khách sạn, không đổi được ngày, không đổi được số đêm, bỏ không ở khách sạn thì chẳng hoàn lại gì, chỗ ngồi là ngẫu nhiên và chỉ hé ra trong ngày, và vé chỉ được trao cho chính bạn, trực tiếp, tại khách sạn, trong một khung giờ.",
+    scope:
+      "Trang này bao gồm các gói buổi diễn cộng khách sạn Play and Stay của NOL World đúng như NOL World công bố: điều gì là cố định, vé được nhận ra sao, các yêu cầu về danh tính và tên, và các câu trả lời về hủy đơn của họ thực sự nói gì. Mỗi gói mang chính sách hủy và các hạng mục bao gồm riêng của nó, và trang sản phẩm là thứ nắm quyền. Dịch vụ xe đưa đón chỉ được nhắc ở nơi một gói có nó.",
+    intro: [
+      "Một gói trông như lựa chọn dễ dàng: một lần thanh toán, một khách sạn gần địa điểm diễn, một hạng chỗ ngồi được bảo đảm, không phải vật lộn với hàng đợi. Với một người hâm mộ ở nước ngoài chỉ có một cơ hội cho chuyến đi, đó là một trao đổi thật sự hấp dẫn.",
+      "Nó cũng là sản phẩm cứng nhắc nhất trên nền tảng, và sự cứng nhắc đó không hiện ra từ trang giới thiệu. Đọc liền một dãy các câu trả lời của chính NOL World thì một khuôn hiện ra: gói đó là một mặt hàng không chia được. Không phải một chiếc vé và một phòng khách sạn mà bạn tối ưu riêng từng thứ — một thứ duy nhất, mua một lần, gần như không đổi được ở đâu. Mọi điều dưới đây đều theo sau cái sự thật đơn lẻ ấy, kể cả những phần sẽ thấy bất công lúc bạn cần tới chúng.",
+    ],
+    steps: [
+      {
+        title: "Hiểu rằng bạn đang mua một mặt hàng, không phải hai đơn đặt",
+        body: "Đây là cả hướng dẫn gói trong một bước. NOL World nêu rằng số đêm trong một gói không thể sửa đổi, rằng các ngày nhận và trả phòng ghi trong gói không thể thay đổi, và rằng việc đổi khách sạn không được phép. Cũng không thể thêm đêm lúc mua — các đêm ở thêm là một cuộc trao đổi riêng với khách sạn, theo giá của khách sạn và tùy phòng trống của họ. Và một tài khoản mua được một mặt hàng, nên đây không phải thứ bạn xếp chồng lên nhau.",
+        pitfall:
+          "Đặt gói với ý định dọn các chi tiết sau: tới sớm một ngày, chuyển sang một khách sạn gần một người bạn, cắt một đêm ở cuối. Mỗi điều trong số đó là một lời không đã được ghi rõ.",
+        takes: "15 phút, trước khi bạn trả tiền",
+      },
+      {
+        title: "Hãy chấp nhận rằng bỏ không ở khách sạn thì chẳng hoàn lại gì",
+        body: "Câu hỏi này được hỏi theo hai cách trong phần hỏi đáp của NOL World và nhận cùng một câu trả lời cả hai lần: bạn có thể chọn không ở khách sạn, nhưng việc hoàn tiền cho phần khách sạn thì không có, và đơn đặt không chuyển nhượng được cho người khác. Vậy nên việc ở cùng một người bạn thay vì vậy không chuyển thành tiền trả lại, và cái phòng bạn đã trả tiền không thể trao cho ai khác. Việc dùng một đêm rồi đòi lại phần còn lại cũng bị từ chối — số đêm là cố định.",
+        pitfall:
+          "Coi nửa khách sạn như một khoản đặt cọc mà bạn bỏ đi được. Đó là nửa bạn không bán lại được, không cho đi được và không đòi lại được.",
+        takes: "—",
+      },
+      {
+        title: "Hãy chờ một chỗ ngồi ngẫu nhiên, và chờ biết nó vào đúng ngày",
+        body: "Gói bảo đảm một hạng, không phải một vị trí. NOL World nói rằng chỗ ngồi bên trong các khu và vùng, ngoài hạng bạn đã chọn, được phân một cách ngẫu nhiên — và rằng việc phân chỗ của bạn được hiện ra khi bạn nhận vé tại khách sạn vào ngày diễn. Bạn sẽ không biết mình ngồi đâu cho tới vài giờ trước buổi diễn. Họ cũng chặn luôn câu hỏi tiếp theo hiển nhiên: việc không hài lòng với chỗ ngồi không phải một lý do hoàn tiền, và một khoản phí hủy vẫn có thể được áp.",
+        pitfall:
+          "Lên kế hoạch quanh một vị trí chỗ ngồi — một phía nhất định cho một fan project, một hàng cho một cái ống kính. Hạng mới là lời hứa; phần còn lại là một lần rút thăm bạn thấy trong ngày.",
+        takes: "—",
+      },
+      {
+        title: "Hãy nhận vé ở quầy khách sạn, trực tiếp, trong khung giờ",
+        body: "Chỉ có đúng một cách để lấy những chiếc vé này. NOL World nói việc nhận vé chỉ diễn ra tại quầy vé NOL World nằm trong khách sạn, chỉ trong những giờ được chỉ định, và rằng vé được phát độc quyền cho người đứng tên đơn đặt, người phải tự tới nhận. Khi được hỏi liệu một người đủ điều kiện hưởng giảm giá có thể nhận vé và đi xem thay hay không, câu trả lời của họ là vé chỉ có thể được nhận và dùng bởi người đứng tên đơn đặt, không có ngoại lệ. Nếu bạn trễ những giờ được chỉ định thì câu trả lời đã công bố đơn giản là vé chỉ có trong khoảng thời gian được nêu.",
+        pitfall:
+          "Xếp cả ngày quanh địa điểm diễn. Cái hẹn có tính ràng buộc là ở quầy khách sạn, trong một khung giờ do người khác đặt ra, vào đúng ngày diễn.",
+        takes: "Hãy xây cả ngày quanh nó",
+      },
+      {
+        title: "Hãy mang đúng những giấy tờ mà cái quầy đó thật sự đòi",
+        body: "NOL World rất cụ thể: giấy tờ tùy thân gốc còn hiệu lực của người đứng tên đơn đặt, cộng với bản xác nhận đơn đặt, in ra hoặc để trên điện thoại — và không có những thứ này thì không nhận được vé. Với người không mang quốc tịch Hàn Quốc, giấy tờ được chấp nhận là hộ chiếu hoặc giấy chứng nhận đăng ký người nước ngoài. Người Hàn Quốc có một danh sách dài hơn, gồm thẻ căn cước, giấy phép lái xe, hộ chiếu, thẻ thanh thiếu niên, hoặc một giấy tờ tùy thân điện tử phát hành qua Government 24 hay PASS.",
+        pitfall:
+          "Để hộ chiếu trong tủ an toàn của phòng vì cái quầy nằm trong cùng tòa nhà. Chính giấy tờ gốc mới mở ra chiếc vé, và một bức ảnh của nó thì không có trên danh sách.",
+        takes: "5 phút lúc xếp đồ",
+      },
+      {
+        title: "Với một gói hai người, cả hai người phải có mặt ở quầy",
+        body: "Điều này sắp xếp lại cả một ngày và rất dễ bị bỏ sót. NOL World nói rằng với một gói dành cho hai người, cả người đứng tên đơn đặt và người đi cùng đều phải có mặt để nhận vé — và rằng người đi cùng cũng được yêu cầu xuất trình giấy tờ tùy thân, để xác nhận họ đáp ứng yêu cầu về tuổi để được vào. Vậy nên khung giờ nhận vé là một cái hẹn cho hai người với hai giấy tờ, không phải một việc lặt vặt mà một trong hai người chạy đi làm.",
+        pitfall:
+          "Chia nhau ra trong ngày — một người nhận vé trong khi người kia đi ngắm phố hay xếp hàng mua merch. Cái quầy sẽ không nhả vé cho một người trong hai.",
+        takes: "—",
+      },
+      {
+        title: "Hãy làm cho tên khớp với hộ chiếu một cách chính xác, ngay bây giờ",
+        body: "NOL World trả lời điều này với cả hai hệ quả trong một câu: nếu cái tên khai lúc đặt không khớp với hộ chiếu của bạn thì việc nhận vé và việc nhận phòng khách sạn sẽ không thể thực hiện được. Cả hai nửa của gói, bị chặn bởi cùng một lỗi. Câu hỏi mà họ trả lời nêu ra những thủ phạm thường thấy — một lỗi chính tả, một tên đệm bị thiếu, chữ hoa chữ thường, khoảng trắng. Hãy kiểm tra đơn đặt đối chiếu với chính trang hộ chiếu chứ đừng đối chiếu với ký ức.",
+        pitfall:
+          "Cho rằng một khác biệt nhỏ sẽ được cho qua vì gói đã trả tiền rồi. Việc đã trả tiền không phải thứ đang được kiểm ở cả hai cái quầy.",
+        takes: "10 phút",
+      },
+      {
+        title: "Đừng chờ một email xác nhận khách sạn, vì không có cái nào",
+        body: "Chuyện này gây ra sự hoảng hốt có thể tránh được, nên hãy biết trước. NOL World nói các bản xác nhận đặt phòng khách sạn không được gửi riêng, và rằng nếu việc thanh toán đã thông thì đơn đặt phòng khách sạn là đã xác nhận và có hiệu lực. Hữu ích hơn: chi tiết đơn đặt chỉ được chuyển cho khách sạn khoảng hai tuần trước kỳ lưu trú, nên khách sạn thật sự không tìm thấy bạn trước lúc đó. Nếu bạn gọi sớm hơn và họ chưa từng nghe tới bạn thì đó là trạng thái bình thường đã được ghi rõ.",
+        pitfall:
+          "Đặt một phòng dự phòng, hoặc mua lại cái gói, vì khách sạn nói không có đơn đặt nào khi còn sáu tuần nữa. Chẳng có gì sai cả, và giờ thì có hai đơn đặt.",
+        takes: "2 phút để yên tâm",
+      },
+      {
+        title: "Hãy nhận phòng với tư cách người mua, và đọc các hạng mục nhỏ được bao gồm",
+        body: "Việc nhận phòng khách sạn bị chặn bởi cùng một con người như với vé: NOL World nói việc nhận phòng chỉ có sau khi xác minh danh tính của người đứng tên đơn đặt, nên một người đi cùng không thể nhận phòng trước rồi đợi. Nếu bạn sẽ tới muộn, chỉ dẫn của họ là liên hệ trước với khách sạn — đồng thời cảnh báo rằng điều đó có thể không khả thi tùy khách sạn. Hai điều cụ thể nữa đáng biết trước khi bạn đặt: trẻ vị thành niên không được lưu trú mà không có người giám hộ pháp lý, và bữa sáng không được bao gồm trừ khi gói cụ thể của bạn có nó.",
+        pitfall:
+          "Cử một người bạn tới trước để đặt hành lý và bắt đầu kỳ lưu trú. Cái phòng mở ra theo danh tính của bạn, không theo mã đơn đặt.",
+        takes: "—",
+      },
+      {
+        title: "Nếu có xe đưa đón, hãy coi nó như một chuyến khởi hành không có lần thứ hai",
+        body: "Ở nơi một gói có xe đưa đón, các câu trả lời của NOL World không hề tình cảm. Việc dùng nó là tùy chọn và việc không dùng thì chẳng hoàn lại gì. Không có xe dự phòng, nên tới điểm đón muộn nghĩa là nó đã đi. Một chuyến chỉ về cũng có thể. Một người đi cùng chưa đặt chỗ có thể hỏi người quản lý xe tại chỗ, nhưng số ghế có hạn và không thể bảo đảm. Và cái chi tiết làm hỏng một buổi tối: bạn được mang một chiếc vali lên xe, nhưng chỗ gửi hành lý bên trong xe thì không có một khi bạn tới địa điểm diễn. Điểm và giờ lên xe lúc về được đưa cho bạn khi vé được trao tại khách sạn.",
+        pitfall:
+          "Mang một chiếc vali tới buổi diễn vì cái xe cho nó lên. Ở địa điểm diễn chẳng có đâu để gửi nó, và bạn thì mang nó suốt buổi diễn.",
+        takes: "—",
+      },
+      {
+        title: "Hãy đọc các câu trả lời về hủy đơn trước khi đặt, vì chúng là không",
+        body: "Đây là bước cần coi trọng trong lúc chuyến đi còn là một kế hoạch. NOL World công bố câu trả lời cho hai trường hợp khó nhất và cả hai đều là lời từ chối. Về việc nhiễm bệnh: sau khi mức phân loại nguy cơ COVID-19 được hạ xuống, việc cách ly không còn bắt buộc, và theo đó không có khoản giảm nào cho phí hủy dù bạn bị nhiễm. Về việc có người thân qua đời và việc nhập viện sau một tai nạn: việc hoàn tiền vì các lý do cá nhân là không có, và các phí hủy được áp theo chính sách riêng của từng sản phẩm. Dù điều đó đọc ra là khắc nghiệt hay chỉ là rõ ràng, nó cho bạn biết rủi ro nằm ở đâu — ở bạn, kể từ giây bạn trả tiền. Công cụ được thiết kế để gánh nó là bảo hiểm du lịch mua trước khi khởi hành, và nó thật sự bao những gì thì tùy hợp đồng bạn mua, nên hãy đọc cái văn bản đó chứ đừng giả định.",
+        pitfall:
+          "Gánh rủi ro mà không có bảo hiểm với giả định rằng một lý do đủ nghiêm trọng sẽ được chấp nhận. NOL World đã công bố câu trả lời của họ cho hai lý do nghiêm trọng nhất vốn có.",
+        takes: "30 phút với một hợp đồng bảo hiểm",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi mua gói rồi không dùng khách sạn được không?",
+        a: "Bạn có thể từ chối ở, nhưng NOL World nêu rằng phần khách sạn không hoàn lại được và đơn đặt không thể chuyển cho ai khác. Việc dùng ít đêm hơn số đêm gói có rồi đòi lại phần chênh cũng bị từ chối, bởi số đêm không thể sửa đổi.",
+      },
+      {
+        q: "Tôi kéo dài kỳ lưu trú, rút ngắn nó, dịch ngày, hay đổi khách sạn được không?",
+        a: "Số đêm không thể sửa đổi, các ngày nhận và trả phòng trong gói không thể thay đổi, và việc đổi khách sạn không được phép. Cũng không thể thêm đêm lúc mua — chỉ dẫn của NOL World là liên hệ trực tiếp với khách sạn về phòng trống và giá, và điều đó có thể là không khả thi. Việc nâng hạng phòng cũng vậy: hỏi khách sạn, và trả tiền trực tiếp cho khách sạn lúc tới.",
+      },
+      {
+        q: "Tôi biết chỗ ngồi của mình khi nào?",
+        a: "Khi bạn nhận vé tại khách sạn vào đúng ngày diễn. Gói bảo đảm một hạng; bên trong hạng đó, NOL World phân các khu và các ghế một cách ngẫu nhiên. Việc không vui với kết quả không phải một lý do hoàn tiền.",
+      },
+      {
+        q: "Có ai nhận vé giúp tôi, hay đi xem thay tôi được không?",
+        a: "Không. NOL World nói vé được phát độc quyền cho người đứng tên đơn đặt và phải được nhận trực tiếp, và rằng vé chỉ có thể được nhận và dùng bởi người đứng tên đơn đặt, không có ngoại lệ. Với một gói hai người, cả hai người phải ở quầy, và người đi cùng cũng phải xuất trình giấy tờ tùy thân để tuổi của họ được xác nhận.",
+      },
+      {
+        q: "Tôi chưa nhận được email xác nhận khách sạn.",
+        a: "Không có cái nào cả. NOL World nói các bản xác nhận khách sạn không được gửi riêng, và rằng một lần thanh toán thành công nghĩa là đơn đặt phòng khách sạn đã được xác nhận. Họ cũng nói chi tiết đơn đặt chỉ tới khách sạn khoảng hai tuần trước ngày nhận phòng, nên việc xác nhận trực tiếp chỉ khả thi sau lúc đó.",
+      },
+      {
+        q: "Tôi gọi khách sạn và họ không tìm được đơn đặt của tôi.",
+        a: "Đúng như dự liệu, nếu bạn gọi sớm. NOL World nói chi tiết được gửi cho khách sạn khoảng hai tuần trước kỳ lưu trú và rằng việc xác nhận chỉ khả thi sau lúc đó, và rằng một đơn đặt gói đã hoàn tất đúng cách cùng việc thanh toán nghĩa là đơn đặt khách sạn là chắc chắn. Đừng đặt lại.",
+      },
+      {
+        q: "Tôi dương tính, hoặc gia đình tôi có việc khẩn. Phí hủy có được miễn không?",
+        a: "Câu trả lời đã công bố của NOL World là không, trong cả hai trường hợp. Họ nói rằng khi việc cách ly vì COVID-19 không còn bắt buộc, không có khoản giảm nào được áp cho phí hủy dù bạn bị nhiễm; và rằng việc hoàn tiền vì các lý do cá nhân, bao gồm người thân qua đời hay nhập viện sau một tai nạn, là không có, với các phí được áp theo chính sách của từng sản phẩm. Bảo hiểm du lịch mua trước khi bạn đi là công cụ cho rủi ro này — nó bao những gì thì tùy hợp đồng, nên hãy đọc nó.",
+      },
+      {
+        q: "Tôi có buộc phải dùng xe đưa đón không, và tôi mang vali lên được không?",
+        a: "Nó là tùy chọn, và việc không dùng thì chẳng hoàn lại gì. Một chiếc vali có thể lên xe, nhưng NOL World cảnh báo rằng chỗ gửi hành lý bên trong xe thì không có một khi bạn tới địa điểm diễn — nên một chiếc vali bạn mang là một chiếc vali bạn phải bê. Không có xe dự phòng nếu bạn trễ chuyến khởi hành, và điểm cùng giờ lên xe lúc về được phát ra cùng với vé tại khách sạn.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: สินค้าชิ้นเดียว และแทบไม่มีอะไรในนั้นที่เปลี่ยนได้",
+    summary:
+      "คอนเสิร์ตกับโรงแรมที่ขายรวมเป็นสินค้าชิ้นเดียว คุณเปลี่ยนโรงแรมไม่ได้ เปลี่ยนวันไม่ได้ เปลี่ยนจำนวนคืนไม่ได้ การไม่เข้าพักก็ไม่ได้เงินคืน ที่นั่งเป็นแบบสุ่มและเปิดเผยในวันงาน และตั๋วถูกส่งมอบให้คุณคนเดียว ด้วยตัวคุณเอง ที่โรงแรม ภายในช่วงเวลาหนึ่ง",
+    scope:
+      "หน้านี้ครอบคลุมแพ็กเกจคอนเสิร์ตบวกโรงแรม Play and Stay ของ NOL World ตามที่ NOL World ประกาศไว้ ได้แก่ อะไรที่ตรึงไว้ การรับตั๋วทำอย่างไร ข้อกำหนดเรื่องตัวตนและชื่อ และคำตอบเรื่องการยกเลิกของมันพูดอะไรจริง ๆ แต่ละแพ็กเกจมีนโยบายการยกเลิกและรายการที่รวมอยู่ของตัวเอง และหน้าสินค้าเป็นฝ่ายมีอำนาจ บริการรถรับส่งถูกกล่าวถึงเฉพาะที่แพ็กเกจหนึ่งมีมันอยู่",
+    intro: [
+      "แพ็กเกจดูเหมือนทางเลือกที่ง่าย คือจ่ายครั้งเดียว ได้โรงแรมใกล้สถานที่จัดงาน ได้เกรดที่นั่งที่รับประกัน ไม่ต้องสู้กับคิว สำหรับแฟนต่างชาติที่มีโอกาสเดินทางหนึ่งครั้ง นั่นเป็นการแลกที่น่าดึงดูดจริง ๆ",
+      "มันก็เป็นสินค้าที่แข็งทื่อที่สุดบนแพลตฟอร์มด้วย และความแข็งทื่อนั้นไม่ปรากฏจากหน้าขาย อ่านคำตอบของ NOL World เองเรียงกันเป็นแถวแล้วรูปแบบหนึ่งก็ผุดขึ้น คือแพ็กเกจเป็นสินค้าชิ้นเดียวที่แบ่งไม่ได้ ไม่ใช่ตั๋วใบหนึ่งกับห้องพักหนึ่งห้องที่คุณไปปรับให้ดีที่สุดแยกกัน แต่เป็นของชิ้นเดียว ซื้อครั้งเดียว และเปลี่ยนได้แทบไม่มีที่ไหน ทุกอย่างด้านล่างตามมาจากข้อเท็จจริงข้อเดียวนั้น รวมถึงส่วนที่จะรู้สึกว่าไม่เป็นธรรมในตอนที่คุณต้องใช้มัน",
+    ],
+    steps: [
+      {
+        title: "เข้าใจว่าคุณกำลังซื้อสินค้าชิ้นเดียว ไม่ใช่การจองสองอย่าง",
+        body: "นี่คือทั้งไกด์นี้ในขั้นเดียว NOL World ระบุว่าจำนวนคืนในแพ็กเกจแก้ไขไม่ได้ ว่าวันเช็กอินและเช็กเอาต์ที่ระบุไว้ในแพ็กเกจเปลี่ยนไม่ได้ และว่าการเปลี่ยนโรงแรมไม่ได้รับอนุญาต การเพิ่มคืนตอนซื้อก็ทำไม่ได้ การพักเพิ่มเป็นการคุยแยกกับโรงแรม ในราคาของโรงแรมและขึ้นอยู่กับห้องว่างของเขา และหนึ่งบัญชีซื้อได้หนึ่งชิ้น ดังนั้นนี่ไม่ใช่ของที่คุณเอามาซ้อนกัน",
+        pitfall:
+          "การจองแพ็กเกจโดยตั้งใจจะไปจัดรายละเอียดทีหลัง เช่นมาถึงก่อนหนึ่งวัน ย้ายไปโรงแรมที่ใกล้เพื่อนกว่า ตัดคืนสุดท้ายออก ทุกข้อในนั้นเป็นคำว่าไม่ที่มีบันทึกไว้แล้ว",
+        takes: "15 นาที ก่อนคุณจ่ายเงิน",
+      },
+      {
+        title: "ยอมรับว่าการไม่เข้าพักที่โรงแรมไม่ได้เงินคืนเลย",
+        body: "คำถามนี้ถูกถามสองแบบในหน้าคำถามของ NOL World และได้คำตอบเดียวกันทั้งสองครั้ง คือคุณเลือกจะไม่พักที่โรงแรมได้ แต่การคืนเงินส่วนโรงแรมนั้นไม่มี และการจองโอนให้คนอื่นไม่ได้ ดังนั้นการไปพักกับเพื่อนแทนไม่ได้แปลงเป็นเงินคืน และห้องที่คุณจ่ายไปแล้วก็ยกให้ใครไม่ได้ การใช้หนึ่งคืนแล้วขอคืนส่วนที่เหลือก็ถูกปฏิเสธ เพราะจำนวนคืนถูกตรึงไว้",
+        pitfall:
+          "การถือว่าซีกโรงแรมเป็นเงินมัดจำที่คุณเดินหนีได้ มันคือซีกที่คุณขายต่อไม่ได้ ยกให้ใครไม่ได้ และขอคืนไม่ได้",
+        takes: "—",
+      },
+      {
+        title: "คาดไว้ว่าที่นั่งเป็นแบบสุ่ม และคาดว่าจะรู้มันในวันงาน",
+        body: "แพ็กเกจรับประกันเกรด ไม่ใช่ตำแหน่ง NOL World บอกว่าที่นั่งภายในโซนและส่วนต่าง ๆ นอกเหนือจากหมวดที่คุณเลือกนั้นถูกจัดแบบสุ่ม และว่าการจัดที่นั่งของคุณจะแสดงออกมาตอนที่คุณไปรับตั๋วที่โรงแรมในวันที่มีการแสดง คุณจะไม่รู้ว่าคุณนั่งที่ไหนจนกระทั่งไม่กี่ชั่วโมงก่อนงาน มันยังปิดคำถามต่อเนื่องที่เห็นชัดไว้ด้วย คือการไม่พอใจที่นั่งไม่ใช่เหตุผลขอเงินคืน และค่าธรรมเนียมการยกเลิกอาจถูกเรียกเก็บอยู่ดี",
+        pitfall:
+          "การวางแผนรอบตำแหน่งที่นั่ง เช่นฝั่งหนึ่งฝั่งใดสำหรับโปรเจกต์แฟน หรือแถวหนึ่งสำหรับเลนส์ตัวหนึ่ง เกรดคือคำสัญญา ส่วนที่เหลือคือการจับฉลากที่คุณเห็นในวันงาน",
+        takes: "—",
+      },
+      {
+        title: "รับตั๋วที่เคาน์เตอร์โรงแรม ด้วยตัวเอง ภายในช่วงเวลาที่กำหนด",
+        body: "มีวิธีเดียวเท่านั้นในการได้ตั๋วเหล่านี้ NOL World บอกว่าการรับตั๋วทำได้เฉพาะที่เคาน์เตอร์ตั๋ว NOL World ซึ่งตั้งอยู่ในโรงแรม เฉพาะในชั่วโมงที่กำหนดไว้ และว่าตั๋วออกให้เฉพาะผู้ถือการจอง ซึ่งต้องมารับด้วยตัวเอง เมื่อถูกถามว่าคนที่มีสิทธิ์ได้ส่วนลดจะมารับและเข้าชมแทนได้ไหม คำตอบของมันคือตั๋วรับและใช้ได้โดยผู้ถือการจองเท่านั้น ไม่มีข้อยกเว้น ถ้าคุณพลาดชั่วโมงที่กำหนด คำตอบที่ประกาศไว้ก็เพียงว่าตั๋วมีให้เฉพาะในช่วงเวลาที่ระบุ",
+        pitfall:
+          "การจัดตารางทั้งวันรอบสถานที่จัดงาน นัดที่ผูกพันคุณอยู่ที่เคาน์เตอร์โรงแรม ในช่วงเวลาที่คนอื่นกำหนด ในวันที่มีการแสดง",
+        takes: "สร้างทั้งวันขึ้นรอบมัน",
+      },
+      {
+        title: "เอาเอกสารที่เคาน์เตอร์เรียกจริงไปด้วย",
+        body: "NOL World เจาะจงไว้ว่า ต้องมีเอกสารแสดงตัวตนฉบับจริงที่ยังไม่หมดอายุของผู้ถือการจอง บวกกับใบยืนยันการจองที่พิมพ์ออกมาหรืออยู่บนโทรศัพท์ และถ้าไม่มีสิ่งเหล่านี้ก็รับตั๋วไม่ได้ สำหรับผู้ที่ไม่ใช่สัญชาติเกาหลี เอกสารที่รับคือหนังสือเดินทางหรือใบรับรองการลงทะเบียนคนต่างด้าว ส่วนผู้ถือสัญชาติเกาหลีมีรายการที่ยาวกว่า รวมถึงบัตรประจำตัวประชาชน ใบขับขี่ หนังสือเดินทาง บัตรเยาวชน หรือบัตรประจำตัวบนมือถือที่ออกผ่าน Government 24 หรือ PASS",
+        pitfall:
+          "การเก็บหนังสือเดินทางไว้ในตู้เซฟในห้องเพราะเคาน์เตอร์อยู่ในตึกเดียวกัน เอกสารฉบับจริงคือสิ่งที่เปิดตั๋วให้ และรูปถ่ายของมันไม่อยู่ในรายการ",
+        takes: "5 นาทีตอนจัดกระเป๋า",
+      },
+      {
+        title: "สำหรับแพ็กเกจสองคน ทั้งสองคนต้องอยู่ที่เคาน์เตอร์",
+        body: "ข้อนี้จัดวันใหม่ทั้งวันและพลาดได้ง่าย NOL World บอกว่าสำหรับแพ็กเกจสำหรับสองคน ทั้งผู้ถือการจองและผู้ร่วมเดินทางต้องมาอยู่ด้วยเพื่อรับตั๋ว และว่าผู้ร่วมเดินทางต้องแสดงเอกสารแสดงตัวตนด้วย เพื่อยืนยันว่าเขาเข้าเกณฑ์อายุสำหรับการเข้าชม ดังนั้นช่วงเวลารับตั๋วคือนัดของคนสองคนกับเอกสารสองใบ ไม่ใช่งานจรที่คนหนึ่งในสองวิ่งไปทำได้",
+        pitfall:
+          "การแยกกันในวันงาน คือคนหนึ่งไปรับตั๋วขณะที่อีกคนไปเที่ยวหรือต่อคิวซื้อของ เคาน์เตอร์จะไม่ปล่อยตั๋วให้คนเดียวในสองคน",
+        takes: "—",
+      },
+      {
+        title: "ทำให้ชื่อตรงกับหนังสือเดินทางอย่างเป๊ะ ตั้งแต่ตอนนี้",
+        body: "NOL World ตอบเรื่องนี้ด้วยผลที่ตามมาทั้งสองข้อในประโยคเดียว คือถ้าชื่อที่ให้ไว้ตอนจองไม่ตรงกับหนังสือเดินทางของคุณ การรับตั๋วและการเช็กอินโรงแรมจะทำไม่ได้ สองซีกของแพ็กเกจ ถูกปิดด้วยความผิดพลาดเดียวกัน คำถามที่มันตอบระบุตัวการที่พบบ่อยไว้ด้วย คือการสะกดผิด ชื่อกลางที่หายไป ตัวพิมพ์ใหญ่เล็ก ช่องว่าง ตรวจการจองเทียบกับหน้าหนังสือเดินทางเองเลย ไม่ใช่เทียบกับความจำ",
+        pitfall:
+          "การเหมาว่าความต่างเล็ก ๆ จะถูกโบกมือให้ผ่านเพราะแพ็กเกจจ่ายเงินไปแล้ว การจ่ายเงินไม่ใช่สิ่งที่ถูกตรวจที่เคาน์เตอร์ไหนทั้งสองที่",
+        takes: "10 นาที",
+      },
+      {
+        title: "อย่ารออีเมลยืนยันจากโรงแรม เพราะไม่มีฉบับนั้น",
+        body: "เรื่องนี้ทำให้ตื่นตระหนกแบบที่เลี่ยงได้ ดังนั้นรู้ไว้ล่วงหน้า NOL World บอกว่าใบยืนยันการจองโรงแรมไม่ได้ถูกส่งแยกออกมา และว่าถ้าการชำระเงินผ่านแล้ว การจองโรงแรมก็ได้รับการยืนยันและมีผล และที่ใช้ประโยชน์ได้มากกว่านั้น คือรายละเอียดการจองถูกส่งต่อให้โรงแรมประมาณสองสัปดาห์ก่อนการเข้าพัก ดังนั้นโรงแรมหาคุณไม่เจอก่อนหน้านั้นจริง ๆ ถ้าคุณโทรไปก่อนและเขาไม่เคยได้ยินชื่อคุณ นั่นคือสภาพปกติที่มีบันทึกไว้",
+        pitfall:
+          "การจองห้องสำรองหรือซื้อแพ็กเกจใหม่เพราะโรงแรมบอกว่าไม่มีการจองตอนที่ยังเหลืออีกหกสัปดาห์ ไม่มีอะไรผิด และตอนนี้ก็มีการจองสองรายการ",
+        takes: "2 นาทีเพื่อความสบายใจ",
+      },
+      {
+        title: "เช็กอินในฐานะผู้ซื้อ และอ่านรายการเล็ก ๆ ที่รวมอยู่",
+        body: "การเช็กอินโรงแรมถูกกั้นด้วยคนคนเดียวกับตั๋ว NOL World บอกว่าการเช็กอินทำได้เฉพาะเมื่อยืนยันตัวตนของผู้ถือการจองแล้ว ดังนั้นผู้ร่วมเดินทางจะเช็กอินก่อนแล้วนั่งรอไม่ได้ ถ้าคุณจะมาถึงดึก คำแนะนำของมันคือติดต่อโรงแรมล่วงหน้า ขณะเดียวกันก็เตือนว่ามันอาจทำไม่ได้ขึ้นกับโรงแรม มีอีกสองข้อเจาะจงที่ควรรู้ก่อนจอง คือผู้เยาว์พักไม่ได้หากไม่มีผู้ปกครองตามกฎหมาย และอาหารเช้าไม่ได้รวมอยู่เว้นแต่แพ็กเกจของคุณจะรวมมันไว้",
+        pitfall:
+          "การส่งเพื่อนไปก่อนเพื่อเอากระเป๋าไปวางและเริ่มการเข้าพัก ห้องเปิดด้วยตัวตนของคุณ ไม่ใช่ด้วยเลขอ้างอิงการจอง",
+        takes: "—",
+      },
+      {
+        title: "ถ้ามีรถรับส่ง ให้ถือว่ามันคือการออกเดินทางครั้งเดียวที่ไม่มีโอกาสที่สอง",
+        body: "ในกรณีที่แพ็กเกจรวมรถรับส่งไว้ คำตอบของ NOL World ไม่มีความเอ็นดูเลย การใช้มันเป็นทางเลือก และการไม่ใช้ก็ไม่ได้เงินคืน ไม่มีรถสำรอง ดังนั้นการมาถึงจุดรับสาย หมายความว่ามันไปแล้ว รถเที่ยวกลับอย่างเดียวก็เป็นไปได้ ผู้ร่วมเดินทางที่ไม่ได้จองสามารถสอบถามผู้จัดการรถรับส่งที่หน้างานได้ แต่ที่นั่งมีจำกัดและรับประกันไม่ได้ และรายละเอียดที่ทำลายค่ำคืนหนึ่งได้ คือคุณเอากระเป๋าขึ้นรถได้ แต่ที่เก็บสัมภาระในรถไม่มีให้ใช้เมื่อคุณถึงสถานที่จัดงานแล้ว จุดและเวลาขึ้นรถเที่ยวกลับจะถูกบอกคุณตอนที่ตั๋วถูกส่งมอบที่โรงแรม",
+        pitfall:
+          "การเอากระเป๋าเดินทางไปคอนเสิร์ตเพราะรถให้เอาขึ้นได้ ที่สถานที่จัดงานไม่มีที่ให้ฝากมัน และคุณก็ต้องแบกมันผ่านงานไปทั้งงาน",
+        takes: "—",
+      },
+      {
+        title: "อ่านคำตอบเรื่องการยกเลิกก่อนจอง เพราะคำตอบคือไม่",
+        body: "นี่คือขั้นที่ต้องเอาจริงตอนที่ทริปยังเป็นแค่แผน NOL World ประกาศคำตอบของสองกรณีที่ยากที่สุดไว้ และทั้งสองเป็นการปฏิเสธ เรื่องการติดเชื้อ หลังการลดระดับการจัดชั้นความเสี่ยงของ COVID-19 การกักตัวไม่ใช่ข้อบังคับอีก และตามนั้นจึงไม่มีการลดค่าธรรมเนียมการยกเลิกแม้คุณจะติดเชื้อ เรื่องการสูญเสียคนในครอบครัวและการเข้าโรงพยาบาลหลังอุบัติเหตุ การคืนเงินด้วยเหตุผลส่วนตัวนั้นไม่มี และค่าธรรมเนียมการยกเลิกใช้ตามนโยบายของสินค้าแต่ละชิ้นเอง ไม่ว่าจะอ่านว่าแข็งกระด้างหรือเพียงแค่ชัดเจน มันก็บอกคุณว่าความเสี่ยงอยู่ที่ไหน คืออยู่ที่คุณ นับจากวินาทีที่คุณจ่าย เครื่องมือที่ออกแบบมาแบกมันคือประกันการเดินทางที่ทำไว้ก่อนออกเดินทาง และมันคุ้มครองอะไรจริงขึ้นกับกรมธรรม์ที่คุณซื้อ ดังนั้นอ่านเอกสารนั้น อย่าเหมาเอา",
+        pitfall:
+          "การแบกความเสี่ยงไว้โดยไม่มีประกัน บนสมมติฐานว่าเหตุผลที่หนักพอจะได้รับการยอมรับ NOL World ประกาศคำตอบของตัวเองต่อสองเหตุผลที่หนักที่สุดที่มีไว้แล้ว",
+        takes: "30 นาทีกับกรมธรรม์ประกันหนึ่งฉบับ",
+      },
+    ],
+    faq: [
+      {
+        q: "ฉันซื้อแพ็กเกจแล้วไม่ใช้โรงแรมได้ไหม",
+        a: "คุณปฏิเสธการเข้าพักได้ แต่ NOL World ระบุว่าส่วนโรงแรมคืนเงินไม่ได้และการจองโอนให้ใครไม่ได้ การใช้คืนน้อยกว่าที่แพ็กเกจมีแล้วขอส่วนต่างคืนก็ถูกปฏิเสธ เพราะจำนวนคืนแก้ไขไม่ได้",
+      },
+      {
+        q: "ฉันต่อวันพัก ย่อวันพัก เลื่อนวัน หรือเปลี่ยนโรงแรมได้ไหม",
+        a: "จำนวนคืนแก้ไขไม่ได้ วันเช็กอินและเช็กเอาต์ในแพ็กเกจเปลี่ยนไม่ได้ และการเปลี่ยนโรงแรมไม่ได้รับอนุญาต การเพิ่มคืนตอนซื้อก็ทำไม่ได้ คำแนะนำของ NOL World คือติดต่อโรงแรมโดยตรงเรื่องห้องว่างและราคา และมันอาจทำไม่ได้ การอัปเกรดห้องก็เหมือนกัน คือถามโรงแรม และจ่ายกับโรงแรมโดยตรงตอนไปถึง",
+      },
+      {
+        q: "ฉันจะรู้ที่นั่งของฉันเมื่อไร",
+        a: "ตอนที่คุณไปรับตั๋วที่โรงแรมในวันที่มีการแสดง แพ็กเกจรับประกันเกรด ภายในเกรดนั้น NOL World จัดโซนและที่นั่งแบบสุ่ม การไม่พอใจผลลัพธ์ไม่ใช่เหตุผลขอเงินคืน",
+      },
+      {
+        q: "ให้คนอื่นไปรับตั๋วแทน หรือไปชมแทนฉันได้ไหม",
+        a: "ไม่ได้ NOL World บอกว่าตั๋วออกให้เฉพาะผู้ถือการจองและต้องรับด้วยตัวเอง และว่าตั๋วรับและใช้ได้โดยผู้ถือการจองเท่านั้น ไม่มีข้อยกเว้น สำหรับแพ็กเกจสองคน ทั้งสองคนต้องอยู่ที่เคาน์เตอร์ และผู้ร่วมเดินทางต้องแสดงเอกสารแสดงตัวตนด้วยเพื่อให้ยืนยันอายุได้",
+      },
+      {
+        q: "ฉันไม่ได้รับอีเมลยืนยันจากโรงแรม",
+        a: "ไม่มีฉบับนั้น NOL World บอกว่าใบยืนยันจากโรงแรมไม่ได้ถูกส่งแยก และว่าการชำระเงินที่สำเร็จหมายถึงการจองโรงแรมได้รับการยืนยันแล้ว มันยังบอกว่ารายละเอียดการจองไปถึงโรงแรมประมาณสองสัปดาห์ก่อนเช็กอิน ดังนั้นการยืนยันกับโรงแรมโดยตรงทำได้หลังจากนั้นเท่านั้น",
+      },
+      {
+        q: "ฉันโทรหาโรงแรมแล้วเขาหาการจองของฉันไม่เจอ",
+        a: "คาดไว้แล้ว ถ้าคุณโทรเร็ว NOL World บอกว่ารายละเอียดถูกส่งให้โรงแรมประมาณสองสัปดาห์ก่อนการเข้าพัก และว่าการยืนยันทำได้หลังจากนั้นเท่านั้น และว่าการจองแพ็กเกจที่ทำครบถ้วนพร้อมการชำระเงินหมายถึงการจองโรงแรมมั่นคงแล้ว อย่าจองใหม่",
+      },
+      {
+        q: "ฉันตรวจพบเชื้อ หรือมีเหตุฉุกเฉินในครอบครัว ค่าธรรมเนียมการยกเลิกจะถูกยกเว้นไหม",
+        a: "คำตอบที่ NOL World ประกาศไว้คือไม่ ทั้งสองกรณี มันบอกว่าเมื่อการกักตัวจาก COVID-19 ไม่ใช่ข้อบังคับอีก จึงไม่มีการลดค่าธรรมเนียมการยกเลิกแม้คุณจะติดเชื้อ และว่าการคืนเงินด้วยเหตุผลส่วนตัว รวมถึงการสูญเสียคนในครอบครัวหรือการเข้าโรงพยาบาลหลังอุบัติเหตุ นั้นไม่มี โดยค่าธรรมเนียมใช้ตามนโยบายของสินค้าแต่ละชิ้น ประกันการเดินทางที่ซื้อก่อนคุณเดินทางคือกลไกสำหรับความเสี่ยงนี้ มันคุ้มครองอะไรขึ้นกับกรมธรรม์ ดังนั้นอ่านมัน",
+      },
+      {
+        q: "ฉันต้องใช้รถรับส่งไหม และเอากระเป๋าเดินทางขึ้นได้ไหม",
+        a: "มันเป็นทางเลือก และการไม่ใช้ก็ไม่ได้เงินคืน กระเป๋าขึ้นรถได้ แต่ NOL World เตือนว่าที่เก็บสัมภาระในรถไม่มีให้ใช้เมื่อคุณถึงสถานที่จัดงานแล้ว ดังนั้นกระเป๋าที่คุณเอาไปคือกระเป๋าที่คุณต้องแบก ไม่มีรถสำรองถ้าคุณพลาดเวลาออก และจุดกับเวลาขึ้นรถเที่ยวกลับจะถูกแจกมาพร้อมตั๋วที่โรงแรม",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: isang produkto, at halos walang mapapalitan dito",
+    summary:
+      "Isang konsiyerto at isang hotel na ipinagbibili bilang isang bagay. Hindi mo mapapalitan ang hotel, ang petsa o ang bilang ng gabi, walang naibabalik sa paglagpas sa hotel, random ang upuan at ibinubunyag sa araw mismo, at sa iyo lamang iniaabot ang tiket, nang harapan, sa hotel, sa loob ng isang bintana.",
+    scope:
+      "Sakop nito ang mga paketeng konsiyerto-at-hotel na Play and Stay ng NOL World gaya ng idinodokumento ng NOL World: ano ang nakapirmi, paano kinokolekta ang tiket, ang kailangan sa pagkakakilanlan at pangalan, at ano talaga ang sinasabi ng mga sagot nito tungkol sa pagkansela. May sariling patakaran sa pagkansela at sariling kasama ang bawat pakete, at ang pahina ng produkto ang nananaig. Nababanggit ang serbisyong shuttle lamang kung saan may isa ang isang pakete.",
+    intro: [
+      "Mukhang madaling pili ang isang pakete: isang bayad, isang hotel na malapit sa venue, isang garantisadong grado ng upuan, walang pakikipagbuno sa pila. Para sa tagahangang nasa ibang bansa na may isang tiyansa lamang sa isang paglalakbay, tunay na nakakahikayat na palitan iyon.",
+      "Ito rin ang pinakamatigas na produkto sa plataporma, at hindi hayag ang tigas na iyon sa listing. Basahin ang sariling sagot ng NOL World nang sunod-sunod at may padrong lumilitaw: isang bagay na hindi mahahati ang pakete. Hindi isang tiket at isang kuwarto sa hotel na ayos mong iisa-isahin — isang bagay, binili nang minsan, halos walang mapapalitan. Lahat ng nasa ibaba ay nagmumula sa isang katotohanang iyon, kasama ang mga bahaging mukhang hindi patas kapag kailangan mo sila.",
+    ],
+    steps: [
+      {
+        title: "Unawain na isang bagay ang binibili mo, hindi dalawang booking",
+        body: "Ito ang buong gabay sa isang hakbang. Isinasaad ng NOL World na hindi mababago ang bilang ng gabi sa isang pakete, na hindi mapapalitan ang petsa ng check-in at check-out na nakasaad sa pakete, at na hindi pinapayagan ang pagpapalit ng hotel. Hindi rin makadadagdag ng gabi sa pagbili — hiwalay na usapan sa hotel ang karagdagang pananatili, sa presyo ng hotel at nakasalalay sa bakante nito. At isang bagay ang nabibili ng isang account, kaya hindi ito bagay na pinapatong-patong mo.",
+        pitfall:
+          "Ang pag-book ng pakete na nagbabalak linisin ang detalye mamaya: dumating nang isang araw na mas maaga, lumipat sa hotel na mas malapit sa isang kaibigan, bawasan ng isang gabi ang dulo. Nadokumentong hindi ang bawat isa sa mga iyon.",
+        takes: "15 minuto, bago ka magbayad",
+      },
+      {
+        title: "Tanggapin na walang naibabalik sa paglagpas sa hotel",
+        body: "Itinatanong ito sa dalawang paraan sa FAQ ng NOL World at pareho ang sagot sa dalawa: puwede kang piliing hindi manatili sa hotel, ngunit walang refund para sa bahaging hotel, at hindi mailipat ang reserbasyon sa ibang tao. Kaya ang pananatili sa isang kaibigan ay hindi nagiging salaping ibinabalik, at hindi maiaabot kaninuman ang kuwartong binayaran mo. Tinatanggihan rin ang paggamit sa isang gabi at pagbawi sa iba pa — nakapirmi ang bilang ng gabi.",
+        pitfall:
+          "Ang pagturing sa kalahating hotel bilang isang depositong puwedeng lakarang iwan. Ito ang kalahating hindi mo mabibili-muli, hindi maibibigay at hindi mababawi.",
+        takes: "—",
+      },
+      {
+        title: "Asahan ang random na upuan, at asahang malalaman ito sa araw mismo",
+        body: "Grado ang ginagarantiya ng pakete, hindi lokasyon. Sinasabi ng NOL World na random na itinatakda ang upuan sa loob ng mga seksiyon at zona bukod sa piniling kategorya mo — at na ipinapakita ang itinakdang upuan mo kapag kinuha mo ang tiket sa hotel sa araw ng pagtatanghal. Hindi mo malalaman kung saan ka nakaupo hanggang sa ilang oras bago ang palabas. Isinasara rin nito ang hayag na susunod na tanong: hindi dahilan ng refund ang hindi pagkasiya sa upuan, at puwede pa ring ipataw ang bayad sa pagkansela.",
+        pitfall:
+          "Ang pagplano sa paligid ng puwesto ng upuan — isang partikular na panig para sa isang fan project, isang hanay para sa isang lente. Ang grado ang pangako; ang iba pa ay isang bunot na nakikita mo sa araw.",
+        takes: "—",
+      },
+      {
+        title: "Kunin sa desk ng hotel, nang harapan, sa loob ng bintana",
+        body: "Isa lamang talaga ang paraan para makuha ang mga tiket na ito. Sinasabi ng NOL World na ang pagkuha ay sa desk ng tiket ng NOL World na nasa hotel lamang, sa loob lamang ng itinakdang oras, at na ang tiket ay inilalabas nang eksklusibo sa may hawak ng reserbasyon, na dapat kumuha nito nang harapan. Nang tanungin kung makakakuha at makakadalo kaya sa halip ang isang karapat-dapat sa diskuwento, ang sagot nito ay makukuha at magagamit lamang ang tiket ng may hawak ng reserbasyon, walang eksempsiyon. Kung malagpasan ang itinakdang oras, ang inilathalang sagot ay simpleng mayroon lamang ang tiket sa loob ng tinukoy na panahon.",
+        pitfall:
+          "Ang pag-iskedyul ng araw sa paligid ng venue. Nasa desk ng hotel ang umuubligang tipanan, sa isang bintanang itinakda ng iba, sa araw ng palabas.",
+        takes: "Itayo ang araw sa paligid nito",
+      },
+      {
+        title: "Dalhin ang mga dokumentong talagang hinihingi ng desk",
+        body: "Tiyak ang NOL World: ang balido at orihinal na ID ng may hawak ng reserbasyon, kasama ang kumpirmasyon ng reserbasyon na naka-print o nasa telepono — at kung wala ang mga ito ay hindi makukuha ang tiket. Para sa hindi Koreanong mamamayan, ang tinatanggap na ID ay pasaporte o sertipiko ng pagpapatala ng dayuhan. May mas mahabang listahan ang mga Koreanong mamamayan, kasama ang resident registration card, lisensiya sa pagmamaneho, pasaporte, youth ID o isang mobile ID na inilabas sa pamamagitan ng Government 24 o PASS.",
+        pitfall:
+          "Ang pag-iwan sa pasaporte sa safe ng kuwarto dahil nasa parehong gusali ang desk. Ang orihinal na ID ang nagbubukas sa tiket, at wala sa listahan ang isang larawan nito.",
+        takes: "5 minuto ng pag-impake",
+      },
+      {
+        title: "Para sa paketeng pandalawahan, dapat nasa desk kayong dalawa",
+        body: "Inaayos nitong muli ang isang buong araw at madali itong malampasan. Sinasabi ng NOL World na para sa paketeng para sa dalawa, dapat naroon ang may hawak ng reserbasyon at ang kasama para kunin ang tiket — at na hinihingi rin sa kasamang magpakita ng pagkakakilanlan, para kumpirmahin na natutugunan niya ang kailangang edad para makapasok. Kaya ang bintana ng pagkuha ay tipanan para sa dalawang tao na may dalawang ID, hindi isang utos na kayang tapusin ng isa sa inyo.",
+        pitfall:
+          "Ang paghihiwalay sa araw mismo — isa ang kumukuha ng tiket habang namamasyal o nakapila sa merch ang isa. Hindi ilalabas ng desk ang tiket sa isa lamang sa inyo.",
+        takes: "—",
+      },
+      {
+        title: "Itugma ang pangalan sa pasaporte nang eksakto, ngayon",
+        body: "Sinasagot ito ng NOL World na may dalawang kahihinatnan sa isang pangungusap: kung hindi tumutugma sa pasaporte mo ang pangalang ibinigay sa pag-book, hindi magiging posible ang pagkuha ng tiket at ang check-in sa hotel. Kapwa kalahati ng pakete, naharang ng parehong mali. Pinapangalanan ng tanong na sinasagot nito ang karaniwang salarin — isang maling baybay, isang nawawalang panggitnang pangalan, ang laki ng titik, ang espasyo. Tingnan ang booking laban sa pahina mismo ng pasaporte kaysa laban sa alaala.",
+        pitfall:
+          "Ang pag-aakalang papapasahin ang maliit na pagkakaiba dahil bayad na ang pakete. Hindi ang pagiging bayad ang tinitingnan sa alinmang counter.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Huwag hintayin ang email ng kumpirmasyon ng hotel, dahil wala nito",
+        body: "Nagdudulot ito ng pag-aalalang maiiwasan, kaya alamin ito nang maaga. Sinasabi ng NOL World na hindi ipinapadala nang hiwalay ang kumpirmasyon ng reserbasyon sa hotel, at na kung dumaan ang bayad ay kumpirmado at balido ang reserbasyon sa hotel. Mas kapaki-pakinabang: ipinapasa lamang ang detalye ng reserbasyon sa hotel mga dalawang linggo bago ang pananatili, kaya talagang hindi ka mahahanap ng hotel bago iyon. Kung tatawag ka nang mas maaga at hindi ka nila kilala, iyon ang nadokumentong normal na kalagayan.",
+        pitfall:
+          "Ang pag-book ng pangalawang kuwarto, o ang muling pagbili ng pakete, dahil sinasabi ng hotel na walang reserbasyon anim na linggo bago. Walang maling nangyari, at mayroon na ngayong dalawang booking.",
+        takes: "2 minuto ng panatag",
+      },
+      {
+        title: "Mag-check in bilang ang bumili, at basahin ang maliliit na kasama",
+        body: "Nakasalalay sa parehong tao ang check-in sa hotel gaya ng tiket: sinasabi ng NOL World na mayroon lamang ang check-in sa pagpapatunay sa pagkakakilanlan ng may hawak ng reserbasyon, kaya hindi makakapag-check in nang una ang kasama at maghintay. Kung darating kang huli, ang bilin nito ay makipag-ugnayan sa hotel nang patiuna — habang nagbababalang maaaring hindi ito posible depende sa hotel. Dalawang tiyak pang bagay na mabuting malaman bago ka mag-book: hindi makakapanatili ang menor de edad nang walang legal na tagapag-alaga, at hindi kasama ang agahan maliban kung kasama ito sa partikular na pakete mo.",
+        pitfall:
+          "Ang pagpapauna sa isang kaibigan para ihulog ang bagahe at simulan ang pananatili. Sa pagkakakilanlan mo bumubukas ang kuwarto, hindi sa sanggunian ng booking.",
+        takes: "—",
+      },
+      {
+        title: "Kung may shuttle, ituring itong isang pag-alis na walang pangalawang tiyansa",
+        body: "Kung saan may kasamang shuttle ang isang pakete ay walang damdamin ang mga sagot ng NOL World. Opsiyonal ang paggamit nito at walang naibabalik sa hindi paggamit. Walang pang-reserbang sasakyan, kaya ang pagdating nang huli sa sakayan ay nangangahulugang umalis na ito. Posible ang shuttle na pabalik lamang. Makakatanong ang kasamang hindi nag-book sa namamahala ng shuttle sa lugar, ngunit limitado ang upuan at hindi ito magagarantiya. At ang detalyeng sumisira ng isang gabi: puwede kang magdala ng maleta sa bus, ngunit walang imbakan ng bagahe sa loob ng bus kapag nakarating ka na sa venue. Ibinibigay sa iyo ang sakayan at oras ng pagbalik kapag iniaabot ang tiket sa hotel.",
+        pitfall:
+          "Ang pagdala ng maleta sa konsiyerto dahil pinayagan ito ng bus. Sa venue ay wala kang pag-iiwanan nito, at dala-dala mo ito sa buong palabas.",
+        takes: "—",
+      },
+      {
+        title: "Basahin ang mga sagot sa pagkansela bago mag-book, dahil hindi ang sagot",
+        body: "Ito ang hakbang na seseryosohin habang plano pa lamang ang paglalakbay. Naglalathala ang NOL World ng sagot sa dalawang pinakamahirap na kaso at pagtanggi ang dalawa. Sa impeksiyon: matapos ibaba ang pag-uuri ng panganib ng COVID-19, hindi na sapilitan ang kuwarentenas, at dahil doon ay walang ibinababa sa bayad sa pagkansela kahit nahawa ka. Sa pagkamatay ng kaanak at sa pagka-ospital matapos ang isang aksidente: walang refund para sa personal na dahilan, at nauukol ang bayad sa pagkansela ayon sa sariling patakaran ng bawat produkto. Mabasa man iyon bilang mabagsik o bilang malinaw lamang, sinasabi nito sa iyo kung saan nakaupo ang panganib — sa iyo, mula sa sandaling magbayad ka. Ang kasangkapang idinisenyo para taglayin ito ay segurong panlakbay na kinuha bago umalis, at ang talagang sakop nito ay nakadepende sa polisang binili mo, kaya basahin ang dokumentong iyon kaysa ipagpalagay ito.",
+        pitfall:
+          "Ang pagtaglay sa panganib nang walang seguro sa pag-aakalang tatanggapin ang isang sapat na mabigat na dahilan. Inilathala na ng NOL World ang sagot nito sa dalawang pinakamabigat na dahilang mayroon.",
+        takes: "30 minuto kasama ang isang polisa ng seguro",
+      },
+    ],
+    faq: [
+      {
+        q: "Puwede ko bang bilhin ang pakete at hindi gamitin ang hotel?",
+        a: "Puwede kang tumangging manatili, ngunit isinasaad ng NOL World na hindi maibabalik ang bahaging hotel at hindi mailipat ang reserbasyon kaninuman. Tinatanggihan rin ang paggamit ng mas kaunting gabi kaysa sa taglay ng pakete at ang pagbawi sa kaibahan, dahil hindi mababago ang bilang ng gabi.",
+      },
+      {
+        q: "Puwede ko bang pahabain ang pananatili, paikliin ito, igalaw ang petsa, o palitan ang hotel?",
+        a: "Hindi mababago ang bilang ng gabi, hindi mapapalitan ang petsa ng check-in at check-out sa pakete, at hindi pinapayagan ang pagpapalit ng hotel. Hindi rin makadadagdag ng gabi sa pagbili — ang bilin ng NOL World ay makipag-ugnayan nang tuwiran sa hotel tungkol sa bakante at presyo, at maaaring hindi ito posible. Gayon din ang pag-upgrade ng kuwarto: tanungin ang hotel, at magbayad nang tuwiran sa hotel sa pagdating.",
+      },
+      {
+        q: "Kailan ko malalaman ang upuan ko?",
+        a: "Kapag kinuha mo ang tiket sa hotel sa araw ng pagtatanghal. Grado ang ginagarantiya ng pakete; sa loob ng gradong iyon ay random na itinatakda ng NOL World ang mga seksiyon at upuan. Hindi dahilan ng refund ang hindi pagkasiya sa kinalabasan.",
+      },
+      {
+        q: "May iba bang makakakuha ng tiket para sa akin, o makakadalo sa lugar ko?",
+        a: "Wala. Sinasabi ng NOL World na inilalabas ang tiket nang eksklusibo sa may hawak ng reserbasyon at kailangan itong kunin nang harapan, at na makukuha at magagamit lamang ito ng may hawak ng reserbasyon, walang eksempsiyon. Para sa paketeng pandalawahan ay dapat nasa desk ang dalawang tao, at dapat magpakita rin ng ID ang kasama para makumpirma ang edad niya.",
+      },
+      {
+        q: "Wala akong natanggap na email ng kumpirmasyon ng hotel.",
+        a: "Wala nito. Sinasabi ng NOL World na hindi ipinapadala nang hiwalay ang kumpirmasyon ng hotel, at na ang matagumpay na bayad ay nangangahulugang kumpirmado ang reserbasyon sa hotel. Sinasabi rin nitong narating ng detalye ng reserbasyon ang hotel mga dalawang linggo lamang bago ang check-in, kaya posible ang tuwirang kumpirmasyon matapos lamang iyon.",
+      },
+      {
+        q: "Tumawag ako sa hotel at hindi nila mahanap ang booking ko.",
+        a: "Inaasahan, kung tumawag ka nang maaga. Sinasabi ng NOL World na ipinapadala ang detalye sa hotel mga dalawang linggo bago ang pananatili at na posible lamang ang kumpirmasyon matapos iyon, at na ang maayos na natapos na reserbasyon at bayad sa pakete ay nangangahulugang ligtas ang booking sa hotel. Huwag mag-book muli.",
+      },
+      {
+        q: "Nagpositibo ako, o nagkaroon ng emerhensiya sa pamilya. Aalisin ba ang bayad sa pagkansela?",
+        a: "Hindi ang inilathalang sagot ng NOL World sa dalawang kaso. Sinasabi nitong sa hindi na sapilitang kuwarentenas para sa COVID-19 ay walang ibinababa sa bayad sa pagkansela kahit nahawa ka; at na walang refund para sa personal na dahilan, kasama ang pagkamatay ng kaanak o ang pagka-ospital matapos ang isang aksidente, at nauukol ang bayad ayon sa patakaran ng bawat produkto. Ang segurong panlakbay na binili bago ka lumakbay ang mekanismo para sa panganib na ito — ang sakop nito ay nakadepende sa polisa, kaya basahin ito.",
+      },
+      {
+        q: "Kailangan ko bang gamitin ang shuttle, at puwede ba akong magdala ng maleta dito?",
+        a: "Opsiyonal ito, at walang naibabalik sa hindi paggamit. Puwedeng sumama ang maleta sa bus, ngunit nagbababala ang NOL World na walang imbakan ng bagahe sa loob ng bus kapag narating mo na ang venue — kaya ang maletang dinala mo ay maletang dala-dala mo. Walang pang-reserbang sasakyan kung malampasan mo ang pag-alis, at ibinibigay ang sakayan at oras ng pagbalik kasama ang tiket sa hotel.",
+      },
+    ],
+    labels: FIL_LABELS,
   },
 ];
 
@@ -13719,6 +19478,27 @@ export function translationsFor(slug: string): Translation[] {
   return translations.filter((t) => t.slug === slug);
 }
 
+/** Every translated guide in one language, in the English editorial order. */
+export function translationsIn(locale: Locale): Translation[] {
+  const order = new Map(guides.map((g, i) => [g.slug, i]));
+  return translations
+    .filter((t) => t.locale === locale)
+    .sort((a, b) => (order.get(a.slug) ?? 0) - (order.get(b.slug) ?? 0));
+}
+
+/**
+ * The chrome strings for a language, taken from the edition itself.
+ *
+ * Deliberately read off the first translation rather than kept in a second
+ * table keyed by locale. The association already exists — every entry names
+ * its `labels` object — and a parallel registry is a thing that can disagree
+ * with the entries while both look right. The loop below makes the shortcut
+ * safe by refusing an edition whose pages do not all share one object.
+ */
+export function labelsFor(locale: Locale): Translation["labels"] | undefined {
+  return translations.find((t) => t.locale === locale)?.labels;
+}
+
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const REVIEWS: ReviewLevel[] = ["machine-assisted", "native-reviewed"];
 const today = new Date().toISOString().slice(0, 10);
@@ -13775,6 +19555,23 @@ for (const t of translations) {
   // translation of it one answer short while still reporting `current`. The
   // count is the cheap half of catching that; the expensive half is still
   // remembering to translate the new answer.
+  // One labels object per language, by reference.
+  //
+  // The index page at /vi speaks for the whole Vietnamese edition, and it has
+  // to get its wording from somewhere: it reads the first entry in that
+  // locale. That is only honest if every entry in the locale carries the same
+  // object, so this refuses the case where it does not — a second labels
+  // object introduced for one page would otherwise silently decide what the
+  // index says, depending on nothing but array order.
+  const first = translations.find((o) => o.locale === t.locale);
+  if (first && first.labels !== t.labels) {
+    throw new Error(
+      `${t.slug} (${t.locale}): uses a different labels object from ` +
+        `${first.slug} (${first.locale}). One language, one set of chrome ` +
+        `strings — the language index reads them off whichever entry comes ` +
+        `first and must not depend on which that is.`,
+    );
+  }
   for (const [name, mine, theirs] of [
     ["steps", t.steps.length, guide.steps.length],
     ["faq entries", t.faq.length, guide.faq.length],

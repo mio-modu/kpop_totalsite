@@ -2,7 +2,7 @@
   "name": "kpopgo",
   "version": "0.1.0",
   "private": true,
-  "description": "KPOPGO — step-by-step guides for international K-pop fans buying tickets, albums and memberships from outside Korea.",
+  "description": "KPOPGO \u2014 step-by-step guides for international K-pop fans buying tickets, albums and memberships from outside Korea.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -26,5 +26,8 @@
     "playwright": "^1.49.1",
     "tailwindcss": "^4.3.3",
     "typescript": "5.7.3"
+  },
+  "overrides": {
+    "postcss": "^8.5.31"
   }
 }

@@ -14600,6 +14600,480 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Mua album K-pop từ nước ngoài sao cho được tính",
+    summary:
+      "Nơi bạn mua quyết định việc đơn hàng của bạn có được tính hay không, bạn trả bao nhiêu tiền ship, và bạn có nhận được quà pre-order hay không. Đây là cách chọn.",
+    scope:
+      "Nói về việc mua album vật lý và hàng hóa chính hãng giao ra ngoài Hàn Quốc. Không nói về các sàn bán lại hay hàng không chính thức.",
+    intro: [
+      "Đây là câu hỏi chạy suốt cả năm, khác với vé — và đó là lý do nó nằm ngay cạnh vé. Khác với vé, nó có một đáp án sai mà bạn không mất gì trông thấy được: album của bạn vẫn về tới nơi, chỉ là nó không được tính.",
+      "Ba thứ thay đổi tùy nơi bạn mua: đơn hàng có được báo lên các bảng xếp hạng Hàn Quốc hay không, quà pre-order có đi kèm hay không, và chi phí thật tới tay bạn sau khi cộng tiền ship và thuế. Ba thứ đó không đi cùng nhau, nên lựa chọn rẻ nhất thường là lựa chọn chẳng tính vào đâu cả.",
+    ],
+    steps: [
+      {
+        title: "Xác định bạn thực sự muốn gì từ đơn hàng này",
+        body: "Đóng góp cho bảng xếp hạng, bản album vật lý, quà pre-order, hay giá thấp nhất. Những thứ đó kéo về các hướng khác nhau. Hãy chọn ưu tiên trước khi chọn cửa hàng, vì cửa hàng là hệ quả của ưu tiên đó.",
+        pitfall:
+          "Mua trên một sàn thương mại điện tử thông thường để tiết kiệm rồi phát hiện nó không được tính — đó là phiên bản tiêu chuẩn của sai lầm này.",
+        takes: "5 phút",
+      },
+      {
+        title: "Kiểm tra xem người bán có báo cáo lên bảng xếp hạng Hàn Quốc không",
+        body: "Hanteo công bố danh sách, nên đây là chuyện kiểm chứng được chứ không phải chuyện tin tưởng. Các cửa hàng Family đã được chứng nhận của họ có thể tra tại hanteochart.com bằng tiếng Anh và tiếng Tây Ban Nha cũng như tiếng Hàn, mỗi cửa hàng mang một mã family: Ktown4U là HF0082KTU001 và Weverse là HF0082BTS001. Hanteo còn yêu cầu mọi cửa hàng Family trực tuyến phải hiển thị dấu Family ở chân trang, có liên kết ngược về hanteochart.com — nên chân trang là bước kiểm tra ba mươi giây với bất kỳ cửa hàng nào, còn danh bạ là phần xác nhận. Chính Hanteo hướng dẫn người mua kiểm tra cả mã lẫn dấu chứng nhận, vốn được cấp lại hằng năm.",
+        pitfall:
+          "Danh bạ ghi phần lớn tên cửa hàng bằng tiếng Hàn ngay cả trên trang tiếng Anh, nên một cửa hàng có thể đang nằm trong đó mà tìm bằng tiếng Anh lại tưởng là không có. Và một tin rao album thật trên sàn của bên thứ ba là chỗ hay bị bỏ sót: album là thật, người bán không phải cửa hàng Family, và phần đóng góp thì không có.",
+        takes: "15 phút",
+      },
+      {
+        title: "Đặt trong khung pre-order để lấy quà kèm",
+        body: "Quyền lợi pre-order — poster, photocard thêm, suất tham dự sự kiện — gắn với việc đặt trong một khung thời gian, và thường gắn với đúng nhà bán lẻ đó. Khung này đóng lại trước ngày phát hành chứ không phải vào ngày phát hành.",
+        pitfall:
+          "Quà độc quyền của từng nhà bán lẻ không thể hoán đổi cho nhau. Đặt cùng album đó ở nơi khác sẽ cho bạn một bộ khác, hoặc không có gì.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy tính tiền ship và rủi ro thuế, đừng chỉ tính giá album",
+        body: "Cước vận chuyển từ Hàn Quốc có thể vượt cả giá album, và việc bạn có phải trả thêm phí nhập khẩu hay không phụ thuộc vào quy định của chính nước bạn. Hãy kiểm tra ngay bây giờ thay vì phỏng đoán: Hoa Kỳ đã tạm dừng ngưỡng 800 đô la của mình vào tháng 8 năm 2025 và Liên minh châu Âu đã bỏ ngưỡng 150 euro vào ngày 1 tháng 7 năm 2026, nên với độc giả ở một trong hai nơi, không còn mức giá trị nào nhỏ đến mức hàng về mà không mất phí. Mua gộp theo nhóm làm giảm cước cho mỗi món. Hãy tính chi phí tới tay trước khi quyết định.",
+        pitfall:
+          "Lên kế hoạch dựa vào một mức miễn thuế không còn tồn tại ở nơi bạn sống. Ở nơi nó còn tồn tại, gộp nhiều album vào một kiện có thể đẩy trị giá khai báo vượt ngưỡng và tốn hơn cả gửi riêng — hãy tính cả hai con số.",
+        takes: "20 phút",
+      },
+      {
+        title: "Giữ hồ sơ đơn hàng cho tới khi hàng về",
+        body: "Hãy lưu lại xác nhận đơn, mã vận đơn và trị giá khai báo. Với bất cứ chuyện gì trục trặc — kiện hàng bị hỏng, hải quan hỏi, thiếu quà kèm — đó chính là những thứ nhà bán lẻ sẽ hỏi bạn.",
+        pitfall:
+          "Bộ phận hỗ trợ của các nhà bán lẻ Hàn Quốc thường làm việc theo số đơn hàng chứ không tra theo email. Không có số đơn, cuộc trao đổi sẽ rất chậm.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Album mua ngoài Hàn Quốc có được tính vào các bảng xếp hạng Hàn Quốc không?",
+        a: "“Các bảng xếp hạng Hàn Quốc” là hai thứ khác nhau, và chỉ một trong hai có liên quan tới đơn hàng của bạn. Hanteo đếm doanh số do các cửa hàng Family đã chứng nhận của họ báo lên, nên người quyết định là cửa hàng chứ không phải vị trí của bạn — hãy đối chiếu với danh bạ. Circle Chart được dựng theo chiều ngược lại: nó định nghĩa Album Chart của mình là số đơn vị xuất buôn tới các nhà bán lẻ, trừ đi hàng trả về, nghĩa là album đó đã được đếm khi rời nhà phân phối và đơn của bạn không làm nó xê dịch. Circle có một Retail Album Chart riêng, đếm doanh số bán lẻ theo thời gian thực. Điều mà cả hai đều không công bố là một quy tắc nói rằng đơn đặt từ nước ngoài ở một cửa hàng có trong danh sách được xử lý giống như đơn trong nước, nên mua ở một cửa hàng có trong danh sách là xa nhất bạn có thể kiểm chứng, chứ không phải một bảo đảm.",
+      },
+      {
+        q: "Mua gộp theo nhóm có đáng không?",
+        a: "Thường là đáng xét về tiền ship, vì chi phí cho mỗi món giảm mạnh. Hãy cân nhắc nó với quy định nhập khẩu nước bạn — nơi nào vẫn còn mức miễn thuế, một kiện hàng giá trị cao có thể bị thu phí trong khi nhiều kiện nhỏ tách riêng thì không. Ở Hoa Kỳ và Liên minh châu Âu, phép tính đó đã thay đổi: cả hai đều đã bỏ mức miễn trừ giá trị thấp, nên không còn ngưỡng nào để nằm dưới nữa.",
+      },
+      {
+        q: "Vì sao quyền lợi pre-order khác nhau giữa các cửa hàng?",
+        a: "Các nhà bán lẻ tự thương lượng quà độc quyền của riêng mình, nên cùng một album sẽ mang theo những món kèm khác nhau tùy nơi bạn đặt trước. Nếu bạn muốn một món kèm cụ thể, bạn phải đặt ở đúng cửa hàng có món đó, trong khung thời gian của họ.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "วิธีซื้ออัลบั้ม K-pop จากต่างประเทศให้นับยอด",
+    summary:
+      "ที่ที่คุณซื้อเป็นตัวตัดสินว่ายอดของคุณถูกนับหรือไม่ คุณจ่ายค่าส่งเท่าไร และคุณจะได้ของแถมพรีออเดอร์หรือเปล่า นี่คือวิธีเลือก",
+    scope:
+      "ครอบคลุมการซื้ออัลบั้มและสินค้าอย่างเป็นทางการแบบมีตัวตนจริงเพื่อจัดส่งออกนอกเกาหลี ไม่ครอบคลุมตลาดขายต่อหรือสินค้าที่ไม่เป็นทางการ",
+    intro: [
+      "นี่คือคำถามที่เดินอยู่ตลอดทั้งปี ต่างจากเรื่องบัตร ซึ่งเป็นเหตุผลที่มันอยู่ถัดจากกัน และต่างจากบัตรตรงที่มันมีคำตอบผิดซึ่งไม่ทำให้คุณเสียอะไรที่มองเห็นได้ อัลบั้มของคุณมาถึง เพียงแต่มันไม่ถูกนับ",
+      "สามสิ่งเปลี่ยนไปตามที่ที่คุณซื้อ: ยอดขายถูกรายงานไปยังชาร์ตเกาหลีหรือไม่ ของแถมพรีออเดอร์มาด้วยหรือไม่ และต้นทุนจริงเมื่อรวมค่าส่งและภาษีแล้ว ทั้งสามไม่ได้ขยับไปด้วยกัน ตัวเลือกที่ถูกที่สุดจึงมักเป็นตัวเลือกที่ไม่ถูกนับเข้าที่ไหนเลย",
+    ],
+    steps: [
+      {
+        title: "ตัดสินใจว่าคุณต้องการอะไรจากการซื้อครั้งนี้จริง ๆ",
+        body: "การมีส่วนในชาร์ต ตัวอัลบั้มจริง ของแถมพรีออเดอร์ หรือราคาต่ำที่สุด สิ่งเหล่านี้ดึงไปคนละทาง เลือกลำดับความสำคัญก่อนเลือกร้าน เพราะร้านเป็นผลตามมาจากมัน",
+        pitfall:
+          "การซื้อบนมาร์เก็ตเพลสทั่วไปเพื่อประหยัดเงินแล้วมาพบว่ามันไม่ถูกนับ คือรูปแบบมาตรฐานของความผิดพลาดนี้",
+        takes: "5 นาที",
+      },
+      {
+        title: "ตรวจว่าผู้ขายรายงานยอดไปยังชาร์ตเกาหลีหรือไม่",
+        body: "Hanteo เผยแพร่รายชื่อไว้ เรื่องนี้จึงตรวจสอบได้ ไม่ใช่เรื่องของความไว้ใจ ร้าน Family ที่ได้รับการรับรองของเขาค้นได้ที่ hanteochart.com ทั้งภาษาอังกฤษและสเปนนอกเหนือจากภาษาเกาหลี แต่ละร้านมีรหัส family กำกับ: Ktown4U คือ HF0082KTU001 และ Weverse คือ HF0082BTS001 Hanteo ยังกำหนดให้ร้าน Family ออนไลน์ทุกร้านแสดงเครื่องหมาย Family ไว้ที่ส่วนท้ายของเว็บ พร้อมลิงก์กลับไปที่ hanteochart.com ส่วนท้ายเว็บจึงเป็นการตรวจสามสิบวินาทีกับร้านใดก็ได้ และทะเบียนคือการยืนยัน คำแนะนำของ Hanteo เองต่อผู้ซื้อคือให้ตรวจทั้งรหัสและเครื่องหมายรับรอง ซึ่งออกใหม่ทุกปี",
+        pitfall:
+          "ทะเบียนแสดงชื่อร้านส่วนใหญ่เป็นภาษาเกาหลีแม้บนหน้าภาษาอังกฤษ ร้านหนึ่งจึงอาจอยู่ในทะเบียนแต่ดูเหมือนไม่มีเมื่อค้นด้วยภาษาอังกฤษ และประกาศขายอัลบั้มของแท้บนมาร์เก็ตเพลสของบุคคลที่สามคือจุดที่พลาดกันบ่อย อัลบั้มเป็นของจริง ผู้ขายไม่ใช่ร้าน Family และยอดนั้นไม่ได้ถูกนับ",
+        takes: "15 นาที",
+      },
+      {
+        title: "สั่งภายในช่วงพรีออเดอร์เพื่อให้ได้ของแถม",
+        body: "สิทธิประโยชน์พรีออเดอร์ — โปสเตอร์ การ์ดเพิ่ม สิทธิ์เข้าร่วมอีเวนต์ — ผูกกับการสั่งภายในช่วงเวลาหนึ่ง และมักผูกกับร้านนั้นโดยเฉพาะ ช่วงนี้ปิดก่อนวันวางจำหน่าย ไม่ใช่ปิดในวันวางจำหน่าย",
+        pitfall:
+          "ของแถมเฉพาะร้านไม่สามารถสลับกันได้ การสั่งอัลบั้มเดียวกันจากที่อื่นจะได้ชุดอื่นหรือไม่ได้อะไรเลย",
+        takes: "10 นาที",
+      },
+      {
+        title: "คิดค่าส่งและความเสี่ยงด้านศุลกากร ไม่ใช่คิดแค่ราคาอัลบั้ม",
+        body: "ค่าส่งจากเกาหลีอาจแพงกว่าราคาอัลบั้ม และคุณจะต้องจ่ายค่าภาษีนำเข้าเพิ่มหรือไม่ ขึ้นอยู่กับกฎของประเทศคุณเอง ตรวจดูตอนนี้แทนที่จะคาดเดา: สหรัฐฯ ระงับเกณฑ์ 800 ดอลลาร์ของตนเมื่อเดือนสิงหาคม 2025 และสหภาพยุโรปยกเลิกเกณฑ์ 150 ยูโรเมื่อวันที่ 1 กรกฎาคม 2026 สำหรับผู้อ่านในสองเขตนี้จึงไม่มีมูลค่าใดเล็กพอที่จะมาถึงโดยไม่เสียค่าใช้จ่ายอีกต่อไป การสั่งรวมกลุ่มช่วยลดค่าส่งต่อชิ้น คำนวณต้นทุนถึงมือให้เสร็จก่อนตัดสินใจ",
+        pitfall:
+          "การวางแผนโดยอิงกับสิทธิ์ยกเว้นภาษีที่ไม่มีอยู่แล้วในประเทศที่คุณอยู่ ส่วนที่ไหนยังมีอยู่ การรวมหลายอัลบั้มไว้ในพัสดุเดียวอาจดันมูลค่าที่สำแดงให้เกินเกณฑ์และแพงกว่าการแยกส่ง ลองคำนวณทั้งสองแบบ",
+        takes: "20 นาที",
+      },
+      {
+        title: "เก็บหลักฐานการสั่งซื้อไว้จนกว่าของจะถึง",
+        body: "บันทึกใบยืนยัน หมายเลขติดตามพัสดุ และมูลค่าที่สำแดงไว้ เมื่อมีอะไรผิดพลาด — พัสดุเสียหาย ศุลกากรสอบถาม ของแถมหาย — นี่คือสิ่งที่ร้านจะขอจากคุณ",
+        pitfall:
+          "ฝ่ายบริการของร้านเกาหลีมักทำงานด้วยหมายเลขคำสั่งซื้อมากกว่าการค้นจากอีเมล ถ้าไม่มีหมายเลข การพูดคุยจะช้ามาก",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "อัลบั้มที่ซื้อนอกเกาหลีนับเข้าชาร์ตเกาหลีไหม",
+        a: "“ชาร์ตเกาหลี” คือสองสิ่งที่ต่างกัน และมีเพียงอย่างเดียวที่เกี่ยวกับการซื้อของคุณ Hanteo นับยอดขายที่ร้าน Family ที่ได้รับการรับรองของตนรายงานเข้ามา ผู้ตัดสินจึงเป็นร้าน ไม่ใช่ตำแหน่งที่คุณอยู่ ตรวจกับทะเบียนได้ ส่วน Circle Chart สร้างขึ้นในทางกลับกัน: นิยาม Album Chart ของตนว่าเป็นหน่วยที่ส่งขายส่งให้ร้านค้าปลีกหักยอดคืน ซึ่งแปลว่าอัลบั้มนั้นถูกนับไปแล้วตอนออกจากผู้จัดจำหน่าย และคำสั่งซื้อของคุณไม่ได้ขยับมัน Circle มี Retail Album Chart แยกต่างหากที่นับยอดขายปลีกแบบเรียลไทม์ สิ่งที่ทั้งสองไม่ได้ประกาศคือกฎที่บอกว่าคำสั่งซื้อจากต่างประเทศที่ร้านในทะเบียนจะถูกปฏิบัติเหมือนคำสั่งซื้อในประเทศ การซื้อจากร้านในทะเบียนจึงเป็นที่ไกลที่สุดที่คุณตรวจสอบได้ ไม่ใช่การรับประกัน",
+      },
+      {
+        q: "การสั่งรวมกลุ่มคุ้มไหม",
+        a: "โดยทั่วไปคุ้มในแง่ค่าส่ง เพราะต้นทุนต่อชิ้นลดลงมาก ให้ชั่งกับกฎนำเข้าของประเทศคุณ ที่ไหนยังมีสิทธิ์ยกเว้นภาษีอยู่ พัสดุมูลค่าสูงชิ้นเดียวอาจโดนเก็บค่าใช้จ่ายขณะที่พัสดุเล็กหลายชิ้นแยกกันไม่โดน ในสหรัฐฯ และสหภาพยุโรป การคำนวณนี้เปลี่ยนไปแล้ว ทั้งสองยกเลิกการยกเว้นสำหรับมูลค่าต่ำ จึงไม่เหลือเกณฑ์ให้อยู่ใต้มันอีก",
+      },
+      {
+        q: "ทำไมสิทธิประโยชน์พรีออเดอร์ต่างกันในแต่ละร้าน",
+        a: "ร้านค้าปลีกเจรจาของแถมเฉพาะของตนเอง อัลบั้มเดียวกันจึงมาพร้อมของแถมต่างกันขึ้นอยู่กับว่าพรีออเดอร์ที่ไหน ถ้าคุณต้องการของแถมชิ้นใดเป็นการเฉพาะ คุณต้องสั่งจากร้านที่เสนอของชิ้นนั้น ภายในช่วงเวลาของร้านนั้น",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "buy-k-pop-albums-from-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Paano bumili ng mga album ng K-pop mula sa ibang bansa nang mabilang ang mga ito",
+    summary:
+      "Ang pinagbilhan mo ang nagpapasya kung mabibilang ba ang binili mo, kung magkano ang babayaran mo sa padala, at kung makukuha mo ba ang mga kasamang pre-order. Narito kung paano pumili.",
+    scope:
+      "Sakop nito ang pagbili ng opisyal na pisikal na album at paninda para ipadala sa labas ng Korea. Hindi nito sakop ang mga palengke ng muling pagbebenta o ang hindi opisyal na merchandise.",
+    intro: [
+      "Ito ang tanong na tumatakbo buong taon, hindi tulad ng tiket — at iyan ang dahilan kung bakit magkatabi sila. At hindi tulad ng tiket, may maling sagot ito na walang nakikitang halagang ibinabayad mo: dumarating ang album mo, hindi lang ito nabilang.",
+      "Tatlong bagay ang nag-iiba ayon sa pinagbilhan: kung iniuulat ba ang benta sa mga Koreanong chart, kung kasama ba ang mga pre-order na dagdag, at ang tunay na gastos hanggang sa pintuan mo kapag kasama na ang padala at ang adwana. Hindi sila sabay gumagalaw, kaya madalas ang pinakamurang pagpipilian ang siyang hindi nabibilang kahit saan.",
+    ],
+    steps: [
+      {
+        title: "Pagpasyahan kung ano talaga ang gusto mo mula sa pagbiling ito",
+        body: "Ambag sa chart, ang pisikal na album, ang mga kasamang pre-order, o ang pinakamababang presyo. Magkakaiba ang hila ng mga ito. Piliin ang prayoridad bago piliin ang tindahan, dahil ang tindahan ay bunga nito.",
+        pitfall:
+          "Ang pagbili sa isang pangkalahatang palengke para makatipid at pagkatapos ay matuklasang hindi ito nabilang ang karaniwang anyo ng pagkakamaling ito.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tingnan kung nag-uulat ba ang nagbebenta sa mga Koreanong chart",
+        body: "Inilalathala ng Hanteo ang listahan, kaya nasusuri ito at hindi usapin ng tiwala. Mahahanap ang mga sertipikadong Family store nito sa hanteochart.com sa Ingles at Espanyol bukod sa Koreano, at may family code ang bawat isa: ang Ktown4U ay HF0082KTU001 at ang Weverse ay HF0082BTS001. Hinihiling din ng Hanteo sa bawat online na Family store na ipakita ang markang Family sa footer nito, na naka-link pabalik sa hanteochart.com — kaya ang footer ang tatlumpung segundong pagsusuri sa kahit anong tindahan, at ang talaan ang kumpirmasyon. Ang mismong bilin ng Hanteo sa mga mamimili ay suriin pareho ang code at ang markang sertipikasyon, na muling inilalabas taun-taon.",
+        pitfall:
+          "Nakalista sa talaan ang karamihan ng pangalan ng tindahan sa Koreano kahit sa pahinang Ingles, kaya may tindahang nasa listahan na mukhang wala kapag hinanap sa Ingles. At ang listing ng tunay na album sa isang palengke ng ibang partido ang karaniwang nalalampasan: totoo ang album, hindi Family store ang nagbebenta, at wala ang ambag.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Mag-order sa loob ng bintana ng pre-order para sa mga kasama",
+        body: "Ang mga benepisyo sa pre-order — poster, dagdag na photocard, pasok sa event — ay nakatali sa pag-order sa loob ng isang bintana, at madalas sa partikular na tindahang iyon. Nagsasara ang bintana bago ang araw ng paglabas, hindi sa mismong araw.",
+        pitfall:
+          "Hindi mapagpapalit ang mga kasamang eksklusibo sa isang tindahan. Ang pag-order ng parehong album sa ibang lugar ay magbibigay sa iyo ng ibang set o wala.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Presyuhan ang padala at ang panganib sa adwana, hindi ang album",
+        body: "Maaaring lumampas sa presyo ng album ang padala mula sa Korea, at kung magbabayad ka ba ng singil sa pag-aangkat bukod doon ay nakadepende sa mga tuntunin ng sarili mong bansa. Suriin kung ano ang mga iyon ngayon sa halip na ipagpalagay: sinuspinde ng Estados Unidos ang hangganan nitong 800 dolyar noong Agosto 2025 at inalis ng European Union ang 150 euro nito noong 1 Hulyo 2026, kaya para sa mga mambabasa sa alinman sa dalawa, wala nang halagang sapat na maliit para makarating nang libre. Binababa ng mga group order ang padala kada item. Kalkulahin ang gastos hanggang sa pintuan mo bago ka magpasya.",
+        pitfall:
+          "Ang pagplano batay sa isang exemption sa buwis na wala na kung saan ka nakatira. Kung saan may natitira pa, ang pagsasama ng ilang album sa iisang parsela ay maaaring magtulak sa idineklarang halaga lampas doon at magastos nang higit sa paghiwa-hiwalay ng padala — kalkulahin ang dalawang bilang.",
+        takes: "20 minuto",
+      },
+      {
+        title: "Itago ang talaan ng order hanggang dumating ito",
+        body: "I-save ang kumpirmasyon, ang numero ng pagsubaybay at ang idineklarang halaga. Para sa anumang magkamali — sirang parsela, tanong ng adwana, nawawalang kasama — ito ang hihingin sa iyo ng tindahan.",
+        pitfall:
+          "Ang suporta ng mga Koreanong tindahan ay madalas gumagana sa mga numero ng order sa halip na sa paghahanap sa email. Kung wala ang numero, mabagal ang usapan.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Nabibilang ba sa mga Koreanong chart ang mga album na binili sa labas ng Korea?",
+        a: "Ang “mga Koreanong chart” ay dalawang magkaibang bagay at isa lamang sa kanila ang may kinalaman sa binili mo. Binibilang ng Hanteo ang mga bentang iniuulat ng mga sertipikadong Family store nito, kaya ang tindahan ang nagpapasya at hindi ang kinaroroonan mo — tingnan ito sa talaan. Baligtad ang pagkakabuo ng Circle Chart: tinutukoy nito ang Album Chart nito bilang mga yunit na ipinadala nang pakyawan sa mga tindahan, bawas ang mga ibinalik, na ibig sabihin ay nabilang na ang album na iyon noong umalis ito sa distributor at hindi ito maigagalaw ng order mo. Nagpapatakbo ang Circle ng hiwalay na Retail Album Chart na bumibilang ng tingiang benta, sa tunay na oras. Ang hindi inilalathala ng dalawa ay isang tuntuning nagsasabing ang order mula sa ibang bansa sa isang nakalistang tindahan ay itinuturing na kapareho ng order sa loob ng bansa, kaya ang pagbili sa isang nakalistang tindahan ang pinakamalayong masusuri mo, hindi isang garantiya.",
+      },
+      {
+        q: "Sulit ba ang group order?",
+        a: "Karaniwang oo pagdating sa padala, dahil bumababa nang malaki ang gastos kada item. Timbangin ito laban sa mga tuntunin ng bansa mo sa pag-aangkat — kung saan may exemption pa sa buwis, ang iisang parselang mataas ang halaga ay puwedeng singilin samantalang ang hiwa-hiwalay na maliliit ay hindi. Sa Estados Unidos at sa European Union ay nagbago ang kalkulasyong iyon: inalis ng dalawa ang kanilang exemption sa mababang halaga, kaya wala nang hangganang mapagtataguan.",
+      },
+      {
+        q: "Bakit magkaiba ang mga benepisyo sa pre-order sa bawat tindahan?",
+        a: "Ang mga tindahan ay nakikipagkasundo para sa sarili nilang eksklusibong kasama, kaya ang parehong album ay may iba't ibang dagdag depende sa kung saan ito pinre-order. Kung tiyak na kasama ang gusto mo, kailangan mong mag-order mula sa tindahang nag-aalok nito, sa loob ng bintana nito.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Đặt hàng trên Weverse Shop từ ngoài Hàn Quốc",
+    summary:
+      "Bạn đang ở cửa hàng nào, vì sao giá thay đổi ở bước thanh toán, loại tiền của bạn thực sự được những phương thức thanh toán nào, và những nước mà Hàn Quốc không gửi hàng tới được.",
+    scope:
+      "Nói về việc đặt hàng trên Weverse Shop với hàng hóa vật lý và album gửi đi từ Hàn Quốc. Việc mua tư cách thành viên và mua vé được xử lý riêng và nằm trong hướng dẫn về bán trước. Các quy định ở đây lấy từ chính thông báo của Weverse Shop và thay đổi mà không báo trước nhiều.",
+    intro: [
+      "Gần như mọi bài hướng dẫn tiếng Anh về Weverse Shop vẫn nói rằng cửa hàng toàn cầu chỉ nhận PayPal hoặc Eximbay chứ không gì khác. Điều đó đúng từ nhiều năm trước. Danh sách thanh toán bây giờ dài hơn, nó được quyết định bởi loại tiền tài khoản bạn đang đặt chứ không phải bởi nước bạn sống, và từ tháng 2 năm 2026, giá trên trang sản phẩm không phải là giá bạn trả.",
+      "Không có gì trong số đó bị giấu — tất cả nằm trong thông báo của chính cửa hàng, và đó là nơi mọi thứ dưới đây bắt nguồn. Chỉ là không ai viết những bài hướng dẫn ấy chịu đi đọc chúng.",
+    ],
+    steps: [
+      {
+        title: "Xác định bạn đang ở Weverse Shop nào",
+        body: "Weverse Shop không phải một cửa hàng duy nhất. Có cửa hàng GLOBAL và có các cửa hàng theo khu vực, chúng có hàng khác nhau, chạy khung pre-order khác nhau và gửi đi từ những nơi khác nhau. Một món bạn thấy người khác đặt có thể đơn giản là không tồn tại trong cửa hàng của bạn. Hãy xem mình đang ở cửa hàng nào trước khi lên kế hoạch quanh một ngày phát hành, vì hạn chót pre-order ở cửa hàng này chẳng nói lên điều gì về các cửa hàng khác.",
+        pitfall:
+          "Một đường dẫn ai đó chia sẻ trong cộng đồng fan sẽ mở cửa hàng của họ, không phải của bạn. Nếu trang vẫn tải được nhưng món hàng không thêm được vào giỏ, thường là bạn đang ở sai cửa hàng chứ không phải đã muộn.",
+        takes: "2 phút",
+      },
+      {
+        title: "Đặt loại tiền của bạn trước khi nhìn bất cứ thứ gì",
+        body: "Loại tiền mặc định của bạn quyết định những phương thức thanh toán nào được đưa ra cho bạn. Weverse nêu rõ theo từng loại tiền: USD có PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay và Grab Pay. JPY có đúng danh sách đó trừ Grab Pay. CNY mất PayPal. MXN chỉ có PayPal và Apple Pay. KRW thêm thẻ Hàn Quốc và các ví Hàn Quốc — Toss, NAVER Pay, Kakao Pay, PAYCO. MXN là danh sách ngắn nhất trong bốn danh sách ngoài tiếng Hàn và là danh sách đáng chuẩn bị trước nhất: hai phương thức, cả hai đều là kỹ thuật số, không có lựa chọn tiền mặt. Nếu không thiết lập cái nào, sẽ không có nút thứ ba nào ở bước thanh toán.",
+        pitfall:
+          "Không có nút “trả bằng Visa” đơn thuần trên các loại tiền không phải KRW. Thẻ của bạn đi qua PayPal hoặc Eximbay, và với ngân hàng của bạn đó là một giao dịch khác hẳn so với khoản chi cho một đơn vị bán hàng Hàn Quốc — đó cũng là lý do một chiếc thẻ hoạt động tốt ở nơi khác vẫn có thể hỏng ở đây.",
+        takes: "3 phút",
+      },
+      {
+        title: "Hãy chờ giá tăng lên ở bước thanh toán, và hiểu vì sao",
+        body: "Từ ngày 3 tháng 2 năm 2026, Weverse tính thuế dựa trên địa chỉ giao hàng và địa chỉ thanh toán của bạn. Đơn hàng gửi tới Hàn Quốc hiển thị giá đã gồm thuế suốt cả quá trình. Đơn hàng đi tới bất kỳ nơi nào khác hiển thị giá trang sản phẩm chưa gồm thuế, và thuế của nơi nhận được cộng vào ở bước thanh toán khi bạn nhập địa chỉ. Con số trên trang sản phẩm không phải con số bạn trả, và đó là chủ ý chứ không phải lỗi.",
+        pitfall:
+          "Chuyện này trông y hệt một vụ lừa đảo hoặc một lỗi kỹ thuật, và đó là điểm người ta bỏ dở đơn hàng. Phần tăng thêm là khoản thuế mà chính nước bạn thu, được thu trước thay vì để hải quan thu sau.",
+        takes: "1 phút",
+      },
+      {
+        title: "Điền cả địa chỉ thanh toán, không chỉ địa chỉ giao hàng",
+        body: "Cùng thay đổi tháng 2 năm 2026 đó đã thêm ô địa chỉ thanh toán ở bước trả tiền, vì phép tính thuế cần nó. Với một số sản phẩm phi vật thể — hàng kỹ thuật số và nội dung — địa chỉ thanh toán có thể là bắt buộc chứ không phải tùy chọn. Hãy điền chính xác: đó là thứ mà mức thuế được tính ra từ nó, và một địa chỉ sai không phải thứ bạn có thể lặng lẽ sửa về sau.",
+        pitfall:
+          "Chép địa chỉ giao hàng sang ô thanh toán mà không nghĩ thì ổn khi hai cái trùng nhau và sai khi chúng khác nhau. Nếu thẻ của bạn đăng ký ở một địa chỉ khác, hãy dùng địa chỉ đó.",
+        takes: "2 phút",
+      },
+      {
+        title: "Kiểm tra ngôn ngữ của địa chỉ so với nơi nhận",
+        body: "Weverse đề nghị khách hàng quốc tế xác nhận xem nước nhận cần địa chỉ viết bằng ngôn ngữ nào trước khi nhập. Quy tắc rõ hơn ở chiều ngược lại: một đơn hàng giao tới Hàn Quốc phải mang địa chỉ bằng tiếng Hàn, vì các hãng vận chuyển có thể không nhận hoặc xử lý sai một địa chỉ tiếng Anh. Với mọi nơi khác, hãy viết địa chỉ theo cách bưu chính nước bạn mong đợi.",
+        pitfall:
+          "Phiên âm một địa chỉ Hàn Quốc sang tiếng Anh là nguyên nhân phổ biến nhất khiến đơn hàng giao tới Hàn Quốc bị chậm hoặc giao thất bại.",
+        takes: "5 phút",
+      },
+      {
+        title: "Xác nhận rằng Hàn Quốc gửi hàng tới chỗ bạn được",
+        body: "Việc gửi hàng từ Hàn Quốc không khả dụng với một danh sách các nước và vùng lãnh thổ mà Weverse duy trì và cập nhật. Theo bản sửa đổi ngày 15 tháng 7 năm 2026, danh sách này gồm Myanmar, Cộng hòa Dân chủ Congo, Iraq, Iran, Liban, Mali, Nga, Andorra, Ukraine, Belarus, Afghanistan, Antille thuộc Hà Lan, Israel và Thổ Nhĩ Kỳ. Danh sách này thay đổi, nên hãy xem thông báo thay vì xem trang này.",
+        pitfall:
+          "Danh sách được mô tả là gián đoạn tạm thời chứ không phải chính sách, nghĩa là một nước có thể rời khỏi nó cũng như có thể bị thêm vào. Một đơn hàng thành công trước đây hay đơn hàng của một người bạn năm ngoái đều không trả lời được việc hôm nay bạn có đặt được hay không.",
+        takes: "2 phút",
+      },
+      {
+        title: "Đặt trong khung pre-order nếu quà kèm là điều quan trọng",
+        body: "Quyền lợi pre-order — những poster, photocard và quà kèm của lần in đầu, vốn thường là lý do người ta đặt ở cửa hàng chính thức thay vì nơi nào rẻ hơn — gắn với khung pre-order, chứ không gắn với album. Khi khung đó đóng lại, vẫn album ấy được gửi đi mà không có chúng. Nếu quà kèm mới là điều quan trọng, thứ cần lên kế hoạch quanh nó là hạn chót, không phải ngày phát hành.",
+        pitfall:
+          "Các khung pre-order đóng lại vào một giờ Hàn Quốc, tức là tối hôm trước hoặc rạng sáng ở nơi phần lớn độc giả của trang này đang sống.",
+        takes: "Trước hạn chót",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi trả bằng Visa hay Mastercard trên Weverse Shop được không?",
+        a: "Không phải dưới dạng lựa chọn thẻ trực tiếp, nếu nằm ngoài thiết lập tiền Hàn Quốc. Với USD, JPY, CNY và MXN, chiếc thẻ sẽ đi qua PayPal hoặc Eximbay. Tiền vẫn trừ vào thẻ bạn, nhưng ngân hàng của bạn nhìn thấy một loại giao dịch khác, nên bật thanh toán quốc tế từ trước là việc đáng làm.",
+      },
+      {
+        q: "Vì sao giá tăng lên khi tôi nhập địa chỉ?",
+        a: "Từ ngày 3 tháng 2 năm 2026, giá ngoài Hàn Quốc được hiển thị trên trang sản phẩm chưa gồm thuế, và thuế của nơi bạn nhận được cộng vào ở bước thanh toán. Đó là khoản thuế mà chính nước bạn thu, được thu lúc mua thay vì lúc giao hàng.",
+      },
+      {
+        q: "Khi hàng tới tôi có bị thu thuế hải quan không?",
+        a: "Weverse hiện đã trả trước thuế và các khoản thu ở bước thanh toán với những đơn hàng áp dụng được, và họ nói điều đó làm giảm nhu cầu phải trả thêm trong lúc thông quan. Họ nêu rõ rằng điều này không áp dụng cho mọi nước hay vùng lãnh thổ, nên đây là một kỳ vọng hợp lý chứ không phải một bảo đảm.",
+      },
+      {
+        q: "Tôi ở Mexico. Tôi thực sự được những phương thức thanh toán nào?",
+        a: "Hai. Thông báo về thanh toán của Weverse ghi MXN có PayPal và Apple Pay — danh sách ngắn nhất trong bốn danh sách của các loại tiền ngoài tiếng Hàn, và cả hai đều là kỹ thuật số. Không có lựa chọn tiền mặt và không có nút thứ ba, nên hãy thiết lập một trong hai trước khung pre-order chứ đừng làm trong lúc nó đang mở.",
+      },
+      {
+        q: "Weverse Shop có gửi hàng tới nước tôi không?",
+        a: "Thường là có, nhưng có một danh sách được duy trì gồm các nước và vùng lãnh thổ hiện không thể nhận hàng gửi từ Hàn Quốc. Hãy xem thông báo đó để biết danh sách hiện hành trước khi đặt — nó được sửa lại khi điều kiện thay đổi.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "สั่งของจาก Weverse Shop จากนอกเกาหลี",
+    summary:
+      "คุณอยู่ในร้านไหน ทำไมราคาถึงเปลี่ยนตอนชำระเงิน สกุลเงินของคุณได้วิธีชำระเงินอะไรบ้างจริง ๆ และประเทศใดที่เกาหลีส่งของไปไม่ได้",
+    scope:
+      "ครอบคลุมการสั่งซื้อสินค้าและอัลบั้มที่เป็นของจริงบน Weverse Shop ซึ่งจัดส่งจากเกาหลี การซื้อสมาชิกภาพและการซื้อบัตรแยกกันคนละเรื่องและอยู่ในคู่มือพรีเซล กฎในหน้านี้มาจากประกาศของ Weverse Shop เอง และเปลี่ยนโดยแทบไม่บอกล่วงหน้า",
+    intro: [
+      "คู่มือภาษาอังกฤษเกี่ยวกับ Weverse Shop เกือบทุกฉบับยังบอกว่าร้านโกลบอลรับแค่ PayPal หรือ Eximbay เท่านั้น นั่นจริงเมื่อหลายปีก่อน ตอนนี้รายการวิธีชำระเงินยาวกว่านั้น มันถูกกำหนดโดยสกุลเงินที่บัญชีของคุณตั้งไว้ ไม่ใช่โดยประเทศที่คุณอาศัยอยู่ และตั้งแต่เดือนกุมภาพันธ์ 2026 ราคาบนหน้าสินค้าไม่ใช่ราคาที่คุณจ่าย",
+      "ไม่มีอะไรในนี้ถูกซ่อนไว้เลย ทั้งหมดอยู่ในประกาศของร้านเอง ซึ่งเป็นที่มาของทุกอย่างด้านล่าง เพียงแต่ไม่มีใครที่เขียนคู่มือเหล่านั้นไปอ่านมัน",
+    ],
+    steps: [
+      {
+        title: "ดูให้ออกว่าคุณอยู่ใน Weverse Shop ร้านไหน",
+        body: "Weverse Shop ไม่ใช่ร้านเดียว มีร้าน GLOBAL และมีร้านรายภูมิภาค ซึ่งมีสินค้าต่างกัน เปิดช่วงพรีออเดอร์ต่างกัน และจัดส่งจากคนละที่ สินค้าที่คุณเห็นคนอื่นสั่งอาจไม่มีอยู่ในร้านของคุณเลย ตรวจว่าคุณอยู่ร้านไหนก่อนจะวางแผนรอบวันวางจำหน่าย เพราะกำหนดปิดพรีออเดอร์ของร้านหนึ่งไม่ได้บอกอะไรเกี่ยวกับร้านอื่น",
+        pitfall:
+          "ลิงก์ที่ใครสักคนแชร์ในคอมมูนิตี้แฟนคลับจะเปิดร้านของเขา ไม่ใช่ร้านของคุณ ถ้าหน้าโหลดได้แต่ใส่สินค้าลงตะกร้าไม่ได้ โดยทั่วไปคุณอยู่ผิดร้าน ไม่ใช่มาช้าเกินไป",
+        takes: "2 นาที",
+      },
+      {
+        title: "ตั้งสกุลเงินของคุณก่อนจะดูอะไรทั้งนั้น",
+        body: "สกุลเงินเริ่มต้นของคุณเป็นตัวกำหนดว่าคุณจะได้รับวิธีชำระเงินแบบใดบ้าง Weverse ระบุไว้ตามสกุลเงิน: USD ได้ PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay และ Grab Pay JPY ได้รายการเดียวกันแต่ไม่มี Grab Pay CNY ไม่มี PayPal MXN มีแค่ PayPal และ Apple Pay ส่วน KRW เพิ่มบัตรเกาหลีและกระเป๋าเงินเกาหลี — Toss, NAVER Pay, Kakao Pay, PAYCO MXN เป็นรายการที่สั้นที่สุดในบรรดาสี่รายการที่ไม่ใช่เกาหลี และเป็นรายการที่ควรวางแผนล่วงหน้าที่สุด: สองวิธี ทั้งคู่เป็นดิจิทัล ไม่มีตัวเลือกเงินสด ถ้าไม่ได้ตั้งค่าไว้สักอย่าง จะไม่มีปุ่มที่สามในขั้นชำระเงิน",
+        pitfall:
+          "ไม่มีปุ่ม “จ่ายด้วย Visa” ตรง ๆ บนสกุลเงินที่ไม่ใช่ KRW บัตรของคุณเดินผ่าน PayPal หรือ Eximbay ซึ่งสำหรับธนาคารของคุณนับเป็นธุรกรรมคนละแบบกับการถูกเรียกเก็บจากร้านค้าเกาหลี และนั่นคือเหตุผลที่บัตรซึ่งใช้ได้ที่อื่นยังอาจล้มเหลวที่นี่",
+        takes: "3 นาที",
+      },
+      {
+        title: "เตรียมใจว่าราคาจะสูงขึ้นตอนชำระเงิน และรู้ว่าทำไม",
+        body: "ตั้งแต่วันที่ 3 กุมภาพันธ์ 2026 Weverse คำนวณภาษีจากที่อยู่จัดส่งและที่อยู่เรียกเก็บเงินของคุณ คำสั่งซื้อที่ส่งไปเกาหลีจะแสดงราคารวมภาษีตลอดทั้งกระบวนการ คำสั่งซื้อที่ส่งไปที่อื่นจะแสดงราคาบนหน้าสินค้าแบบยังไม่รวมภาษี และภาษีของปลายทางจะถูกบวกเพิ่มในขั้นชำระเงินเมื่อคุณกรอกที่อยู่ ตัวเลขบนหน้าสินค้าจึงไม่ใช่ตัวเลขที่คุณจ่าย และนั่นเป็นความตั้งใจ ไม่ใช่ความผิดพลาด",
+        pitfall:
+          "เรื่องนี้ดูเหมือนการโกงหรือข้อบกพร่องของระบบเป๊ะ ๆ และเป็นจุดที่คนล้มเลิกคำสั่งซื้อ ส่วนที่เพิ่มขึ้นคือภาษีที่ประเทศของคุณเองเรียกเก็บ โดยเก็บไว้ล่วงหน้าแทนที่จะให้ศุลกากรเก็บทีหลัง",
+        takes: "1 นาที",
+      },
+      {
+        title: "กรอกที่อยู่เรียกเก็บเงินด้วย ไม่ใช่แค่ที่อยู่จัดส่ง",
+        body: "การเปลี่ยนแปลงเดือนกุมภาพันธ์ 2026 เดียวกันนี้เพิ่มช่องที่อยู่เรียกเก็บเงินในขั้นชำระเงิน เพราะการคำนวณภาษีต้องใช้มัน สำหรับสินค้าที่จับต้องไม่ได้บางรายการ — สินค้าดิจิทัลและคอนเทนต์ — ที่อยู่เรียกเก็บเงินอาจเป็นข้อบังคับแทนที่จะเป็นทางเลือก กรอกให้ถูกต้อง เพราะอัตราภาษีคำนวณจากมัน และที่อยู่ผิดไม่ใช่สิ่งที่คุณจะแก้เงียบ ๆ ทีหลังได้",
+        pitfall:
+          "การคัดลอกที่อยู่จัดส่งไปใส่ช่องเรียกเก็บเงินโดยไม่คิดนั้นถูกเมื่อทั้งสองตรงกัน และผิดเมื่อมันไม่ตรง ถ้าบัตรของคุณผูกกับที่อยู่อื่น ให้ใช้ที่อยู่นั้น",
+        takes: "2 นาที",
+      },
+      {
+        title: "ตรวจภาษาของที่อยู่ให้ตรงกับปลายทาง",
+        body: "Weverse ขอให้ลูกค้าต่างประเทศตรวจก่อนกรอกว่าประเทศปลายทางต้องการที่อยู่เป็นภาษาใด กฎชัดกว่าในทิศทางตรงข้าม: คำสั่งซื้อที่ส่งไปเกาหลีใต้ต้องมีที่อยู่เป็นภาษาเกาหลี เพราะบริษัทขนส่งอาจไม่รับหรืออาจประมวลผลที่อยู่ภาษาอังกฤษผิด สำหรับที่อื่นทั้งหมด ให้เขียนที่อยู่ตามแบบที่ไปรษณีย์ของประเทศคุณคาดหวัง",
+        pitfall:
+          "การถอดที่อยู่เกาหลีเป็นภาษาอังกฤษคือสาเหตุเดียวที่พบบ่อยที่สุดของการจัดส่งล่าช้าหรือล้มเหลวในคำสั่งซื้อที่ส่งไปเกาหลี",
+        takes: "5 นาที",
+      },
+      {
+        title: "ยืนยันว่าเกาหลีส่งของมาถึงคุณได้",
+        body: "การจัดส่งจากเกาหลีใต้ใช้ไม่ได้กับรายชื่อประเทศและเขตแดนที่ Weverse ดูแลและปรับปรุงอยู่ ตามฉบับแก้ไขวันที่ 15 กรกฎาคม 2026 รายการนี้ครอบคลุมเมียนมา สาธารณรัฐประชาธิปไตยคองโก อิรัก อิหร่าน เลบานอน มาลี รัสเซีย อันดอร์รา ยูเครน เบลารุส อัฟกานิสถาน เนเธอร์แลนด์แอนทิลลิส อิสราเอล และตุรกี รายการนี้ขยับได้ จึงควรดูประกาศแทนที่จะดูหน้านี้",
+        pitfall:
+          "รายการนี้ถูกอธิบายว่าเป็นการหยุดชะงักชั่วคราวไม่ใช่นโยบาย ซึ่งแปลว่าประเทศหนึ่งหลุดออกจากรายการได้พอ ๆ กับที่ถูกเพิ่มเข้าไปได้ ทั้งคำสั่งซื้อที่เคยสำเร็จก่อนหน้านี้และคำสั่งซื้อของเพื่อนเมื่อปีที่แล้วต่างก็ไม่ได้ตอบว่าวันนี้คุณสั่งได้หรือไม่",
+        takes: "2 นาที",
+      },
+      {
+        title: "สั่งภายในช่วงพรีออเดอร์ถ้าของแถมสำคัญ",
+        body: "สิทธิประโยชน์พรีออเดอร์ — โปสเตอร์ การ์ด และของแถมรอบพิมพ์แรก ซึ่งมักเป็นเหตุผลที่คนสั่งจากร้านอย่างเป็นทางการแทนที่จะสั่งจากที่ถูกกว่า — ผูกกับช่วงพรีออเดอร์ ไม่ได้ผูกกับตัวอัลบั้ม เมื่อช่วงนั้นปิดลง อัลบั้มเดียวกันจะถูกส่งโดยไม่มีของเหล่านั้น ถ้าของแถมคือประเด็น สิ่งที่ต้องวางแผนรอบ ๆ คือเส้นตาย ไม่ใช่วันวางจำหน่าย",
+        pitfall:
+          "ช่วงพรีออเดอร์ปิดตามเวลาเกาหลี ซึ่งตรงกับช่วงเย็นของวันก่อนหน้าหรือตอนดึกในที่ที่ผู้อ่านส่วนใหญ่ของเว็บนี้อาศัยอยู่",
+        takes: "ก่อนเส้นตาย",
+      },
+    ],
+    faq: [
+      {
+        q: "จ่ายด้วย Visa หรือ Mastercard บน Weverse Shop ได้ไหม",
+        a: "ไม่ได้ในฐานะตัวเลือกบัตรโดยตรง หากอยู่นอกการตั้งค่าสกุลเงินเกาหลี บน USD, JPY, CNY และ MXN บัตรจะเดินผ่าน PayPal หรือ Eximbay แทน เงินยังถูกตัดจากบัตรคุณอยู่ดี แต่ธนาคารของคุณเห็นเป็นธุรกรรมคนละแบบ การเปิดใช้การชำระเงินระหว่างประเทศไว้ล่วงหน้าจึงคุ้มค่าที่จะทำ",
+      },
+      {
+        q: "ทำไมราคาถึงสูงขึ้นตอนฉันกรอกที่อยู่",
+        a: "ตั้งแต่วันที่ 3 กุมภาพันธ์ 2026 ราคานอกเกาหลีถูกแสดงบนหน้าสินค้าแบบยังไม่รวมภาษี และภาษีของปลายทางคุณถูกบวกเพิ่มในขั้นชำระเงิน มันคือภาษีที่ประเทศของคุณเองเรียกเก็บ โดยเก็บตอนซื้อแทนที่จะเก็บตอนส่งของ",
+      },
+      {
+        q: "ของมาถึงแล้วฉันจะโดนเก็บภาษีศุลกากรไหม",
+        a: "ตอนนี้ Weverse จ่ายอากรและภาษีล่วงหน้าในขั้นชำระเงินสำหรับคำสั่งซื้อที่เข้าเงื่อนไข ซึ่งทางร้านบอกว่าช่วยลดความจำเป็นในการจ่ายเพิ่มระหว่างพิธีการศุลกากร ร้านระบุว่าเรื่องนี้ไม่ได้ใช้กับทุกประเทศหรือทุกเขตแดน จึงเป็นความคาดหมายที่สมเหตุสมผล ไม่ใช่การรับประกัน",
+      },
+      {
+        q: "ฉันอยู่เม็กซิโก ได้วิธีชำระเงินอะไรบ้างจริง ๆ",
+        a: "สองอย่าง ประกาศเรื่องการชำระเงินของ Weverse ระบุว่า MXN มี PayPal และ Apple Pay ซึ่งเป็นรายการที่สั้นที่สุดในบรรดาสี่สกุลเงินที่ไม่ใช่เกาหลี และทั้งคู่เป็นดิจิทัล ไม่มีตัวเลือกเงินสดและไม่มีปุ่มที่สาม จึงควรตั้งค่าอย่างใดอย่างหนึ่งก่อนช่วงพรีออเดอร์ ไม่ใช่ตอนที่มันเปิดอยู่แล้ว",
+      },
+      {
+        q: "Weverse Shop ส่งของมาประเทศฉันไหม",
+        a: "โดยทั่วไปส่ง แต่มีรายชื่อประเทศและเขตแดนที่ดูแลไว้ซึ่งขณะนี้ไม่สามารถรับการจัดส่งจากเกาหลีใต้ได้ ตรวจประกาศนั้นเพื่อดูรายการปัจจุบันก่อนสั่งซื้อ เพราะมันถูกแก้ไขเมื่อสถานการณ์เปลี่ยน",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "order-from-weverse-shop-overseas",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pag-order sa Weverse Shop mula sa labas ng Korea",
+    summary:
+      "Kung aling tindahan ang kinaroroonan mo, bakit nagbabago ang presyo sa checkout, aling mga paraan ng pagbabayad ang talagang nakukuha ng pera mo, at ang mga bansang hindi mapapadalhan ng Korea.",
+    scope:
+      "Sakop nito ang pag-order sa Weverse Shop ng pisikal na paninda at album na ipinapadala mula sa Korea. Hiwalay na hinahawakan ang pagbili ng membership at ang tiket, at nasa gabay ng presale ang mga iyon. Ang mga tuntunin dito ay galing sa mismong mga abiso ng Weverse Shop at nagbabago nang walang gaanong paunang babala.",
+    intro: [
+      "Halos lahat ng gabay sa Ingles tungkol sa Weverse Shop ay nagsasabi pa ring PayPal o Eximbay lamang ang tinatanggap ng pandaigdigang tindahan. Totoo iyon noong mga nakaraang taon. Mas mahaba na ngayon ang listahan ng pagbabayad, itinatakda ito ng perang nakatakda sa account mo at hindi ng bansang tinitirhan mo, at mula Pebrero 2026 ang presyo sa pahina ng produkto ay hindi ang presyong babayaran mo.",
+      "Wala sa mga iyan ang itinatago — nasa sariling mga abiso ng tindahan ang lahat, at doon galing ang bawat bagay sa ibaba. Walang sumulat lang ng mga gabay na iyon ang nagtiyagang basahin ang mga ito.",
+    ],
+    steps: [
+      {
+        title: "Alamin kung aling Weverse Shop ang talagang kinaroroonan mo",
+        body: "Hindi iisang tindahan ang Weverse Shop. May tindahang GLOBAL at may mga tindahan kada rehiyon, at magkakaiba ang paninda nila, magkakaiba ang bintana ng pre-order, at magkakaiba ang pinagpapadalhan. Ang item na nakita mong inorder ng iba ay maaaring hindi talaga umiiral sa tindahan mo. Tingnan kung nasaan ka bago ka magplano batay sa petsa ng paglabas, dahil ang hangganan ng pre-order sa isang tindahan ay walang sinasabi tungkol sa iba.",
+        pitfall:
+          "Ang link na ibinahagi ng isang tao sa isang komunidad ng fan ay nagbubukas ng tindahan niya, hindi sa iyo. Kung bumubukas ang pahina pero ayaw pumasok ng item sa cart, karaniwang nasa maling tindahan ka at hindi huli na.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Itakda ang pera mo bago ka tumingin ng kahit ano",
+        body: "Ang default mong pera ang nagpapasya kung aling paraan ng pagbabayad ang iaalok sa iyo. Inilalahad ito ng Weverse kada pera: ang USD ay may PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay at Grab Pay. Ang JPY ay may parehong listahan maliban sa Grab Pay. Nawawalan ng PayPal ang CNY. Ang MXN ay PayPal at Apple Pay lamang. Nagdaragdag ang KRW ng mga Koreanong kard at ng mga Koreanong wallet — Toss, NAVER Pay, Kakao Pay, PAYCO. Ang MXN ang pinakamaikli sa apat na listahang hindi Koreano at ang pinakadapat paghandaan: dalawang paraan, parehong digital, walang opsiyong cash. Kung wala ni isa sa dalawang naitakda, walang ikatlong pindutan sa checkout.",
+        pitfall:
+          "Walang simpleng “magbayad gamit ang Visa” sa mga perang hindi KRW. Dumaraan ang kard mo sa PayPal o Eximbay, na ibang uri ng transaksiyon para sa bangko mo kaysa sa singil ng isang Koreanong merchant — at iyan ang dahilan kung bakit ang kard na gumagana saanman ay puwede pa ring bumagsak dito.",
+        takes: "3 minuto",
+      },
+      {
+        title: "Asahan mong tataas ang presyo sa checkout, at alamin kung bakit",
+        body: "Mula 3 Pebrero 2026, kinakalkula ng Weverse ang buwis mula sa iyong address ng padala at ng pagsingil. Ang mga order na papuntang Korea ay nagpapakita ng presyong kasama na ang buwis mula simula hanggang dulo. Ang mga order na papunta saanman pa ay nagpapakita ng presyo sa pahina ng produkto nang walang buwis, at idinaragdag ang buwis ng destinasyon sa checkout kapag naglagay ka ng address. Ang numero sa pahina ng produkto ay hindi ang numerong babayaran mo, at sinadya iyon at hindi isang depekto.",
+        pitfall:
+          "Mukha itong eksaktong scam o bug, at dito nag-iiwan ng order ang mga tao. Ang itinaas ay ang buwis na sinisingil ng sarili mong bansa, na kinokolekta nang maaga sa halip na ng adwana sa bandang huli.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Punan ang address ng pagsingil, hindi lang ang address ng padala",
+        body: "Ang parehong pagbabago noong Pebrero 2026 ay nagdagdag ng patlang para sa address ng pagsingil sa checkout, dahil kailangan ito ng kalkulasyon ng buwis. Para sa ilang produktong hindi nahahawakan — mga digital na item at nilalaman — maaaring kailangan ang address ng pagsingil sa halip na opsiyonal. Ilagay ito nang tumpak: dito kinakalkula ang tantos ng buwis, at ang maling address ay hindi isang bagay na matahimik mong maitatama sa kalaunan.",
+        pitfall:
+          "Ang pagkopya ng address ng padala sa patlang ng pagsingil nang hindi nag-iisip ay tama kapag magkatugma sila at mali kapag hindi. Kung nakarehistro ang kard mo sa ibang address, gamitin iyon.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Tingnan ang wika ng address kontra sa destinasyon",
+        body: "Hinihiling ng Weverse sa mga internasyonal na customer na tiyakin kung anong wika ang kailangan ng bansang destinasyon para sa address bago ito ilagay. Mas malinaw ang tuntunin sa kabilang direksiyon: ang order na ipapadala sa South Korea ay kailangang may address sa Koreano, dahil maaaring hindi tanggapin o maling maproseso ng mga courier ang Ingles. Para saanman pa, isulat ang address sa paraang inaasahan ng sariling serbisyong postal ng bansa mo.",
+        pitfall:
+          "Ang pagsasalin ng isang Koreanong address sa Ingles ang pinakakaraniwang dahilan ng naantala o nabigong paghahatid sa mga order na papuntang Korea.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tiyaking kaya kang padalhan ng Korea",
+        body: "Hindi magagamit ang pagpapadala mula sa South Korea para sa isang listahan ng mga bansa at rehiyon na pinananatili at ina-update ng Weverse. Sa rebisyon noong 15 Hulyo 2026, sakop nito ang Myanmar, ang Demokratikong Republika ng Congo, Iraq, Iran, Lebanon, Mali, Russia, Andorra, Ukraine, Belarus, Afghanistan, ang Netherlands Antilles, Israel at Turkey. Gumagalaw ang listahan, kaya tingnan ang abiso sa halip na ang pahinang ito.",
+        pitfall:
+          "Inilalarawan ang listahan bilang pansamantalang kaguluhan at hindi bilang patakaran, kaya kayang makaalis ng isang bansa rito gaya ng kaya nitong mapasama. Hindi natatapos ng dating matagumpay na order o ng order ng kaibigan mo noong isang taon ang tanong kung makakapag-order ka ngayon.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Mag-order sa loob ng bintana ng pre-order kung mahalaga ang mga kasama",
+        body: "Ang mga benepisyo sa pre-order — ang mga poster, photocard at kasamang unang limbag na karaniwang dahilan ng pag-order sa opisyal na tindahan sa halip na sa mas murang lugar — ay nakatali sa bintana ng pre-order, hindi sa album. Kapag nagsara ang bintana, ipinapadala ang parehong album nang wala ang mga ito. Kung ang mga kasama ang punto, ang hangganan ang dapat paghandaan at hindi ang petsa ng paglabas.",
+        pitfall:
+          "Nagsasara ang mga bintana ng pre-order sa isang oras na Koreano, na gabi ng nakaraang araw o madaling-araw sa kinatitirhan ng karamihan ng mambabasa ng site na ito.",
+        takes: "Bago ang hangganan",
+      },
+    ],
+    faq: [
+      {
+        q: "Puwede ba akong magbayad gamit ang Visa o Mastercard sa Weverse Shop?",
+        a: "Hindi bilang tuwirang opsiyon ng kard sa labas ng setting na Koreanong pera. Sa USD, JPY, CNY at MXN ay dumaraan ang kard sa PayPal o Eximbay. Umaabot pa rin ito sa kard mo, pero ibang uri ng transaksiyon ang nakikita ng bangko mo, kaya sulit na buksan nang maaga ang mga internasyonal na pagbabayad.",
+      },
+      {
+        q: "Bakit tumaas ang presyo nang ilagay ko ang address ko?",
+        a: "Mula 3 Pebrero 2026, ipinapakita ang mga presyo sa labas ng Korea sa pahina ng produkto nang walang buwis, at idinaragdag sa checkout ang buwis para sa destinasyon mo. Ito ang buwis na sinisingil ng sarili mong bansa, na kinokolekta sa pagbili sa halip na sa paghahatid.",
+      },
+      {
+        q: "Sisingilin ba ako ng adwana pagdating nito?",
+        a: "Pauna nang binabayaran ngayon ng Weverse ang mga tungkulin at buwis sa checkout para sa mga saklaw na order, na aniya ay nagpapababa sa pangangailangan ng dagdag na bayad habang nagkakaroon ng clearance. Sinasabi nitong hindi ito umiiral sa bawat bansa o rehiyon, kaya makatwirang asahan ito at hindi isang garantiya.",
+      },
+      {
+        q: "Nasa Mexico ako. Aling mga paraan ng pagbabayad ang talagang nakukuha ko?",
+        a: "Dalawa. Nakalista sa abiso ng Weverse tungkol sa pagbabayad na ang MXN ay PayPal at Apple Pay — ang pinakamaikli sa apat na listahan ng perang hindi Koreano, at parehong digital. Walang opsiyong cash at walang ikatlong pindutan, kaya ihanda ang isa sa dalawa bago ang bintana ng pre-order at hindi sa loob nito.",
+      },
+      {
+        q: "Nagpapadala ba ang Weverse Shop sa bansa ko?",
+        a: "Karaniwang oo, pero may pinananatiling listahan ng mga bansa at rehiyon na hindi makatatanggap ng padala mula sa South Korea sa kasalukuyan. Tingnan ang abisong iyon para sa kasalukuyang listahan bago mag-order — nirerebisa ito habang nagbabago ang mga kalagayan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

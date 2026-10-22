@@ -16502,6 +16502,333 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vé điện tử NOL World của bạn: mã QR, mã PIN, và chuyện qua được cổng",
+    summary:
+      "Tấm vé chỉ mở trên điện thoại, nó chỉ có tiếng Anh và tính năng dịch tự động của trình duyệt sẽ làm nó biến dạng, một tấm vé đã gửi đi có đồng hồ PIN 24 tiếng, và đến muộn không phải là vào cửa chắc chắn. Hai mươi phút cuối của cả quá trình, theo thứ tự.",
+    scope:
+      "Nói về vé điện tử NOL World và việc vào cửa đúng như NOL World ghi: tấm vé mở ở đâu, hai trạng thái trình duyệt che mất nó, việc gửi và nhận cùng đồng hồ PIN, việc nhận hộ, và chuyện đến muộn. Quy định vào cửa được đặt theo từng show và nơi tổ chức là bên quyết định vào tối hôm đó. Vào cửa bằng nhận diện khuôn mặt là một luồng riêng có hướng dẫn riêng.",
+    intro: [
+      "Mọi thứ khác trên trang này là sự chuẩn bị. Đây là phần mà một chuyến bay, một khách sạn và một đợt bán trước hoặc biến thành một chiếc ghế hoặc không, và nó chạy trên chiếc điện thoại bạn đang cầm giữa đám đông với sóng yếu.",
+      "Phần lớn những gì hỏng ở đây không hề kịch tính. Đó là một trình duyệt ở sai chế độ hiển thị mã QR chỗ đáng lẽ là tấm vé, một tiện ích dịch viết lại số cổng, một mã PIN hết hạn trong lúc một người bạn đang ngủ. Cả bốn đều được NOL World ghi lại và cả bốn đều tránh được từ đêm hôm trước.",
+    ],
+    steps: [
+      {
+        title: "Biết bạn đang cầm loại vé nào",
+        body: "Phương thức nhận vé đã được quyết định lúc bạn đặt, và nó quyết định mọi thứ dưới đây. Một tấm vé điện tử sống trong tài khoản của bạn và được quét từ màn hình bạn. Nhận tại địa điểm nghĩa là một tấm vé giấy lấy ở quầy vé vào đúng ngày diễn, và NOL World không phát sớm — khung nhận vé mở trước một tiếng, và một tấm vé đã nhận thì không được cấp lại nếu mất hay bị lấy cắp. Hãy kiểm tra bạn có loại nào ngay bây giờ, chứ không phải ở địa điểm tổ chức.",
+        pitfall:
+          "Cho rằng mọi đơn đặt đều là vé điện tử vì buổi diễn trước đã như vậy. Đó là thuộc tính của từng đơn đặt, và hai lối đi hỏng theo những cách hoàn toàn khác nhau.",
+        takes: "5 phút",
+      },
+      {
+        title: "Mở vé điện tử trên chính chiếc điện thoại bạn sẽ vào cửa",
+        body: "NOL World khẳng định vé điện tử chỉ có trên ứng dụng NOL World hoặc web di động. Việc vào cửa là bằng mã QR trên tấm vé. Lối đi trên điện thoại là ứng dụng hoặc web di động, đăng nhập, Account/My, My Reservations, rồi nút Mobile Ticket. Trên máy tính, chính nút đó tạo ra một mã QR không phải vé của bạn — nó là một bước chuyển giao, để bạn quét bằng điện thoại cho tấm vé mở ra ở đó.",
+        pitfall:
+          "Chụp màn hình tấm vé để dự phòng rồi tính đưa ảnh ra cho người ta xem. Một tấm vé được dựng trực tiếp trong một tài khoản không phải cùng một thứ với một bức ảnh chụp nó, và cổng vào không phải nơi bạn muốn phát hiện ra sự khác biệt đó.",
+        takes: "10 phút, từ đêm hôm trước",
+      },
+      {
+        title: "Tắt tính năng dịch của trình duyệt trước khi đi",
+        body: "NOL World nói vé điện tử chỉ được cung cấp bằng tiếng Anh, và rằng nếu bạn đang thấy ngôn ngữ khác thì đó là bản dịch tự động của trình duyệt — cách sửa là tắt dịch và tải lại trang. Với nhóm độc giả này, đó là trạng thái mặc định của trình duyệt chứ không phải một trường hợp hiếm. Một trình dịch tự động viết lại một cái cổng, một khu hay một dãy ghế là vấn đề bạn sẽ không nhận ra cho tới khi ai đó ở cửa đọc nó lại cho bạn nghe.",
+        pitfall:
+          "Để dịch tự động bật vì nó đã hữu ích suốt chuyến đi. Nó đã dịch các trang tiếng Hàn giúp bạn; ở đây trang vốn đã là tiếng Anh và điều duy nhất nó có thể làm là gây hại.",
+        takes: "2 phút",
+      },
+      {
+        title: "Nếu bạn thấy mã QR chỗ đáng lẽ là tấm vé, hãy sửa chế độ trình duyệt",
+        body: "Đây là cách phổ biến nhất khiến tấm vé trông như biến mất, và nó không phải lỗi. NOL World nói rằng nếu trình duyệt của bạn ở chế độ máy tính thì một mã QR sẽ hiện ra thay cho vé điện tử — và rằng có một nút View Tickets ngay dưới mã QR đó vẫn mở được tấm vé. Nếu không, hãy chuyển trình duyệt sang chế độ di động: ở Chrome là menu ba chấm rồi View as mobile version; ở Safari là nút ngôn ngữ bên trái thanh địa chỉ rồi Request Mobile Website; ở Samsung Internet là menu ba gạch rồi Mobile site.",
+        pitfall:
+          "Để ai đó ở cổng quét cái mã QR ấy. Đó là mã chuyển giao của máy tính, không phải mã vào cửa của bạn, và thứ bạn cần nằm cách nó đúng một cú chạm xuống dưới.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hiểu việc gửi một tấm vé ràng buộc bạn vào điều gì",
+        body: "Việc chia sẻ vé điện tử đi một chiều: người mua gửi cho người đi xem, và NOL World khẳng định rằng một tấm vé đã nhận thì không thể gửi tiếp — chỉ vé đã đặt mới gửi được. Việc gửi vẫn làm được cho tới ngày diễn ra sự kiện. Không phải sản phẩm nào cũng có; ở nơi bên bán đã tắt nó, nút gửi đơn giản là không có ở đó. Và cái giá của việc gửi là chính lối thoát của bạn: một khi tấm vé đã được gửi thành công, NOL World hạn chế việc hủy đơn đặt, và điều đó chỉ được khôi phục nếu người nhận hủy đăng ký vé.",
+        pitfall:
+          "Tổ chức một nhóm bằng cách gửi vé cho từng người ngay trong tuần bạn đặt. Bạn vừa trao cho mỗi người một quyền phủ quyết đối với việc hủy đơn đặt đó.",
+        takes: "5 phút",
+      },
+      {
+        title: "Nếu bạn là người nhận vé, hãy coi mã PIN là một chiếc đồng hồ 24 tiếng",
+        body: "Một tấm vé đã nhận chưa dùng được cho tới khi nó được đăng ký, và khung thời gian thì ngắn. NOL World nói mã PIN chỉ có thể đăng ký trong vòng 24 tiếng kể từ lúc gửi, và rằng một tấm vé chưa đăng ký sẽ quay về với người gửi sau đó — hoặc nếu nó chưa được đăng ký tính đến ngày diễn. Việc đăng ký bắt đầu từ đường dẫn trong tin nhắn hoặc email: Received Mobile Ticket, Ticket Register, rồi nhập mã PIN trong tin nhắn. Sau đó tấm vé nằm trong My Page, Received Mobile Ticket, Booking History. Trả lại một tấm vé cũng đi cùng đường đó với nút Return, và NOL World nói một tấm vé đã đăng ký vẫn trả lại được.",
+        pitfall:
+          "Gửi cho một người bạn ở múi giờ mà 24 tiếng đó phần lớn là ban đêm. Tấm vé lặng lẽ bật về chỗ bạn và đơn đặt lại là của bạn, điều đó không sao vào một ngày thứ Ba và rất có sao vào sáng ngày diễn.",
+        takes: "5 phút, trong vòng 24 tiếng",
+      },
+      {
+        title: "Xem trang của show trước khi cho rằng người khác nhận vé hộ bạn được",
+        body: "NOL World có cho phép người không phải người mua đi nhận vé, kèm những điều kiện thực sự. Quy trình khác nhau theo từng địa điểm, việc nhận hộ có thể bị hạn chế tùy loại hình buổi diễn, và chỉ dẫn của NOL World là xem thông báo trên trang chi tiết của show bạn đã đặt. Thứ người kia cần là chi tiết đơn đặt in ra từ My Ticket, mã xác nhận, và giấy tờ tùy thân của người mua. Hãy coi yêu cầu cuối cùng đó đúng như giới hạn mà nó là: với một show chặn cửa bằng chính danh tính đã xác minh của người mua, đừng lên kế hoạch dựa vào người nhận hộ.",
+        pitfall:
+          "Đọc việc nhận hộ như một quyền chung. Đó là một sự cho phép theo từng địa điểm, từng show, và những show nhiều khả năng từ chối nó nhất chính là những show nhu cầu cao mà bạn đã phải cần tới một đợt bán trước.",
+        takes: "10 phút",
+      },
+      {
+        title: "Đừng coi việc đến muộn như một chiếc ghế bạn vẫn còn giữ",
+        body: "NOL World nói rõ rằng việc vào cửa sau khi đã bắt đầu tùy thuộc vào từng show, và rằng một số buổi diễn không cho phép điều đó chút nào — họ nêu đích danh hòa nhạc cổ điển và opera. Ở nơi có cho vào muộn, điều đó có thể nghĩa là chờ tới giờ nghỉ giải lao và xem nửa sau. Và ngay cả khi bạn được cho vào, NOL World nói bạn có thể chưa ngồi được vào ghế của mình cho tới giờ giải lao, nên đến muộn có thể nghĩa là đứng hoặc ngồi chỗ khác suốt đúng cái phần bạn đã tới để xem.",
+        pitfall:
+          "Tính giờ đến dựa trên giờ bắt đầu. Hãy tính từ hàng chờ vào cửa, khâu kiểm tra an ninh và khung nhận vé, tất cả đều diễn ra trước giờ bắt đầu và không cái nào chịu đợi.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Có một mã QR chỗ đáng lẽ là vé của tôi. Đơn đặt của tôi hỏng à?",
+        a: "Không — trình duyệt của bạn đang ở chế độ máy tính. NOL World nói điều đó tạo ra một mã QR thay cho vé điện tử, và rằng một nút View Tickets ngay bên dưới sẽ mở tấm vé. Bạn cũng có thể chuyển trình duyệt sang chế độ di động: menu ba chấm của Chrome có View as mobile version, nút ngôn ngữ của Safari có Request Mobile Website, và menu ba gạch của Samsung Internet có Mobile site.",
+      },
+      {
+        q: "Vé điện tử của tôi hiển thị sai ngôn ngữ.",
+        a: "NOL World chỉ cung cấp vé điện tử bằng tiếng Anh, nên một ngôn ngữ khác nghĩa là trình duyệt của bạn đang dịch tự động. Hãy tắt dịch và tải lại trang. Nên làm trước khi đi chứ không phải ở cổng vào, vì một số cổng hay một dãy ghế bị dịch là thứ sai theo cách rất khó nhận ra.",
+      },
+      {
+        q: "Tôi đưa vé từ máy tính xách tay ở cửa được không?",
+        a: "NOL World nói vé điện tử chỉ có trên ứng dụng hoặc web di động. Trên máy tính, nút Mobile Ticket cho bạn một mã QR để quét bằng điện thoại, và tấm vé thật sẽ mở ra ở đó. Hãy tính vào cửa bằng một chiếc điện thoại.",
+      },
+      {
+        q: "Bạn tôi nhận vé hộ tôi ở quầy vé được không?",
+        a: "Đôi khi. NOL World nói người không phải người mua có thể nhận, nhưng quy trình thay đổi theo địa điểm và việc nhận hộ có thể bị hạn chế tùy loại hình buổi diễn — nên thông báo trên trang chi tiết của show bạn mới là nơi có thẩm quyền. Người đó sẽ cần chi tiết đơn đặt in ra từ My Ticket, mã xác nhận và giấy tờ tùy thân của người mua. Với những show xác minh danh tính người mua ở cửa vào, đừng trông cậy vào cách này.",
+      },
+      {
+        q: "Tôi lỡ gửi một tấm vé điện tử. Lấy lại được không?",
+        a: "Nếu người nhận chưa đăng ký nó thì được — NOL World nói người gửi có thể hủy việc chia sẻ bằng nút Cancel Send. Nó cũng tự quay về nếu người nhận không đăng ký trong vòng 24 tiếng hoặc tính đến ngày diễn. Khi đã đăng ký rồi thì việc lấy lại là hành động của họ: họ trả vé từ My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return.",
+      },
+      {
+        q: "Chuyện gì xảy ra nếu bạn tôi không bao giờ đăng ký tấm vé tôi gửi?",
+        a: "Nó quay về với bạn. NOL World nói một tấm vé chưa đăng ký sẽ tự động được trả về cho người gửi sau 24 tiếng, hoặc nếu nó chưa được đăng ký tính đến ngày diễn. Điều đó khôi phục đơn đặt của bạn — kể cả, theo các quy định hủy của họ, khả năng bạn hủy nó — nhưng đây là một quá trình lặng lẽ, nên hãy kiểm tra thay vì phỏng đoán.",
+      },
+      {
+        q: "Tôi sẽ đến muộn hai mươi phút. Họ có cho tôi vào không?",
+        a: "Tùy từng show và không ai hứa được. NOL World nói việc vào cửa sau khi đã bắt đầu tùy thuộc vào buổi diễn và rằng một số buổi không cho phép chút nào, đặc biệt là hòa nhạc cổ điển và opera; ở nơi được phép, bạn có thể phải chờ tới giờ giải lao, và có thể chưa ngồi được vào ghế của chính mình cho tới lúc đó.",
+      },
+      {
+        q: "Vé điện tử có phải là cùng một thứ với vào cửa bằng nhận diện khuôn mặt không?",
+        a: "Không. NOL facepass là một hệ thống riêng, nơi một chiếc camera ở cửa cho bạn vào mà không cần kiểm tra vé, và việc hỗ trợ nó được đặt theo từng sự kiện. Vé điện tử cùng mã QR của nó là lối đi thông thường, và là lối cần giữ cho hoạt động được ngay cả khi bạn đã đăng ký khuôn mặt.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "บัตรมือถือ NOL World ของคุณ: คิวอาร์ รหัส PIN และการผ่านประตู",
+    summary:
+      "บัตรเปิดได้บนโทรศัพท์เท่านั้น มันเป็นภาษาอังกฤษล้วนและระบบแปลอัตโนมัติของเบราว์เซอร์จะทำให้มันเพี้ยน บัตรที่ส่งออกไปมีนาฬิกา PIN 24 ชั่วโมง และการมาสายไม่ใช่การรับประกันว่าจะได้เข้า ยี่สิบนาทีสุดท้ายของกระบวนการทั้งหมด เรียงตามลำดับ",
+    scope:
+      "ครอบคลุมบัตรมือถือของ NOL World และการเข้างานตามที่ NOL World บันทึกไว้: บัตรเปิดที่ไหน สองสถานะของเบราว์เซอร์ที่ซ่อนมันไว้ การส่งและการรับพร้อมนาฬิกา PIN การรับแทน และการมาสาย กฎการเข้างานกำหนดเป็นรายงานและสถานที่จัดงานเป็นผู้ตัดสินในคืนนั้น การเข้างานด้วยการจดจำใบหน้าเป็นกระบวนการแยกที่มีคู่มือของตัวเอง",
+    intro: [
+      "ทุกอย่างที่เหลือบนเว็บนี้คือการเตรียมตัว นี่คือช่วงที่ตั๋วเครื่องบิน โรงแรม และรอบพรีเซลจะกลายเป็นที่นั่งหรือไม่กลายเป็น และมันทำงานบนโทรศัพท์ที่คุณถืออยู่ท่ามกลางฝูงชนที่สัญญาณไม่ดี",
+      "เรื่องที่ผิดพลาดตรงนี้ส่วนใหญ่ไม่ได้ดราม่าอะไร มันคือเบราว์เซอร์ที่อยู่ผิดโหมดแล้วแสดงคิวอาร์โค้ดตรงที่ควรเป็นบัตร ส่วนขยายแปลภาษาที่เขียนหมายเลขประตูใหม่ รหัส PIN ที่หมดอายุระหว่างที่เพื่อนคนหนึ่งหลับอยู่ ทั้งสี่เรื่องถูกบันทึกโดย NOL World และทั้งสี่เรื่องเลี่ยงได้ตั้งแต่คืนก่อนหน้า",
+    ],
+    steps: [
+      {
+        title: "รู้ว่าคุณถือบัตรแบบไหนอยู่",
+        body: "วิธีรับบัตรถูกตัดสินไปแล้วตอนคุณจอง และมันกำหนดทุกอย่างที่อยู่ข้างล่างนี้ บัตรมือถืออยู่ในบัญชีของคุณและถูกสแกนจากหน้าจอคุณ การรับที่สถานที่จัดงานหมายถึงบัตรกระดาษจากห้องจำหน่ายบัตรในวันแสดง และ NOL World ไม่ปล่อยให้รับก่อน ช่วงรับเปิดหนึ่งชั่วโมงก่อนงาน และบัตรที่รับไปแล้วจะไม่ออกใหม่ให้ถ้าหายหรือถูกขโมย ตรวจว่าคุณมีแบบไหนตั้งแต่ตอนนี้ ไม่ใช่ที่หน้างาน",
+        pitfall:
+          "การคิดว่าทุกการจองเป็นบัตรมือถือเพราะคอนเสิร์ตที่แล้วเป็นแบบนั้น มันเป็นคุณสมบัติของแต่ละการจอง และสองเส้นทางนี้ล้มเหลวคนละแบบโดยสิ้นเชิง",
+        takes: "5 นาที",
+      },
+      {
+        title: "เปิดบัตรมือถือบนโทรศัพท์เครื่องที่คุณจะใช้เข้างาน",
+        body: "NOL World ระบุว่าบัตรมือถือมีให้ใช้เฉพาะบนแอป NOL World หรือเว็บมือถือเท่านั้น การเข้างานใช้คิวอาร์โค้ดบนบัตร เส้นทางบนโทรศัพท์คือแอปหรือเว็บมือถือ ล็อกอิน Account/My, My Reservations แล้วปุ่ม Mobile Ticket บนคอมพิวเตอร์ ปุ่มเดียวกันจะสร้างคิวอาร์โค้ดที่ไม่ใช่บัตรของคุณ มันคือการส่งต่อ มีไว้ให้สแกนด้วยโทรศัพท์เพื่อให้บัตรเปิดที่นั่น",
+        pitfall:
+          "การแคปหน้าจอบัตรไว้เผื่อแล้วคิดว่าจะยื่นภาพนั้นให้ดู บัตรที่ถูกเรนเดอร์สด ๆ ในบัญชีไม่ใช่สิ่งเดียวกับรูปถ่ายของมัน และประตูทางเข้าไม่ใช่ที่ที่คุณอยากค้นพบความต่างนี้",
+        takes: "10 นาที ตั้งแต่คืนก่อนหน้า",
+      },
+      {
+        title: "ปิดการแปลภาษาของเบราว์เซอร์ก่อนออกเดินทาง",
+        body: "NOL World บอกว่าบัตรมือถือให้บริการเป็นภาษาอังกฤษเท่านั้น และถ้าคุณเห็นภาษาอื่นแปลว่าเป็นการแปลอัตโนมัติของเบราว์เซอร์คุณ ทางแก้คือปิดการแปลแล้วโหลดหน้าใหม่ สำหรับผู้อ่านกลุ่มนี้ นั่นคือสถานะเริ่มต้นของเบราว์เซอร์ ไม่ใช่กรณียกเว้น ตัวแปลอัตโนมัติที่เขียนประตู โซน หรือแถวที่นั่งใหม่คือปัญหาที่คุณจะไม่สังเกตจนกระทั่งมีคนที่ประตูอ่านมันกลับมาให้คุณฟัง",
+        pitfall:
+          "การปล่อยให้การแปลเปิดอยู่เพราะมันช่วยมาตลอดทั้งทริป มันแปลหน้าภาษาเกาหลีให้คุณ แต่ตรงนี้หน้าเว็บเป็นภาษาอังกฤษอยู่แล้ว และสิ่งเดียวที่มันทำได้คือทำให้เสียหาย",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถ้าคุณเห็นคิวอาร์โค้ดตรงที่ควรเป็นบัตร ให้แก้โหมดเบราว์เซอร์",
+        body: "นี่คือวิธีที่พบบ่อยที่สุดที่ทำให้บัตรดูเหมือนหายไป และมันไม่ใช่ความผิดพลาดของระบบ NOL World บอกว่าถ้าเบราว์เซอร์ของคุณอยู่ในโหมดเดสก์ท็อป คิวอาร์โค้ดจะถูกแสดงแทนบัตรมือถือ และว่ามีปุ่ม View Tickets อยู่ใต้คิวอาร์โค้ดนั้นซึ่งเปิดบัตรได้อยู่ดี มิฉะนั้นให้สลับเบราว์เซอร์เป็นโหมดมือถือ: ใน Chrome คือเมนูสามจุดแล้ว View as mobile version ใน Safari คือปุ่มภาษาทางซ้ายของแถบที่อยู่แล้ว Request Mobile Website ใน Samsung Internet คือเมนูสามขีดแล้ว Mobile site",
+        pitfall:
+          "การปล่อยให้คนที่ประตูสแกนคิวอาร์โค้ดนั้น มันคือโค้ดส่งต่อของเดสก์ท็อป ไม่ใช่โค้ดเข้างานของคุณ และสิ่งที่คุณต้องการอยู่ต่ำลงไปแค่หนึ่งแตะ",
+        takes: "2 นาที",
+      },
+      {
+        title: "เข้าใจว่าการส่งบัตรผูกมัดคุณกับอะไร",
+        body: "การแบ่งปันบัตรมือถือไปทางเดียว: ผู้ซื้อส่งให้ผู้เข้าชม และ NOL World ระบุว่าบัตรที่รับมาแล้วส่งต่อไม่ได้ ส่งได้เฉพาะบัตรที่จองไว้เท่านั้น การส่งยังทำได้จนถึงวันงาน ไม่ใช่ทุกสินค้าจะมีให้ ที่ใดผู้ขายปิดไว้ ปุ่มส่งก็ไม่มีอยู่เฉย ๆ และราคาของการส่งคือทางออกของคุณเอง เมื่อบัตรถูกส่งสำเร็จแล้ว NOL World จะจำกัดการยกเลิกการจอง ซึ่งจะคืนกลับก็ต่อเมื่อผู้รับยกเลิกการลงทะเบียนบัตร",
+        pitfall:
+          "การจัดกลุ่มด้วยการส่งบัตรให้ทุกคนตั้งแต่สัปดาห์ที่คุณจอง คุณเพิ่งมอบสิทธิ์ยับยั้งการยกเลิกการจองนั้นให้แต่ละคนไป",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถ้าคุณเป็นผู้รับบัตร ให้ถือว่า PIN คือนาฬิกา 24 ชั่วโมง",
+        body: "บัตรที่รับมาใช้ไม่ได้จนกว่าจะลงทะเบียน และช่วงเวลานั้นสั้น NOL World บอกว่า PIN ลงทะเบียนได้ภายใน 24 ชั่วโมงนับจากการส่งเท่านั้น และว่าบัตรที่ยังไม่ลงทะเบียนจะกลับไปหาผู้ส่งหลังจากนั้น หรือถ้ายังไม่ลงทะเบียนภายในวันแสดง การลงทะเบียนเริ่มจาก URL ในข้อความหรืออีเมล: Received Mobile Ticket, Ticket Register แล้วใส่ PIN จากข้อความ หลังจากนั้นบัตรจะอยู่ใน My Page, Received Mobile Ticket, Booking History การคืนบัตรใช้เส้นทางเดียวกันกับปุ่ม Return และ NOL World บอกว่าบัตรที่ลงทะเบียนแล้วก็ยังคืนได้",
+        pitfall:
+          "การส่งให้เพื่อนในเขตเวลาที่ 24 ชั่วโมงนั้นส่วนใหญ่เป็นเวลากลางคืน บัตรจะเด้งกลับมาหาคุณอย่างเงียบ ๆ และการจองก็เป็นของคุณอีกครั้ง ซึ่งไม่เป็นไรในวันอังคาร และเป็นเรื่องใหญ่ในเช้าวันแสดง",
+        takes: "5 นาที ภายใน 24 ชั่วโมง",
+      },
+      {
+        title: "ดูหน้าของงานก่อนจะคิดว่าคนอื่นรับบัตรแทนคุณได้",
+        body: "NOL World อนุญาตให้คนที่ไม่ใช่ผู้ซื้อรับบัตรได้จริง พร้อมเงื่อนไขที่เป็นจริงจัง กระบวนการต่างกันไปตามสถานที่ การรับแทนอาจถูกจำกัดขึ้นอยู่กับประเภทของงาน และคำสั่งของ NOL World คือให้ดูประกาศบนหน้ารายละเอียดของงานที่คุณจอง สิ่งที่อีกฝ่ายต้องมีคือรายละเอียดการจองที่พิมพ์ออกมาจาก My Ticket หมายเลขยืนยัน และเอกสารแสดงตนของผู้ซื้อ ให้ถือว่าข้อสุดท้ายนั้นคือขีดจำกัดตามที่มันเป็น: สำหรับงานที่กั้นประตูด้วยตัวตนที่ยืนยันแล้วของผู้ซื้อเอง อย่าวางแผนโดยอาศัยการรับแทน",
+        pitfall:
+          "การอ่านการรับแทนว่าเป็นสิทธิ์ทั่วไป มันเป็นการอนุญาตรายสถานที่และรายงาน และงานที่มีแนวโน้มจะปฏิเสธมากที่สุดคืองานความต้องการสูงที่คุณต้องใช้รอบพรีเซลพอดี",
+        takes: "10 นาที",
+      },
+      {
+        title: "อย่าถือว่าการมาสายคือที่นั่งที่คุณยังมีอยู่",
+        body: "NOL World บอกชัดว่าการเข้างานหลังเริ่มแล้วขึ้นอยู่กับแต่ละงาน และว่าบางการแสดงไม่อนุญาตเลย โดยระบุคอนเสิร์ตคลาสสิกและอุปรากรเป็นพิเศษ ที่ใดมีการเข้าสาย มันอาจหมายถึงการรอจนถึงช่วงพักแล้วดูครึ่งหลัง และแม้คุณจะได้เข้า NOL World บอกว่าคุณอาจยังนั่งที่ของตัวเองไม่ได้จนถึงช่วงพัก การมาสายจึงอาจหมายถึงการยืนหรือนั่งที่อื่นตลอดช่วงที่คุณตั้งใจมาดู",
+        pitfall:
+          "การคำนวณเวลามาถึงจากเวลาเริ่มงาน ให้คำนวณจากคิวเข้างาน การตรวจความปลอดภัย และช่วงรับบัตร ซึ่งทั้งหมดเกิดก่อนเวลาเริ่มงานและไม่มีอันไหนรอคุณ",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "มีคิวอาร์โค้ดอยู่ตรงที่ควรเป็นบัตรของฉัน การจองของฉันพังหรือเปล่า",
+        a: "ไม่ เบราว์เซอร์ของคุณอยู่ในโหมดเดสก์ท็อป NOL World บอกว่านั่นทำให้เกิดคิวอาร์โค้ดแทนที่บัตรมือถือ และว่ามีปุ่ม View Tickets อยู่ใต้มันซึ่งเปิดบัตรได้ คุณยังสลับเบราว์เซอร์เป็นโหมดมือถือได้ด้วย: เมนูสามจุดของ Chrome มี View as mobile version ปุ่มภาษาของ Safari มี Request Mobile Website และเมนูสามขีดของ Samsung Internet มี Mobile site",
+      },
+      {
+        q: "บัตรมือถือของฉันแสดงผิดภาษา",
+        a: "NOL World ให้บริการบัตรมือถือเป็นภาษาอังกฤษเท่านั้น ภาษาอื่นจึงแปลว่าเบราว์เซอร์ของคุณกำลังแปลอัตโนมัติ ปิดการแปลแล้วโหลดใหม่ ควรทำก่อนออกเดินทางมากกว่าทำที่ประตู เพราะหมายเลขประตูหรือแถวที่นั่งที่ถูกแปลนั้นผิดในแบบที่สังเกตยาก",
+      },
+      {
+        q: "แสดงบัตรจากแล็ปท็อปที่ประตูได้ไหม",
+        a: "NOL World บอกว่าบัตรมือถือมีให้ใช้เฉพาะบนแอปหรือเว็บมือถือ บนคอมพิวเตอร์ ปุ่ม Mobile Ticket จะให้คิวอาร์โค้ดเพื่อสแกนด้วยโทรศัพท์ของคุณ ซึ่งจะเปิดบัตรจริงที่นั่น วางแผนเข้างานด้วยโทรศัพท์",
+      },
+      {
+        q: "เพื่อนไปรับบัตรให้ฉันที่ห้องจำหน่ายบัตรได้ไหม",
+        a: "บางครั้งได้ NOL World บอกว่าคนที่ไม่ใช่ผู้ซื้อรับได้ แต่กระบวนการต่างกันไปตามสถานที่ และการรับแทนอาจถูกจำกัดขึ้นอยู่กับประเภทของงาน ประกาศบนหน้ารายละเอียดของงานคุณจึงเป็นที่ที่มีอำนาจตัดสิน เขาจะต้องมีรายละเอียดการจองที่พิมพ์จาก My Ticket หมายเลขยืนยัน และเอกสารแสดงตนของผู้ซื้อ สำหรับงานที่ตรวจตัวตนของผู้ซื้อตอนเข้า อย่าไปพึ่งวิธีนี้",
+      },
+      {
+        q: "ฉันเผลอส่งบัตรมือถือไป เอากลับได้ไหม",
+        a: "ถ้าผู้รับยังไม่ได้ลงทะเบียนก็ได้ NOL World บอกว่าผู้ส่งยกเลิกการแบ่งปันได้ด้วยปุ่ม Cancel Send มันยังกลับมาเองโดยอัตโนมัติถ้าผู้รับไม่ลงทะเบียนภายใน 24 ชั่วโมงหรือภายในวันแสดง เมื่อลงทะเบียนแล้ว การเอากลับเป็นการกระทำของเขา เขาคืนจาก My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return",
+      },
+      {
+        q: "จะเกิดอะไรขึ้นถ้าเพื่อนไม่เคยลงทะเบียนบัตรที่ฉันส่งไป",
+        a: "มันกลับมาหาคุณ NOL World บอกว่าบัตรที่ยังไม่ลงทะเบียนจะถูกคืนให้ผู้ส่งโดยอัตโนมัติหลัง 24 ชั่วโมง หรือถ้ายังไม่ลงทะเบียนภายในวันแสดง นั่นคืนการจองของคุณกลับมา รวมถึงความสามารถในการยกเลิกตามกฎการยกเลิกของเขาด้วย แต่มันเป็นกระบวนการเงียบ ๆ จึงควรตรวจแทนการคาดเอา",
+      },
+      {
+        q: "ฉันจะไปสายยี่สิบนาที เขาจะให้เข้าไหม",
+        a: "ขึ้นอยู่กับงานและไม่มีใครรับประกันได้ NOL World บอกว่าการเข้างานหลังเริ่มแล้วขึ้นอยู่กับการแสดง และว่าบางการแสดงไม่อนุญาตเลย โดยเฉพาะคอนเสิร์ตคลาสสิกและอุปรากร ที่ใดอนุญาต คุณอาจต้องรอถึงช่วงพัก และอาจยังนั่งที่ของตัวเองไม่ได้จนกว่าจะถึงตอนนั้น",
+      },
+      {
+        q: "บัตรมือถือเป็นอันเดียวกับการเข้างานด้วยการจดจำใบหน้าไหม",
+        a: "ไม่ NOL facepass เป็นระบบแยกที่กล้องตรงประตูให้คุณเข้าโดยไม่ตรวจบัตร และการรองรับมันถูกกำหนดเป็นรายอีเวนต์ บัตรมือถือและคิวอาร์โค้ดของมันคือเส้นทางปกติ และเป็นเส้นทางที่ควรรักษาให้ใช้ได้แม้คุณจะลงทะเบียนใบหน้าไว้แล้ว",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Ang mobile ticket mo sa NOL World: ang QR, ang PIN, at ang pagdaan sa gate",
+    summary:
+      "Bumubukas lamang ang tiket sa telepono, Ingles lamang ito at sisirain ito ng auto-translate ng browser mo, may 24-oras na orasan ng PIN ang tiket na naipadala, at hindi garantisadong pagpasok ang pagdating nang huli. Ang huling dalawampung minuto ng buong proseso, ayon sa pagkakasunod.",
+    scope:
+      "Sakop nito ang mobile ticket ng NOL World at ang pagpasok sa venue ayon sa pagkakatala ng NOL World: kung saan bumubukas ang tiket, ang dalawang kalagayan ng browser na nagtatago nito, ang pagpapadala at pagtanggap kasama ang orasan ng PIN, ang pagkuha ng ibang tao, at ang pagdating nang huli. Itinatakda kada palabas ang mga tuntunin sa pagpasok at ang venue ang nagpapasya sa gabing iyon. Hiwalay na daloy ang pagpasok sa pamamagitan ng pagkilala ng mukha at may sarili itong gabay.",
+    intro: [
+      "Paghahanda ang lahat ng iba pa sa site na ito. Ito ang bahaging kung saan ang isang flight, isang hotel at isang presale ay nagiging upuan o hindi, at tumatakbo ito sa isang teleponong hawak mo sa gitna ng maraming tao at mahinang signal.",
+      "Karamihan sa nagkakamali rito ay hindi madrama. Isang browser na nasa maling mode na nagpapakita ng QR code kung saan dapat nasa tiket, isang extension ng pagsasalin na nagre-rewrite ng numero ng gate, isang PIN na nag-expire habang tulog ang isang kaibigan. Nakatala ng NOL World ang apat na iyon at ang apat na iyon ay maiiwasan noong gabi pa lamang.",
+    ],
+    steps: [
+      {
+        title: "Alamin kung anong uri ng tiket ang talagang hawak mo",
+        body: "Napagpasyahan ang paraan ng pagkuha noong nag-book ka, at itinatakda nito ang lahat ng nasa ibaba. Ang mobile ticket ay nasa account mo at ina-scan mula sa screen mo. Ang pagkuha sa venue ay nangangahulugan ng papel na tiket mula sa box office sa araw ng palabas, at hindi ito inilalabas nang maaga ng NOL World — nagbubukas ang bintana isang oras bago, at hindi na muling maibibigay ang nakuhang tiket kung mawala o manakaw ito. Tingnan kung alin ang nasa iyo ngayon, hindi sa venue.",
+        pitfall:
+          "Ang pag-aakalang mobile ticket ang bawat booking dahil iyon ang ginamit ng nakaraang konsiyerto. Katangian ito kada booking, at magkaiba ang paraan ng pagkabigo ng dalawang ruta.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Buksan ang mobile ticket sa teleponong gagamitin mo sa pagpasok",
+        body: "Isinasaad ng NOL World na available lamang ang mobile ticket sa app ng NOL World o sa mobile web. Ang pagpasok ay sa pamamagitan ng QR code sa tiket. Ang ruta sa telepono ay app o mobile web, mag-log in, Account/My, My Reservations, at ang pindutang Mobile Ticket. Sa kompyuter, ang parehong pindutan ay gumagawa ng QR code na hindi ang tiket mo — isa itong paghahabilin, na dapat i-scan gamit ang telepono mo para doon bumukas ang tiket.",
+        pitfall:
+          "Ang pag-screenshot ng tiket bilang backup at ang balak na ipakita ang larawan. Ang tiket na buhay na ina-render sa isang account ay hindi kaparehong bagay ng larawan nito, at hindi ang gate ang lugar na gusto mong matuklasan ang pagkakaiba.",
+        takes: "10 minuto, noong gabi bago",
+      },
+      {
+        title: "Patayin ang pagsasalin ng browser bago ka umalis",
+        body: "Sinasabi ng NOL World na ibinibigay ang mobile ticket sa Ingles lamang, at kung nakikita mo ang ibang wika ay awtomatikong pagsasalin iyon ng browser mo — at ang lunas ay patayin ang pagsasalin at i-refresh ang pahina. Para sa madlang ito, iyon ang default na kalagayan ng browser at hindi isang bihirang kaso. Ang auto-translator na nagre-rewrite ng gate, bloke o hanay ng upuan ay isang problemang hindi mo mapapansin hanggang basahin ito pabalik sa iyo ng isang tao sa pintuan.",
+        pitfall:
+          "Ang pag-iwan sa pagsasaling naka-on dahil nakatulong ito sa buong biyahe. Nagsasalin ito ng mga pahinang Koreano para sa iyo; dito ay Ingles na ang pahina at ang tanging magagawa nito ay sumira.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Kung may QR code kung saan dapat nasa tiket, ayusin ang mode ng browser",
+        body: "Ito ang pinakakaraniwang paraan kung paano nagmumukhang nawawala ang tiket, at hindi ito depekto. Sinasabi ng NOL World na kung nasa desktop mode ang browser mo, isang QR code ang ipinapakita sa halip na ang mobile ticket — at na may pindutang View Tickets sa ilalim ng QR na iyon na nagbubukas pa rin sa tiket. Kung hindi, ilipat ang browser sa mobile mode: sa Chrome ay ang tatlong-tuldok na menu at View as mobile version; sa Safari ay ang pindutan ng wika sa kaliwa ng address bar at Request Mobile Website; sa Samsung Internet ay ang tatlong-guhit na menu at Mobile site.",
+        pitfall:
+          "Ang pagpapa-scan ng QR code na iyon sa gate. Ito ang handoff code ng desktop, hindi ang entry code mo, at ang kailangan mo ay isang tap lamang sa ilalim nito.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Unawain kung saan ka itinatali ng pagpapadala ng tiket",
+        body: "Isang direksiyon lamang ang pagbabahagi ng mobile ticket: ang bumili ang nagpapadala sa dadalo, at isinasaad ng NOL World na ang natanggap na tiket ay hindi na maipapasa pa — ang mga nabook na tiket lamang ang maipapadala. Posible ang pagpapadala hanggang sa araw ng event. Hindi lahat ng produkto ay may ganito; kung saan tinanggal ito ng nagbebenta, basta wala lang doon ang pindutan ng pagpapadala. At ang halaga ng pagpapadala ay ang sarili mong labasan: kapag naipadala nang matagumpay ang tiket, nililimitahan ng NOL World ang pagkansela ng reserbasyon, na naibabalik lamang kung tatanggalin ng tumanggap ang pagkakarehistro nito.",
+        pitfall:
+          "Ang pag-oorganisa ng grupo sa pamamagitan ng pagpapadala sa lahat ng tiket nila sa linggong nag-book ka. Kaka-abot mo lang sa bawat isa ng beto sa pagkansela ng reserbasyong iyon.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Kung tumatanggap ka ng tiket, ituring ang PIN bilang 24-oras na orasan",
+        body: "Hindi magagamit ang natanggap na tiket hangga't hindi ito nairerehistro, at maikli ang bintana. Sinasabi ng NOL World na mairerehistro lamang ang PIN sa loob ng 24 oras mula sa pagpapadala, at na ang hindi nairehistrong tiket ay bumabalik sa nagpadala pagkatapos niyon — o kung hindi ito nairehistro bago ang petsa ng panonood. Nagsisimula ang pagpaparehistro mula sa URL sa mensahe o email: Received Mobile Ticket, Ticket Register, at saka ang PIN mula sa mensahe. Pagkatapos ay nasa My Page, Received Mobile Ticket, Booking History ang tiket. Ang pagsasauli nito ay parehong ruta gamit ang pindutang Return, at sinasabi ng NOL World na maisasauli pa rin ang nairehistrong tiket.",
+        pitfall:
+          "Ang pagpapadala sa kaibigang nasa time zone kung saan karamihan sa 24 oras na iyon ay gabi. Tahimik na bumabalik sa iyo ang tiket at sa iyo na muli ang reserbasyon, na walang problema sa Martes at malaking problema sa umaga ng palabas.",
+        takes: "5 minuto, sa loob ng 24 oras",
+      },
+      {
+        title: "Tingnan ang pahina ng palabas bago ipagpalagay na may ibang makakakuha para sa iyo",
+        body: "Pinapayagan nga ng NOL World ang hindi bumili na kumuha ng tiket, may kasamang tunay na kondisyon. Nag-iiba ang proseso kada venue, maaaring limitado ang pagkuha ng ibang tao depende sa uri ng palabas, at ang bilin ng NOL World ay tingnan ang abiso sa pahina ng detalye ng palabas na nabook mo. Ang kailangan ng ibang tao ay ang detalye ng booking na naka-print mula sa My Ticket, ang numero ng kumpirmasyon, at ang pagkakakilanlan ng bumili. Ituring ang huling kahilingang iyon bilang hangganang talagang ito: sa isang palabas na nagbabantay sa pintuan batay sa napatunayang pagkakakilanlan ng mismong bumili, huwag magplano batay sa isang kinatawan.",
+        pitfall:
+          "Ang pagbasa sa pagkuha ng ibang tao bilang pangkalahatang karapatan. Isa itong pahintulot kada venue at kada palabas, at ang mga palabas na malamang tumanggi rito ay mismong ang mga mataas ang hinihingi na kinailangan mo ng presale.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Huwag ituring ang pagdating nang huli bilang upuang hawak mo pa",
+        body: "Malinaw ang NOL World na ang pagpasok matapos magsimula ay nakadepende sa palabas, at na may mga pagtatanghal na hindi talaga ito pinapayagan — binabanggit nito ang mga klasikong konsiyerto at opera sa partikular. Kung saan may huling pagpasok, maaaring ibig sabihin nito ay maghintay sa interval at panoorin ang ikalawang kalahati. At kahit papasukin ka, sinasabi ng NOL World na maaaring hindi mo maangkin ang upuan mo hanggang sa interval, kaya ang pagdating nang huli ay maaaring mangahulugan ng pagtayo o pag-upo sa ibang lugar sa buong bahaging pinuntahan mo.",
+        pitfall:
+          "Ang pagtutuos ng oras ng pagdating mula sa oras ng pagsisimula. Ituos ito mula sa pila sa pagpasok, sa pagsusuri sa seguridad at sa bintana ng pagkuha, na pawang nangyayari bago ang oras ng pagsisimula at wala ni isa sa kanila ang naghihintay.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "May QR code kung saan dapat nasa tiket ko. Sira ba ang booking ko?",
+        a: "Hindi — nasa desktop mode ang browser mo. Sinasabi ng NOL World na gumagawa iyon ng QR code kapalit ng mobile ticket, at na may pindutang View Tickets sa ilalim nito na nagbubukas ng tiket. Maaari mo ring ilipat ang browser sa mobile mode: may View as mobile version ang tatlong-tuldok na menu ng Chrome, nag-aalok ng Request Mobile Website ang pindutan ng wika sa Safari, at may Mobile site ang tatlong-guhit na menu ng Samsung Internet.",
+      },
+      {
+        q: "Mali ang wikang ipinapakita ng mobile ticket ko.",
+        a: "Ibinibigay ng NOL World ang mobile ticket sa Ingles lamang, kaya ang ibang wika ay nangangahulugang nagsasalin nang awtomatiko ang browser mo. Patayin ang pagsasalin at mag-refresh. Sulit itong gawin bago ka maglakbay sa halip na sa gate, dahil ang naisaling numero ng gate o hanay ng upuan ay mali sa paraang mahirap mapansin.",
+      },
+      {
+        q: "Puwede ko bang ipakita ang tiket mula sa laptop ko sa pintuan?",
+        a: "Sinasabi ng NOL World na available lamang ang mobile ticket sa app o sa mobile web. Sa kompyuter, binibigyan ka ng pindutang Mobile Ticket ng QR code na ise-scan mo gamit ang telepono mo, na doon magbubukas ng totoong tiket. Magplanong pumasok gamit ang telepono.",
+      },
+      {
+        q: "Puwede bang ang kaibigan ko ang kumuha ng tiket ko sa box office?",
+        a: "Minsan. Sinasabi ng NOL World na puwedeng kumuha ang hindi bumili, ngunit nag-iiba ang proseso kada venue at maaaring limitado ang pagkuha ng ibang tao depende sa uri ng palabas — kaya ang abiso sa pahina ng detalye ng palabas mo ang may hawak ng pasya. Kakailanganin niya ang detalye ng booking na naka-print mula sa My Ticket, ang numero ng kumpirmasyon at ang pagkakakilanlan ng bumili. Sa mga palabas na nagpapatunay ng pagkakakilanlan ng bumili sa pagpasok, huwag kang umasa rito.",
+      },
+      {
+        q: "Napadala ko ang mobile ticket nang hindi sinasadya. Mababawi ko ba ito?",
+        a: "Kung hindi pa ito nairerehistro ng tumanggap, oo — sinasabi ng NOL World na makakakansela ang nagpadala ng pagbabahagi gamit ang pindutang Cancel Send. Awtomatiko rin itong bumabalik kung hindi magparehistro ang tumanggap sa loob ng 24 oras o bago ang petsa ng panonood. Kapag nairehistro na, siya na ang may gawa sa pagbabalik: isinasauli niya ito mula sa My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return.",
+      },
+      {
+        q: "Ano ang mangyayari kung hindi kailanman irehistro ng kaibigan ko ang tiket na ipinadala ko?",
+        a: "Babalik ito sa iyo. Sinasabi ng NOL World na awtomatikong isinasauli sa nagpadala ang hindi nairehistrong tiket pagkatapos ng 24 oras, o kung hindi ito nairehistro bago ang petsa ng panonood. Ibinabalik niyan ang reserbasyon mo — kasama na, ayon sa mga tuntunin nito sa pagkansela, ang kakayahan mong kanselahin ito — ngunit tahimik itong proseso, kaya tingnan sa halip na ipagpalagay.",
+      },
+      {
+        q: "Male-late ako nang dalawampung minuto. Papapasukin ba nila ako?",
+        a: "Depende sa palabas at walang makakapangako. Sinasabi ng NOL World na nakadepende sa pagtatanghal ang pagpasok matapos magsimula at na may mga hindi talaga pumapayag, lalo na ang mga klasikong konsiyerto at opera; kung saan pinapayagan, maaaring kailangan mong maghintay sa interval, at maaaring hindi mo maangkin ang sarili mong upuan hanggang doon.",
+      },
+      {
+        q: "Pareho ba ang mobile ticket at ang pagpasok sa pamamagitan ng pagkilala ng mukha?",
+        a: "Hindi. Hiwalay na sistema ang NOL facepass kung saan papapasukin ka ng kamera sa pintuan nang walang pagsusuri ng tiket, at itinatakda kada event ang suporta rito. Ang mobile ticket at ang QR code nito ang karaniwang ruta, at ito ang dapat panatilihing gumagana kahit nakapagrehistro ka na ng mukha.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

@@ -15614,6 +15614,354 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Verified Member của NOL World: vượt qua eKYC từ nước ngoài",
+    summary:
+      "Một số show sẽ không cho bạn đặt vé cho tới khi hộ chiếu của bạn được xác minh. Khâu kiểm tra là một lần chụp trực tiếp hộ chiếu và khuôn mặt, không thể làm lại một cách tùy tiện, và hướng dẫn duy nhất NOL World đưa ra về thời điểm lại là thứ phần lớn mọi người bỏ qua.",
+    scope:
+      "Nói về khâu kiểm tra danh tính Verified Member Only trên NOL World, đúng như NOL World ghi: khi nào nó áp dụng, phần chụp cần những gì, điều gì xảy ra với cái tên nó lưu lại, và điều gì xóa bỏ hoặc hạn chế nó. Người có hộ chiếu Hàn Quốc được chỉ sang NOL Ticket, đó là một khâu kiểm tra khác trên một trang khác. Không có gì ở đây là cách lách qua một lần xác minh.",
+    intro: [
+      "Một show Verified Member Only là show bạn không thể đặt vé cho tới khi danh tính của bạn được xác minh. Không phải một cảnh báo ở bước thanh toán — chỗ đặt đơn giản là không hiện ra với một tài khoản chưa xác minh. Fan phát hiện ra điều này đúng vào lúc mở bán, tức là thời điểm tệ nhất có thể, vì phần xác minh là một lần chụp trực tiếp hộ chiếu và khuôn mặt bạn, và nó mất bao lâu thì mất bấy lâu.",
+      "NOL World giải thích dịch vụ này là cách hạn chế quyền truy cập cho những mục đích không được phép, chẳng hạn bán lại vé. Điều đó đáng tin theo đúng nghĩa đen: khâu kiểm tra tồn tại để buộc một người vào một tài khoản, và gần như mọi quy tắc dưới đây đều bắt nguồn từ đó.",
+    ],
+    steps: [
+      {
+        title: "Xem show của bạn có cần nó không, và bạn có đang ở đúng trang không",
+        body: "Verified Member Only được đặt theo từng sản phẩm chứ không theo tài khoản — NOL World nói rằng chỉ những thành viên đã hoàn tất xác minh danh tính trên trang sản phẩm mới có thể đặt chỗ. Vậy câu hỏi đầu tiên là show của bạn có mang dấu đó hay không. Câu thứ hai là bạn có nên ở trên NOL World hay không: NOL World bảo người có hộ chiếu Hàn Quốc dùng trang NOL Ticket, nơi chạy một khâu kiểm tra hoàn toàn khác.",
+        pitfall:
+          "Cho rằng khâu kiểm tra danh tính là một việc vặt làm một lần mà trang web sẽ nhắc bạn. Với một show Verified Member Only thì không có lời nhắc nào — chỗ đặt đơn giản là không có ở đó.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy làm trước một đến hai ngày so với lúc mở bán",
+        body: "Đây là hướng dẫn của chính NOL World và là dữ kiện hữu ích nhất trên trang này: hãy hoàn tất xác minh ít nhất trước một đến hai ngày, vì thử làm gần giờ mở bán vé nghĩa là lưu lượng truy cập cao có thể gây trục trặc. Khi đã xong, bạn có thể đặt bất kỳ show Verified Member Only nào mà không phải xác minh lại. Cái giá của việc làm sớm là một buổi tối. Cái giá của việc làm muộn là cả cái show.",
+        pitfall:
+          "Bắt đầu chụp trong mười phút trước một đợt bán trước. Một lần xác minh hỏng vì lưu lượng thì không thể hối thúc, còn hàng chờ thì không đợi.",
+        takes: "30 phút, trước hai ngày",
+      },
+      {
+        title: "Hãy xác minh đúng tài khoản bạn sẽ dùng để mua",
+        body: "Việc xác minh chỉ làm một lần cho mỗi tài khoản, và NOL World nói rõ rằng thông tin đã xác minh không thể dùng lại — một hộ chiếu xác minh một tài khoản. Nếu bạn có nhiều hơn một tài khoản, đây là lúc quyết định cái nào là thật, vì sau đó phần xác minh không chuyển đi đâu được. NOL World nói thêm rằng xóa một tài khoản sẽ xóa thông tin đã xác minh của nó và giải phóng cho tài khoản khác, nhưng một tài khoản bị hạn chế vì sử dụng sai thì không thể xóa được.",
+        pitfall:
+          "Xác minh trên tài khoản mà bạn tình cờ đang đăng nhập, rồi lại mua bằng tài khoản kia. Tài khoản thứ hai chưa xác minh, còn show thì là Verified Member Only.",
+        takes: "5 phút để quyết định",
+      },
+      {
+        title: "Hãy có hộ chiếu bản gốc, còn hiệu lực và chưa hết hạn",
+        body: "Chỉ hộ chiếu còn hiệu lực được chấp nhận, và NOL World nói thẳng rằng ảnh chụp hay bản sao thì không: không phải bản quét đã in ra, không phải ảnh chụp màn hình, không phải ảnh chụp trang hộ chiếu trên một màn hình khác. Nếu hộ chiếu của bạn đã hết hạn thì bạn phải làm lại trước khi có thể xác minh — trên NOL World không có lối đi bằng giấy tờ thay thế cho người không mang hộ chiếu Hàn Quốc.",
+        pitfall:
+          "Với lấy tấm ảnh hộ chiếu vốn đã nằm sẵn trong thư viện ảnh điện thoại vì cuốn thật đang trong két an toàn khách sạn. Lần thử đó được ghi lại là một lần thử bằng bản sao.",
+        takes: "—",
+      },
+      {
+        title: "Hãy qua được phần chụp ngay lần đầu",
+        body: "NOL World công bố những gì khiến phần chụp thất bại, và danh sách ấy đọc như một danh sách những việc người ta làm khi vội. Hãy căn hộ chiếu và khuôn mặt bạn theo khung dẫn trên màn hình. Giữ cho không có lóa và phản chiếu trên cả trang hộ chiếu lẫn khuôn mặt bạn. Khuôn mặt bạn phải khớp với ảnh trong hộ chiếu. Giữ thiết bị thật yên ít nhất năm giây trong lúc nó chụp. Và nếu thiết bị cấu hình thấp hoặc mạng không ổn định, dữ liệu có thể không được lưu đúng ngay cả khi phần chụp trông ổn. Khi nó hỏng, màn hình sẽ nêu lý do — hãy đọc nó thay vì thử lại trong vô thức.",
+        pitfall:
+          "Làm việc này bằng một tay, vào ban đêm, dưới bóng đèn trần hắt lên lớp nhựa ép. Ánh sáng từ trên xuống rọi vào trang hộ chiếu là lý do phổ biến nhất khiến một lần chụp không đọc được.",
+        takes: "15 phút",
+      },
+      {
+        title: "Hãy kiểm tra cái tên đã thực sự được lưu",
+        body: "Chỉ tên viết bằng tiếng Anh được chấp nhận. NOL World nói rằng nếu tên trên hộ chiếu của bạn không phải tiếng Anh hoặc chứa ký tự đặc biệt thì việc đặt chỗ không thể tiến hành, và rằng bạn có thể bị chuyển hướng sang một yêu cầu sửa tên — đó là một đơn gửi đi, không phải một thay đổi trong phần cài đặt. Tên đã lưu hiện ra ở My Page, và đó là nơi để kiểm tra thay vì phỏng đoán. Điều này quan trọng ngay bây giờ vì sau khi xác minh bạn hoàn toàn không thể sửa tên, ngày sinh hay địa chỉ email của mình: việc đặt chỗ chỉ có thể thực hiện bằng thông tin đã xác minh.",
+        pitfall:
+          "Bỏ qua việc kiểm tra tên vì phần xác minh báo thành công. Thành công và lưu đúng ký tự là hai chuyện khác nhau, và một trong hai thì không còn sửa được nữa.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hiểu về thứ tự tên — và điều gì mới thực sự quan trọng ở cửa soát vé",
+        body: "NOL World đã đổi thứ tự tên được lưu vào ngày 16 tháng 4 năm 2025. Thành viên xác minh trước ngày đó giữ Tên + (Tên đệm) + Họ; thành viên xác minh sau đó giữ Họ + Tên + (Tên đệm). NOL World nói thẳng rằng ngay cả khi thứ tự khác với hộ chiếu của bạn, việc kiểm tra vé và vào cửa tại nơi tổ chức vẫn thực hiện được — việc kiểm tra tại chỗ chỉ bị hạn chế nếu chính cái tên khác với tên trên hộ chiếu. Thành viên xác minh trước ngày 16 tháng 4 năm 2025 sẽ được áp dụng định dạng mới khi họ xác minh lại sau khi hộ chiếu hết hạn.",
+        pitfall:
+          "Gửi yêu cầu sửa tên vì thấy thứ tự trông sai. NOL World nói rằng thứ tự không phải vấn đề; một cái tên khác mới là vấn đề. Đúng ký tự, không phải đúng trình tự.",
+        takes: "5 phút",
+      },
+      {
+        title: "Biết điều gì có thể xóa bỏ một lần xác minh bạn đã qua",
+        body: "Một lần xác minh đã hoàn tất vẫn có thể bị hủy về sau. NOL World nêu hai nguyên nhân: thử xác minh bằng giấy tờ giả mạo hoặc bị sửa đổi — mà họ định nghĩa là bao gồm cả bản sao đã in và ảnh chụp màn hình — và việc hộ chiếu dùng để xác minh hết hạn. Nếu của bạn bị hủy, hãy xác minh lại bằng chính tài khoản hiện có. NOL World cảnh báo cụ thể rằng thử bằng một tài khoản mới có thể dẫn tới lỗi hệ thống lặp đi lặp lại, và rằng một lần xác minh bị phát hiện là có được bằng thủ đoạn gian lận có thể khiến bạn mất quyền dùng các dịch vụ đặt vé.",
+        pitfall:
+          "Mở một tài khoản mới để thoát khỏi một lần bị hủy. Việc hủy đi theo giấy tờ chứ không theo tài khoản, và tài khoản mới thừa hưởng cả vấn đề lẫn sự nghi ngờ.",
+        takes: "—",
+      },
+      {
+        title: "Biết nền tảng coi điều gì là gian lận, và nó trả giá bao nhiêu",
+        body: "Lý do khâu kiểm tra nghiêm ngặt đến vậy nằm trong chính sách chống gian lận của NOL World, và hậu quả thì được công bố. Dùng giấy tờ tùy thân bị đánh cắp hoặc giả mạo để xác minh được liệt là sử dụng gian lận. Việc đặt nhiều vé vượt quá nhu cầu thông thường bằng thông tin cá nhân giống hoặc tương tự nhau cũng vậy — cùng thông tin liên hệ, cùng địa chỉ giao hàng hoặc cùng thông tin thanh toán trên nhiều tài khoản. Hình phạt chạy từ việc bị hạn chế đặt vé ba tháng trở lên cho tới đình chỉ tài khoản vĩnh viễn và hủy mọi vé đã đặt. Nhà tổ chức sự kiện có thể thêm hình phạt riêng, kể cả khai trừ khỏi fan club. Có cơ chế khiếu nại, và ở nơi việc buôn bán gian lận được xác nhận rõ ràng thì không có.",
+        pitfall:
+          "Xác minh vài tài khoản của người nhà từ một chiếc điện thoại, một địa chỉ và một chiếc thẻ để tăng cơ hội trong một đợt bán trước. Mô thức đó nằm trong danh sách đã công bố, và hình phạt được nêu vươn tới mọi tấm vé trên mỗi tài khoản trong số đó.",
+        takes: "10 phút đọc",
+      },
+    ],
+    faq: [
+      {
+        q: "Verified Member Only thực sự có nghĩa gì trên một trang sự kiện?",
+        a: "Nghĩa là show đó đóng với các tài khoản chưa xác minh. NOL World mô tả nó là một dịch vụ cho phép thành viên xác minh danh tính trước khi mua, trong đó chỉ những thành viên đã hoàn tất xác minh trên trang sản phẩm mới có thể đặt chỗ. Họ nêu mục đích là hạn chế quyền truy cập cho những mục đích không được phép, chẳng hạn bán lại vé. Hãy có sẵn hộ chiếu và điện thoại thông minh, vì khâu kiểm tra cần cả hai.",
+      },
+      {
+        q: "Tôi mang hộ chiếu Hàn Quốc. Tôi cứ xác minh trên NOL World được không?",
+        a: "NOL World bảo người mang hộ chiếu Hàn Quốc dùng trang vé NOL. Đó là một trang khác với một khâu kiểm tra danh tính khác — thường là xác thực qua di động Hàn Quốc hoặc I-PIN — và một tài khoản riêng.",
+      },
+      {
+        q: "Tôi là công dân Hàn Quốc sống ở nước ngoài và không có số di động Hàn Quốc. Vậy thì sao?",
+        a: "NOL World công bố một lối đi bằng giấy tờ. Họ chỉ công dân Hàn Quốc cư trú ở nước ngoài sang NOL Ticket, nơi danh tính có thể được xác minh bằng xác thực di động hoặc I-PIN; nơi không có số đăng ký cư trú Hàn Quốc và không dùng được xác thực di động, họ chấp nhận giấy tờ chứng minh tư cách người Hàn ở nước ngoài — Giấy chứng nhận Đăng ký Người Hàn ở Nước ngoài kèm hộ chiếu Hàn Quốc, nộp qua biểu mẫu hỗ trợ khách hàng kèm ID tài khoản của bạn. Họ nói giấy chứng nhận có thể xin trực tuyến qua Cơ quan Người Hàn ở Nước ngoài, và rằng Thẻ Đăng ký Người Nước ngoài có thể được chấp nhận thay thế ở nơi khó xin giấy chứng nhận. Họ cũng cảnh báo rằng giấy tờ giả mạo đồng nghĩa với việc bị hạn chế ngay lập tức.",
+      },
+      {
+        q: "Có giới hạn độ tuổi tối thiểu để xác minh danh tính không?",
+        a: "NOL World nói rằng bản thân việc xác minh không giới hạn độ tuổi, nhưng bạn vẫn có thể không đặt hay không vào được những sản phẩm có giới hạn tuổi. Xác minh không giống với việc đủ điều kiện cho một show cụ thể.",
+      },
+      {
+        q: "Tên tôi trên My Page có thứ tự khác với hộ chiếu. Tôi có bị chặn không?",
+        a: "NOL World nói là không. Họ đã đổi thứ tự lưu trữ vào ngày 16 tháng 4 năm 2025 và khẳng định rằng việc kiểm tra vé và vào cửa vẫn thực hiện được ngay cả khi thứ tự khác với hộ chiếu. Việc kiểm tra tại chỗ chỉ bị hạn chế nếu chính cái tên khác đi — nên hãy kiểm tra chính tả và ký tự, không phải trình tự.",
+      },
+      {
+        q: "Hộ chiếu của tôi hết hạn sau khi tôi đã xác minh. Tôi có phải làm gì không?",
+        a: "Có. NOL World liệt việc hộ chiếu hết hạn là một nguyên nhân khiến một lần xác minh đã hoàn tất bị hủy, nên làm lại hộ chiếu nghĩa là phải xác minh lại — trên tài khoản hiện có, không phải một tài khoản mới. Nếu bạn đã xác minh trước ngày 16 tháng 4 năm 2025, đây cũng là lúc thứ tự tên mới được áp dụng vào hồ sơ của bạn.",
+      },
+      {
+        q: "Tôi dùng hộ chiếu của người nhà để xác minh được không, nếu hộ chiếu tôi đã hết hạn?",
+        a: "Không, và đây là câu hỏi duy nhất có một hậu quả được công bố chứ không phải một ý kiến. NOL World liệt việc dùng giấy tờ bị đánh cắp hoặc giả mạo để xác minh vào nhóm hành vi mà họ coi là sử dụng gian lận, và các hình phạt được nêu chạy tới đình chỉ tài khoản vĩnh viễn và hủy mọi vé đã đặt. Họ cũng nói rằng việc xác minh danh tính có thể được thực hiện tại nơi tổ chức và đề nghị bạn đặt vé bằng chính tên và tài khoản của mình, mang theo giấy tờ tùy thân có ảnh còn hiệu lực. Một tấm vé không sống sót qua cánh cửa thì không phải là một tấm vé.",
+      },
+      {
+        q: "Tài khoản của tôi bị hạn chế. Có khiếu nại được không?",
+        a: "NOL World có công bố một quy trình. Họ nói rằng người dùng nhìn chung được dành ít nhất một ngày để trình bày lý do, và rằng đơn khiếu nại nên là một bản trình bày chi tiết gồm ID tài khoản bị hạn chế, họ tên đầy đủ và thông tin liên hệ, không bắt buộc theo định dạng hay mẫu nào, gửi qua biểu mẫu hỗ trợ khách hàng. Việc xem xét mất khoảng 10 đến 15 ngày và kết quả đến qua email. Họ cũng nêu giới hạn: quá hạn hoặc không giải tỏa được nghi ngờ thì các đơn đặt sẽ bị hủy cưỡng chế, và ở nơi việc buôn bán gian lận được xác nhận rõ ràng thì vé có thể bị hủy mà không có khiếu nại nào cả.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Verified Member ของ NOL World: ผ่าน eKYC จากต่างประเทศ",
+    summary:
+      "บางงานไม่ให้คุณจองเลยจนกว่าหนังสือเดินทางของคุณจะได้รับการยืนยัน การตรวจคือการถ่ายหนังสือเดินทางและใบหน้าแบบสด ทำใหม่ตามใจไม่ได้ และคำแนะนำข้อเดียวที่ NOL World ให้เรื่องจังหวะเวลา คือข้อที่คนส่วนใหญ่มองข้าม",
+    scope:
+      "ครอบคลุมการตรวจตัวตนแบบ Verified Member Only บน NOL World ตามที่ NOL World บันทึกไว้: ใช้เมื่อไร การถ่ายต้องการอะไร เกิดอะไรขึ้นกับชื่อที่มันบันทึก และอะไรที่ล้างหรือจำกัดมัน ผู้ถือหนังสือเดินทางเกาหลีถูกส่งไปที่ NOL Ticket ซึ่งเป็นการตรวจคนละแบบบนเว็บคนละเว็บ ไม่มีอะไรในหน้านี้เป็นวิธีเลี่ยงการยืนยันตัวตน",
+    intro: [
+      "งานแบบ Verified Member Only คืองานที่คุณจองไม่ได้เลยจนกว่าตัวตนของคุณจะได้รับการยืนยัน ไม่ใช่คำเตือนตอนชำระเงิน แต่คือการจองนั้นไม่ปรากฏให้บัญชีที่ยังไม่ยืนยันเห็นเลย แฟน ๆ มักรู้เรื่องนี้ตอนที่การจองเปิดพอดี ซึ่งเป็นจังหวะที่แย่ที่สุดเท่าที่จะเป็นไปได้ เพราะการยืนยันคือการถ่ายหนังสือเดินทางและใบหน้าของคุณแบบสด และมันใช้เวลาเท่าที่มันใช้",
+      "NOL World อธิบายบริการนี้ว่าเป็นวิธีจำกัดการเข้าถึงเพื่อวัตถุประสงค์ที่ไม่ได้รับอนุญาต เช่น การขายบัตรต่อ เรื่องนี้ควรเชื่อตามตัวอักษร การตรวจมีอยู่เพื่อผูกคนหนึ่งคนเข้ากับบัญชีหนึ่งบัญชี และกฎเกือบทุกข้อด้านล่างล้วนตามมาจากจุดนั้น",
+    ],
+    steps: [
+      {
+        title: "ตรวจว่างานของคุณต้องใช้ไหม และคุณอยู่บนเว็บที่ถูกต้องหรือเปล่า",
+        body: "Verified Member Only ถูกกำหนดเป็นรายสินค้าไม่ใช่รายบัญชี NOL World บอกว่าเฉพาะสมาชิกที่ทำการยืนยันตัวตนบนหน้าสินค้าเสร็จแล้วเท่านั้นที่จองได้ คำถามแรกจึงคืองานของคุณมีป้ายนี้หรือไม่ คำถามที่สองคือคุณควรอยู่บน NOL World หรือเปล่า NOL World บอกให้ผู้ถือหนังสือเดินทางเกาหลีไปใช้เว็บ NOL Ticket แทน ซึ่งใช้การตรวจคนละแบบโดยสิ้นเชิง",
+        pitfall:
+          "การคิดว่าการตรวจตัวตนเป็นงานจุกจิกครั้งเดียวที่เว็บจะเตือนคุณเอง สำหรับงาน Verified Member Only ไม่มีคำเตือนใด ๆ การจองแค่ไม่อยู่ตรงนั้น",
+        takes: "10 นาที",
+      },
+      {
+        title: "ทำก่อนการจองเปิดหนึ่งถึงสองวัน",
+        body: "นี่คือคำสั่งของ NOL World เองและเป็นข้อเท็จจริงที่มีประโยชน์ที่สุดในหน้านี้: ทำการยืนยันให้เสร็จล่วงหน้าอย่างน้อยหนึ่งถึงสองวัน เพราะการพยายามทำใกล้เวลาเปิดจำหน่ายบัตรหมายความว่าปริมาณการใช้งานที่สูงอาจทำให้เกิดปัญหา เมื่อทำเสร็จแล้ว คุณจองงาน Verified Member Only ใดก็ได้โดยไม่ต้องยืนยันซ้ำ ราคาของการทำแต่เนิ่น ๆ คือหนึ่งเย็น ราคาของการทำช้าคือทั้งงาน",
+        pitfall:
+          "การเริ่มถ่ายในสิบนาทีก่อนรอบพรีเซล การยืนยันที่ล้มเหลวเพราะปริมาณการใช้งานนั้นเร่งไม่ได้ และคิวก็ไม่รอ",
+        takes: "30 นาที ล่วงหน้าสองวัน",
+      },
+      {
+        title: "ยืนยันบัญชีที่คุณจะใช้ซื้อจริง ๆ",
+        body: "การยืนยันทำได้ครั้งเดียวต่อหนึ่งบัญชี และ NOL World ระบุว่าข้อมูลที่ยืนยันแล้วนำกลับมาใช้ซ้ำไม่ได้ หนังสือเดินทางหนึ่งเล่มยืนยันได้หนึ่งบัญชี ถ้าคุณมีมากกว่าหนึ่งบัญชี นี่คือจังหวะที่ต้องตัดสินใจว่าบัญชีไหนคือของจริง เพราะหลังจากนั้นการยืนยันจะย้ายไม่ได้ NOL World เสริมว่าการลบบัญชีจะลบข้อมูลที่ยืนยันแล้วของบัญชีนั้นและปล่อยให้บัญชีอื่นใช้ได้ แต่บัญชีที่ถูกจำกัดเพราะใช้งานโดยมิชอบจะลบไม่ได้เลย",
+        pitfall:
+          "การยืนยันบนบัญชีที่บังเอิญล็อกอินค้างอยู่ แล้วไปซื้อบนอีกบัญชีหนึ่ง บัญชีที่สองยังไม่ได้ยืนยัน และงานนั้นเป็น Verified Member Only",
+        takes: "5 นาทีในการตัดสินใจ",
+      },
+      {
+        title: "ต้องมีหนังสือเดินทางเล่มจริง ที่ใช้ได้และยังไม่หมดอายุ",
+        body: "รับเฉพาะหนังสือเดินทางที่ยังใช้ได้ และ NOL World ระบุชัดว่ารูปถ่ายหรือสำเนาไม่นับ ไม่ว่าจะเป็นไฟล์สแกนที่พิมพ์ออกมา ภาพหน้าจอ หรือรูปถ่ายของหน้าหนังสือเดินทางบนจออีกเครื่อง ถ้าหนังสือเดินทางของคุณหมดอายุแล้ว คุณต้องทำใหม่ก่อนจึงจะยืนยันได้ บน NOL World ไม่มีเส้นทางเอกสารทางเลือกสำหรับผู้ที่ไม่ได้ถือหนังสือเดินทางเกาหลี",
+        pitfall:
+          "การหยิบรูปหนังสือเดินทางที่มีอยู่แล้วในคลังภาพในโทรศัพท์มาใช้ เพราะเล่มจริงอยู่ในตู้เซฟโรงแรม ความพยายามครั้งนั้นถูกบันทึกไว้ว่าเป็นความพยายามด้วยสำเนา",
+        takes: "—",
+      },
+      {
+        title: "ผ่านการถ่ายให้ได้ตั้งแต่ครั้งแรก",
+        body: "NOL World เผยแพร่สิ่งที่ทำให้การถ่ายล้มเหลว และรายการนั้นอ่านเหมือนรายการสิ่งที่คนทำเวลารีบ จัดหนังสือเดินทางและใบหน้าของคุณให้ตรงกับกรอบนำบนหน้าจอ อย่าให้มีแสงสะท้อนบนทั้งหน้าหนังสือเดินทางและใบหน้าคุณ ใบหน้าของคุณต้องตรงกับรูปในหนังสือเดินทาง ถือเครื่องให้นิ่งอย่างน้อยห้าวินาทีระหว่างที่มันถ่าย และถ้าเครื่องสเปกต่ำหรือเครือข่ายไม่เสถียร ข้อมูลอาจบันทึกไม่ถูกต้องแม้การถ่ายจะดูเรียบร้อย เมื่อมันล้มเหลว หน้าจอจะบอกเหตุผล อ่านมันแทนที่จะลองใหม่แบบมืดบอด",
+        pitfall:
+          "การทำเรื่องนี้ด้วยมือเดียวตอนกลางคืนใต้ไฟเพดานที่สะท้อนบนแผ่นเคลือบ แสงจากด้านบนตกบนหน้าหนังสือเดินทางคือเหตุผลที่พบบ่อยที่สุดที่ทำให้การถ่ายอ่านไม่ออก",
+        takes: "15 นาที",
+      },
+      {
+        title: "ตรวจชื่อที่ถูกบันทึกไว้จริง",
+        body: "รับเฉพาะชื่อที่เป็นภาษาอังกฤษ NOL World บอกว่าถ้าชื่อในหนังสือเดินทางของคุณไม่ได้เป็นภาษาอังกฤษหรือมีอักขระพิเศษ การจองจะดำเนินต่อไม่ได้ และคุณอาจถูกส่งไปยังคำร้องขอแก้ไขชื่อ ซึ่งเป็นการยื่นเรื่อง ไม่ใช่การเปลี่ยนค่าในหน้าตั้งค่า ชื่อที่บันทึกไว้ดูได้ที่ My Page และนั่นคือที่ที่ควรไปตรวจแทนการเดาเอา เรื่องนี้สำคัญตั้งแต่ตอนนี้ เพราะหลังการยืนยันคุณจะแก้ชื่อ วันเกิด หรืออีเมลของตัวเองไม่ได้เลย การจองทำได้ด้วยข้อมูลที่ยืนยันแล้วเท่านั้น",
+        pitfall:
+          "การไม่ตรวจชื่อเพราะระบบแจ้งว่าการยืนยันสำเร็จ การสำเร็จกับการบันทึกอักขระที่ถูกต้องเป็นคนละเรื่อง และหนึ่งในสองนั้นแก้ไม่ได้อีกแล้ว",
+        takes: "5 นาที",
+      },
+      {
+        title: "เข้าใจลำดับชื่อ และเข้าใจว่าอะไรสำคัญจริงที่หน้าประตู",
+        body: "NOL World เปลี่ยนลำดับชื่อที่จัดเก็บเมื่อวันที่ 16 เมษายน 2025 สมาชิกที่ยืนยันก่อนวันนั้นจะเก็บเป็น ชื่อต้น + (ชื่อกลาง) + นามสกุล ส่วนสมาชิกที่ยืนยันหลังจากนั้นจะเก็บเป็น นามสกุล + ชื่อต้น + (ชื่อกลาง) NOL World ระบุตรง ๆ ว่าแม้ลำดับจะต่างจากในหนังสือเดินทางของคุณ การตรวจบัตรและการเข้างานที่สถานที่จัดงานก็ยังทำได้ การตรวจที่หน้างานจะถูกจำกัดก็ต่อเมื่อตัวชื่อเองต่างจากชื่อในหนังสือเดินทาง สมาชิกที่ยืนยันก่อนวันที่ 16 เมษายน 2025 จะได้รูปแบบใหม่เมื่อยืนยันซ้ำหลังหนังสือเดินทางหมดอายุ",
+        pitfall:
+          "การยื่นคำร้องขอแก้ไขชื่อเพราะเห็นว่าลำดับดูผิด NOL World บอกว่าลำดับไม่ใช่ปัญหา ชื่อที่ต่างออกไปต่างหากที่เป็น อักขระต้องถูก ไม่ใช่ลำดับต้องถูก",
+        takes: "5 นาที",
+      },
+      {
+        title: "รู้ว่าอะไรล้มล้างการยืนยันที่คุณผ่านไปแล้วได้",
+        body: "การยืนยันที่เสร็จแล้วถูกยกเลิกภายหลังได้ NOL World ระบุสองสาเหตุ: การพยายามยืนยันด้วยเอกสารแสดงตนที่ปลอมแปลงหรือถูกแก้ไข ซึ่งเขานิยามว่ารวมถึงสำเนาที่พิมพ์ออกมาและภาพหน้าจอ และการที่หนังสือเดินทางที่ใช้ยืนยันหมดอายุ ถ้าของคุณถูกยกเลิก ให้ยืนยันใหม่โดยใช้บัญชีเดิม NOL World เตือนเป็นการเฉพาะว่าการลองใช้บัญชีใหม่แทนอาจนำไปสู่ความล้มเหลวของระบบซ้ำ ๆ และว่าการยืนยันที่พบว่าได้มาโดยวิธีฉ้อฉลอาจทำให้คุณเสียสิทธิ์เข้าถึงบริการจองบัตร",
+        pitfall:
+          "การเปิดบัญชีใหม่เพื่อหนีการถูกล้างสถานะ การล้างนั้นตามเอกสารไป ไม่ได้ตามบัญชี และบัญชีใหม่จะรับทั้งปัญหาและความสงสัยมาด้วย",
+        takes: "—",
+      },
+      {
+        title: "รู้ว่าแพลตฟอร์มนับอะไรเป็นการฉ้อโกง และมันแลกมาด้วยอะไร",
+        body: "เหตุผลที่การตรวจเข้มขนาดนี้อยู่ในนโยบายต่อต้านการฉ้อโกงของ NOL World และผลที่ตามมาก็ถูกเผยแพร่ไว้ การใช้เอกสารแสดงตนที่ขโมยมาหรือปลอมเพื่อยืนยันตัวตนถูกระบุว่าเป็นการใช้งานโดยฉ้อฉล การจองบัตรหลายใบเกินการใช้งานปกติด้วยข้อมูลส่วนบุคคลที่เหมือนหรือคล้ายกันก็เช่นกัน — ข้อมูลติดต่อ ที่อยู่จัดส่ง หรือข้อมูลการชำระเงินเดียวกันข้ามหลายบัญชี บทลงโทษไล่ตั้งแต่การจำกัดการจองสามเดือนขึ้นไป ไปจนถึงการระงับบัญชีถาวรและการยกเลิกบัตรทุกใบที่จองไว้ ผู้จัดงานอาจเพิ่มบทลงโทษของตนเองรวมถึงการขับออกจากแฟนคลับ มีช่องทางอุทธรณ์อยู่ และที่ใดการค้าขายโดยฉ้อฉลได้รับการยืนยันชัดเจน ที่นั่นก็ไม่มี",
+        pitfall:
+          "การยืนยันบัญชีของคนในครอบครัวหลายบัญชีจากโทรศัพท์เครื่องเดียว ที่อยู่เดียว และบัตรใบเดียวเพื่อเพิ่มโอกาสในรอบพรีเซล รูปแบบนั้นอยู่ในรายการที่เผยแพร่ไว้ และบทลงโทษที่ระบุไว้ไปถึงบัตรทุกใบในทุกบัญชีเหล่านั้น",
+        takes: "อ่าน 10 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "Verified Member Only บนหน้าอีเวนต์หมายความว่าอะไรกันแน่",
+        a: "หมายความว่างานนั้นปิดสำหรับบัญชีที่ยังไม่ยืนยันตัวตน NOL World อธิบายว่าเป็นบริการที่ให้สมาชิกยืนยันตัวตนก่อนซื้อ โดยเฉพาะสมาชิกที่ทำการยืนยันบนหน้าสินค้าเสร็จแล้วเท่านั้นที่จองได้ เขาระบุวัตถุประสงค์ว่าเพื่อจำกัดการเข้าถึงสำหรับวัตถุประสงค์ที่ไม่ได้รับอนุญาต เช่น การขายบัตรต่อ เตรียมหนังสือเดินทางและสมาร์ตโฟนไว้ให้พร้อม เพราะการตรวจต้องใช้ทั้งสองอย่าง",
+      },
+      {
+        q: "ฉันถือหนังสือเดินทางเกาหลี ยืนยันบน NOL World เลยได้ไหม",
+        a: "NOL World บอกให้ผู้ถือหนังสือเดินทางเกาหลีไปใช้เว็บบัตร NOL แทน นั่นเป็นเว็บคนละเว็บที่มีการตรวจตัวตนคนละแบบ — โดยทั่วไปคือการยืนยันผ่านมือถือเกาหลีหรือ I-PIN — และเป็นบัญชีแยกต่างหาก",
+      },
+      {
+        q: "ฉันเป็นคนสัญชาติเกาหลีที่อยู่ต่างประเทศและไม่มีเบอร์มือถือเกาหลี แล้วยังไงต่อ",
+        a: "NOL World เผยแพร่เส้นทางเอกสารไว้ เขาส่งพลเมืองเกาหลีใต้ที่พำนักในต่างประเทศไปที่ NOL Ticket ซึ่งยืนยันตัวตนได้ด้วยการยืนยันผ่านมือถือหรือ I-PIN ในกรณีที่ไม่มีเลขทะเบียนผู้พำนักเกาหลีและใช้การยืนยันผ่านมือถือไม่ได้ เขารับเอกสารประกอบที่พิสูจน์สถานะคนเกาหลีในต่างประเทศ — หนังสือรับรองการลงทะเบียนคนเกาหลีโพ้นทะเลพร้อมหนังสือเดินทางเกาหลีใต้ ยื่นผ่านแบบฟอร์มสอบถามฝ่ายบริการลูกค้าพร้อม ID บัญชีของคุณ เขาบอกว่าหนังสือรับรองขอออนไลน์ได้ผ่านหน่วยงานคนเกาหลีโพ้นทะเล และว่าบัตรประจำตัวคนต่างด้าวอาจใช้แทนได้ในกรณีที่ขอหนังสือรับรองได้ยาก เขายังเตือนด้วยว่าเอกสารปลอมแปลงหมายถึงการถูกจำกัดทันที",
+      },
+      {
+        q: "มีอายุขั้นต่ำสำหรับการยืนยันตัวตนไหม",
+        a: "NOL World บอกว่าตัวการยืนยันเองไม่มีข้อจำกัดเรื่องอายุ แต่คุณอาจยังจองหรือเข้าร่วมสินค้าที่มีข้อจำกัดด้านอายุไม่ได้อยู่ดี การยืนยันตัวตนไม่เท่ากับการมีคุณสมบัติสำหรับงานใดงานหนึ่ง",
+      },
+      {
+        q: "ชื่อของฉันใน My Page เรียงลำดับต่างจากหนังสือเดินทาง ฉันจะถูกปฏิเสธไหม",
+        a: "NOL World บอกว่าไม่ เขาเปลี่ยนลำดับที่จัดเก็บเมื่อวันที่ 16 เมษายน 2025 และระบุว่าการตรวจบัตรและการเข้างานทำได้แม้ลำดับจะต่างจากหนังสือเดินทาง การตรวจที่หน้างานจะถูกจำกัดก็ต่อเมื่อตัวชื่อเองต่างออกไป ดังนั้นให้ตรวจการสะกดและอักขระ ไม่ใช่ลำดับ",
+      },
+      {
+        q: "หนังสือเดินทางของฉันหมดอายุหลังจากยืนยันไปแล้ว ต้องทำอะไรไหม",
+        a: "ต้อง NOL World ระบุว่าการหมดอายุของหนังสือเดินทางเป็นสาเหตุให้การยืนยันที่เสร็จแล้วถูกยกเลิก การทำเล่มใหม่จึงหมายถึงการยืนยันซ้ำ บนบัญชีเดิม ไม่ใช่บัญชีใหม่ ถ้าคุณยืนยันก่อนวันที่ 16 เมษายน 2025 นี่ก็เป็นจังหวะที่ลำดับชื่อแบบใหม่ถูกนำมาใช้กับระเบียนของคุณด้วย",
+      },
+      {
+        q: "ใช้หนังสือเดินทางของคนในครอบครัวยืนยันแทนได้ไหม ถ้าของฉันหมดอายุ",
+        a: "ไม่ได้ และนี่เป็นคำถามเดียวที่มีผลตามมาซึ่งถูกเผยแพร่ไว้แทนที่จะเป็นความเห็น NOL World ระบุการใช้เอกสารแสดงตนที่ขโมยมาหรือปลอมเพื่อยืนยันไว้ในกลุ่มพฤติกรรมที่เขาถือว่าเป็นการใช้งานโดยฉ้อฉล และบทลงโทษที่ระบุไว้ไปถึงการระงับบัญชีถาวรและการยกเลิกบัตรทุกใบที่จองไว้ เขายังบอกว่าการยืนยันตัวตนอาจทำที่สถานที่จัดงาน และขอให้คุณจองในชื่อและบัญชีของตัวเองพร้อมพกบัตรประจำตัวที่มีรูปถ่ายซึ่งยังใช้ได้ บัตรที่รอดผ่านประตูไม่ได้ก็ไม่ใช่บัตร",
+      },
+      {
+        q: "บัญชีของฉันถูกจำกัด อุทธรณ์ได้ไหม",
+        a: "NOL World เผยแพร่ช่องทางไว้ เขาบอกว่าโดยทั่วไปผู้ใช้จะได้รับเวลาอย่างน้อยหนึ่งวันเพื่อชี้แจง และว่าคำอุทธรณ์ควรเป็นคำชี้แจงโดยละเอียดที่ประกอบด้วย ID บัญชีที่ถูกจำกัด ชื่อเต็ม และข้อมูลติดต่อ โดยไม่มีรูปแบบหรือแม่แบบที่บังคับ ส่งผ่านแบบฟอร์มสอบถามฝ่ายบริการลูกค้า การพิจารณาใช้เวลาราว 10 ถึง 15 วัน และผลจะมาทางอีเมล เขายังระบุข้อจำกัดไว้ด้วย: พลาดกำหนดเวลาหรือคลายความสงสัยไม่ได้ การจองจะถูกยกเลิกโดยบังคับ และที่ใดการค้าขายโดยฉ้อฉลได้รับการยืนยันชัดเจน บัตรอาจถูกยกเลิกโดยไม่มีการอุทธรณ์ใด ๆ เลย",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Verified Member sa NOL World: pagpasa sa eKYC mula sa ibang bansa",
+    summary:
+      "May mga palabas na hindi ka papayagang mag-book hangga't hindi napapatunayan ang pasaporte mo. Ang pagsusuri ay isang live na pagkuha ng pasaporte at mukha, hindi ito basta-basta nauulit, at ang iisang bilin ng NOL World tungkol sa timing ang siyang hindi pinapansin ng karamihan.",
+    scope:
+      "Sakop nito ang pagsusuri ng pagkakakilanlang Verified Member Only sa NOL World, ayon sa pagkakatala ng NOL World: kailan ito umiiral, ano ang kailangan ng pagkuha, ano ang nangyayari sa pangalang itinatala nito, at ano ang bumubura o naglilimita rito. Ang may hawak ng pasaporteng Koreano ay ipinapadala sa NOL Ticket, na ibang pagsusuri sa ibang site. Walang anuman dito ang paraan para lusutan ang isang pagpapatunay.",
+    intro: [
+      "Ang palabas na Verified Member Only ay isang palabas na hindi mo talaga mabu-book hangga't hindi napapatunayan ang pagkakakilanlan mo. Hindi ito babala sa checkout — basta hindi lang available ang reserbasyon sa account na hindi napatunayan. Nalalaman ito ng mga fan sa mismong sandaling nagbubukas ang booking, na siyang pinakamasamang sandali, dahil ang pagpapatunay ay isang live na pagkuha ng pasaporte at mukha mo at tumatagal ito ng kung gaano katagal ito tumagal.",
+      "Ipinapaliwanag ng NOL World ang serbisyo bilang paraan para limitahan ang akses para sa mga layuning walang pahintulot gaya ng muling pagbebenta ng tiket. Sulit itong tanggapin sa literal na kahulugan: umiiral ang pagsusuri para itali ang isang tao sa isang account, at halos lahat ng tuntunin sa ibaba ay sumusunod dito.",
+    ],
+    steps: [
+      {
+        title: "Tingnan kung kailangan ito ng palabas mo, at kung nasa tamang site ka",
+        body: "Itinatakda ang Verified Member Only kada produkto at hindi kada account — sinasabi ng NOL World na ang mga miyembro lamang na nakatapos ng pagpapatunay ng pagkakakilanlan sa pahina ng produkto ang makakapagreserba. Kaya ang unang tanong ay kung may ganitong marka ba ang palabas mo. Ang pangalawa ay kung dapat ka bang nasa NOL World: sinasabi ng NOL World sa mga may hawak ng pasaporteng Koreano na gamitin ang site na NOL Ticket, na nagpapatakbo ng ganap na ibang pagsusuri.",
+        pitfall:
+          "Ang pag-aakalang ang pagsusuri ng pagkakakilanlan ay isang beses na gawaing ipapaalala sa iyo ng site. Para sa palabas na Verified Member Only ay walang paalala — wala lang talaga ang booking doon.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Gawin ito isa hanggang dalawang araw bago magbukas ang booking",
+        body: "Ito ang mismong bilin ng NOL World at ang pinakakapaki-pakinabang na katotohanan sa pahinang ito: tapusin ang pagpapatunay nang hindi bababa sa isa hanggang dalawang araw na mas maaga, dahil ang pagtatangka nito malapit sa oras ng pagbubukas ng tiket ay nangangahulugang maaaring magdulot ng hirap ang mataas na trapiko. Kapag tapos na ito, maaari kang mag-book ng kahit anong palabas na Verified Member Only nang hindi na nagpapatunay muli. Ang halaga ng paggawa nito nang maaga ay isang gabi. Ang halaga ng paggawa nito nang huli ay ang palabas.",
+        pitfall:
+          "Ang pagsisimula ng pagkuha sa sampung minuto bago ang presale. Ang pagpapatunay na bumabagsak dahil sa trapiko ay hindi mamamadali, at hindi naghihintay ang pila.",
+        takes: "30 minuto, dalawang araw nang maaga",
+      },
+      {
+        title: "Patunayan ang account na talagang gagamitin mo sa pagbili",
+        body: "Isang beses lamang ang pagpapatunay kada account, at sinasabi ng NOL World na hindi magagamit muli ang napatunayang impormasyon — isang pasaporte, isang account. Kung mahigit isa ang account mo, ngayon ang sandaling magpasya kung alin ang totoo, dahil hindi na lumilipat ang pagpapatunay pagkatapos. Dagdag pa ng NOL World, binubura ng pagtanggal ng account ang napatunayang impormasyon nito at pinapalaya ito para sa iba, ngunit ang account na nilimitahan dahil sa maling paggamit ay hindi matatanggal kahit kailan.",
+        pitfall:
+          "Ang pagpapatunay sa account na nagkataong naka-log in ka, at pagkatapos ay pagbili sa isa pa. Hindi napatunayan ang pangalawang account, at Verified Member Only ang palabas.",
+        takes: "5 minuto ng pagpapasya",
+      },
+      {
+        title: "Magdala ng orihinal na pasaporte, wasto at hindi pa expired",
+        body: "Wastong pasaporte lamang ang tinatanggap, at malinaw ang NOL World na hindi tinatanggap ang larawan o kopya: hindi ang naka-print na scan, hindi ang screenshot, hindi ang larawan ng pahina sa ibang screen. Kung expired na ang pasaporte mo, kailangan mo itong baguhin bago ka makapagpatunay — walang alternatibong ruta ng dokumento sa NOL World para sa hindi may hawak ng pasaporteng Koreano.",
+        pitfall:
+          "Ang pag-abot sa larawan ng pasaporteng nasa camera roll na ng telepono mo dahil nasa hotel safe ang totoo. Naitatala ang pagtatangkang iyon bilang pagtatangka gamit ang kopya.",
+        takes: "—",
+      },
+      {
+        title: "Makapasa sa pagkuha sa unang pagtatangka",
+        body: "Inilalathala ng NOL World kung ano ang nagpapabagsak sa pagkuha, at ang listahan ay parang listahan ng mga ginagawa ng tao kapag nagmamadali. Ihanay ang pasaporte at ang mukha mo sa mga gabay sa screen. Iwasan ang silaw at repleksiyon sa pahina ng pasaporte at sa mukha mo. Kailangang tumugma ang mukha mo sa larawan sa pasaporte. Panatilihing matatag ang device nang hindi bababa sa limang segundo habang kumukuha ito. At kung mababa ang spec ng device o hindi matatag ang network, maaaring hindi tamang ma-save ang datos kahit mukhang maayos ang pagkuha. Kapag bumagsak ito, sinasabi ng screen ang dahilan — basahin iyon sa halip na bulag na sumubok muli.",
+        pitfall:
+          "Ang paggawa nito nang isang kamay, sa gabi, sa ilalim ng ilaw sa kisame na sumasalamin sa laminado. Ang ilaw mula sa itaas sa isang pahina ng pasaporte ang pinakakaraniwang dahilan kung bakit hindi nababasa ang isang pagkuha.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Suriin ang pangalang talagang na-save",
+        body: "Mga pangalang Ingles lamang ang tinatanggap. Sinasabi ng NOL World na kung ang pangalan sa pasaporte mo ay hindi nasa Ingles o may mga espesyal na karakter, hindi makakatuloy ang reserbasyon, at maaari kang ilipat sa isang kahilingan sa pagtatama ng pangalan — isang pagsusumite, hindi isang pagbabago sa settings. Makikita ang na-save na pangalan sa My Page, at doon ito dapat suriin sa halip na ipagpalagay. Mahalaga ito ngayon dahil pagkatapos ng pagpapatunay ay hindi mo na mababago ang pangalan, petsa ng kapanganakan o email address mo: ang mga reserbasyon ay magagawa lamang gamit ang napatunayang impormasyon.",
+        pitfall:
+          "Ang pag-iwan sa pangalan nang hindi sinusuri dahil sinabi ng pagpapatunay na nagtagumpay ito. Magkaiba ang pagtatagumpay at ang pag-save ng tamang mga karakter, at ang isa sa mga iyon ay hindi na nababago.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Unawain ang pagkakasunod ng pangalan — at kung ano ang talagang mahalaga sa pintuan",
+        body: "Binago ng NOL World ang nakatalang pagkakasunod ng pangalan noong 16 Abril 2025. Ang mga miyembrong napatunayan bago ang petsang iyon ay may Pangalan + (Gitnang Pangalan) + Apelyido; ang mga napatunayan pagkatapos ay may Apelyido + Pangalan + (Gitnang Pangalan). Malinaw ang sinasabi ng NOL World na kahit iba ang pagkakasunod sa pasaporte mo, posible pa rin ang pagsusuri ng tiket at ang pagpasok sa venue — nililimitahan lamang ang pagsusuri sa lugar kung ang mismong pangalan ang iba sa pangalan sa pasaporte. Ang mga miyembrong napatunayan bago ang 16 Abril 2025 ay binibigyan ng bagong format kapag nagpatunay silang muli matapos mag-expire ang pasaporte.",
+        pitfall:
+          "Ang paghahain ng kahilingan sa pagtatama ng pangalan dahil mukhang mali ang pagkakasunod. Sinasabi ng NOL World na hindi ang pagkakasunod ang problema; ang ibang pangalan ang problema. Tamang mga karakter, hindi tamang pagkakasunod.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Alamin kung ano ang makakabura sa pagpapatunay na naipasa mo na",
+        body: "Maaaring kanselahin pagkatapos ang isang natapos nang pagpapatunay. Dalawang sanhi ang pinapangalanan ng NOL World: ang pagtatangkang magpatunay gamit ang pekeng o binagong ID — na tinutukoy nitong kasama ang mga naka-print na kopya at screenshot — at ang pag-expire ng pasaporteng ginamit sa pagpapatunay. Kung nakansela ang sa iyo, magpatunay muli gamit ang umiiral na account. Partikular na nagbabala ang NOL World na ang pagsubok ng bagong account sa halip ay maaaring humantong sa paulit-ulit na pagpalya ng sistema, at na ang pagpapatunay na natuklasang nakuha sa pamamagitan ng mapandayang paraan ay puwedeng magkait sa iyo ng akses sa mga serbisyo ng booking.",
+        pitfall:
+          "Ang pagbukas ng bagong account para makatakas sa isang pagbura. Sumunod ang pagbura sa dokumento, hindi sa account, at minamana ng bagong account ang problema at ang hinala.",
+        takes: "—",
+      },
+      {
+        title: "Alamin kung ano ang itinuturing ng plataporma na pandaraya, at kung magkano ang halaga nito",
+        body: "Nasa patakaran ng NOL World laban sa pandaraya ang dahilan kung bakit ganito kahigpit ang pagsusuri, at inilathala ang mga kahihinatnan. Ang paggamit ng ninakaw o pekeng ID sa pagpapatunay ay nakalista bilang mapandayang paggamit. Gayundin ang pagbu-book ng maraming tiket lampas sa karaniwang paggamit gamit ang magkatulad o magkahawig na personal na impormasyon — parehong detalye ng kontak, address ng padala o impormasyon sa pagbabayad sa magkakaibang account. Umaabot ang mga parusa mula sa limitasyon sa booking na tatlong buwan o higit pa hanggang sa permanenteng pagsuspinde ng account at pagkansela ng bawat tiket na nabook. Maaaring magdagdag ang organisador ng event ng sariling parusa, kabilang ang pagpapatalsik sa fan club. May apela, at kung saan malinaw na napatunayan ang mapandayang pangangalakal ay wala.",
+        pitfall:
+          "Ang pagpapatunay ng ilang account ng pamilya mula sa iisang telepono, iisang address at iisang kard para itaas ang tsansa sa isang presale. Nasa inilathalang listahan ang pattern na iyon, at inaabot ng nakasaad na parusa ang bawat tiket sa bawat isa sa mga account na iyon.",
+        takes: "10 minuto ng pagbabasa",
+      },
+    ],
+    faq: [
+      {
+        q: "Ano ba talaga ang ibig sabihin ng Verified Member Only sa pahina ng event?",
+        a: "Na sarado ang palabas sa mga account na hindi napatunayan. Inilalarawan ito ng NOL World bilang serbisyong nagpapahintulot sa mga miyembrong patunayan ang pagkakakilanlan bago bumili, kung saan ang mga miyembro lamang na nakatapos ng pagpapatunay sa pahina ng produkto ang makakapagreserba. Isinasaad nitong layunin ang paglilimita ng akses para sa mga layuning walang pahintulot gaya ng muling pagbebenta ng tiket. Ihanda ang pasaporte at smartphone mo, dahil kailangan ng pagsusuri ang dalawa.",
+      },
+      {
+        q: "May hawak akong pasaporteng Koreano. Puwede ba akong magpatunay sa NOL World?",
+        a: "Sinasabi ng NOL World sa mga may hawak ng pasaporteng Koreano na gamitin ang site ng tiket na NOL. Ibang site iyon na may ibang pagsusuri ng pagkakakilanlan — karaniwan ay Koreanong mobile authentication o I-PIN — at hiwalay na account.",
+      },
+      {
+        q: "Mamamayang Koreano ako na nakatira sa ibang bansa at walang numerong Koreano. Ano ngayon?",
+        a: "Naglathala ang NOL World ng ruta ng dokumento. Ipinapadala nito ang mga mamamayang South Korean na naninirahan sa ibang bansa sa NOL Ticket, kung saan mapapatunayan ang pagkakakilanlan sa pamamagitan ng mobile authentication o I-PIN; kung walang Koreanong resident registration number at hindi magagamit ang mobile authentication, tinatanggap nito ang mga sumusuportang dokumentong nagpapatunay ng katayuan bilang Koreanong nasa ibang bansa — isang Certificate of Overseas Korean Registration kasama ang pasaporteng South Korean, na isinusumite sa pamamagitan ng form ng customer support kasama ang ID ng account mo. Sinasabi nitong makukuha ang sertipiko online sa pamamagitan ng Overseas Koreans Agency, at na maaaring tanggapin ang Foreign Registration Card bilang kapalit kung saan mahirap makuha ang sertipiko. Nagbabala rin itong ang pinekeng dokumento ay nangangahulugan ng agarang paglilimita.",
+      },
+      {
+        q: "May pinakamababang edad ba para sa pagpapatunay ng pagkakakilanlan?",
+        a: "Sinasabi ng NOL World na walang limitasyon sa edad para sa mismong pagpapatunay, ngunit maaari ka pa ring hindi makapag-book o makadalo sa mga produktong may limitasyon sa edad. Ang pagpapatunay ay hindi kapareho ng pagiging kuwalipikado para sa isang partikular na palabas.",
+      },
+      {
+        q: "Iba ang pagkakasunod ng pangalan ko sa My Page kaysa sa pasaporte ko. Pagbabawalan ba ako?",
+        a: "Sinasabi ng NOL World na hindi. Binago nito ang nakatalang pagkakasunod noong 16 Abril 2025 at isinasaad na posible ang pagsusuri ng tiket at ang pagpasok kahit iba ang pagkakasunod sa pasaporte. Nililimitahan lamang ang pagsusuri sa lugar kung ang mismong pangalan ang iba — kaya suriin ang baybay at ang mga karakter, hindi ang pagkakasunod.",
+      },
+      {
+        q: "Nag-expire ang pasaporte ko pagkatapos kong magpatunay. May dapat ba akong gawin?",
+        a: "Oo. Nakalista sa NOL World ang pag-expire ng pasaporte bilang sanhi ng pagkansela ng natapos nang pagpapatunay, kaya ang pagpapalit ay nangangahulugan ng muling pagpapatunay — sa umiiral na account, hindi sa bago. Kung napatunayan ka bago ang 16 Abril 2025, dito rin ilalapat ang bagong pagkakasunod ng pangalan sa talaan mo.",
+      },
+      {
+        q: "Puwede ba akong magpatunay gamit ang pasaporte ng kapamilya kung expired na ang akin?",
+        a: "Hindi, at ito ang iisang tanong na may inilathalang kahihinatnan sa halip na opinyon. Nakalista sa NOL World ang paggamit ng ninakaw o pekeng ID sa pagpapatunay bilang isa sa mga gawaing itinuturing nitong mapandayang paggamit, at umaabot ang nakasaad na mga parusa sa permanenteng pagsuspinde ng account at pagkansela ng bawat tiket na nabook. Sinasabi rin nitong maaaring isagawa ang pagpapatunay ng pagkakakilanlan sa venue at hinihiling nitong mag-book ka sa sarili mong pangalan at account at magdala ng wastong ID na may larawan. Ang tiket na hindi makakalusot sa pintuan ay hindi tiket.",
+      },
+      {
+        q: "Nilimitahan ang account ko. May apela ba?",
+        a: "Naglathala ang NOL World ng isa. Sinasabi nitong karaniwang binibigyan ang mga user ng panahong hindi bababa sa isang araw para magbigay ng paliwanag, at na ang apela ay dapat isang detalyadong pahayag kasama ang ID ng nilimitahang account, buong pangalan at impormasyon sa pakikipag-ugnayan, nang walang hinihinging format o template, na ipinadadala sa pamamagitan ng form ng customer support. Umaabot ng mga 10 hanggang 15 araw ang pagsusuri at dumarating ang resulta sa email. Isinasaad din nito ang mga hangganan: kung malalampasan ang takdang panahon o hindi malilinis ang hinala ay sapilitang kinakansela ang mga booking, at kung saan malinaw na napatunayan ang mapandayang pangangalakal ay maaaring kanselahin ang mga tiket nang walang apela.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

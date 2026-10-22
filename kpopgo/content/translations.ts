@@ -17156,6 +17156,354 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Hủy vé NOL World: thời hạn, phí hủy, và khoản tiền bạn vẫn mất",
+    summary:
+      "Thời hạn hủy là buổi chiều của ngày trước đêm diễn theo giờ Hàn Quốc, các suất thứ Bảy đóng sớm hơn mọi ngày khác trong tuần, và một chiếc vé được hoàn tiền đầy đủ vẫn có thể làm chủ thẻ nước ngoài mất tiền. Thêm nữa: gửi vé cho bạn mình là lấy đi luôn cái nút hủy của bạn.",
+    scope:
+      "Trang này bao gồm việc hủy một vé biểu diễn trên NOL World, đúng như NOL World công bố: các thời hạn, nơi hiển thị phí hủy, cách tiền hoàn về một chiếc thẻ nước ngoài, và những điều khiến việc hủy trở nên bất khả thi. NOL World không công bố một bảng phí tập trung và trang này không tự bày ra một bảng như vậy. Các sản phẩm tour và hoạt động đi theo chính sách riêng của chúng và chỉ được nhắc tới ở những chỗ khác biệt.",
+    intro: [
+      "Một người hâm mộ ở nước ngoài hủy vé vì những lý do mà người hâm mộ trong nước ít khi có: một tấm visa, một chuyến bay nối chuyến, một lịch làm việc vừa bị đổi. Vậy nên các quy định hủy vé quan trọng với nhóm khán giả này hơn là với nhóm mà chúng được viết ra cho — và chúng nghiêm ngặt, gắn chặt vào múi giờ, và ở hai điểm thì bất đối xứng theo cách không ai đoán nổi.",
+      "Hai trong số những sự thật dưới đây đáng biết trước khi mua vé chứ không phải sau. Các suất thứ Bảy đóng cửa hủy vé sớm hơn mọi ngày khác sáu tiếng. Và một lần hủy mà NOL World xử lý trọn vẹn vẫn có thể để chủ thẻ nước ngoài bị hụt tiền, điều không phải lỗi của ai và cũng không phải việc của ai để sửa giúp bạn.",
+    ],
+    steps: [
+      {
+        title: "Nắm thời hạn trước khi mua, vì nó không phải ngày diễn",
+        body: "NOL World đóng cửa hủy vé biểu diễn vào ngày trước đó, không phải ngày diễn: 5 giờ chiều KST của ngày hôm trước đối với ngày thường và ngày lễ, và 11 giờ sáng KST của ngày hôm trước đối với suất thứ Bảy. Quy định thứ Bảy là thứ bẫy người ta — nó sớm hơn phần còn lại của tuần sáu tiếng, và nó áp cho suất diễn thứ Bảy, nên thời hạn rơi vào sáng thứ Sáu theo giờ Hàn Quốc.",
+        pitfall:
+          "Tự tính “ngày hôm trước” trên lịch của chính bạn. Với một suất diễn tối thứ Bảy ở Seoul, 11 giờ sáng KST thứ Sáu là tối thứ Năm ở New York. Thời hạn có thể rơi sớm hơn hẳn một ngày so với cách nó đọc ra.",
+        takes: "5 phút, trước khi trả tiền",
+      },
+      {
+        title: "Dùng cửa sổ miễn phí nếu bạn đang đổi ý",
+        body: "Có một khoảng thời gian không mất phí, và nó ngắn: NOL World nói rằng với vé, hủy trước 11:59 tối của chính ngày bạn đặt thì không có phí hủy. Vậy nên quyết định bạn có thể đảo ngược miễn phí là quyết định bạn đưa ra cùng ngày đã mua. Sau nửa đêm thì nó có giá.",
+        pitfall:
+          "Cho rằng 11:59 tối là nửa đêm của riêng bạn. NOL World nêu rõ KST ở các thời hạn hủy khác và không nêu múi giờ ở cái này, nên cách đọc an toàn là giờ Hàn Quốc — và dù thế nào, một quyết định đưa ra trong mười phút cuối của một cửa sổ là một quyết định đưa ra quá muộn.",
+        takes: "—",
+      },
+      {
+        title: "Biết cái nút ở đâu, và biết nó nghĩa gì khi nó không có ở đó",
+        body: "Đường đi là App hoặc Web, rồi Account/My, rồi My Reservations, rồi Ticket Reservation List, rồi chọn đơn đặt, rồi Cancel Reservation trên trang chi tiết. Nếu nút Cancel Reservation không hề có trên trang chi tiết, hướng dẫn của NOL World là liên hệ bộ phận hỗ trợ khách hàng thay vì tìm tiếp: một nhân viên sẽ xác nhận với nhà cung cấp về điều kiện hủy, mức phí và số tiền hoàn, rồi hướng dẫn bạn. Bạn có thể theo dõi yêu cầu từ trang chi tiết đơn đặt, và một email xác nhận sẽ đến khi nó hoàn tất.",
+        pitfall:
+          "Đọc một cái nút thiếu như lỗi của website rồi thử lại suốt một tiếng. Đó là một trạng thái, và cái đồng hồ ở bước một vẫn đang chạy trong lúc bạn thử lại.",
+        takes: "15 phút, cộng thời gian của bộ phận hỗ trợ",
+      },
+      {
+        title: "Đừng mong có bảng phí, hãy lấy con số từ chính đơn đặt của bạn",
+        body: "Không có bảng phí công bố nào để lên kế hoạch dựa vào. Khi được hỏi phí hủy là bao nhiêu, NOL World trả lời bằng một đường đi — Web/App, Account/My, My Reservations, Reservation Details — bởi con số là thuộc tính của đơn đặt của bạn, chứ không phải của nền tảng. Với sản phẩm tour và hoạt động, phí hủy và số tiền hoàn được hiện cho bạn khi bạn bấm Cancel Reservation, trước khi bạn xác nhận. Chúng tôi sẽ không in ra đây một tỷ lệ phần trăm mà đơn đặt của bạn có thể không đồng ý.",
+        pitfall:
+          "Lên kế hoạch quanh một bảng phí lấy từ một bài blog. Bất kỳ hướng dẫn nào dẫn ra một tỷ lệ hủy cố định của Hàn Quốc cho suất diễn của bạn là đang dẫn ra thứ NOL World không công bố.",
+        takes: "5 phút",
+      },
+      {
+        title: "Kiểm tra việc hủy một phần ngay khi còn đang đặt",
+        body: "Hủy hai chỗ trong bốn chỗ là được với một số suất và không được với suất khác, và hướng dẫn của NOL World là kiểm tra tình trạng hủy một phần ngay trong lúc bạn đang đặt — nghĩa là trước khi nó trở thành thứ bạn cần. Sản phẩm tour và hoạt động thì không cho phép điều đó chút nào: ở đó đường đi là hủy toàn bộ đơn rồi đặt lại, và NOL World cảnh báo thẳng rằng chỗ trống sau đó không được bảo đảm và việc đặt lại có thể là không thể.",
+        pitfall:
+          "Đặt bốn chỗ với giả định rằng hai người bạn còn chưa chắc có thể bỏ ra sau. Với một suất diễn không cho hủy một phần, lựa chọn trở thành cả bốn hoặc không chỗ nào.",
+        takes: "2 phút, lúc đặt vé",
+      },
+      {
+        title: "Hiểu rằng hoàn tiền đầy đủ vẫn có thể làm chủ thẻ nước ngoài mất tiền",
+        body: "Đây là phần được viết cho nhóm khán giả này và gần như không bao giờ được giải thích bằng tiếng Anh. NOL World nêu rằng khi một thẻ tín dụng nước ngoài được dùng, một khoản lãi hay lỗ tỷ giá có thể phát sinh vì chênh lệch giữa tỷ giá ngày đặt và tỷ giá ngày hủy — và, riêng biệt với điều đó, phí giao dịch quốc tế vẫn có thể bị áp dù giao dịch đã bị hủy. Không khoản nào trong hai khoản ấy là do NOL World trừ. Cả hai đều thuộc về đơn vị phát hành thẻ của bạn, và lời khuyên của NOL World là hỏi đơn vị phát hành về tỷ giá và phí chính xác.",
+        pitfall:
+          "Đọc một số tiền hoàn nhỏ hơn số đã bị trừ như một lỗi hay một khoản phí ẩn. Khoảng cách đó có thể là tỷ giá đã dịch chuyển giữa hai ngày, và người giải thích được chuyện đó là ngân hàng của bạn, không phải nền tảng bán vé.",
+        takes: "Một cuộc gọi cho ngân hàng của bạn",
+      },
+      {
+        title: "Cho tiền hoàn đúng khoảng thời gian mà mạng thẻ cần",
+        body: "Nếu giao dịch còn chưa tới công ty thẻ tín dụng của bạn, NOL World nói việc hủy hoàn tất ngay lập tức. Nếu nó đã tới, và số tiền thanh toán đã được quyết toán, hãy chờ khoảng 5 đến 7 ngày để công ty thẻ đảo ngược giao dịch, và số tiền bị hủy sẽ được trừ vào hóa đơn của tháng sau chứ không được trả lại như một lần chi. NOL World lưu ý rằng chính sách hoàn tiền khác nhau giữa các công ty thẻ, nên công ty của bạn mới là nơi có quyền nói về thời gian của chính nó.",
+        pitfall:
+          "Mở tranh chấp với ngân hàng trong lúc việc đảo ngược đang chạy. Một yêu cầu chargeback trên một giao dịch vốn đã đang bị hủy tạo ra vấn đề thứ hai trên một tài khoản mà có thể bạn còn muốn dùng để đặt vé lần sau.",
+        takes: "5-7 ngày",
+      },
+      {
+        title: "Đừng gửi vé điện thoại cho tới khi bạn chắc chắn là mình sẽ đi",
+        body: "Đây là cái bẫy đáng giá cả trang này. Tính năng chia sẻ vé điện thoại cho phép người mua gửi một vé cho người sẽ đi xem — và NOL World nêu rằng một khi vé điện thoại đã được gửi thành công, việc hủy đơn đặt bị hạn chế. Đường về nằm ở phía người nhận: nếu họ hủy đăng ký vé, việc hủy đơn lại trở thành có thể. Trước khi vé được đăng ký thì có những lối ra nhẹ hơn — người gửi có thể bấm Cancel Send trong lúc vé chưa được đăng ký, và một vé chưa đăng ký sẽ tự quay về sau 24 giờ hoặc tới ngày xem.",
+        pitfall:
+          "Gửi vé cho bạn bè ngay tuần bạn mua, như một việc ngăn nắp nên làm. Cái nút hủy giờ thực chất là của họ, và lấy nó về nghĩa là phải nhờ họ nhả vé ra trước.",
+        takes: "—",
+      },
+      {
+        title: "Đọc chính sách tour và hoạt động một cách riêng biệt",
+        body: "Nếu đơn của bạn là một tour, một chuyến đưa đón hay một hoạt động chứ không phải vé biểu diễn, thì không điều nào ở trên là một mặc định an toàn. NOL World nói rằng một số sản phẩm trong nhóm này hoàn toàn không thể hủy sau khi đã mua, và rằng phí hủy 100% có thể được áp ngay cả trong ngày mua. Chính sách có hiệu lực là chính sách trên trang chi tiết và trên voucher của chính sản phẩm đó, và NOL World đề nghị bạn đọc nó trước khi gửi yêu cầu hủy.",
+        pitfall:
+          "Mang quy định của vé sang một gói được đặt trong cùng một lần. Cửa sổ miễn phí trong ngày là quy định của vé biểu diễn, còn một sản phẩm tour có thể không hoàn tiền kể từ giây bạn trả tiền.",
+        takes: "10 phút mỗi sản phẩm",
+      },
+    ],
+    faq: [
+      {
+        q: "Thời hạn hủy của một suất biểu diễn chính xác là khi nào?",
+        a: "Ngày trước đêm diễn, theo giờ Hàn Quốc. NOL World đưa ra 5 giờ chiều KST của ngày hôm trước cho ngày thường và ngày lễ, và 11 giờ sáng KST của ngày hôm trước cho các suất thứ Bảy. Hãy quy đổi nó theo ngày của riêng bạn một cách cẩn thận — một thời hạn 11 giờ sáng KST thứ Sáu là tối thứ Năm ở phần lớn châu Mỹ.",
+      },
+      {
+        q: "Có hủy miễn phí nào không?",
+        a: "Với vé biểu diễn thì có, trong ngày bạn đặt: NOL World nói hủy trước 11:59 tối của chính ngày đặt thì không mang phí hủy. Nó không nêu múi giờ ở điều đó trong khi có nêu KST ở các điều khác, nên hãy coi đó là giờ Hàn Quốc và đừng cắt sát. Sản phẩm tour và hoạt động thì khác — một số thu 100% ngay cả trong cùng ngày.",
+      },
+      {
+        q: "Phí hủy là bao nhiêu?",
+        a: "NOL World không công bố bảng phí. Khi được hỏi câu đó, nó đưa ra một đường đi thay vì con số — Web hoặc App, Account/My, My Reservations, Reservation Details — bởi con số thuộc về đơn đặt của bạn. Với sản phẩm tour và hoạt động, bấm Cancel Reservation sẽ hiện phí hủy và số tiền hoàn trước khi bạn xác nhận. Bất kỳ hướng dẫn tiếng Anh nào dẫn ra một tỷ lệ cố định cho suất diễn của bạn là đang dẫn ra con số mà nền tảng không nêu.",
+      },
+      {
+        q: "Tôi đã hủy đúng hạn mà nhận lại ít hơn số đã trả. Phần còn lại đi đâu?",
+        a: "Có lẽ không đi về NOL World. Nó nêu rằng một chiếc thẻ nước ngoài có thể tạo ra lãi hay lỗ tỷ giá từ chênh lệch giữa tỷ giá ngày đặt và tỷ giá ngày hủy, và rằng phí giao dịch quốc tế vẫn có thể bị áp dù giao dịch đã bị hủy. Cả hai nằm ở đơn vị phát hành thẻ của bạn, và lời khuyên của chính NOL World là hỏi đơn vị phát hành về tỷ giá và phí chính xác.",
+      },
+      {
+        q: "Tiền mất bao lâu để về?",
+        a: "Nếu giao dịch còn chưa tới công ty thẻ của bạn, việc hủy hoàn tất ngay. Nếu nó đã tới, NOL World nói khoảng 5 đến 7 ngày để công ty thẻ hủy giao dịch, với số tiền được trừ vào hóa đơn tháng sau. Các công ty thẻ khác nhau, nên công ty của bạn mới là nơi nói được cho bạn.",
+      },
+      {
+        q: "Tôi đã gửi vé điện thoại cho bạn tôi rồi. Tôi còn hủy được không?",
+        a: "Không, trong lúc họ còn giữ nó. NOL World nói việc hủy đơn đặt bị hạn chế một khi vé điện thoại đã được gửi thành công, và trở lại khả thi nếu người nhận hủy đăng ký nó. Nếu vé còn chưa được đăng ký thì bạn có lối ra dễ hơn: người gửi có thể bấm Cancel Send, và một vé chưa đăng ký sẽ tự quay về sau 24 giờ hoặc tới ngày xem.",
+      },
+      {
+        q: "Tôi hủy hai trong bốn chỗ của mình được không?",
+        a: "Điều đó tùy suất diễn, và lời khuyên của NOL World là kiểm tra tình trạng hủy một phần lúc bạn đặt chứ không phải lúc bạn cần. Sản phẩm tour và hoạt động hoàn toàn không hỗ trợ hủy một phần — bạn sẽ phải hủy cả đơn rồi đặt lại, không có bảo đảm nào rằng chỗ vẫn còn đó.",
+      },
+      {
+        q: "Nút Cancel Reservation không có trên trang đơn đặt của tôi.",
+        a: "NOL World coi đó là một ca dành cho bộ phận hỗ trợ khách hàng chứ không phải một lỗi để thử lại. Một nhân viên sẽ xác nhận trước với nhà cung cấp về điều kiện, mức phí và số tiền hoàn. Hãy liên hệ sớm, vì thời hạn ở câu trả lời đầu tiên vẫn chạy trong lúc bạn chờ.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "การยกเลิกตั๋ว NOL World: เส้นตาย ค่าธรรมเนียม และเงินที่คุณยังเสียไปอยู่ดี",
+    summary:
+      "เส้นตายของการยกเลิกคือบ่ายของวันก่อนวันแสดงตามเวลาเกาหลี รอบวันเสาร์ปิดเร็วกว่าวันอื่นในสัปดาห์ และตั๋วที่ได้เงินคืนเต็มจำนวนก็ยังทำให้ผู้ถือบัตรจากต่างประเทศเสียเงินได้ อีกอย่าง การส่งตั๋วให้เพื่อนเท่ากับพาปุ่มยกเลิกไปจากมือคุณ",
+    scope:
+      "หน้านี้ครอบคลุมการยกเลิกตั๋วการแสดงบน NOL World ตามที่ NOL World ประกาศไว้เอง ได้แก่ เส้นตายต่าง ๆ ที่ที่ค่าธรรมเนียมแสดงออกมา วิธีที่เงินคืนเดินทางไปถึงบัตรต่างประเทศ และสิ่งที่ทำให้การยกเลิกเป็นไปไม่ได้ NOL World ไม่ได้ประกาศตารางค่าธรรมเนียมกลาง และหน้านี้ก็ไม่คิดตารางขึ้นมาเอง สินค้าประเภททัวร์และกิจกรรมมีนโยบายของตัวเองและถูกกล่าวถึงเฉพาะจุดที่ต่างออกไป",
+    intro: [
+      "แฟนจากต่างประเทศยกเลิกตั๋วด้วยเหตุผลที่แฟนในประเทศแทบไม่มี เช่น วีซ่า เที่ยวบินต่อเครื่อง หรือตารางงานที่ถูกเลื่อน กฎการยกเลิกจึงสำคัญกับผู้อ่านกลุ่มนี้มากกว่ากลุ่มที่กฎถูกเขียนขึ้นเพื่อ และกฎเหล่านั้นเข้มงวด ผูกกับเขตเวลา และในสองจุดก็ไม่สมมาตรในแบบที่ไม่มีใครเดาได้",
+      "ข้อเท็จจริงสองข้อด้านล่างควรรู้ก่อนจองมากกว่ารู้ทีหลัง รอบวันเสาร์ปิดการยกเลิกเร็วกว่าวันอื่นหกชั่วโมง และการยกเลิกที่ NOL World ดำเนินการให้ครบถ้วนก็ยังทำให้ผู้ถือบัตรต่างประเทศขาดเงินได้ ซึ่งไม่ใช่ความผิดของใคร และก็ไม่ใช่ปัญหาที่ใครจะมาแก้ให้คุณเช่นกัน",
+    ],
+    steps: [
+      {
+        title: "รู้เส้นตายก่อนจอง เพราะมันไม่ใช่วันแสดง",
+        body: "NOL World ปิดการยกเลิกตั๋วการแสดงในวันก่อนหน้า ไม่ใช่วันแสดง คือ 5 โมงเย็น KST ของวันก่อนการแสดงสำหรับวันธรรมดาและวันหยุดนักขัตฤกษ์ และ 11 นาฬิกา KST ของวันก่อนหน้าสำหรับรอบวันเสาร์ กฎวันเสาร์คือข้อที่ดักคนมากที่สุด เพราะเร็วกว่าวันอื่นในสัปดาห์หกชั่วโมง และใช้กับรอบการแสดงวันเสาร์ ดังนั้นเส้นตายจึงตกในเช้าวันศุกร์ตามเวลาเกาหลี",
+        pitfall:
+          "การคำนวณ “วันก่อนหน้า” บนปฏิทินของตัวเอง สำหรับรอบค่ำวันเสาร์ในโซล 11 นาฬิกา KST ของวันศุกร์คือค่ำวันพฤหัสบดีที่นิวยอร์ก เส้นตายอาจตกเร็วกว่าที่อ่านได้เต็มหนึ่งวัน",
+        takes: "5 นาที ก่อนจ่ายเงิน",
+      },
+      {
+        title: "ใช้ช่วงยกเลิกฟรีถ้าคุณเริ่มลังเล",
+        body: "มีช่วงที่ไม่เสียค่าธรรมเนียมอยู่จริง และมันสั้น NOL World บอกว่าสำหรับตั๋ว การยกเลิกภายใน 11:59 PM ของวันที่คุณจองหมายถึงไม่มีค่าธรรมเนียมการยกเลิก ดังนั้นการตัดสินใจที่คุณย้อนกลับได้ฟรีคือการตัดสินใจในวันเดียวกับที่คุณจอง หลังเที่ยงคืนไปแล้วมันมีราคา",
+        pitfall:
+          "การเหมาว่า 11:59 PM คือเที่ยงคืนของคุณเอง NOL World ระบุ KST ไว้ชัดในเส้นตายการยกเลิกข้ออื่น และไม่ระบุเขตเวลาในข้อนี้ การอ่านที่ปลอดภัยจึงคือเวลาเกาหลี และไม่ว่าทางไหน การตัดสินใจในสิบนาทีสุดท้ายของช่วงเวลาหนึ่งก็คือการตัดสินใจที่สายไปแล้ว",
+        takes: "—",
+      },
+      {
+        title: "รู้ว่าปุ่มอยู่ที่ไหน และรู้ว่ามันหมายความว่าอะไรเมื่อมันไม่อยู่",
+        body: "เส้นทางคือ App หรือ Web แล้วไป Account/My แล้ว My Reservations แล้ว Ticket Reservation List แล้วเลือกการจอง แล้วกด Cancel Reservation บนหน้ารายละเอียด ถ้าปุ่ม Cancel Reservation ไม่อยู่บนหน้ารายละเอียดเลย คำแนะนำของ NOL World คือให้ติดต่อฝ่ายบริการลูกค้าแทนที่จะหาต่อไป เจ้าหน้าที่จะยืนยันเงื่อนไขการยกเลิก ค่าธรรมเนียม และยอดเงินคืนกับผู้ให้บริการ แล้วจึงแนะนำคุณ คุณติดตามคำขอได้จากหน้ารายละเอียดการจอง และอีเมลยืนยันจะตามมาเมื่อเรื่องเสร็จ",
+        pitfall:
+          "การอ่านปุ่มที่หายไปว่าเป็นความเสียของเว็บไซต์แล้วลองใหม่อยู่เป็นชั่วโมง นั่นคือสถานะหนึ่ง และนาฬิกาในขั้นแรกก็ยังเดินอยู่ระหว่างที่คุณลองใหม่",
+        takes: "15 นาที บวกเวลาของฝ่ายบริการ",
+      },
+      {
+        title: "อย่าคาดหวังตารางค่าธรรมเนียม ให้เอาตัวเลขจากการจองของคุณเอง",
+        body: "ไม่มีตารางค่าธรรมเนียมที่ประกาศไว้ให้วางแผนล่วงหน้า เมื่อถูกถามว่าค่าธรรมเนียมการยกเลิกเท่าไร NOL World ตอบด้วยเส้นทาง คือ Web/App แล้ว Account/My แล้ว My Reservations แล้ว Reservation Details เพราะตัวเลขนั้นเป็นคุณสมบัติของการจองของคุณ ไม่ใช่ของแพลตฟอร์ม สำหรับสินค้าประเภททัวร์และกิจกรรม ค่าธรรมเนียมและยอดเงินคืนจะแสดงให้คุณเห็นเมื่อกด Cancel Reservation ก่อนที่คุณจะยืนยัน เราจะไม่พิมพ์เปอร์เซ็นต์ลงที่นี่ให้เป็นตัวเลขที่การจองของคุณอาจไม่เห็นด้วย",
+        pitfall:
+          "การวางแผนรอบตารางค่าธรรมเนียมจากบล็อกโพสต์หนึ่ง ไกด์ใดที่อ้างเปอร์เซ็นต์การยกเลิกแบบคงที่ของเกาหลีสำหรับรอบของคุณ คือการอ้างสิ่งที่ NOL World ไม่ได้ประกาศ",
+        takes: "5 นาที",
+      },
+      {
+        title: "ตรวจเรื่องการยกเลิกบางส่วนตอนที่ยังจองอยู่",
+        body: "การยกเลิกสองที่นั่งจากสี่ที่นั่งทำได้ในบางรอบและทำไม่ได้ในบางรอบ และคำแนะนำของ NOL World คือให้ตรวจสถานะการยกเลิกบางส่วนตอนที่คุณกำลังจอง นั่นคือก่อนที่มันจะกลายเป็นสิ่งที่คุณต้องใช้ สินค้าประเภททัวร์และกิจกรรมไม่อนุญาตเลย เส้นทางที่นั่นคือยกเลิกการจองทั้งก้อนแล้วจองใหม่ และ NOL World เตือนตรง ๆ ว่าที่ว่างหลังจากนั้นไม่มีการรับประกัน และการจองใหม่อาจเป็นไปไม่ได้",
+        pitfall:
+          "การจองสี่ที่นั่งบนสมมติฐานว่าเพื่อนสองคนที่ยังไม่แน่นอนจะตัดออกทีหลังได้ สำหรับรอบที่ไม่มีการยกเลิกบางส่วน ตัวเลือกจะเหลือสี่ที่นั่งทั้งหมดหรือไม่เอาเลย",
+        takes: "2 นาที ตอนจอง",
+      },
+      {
+        title: "เข้าใจว่าเงินคืนเต็มจำนวนก็ยังทำให้ผู้ถือบัตรต่างประเทศเสียเงินได้",
+        body: "นี่คือส่วนที่เขียนขึ้นเพื่อผู้อ่านกลุ่มนี้และแทบไม่เคยถูกอธิบายเป็นภาษาอังกฤษ NOL World ระบุว่าเมื่อใช้บัตรเครดิตต่างประเทศ กำไรหรือขาดทุนจากอัตราแลกเปลี่ยนเกิดขึ้นได้เพราะส่วนต่างระหว่างอัตราในวันจองกับอัตราในวันยกเลิก และแยกอีกข้อหนึ่งว่าค่าธรรมเนียมธุรกรรมต่างประเทศอาจถูกเรียกเก็บได้แม้ธุรกรรมจะถูกยกเลิกแล้ว ทั้งสองอย่างไม่ใช่ยอดที่ NOL World หักไว้ ทั้งสองอย่างเป็นเรื่องของผู้ออกบัตรของคุณ และคำแนะนำของ NOL World คือให้ถามผู้ออกบัตรถึงอัตราและค่าธรรมเนียมที่แน่นอน",
+        pitfall:
+          "การอ่านยอดเงินคืนที่น้อยกว่ายอดที่ถูกตัดไปว่าเป็นความผิดพลาดหรือค่าธรรมเนียมแอบแฝง ช่องว่างนั้นอาจเป็นอัตราแลกเปลี่ยนที่ขยับระหว่างสองวัน และคนที่อธิบายได้คือธนาคารของคุณ ไม่ใช่แพลตฟอร์มขายตั๋ว",
+        takes: "โทรหาธนาคารของคุณครั้งหนึ่ง",
+      },
+      {
+        title: "ให้เวลาเงินคืนเท่าที่เครือข่ายบัตรต้องใช้",
+        body: "ถ้าธุรกรรมยังไม่ไปถึงบริษัทบัตรเครดิตของคุณ NOL World บอกว่าการยกเลิกเสร็จสิ้นทันที ถ้าไปถึงแล้วและยอดชำระถูกตัดบัญชีเรียบร้อย ให้คาดไว้ราว 5 ถึง 7 วันที่บริษัทบัตรจะกลับรายการ และยอดที่ถูกยกเลิกจะถูกหักออกจากบิลของเดือนถัดไปแทนที่จะคืนมาเป็นเงินก้อน NOL World ตั้งข้อสังเกตว่านโยบายการคืนเงินต่างกันไปตามบริษัทบัตร ดังนั้นบริษัทของคุณคือผู้มีอำนาจเรื่องเวลาของตัวเอง",
+        pitfall:
+          "การเปิดข้อพิพาทกับธนาคารระหว่างที่การกลับรายการกำลังดำเนินอยู่ การขอ chargeback บนธุรกรรมที่กำลังถูกยกเลิกอยู่แล้วสร้างปัญหาที่สองบนบัญชีที่คุณอาจยังอยากใช้จองอีก",
+        takes: "5-7 วัน",
+      },
+      {
+        title: "อย่าส่งตั๋วมือถือจนกว่าคุณจะมั่นใจว่าคุณไป",
+        body: "นี่คือกับดักที่คุ้มค่าทั้งหน้านี้ การแชร์ตั๋วมือถือให้ผู้ซื้อส่งตั๋วไปให้คนที่จะเข้าชมได้ และ NOL World ระบุว่าเมื่อตั๋วมือถือถูกส่งสำเร็จแล้ว การยกเลิกการจองจะถูกจำกัด ทางกลับอยู่ในมือผู้รับ ถ้าเขายกเลิกการลงทะเบียนตั๋ว การยกเลิกการจองก็กลับมาทำได้อีก ก่อนการลงทะเบียนยังมีทางออกที่นุ่มกว่า ผู้ส่งกดปุ่ม Cancel Send ได้ขณะที่ตั๋วยังไม่ถูกลงทะเบียน และตั๋วที่ยังไม่ลงทะเบียนจะกลับมาเองหลัง 24 ชั่วโมงหรือเมื่อถึงวันเข้าชม",
+        pitfall:
+          "การส่งตั๋วให้เพื่อนในสัปดาห์ที่คุณจอง ด้วยความรู้สึกว่านี่คือเรื่องที่คนเป็นระเบียบทำ ปุ่มยกเลิกกลายเป็นของเขาไปแล้วในทางปฏิบัติ และการเอามันกลับมาหมายถึงต้องขอให้เขาปล่อยตั๋วก่อน",
+        takes: "—",
+      },
+      {
+        title: "อ่านนโยบายของทัวร์และกิจกรรมแยกออกมา",
+        body: "ถ้าการจองของคุณเป็นทัวร์ รถรับส่ง หรือกิจกรรม ไม่ใช่ตั๋วการแสดง ไม่มีข้อใดข้างบนเป็นค่าตั้งต้นที่ปลอดภัย NOL World บอกว่าสินค้าบางอย่างในกลุ่มนี้ยกเลิกไม่ได้เลยเมื่อซื้อแล้ว และค่าธรรมเนียมการยกเลิก 100% อาจถูกเรียกเก็บได้แม้ในวันที่ซื้อ นโยบายที่มีผลคือนโยบายบนหน้ารายละเอียดและบนวอชเชอร์ของสินค้านั้นเอง และ NOL World ขอให้คุณอ่านมันก่อนส่งคำขอยกเลิก",
+        pitfall:
+          "การยกกฎของตั๋วไปใช้กับแพ็กเกจที่จองในการนั่งคราวเดียวกัน ช่วงยกเลิกฟรีในวันเดียวกันเป็นกฎของตั๋วการแสดง ส่วนสินค้าทัวร์อาจคืนเงินไม่ได้ตั้งแต่วินาทีที่คุณจ่าย",
+        takes: "10 นาทีต่อสินค้าหนึ่งอย่าง",
+      },
+    ],
+    faq: [
+      {
+        q: "เส้นตายการยกเลิกของการแสดงคือเมื่อไรกันแน่",
+        a: "วันก่อนวันแสดง ตามเวลาเกาหลี NOL World ให้ไว้ว่า 5 โมงเย็น KST ของวันก่อนหน้าสำหรับวันธรรมดาและวันหยุดนักขัตฤกษ์ และ 11 นาฬิกา KST ของวันก่อนหน้าสำหรับรอบวันเสาร์ แปลงเทียบกับวันที่ของคุณเองอย่างระวัง เส้นตาย 11 นาฬิกา KST ของวันศุกร์คือค่ำวันพฤหัสบดีในพื้นที่ส่วนใหญ่ของทวีปอเมริกา",
+      },
+      {
+        q: "มีการยกเลิกแบบฟรีอยู่ไหม",
+        a: "สำหรับตั๋วการแสดงมี ในวันที่คุณจอง NOL World บอกว่าการยกเลิกภายใน 11:59 PM ของวันที่จองไม่มีค่าธรรมเนียมการยกเลิก มันไม่ระบุเขตเวลาในข้อนั้นขณะที่ระบุ KST ในข้ออื่น ดังนั้นให้ถือเป็นเวลาเกาหลีและอย่าเฉียดเส้น สินค้าประเภททัวร์และกิจกรรมต่างออกไป บางอย่างเก็บ 100% แม้ในวันเดียวกัน",
+      },
+      {
+        q: "ค่าธรรมเนียมการยกเลิกเท่าไร",
+        a: "NOL World ไม่ประกาศตาราง เมื่อถูกถามคำนั้นมันให้เส้นทางแทน คือ Web หรือ App แล้ว Account/My แล้ว My Reservations แล้ว Reservation Details เพราะตัวเลขเป็นของการจองของคุณ สำหรับสินค้าทัวร์และกิจกรรม การกด Cancel Reservation จะแสดงค่าธรรมเนียมการยกเลิกและยอดเงินคืนให้เห็นก่อนยืนยัน ไกด์ภาษาอังกฤษใดที่อ้างเปอร์เซ็นต์คงที่สำหรับรอบของคุณ คือการอ้างตัวเลขที่แพลตฟอร์มไม่ได้พูด",
+      },
+      {
+        q: "ฉันยกเลิกทันเวลาแต่ได้คืนน้อยกว่าที่จ่ายไป ส่วนที่เหลือไปไหน",
+        a: "น่าจะไม่ได้ไปที่ NOL World มันระบุว่าบัตรต่างประเทศทำให้เกิดกำไรหรือขาดทุนจากอัตราแลกเปลี่ยนได้จากส่วนต่างระหว่างอัตราวันจองกับอัตราวันยกเลิก และว่าค่าธรรมเนียมธุรกรรมต่างประเทศยังอาจถูกเรียกเก็บได้แม้ธุรกรรมจะถูกยกเลิก ทั้งสองอย่างอยู่ที่ผู้ออกบัตรของคุณ และคำแนะนำของ NOL World เองคือให้ถามผู้ออกบัตรถึงอัตราและค่าธรรมเนียมที่แน่นอน",
+      },
+      {
+        q: "เงินใช้เวลานานแค่ไหนจะกลับมา",
+        a: "ถ้าธุรกรรมยังไม่ไปถึงบริษัทบัตรของคุณ การยกเลิกเสร็จสิ้นทันที ถ้าไปถึงแล้ว NOL World บอกว่าราว 5 ถึง 7 วันที่บริษัทบัตรจะยกเลิกธุรกรรม โดยยอดจะถูกหักออกจากบิลเดือนถัดไป บริษัทบัตรต่างกันไป ดังนั้นบริษัทของคุณคือที่ที่บอกคุณได้",
+      },
+      {
+        q: "ฉันส่งตั๋วมือถือให้เพื่อนไปแล้ว ยังยกเลิกได้ไหม",
+        a: "ไม่ได้ ระหว่างที่เขายังถือมันอยู่ NOL World บอกว่าการยกเลิกการจองถูกจำกัดเมื่อตั๋วมือถือถูกส่งสำเร็จแล้ว และกลับมาทำได้อีกถ้าผู้รับยกเลิกการลงทะเบียน ถ้าตั๋วยังไม่ถูกลงทะเบียน คุณมีทางออกที่ง่ายกว่า ผู้ส่งกด Cancel Send ได้ และตั๋วที่ยังไม่ลงทะเบียนจะกลับมาเองหลัง 24 ชั่วโมงหรือเมื่อถึงวันเข้าชม",
+      },
+      {
+        q: "ฉันยกเลิกสองที่นั่งจากสี่ที่นั่งได้ไหม",
+        a: "ขึ้นกับรอบการแสดง และคำแนะนำของ NOL World คือให้ตรวจสถานะการยกเลิกบางส่วนตอนที่คุณจอง ไม่ใช่ตอนที่คุณต้องใช้ สินค้าประเภททัวร์และกิจกรรมไม่รองรับการยกเลิกบางส่วนเลย คุณจะต้องยกเลิกการจองทั้งก้อนแล้วจองใหม่ โดยไม่มีการรับประกันว่าที่ว่างยังอยู่",
+      },
+      {
+        q: "ปุ่ม Cancel Reservation ไม่อยู่บนหน้าการจองของฉัน",
+        a: "NOL World ถือว่านั่นเป็นเคสของฝ่ายบริการลูกค้า ไม่ใช่ความเสียที่จะลองใหม่ เจ้าหน้าที่จะยืนยันเงื่อนไข ค่าธรรมเนียม และยอดเงินคืนกับผู้ให้บริการก่อน ติดต่อเสียแต่เนิ่น ๆ เพราะเส้นตายในคำตอบข้อแรกยังเดินอยู่ระหว่างที่คุณรอ",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-cancel-ticket-refund",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pagkansela ng tiket sa NOL World: ang takdang oras, ang bayad, at ang perang nawawala sa iyo pa rin",
+    summary:
+      "Hapon ng araw bago ang palabas, oras ng Korea, ang takdang oras ng pagkansela; mas maaga ang Sabado kaysa sa buong linggo; at puwede pa ring magastusan ang may kard mula sa ibang bansa sa isang tiket na lubos na naibalik ang bayad. Isa pa: inaalis ng pagpapadala ng tiket sa kaibigan mo ang pindutan ng pagkansela sa iyo.",
+    scope:
+      "Sakop nito ang pagkansela ng tiket sa pagtatanghal sa NOL World ayon sa inilalathala ng NOL World: ang mga takdang oras, kung saan ipinapakita ang bayad, kung paano nakakarating ang refund sa isang dayuhang kard, at ano ang gumagawang imposible ang pagkansela. Hindi naglalathala ng sentral na talaan ng bayad ang NOL World at hindi gumagawa ng isa ang pahinang ito. May sariling patakaran ang mga produktong tour at aktibidad at nababanggit lamang sila kung saan nagkakaiba.",
+    intro: [
+      "Kinakansela ng tagahangang mula sa ibang bansa ang booking dahil sa mga dahilang bihira sa isang tagahangang nasa Korea: isang visa, isang konektadong flight, isang iskedyul ng trabahong nagbago. Kaya mas mabigat ang mga tuntunin ng pagkansela sa mambabasang ito kaysa sa pinagsulatan nila — at mahigpit sila, nakatali sa oras ng Korea, at sa dalawang punto ay hindi simetriko sa paraang walang maghuhula.",
+      "Dalawa sa mga katotohanang nasa ibaba ay mas mabuting malaman bago ka mag-book kaysa pagkatapos. Anim na oras na mas maaga kaysa sa lahat ng ibang araw ang pagsasara ng pagkansela para sa palabas na Sabado. At ang isang pagkanselang lubos na pinoproseso ng NOL World ay puwede pa ring maglabas ng pera sa may dayuhang kard, na walang kasalanan ninuman at walang trabaho rin ninuman na ayusin para sa iyo.",
+    ],
+    steps: [
+      {
+        title: "Alamin ang takdang oras bago mag-book, dahil hindi ito ang araw ng palabas",
+        body: "Isinasara ng NOL World ang pagkansela ng tiket sa pagtatanghal sa araw bago, hindi sa araw mismo: 5pm KST sa araw bago ang palabas para sa karaniwang araw at pista opisyal, at 11am KST sa araw bago para sa palabas na Sabado. Ang tuntuning Sabado ang nakakahuli sa mga tao — anim na oras ito na mas maaga kaysa sa buong linggo, at sa pagtatanghal ng Sabado ito nauukol, kaya sa umaga ng Biyernes sa oras ng Korea bumabagsak ang takdang oras.",
+        pitfall:
+          "Ang pagkuwenta ng “araw bago” sa sarili mong kalendaryo. Para sa palabas ng Sabado ng gabi sa Seoul, ang 11am KST ng Biyernes ay Huwebes ng gabi sa New York. Puwedeng bumagsak ang takdang oras ng isang buong araw na mas maaga kaysa sa pakiwari mo.",
+        takes: "5 minuto, bago ka magbayad",
+      },
+      {
+        title: "Gamitin ang walang-bayad na bintana kung nag-iisip ka pang muli",
+        body: "May panahong walang bayad, at maikli ito: sinasabi ng NOL World na para sa tiket, ang pagkansela bago ang 11:59 PM sa araw ng reserbasyon mo ay walang bayad sa pagkansela. Kaya ang desisyong mababaligtad mo nang walang halaga ay ang desisyong ginawa mo sa parehong araw na nag-book ka. Pagkatapos ng hatinggabi ay may presyo na ito.",
+        pitfall:
+          "Ang pag-aakalang ang 11:59 PM ay ang sariling hatinggabi mo. Tahasang pinapangalanan ng NOL World ang KST sa ibang takdang oras ng pagkansela at walang pinapangalanang sona rito, kaya ang matiwasay na pagbasa ay oras ng Korea — at sa alinmang paraan, ang desisyong ginawa sa huling sampung minuto ng isang bintana ay desisyong huli na.",
+        takes: "—",
+      },
+      {
+        title: "Alamin kung nasaan ang pindutan, at ano ang kahulugan kapag wala ito",
+        body: "Ang ruta ay App o Web, saka Account/My, saka My Reservations, saka Ticket Reservation List, saka ang reserbasyon, saka Cancel Reservation sa pahina ng detalye. Kung wala talaga ang pindutang Cancel Reservation sa pahina ng detalye, ang bilin ng NOL World ay makipag-ugnayan sa suporta sa customer sa halip na maghanap pa: kinukumpirma ng isang kinatawan sa supplier ang pagiging karapat-dapat, ang bayad at ang halaga ng refund, at saka ka inaakay. Masusubaybayan mo ang kahilingan mula sa pahina ng detalye ng reserbasyon, at may email ng kumpirmasyong sumusunod kapag kumpleto na ito.",
+        pitfall:
+          "Ang pagbasa sa nawawalang pindutan bilang depekto ng website at ang pagsubok nitong muli nang isang oras. Isa itong katayuan, at tumatakbo pa rin ang orasan sa unang hakbang habang nagsusubok ka.",
+        takes: "15 minuto, kasama ang oras ng suporta",
+      },
+      {
+        title: "Huwag asahan ang talaan ng bayad, at kunin ang numero sa sarili mong reserbasyon",
+        body: "Walang inilathalang talaan ng bayad na mapagpaplanuhan. Nang tanungin kung magkano ang bayad sa pagkansela, isang ruta ang isinagot ng NOL World — Web/App, Account/My, My Reservations, Reservation Details — dahil pag-aari ng booking mo ang bilang at hindi ng plataporma. Para sa produktong tour at aktibidad, ipinapakita sa iyo ang bayad at ang halaga ng refund kapag pinindot mo ang Cancel Reservation, bago ka magkumpirma. Hindi kami maglilimbag dito ng porsiyentong baka hindi sang-ayunan ng reserbasyon mo.",
+        pitfall:
+          "Ang pagplano sa paligid ng talaan ng bayad na galing sa isang blog. Anumang gabay na sumisipi ng nakapirming Koreanong porsiyento ng pagkansela para sa palabas mo ay sumisipi ng isang bagay na hindi inilalathala ng NOL World.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tingnan ang bahagyang pagkansela habang nagbu-book ka pa",
+        body: "Posible sa ilang palabas at hindi sa iba ang pagkansela ng dalawa sa apat na upuan, at ang bilin ng NOL World ay tingnan ang katayuan ng bahagyang pagkansela habang nagbu-book ka — ibig sabihin, bago ito ang bagay na kailangan mo. Hindi ito pinapayagan nang tuluyan sa produktong tour at aktibidad: doon ang ruta ay kanselahin ang buong booking at mag-book muli, at tahasang nagbabala ang NOL World na hindi garantisado ang bakante pagkatapos at maaaring hindi na posible ang muling pag-book.",
+        pitfall:
+          "Ang pag-book ng apat na upuan sa pag-aakalang maibababa pa ang dalawang kaibigang hindi pa tiyak. Para sa palabas na walang bahagyang pagkansela, ang pagpipilian ay nagiging lahat ng apat o wala.",
+        takes: "2 minuto, sa pag-book",
+      },
+      {
+        title: "Unawain na ang buong refund ay puwede pa ring magastos sa may dayuhang kard",
+        body: "Ito ang bahaging isinulat para sa mambabasang ito at halos hindi ipinapaliwanag sa Ingles. Isinasaad ng NOL World na kapag dayuhang credit card ang ginamit, puwedeng mangyari ang tubo o lugi sa palitan ng pera dahil sa pagkakaiba ng palitan sa araw ng booking at ng palitan sa araw ng pagkansela — at, hiwalay dito, na puwede pa ring ipataw ang bayad sa dayuhang transaksiyon kahit kinansela na ang transaksiyon. Hindi bawas ng NOL World ang alinman sa dalawa. Nasa nag-isyu ng kard mo ang dalawa, at ang payo ng NOL World ay tanungin ang nag-isyu tungkol sa eksaktong palitan at bayad.",
+        pitfall:
+          "Ang pagbasa sa halagang naibalik na mas maliit kaysa sa halagang kinaltas bilang mali o bilang tagong bayad. Puwedeng ang agwat ay ang palitang gumalaw sa pagitan ng dalawang araw, at ang makapagpapaliwanag nito ay ang bangko mo, hindi ang plataporma ng tiket.",
+        takes: "Isang tawag sa bangko mo",
+      },
+      {
+        title: "Bigyan ang refund ng panahong kailangan ng network ng kard",
+        body: "Kung hindi pa narating ng transaksiyon ang kompanya ng credit card mo, sinasabi ng NOL World na kumpleto agad ang pagkansela. Kung narating na nito, at naiayos na ang halaga ng bayad, asahan ang humigit-kumulang 5 hanggang 7 araw para ibaligtad ito ng kompanya ng kard, at ang kinanselang halaga ay ibabawas sa bill ng kasunod na buwan sa halip na ibalik bilang bayad. Pansin ng NOL World na magkakaiba ang patakaran sa refund kada kompanya ng kard, kaya ang sa iyo ang may say sa sariling takdang panahon nito.",
+        pitfall:
+          "Ang pagbukas ng disputa sa bangko mo habang umuusad ang pagbaligtad. Ang isang chargeback sa transaksiyong kinakansela na ay gumagawa ng pangalawang problema sa isang account na baka gusto mo pang gamitin sa pag-book.",
+        takes: "5-7 araw",
+      },
+      {
+        title: "Huwag ipadala ang mobile ticket hangga't hindi ka tiyak na pupunta ka",
+        body: "Ito ang bitag na katumbas ng buong pahina. Pinapayagan ng pagbabahagi ng mobile ticket ang bumili na ipadala ang tiket sa taong dadalo — at isinasaad ng NOL World na kapag matagumpay nang naipadala ang mobile ticket ay pinaghihigpitan ang pagkansela ng reserbasyon. Sa tatanggap ang daan pabalik: kung aalisin niya ang pagpapatala ng tiket ay posible nang muli ang pagkansela. Bago ang pagpapatala ay may mas malumanay na labasan — mapipindot ng nagpadala ang Cancel Send habang hindi pa nakapatala ang tiket, at bumabalik nang kusa ang tiketang hindi nakapatala pagkalipas ng 24 oras o pagsapit ng araw ng panonood.",
+        pitfall:
+          "Ang pagpapadala ng tiket sa mga kaibigan sa linggong nag-book ka, bilang ang maayos na bagay na gawin. Kanila na ang pindutan ng pagkansela sa katunayan, at ang pagbawi nito ay ang paghiling sa kanilang bitawan muna ang tiket.",
+        takes: "—",
+      },
+      {
+        title: "Basahin nang hiwalay ang patakaran ng tour at aktibidad",
+        body: "Kung ang booking mo ay isang tour, isang transfer o isang aktibidad at hindi tiket sa pagtatanghal, wala sa itaas ang matiwasay na palagay. Sinasabi ng NOL World na may mga produkto rito na hindi na makakansela matapos mabili, at na puwedeng ipataw ang 100% na bayad sa pagkansela kahit sa araw ng pagbili. Ang patakarang nananaig ay ang nasa sariling pahina ng detalye at voucher ng produkto, at hinihiling ng NOL World na basahin mo ito bago magpasa ng kahilingan ng pagkansela.",
+        pitfall:
+          "Ang paglipat ng tuntunin ng tiket sa isang pakete na binook sa parehong pagkakataon. Tuntunin ng tiket sa pagtatanghal ang walang-bayad na bintana sa araw mismo, at puwedeng hindi na maibalik ang bayad sa produktong tour mula sa sandaling magbayad ka.",
+        takes: "10 minuto kada produkto",
+      },
+    ],
+    faq: [
+      {
+        q: "Ano nga ba ang takdang oras ng pagkansela para sa isang pagtatanghal?",
+        a: "Ang araw bago ang palabas, sa oras ng Korea. Ibinibigay ng NOL World ang 5pm KST sa araw bago para sa karaniwang araw at pista opisyal, at 11am KST sa araw bago para sa pagtatanghal na Sabado. Ikonberte ito laban sa sarili mong petsa nang maingat — ang takdang 11am KST ng Biyernes ay Huwebes ng gabi sa malaking bahagi ng Amerika.",
+      },
+      {
+        q: "May libreng pagkansela ba?",
+        a: "Para sa tiket sa pagtatanghal, oo, sa araw na nag-book ka: sinasabi ng NOL World na ang pagkansela bago ang 11:59 PM sa araw ng reserbasyon mo ay walang bayad sa pagkansela. Hindi ito nagpapangalan ng sona sa isang iyon samantalang pinapangalanan ang KST sa iba, kaya ituring itong oras ng Korea at huwag ipagsapalaran. Iba ang produktong tour at aktibidad — may humihingi ng 100% kahit sa parehong araw.",
+      },
+      {
+        q: "Magkano ang bayad sa pagkansela?",
+        a: "Hindi naglalathala ng talaan ang NOL World. Nang tanungin iyon ay isang ruta ang ibinigay nito — Web o App, Account/My, My Reservations, Reservation Details — dahil sa booking mo nabibilang ang numero. Para sa produktong tour at aktibidad, ipinapakita ng pagpindot sa Cancel Reservation ang bayad sa pagkansela at ang halaga ng refund bago ka magkumpirma. Anumang gabay sa Ingles na sumisipi ng nakapirming porsiyento para sa palabas mo ay sumisipi ng numerong hindi isinasaad ng plataporma.",
+      },
+      {
+        q: "Nakansela ako sa oras at mas maliit ang nakuha ko kaysa sa binayad ko. Saan napunta ang iba?",
+        a: "Malamang hindi sa NOL World. Isinasaad nitong puwedeng maglikha ang dayuhang kard ng tubo o lugi sa palitan ng pera mula sa pagkakaiba ng palitan sa araw ng booking at sa araw ng pagkansela, at na puwede pa ring ipataw ang bayad sa dayuhang transaksiyon kahit kinansela ang transaksiyon. Nasa nag-isyu ng kard mo ang dalawa, at ang payo ng NOL World mismo ay tanungin ang nag-isyu tungkol sa eksaktong palitan at bayad.",
+      },
+      {
+        q: "Gaano katagal bago bumalik ang pera?",
+        a: "Kung hindi pa narating ng transaksiyon ang kompanya ng kard mo, kumpleto agad ang pagkansela. Kung narating na, sinasabi ng NOL World na mga 5 hanggang 7 araw para kanselahin ng kompanya ng kard ang transaksiyon, at ibabawas ang halaga sa bill ng kasunod na buwan. Magkakaiba ang kompanya ng kard, kaya ang sa iyo ang makapagsasabi sa iyo.",
+      },
+      {
+        q: "Naipadala ko na ang mobile ticket sa kaibigan ko. Makakansela pa ba ako?",
+        a: "Hindi habang hawak nila ito. Sinasabi ng NOL World na pinaghihigpitan ang pagkansela ng reserbasyon kapag matagumpay nang naipadala ang mobile ticket, at nagiging posible itong muli kung aalisin ng tatanggap ang pagpapatala nito. Kung hindi pa naipapatala ang tiket ay may mas madaling labasan ka: mapipindot ng nagpadala ang Cancel Send, at bumabalik nang kusa ang tiketang hindi nakapatala pagkalipas ng 24 oras o pagsapit ng araw ng panonood.",
+      },
+      {
+        q: "Makakansela ko ba ang dalawa sa apat na upuan ko?",
+        a: "Depende sa palabas, at ang payo ng NOL World ay tingnan ang katayuan ng bahagyang pagkansela sa pag-book at hindi sa oras na kailangan mo ito. Hindi talaga sinusuportahan ng produktong tour at aktibidad ang bahagyang pagkansela — kanselahin mo ang buong booking at mag-book muli, nang walang garantiyang nasa stock pa ito.",
+      },
+      {
+        q: "Wala ang pindutang Cancel Reservation sa pahina ng reserbasyon ko.",
+        a: "Itinuturing ito ng NOL World na kaso para sa suporta sa customer at hindi isang depektong susubukang muli. Kinukumpirma muna ng isang kinatawan sa supplier ang pagiging karapat-dapat, ang bayad at ang halaga ng refund. Makipag-ugnayan nang maaga, dahil tumatakbo ang takdang oras sa unang sagot habang naghihintay ka.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

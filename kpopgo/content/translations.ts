@@ -17504,6 +17504,375 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Bị khóa ngoài NOL World: tìm lại tài khoản, và sửa cái trang không mở",
+    summary:
+      "Bạn đã dùng kiểu đăng nhập nào sẽ quyết định mọi con đường khôi phục, việc đặt lại mật khẩu chỉ tồn tại với người đăng ký bằng email, và một email chưa xác thực có thể làm tài khoản gần như không thể tìm thấy. Thêm vào đó là những lỗi trang đặt vé mà thực ra không phải lỗi.",
+    scope:
+      "Trang này bao gồm việc khôi phục tài khoản, xóa tài khoản và những sự cố trang đặt vé mà NOL World có công bố: yêu cầu về trình duyệt và ứng dụng, sơ đồ chỗ ngồi trên di động, và những cửa sổ bật lên trông như lỗi. Cơ chế xếp hàng nằm ở hướng dẫn riêng của nó. Không điều gì ở đây giúp ai đó vào một tài khoản không phải của họ.",
+    intro: [
+      "Có hai thứ hỏng trên một trang bán vé mà chẳng liên quan gì tới vé. Bạn không vào được tài khoản, hoặc cái trang đơn giản là không làm điều nó phải làm — và cả hai đều xảy ra vào sáng ngày mở bán, lúc không còn thời gian để đọc gì cả.",
+      "Gần như toàn bộ chuyện này được quyết định bởi một lựa chọn bạn đã làm từ nhiều tháng trước mà không nghĩ gì: bạn đăng ký bằng địa chỉ email hay bằng Google, Apple hoặc Line. Chỉ riêng sự thật đó đã quyết định liệu việc đặt lại mật khẩu có tồn tại với bạn hay không, nên đó là chỗ để bắt đầu.",
+    ],
+    steps: [
+      {
+        title: "Tìm ra bạn thực sự có kiểu đăng nhập nào",
+        body: "Tài khoản NOL World được tạo bằng một địa chỉ email hoặc qua đăng nhập mạng xã hội — Google, Apple hoặc Line, cùng những cái khác. Hệ quả sắc hơn vẻ ngoài của nó: NOL World nêu rằng việc khôi phục mật khẩu chỉ có sẵn cho người dùng đã đăng ký bằng địa chỉ email. Nếu bạn dùng đăng nhập mạng xã hội thì không có mật khẩu NOL World nào để đặt lại, vì chưa từng có một mật khẩu nào. Hãy xác định ngay bây giờ bạn thuộc kiểu nào, lúc chưa có gì gấp.",
+        pitfall:
+          "Cho rằng mình có tài khoản email vì nhớ là đã gõ một địa chỉ email. Đăng nhập mạng xã hội cũng hiện email của bạn, và các con đường khôi phục thì hoàn toàn khác nhau.",
+        takes: "5 phút",
+      },
+      {
+        title: "Xác thực email của bạn, vì đây là thứ không thể làm lại",
+        body: "Chính câu kết của NOL World về khôi phục tài khoản là câu quan trọng nhất trong vùng này: có thể sẽ khó tìm được những tài khoản chưa được xác thực qua email. Mọi thứ khác ở đây là một quy trình có kết quả. Cái này là một cánh cửa có thể đơn giản là không mở — bộ phận hỗ trợ đang khớp bạn với một bản ghi, và một email chưa xác thực là mối khớp mạnh nhất họ có. Nếu bạn đang đọc trang này với một tài khoản còn dùng được, hãy kiểm tra email trên đó đã được xác thực và cứ để nó như vậy.",
+        pitfall:
+          "Bỏ qua thư xác thực lúc đăng ký vì đang gấp để kịp một buổi mở bán. Nó không tốn gì trong ngày hôm đó và nó là khoảng cách giữa một tài khoản khôi phục được và một tài khoản đã mất.",
+        takes: "3 phút, ngay bây giờ",
+      },
+      {
+        title: "Với đăng nhập mạng xã hội, hãy tìm ở phía nhà cung cấp trước",
+        body: "Nếu bạn không nhớ được mình có từng có tài khoản NOL World hay không, nhà cung cấp thì biết. NOL World công bố chỗ cần xem: ở Google, vào Google Account rồi Security rồi phần kết nối của bạn với ứng dụng và dịch vụ của bên thứ ba. Ở Apple, vào Settings, tên bạn và Apple ID, rồi Sign-In & Security, rồi Sign in with Apple. Ở Line, vào Settings rồi Account rồi Authorized apps. Nếu NOL World được liệt ở đó thì tài khoản có tồn tại và bạn biết nhà cung cấp nào mở nó.",
+        pitfall:
+          "Thử lần lượt từng nút mạng xã hội trên trang đăng nhập để xem cái nào chạy. Việc đó có thể tạo ra tài khoản thứ hai chứ không tìm ra cái thứ nhất, và giờ thì có hai cái — một trong số đó đang giữ các đơn đặt của bạn.",
+        takes: "10 phút",
+      },
+      {
+        title: "Nếu cách đó thất bại, hãy gửi cho bộ phận hỗ trợ năm thứ họ yêu cầu",
+        body: "NOL World sẽ tìm giúp một tài khoản, và nó nêu rõ cần gì: địa chỉ email bạn có thể đã dùng, kiểu đăng nhập (Google, Line, Apple hay email), nickname của bạn, và loại sản phẩm bạn đã đặt cùng với các số đơn đặt. Nó còn nói cho bạn chỗ tìm cái cuối ấy — số đơn đặt nằm trong email voucher gửi lúc bạn đặt. Hãy thu đủ tất cả trước khi viết, bởi một yêu cầu thiếu số đơn đặt là một yêu cầu đề nghị họ đoán.",
+        pitfall:
+          "Xóa các email xác nhận đặt vé cũ vì thấy chúng lộn xộn. Chúng giữ các số đơn đặt, thứ nhận dạng mạnh nhất bạn có thể đưa ra khi chính tài khoản là thứ bạn đã mất.",
+        takes: "20 phút",
+      },
+      {
+        title: "Điện thoại mới không làm mất đơn đặt của bạn — một tài khoản khác thì có",
+        body: "Đây là báo động giả phổ biến nhất và NOL World trả lời thẳng: đổi điện thoại hay đăng nhập lại không xóa lịch sử của bạn. Điều nó đề nghị bạn kiểm tra là liệu bạn đang đăng nhập bằng một tài khoản khác với tài khoản bạn dùng ban đầu hay không. Đó gần như luôn là nguyên nhân thật, và đăng nhập mạng xã hội là lý do — một chiếc điện thoại mới sẽ mời nhà cung cấp nào tiện nhất, và bấm sai một cái là bạn rơi vào một tài khoản thứ hai trống trơn nhưng hoàn toàn hợp lệ.",
+        pitfall:
+          "Kết luận rằng đơn đặt đã mất rồi đi mua lại. Vé đang ở trong tài khoản kia, và lần mua thứ hai là một lần mua thật.",
+        takes: "5 phút",
+      },
+      {
+        title: "Dùng trình duyệt mà trang đặt vé mong đợi, và chỉ các kênh chính thức",
+        body: "NOL World nói nó được xây theo chuẩn web và khuyến nghị Google Chrome hoặc Microsoft Edge trên cả máy tính và di động. Nếu cửa sổ đặt vé không mở, hướng dẫn của nó rất cụ thể: cập nhật trình duyệt lên bản mới nhất, xóa cache, và thử lại. Với ứng dụng, hãy cập nhật từ App Store hoặc Google Play. Và nó nêu rõ chỗ duy nhất mua được vé — website NOL World tại world.nol.com/ticket và ứng dụng NOL World, không chỗ nào khác.",
+        pitfall:
+          "Chẩn lỗi trên một trình duyệt chưa bao giờ được hỗ trợ, trong một webview mở ra từ một liên kết mạng xã hội. Hãy mở trang đặt vé trực tiếp trong Chrome hoặc Edge trước khi kết luận rằng trang bị hỏng.",
+        takes: "15 phút, hôm trước",
+      },
+      {
+        title: "Nếu sơ đồ chỗ ngồi không chạy trên web di động, hãy chuyển sang ứng dụng",
+        body: "Đây là một vấn đề thiết bị có ghi nhận chứ không phải một vấn đề chung. NOL World nói rằng trên một số thiết bị, môi trường web di động phóng to cả trình duyệt khi bạn thu nhỏ và phóng to, và điều đó làm việc chọn chỗ trở nên bất khả thi — và con đường vượt qua là tải ứng dụng NOL World. Nó nêu tên thiết bị đã được xác nhận tới giờ: Galaxy Fold. Nếu bạn dùng một màn hình gập hay có tỷ lệ khác thường, hãy cài ứng dụng trước buổi mở bán thay vì phát hiện chuyện này bên trong một cửa sổ thanh toán bảy phút.",
+        pitfall:
+          "Chụm hai ngón để phóng to sơ đồ chỗ ngồi nhằm tìm một ghế cụ thể. Trên các thiết bị bị ảnh hưởng, chính cử chỉ đó là thứ làm hỏng việc chọn chỗ.",
+        takes: "10 phút, trước đó",
+      },
+      {
+        title: "Biết cửa sổ bật lên nào không phải là lỗi",
+        body: "Có hai thông báo đọc ra như lỗi mà không phải. NOL World nói rằng cửa sổ bật lên báo ghế này đã được chọn xuất hiện khi bạn chọn cùng một ghế vào gần như cùng một thời điểm với người dùng khác — phiên của bạn không có gì sai, chỉ là có ai đó nhanh hơn một giây. Và nó nói rằng số ghế còn trống tự cập nhật mà không cần tải lại, nên một sơ đồ chỗ ngồi trông như đóng băng thường là một sơ đồ đang chạy. Hãy coi cả hai là thông tin chứ không phải thứ phải sửa.",
+        pitfall:
+          "Tải lại trang để xóa một cửa sổ bật lên. Trong một buổi bán có xếp hàng, đó chính là hành động làm bạn mất chỗ.",
+        takes: "—",
+      },
+      {
+        title: "Đọc lời khuyên về nhiều tab trong thế đối chiếu với chính sách chống gian lận",
+        body: "NOL World yêu cầu một thiết bị cho một tài khoản, và nói rằng truy cập đồng thời từ nhiều thiết bị trên cùng một tài khoản có thể làm hạn chế việc đặt vé của bạn. Rồi nó đưa lời khuyên kỹ thuật cho những người đặt vé song song — rằng nhiều tab gây xung đột phiên, và nên dùng các trình duyệt hoàn toàn tách biệt như Chrome và Edge, hoặc các thiết bị khác nhau. Hãy đọc kỹ chỗ đó, vì chính sách chống gian lận của nó liệt việc đặt vé qua nhiều tài khoản dùng thông tin cá nhân giống hoặc tương tự nhau là hành vi gian lận. Cách đọc an toàn của lời khuyên ấy là về các nền tảng tách biệt: NOL World ở một trình duyệt trong khi một trang bán vé khác chạy ở trình duyệt kia. Nó không phải sự cho phép để chạy nhiều tài khoản của chính bạn cùng lúc.",
+        pitfall:
+          "Lấy một mẹo về xung đột phiên làm chiến lược được chuẩn thuận cho nhiều tài khoản. Hai trang đó nằm cạnh nhau một cách khó xử, và trang có kèm hình phạt được công bố là chính sách chống gian lận.",
+        takes: "5 phút",
+      },
+      {
+        title: "Nếu bạn xóa tài khoản, hãy biết chính xác cái gì mất và cái gì ở lại",
+        body: "Việc xóa là không thể đảo ngược và NOL World liệt từng mục. Bị xóa: tài khoản và thông tin hồ sơ của bạn, lịch sử đơn đặt của bạn, các chuyến đi của bạn, và danh sách những nơi bạn đã thích. Được giữ lại: các bài đánh giá và ảnh bạn đã để lại cho một địa điểm. Trên website, bất kỳ phương thức đăng nhập nào cũng xóa được tài khoản. Trong ứng dụng với đăng nhập email, đường đi là My Account, Settings, Delete Account, rồi mật khẩu của bạn; với đăng nhập mạng xã hội thì cùng đường đi nhưng bạn xác thực qua Google, Line hoặc Apple thay vì mật khẩu. Hai điều từ chỗ khác trong tài liệu của nó đáng nằm cạnh điều này: việc xóa sẽ hủy luôn phần xác minh danh tính của bạn và giải phóng nó cho một tài khoản khác, và một tài khoản đang bị hạn chế vì sử dụng sai thì hoàn toàn không xóa được.",
+        pitfall:
+          "Xóa tài khoản để dọn một vấn đề với nó. Một tài khoản bị hạn chế thì không xóa được, còn một tài khoản đã xác minh thì mang theo cả phần xác minh của bạn — lịch sử đơn đặt thì mất mà các bài đánh giá thì không.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi không nhớ mật khẩu. Đặt lại thế nào?",
+        a: "Chỉ khi bạn đăng ký bằng địa chỉ email — NOL World nói việc khôi phục mật khẩu chỉ có cho người đăng ký bằng email. Đường đi là màn hình đăng nhập, Find Password, nhập email đã đăng ký, rồi theo liên kết đặt lại được gửi tới. Nếu bạn dùng Google, Apple hay Line thì không có mật khẩu NOL World nào; bạn đăng nhập qua nhà cung cấp.",
+      },
+      {
+        q: "Tôi còn không biết mình đã dùng tài khoản nào.",
+        a: "Hãy kiểm tra phía nhà cung cấp trước. NOL World công bố các đường đi: Google Account rồi Security rồi phần kết nối của bạn với ứng dụng và dịch vụ của bên thứ ba; Settings của Apple rồi Apple ID của bạn rồi Sign-In & Security rồi Sign in with Apple; Settings của Line rồi Account rồi Authorized apps. Nếu NOL World hiện ra, đó chính là tài khoản.",
+      },
+      {
+        q: "Không cách nào trong đó chạy. Bộ phận hỗ trợ có tìm ra không?",
+        a: "Họ sẽ tìm, bằng những gì bạn đưa: email bạn có thể đã dùng, kiểu đăng nhập, nickname của bạn, và các loại sản phẩm bạn đã đặt kèm số đơn đặt của chúng — thứ mà NOL World nói nằm trong email voucher gửi lúc bạn đặt. Nó cũng cảnh báo rằng những tài khoản chưa từng được xác thực qua email có thể khó tìm, nên hãy gửi tất cả những gì bạn có.",
+      },
+      {
+        q: "Tôi đổi điện thoại và các đơn đặt của tôi biến mất.",
+        a: "Gần như chắc chắn là không. NOL World nói việc đổi điện thoại hay đăng nhập lại không xóa lịch sử, và đề nghị bạn kiểm tra xem bạn có đang đăng nhập bằng một tài khoản khác với tài khoản ban đầu hay không. Với đăng nhập mạng xã hội, chuyện đó rất dễ xảy ra ngoài ý muốn — một điện thoại mới mời nhà cung cấp tiện nhất, không nhất thiết là cái bạn đã dùng.",
+      },
+      {
+        q: "Cửa sổ đặt vé hoàn toàn không mở.",
+        a: "Các bước của chính NOL World: dùng một trình duyệt chuẩn, và nó nêu tên Chrome và Edge; cập nhật nó lên bản mới nhất; xóa cache; thử lại. Với ứng dụng, cập nhật lên bản mới nhất từ App Store hoặc Google Play. Nó cũng nêu rằng vé chỉ mua được tại world.nol.com/ticket hoặc trong ứng dụng NOL World.",
+      },
+      {
+        q: "Tôi không chọn được ghế trên trình duyệt điện thoại.",
+        a: "Có một vấn đề thiết bị đã biết. NOL World nói rằng trên một số thiết bị, việc thu nhỏ và phóng to làm phóng to cả trình duyệt di động, khiến việc chọn chỗ trở nên bất khả thi, và rằng câu trả lời là dùng ứng dụng NOL World. Thiết bị nó nêu tên như đã xác nhận là Galaxy Fold. Hãy cài ứng dụng trước buổi mở bán chứ không phải trong lúc đang bán.",
+      },
+      {
+        q: "Tôi mở hai tab để tăng cơ hội được không?",
+        a: "Không, và NOL World yêu cầu một thiết bị cho một tài khoản — nó nói truy cập đồng thời từ nhiều thiết bị trên cùng một tài khoản có thể làm hạn chế việc đặt vé của bạn. Lời khuyên của nó về các trình duyệt tách biệt là về xung đột phiên khi bạn thực sự đang dùng hai nền tảng bán vé khác nhau, không phải sự tán thành việc chạy nhiều tài khoản của chính bạn. Việc đặt vé qua nhiều tài khoản trên thông tin cá nhân tương tự nằm trong danh sách hành vi gian lận đã công bố của nó.",
+      },
+      {
+        q: "Dữ liệu của tôi sẽ thế nào nếu tôi xóa tài khoản?",
+        a: "NOL World nói việc xóa không thể hoàn lại, và liệt những gì mất: tài khoản và thông tin hồ sơ, lịch sử đơn đặt, các chuyến đi, và những nơi đã thích. Các bài đánh giá và ảnh bạn để lại cho một địa điểm thì được giữ. Ở chỗ khác nó nói việc xóa cũng hủy phần xác minh danh tính của bạn, giải phóng nó cho một tài khoản khác, và rằng một tài khoản bị hạn chế vì sử dụng sai thì không xóa được.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ถูกล็อกอยู่นอก NOL World: การหาบัญชีให้เจอ และการแก้หน้าที่ไม่ยอมเปิด",
+    summary:
+      "คุณใช้การเข้าสู่ระบบแบบไหนเป็นตัวตัดสินเส้นทางการกู้คืนทุกเส้น การตั้งรหัสผ่านใหม่มีอยู่เฉพาะกับคนที่สมัครด้วยอีเมล และอีเมลที่ไม่ได้ยืนยันอาจทำให้บัญชีหายากถึงขั้นหาไม่เจอ รวมถึงข้อผิดพลาดบนหน้าจองที่จริง ๆ ไม่ใช่ข้อผิดพลาด",
+    scope:
+      "หน้านี้ครอบคลุมการกู้คืนบัญชี การลบบัญชี และความล้มเหลวบนหน้าจองที่ NOL World ประกาศไว้ ได้แก่ ข้อกำหนดของเบราว์เซอร์และแอป ผังที่นั่งบนมือถือ และป็อปอัปที่ดูเหมือนข้อผิดพลาด กลไกการต่อคิวอยู่ในไกด์ของตัวเอง ไม่มีอะไรในหน้านี้ที่ช่วยใครเข้าบัญชีที่ไม่ใช่ของตัวเอง",
+    intro: [
+      "มีสองอย่างที่พังบนเว็บขายตั๋วซึ่งไม่เกี่ยวกับตั๋วเลย คุณเข้าบัญชีไม่ได้ หรือหน้าเว็บก็แค่ไม่ทำสิ่งที่มันควรทำ และทั้งสองอย่างเกิดในเช้าวันเปิดขาย ตอนที่ไม่มีเวลาอ่านอะไรแล้ว",
+      "เกือบทั้งหมดของเรื่องนี้ถูกตัดสินด้วยทางเลือกเดียวที่คุณทำไปหลายเดือนก่อนโดยไม่คิด คือคุณสมัครด้วยที่อยู่อีเมล หรือด้วย Google, Apple หรือ Line ข้อเท็จจริงข้อเดียวนั้นกำหนดว่าการตั้งรหัสผ่านใหม่มีอยู่สำหรับคุณหรือไม่ จึงเป็นจุดที่ควรเริ่ม",
+    ],
+    steps: [
+      {
+        title: "หาให้ได้ว่าคุณมีการเข้าสู่ระบบแบบไหนจริง ๆ",
+        body: "บัญชี NOL World ถูกสร้างด้วยที่อยู่อีเมล หรือผ่านการเข้าสู่ระบบด้วยโซเชียล ได้แก่ Google, Apple หรือ Line และอื่น ๆ ผลที่ตามมาคมกว่าที่ฟัง NOL World ระบุว่าการกู้คืนรหัสผ่านมีให้เฉพาะผู้ใช้ที่สมัครด้วยที่อยู่อีเมล ถ้าคุณใช้การเข้าสู่ระบบด้วยโซเชียล ก็ไม่มีรหัสผ่าน NOL World ให้ตั้งใหม่ เพราะไม่เคยมีมาตั้งแต่ต้น หาให้ออกตอนนี้ว่าคุณเป็นแบบไหน ในขณะที่ยังไม่มีอะไรเร่งด่วน",
+        pitfall:
+          "การเหมาว่าตัวเองมีบัญชีแบบอีเมลเพราะจำได้ว่าพิมพ์ที่อยู่อีเมลลงไป การเข้าสู่ระบบด้วยโซเชียลก็แสดงอีเมลของคุณเหมือนกัน และเส้นทางการกู้คืนต่างกันโดยสิ้นเชิง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ยืนยันอีเมลของคุณ เพราะนี่คือข้อที่ย้อนกลับไม่ได้",
+        body: "ประโยคปิดท้ายของ NOL World เรื่องการกู้คืนบัญชีคือประโยคสำคัญที่สุดในเรื่องนี้ คืออาจเป็นเรื่องยากที่จะหาบัญชีที่ไม่ได้ยืนยันผ่านอีเมล ทุกอย่างที่เหลือในหน้านี้เป็นขั้นตอนที่มีผลลัพธ์ แต่ข้อนี้เป็นประตูที่อาจไม่เปิดเลย ฝ่ายบริการกำลังจับคู่คุณกับระเบียนหนึ่ง และอีเมลที่ไม่ได้ยืนยันคือการจับคู่ที่แข็งแรงที่สุดที่เขามี ถ้าคุณกำลังอ่านสิ่งนี้ด้วยบัญชีที่ยังใช้ได้ ตรวจว่าอีเมลบนบัญชีนั้นยืนยันแล้ว และปล่อยให้มันยืนยันอยู่อย่างนั้น",
+        pitfall:
+          "การข้ามเมลยืนยันตอนสมัครเพราะกำลังรีบไปให้ทันรอบขาย มันไม่มีค่าใช้จ่ายในวันนั้น และมันคือความต่างระหว่างบัญชีที่กู้คืนได้กับบัญชีที่หายไป",
+        takes: "3 นาที ตอนนี้",
+      },
+      {
+        title: "ถ้าเป็นการเข้าสู่ระบบด้วยโซเชียล ให้ดูที่ฝั่งผู้ให้บริการก่อน",
+        body: "ถ้าคุณจำไม่ได้ว่าเคยมีบัญชี NOL World หรือไม่ ผู้ให้บริการรู้ NOL World ประกาศที่ที่ต้องดูไว้ ใน Google ให้ไปที่ Google Account แล้ว Security แล้วส่วนการเชื่อมต่อของคุณกับแอปและบริการของบุคคลที่สาม ใน Apple ให้ไปที่ Settings ชื่อของคุณและ Apple ID แล้ว Sign-In & Security แล้ว Sign in with Apple ใน Line ให้ไปที่ Settings แล้ว Account แล้ว Authorized apps ถ้า NOL World อยู่ในรายการนั้น บัญชีมีอยู่จริง และคุณรู้แล้วว่าผู้ให้บริการรายไหนเปิดมันได้",
+        pitfall:
+          "การไล่กดปุ่มโซเชียลทีละอันบนหน้าเข้าสู่ระบบเพื่อดูว่าอันไหนใช้ได้ นั่นอาจสร้างบัญชีที่สองขึ้นมาแทนที่จะหาอันแรกเจอ และตอนนี้ก็มีสองบัญชี โดยอันหนึ่งถือการจองของคุณอยู่",
+        takes: "10 นาที",
+      },
+      {
+        title: "ถ้าวิธีนั้นไม่ได้ผล ให้ส่งห้าอย่างที่ฝ่ายบริการขอ",
+        body: "NOL World จะค้นหาบัญชีให้ และมันระบุว่าต้องการอะไร คือที่อยู่อีเมลที่คุณอาจใช้ ประเภทการเข้าสู่ระบบ (Google, Line, Apple หรืออีเมล) ชื่อเล่นของคุณ และประเภทสินค้าที่คุณจองพร้อมหมายเลขการจอง มันยังบอกที่ที่หาข้อสุดท้ายนั้นด้วย คือหมายเลขการจองอยู่ในอีเมลวอชเชอร์ที่ส่งมาตอนจอง รวบรวมทั้งหมดก่อนเขียนไป เพราะคำขอที่ขาดหมายเลขการจองคือคำขอที่กำลังขอให้เขาเดา",
+        pitfall:
+          "การลบอีเมลยืนยันการจองเก่าทิ้งเพราะเห็นว่ารกกล่อง มันเก็บหมายเลขการจองไว้ ซึ่งเป็นตัวระบุที่แข็งแรงที่สุดที่คุณยื่นได้ตอนที่ของที่หายไปคือตัวบัญชีเอง",
+        takes: "20 นาที",
+      },
+      {
+        title: "เครื่องใหม่ไม่ทำให้การจองหาย แต่บัญชีคนละอันทำ",
+        body: "นี่คือสัญญาณเตือนผิดที่พบบ่อยที่สุด และ NOL World ตอบตรง ๆ ว่าการเปลี่ยนเครื่องหรือเข้าสู่ระบบใหม่ไม่ได้ลบประวัติของคุณ สิ่งที่มันขอให้คุณตรวจคือคุณกำลังเข้าสู่ระบบด้วยบัญชีที่ต่างจากบัญชีที่ใช้ตอนแรกหรือไม่ นั่นแทบจะเป็นสาเหตุจริงเสมอ และการเข้าสู่ระบบด้วยโซเชียลคือเหตุผล เครื่องใหม่จะเสนอผู้ให้บริการรายที่สะดวกที่สุด และการกดผิดรายก็พาคุณไปลงบัญชีที่สองที่ว่างเปล่าแต่ใช้งานได้สมบูรณ์",
+        pitfall:
+          "การสรุปว่าการจองหายไปแล้วไปซื้อใหม่ ตั๋วอยู่ในบัญชีอีกอัน และการซื้อครั้งที่สองเป็นการซื้อจริง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ใช้เบราว์เซอร์ที่หน้าจองคาดหวัง และใช้แต่ช่องทางอย่างเป็นทางการ",
+        body: "NOL World บอกว่าตัวเองสร้างตามมาตรฐานเว็บ และแนะนำ Google Chrome หรือ Microsoft Edge ทั้งบนเดสก์ท็อปและมือถือ ถ้าหน้าต่างการจองไม่ยอมเปิด คำแนะนำของมันเจาะจง คืออัปเดตเบราว์เซอร์เป็นเวอร์ชันล่าสุด ล้างแคช แล้วลองอีกครั้ง ส่วนแอปให้อัปเดตจาก App Store หรือ Google Play และมันระบุว่าซื้อตั๋วได้ที่ไหน คือเว็บไซต์ NOL World ที่ world.nol.com/ticket และแอป NOL World ไม่มีที่อื่น",
+        pitfall:
+          "การไล่แก้ปัญหาบนเบราว์เซอร์ที่ไม่เคยถูกรองรับ ในเว็บวิวที่เปิดจากลิงก์โซเชียลมีเดีย เปิดหน้าจองใน Chrome หรือ Edge โดยตรงก่อนจะสรุปว่าเว็บเสีย",
+        takes: "15 นาที ในวันก่อนหน้า",
+      },
+      {
+        title: "ถ้าผังที่นั่งใช้บนเว็บมือถือไม่ได้ ให้ย้ายไปใช้แอป",
+        body: "นี่เป็นปัญหาของอุปกรณ์ที่มีบันทึกไว้ ไม่ใช่ปัญหาทั่วไป NOL World บอกว่าบนอุปกรณ์บางรุ่น สภาพแวดล้อมเว็บมือถือจะขยายเบราว์เซอร์ทั้งตัวเมื่อคุณซูมเข้าออก ซึ่งทำให้การเลือกที่นั่งเป็นไปไม่ได้ และทางออกคือดาวน์โหลดแอป NOL World มันระบุชื่ออุปกรณ์ที่ยืนยันแล้วถึงตอนนี้ไว้ด้วย คือ Galaxy Fold ถ้าคุณใช้จอพับหรือจอที่มีสัดส่วนไม่ปกติ ให้ติดตั้งแอปก่อนรอบขาย แทนที่จะมาค้นพบเรื่องนี้ภายในหน้าต่างชำระเงินเจ็ดนาที",
+        pitfall:
+          "การจีบนิ้วซูมผังที่นั่งเพื่อหาที่นั่งเฉพาะที่หนึ่ง บนอุปกรณ์ที่ได้รับผลกระทบ ท่าทางนั้นเองคือสิ่งที่ทำให้การเลือกพัง",
+        takes: "10 นาที ล่วงหน้า",
+      },
+      {
+        title: "รู้ว่าป็อปอัปไหนไม่ใช่ความเสีย",
+        body: "มีสองข้อความที่อ่านเหมือนข้อผิดพลาดแต่ไม่ใช่ NOL World บอกว่าป็อปอัปที่บอกคุณว่าที่นั่งนี้ถูกเลือกไปแล้วจะขึ้นเมื่อคุณเลือกที่นั่งเดียวกันในจังหวะใกล้กันกับผู้ใช้อีกคน เซสชันของคุณไม่มีอะไรผิด มีแค่ใครคนหนึ่งเร็วกว่าหนึ่งวินาที และมันบอกว่าจำนวนที่นั่งว่างอัปเดตเองโดยไม่ต้องรีเฟรช ดังนั้นผังที่นั่งที่ดูเหมือนค้างมักคือผังที่นั่งที่กำลังทำงาน ให้ถือทั้งสองอย่างเป็นข้อมูล ไม่ใช่สิ่งที่ต้องไปแก้",
+        pitfall:
+          "การโหลดหน้าใหม่เพื่อไล่ป็อปอัป ในรอบขายที่มีคิว นั่นคือการกระทำเดียวที่ทำให้คุณเสียคิว",
+        takes: "—",
+      },
+      {
+        title: "อ่านคำแนะนำเรื่องหลายแท็บเทียบกับนโยบายต่อต้านการทุจริต",
+        body: "NOL World ขอหนึ่งอุปกรณ์ต่อหนึ่งบัญชี และบอกว่าการเข้าใช้พร้อมกันจากหลายอุปกรณ์บนบัญชีเดียวอาจทำให้การจองของคุณถูกจำกัด แล้วมันให้คำแนะนำทางเทคนิคสำหรับคนที่จองพร้อมกันหลายที่ ว่าหลายแท็บทำให้เซสชันชนกัน และให้ใช้เบราว์เซอร์ที่แยกกันโดยสิ้นเชิงอย่าง Chrome กับ Edge หรือใช้อุปกรณ์ต่างเครื่อง อ่านตรงนั้นให้ดี เพราะนโยบายต่อต้านการทุจริตของมันเองระบุว่าการจองข้ามหลายบัญชีโดยใช้ข้อมูลส่วนบุคคลที่เหมือนหรือใกล้เคียงกันเป็นการใช้งานโดยทุจริต การอ่านคำแนะนำนั้นอย่างปลอดภัยคืออ่านว่าหมายถึงแพลตฟอร์มที่แยกกัน คือ NOL World ในเบราว์เซอร์หนึ่งขณะที่เว็บขายตั๋วอีกเจ้าเปิดอยู่ในอีกเบราว์เซอร์ มันไม่ใช่การอนุญาตให้รันหลายบัญชีของตัวเองพร้อมกัน",
+        pitfall:
+          "การเอาเคล็ดเรื่องเซสชันชนกันไปใช้เป็นกลยุทธ์ที่ได้รับอนุญาตสำหรับหลายบัญชี สองหน้านั้นวางอยู่ด้วยกันอย่างกระอักกระอ่วน และหน้าที่มีบทลงโทษประกาศแนบมาด้วยคือนโยบายต่อต้านการทุจริต",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถ้าคุณจะลบบัญชี ให้รู้ให้แน่ว่าอะไรหายและอะไรอยู่",
+        body: "การลบย้อนกลับไม่ได้ และ NOL World แจกแจงไว้เป็นข้อ สิ่งที่ถูกลบ คือบัญชีและข้อมูลโปรไฟล์ของคุณ ประวัติการจองของคุณ ทริปของคุณ และรายการสถานที่ที่คุณกดถูกใจ สิ่งที่ถูกเก็บไว้ คือรีวิวและรูปที่คุณฝากไว้ให้สถานที่หนึ่ง บนเว็บไซต์ วิธีเข้าสู่ระบบแบบไหนก็ลบบัญชีได้ ในแอปที่เข้าสู่ระบบด้วยอีเมล เส้นทางคือ My Account แล้ว Settings แล้ว Delete Account แล้วรหัสผ่านของคุณ ถ้าเข้าสู่ระบบด้วยโซเชียลก็เส้นทางเดียวกัน แต่คุณยืนยันผ่าน Google, Line หรือ Apple แทน มีสองข้อจากที่อื่นในเอกสารของมันที่ควรวางไว้ข้างกัน คือการลบจะลบการยืนยันตัวตนของคุณไปด้วยและปล่อยมันให้บัญชีอื่นใช้ได้ และบัญชีที่ถูกจำกัดเพราะใช้งานผิดนั้นลบไม่ได้เลย",
+        pitfall:
+          "การลบบัญชีเพื่อเคลียร์ปัญหาของบัญชีนั้น บัญชีที่ถูกจำกัดลบไม่ได้ และบัญชีที่ยืนยันตัวตนแล้วก็พาการยืนยันของคุณไปด้วย ประวัติการจองหายไป ส่วนรีวิวไม่หาย",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "ฉันจำรหัสผ่านไม่ได้ ตั้งใหม่อย่างไร",
+        a: "ได้เฉพาะถ้าคุณสมัครด้วยที่อยู่อีเมล NOL World บอกว่าการกู้คืนรหัสผ่านมีให้เฉพาะผู้สมัครด้วยอีเมล เส้นทางคือหน้าเข้าสู่ระบบ แล้ว Find Password ใส่อีเมลที่สมัคร แล้วตามลิงก์ตั้งรหัสใหม่ที่ส่งมา ถ้าคุณใช้ Google, Apple หรือ Line ก็ไม่มีรหัสผ่าน NOL World คุณเข้าสู่ระบบผ่านผู้ให้บริการ",
+      },
+      {
+        q: "ฉันไม่รู้ด้วยซ้ำว่าใช้บัญชีไหน",
+        a: "ตรวจฝั่งผู้ให้บริการก่อน NOL World ประกาศเส้นทางไว้ คือ Google Account แล้ว Security แล้วส่วนการเชื่อมต่อของคุณกับแอปและบริการของบุคคลที่สาม Settings ของ Apple แล้ว Apple ID ของคุณ แล้ว Sign-In & Security แล้ว Sign in with Apple และ Settings ของ Line แล้ว Account แล้ว Authorized apps ถ้า NOL World ปรากฏ นั่นคือบัญชีนั้น",
+      },
+      {
+        q: "ไม่มีวิธีไหนได้ผลเลย ฝ่ายบริการจะหาเจอไหม",
+        a: "เขาจะหา ด้วยสิ่งที่คุณให้ คืออีเมลที่คุณอาจใช้ ประเภทการเข้าสู่ระบบ ชื่อเล่นของคุณ และประเภทสินค้าที่คุณจองพร้อมหมายเลขการจองของมัน ซึ่ง NOL World บอกว่าอยู่ในอีเมลวอชเชอร์ที่ส่งมาตอนคุณจอง มันยังเตือนว่าบัญชีที่ไม่เคยยืนยันผ่านอีเมลอาจหายาก ดังนั้นส่งทุกอย่างที่คุณมีไป",
+      },
+      {
+        q: "ฉันเปลี่ยนเครื่องแล้วการจองหายไป",
+        a: "แทบจะแน่นอนว่าไม่หาย NOL World บอกว่าการเปลี่ยนเครื่องหรือเข้าสู่ระบบใหม่ไม่ลบประวัติ และขอให้คุณตรวจว่าคุณกำลังเข้าสู่ระบบด้วยบัญชีที่ต่างจากบัญชีเดิมหรือไม่ ด้วยการเข้าสู่ระบบแบบโซเชียล เรื่องนั้นเกิดโดยไม่ตั้งใจได้ง่าย เครื่องใหม่เสนอผู้ให้บริการที่สะดวกที่สุด ไม่จำเป็นว่าเป็นรายที่คุณใช้",
+      },
+      {
+        q: "หน้าต่างการจองไม่เปิดเลย",
+        a: "ขั้นตอนของ NOL World เองคือ ใช้เบราว์เซอร์มาตรฐาน และมันระบุชื่อ Chrome กับ Edge อัปเดตเป็นเวอร์ชันล่าสุด ล้างแคช แล้วลองอีกครั้ง ส่วนแอปให้อัปเดตเป็นเวอร์ชันล่าสุดจาก App Store หรือ Google Play มันยังระบุว่าซื้อตั๋วได้เฉพาะที่ world.nol.com/ticket หรือในแอป NOL World",
+      },
+      {
+        q: "ฉันเลือกที่นั่งบนเบราว์เซอร์มือถือไม่ได้",
+        a: "มีปัญหาของอุปกรณ์ที่รู้กันอยู่ NOL World บอกว่าบนอุปกรณ์บางรุ่น การซูมเข้าออกจะขยายเบราว์เซอร์มือถือทั้งตัว ซึ่งทำให้การเลือกที่นั่งเป็นไปไม่ได้ และคำตอบคือให้ใช้แอป NOL World อุปกรณ์ที่มันระบุว่ายืนยันแล้วคือ Galaxy Fold ติดตั้งแอปไว้ก่อนรอบขาย ไม่ใช่ระหว่างรอบขาย",
+      },
+      {
+        q: "ฉันเปิดสองแท็บเพื่อเพิ่มโอกาสได้ไหม",
+        a: "ไม่ได้ และ NOL World ขอหนึ่งอุปกรณ์ต่อหนึ่งบัญชี มันบอกว่าการเข้าใช้พร้อมกันจากหลายอุปกรณ์บนบัญชีเดียวอาจทำให้การจองของคุณถูกจำกัด คำแนะนำของมันเรื่องเบราว์เซอร์ที่แยกกันเป็นเรื่องเซสชันชนกันตอนที่คุณใช้แพลตฟอร์มขายตั๋วสองเจ้าจริง ๆ ไม่ใช่การรับรองการรันหลายบัญชีของตัวเอง การจองข้ามบัญชีด้วยข้อมูลส่วนตัวที่ใกล้เคียงกันอยู่ในรายการการใช้งานโดยทุจริตที่มันประกาศไว้",
+      },
+      {
+        q: "ข้อมูลของฉันจะเป็นอย่างไรถ้าฉันลบบัญชี",
+        a: "NOL World บอกว่าการลบย้อนกลับไม่ได้ และแจกแจงสิ่งที่หายไว้ คือบัญชีและข้อมูลโปรไฟล์ ประวัติการจอง ทริป และสถานที่ที่กดถูกใจ รีวิวและรูปที่คุณฝากไว้ให้สถานที่หนึ่งจะถูกเก็บไว้ ที่อื่นมันบอกว่าการลบจะลบการยืนยันตัวตนของคุณด้วย ปล่อยมันให้บัญชีอื่นใช้ได้ และบัญชีที่ถูกจำกัดเพราะใช้งานผิดนั้นลบไม่ได้",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Nakasara sa labas ng NOL World: ang paghanap sa account, at ang pagkumpuni sa pahinang ayaw magbukas",
+    summary:
+      "Kung aling login ang ginamit mo ang nagpapasya sa lahat ng rutang pambawi, may pagpapalit ng password lamang para sa nagsign-up sa email, at puwedeng gawing napakahirap mahanap ng isang hindi beripikadong email ang buong account. Dagdag pa: ang mga error sa pahina ng booking na hindi naman error.",
+    scope:
+      "Sakop nito ang pagbawi ng account, ang pagbura ng account at ang mga pagkabigo sa pahina ng booking na inilalathala ng NOL World: ang mga kailangan sa browser at app, ang mapa ng upuan sa telepono, at ang mga pop-up na mukhang depekto. Nasa sariling gabay ang mekanika ng pila. Walang narito na tumutulong sa kaninuman na makapasok sa account na hindi kanya.",
+    intro: [
+      "May dalawang bagay na nasisira sa isang site ng tiket na walang kinalaman sa tiket. Hindi ka makapasok sa account, o ayaw na lang gawin ng pahina ang dapat nitong gawin — at pareho silang nangyayari sa umaga ng benta, kung kailan wala nang panahong magbasa ng anuman.",
+      "Halos lahat nito ay napagpasyahan ng isang pili mong ginawa buwan bago, nang hindi nag-iisip: nag-sign up ka ba sa isang email address, o sa Google, Apple o Line. Ang isang katotohanang iyon ang nagtatakda kung umiiral man para sa iyo ang pagpapalit ng password, kaya iyon ang panimula.",
+    ],
+    steps: [
+      {
+        title: "Alamin kung aling uri ng login ang talagang hawak mo",
+        body: "Ang account sa NOL World ay nagagawa sa pamamagitan ng isang email address o sa pamamagitan ng social login — Google, Apple o Line, bukod sa iba. Mas matalas ang kahihinatnan kaysa sa tunog nito: isinasaad ng NOL World na ang pagbawi ng password ay para lamang sa mga gumamit na nag-sign up sa isang email address. Kung social login ang ginamit mo ay walang password sa NOL World na papalitan, dahil wala ni isa kahit kailan. Alamin ngayon kung alin ka, habang walang nagmamadali.",
+        pitfall:
+          "Ang pag-aakalang email account ang hawak mo dahil natatandaan mong nagtipa ka ng isang email address. Ipinapakita rin ng social login ang email mo, at tuluyang magkaiba ang mga rutang pambawi.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Beripikahin ang email mo, dahil ito ang hindi na mababawi",
+        body: "Ang sariling huling linya ng NOL World tungkol sa pagbawi ng account ang pinakamahalagang pangungusap sa larangang ito: maaaring mahirap mahanap ang mga account na hindi bineripika sa email. Ang lahat ng iba pa rito ay isang proseso na may kalalabasan. Ito ay isang pintuang maaaring hindi talaga magbukas — itinutugma ka ng suporta sa isang talaan, at ang hindi beripikadong email ang pinakamalakas na tugmang hawak nila. Kung binabasa mo ito gamit ang account na gumagana, tingnan kung beripikado ang email dito at hayaan itong beripikado.",
+        pitfall:
+          "Ang paglagpas sa sulat ng beripikasyon sa pag-sign up dahil nagmamadali kang makaabot sa isang benta. Walang halaga ito sa araw mismo at ito ang pagkakaiba ng isang account na mababawi at isang nawala.",
+        takes: "3 minuto, ngayon",
+      },
+      {
+        title: "Para sa social login, tingnan muna ang panig ng provider",
+        body: "Kung hindi mo matandaan kung nagkaroon ka man ng account sa NOL World, alam ng provider. Inilalathala ng NOL World kung saan titingin: sa Google, sa ilalim ng Google Account saka Security saka ang mga koneksiyon mo sa app at serbisyo ng ibang panig. Sa Apple, sa ilalim ng Settings, ng pangalan mo at Apple ID, saka Sign-In & Security, saka Sign in with Apple. Sa Line, sa ilalim ng Settings saka Account saka Authorized apps. Kung nakalista roon ang NOL World ay umiiral ang account at alam mo na kung aling provider ang nagbubukas nito.",
+        pitfall:
+          "Ang pagsubok sa bawat pindutang social sa pahina ng login para tingnan kung alin ang gumagana. Puwede iyong magbuo ng pangalawang account sa halip na mahanap ang una, at mayroon nang dalawa — at isa sa kanila ang may hawak ng mga booking mo.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Kung mabigo iyon, ipadala sa suporta ang limang bagay na hinihingi nito",
+        body: "Hahanapin ng NOL World ang isang account, at pinapangalanan nito ang kailangan: ang email address na maaaring ginamit mo, ang uri ng login (Google, Line, Apple o email), ang nickname mo, at ang uri ng produktong binook mo kasama ang mga numero ng reserbasyon. Sinasabi rin nito kung saan hanapin ang huli — nasa email voucher na ipinadala noong nag-book ka ang numero ng reserbasyon. Tipunin lahat bago ka magsulat, dahil ang kahilingang walang numero ng reserbasyon ay kahilingang nagpapahula sa kanila.",
+        pitfall:
+          "Ang pagbura sa lumang email ng kumpirmasyon ng booking dahil kalat ito. Hawak nila ang mga numero ng reserbasyon, ang pinakamalakas na pantukoy na maiaalok mo kapag ang account mismo ang bagay na nawala.",
+        takes: "20 minuto",
+      },
+      {
+        title: "Hindi nawawala ang booking mo sa bagong telepono — sa ibang account nawawala",
+        body: "Ito ang pinakakaraniwang maling alarma at tuwirang sinasagot ito ng NOL World: hindi binubura ng pagpapalit ng telepono o ng muling pag-log in ang kasaysayan mo. Ang ipinapatingin nito ay kung naka-log in ka sa ibang account kaysa sa orihinal na ginamit mo. Halos palagi iyon ang tunay na sanhi, at ang social login ang dahilan — iniaalok ng bagong telepono ang provider na pinakamadali, at ang pagpindot sa maling isa ay naghahatid sa iyo sa isang walang laman ngunit lubos na tunay na pangalawang account.",
+        pitfall:
+          "Ang paghinuhang wala na ang booking at ang pagbili nitong muli. Nasa kabilang account ang tiket, at tunay na pagbili ang pangalawang pagbili.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Gumamit ng browser na inaasahan ng pahina ng booking, at ng opisyal na channel lamang",
+        body: "Sinasabi ng NOL World na itinatayo nito ang sarili ayon sa pamantayan ng web at inirerekomenda nito ang Google Chrome o Microsoft Edge sa desktop at sa telepono. Kung ayaw magbukas ng bintana ng booking ay tiyak ang bilin nito: i-update ang browser sa pinakabagong bersiyon, linisin ang cache, at muling subukan. Para sa app, i-update ito mula sa App Store o Google Play. At isinasaad nito kung saan talaga mabibili ang tiket — ang website ng NOL World sa world.nol.com/ticket at ang app ng NOL World, at wala nang iba.",
+        pitfall:
+          "Ang pag-troubleshoot sa browser na hindi kahit kailan sinuportahan, sa loob ng isang webview na binuksan mula sa link ng social media. Buksan ang pahina ng booking sa Chrome o Edge nang tuwiran bago mo ipasyang sira ang site.",
+        takes: "15 minuto, sa araw bago",
+      },
+      {
+        title: "Kung ayaw gumana ng mapa ng upuan sa mobile web, lumipat sa app",
+        body: "May nakadokumentong problema sa aparato, hindi isang pangkalahatang problema. Sinasabi ng NOL World na sa ilang aparato ay pinalalaki ng mobile web ang buong browser kapag nag-zoom ka papasok at palabas, at iyon ang gumagawang imposible ang pagpili ng upuan — at ang daan palabas ay i-download ang app ng NOL World. Pinapangalanan nito ang aparatong nakumpirma sa ngayon: ang Galaxy Fold. Kung nasa tiklop o sa hindi pangkaraniwang hugis na screen ka, iluklok ang app bago ang benta sa halip na matuklasan ito sa loob ng pitong minutong bintana ng bayad.",
+        pitfall:
+          "Ang pagkurot papasok sa mapa ng upuan para hanapin ang isang partikular na upuan. Sa mga apektadong aparato, ang galaw na iyon mismo ang sumisira sa pagpili.",
+        takes: "10 minuto, nang maaga",
+      },
+      {
+        title: "Alamin kung aling pop-up ang hindi depekto",
+        body: "May dalawang mensaheng nagmumukhang error at hindi naman. Sinasabi ng NOL World na lumalabas ang pop-up na nagsasabing napili na ang upuang ito kapag pinili mo ang parehong upuan nang halos sabay ng ibang gumagamit — walang mali sa session mo, may isang taong mas mabilis ng isang segundo. At sinasabi nitong kusang nag-a-update ang bakanteng upuan nang walang refresh, kaya ang mapa ng upuang mukhang nakapirmi ay karaniwang mapa ng upuang gumagana. Ituring ang dalawa bilang impormasyon at hindi bilang bagay na aayusin.",
+        pitfall:
+          "Ang muling pag-load ng pahina para paalisin ang isang pop-up. Sa bentang may pila, iyon ang isang kilos na nagpapaubos ng puwesto mo.",
+        takes: "—",
+      },
+      {
+        title: "Basahin ang payo tungkol sa maraming tab laban sa patakaran sa pandaraya",
+        body: "Humihingi ang NOL World ng isang aparato kada account, at sinasabi nitong maaaring limitahan ang booking mo ng sabay na pagpasok mula sa maraming aparato sa parehong account. Pagkatapos ay nagbibigay ito ng teknikal na payo para sa mga nagbu-book nang sabay-sabay — na ang maraming tab ay nagdudulot ng salungatan ng session, at gumamit ng ganap na magkahiwalay na browser gaya ng Chrome at Edge, o ng magkaibang aparato. Basahin iyon nang maingat, dahil nakalista sa sarili nitong patakaran laban sa pandaraya ang pag-book sa iba-ibang account gamit ang magkatulad o magkahawig na personal na impormasyon bilang mapandayang paggamit. Ang matiwasay na pagbasa ng payo ay tungkol sa magkahiwalay na plataporma: NOL World sa isang browser habang ibang site ng tiket ang tumatakbo sa isa. Hindi ito pahintulot na patakbuhin nang sabay ang maraming account mo.",
+        pitfall:
+          "Ang pagturing sa tip tungkol sa salungatan ng session bilang isang pinahihintulutang taktika para sa maraming account. Hindi magkasundong nakaupo ang dalawang pahina, at ang may nakalathalang parusa ay ang patakaran sa pandaraya.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Kung buburahin mo ang account, alamin nang eksakto kung ano ang aalis at ano ang mananatili",
+        body: "Hindi mababawi ang pagbura at isa-isang inilalahad ito ng NOL World. Nabubura: ang account at ang impormasyon ng profile mo, ang kasaysayan ng reserbasyon mo, ang mga lakad mo, at ang listahan ng mga lugar na nagustuhan mo. Nananatili: ang review at larawang iniwan mo para sa isang lugar. Sa website ay anumang paraan ng login ay makakabura ng account. Sa app na may email login ang ruta ay My Account, Settings, Delete Account, saka ang password mo; sa social login ay parehong ruta pero sa Google, Line o Apple ka magpapatunay. Dalawang bagay mula sa ibang bahagi ng dokumentasyon nito ang nabibilang dito: binubura rin ng pagbura ang beripikasyon ng pagkakakilanlan mo at pinapalaya ito para sa ibang account, at ang account na nililimitahan dahil sa maling paggamit ay hindi mabubura kahit kailan.",
+        pitfall:
+          "Ang pagbura ng account para alisin ang isang problema nito. Hindi mabubura ang account na nililimitahan, at kasama ng beripikadong account ang beripikasyon mo pag-alis — umaalis ang kasaysayan ng reserbasyon at hindi ang mga review.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Hindi ko matandaan ang password ko. Paano ko ito papalitan?",
+        a: "Kung nag-sign up ka sa isang email address lamang — sinasabi ng NOL World na ang pagbawi ng password ay para sa nag-sign up sa email lamang. Ang ruta ay ang screen ng login, Find Password, ilagay ang email ng pag-sign up, saka sundan ang link ng pagpapalit na darating. Kung Google, Apple o Line ang ginamit mo ay walang password sa NOL World; sa provider ka nagsa-sign in.",
+      },
+      {
+        q: "Hindi ko nga alam kung aling account ang ginamit ko.",
+        a: "Tingnan muna ang panig ng provider. Inilalathala ng NOL World ang mga ruta: Google Account saka Security saka ang mga koneksiyon mo sa app at serbisyo ng ibang panig; ang Settings ng Apple saka ang Apple ID mo saka Sign-In & Security saka Sign in with Apple; ang Settings ng Line saka Account saka Authorized apps. Kung lumabas ang NOL World, iyon ang account.",
+      },
+      {
+        q: "Walang gumana sa mga iyon. Mahahanap kaya ito ng suporta?",
+        a: "Titingnan nila, sa pamamagitan ng ibibigay mo: ang email na maaaring ginamit mo, ang uri ng login, ang nickname mo, at ang uri ng produktong binook mo kasama ang numero ng reserbasyon nila — na nasa email voucher na ipinadala noong nag-book ka, ayon sa NOL World. Nagbabala rin itong maaaring mahirap mahanap ang account na hindi kahit kailan bineripika sa email, kaya ipadala lahat ng hawak mo.",
+      },
+      {
+        q: "Nagpalit ako ng telepono at wala na ang mga booking ko.",
+        a: "Halos tiyak na naroon pa. Sinasabi ng NOL World na hindi binubura ng pagpapalit ng telepono o ng muling pag-log in ang kasaysayan, at ipinapatingin nito kung naka-sign in ka sa ibang account kaysa sa orihinal. Sa social login ay madali iyong mangyari nang hindi sinasadya — iniaalok ng bagong telepono ang pinakamadaling provider, hindi laging ang ginamit mo.",
+      },
+      {
+        q: "Ayaw magbukas ng bintana ng booking kahit kailan.",
+        a: "Ang sariling hakbang ng NOL World: gumamit ng karaniwang browser, at pinapangalanan nito ang Chrome at Edge; i-update ito sa pinakabagong bersiyon; linisin ang cache; subukan muli. Para sa app, i-update sa pinakabagong bersiyon mula sa App Store o Google Play. Isinasaad din nitong mabibili lamang ang tiket sa world.nol.com/ticket o sa app ng NOL World.",
+      },
+      {
+        q: "Hindi ako makapili ng upuan sa browser ng telepono ko.",
+        a: "May kilalang isyu sa aparato. Sinasabi ng NOL World na sa ilang aparato ay pinalalaki ng pag-zoom papasok at palabas ang buong mobile browser, na gumagawang imposible ang pagpili ng upuan, at na ang sagot ay gamitin ang app ng NOL World. Ang aparatong pinapangalanan nitong nakumpirma ay ang Galaxy Fold. Iluklok ang app bago ang benta, hindi sa gitna nito.",
+      },
+      {
+        q: "Puwede ba akong magbukas ng dalawang tab para lumaki ang tsansa ko?",
+        a: "Hindi, at humihingi ang NOL World ng isang aparato kada account — sinasabi nitong maaaring limitahan ang booking mo ng sabay na pagpasok mula sa maraming aparato sa parehong account. Ang payo nito tungkol sa magkahiwalay na browser ay tungkol sa salungatan ng session kapag tunay na dalawang magkaibang plataporma ng tiket ang ginagamit mo, hindi isang pag-endorso sa pagpapatakbo ng maraming account mo. Nasa inilathalang listahan nito ng mapandayang paggamit ang pag-book sa iba-ibang account gamit ang magkahawig na personal na detalye.",
+      },
+      {
+        q: "Ano ang mangyayari sa datos ko kung buburahin ko ang account ko?",
+        a: "Sinasabi ng NOL World na hindi mababawi ang pagbura, at inililista nito ang aalis: ang account at impormasyon ng profile, ang kasaysayan ng reserbasyon, ang mga lakad, at ang mga nagustuhang lugar. Nananatili ang review at larawang iniwan mo para sa isang lugar. Sa ibang bahagi ay sinasabi nitong binubura rin ng pagbura ang beripikasyon ng pagkakakilanlan mo, na pinapalaya ito para sa ibang account, at na hindi mabubura ang account na nililimitahan dahil sa maling paggamit.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

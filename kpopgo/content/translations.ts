@@ -11722,6 +11722,224 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "O seu ingresso digital da NOL World: o QR, o PIN e a passagem pelo portão",
+    summary:
+      "O ingresso só abre num celular, ele é só em inglês e a tradução automática do seu navegador vai deturpá-lo, um ingresso enviado tem um relógio de PIN de 24 horas, e chegar atrasado não é entrada garantida. Os últimos vinte minutos de todo o processo, em ordem.",
+    scope:
+      "Cobre o ingresso digital e a entrada no local da NOL World como a NOL World os documenta: onde o ingresso abre, os dois estados de navegador que o escondem, o envio e o recebimento com o relógio do PIN, a retirada por terceiro e a chegada atrasada. As regras de entrada são definidas por show e quem decide na noite é o local. A entrada por reconhecimento facial é um fluxo separado com guia próprio.",
+    intro: [
+      "Todo o resto deste site é preparação. Esta é a parte em que um voo, um hotel e uma pré-venda viram um assento ou não viram, e ela roda num celular que você segura no meio da multidão com sinal ruim.",
+      "A maior parte do que dá errado aqui não é dramático. É um navegador no modo errado mostrando um QR code onde deveria estar o ingresso, uma extensão de tradução reescrevendo um número de portão, um PIN que venceu enquanto um amigo dormia. Os quatro casos estão documentados pela NOL World e os quatro são evitáveis na véspera.",
+    ],
+    steps: [
+      {
+        title: "Saiba que tipo de ingresso você tem de fato",
+        body: "A forma de entrega foi decidida quando você comprou, e ela determina tudo o que vem abaixo. Um ingresso digital mora na sua conta e é escaneado da sua tela. Retirada no local significa um ingresso de papel na bilheteria no dia do show, e a NOL World não os libera antes — a janela abre uma hora antes, e um ingresso retirado não pode ser reemitido se for perdido ou roubado. Veja qual deles você tem agora, e não no local do evento.",
+        pitfall:
+          "Supor que toda compra é um ingresso digital porque foi assim no último show. É uma propriedade de cada compra, e os dois caminhos falham de maneiras completamente diferentes.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Abra o ingresso digital no celular com que você vai entrar",
+        body: "A NOL World afirma que os ingressos digitais só estão disponíveis no aplicativo ou na web móvel da NOL World. A entrada é pelo QR code do ingresso. O caminho num celular é aplicativo ou web móvel, login, Account/My, My Reservations, e então o botão Mobile Ticket. Num computador, o mesmo botão gera um QR code que não é o seu ingresso — é uma passagem de bastão, feita para ser escaneada com o seu celular para o ingresso abrir lá.",
+        pitfall:
+          "Tirar print do ingresso como garantia e planejar mostrar a imagem. Um ingresso que é renderizado ao vivo numa conta não é o mesmo objeto que uma foto dele, e o portão não é onde você quer descobrir a diferença.",
+        takes: "10 minutos, na véspera",
+      },
+      {
+        title: "Desligue a tradução do navegador antes de ir",
+        body: "A NOL World diz que os ingressos digitais são fornecidos apenas em inglês, e que, se você está vendo outros idiomas, é a tradução automática do seu navegador — sendo a solução desligar a tradução e recarregar a página. Para este público esse é o estado padrão do navegador, e não um caso raro. Um tradutor automático reescrevendo um portão, um setor ou uma fileira é um problema que você não vai notar até alguém na porta ler isso de volta para você.",
+        pitfall:
+          "Deixar a tradução ligada porque ela ajudou a viagem inteira. Ela vinha traduzindo páginas em coreano para você; aqui a página já está em inglês e a única coisa que ela pode fazer é estragar.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Se você vê um QR code onde deveria estar o ingresso, corrija o modo do navegador",
+        body: "Esta é de longe a forma mais comum de o ingresso parecer sumido, e não é um defeito. A NOL World diz que, se o seu navegador está em modo desktop, um QR code é mostrado no lugar do ingresso digital — e que há um botão View Tickets abaixo desse QR que abre o ingresso de qualquer forma. Caso contrário, mude o navegador para o modo móvel: no Chrome, o menu de três pontos e View as mobile version; no Safari, o botão de idioma à esquerda da barra de endereço e Request Mobile Website; no Samsung Internet, o menu de três linhas e Mobile site.",
+        pitfall:
+          "Deixar alguém no portão escanear aquele QR code. Ele é o código de passagem do desktop, não o seu código de entrada, e o que você precisa está a um toque abaixo dele.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Entenda a que o envio de um ingresso compromete você",
+        body: "O compartilhamento de ingresso digital vai numa direção só: o comprador envia para quem vai assistir, e a NOL World afirma que um ingresso recebido não pode ser reenviado — só ingressos comprados podem ser enviados. O envio continua possível até o dia do evento. Nem todo produto o oferece; onde o vendedor o reteve, o botão de envio simplesmente não está lá. E o custo de enviar é a sua própria saída: uma vez que um ingresso tenha sido enviado com sucesso, a NOL World restringe o cancelamento da reserva, que só é restaurado se o destinatário descadastrar.",
+        pitfall:
+          "Organizar um grupo enviando a cada um o seu ingresso na semana da compra. Você acabou de dar a cada pessoa um veto sobre o cancelamento daquela reserva.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Se você está recebendo um ingresso, trate o PIN como um relógio de 24 horas",
+        body: "Um ingresso recebido não é utilizável até ser cadastrado, e a janela é curta. A NOL World diz que o PIN só pode ser cadastrado dentro de 24 horas do envio, e que um ingresso sem cadastro volta para quem enviou depois disso — ou se não for cadastrado até a data da apresentação. O cadastro corre a partir da URL da mensagem ou do e-mail: Received Mobile Ticket, Ticket Register, e então o PIN da mensagem. Depois disso o ingresso mora em My Page, Received Mobile Ticket, Booking History. Devolver um é o mesmo caminho com o botão Return, e a NOL World diz que um ingresso já cadastrado ainda pode ser devolvido.",
+        pitfall:
+          "Enviar para um amigo num fuso em que essas 24 horas são quase todas noite. O ingresso volta para você em silêncio e a reserva é sua de novo, o que está tudo bem numa terça e não está nada bem na manhã do show.",
+        takes: "5 minutos, dentro de 24 horas",
+      },
+      {
+        title: "Veja a página do show antes de supor que outra pessoa pode retirar para você",
+        body: "A NOL World de fato permite que alguém que não comprou retire os ingressos, com condições reais presas a isso. O processo varia por local, a retirada por terceiro pode ser restringida dependendo do tipo de show, e a instrução da NOL World é conferir o aviso na página de detalhes do show que você comprou. O que a outra pessoa precisa levar são os detalhes da compra impressos em My Ticket, o número de confirmação e um documento de identidade do comprador. Trate essa última exigência pelo limite que ela é: num show que condiciona a entrada à identidade validada do próprio comprador, não planeje com um terceiro.",
+        pitfall:
+          "Ler a retirada por terceiro como um direito geral. É uma permissão por local e por show, e os shows com mais chance de recusá-la são exatamente os de alta demanda para os quais você precisou de uma pré-venda.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Não trate a chegada atrasada como um assento que você ainda tem",
+        body: "A NOL World é explícita de que a entrada depois do início depende do show, e de que algumas apresentações não a permitem de jeito nenhum — citando concertos clássicos e óperas em particular. Onde a entrada atrasada existe, ela pode significar esperar o intervalo e assistir à segunda metade. E mesmo quando você é deixado entrar, a NOL World diz que você pode não conseguir ocupar o seu assento até o intervalo, então uma chegada atrasada pode significar ficar em pé ou sentado em outro lugar durante justamente a parte pela qual você veio.",
+        pitfall:
+          "Calcular a hora de chegada a partir do horário de início. Calcule a partir da fila de entrada, da revista e da janela de retirada, que acontecem todas antes do horário de início e nenhuma das quais espera.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Tem um QR code onde deveria estar o meu ingresso. A minha compra quebrou?",
+        a: "Não — o seu navegador está em modo desktop. A NOL World diz que isso produz um QR code no lugar do ingresso digital, e que um botão View Tickets abaixo dele abre o ingresso. Você também pode mudar o navegador para o modo móvel: o menu de três pontos do Chrome tem View as mobile version, o botão de idioma do Safari oferece Request Mobile Website, e o menu de três linhas do Samsung Internet tem Mobile site.",
+      },
+      {
+        q: "O meu ingresso digital está aparecendo no idioma errado.",
+        a: "A NOL World fornece os ingressos digitais apenas em inglês, então outro idioma significa que o seu navegador está traduzindo automaticamente. Desligue a tradução e recarregue. Vale fazer antes de viajar e não no portão, porque um número de portão ou uma fileira traduzidos estão errados de um jeito difícil de perceber.",
+      },
+      {
+        q: "Posso mostrar o ingresso do meu notebook na porta?",
+        a: "A NOL World diz que os ingressos digitais só estão disponíveis no aplicativo ou na web móvel. Num computador, o botão Mobile Ticket dá a você um QR code para escanear com o seu celular, que então abre o ingresso de verdade lá. Planeje entrar com um celular.",
+      },
+      {
+        q: "O meu amigo pode retirar os meus ingressos na bilheteria?",
+        a: "Às vezes. A NOL World diz que alguém que não comprou pode retirar, mas que o processo varia por local e que a retirada por terceiro pode ser restringida dependendo do tipo de show — então o aviso na página de detalhes do seu show é a autoridade. Ele precisaria dos detalhes da compra impressos em My Ticket, do número de confirmação e de um documento de identidade do comprador. Em shows que validam a identidade do comprador na entrada, não conte com isso.",
+      },
+      {
+        q: "Eu enviei um ingresso digital por engano. Posso pegar de volta?",
+        a: "Se o destinatário ainda não o cadastrou, sim — a NOL World diz que quem enviou pode cancelar o compartilhamento com o botão Cancel Send. Ele também volta automaticamente se o destinatário não cadastrar dentro de 24 horas ou até a data da apresentação. Depois de cadastrado, recuperá-lo é ação dele: ele devolve em My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return.",
+      },
+      {
+        q: "O que acontece se o meu amigo nunca cadastrar o ingresso que eu enviei?",
+        a: "Ele volta para você. A NOL World diz que um ingresso sem cadastro é automaticamente devolvido a quem enviou depois de 24 horas, ou se não tiver sido cadastrado até a data da apresentação. Isso restaura a sua reserva — inclusive, pelas regras de cancelamento dela, a sua capacidade de cancelá-la — mas é um processo silencioso, então confira em vez de supor.",
+      },
+      {
+        q: "Eu vou chegar vinte minutos atrasado. Vão me deixar entrar?",
+        a: "Depende do show e ninguém pode prometer. A NOL World diz que a entrada depois do início depende da apresentação e que algumas não a permitem de jeito nenhum, concertos clássicos e óperas especialmente; onde é permitida, você pode ter de esperar o intervalo, e pode não conseguir ocupar o seu próprio assento até lá.",
+      },
+      {
+        q: "O ingresso digital é a mesma coisa que a entrada por reconhecimento facial?",
+        a: "Não. O NOL facepass é um sistema separado em que uma câmera na porta deixa você entrar sem conferência de ingresso, e o suporte a ele é definido por evento. O ingresso digital e o seu QR code são a rota comum, e a que deve continuar funcionando mesmo que você tenha cadastrado um rosto.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-world-mobile-ticket-and-entry",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Votre billet mobile NOL World : le QR, le PIN et le passage à l'entrée",
+    summary:
+      "Le billet ne s'ouvre que sur un téléphone, il est en anglais uniquement et la traduction automatique de votre navigateur va le défigurer, un billet envoyé a une horloge de PIN de 24 heures, et arriver en retard n'est pas une entrée garantie. Les vingt dernières minutes de tout le processus, dans l'ordre.",
+    scope:
+      "Couvre le billet mobile NOL World et l'entrée en salle tels que NOL World les documente : où le billet s'ouvre, les deux états de navigateur qui le masquent, l'envoi et la réception avec l'horloge du PIN, le retrait par un tiers et l'arrivée tardive. Les règles d'entrée se fixent par concert et c'est la salle qui décide le soir même. L'entrée par reconnaissance faciale est un parcours distinct avec son propre guide.",
+    intro: [
+      "Tout le reste de ce site est de la préparation. Voici le moment où un vol, un hôtel et une prévente se transforment en une place ou non, et il se joue sur un téléphone que vous tenez dans une foule avec un mauvais réseau.",
+      "L'essentiel de ce qui tourne mal ici n'a rien de spectaculaire. C'est un navigateur dans le mauvais mode qui affiche un QR code là où devrait être le billet, une extension de traduction qui réécrit un numéro de porte, un PIN expiré pendant qu'un ami dormait. Les quatre cas sont documentés par NOL World et les quatre s'évitent la veille.",
+    ],
+    steps: [
+      {
+        title: "Sachez quel type de billet vous détenez réellement",
+        body: "Le mode de remise a été décidé au moment de la réservation, et il détermine tout ce qui suit. Un billet mobile vit dans votre compte et se fait scanner depuis votre écran. Le retrait à la salle signifie un billet papier au guichet le jour du concert, et NOL World ne les délivre pas à l'avance — la fenêtre ouvre une heure avant, et un billet retiré ne peut pas être réédité s'il est perdu ou volé. Vérifiez lequel vous avez maintenant, et non à la salle.",
+        pitfall:
+          "Supposer que toute réservation est un billet mobile parce que c'était le cas au dernier concert. C'est une propriété de chaque réservation, et les deux voies échouent de manières complètement différentes.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Ouvrez le billet mobile sur le téléphone avec lequel vous entrerez",
+        body: "NOL World indique que les billets mobiles ne sont disponibles que sur l'application ou le web mobile NOL World. L'entrée se fait par le QR code du billet. Le chemin sur un téléphone est application ou web mobile, connexion, Account/My, My Reservations, puis le bouton Mobile Ticket. Sur un ordinateur, le même bouton produit un QR code qui n'est pas votre billet — c'est un relais, destiné à être scanné avec votre téléphone pour que le billet s'ouvre là.",
+        pitfall:
+          "Faire une capture d'écran du billet en guise de secours et compter montrer l'image. Un billet rendu en direct dans un compte n'est pas le même objet qu'une photo de celui-ci, et le portique n'est pas l'endroit où découvrir la différence.",
+        takes: "10 minutes, la veille",
+      },
+      {
+        title: "Désactivez la traduction du navigateur avant de partir",
+        body: "NOL World indique que les billets mobiles sont fournis en anglais uniquement, et que si vous voyez d'autres langues, c'est la traduction automatique de votre navigateur — le remède étant de désactiver la traduction et de recharger la page. Pour ce public, c'est l'état par défaut du navigateur et non un cas limite. Un traducteur automatique qui réécrit une porte, un bloc ou un rang est un problème que vous ne remarquerez pas avant que quelqu'un à l'entrée ne vous le relise.",
+        pitfall:
+          "Laisser la traduction active parce qu'elle a rendu service tout le voyage. Elle traduisait des pages coréennes pour vous ; ici la page est déjà en anglais et la seule chose qu'elle puisse faire est de l'abîmer.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Si vous voyez un QR code à la place du billet, corrigez le mode du navigateur",
+        body: "C'est de loin la façon la plus fréquente dont le billet semble absent, et ce n'est pas un défaut. NOL World indique que si votre navigateur est en mode ordinateur, un QR code s'affiche à la place du billet mobile — et qu'un bouton View Tickets sous ce QR ouvre tout de même le billet. Sinon, basculez le navigateur en mode mobile : dans Chrome, le menu à trois points et View as mobile version ; dans Safari, le bouton de langue à gauche de la barre d'adresse et Request Mobile Website ; dans Samsung Internet, le menu à trois lignes et Mobile site.",
+        pitfall:
+          "Laisser quelqu'un scanner ce QR code à l'entrée. C'est le code de relais vers l'ordinateur, pas votre code d'entrée, et ce dont vous avez besoin se trouve une tape en dessous.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Comprenez à quoi vous engage l'envoi d'un billet",
+        body: "Le partage de billet mobile va dans un seul sens : l'acheteur envoie à la personne qui assiste au concert, et NOL World précise qu'un billet reçu ne peut pas être réexpédié — seuls les billets réservés peuvent être envoyés. L'envoi reste possible jusqu'au jour de l'événement. Tous les produits ne le proposent pas ; là où le vendeur l'a retiré, le bouton d'envoi n'est tout simplement pas là. Et le prix de l'envoi, c'est votre propre sortie : une fois un billet envoyé avec succès, NOL World bloque l'annulation de la réservation, qui n'est rétablie que si le destinataire le désenregistre.",
+        pitfall:
+          "Organiser un groupe en envoyant à chacun son billet la semaine de la réservation. Vous venez de donner à chaque personne un droit de veto sur l'annulation de cette réservation.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Si vous recevez un billet, traitez le PIN comme une horloge de 24 heures",
+        body: "Un billet reçu n'est pas utilisable avant d'être enregistré, et la fenêtre est courte. NOL World indique que le PIN ne peut être enregistré que dans les 24 heures suivant l'envoi, et qu'un billet non enregistré revient à l'expéditeur passé ce délai — ou s'il n'est pas enregistré à la date de la représentation. L'enregistrement part de l'URL du message ou de l'e-mail : Received Mobile Ticket, Ticket Register, puis le PIN du message. Ensuite le billet vit dans My Page, Received Mobile Ticket, Booking History. En rendre un suit le même chemin avec le bouton Return, et NOL World précise qu'un billet déjà enregistré peut encore être rendu.",
+        pitfall:
+          "Envoyer à un ami dans un fuseau où ces 24 heures sont en grande partie nocturnes. Le billet vous revient en silence et la réservation est de nouveau la vôtre, ce qui est sans gravité un mardi et ne l'est pas le matin du concert.",
+        takes: "5 minutes, sous 24 heures",
+      },
+      {
+        title: "Lisez la page du concert avant de supposer qu'un tiers peut retirer pour vous",
+        body: "NOL World autorise bel et bien une personne autre que l'acheteur à retirer les billets, avec de vraies conditions attachées. Le processus diffère selon la salle, le retrait par un tiers peut être restreint selon le type de spectacle, et la consigne de NOL World est de consulter l'avis sur la page de détail du concert que vous avez réservé. Ce qu'il faut à cette personne, ce sont les détails de réservation imprimés depuis My Ticket, le numéro de confirmation et une pièce d'identité de l'acheteur. Prenez cette dernière exigence pour la limite qu'elle est : sur un concert dont l'entrée repose sur l'identité vérifiée de l'acheteur lui-même, ne bâtissez pas un plan sur un tiers.",
+        pitfall:
+          "Lire le retrait par un tiers comme un droit général. C'est une tolérance par salle et par concert, et les concerts les plus susceptibles de la refuser sont précisément ceux, très demandés, pour lesquels il vous a fallu une prévente.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Ne prenez pas une arrivée tardive pour une place encore à vous",
+        body: "NOL World est explicite : l'entrée après le début dépend du spectacle, et certaines représentations ne la permettent pas du tout — elle nomme en particulier les concerts classiques et les opéras. Là où l'entrée tardive existe, elle peut signifier attendre l'entracte et ne voir que la seconde partie. Et même une fois entré, NOL World indique que vous pourriez ne pas pouvoir occuper votre place avant l'entracte : une arrivée tardive peut donc vouloir dire rester debout ou assis ailleurs pendant la partie pour laquelle vous êtes venu.",
+        pitfall:
+          "Calculer votre heure d'arrivée à partir de l'heure de début. Calculez-la à partir de la file d'entrée, du contrôle de sécurité et de la fenêtre de retrait, qui ont tous lieu avant l'heure de début et dont aucun n'attend.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Il y a un QR code là où devrait être mon billet. Ma réservation est-elle cassée ?",
+        a: "Non — votre navigateur est en mode ordinateur. NOL World indique que cela produit un QR code à la place du billet mobile, et qu'un bouton View Tickets situé en dessous ouvre le billet. Vous pouvez aussi basculer le navigateur en mode mobile : le menu à trois points de Chrome propose View as mobile version, le bouton de langue de Safari offre Request Mobile Website, et le menu à trois lignes de Samsung Internet a Mobile site.",
+      },
+      {
+        q: "Mon billet mobile s'affiche dans la mauvaise langue.",
+        a: "NOL World fournit les billets mobiles en anglais uniquement : une autre langue signifie donc que votre navigateur traduit automatiquement. Désactivez la traduction et rechargez. Mieux vaut le faire avant de partir qu'à l'entrée, car un numéro de porte ou un rang traduit est faux d'une manière difficile à repérer.",
+      },
+      {
+        q: "Puis-je présenter le billet depuis mon ordinateur portable à la porte ?",
+        a: "NOL World indique que les billets mobiles ne sont disponibles que sur l'application ou le web mobile. Sur un ordinateur, le bouton Mobile Ticket vous donne un QR code à scanner avec votre téléphone, qui y ouvre ensuite le vrai billet. Prévoyez d'entrer avec un téléphone.",
+      },
+      {
+        q: "Mon ami peut-il retirer mes billets au guichet ?",
+        a: "Parfois. NOL World indique qu'une personne autre que l'acheteur peut retirer, mais que le processus varie selon la salle et que le retrait par un tiers peut être restreint selon le type de spectacle — l'avis sur la page de détail de votre concert fait donc autorité. Il lui faudrait les détails de réservation imprimés depuis My Ticket, le numéro de confirmation et une pièce d'identité de l'acheteur. Sur les concerts qui vérifient l'identité de l'acheteur à l'entrée, n'y comptez pas.",
+      },
+      {
+        q: "J'ai envoyé un billet mobile par erreur. Puis-je le reprendre ?",
+        a: "Si le destinataire ne l'a pas encore enregistré, oui — NOL World indique que l'expéditeur peut annuler le partage avec le bouton Cancel Send. Il revient aussi automatiquement si le destinataire ne l'enregistre pas sous 24 heures ou à la date de la représentation. Une fois enregistré, le récupérer dépend de lui : il le rend depuis My Page, Received Mobile Ticket, Booking History, Mobile Ticket, Return.",
+      },
+      {
+        q: "Que se passe-t-il si mon ami n'enregistre jamais le billet que je lui ai envoyé ?",
+        a: "Il vous revient. NOL World indique qu'un billet non enregistré est automatiquement rendu à l'expéditeur au bout de 24 heures, ou s'il n'a pas été enregistré à la date de la représentation. Cela rétablit votre réservation — y compris, selon ses règles d'annulation, votre faculté de l'annuler — mais c'est un processus silencieux : vérifiez plutôt que de le supposer.",
+      },
+      {
+        q: "Je vais avoir vingt minutes de retard. Vont-ils me laisser entrer ?",
+        a: "Cela dépend du spectacle et personne ne peut le promettre. NOL World indique que l'entrée après le début dépend de la représentation et que certaines ne la permettent pas du tout, les concerts classiques et les opéras en particulier ; là où elle est permise, vous pourriez devoir attendre l'entracte, et ne pas pouvoir occuper votre propre place avant.",
+      },
+      {
+        q: "Le billet mobile est-il la même chose que l'entrée par reconnaissance faciale ?",
+        a: "Non. NOL facepass est un système distinct où une caméra à la porte vous admet sans contrôle de billet, et sa prise en charge se décide par événement. Le billet mobile et son QR code sont la voie ordinaire, et celle qu'il faut garder opérationnelle même si vous avez enregistré un visage.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

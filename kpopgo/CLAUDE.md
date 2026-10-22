@@ -750,6 +750,35 @@ The test for a new partner is the fourth bullet applied first: find the
 sentence it would sit on **before** finding out what it pays. If no sentence
 exists, there is no partnership, however good the rate.
 
+**And no affiliate network's script goes on the site.** Travelpayouts asked
+for its "Drive" tag during signup, advertised as up to 30% more earnings, and
+it was refused on 22 October 2026. The snippet injects
+`https://emrldtp.cc/NTg5MDYz.js` — a host that is not travelpayouts.com, with
+a filename that base64-decodes to the account number — carrying
+`nowprocket`, `data-noptimize`, `data-cfasync="false"`,
+`data-wpfc-render="false"`, `seraph-accel-crit` and `data-no-defer`, which is
+six different instructions not to defer or touch it.
+
+Four reasons, the first of which is the one that would still apply if the
+other three were answered:
+
+1. **It is remote code that can change after it is reviewed.** Everything
+   else that runs on this site is in this repository. Reading the file once
+   proves nothing about what it serves next week.
+2. **The uplift it sells is link rewriting**, and this site's links include
+   the source citations at the foot of every guide. A paid link among the
+   evidence, with no `Paid` tag and no `rel="sponsored"`, breaks the
+   disclosure rules and the premise they protect at the same time.
+3. **Six anti-deferral attributes on a site whose only channel is search.**
+   The network says it does not affect page speed; the markup says it refuses
+   to be optimised.
+4. **It is not needed.** The Klook link is hand-placed in the register,
+   disclosed, tagged and auditable. Network links work the same way without
+   the tag.
+
+Dashboard reporting is the real thing given up, and it is worth less than
+being able to say that every link on the page is one somebody chose.
+
 ## Phone width
 
 Most of the traffic will be on a phone, so the narrow layout is not a

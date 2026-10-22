@@ -765,10 +765,25 @@ other three were answered:
 1. **It is remote code that can change after it is reviewed.** Everything
    else that runs on this site is in this repository. Reading the file once
    proves nothing about what it serves next week.
-2. **The uplift it sells is link rewriting**, and this site's links include
-   the source citations at the foot of every guide. A paid link among the
-   evidence, with no `Paid` tag and no `rel="sponsored"`, breaks the
-   disclosure rules and the premise they protect at the same time.
+2. **It places offers into the page**, which is worse than the link
+   rewriting first assumed and is not an inference — the last screen of the
+   signup says it in Travelpayouts' own words: *"Drive finds and places
+   offers where readers are most likely to book."* Finds and places. The
+   same screen adds that continuing *"automatically connects you to these
+   programs"*, so the offers would come from partners nobody here evaluated.
+
+   Every disclosure on this site is **derived from the content**: the notice
+   above step one exists because a step carries a `partner`, and the build
+   fails on a paid link to a partner missing from the register. An offer
+   injected into the page at runtime is invisible to all of it — no `Paid`
+   tag, no `rel="sponsored"`, no notice, and `/editorial-policy` still
+   listing a partner set that is no longer the truth. It is the exact failure
+   the machinery was built to make impossible, arriving by the one route the
+   machinery cannot see.
+
+   It also decides *where* a link goes, which is the first rule inverted: a
+   link belongs only where the thing would have been named anyway, and this
+   places them where a model thinks they convert.
 3. **Six anti-deferral attributes on a site whose only channel is search.**
    The network says it does not affect page speed; the markup says it refuses
    to be optimised.

@@ -720,12 +720,33 @@ geometry from bearings rather than hard-coded points, for the reason the
 band's hairlines left their inline styles. Nothing in it is traced — it is a
 diagram of the rule at this site's own proportions, and the caption says
 schematic, because a reader who needs to know whether 417 or 418 is the one
-beside gate D has to open the venue's chart. Two things it took a second pass
-to get right, both only visible rendered: the four range labels set at one
-bearing stack into a block that reads as a list standing in front of the
-drawing, worst at phone width, so `labelAt` fans them apart; and a band tone
-that inverts between themes puts dark text on a dark band in light mode, so
-each label sits on a plate of `--paper`.
+beside gate D has to open the venue's chart.
+
+**Its first version drew four concentric circles with one shared gap, and
+that was not merely a duller picture — it was a false one.** Measured off the
+chart, the break is 44° at the 100 level, 71° at the 200, 91° at the 300 and
+96° at the 400: the upper decks stop short of that corner while the lowest
+ring nearly closes around it. Drawing the four real openings on four ellipses
+is what makes the shape a horseshoe rather than a target, so the honest
+version and the legible one turned out to be the same drawing. The fact went
+into the guide text in the same change, because it is navigational — more of
+the ring is missing the higher you sit.
+
+Four things it took passes to get right, every one of them only visible
+rendered:
+
+- Four range labels at one bearing **stack into a block** that reads as a list
+  standing in front of the drawing, worst at phone width. `labelAt` fans them.
+- A band tone that inverts between themes puts **dark text on a dark band** in
+  light mode, so each label sits on a plate of `--paper`.
+- Four levels ending at four bearings make a polyline through them **step**,
+  and a stepped red dash beside a band end reads as a rendering fault. The two
+  edges of the opening are smoothed through their points instead.
+- The direction arrow was drawn **across the break**, which points the one way
+  a reader cannot walk: clockwise through that wedge is the jump from 132 back
+  to 101, the single place the rule does not apply. It is three chevrons on
+  the band now, on the left flank — the one long stretch of perimeter with no
+  gate on it.
 
 **The station rows were wrong, and the shape of the error is what is worth
 keeping.** The venue prints its transit information twice — a four-column

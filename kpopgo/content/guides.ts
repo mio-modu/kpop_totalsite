@@ -3071,7 +3071,7 @@ export const guides: Guide[] = [
       },
       {
         title: "The loop has exactly one break, and there is no gate in it",
-        body: "The seating does not close into a full circle. On the side the chart draws at the right there is a wedge of building with no seats at any level, and that is where the numbering restarts — 132 and 101 face each other across it, and so do 435 and 401. The seven gates run clockwise in the same direction the numbers do: A, B, C, D and E along the near side, then F and G across the far one. A is the first gate after the break; G is the last one before it. Gate letters and block numbers are one scale, which is the whole reason the building can be navigated without a compass.",
+        body: "The seating does not close into a full circle. On the side the chart draws at the right there is a wedge of building with no seats at any level, and that is where the numbering restarts — 132 and 101 face each other across it, and so do 435 and 401. That break is not one width: measured off the chart it is about 44 degrees at the 100 level, 71 at the 200, 91 at the 300 and 96 at the 400, because the upper decks stop short of that corner while the lowest ring nearly closes around it. The seating is a horseshoe that opens as it rises. The seven gates run clockwise in the same direction the numbers do: A, B, C, D and E along the near side, then F and G across the far one. A is the first gate after the break; G is the last one before it. Gate letters and block numbers are one scale, which is the whole reason the building can be navigated without a compass.",
         pitfall:
           "Assuming a gate you can see is a gate you may use. The venue's own chart marks gate C, the one at the centre, as an entrance reserved for R.d-club and skybox season-ticket holders rather than a general one. The nearest door is not always yours.",
         takes: "3 minutes",
@@ -3121,7 +3121,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Why do the numbers stop and start again?",
-        a: "Because the seating is a horseshoe, not a ring. There is a wedge of the building with no seats in it at any level, and the numbering restarts there: 132 faces 101 across it, 435 faces 401. It is also the one stretch of the perimeter with no gate in it, which makes it easy to recognise.",
+        a: "Because the seating is a horseshoe, not a ring. There is a wedge of the building with no seats in it at any level, and the numbering restarts there: 132 faces 101 across it, 435 faces 401. It is also the one stretch of the perimeter with no gate in it, which makes it easy to recognise. It is wider the higher you are — about 44 degrees of the circle at the 100 level against 96 at the 400 — so on the top level more of the ring is missing and walking the long way round costs more.",
       },
       {
         q: "Can I go in through whichever gate is closest?",

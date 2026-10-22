@@ -133,11 +133,12 @@ export default async function GuidePage({
             <GocheokBowl />
           </div>
           <p className="t-sm dim mt-4 max-w-[62ch]">
-            Four levels, numbered outward from the floor. The red arrow is the
-            direction every level counts in; the red dashes are the break where the
-            seating stops and the numbering starts again. Cyan circles are the seven
-            gates, A to G. Red squares are the ticket offices, which the chart marks
-            2, 3 and 4.
+            Four levels, numbered outward from the floor. The two red dashed lines
+            are the edges of the break where the seating stops and the numbering
+            starts again &mdash; it widens with height, because the upper decks stop
+            short of that corner. The red arrow is the direction every level counts
+            in. Cyan circles are the seven gates, A to G; red squares are the ticket
+            offices, which the chart marks 2, 3 and 4.
           </p>
           <p className="data-sm dim mt-2.5 max-w-[62ch]">
             Schematic, drawn from the venue&rsquo;s own chart rather than traced from

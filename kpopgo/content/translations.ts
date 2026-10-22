@@ -16232,6 +16232,276 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Gia hạn tư cách thành viên Weverse từ nước ngoài",
+    summary:
+      "Thanh toán Tự động chạy vào ngày cuối cùng của kỳ hạn, đúng giờ bạn đã trả lần đầu, bằng một loại tiền phải khớp, và nếu nó hỏng sau khi khung gia hạn khép lại thì không còn đường nào ngoài mua lại.",
+    scope:
+      "Nói về việc giữ cho một tư cách thành viên Weverse Official Membership hiện có tiếp tục chạy, và cái giá của một khoảng trống. Việc lần đầu gia nhập fan club, và việc đủ điều kiện cho một đợt bán trước cụ thể, là những câu hỏi riêng nằm trong hướng dẫn về bán trước. Mọi thứ ở đây lấy từ thông báo ngày 3 tháng 9 năm 2026 của Weverse Shop và các trang sản phẩm mà nó dẫn tới.",
+    intro: [
+      "Một tư cách thành viên hết hạn vào đúng tuần dở nhất không lấy đi của bạn một khoản thuê bao. Nó lấy đi của bạn đợt bán trước, vì điều kiện được xét dựa trên một tư cách thành viên đang hoạt động trước một mốc chặn, và việc mua lại sau đó bao nhiêu lần cũng không dời được cái mốc ấy.",
+      "Weverse bổ sung Thanh toán Tự động vào ngày 3 tháng 9 năm 2026, qua đó loại bỏ cách hết hạn thông thường. Nó cũng mang theo bốn quy tắc dễ làm sai, và một điểm không quay đầu được.",
+    ],
+    steps: [
+      {
+        title: "Tìm xem bạn đang ở nhóm thành viên nào",
+        body: "Weverse vận hành tư cách thành viên theo ba nhóm — Global, Japan và USA — và chúng được quản lý riêng. Phương thức thanh toán, loại tiền và thiết lập Thanh toán Tự động đều theo từng nhóm, và mỗi nhóm có thể lưu tới năm phương thức thanh toán với một phương thức được đánh dấu là chính. Bạn ở nhóm nào không phải thứ bạn chọn bừa; đó là nơi tư cách thành viên của bạn vốn đã nằm.",
+        pitfall:
+          "Thiết lập Thanh toán Tự động trên nhóm mà bạn không dùng. Màn hình trông y hệt nhau, còn tư cách thành viên được gia hạn lại là cái kia.",
+        takes: "5 phút",
+      },
+      {
+        title: "Kiểm tra loại tiền của bạn có phải loại nhóm đó thực sự nhận không",
+        body: "Tính đến ngày 3 tháng 9 năm 2026: một Global Membership nhận thẻ ghi nợ hoặc tín dụng Hàn Quốc cho KRW, và thẻ đã đăng ký với PayPal cho JPY, USD hoặc MXN. Một Japan Membership nhận thẻ tín dụng cho JPY. Một US Membership nhận thẻ đã đăng ký với PayPal cho USD. Với một fan ở nước ngoài dùng Global Membership trả bằng USD, điều đó nghĩa là chiếc thẻ đi qua PayPal — không có lựa chọn thẻ trực tiếp.",
+        pitfall:
+          "Trông đợi đăng ký thẳng một chiếc Visa trên một Global Membership bằng USD. Cùng mô thức đó chạy xuyên suốt Weverse Shop, và nó là lý do một chiếc thẻ hoạt động tốt ở mọi nơi khác vẫn có thể hỏng ở đây.",
+        takes: "10 phút",
+      },
+      {
+        title: "Cho loại tiền lúc mua khớp với phương thức chính",
+        body: "Weverse nói thẳng: loại tiền thanh toán dùng để mua tư cách thành viên phải khớp với loại tiền thanh toán của phương thức Thanh toán Tự động chính của bạn. Một sự lệch nhau không được xử lý có lợi cho bạn vào lúc gia hạn — nó là một lần gia hạn không đi qua được.",
+        pitfall:
+          "Mua tư cách thành viên bằng một loại tiền rồi sau đó thêm một phương thức chính bằng loại tiền khác, chuyện trông ổn trên cả hai màn hình và chỉ hỏng vào đúng ngày nó quan trọng.",
+        takes: "3 phút",
+      },
+      {
+        title: "Biết chính xác khoảnh khắc nó gia hạn",
+        body: "Thanh toán Tự động chạy vào ngày cuối cùng của kỳ hiệu lực hiện tại, vào đúng giờ trong ngày mà bạn đã trả tiền lần đầu. Giờ đó được đặt trên một máy chủ Hàn Quốc, nên với phần lớn người đọc nó rơi vào đâu đó trong đêm hoặc sáng sớm. Nếu nó hỏng, Weverse gửi một email và một thông báo đẩy rồi thử lại mỗi ngày một lần vào đúng giờ đó, kéo dài suốt khung gia hạn.",
+        pitfall:
+          "Một chiếc thẻ hết hạn giữa kỳ, hay một ngân hàng chặn khoản trừ tiền, biến thành một thông báo đến vào bốn giờ sáng giờ bạn. Việc thử lại là mỗi ngày chứ không phải mỗi giờ — một ngày không nhìn thấy email là một ngày của khung gia hạn trôi đi.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hiểu điều mà việc hủy Thanh toán Tự động không làm",
+        body: "Hủy Thanh toán Tự động sẽ dừng các lần gia hạn trong tương lai. Nó không hủy và không hoàn tiền tư cách thành viên bạn đang giữ, và bạn vẫn dùng bình thường cho tới khi kỳ hiệu lực kết thúc. Việc hủy và hoàn tiền chính tư cách thành viên là chuyện riêng, do trang sản phẩm của tư cách thành viên đó điều chỉnh.",
+        pitfall:
+          "Hủy Thanh toán Tự động mà mong được trả lại tiền, và tách biệt với điều đó: hủy nó để “tạm dừng” trong lúc có tin đồn về một tour, tức đúng cái tuần bạn ít muốn việc gia hạn dừng lại nhất.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hãy coi lúc khung gia hạn kết thúc là điểm không quay đầu được",
+        body: "Nếu bạn đã hủy Thanh toán Tự động thì bạn có thể kích hoạt lại — nhưng chỉ khi khung gia hạn vẫn đang chạy. Khi khung đó kết thúc, việc kích hoạt lại không còn khả dụng và con đường duy nhất là mua lại tư cách thành viên. Weverse cũng cho hai nút thủ công bên trong khung đó: Pay Now để gia hạn ngay, và Retry Now nếu một lần thanh toán đã hỏng trên một phương thức mà từ đó bạn đã sửa.",
+        pitfall:
+          "Ngồi chờ xem các lần thử lại có thành công không. Retry Now và Pay Now tồn tại đúng để bạn không phải chờ, và cả hai biến mất khi khung đóng lại.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy gia hạn thay vì mua lại, vì hồ sơ được mang theo",
+        body: "Khi một tư cách thành viên gia hạn qua Thanh toán Tự động, thông tin thành viên đã đăng ký trên tư cách hiện có sẽ được giữ lại trên tư cách tiếp theo. Chính hồ sơ đó — đặc biệt là cái tên trên nó — là thứ mà một lần xét điều kiện bán trước chạy đối chiếu. Mua một tư cách thành viên mới sau một khoảng trống sẽ mở một hồ sơ mới và một ngày bắt đầu mới, và đó mới là phần khiến bạn mất một đợt bán trước chứ không phải mất một khoản phí thuê bao.",
+        pitfall:
+          "Cho rằng tính liên tục là chuyện của lòng trung thành. Nó là chuyện của một ngày tháng và một cái tên trên một hồ sơ, và một khoảng hở ở bất kỳ cái nào cũng là thứ mà khâu xét duyệt nhìn thấy.",
+        takes: "2 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi trả tiền cho Global Membership bằng Visa hay Mastercard của mình được không?",
+        a: "Không trực tiếp, nếu nằm ngoài KRW. Một Global Membership nhận thẻ Hàn Quốc cho KRW, và thẻ đã đăng ký với PayPal cho JPY, USD hoặc MXN — nên chiếc thẻ của bạn tới được Weverse thông qua PayPal chứ không phải dưới dạng một khoản thanh toán thẻ trực tiếp.",
+      },
+      {
+        q: "Chính xác thì Thanh toán Tự động trừ tiền tôi khi nào?",
+        a: "Vào ngày cuối cùng của kỳ hiệu lực hiện tại, vào đúng giờ trong ngày mà bạn đã trả lần đầu. Giờ đó được đặt theo đồng hồ Hàn Quốc, nên hãy quy đổi sang giờ của bạn.",
+      },
+      {
+        q: "Nếu Thanh toán Tự động hỏng, tôi có bao nhiêu cơ hội?",
+        a: "Weverse báo cho bạn qua email và thông báo đẩy, rồi thử lại mỗi ngày một lần vào đúng giờ đó trong phần còn lại của khung gia hạn. Bạn cũng có thể dùng Retry Now sau khi sửa phương thức thanh toán, hoặc Pay Now để gia hạn ngay.",
+      },
+      {
+        q: "Tôi đã hủy Thanh toán Tự động. Bật lại được không?",
+        a: "Được, khi khung gia hạn vẫn còn mở — có hẳn một nút kích hoạt lại đúng cho việc đó. Sau khi khung gia hạn kết thúc thì bạn không thể, và lựa chọn duy nhất là mua lại tư cách thành viên.",
+      },
+      {
+        q: "Tư cách thành viên của tôi hở vài ngày thì có sao không?",
+        a: "Có thể còn quan trọng hơn cả giá tiền. Việc gia hạn giữ lại thông tin thành viên từ tư cách hiện có; việc mua lại mở một hồ sơ mới với một ngày mới. Điều kiện bán trước được xét dựa trên hồ sơ đó và mốc chặn của nó, chứ không dựa trên việc bạn đã là fan bao lâu.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ต่ออายุสมาชิก Weverse จากต่างประเทศ",
+    summary:
+      "ระบบชำระเงินอัตโนมัติทำงานในวันสุดท้ายของรอบสมาชิกของคุณ ในเวลาเดียวกับที่คุณจ่ายครั้งแรก ด้วยสกุลเงินที่ต้องตรงกัน และถ้ามันล้มเหลวหลังช่วงต่ออายุผ่านไป ก็ไม่มีทางกลับนอกจากซื้อใหม่",
+    scope:
+      "ครอบคลุมการรักษาสมาชิก Weverse Official Membership ที่มีอยู่ให้เดินต่อไป และราคาของการปล่อยให้ขาดช่วง การเข้าร่วมแฟนคลับครั้งแรก และการมีคุณสมบัติสำหรับพรีเซลงานใดงานหนึ่ง เป็นคนละคำถามซึ่งอยู่ในคู่มือพรีเซล ทุกอย่างในหน้านี้มาจากประกาศของ Weverse Shop วันที่ 3 กันยายน 2026 และหน้าสินค้าที่ประกาศนั้นชี้ไป",
+    intro: [
+      "สมาชิกภาพที่ขาดช่วงในสัปดาห์ที่ผิดไม่ได้ทำให้คุณเสียค่าสมาชิก มันทำให้คุณเสียรอบพรีเซล เพราะคุณสมบัติถูกตรวจกับสมาชิกภาพที่ยังมีผลก่อนเส้นตายหนึ่ง และการซื้อใหม่ภายหลังกี่ครั้งก็ไม่ขยับวันนั้น",
+      "Weverse เพิ่มระบบชำระเงินอัตโนมัติเมื่อวันที่ 3 กันยายน 2026 ซึ่งตัดวิธีขาดช่วงแบบธรรมดาออกไป มันยังนำกฎสี่ข้อที่เข้าใจผิดได้ง่ายมาด้วย และจุดหนึ่งที่ย้อนกลับไม่ได้",
+    ],
+    steps: [
+      {
+        title: "ดูว่าคุณอยู่ในหมวดสมาชิกใด",
+        body: "Weverse เปิดสมาชิกภาพเป็นสามหมวด — Global, Japan และ USA — และบริหารแยกกัน วิธีชำระเงิน สกุลเงิน และการตั้งค่าชำระเงินอัตโนมัติ ล้วนแยกตามหมวด และแต่ละหมวดเก็บวิธีชำระเงินได้ถึงห้าวิธีโดยมีหนึ่งวิธีถูกทำเครื่องหมายเป็นวิธีหลัก คุณอยู่หมวดใดไม่ใช่เรื่องที่เลือกเล่น ๆ มันคือที่ที่สมาชิกภาพของคุณอยู่แล้ว",
+        pitfall:
+          "การตั้งค่าชำระเงินอัตโนมัติบนหมวดที่คุณไม่ได้ใช้ หน้าจอดูเหมือนกันเป๊ะ แต่สมาชิกภาพที่ถูกต่ออายุคืออีกอันหนึ่ง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ตรวจว่าสกุลเงินของคุณเป็นสกุลที่หมวดนั้นรับจริง",
+        body: "ณ วันที่ 3 กันยายน 2026: Global Membership รับบัตรเดบิตหรือเครดิตของเกาหลีใต้สำหรับ KRW และรับบัตรที่ลงทะเบียนกับ PayPal สำหรับ JPY, USD หรือ MXN Japan Membership รับบัตรเครดิตสำหรับ JPY US Membership รับบัตรที่ลงทะเบียนกับ PayPal สำหรับ USD สำหรับแฟนที่อยู่ต่างประเทศซึ่งใช้ Global Membership จ่ายเป็น USD นั่นแปลว่าบัตรเดินผ่าน PayPal ไม่มีตัวเลือกบัตรโดยตรง",
+        pitfall:
+          "การคาดหวังว่าจะลงทะเบียนบัตร Visa ตรง ๆ บน Global Membership ที่เป็น USD รูปแบบเดียวกันนี้เดินทะลุทั้ง Weverse Shop และเป็นเหตุผลที่บัตรซึ่งใช้ได้ทุกที่ยังล้มเหลวที่นี่ได้",
+        takes: "10 นาที",
+      },
+      {
+        title: "ทำให้สกุลเงินตอนซื้อตรงกับวิธีชำระเงินหลัก",
+        body: "Weverse บอกตรง ๆ ว่าสกุลเงินที่ใช้ซื้อสมาชิกภาพต้องตรงกับสกุลเงินของวิธีชำระเงินอัตโนมัติหลักของคุณ ความไม่ตรงกันจะไม่ถูกตัดสินให้เข้าข้างคุณในเวลาต่ออายุ มันคือการต่ออายุที่ไม่ผ่าน",
+        pitfall:
+          "การซื้อสมาชิกภาพด้วยสกุลเงินหนึ่งแล้วค่อยเพิ่มวิธีหลักเป็นอีกสกุลเงินหนึ่งในภายหลัง ซึ่งดูเรียบร้อยทั้งสองหน้าจอและพังเฉพาะวันที่มันสำคัญ",
+        takes: "3 นาที",
+      },
+      {
+        title: "รู้จังหวะที่มันต่ออายุให้แม่น",
+        body: "ระบบชำระเงินอัตโนมัติทำงานในวันสุดท้ายของช่วงที่สมาชิกภาพปัจจุบันยังมีผล ในเวลาเดียวกับที่คุณจ่ายครั้งแรก เวลานั้นถูกตั้งบนเซิร์ฟเวอร์เกาหลี สำหรับผู้อ่านส่วนใหญ่มันจึงตกอยู่ที่ไหนสักแห่งในตอนกลางคืนหรือเช้ามืด ถ้ามันล้มเหลว Weverse จะส่งอีเมลและการแจ้งเตือนแบบพุช แล้วลองใหม่วันละครั้งในเวลาเดิม ตลอดช่วงที่การต่ออายุยังเปิดอยู่",
+        pitfall:
+          "บัตรที่หมดอายุกลางรอบ หรือธนาคารที่บล็อกการเรียกเก็บ กลายเป็นการแจ้งเตือนที่มาถึงตอนตีสี่ตามเวลาคุณ การลองใหม่เป็นรายวันไม่ใช่รายชั่วโมง หนึ่งวันที่ไม่เห็นอีเมลคือหนึ่งวันของช่วงเวลาที่ถูกใช้ไป",
+        takes: "2 นาที",
+      },
+      {
+        title: "เข้าใจว่าการยกเลิกระบบชำระเงินอัตโนมัติไม่ได้ทำอะไร",
+        body: "การยกเลิกระบบชำระเงินอัตโนมัติหยุดการต่ออายุในอนาคต มันไม่ได้ยกเลิกหรือคืนเงินสมาชิกภาพที่คุณถืออยู่แล้ว และคุณยังใช้งานได้ตามปกติจนกว่าช่วงที่มีผลจะสิ้นสุด การยกเลิกและคืนเงินตัวสมาชิกภาพเองเป็นคนละเรื่อง และอยู่ภายใต้หน้าสินค้าของสมาชิกภาพนั้น",
+        pitfall:
+          "การยกเลิกระบบชำระเงินอัตโนมัติโดยหวังจะได้เงินคืน และอีกกรณีหนึ่ง: การยกเลิกเพื่อ “พักไว้ก่อน” ในช่วงที่มีข่าวลือเรื่องทัวร์ ซึ่งเป็นสัปดาห์ที่คุณอยากให้การต่ออายุหยุดน้อยที่สุด",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถือว่าจุดสิ้นสุดของช่วงต่ออายุคือจุดที่ย้อนกลับไม่ได้",
+        body: "ถ้าคุณยกเลิกระบบชำระเงินอัตโนมัติไปแล้ว คุณเปิดใช้ใหม่ได้ แต่เฉพาะตอนที่ช่วงต่ออายุยังเดินอยู่ เมื่อช่วงนั้นสิ้นสุดลง การเปิดใช้ใหม่จะไม่มีให้ และทางเดียวคือซื้อสมาชิกภาพอีกครั้ง Weverse ยังให้ปุ่มควบคุมด้วยมือสองปุ่มภายในช่วงนั้น: Pay Now เพื่อต่ออายุทันที และ Retry Now ถ้าการชำระเงินล้มเหลวบนวิธีที่คุณแก้ไขแล้ว",
+        pitfall:
+          "การรอดูว่าการลองใหม่จะสำเร็จไหม Retry Now และ Pay Now มีอยู่เพื่อที่คุณจะได้ไม่ต้องรอ และทั้งคู่หายไปเมื่อช่วงเวลาปิดลง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ต่ออายุแทนการซื้อใหม่ เพราะระเบียนถูกยกไปด้วย",
+        body: "เมื่อสมาชิกภาพต่ออายุผ่านระบบชำระเงินอัตโนมัติ ข้อมูลสมาชิกที่ลงทะเบียนไว้บนสมาชิกภาพเดิมจะถูกคงไว้บนอันถัดไป ระเบียนนั้น — โดยเฉพาะชื่อที่อยู่บนมัน — คือสิ่งที่การตรวจคุณสมบัติพรีเซลใช้เทียบ การซื้อสมาชิกภาพใหม่หลังการขาดช่วงจะเริ่มระเบียนใหม่และวันเริ่มต้นใหม่ และนั่นคือส่วนที่ทำให้คุณเสียรอบพรีเซล ไม่ใช่เสียแค่ค่าสมาชิก",
+        pitfall:
+          "การคิดว่าความต่อเนื่องเป็นเรื่องของความภักดี มันเป็นเรื่องของวันที่และชื่อบนระเบียน และช่องว่างในอย่างใดอย่างหนึ่งคือสิ่งที่การตรวจมองเห็น",
+        takes: "2 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "จ่ายค่า Global Membership ด้วยบัตร Visa หรือ Mastercard ของตัวเองได้ไหม",
+        a: "ไม่ได้โดยตรงถ้าอยู่นอก KRW Global Membership รับบัตรเกาหลีสำหรับ KRW และรับบัตรที่ลงทะเบียนกับ PayPal สำหรับ JPY, USD หรือ MXN บัตรของคุณจึงไปถึง Weverse ผ่าน PayPal แทนที่จะเป็นการชำระด้วยบัตรโดยตรง",
+      },
+      {
+        q: "ระบบชำระเงินอัตโนมัติเรียกเก็บเงินฉันตอนไหนกันแน่",
+        a: "ในวันสุดท้ายของช่วงที่สมาชิกภาพปัจจุบันของคุณมีผล ในเวลาเดียวกับที่คุณจ่ายครั้งแรก เวลานั้นถูกตั้งตามนาฬิกาเกาหลี จึงควรแปลงเป็นเวลาของคุณเอง",
+      },
+      {
+        q: "ถ้าระบบชำระเงินอัตโนมัติล้มเหลว ฉันมีกี่โอกาส",
+        a: "Weverse แจ้งคุณทางอีเมลและการแจ้งเตือนแบบพุช แล้วลองใหม่วันละครั้งในเวลาเดิมตลอดช่วงต่ออายุที่เหลือ คุณยังใช้ Retry Now ได้หลังแก้วิธีชำระเงินแล้ว หรือใช้ Pay Now เพื่อต่ออายุทันที",
+      },
+      {
+        q: "ฉันยกเลิกระบบชำระเงินอัตโนมัติไปแล้ว เปิดกลับได้ไหม",
+        a: "ได้ ตอนที่ช่วงต่ออายุยังเปิดอยู่ มีปุ่มเปิดใช้ใหม่สำหรับเรื่องนี้โดยเฉพาะ หลังช่วงต่ออายุสิ้นสุดแล้วคุณทำไม่ได้ และตัวเลือกเดียวคือซื้อสมาชิกภาพใหม่",
+      },
+      {
+        q: "สมาชิกภาพของฉันขาดไปไม่กี่วันจะเป็นไรไหม",
+        a: "อาจสำคัญกว่าราคาเสียอีก การต่ออายุคงข้อมูลสมาชิกจากสมาชิกภาพเดิมไว้ ส่วนการซื้อใหม่เริ่มระเบียนใหม่พร้อมวันที่ใหม่ คุณสมบัติพรีเซลถูกตรวจกับระเบียนนั้นและเส้นตายของมัน ไม่ได้ตรวจว่าคุณเป็นแฟนมานานแค่ไหน",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pag-renew ng membership sa Weverse mula sa ibang bansa",
+    summary:
+      "Tumatakbo ang Auto Payment sa huling araw ng termino mo sa oras na una kang nagbayad, sa isang perang kailangang magtugma, at kung bumagsak ito pagkalipas ng bintana ng pag-renew ay wala nang balikan maliban sa muling pagbili.",
+    scope:
+      "Sakop nito ang pagpapanatiling buhay ng umiiral nang Weverse Official Membership, at kung ano ang halaga ng isang pagkaputol. Ang unang pagsali sa isang fan club, at ang pagiging kuwalipikado sa isang tiyak na presale, ay magkahiwalay na tanong na nasa gabay ng presale. Lahat ng narito ay mula sa abiso ng Weverse Shop noong 3 Setyembre 2026 at sa mga pahina ng produktong tinutukoy nito.",
+    intro: [
+      "Ang membership na napaso sa maling linggo ay hindi nagkakahalaga sa iyo ng isang subscription. Nagkakahalaga ito sa iyo ng presale, dahil sinusuri ang pagiging kuwalipikado laban sa isang membership na may bisa bago ang isang hangganan, at gaano ka man kadalas bumili muli pagkatapos ay hindi nito maigagalaw ang petsang iyon.",
+      "Idinagdag ng Weverse ang Auto Payment noong 3 Setyembre 2026, na nag-aalis ng karaniwang paraan ng pagkapaso. Nagdala rin ito ng apat na tuntuning madaling mapagkamalan, at isang puntong hindi na mababalikan.",
+    ],
+    steps: [
+      {
+        title: "Alamin kung aling kategorya ng membership ang nasa iyo",
+        body: "Pinapatakbo ng Weverse ang mga membership sa tatlong kategorya — Global, Japan at USA — at hiwalay silang pinamamahalaan. Ang mga paraan ng pagbabayad, ang pera at ang mga setting ng Auto Payment ay pawang kada kategorya, at hanggang limang paraan ng pagbabayad ang maiimbak sa bawat isa kung saan may isang minarkahan bilang pangunahin. Hindi basta pinipili ang kategoryang kinaroroonan mo; iyon ang kinalalagyan na ng membership mo.",
+        pitfall:
+          "Ang pagtatakda ng Auto Payment sa kategoryang hindi mo ginagamit. Magkamukhang-magkamukha ang screen, at ang membership na nagre-renew ay ang isa pa.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Tingnan kung talagang tinatanggap ba ng kategorya ang pera mo",
+        body: "Noong 3 Setyembre 2026: tumatanggap ang Global Membership ng South Korean debit o credit card para sa KRW, at ng mga kard na nakarehistro sa PayPal para sa JPY, USD o MXN. Tumatanggap ang Japan Membership ng credit card para sa JPY. Tumatanggap ang US Membership ng mga kard na nakarehistro sa PayPal para sa USD. Para sa fan sa ibang bansang nasa Global Membership na nagbabayad sa USD, ibig sabihin ay dumaraan ang kard sa PayPal — walang tuwirang opsiyon ng kard.",
+        pitfall:
+          "Ang pag-asang makapagrehistro ng Visa nang tuwiran sa isang Global Membership na USD. Tumatakbo ang parehong pattern sa buong Weverse Shop, at iyan ang dahilan kung bakit ang kard na gumagana saanman ay puwede pa ring bumagsak dito.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Itugma ang perang ipinambili sa pangunahing paraan",
+        body: "Tuwirang sinasabi ito ng Weverse: ang perang ginamit sa pagbili ng Membership ay kailangang tumugma sa perang gamit ng pangunahin mong paraan ng Auto Payment. Hindi nilulutas pabor sa iyo ang pagkakaiba sa oras ng pag-renew — isa itong pag-renew na hindi tumutuloy.",
+        pitfall:
+          "Ang pagbili ng membership sa isang pera at ang pagdaragdag mamaya ng pangunahing paraan sa iba, na mukhang maayos sa dalawang screen at bumabagsak lamang sa araw na mahalaga ito.",
+        takes: "3 minuto",
+      },
+      {
+        title: "Alamin ang eksaktong sandali ng pag-renew",
+        body: "Tumatakbo ang Auto Payment sa huling araw ng panahon ng bisa ng kasalukuyang membership, sa parehong oras ng araw na una kang nagbayad. Itinakda ang oras na iyon sa isang Koreanong server, kaya para sa karamihan ng mambabasa ay tumatapat ito sa gabi o maagang umaga. Kung bumagsak ito, nagpapadala ang Weverse ng email at push notification at sumusubok muli minsan sa isang araw sa parehong oras, hangga't tumatagal ang panahon ng pag-renew.",
+        pitfall:
+          "Ang kard na nag-e-expire sa gitna ng termino, o ang bangkong humaharang sa singil, ay nagiging isang abisong dumarating ng alas-kuwatro ng madaling-araw sa oras mo. Araw-araw ang pagsubok muli, hindi oras-oras — ang isang araw na hindi mo nakita ang email ay isang araw ng bintanang nagamit na.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Unawain kung ano ang hindi ginagawa ng pagkansela ng Auto Payment",
+        body: "Hinihinto ng pagkansela ng Auto Payment ang mga susunod na pag-renew. Hindi nito kinakansela o isinasauli ang membership na hawak mo na, at patuloy mo itong gagamitin nang normal hanggang matapos ang panahon ng bisa. Ang pagkansela at pagsasauli ng mismong membership ay hiwalay na usapin na pinamamahalaan ng pahina ng produkto ng membership na iyon.",
+        pitfall:
+          "Ang pagkansela ng Auto Payment sa pag-asang may ibabalik na pera at, bukod doon: ang pagkansela nito para “i-pause” habang may tsismis na tour, na siyang linggong pinakaayaw mong tumigil ang pag-renew.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Ituring na puntong hindi na mababalikan ang katapusan ng panahon ng pag-renew",
+        body: "Kung kinansela mo ang Auto Payment ay maaari mo itong buhayin muli — ngunit habang tumatakbo pa ang panahon ng pag-renew. Kapag natapos na ang panahong iyon, hindi na available ang muling pagbuhay at ang tanging ruta ay bilhin muli ang membership. Nagbibigay din ang Weverse ng dalawang manual na kontrol sa loob ng bintana: ang Pay Now para mag-renew kaagad, at ang Retry Now kung bumagsak ang bayad sa isang paraang naayos mo na.",
+        pitfall:
+          "Ang paghihintay kung magtatagumpay ba ang mga pagsubok muli. Umiiral ang Retry Now at Pay Now nang eksakto para hindi mo na kailangang maghintay, at nawawala silang dalawa kapag nagsara ang bintana.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Mag-renew sa halip na bumili muli, dahil dinadala ang talaan",
+        body: "Kapag nag-renew ang membership sa pamamagitan ng Auto Payment, pinapanatili sa susunod ang impormasyon ng miyembrong nakarehistro sa umiiral na membership. Ang talaang iyon — lalo na ang pangalan dito — ang pinagbabatayan ng pagsusuri ng pagiging kuwalipikado sa presale. Ang pagbili ng bagong membership pagkatapos ng isang pagkaputol ay nagsisimula ng bagong talaan at bagong petsa ng simula, at iyan ang bahaging nagkakahalaga ng isang presale sa halip na isang bayad sa subscription.",
+        pitfall:
+          "Ang pag-aakalang tungkol sa katapatan ang pagpapatuloy. Tungkol ito sa isang petsa at isang pangalan sa isang talaan, at ang puwang sa alinman sa dalawa ang nakikita ng pagsusuri.",
+        takes: "2 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Puwede ko bang bayaran ang Global Membership gamit ang sarili kong Visa o Mastercard?",
+        a: "Hindi nang tuwiran, sa labas ng KRW. Tumatanggap ang Global Membership ng mga Koreanong kard para sa KRW, at ng mga kard na nakarehistro sa PayPal para sa JPY, USD o MXN — kaya umaabot ang kard mo sa Weverse sa pamamagitan ng PayPal at hindi bilang tuwirang bayad sa kard.",
+      },
+      {
+        q: "Kailan ba talaga ako sinisingil ng Auto Payment?",
+        a: "Sa huling araw ng panahon ng bisa ng kasalukuyan mong membership, sa parehong oras ng araw na una kang nagbayad. Itinakda ang oras na iyon sa isang Koreanong orasan, kaya ikonberte ito para sa sarili mo.",
+      },
+      {
+        q: "Kung bumagsak ang Auto Payment, ilang pagkakataon ang meron ako?",
+        a: "Inaabisuhan ka ng Weverse sa email at push, at pagkatapos ay sumusubok muli minsan sa isang araw sa parehong oras sa natitirang panahon ng pag-renew. Magagamit mo rin ang Retry Now pagkatapos ayusin ang paraan ng pagbabayad, o ang Pay Now para mag-renew kaagad.",
+      },
+      {
+        q: "Kinansela ko ang Auto Payment. Puwede ko ba itong buksan muli?",
+        a: "Oo, habang bukas pa ang panahon ng pag-renew — may kontrol sa muling pagbuhay nang eksakto para doon. Pagkatapos matapos ang panahon ng pag-renew ay hindi mo na kaya, at ang tanging opsiyon ay bilhin muli ang membership.",
+      },
+      {
+        q: "Mahalaga ba kung mapaso ang membership ko nang ilang araw?",
+        a: "Maaaring mas mahalaga pa ito kaysa sa presyo. Pinapanatili ng pag-renew ang impormasyon ng miyembro mula sa umiiral na membership; nagsisimula ang muling pagbili ng bagong talaan na may bagong petsa. Sinusuri ang pagiging kuwalipikado sa presale laban sa talaang iyon at sa hangganan nito, hindi laban sa kung gaano ka na katagal na fan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

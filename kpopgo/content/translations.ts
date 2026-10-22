@@ -12830,6 +12830,238 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Por que o seu pedido do Weverse Shop está atrasado, e quando ainda dá para cancelar",
+    summary:
+      "O botão de cancelar some numa mudança de status e não num prazo, a União Europeia acabou com a isenção de 150 euros, os Estados Unidos acrescentaram um segundo regime de inspeção por cima do de tributos, e um feriado coreano tem um corte medido no minuto.",
+    scope:
+      "Cobre o que acontece depois de um pedido do Weverse Shop ser feito, a partir dos avisos do próprio Weverse Shop: a janela de cancelamento, as mudanças aduaneiras sobre as quais ele alertou para a UE e os EUA, os atrasos de feriado e de logística, e de quem você está comprando de fato. As datas de feriado são de 2026 e estarão erradas no ano que vem — a página de avisos é a versão viva. A compra em si tem guia próprio.",
+    intro: [
+      "O Weverse Shop publica um fluxo constante de avisos sobre entregas, e quase ninguém os lê até um pacote atrasar. É ali que estão as respostas de verdade: qual mudança aduaneira se aplica a você, qual feriado comeu quatro dias, e o minuto exato em que um pedido deixou de ser cancelável.",
+      "Este é esse fluxo, lido de uma vez. Dois dos itens abaixo são regras genuinamente novas e não atrasos sazonais, e um deles é o momento em que o seu dinheiro deixa de ser reembolsável.",
+    ],
+    steps: [
+      {
+        title: "Saiba que a janela de cancelamento fecha num status, não num relógio",
+        body: "Este é o fato que vale saber antes de qualquer coisa dar errado. O Weverse Shop dá o caminho do cancelamento como o aplicativo Weverse, depois More, depois My Orders, depois Order Details, depois Cancel Order — e afirma que, quando o status do seu pedido muda para Shipping Soon ou In Transit, você não poderá mais cancelar o pedido. Não há período de carência declarado nem regra de horas após a compra. A janela fica aberta até um depósito mudar um status, o que pode acontecer mais cedo do que você espera num lançamento popular.",
+        pitfall:
+          "Decidir durante a noite se mantém uma pré-venda por impulso. O prazo não é um horário que você possa consultar — é um evento que você não controla, e ele pode passar enquanto você dorme.",
+        takes: "5 minutos, imediatamente",
+      },
+      {
+        title: "Se você está na União Europeia, a isenção de 150 euros acabou",
+        body: "O aviso do próprio Weverse Shop é específico onde a cobertura geral é vaga. A partir de 1º de julho de 2026 a UE revisou as suas regras para importações de baixo valor: antes, pedidos abaixo de 150 euros eram isentos de tributos aduaneiros, e essa isenção foi eliminada, então os tributos agora se aplicam independentemente do valor da compra. O detalhe que mais importa é a base — o Weverse diz que isso vale para remessas que passem pelo desembaraço local a partir de 1º de julho de 2026, pela data do desembaraço local e não pela data do pedido. Um pedido feito antes da mudança ainda pode ser pego por ela.",
+        pitfall:
+          "Supor que um pedido pequeno é barato demais para ser tributado. Já não existe um piso, e a data que decide isso é uma que você não enxerga da página do pedido.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Espere que a aduana, ou a transportadora, peça dinheiro diretamente a você",
+        body: "O Weverse Shop diz que os pedidos para a UE podem incorrer em tributos durante o desembaraço local, que você pode receber instruções de pagamento separadas da aduana local ou da transportadora, e que não pagar esses tributos pode atrasar ou impedir a entrega. Essa é uma experiência diferente de uma cobrança no checkout: chega uma mensagem de uma empresa com a qual você não tem relação, pedindo dinheiro antes de um pacote que você já pagou sair do lugar. Não é um golpe por padrão — mas é também exatamente o que um golpe imita, então confira o código de rastreio contra o seu pedido em vez de seguir um link da mensagem.",
+        pitfall:
+          "Ignorar um pedido de pagamento da aduana ou da transportadora como se fosse phishing e deixar o pacote parado. O não pagamento é um dos jeitos documentados de um pedido simplesmente nunca chegar.",
+        takes: "—",
+      },
+      {
+        title: "Se você está nos Estados Unidos, saiba que são duas mudanças separadas, não uma",
+        body: "A mudança tributária fica com toda a cobertura e não é a única coisa atrasando os pacotes americanos. O Weverse Shop alerta separadamente que, a partir de 8 de julho de 2026, a Consumer Product Safety Commission dos EUA passa a exigir uma política obrigatória de eFiling, trazendo inspeções aduaneiras locais mais rígidas sobre todas as mercadorias importadas para os EUA, e que se espera que o desembaraço leve alguns dias a mais que o prazo padrão de entrega. Isso é um regime de registro de segurança de produto e não uma tarifa — então um pedido americano pode ficar lento por um motivo que não tem nada a ver com quanto se deve de tributo.",
+        pitfall:
+          "Ler todo atraso americano como a mudança da isenção e esperar por uma cobrança de tributo que nunca vem. Uma dessas duas mudanças custa dinheiro e a outra custa dias.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Trate um feriado coreano como um corte medido em minutos",
+        body: "O Weverse Shop publica um cronograma de corte para cada feriado coreano, e os horários são precisos. No Chuseok de 2026, o corte de pedidos para endereços fora da Coreia do Sul foi 23 de setembro às 11:00 KST, com a entrega expressa retomando em 28 de setembro; para endereços coreanos o corte da transportadora foi 22 de setembro às 11:00 KST, retomando no mesmo dia. Pedidos feitos depois do corte são enviados em sequência a partir da data de retomada. O Weverse acrescenta duas ressalvas: itens enviados na data do corte ainda podem chegar depois do feriado dependendo da região, e o cronograma vem da transportadora e pode mudar.",
+        pitfall:
+          "Ler essas datas como as deste ano. São os números do Chuseok de 2026, e o padrão — um corte às 11:00 KST um ou dois dias antes, retomada cerca de uma semana depois — é a parte que se repete. As datas em si precisam ser consultadas a cada vez.",
+        takes: "10 minutos antes de um pedido de feriado",
+      },
+      {
+        title: "Se o seu endereço é na China, vale um segundo calendário de feriados",
+        body: "O Weverse Shop emite avisos separados para os feriados chineses, afetando pedidos com endereço de entrega na China, porque as repartições aduaneiras chinesas fecham e o desembaraço para. Para o Festival do Meio do Outono de 2026, de 25 a 27 de setembro, e o Dia Nacional, de 1º a 7 de outubro, ele disse que pedidos integralmente pagos até 15 de setembro às 11:00 KST provavelmente seriam entregues durante o feriado do Dia Nacional, e que pedidos pagos depois disso começariam a ser enviados assim que o feriado terminasse, em 8 de outubro. Note que o que conta é o pagamento estar concluído, e não o pedido ter sido feito.",
+        pitfall:
+          "Uma pré-venda cujo pagamento se conclui mais tarde do que você imagina. Onde o corte é definido pelo pagamento integral, um pedido com pagamento pendente é um pedido do outro lado de um intervalo de três semanas.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Separe uma crise de transporte de um pacote perdido",
+        body: "Alguns atrasos não são nem aduana nem feriado. Em abril de 2026 o Weverse Shop avisou os clientes de atrasos de entrega em toda a Europa e em países selecionados do Oriente Médio, causados por oscilações nas rotas logísticas globais e nos cronogramas de frete aéreo e marítimo, afetando pedidos enviados depois de 1º de abril de 2026 que estavam em trânsito internacional. A parte útil é o que ele diz sobre rastreio: por causa dos desvios de rota, as atualizações de rastreio e as chegadas locais podem demorar mais que o habitual, e o pacote continua em trânsito. Rastreio silencioso durante uma crise conhecida é o sintoma esperado, não prova de extravio.",
+        pitfall:
+          "Abrir uma reclamação de pacote extraviado porque o rastreio não anda há uma semana. Confira primeiro na página de avisos se há uma crise ativa cobrindo a sua região — uma reclamação aberta contra um pacote que está apenas desviado gasta o tempo de que você precisaria numa reclamação de verdade.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Veja se a Weverse é de fato a vendedora",
+        body: "O Weverse Shop afirma nas próprias páginas que alguns produtos são oferecidos por vendedores terceiros individuais, que nesses casos a Weverse Company atua apenas como intermediária de comércio eletrônico e não é parte da transação, e que ela não assume responsabilidade pelas informações do produto nem pelas transações conduzidas por esses vendedores. Isso muda com quem você está lidando quando algo dá errado — num item de terceiro, a contraparte é o vendedor, não a Weverse. Vale estabelecer antes de você precisar reclamar, e não durante.",
+        pitfall:
+          "Supor que tudo na loja tem o mesmo respaldo porque está atrás do mesmo checkout. A ressalva de intermediação é publicada, e é ela que decide quem deve a você uma solução.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Leia os avisos você mesmo, porque esta página vai envelhecer mais rápido que a maioria",
+        body: "Tudo acima veio da página de avisos do Weverse Shop, e essa página é a versão viva. As mudanças aduaneiras são duradouras; os cronogramas de feriado, as crises de frete e os cortes das transportadoras não são — eles são reemitidos a cada ocasião e substituídos sem que o aviso antigo mude. Antes de um pedido de feriado ou quando um pacote atrasar, leia a lista de avisos em vez de confiar nas datas de qualquer guia, este inclusive. A data no topo desta página é quando fizemos isso pela última vez.",
+        pitfall:
+          "Confiar num horário de corte de um guia escrito no ano passado. A estrutura se repete e os números não.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Ainda dá para cancelar o meu pedido?",
+        a: "Só enquanto o status permitir. O caminho do Weverse Shop é o aplicativo Weverse, More, My Orders, Order Details, Cancel Order — e ele afirma que, quando o status muda para Shipping Soon ou In Transit, o cancelamento não é mais possível. Não há período de carência publicado, então a resposta depende do pedido e não do relógio.",
+      },
+      {
+        q: "Eu estou na UE e o meu pedido veio com cobrança aduaneira. Isso está certo?",
+        a: "Provavelmente. O Weverse Shop diz que a partir de 1º de julho de 2026 a UE eliminou a isenção de tributos que antes cobria pedidos abaixo de 150 euros, então os tributos agora se aplicam independentemente do valor, com base em remessas que passem pelo desembaraço local a partir dessa data. Ele também avisa que você pode receber instruções de pagamento separadas da aduana ou da transportadora, e que não pagar pode atrasar ou impedir a entrega.",
+      },
+      {
+        q: "Por que o meu pedido americano está lento se não há tributo a pagar?",
+        a: "Porque são duas mudanças. Além das regras de tributos, o Weverse Shop alerta que a partir de 8 de julho de 2026 a Consumer Product Safety Commission dos EUA passa a exigir eFiling obrigatório, trazendo inspeções mais rígidas sobre todas as mercadorias importadas para os EUA, com desembaraço levando alguns dias a mais. Essa custa tempo em vez de dinheiro.",
+      },
+      {
+        q: "Recebi uma mensagem pedindo que eu pague a aduana. É golpe?",
+        a: "Pode legitimamente ser real — o Weverse Shop diz que clientes da UE podem receber instruções de pagamento separadas da aduana local ou da transportadora. E é também exatamente o que um golpe imita. Verifique casando o código de rastreio com o seu próprio pedido e indo ao site da transportadora por conta própria, em vez de seguir um link da mensagem.",
+      },
+      {
+        q: "Qual é o corte de feriado num pedido de feriado coreano?",
+        a: "O Weverse Shop publica um por feriado, no minuto. No Chuseok de 2026 o corte para endereços fora da Coreia foi 23 de setembro às 11:00 KST, com a entrega expressa retomando em 28 de setembro. Ele avisa que o cronograma vem da transportadora e pode mudar, e que itens enviados no dia do corte ainda podem chegar depois do feriado. Consulte o corte atual em vez de reaproveitar estas datas.",
+      },
+      {
+        q: "O meu rastreio não atualiza há uma semana. O meu pacote se perdeu?",
+        a: "Confira primeiro na página de avisos se há uma crise cobrindo a sua região. Quando o Weverse Shop avisou atrasos para a Europa e o Oriente Médio em abril de 2026, ele disse que o desvio de rotas faz as atualizações de rastreio e as chegadas locais demorarem mais que o habitual e que o pacote continua em trânsito — então um rastreio parado durante uma crise conhecida é o sintoma e não o problema.",
+      },
+      {
+        q: "Tem algo errado com o meu item. Eu trato com a Weverse?",
+        a: "Nem sempre. O Weverse Shop afirma que alguns produtos são vendidos por vendedores terceiros individuais, que a Weverse Company então atua apenas como intermediária e não é parte da transação, e que ela não assume responsabilidade pelas informações de produto nem pelas transações desses vendedores. Veja que tipo de item você comprou antes de decidir a quem procurar.",
+      },
+      {
+        q: "O cronograma de feriados chineses me afeta se eu não estou na China?",
+        a: "Os avisos dizem que esses cronogramas valem para pedidos com endereço de entrega na China, porque as repartições aduaneiras chinesas fecham nos feriados. Se o seu endereço é em outro lugar, os cortes de feriado coreano e qualquer crise de frete ativa são os que você deve acompanhar.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pourquoi votre commande Weverse Shop est en retard, et quand vous pouvez encore l'annuler",
+    summary:
+      "Le bouton d'annulation disparaît sur un changement de statut et non à une date limite, l'Union européenne a supprimé sa franchise de 150 euros, les États-Unis ont ajouté un second régime d'inspection par-dessus celui des droits, et un jour férié coréen a une heure de clôture fixée à la minute.",
+    scope:
+      "Couvre ce qui se passe après qu'une commande Weverse Shop a été passée, à partir des avis publiés par Weverse Shop : la fenêtre d'annulation, les changements douaniers dont elle a averti pour l'UE et les États-Unis, les retards de jours fériés et de logistique, et l'identité réelle du vendeur. Les dates de jours fériés sont celles de 2026 et seront fausses l'an prochain — la page des avis est la version vivante. La commande elle-même a son propre guide.",
+    intro: [
+      "Weverse Shop publie un flux continu d'avis sur les livraisons, et presque personne ne les lit avant qu'un colis ne soit en retard. C'est pourtant là que se trouvent les vraies réponses : quel changement douanier vous concerne, quel jour férié a mangé quatre jours, et la minute exacte où une commande a cessé d'être annulable.",
+      "Voici ce flux, lu d'un seul tenant. Deux des points ci-dessous sont de véritables règles nouvelles et non des retards saisonniers, et l'un d'eux est le moment où votre argent cesse d'être remboursable.",
+    ],
+    steps: [
+      {
+        title: "Sachez que la fenêtre d'annulation se ferme sur un statut, pas sur une horloge",
+        body: "Voilà le fait à connaître avant que quoi que ce soit n'aille de travers. Weverse Shop donne le chemin d'annulation suivant : l'application Weverse, puis More, puis My Orders, puis Order Details, puis Cancel Order — et précise qu'une fois le statut de votre commande passé à Shipping Soon ou In Transit, vous ne pourrez plus l'annuler. Aucun délai de grâce n'est annoncé, ni aucune règle d'heures après la commande. La fenêtre reste ouverte jusqu'à ce qu'un entrepôt change un statut, ce qui peut arriver plus tôt que vous ne le pensez sur une sortie très demandée.",
+        pitfall:
+          "Décider pendant la nuit si vous gardez une précommande faite sur un coup de tête. La date limite n'est pas une heure que vous pouvez consulter — c'est un événement que vous ne maîtrisez pas, et il peut passer pendant votre sommeil.",
+        takes: "5 minutes, tout de suite",
+      },
+      {
+        title: "Si vous êtes dans l'Union européenne, la franchise de 150 euros a disparu",
+        body: "L'avis de Weverse Shop est précis là où la couverture générale reste vague. À compter du 1er juillet 2026, l'UE a révisé ses règles sur les importations de faible valeur : auparavant les commandes inférieures à 150 euros étaient exonérées de droits de douane, et cette exonération a été supprimée, de sorte que les droits s'appliquent désormais quel que soit le montant de l'achat. Le détail le plus important est la base retenue — Weverse indique que cela vaut pour les envois dédouanés localement à partir du 1er juillet 2026, selon la date de dédouanement local et non la date de commande. Une commande passée avant le changement peut donc malgré tout tomber dedans.",
+        pitfall:
+          "Supposer qu'une petite commande est trop bon marché pour être taxable. Il n'existe plus de plancher, et la date qui en décide est une date que la page de commande ne vous montre pas.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Attendez-vous à ce que la douane, ou le transporteur, vous réclame de l'argent directement",
+        body: "Weverse Shop indique que les commandes vers l'UE peuvent donner lieu à des droits lors du dédouanement local, que vous pouvez recevoir des instructions de paiement distinctes de la douane locale ou du transporteur, et que ne pas acquitter ces droits peut retarder ou empêcher la livraison. C'est une expérience différente d'un prélèvement au moment de payer : un message arrive d'une entreprise avec laquelle vous n'avez aucune relation, réclamant de l'argent avant qu'un colis que vous avez déjà payé ne bouge. Ce n'est pas une arnaque par défaut — mais c'est exactement ce qu'une arnaque imite : vérifiez donc le numéro de suivi par rapport à votre commande plutôt que de suivre un lien contenu dans le message.",
+        pitfall:
+          "Ignorer une demande de paiement douanière ou du transporteur en la prenant pour de l'hameçonnage et laisser le colis attendre. Le non-paiement est l'une des façons documentées dont une commande n'arrive tout simplement jamais.",
+        takes: "—",
+      },
+      {
+        title: "Si vous êtes aux États-Unis, sachez qu'il y a deux changements distincts, pas un",
+        body: "Le changement sur les droits monopolise la couverture et il n'est pas la seule chose qui ralentit les colis américains. Weverse Shop avertit séparément qu'à compter du 8 juillet 2026 la Consumer Product Safety Commission des États-Unis impose une politique obligatoire d'eFiling, entraînant des inspections douanières locales plus strictes sur toutes les marchandises importées aux États-Unis, et que le dédouanement devrait prendre quelques jours de plus que le délai de livraison standard. C'est un régime de déclaration de sécurité des produits et non un droit de douane — une commande américaine peut donc être lente pour une raison qui n'a rien à voir avec le montant dû.",
+        pitfall:
+          "Lire tout retard américain comme le changement de franchise et attendre une facture de droits qui ne vient jamais. L'un de ces deux changements coûte de l'argent et l'autre coûte des jours.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Traitez un jour férié coréen comme une clôture mesurée en minutes",
+        body: "Weverse Shop publie un calendrier de clôture pour chaque jour férié coréen, et les heures sont précises. Pour le Chuseok 2026, la clôture des commandes vers des adresses hors de Corée du Sud était le 23 septembre à 11:00 KST, la livraison express reprenant le 28 septembre ; pour les adresses coréennes, la clôture transporteur était le 22 septembre à 11:00 KST, avec reprise le jour même. Les commandes passées après la clôture partent dans l'ordre à compter de la date de reprise. Weverse ajoute deux réserves : les articles expédiés le jour de la clôture peuvent tout de même arriver après le férié selon la zone, et le calendrier vient du transporteur et peut changer.",
+        pitfall:
+          "Lire ces dates comme celles de cette année. Ce sont les chiffres du Chuseok 2026, et c'est le schéma — une clôture à 11:00 KST un ou deux jours avant, une reprise environ une semaine plus tard — qui se reporte. Les dates elles-mêmes doivent être vérifiées à chaque fois.",
+        takes: "10 minutes avant une commande de période de fêtes",
+      },
+      {
+        title: "Si votre adresse est en Chine, un second calendrier de jours fériés s'applique",
+        body: "Weverse Shop publie des avis distincts pour les jours fériés chinois, qui concernent les commandes dont l'adresse de livraison est en Chine, parce que les bureaux de douane chinois ferment et que le dédouanement s'arrête. Pour la fête de la mi-automne 2026, du 25 au 27 septembre, et la fête nationale, du 1er au 7 octobre, elle a indiqué que les commandes intégralement payées avant le 15 septembre à 11:00 KST seraient probablement livrées pendant la fête nationale, et que les commandes payées après commenceraient à partir une fois le férié terminé, le 8 octobre. Notez que c'est le paiement achevé qui compte, et non la commande passée.",
+        pitfall:
+          "Une précommande dont le paiement s'achève plus tard que vous ne le croyez. Là où la clôture se définit par le paiement intégral, une commande impayée est une commande de l'autre côté d'un trou de trois semaines.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Distinguez une perturbation du fret d'un colis perdu",
+        body: "Certains retards ne relèvent ni de la douane ni des jours fériés. En avril 2026, Weverse Shop a informé ses clients de retards de livraison dans toute l'Europe et dans certains pays du Moyen-Orient, dus à des fluctuations des routes logistiques mondiales et des plannings de fret aérien et maritime, touchant les commandes expédiées après le 1er avril 2026 et se trouvant en transit international. Le plus utile est ce qu'elle en dit sur le suivi : à cause des reroutages, les mises à jour de suivi et les arrivées locales peuvent prendre plus de temps que d'habitude, et le colis est toujours en transit. Un suivi silencieux pendant une perturbation connue est le symptôme attendu, pas la preuve d'une perte.",
+        pitfall:
+          "Ouvrir une réclamation pour colis perdu parce que le suivi n'a pas bougé depuis une semaine. Vérifiez d'abord sur la page des avis qu'aucune perturbation en cours ne couvre votre région — une réclamation déposée pour un colis simplement rerouté consomme le temps dont vous auriez besoin pour une vraie.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Vérifiez si Weverse est bien le vendeur",
+        body: "Weverse Shop indique sur ses propres pages que certains produits sont proposés par des vendeurs tiers individuels, que dans ces cas Weverse Company agit uniquement comme intermédiaire de commerce électronique et n'est pas partie à la transaction, et qu'elle n'assume aucune responsabilité quant aux informations produit ni aux transactions menées par ces vendeurs. Cela change votre interlocuteur quand quelque chose ne va pas — pour un article tiers, la contrepartie est le vendeur, pas Weverse. Mieux vaut l'établir avant d'avoir à réclamer que pendant.",
+        pitfall:
+          "Supposer que tout ce que vend la boutique bénéficie de la même garantie parce que tout passe par le même paiement. La clause d'intermédiation est publiée, et c'est elle qui décide qui vous doit réparation.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Lisez les avis vous-même, car cette page vieillira plus vite que la plupart",
+        body: "Tout ce qui précède vient de la page des avis de Weverse Shop, et cette page est la version vivante. Les changements douaniers sont durables ; les calendriers de jours fériés, les perturbations du fret et les clôtures des transporteurs ne le sont pas — ils sont réédités à chaque occasion et remplacés sans que l'ancien avis change. Avant une commande de période de fêtes, ou quand un colis est en retard, lisez la liste des avis plutôt que de vous fier aux dates d'un guide, celui-ci compris. La date en haut de cette page est celle de notre dernière lecture.",
+        pitfall:
+          "Se fier à une heure de clôture tirée d'un guide écrit l'an dernier. La structure se répète, les chiffres non.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Puis-je encore annuler ma commande ?",
+        a: "Seulement tant que le statut le permet. Le chemin donné par Weverse Shop est l'application Weverse, More, My Orders, Order Details, Cancel Order — et elle précise qu'une fois le statut passé à Shipping Soon ou In Transit, l'annulation n'est plus possible. Aucun délai de grâce n'est publié : la réponse dépend donc de la commande et non de l'horloge.",
+      },
+      {
+        q: "Je suis dans l'UE et ma commande fait l'objet d'une facture douanière. Est-ce normal ?",
+        a: "Probablement. Weverse Shop indique qu'à compter du 1er juillet 2026 l'UE a supprimé l'exonération de droits qui couvrait auparavant les commandes inférieures à 150 euros, de sorte que les droits s'appliquent désormais quel que soit le montant, sur la base des envois dédouanés localement à partir de cette date. Elle avertit aussi que vous pouvez recevoir des instructions de paiement distinctes de la douane ou du transporteur, et que ne pas payer peut retarder ou empêcher la livraison.",
+      },
+      {
+        q: "Pourquoi ma commande américaine est-elle lente s'il n'y a pas de droits à payer ?",
+        a: "Parce qu'il y a deux changements. À côté des règles de droits, Weverse Shop avertit qu'à compter du 8 juillet 2026 la Consumer Product Safety Commission des États-Unis impose l'eFiling obligatoire, entraînant des inspections plus strictes sur toutes les marchandises importées aux États-Unis, avec un dédouanement qui devrait prendre quelques jours de plus. Celui-là coûte du temps plutôt que de l'argent.",
+      },
+      {
+        q: "J'ai reçu un message me demandant de payer la douane. Est-ce une arnaque ?",
+        a: "Cela peut légitimement être authentique — Weverse Shop indique que les clients de l'UE peuvent recevoir des instructions de paiement distinctes de la douane locale ou du transporteur. C'est aussi exactement ce qu'une arnaque imite. Vérifiez en rapprochant le numéro de suivi de votre propre commande et en allant vous-même sur le site du transporteur plutôt qu'en suivant un lien du message.",
+      },
+      {
+        q: "Quelle est l'heure de clôture pour une commande en période de fête coréenne ?",
+        a: "Weverse Shop en publie une par jour férié, à la minute près. Pour le Chuseok 2026, la clôture pour les adresses hors de Corée était le 23 septembre à 11:00 KST, la livraison express reprenant le 28 septembre. Elle prévient que le calendrier vient du transporteur et peut changer, et que les articles expédiés le jour de la clôture peuvent tout de même arriver après le férié. Vérifiez la clôture en vigueur plutôt que de réutiliser ces dates.",
+      },
+      {
+        q: "Mon suivi n'a pas bougé depuis une semaine. Mon colis est-il perdu ?",
+        a: "Vérifiez d'abord sur la page des avis si une perturbation couvre votre région. Quand Weverse Shop a signalé des retards pour l'Europe et le Moyen-Orient en avril 2026, elle indiquait que le reroutage fait que les mises à jour de suivi et les arrivées locales prennent plus de temps que d'habitude et que le colis est toujours en transit — un suivi figé pendant une perturbation connue est donc le symptôme et non le problème.",
+      },
+      {
+        q: "Il y a un problème avec mon article. Est-ce avec Weverse que je dois traiter ?",
+        a: "Pas toujours. Weverse Shop indique que certains produits sont vendus par des vendeurs tiers individuels, que Weverse Company agit alors uniquement comme intermédiaire et n'est pas partie à la transaction, et qu'elle n'assume aucune responsabilité quant aux informations produit ou aux transactions de ces vendeurs. Vérifiez de quel type d'article il s'agit avant de décider à qui vous adresser.",
+      },
+      {
+        q: "Le calendrier des fêtes chinoises me concerne-t-il si je ne suis pas en Chine ?",
+        a: "Les avis précisent que ces calendriers s'appliquent aux commandes dont l'adresse de livraison est en Chine, parce que les bureaux de douane chinois ferment pendant les fêtes. Si votre adresse est ailleurs, ce sont les clôtures des jours fériés coréens et toute perturbation du fret en cours qu'il faut surveiller.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

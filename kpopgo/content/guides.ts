@@ -3064,7 +3064,7 @@ export const guides: Guide[] = [
       },
       {
         title: "The other two digits are a position on a loop that turns one way",
-        body: "Inside a level the numbers run in a single direction all the way round — clockwise, on the chart as the venue prints it — and every level starts from the same side of the building. So the step from 401 to 405 is the same rotation as the step from 301 to 305, in the same direction, at a different height. There is no left half and right half to learn, and no odd and even side.",
+        body: "Inside a level the numbers run in a single direction all the way round, and that is the venue's own word for it rather than something measured off the picture: the description published with the chart says the blocks run 시계방향 — clockwise — starting from the bottom right of the infield side, and then lists them in that order. Every level starts from the same side of the building. So the step from 401 to 405 is the same rotation as the step from 301 to 305, in the same direction, at a different height. There is no left half and right half to learn, and no odd and even side.",
         pitfall:
           "Expecting the levels to stack block for block. They hold 32, 22, 34 and 35 blocks, so they drift apart as they go round: only the line they start from is shared. 417 is not above 317, and a friend in 210 is not below you in 310.",
         takes: "2 minutes",
@@ -3113,7 +3113,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Which direction do the numbers run?",
-        a: "Clockwise, on the venue's chart as printed, and the same way at every level. The gate letters run the same way: A, B, C, D, E along the near side and F, G across the far side. That means letters and numbers rise together — if you pass gate D on your way to gate E, your block numbers are rising too.",
+        a: "Clockwise, and the venue says so itself: the description published with its chart reads 시계방향, starting from the bottom right of the infield side, and the block ranges it then lists match the picture on both sides. The same direction at every level. The gate letters run the same way: A, B, C, D, E along the near side and F, G across the far side. That means letters and numbers rise together — if you pass gate D on your way to gate E, your block numbers are rising too.",
       },
       {
         q: "Is block 417 directly above block 317?",
@@ -3135,7 +3135,7 @@ export const guides: Guide[] = [
     sources: [
       {
         label:
-          "서울시설공단 고척스카이돔 — 좌석배치도: the seating chart the block ranges, gate letters and ticket offices are read from",
+          "서울시설공단 고척스카이돔 — 좌석배치도: the seating chart, and the text description published with it, which states the clockwise direction and lists every block range on each side",
         url: "https://www.sisul.or.kr/open_content/skydome/introduce/seat.jsp",
       },
       {

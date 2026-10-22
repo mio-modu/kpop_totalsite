@@ -283,9 +283,25 @@ It lands with German and Spanish on both exclusions, on the tests they were
 already given rather than new ones. France observes daylight saving and Korea
 does not, so the timezone guide applies: checked against this container's
 zoneinfo, 20:00 KST is 12:00 in Paris in January and 13:00 in July, which is
-exactly the Berlin and Madrid line the English page already converts for — no
-English edit needed, and therefore no re-sync cascade. France is in the EU, so
-the customs guide is refused for the reason counted there.
+exactly the Berlin and Madrid line the English page converts for. France is in
+the EU, so the customs guide is refused for the reason counted there.
+
+**Paris is now named in that line, and the way it was added is the pattern.**
+Arithmetically it changed nothing — `zdump -v` shows Europe/Paris and
+Europe/Berlin transitioning in the same second, 28 March and 31 October 2027
+included — but a French reader should not have to know that Paris is Berlin to
+use the sentence. So the city went into the English page and into all three
+translations of that step in the same commit. Not into the English alone:
+there is no check that would have caught it. The step and FAQ counts catch a
+translation that is short an item; a sentence that grew a word inside a body
+string is invisible to every assertion in the suite, which is exactly the
+"silently short" case the register warns about.
+
+`lastChecked` deliberately did not move. It records when a source was last
+held against the live platform, not when the English text was edited — so
+moving it would have put a "the English was re-checked" banner on ten
+editions to report a word, and the honest way to clear that banner is to
+re-check the sources, which nobody did.
 
 French needed one check no other edition did. It groups thousands with a
 space rather than a period, so a correctly written `8 000` read as a missing

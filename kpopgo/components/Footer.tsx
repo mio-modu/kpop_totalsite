@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { guides, RESEARCH_DATE } from "@/content/guides";
+import { localesWithContent } from "@/content/translations";
+import { LOCALES } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -80,6 +82,51 @@ export function Footer() {
           </ul>
         </div>
       </div>
+
+      {/*
+        Ten links to the language indexes, on every page.
+
+        This is not the site-wide language switcher LanguageLinks refuses, and
+        the difference is what makes it safe. That component is per guide
+        because only some guides are translated, so a global toggle would
+        either 404 or drop a reader onto English fifteen pages out of twenty.
+        These links go to an *index* — a page that exists for every language
+        listed and shows exactly what that language has. Nothing here can
+        promise a translation that is not there.
+
+        It is also the only reader-visible route from the English site into
+        the other editions. hreflang tells a crawler they exist and tells a
+        reader nothing, and before this row no anchor anywhere on an English
+        page pointed at /ja or /th. One line in the footer is also the
+        cheapest crawl path into the indexes that root each edition.
+
+        Each name is set in its own language, with `lang` so a screen reader
+        pronounces it rather than spelling it out in English, and `hrefLang`
+        so the relationship is stated rather than inferred from the href. The
+        list comes from the register, so a language appears here when it has
+        pages and not when it is merely declared.
+      */}
+      <nav
+        aria-label="Languages"
+        className="wrap py-5"
+        style={{ borderTop: "1px solid var(--rule-soft)" }}
+      >
+        <ul className="t-sm flex flex-wrap items-center gap-x-5 gap-y-2">
+          <li className="data-sm dim">Read in</li>
+          {localesWithContent().map((code) => (
+            <li key={code}>
+              <Link
+                href={LOCALES[code].prefix}
+                className="tap hover:text-[var(--ink)]"
+                hrefLang={LOCALES[code].tag}
+                lang={LOCALES[code].tag}
+              >
+                {LOCALES[code].native}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       <div
         className="wrap flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between"

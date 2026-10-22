@@ -175,14 +175,40 @@ const JA_LABELS = {
 
 /**
  * One guide is deliberately in no language but English, and a second is in
- * two of the five. Both are decisions with reasons, not oversights, and the
- * reasons are here because the counts will keep moving and the reasoning
+ * three of the seven. Both are decisions with reasons, not oversights, and
+ * the reasons are here because the counts will keep moving and the reasoning
  * should not have to be reconstructed each time.
  *
  * Where it stands against twenty-one English guides:
  *
  *   ja, zh-Hant, id   19/21   skip the timezone guide and the customs guide
- *   de, es            20/21   skip the customs guide only
+ *   pt-BR             19/21   skip the timezone guide and the customs guide
+ *   de, es, fr        20/21   skip the customs guide only
+ *
+ * All seven are complete at their intended counts as of 2026-10-22. That
+ * sentence is worth dating, because "in progress" is the state this file was
+ * in for most of its life and the state it will be in again the next time a
+ * language is added — a count that has stopped moving looks identical to a
+ * count nobody is moving.
+ *
+ * `pt-BR` sits with the Asian three rather than with the European ones, and
+ * the region in its code is what makes that decidable instead of arguable.
+ * Brazil abolished daylight saving in 2019, so the timezone guide — which is
+ * really a daylight-saving guide — teaches arithmetic a Brazilian reader
+ * never has to do. Checked against this container's zoneinfo rather than
+ * recalled: America/Sao_Paulo, America/Manaus and America/Recife hold the
+ * same offset in January and July, and 20:00 KST is 08:00 in Sao Paulo on
+ * both dates. Portugal does observe it, which is exactly why a generic `pt`
+ * edition would have to carry that guide for half its readers and waste it
+ * on the other half.
+ *
+ * `fr` carries no region, and that is the honest scope rather than a
+ * shortcut. Brazil's region decided a page; France's would decide nothing.
+ * Its readers are spread across zones that agree on everything this site
+ * covers — Paris, Brussels and Montreal all observe daylight saving — and
+ * the one francophone zone that does not, Dakar, is not a market with a
+ * reader here. It takes the timezone guide for the same reason German and
+ * Spanish do, and refuses the customs guide on the same test.
  *
  * Four editions once skipped the same two. Three arrived there without being
  * planned to, written at different times for different reasons; German was
@@ -13536,6 +13562,92 @@ export const translations: Translation[] = [
       {
         q: "Suis-je obligé d'utiliser la navette, et puis-je y monter une valise ?",
         a: "Elle est facultative, et ne pas l'utiliser ne rembourse rien. Une valise peut monter à bord, mais NOL World prévient qu'aucun espace à bagages n'est disponible dans le bus une fois à la salle — une valise que vous emportez est donc une valise que vous portez. Il n'y a pas de véhicule de secours si vous manquez le départ, et le point et l'heure d'embarquement du retour sont communiqués avec les billets à l'hôtel.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "kpop-ticketing-day-timezone",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "À quelle heure une vente de billets coréenne ouvre chez vous",
+    summary:
+      "La Corée n'applique pas l'heure d'été et votre pays le fait probablement : l'heure à laquelle une vente coréenne tombe sur votre horloge bouge donc deux à quatre fois par an. Voici comment la calculer juste pour la date, et non pour aujourd'hui.",
+    scope:
+      "Couvre la conversion d'une heure de vente coréenne annoncée vers la vôtre, et l'horloge sur laquelle les plateformes fonctionnent ensuite. Ne couvre pas la manière de gagner une file d'attente, qui tient surtout à l'allocation et à la chance. L'annonce officielle de votre concert est la seule autorité sur l'heure elle-même.",
+    intro: [
+      "Tous les guides qui convertissent une heure de vente coréenne vous donnent un seul chiffre. « 20h KST, c'est 6h sur la côte Est. » Ce chiffre est juste environ quatre mois par an et faux le reste du temps, parce que la Corée n'observe pas l'heure d'été et que la plupart des pays qui lisent ceci l'observent.",
+      "Les heures ci-dessous ont été calculées à partir de la base de données de fuseaux horaires IANA, version 2026c — les mêmes données que celles qu'utilise votre système d'exploitation. Le but n'est pas de les retenir. C'est de convertir pour la date de la vente, ce qui donne rarement la même réponse que convertir pour aujourd'hui.",
+    ],
+    steps: [
+      {
+        title: "Prenez l'heure annoncée comme du KST, et ne la corrigez pas",
+        body: "Les ventes coréennes sont annoncées en heure coréenne, et l'heure coréenne ne bouge pas : le KST est UTC+9 toute l'année, sans ajustement estival. Une vente générale est couramment annoncée pour 20:00 KST en semaine, mais c'est une convention et non une règle — 19:00 et 14:00 apparaissent aussi, et les fenêtres de vérification de fan-club ouvrent souvent plus tôt le même jour, selon leur propre calendrier. L'annonce de votre concert est la seule autorité.",
+        pitfall:
+          "Reprendre l'heure d'une tournée précédente en supposant que celle-ci s'y conforme. La plateforme est la même, l'heure souvent non.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Convertissez pour la date de la vente, pas pour aujourd'hui",
+        body: "C'est tout le guide en une phrase. Comme la Corée ne bouge jamais et que vous bougez, l'heure locale d'une vente coréenne dépend du côté de votre propre changement d'heure où tombe la date. À 20:00 KST, une vente tombe à 06:00 à New York en janvier et à 07:00 en juillet. Los Angeles passe de 03:00 à 04:00, Toronto de 06:00 à 07:00, Londres de 11:00 à 12:00, Berlin et Madrid de 12:00 à 13:00.",
+        pitfall:
+          "Faire la conversion aujourd'hui dans un moteur de recherche pour une vente dans trois semaines. Si un changement d'heure tombe entre-temps, la réponse obtenue est fausse d'une heure — et fausse dans le sens où l'on arrive en retard.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Si vous êtes en Australie, l'écart bouge dans l'autre sens",
+        body: "L'heure d'été de l'hémisphère sud fonctionne à l'inverse de celle du nord. À 20:00 KST, une vente a lieu à 22:00 à Sydney en janvier et à 21:00 en juillet — l'écart se resserre pendant l'été du nord au lieu de s'élargir. Santiago fait de même, 08:00 en janvier et 07:00 en juillet, et c'est la seule capitale d'Amérique latine hispanophone dont les horloges bougent. Sur une année entière, le décalage de Sydney varie d'une heure dans le sens opposé à tous les chiffres nord-américains et européens ci-dessus : une conversion empruntée à un fan américain est donc fausse de deux heures.",
+        pitfall:
+          "La plupart des guides sur le sujet sont écrits pour des lecteurs américains. Les fans australiens et néo-zélandais héritent de leur arithmétique et arrivent avec une ou deux heures de retard.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Vérifiez si un changement d'heure tombe entre aujourd'hui et la vente",
+        body: "Les dates de bascule ne sont pas les mêmes d'un pays à l'autre, ce qui crée de courtes périodes où la conversion habituelle est fausse même entre deux pays qui l'observent tous les deux. En 2027, New York change le 14 mars, Londres le 28 mars, Sydney le 4 avril ; Berlin et Madrid changent en même temps que Londres et reviennent en arrière le 31 octobre. La majeure partie de l'Amérique latine hispanophone ne change pas du tout — Bogotá, Lima et Buenos Aires conservent un écart fixe avec la Corée, tout comme Mexico, et Manille également. Pour ces lecteurs, cette étape ne s'applique tout simplement pas, ce qui mérite d'être su en soi. Si la date de la vente se situe de l'autre côté de votre propre bascule, réglez votre réveil sur l'heure convertie pour cette date-là.",
+        pitfall:
+          "Les deux semaines d'écart entre la bascule nord-américaine et l'européenne en mars sont le piège classique, parce que la différence familière entre New York et Londres n'est brièvement pas celle qu'elle est d'habitude.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Notez la date autant que l'heure",
+        body: "Pour la plus grande partie des Amériques, une vente coréenne du soir tombe le même jour calendaire, tôt le matin. Pour Sydney, c'est le même soir. L'heure est la partie que l'on convertit et la date celle que l'on suppose, et un réveil réglé à la bonne heure le mauvais jour vaut l'absence de réveil.",
+        pitfall:
+          "Une vente annoncée pour un mardi soir à Séoul est un mardi matin à New York. Écrire « mardi » dans un agenda sans l'heure convertie, c'est ainsi que l'on se trompe d'un jour.",
+        takes: "1 minute",
+      },
+      {
+        title: "Soyez connecté et vérifié avant la fenêtre, pas dedans",
+        body: "Tout ce qui peut être fait à l'avance doit déjà l'être quand l'heure arrive : compte créé, vérification de client étranger traitée, abonnement de fan-club rattaché, moyen de paiement activé pour l'international et pour le 3-D Secure. Les systèmes de file d'attente laissent couramment une courte fenêtre pour choisir les places et payer avant de libérer la réservation, et aucune de ces minutes n'est de trop.",
+        pitfall:
+          "Ouvrir une fenêtre de navigation privée toute neuve par précaution revient à se connecter et à se re-vérifier à l'intérieur de la file, ce qui coûte plus que cela ne protège.",
+        takes: "30 minutes avant l'ouverture",
+      },
+      {
+        title: "Connaissez aussi l'horloge de fermeture, qui est une autre horloge",
+        body: "L'heure d'ouverture n'est pas la seule échéance qui tourne à l'heure coréenne. Sur YES24 Global, la réservation ferme à 17h la veille pour un concert du mardi au samedi et à 11h le samedi pour un concert du dimanche ou du lundi, et l'annulation suit exactement la même horloge. Ce sont aussi des heures KST, et la même conversion s'applique — dans l'autre sens, au moment où cela compte le plus.",
+        pitfall:
+          "Calculer une annulation à partir de la date du concert plutôt que de l'échéance de la plateforme. Une fois celle-ci passée, il n'y a ni annulation, ni modification, ni remboursement.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "La Corée applique-t-elle l'heure d'été ?",
+        a: "Non. Le KST est UTC+9 toute l'année. La Corée a appliqué l'heure d'été en 1987 et 1988, autour des Jeux olympiques de Séoul, et ne l'a plus fait depuis — la base de données des fuseaux horaires ne montre aucun changement de décalage dans les quatre décennies qui ont suivi. Toute variation de l'écart entre la Corée et votre pays vient donc de votre côté.",
+      },
+      {
+        q: "À quelle heure les ventes de billets coréennes ouvrent-elles généralement ?",
+        a: "Une vente générale est couramment annoncée pour 20:00 KST en semaine, souvent un à trois mois avant le concert. C'est une convention et non une règle — d'autres heures apparaissent régulièrement, et les préventes de fan-club et leurs fenêtres de vérification suivent leur propre calendrier, plus tôt. Lisez l'annonce.",
+      },
+      {
+        q: "Pourquoi ma conversion change-t-elle d'une heure sans arrêt ?",
+        a: "Parce que votre pays change ses horloges et que la Corée ne le fait pas. Convertissez pour la date de la vente plutôt que pour aujourd'hui, et vérifiez si votre propre bascule tombe entre les deux.",
+      },
+      {
+        q: "Je suis en Australie — puis-je utiliser la conversion d'un fan américain ?",
+        a: "Non. L'heure d'été de l'hémisphère sud fonctionne à l'inverse : l'écart de Sydney se resserre quand celui de New York s'élargit. Emprunter une conversion du nord vous décale de deux heures au maximum.",
       },
     ],
     labels: FR_LABELS,

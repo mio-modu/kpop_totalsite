@@ -67,15 +67,18 @@ appear in `main` under different ones:
   `npm run hosts`, supplied **inside a fenced code block** because pasting bare
   hostnames has twice come back markdown-linkified. Editing the field replaces
   it, so a partial paste is how hosts go dark.
-- **`www.inspirekorea.com` is not an allowlist problem, and the previous note
-  here was wrong about it.** The gateway answers **502** to CONNECT for it on
-  every attempt, where a host missing from the field answers **403** — checked
-  against the apex `inspirekorea.com`, which does answer 403. So it is already
-  declared and permitted, and the fetch fails upstream: pasting the list again
-  will not move it. CLAUDE.md now carries the 403-vs-502 reading under
-  **Outbound hosts**. What it needs next is somebody establishing whether the
-  host serves at all from outside this container, because nothing here can see
-  past the gateway. The Inspire Arena guide waits on that, not on a paste.
+- **Inspire Arena needs a live hostname, and that is the whole blocker.**
+  `www.inspirekorea.com` was recorded here for weeks as blocked by the
+  allowlist. It was never blocked: the gateway answers **502** to CONNECT for
+  it where a refused host answers **403**, and a browser outside this container
+  answers `DNS_PROBE_FINISHED_NXDOMAIN` — **the domain does not resolve.** It
+  is the address Mohegan's own 2024 press releases give, so it was right once
+  and is not now. The declaration is gone, with that evidence in
+  `scripts/hosts.mjs` rather than a guess in its place. `inspireer.com` is the
+  other address in circulation and was a pre-opening holding page in 2024, so
+  it is a candidate to check and not an answer. Nothing in this container can
+  resolve a domain the gateway has not been given, so finding the live host
+  takes a browser or a current listing — not a paste.
 - **GA4** — confirm the `scroll` key event and the internal-traffic filter are
   set to 사용 rather than 테스트.
 - **Klook** — the accommodation commission rate is still unknown.

@@ -83,7 +83,18 @@ const FIXED = [
   ["www.kspo.or.kr", "KSPO, the foundation that owns Olympic Park — corporate, not the venue"],
   ["kspo.or.kr", "KSPO, apex"],
   ["www.sisul.or.kr", "Seoul Facilities Corporation — Gocheok Sky Dome and Jamsil"],
-  ["www.inspirekorea.com", "Inspire Arena, Incheon — the newest large venue"],
+  // Inspire Arena has no declaration, because nobody has a host for it. This
+  // sat here for weeks as `www.inspirekorea.com`, recorded as blocked by the
+  // allowlist, and it was neither blocked nor a host: the gateway answers 502
+  // rather than the 403 a refused host gets, and a browser outside this
+  // container answers DNS_PROBE_FINISHED_NXDOMAIN — the domain does not
+  // resolve. It is the address Mohegan's own 2024 press releases give, so it
+  // was right once. `inspireer.com` is the other address in circulation and
+  // was already a pre-opening holding page in 2024, so it is a candidate and
+  // not an answer. Declaring a guess here would re-create exactly the state
+  // this comment replaces: a host nobody can reach, with a reason that reads
+  // as though somebody checked. Find the live host first, from the venue's
+  // own ticketing or a current listing, then declare it.
   ["www.kintex.com", "KINTEX, Goyang — hosts arena-scale concerts and fan events"],
   ["english.visitseoul.net", "Seoul tourism, English — transport and access pages"],
   ["www.seoulmetro.co.kr", "Seoul Metro — the line and exit a venue is reached from"],

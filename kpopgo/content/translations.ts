@@ -14189,6 +14189,417 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Bán trước cho fan club: làm sao đủ điều kiện trước khi đóng",
+    summary:
+      "Có tư cách thành viên không đồng nghĩa với có quyền mua. Giữa hai thứ đó còn một bước xác minh, bước này có hạn chót riêng, và bỏ lỡ nó là cách phổ biến nhất khiến fan mất suất bán trước.",
+    scope:
+      "Nói về hình hài chung của việc đủ điều kiện mua trước cho fan club với các show Hàn Quốc. Mỗi tour tự đặt hạng thành viên, hạn chót và điều kiện riêng trong thông báo chính thức, và thông báo đó đè lên mọi quy tắc chung.",
+    intro: [
+      "Quyền mua trước là một chuỗi ba mắt xích, và fan thường chỉ biết mắt xích đầu tiên. Bạn mua tư cách thành viên. Rồi bạn liên kết và xác minh tư cách đó với tài khoản bán vé. Chỉ khi ấy bạn mới có quyền mua trước.",
+      "Mỗi mắt xích có hạn chót riêng, và hạn chót của bước xác minh thường sớm hơn người ta tưởng — có trường hợp sớm hơn chính đợt bán trước vài ngày. Một tư cách thành viên mua vào tối hôm trước có thể đã quá muộn, dù nó vẫn đang có hiệu lực.",
+      "Hãy coi thông báo là bản đặc tả, còn trang này là danh sách kiểm tra.",
+    ],
+    steps: [
+      {
+        title: "Đọc điều khoản về điều kiện, đừng đọc tiêu đề",
+        body: "Thông báo sẽ nêu rõ sản phẩm thành viên nào và hạng nào thì đủ điều kiện, cùng mốc thời gian mà nó phải đã được mua hoặc phải còn hiệu lực. Đó là hai ngày khác nhau và cả hai đều quan trọng. Hãy ghi chúng lại theo múi giờ của bạn, đặt cạnh giờ KST.",
+        pitfall:
+          "Một tư cách thành viên đang có hiệu lực nhưng được mua sau hạn chót thì ở một số tour là không đủ điều kiện. “Tôi có tư cách thành viên” không giống với “Tôi đã đủ điều kiện”.",
+        takes: "10 phút",
+      },
+      {
+        title: "Mua tư cách thành viên sớm hơn hạn chót thật nhiều",
+        body: "Hãy mua ở cửa hàng chính thức của nghệ sĩ đó. Giữ lại xác nhận đơn hàng và số thành viên. Nếu tư cách thành viên là một bộ sản phẩm vật lý kèm mã điện tử, hãy tính cả thời gian giao hàng và thời gian kích hoạt mã, vốn không diễn ra tức thì. Từ ngày 3 tháng 9 năm 2026, Weverse Shop còn có Thanh toán Tự động trên những gói thành viên hỗ trợ: khoản gia hạn được trừ vào phương thức đã đăng ký vào ngày cuối cùng của kỳ hiệu lực, nên một tư cách thành viên không thể âm thầm hết hạn đúng vào tuần một tour được công bố. Thiết lập này theo từng nhóm thành viên — Global, Japan và USA được quản lý riêng.",
+        pitfall:
+          "Mã thành viên bán lại hoặc được tặng thường trượt ở khâu xác minh, vì tên đăng ký sẽ không khớp với tài khoản bán vé của bạn. Thanh toán Tự động loại bỏ rủi ro hết hạn, nhưng không loại bỏ rủi ro về tên: nó gia hạn đúng tài khoản mà nó được gắn vào, bất kể đó là tài khoản nào.",
+        takes: "30 phút",
+      },
+      {
+        title: "Liên kết và xác minh tư cách thành viên trên nền tảng bán vé",
+        body: "Đây là bước người ta hay bỏ sót. Trên nền tảng bán vé có một thao tác riêng để xác minh tư cách fan club của bạn, và nó mở trong một khung thời gian — thường là vài ngày trước đợt bán trước — rồi đóng lại trước đợt đó. Hãy làm ngay giờ nó mở.",
+        pitfall:
+          "Việc xác minh cho một đợt bán bằng tiếng Hàn và cho một đợt bán toàn cầu có thể được xử lý riêng cho cùng một show. Hoàn tất bên này không nhất thiết cho bạn bên kia.",
+        takes: "20 phút, trong khung thời gian đó",
+      },
+      {
+        title: "Làm cho ba cái tên giống hệt nhau",
+        body: "Hộ chiếu, tư cách thành viên fan club và tài khoản bán vé. Cả ba. Cùng một tên pháp lý, cùng một ngày sinh, cùng một thứ tự. Nếu một chỗ sai, hãy sửa nó trước khung xác minh chứ đừng sửa sau.",
+        pitfall:
+          "Đây là nguyên nhân được ghi nhận thường gặp nhất khiến quyền mua trước không có hiệu lực, và nó vô hình cho tới đúng lúc nó quan trọng.",
+        takes: "15 phút",
+      },
+      {
+        title: "Xác nhận rằng quyền mua trước đã về tới nơi",
+        body: "Sau khi xác minh, hãy tìm một xác nhận rõ ràng — một huy hiệu, một dòng trạng thái, một email. Nếu bạn không tìm thấy xác nhận khẳng định rằng bạn đủ điều kiện, hãy coi như bạn không đủ và liên hệ bộ phận hỗ trợ khi khung thời gian còn mở.",
+        pitfall:
+          "Im lặng không phải là thành công. Một biểu mẫu đã gửi không phải là một quyền đã được cấp.",
+        takes: "10 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Mua tư cách thành viên có bảo đảm được quyền mua trước không?",
+        a: "Không. Ở phần lớn các tour có một bước xác minh riêng để nối tư cách thành viên với tài khoản bán vé của bạn, với khung thời gian riêng mở ra rồi đóng lại trước đợt bán trước. Tư cách thành viên là điều kiện cần, không phải chính cái quyền đó.",
+      },
+      {
+        q: "Tôi dùng tư cách thành viên của người khác được không?",
+        a: "Trên thực tế là không, vì khâu xác minh đối chiếu tên đăng ký và ngày sinh với tài khoản bán vé và giấy tờ tùy thân của bạn. Ngoài việc không chạy được, nó còn khiến đơn hàng có nguy cơ bị hủy.",
+      },
+      {
+        q: "Đợt bán trước mở sớm hơn đợt bán chung bao lâu?",
+        a: "Tùy từng tour. Sớm hơn một ngày trở lên là chuyện thường, và hạn chót của tư cách thành viên còn sớm hơn nữa. Thông báo chính thức của show bạn quan tâm là nguồn đáng tin duy nhất.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "พรีเซลแฟนคลับ: ทำอย่างไรให้มีสิทธิ์ก่อนรอบจะปิด",
+    summary:
+      "การเป็นสมาชิกอย่างเดียวไม่ใช่สิทธิ์เข้าซื้อ ระหว่างสองอย่างนั้นมีขั้นตอนยืนยันคั่นอยู่ ขั้นตอนนั้นมีเส้นตายของตัวเอง และการพลาดมันคือสาเหตุที่แฟน ๆ เสียสิทธิ์พรีเซลบ่อยที่สุด",
+    scope:
+      "ครอบคลุมรูปแบบทั่วไปของการมีสิทธิ์พรีเซลแฟนคลับสำหรับงานในเกาหลี แต่ละทัวร์กำหนดระดับสมาชิก เส้นตาย และเงื่อนไขของตัวเองไว้ในประกาศอย่างเป็นทางการ ซึ่งมีผลเหนือกฎทั่วไปใด ๆ",
+    intro: [
+      "สิทธิ์พรีเซลเป็นโซ่สามข้อต่อ และแฟน ๆ มักรู้จักเพียงข้อแรก คุณซื้อสมาชิกภาพ จากนั้นคุณผูกและยืนยันสมาชิกภาพนั้นกับบัญชีขายบัตร แล้วคุณจึงจะได้สิทธิ์พรีเซล",
+      "แต่ละข้อต่อมีเส้นตายของตัวเอง และเส้นตายของการยืนยันมักมาเร็วกว่าที่คนคาดเสมอ บางกรณีเร็วกว่าตัวรอบพรีเซลหลายวัน สมาชิกภาพที่ซื้อตอนคืนก่อนหน้าอาจสายเกินไปแล้ว ทั้งที่มันยังมีผลอยู่",
+      "ให้ถือว่าประกาศคือข้อกำหนด และหน้านี้คือรายการตรวจสอบ",
+    ],
+    steps: [
+      {
+        title: "อ่านข้อกำหนดคุณสมบัติ ไม่ใช่อ่านพาดหัว",
+        body: "ประกาศจะระบุว่าสมาชิกภาพรุ่นใดและระดับใดจึงมีสิทธิ์ และวันที่ซึ่งต้องซื้อไว้แล้วหรือยังต้องมีผลอยู่ นี่คือสองวันที่ต่างกันและสำคัญทั้งคู่ จดไว้ตามเขตเวลาของคุณเองควบคู่กับเวลา KST",
+        pitfall:
+          "สมาชิกภาพที่ยังมีผลแต่ซื้อหลังเส้นตายนั้น ในบางทัวร์ถือว่าไม่มีสิทธิ์ “ฉันเป็นสมาชิกอยู่” ไม่เท่ากับ “ฉันมีสิทธิ์แล้ว”",
+        takes: "10 นาที",
+      },
+      {
+        title: "ซื้อสมาชิกภาพล่วงหน้าเส้นตายให้มาก",
+        body: "ซื้อจากร้านค้าอย่างเป็นทางการของศิลปินคนนั้น เก็บใบยืนยันคำสั่งซื้อและหมายเลขสมาชิกไว้ ถ้าสมาชิกภาพมาในรูปชุดสินค้าจริงพร้อมรหัสดิจิทัล ให้เผื่อเวลาจัดส่งและเวลาเปิดใช้รหัสด้วย เพราะไม่ได้เกิดขึ้นทันที ตั้งแต่วันที่ 3 กันยายน 2026 Weverse Shop ยังมีระบบชำระเงินอัตโนมัติบนสมาชิกภาพที่รองรับ โดยค่าต่ออายุจะถูกตัดจากวิธีชำระที่ลงทะเบียนไว้ในวันสุดท้ายของช่วงที่มีผล ทำให้สมาชิกภาพไม่หมดอายุอย่างเงียบ ๆ ในสัปดาห์ที่มีการประกาศทัวร์พอดี การตั้งค่านี้แยกตามหมวดสมาชิก — Global, Japan และ USA บริหารแยกกัน",
+        pitfall:
+          "รหัสสมาชิกที่ขายต่อหรือได้รับเป็นของขวัญมักไม่ผ่านการยืนยัน เพราะชื่อที่ลงทะเบียนจะไม่ตรงกับบัญชีขายบัตรของคุณ ระบบชำระเงินอัตโนมัติขจัดความเสี่ยงเรื่องหมดอายุ แต่ไม่ขจัดความเสี่ยงเรื่องชื่อ มันต่ออายุให้บัญชีที่มันผูกอยู่ ไม่ว่าบัญชีนั้นจะเป็นของใคร",
+        takes: "30 นาที",
+      },
+      {
+        title: "ผูกและยืนยันสมาชิกภาพบนแพลตฟอร์มขายบัตร",
+        body: "นี่คือขั้นที่คนมองข้าม บนแพลตฟอร์มขายบัตรมีการกระทำแยกต่างหากเพื่อยืนยันสถานะแฟนคลับของคุณ และมันเปิดเป็นช่วงเวลา โดยทั่วไปคือไม่กี่วันก่อนพรีเซล แล้วปิดก่อนพรีเซลจะเริ่ม ทำทันทีในชั่วโมงที่มันเปิด",
+        pitfall:
+          "การยืนยันสำหรับรอบขายภาษาเกาหลีกับรอบขายทั่วโลกอาจถูกจัดการแยกกันสำหรับงานเดียวกัน การทำเสร็จฝั่งหนึ่งไม่จำเป็นต้องให้สิทธิ์อีกฝั่ง",
+        takes: "20 นาที ภายในช่วงเวลานั้น",
+      },
+      {
+        title: "ทำให้ชื่อทั้งสามเหมือนกันทุกตัวอักษร",
+        body: "หนังสือเดินทาง สมาชิกภาพแฟนคลับ และบัญชีขายบัตร ครบทั้งสาม ชื่อตามกฎหมายเดียวกัน วันเกิดเดียวกัน ลำดับเดียวกัน ถ้ามีจุดใดผิด ให้แก้ก่อนช่วงยืนยัน ไม่ใช่หลังจากนั้น",
+        pitfall:
+          "นี่คือสาเหตุที่มีบันทึกไว้บ่อยที่สุดที่ทำให้สิทธิ์พรีเซลใช้ไม่ได้ และมันมองไม่เห็นเลยจนถึงวินาทีที่มันสำคัญ",
+        takes: "15 นาที",
+      },
+      {
+        title: "ยืนยันว่าสิทธิ์เข้ามาจริง",
+        body: "หลังยืนยันแล้ว ให้มองหาคำยืนยันที่ชัดเจน — ตราสัญลักษณ์ บรรทัดสถานะ หรืออีเมล ถ้าคุณหาคำยืนยันเชิงบวกว่าคุณมีสิทธิ์ไม่เจอ ให้ถือว่าคุณไม่มี แล้วติดต่อฝ่ายบริการขณะที่ช่วงเวลายังเปิดอยู่",
+        pitfall:
+          "ความเงียบไม่ใช่ความสำเร็จ แบบฟอร์มที่ส่งไปแล้วไม่ใช่สิทธิ์ที่ได้รับแล้ว",
+        takes: "10 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "การซื้อสมาชิกภาพรับประกันสิทธิ์พรีเซลไหม",
+        a: "ไม่ ในทัวร์ส่วนใหญ่มีขั้นตอนยืนยันแยกต่างหากที่เชื่อมสมาชิกภาพเข้ากับบัญชีขายบัตรของคุณ พร้อมช่วงเวลาของตัวเองที่เปิดและปิดก่อนพรีเซล สมาชิกภาพเป็นเงื่อนไขเบื้องต้น ไม่ใช่ตัวสิทธิ์เอง",
+      },
+      {
+        q: "ใช้สมาชิกภาพของคนอื่นได้ไหม",
+        a: "ในทางปฏิบัติไม่ได้ เพราะการยืนยันจะเทียบชื่อที่ลงทะเบียนและวันเกิดกับบัญชีขายบัตรและเอกสารแสดงตนของคุณ นอกจากใช้ไม่ได้แล้ว ยังเสี่ยงให้คำสั่งซื้อถูกยกเลิกด้วย",
+      },
+      {
+        q: "พรีเซลเปิดก่อนรอบขายทั่วไปนานแค่ไหน",
+        a: "แล้วแต่ทัวร์ หนึ่งวันขึ้นไปเป็นเรื่องปกติ และเส้นตายของสมาชิกภาพยังมาก่อนหน้านั้นอีก ประกาศอย่างเป็นทางการของงานคุณคือแหล่งเดียวที่เชื่อถือได้",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "fan-club-presale-checklist",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Presale ng fan club: paano maging kuwalipikado bago ito magsara",
+    summary:
+      "Hindi pa akses ang membership mag-isa. May hakbang ng pagpapatunay sa pagitan ng dalawa, may sarili itong hangganan, at ang pagkaligta rito ang pinakakaraniwang dahilan ng pagkawala ng presale sa mga fan.",
+    scope:
+      "Sakop nito ang pangkalahatang hugis ng pagiging kuwalipikado sa presale ng fan club para sa mga palabas sa Korea. Bawat tour ay nagtatakda ng sarili nitong antas, hangganan at kondisyon sa opisyal na anunsiyo, na nananaig sa anumang pangkalahatang tuntunin.",
+    intro: [
+      "Ang akses sa presale ay tanikala ng tatlong kawing, at karaniwang ang una lamang ang alam ng mga fan. Bumibili ka ng membership. Pagkatapos ay iniuugnay at pinapatunayan mo ang membership na iyon sa account ng tiket. Saka ka lamang magkakaroon ng karapatan sa presale.",
+      "May sariling hangganan ang bawat kawing, at ang hangganan ng pagpapatunay ay palaging mas maaga kaysa sa inaasahan ng mga tao — sa ilang pagkakataon ay ilang araw bago ang mismong presale. Ang membership na binili kagabi ay maaaring huli na kahit may bisa pa ito.",
+      "Ituring ang anunsiyo bilang ang espesipikasyon at ang pahinang ito bilang ang listahan ng dapat suriin.",
+    ],
+    steps: [
+      {
+        title: "Basahin ang sugnay tungkol sa pagiging kuwalipikado, hindi ang ulong balita",
+        body: "Tutukuyin ng anunsiyo kung aling produkto at antas ng membership ang kuwalipikado, at ang petsa kung kailan dapat nabili na ito o may bisa pa ito. Dalawang magkaibang petsa ang mga ito at mahalaga pareho. Isulat mo ang mga ito sa sarili mong time zone katabi ng KST.",
+        pitfall:
+          "Ang membership na may bisa pero binili pagkatapos ng hangganan ay hindi kuwalipikado sa ilang tour. Ang “may membership ako” ay hindi katumbas ng “naging kuwalipikado ako”.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Bumili ng membership nang mas maaga sa hangganan",
+        body: "Bumili sa opisyal na tindahan ng artist na iyon. Itago ang kumpirmasyon ng order at ang numero ng membership. Kung ang membership ay isang pisikal na kit na may digital code, maglaan ng oras para sa paghahatid at pag-activate ng code, na hindi agaran. Mula 3 Setyembre 2026, nag-aalok din ang Weverse Shop ng Auto Payment sa mga membership na sumusuporta rito: sinisingil ang pag-renew sa isang nakarehistrong paraan ng pagbabayad sa huling araw ng panahon ng bisa, kaya hindi basta mapapaso ang isang membership nang hindi napapansin sa mismong linggong inianunsiyo ang isang tour. Itinatakda ito kada kategorya ng membership — magkahiwalay na pinamamahalaan ang Global, Japan at USA.",
+        pitfall:
+          "Ang mga membership code na muling ibinenta o iniregalo ay madalas bumabagsak sa pagpapatunay, dahil hindi tutugma ang nakarehistrong pangalan sa account mo ng tiket. Inaalis ng Auto Payment ang panganib ng pagkapaso ngunit hindi ang panganib sa pangalan: nire-renew nito ang alinmang account na nakakabit dito.",
+        takes: "30 minuto",
+      },
+      {
+        title: "Iugnay at patunayan ang membership sa plataporma ng tiket",
+        body: "Ito ang hakbang na nalalaktawan ng mga tao. Sa plataporma ng tiket ay may hiwalay na aksiyon para mapatunayan ang katayuan mo sa fan club, at nagbubukas ito sa loob ng isang bintana — karaniwan ay ilang araw bago ang presale — at nagsasara bago nito. Gawin mo ito sa mismong oras ng pagbubukas.",
+        pitfall:
+          "Ang pagpapatunay para sa isang bentang Koreano at para sa isang pandaigdigang benta ay maaaring hawakan nang hiwalay para sa iisang palabas. Ang pagtatapos sa isa ay hindi awtomatikong nagkakaloob ng isa pa.",
+        takes: "20 minuto, sa loob ng bintana",
+      },
+      {
+        title: "Gawing magkapareho ang tatlong pangalan",
+        body: "Pasaporte, membership sa fan club at account ng tiket. Lahat ng tatlo. Iisang legal na pangalan, iisang petsa ng kapanganakan, iisang pagkakasunod-sunod. Kung may mali sa isa, itama ito bago ang bintana ng pagpapatunay at hindi pagkatapos.",
+        pitfall:
+          "Ito ang pinakamadalas na nakatalang dahilan kung bakit hindi nagagamit ang karapatan sa presale, at hindi ito nakikita hanggang sa sandaling mahalaga na ito.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Tiyakin na dumating ang karapatan",
+        body: "Pagkatapos magpatunay, maghanap ng malinaw na kumpirmasyon — isang badge, isang linya ng katayuan, isang email. Kung hindi ka makakita ng positibong kumpirmasyon na kuwalipikado ka, ipagpalagay mong hindi ka at makipag-ugnayan sa suporta habang bukas pa ang bintana.",
+        pitfall:
+          "Hindi tagumpay ang katahimikan. Ang naipasang form ay hindi isang ipinagkaloob na karapatan.",
+        takes: "10 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Ginagarantiya ba ng pagbili ng membership ang akses sa presale?",
+        a: "Hindi. Sa karamihan ng tour ay may hiwalay na hakbang ng pagpapatunay na nag-uugnay sa membership sa account mo ng tiket, na may sarili nitong bintanang nagbubukas at nagsasara bago ang presale. Ang membership ay isang kinakailangan, hindi ang mismong karapatan.",
+      },
+      {
+        q: "Puwede ko bang gamitin ang membership ng iba?",
+        a: "Sa praktika ay hindi, dahil itinutugma ng pagpapatunay ang nakarehistrong pangalan at petsa ng kapanganakan sa account mo ng tiket at sa dokumento mo ng pagkakakilanlan. Bukod sa hindi ito gumagana, inilalagay nito sa panganib na makansela ang order.",
+      },
+      {
+        q: "Gaano kaaga nagbubukas ang presale kumpara sa pangkalahatang benta?",
+        a: "Nag-iiba ito kada tour. Karaniwan ang isang araw o higit pa, at mas maaga pa ang hangganan ng membership. Ang opisyal na anunsiyo para sa palabas mo ang tanging maaasahang pinagkukunan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vì sao thẻ của bạn bị từ chối trên trang bán vé Hàn Quốc",
+    summary:
+      "Ba hệ thống khác nhau có thể từ chối cùng một giao dịch — nền tảng, mạng lưới thẻ của bạn và ngân hàng của bạn. Mỗi bên có một cách khắc phục riêng và chỉ một trong số đó là nhanh.",
+    scope:
+      "Nói về việc thanh toán bằng thẻ phát hành ở nước ngoài trên các nền tảng bán vé Hàn Quốc. Đây không phải lời khuyên tài chính, và nó không thể bao quát quy định riêng của ngân hàng bạn.",
+    intro: [
+      "Thẻ bị từ chối ở bước thanh toán là thất bại tốn kém nhất trong việc mua vé K-pop, vì một chiếc ghế đang giữ sẽ quay lại kho chung chỉ trong vài phút. Gần như toàn bộ chuyện này có thể phòng tránh được nếu chuẩn bị sớm.",
+      "Lý do nó có vẻ ngẫu nhiên là vì ba hệ thống độc lập đều có thể từ chối cùng một giao dịch, và thông báo lỗi bạn thấy hiếm khi cho biết bên nào đã từ chối. Hãy rà soát chúng theo thứ tự thời gian cần để sửa.",
+    ],
+    steps: [
+      {
+        title: "Kiểm tra xem phần xác minh tài khoản của bạn đã thực sự hoàn tất chưa",
+        body: "Trên một vài nền tảng, thẻ phát hành ở nước ngoài chỉ dùng được sau khi tài khoản đã được xác minh là khách hàng ở nước ngoài. Nếu phần xác minh đó còn đang chờ xử lý, thẻ sẽ hỏng bất kể nó khỏe mạnh đến đâu. Đây là cách khắc phục chậm nhất, nên nó đứng đầu tiên.",
+        pitfall:
+          "Thông báo lỗi thanh toán sẽ không nói “phần xác minh của bạn đang chờ xử lý”. Nó sẽ trông như một vấn đề của thẻ.",
+        takes: "1-3 ngày",
+      },
+      {
+        title: "Báo ngân hàng trước buổi mở bán, đừng báo sau",
+        body: "Hãy bật giao dịch quốc tế và trực tuyến, và nếu ngân hàng của bạn cho phép, hãy đăng ký trước khoảng số tiền và quốc gia. Một khoản chi lần đầu tiên từ một đơn vị bán hàng Hàn Quốc vào giờ bất thường chính là hồ sơ mà hệ thống chống gian lận sẽ chặn.",
+        pitfall:
+          "Các lệnh chặn gian lận tự động thường im lặng ở phía bạn — không tin nhắn, không thông báo trong ứng dụng. Bạn chỉ biết qua thông báo từ chối chung chung của đơn vị bán hàng.",
+        takes: "1 ngày",
+      },
+      {
+        title: "Đừng thực hiện bước thanh toán trong trình duyệt nhúng của ứng dụng",
+        body: "Luồng 3-D Secure và mật khẩu dùng một lần của ngân hàng thường hỏng bên trong trình duyệt được nhúng trong ứng dụng mạng xã hội hay nhắn tin. Hãy dùng trình duyệt thông thường trên điện thoại hoặc máy tính, và đảm bảo bạn nhận được tin nhắn xác thực của ngân hàng trên cùng thiết bị đó.",
+        pitfall:
+          "Bước chuyển hướng có thể trông như thành công rồi âm thầm đánh rơi phần ủy quyền, và bạn chỉ thấy đó là một lần bị từ chối.",
+        takes: "0 phút, chỉ cần làm đúng cách",
+      },
+      {
+        title: "Hãy có một phương án dự phòng thực sự khác, không phải thẻ cùng nhà",
+        body: "Một chiếc thẻ thứ hai của cùng tổ chức phát hành thường sẽ hỏng vì đúng lý do đó. Một tổ chức phát hành khác, một mạng lưới thẻ khác, hoặc phương thức thay thế mà nền tảng hỗ trợ nếu có, mới là phương án dự phòng thật. Hai nền tảng dành cho người ở nước ngoài còn từ chối những thứ ngược nhau, điều đáng biết trước khi bạn đổ lỗi cho chiếc thẻ: NOL World chấp nhận VISA, MasterCard, AMEX, JCB và UnionPay nhưng chỉ khi được phát hành ngoài Hàn Quốc, và từ chối thẳng thừng thẻ phát hành tại Hàn. YES24 Global làm ngược lại ở hai trong số đó, loại trừ American Express phát hành ngoài Hàn Quốc và loại trừ UnionPay hoàn toàn. Một chiếc thẻ bị từ chối bên này có thể là chiếc thẻ đúng ở bên kia.",
+        pitfall:
+          "Hai chiếc thẻ của cùng một ngân hàng, đối với một quy tắc chống gian lận, chỉ là một chiếc thẻ.",
+        takes: "30 phút để chuẩn bị",
+      },
+      {
+        title: "Kiểm tra loại tiền và số tiền trước khi xác nhận",
+        body: "Hãy đọc xem bạn bị tính bằng KRW hay bằng một số tiền đã quy đổi, và nắm rõ phí giao dịch nước ngoài của thẻ mình. Một lần quy đổi đẩy tổng số tiền vượt quá hạn mức mà chính bạn đặt ra cũng có thể gây ra việc bị từ chối.",
+        pitfall:
+          "Quy đổi tiền tệ động lặng lẽ làm tăng chi phí. Trả bằng KRW thường là lựa chọn rẻ hơn.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Vì sao thẻ của tôi bị từ chối dù trong thẻ vẫn còn tiền?",
+        a: "Thường là một trong ba điều: tài khoản của bạn trên nền tảng chưa hoàn tất xác minh khách hàng ở nước ngoài, hệ thống chống gian lận của ngân hàng đã chặn một đơn vị bán hàng nước ngoài lạ, hoặc một bước 3-D Secure thất bại — thường vì nó chạy trong trình duyệt nhúng của ứng dụng. Thông báo từ chối thường không phân biệt được ba trường hợp này.",
+      },
+      {
+        q: "PayPal có dùng được không?",
+        a: "Một số nền tảng dành cho người ở nước ngoài có hỗ trợ các phương thức thanh toán thay thế ở một số show. Điều này được đặt theo từng nền tảng và từng sự kiện chứ không áp dụng chung, nên hãy xem danh sách phương thức thanh toán trên trang sự kiện của bạn trước khi tính toán dựa vào nó.",
+      },
+      {
+        q: "Tôi nên trả bằng KRW hay bằng tiền nước mình?",
+        a: "Trả bằng tiền của đơn vị bán hàng nhìn chung rẻ hơn là để trang thanh toán quy đổi giúp bạn, vì quy đổi tiền tệ động cộng thêm một khoản biên. Phí giao dịch nước ngoài của chính thẻ bạn vẫn áp dụng trong cả hai trường hợp.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ทำไมบัตรของคุณถูกปฏิเสธบนเว็บขายบัตรเกาหลี",
+    summary:
+      "ระบบที่ต่างกันสามระบบสามารถปฏิเสธการชำระเงินรายการเดียวกันได้ — แพลตฟอร์ม เครือข่ายบัตรของคุณ และธนาคารของคุณ แต่ละอย่างมีวิธีแก้ต่างกัน และมีเพียงอย่างเดียวที่แก้ได้เร็ว",
+    scope:
+      "ครอบคลุมการชำระเงินด้วยบัตรที่ออกในต่างประเทศบนแพลตฟอร์มขายบัตรของเกาหลี ไม่ใช่คำแนะนำทางการเงิน และไม่อาจครอบคลุมกฎเฉพาะของธนาคารคุณได้",
+    intro: [
+      "บัตรที่ถูกปฏิเสธในขั้นชำระเงินคือความล้มเหลวที่แพงที่สุดในการซื้อบัตร K-pop เพราะที่นั่งที่จองไว้จะกลับคืนสู่ระบบภายในไม่กี่นาที เกือบทั้งหมดของเรื่องนี้ป้องกันได้ถ้าเผื่อเวลาไว้",
+      "เหตุที่มันดูเหมือนเกิดขึ้นแบบสุ่ม เพราะมีระบบอิสระสามระบบที่ปฏิเสธรายการเดียวกันได้ และข้อความแสดงข้อผิดพลาดที่คุณเห็นแทบไม่เคยบอกว่าระบบไหนเป็นคนปฏิเสธ ให้ไล่ตรวจตามลำดับเวลาที่แต่ละอย่างใช้ในการแก้",
+    ],
+    steps: [
+      {
+        title: "ตรวจว่าการยืนยันบัญชีของคุณเสร็จสมบูรณ์จริงหรือยัง",
+        body: "บนหลายแพลตฟอร์ม บัตรที่ออกในต่างประเทศจะใช้ได้ก็ต่อเมื่อบัญชีผ่านการยืนยันว่าเป็นลูกค้าต่างประเทศแล้ว ถ้าการยืนยันนั้นยังรอดำเนินการอยู่ บัตรจะล้มเหลวไม่ว่าบัตรจะสมบูรณ์แค่ไหน นี่เป็นวิธีแก้ที่ช้าที่สุด จึงมาเป็นข้อแรก",
+        pitfall:
+          "ข้อความแสดงข้อผิดพลาดจะไม่บอกว่า “การยืนยันของคุณยังรอดำเนินการ” มันจะดูเหมือนปัญหาของบัตร",
+        takes: "1-3 วัน",
+      },
+      {
+        title: "บอกธนาคารก่อนรอบขาย ไม่ใช่หลังจากนั้น",
+        body: "เปิดใช้ธุรกรรมระหว่างประเทศและธุรกรรมออนไลน์ และถ้าธนาคารของคุณรองรับ ให้แจ้งอนุมัติล่วงหน้าทั้งช่วงจำนวนเงินและประเทศปลายทาง การถูกเรียกเก็บเงินครั้งแรกจากร้านค้าเกาหลีในเวลาที่ผิดปกติ คือรูปแบบที่ระบบป้องกันการฉ้อโกงจะบล็อกพอดี",
+        pitfall:
+          "การบล็อกอัตโนมัติเพื่อป้องกันการฉ้อโกงมักเงียบในฝั่งของคุณ ไม่มี SMS ไม่มีการแจ้งเตือนในแอป คุณจะรู้ก็จากข้อความปฏิเสธกลาง ๆ ของร้านค้าเท่านั้น",
+        takes: "1 วัน",
+      },
+      {
+        title: "อย่าทำขั้นชำระเงินในเบราว์เซอร์ที่ฝังอยู่ในแอป",
+        body: "ขั้นตอน 3-D Secure และรหัสผ่านครั้งเดียวของธนาคารมักพังเมื่อทำในเบราว์เซอร์ที่ฝังอยู่ในแอปโซเชียลหรือแอปแชต ให้ใช้เบราว์เซอร์ปกติบนมือถือหรือคอมพิวเตอร์ และตรวจให้แน่ใจว่าคุณรับข้อความยืนยันจากธนาคารบนเครื่องเดียวกันได้",
+        pitfall:
+          "การเปลี่ยนหน้าอาจดูเหมือนสำเร็จแล้วปล่อยการอนุมัติหลุดไปเงียบ ๆ ซึ่งคุณจะอ่านว่าเป็นการถูกปฏิเสธ",
+        takes: "0 นาที แค่ทำให้ถูกวิธี",
+      },
+      {
+        title: "มีบัตรสำรองที่ต่างกันจริง ไม่ใช่บัตรพี่น้องกัน",
+        body: "บัตรใบที่สองจากผู้ออกบัตรรายเดียวกันมักล้มเหลวด้วยเหตุผลเดียวกัน ผู้ออกบัตรรายอื่น เครือข่ายอื่น หรือวิธีชำระทางเลือกที่แพลตฟอร์มรองรับหากมี จึงจะนับเป็นตัวสำรองจริง สองแพลตฟอร์มสำหรับผู้อยู่ต่างประเทศยังปฏิเสธคนละอย่างกัน ซึ่งควรรู้ก่อนจะโทษบัตร: NOL World รับ VISA, MasterCard, AMEX, JCB และ UnionPay แต่เฉพาะที่ออกนอกเกาหลี และปฏิเสธบัตรที่ออกในเกาหลีทันที ส่วน YES24 Global ทำตรงข้ามในสองรายการ โดยตัด American Express ที่ออกนอกเกาหลี และตัด UnionPay ทั้งหมด บัตรที่ถูกปฏิเสธบนเว็บหนึ่งอาจเป็นบัตรที่ถูกต้องบนอีกเว็บหนึ่ง",
+        pitfall:
+          "บัตรสองใบจากธนาคารเดียวกัน ในสายตาของกฎป้องกันการฉ้อโกงถือเป็นบัตรใบเดียว",
+        takes: "30 นาทีในการเตรียม",
+      },
+      {
+        title: "ตรวจสกุลเงินและจำนวนเงินก่อนกดยืนยัน",
+        body: "อ่านให้ชัดว่าคุณถูกเรียกเก็บเป็น KRW หรือเป็นจำนวนที่แปลงแล้ว และรู้ว่าบัตรของคุณคิดค่าธรรมเนียมธุรกรรมต่างประเทศเท่าไร การแปลงสกุลเงินที่ดันยอดรวมเกินวงเงินที่คุณตั้งไว้เองก็ทำให้ถูกปฏิเสธได้เช่นกัน",
+        pitfall:
+          "การแปลงสกุลเงินแบบไดนามิกเพิ่มต้นทุนอย่างเงียบ ๆ การจ่ายเป็น KRW มักเป็นทางเลือกที่ถูกกว่า",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ทำไมบัตรถูกปฏิเสธทั้งที่มีเงินพอ",
+        a: "ส่วนใหญ่เป็นหนึ่งในสามอย่าง: บัญชีของคุณบนแพลตฟอร์มยังยืนยันความเป็นลูกค้าต่างประเทศไม่เสร็จ ระบบป้องกันการฉ้อโกงของธนาคารบล็อกร้านค้าต่างประเทศที่ไม่คุ้นเคย หรือขั้นตอน 3-D Secure ล้มเหลว ซึ่งมักเกิดเพราะทำในเบราว์เซอร์ที่ฝังในแอป ข้อความปฏิเสธมักไม่แยกแยะระหว่างสามกรณีนี้",
+      },
+      {
+        q: "PayPal ใช้ได้ไหม",
+        a: "แพลตฟอร์มสำหรับผู้อยู่ต่างประเทศบางแห่งรองรับวิธีชำระเงินทางเลือกในบางงาน เรื่องนี้กำหนดเป็นรายแพลตฟอร์มและรายอีเวนต์ ไม่ใช่ใช้ได้ทั่วไป จึงควรดูตัวเลือกการชำระเงินที่ระบุไว้บนหน้าอีเวนต์ของคุณก่อนจะวางแผนโดยอาศัยมัน",
+      },
+      {
+        q: "ควรจ่ายเป็น KRW หรือสกุลเงินของตัวเอง",
+        a: "การจ่ายเป็นสกุลเงินของร้านค้าโดยทั่วไปถูกกว่าการปล่อยให้หน้าชำระเงินแปลงให้คุณ เพราะการแปลงสกุลเงินแบบไดนามิกบวกส่วนต่างเข้าไป ค่าธรรมเนียมธุรกรรมต่างประเทศของบัตรคุณเองยังคงถูกคิดอยู่ดีทั้งสองทาง",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "foreign-card-declined-korean-ticketing",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Bakit tinanggihan ang kard mo sa isang Koreanong site ng tiket",
+    summary:
+      "Tatlong magkaibang sistema ang puwedeng tumanggi sa iisang bayad — ang plataporma, ang network ng kard mo, at ang bangko mo. Magkaiba ang lunas sa bawat isa at isa lamang sa kanila ang mabilis.",
+    scope:
+      "Sakop nito ang mga bayad gamit ang kard na inisyu sa labas ng Korea sa mga Koreanong plataporma ng tiket. Hindi ito payo sa pananalapi, at hindi nito masasakop ang tiyak na mga patakaran ng bangko mo.",
+    intro: [
+      "Ang tinanggihang kard sa hakbang ng pagbabayad ang pinakamahal na pagkabigo sa buong pagbili ng tiket sa K-pop, dahil bumabalik sa pool ang hawak mong upuan sa loob ng ilang minuto. Halos lahat nito ay maiiwasan kung may sapat kang paghahanda.",
+      "Pakiramdam mo ay pabigla-bigla ito dahil tatlong magkahiwalay na sistema ang puwedeng tumanggi sa iisang transaksiyon, at bihirang sabihin ng mensahe ng error kung alin sa kanila ang tumanggi. Dumaan ka sa kanila ayon sa haba ng panahong kailangan para ayusin ang bawat isa.",
+    ],
+    steps: [
+      {
+        title: "Tingnan kung talagang tapos na ang pagpapatunay ng account mo",
+        body: "Sa ilang plataporma, gumagana lamang ang mga kard na inisyu sa labas ng Korea kapag napatunayan na ang account bilang customer mula sa ibang bansa. Kung nakabinbin pa ang pagpapatunay na iyon, babagsak ang kard gaano man ito kaayos. Ito ang pinakamabagal na lunas, kaya ito ang nauuna.",
+        pitfall:
+          "Hindi sasabihin ng error sa pagbabayad na “nakabinbin pa ang pagpapatunay mo”. Magmumukha itong problema ng kard.",
+        takes: "1-3 araw",
+      },
+      {
+        title: "Sabihan ang bangko mo bago ang benta, hindi pagkatapos",
+        body: "Buksan ang mga internasyonal at online na transaksiyon, at kung sinusuportahan ito ng bangko mo, paunang aprubahan ang saklaw ng halaga at ang bansa. Ang kauna-unahang singil mula sa isang Koreanong merchant sa isang di-karaniwang oras ang eksaktong hugis na hinaharangan ng isang sistemang laban sa pandaraya.",
+        pitfall:
+          "Madalas tahimik sa panig mo ang awtomatikong pagharang laban sa pandaraya — walang SMS, walang abiso sa app. Malalaman mo lang ito mula sa pangkalahatang pagtanggi ng merchant.",
+        takes: "1 araw",
+      },
+      {
+        title: "Huwag gawin ang hakbang ng pagbabayad sa loob ng browser ng isang app",
+        body: "Madalas masira ang 3-D Secure at ang mga daloy ng isahang password ng bangko sa loob ng browser na nakabaon sa isang social o messaging app. Gumamit ng karaniwang browser sa telepono o kompyuter, at tiyaking matatanggap mo ang mensahe ng pagpapatunay ng bangko mo sa iisang device.",
+        pitfall:
+          "Maaaring magmukhang matagumpay ang redirect at pagkatapos ay tahimik nitong bitawan ang awtorisasyon, na babasahin mo bilang isang pagtanggi.",
+        takes: "0 minuto, gawin lang nang tama",
+      },
+      {
+        title: "Magkaroon ng tunay na ibang panghalili, hindi kapatid na kard",
+        body: "Ang pangalawang kard mula sa iisang nag-isyu ay karaniwang babagsak sa parehong dahilan. Ang ibang nag-isyu, ang ibang network, o ang suportadong alternatibong paraan ng plataporma kung mayroon, ang tunay na panghalili. Magkasalungat din ang tinatanggihan ng dalawang platapormang nakaharap sa ibang bansa, at sulit itong malaman bago mo sisihin ang kard: tumatanggap ang NOL World ng VISA, MasterCard, AMEX, JCB at UnionPay ngunit kapag inisyu lamang sa labas ng Korea, at tinatanggihan nito nang tuwiran ang mga kard na inisyu sa Korea. Ginagawa naman ng YES24 Global ang kabaligtaran sa dalawa sa mga ito, hindi tinatanggap ang American Express na inisyu sa labas ng Korea at ang UnionPay nang tuluyan. Ang kard na tinanggihan sa isa ay maaaring siyang tamang kard sa isa pa.",
+        pitfall:
+          "Ang dalawang kard mula sa iisang bangko ay iisang kard sa paningin ng isang tuntunin laban sa pandaraya.",
+        takes: "30 minuto para ihanda",
+      },
+      {
+        title: "Tingnan ang pera at ang halaga bago kumpirmahin",
+        body: "Basahin kung sinisingil ka ba sa KRW o sa isang halagang kinonberte, at alamin ang bayad ng kard mo sa dayuhang transaksiyon. Ang isang konbersiyong nagtutulak sa kabuuan nang lampas sa limitasyong ikaw mismo ang nagtakda ay puwede ring maging dahilan ng pagtanggi.",
+        pitfall:
+          "Tahimik na nagdaragdag ng gastos ang dynamic currency conversion. Karaniwang mas mura ang magbayad sa KRW.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Bakit tinanggihan ang kard ko gayong may pondo naman ito?",
+        a: "Kadalasan ay isa sa tatlong bagay: hindi pa natatapos ng account mo sa plataporma ang pagpapatunay bilang customer mula sa ibang bansa, hinarangan ng sistema laban sa pandaraya ng bangko mo ang isang di-pamilyar na dayuhang merchant, o nabigo ang isang hakbang na 3-D Secure — karaniwan dahil tumakbo ito sa loob ng browser ng isang app. Karaniwang hindi pinagkaiba ng mensahe ng pagtanggi ang tatlong ito.",
+      },
+      {
+        q: "Gumagana ba ang PayPal?",
+        a: "May ilang platapormang nakaharap sa ibang bansa na sumusuporta sa mga alternatibong paraan ng pagbabayad sa ilang palabas. Itinatakda ito kada plataporma at kada event sa halip na pangkalahatan, kaya tingnan ang mga opsiyon sa pagbabayad na nakalista sa pahina ng event mo bago ka magplano batay dito.",
+      },
+      {
+        q: "Dapat ba akong magbayad sa KRW o sa sarili kong pera?",
+        a: "Karaniwang mas mura ang magbayad sa pera ng merchant kaysa hayaang ikonberte ito ng pahina ng pagbabayad para sa iyo, dahil nagdaragdag ng margin ang dynamic currency conversion. Napapataw pa rin ang bayad ng sarili mong kard sa dayuhang transaksiyon sa alinmang paraan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

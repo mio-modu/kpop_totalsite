@@ -142,23 +142,41 @@ export default function RootLayout({
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ads.client}`}
           />
         ) : null}
-        {site.gaId ? (
-          <>
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${site.gaId}`}
-            />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${site.gaId}');`,
-              }}
-            />
-          </>
-        ) : null}
-        {site.clarityId ? (
+        {/*
+          Measurement, behind one gate.
+
+          Both tags used to load unconditionally, and on the first day Clarity
+          was live its session list was two HeadlessChrome visits from the
+          United States, a minute apart, with no human in either. GA4 drops
+          crawlers that identify themselves — a headless browser that does not
+          is counted as a reader, which on a site measured in tens of users a
+          day is not a rounding error but the dataset.
+
+          `navigator.webdriver` is the signal an automated browser is required
+          by the WebDriver specification to set, so it catches the honest ones:
+          Playwright, Puppeteer, Selenium, and the SEO and uptime tools built
+          on them. It does not catch a crawler that deliberately hides, and it
+          is not meant to — the purpose is a count that reflects readers, not
+          an access control.
+
+          The gate wraps both tags rather than GA4 alone, because a bot
+          excluded from one and recorded by the other gives two numbers that
+          can never be reconciled. `gtag` is assigned to `window` deliberately:
+          inside this closure a bare function declaration would no longer be
+          global, and anything that later sends an event would find nothing.
+        */}
+        {site.gaId || site.clarityId ? (
           <script
             dangerouslySetInnerHTML={{
-              __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${site.clarityId}");`,
+              __html: `(function(){if(navigator.webdriver)return;${
+                site.gaId
+                  ? `var g=document.createElement("script");g.async=1;g.src="https://www.googletagmanager.com/gtag/js?id=${site.gaId}";document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${site.gaId}');`
+                  : ""
+              }${
+                site.clarityId
+                  ? `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${site.clarityId}");`
+                  : ""
+              }})();`,
             }}
           />
         ) : null}

@@ -128,6 +128,51 @@ const FR_LABELS = {
     "La version anglaise sur laquelle repose cette traduction a dépassé sa durée de validité. Consultez la version anglaise et ses sources pour savoir où en sont les choses aujourd\u0027hui.",
 };
 
+const VI_LABELS = {
+  pitfall: "Lỗi thường gặp",
+  takes: "Thời gian ước tính:",
+  sources: "Nguồn",
+  readEnglish: "Đọc bản tiếng Anh",
+  related: "Các hướng dẫn khác bằng ngôn ngữ này",
+  reviewedMachine:
+    "Bản dịch này được thực hiện với sự hỗ trợ của máy và chưa được người bản ngữ tiếng Việt hiệu đính. Với những quyết định quan trọng, hãy đối chiếu bản tiếng Anh và các nguồn gốc.",
+  reviewedNative: "Một người bản ngữ tiếng Việt đã hiệu đính bản dịch này.",
+  sourceMoved:
+    "Bản tiếng Anh đã được kiểm tra lại sau khi bản dịch này được thực hiện. Nếu có khác biệt, bản tiếng Anh là bản đúng.",
+  sourceStale:
+    "Bản tiếng Anh mà bản dịch này dựa vào đã quá hạn kiểm tra. Hãy xem bản tiếng Anh và các nguồn của nó để biết tình hình hiện nay.",
+};
+
+const TH_LABELS = {
+  pitfall: "ข้อผิดพลาดที่พบบ่อย",
+  takes: "เวลาที่ใช้โดยประมาณ:",
+  sources: "แหล่งข้อมูล",
+  readEnglish: "อ่านฉบับภาษาอังกฤษ",
+  related: "คู่มืออื่นในภาษานี้",
+  reviewedMachine:
+    "คำแปลนี้จัดทำโดยมีเครื่องช่วย และยังไม่ผ่านการตรวจทานจากเจ้าของภาษาไทย สำหรับการตัดสินใจที่สำคัญ โปรดตรวจสอบกับฉบับภาษาอังกฤษและแหล่งข้อมูลต้นทาง",
+  reviewedNative: "เจ้าของภาษาไทยได้ตรวจทานคำแปลนี้แล้ว",
+  sourceMoved:
+    "ฉบับภาษาอังกฤษได้รับการตรวจสอบใหม่หลังจากจัดทำคำแปลนี้ หากข้อความขัดแย้งกัน ให้ยึดฉบับภาษาอังกฤษเป็นหลัก",
+  sourceStale:
+    "ฉบับภาษาอังกฤษที่คำแปลนี้อ้างอิงอยู่เลยกำหนดอายุการตรวจสอบแล้ว โปรดดูฉบับภาษาอังกฤษและแหล่งข้อมูลเพื่อทราบสถานะปัจจุบัน",
+};
+
+const FIL_LABELS = {
+  pitfall: "Karaniwang pagkakamali",
+  takes: "Tinatayang oras:",
+  sources: "Mga pinagkunan",
+  readEnglish: "Basahin ang bersyong Ingles",
+  related: "Iba pang gabay sa wikang ito",
+  reviewedMachine:
+    "Ginawa ang pagsasaling ito nang may tulong ng makina at hindi pa ito nasusuri ng isang katutubong nagsasalita ng Filipino. Para sa mahahalagang desisyon, tingnan ang bersyong Ingles at ang mga orihinal na pinagkunan.",
+  reviewedNative: "Sinuri ng isang katutubong nagsasalita ng Filipino ang pagsasaling ito.",
+  sourceMoved:
+    "Muling sinuri ang bersyong Ingles matapos gawin ang pagsasaling ito. Kung magkaiba sila, ang bersyong Ingles ang susundin.",
+  sourceStale:
+    "Lumipas na ang panahon ng pagsusuri ng bersyong Ingles na pinagbatayan ng pagsasaling ito. Tingnan ang bersyong Ingles at ang mga pinagkunan nito para sa kasalukuyang kalagayan.",
+};
+
 const PT_LABELS = {
   pitfall: "Erro comum",
   takes: "Tempo estimado:",
@@ -13651,6 +13696,498 @@ export const translations: Translation[] = [
       },
     ],
     labels: FR_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Cách mua vé concert K-pop từ ngoài Hàn Quốc",
+    summary:
+      "Toàn cảnh trước khi bắt đầu: show của bạn bán trên nền tảng nào, nền tảng đó xác minh danh tính ra sao, và bạn cần chuẩn bị sẵn những gì trước giờ mở bán.",
+    scope:
+      "Áp dụng cho các show diễn ra tại Hàn Quốc và những nền tảng bán vé mà các công ty quản lý Hàn Quốc sử dụng. Các điểm diễn trong tour nước ngoài do nhà tổ chức địa phương bán và được nói riêng — những quy tắc dưới đây không áp dụng cho chúng.",
+    intro: [
+      "Gần như mọi bài hướng dẫn đang xếp hạng cao cho câu hỏi này đều được viết trước tháng 12 năm 2025, và chúng chỉ bạn tới một trang web không còn tồn tại dưới cái tên đó nữa. Đó là lý do chính khiến trang này có mặt.",
+      "Không có một trang bán vé K-pop duy nhất. Nền tảng được công ty quản lý và nhà tổ chức chọn riêng cho từng tour, và được nêu rõ trong thông báo chính thức của show đó. Mọi thứ còn lại — bạn phải qua kiểu xác minh danh tính nào, thẻ nước ngoài có dùng được không, bán trước mở sớm bao nhiêu — đều bắt nguồn từ một dữ kiện đó.",
+      "Vậy nên thứ tự là: tìm thông báo chính thức trước, xác định nền tảng, rồi mới chuẩn bị theo yêu cầu riêng của nền tảng ấy. Làm ngược lại chính là cách người ta có một tài khoản đã xác minh trên trang sai, một tiếng trước giờ mở bán.",
+    ],
+    steps: [
+      {
+        title: "Tìm thông báo chính thức, không phải bài đăng lại của fan",
+        body: "Hãy vào các kênh chính thức của nghệ sĩ — trang của công ty quản lý, cộng đồng Weverse của nghệ sĩ, và tài khoản X/Instagram chính thức. Thông báo sẽ nêu nền tảng bán vé, giờ bán trước và giờ mở bán chung theo giờ KST, hạng thành viên cần có để được bán trước, cùng mọi điều kiện về nơi cư trú hay xác minh. Hãy chụp màn hình lại. Mọi việc bạn làm sau đó đều dựa trên đúng một văn bản này.",
+        pitfall:
+          "Các tài khoản fan tổng hợp và diễn giải lại, và họ nhầm nền tảng đủ thường xuyên để khiến bạn mất suất mua. Họ cũng hiếm khi cập nhật khi ngày giờ thay đổi.",
+        takes: "10 phút",
+      },
+      {
+        title: "Xác định nền tảng — và đừng suy ra từ tên công ty quản lý",
+        body: "Nghệ sĩ của HYBE nhìn chung bán qua hệ thống vé của chính Weverse. Các tour Hàn Quốc khác thường dùng NOL Ticket (trang tiếng Hàn) hoặc NOL World (trang dành cho người ở nước ngoài), YES24, hay Melon Ticket. Nhưng đây là xu hướng chứ không phải quy tắc: các công ty đổi nền tảng giữa các tour, và một tour có thể tách đợt bán trong nước với đợt bán toàn cầu sang hai trang khác nhau. Hãy đọc thông báo.",
+        pitfall:
+          "Coi sự tương ứng đó là cố định — “HYBE thì Weverse, SM thì YES24” — là lỗi phổ biến nhất trong các bài hướng dẫn hiện có. Nó sai đủ thường xuyên để gây hậu quả.",
+        takes: "5 phút",
+      },
+      {
+        title: "Xác định xem bạn phải qua kiểu xác minh danh tính nào",
+        body: "Các trang bán vé tiếng Hàn nhìn chung xác minh danh tính dựa trên số điện thoại di động Hàn Quốc, mà trên thực tế muốn có số đó thì cần giấy tờ cư trú tại Hàn. Nếu bạn không có, trang tiếng Hàn không phải con đường của bạn. Các trang dành cho người ở nước ngoài tồn tại đúng cho trường hợp này và xác minh bằng cách khác — thường là đối chiếu thông tin hộ chiếu với tài khoản của bạn. Hãy quyết định ngay bây giờ bạn dùng trang nào, vì tài khoản bạn cần nằm trên trang đó.",
+        pitfall:
+          "Cố ép trang tiếng Hàn hoạt động cho mình là phí công, và những cách mượn danh tính của người khác để qua xác minh thì chúng tôi không hỗ trợ — chúng đặt cả tấm vé lẫn tài khoản của bạn vào vòng rủi ro.",
+        takes: "15 phút",
+      },
+      {
+        title: "Tạo tài khoản đúng y như thông tin trên hộ chiếu",
+        body: "Hãy nhập tên pháp lý đúng như nó hiện ra ở vùng đọc máy của hộ chiếu, và ngày sinh theo định dạng trang web yêu cầu. Nếu show đòi tư cách thành viên fan club để được mua trước, thì tên và ngày sinh trên tư cách thành viên và trên tài khoản bán vé phải trùng nhau. Sai lệch là nguyên nhân đã được ghi nhận khiến đơn hàng bị hủy ở cửa soát vé hoặc trong lúc xác minh.",
+        pitfall:
+          "Tên đệm, họ có dấu gạch nối và thứ tự tên là chỗ hỏng. Tư cách thành viên ghi “Maria Santos” trong khi hộ chiếu ghi “Maria Elena Santos Cruz” là một sai lệch.",
+        takes: "20 phút",
+      },
+      {
+        title: "Kiểm tra phương thức thanh toán trước vài ngày, đừng để đến hôm đó",
+        body: "Thẻ phát hành ở nước ngoài thường được chấp nhận, nhưng nhiều khi chỉ sau khi tài khoản của bạn đã được xác minh là khách hàng ở nước ngoài. Ngoài ra, ngân hàng của bạn có thể chặn một giao dịch đầu tiên với đơn vị bán hàng Hàn Quốc, và bước xác thực 3-D Secure có thể thất bại bên trong trình duyệt nhúng của ứng dụng. Hãy gọi cho ngân hàng, bật giao dịch quốc tế, và nếu nền tảng có luồng nào thử được thì hãy chạy thử một giao dịch nhỏ không liên quan trước.",
+        pitfall:
+          "Một chiếc thẻ bị từ chối ở bước thanh toán sẽ trả ghế của bạn về kho chung trong vài phút. Đây là thất bại tốn kém nhất trong toàn bộ quy trình, và hoàn toàn có thể phòng tránh.",
+        takes: "Cần 1-3 ngày chuẩn bị",
+      },
+      {
+        title: "Chuẩn bị cho chính buổi mở bán",
+        body: "Hãy đăng nhập và hoàn tất mọi bước xác minh trước ít nhất một ngày. Đúng hôm đó, hãy đăng nhập sẵn từ sớm trước giờ mở, lấy giờ KST chính thức làm mốc chứ không lấy đồng hồ trên máy của bạn. Hãy quyết định trước bạn muốn ngồi khu nào — phần lớn hệ thống xếp hàng chỉ cho bạn một khoảng thời gian ngắn để chọn và thanh toán trước khi nhả chỗ đang giữ.",
+        pitfall:
+          "Mở một cửa sổ ẩn danh mới “cho chắc” nghĩa là bạn phải đăng nhập và xác minh lại ngay trong hàng chờ. Đừng làm vậy.",
+        takes: "30 phút trước giờ mở",
+      },
+      {
+        title: "Biết luật bán lại trước khi nghĩ đến chuyện bán lại",
+        body: "Hàn Quốc đã siết quy định về bán lại vé bằng một bản sửa đổi Luật Biểu diễn có hiệu lực từ ngày 28 tháng 8 năm 2026 — sửa đổi hồi tháng 1, công bố tháng 2, và có hiệu lực từ cuối tháng 8. Báo chí mô tả bản sửa đổi này cấm việc bán lại có tính thường xuyên hoặc có tính thương mại với giá cao hơn giá mua, bao gồm cả việc mua với ý định bán lại chứ không chỉ việc bán, và không còn giới hạn ở các giao dịch mua bằng công cụ tự động. Mức phạt được nêu lên tới năm mươi lần giá trị giao dịch, kèm tịch thu khoản thu lợi. Hãy coi việc bán lại cao hơn mệnh giá cho các show ở Hàn Quốc là chuyện không bàn tới, và dùng chức năng bán lại hoặc chuyển nhượng chính thức của nền tảng nếu show đó có.",
+        pitfall:
+          "Đây là luật mới, mới có hiệu lực từ tháng 8 năm 2026, và ngưỡng thế nào là “thường xuyên” vẫn đang được định hình trên thực tế. Việc một tin rao vẫn tồn tại trên một sàn bán lại quốc tế không nói lên điều gì về chuyện mua hay bán nó có an toàn cho bạn hay không.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Nếu tư cách thành viên của tôi hết hạn trước đợt bán trước, tôi gia hạn kịp có được không?",
+        a: "Chỉ khi việc gia hạn rơi vào trước hạn chót xét điều kiện, mà hạn chót đó thường sớm hơn chính đợt bán trước. Tính năng Thanh toán Tự động của Weverse Shop, có từ ngày 3 tháng 9 năm 2026 trên những gói thành viên hỗ trợ nó, sẽ trừ tiền từ phương thức đã đăng ký vào ngày cuối cùng của kỳ hiệu lực, nhờ đó không còn khoảng trống nào. Hãy thiết lập nó trước khi một tour được công bố chứ đừng đợi sau đó.",
+      },
+      {
+        q: "Tôi có cần số điện thoại Hàn Quốc để mua vé concert K-pop không?",
+        a: "Với các trang bán vé tiếng Hàn, việc xác minh danh tính nhìn chung phụ thuộc vào số di động Hàn Quốc, và muốn có số đó thường phải có giấy tờ cư trú tại Hàn. Với các trang dành cho người ở nước ngoài thì nhìn chung là không — họ xác minh khách ở nước ngoài bằng cách khác, thường là thông tin hộ chiếu. Điều nào áp dụng cho bạn phụ thuộc vào việc show cụ thể của bạn được bán trên nền tảng nào.",
+      },
+      {
+        q: "Tôi dùng thẻ tín dụng nước ngoài được không?",
+        a: "Thường là được trên các nền tảng dành cho người ở nước ngoài, và nhiều khi chỉ sau khi tài khoản của bạn đã được xác minh là khách ở nước ngoài. Hãy lường trước rằng chính ngân hàng của bạn là nửa còn lại của vấn đề: hãy bật giao dịch quốc tế từ trước và sẵn sàng cho bước xác thực 3-D Secure.",
+      },
+      {
+        q: "Đợt bán trước cho fan club mở sớm bao lâu?",
+        a: "Tùy từng show, và thông báo chính thức là câu trả lời đáng tin duy nhất. Các khung bán trước thường diễn ra trước đợt bán chung một ngày trở lên, và tư cách thành viên thường phải còn hiệu lực trước một hạn chót còn sớm hơn nữa. Đừng suy ra thời điểm từ một tour trước đó.",
+      },
+      {
+        q: "Trang Hàn Quốc và trang toàn cầu có chung một hàng chờ không?",
+        a: "Không hẳn. Việc phân bổ vé, xác minh và công nhận tư cách fan club có thể được xử lý riêng giữa đợt bán tiếng Hàn và đợt bán toàn cầu của cùng một show. Tư cách thành viên đã xác minh ở bên này không mặc nhiên được công nhận ở bên kia, nên hãy xem thông báo để biết điều nào áp dụng cho bạn.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "วิธีซื้อบัตรคอนเสิร์ต K-pop จากนอกประเทศเกาหลี",
+    summary:
+      "ภาพรวมทั้งหมดก่อนเริ่ม: งานของคุณขายบัตรบนแพลตฟอร์มไหน แพลตฟอร์มนั้นตรวจสอบตัวตนอย่างไร และคุณต้องเตรียมอะไรไว้ก่อนเปิดขาย",
+    scope:
+      "ครอบคลุมงานที่จัดในเกาหลีใต้และแพลตฟอร์มขายบัตรที่ค่ายเพลงเกาหลีใช้ รอบทัวร์ต่างประเทศขายโดยผู้จัดในท้องถิ่นและแยกกันคนละเรื่อง กฎด้านล่างนี้ใช้กับรอบเหล่านั้นไม่ได้",
+    intro: [
+      "คู่มือเกือบทุกฉบับที่ติดอันดับสำหรับคำถามนี้เขียนขึ้นก่อนเดือนธันวาคม 2025 และบอกให้คุณไปใช้เว็บไซต์ที่ไม่มีอยู่ในชื่อนั้นแล้ว นั่นคือเหตุผลหลักที่หน้านี้มีอยู่",
+      "ไม่มีเว็บขายบัตร K-pop เพียงเว็บเดียว แพลตฟอร์มถูกเลือกเป็นรายทัวร์โดยค่ายและผู้จัด และถูกระบุไว้ในประกาศอย่างเป็นทางการของงานนั้น ทุกอย่างที่เหลือ — คุณต้องผ่านการยืนยันตัวตนแบบไหน บัตรต่างประเทศใช้ได้หรือไม่ รอบพรีเซลเปิดล่วงหน้านานแค่ไหน — ล้วนตามมาจากข้อเท็จจริงข้อเดียวนี้",
+      "ลำดับจึงเป็นแบบนี้: หาประกาศอย่างเป็นทางการก่อน ระบุแพลตฟอร์มให้ได้ แล้วค่อยเตรียมตัวตามข้อกำหนดเฉพาะของแพลตฟอร์มนั้น การทำสลับลำดับคือสาเหตุที่คนมีบัญชีซึ่งยืนยันตัวตนแล้วอยู่ผิดเว็บ ก่อนเปิดขายหนึ่งชั่วโมง",
+    ],
+    steps: [
+      {
+        title: "หาประกาศอย่างเป็นทางการ ไม่ใช่โพสต์ที่แฟนแชร์ต่อ",
+        body: "เข้าไปที่ช่องทางทางการของศิลปิน — เว็บไซต์ของค่าย คอมมูนิตี้ Weverse ของศิลปิน และบัญชี X หรือ Instagram ทางการ ประกาศจะระบุแพลตฟอร์มขายบัตร เวลาพรีเซลและเวลาเปิดขายรอบทั่วไปเป็นเวลา KST ระดับสมาชิกที่ต้องมีเพื่อเข้าพรีเซล รวมถึงเงื่อนไขเรื่องถิ่นที่อยู่หรือการยืนยันตัวตน แคปหน้าจอเก็บไว้ ทุกอย่างที่คุณทำหลังจากนี้ขึ้นอยู่กับเอกสารชิ้นเดียวนี้",
+        pitfall:
+          "บัญชีแฟนคลับรวบรวมและเรียบเรียงใหม่ และระบุแพลตฟอร์มผิดบ่อยพอที่จะทำให้คุณพลาดรอบขาย อีกทั้งแทบไม่เคยอัปเดตเมื่อวันเวลาเปลี่ยน",
+        takes: "10 นาที",
+      },
+      {
+        title: "ระบุแพลตฟอร์มให้ได้ — และอย่าเดาจากชื่อค่าย",
+        body: "ศิลปินในเครือ HYBE โดยทั่วไปขายผ่านระบบบัตรของ Weverse เอง ทัวร์เกาหลีอื่น ๆ มักใช้ NOL Ticket (เว็บภาษาเกาหลี) หรือ NOL World (เว็บสำหรับผู้อยู่ต่างประเทศ) YES24 หรือ Melon Ticket แต่นี่เป็นแนวโน้ม ไม่ใช่กฎ ค่ายเปลี่ยนแพลตฟอร์มระหว่างทัวร์ได้ และทัวร์เดียวอาจแยกรอบขายในเกาหลีกับรอบขายทั่วโลกไปคนละเว็บ อ่านประกาศ",
+        pitfall:
+          "การยึดการจับคู่นั้นเป็นตายตัว — “HYBE ต้อง Weverse, SM ต้อง YES24” — คือข้อผิดพลาดที่พบบ่อยที่สุดในคู่มือที่มีอยู่ มันผิดบ่อยพอที่จะสร้างความเสียหาย",
+        takes: "5 นาที",
+      },
+      {
+        title: "ดูให้ออกว่าคุณต้องผ่านการยืนยันตัวตนแบบไหน",
+        body: "เว็บขายบัตรภาษาเกาหลีโดยทั่วไปยืนยันตัวตนด้วยเบอร์มือถือเกาหลี ซึ่งในทางปฏิบัติต้องมีเอกสารถิ่นที่อยู่ในเกาหลีจึงจะขอได้ ถ้าคุณไม่มี เว็บภาษาเกาหลีไม่ใช่ทางของคุณ เว็บสำหรับผู้อยู่ต่างประเทศมีไว้สำหรับกรณีนี้โดยเฉพาะ และยืนยันด้วยวิธีอื่น โดยทั่วไปคือข้อมูลหนังสือเดินทางที่ผูกกับบัญชีของคุณ ตัดสินใจตอนนี้เลยว่าจะใช้เว็บไหน เพราะบัญชีที่คุณต้องมีอยู่บนเว็บนั้น",
+        pitfall:
+          "การพยายามฝืนใช้เว็บภาษาเกาหลีให้ได้คือการเสียแรงเปล่า และการจัดแจงที่ยืมตัวตนของคนอื่นมาผ่านการยืนยัน เราไม่ช่วย เพราะมันทำให้ทั้งบัตรและบัญชีของคุณเสี่ยง",
+        takes: "15 นาที",
+      },
+      {
+        title: "สร้างบัญชีด้วยข้อมูลหนังสือเดินทางให้ตรงเป๊ะ",
+        body: "กรอกชื่อตามกฎหมายให้ตรงกับที่ปรากฏในแถบอ่านด้วยเครื่องของหนังสือเดินทาง และกรอกวันเกิดตามรูปแบบที่เว็บกำหนด ถ้างานนั้นต้องเป็นสมาชิกแฟนคลับจึงจะเข้าพรีเซลได้ ชื่อและวันเกิดบนสมาชิกภาพกับบนบัญชีขายบัตรต้องตรงกัน ความไม่ตรงกันเป็นสาเหตุที่มีบันทึกไว้ว่าทำให้คำสั่งซื้อถูกยกเลิกที่หน้างานหรือระหว่างการยืนยันตัวตน",
+        pitfall:
+          "ชื่อกลาง นามสกุลที่มีขีดกลาง และลำดับชื่อ คือจุดที่พัง สมาชิกภาพที่เขียนว่า “Maria Santos” ขณะที่หนังสือเดินทางเขียนว่า “Maria Elena Santos Cruz” ถือว่าไม่ตรงกัน",
+        takes: "20 นาที",
+      },
+      {
+        title: "ตรวจวิธีชำระเงินล่วงหน้าหลายวัน ไม่ใช่วันงาน",
+        body: "บัตรที่ออกในต่างประเทศมักใช้ได้ แต่บ่อยครั้งใช้ได้ก็ต่อเมื่อบัญชีของคุณผ่านการยืนยันว่าเป็นลูกค้าต่างประเทศแล้ว นอกจากนี้ ธนาคารของคุณอาจบล็อกการตัดเงินครั้งแรกจากร้านค้าเกาหลี และขั้นตอน 3-D Secure อาจล้มเหลวเมื่อทำในเบราว์เซอร์ที่ฝังอยู่ในแอป โทรหาธนาคาร เปิดใช้ธุรกรรมระหว่างประเทศ และถ้าแพลตฟอร์มมีขั้นตอนที่ลองได้ ให้ลองจ่ายรายการเล็ก ๆ ที่ไม่เกี่ยวข้องก่อนสักครั้ง",
+        pitfall:
+          "บัตรที่ถูกปฏิเสธในขั้นชำระเงินจะทำให้ที่นั่งของคุณกลับคืนสู่ระบบภายในไม่กี่นาที นี่คือความล้มเหลวที่แพงที่สุดในกระบวนการทั้งหมด และเป็นความล้มเหลวที่ป้องกันได้ทั้งหมดเช่นกัน",
+        takes: "ต้องเผื่อเวลา 1-3 วัน",
+      },
+      {
+        title: "เตรียมตัวสำหรับตัวรอบขายเอง",
+        body: "ล็อกอินและทำทุกขั้นตอนการยืนยันให้เสร็จอย่างน้อยหนึ่งวันล่วงหน้า ในวันนั้นให้ล็อกอินค้างไว้ก่อนเวลาเปิดนาน ๆ โดยยึดเวลา KST อย่างเป็นทางการเป็นหลัก ไม่ใช่นาฬิกาในเครื่องของคุณ ตัดสินใจเรื่องโซนที่นั่งที่ต้องการไว้ล่วงหน้า ระบบคิวส่วนใหญ่ให้เวลาคุณสั้น ๆ ในการเลือกและจ่ายเงินก่อนจะปล่อยที่นั่งที่จองไว้",
+        pitfall:
+          "การเปิดหน้าต่างไม่ระบุตัวตนอันใหม่ “เผื่อไว้” หมายถึงการต้องล็อกอินและยืนยันตัวตนใหม่ขณะอยู่ในคิว อย่าทำ",
+        takes: "30 นาทีก่อนเปิดขาย",
+      },
+      {
+        title: "รู้กฎเรื่องการขายต่อก่อนจะคิดเรื่องขายต่อ",
+        body: "เกาหลีใต้เข้มงวดกับการขายบัตรต่อมากขึ้นผ่านการแก้ไขกฎหมายการแสดงที่มีผลบังคับใช้วันที่ 28 สิงหาคม 2026 — แก้ไขในเดือนมกราคม ประกาศใช้ในเดือนกุมภาพันธ์ และมีผลตั้งแต่ปลายเดือนสิงหาคม รายงานข่าวเกี่ยวกับการแก้ไขนี้อธิบายว่าเป็นการห้ามขายต่อในลักษณะทำเป็นปกติวิสัยหรือเชิงพาณิชย์ในราคาสูงกว่าราคาที่ซื้อมา ครอบคลุมถึงการซื้อโดยมีเจตนาขายต่อ ไม่ใช่เฉพาะการขาย และไม่จำกัดอยู่แค่การซื้อด้วยระบบอัตโนมัติอีกต่อไป บทลงโทษที่มีรายงานรวมถึงค่าปรับสูงสุดห้าสิบเท่าของมูลค่าการขายและการริบผลประโยชน์ที่ได้มา ให้ถือว่าการขายต่อสูงกว่าราคาหน้าบัตรสำหรับงานในเกาหลีเป็นเรื่องที่ไม่ต้องคิดถึง และใช้ฟังก์ชันขายต่อหรือโอนบัตรอย่างเป็นทางการของแพลตฟอร์มหากงานนั้นมีให้",
+        pitfall:
+          "นี่เป็นกฎหมายใหม่ที่เพิ่งมีผลตั้งแต่เดือนสิงหาคม 2026 และเส้นแบ่งว่าอย่างไรคือ “ทำเป็นปกติวิสัย” ยังกำลังก่อตัวในทางปฏิบัติ การที่ประกาศขายยังอยู่บนตลาดขายต่อระหว่างประเทศไม่ได้บอกอะไรเลยว่าการซื้อหรือขายมันปลอดภัยสำหรับคุณหรือไม่",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ถ้าสมาชิกภาพของฉันหมดอายุก่อนรอบพรีเซล ต่ออายุทันไหม",
+        a: "ทันก็ต่อเมื่อการต่ออายุเกิดขึ้นก่อนเส้นตายของการพิจารณาสิทธิ์ ซึ่งเส้นตายนั้นมักมาก่อนตัวรอบพรีเซลเสียอีก ระบบชำระเงินอัตโนมัติของ Weverse Shop ซึ่งมีให้ใช้ตั้งแต่วันที่ 3 กันยายน 2026 บนสมาชิกภาพที่รองรับ จะตัดเงินจากวิธีชำระที่ลงทะเบียนไว้ในวันสุดท้ายของช่วงที่ยังมีผล ทำให้ไม่เหลือช่องว่างเลย ตั้งค่ามันไว้ก่อนที่ทัวร์จะประกาศ ไม่ใช่หลังจากนั้น",
+      },
+      {
+        q: "ต้องมีเบอร์โทรศัพท์เกาหลีถึงจะซื้อบัตรคอนเสิร์ต K-pop ได้ไหม",
+        a: "สำหรับเว็บขายบัตรภาษาเกาหลี การยืนยันตัวตนโดยทั่วไปขึ้นอยู่กับเบอร์มือถือเกาหลี และการขอเบอร์นั้นตามปกติต้องมีเอกสารถิ่นที่อยู่ในเกาหลี สำหรับเว็บที่รองรับผู้อยู่ต่างประเทศ โดยทั่วไปไม่ต้อง เพราะยืนยันลูกค้าต่างประเทศด้วยวิธีอื่น ซึ่งมักเป็นข้อมูลหนังสือเดินทาง ข้อไหนใช้กับคุณขึ้นอยู่กับว่างานของคุณขายบนแพลตฟอร์มใด",
+      },
+      {
+        q: "ใช้บัตรเครดิตต่างประเทศได้ไหม",
+        a: "โดยทั่วไปได้บนแพลตฟอร์มที่รองรับผู้อยู่ต่างประเทศ และบ่อยครั้งได้ก็ต่อเมื่อบัญชีของคุณผ่านการยืนยันว่าเป็นลูกค้าต่างประเทศแล้ว ให้เตรียมใจว่าธนาคารของคุณเองคืออีกครึ่งหนึ่งของปัญหา เปิดใช้ธุรกรรมระหว่างประเทศไว้ล่วงหน้า และเตรียมพร้อมสำหรับขั้นตอน 3-D Secure",
+      },
+      {
+        q: "รอบพรีเซลของแฟนคลับเปิดล่วงหน้านานแค่ไหน",
+        a: "แล้วแต่งาน และประกาศอย่างเป็นทางการคือคำตอบเดียวที่เชื่อถือได้ ช่วงพรีเซลมักเกิดก่อนรอบขายทั่วไปหนึ่งวันขึ้นไป และสมาชิกภาพมักต้องยังมีผลก่อนเส้นตายที่เร็วกว่านั้นอีก อย่าอนุมานเวลาจากทัวร์ครั้งก่อน",
+      },
+      {
+        q: "เว็บเกาหลีกับเว็บทั่วโลกใช้คิวเดียวกันไหม",
+        a: "ไม่จำเป็น การจัดสรรบัตร การยืนยันตัวตน และการรับรองสมาชิกแฟนคลับอาจถูกจัดการแยกกันระหว่างรอบขายภาษาเกาหลีกับรอบขายทั่วโลกของงานเดียวกัน สมาชิกภาพที่ยืนยันแล้วบนฝั่งหนึ่งไม่ได้ถูกรับรองโดยอัตโนมัติบนอีกฝั่ง จึงควรดูประกาศว่าข้อไหนใช้กับคุณ",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "buy-k-pop-concert-tickets-from-overseas",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Paano bumili ng tiket sa konsiyerto ng K-pop mula sa labas ng Korea",
+    summary:
+      "Ang buong larawan bago ka magsimula: kung saang plataporma ibinebenta ang konsiyerto mo, kung anong pagpapatunay ng pagkakakilanlan ang hinihingi nito, at kung ano ang dapat handa na bago magbukas ang benta.",
+    scope:
+      "Sakop nito ang mga palabas na ginaganap sa South Korea at ang mga plataporma ng tiket na ginagamit ng mga ahensiyang Koreano. Ang mga petsa ng tour sa ibang bansa ay ibinebenta ng lokal na promoter at hiwalay ang usapan — hindi sa kanila tumutukoy ang mga tuntunin sa ibaba.",
+    intro: [
+      "Halos lahat ng gabay na lumalabas sa tuktok para sa tanong na ito ay isinulat bago ang Disyembre 2025, at itinuturo ka ng mga ito sa isang site na wala na sa pangalang iyon. Iyan ang pangunahing dahilan kung bakit umiiral ang pahinang ito.",
+      "Walang iisang site ng tiket para sa K-pop. Pinipili ang plataporma kada tour ng ahensiya at ng promoter, at pinangangalanan ito sa opisyal na anunsiyo ng palabas na iyon. Ang lahat ng iba pa — kung anong pagpapatunay ng pagkakakilanlan ang haharapin mo, kung gumagana ang dayuhang kard, kung gaano kaaga magbubukas ang presale — ay sumusunod sa isang bagay na iyon.",
+      "Kaya ganito ang pagkakasunod-sunod: hanapin muna ang opisyal na anunsiyo, tukuyin ang plataporma, saka maghanda para sa mga tiyak na kahilingan ng plataporma. Ang pagbaligtad nito ang dahilan kung bakit may mga taong may napatunayang account sa maling site isang oras bago magbukas ang benta.",
+    ],
+    steps: [
+      {
+        title: "Hanapin ang opisyal na anunsiyo, hindi ang repost ng fan",
+        body: "Pumunta sa mga opisyal na channel ng artist — ang site ng ahensiya, ang Weverse community ng artist, at ang opisyal nilang X o Instagram. Nakasaad sa anunsiyo ang plataporma ng tiket, ang oras ng presale at ng pangkalahatang benta sa KST, ang antas ng membership na kailangan para sa presale, at anumang kondisyon sa paninirahan o pagpapatunay. I-screenshot mo ito. Ang lahat ng gagawin mo pagkatapos ay nakasalalay sa iisang dokumentong ito.",
+        pitfall:
+          "Ang mga fan account ay nagtitipon at nagpapaliwanag sa sarili nilang salita, at madalas silang magkamali sa plataporma nang sapat para ikaw ay mawalan ng pagkakataong makabili. Bihira rin silang mag-update kapag inilipat ang petsa.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Tukuyin ang plataporma — at huwag hulaan ito mula sa pangalan ng ahensiya",
+        body: "Ang mga artist ng HYBE ay karaniwang dumadaan sa sariling sistema ng tiket ng Weverse. Ang ibang tour sa Korea ay karaniwang gumagamit ng NOL Ticket (ang site sa wikang Koreano) o NOL World (ang katapat nito para sa mga nasa ibang bansa), YES24, o Melon Ticket. Pero ugali lang ito at hindi tuntunin: nagpapalit ng plataporma ang mga ahensiya sa pagitan ng mga tour, at kayang hatiin ng isang tour ang benta sa Korea at ang pandaigdigang benta sa dalawang magkaibang site. Basahin ang anunsiyo.",
+        pitfall:
+          "Ang pagturing sa pagtutumbas na iyon bilang tiyak — “HYBE ay Weverse, SM ay YES24” — ang pinakakaraniwang pagkakamali sa mga umiiral na gabay. Mali ito nang sapat na kadalasan para magdulot ng pinsala.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Alamin kung anong pagpapatunay ng pagkakakilanlan ang haharapin mo",
+        body: "Ang mga site ng tiket sa wikang Koreano ay karaniwang nagpapatunay ng pagkakakilanlan laban sa isang numero ng cellphone na Koreano, na sa praktika ay nangangailangan ng dokumento ng paninirahan sa Korea. Kung wala ka niyan, hindi ang site na Koreano ang ruta mo. Ang mga site para sa nasa ibang bansa ay umiiral mismo para sa ganitong kaso at nagpapatunay sa ibang paraan — karaniwan ay mga detalye ng pasaporte na itinutugma sa account mo. Magpasya ka na ngayon kung aling site ang gagamitin mo, dahil nasa site na iyon ang account na kailangan mo.",
+        pitfall:
+          "Ang pagpupumilit na paganahin ang site na Koreano ay sayang na pagod, at ang mga kaayusang humihiram ng pagkakakilanlan ng iba para makapasa sa pagpapatunay ay hindi namin tutulungan — inilalagay ng mga ito sa panganib ang tiket at ang account mo.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Gawin ang account gamit ang eksaktong detalye ng pasaporte mo",
+        body: "Ilagay ang legal na pangalan mo gaya ng nakalimbag sa machine-readable zone ng pasaporte, at ang petsa ng kapanganakan sa format na hinihingi ng site. Kung kailangan ng membership sa fan club para sa presale, kailangang pareho ang pangalan at petsa ng kapanganakan sa membership at sa account ng tiket. Ang hindi pagtutugma ay nakatalang dahilan ng mga kanseladong order sa pintuan o habang nagpapatunay.",
+        pitfall:
+          "Ang gitnang pangalan, ang apelyidong may gitling at ang pagkakasunod-sunod ng pangalan ang mga puntong nasisira. Ang membership na nakasulat na “Maria Santos” habang ang pasaporte ay “Maria Elena Santos Cruz” ay hindi magkatugma.",
+        takes: "20 minuto",
+      },
+      {
+        title: "Suriin ang paraan ng pagbabayad ilang araw bago, hindi sa mismong araw",
+        body: "Karaniwang tinatanggap ang mga kard na inisyu sa ibang bansa, pero madalas ay pagkatapos lamang mapatunayan ang account mo bilang customer mula sa ibang bansa. Hiwalay doon, maaaring harangin ng bangko mo ang unang singil mula sa isang Koreanong merchant, at maaaring mabigo ang 3-D Secure sa loob ng browser ng isang app. Tawagan ang bangko, buksan ang mga internasyonal na transaksiyon, at kung may masusubukang daloy ang plataporma, subukan muna ang isang maliit at walang kaugnayang pagbili.",
+        pitfall:
+          "Ang kard na tinanggihan sa hakbang ng pagbabayad ay nagbabalik ng upuan mo sa pool sa loob ng ilang minuto. Ito ang pinakamahal na pagkabigo sa buong proseso, at ito rin ang lubos na maiiwasan.",
+        takes: "1-3 araw na paghahanda",
+      },
+      {
+        title: "Maghanda para sa mismong benta",
+        body: "Mag-log in at tapusin ang bawat hakbang ng pagpapatunay nang hindi bababa sa isang araw bago. Sa mismong araw, naka-sign in ka na nang maaga bago ang oras ng pagbubukas, at ang opisyal na oras na KST ang sundin mo sa halip na ang orasan ng device mo. Napagpasyahan mo na dapat ang nais mong upuan — karaniwang maikli lang ang ibinibigay ng mga sistema ng pila para pumili at magbayad bago nila bitawan ang hawak mong upuan.",
+        pitfall:
+          "Ang pagbukas ng bagong incognito window “para sigurado” ay nangangahulugang mag-lo-log in at magpapatunay kang muli sa loob mismo ng pila. Huwag.",
+        takes: "30 minuto bago magbukas",
+      },
+      {
+        title: "Alamin ang tuntunin sa muling pagbebenta bago mo isipin ang muling pagbebenta",
+        body: "Hinigpitan ng South Korea ang mga tuntunin sa muling pagbebenta ng tiket sa pamamagitan ng isang pagbabago sa Performances Act na nagkabisa noong 28 Agosto 2026 — binago noong Enero, inilathala noong Pebrero, at may bisa mula huling bahagi ng Agosto. Inilalarawan ng mga ulat ang pagbabago bilang pagbabawal sa paulit-ulit o komersiyal na muling pagbebenta nang mas mataas sa presyong binilhan, sakop pati ang pagbili nang may balak na ibenta muli at hindi lamang ang pagbebenta, at hindi na limitado sa mga pagbiling ginawa gamit ang automation. Kabilang sa mga naiulat na parusa ang multang umaabot sa limampung beses ng halaga ng benta at pagsamsam sa napagbentahan. Ituring mong wala sa talahanayan ang muling pagbebenta nang lampas sa nakalimbag na presyo para sa mga palabas sa Korea, at gamitin ang opisyal na resale o transfer na tampok ng plataporma kung mayroon ang palabas.",
+        pitfall:
+          "Bago ang batas na ito, may bisa lamang mula Agosto 2026, at hinuhubog pa sa praktika ang hangganan ng “paulit-ulit”. Ang pag-iral ng isang listing sa isang internasyonal na resale marketplace ay walang sinasabi tungkol sa kung ligtas para sa iyo ang bumili o magbenta nito.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Kung mag-e-expire ang membership ko bago ang presale, puwede ko pa bang i-renew sa oras?",
+        a: "Kung ang pag-renew ay bago ang hangganan ng pagiging kuwalipikado, at mas maaga ang hangganang iyon kaysa sa mismong presale. Ang Auto Payment ng Weverse Shop, na magagamit mula 3 Setyembre 2026 sa mga membership na sumusuporta rito, ay naniningil sa nakarehistrong paraan ng pagbabayad sa huling araw ng panahon ng bisa, kaya tuluyan nitong inaalis ang puwang. Itakda mo ito bago ianunsiyo ang isang tour, hindi pagkatapos.",
+      },
+      {
+        q: "Kailangan ko ba ng numerong Koreano para makabili ng tiket sa konsiyerto ng K-pop?",
+        a: "Para sa mga site ng tiket sa wikang Koreano, ang pagpapatunay ng pagkakakilanlan ay karaniwang nakasalalay sa isang numero ng cellphone na Koreano, at ang pagkuha nito ay karaniwang nangangailangan ng dokumento ng paninirahan sa Korea. Para sa mga site na nakaharap sa ibang bansa, karaniwan ay hindi — nagpapatunay sila ng mga customer mula sa ibang bansa sa ibang paraan, kadalasan sa pamamagitan ng mga detalye ng pasaporte. Kung alin ang tumutukoy sa iyo ay nakadepende sa kung saang plataporma ibinebenta ang tiyak mong palabas.",
+      },
+      {
+        q: "Puwede ba akong gumamit ng dayuhang credit card?",
+        a: "Karaniwang oo sa mga plataporma para sa nasa ibang bansa, at madalas ay pagkatapos lamang mapatunayan ang account mo bilang customer mula sa ibang bansa. Asahan mong ang sarili mong bangko ang kalahati pa ng problema: buksan nang maaga ang mga internasyonal na transaksiyon at maghanda para sa isang hakbang na 3-D Secure.",
+      },
+      {
+        q: "Gaano kaaga nagbubukas ang presale ng fan club?",
+        a: "Nag-iiba ito kada palabas, at ang opisyal na anunsiyo lamang ang maaasahang sagot. Karaniwang nangyayari ang mga presale nang isang araw o higit pa bago ang pangkalahatang benta, at karaniwang kailangang may bisa pa ang membership bago ang isang hangganang mas maaga pa doon. Huwag mong hulaan ang oras batay sa nakaraang tour.",
+      },
+      {
+        q: "Iisang pila ba ang site na Koreano at ang pandaigdigang site?",
+        a: "Hindi palagi. Ang paglalaan ng tiket, ang pagpapatunay, at ang pagkilala sa membership ng fan club ay maaaring hawakan nang magkahiwalay sa pagitan ng bentang Koreano at ng pandaigdigang benta para sa iisang palabas. Ang membership na napatunayan sa isa ay hindi awtomatikong kinikilala sa isa pa, kaya tingnan ang anunsiyo kung alin ang tumutukoy sa iyo.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vé NOL World: trang web từng là Interpark Global",
+    summary:
+      "Trang web trước đây là interpark Global. Nó được đổi tên vào ngày 1 tháng 12 năm 2025, phần lớn các bài hướng dẫn vẫn chỉ bạn tới cái tên cũ, và đây là lộ trình hiện tại theo từng bước.",
+    scope:
+      "Nói về nền tảng dành cho người ở nước ngoài để mua vé các show tại Hàn Quốc. Trang NOL Ticket bằng tiếng Hàn là một sản phẩm riêng, có hệ thống tài khoản riêng và khâu xác minh danh tính chặt hơn.",
+    intro: [
+      "Hai lần đổi tên diễn ra gần nhau và gần như không bài hướng dẫn tiếng Anh nào trên mạng tiếp nhận được lần nào. Yanolja Core gom các thương hiệu của mình về dưới tên NOL vào tháng 4 năm 2025, đó là lúc Interpark Ticket trở thành NOL Ticket. Rồi đến ngày 1 tháng 12 năm 2025, interpark Global hướng tới người ở nước ngoài trở thành NOL World.",
+      "Hệ quả thực tế: những bài hướng dẫn bảo bạn vào “Interpark Global”, cùng ảnh chụp giao diện cũ của nó, đang mô tả một sản phẩm đã được đổi tên và thiết kế lại. Nếu bạn đang đi theo một bài như vậy, bạn đang dò đường bằng một tấm bản đồ lỗi thời.",
+      "Trang này bám theo bản hiện tại. Ngày ghi ở đầu trang là lần kiểm tra gần nhất.",
+    ],
+    steps: [
+      {
+        title: "Bắt đầu từ trang dành cho người ở nước ngoài, không phải trang tiếng Hàn",
+        body: "NOL World là cửa chính dành cho fan ở nước ngoài. Trang NOL Ticket tiếng Hàn chạy khâu xác minh danh tính trong nước chặt hơn và nhìn chung không phải lối đi của bạn, trừ khi bạn có giấy tờ cư trú tại Hàn Quốc. Đây là hai tài khoản riêng biệt — đăng ký bên này không cho bạn bên kia.",
+        pitfall:
+          "Kết quả tìm kiếm và các dấu trang cũ vẫn dẫn về thương hiệu trước đây. Hãy xác nhận bạn đang ở trang dành cho người ở nước ngoài trước khi bỏ công lập tài khoản.",
+        takes: "5 phút",
+      },
+      {
+        title: "Đăng ký bằng thông tin đúng y hộ chiếu",
+        body: "Hãy dùng tên pháp lý và ngày sinh đúng như in trên hộ chiếu. Nếu show bạn muốn có đợt bán trước cho fan club, những thông tin này còn phải khớp với hồ sơ thành viên của bạn. Hãy sửa mọi sai lệch trước khi khung bán trước mở ra, đừng sửa trong lúc nó đang diễn ra.",
+        pitfall:
+          "Đổi một cái tên đã xác minh về sau là quy trình gửi yêu cầu hỗ trợ, không phải một nút gạt trong phần cài đặt. Hãy làm đúng ngay từ đầu.",
+        takes: "20 phút",
+      },
+      {
+        title: "Hoàn tất xác minh khách ở nước ngoài trước khi cần đến nó",
+        body: "Xác minh khách ở nước ngoài là thao tác chỉ làm một lần cho mỗi tài khoản, và NOL World nói rõ rằng thông tin đã xác minh không thể dùng lại. Hãy xác minh trên chính tài khoản bạn định mua bằng nó — nếu bạn có nhiều tài khoản, phần xác minh không chuyển qua lại giữa chúng. Xóa một tài khoản thì đúng là xóa luôn phần xác minh của nó và giải phóng cho tài khoản khác, nhưng một tài khoản đang bị hạn chế vì sử dụng sai thì không thể xóa được. Bản thân việc xác minh không giới hạn độ tuổi, dù những sự kiện có giới hạn tuổi vẫn có thể từ chối đơn mua. Xác nhận sẽ được gửi qua email, nên hãy kiểm tra cả thư rác trước khi kết luận là thất bại.",
+        pitfall:
+          "Phát hiện ở bước thanh toán rằng phần xác minh vẫn đang chờ xử lý là cách kinh điển để mất chiếc ghế đang giữ.",
+        takes: "1-3 ngày tính cả thời gian xử lý",
+      },
+      {
+        title: "Kiểm tra điều kiện riêng của từng show trên trang sự kiện",
+        body: "Giới hạn số ghế mỗi tài khoản, có cần tư cách thành viên hay không, yêu cầu giấy tờ tại địa điểm, và cả việc show đó có mở cho người mua ở nước ngoài hay không — tất cả đều được đặt riêng theo từng sự kiện. Hãy đọc trang sự kiện cùng với thông báo chính thức; chỗ nào hai bên mâu thuẫn thì thông báo chính thức của show đó thắng.",
+        pitfall:
+          "Một số show giới hạn những khu ghế hoặc những đợt bán nhất định cho người mua trong nước. Điều này tùy từng show và không thể biết được từ một bài hướng dẫn chung.",
+        takes: "10 phút",
+      },
+      {
+        title: "Mang đúng giấy tờ khi đi nhận vé",
+        body: "Việc nhận vé diễn ra tại quầy vé ở địa điểm tổ chức vào đúng ngày diễn chứ không sớm hơn — NOL World nói rằng không thể nhận vé vào một ngày trước đó. Khung nhận vé mở trước giờ diễn một tiếng, và bạn cần mã xác nhận cùng với giấy tờ tùy thân. Hãy tính cả thời gian xếp hàng ngay tại quầy vé. Một khi đã nhận, vé không được cấp lại nếu bị mất hay bị lấy cắp.",
+        pitfall:
+          "Tên trên đơn đặt, tên trên giấy tờ và tên trên tư cách thành viên đều phải khớp nhau. Một biệt danh ở bất kỳ mắt xích nào trong chuỗi đó đều là rắc rối.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World có phải là Interpark Global không?",
+        a: "Đó vẫn là dịch vụ bán vé dành cho người ở nước ngoài, sau khi đổi thương hiệu. interpark Global được đổi tên thành NOL World vào ngày 1 tháng 12 năm 2025, tiếp nối việc Yanolja Core gom các thương hiệu về dưới tên NOL vào tháng 4 năm 2025, khi Interpark Ticket trở thành NOL Ticket.",
+      },
+      {
+        q: "Vì sao dấu trang cũ của tôi vẫn ghi Interpark?",
+        a: "Việc đổi thương hiệu cần thời gian để lan ra kết quả tìm kiếm, các bài hướng dẫn của bên thứ ba và những trang đã lưu đệm. Hãy đi từ thông báo chính thức của show bạn quan tâm, thay vì từ một liên kết đã lưu hay một bài blog.",
+      },
+      {
+        q: "NOL Global có phải cùng một thứ không? Còn NOL Korea thì sao?",
+        a: "Đó là những cái tên người ta buột miệng khi nhớ mang máng về lần đổi tên, và đáng nói ra vì chúng là thứ thực sự được gõ vào ô tìm kiếm. Có hai trang: NOL World, trang dành cho người ở nước ngoài, vốn là interpark Global cho tới ngày 1 tháng 12 năm 2025; và NOL Ticket, trang tiếng Hàn, vốn là Interpark Ticket cho tới tháng 4 năm 2025. Nếu ai đó chỉ bạn tới “NOL Global”, “NOL Korea” hay “NOL KR”, thì trang bạn đang tìm gần như chắc chắn là NOL World.",
+      },
+      {
+        q: "Tôi dùng tài khoản NOL Ticket trên NOL World được không?",
+        a: "Hãy coi chúng là hai tài khoản riêng với hai phần xác minh riêng. Đừng cho rằng một lần đăng nhập hay một phần xác minh đã hoàn tất sẽ theo bạn sang bên kia — hãy xác nhận ngay trên trang mà bạn sẽ thực sự mua vé.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "บัตร NOL World: เว็บที่เคยชื่อ Interpark Global",
+    summary:
+      "เว็บที่เคยเป็น interpark Global ถูกเปลี่ยนชื่อเมื่อวันที่ 1 ธันวาคม 2025 คู่มือส่วนใหญ่ยังส่งคุณไปที่ชื่อเดิม และนี่คือเส้นทางปัจจุบันแบบทีละขั้น",
+    scope:
+      "ครอบคลุมแพลตฟอร์มสำหรับผู้อยู่ต่างประเทศที่ใช้ซื้อบัตรงานในเกาหลี เว็บ NOL Ticket ภาษาเกาหลีเป็นผลิตภัณฑ์คนละตัว มีระบบบัญชีแยกต่างหากและการยืนยันตัวตนที่เข้มกว่า",
+    intro: [
+      "การเปลี่ยนชื่อสองครั้งเกิดขึ้นห่างกันไม่นาน และคู่มือภาษาอังกฤษบนอินเทอร์เน็ตแทบไม่มีฉบับใดรับรู้ทั้งสองครั้ง Yanolja Core รวมแบรนด์ของตนไว้ภายใต้ชื่อ NOL เมื่อเดือนเมษายน 2025 ซึ่งเป็นตอนที่ Interpark Ticket กลายเป็น NOL Ticket จากนั้นวันที่ 1 ธันวาคม 2025 interpark Global ที่ให้บริการผู้อยู่ต่างประเทศก็กลายเป็น NOL World",
+      "ผลในทางปฏิบัติคือ คู่มือที่บอกให้คุณไปที่ “Interpark Global” พร้อมภาพหน้าจอของอินเทอร์เฟซเก่า กำลังอธิบายผลิตภัณฑ์ที่ถูกเปลี่ยนชื่อและออกแบบใหม่ไปแล้ว ถ้าคุณกำลังทำตามคู่มือแบบนั้น คุณกำลังเดินทางด้วยแผนที่ที่ล้าสมัย",
+      "หน้านี้ตามฉบับปัจจุบัน วันที่ด้านบนคือวันที่ตรวจสอบล่าสุด",
+    ],
+    steps: [
+      {
+        title: "เริ่มที่เว็บสำหรับผู้อยู่ต่างประเทศ ไม่ใช่เว็บภาษาเกาหลี",
+        body: "NOL World คือประตูหน้าสำหรับแฟนที่อยู่ต่างประเทศ เว็บ NOL Ticket ภาษาเกาหลีใช้การยืนยันตัวตนสำหรับคนในประเทศซึ่งเข้มกว่า และโดยทั่วไปไม่ใช่ทางของคุณ เว้นแต่คุณมีเอกสารถิ่นที่อยู่ในเกาหลี ทั้งสองเป็นบัญชีแยกกัน การสมัครที่หนึ่งไม่ได้ทำให้คุณมีอีกที่หนึ่ง",
+        pitfall:
+          "ผลการค้นหาและบุ๊กมาร์กเก่ายังชี้ไปที่แบรนด์เดิมอยู่ ยืนยันให้แน่ว่าคุณอยู่บนเว็บสำหรับผู้อยู่ต่างประเทศก่อนจะเสียเวลาสร้างบัญชี",
+        takes: "5 นาที",
+      },
+      {
+        title: "สมัครด้วยข้อมูลที่ตรงกับหนังสือเดินทางเป๊ะ",
+        body: "ใช้ชื่อตามกฎหมายและวันเกิดตามที่พิมพ์อยู่ในหนังสือเดินทางของคุณ ถ้างานที่คุณต้องการมีรอบพรีเซลสำหรับแฟนคลับ ข้อมูลเหล่านี้ต้องตรงกับประวัติสมาชิกของคุณด้วย แก้ความไม่ตรงกันให้เสร็จก่อนที่ช่วงพรีเซลจะเปิด ไม่ใช่ระหว่างที่มันกำลังเปิดอยู่",
+        pitfall:
+          "การเปลี่ยนชื่อที่ยืนยันไปแล้วในภายหลังเป็นกระบวนการยื่นเรื่องกับฝ่ายบริการ ไม่ใช่ปุ่มสลับในหน้าตั้งค่า ทำให้ถูกตั้งแต่ครั้งแรก",
+        takes: "20 นาที",
+      },
+      {
+        title: "ทำการยืนยันลูกค้าต่างประเทศให้เสร็จก่อนที่จะต้องใช้",
+        body: "การยืนยันลูกค้าต่างประเทศเป็นการกระทำครั้งเดียวต่อหนึ่งบัญชี และ NOL World ระบุว่าข้อมูลที่ยืนยันแล้วไม่สามารถนำกลับมาใช้ซ้ำได้ ให้ยืนยันบนบัญชีที่คุณตั้งใจจะใช้ซื้อจริง ๆ ถ้าคุณมีมากกว่าหนึ่งบัญชี การยืนยันจะไม่ย้ายระหว่างกัน การลบบัญชีนั้นลบข้อมูลการยืนยันของมันจริงและปล่อยให้บัญชีอื่นใช้ได้ แต่บัญชีที่ถูกจำกัดเพราะใช้งานโดยมิชอบจะลบไม่ได้เลย ตัวการยืนยันเองไม่มีข้อจำกัดเรื่องอายุ แม้ว่างานที่จำกัดอายุอาจยังปฏิเสธการจองอยู่ดี คำยืนยันจะมาทางอีเมล จึงควรเช็กกล่องสแปมก่อนจะสรุปว่าล้มเหลว",
+        pitfall:
+          "การมารู้ตอนขั้นชำระเงินว่าการยืนยันยังรอดำเนินการอยู่ คือวิธีคลาสสิกในการเสียที่นั่งที่กำลังจองไว้",
+        takes: "1-3 วันรวมเวลาดำเนินการ",
+      },
+      {
+        title: "ตรวจเงื่อนไขเฉพาะของแต่ละงานบนหน้าอีเวนต์",
+        body: "จำนวนที่นั่งสูงสุดต่อบัญชี การต้องเป็นสมาชิกหรือไม่ ข้อกำหนดเรื่องเอกสารที่หน้างาน และแม้แต่ว่างานนั้นเปิดให้ผู้ซื้อจากต่างประเทศหรือไม่ ล้วนถูกกำหนดเป็นรายอีเวนต์ อ่านหน้าอีเวนต์ควบคู่กับประกาศอย่างเป็นทางการ หากทั้งสองขัดกัน ให้ยึดประกาศอย่างเป็นทางการของงานนั้น",
+        pitfall:
+          "บางงานจำกัดโซนที่นั่งหรือรอบขายบางรอบไว้ให้ผู้ซื้อในประเทศเท่านั้น เรื่องนี้ขึ้นกับแต่ละงานและไม่อาจรู้ได้จากคู่มือทั่วไป",
+        takes: "10 นาที",
+      },
+      {
+        title: "พกเอกสารที่ถูกต้องไปรับบัตร",
+        body: "การรับบัตรทำที่ห้องจำหน่ายบัตรของสถานที่จัดงานในวันแสดงเท่านั้น ไม่ใช่ก่อนหน้านั้น — NOL World ระบุว่าไม่สามารถรับบัตรในวันก่อนหน้าได้ ช่วงรับบัตรเปิดหนึ่งชั่วโมงก่อนการแสดง และคุณต้องมีหมายเลขยืนยันพร้อมเอกสารแสดงตน เผื่อเวลาสำหรับการต่อแถวที่ห้องจำหน่ายบัตรด้วย เมื่อรับบัตรไปแล้ว หากสูญหายหรือถูกขโมย จะไม่มีการออกบัตรใหม่ให้",
+        pitfall:
+          "ชื่อบนการจอง ชื่อบนเอกสาร และชื่อบนสมาชิกภาพ ต้องตรงกันทั้งหมด ชื่อเล่นที่โผล่มาในจุดใดจุดหนึ่งของห่วงโซ่นี้คือปัญหา",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World คืออันเดียวกับ Interpark Global ไหม",
+        a: "เป็นบริการขายบัตรสำหรับผู้อยู่ต่างประเทศเดิมที่เปลี่ยนแบรนด์ interpark Global ถูกเปลี่ยนชื่อเป็น NOL World เมื่อวันที่ 1 ธันวาคม 2025 ต่อเนื่องจากการที่ Yanolja Core รวมแบรนด์ไว้ใต้ชื่อ NOL เมื่อเดือนเมษายน 2025 ซึ่งเป็นตอนที่ Interpark Ticket กลายเป็น NOL Ticket",
+      },
+      {
+        q: "ทำไมบุ๊กมาร์กเก่าของฉันยังขึ้นว่า Interpark",
+        a: "การเปลี่ยนแบรนด์ต้องใช้เวลากว่าจะแพร่ไปถึงผลการค้นหา คู่มือของบุคคลที่สาม และหน้าที่ถูกแคชไว้ ให้เริ่มจากประกาศอย่างเป็นทางการของงานที่คุณสนใจ แทนที่จะเริ่มจากลิงก์ที่บันทึกไว้หรือบทความบล็อก",
+      },
+      {
+        q: "NOL Global คืออันเดียวกันไหม แล้ว NOL Korea ล่ะ",
+        a: "ชื่อเหล่านั้นคือสิ่งที่คนนึกออกเวลาจำการเปลี่ยนชื่อได้ครึ่ง ๆ กลาง ๆ และควรพูดถึงเพราะมันคือสิ่งที่ถูกพิมพ์ลงไปจริง ๆ มีสองเว็บ: NOL World สำหรับผู้อยู่ต่างประเทศ ซึ่งเคยเป็น interpark Global จนถึงวันที่ 1 ธันวาคม 2025 และ NOL Ticket เว็บภาษาเกาหลี ซึ่งเคยเป็น Interpark Ticket จนถึงเดือนเมษายน 2025 ถ้ามีคนส่งคุณไปที่ “NOL Global” “NOL Korea” หรือ “NOL KR” เว็บที่คุณกำลังหาแทบจะแน่นอนว่าคือ NOL World",
+      },
+      {
+        q: "ฉันใช้บัญชี NOL Ticket บน NOL World ได้ไหม",
+        a: "ให้ถือว่าเป็นคนละบัญชีที่มีการยืนยันตัวตนแยกกัน อย่าคิดเอาเองว่าการล็อกอินหรือการยืนยันที่เสร็จแล้วจะติดตามข้ามไป ให้ยืนยันบนเว็บที่คุณจะซื้อจริงเท่านั้น",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-ticketing-guide",
+    sourceChecked: "2026-10-14",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Mga tiket sa NOL World: ang site na dating Interpark Global",
+    summary:
+      "Ang site na dating interpark Global. Pinalitan ito ng pangalan noong 1 Disyembre 2025, karamihan sa mga gabay ay nagtuturo pa rin sa lumang pangalan, at narito ang kasalukuyang ruta nang hakbang-hakbang.",
+    scope:
+      "Sakop nito ang platapormang nakaharap sa ibang bansa para sa mga palabas sa Korea. Ang site na NOL Ticket sa wikang Koreano ay hiwalay na produkto na may hiwalay na sistema ng account at mas mahigpit na pagpapatunay ng pagkakakilanlan.",
+    intro: [
+      "Dalawang pagpapalit ng pangalan ang naganap nang magkalapit at halos walang gabay sa Ingles sa internet ang nakahabol sa alinman sa dalawa. Pinagsama ng Yanolja Core ang mga brand nito sa ilalim ng pangalang NOL noong Abril 2025, at doon naging NOL Ticket ang Interpark Ticket. Pagkatapos, noong 1 Disyembre 2025, naging NOL World ang interpark Global na nakaharap sa ibang bansa.",
+      "Ang praktikal na bunga: ang mga gabay na nagsasabing pumunta ka sa “Interpark Global”, kasama ang mga screenshot ng lumang interface nito, ay naglalarawan ng isang produktong pinalitan na ng pangalan at idinisenyong muli. Kung sinusunod mo ang isa sa mga iyon, naglalakbay ka gamit ang mapang luma na.",
+      "Sinusubaybayan ng pahinang ito ang kasalukuyan. Ang petsa sa itaas ay kung kailan ito huling sinuri.",
+    ],
+    steps: [
+      {
+        title: "Magsimula sa site para sa nasa ibang bansa, hindi sa Koreano",
+        body: "Ang NOL World ang pintuang-harap para sa mga fan sa labas ng Korea. Ang site na NOL Ticket sa wikang Koreano ay nagpapatakbo ng mas mahigpit na lokal na pagpapatunay ng pagkakakilanlan at karaniwang hindi ito ang ruta mo maliban kung may hawak kang dokumento ng paninirahan sa Korea. Magkahiwalay ang mga account — ang pagparehistro sa isa ay hindi nagbibigay sa iyo ng isa pa.",
+        pitfall:
+          "Ang mga resulta ng paghahanap at mga lumang bookmark ay patungo pa rin sa dating pangalan. Tiyaking nasa site ka para sa nasa ibang bansa bago ka gumugol ng oras sa paggawa ng account.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Magparehistro gamit ang detalyeng eksaktong katulad ng pasaporte",
+        body: "Gamitin ang legal mong pangalan at petsa ng kapanganakan gaya ng nakalimbag sa pasaporte mo. Kung may presale para sa fan club ang palabas na gusto mo, kailangang tumugma rin ang mga detalyeng ito sa talaan ng membership mo. Ayusin ang anumang hindi pagtutugma bago magbukas ang bintana ng presale, hindi habang bukas ito.",
+        pitfall:
+          "Ang pagpapalit ng napatunayang pangalan sa kalaunan ay isang prosesong dumadaan sa suporta, hindi isang switch sa settings. Itama mo ito sa unang pagkakataon.",
+        takes: "20 minuto",
+      },
+      {
+        title: "Tapusin ang pagpapatunay bilang customer mula sa ibang bansa bago mo ito kailanganin",
+        body: "Ang pagpapatunay bilang customer mula sa ibang bansa ay isang beses lamang kada account, at sinasabi ng NOL World na hindi maaaring magamit muli ang napatunayang impormasyon. Magpatunay sa account na talagang gagamitin mo sa pagbili — kung mahigit isa ang account mo, hindi lumilipat ang pagpapatunay sa pagitan ng mga ito. Ang pagbura ng account ay talagang nagbubura sa pagpapatunay nito at nagpapalaya nito para sa iba, ngunit ang account na pinigilan dahil sa maling paggamit ay hindi mabubura kahit kailan. Walang limitasyon sa edad ang mismong pagpapatunay, bagaman maaari pa ring tanggihan ng mga palabas na may hangganan sa edad ang pagbu-book. Dumarating ang kumpirmasyon sa email, kaya tingnan ang spam bago magpasyang nabigo ito.",
+        pitfall:
+          "Ang pagkatuklas sa hakbang ng pagbabayad na nakabinbin pa ang pagpapatunay ang klasikong paraan ng pagkawala ng hawak mong upuan.",
+        takes: "1-3 araw kasama ang pagproseso",
+      },
+      {
+        title: "Tingnan ang mga kondisyon ng bawat palabas sa pahina ng event",
+        body: "Ang limitasyon sa upuan kada account, kung kailangan ba ng membership, ang kahilingan sa pagkakakilanlan sa venue, at kung bukas ba ang palabas sa mga bumibili mula sa ibang bansa ay itinatakda kada event. Basahin ang pahina ng event kasabay ng opisyal na anunsiyo — kung magkasalungat sila, ang opisyal na anunsiyo para sa palabas mo ang mananaig.",
+        pitfall:
+          "May mga palabas na naglilimita ng ilang bloke ng upuan o ilang round ng benta sa mga bumibili sa loob ng bansa. Nakadepende ito sa palabas at hindi matutuklasan mula sa isang pangkalahatang gabay.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Dalhin ang tamang dokumento sa pagkuha ng tiket",
+        body: "Ang pagkuha ay sa box office ng venue sa mismong araw ng palabas at hindi mas maaga — sinasabi ng NOL World na hindi maaaring kunin ang tiket sa naunang araw. Nagbubukas ang bintana isang oras bago ang palabas, at kailangan mo ang numero ng kumpirmasyon kasama ang isang pagkakakilanlan. Maglaan ng oras para sa pila sa mismong box office. Kapag nakuha na, hindi na muling maibibigay ang tiket kung mawala o manakaw ito.",
+        pitfall:
+          "Ang pangalan sa booking, ang pangalan sa dokumento at ang pangalan sa membership ay dapat magkatugma lahat. Ang isang palayaw saanman sa tanikalang iyon ay isang problema.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Pareho ba ang NOL World at ang Interpark Global?",
+        a: "Iisa pa rin itong serbisyo ng tiket para sa nasa ibang bansa, matapos ang pagpapalit ng brand. Pinalitan ang pangalan ng interpark Global tungo sa NOL World noong 1 Disyembre 2025, kasunod ng pagsasama ng Yanolja Core sa mga brand nito sa ilalim ng pangalang NOL noong Abril 2025, nang maging NOL Ticket ang Interpark Ticket.",
+      },
+      {
+        q: "Bakit Interpark pa rin ang nakasulat sa lumang bookmark ko?",
+        a: "Matagal bago kumalat ang pagpapalit ng brand sa mga resulta ng paghahanap, sa mga gabay ng ibang tao, at sa mga naka-cache na pahina. Magsimula sa opisyal na anunsiyo para sa palabas mo sa halip na sa isang naka-save na link o sa isang blog.",
+      },
+      {
+        q: "Pareho rin ba ang NOL Global? Paano naman ang NOL Korea?",
+        a: "Iyan ang mga pangalang naiisip ng mga tao kapag kalahati lang ang natatandaan nila sa pagpapalit, at sulit silang banggitin dahil iyan ang talagang tinatype. May dalawang site: ang NOL World, ang nakaharap sa ibang bansa, na interpark Global hanggang 1 Disyembre 2025; at ang NOL Ticket, ang nasa wikang Koreano, na Interpark Ticket hanggang Abril 2025. Kung pinapunta ka sa “NOL Global”, “NOL Korea” o “NOL KR”, halos tiyak na NOL World ang hinahanap mo.",
+      },
+      {
+        q: "Magagamit ko ba ang NOL Ticket account ko sa NOL World?",
+        a: "Ituring silang magkahiwalay na account na may magkahiwalay na pagpapatunay. Huwag ipagpalagay na dadala ang isang login o isang natapos na pagpapatunay — tiyakin ito sa site na talagang pagbibilhan mo.",
+      },
+    ],
+    labels: FIL_LABELS,
   },
 ];
 

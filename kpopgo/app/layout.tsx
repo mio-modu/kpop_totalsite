@@ -10,8 +10,17 @@ import { siteJsonLd } from "@/lib/jsonld";
 import { JsonLd } from "@/components/JsonLd";
 
 // Archivo carries a width axis — the wide cut gives the headlines their poster feel.
+/*
+ * The `vietnamese` subset is here and `latin-ext` is not, which is the whole
+ * decision. Google splits its webfonts by unicode-range, so a subset listed
+ * here is fetched only by a page that actually sets a character in it: an
+ * English reader downloads exactly what they downloaded before. Without it,
+ * every ơ, ư, đ and tone mark on the Vietnamese pages drops to a system
+ * fallback mid-word — the one typographic failure that looks like a typo
+ * rather than like a different font.
+ */
 const archivo = Archivo({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   axes: ["wdth"],
   variable: "--font-archivo",
   display: "swap",
@@ -52,7 +61,7 @@ const gothicA1 = localFont({
 
 // The data voice: verification dates, platform codes, step timings.
 const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   weight: ["400", "700"],
   variable: "--font-jetbrains",
   display: "swap",

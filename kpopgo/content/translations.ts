@@ -12338,6 +12338,252 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Trancado fora da NOL World: achando a conta e consertando a página que não abre",
+    summary:
+      "Qual login você usou decide todas as rotas de recuperação, a redefinição de senha existe só para cadastros por e-mail, e um e-mail não verificado pode tornar uma conta difícil de achar. Além dos erros da página de compra que não são erros.",
+    scope:
+      "Cobre a recuperação de conta, a exclusão de conta e as falhas da página de compra que a NOL World documenta: requisitos de navegador e aplicativo, o mapa de assentos no celular, e os pop-ups que parecem defeitos. A mecânica da fila está no guia dela. Nada aqui ajuda alguém a entrar numa conta que não é sua.",
+    intro: [
+      "Duas coisas dão errado num site de ingressos que não têm nada a ver com ingressos. Ou você não consegue entrar na conta, ou a página simplesmente não faz o que deveria — e as duas acontecem na manhã de uma venda, quando não há tempo para ler nada.",
+      "Quase tudo isso é decidido por uma escolha que você fez meses antes sem pensar: se você se cadastrou com um endereço de e-mail ou com Google, Apple ou Line. Esse único fato determina se uma redefinição de senha sequer existe para você, então é por aí que se começa.",
+    ],
+    steps: [
+      {
+        title: "Descubra que tipo de login você tem de fato",
+        body: "As contas da NOL World são criadas com um endereço de e-mail ou por um login social — Google, Apple ou Line, entre outros. A consequência é mais dura do que parece: a NOL World afirma que a recuperação de senha só está disponível para quem se cadastrou com um endereço de e-mail. Se você usou um login social, não existe senha da NOL World para redefinir, porque nunca houve uma. Descubra qual é o seu caso agora, enquanto nada é urgente.",
+        pitfall:
+          "Supor que você tem conta por e-mail porque lembra de ter digitado um endereço de e-mail. Um login social também mostra o seu e-mail, e as rotas de recuperação são completamente diferentes.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Verifique o seu e-mail, porque esta é a que não dá para desfazer",
+        body: "A frase final da própria NOL World sobre recuperação de conta é a mais importante desta área: pode ser difícil encontrar contas que não foram verificadas por e-mail. Todo o resto aqui é um procedimento com um desfecho. Esta é uma porta que pode simplesmente não abrir — o suporte está casando você com um registro, e um e-mail verificado é a prova mais forte que eles têm. Se você está lendo isto com uma conta que funciona, confira se o e-mail dela está verificado e deixe verificado.",
+        pitfall:
+          "Pular o e-mail de verificação no cadastro porque você estava com pressa de chegar a uma venda. Não custa nada no dia e é a diferença entre uma conta recuperável e uma conta perdida.",
+        takes: "3 minutos, agora",
+      },
+      {
+        title: "Num login social, procure primeiro do lado do provedor",
+        body: "Se você não lembra se chegou a ter uma conta na NOL World, o provedor sabe. A NOL World publica onde olhar: no Google, em Conta do Google, depois Segurança, depois as suas conexões com apps e serviços de terceiros. Na Apple, em Ajustes, seu nome e ID Apple, depois Início de Sessão e Segurança, depois Iniciar Sessão com a Apple. No Line, em Configurações, depois Conta, depois Apps autorizados. Se a NOL World estiver listada ali, a conta existe e você sabe qual provedor a abre.",
+        pitfall:
+          "Tentar cada botão social por vez na tela de login para ver qual funciona. Isso pode criar uma segunda conta em vez de achar a primeira, e agora existem duas — e uma delas tem as suas compras.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Se isso falhar, mande ao suporte as cinco coisas que ele pede",
+        body: "A NOL World vai procurar uma conta, e ela diz do que precisa: o endereço de e-mail que você possa ter usado, o tipo de login (Google, Line, Apple ou e-mail), o seu apelido, e o tipo de produtos que você comprou junto com os números de reserva. Ela também diz onde achar o último — o número da reserva está no voucher enviado por e-mail na hora da compra. Junte tudo antes de escrever, porque um pedido sem o número da reserva é um pedido para eles adivinharem.",
+        pitfall:
+          "Apagar e-mails antigos de confirmação de compra como se fossem lixo. Eles guardam os números de reserva, que são o identificador mais forte que você pode oferecer quando a própria conta é o que você perdeu.",
+        takes: "20 minutos",
+      },
+      {
+        title: "Um celular novo não perde as suas compras — uma conta diferente perde",
+        body: "Este é o falso alarme mais comum e a NOL World responde com todas as letras: trocar de celular ou entrar de novo não apaga o seu histórico. O que ela pede que você confira é se você está logado com uma conta diferente da que usou originalmente. É quase sempre essa a causa real, e o login social é o motivo — um celular novo oferece o provedor que for mais conveniente, e tocar no errado leva você a uma segunda conta vazia e perfeitamente válida.",
+        pitfall:
+          "Concluir que a compra sumiu e comprar de novo. Os ingressos estão na outra conta, e a segunda compra é uma compra de verdade.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Use um navegador que a página de compra espera, e só os canais oficiais",
+        body: "A NOL World diz que constrói segundo os padrões da web e recomenda o Google Chrome ou o Microsoft Edge, tanto no computador quanto no celular. Se a janela de compra não abrir, a instrução dela é específica: atualizar o navegador para a versão mais recente, limpar o cache e tentar de novo. Para o aplicativo, atualizar pela App Store ou pelo Google Play. E ela declara onde os ingressos podem ser comprados: no site da NOL World em world.nol.com/ticket e no aplicativo da NOL World, e em nenhum outro lugar.",
+        pitfall:
+          "Investigar o problema num navegador que nunca foi suportado, dentro do navegador embutido aberto por um link de rede social. Abra a página de compra direto no Chrome ou no Edge antes de concluir que o site está quebrado.",
+        takes: "15 minutos, na véspera",
+      },
+      {
+        title: "Se o mapa de assentos não funcionar na web móvel, mude para o aplicativo",
+        body: "Existe um problema de aparelho documentado, e não um problema geral. A NOL World diz que em alguns aparelhos o ambiente de web móvel amplia o navegador quando você dá zoom para dentro e para fora, o que torna a seleção de assentos impossível — e que o caminho para contornar é baixar o aplicativo da NOL World. Ela nomeia o aparelho confirmado até agora: o Galaxy Fold. Se você está num celular dobrável ou de proporção incomum, instale o aplicativo antes da venda em vez de descobrir isso dentro de uma janela de pagamento de sete minutos.",
+        pitfall:
+          "Dar zoom com os dedos num mapa de assentos para achar um assento específico. Nos aparelhos afetados, esse gesto é justamente o que quebra a seleção.",
+        takes: "10 minutos, com antecedência",
+      },
+      {
+        title: "Saiba quais pop-ups não são defeitos",
+        body: "Duas mensagens parecem erros e não são. A NOL World diz que o pop-up avisando que este assento já foi selecionado aparece quando você escolhe o mesmo assento mais ou menos no mesmo instante que outro usuário — não há nada errado com a sua sessão, alguém foi um segundo mais rápido. E ela diz que os assentos disponíveis se atualizam automaticamente sem recarregar, então um mapa de assentos que parece travado em geral é um mapa de assentos funcionando. Trate os dois como informação e não como algo a consertar.",
+        pitfall:
+          "Recarregar a página para tirar um pop-up. Numa venda com fila, essa é a única ação que custa o seu lugar.",
+        takes: "—",
+      },
+      {
+        title: "Leia o conselho sobre várias abas contra a política antifraude",
+        body: "A NOL World pede um aparelho por conta, e diz que o acesso simultâneo de vários aparelhos na mesma conta pode restringir a sua compra. Depois ela dá um conselho técnico para quem compra em paralelo — que várias abas causam conflitos de sessão, e que se deve usar navegadores completamente separados, como Chrome e Edge, ou aparelhos diferentes. Leia isso com cuidado, porque a própria política antifraude dela lista comprar entre contas com dados pessoais idênticos ou parecidos como uso fraudulento. A leitura segura do conselho é sobre plataformas separadas: a NOL World num navegador enquanto outro site de ingressos roda em outro. Não é permissão para rodar várias contas suas ao mesmo tempo.",
+        pitfall:
+          "Tomar uma dica sobre conflito de sessão como estratégia autorizada para várias contas. As duas páginas convivem mal, e a que tem penalidades publicadas é a política antifraude.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Se você apagar a conta, saiba exatamente o que vai e o que fica",
+        body: "A exclusão é irreversível e a NOL World discrimina. Apagado: a sua conta e as informações de perfil, o seu histórico de reservas, as suas viagens e a sua lista de lugares curtidos. Mantido: avaliações e fotos que você deixou para um lugar. No site, qualquer forma de login pode apagar a conta. No aplicativo com login por e-mail, o caminho é My Account, Settings, Delete Account, e então a sua senha; com login social é o mesmo caminho, mas você confirma pelo Google, Line ou Apple. Duas coisas de outras partes da documentação pertencem ao lado disto: apagar elimina a sua validação de identidade e a libera para outra conta, e uma conta restringida por uso indevido não pode ser apagada de jeito nenhum.",
+        pitfall:
+          "Apagar uma conta para resolver um problema com ela. Uma conta restringida não pode ser apagada, e uma conta validada leva a sua validação junto — o histórico de reservas vai embora e as avaliações não.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Não lembro a minha senha. Como redefino?",
+        a: "Só se você se cadastrou com um endereço de e-mail — a NOL World diz que a recuperação de senha está disponível apenas para cadastros por e-mail. O caminho é a tela de login, Find Password, informar o e-mail do cadastro e então seguir o link de redefinição que chega. Se você usou Google, Apple ou Line, não existe senha da NOL World; você entra pelo provedor.",
+      },
+      {
+        q: "Eu nem sei qual conta usei.",
+        a: "Confira primeiro do lado do provedor. A NOL World publica os caminhos: Conta do Google, depois Segurança, depois as suas conexões com apps e serviços de terceiros; nos Ajustes da Apple, o seu ID Apple, depois Início de Sessão e Segurança, depois Iniciar Sessão com a Apple; nas Configurações do Line, Conta, depois Apps autorizados. Se a NOL World aparecer, é essa a conta.",
+      },
+      {
+        q: "Nada disso funcionou. O suporte vai achar?",
+        a: "Eles vão procurar, com o que você der: o e-mail que você possa ter usado, o tipo de login, o seu apelido, e os tipos de produto que você comprou com os respectivos números de reserva — que, segundo a NOL World, estão no voucher enviado por e-mail quando você comprou. Ela também avisa que contas nunca verificadas por e-mail podem ser difíceis de achar, então mande tudo o que você tiver.",
+      },
+      {
+        q: "Eu troquei de celular e as minhas compras sumiram.",
+        a: "Quase certamente não sumiram. A NOL World diz que trocar de celular ou entrar de novo não apaga o histórico, e pede que você confira se está logado com uma conta diferente da original. Com login social isso é fácil de fazer sem querer — um celular novo oferece o provedor mais conveniente, não necessariamente o que você usou.",
+      },
+      {
+        q: "A janela de compra não abre de jeito nenhum.",
+        a: "Os passos da própria NOL World: usar um navegador comum, e ela cita o Chrome e o Edge; atualizá-lo para a versão mais recente; limpar o cache; tentar de novo. Para o aplicativo, atualizar para a versão mais recente pela App Store ou pelo Google Play. Ela também declara que os ingressos só podem ser comprados em world.nol.com/ticket ou no aplicativo da NOL World.",
+      },
+      {
+        q: "Não consigo selecionar um assento no navegador do meu celular.",
+        a: "Existe um problema conhecido de aparelho. A NOL World diz que em alguns aparelhos dar zoom para dentro e para fora amplia o navegador móvel inteiro, o que torna a seleção de assentos impossível, e que a solução é usar o aplicativo da NOL World. O aparelho que ela cita como confirmado é o Galaxy Fold. Instale o aplicativo antes da venda, e não durante.",
+      },
+      {
+        q: "Posso abrir duas abas para aumentar as minhas chances?",
+        a: "Não, e a NOL World pede um aparelho por conta — ela diz que o acesso simultâneo de vários aparelhos na mesma conta pode restringir a sua compra. O conselho dela sobre navegadores separados trata de conflitos de sessão quando você está de fato usando duas plataformas de ingressos diferentes, e não é um aval para rodar várias contas suas. Comprar entre contas com dados pessoais parecidos está na lista publicada de uso fraudulento dela.",
+      },
+      {
+        q: "O que acontece com os meus dados se eu apagar a conta?",
+        a: "A NOL World diz que a exclusão não pode ser desfeita, e lista o que vai embora: conta e informações de perfil, histórico de reservas, viagens e lugares curtidos. Avaliações e fotos que você deixou para um lugar são mantidas. Em outro ponto ela diz que apagar também elimina a sua validação de identidade, liberando-a para outra conta, e que uma conta restringida por uso indevido não pode ser apagada.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-world-account-recovery-and-booking-errors",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Bloqué hors de NOL World : retrouver le compte, et réparer la page qui refuse de s'ouvrir",
+    summary:
+      "La méthode de connexion que vous avez choisie décide de toutes les voies de récupération, la réinitialisation de mot de passe n'existe que pour les inscriptions par e-mail, et une adresse non vérifiée peut rendre un compte difficile à retrouver. Plus les erreurs de la page de réservation qui n'en sont pas.",
+    scope:
+      "Couvre la récupération de compte, la suppression de compte et les défaillances de la page de réservation que NOL World documente : exigences de navigateur et d'application, le plan de salle sur mobile, et les fenêtres surgissantes qui ressemblent à des pannes. La mécanique de la file d'attente a son propre guide. Rien ici n'aide qui que ce soit à entrer dans un compte qui n'est pas le sien.",
+    intro: [
+      "Deux choses tournent mal sur un site de billetterie sans avoir le moindre rapport avec les billets. Soit vous n'arrivez pas à entrer dans le compte, soit la page refuse tout simplement de faire ce qu'elle devrait — et les deux arrivent le matin d'une vente, quand il n'y a le temps de rien lire.",
+      "Presque tout cela est décidé par un choix que vous avez fait des mois plus tôt sans y penser : vous être inscrit avec une adresse e-mail, ou via Google, Apple ou Line. Ce seul fait détermine si une réinitialisation de mot de passe existe seulement pour vous : c'est donc par là qu'il faut commencer.",
+    ],
+    steps: [
+      {
+        title: "Déterminez quel type de connexion vous avez réellement",
+        body: "Les comptes NOL World se créent soit avec une adresse e-mail, soit par une connexion sociale — Google, Apple ou Line, entre autres. La conséquence est plus tranchante qu'il n'y paraît : NOL World indique que la récupération de mot de passe n'est disponible que pour les utilisateurs inscrits avec une adresse e-mail. Si vous avez utilisé une connexion sociale, il n'existe aucun mot de passe NOL World à réinitialiser, parce qu'il n'y en a jamais eu. Déterminez votre cas maintenant, pendant que rien n'est urgent.",
+        pitfall:
+          "Supposer que vous avez un compte e-mail parce que vous vous souvenez d'avoir tapé une adresse e-mail. Une connexion sociale affiche aussi votre adresse, et les voies de récupération sont complètement différentes.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Vérifiez votre adresse e-mail, car c'est celle-là qui ne se rattrape pas",
+        body: "La phrase par laquelle NOL World conclut sur la récupération de compte est la plus importante de tout ce domaine : il peut être difficile de retrouver les comptes qui n'ont pas été vérifiés par e-mail. Tout le reste ici est une procédure avec une issue. Celle-ci est une porte qui peut tout simplement ne pas s'ouvrir — le support cherche à vous rattacher à une fiche, et une adresse vérifiée est la correspondance la plus solide dont il dispose. Si vous lisez ceci avec un compte qui fonctionne, vérifiez que son adresse est bien vérifiée et laissez-la vérifiée.",
+        pitfall:
+          "Sauter le message de vérification à l'inscription parce que vous étiez pressé d'atteindre une vente. Cela ne coûte rien le jour même et c'est la différence entre un compte récupérable et un compte perdu.",
+        takes: "3 minutes, maintenant",
+      },
+      {
+        title: "Pour une connexion sociale, cherchez d'abord du côté du fournisseur",
+        body: "Si vous ne vous rappelez pas si vous avez jamais eu un compte NOL World, le fournisseur, lui, le sait. NOL World publie où regarder : dans Google, sous Compte Google puis Sécurité puis vos connexions à des applications et services tiers. Dans Apple, sous Réglages, votre nom et identifiant Apple, puis Connexion et sécurité, puis Se connecter avec Apple. Dans Line, sous Paramètres puis Compte puis Applications autorisées. Si NOL World y figure, le compte existe et vous savez quel fournisseur l'ouvre.",
+        pitfall:
+          "Essayer chaque bouton social l'un après l'autre sur l'écran de connexion pour voir lequel marche. Cela peut créer un deuxième compte au lieu de retrouver le premier, et il y en a désormais deux — dont l'un contient vos réservations.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Si cela échoue, envoyez au support les cinq choses qu'il demande",
+        body: "NOL World cherchera un compte, et elle dit ce qu'il lui faut : l'adresse e-mail que vous avez pu utiliser, le type de connexion (Google, Line, Apple ou e-mail), votre pseudonyme, et le type de produits réservés avec les numéros de réservation. Elle dit aussi où trouver ce dernier — le numéro de réservation figure dans le bon envoyé par e-mail au moment de la réservation. Rassemblez tout cela avant d'écrire, parce qu'une demande sans numéro de réservation est une demande de deviner.",
+        pitfall:
+          "Supprimer les vieux e-mails de confirmation comme de l'encombrement. Ils contiennent les numéros de réservation, qui sont l'identifiant le plus solide que vous puissiez offrir quand c'est le compte lui-même que vous avez perdu.",
+        takes: "20 minutes",
+      },
+      {
+        title: "Un nouveau téléphone ne perd pas vos réservations — un autre compte, si",
+        body: "C'est la fausse alerte la plus fréquente et NOL World y répond clairement : changer de téléphone ou se reconnecter n'efface pas votre historique. Ce qu'elle vous demande de vérifier, c'est si vous êtes connecté avec un compte différent de celui que vous aviez utilisé à l'origine. C'est presque toujours la vraie cause, et la connexion sociale en est la raison — un téléphone neuf propose le fournisseur le plus commode, et appuyer sur le mauvais vous dépose dans un deuxième compte, vide et parfaitement valide.",
+        pitfall:
+          "Conclure que la réservation a disparu et racheter. Les billets sont dans l'autre compte, et le second achat est un vrai achat.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Utilisez un navigateur que la page de réservation attend, et seulement les canaux officiels",
+        body: "NOL World indique qu'elle développe selon les standards du web et recommande Google Chrome ou Microsoft Edge, sur ordinateur comme sur mobile. Si la fenêtre de réservation refuse de s'ouvrir, sa consigne est précise : mettre le navigateur à jour vers la dernière version, vider le cache, et réessayer. Pour l'application, la mettre à jour depuis l'App Store ou Google Play. Et elle énonce où les billets peuvent être achetés : sur le site NOL World à world.nol.com/ticket et dans l'application NOL World, nulle part ailleurs.",
+        pitfall:
+          "Chercher la panne dans un navigateur qui n'a jamais été pris en charge, à l'intérieur d'une vue web ouverte depuis un lien de réseau social. Ouvrez la page de réservation directement dans Chrome ou Edge avant de conclure que le site est cassé.",
+        takes: "15 minutes, la veille",
+      },
+      {
+        title: "Si le plan de salle ne marche pas sur le web mobile, passez à l'application",
+        body: "Il existe un problème d'appareil documenté, et non un problème général. NOL World indique que sur certains appareils l'environnement web mobile agrandit le navigateur quand vous zoomez et dézoomez, ce qui rend la sélection de place impossible — et que la façon de s'en sortir est de télécharger l'application NOL World. Elle nomme l'appareil confirmé à ce jour : le Galaxy Fold. Si vous êtes sur un écran pliant ou aux proportions inhabituelles, installez l'application avant la vente plutôt que de découvrir cela dans une fenêtre de paiement de sept minutes.",
+        pitfall:
+          "Zoomer à deux doigts sur un plan de salle pour trouver une place précise. Sur les appareils concernés, c'est ce geste qui casse la sélection.",
+        takes: "10 minutes, à l'avance",
+      },
+      {
+        title: "Sachez quelles fenêtres surgissantes ne sont pas des pannes",
+        body: "Deux messages ressemblent à des erreurs et n'en sont pas. NOL World indique que la fenêtre vous disant que cette place a déjà été sélectionnée apparaît quand vous choisissez la même place à peu près au même instant qu'un autre utilisateur — rien ne cloche dans votre session, quelqu'un a été une seconde plus rapide. Et elle indique que les places disponibles se mettent à jour automatiquement sans rechargement : un plan de salle qui paraît figé est donc généralement un plan de salle qui fonctionne. Traitez les deux comme des informations plutôt que comme quelque chose à réparer.",
+        pitfall:
+          "Recharger la page pour faire disparaître une fenêtre surgissante. Dans une vente avec file d'attente, c'est le seul geste qui vous coûte votre place.",
+        takes: "—",
+      },
+      {
+        title: "Lisez le conseil sur les onglets multiples au regard de la politique antifraude",
+        body: "NOL World demande un appareil par compte, et indique qu'un accès simultané depuis plusieurs appareils sur le même compte peut restreindre votre réservation. Elle donne ensuite un conseil technique à ceux qui réservent en parallèle — que les onglets multiples provoquent des conflits de session, et qu'il faut utiliser des navigateurs complètement séparés comme Chrome et Edge, ou des appareils différents. Lisez cela attentivement, car sa propre politique antifraude range le fait de réserver depuis plusieurs comptes aux informations personnelles identiques ou voisines parmi les usages frauduleux. La lecture prudente de ce conseil porte sur des plateformes distinctes : NOL World dans un navigateur pendant qu'un autre site de billetterie tourne dans un autre. Ce n'est pas une permission de faire tourner plusieurs de vos propres comptes à la fois.",
+        pitfall:
+          "Prendre une astuce sur les conflits de session pour une stratégie autorisée à plusieurs comptes. Les deux pages cohabitent mal, et celle qui a des sanctions publiées est la politique antifraude.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Si vous supprimez le compte, sachez exactement ce qui part et ce qui reste",
+        body: "La suppression est irréversible et NOL World la détaille. Supprimés : votre compte et vos informations de profil, votre historique de réservations, vos voyages et votre liste de lieux aimés. Conservés : les avis et les photos que vous avez laissés pour un lieu. Sur le site, n'importe quelle méthode de connexion permet de supprimer le compte. Dans l'application avec une connexion e-mail, le chemin est My Account, Settings, Delete Account, puis votre mot de passe ; avec une connexion sociale c'est le même chemin, mais vous confirmez via Google, Line ou Apple. Deux éléments venus d'ailleurs dans sa documentation ont leur place ici : supprimer efface votre vérification d'identité et la libère pour un autre compte, et un compte restreint pour usage abusif ne peut pas être supprimé du tout.",
+        pitfall:
+          "Supprimer un compte pour régler un problème qu'il pose. Un compte restreint ne peut pas être supprimé, et un compte vérifié emporte sa vérification avec lui — l'historique de réservations disparaît et les avis, non.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Je ne me souviens plus de mon mot de passe. Comment le réinitialiser ?",
+        a: "Seulement si vous vous êtes inscrit avec une adresse e-mail — NOL World indique que la récupération de mot de passe n'est disponible que pour les inscriptions par e-mail. Le chemin est l'écran de connexion, Find Password, saisir l'adresse d'inscription, puis suivre le lien de réinitialisation reçu. Si vous avez utilisé Google, Apple ou Line, il n'y a pas de mot de passe NOL World : vous vous connectez par le fournisseur.",
+      },
+      {
+        q: "Je ne sais même pas quel compte j'ai utilisé.",
+        a: "Regardez d'abord du côté du fournisseur. NOL World publie les chemins : Compte Google puis Sécurité puis vos connexions à des applications et services tiers ; les Réglages d'Apple puis votre identifiant Apple puis Connexion et sécurité puis Se connecter avec Apple ; les Paramètres de Line puis Compte puis Applications autorisées. Si NOL World apparaît, c'est ce compte-là.",
+      },
+      {
+        q: "Rien de tout cela n'a marché. Le support le retrouvera-t-il ?",
+        a: "Ils chercheront, avec ce que vous leur donnez : l'adresse e-mail que vous avez pu utiliser, le type de connexion, votre pseudonyme, et les types de produits réservés avec leurs numéros de réservation — qui, selon NOL World, figurent dans le bon envoyé par e-mail au moment de la réservation. Elle prévient aussi que les comptes jamais vérifiés par e-mail peuvent être difficiles à retrouver : envoyez donc tout ce que vous avez.",
+      },
+      {
+        q: "J'ai changé de téléphone et mes réservations ont disparu.",
+        a: "Elles n'ont presque certainement pas disparu. NOL World indique que changer de téléphone ou se reconnecter n'efface pas l'historique, et demande de vérifier si vous êtes connecté avec un compte différent de l'original. Avec une connexion sociale, c'est facile à faire par accident — un téléphone neuf propose le fournisseur le plus commode, pas nécessairement celui que vous aviez utilisé.",
+      },
+      {
+        q: "La fenêtre de réservation refuse de s'ouvrir.",
+        a: "Les étapes de NOL World elle-même : utiliser un navigateur courant, et elle nomme Chrome et Edge ; le mettre à jour vers la dernière version ; vider le cache ; réessayer. Pour l'application, la mettre à jour depuis l'App Store ou Google Play. Elle précise aussi que les billets ne peuvent être achetés que sur world.nol.com/ticket ou dans l'application NOL World.",
+      },
+      {
+        q: "Je n'arrive pas à sélectionner une place dans le navigateur de mon téléphone.",
+        a: "Il y a un problème d'appareil connu. NOL World indique que sur certains appareils, zoomer et dézoomer agrandit tout le navigateur mobile, ce qui rend la sélection de place impossible, et que la réponse est d'utiliser l'application NOL World. L'appareil qu'elle cite comme confirmé est le Galaxy Fold. Installez l'application avant la vente plutôt que pendant.",
+      },
+      {
+        q: "Puis-je ouvrir deux onglets pour augmenter mes chances ?",
+        a: "Non, et NOL World demande un appareil par compte — elle indique qu'un accès simultané depuis plusieurs appareils sur le même compte peut restreindre votre réservation. Son conseil sur les navigateurs séparés porte sur les conflits de session quand vous utilisez réellement deux plateformes de billetterie différentes, et non sur un feu vert pour faire tourner plusieurs de vos comptes. Réserver depuis plusieurs comptes aux informations personnelles voisines figure sur sa liste publiée d'usages frauduleux.",
+      },
+      {
+        q: "Qu'advient-il de mes données si je supprime mon compte ?",
+        a: "NOL World indique que la suppression est définitive, et liste ce qui part : compte et informations de profil, historique de réservations, voyages et lieux aimés. Les avis et photos laissés pour un lieu sont conservés. Ailleurs, elle précise que la suppression efface aussi votre vérification d'identité, la libérant pour un autre compte, et qu'un compte restreint pour usage abusif ne peut pas être supprimé.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

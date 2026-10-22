@@ -52,12 +52,35 @@ export type Partner = {
 };
 
 /**
- * Empty, and accurately so: this site carries no paid links today.
- *
- * /editorial-policy reads this list directly and says so in as many words, so
- * the claim on that page cannot drift from the truth in this file.
+ * /editorial-policy reads this list directly, so the claim on that page
+ * cannot drift from the truth in this file.
  */
-export const partners: Partner[] = [];
+export const partners: Partner[] = [
+  {
+    id: "klook",
+    name: "Klook",
+    what: "Hotels, tours and transport in Korea, bookable from outside it.",
+    // No rate quoted, because none has been confirmed yet. A percentage
+    // invented to make this sentence sound specific would be the one lie on
+    // the page whose whole job is being checkable. Add it here when Klook's
+    // own dashboard states the accommodation rate, and move `checked`.
+    howWeArePaid: "Klook pays this site a commission if a reader opens the link and books something. It costs the reader nothing extra, and the commission never decides what a step says — where the paying option is the worse one, the guide says it is worse.",
+    /*
+     * The long form rather than the short one Klook also offers.
+     *
+     * affiliate.klook.com/sl/1Ou1OuQ is tidier and says nothing: a reader
+     * hovering it, and the next person auditing this file, both learn only
+     * that it goes somewhere. The field's whole purpose is that there is one
+     * place to see what is being passed along, and an opaque redirect defeats
+     * it. The destination is also trimmed — Klook's generator appended `spm`
+     * and a `clickId` minted in the browsing session that produced the link,
+     * and neither belongs in a URL thousands of readers share. The attribution
+     * is `aid` and `aff_adid`, which are untouched.
+     */
+    url: "https://affiliate.klook.com/redirect?aid=140222&aff_adid=1516924&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fsearch%2Fresult%2F%3Fquery%3DSEOUL%26search_scope%3Dmain_search%26tab_key%3D54",
+    checked: "2026-10-22",
+  },
+];
 
 export function getPartner(id: string): Partner | undefined {
   return partners.find((p) => p.id === id);

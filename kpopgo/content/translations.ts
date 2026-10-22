@@ -1737,7 +1737,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "買っているのは二つの予約ではなく一つの商品だと理解する",
-        body: "これがこのガイド全体を一段にしたものです。NOL Worldは、パッケージの泊数は変更できない、パッケージに指定されたチェックイン・チェックアウトの日付は変更できない、ホテルの変更は認められない、と述べています。購入時に泊数を追加することもできません——延泊はホテルとの別の話で、ホテルの価格と空室状況によります。そして1アカウントが買えるのは1商品なので、積み重ねられるものでもありません。",
+        body: "これがこのガイド全体を一段にしたものです。NOL Worldは、パッケージの泊数は変更できない、パッケージに指定されたチェックイン・チェックアウトの日付は変更できない、ホテルの変更は認められない、と述べています。購入時に泊数を追加することもできません——延泊はホテルとの別の話で、ホテルの価格と空室状況によります。そして1アカウントが買えるのは1商品なので、積み重ねられるものでもありません。ホテルが受けてくれない場合、その分の宿泊はこの予約の一部ではまったくなくなり、自分で取る普通のホテル予約になります。",
         pitfall:
           "細かいところはあとで整えるつもりでパッケージを予約すること。1日早く着く、友人の近くのホテルに移る、最後の1泊を削る。どれも文書化された「できません」です。",
         takes: "支払う前に15分",
@@ -4011,7 +4011,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "理解你買的是一個商品，不是兩筆訂單",
-        body: "這一步就是整份指南。NOL World 表示套裝中的住宿晚數無法變更，套裝所指定的入住與退房日期無法變更，而且不允許更換飯店。購買時也不能加晚數——額外的住宿是另外跟飯店談的事，按飯店的價格、受飯店的空房狀況限制。而且一個帳號只能買一個商品，所以這不是可以疊加的東西。",
+        body: "這一步就是整份指南。NOL World 表示套裝中的住宿晚數無法變更，套裝所指定的入住與退房日期無法變更，而且不允許更換飯店。購買時也不能加晚數——額外的住宿是另外跟飯店談的事，按飯店的價格、受飯店的空房狀況限制。而且一個帳號只能買一個商品，所以這不是可以疊加的東西。如果飯店不接受，那幾晚就完全不屬於這筆預訂，而是你自己另外訂的一般飯店住宿。",
         pitfall:
           "抱著「細節之後再整理」的想法訂下套裝：提前一天到、換到離朋友更近的飯店、把最後一晚砍掉。這每一項都是被明文記錄的「不行」。",
         takes: "15 分鐘，在你付款之前",
@@ -4141,7 +4141,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "Pahami bahwa Anda membeli satu barang, bukan dua pemesanan",
-        body: "Inilah seluruh panduan ini dalam satu langkah. NOL World menyatakan jumlah malam dalam sebuah paket tidak dapat diubah, tanggal check-in dan check-out yang ditentukan dalam paket tidak dapat diganti, dan penggantian hotel tidak diizinkan. Malam tambahan juga tidak bisa ditambahkan saat pembelian — menginap lebih lama adalah percakapan terpisah dengan hotelnya, dengan harga hotel dan tunduk pada ketersediaannya. Dan satu akun bisa membeli satu barang, jadi ini bukan sesuatu yang Anda tumpuk.",
+        body: "Inilah seluruh panduan ini dalam satu langkah. NOL World menyatakan jumlah malam dalam sebuah paket tidak dapat diubah, tanggal check-in dan check-out yang ditentukan dalam paket tidak dapat diganti, dan penggantian hotel tidak diizinkan. Malam tambahan juga tidak bisa ditambahkan saat pembelian — menginap lebih lama adalah percakapan terpisah dengan hotelnya, dengan harga hotel dan tunduk pada ketersediaannya. Dan satu akun bisa membeli satu barang, jadi ini bukan sesuatu yang Anda tumpuk. Kalau hotelnya tidak bisa menerima, malam-malam itu sama sekali berhenti menjadi bagian dari pemesanan ini dan menjadi reservasi hotel biasa yang Anda buat sendiri.",
         pitfall:
           "Memesan paketnya dengan niat merapikan detailnya nanti: datang sehari lebih awal, pindah ke hotel yang lebih dekat dengan teman, memangkas satu malam di akhir. Setiap satu dari itu adalah tidak yang terdokumentasi.",
         takes: "15 menit, sebelum Anda membayar",
@@ -7468,7 +7468,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "Verstehen Sie, dass Sie einen Posten kaufen und nicht zwei Buchungen",
-        body: "Das ist die ganze Anleitung in einem Schritt. NOL World gibt an, dass die Anzahl der Nächte in einem Paket nicht geändert werden kann, dass die im Paket angegebenen Daten für Anreise und Abreise nicht geändert werden können, und dass ein Hotelwechsel nicht zulässig ist. Nächte lassen sich auch beim Kauf nicht hinzufügen — ein längerer Aufenthalt ist ein eigenes Gespräch mit dem Hotel, zum Preis des Hotels und abhängig von dessen Verfügbarkeit. Und ein Konto kann einen Posten kaufen, das ist also nichts, was man stapelt.",
+        body: "Das ist die ganze Anleitung in einem Schritt. NOL World gibt an, dass die Anzahl der Nächte in einem Paket nicht geändert werden kann, dass die im Paket angegebenen Daten für Anreise und Abreise nicht geändert werden können, und dass ein Hotelwechsel nicht zulässig ist. Nächte lassen sich auch beim Kauf nicht hinzufügen — ein längerer Aufenthalt ist ein eigenes Gespräch mit dem Hotel, zum Preis des Hotels und abhängig von dessen Verfügbarkeit. Und ein Konto kann einen Posten kaufen, das ist also nichts, was man stapelt. Nimmt das Hotel sie nicht, gehören diese Nächte gar nicht mehr zu dieser Buchung und werden zu einer gewöhnlichen Hotelreservierung, die Sie selbst vornehmen.",
         pitfall:
           "Das Paket zu buchen mit der Absicht, die Einzelheiten später zu ordnen: einen Tag früher anreisen, in ein Hotel näher bei einer Freundin wechseln, hinten eine Nacht streichen. Jedes davon ist ein dokumentiertes Nein.",
         takes: "15 Minuten, bevor Sie zahlen",
@@ -9146,7 +9146,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "Entiende que estás comprando un artículo, no dos reservas",
-        body: "Esta es la guía entera en un paso. NOL World declara que el número de noches de un paquete no se puede modificar, que las fechas de entrada y salida especificadas en el paquete no se pueden cambiar, y que no se permiten cambios de hotel. Tampoco se pueden añadir noches en la compra — una estancia más larga es una conversación aparte con el hotel, a su precio y sujeta a su disponibilidad. Y una cuenta puede comprar un artículo, así que esto no es algo que se apile.",
+        body: "Esta es la guía entera en un paso. NOL World declara que el número de noches de un paquete no se puede modificar, que las fechas de entrada y salida especificadas en el paquete no se pueden cambiar, y que no se permiten cambios de hotel. Tampoco se pueden añadir noches en la compra — una estancia más larga es una conversación aparte con el hotel, a su precio y sujeta a su disponibilidad. Y una cuenta puede comprar un artículo, así que esto no es algo que se apile. Si el hotel no las acepta, esas noches dejan de formar parte de esta reserva y pasan a ser una reserva de hotel corriente que haces tú.",
         pitfall:
           "Reservar el paquete con la idea de ordenar los detalles después: llegar un día antes, mudarte a un hotel más cerca de una amiga, recortar una noche al final. Cada una de esas cosas es un no documentado.",
         takes: "15 minutos, antes de pagar",
@@ -13473,7 +13473,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "Entenda que você está comprando um item, e não duas reservas",
-        body: "Este é o guia inteiro num passo. A NOL World afirma que o número de diárias de um pacote não pode ser modificado, que as datas de check-in e check-out especificadas no pacote não podem ser alteradas, e que trocas de hotel não são permitidas. Também não dá para acrescentar diárias na compra — estadias extras são uma conversa separada com o hotel, ao preço dele e sujeitas à disponibilidade dele. E uma conta pode comprar um item, então isso não é algo que se empilhe.",
+        body: "Este é o guia inteiro num passo. A NOL World afirma que o número de diárias de um pacote não pode ser modificado, que as datas de check-in e check-out especificadas no pacote não podem ser alteradas, e que trocas de hotel não são permitidas. Também não dá para acrescentar diárias na compra — estadias extras são uma conversa separada com o hotel, ao preço dele e sujeitas à disponibilidade dele. E uma conta pode comprar um item, então isso não é algo que se empilhe. Se o hotel não aceitar, essas diárias deixam de fazer parte desta reserva e viram uma reserva de hotel comum que você mesmo faz.",
         pitfall:
           "Comprar o pacote pretendendo ajeitar os detalhes depois: chegar um dia antes, mudar para um hotel mais perto de um amigo, cortar uma diária do fim. Cada uma dessas coisas é um não documentado.",
         takes: "15 minutos, antes de pagar",
@@ -13603,7 +13603,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "Comprenez que vous achetez un article, et non deux réservations",
-        body: "C'est tout le guide en une étape. NOL World indique que le nombre de nuits d'un forfait ne peut pas être modifié, que les dates d'arrivée et de départ précisées dans le forfait ne peuvent pas être changées, et que les changements d'hôtel ne sont pas autorisés. Les nuits ne peuvent pas davantage être ajoutées à l'achat — les séjours supplémentaires sont une conversation distincte avec l'hôtel, à son prix et sous réserve de ses disponibilités. Et un compte peut acheter un article : ce n'est donc pas une chose que l'on empile.",
+        body: "C'est tout le guide en une étape. NOL World indique que le nombre de nuits d'un forfait ne peut pas être modifié, que les dates d'arrivée et de départ précisées dans le forfait ne peuvent pas être changées, et que les changements d'hôtel ne sont pas autorisés. Les nuits ne peuvent pas davantage être ajoutées à l'achat — les séjours supplémentaires sont une conversation distincte avec l'hôtel, à son prix et sous réserve de ses disponibilités. Et un compte peut acheter un article : ce n'est donc pas une chose que l'on empile. Si l'hôtel ne les prend pas, ces nuits cessent complètement de faire partie de cette réservation et deviennent une réservation d'hôtel ordinaire que vous faites vous-même.",
         pitfall:
           "Réserver le forfait en comptant arranger les détails plus tard : arriver un jour plus tôt, changer pour un hôtel plus proche d'un ami, retrancher une nuit à la fin. Chacune de ces choses est un non documenté.",
         takes: "15 minutes, avant de payer",
@@ -19039,7 +19039,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "Hiểu rằng bạn đang mua một mặt hàng, không phải hai đơn đặt",
-        body: "Đây là cả hướng dẫn gói trong một bước. NOL World nêu rằng số đêm trong một gói không thể sửa đổi, rằng các ngày nhận và trả phòng ghi trong gói không thể thay đổi, và rằng việc đổi khách sạn không được phép. Cũng không thể thêm đêm lúc mua — các đêm ở thêm là một cuộc trao đổi riêng với khách sạn, theo giá của khách sạn và tùy phòng trống của họ. Và một tài khoản mua được một mặt hàng, nên đây không phải thứ bạn xếp chồng lên nhau.",
+        body: "Đây là cả hướng dẫn gói trong một bước. NOL World nêu rằng số đêm trong một gói không thể sửa đổi, rằng các ngày nhận và trả phòng ghi trong gói không thể thay đổi, và rằng việc đổi khách sạn không được phép. Cũng không thể thêm đêm lúc mua — các đêm ở thêm là một cuộc trao đổi riêng với khách sạn, theo giá của khách sạn và tùy phòng trống của họ. Và một tài khoản mua được một mặt hàng, nên đây không phải thứ bạn xếp chồng lên nhau. Nếu khách sạn không nhận, những đêm đó thôi hẳn không còn là một phần của đơn đặt này và trở thành một đơn đặt phòng khách sạn thông thường do chính bạn tự đặt.",
         pitfall:
           "Đặt gói với ý định dọn các chi tiết sau: tới sớm một ngày, chuyển sang một khách sạn gần một người bạn, cắt một đêm ở cuối. Mỗi điều trong số đó là một lời không đã được ghi rõ.",
         takes: "15 phút, trước khi bạn trả tiền",
@@ -19169,7 +19169,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "เข้าใจว่าคุณกำลังซื้อสินค้าชิ้นเดียว ไม่ใช่การจองสองอย่าง",
-        body: "นี่คือทั้งไกด์นี้ในขั้นเดียว NOL World ระบุว่าจำนวนคืนในแพ็กเกจแก้ไขไม่ได้ ว่าวันเช็กอินและเช็กเอาต์ที่ระบุไว้ในแพ็กเกจเปลี่ยนไม่ได้ และว่าการเปลี่ยนโรงแรมไม่ได้รับอนุญาต การเพิ่มคืนตอนซื้อก็ทำไม่ได้ การพักเพิ่มเป็นการคุยแยกกับโรงแรม ในราคาของโรงแรมและขึ้นอยู่กับห้องว่างของเขา และหนึ่งบัญชีซื้อได้หนึ่งชิ้น ดังนั้นนี่ไม่ใช่ของที่คุณเอามาซ้อนกัน",
+        body: "นี่คือทั้งไกด์นี้ในขั้นเดียว NOL World ระบุว่าจำนวนคืนในแพ็กเกจแก้ไขไม่ได้ ว่าวันเช็กอินและเช็กเอาต์ที่ระบุไว้ในแพ็กเกจเปลี่ยนไม่ได้ และว่าการเปลี่ยนโรงแรมไม่ได้รับอนุญาต การเพิ่มคืนตอนซื้อก็ทำไม่ได้ การพักเพิ่มเป็นการคุยแยกกับโรงแรม ในราคาของโรงแรมและขึ้นอยู่กับห้องว่างของเขา และหนึ่งบัญชีซื้อได้หนึ่งชิ้น ดังนั้นนี่ไม่ใช่ของที่คุณเอามาซ้อนกัน ถ้าโรงแรมไม่รับ คืนเหล่านั้นก็เลิกเป็นส่วนหนึ่งของการจองนี้ไปเลย และกลายเป็นการจองโรงแรมธรรมดาที่คุณจองเอง",
         pitfall:
           "การจองแพ็กเกจโดยตั้งใจจะไปจัดรายละเอียดทีหลัง เช่นมาถึงก่อนหนึ่งวัน ย้ายไปโรงแรมที่ใกล้เพื่อนกว่า ตัดคืนสุดท้ายออก ทุกข้อในนั้นเป็นคำว่าไม่ที่มีบันทึกไว้แล้ว",
         takes: "15 นาที ก่อนคุณจ่ายเงิน",
@@ -19299,7 +19299,7 @@ export const translations: Translation[] = [
     steps: [
       {
         title: "Unawain na isang bagay ang binibili mo, hindi dalawang booking",
-        body: "Ito ang buong gabay sa isang hakbang. Isinasaad ng NOL World na hindi mababago ang bilang ng gabi sa isang pakete, na hindi mapapalitan ang petsa ng check-in at check-out na nakasaad sa pakete, at na hindi pinapayagan ang pagpapalit ng hotel. Hindi rin makadadagdag ng gabi sa pagbili — hiwalay na usapan sa hotel ang karagdagang pananatili, sa presyo ng hotel at nakasalalay sa bakante nito. At isang bagay ang nabibili ng isang account, kaya hindi ito bagay na pinapatong-patong mo.",
+        body: "Ito ang buong gabay sa isang hakbang. Isinasaad ng NOL World na hindi mababago ang bilang ng gabi sa isang pakete, na hindi mapapalitan ang petsa ng check-in at check-out na nakasaad sa pakete, at na hindi pinapayagan ang pagpapalit ng hotel. Hindi rin makadadagdag ng gabi sa pagbili — hiwalay na usapan sa hotel ang karagdagang pananatili, sa presyo ng hotel at nakasalalay sa bakante nito. At isang bagay ang nabibili ng isang account, kaya hindi ito bagay na pinapatong-patong mo. Kung hindi ito tatanggapin ng hotel, titigil nang tuluyan ang mga gabing iyon sa pagiging bahagi ng booking na ito at magiging ordinaryong reserbasyon sa hotel na ikaw mismo ang gumagawa.",
         pitfall:
           "Ang pag-book ng pakete na nagbabalak linisin ang detalye mamaya: dumating nang isang araw na mas maaga, lumipat sa hotel na mas malapit sa isang kaibigan, bawasan ng isang gabi ang dulo. Nadokumentong hindi ang bawat isa sa mga iyon.",
         takes: "15 minuto, bago ka magbayad",

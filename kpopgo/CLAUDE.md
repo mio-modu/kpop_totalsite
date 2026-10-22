@@ -227,17 +227,50 @@ the register, and the machinery landed before the first translated word, as it
 did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
-Seven languages today, none native-reviewed, and all seven **complete at their
+Ten languages today, none native-reviewed, and all ten **complete at their
 intended counts** as of 22 October 2026: Japanese, Traditional Chinese,
-Indonesian and Brazilian Portuguese on 19 of the 21 guides, German, Spanish and
-French on 20. Each language skips the guides it has no reader for rather than
-padding to a round number, and `content/translations.ts` records which and why
-at the top.
+Indonesian, Brazilian Portuguese, Vietnamese, Thai and Filipino on 19 of the 21
+guides, German, Spanish and French on 20. Each language skips the guides it has
+no reader for rather than padding to a round number, and
+`content/translations.ts` records which and why at the top.
 
 That completion is worth dating rather than simply asserting, because the file
 spent most of its life in progress and will be again the next time a language
 is added. A count that has stopped moving and a count nobody is moving look
 identical from outside.
+
+**Vietnamese, Thai and Filipino were chosen from arrivals data, not from a
+sense of which markets feel large** — because that sense is exactly what put
+Europe first. Korea received about 15.05 million international visitors from
+January to August 2026, and among Southeast Asian source markets the ranking
+was Philippines 454,000 (fastest growing, up 16.1%), Vietnam 407,000,
+Indonesia 295,000, Singapore 243,000, Thailand 230,000, Malaysia 207,000.
+Indonesia was already covered; Singapore is skipped because English is a
+working language there; Malaysia is skipped because Malay and Indonesian are
+close enough that the `id` edition largely reaches those readers. That leaves
+the top three uncovered markets, and they are exactly these three.
+
+**The Filipino edition is an explicit bet, and it is recorded as one.** English
+is an official language of the Philippines, so unlike a Vietnamese or Thai
+reader a Filipino reader can already read the English pages. The bet is that a
+procedure read under time pressure — a seven-minute checkout, a cancellation
+deadline in a foreign time zone — is read more carefully in a first language.
+If those pages draw nothing, the bet was wrong, and `lib/i18n.ts` says so in
+those words so that the next person knows it was a decision rather than an
+oversight. The tag is `fil` rather than `tl` deliberately: Filipino is the
+standardised national language and what hreflang expects, and Tagalog would be
+a narrower claim than this edition makes.
+
+All three refuse both excluded guides, on the tests the earlier editions were
+already given rather than new ones, and the timezone half was verified rather
+than inherited: `zdump -v` on Asia/Ho_Chi_Minh, Asia/Bangkok and Asia/Manila
+prints no transition at all, so 20:00 KST is 18:00 in Hanoi and Bangkok and
+19:00 in Manila in January and in July alike. Worth checking rather than
+assuming, because the Philippines has legislated daylight saving before and
+could again. Thai also needed one thing the nine other editions did not: a
+font stack and a `line-height` of its own, because Thai stacks vowel and tone
+marks two deep above the line and the 1.85 that works for Japanese and Chinese
+clips them.
 
 **French carries no region, and that is the honest scope rather than a
 shortcut.** Brazil's region decided a page; France's would decide nothing. Its
@@ -254,7 +287,7 @@ exactly the Berlin and Madrid line the English page already converts for — no
 English edit needed, and therefore no re-sync cascade. France is in the EU, so
 the customs guide is refused for the reason counted there.
 
-French needed one check the other six did not. It groups thousands with a
+French needed one check no other edition did. It groups thousands with a
 space rather than a period, so a correctly written `8 000` read as a missing
 `8,000` and would have failed every page quoting a fee. All three spaces that
 appear in honest French text are accepted — plain, no-break, and the narrow
@@ -267,7 +300,8 @@ which is the right answer — a language with a single page is a dead end whose
 only route in is the sitemap. Two was the smallest honest increment, and the
 pair was the hub guide and the NOL World guide it links to. It is complete at
 nineteen now, but the constraint is worth keeping written down, because it
-applies again on the first day of the eighth language.
+applied again on the first day of each of the three that followed and will
+apply on the first day of the eleventh.
 
 The region in the code is load-bearing rather than decorative. Brazil
 abolished daylight saving in 2019, so the timezone guide — which is really a
@@ -282,8 +316,11 @@ waste it on the other half.
 
 They no longer sit on one set, and that is the system working rather than
 drifting. The customs guide is still refused everywhere, because its subject
-is a jurisdiction no reader of these seven is in — Brazil included, which is
-why `pt-BR` refuses it on the same test rather than a new one. The timezone guide used to
+is a jurisdiction no reader of these ten is in — Brazil included, which is
+why `pt-BR` refuses it on the same test rather than a new one, and the three
+Southeast Asian editions most of all: a page explaining CBP's executive orders
+to a reader whose parcel clears the Philippine Bureau of Customs is not merely
+useless, it is confidently about the wrong country. The timezone guide used to
 be refused everywhere too — correctly for Japanese, Chinese and Indonesian,
 whose readers observe no daylight saving at all, and wrongly for German and
 Spanish, whose readers do. It is translated for those two now.
@@ -294,11 +331,12 @@ London and Sydney, so a German or Spanish edition could either carry American
 cities or change the numbers, and changing numbers is what the checks exist to
 stop. The cities belong in the English page, so that is where they went.
 
-The three Asian editions still refuse that guide, and correctly: checked
-against the IANA database the guide itself cites, Asia/Tokyo, Asia/Taipei and
-Asia/Jakarta have no transition in the next decade, so the gap to KST is zero,
-one and two hours permanently. For those readers the arithmetic the guide
-exists to teach does not exist.
+The six Asian editions still refuse that guide, and correctly: checked
+against the IANA database the guide itself cites, Asia/Tokyo, Asia/Taipei,
+Asia/Jakarta, Asia/Ho_Chi_Minh, Asia/Bangkok and Asia/Manila have no
+transition in the next decade, so the gap to KST is a fixed zero, one or two
+hours permanently. For those readers the arithmetic the guide exists to teach
+does not exist.
 
 **A language's edition leads with what its readers came for, but it does not
 stop there — and German is the correction, not the rule.** The Asian editions

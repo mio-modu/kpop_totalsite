@@ -220,21 +220,30 @@ const JA_LABELS = {
 
 /**
  * One guide is deliberately in no language but English, and a second is in
- * three of the seven. Both are decisions with reasons, not oversights, and
+ * three of the ten. Both are decisions with reasons, not oversights, and
  * the reasons are here because the counts will keep moving and the reasoning
  * should not have to be reconstructed each time.
  *
  * Where it stands against twenty-one English guides:
  *
- *   ja, zh-Hant, id   19/21   skip the timezone guide and the customs guide
- *   pt-BR             19/21   skip the timezone guide and the customs guide
- *   de, es, fr        20/21   skip the customs guide only
+ *   ja, zh-Hant, id        19/21   skip the timezone guide and the customs guide
+ *   vi, th, fil            19/21   skip the timezone guide and the customs guide
+ *   pt-BR                  19/21   skip the timezone guide and the customs guide
+ *   de, es, fr             20/21   skip the customs guide only
  *
- * All seven are complete at their intended counts as of 2026-10-22. That
+ * All ten are complete at their intended counts as of 2026-10-22. That
  * sentence is worth dating, because "in progress" is the state this file was
  * in for most of its life and the state it will be in again the next time a
  * language is added — a count that has stopped moving looks identical to a
  * count nobody is moving.
+ *
+ * Vietnamese, Thai and Filipino arrived together and landed on exactly the
+ * set the Asian three carry — the same nineteen slugs, not nineteen that
+ * happen to count the same. That is a result rather than a convention: both
+ * exclusions were re-tested against the three new readerships, and both
+ * survived for the reasons below. Where a shared answer is reached by
+ * applying the test rather than by copying the previous edition, it is worth
+ * saying so, because the next language will be tempted to copy instead.
  *
  * `pt-BR` sits with the Asian three rather than with the European ones, and
  * the region in its code is what makes that decidable instead of arguable.
@@ -288,16 +297,28 @@ const JA_LABELS = {
  * Asia/Jakarta across the next decade, and identical January and July offsets
  * in each:
  *
- *   Asia/Seoul   UTC+9    Asia/Tokyo    UTC+9   — no conversion at all
- *   Asia/Taipei  UTC+8    KST minus 1, permanently
- *   Asia/Jakarta UTC+7    KST minus 2, permanently
+ *   Asia/Seoul        UTC+9    Asia/Tokyo    UTC+9   — no conversion at all
+ *   Asia/Taipei       UTC+8    KST minus 1, permanently
+ *   Asia/Jakarta      UTC+7    KST minus 2, permanently
+ *   Asia/Ho_Chi_Minh  UTC+7    KST minus 2, permanently
+ *   Asia/Bangkok      UTC+7    KST minus 2, permanently
+ *   Asia/Manila       UTC+8    KST minus 1, permanently
  *
- * So for a Japanese reader there is nothing to convert, and for a Taiwanese or
- * Indonesian one the gap is a fixed hour or two that never moves. Translating
- * it would hand all three a page mostly about New York's March clock change.
+ * So for a Japanese reader there is nothing to convert, and for everyone else
+ * on that list the gap is a fixed hour or two that never moves. Translating
+ * it would hand all six a page mostly about New York's March clock change.
  * The parts that do apply — be verified before the window opens, and the
  * checkout clock is a separate deadline — are already in guides 01 and 12,
- * which are translated into all three.
+ * which are translated into all six.
+ *
+ * The three new zones were checked the same way rather than assumed from
+ * their neighbours: `zdump -v` on Asia/Ho_Chi_Minh, Asia/Bangkok and
+ * Asia/Manila prints nothing but the two sentinel rows at each end of time,
+ * so there is no transition in the table at all, and January and July hold
+ * the same offset in each. Worth doing properly, because the Philippines has
+ * legislated daylight saving three times in its history and could again —
+ * the claim here is about today's zoneinfo, not about the idea that tropical
+ * countries never move their clocks.
  *
  * `kpop-album-customs-duty-overseas` is the one guide no edition takes, and
  * the reason differs by language, so both halves are recorded.
@@ -307,13 +328,22 @@ const JA_LABELS = {
  * guessed at: of ten steps, five are US-specific — CBP, the executive
  * orders, US tariff chapters — one is EU-specific, and four carry no region.
  *
- * For Japanese, Chinese and Indonesian readers, neither jurisdiction is
- * theirs. Worse, the page would read as though it covered them: a translated
- * customs guide is exactly the kind of page a reader trusts on the one
- * subject where being wrong costs money at a border. Each would need its own
- * national source — and for Japanese, customs.go.jp and japanpost.jp are both
- * outside this container's outbound allowlist, so it cannot be written from
- * here today even if the appetite were there.
+ * For Japanese, Chinese, Indonesian, Vietnamese, Thai and Filipino readers,
+ * neither jurisdiction is theirs. Worse, the page would read as though it
+ * covered them: a translated customs guide is exactly the kind of page a
+ * reader trusts on the one subject where being wrong costs money at a
+ * border. Each would need its own national source — and for Japanese,
+ * customs.go.jp and japanpost.jp are both outside this container's outbound
+ * allowlist, so it cannot be written from here today even if the appetite
+ * were there.
+ *
+ * The three newest editions make that worse rather than better, which is why
+ * they were checked rather than waved through. A Filipino reader's parcel
+ * clears through the Bureau of Customs under a de minimis of its own, and a
+ * Thai or Vietnamese reader's through thresholds that have moved in the last
+ * few years; a page explaining CBP's executive orders to any of them is not
+ * merely useless, it is confidently about the wrong country. Until there is
+ * a primary source per jurisdiction, no translation of this page is honest.
  *
  * German and Spanish are the harder case, because Germany and Spain are in
  * the EU and the guide covers the EU. That is the same shape as the
@@ -18913,6 +18943,396 @@ export const translations: Translation[] = [
       {
         q: "Nabibilang ba sa mga Koreanong chart ang pagbili sa Ktown4u?",
         a: "Sertipikadong tindahang Family ng Hanteo ang Ktown4U, nakalista sa code na HF0082KTU001, kaya para sa Hanteo ay nag-uulat na tindahan ito — at iyon ang pinakamalayong naabot ng isang pampublikong pinagmulan. Hindi naglalathala ang Hanteo ng tuntunin kung itinuturing bang katulad ng isang lokal na order ang isang orderng galing sa ibang bansa, at ibang tanong na muli ang Circle Chart: binibilang ng pangunahing Album Chart nito ang pakyawang kargamento sa mga tindahan at hindi ang bentang tingi, kaya walang binabago ang isang order doon sa anumang panig. Kung isang partikular na release ang punto, karaniwang pinapangalanan ng sariling anunsiyo ng artist ang mga kalahok na tindahan para dito.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+  {
+    locale: "vi",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: một sản phẩm, và gần như không gì trong đó thay đổi được",
+    summary:
+      "Một buổi diễn và một khách sạn bán ra như một mặt hàng duy nhất. Bạn không đổi được khách sạn, không đổi được ngày, không đổi được số đêm, bỏ không ở khách sạn thì chẳng hoàn lại gì, chỗ ngồi là ngẫu nhiên và chỉ hé ra trong ngày, và vé chỉ được trao cho chính bạn, trực tiếp, tại khách sạn, trong một khung giờ.",
+    scope:
+      "Trang này bao gồm các gói buổi diễn cộng khách sạn Play and Stay của NOL World đúng như NOL World công bố: điều gì là cố định, vé được nhận ra sao, các yêu cầu về danh tính và tên, và các câu trả lời về hủy đơn của họ thực sự nói gì. Mỗi gói mang chính sách hủy và các hạng mục bao gồm riêng của nó, và trang sản phẩm là thứ nắm quyền. Dịch vụ xe đưa đón chỉ được nhắc ở nơi một gói có nó.",
+    intro: [
+      "Một gói trông như lựa chọn dễ dàng: một lần thanh toán, một khách sạn gần địa điểm diễn, một hạng chỗ ngồi được bảo đảm, không phải vật lộn với hàng đợi. Với một người hâm mộ ở nước ngoài chỉ có một cơ hội cho chuyến đi, đó là một trao đổi thật sự hấp dẫn.",
+      "Nó cũng là sản phẩm cứng nhắc nhất trên nền tảng, và sự cứng nhắc đó không hiện ra từ trang giới thiệu. Đọc liền một dãy các câu trả lời của chính NOL World thì một khuôn hiện ra: gói đó là một mặt hàng không chia được. Không phải một chiếc vé và một phòng khách sạn mà bạn tối ưu riêng từng thứ — một thứ duy nhất, mua một lần, gần như không đổi được ở đâu. Mọi điều dưới đây đều theo sau cái sự thật đơn lẻ ấy, kể cả những phần sẽ thấy bất công lúc bạn cần tới chúng.",
+    ],
+    steps: [
+      {
+        title: "Hiểu rằng bạn đang mua một mặt hàng, không phải hai đơn đặt",
+        body: "Đây là cả hướng dẫn gói trong một bước. NOL World nêu rằng số đêm trong một gói không thể sửa đổi, rằng các ngày nhận và trả phòng ghi trong gói không thể thay đổi, và rằng việc đổi khách sạn không được phép. Cũng không thể thêm đêm lúc mua — các đêm ở thêm là một cuộc trao đổi riêng với khách sạn, theo giá của khách sạn và tùy phòng trống của họ. Và một tài khoản mua được một mặt hàng, nên đây không phải thứ bạn xếp chồng lên nhau.",
+        pitfall:
+          "Đặt gói với ý định dọn các chi tiết sau: tới sớm một ngày, chuyển sang một khách sạn gần một người bạn, cắt một đêm ở cuối. Mỗi điều trong số đó là một lời không đã được ghi rõ.",
+        takes: "15 phút, trước khi bạn trả tiền",
+      },
+      {
+        title: "Hãy chấp nhận rằng bỏ không ở khách sạn thì chẳng hoàn lại gì",
+        body: "Câu hỏi này được hỏi theo hai cách trong phần hỏi đáp của NOL World và nhận cùng một câu trả lời cả hai lần: bạn có thể chọn không ở khách sạn, nhưng việc hoàn tiền cho phần khách sạn thì không có, và đơn đặt không chuyển nhượng được cho người khác. Vậy nên việc ở cùng một người bạn thay vì vậy không chuyển thành tiền trả lại, và cái phòng bạn đã trả tiền không thể trao cho ai khác. Việc dùng một đêm rồi đòi lại phần còn lại cũng bị từ chối — số đêm là cố định.",
+        pitfall:
+          "Coi nửa khách sạn như một khoản đặt cọc mà bạn bỏ đi được. Đó là nửa bạn không bán lại được, không cho đi được và không đòi lại được.",
+        takes: "—",
+      },
+      {
+        title: "Hãy chờ một chỗ ngồi ngẫu nhiên, và chờ biết nó vào đúng ngày",
+        body: "Gói bảo đảm một hạng, không phải một vị trí. NOL World nói rằng chỗ ngồi bên trong các khu và vùng, ngoài hạng bạn đã chọn, được phân một cách ngẫu nhiên — và rằng việc phân chỗ của bạn được hiện ra khi bạn nhận vé tại khách sạn vào ngày diễn. Bạn sẽ không biết mình ngồi đâu cho tới vài giờ trước buổi diễn. Họ cũng chặn luôn câu hỏi tiếp theo hiển nhiên: việc không hài lòng với chỗ ngồi không phải một lý do hoàn tiền, và một khoản phí hủy vẫn có thể được áp.",
+        pitfall:
+          "Lên kế hoạch quanh một vị trí chỗ ngồi — một phía nhất định cho một fan project, một hàng cho một cái ống kính. Hạng mới là lời hứa; phần còn lại là một lần rút thăm bạn thấy trong ngày.",
+        takes: "—",
+      },
+      {
+        title: "Hãy nhận vé ở quầy khách sạn, trực tiếp, trong khung giờ",
+        body: "Chỉ có đúng một cách để lấy những chiếc vé này. NOL World nói việc nhận vé chỉ diễn ra tại quầy vé NOL World nằm trong khách sạn, chỉ trong những giờ được chỉ định, và rằng vé được phát độc quyền cho người đứng tên đơn đặt, người phải tự tới nhận. Khi được hỏi liệu một người đủ điều kiện hưởng giảm giá có thể nhận vé và đi xem thay hay không, câu trả lời của họ là vé chỉ có thể được nhận và dùng bởi người đứng tên đơn đặt, không có ngoại lệ. Nếu bạn trễ những giờ được chỉ định thì câu trả lời đã công bố đơn giản là vé chỉ có trong khoảng thời gian được nêu.",
+        pitfall:
+          "Xếp cả ngày quanh địa điểm diễn. Cái hẹn có tính ràng buộc là ở quầy khách sạn, trong một khung giờ do người khác đặt ra, vào đúng ngày diễn.",
+        takes: "Hãy xây cả ngày quanh nó",
+      },
+      {
+        title: "Hãy mang đúng những giấy tờ mà cái quầy đó thật sự đòi",
+        body: "NOL World rất cụ thể: giấy tờ tùy thân gốc còn hiệu lực của người đứng tên đơn đặt, cộng với bản xác nhận đơn đặt, in ra hoặc để trên điện thoại — và không có những thứ này thì không nhận được vé. Với người không mang quốc tịch Hàn Quốc, giấy tờ được chấp nhận là hộ chiếu hoặc giấy chứng nhận đăng ký người nước ngoài. Người Hàn Quốc có một danh sách dài hơn, gồm thẻ căn cước, giấy phép lái xe, hộ chiếu, thẻ thanh thiếu niên, hoặc một giấy tờ tùy thân điện tử phát hành qua Government 24 hay PASS.",
+        pitfall:
+          "Để hộ chiếu trong tủ an toàn của phòng vì cái quầy nằm trong cùng tòa nhà. Chính giấy tờ gốc mới mở ra chiếc vé, và một bức ảnh của nó thì không có trên danh sách.",
+        takes: "5 phút lúc xếp đồ",
+      },
+      {
+        title: "Với một gói hai người, cả hai người phải có mặt ở quầy",
+        body: "Điều này sắp xếp lại cả một ngày và rất dễ bị bỏ sót. NOL World nói rằng với một gói dành cho hai người, cả người đứng tên đơn đặt và người đi cùng đều phải có mặt để nhận vé — và rằng người đi cùng cũng được yêu cầu xuất trình giấy tờ tùy thân, để xác nhận họ đáp ứng yêu cầu về tuổi để được vào. Vậy nên khung giờ nhận vé là một cái hẹn cho hai người với hai giấy tờ, không phải một việc lặt vặt mà một trong hai người chạy đi làm.",
+        pitfall:
+          "Chia nhau ra trong ngày — một người nhận vé trong khi người kia đi ngắm phố hay xếp hàng mua merch. Cái quầy sẽ không nhả vé cho một người trong hai.",
+        takes: "—",
+      },
+      {
+        title: "Hãy làm cho tên khớp với hộ chiếu một cách chính xác, ngay bây giờ",
+        body: "NOL World trả lời điều này với cả hai hệ quả trong một câu: nếu cái tên khai lúc đặt không khớp với hộ chiếu của bạn thì việc nhận vé và việc nhận phòng khách sạn sẽ không thể thực hiện được. Cả hai nửa của gói, bị chặn bởi cùng một lỗi. Câu hỏi mà họ trả lời nêu ra những thủ phạm thường thấy — một lỗi chính tả, một tên đệm bị thiếu, chữ hoa chữ thường, khoảng trắng. Hãy kiểm tra đơn đặt đối chiếu với chính trang hộ chiếu chứ đừng đối chiếu với ký ức.",
+        pitfall:
+          "Cho rằng một khác biệt nhỏ sẽ được cho qua vì gói đã trả tiền rồi. Việc đã trả tiền không phải thứ đang được kiểm ở cả hai cái quầy.",
+        takes: "10 phút",
+      },
+      {
+        title: "Đừng chờ một email xác nhận khách sạn, vì không có cái nào",
+        body: "Chuyện này gây ra sự hoảng hốt có thể tránh được, nên hãy biết trước. NOL World nói các bản xác nhận đặt phòng khách sạn không được gửi riêng, và rằng nếu việc thanh toán đã thông thì đơn đặt phòng khách sạn là đã xác nhận và có hiệu lực. Hữu ích hơn: chi tiết đơn đặt chỉ được chuyển cho khách sạn khoảng hai tuần trước kỳ lưu trú, nên khách sạn thật sự không tìm thấy bạn trước lúc đó. Nếu bạn gọi sớm hơn và họ chưa từng nghe tới bạn thì đó là trạng thái bình thường đã được ghi rõ.",
+        pitfall:
+          "Đặt một phòng dự phòng, hoặc mua lại cái gói, vì khách sạn nói không có đơn đặt nào khi còn sáu tuần nữa. Chẳng có gì sai cả, và giờ thì có hai đơn đặt.",
+        takes: "2 phút để yên tâm",
+      },
+      {
+        title: "Hãy nhận phòng với tư cách người mua, và đọc các hạng mục nhỏ được bao gồm",
+        body: "Việc nhận phòng khách sạn bị chặn bởi cùng một con người như với vé: NOL World nói việc nhận phòng chỉ có sau khi xác minh danh tính của người đứng tên đơn đặt, nên một người đi cùng không thể nhận phòng trước rồi đợi. Nếu bạn sẽ tới muộn, chỉ dẫn của họ là liên hệ trước với khách sạn — đồng thời cảnh báo rằng điều đó có thể không khả thi tùy khách sạn. Hai điều cụ thể nữa đáng biết trước khi bạn đặt: trẻ vị thành niên không được lưu trú mà không có người giám hộ pháp lý, và bữa sáng không được bao gồm trừ khi gói cụ thể của bạn có nó.",
+        pitfall:
+          "Cử một người bạn tới trước để đặt hành lý và bắt đầu kỳ lưu trú. Cái phòng mở ra theo danh tính của bạn, không theo mã đơn đặt.",
+        takes: "—",
+      },
+      {
+        title: "Nếu có xe đưa đón, hãy coi nó như một chuyến khởi hành không có lần thứ hai",
+        body: "Ở nơi một gói có xe đưa đón, các câu trả lời của NOL World không hề tình cảm. Việc dùng nó là tùy chọn và việc không dùng thì chẳng hoàn lại gì. Không có xe dự phòng, nên tới điểm đón muộn nghĩa là nó đã đi. Một chuyến chỉ về cũng có thể. Một người đi cùng chưa đặt chỗ có thể hỏi người quản lý xe tại chỗ, nhưng số ghế có hạn và không thể bảo đảm. Và cái chi tiết làm hỏng một buổi tối: bạn được mang một chiếc vali lên xe, nhưng chỗ gửi hành lý bên trong xe thì không có một khi bạn tới địa điểm diễn. Điểm và giờ lên xe lúc về được đưa cho bạn khi vé được trao tại khách sạn.",
+        pitfall:
+          "Mang một chiếc vali tới buổi diễn vì cái xe cho nó lên. Ở địa điểm diễn chẳng có đâu để gửi nó, và bạn thì mang nó suốt buổi diễn.",
+        takes: "—",
+      },
+      {
+        title: "Hãy đọc các câu trả lời về hủy đơn trước khi đặt, vì chúng là không",
+        body: "Đây là bước cần coi trọng trong lúc chuyến đi còn là một kế hoạch. NOL World công bố câu trả lời cho hai trường hợp khó nhất và cả hai đều là lời từ chối. Về việc nhiễm bệnh: sau khi mức phân loại nguy cơ COVID-19 được hạ xuống, việc cách ly không còn bắt buộc, và theo đó không có khoản giảm nào cho phí hủy dù bạn bị nhiễm. Về việc có người thân qua đời và việc nhập viện sau một tai nạn: việc hoàn tiền vì các lý do cá nhân là không có, và các phí hủy được áp theo chính sách riêng của từng sản phẩm. Dù điều đó đọc ra là khắc nghiệt hay chỉ là rõ ràng, nó cho bạn biết rủi ro nằm ở đâu — ở bạn, kể từ giây bạn trả tiền. Công cụ được thiết kế để gánh nó là bảo hiểm du lịch mua trước khi khởi hành, và nó thật sự bao những gì thì tùy hợp đồng bạn mua, nên hãy đọc cái văn bản đó chứ đừng giả định.",
+        pitfall:
+          "Gánh rủi ro mà không có bảo hiểm với giả định rằng một lý do đủ nghiêm trọng sẽ được chấp nhận. NOL World đã công bố câu trả lời của họ cho hai lý do nghiêm trọng nhất vốn có.",
+        takes: "30 phút với một hợp đồng bảo hiểm",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi mua gói rồi không dùng khách sạn được không?",
+        a: "Bạn có thể từ chối ở, nhưng NOL World nêu rằng phần khách sạn không hoàn lại được và đơn đặt không thể chuyển cho ai khác. Việc dùng ít đêm hơn số đêm gói có rồi đòi lại phần chênh cũng bị từ chối, bởi số đêm không thể sửa đổi.",
+      },
+      {
+        q: "Tôi kéo dài kỳ lưu trú, rút ngắn nó, dịch ngày, hay đổi khách sạn được không?",
+        a: "Số đêm không thể sửa đổi, các ngày nhận và trả phòng trong gói không thể thay đổi, và việc đổi khách sạn không được phép. Cũng không thể thêm đêm lúc mua — chỉ dẫn của NOL World là liên hệ trực tiếp với khách sạn về phòng trống và giá, và điều đó có thể là không khả thi. Việc nâng hạng phòng cũng vậy: hỏi khách sạn, và trả tiền trực tiếp cho khách sạn lúc tới.",
+      },
+      {
+        q: "Tôi biết chỗ ngồi của mình khi nào?",
+        a: "Khi bạn nhận vé tại khách sạn vào đúng ngày diễn. Gói bảo đảm một hạng; bên trong hạng đó, NOL World phân các khu và các ghế một cách ngẫu nhiên. Việc không vui với kết quả không phải một lý do hoàn tiền.",
+      },
+      {
+        q: "Có ai nhận vé giúp tôi, hay đi xem thay tôi được không?",
+        a: "Không. NOL World nói vé được phát độc quyền cho người đứng tên đơn đặt và phải được nhận trực tiếp, và rằng vé chỉ có thể được nhận và dùng bởi người đứng tên đơn đặt, không có ngoại lệ. Với một gói hai người, cả hai người phải ở quầy, và người đi cùng cũng phải xuất trình giấy tờ tùy thân để tuổi của họ được xác nhận.",
+      },
+      {
+        q: "Tôi chưa nhận được email xác nhận khách sạn.",
+        a: "Không có cái nào cả. NOL World nói các bản xác nhận khách sạn không được gửi riêng, và rằng một lần thanh toán thành công nghĩa là đơn đặt phòng khách sạn đã được xác nhận. Họ cũng nói chi tiết đơn đặt chỉ tới khách sạn khoảng hai tuần trước ngày nhận phòng, nên việc xác nhận trực tiếp chỉ khả thi sau lúc đó.",
+      },
+      {
+        q: "Tôi gọi khách sạn và họ không tìm được đơn đặt của tôi.",
+        a: "Đúng như dự liệu, nếu bạn gọi sớm. NOL World nói chi tiết được gửi cho khách sạn khoảng hai tuần trước kỳ lưu trú và rằng việc xác nhận chỉ khả thi sau lúc đó, và rằng một đơn đặt gói đã hoàn tất đúng cách cùng việc thanh toán nghĩa là đơn đặt khách sạn là chắc chắn. Đừng đặt lại.",
+      },
+      {
+        q: "Tôi dương tính, hoặc gia đình tôi có việc khẩn. Phí hủy có được miễn không?",
+        a: "Câu trả lời đã công bố của NOL World là không, trong cả hai trường hợp. Họ nói rằng khi việc cách ly vì COVID-19 không còn bắt buộc, không có khoản giảm nào được áp cho phí hủy dù bạn bị nhiễm; và rằng việc hoàn tiền vì các lý do cá nhân, bao gồm người thân qua đời hay nhập viện sau một tai nạn, là không có, với các phí được áp theo chính sách của từng sản phẩm. Bảo hiểm du lịch mua trước khi bạn đi là công cụ cho rủi ro này — nó bao những gì thì tùy hợp đồng, nên hãy đọc nó.",
+      },
+      {
+        q: "Tôi có buộc phải dùng xe đưa đón không, và tôi mang vali lên được không?",
+        a: "Nó là tùy chọn, và việc không dùng thì chẳng hoàn lại gì. Một chiếc vali có thể lên xe, nhưng NOL World cảnh báo rằng chỗ gửi hành lý bên trong xe thì không có một khi bạn tới địa điểm diễn — nên một chiếc vali bạn mang là một chiếc vali bạn phải bê. Không có xe dự phòng nếu bạn trễ chuyến khởi hành, và điểm cùng giờ lên xe lúc về được phát ra cùng với vé tại khách sạn.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: สินค้าชิ้นเดียว และแทบไม่มีอะไรในนั้นที่เปลี่ยนได้",
+    summary:
+      "คอนเสิร์ตกับโรงแรมที่ขายรวมเป็นสินค้าชิ้นเดียว คุณเปลี่ยนโรงแรมไม่ได้ เปลี่ยนวันไม่ได้ เปลี่ยนจำนวนคืนไม่ได้ การไม่เข้าพักก็ไม่ได้เงินคืน ที่นั่งเป็นแบบสุ่มและเปิดเผยในวันงาน และตั๋วถูกส่งมอบให้คุณคนเดียว ด้วยตัวคุณเอง ที่โรงแรม ภายในช่วงเวลาหนึ่ง",
+    scope:
+      "หน้านี้ครอบคลุมแพ็กเกจคอนเสิร์ตบวกโรงแรม Play and Stay ของ NOL World ตามที่ NOL World ประกาศไว้ ได้แก่ อะไรที่ตรึงไว้ การรับตั๋วทำอย่างไร ข้อกำหนดเรื่องตัวตนและชื่อ และคำตอบเรื่องการยกเลิกของมันพูดอะไรจริง ๆ แต่ละแพ็กเกจมีนโยบายการยกเลิกและรายการที่รวมอยู่ของตัวเอง และหน้าสินค้าเป็นฝ่ายมีอำนาจ บริการรถรับส่งถูกกล่าวถึงเฉพาะที่แพ็กเกจหนึ่งมีมันอยู่",
+    intro: [
+      "แพ็กเกจดูเหมือนทางเลือกที่ง่าย คือจ่ายครั้งเดียว ได้โรงแรมใกล้สถานที่จัดงาน ได้เกรดที่นั่งที่รับประกัน ไม่ต้องสู้กับคิว สำหรับแฟนต่างชาติที่มีโอกาสเดินทางหนึ่งครั้ง นั่นเป็นการแลกที่น่าดึงดูดจริง ๆ",
+      "มันก็เป็นสินค้าที่แข็งทื่อที่สุดบนแพลตฟอร์มด้วย และความแข็งทื่อนั้นไม่ปรากฏจากหน้าขาย อ่านคำตอบของ NOL World เองเรียงกันเป็นแถวแล้วรูปแบบหนึ่งก็ผุดขึ้น คือแพ็กเกจเป็นสินค้าชิ้นเดียวที่แบ่งไม่ได้ ไม่ใช่ตั๋วใบหนึ่งกับห้องพักหนึ่งห้องที่คุณไปปรับให้ดีที่สุดแยกกัน แต่เป็นของชิ้นเดียว ซื้อครั้งเดียว และเปลี่ยนได้แทบไม่มีที่ไหน ทุกอย่างด้านล่างตามมาจากข้อเท็จจริงข้อเดียวนั้น รวมถึงส่วนที่จะรู้สึกว่าไม่เป็นธรรมในตอนที่คุณต้องใช้มัน",
+    ],
+    steps: [
+      {
+        title: "เข้าใจว่าคุณกำลังซื้อสินค้าชิ้นเดียว ไม่ใช่การจองสองอย่าง",
+        body: "นี่คือทั้งไกด์นี้ในขั้นเดียว NOL World ระบุว่าจำนวนคืนในแพ็กเกจแก้ไขไม่ได้ ว่าวันเช็กอินและเช็กเอาต์ที่ระบุไว้ในแพ็กเกจเปลี่ยนไม่ได้ และว่าการเปลี่ยนโรงแรมไม่ได้รับอนุญาต การเพิ่มคืนตอนซื้อก็ทำไม่ได้ การพักเพิ่มเป็นการคุยแยกกับโรงแรม ในราคาของโรงแรมและขึ้นอยู่กับห้องว่างของเขา และหนึ่งบัญชีซื้อได้หนึ่งชิ้น ดังนั้นนี่ไม่ใช่ของที่คุณเอามาซ้อนกัน",
+        pitfall:
+          "การจองแพ็กเกจโดยตั้งใจจะไปจัดรายละเอียดทีหลัง เช่นมาถึงก่อนหนึ่งวัน ย้ายไปโรงแรมที่ใกล้เพื่อนกว่า ตัดคืนสุดท้ายออก ทุกข้อในนั้นเป็นคำว่าไม่ที่มีบันทึกไว้แล้ว",
+        takes: "15 นาที ก่อนคุณจ่ายเงิน",
+      },
+      {
+        title: "ยอมรับว่าการไม่เข้าพักที่โรงแรมไม่ได้เงินคืนเลย",
+        body: "คำถามนี้ถูกถามสองแบบในหน้าคำถามของ NOL World และได้คำตอบเดียวกันทั้งสองครั้ง คือคุณเลือกจะไม่พักที่โรงแรมได้ แต่การคืนเงินส่วนโรงแรมนั้นไม่มี และการจองโอนให้คนอื่นไม่ได้ ดังนั้นการไปพักกับเพื่อนแทนไม่ได้แปลงเป็นเงินคืน และห้องที่คุณจ่ายไปแล้วก็ยกให้ใครไม่ได้ การใช้หนึ่งคืนแล้วขอคืนส่วนที่เหลือก็ถูกปฏิเสธ เพราะจำนวนคืนถูกตรึงไว้",
+        pitfall:
+          "การถือว่าซีกโรงแรมเป็นเงินมัดจำที่คุณเดินหนีได้ มันคือซีกที่คุณขายต่อไม่ได้ ยกให้ใครไม่ได้ และขอคืนไม่ได้",
+        takes: "—",
+      },
+      {
+        title: "คาดไว้ว่าที่นั่งเป็นแบบสุ่ม และคาดว่าจะรู้มันในวันงาน",
+        body: "แพ็กเกจรับประกันเกรด ไม่ใช่ตำแหน่ง NOL World บอกว่าที่นั่งภายในโซนและส่วนต่าง ๆ นอกเหนือจากหมวดที่คุณเลือกนั้นถูกจัดแบบสุ่ม และว่าการจัดที่นั่งของคุณจะแสดงออกมาตอนที่คุณไปรับตั๋วที่โรงแรมในวันที่มีการแสดง คุณจะไม่รู้ว่าคุณนั่งที่ไหนจนกระทั่งไม่กี่ชั่วโมงก่อนงาน มันยังปิดคำถามต่อเนื่องที่เห็นชัดไว้ด้วย คือการไม่พอใจที่นั่งไม่ใช่เหตุผลขอเงินคืน และค่าธรรมเนียมการยกเลิกอาจถูกเรียกเก็บอยู่ดี",
+        pitfall:
+          "การวางแผนรอบตำแหน่งที่นั่ง เช่นฝั่งหนึ่งฝั่งใดสำหรับโปรเจกต์แฟน หรือแถวหนึ่งสำหรับเลนส์ตัวหนึ่ง เกรดคือคำสัญญา ส่วนที่เหลือคือการจับฉลากที่คุณเห็นในวันงาน",
+        takes: "—",
+      },
+      {
+        title: "รับตั๋วที่เคาน์เตอร์โรงแรม ด้วยตัวเอง ภายในช่วงเวลาที่กำหนด",
+        body: "มีวิธีเดียวเท่านั้นในการได้ตั๋วเหล่านี้ NOL World บอกว่าการรับตั๋วทำได้เฉพาะที่เคาน์เตอร์ตั๋ว NOL World ซึ่งตั้งอยู่ในโรงแรม เฉพาะในชั่วโมงที่กำหนดไว้ และว่าตั๋วออกให้เฉพาะผู้ถือการจอง ซึ่งต้องมารับด้วยตัวเอง เมื่อถูกถามว่าคนที่มีสิทธิ์ได้ส่วนลดจะมารับและเข้าชมแทนได้ไหม คำตอบของมันคือตั๋วรับและใช้ได้โดยผู้ถือการจองเท่านั้น ไม่มีข้อยกเว้น ถ้าคุณพลาดชั่วโมงที่กำหนด คำตอบที่ประกาศไว้ก็เพียงว่าตั๋วมีให้เฉพาะในช่วงเวลาที่ระบุ",
+        pitfall:
+          "การจัดตารางทั้งวันรอบสถานที่จัดงาน นัดที่ผูกพันคุณอยู่ที่เคาน์เตอร์โรงแรม ในช่วงเวลาที่คนอื่นกำหนด ในวันที่มีการแสดง",
+        takes: "สร้างทั้งวันขึ้นรอบมัน",
+      },
+      {
+        title: "เอาเอกสารที่เคาน์เตอร์เรียกจริงไปด้วย",
+        body: "NOL World เจาะจงไว้ว่า ต้องมีเอกสารแสดงตัวตนฉบับจริงที่ยังไม่หมดอายุของผู้ถือการจอง บวกกับใบยืนยันการจองที่พิมพ์ออกมาหรืออยู่บนโทรศัพท์ และถ้าไม่มีสิ่งเหล่านี้ก็รับตั๋วไม่ได้ สำหรับผู้ที่ไม่ใช่สัญชาติเกาหลี เอกสารที่รับคือหนังสือเดินทางหรือใบรับรองการลงทะเบียนคนต่างด้าว ส่วนผู้ถือสัญชาติเกาหลีมีรายการที่ยาวกว่า รวมถึงบัตรประจำตัวประชาชน ใบขับขี่ หนังสือเดินทาง บัตรเยาวชน หรือบัตรประจำตัวบนมือถือที่ออกผ่าน Government 24 หรือ PASS",
+        pitfall:
+          "การเก็บหนังสือเดินทางไว้ในตู้เซฟในห้องเพราะเคาน์เตอร์อยู่ในตึกเดียวกัน เอกสารฉบับจริงคือสิ่งที่เปิดตั๋วให้ และรูปถ่ายของมันไม่อยู่ในรายการ",
+        takes: "5 นาทีตอนจัดกระเป๋า",
+      },
+      {
+        title: "สำหรับแพ็กเกจสองคน ทั้งสองคนต้องอยู่ที่เคาน์เตอร์",
+        body: "ข้อนี้จัดวันใหม่ทั้งวันและพลาดได้ง่าย NOL World บอกว่าสำหรับแพ็กเกจสำหรับสองคน ทั้งผู้ถือการจองและผู้ร่วมเดินทางต้องมาอยู่ด้วยเพื่อรับตั๋ว และว่าผู้ร่วมเดินทางต้องแสดงเอกสารแสดงตัวตนด้วย เพื่อยืนยันว่าเขาเข้าเกณฑ์อายุสำหรับการเข้าชม ดังนั้นช่วงเวลารับตั๋วคือนัดของคนสองคนกับเอกสารสองใบ ไม่ใช่งานจรที่คนหนึ่งในสองวิ่งไปทำได้",
+        pitfall:
+          "การแยกกันในวันงาน คือคนหนึ่งไปรับตั๋วขณะที่อีกคนไปเที่ยวหรือต่อคิวซื้อของ เคาน์เตอร์จะไม่ปล่อยตั๋วให้คนเดียวในสองคน",
+        takes: "—",
+      },
+      {
+        title: "ทำให้ชื่อตรงกับหนังสือเดินทางอย่างเป๊ะ ตั้งแต่ตอนนี้",
+        body: "NOL World ตอบเรื่องนี้ด้วยผลที่ตามมาทั้งสองข้อในประโยคเดียว คือถ้าชื่อที่ให้ไว้ตอนจองไม่ตรงกับหนังสือเดินทางของคุณ การรับตั๋วและการเช็กอินโรงแรมจะทำไม่ได้ สองซีกของแพ็กเกจ ถูกปิดด้วยความผิดพลาดเดียวกัน คำถามที่มันตอบระบุตัวการที่พบบ่อยไว้ด้วย คือการสะกดผิด ชื่อกลางที่หายไป ตัวพิมพ์ใหญ่เล็ก ช่องว่าง ตรวจการจองเทียบกับหน้าหนังสือเดินทางเองเลย ไม่ใช่เทียบกับความจำ",
+        pitfall:
+          "การเหมาว่าความต่างเล็ก ๆ จะถูกโบกมือให้ผ่านเพราะแพ็กเกจจ่ายเงินไปแล้ว การจ่ายเงินไม่ใช่สิ่งที่ถูกตรวจที่เคาน์เตอร์ไหนทั้งสองที่",
+        takes: "10 นาที",
+      },
+      {
+        title: "อย่ารออีเมลยืนยันจากโรงแรม เพราะไม่มีฉบับนั้น",
+        body: "เรื่องนี้ทำให้ตื่นตระหนกแบบที่เลี่ยงได้ ดังนั้นรู้ไว้ล่วงหน้า NOL World บอกว่าใบยืนยันการจองโรงแรมไม่ได้ถูกส่งแยกออกมา และว่าถ้าการชำระเงินผ่านแล้ว การจองโรงแรมก็ได้รับการยืนยันและมีผล และที่ใช้ประโยชน์ได้มากกว่านั้น คือรายละเอียดการจองถูกส่งต่อให้โรงแรมประมาณสองสัปดาห์ก่อนการเข้าพัก ดังนั้นโรงแรมหาคุณไม่เจอก่อนหน้านั้นจริง ๆ ถ้าคุณโทรไปก่อนและเขาไม่เคยได้ยินชื่อคุณ นั่นคือสภาพปกติที่มีบันทึกไว้",
+        pitfall:
+          "การจองห้องสำรองหรือซื้อแพ็กเกจใหม่เพราะโรงแรมบอกว่าไม่มีการจองตอนที่ยังเหลืออีกหกสัปดาห์ ไม่มีอะไรผิด และตอนนี้ก็มีการจองสองรายการ",
+        takes: "2 นาทีเพื่อความสบายใจ",
+      },
+      {
+        title: "เช็กอินในฐานะผู้ซื้อ และอ่านรายการเล็ก ๆ ที่รวมอยู่",
+        body: "การเช็กอินโรงแรมถูกกั้นด้วยคนคนเดียวกับตั๋ว NOL World บอกว่าการเช็กอินทำได้เฉพาะเมื่อยืนยันตัวตนของผู้ถือการจองแล้ว ดังนั้นผู้ร่วมเดินทางจะเช็กอินก่อนแล้วนั่งรอไม่ได้ ถ้าคุณจะมาถึงดึก คำแนะนำของมันคือติดต่อโรงแรมล่วงหน้า ขณะเดียวกันก็เตือนว่ามันอาจทำไม่ได้ขึ้นกับโรงแรม มีอีกสองข้อเจาะจงที่ควรรู้ก่อนจอง คือผู้เยาว์พักไม่ได้หากไม่มีผู้ปกครองตามกฎหมาย และอาหารเช้าไม่ได้รวมอยู่เว้นแต่แพ็กเกจของคุณจะรวมมันไว้",
+        pitfall:
+          "การส่งเพื่อนไปก่อนเพื่อเอากระเป๋าไปวางและเริ่มการเข้าพัก ห้องเปิดด้วยตัวตนของคุณ ไม่ใช่ด้วยเลขอ้างอิงการจอง",
+        takes: "—",
+      },
+      {
+        title: "ถ้ามีรถรับส่ง ให้ถือว่ามันคือการออกเดินทางครั้งเดียวที่ไม่มีโอกาสที่สอง",
+        body: "ในกรณีที่แพ็กเกจรวมรถรับส่งไว้ คำตอบของ NOL World ไม่มีความเอ็นดูเลย การใช้มันเป็นทางเลือก และการไม่ใช้ก็ไม่ได้เงินคืน ไม่มีรถสำรอง ดังนั้นการมาถึงจุดรับสาย หมายความว่ามันไปแล้ว รถเที่ยวกลับอย่างเดียวก็เป็นไปได้ ผู้ร่วมเดินทางที่ไม่ได้จองสามารถสอบถามผู้จัดการรถรับส่งที่หน้างานได้ แต่ที่นั่งมีจำกัดและรับประกันไม่ได้ และรายละเอียดที่ทำลายค่ำคืนหนึ่งได้ คือคุณเอากระเป๋าขึ้นรถได้ แต่ที่เก็บสัมภาระในรถไม่มีให้ใช้เมื่อคุณถึงสถานที่จัดงานแล้ว จุดและเวลาขึ้นรถเที่ยวกลับจะถูกบอกคุณตอนที่ตั๋วถูกส่งมอบที่โรงแรม",
+        pitfall:
+          "การเอากระเป๋าเดินทางไปคอนเสิร์ตเพราะรถให้เอาขึ้นได้ ที่สถานที่จัดงานไม่มีที่ให้ฝากมัน และคุณก็ต้องแบกมันผ่านงานไปทั้งงาน",
+        takes: "—",
+      },
+      {
+        title: "อ่านคำตอบเรื่องการยกเลิกก่อนจอง เพราะคำตอบคือไม่",
+        body: "นี่คือขั้นที่ต้องเอาจริงตอนที่ทริปยังเป็นแค่แผน NOL World ประกาศคำตอบของสองกรณีที่ยากที่สุดไว้ และทั้งสองเป็นการปฏิเสธ เรื่องการติดเชื้อ หลังการลดระดับการจัดชั้นความเสี่ยงของ COVID-19 การกักตัวไม่ใช่ข้อบังคับอีก และตามนั้นจึงไม่มีการลดค่าธรรมเนียมการยกเลิกแม้คุณจะติดเชื้อ เรื่องการสูญเสียคนในครอบครัวและการเข้าโรงพยาบาลหลังอุบัติเหตุ การคืนเงินด้วยเหตุผลส่วนตัวนั้นไม่มี และค่าธรรมเนียมการยกเลิกใช้ตามนโยบายของสินค้าแต่ละชิ้นเอง ไม่ว่าจะอ่านว่าแข็งกระด้างหรือเพียงแค่ชัดเจน มันก็บอกคุณว่าความเสี่ยงอยู่ที่ไหน คืออยู่ที่คุณ นับจากวินาทีที่คุณจ่าย เครื่องมือที่ออกแบบมาแบกมันคือประกันการเดินทางที่ทำไว้ก่อนออกเดินทาง และมันคุ้มครองอะไรจริงขึ้นกับกรมธรรม์ที่คุณซื้อ ดังนั้นอ่านเอกสารนั้น อย่าเหมาเอา",
+        pitfall:
+          "การแบกความเสี่ยงไว้โดยไม่มีประกัน บนสมมติฐานว่าเหตุผลที่หนักพอจะได้รับการยอมรับ NOL World ประกาศคำตอบของตัวเองต่อสองเหตุผลที่หนักที่สุดที่มีไว้แล้ว",
+        takes: "30 นาทีกับกรมธรรม์ประกันหนึ่งฉบับ",
+      },
+    ],
+    faq: [
+      {
+        q: "ฉันซื้อแพ็กเกจแล้วไม่ใช้โรงแรมได้ไหม",
+        a: "คุณปฏิเสธการเข้าพักได้ แต่ NOL World ระบุว่าส่วนโรงแรมคืนเงินไม่ได้และการจองโอนให้ใครไม่ได้ การใช้คืนน้อยกว่าที่แพ็กเกจมีแล้วขอส่วนต่างคืนก็ถูกปฏิเสธ เพราะจำนวนคืนแก้ไขไม่ได้",
+      },
+      {
+        q: "ฉันต่อวันพัก ย่อวันพัก เลื่อนวัน หรือเปลี่ยนโรงแรมได้ไหม",
+        a: "จำนวนคืนแก้ไขไม่ได้ วันเช็กอินและเช็กเอาต์ในแพ็กเกจเปลี่ยนไม่ได้ และการเปลี่ยนโรงแรมไม่ได้รับอนุญาต การเพิ่มคืนตอนซื้อก็ทำไม่ได้ คำแนะนำของ NOL World คือติดต่อโรงแรมโดยตรงเรื่องห้องว่างและราคา และมันอาจทำไม่ได้ การอัปเกรดห้องก็เหมือนกัน คือถามโรงแรม และจ่ายกับโรงแรมโดยตรงตอนไปถึง",
+      },
+      {
+        q: "ฉันจะรู้ที่นั่งของฉันเมื่อไร",
+        a: "ตอนที่คุณไปรับตั๋วที่โรงแรมในวันที่มีการแสดง แพ็กเกจรับประกันเกรด ภายในเกรดนั้น NOL World จัดโซนและที่นั่งแบบสุ่ม การไม่พอใจผลลัพธ์ไม่ใช่เหตุผลขอเงินคืน",
+      },
+      {
+        q: "ให้คนอื่นไปรับตั๋วแทน หรือไปชมแทนฉันได้ไหม",
+        a: "ไม่ได้ NOL World บอกว่าตั๋วออกให้เฉพาะผู้ถือการจองและต้องรับด้วยตัวเอง และว่าตั๋วรับและใช้ได้โดยผู้ถือการจองเท่านั้น ไม่มีข้อยกเว้น สำหรับแพ็กเกจสองคน ทั้งสองคนต้องอยู่ที่เคาน์เตอร์ และผู้ร่วมเดินทางต้องแสดงเอกสารแสดงตัวตนด้วยเพื่อให้ยืนยันอายุได้",
+      },
+      {
+        q: "ฉันไม่ได้รับอีเมลยืนยันจากโรงแรม",
+        a: "ไม่มีฉบับนั้น NOL World บอกว่าใบยืนยันจากโรงแรมไม่ได้ถูกส่งแยก และว่าการชำระเงินที่สำเร็จหมายถึงการจองโรงแรมได้รับการยืนยันแล้ว มันยังบอกว่ารายละเอียดการจองไปถึงโรงแรมประมาณสองสัปดาห์ก่อนเช็กอิน ดังนั้นการยืนยันกับโรงแรมโดยตรงทำได้หลังจากนั้นเท่านั้น",
+      },
+      {
+        q: "ฉันโทรหาโรงแรมแล้วเขาหาการจองของฉันไม่เจอ",
+        a: "คาดไว้แล้ว ถ้าคุณโทรเร็ว NOL World บอกว่ารายละเอียดถูกส่งให้โรงแรมประมาณสองสัปดาห์ก่อนการเข้าพัก และว่าการยืนยันทำได้หลังจากนั้นเท่านั้น และว่าการจองแพ็กเกจที่ทำครบถ้วนพร้อมการชำระเงินหมายถึงการจองโรงแรมมั่นคงแล้ว อย่าจองใหม่",
+      },
+      {
+        q: "ฉันตรวจพบเชื้อ หรือมีเหตุฉุกเฉินในครอบครัว ค่าธรรมเนียมการยกเลิกจะถูกยกเว้นไหม",
+        a: "คำตอบที่ NOL World ประกาศไว้คือไม่ ทั้งสองกรณี มันบอกว่าเมื่อการกักตัวจาก COVID-19 ไม่ใช่ข้อบังคับอีก จึงไม่มีการลดค่าธรรมเนียมการยกเลิกแม้คุณจะติดเชื้อ และว่าการคืนเงินด้วยเหตุผลส่วนตัว รวมถึงการสูญเสียคนในครอบครัวหรือการเข้าโรงพยาบาลหลังอุบัติเหตุ นั้นไม่มี โดยค่าธรรมเนียมใช้ตามนโยบายของสินค้าแต่ละชิ้น ประกันการเดินทางที่ซื้อก่อนคุณเดินทางคือกลไกสำหรับความเสี่ยงนี้ มันคุ้มครองอะไรขึ้นกับกรมธรรม์ ดังนั้นอ่านมัน",
+      },
+      {
+        q: "ฉันต้องใช้รถรับส่งไหม และเอากระเป๋าเดินทางขึ้นได้ไหม",
+        a: "มันเป็นทางเลือก และการไม่ใช้ก็ไม่ได้เงินคืน กระเป๋าขึ้นรถได้ แต่ NOL World เตือนว่าที่เก็บสัมภาระในรถไม่มีให้ใช้เมื่อคุณถึงสถานที่จัดงานแล้ว ดังนั้นกระเป๋าที่คุณเอาไปคือกระเป๋าที่คุณต้องแบก ไม่มีรถสำรองถ้าคุณพลาดเวลาออก และจุดกับเวลาขึ้นรถเที่ยวกลับจะถูกแจกมาพร้อมตั๋วที่โรงแรม",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: isang produkto, at halos walang mapapalitan dito",
+    summary:
+      "Isang konsiyerto at isang hotel na ipinagbibili bilang isang bagay. Hindi mo mapapalitan ang hotel, ang petsa o ang bilang ng gabi, walang naibabalik sa paglagpas sa hotel, random ang upuan at ibinubunyag sa araw mismo, at sa iyo lamang iniaabot ang tiket, nang harapan, sa hotel, sa loob ng isang bintana.",
+    scope:
+      "Sakop nito ang mga paketeng konsiyerto-at-hotel na Play and Stay ng NOL World gaya ng idinodokumento ng NOL World: ano ang nakapirmi, paano kinokolekta ang tiket, ang kailangan sa pagkakakilanlan at pangalan, at ano talaga ang sinasabi ng mga sagot nito tungkol sa pagkansela. May sariling patakaran sa pagkansela at sariling kasama ang bawat pakete, at ang pahina ng produkto ang nananaig. Nababanggit ang serbisyong shuttle lamang kung saan may isa ang isang pakete.",
+    intro: [
+      "Mukhang madaling pili ang isang pakete: isang bayad, isang hotel na malapit sa venue, isang garantisadong grado ng upuan, walang pakikipagbuno sa pila. Para sa tagahangang nasa ibang bansa na may isang tiyansa lamang sa isang paglalakbay, tunay na nakakahikayat na palitan iyon.",
+      "Ito rin ang pinakamatigas na produkto sa plataporma, at hindi hayag ang tigas na iyon sa listing. Basahin ang sariling sagot ng NOL World nang sunod-sunod at may padrong lumilitaw: isang bagay na hindi mahahati ang pakete. Hindi isang tiket at isang kuwarto sa hotel na ayos mong iisa-isahin — isang bagay, binili nang minsan, halos walang mapapalitan. Lahat ng nasa ibaba ay nagmumula sa isang katotohanang iyon, kasama ang mga bahaging mukhang hindi patas kapag kailangan mo sila.",
+    ],
+    steps: [
+      {
+        title: "Unawain na isang bagay ang binibili mo, hindi dalawang booking",
+        body: "Ito ang buong gabay sa isang hakbang. Isinasaad ng NOL World na hindi mababago ang bilang ng gabi sa isang pakete, na hindi mapapalitan ang petsa ng check-in at check-out na nakasaad sa pakete, at na hindi pinapayagan ang pagpapalit ng hotel. Hindi rin makadadagdag ng gabi sa pagbili — hiwalay na usapan sa hotel ang karagdagang pananatili, sa presyo ng hotel at nakasalalay sa bakante nito. At isang bagay ang nabibili ng isang account, kaya hindi ito bagay na pinapatong-patong mo.",
+        pitfall:
+          "Ang pag-book ng pakete na nagbabalak linisin ang detalye mamaya: dumating nang isang araw na mas maaga, lumipat sa hotel na mas malapit sa isang kaibigan, bawasan ng isang gabi ang dulo. Nadokumentong hindi ang bawat isa sa mga iyon.",
+        takes: "15 minuto, bago ka magbayad",
+      },
+      {
+        title: "Tanggapin na walang naibabalik sa paglagpas sa hotel",
+        body: "Itinatanong ito sa dalawang paraan sa FAQ ng NOL World at pareho ang sagot sa dalawa: puwede kang piliing hindi manatili sa hotel, ngunit walang refund para sa bahaging hotel, at hindi mailipat ang reserbasyon sa ibang tao. Kaya ang pananatili sa isang kaibigan ay hindi nagiging salaping ibinabalik, at hindi maiaabot kaninuman ang kuwartong binayaran mo. Tinatanggihan rin ang paggamit sa isang gabi at pagbawi sa iba pa — nakapirmi ang bilang ng gabi.",
+        pitfall:
+          "Ang pagturing sa kalahating hotel bilang isang depositong puwedeng lakarang iwan. Ito ang kalahating hindi mo mabibili-muli, hindi maibibigay at hindi mababawi.",
+        takes: "—",
+      },
+      {
+        title: "Asahan ang random na upuan, at asahang malalaman ito sa araw mismo",
+        body: "Grado ang ginagarantiya ng pakete, hindi lokasyon. Sinasabi ng NOL World na random na itinatakda ang upuan sa loob ng mga seksiyon at zona bukod sa piniling kategorya mo — at na ipinapakita ang itinakdang upuan mo kapag kinuha mo ang tiket sa hotel sa araw ng pagtatanghal. Hindi mo malalaman kung saan ka nakaupo hanggang sa ilang oras bago ang palabas. Isinasara rin nito ang hayag na susunod na tanong: hindi dahilan ng refund ang hindi pagkasiya sa upuan, at puwede pa ring ipataw ang bayad sa pagkansela.",
+        pitfall:
+          "Ang pagplano sa paligid ng puwesto ng upuan — isang partikular na panig para sa isang fan project, isang hanay para sa isang lente. Ang grado ang pangako; ang iba pa ay isang bunot na nakikita mo sa araw.",
+        takes: "—",
+      },
+      {
+        title: "Kunin sa desk ng hotel, nang harapan, sa loob ng bintana",
+        body: "Isa lamang talaga ang paraan para makuha ang mga tiket na ito. Sinasabi ng NOL World na ang pagkuha ay sa desk ng tiket ng NOL World na nasa hotel lamang, sa loob lamang ng itinakdang oras, at na ang tiket ay inilalabas nang eksklusibo sa may hawak ng reserbasyon, na dapat kumuha nito nang harapan. Nang tanungin kung makakakuha at makakadalo kaya sa halip ang isang karapat-dapat sa diskuwento, ang sagot nito ay makukuha at magagamit lamang ang tiket ng may hawak ng reserbasyon, walang eksempsiyon. Kung malagpasan ang itinakdang oras, ang inilathalang sagot ay simpleng mayroon lamang ang tiket sa loob ng tinukoy na panahon.",
+        pitfall:
+          "Ang pag-iskedyul ng araw sa paligid ng venue. Nasa desk ng hotel ang umuubligang tipanan, sa isang bintanang itinakda ng iba, sa araw ng palabas.",
+        takes: "Itayo ang araw sa paligid nito",
+      },
+      {
+        title: "Dalhin ang mga dokumentong talagang hinihingi ng desk",
+        body: "Tiyak ang NOL World: ang balido at orihinal na ID ng may hawak ng reserbasyon, kasama ang kumpirmasyon ng reserbasyon na naka-print o nasa telepono — at kung wala ang mga ito ay hindi makukuha ang tiket. Para sa hindi Koreanong mamamayan, ang tinatanggap na ID ay pasaporte o sertipiko ng pagpapatala ng dayuhan. May mas mahabang listahan ang mga Koreanong mamamayan, kasama ang resident registration card, lisensiya sa pagmamaneho, pasaporte, youth ID o isang mobile ID na inilabas sa pamamagitan ng Government 24 o PASS.",
+        pitfall:
+          "Ang pag-iwan sa pasaporte sa safe ng kuwarto dahil nasa parehong gusali ang desk. Ang orihinal na ID ang nagbubukas sa tiket, at wala sa listahan ang isang larawan nito.",
+        takes: "5 minuto ng pag-impake",
+      },
+      {
+        title: "Para sa paketeng pandalawahan, dapat nasa desk kayong dalawa",
+        body: "Inaayos nitong muli ang isang buong araw at madali itong malampasan. Sinasabi ng NOL World na para sa paketeng para sa dalawa, dapat naroon ang may hawak ng reserbasyon at ang kasama para kunin ang tiket — at na hinihingi rin sa kasamang magpakita ng pagkakakilanlan, para kumpirmahin na natutugunan niya ang kailangang edad para makapasok. Kaya ang bintana ng pagkuha ay tipanan para sa dalawang tao na may dalawang ID, hindi isang utos na kayang tapusin ng isa sa inyo.",
+        pitfall:
+          "Ang paghihiwalay sa araw mismo — isa ang kumukuha ng tiket habang namamasyal o nakapila sa merch ang isa. Hindi ilalabas ng desk ang tiket sa isa lamang sa inyo.",
+        takes: "—",
+      },
+      {
+        title: "Itugma ang pangalan sa pasaporte nang eksakto, ngayon",
+        body: "Sinasagot ito ng NOL World na may dalawang kahihinatnan sa isang pangungusap: kung hindi tumutugma sa pasaporte mo ang pangalang ibinigay sa pag-book, hindi magiging posible ang pagkuha ng tiket at ang check-in sa hotel. Kapwa kalahati ng pakete, naharang ng parehong mali. Pinapangalanan ng tanong na sinasagot nito ang karaniwang salarin — isang maling baybay, isang nawawalang panggitnang pangalan, ang laki ng titik, ang espasyo. Tingnan ang booking laban sa pahina mismo ng pasaporte kaysa laban sa alaala.",
+        pitfall:
+          "Ang pag-aakalang papapasahin ang maliit na pagkakaiba dahil bayad na ang pakete. Hindi ang pagiging bayad ang tinitingnan sa alinmang counter.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Huwag hintayin ang email ng kumpirmasyon ng hotel, dahil wala nito",
+        body: "Nagdudulot ito ng pag-aalalang maiiwasan, kaya alamin ito nang maaga. Sinasabi ng NOL World na hindi ipinapadala nang hiwalay ang kumpirmasyon ng reserbasyon sa hotel, at na kung dumaan ang bayad ay kumpirmado at balido ang reserbasyon sa hotel. Mas kapaki-pakinabang: ipinapasa lamang ang detalye ng reserbasyon sa hotel mga dalawang linggo bago ang pananatili, kaya talagang hindi ka mahahanap ng hotel bago iyon. Kung tatawag ka nang mas maaga at hindi ka nila kilala, iyon ang nadokumentong normal na kalagayan.",
+        pitfall:
+          "Ang pag-book ng pangalawang kuwarto, o ang muling pagbili ng pakete, dahil sinasabi ng hotel na walang reserbasyon anim na linggo bago. Walang maling nangyari, at mayroon na ngayong dalawang booking.",
+        takes: "2 minuto ng panatag",
+      },
+      {
+        title: "Mag-check in bilang ang bumili, at basahin ang maliliit na kasama",
+        body: "Nakasalalay sa parehong tao ang check-in sa hotel gaya ng tiket: sinasabi ng NOL World na mayroon lamang ang check-in sa pagpapatunay sa pagkakakilanlan ng may hawak ng reserbasyon, kaya hindi makakapag-check in nang una ang kasama at maghintay. Kung darating kang huli, ang bilin nito ay makipag-ugnayan sa hotel nang patiuna — habang nagbababalang maaaring hindi ito posible depende sa hotel. Dalawang tiyak pang bagay na mabuting malaman bago ka mag-book: hindi makakapanatili ang menor de edad nang walang legal na tagapag-alaga, at hindi kasama ang agahan maliban kung kasama ito sa partikular na pakete mo.",
+        pitfall:
+          "Ang pagpapauna sa isang kaibigan para ihulog ang bagahe at simulan ang pananatili. Sa pagkakakilanlan mo bumubukas ang kuwarto, hindi sa sanggunian ng booking.",
+        takes: "—",
+      },
+      {
+        title: "Kung may shuttle, ituring itong isang pag-alis na walang pangalawang tiyansa",
+        body: "Kung saan may kasamang shuttle ang isang pakete ay walang damdamin ang mga sagot ng NOL World. Opsiyonal ang paggamit nito at walang naibabalik sa hindi paggamit. Walang pang-reserbang sasakyan, kaya ang pagdating nang huli sa sakayan ay nangangahulugang umalis na ito. Posible ang shuttle na pabalik lamang. Makakatanong ang kasamang hindi nag-book sa namamahala ng shuttle sa lugar, ngunit limitado ang upuan at hindi ito magagarantiya. At ang detalyeng sumisira ng isang gabi: puwede kang magdala ng maleta sa bus, ngunit walang imbakan ng bagahe sa loob ng bus kapag nakarating ka na sa venue. Ibinibigay sa iyo ang sakayan at oras ng pagbalik kapag iniaabot ang tiket sa hotel.",
+        pitfall:
+          "Ang pagdala ng maleta sa konsiyerto dahil pinayagan ito ng bus. Sa venue ay wala kang pag-iiwanan nito, at dala-dala mo ito sa buong palabas.",
+        takes: "—",
+      },
+      {
+        title: "Basahin ang mga sagot sa pagkansela bago mag-book, dahil hindi ang sagot",
+        body: "Ito ang hakbang na seseryosohin habang plano pa lamang ang paglalakbay. Naglalathala ang NOL World ng sagot sa dalawang pinakamahirap na kaso at pagtanggi ang dalawa. Sa impeksiyon: matapos ibaba ang pag-uuri ng panganib ng COVID-19, hindi na sapilitan ang kuwarentenas, at dahil doon ay walang ibinababa sa bayad sa pagkansela kahit nahawa ka. Sa pagkamatay ng kaanak at sa pagka-ospital matapos ang isang aksidente: walang refund para sa personal na dahilan, at nauukol ang bayad sa pagkansela ayon sa sariling patakaran ng bawat produkto. Mabasa man iyon bilang mabagsik o bilang malinaw lamang, sinasabi nito sa iyo kung saan nakaupo ang panganib — sa iyo, mula sa sandaling magbayad ka. Ang kasangkapang idinisenyo para taglayin ito ay segurong panlakbay na kinuha bago umalis, at ang talagang sakop nito ay nakadepende sa polisang binili mo, kaya basahin ang dokumentong iyon kaysa ipagpalagay ito.",
+        pitfall:
+          "Ang pagtaglay sa panganib nang walang seguro sa pag-aakalang tatanggapin ang isang sapat na mabigat na dahilan. Inilathala na ng NOL World ang sagot nito sa dalawang pinakamabigat na dahilang mayroon.",
+        takes: "30 minuto kasama ang isang polisa ng seguro",
+      },
+    ],
+    faq: [
+      {
+        q: "Puwede ko bang bilhin ang pakete at hindi gamitin ang hotel?",
+        a: "Puwede kang tumangging manatili, ngunit isinasaad ng NOL World na hindi maibabalik ang bahaging hotel at hindi mailipat ang reserbasyon kaninuman. Tinatanggihan rin ang paggamit ng mas kaunting gabi kaysa sa taglay ng pakete at ang pagbawi sa kaibahan, dahil hindi mababago ang bilang ng gabi.",
+      },
+      {
+        q: "Puwede ko bang pahabain ang pananatili, paikliin ito, igalaw ang petsa, o palitan ang hotel?",
+        a: "Hindi mababago ang bilang ng gabi, hindi mapapalitan ang petsa ng check-in at check-out sa pakete, at hindi pinapayagan ang pagpapalit ng hotel. Hindi rin makadadagdag ng gabi sa pagbili — ang bilin ng NOL World ay makipag-ugnayan nang tuwiran sa hotel tungkol sa bakante at presyo, at maaaring hindi ito posible. Gayon din ang pag-upgrade ng kuwarto: tanungin ang hotel, at magbayad nang tuwiran sa hotel sa pagdating.",
+      },
+      {
+        q: "Kailan ko malalaman ang upuan ko?",
+        a: "Kapag kinuha mo ang tiket sa hotel sa araw ng pagtatanghal. Grado ang ginagarantiya ng pakete; sa loob ng gradong iyon ay random na itinatakda ng NOL World ang mga seksiyon at upuan. Hindi dahilan ng refund ang hindi pagkasiya sa kinalabasan.",
+      },
+      {
+        q: "May iba bang makakakuha ng tiket para sa akin, o makakadalo sa lugar ko?",
+        a: "Wala. Sinasabi ng NOL World na inilalabas ang tiket nang eksklusibo sa may hawak ng reserbasyon at kailangan itong kunin nang harapan, at na makukuha at magagamit lamang ito ng may hawak ng reserbasyon, walang eksempsiyon. Para sa paketeng pandalawahan ay dapat nasa desk ang dalawang tao, at dapat magpakita rin ng ID ang kasama para makumpirma ang edad niya.",
+      },
+      {
+        q: "Wala akong natanggap na email ng kumpirmasyon ng hotel.",
+        a: "Wala nito. Sinasabi ng NOL World na hindi ipinapadala nang hiwalay ang kumpirmasyon ng hotel, at na ang matagumpay na bayad ay nangangahulugang kumpirmado ang reserbasyon sa hotel. Sinasabi rin nitong narating ng detalye ng reserbasyon ang hotel mga dalawang linggo lamang bago ang check-in, kaya posible ang tuwirang kumpirmasyon matapos lamang iyon.",
+      },
+      {
+        q: "Tumawag ako sa hotel at hindi nila mahanap ang booking ko.",
+        a: "Inaasahan, kung tumawag ka nang maaga. Sinasabi ng NOL World na ipinapadala ang detalye sa hotel mga dalawang linggo bago ang pananatili at na posible lamang ang kumpirmasyon matapos iyon, at na ang maayos na natapos na reserbasyon at bayad sa pakete ay nangangahulugang ligtas ang booking sa hotel. Huwag mag-book muli.",
+      },
+      {
+        q: "Nagpositibo ako, o nagkaroon ng emerhensiya sa pamilya. Aalisin ba ang bayad sa pagkansela?",
+        a: "Hindi ang inilathalang sagot ng NOL World sa dalawang kaso. Sinasabi nitong sa hindi na sapilitang kuwarentenas para sa COVID-19 ay walang ibinababa sa bayad sa pagkansela kahit nahawa ka; at na walang refund para sa personal na dahilan, kasama ang pagkamatay ng kaanak o ang pagka-ospital matapos ang isang aksidente, at nauukol ang bayad ayon sa patakaran ng bawat produkto. Ang segurong panlakbay na binili bago ka lumakbay ang mekanismo para sa panganib na ito — ang sakop nito ay nakadepende sa polisa, kaya basahin ito.",
+      },
+      {
+        q: "Kailangan ko bang gamitin ang shuttle, at puwede ba akong magdala ng maleta dito?",
+        a: "Opsiyonal ito, at walang naibabalik sa hindi paggamit. Puwedeng sumama ang maleta sa bus, ngunit nagbababala ang NOL World na walang imbakan ng bagahe sa loob ng bus kapag narating mo na ang venue — kaya ang maletang dinala mo ay maletang dala-dala mo. Walang pang-reserbang sasakyan kung malampasan mo ang pag-alis, at ibinibigay ang sakayan at oras ng pagbalik kasama ang tiket sa hotel.",
       },
     ],
     labels: FIL_LABELS,

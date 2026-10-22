@@ -64,7 +64,18 @@ export async function generateMetadata({
         ),
       },
     },
-    openGraph: { locale: tr.locale, type: "article", title: tr.title, description: tr.summary },
+    openGraph: {
+      locale: tr.locale,
+      type: "article",
+      title: tr.title,
+      description: tr.summary,
+      // The edition's card, not this guide's. Nothing on it is per-guide —
+      // `ImageResponse` has no font for these scripts, so it carries the
+      // locale, the count and the evidence level instead of a title — and a
+      // card per guide would be nineteen identical images ten times over.
+      // Without this line these pages had no `og:image` at all.
+      images: [`${info.prefix}/opengraph-image`],
+    },
   };
 }
 

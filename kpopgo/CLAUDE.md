@@ -1144,9 +1144,51 @@ chromium.launch({
 })
 ```
 
+## What a page owes a crawler and a paste
+
+`scripts/check-meta.mjs` fetches every URL in the sitemap and reads the things
+that are invisible on the page and expensive off it: that it serves at all,
+that it has a title, a description, a canonical and a share card, that it has
+exactly one `h1`, and that no two pages claim the same title or description.
+It needs a production build, for the reason the layout check does — what it
+measures is `generateMetadata` and the `opengraph-image` routes.
+
+```bash
+npm run build && npx next start -p 3000 &
+BASE_URL=http://localhost:3000 node scripts/check-meta.mjs
+```
+
+**It exists because its first run found 203 of 234 pages with no `og:image`** —
+every translated guide and every language index, which is the whole site
+outside English. Nothing could have seen it. The suite reads content and source
+files, the layout check measures rendered width, and a missing share card is
+invisible to both and to anyone looking at the page in a browser. This site's
+early distribution is a link pasted into a fan community, so a blank preview is
+a distribution cost paid silently — on exactly the pages pasted into the
+communities the translations exist for.
+
+**The translated card carries no prose, and that is the constraint rather than
+a shortcut.** `ImageResponse` ships a Latin font, which is why the English
+cards are documented as Latin-only; a translated title would need CJK and Thai
+fonts in the build. Pointing those pages at the English card was the other
+option and is worse — this repository already refuses English artwork on a
+translated page, and a card is seen *before* the click, so it would
+misrepresent the page's language to the reader who chose it for the language.
+So the card says what is true in any language: the locale, the guide count,
+the evidence rung, and that the translation is machine-assisted. That last one
+belongs before the click rather than after it. One card per locale, not per
+guide, because nothing on it is per-guide — and the guide pages point their
+`openGraph.images` at it.
+
+Length is reported and does not fail. Google rewrites titles and descriptions
+often enough that a character count is a judgement, and a check that fails on
+a judgement is one people learn to ignore. 315 of them are over today.
+
 ## Before pushing
 
 - `npm run typecheck` and `npm run build` both clean
 - Check both themes and phone width — the hero headline must stay legible over
   the scrim, and nothing may scroll sideways
+- `node scripts/check-meta.mjs` against the production build, if routes or
+  metadata changed
 - Any new claim carries a source and a date

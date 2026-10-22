@@ -370,15 +370,11 @@ export default function Home() {
       </section>
 
       {/* ─────────── Principles ─────────── */}
-      <section className="band flood">
+      <section className="band flood-band">
         <div className="wrap sect">
-          <p className="data" style={{ opacity: 0.64 }}>
-            04 / How we write these
-          </p>
+          <p className="data band-mark">04 / How we write these</p>
           <h2 className="pl mt-4 max-w-[20ch]">Four rules, no exceptions</h2>
-          <p className="han-m mt-3" style={{ opacity: 0.76 }}>
-            네 가지 원칙, 예외 없음
-          </p>
+          <p className="han-m band-sub mt-3">네 가지 원칙, 예외 없음</p>
 
           <div className="mt-9 grid">
             {[
@@ -401,13 +397,11 @@ export default function Home() {
             ].map((p, i, arr) => (
               <div
                 key={p.t}
-                className="grid grid-cols-[48px_1fr] py-5"
-                style={{
-                  borderTop: "1px solid rgba(0,0,0,.22)",
-                  borderBottom: i === arr.length - 1 ? "1px solid rgba(0,0,0,.22)" : undefined,
-                }}
+                className={`band-rule grid grid-cols-[48px_1fr] py-5${
+                  i === arr.length - 1 ? " band-rule-end" : ""
+                }`}
               >
-                <span className="data" style={{ opacity: 0.6 }}>
+                <span className="data band-mark">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>

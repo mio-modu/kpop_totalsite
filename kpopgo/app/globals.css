@@ -83,6 +83,32 @@
   --ju-body: rgba(10, 10, 15, 0.82);
   --foil: linear-gradient(115deg, var(--cy), var(--vi) 42%, var(--ju) 82%, var(--cy));
 
+  /* A large vermilion field is not a large version of a small one.
+     ----------------------------------------------------------------
+     `.flood` is right where it is used as a mark: the city ticker is a 48px
+     strip and reads as saturated light on a black page, which is the whole
+     design brief. The same fill over a 700px section stops being a mark and
+     becomes a room — and in dark mode specifically it becomes an inverted
+     room, a bright field with near-black text sitting inside a near-black
+     page, so the eye adapts twice while scrolling one page.
+     The rule is area, not hue. Below the threshold the fill stays vermilion;
+     above it the band becomes black with vermilion light on it, which is the
+     T09 code the hero already uses — 빛은 뒤에서 — rather than a new idea.
+     Light mode keeps the fill at both sizes: on cream paper the red band is
+     the dark element, so nothing inverts and there is nothing to fix. */
+  --band-bg: radial-gradient(
+      110% 80% at 50% -10%,
+      rgba(255, 59, 46, 0.34),
+      rgba(255, 59, 46, 0) 62%
+    ),
+    #120605;
+  --band-ink: var(--ink);
+  --band-body: var(--ink-72);
+  --band-rule: rgba(255, 59, 46, 0.3);
+  --band-mark: var(--ju);
+  --band-mark-op: 1;
+  --band-sub: rgba(255, 59, 46, 0.78);
+
   --cast: rgba(0, 0, 0, 0.55);
   --cast-soft: rgba(0, 0, 0, 0.34);
 
@@ -120,6 +146,14 @@
     --vi: #7a2fd0;
     --on-ju: #fffaf6;
     --ju-body: rgba(255, 250, 246, 0.9);
+    /* The flood stays a flood here — see the note on --band-bg. */
+    --band-bg: var(--ju);
+    --band-ink: var(--on-ju);
+    --band-body: var(--ju-body);
+    --band-rule: rgba(0, 0, 0, 0.22);
+    --band-mark: var(--on-ju);
+    --band-mark-op: 0.62;
+    --band-sub: var(--ju-body);
     --cast: rgba(20, 19, 26, 0.17);
     --cast-soft: rgba(20, 19, 26, 0.09);
     color-scheme: light;
@@ -139,6 +173,14 @@
   --vi: #7a2fd0;
   --on-ju: #fffaf6;
   --ju-body: rgba(255, 250, 246, 0.9);
+  /* The flood stays a flood here — see the note on --band-bg. */
+  --band-bg: var(--ju);
+  --band-ink: var(--on-ju);
+  --band-body: var(--ju-body);
+  --band-rule: rgba(0, 0, 0, 0.22);
+  --band-mark: var(--on-ju);
+  --band-mark-op: 0.62;
+  --band-sub: var(--ju-body);
   --cast: rgba(20, 19, 26, 0.17);
   --cast-soft: rgba(20, 19, 26, 0.09);
   color-scheme: light;
@@ -293,6 +335,35 @@ h4 {
   .flood .t-sm,
   .flood .dim {
     color: var(--ju-body);
+  }
+
+  /* The large-area band. Same family as .flood and deliberately not the same
+     declaration — see the note on --band-bg. */
+  .flood-band {
+    background: var(--band-bg);
+    color: var(--band-ink);
+  }
+  .flood-band .t,
+  .flood-band .t-sm,
+  .flood-band .dim {
+    color: var(--band-body);
+  }
+  /* Hairlines, numerals and the Korean line, themed rather than written
+     inline: the old inline rgba(0,0,0,.22) was correct on a red ground and
+     invisible on a dark one, which is the kind of thing a theme token exists
+     to stop. */
+  .band-rule {
+    border-top: 1px solid var(--band-rule);
+  }
+  .band-rule-end {
+    border-bottom: 1px solid var(--band-rule);
+  }
+  .band-mark {
+    color: var(--band-mark);
+    opacity: var(--band-mark-op);
+  }
+  .band-sub {
+    color: var(--band-sub);
   }
   .mark {
     background: var(--ju);

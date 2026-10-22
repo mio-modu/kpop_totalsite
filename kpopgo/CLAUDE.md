@@ -183,6 +183,23 @@ a background wash. That distinction is the whole thing: a photocard's edge
 really is iridescent, so the gradient describes an object rather than
 decorating a box.
 
+**A large vermilion field is not a large version of a small one.** `.flood`
+is right where it is used as a mark — the city ticker is a 48px strip and
+reads as saturated light on a black page, which is the brief. The same fill
+over a 700px section stops being a mark and becomes a room, and in dark mode
+an inverted one: a bright field with near-black text inside a near-black page,
+so the eye adapts twice while scrolling a single page. The rule is **area, not
+hue**. Below the threshold the fill stays vermilion; above it, `.flood-band`
+makes the section black with vermilion light on it — the T09 code the hero
+already uses, 빛은 뒤에서, rather than a new idea. Light mode keeps the fill at
+both sizes, because on cream paper the red band is the dark element and
+nothing inverts.
+
+The hairlines, numerals and Korean subtitle in that band moved from inline
+styles to theme tokens in the same change. `rgba(0,0,0,.22)` was correct on a
+red ground and invisible on a dark one, which is exactly what a token exists
+to stop — if a value has to change with the theme, it cannot live in JSX.
+
 A guide is a **photocard** (`.pc`): a Korean word as its face, an outlined
 tracklist number that fills on hover, and a foil edge that lights only on hover
 or focus. Korean terms are **stickers** (`.sticker`). The verification badge is

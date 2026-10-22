@@ -13280,6 +13280,266 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: um produto só, e quase nada nele pode ser mudado",
+    summary:
+      "Um show e um hotel vendidos como um item único. Você não pode trocar o hotel, as datas nem as diárias, abrir mão do hotel não devolve nada, o assento é aleatório e revelado no dia, e os ingressos são entregues só a você, pessoalmente, no hotel, dentro de uma janela.",
+    scope:
+      "Cobre os pacotes de show mais hotel Play and Stay da NOL World como a NOL World os documenta: o que é fixo, como os ingressos são retirados, as exigências de identidade e de nome, e o que as respostas dela sobre cancelamento de fato dizem. Cada pacote carrega a própria política de cancelamento e os próprios itens inclusos, e a página do produto prevalece. O serviço de traslado é citado apenas onde um pacote inclui um.",
+    intro: [
+      "Um pacote parece a opção fácil: um pagamento, um hotel perto do local do show, uma categoria de assento garantida, nenhuma briga numa fila. Para um fã do exterior com uma só chance de viagem, essa é uma troca genuinamente atraente.",
+      "É também o produto mais rígido da plataforma, e a rigidez não é óbvia no anúncio. Leia as respostas da própria NOL World em sequência e um padrão aparece: o pacote é um item indivisível. Não é um ingresso mais um quarto de hotel que você possa otimizar separadamente — é uma coisa só, comprada uma vez, mudável em quase nenhum ponto. Tudo abaixo decorre desse único fato, inclusive as partes que vão parecer injustas quando você precisar delas.",
+    ],
+    steps: [
+      {
+        title: "Entenda que você está comprando um item, e não duas reservas",
+        body: "Este é o guia inteiro num passo. A NOL World afirma que o número de diárias de um pacote não pode ser modificado, que as datas de check-in e check-out especificadas no pacote não podem ser alteradas, e que trocas de hotel não são permitidas. Também não dá para acrescentar diárias na compra — estadias extras são uma conversa separada com o hotel, ao preço dele e sujeitas à disponibilidade dele. E uma conta pode comprar um item, então isso não é algo que se empilhe.",
+        pitfall:
+          "Comprar o pacote pretendendo ajeitar os detalhes depois: chegar um dia antes, mudar para um hotel mais perto de um amigo, cortar uma diária do fim. Cada uma dessas coisas é um não documentado.",
+        takes: "15 minutos, antes de pagar",
+      },
+      {
+        title: "Aceite que abrir mão do hotel não devolve nada",
+        body: "A pergunta é feita de dois jeitos no FAQ da NOL World e recebe a mesma resposta nas duas vezes: você pode optar por não ficar no hotel, mas reembolsos da parte do hotel não estão disponíveis, e a reserva é intransferível a outra pessoa. Então ficar na casa de um amigo não se converte em dinheiro de volta, e o quarto que você pagou não pode ser passado a ninguém. Usar uma diária e reaver o resto também é recusado — o número de diárias é fixo.",
+        pitfall:
+          "Tratar a metade do hotel como um depósito do qual você pode simplesmente se afastar. É a metade que você não pode revender, não pode dar e não pode reaver.",
+        takes: "—",
+      },
+      {
+        title: "Espere um assento aleatório, e espere descobri-lo no dia",
+        body: "O pacote garante uma categoria, não um lugar. A NOL World diz que a distribuição de assentos dentro de setores e zonas, fora a categoria que você escolheu, é aleatória — e que a sua designação de assento é mostrada quando você retira o ingresso no hotel no dia da apresentação. Você não vai saber onde está sentado até poucas horas antes do show. Ela também fecha a pergunta óbvia que vem depois: estar insatisfeito com o assento não é motivo de reembolso, e uma taxa de cancelamento pode se aplicar de qualquer forma.",
+        pitfall:
+          "Planejar em torno da posição do assento — um lado específico para um projeto de fãs, uma fileira para uma lente. A categoria é a promessa; o resto é um sorteio que você vê no dia.",
+        takes: "—",
+      },
+      {
+        title: "Retire no balcão do hotel, pessoalmente, dentro da janela",
+        body: "Existe exatamente um jeito de pegar esses ingressos. A NOL World diz que a retirada é apenas no balcão de ingressos da NOL World localizado no hotel, apenas durante o horário designado, e que os ingressos são emitidos exclusivamente ao titular da reserva, que precisa retirá-los pessoalmente. Perguntada se alguém com direito a desconto poderia retirar e assistir no lugar, a resposta dela é que os ingressos só podem ser retirados e usados pelo titular da reserva, sem exceções. Perca o horário designado e a resposta publicada é simplesmente que os ingressos estão disponíveis apenas durante o horário especificado.",
+        pitfall:
+          "Montar o dia em torno do local do show. O compromisso que prende é no balcão do hotel, numa janela que outra pessoa definiu, no dia do show.",
+        takes: "Monte o dia em torno disso",
+      },
+      {
+        title: "Leve os documentos que o balcão de fato exige",
+        body: "A NOL World é específica: o documento de identidade original e válido do titular da reserva, mais a confirmação da reserva impressa ou no celular — e, sem isso, os ingressos não podem ser retirados. Para não coreanos, o documento aceito é passaporte ou certificado de registro de estrangeiro. Coreanos têm uma lista mais longa, incluindo carteira de registro de residente, carteira de motorista, passaporte, identidade juvenil ou uma identidade digital emitida pelo Government 24 ou pelo PASS.",
+        pitfall:
+          "Deixar o passaporte no cofre do quarto porque o balcão fica no mesmo prédio. É o documento original que abre o ingresso, e uma foto dele não está na lista.",
+        takes: "5 minutos de preparo",
+      },
+      {
+        title: "Num pacote para dois, os dois precisam estar no balcão",
+        body: "Esta reorganiza um dia e passa fácil despercebida. A NOL World diz que, num pacote para dois, tanto o titular da reserva quanto o acompanhante precisam estar presentes para retirar os ingressos — e que o acompanhante também precisa apresentar documento de identidade, para confirmar que atende à exigência de idade para a entrada. Então a janela de retirada é um compromisso de duas pessoas com dois documentos, e não uma tarefa que um de vocês possa resolver sozinho.",
+        pitfall:
+          "Se separar no dia — um retirando os ingressos enquanto o outro passeia ou fica na fila da loja. O balcão não vai liberar os ingressos para um de vocês.",
+        takes: "—",
+      },
+      {
+        title: "Faça o nome bater exatamente com o passaporte, agora",
+        body: "A NOL World responde isso com as duas consequências numa frase só: se o nome informado na compra não bater com o seu passaporte, a retirada do ingresso e o check-in no hotel não serão possíveis. As duas metades do pacote, travadas pelo mesmo erro. A pergunta que ela responde nomeia os culpados de sempre — um erro de grafia, um nome do meio faltando, maiúsculas, espaçamento. Confira a compra contra a própria página do passaporte, e não contra a memória.",
+        pitfall:
+          "Supor que uma diferença pequena será deixada passar porque o pacote já está pago. Pago não é o que está sendo conferido em nenhum dos dois balcões.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Não espere um e-mail de confirmação do hotel, porque ele não existe",
+        body: "Isso causa pânico evitável, então saiba com antecedência. A NOL World diz que confirmações de reserva de hotel não são enviadas separadamente, e que, se o pagamento passou, a reserva do hotel está confirmada e válida. Mais útil ainda: os dados da reserva só são passados ao hotel cerca de duas semanas antes da estadia, então o hotel genuinamente não consegue achar você antes disso. Se você ligar antes e eles nunca tiverem ouvido falar de você, esse é o estado normal documentado.",
+        pitfall:
+          "Reservar um quarto reserva, ou recomprar o pacote, porque o hotel diz que não há reserva seis semanas antes. Não havia nada errado, e agora há duas reservas.",
+        takes: "2 minutos de tranquilidade",
+      },
+      {
+        title: "Faça o check-in como o comprador, e leia os itens inclusos miúdos",
+        body: "O check-in no hotel depende da mesma pessoa que os ingressos: a NOL World diz que o check-in só está disponível mediante verificação da identidade do titular da reserva, então um acompanhante não pode fazer o check-in primeiro e esperar. Se você for chegar tarde, a instrução dela é avisar o hotel com antecedência — ao mesmo tempo em que adverte que pode não ser possível dependendo do hotel. Mais duas especificidades que vale saber antes de comprar: menores não podem se hospedar sem um responsável legal, e o café da manhã não está incluso a menos que o seu pacote específico o inclua.",
+        pitfall:
+          "Mandar um amigo na frente para deixar as malas e começar a estadia. O quarto abre com a sua identidade, não com o código da reserva.",
+        takes: "—",
+      },
+      {
+        title: "Se houver traslado, trate-o como uma única partida sem segunda chance",
+        body: "Onde um pacote inclui traslado, as respostas da NOL World não têm sentimentalismo. O uso é opcional e não usar não devolve nada. Não há veículos reserva, então chegar tarde ao ponto de embarque significa que ele já foi. Um traslado só de volta é possível. Um acompanhante que não reservou pode pedir ao responsável do traslado no local, mas os assentos são limitados e não podem ser garantidos. E o detalhe que estraga uma noite: você pode levar uma mala para dentro do ônibus, mas o guarda-volumes dentro do ônibus não fica disponível depois que vocês chegam ao local do show. O ponto e o horário de embarque da volta são informados a você quando os ingressos são entregues no hotel.",
+        pitfall:
+          "Levar uma mala ao show porque o ônibus deixou embarcá-la. No local do show não há onde deixá-la, e você a carrega durante a apresentação.",
+        takes: "—",
+      },
+      {
+        title: "Leia as respostas sobre cancelamento antes de comprar, porque elas são não",
+        body: "Este é o passo para levar a sério enquanto a viagem ainda é um plano. A NOL World publica respostas para os dois casos mais difíceis e os dois são recusas. Sobre infecção: após o rebaixamento da classificação de risco da COVID-19, a quarentena deixou de ser obrigatória e, por consequência, nenhuma redução da taxa de cancelamento se aplica mesmo que você esteja infectado. Sobre luto e hospitalização depois de um acidente: reembolsos por motivos pessoais não estão disponíveis, e as taxas de cancelamento se aplicam conforme a política de cada produto. Quer isso soe duro ou apenas claro, ele diz onde o risco está — com você, desde o instante em que você paga. O instrumento feito para carregá-lo é um seguro de viagem contratado antes da partida, e o que ele de fato cobre depende da apólice que você comprar, então leia esse documento em vez de supor.",
+        pitfall:
+          "Carregar o risco sem seguro na suposição de que um motivo grave o bastante será aceito. A NOL World já publicou a resposta dela para os dois motivos mais graves que existem.",
+        takes: "30 minutos com uma apólice de seguro",
+      },
+    ],
+    faq: [
+      {
+        q: "Posso comprar o pacote e não usar o hotel?",
+        a: "Você pode optar por não se hospedar, mas a NOL World afirma que a parte do hotel não é reembolsável e que a reserva não pode ser transferida a mais ninguém. Usar menos diárias do que o pacote contém e reaver a diferença também é recusado, porque o número de diárias não pode ser modificado.",
+      },
+      {
+        q: "Posso estender a estadia, encurtá-la, mudar as datas ou trocar de hotel?",
+        a: "As diárias não podem ser modificadas, as datas de check-in e check-out do pacote não podem ser alteradas, e trocas de hotel não são permitidas. Diárias extras também não podem ser acrescentadas na compra — a instrução da NOL World é falar direto com o hotel sobre disponibilidade e preço, e pode não ser possível. Upgrade de quarto é a mesma coisa: peça ao hotel, e pague ao hotel diretamente na chegada.",
+      },
+      {
+        q: "Quando eu descubro o meu assento?",
+        a: "Quando você retira o ingresso no hotel no dia da apresentação. O pacote garante uma categoria; dentro dessa categoria, a NOL World distribui setores e assentos aleatoriamente. Não gostar do resultado não é motivo de reembolso.",
+      },
+      {
+        q: "Outra pessoa pode retirar os ingressos por mim, ou assistir no meu lugar?",
+        a: "Não. A NOL World diz que os ingressos são emitidos exclusivamente ao titular da reserva e precisam ser retirados pessoalmente, e que eles só podem ser retirados e usados pelo titular da reserva, sem exceções. Num pacote para dois, as duas pessoas precisam estar no balcão, e o acompanhante também precisa apresentar documento para que a idade seja confirmada.",
+      },
+      {
+        q: "Eu não recebi e-mail de confirmação do hotel.",
+        a: "Não existe um. A NOL World diz que confirmações de hotel não são enviadas separadamente, e que um pagamento bem-sucedido significa que a reserva do hotel está confirmada. Ela também diz que os dados da reserva chegam ao hotel apenas cerca de duas semanas antes do check-in, então a confirmação direta só é possível depois disso.",
+      },
+      {
+        q: "Liguei para o hotel e eles não acham a minha reserva.",
+        a: "Esperado, se você ligou cedo. A NOL World diz que os dados são enviados ao hotel cerca de duas semanas antes da estadia e que a confirmação só é possível depois disso, e que uma reserva de pacote devidamente concluída e paga significa que a reserva do hotel está garantida. Não reserve de novo.",
+      },
+      {
+        q: "Eu testei positivo, ou tive uma emergência familiar. A taxa de cancelamento é dispensada?",
+        a: "A resposta publicada da NOL World é não nos dois casos. Ela diz que, com a quarentena da COVID-19 já não sendo obrigatória, nenhuma redução se aplica à taxa de cancelamento mesmo que você esteja infectado; e que reembolsos por motivos pessoais, incluindo luto ou hospitalização depois de um acidente, não estão disponíveis, com taxas aplicadas conforme a política de cada produto. Um seguro de viagem contratado antes de viajar é o mecanismo para esse risco — o que ele cobre depende da apólice, então leia.",
+      },
+      {
+        q: "Eu preciso usar o traslado, e posso levar uma mala nele?",
+        a: "É opcional, e não usar não devolve nada. Uma mala pode entrar no ônibus, mas a NOL World avisa que o guarda-volumes dentro do ônibus não fica disponível depois que vocês chegam ao local do show — então uma mala que você leva é uma mala que você carrega. Não há veículos reserva se você perder a partida, e o ponto e o horário de embarque da volta são informados junto com os ingressos no hotel.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay : un seul produit, et presque rien n'y est modifiable",
+    summary:
+      "Un concert et un hôtel vendus comme un article unique. Vous ne pouvez changer ni l'hôtel, ni les dates, ni le nombre de nuits, renoncer à l'hôtel ne rembourse rien, la place est tirée au sort et révélée le jour même, et les billets ne sont remis qu'à vous, en personne, à l'hôtel, dans une fenêtre donnée.",
+    scope:
+      "Couvre les forfaits concert-plus-hôtel Play and Stay de NOL World tels qu'elle les documente : ce qui est figé, comment les billets se retirent, les exigences d'identité et de nom, et ce que ses réponses sur l'annulation disent réellement. Chaque forfait porte sa propre politique d'annulation et ses propres prestations, et c'est la page produit qui fait foi. La navette n'est évoquée que là où un forfait en comprend une.",
+    intro: [
+      "Un forfait a l'air de la solution de facilité : un seul paiement, un hôtel près de la salle, une catégorie de place garantie, aucune file d'attente à affronter. Pour un fan de l'étranger qui n'a qu'une chance de faire le voyage, c'est un échange réellement séduisant.",
+      "C'est aussi le produit le plus rigide de la plateforme, et cette rigidité ne saute pas aux yeux sur l'annonce. Lisez les réponses de NOL World à la suite et un motif apparaît : le forfait est un article indivisible. Pas un billet et une chambre que vous pourriez optimiser séparément — une seule chose, achetée une fois, modifiable à peu près nulle part. Tout ce qui suit découle de ce seul fait, y compris les passages qui paraîtront injustes le jour où ils vous concerneront.",
+    ],
+    steps: [
+      {
+        title: "Comprenez que vous achetez un article, et non deux réservations",
+        body: "C'est tout le guide en une étape. NOL World indique que le nombre de nuits d'un forfait ne peut pas être modifié, que les dates d'arrivée et de départ précisées dans le forfait ne peuvent pas être changées, et que les changements d'hôtel ne sont pas autorisés. Les nuits ne peuvent pas davantage être ajoutées à l'achat — les séjours supplémentaires sont une conversation distincte avec l'hôtel, à son prix et sous réserve de ses disponibilités. Et un compte peut acheter un article : ce n'est donc pas une chose que l'on empile.",
+        pitfall:
+          "Réserver le forfait en comptant arranger les détails plus tard : arriver un jour plus tôt, changer pour un hôtel plus proche d'un ami, retrancher une nuit à la fin. Chacune de ces choses est un non documenté.",
+        takes: "15 minutes, avant de payer",
+      },
+      {
+        title: "Acceptez que renoncer à l'hôtel ne rembourse rien",
+        body: "La question est posée de deux façons dans la FAQ de NOL World et reçoit deux fois la même réponse : vous pouvez choisir de ne pas séjourner à l'hôtel, mais aucun remboursement de la part hôtelière n'est possible, et la réservation n'est pas transférable à une autre personne. Dormir chez un ami ne se convertit donc pas en argent rendu, et la chambre que vous avez payée ne peut être cédée à personne. Utiliser une nuit et récupérer le reste est également refusé — le nombre de nuits est figé.",
+        pitfall:
+          "Prendre la moitié hôtelière pour une caution dont on peut s'éloigner. C'est la moitié que vous ne pouvez ni revendre, ni donner, ni récupérer.",
+        takes: "—",
+      },
+      {
+        title: "Attendez-vous à une place tirée au sort, et à la découvrir le jour même",
+        body: "Le forfait garantit une catégorie, pas un emplacement. NOL World indique que l'attribution des places à l'intérieur des sections et des zones, en dehors de la catégorie choisie, se fait de façon aléatoire — et que votre place vous est communiquée au moment où vous retirez le billet à l'hôtel, le jour de la représentation. Vous ne saurez pas où vous êtes assis avant quelques heures avant le concert. Elle clôt aussi la question suivante, l'évidente : être mécontent de sa place n'est pas un motif de remboursement, et des frais d'annulation peuvent s'appliquer de toute façon.",
+        pitfall:
+          "Bâtir un plan sur la position de la place — un côté précis pour un projet de fans, un rang pour un objectif photo. La catégorie est la promesse ; le reste est un tirage que vous découvrez le jour même.",
+        takes: "—",
+      },
+      {
+        title: "Retirez au comptoir de l'hôtel, en personne, dans la fenêtre",
+        body: "Il existe exactement une façon d'obtenir ces billets. NOL World indique que le retrait se fait uniquement au comptoir billetterie NOL World situé dans l'hôtel, uniquement pendant les horaires désignés, et que les billets sont délivrés exclusivement au titulaire de la réservation, qui doit les retirer en personne. Interrogée sur le cas d'une personne bénéficiant d'une réduction qui viendrait retirer et assister à sa place, elle répond que les billets ne peuvent être retirés et utilisés que par le titulaire de la réservation, sans exception. Manquez les horaires désignés et la réponse publiée est simplement que les billets ne sont disponibles que pendant la plage indiquée.",
+        pitfall:
+          "Organiser la journée autour de la salle. Le rendez-vous contraignant est au comptoir de l'hôtel, dans une fenêtre fixée par quelqu'un d'autre, le jour du concert.",
+        takes: "Construisez la journée autour",
+      },
+      {
+        title: "Apportez les documents que le comptoir exige réellement",
+        body: "NOL World est précise : la pièce d'identité originale et valide du titulaire de la réservation, plus la confirmation de réservation imprimée ou sur un téléphone — et sans cela, les billets ne peuvent pas être retirés. Pour les ressortissants non coréens, la pièce acceptée est un passeport ou un certificat d'enregistrement d'étranger. Les ressortissants coréens disposent d'une liste plus longue, comprenant la carte d'enregistrement de résident, le permis de conduire, le passeport, la carte d'identité jeunesse ou une identité numérique délivrée via Government 24 ou PASS.",
+        pitfall:
+          "Laisser le passeport dans le coffre de la chambre parce que le comptoir est dans le même bâtiment. C'est la pièce originale qui ouvre le billet, et une photo de celle-ci ne figure pas sur la liste.",
+        takes: "5 minutes de préparation",
+      },
+      {
+        title: "Pour un forfait à deux, vous devez être tous les deux au comptoir",
+        body: "Celle-ci réorganise une journée et se manque facilement. NOL World indique que pour un forfait pour deux personnes, le titulaire de la réservation et son accompagnant doivent tous deux être présents pour retirer les billets — et que l'accompagnant doit lui aussi présenter une pièce d'identité, afin de confirmer qu'il remplit la condition d'âge pour entrer. La fenêtre de retrait est donc un rendez-vous à deux personnes avec deux pièces d'identité, et non une course que l'un de vous peut faire seul.",
+        pitfall:
+          "Se séparer le jour même — l'un retirant les billets pendant que l'autre visite ou fait la queue à la boutique. Le comptoir ne remettra pas les billets à un seul d'entre vous.",
+        takes: "—",
+      },
+      {
+        title: "Faites correspondre le nom au passeport, exactement, dès maintenant",
+        body: "NOL World répond à cela avec les deux conséquences dans une seule phrase : si le nom fourni à la réservation ne correspond pas à votre passeport, le retrait du billet et l'enregistrement à l'hôtel seront impossibles. Les deux moitiés du forfait, bloquées par la même erreur. La question à laquelle elle répond nomme les coupables habituels — une faute d'orthographe, un deuxième prénom manquant, les majuscules, les espaces. Comparez la réservation à la page du passeport elle-même, et non à votre souvenir.",
+        pitfall:
+          "Supposer qu'une petite différence passera parce que le forfait est déjà payé. Payé n'est pas ce que l'on contrôle à l'un ou l'autre comptoir.",
+        takes: "10 minutes",
+      },
+      {
+        title: "N'attendez pas d'e-mail de confirmation de l'hôtel, car il n'y en a pas",
+        body: "Cela provoque une panique évitable : sachez-le à l'avance. NOL World indique que les confirmations de réservation d'hôtel ne sont pas envoyées séparément, et que si le paiement est passé, la réservation d'hôtel est confirmée et valide. Plus utile encore : les détails de la réservation ne sont transmis à l'hôtel qu'environ deux semaines avant le séjour, de sorte que l'hôtel ne peut véritablement pas vous retrouver avant. Si vous appelez plus tôt et que personne n'a entendu parler de vous, c'est l'état normal documenté.",
+        pitfall:
+          "Réserver une chambre de secours, ou racheter le forfait, parce que l'hôtel dit n'avoir aucune réservation six semaines à l'avance. Rien n'allait mal, et il y a maintenant deux réservations.",
+        takes: "2 minutes de réassurance",
+      },
+      {
+        title: "Enregistrez-vous en tant qu'acheteur, et lisez les petites prestations",
+        body: "L'enregistrement à l'hôtel dépend de la même personne que les billets : NOL World indique qu'il n'est possible qu'après vérification de l'identité du titulaire de la réservation, de sorte qu'un accompagnant ne peut pas s'enregistrer en premier et attendre. Si vous arrivez tard, sa consigne est de prévenir l'hôtel à l'avance — tout en avertissant que cela peut se révéler impossible selon l'établissement. Deux précisions de plus à connaître avant de réserver : les mineurs ne peuvent pas séjourner sans représentant légal, et le petit-déjeuner n'est pas compris sauf si votre forfait le comprend.",
+        pitfall:
+          "Envoyer un ami en avance déposer les bagages et commencer le séjour. La chambre s'ouvre sur votre identité, pas sur la référence de réservation.",
+        takes: "—",
+      },
+      {
+        title: "S'il y a une navette, traitez-la comme un départ unique sans seconde chance",
+        body: "Là où un forfait comprend une navette, les réponses de NOL World sont sans sentimentalisme. Son usage est facultatif et ne pas l'utiliser ne rembourse rien. Il n'y a pas de véhicule de secours : arriver en retard au point de ramassage signifie qu'elle est partie. Une navette au retour seulement est possible. Un accompagnant qui n'a pas réservé peut s'adresser au responsable de la navette sur place, mais les places sont limitées et ne peuvent être garanties. Et le détail qui gâche une soirée : vous pouvez monter une valise à bord, mais aucun espace à bagages n'est disponible dans le bus une fois arrivé à la salle. Le point et l'heure d'embarquement du retour vous sont communiqués au moment de la remise des billets à l'hôtel.",
+        pitfall:
+          "Emporter une valise au concert parce que le bus l'a acceptée. À la salle, il n'y a nulle part où la laisser, et vous la portez pendant le spectacle.",
+        takes: "—",
+      },
+      {
+        title: "Lisez les réponses sur l'annulation avant de réserver, parce que ce sont des non",
+        body: "C'est l'étape à prendre au sérieux pendant que le voyage n'est encore qu'un projet. NOL World publie des réponses aux deux cas les plus difficiles et les deux sont des refus. Sur l'infection : à la suite de l'abaissement de la classification de risque du COVID-19, la quarantaine n'est plus obligatoire et, en conséquence, aucune réduction des frais d'annulation ne s'applique même si vous êtes infecté. Sur un deuil et une hospitalisation après un accident : les remboursements pour motifs personnels ne sont pas possibles, et les frais d'annulation s'appliquent selon la politique propre à chaque produit. Que cela paraisse dur ou simplement clair, cela vous dit où se trouve le risque — chez vous, dès l'instant où vous payez. L'instrument prévu pour le porter est une assurance voyage souscrite avant le départ, et ce qu'elle couvre réellement dépend du contrat que vous achetez : lisez donc ce document plutôt que de le supposer.",
+        pitfall:
+          "Porter ce risque sans assurance en supposant qu'un motif assez grave sera accepté. NOL World a déjà publié sa réponse aux deux motifs les plus graves qui soient.",
+        takes: "30 minutes avec un contrat d'assurance",
+      },
+    ],
+    faq: [
+      {
+        q: "Puis-je acheter le forfait et ne pas utiliser l'hôtel ?",
+        a: "Vous pouvez renoncer au séjour, mais NOL World indique que la part hôtelière n'est pas remboursable et que la réservation ne peut être transférée à personne d'autre. Utiliser moins de nuits que n'en comprend le forfait et récupérer la différence est également refusé, parce que le nombre de nuits ne peut pas être modifié.",
+      },
+      {
+        q: "Puis-je prolonger le séjour, le raccourcir, déplacer les dates ou changer d'hôtel ?",
+        a: "Les nuits ne peuvent pas être modifiées, les dates d'arrivée et de départ du forfait ne peuvent pas être changées, et les changements d'hôtel ne sont pas autorisés. Les nuits supplémentaires ne peuvent pas non plus être ajoutées à l'achat — la consigne de NOL World est de contacter directement l'hôtel pour la disponibilité et le prix, et cela peut se révéler impossible. Une montée en gamme de chambre suit la même règle : demandez à l'hôtel, et payez-le directement à l'arrivée.",
+      },
+      {
+        q: "Quand est-ce que je découvre ma place ?",
+        a: "Au moment où vous retirez le billet à l'hôtel, le jour de la représentation. Le forfait garantit une catégorie ; à l'intérieur de celle-ci, NOL World attribue sections et places de façon aléatoire. Être mécontent du résultat n'est pas un motif de remboursement.",
+      },
+      {
+        q: "Quelqu'un peut-il retirer les billets à ma place, ou assister au concert à ma place ?",
+        a: "Non. NOL World indique que les billets sont délivrés exclusivement au titulaire de la réservation et doivent être retirés en personne, et qu'ils ne peuvent être retirés et utilisés que par lui, sans exception. Pour un forfait à deux, les deux personnes doivent être au comptoir, et l'accompagnant doit lui aussi présenter une pièce d'identité pour que son âge soit confirmé.",
+      },
+      {
+        q: "Je n'ai pas reçu d'e-mail de confirmation de l'hôtel.",
+        a: "Il n'y en a pas. NOL World indique que les confirmations d'hôtel ne sont pas envoyées séparément, et qu'un paiement abouti signifie que la réservation d'hôtel est confirmée. Elle précise aussi que les détails de la réservation ne parviennent à l'hôtel qu'environ deux semaines avant l'arrivée : une confirmation directe n'est donc possible qu'après ce moment.",
+      },
+      {
+        q: "J'ai appelé l'hôtel et il ne trouve pas ma réservation.",
+        a: "C'est attendu si vous avez appelé tôt. NOL World indique que les détails sont transmis à l'hôtel environ deux semaines avant le séjour et que la confirmation n'est possible qu'après, et qu'une réservation de forfait correctement finalisée et payée signifie que la réservation d'hôtel est acquise. Ne réservez pas une seconde fois.",
+      },
+      {
+        q: "J'ai été testé positif, ou j'ai eu une urgence familiale. Les frais d'annulation seront-ils levés ?",
+        a: "La réponse publiée par NOL World est non dans les deux cas. Elle indique que, la quarantaine liée au COVID-19 n'étant plus obligatoire, aucune réduction ne s'applique aux frais d'annulation même si vous êtes infecté ; et que les remboursements pour motifs personnels, y compris un deuil ou une hospitalisation après un accident, ne sont pas possibles, les frais s'appliquant selon la politique de chaque produit. Une assurance voyage souscrite avant le départ est le mécanisme prévu pour ce risque — ce qu'elle couvre dépend du contrat, alors lisez-le.",
+      },
+      {
+        q: "Suis-je obligé d'utiliser la navette, et puis-je y monter une valise ?",
+        a: "Elle est facultative, et ne pas l'utiliser ne rembourse rien. Une valise peut monter à bord, mais NOL World prévient qu'aucun espace à bagages n'est disponible dans le bus une fois à la salle — une valise que vous emportez est donc une valise que vous portez. Il n'y a pas de véhicule de secours si vous manquez le départ, et le point et l'heure d'embarquement du retour sont communiqués avec les billets à l'hôtel.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

@@ -10,6 +10,7 @@ import { LanguageLinks } from "@/components/LanguageLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { StackedScreens, SingleScreen, StepObject } from "@/components/Objects";
 import { GocheokBowl } from "@/components/VenuePlan";
+import { SourceDocument } from "@/components/SourceDocument";
 import { Artwork } from "@/components/Artwork";
 import { VerifiedBadge, StatusNotice } from "@/components/Badges";
 import { PaidDisclosure, AffiliateLink } from "@/components/Affiliate";
@@ -229,6 +230,16 @@ export default async function GuidePage({
           ))}
         </ol>
       </section>
+
+      {guide.document ? (
+        <section className="wrap mt-14">
+          <h2 className="pl">The chart itself</h2>
+          <p className="han-m dim mt-3">좌석배치도</p>
+          <div className="mt-8">
+            <SourceDocument guide={guide} />
+          </div>
+        </section>
+      ) : null}
 
       <div className="wrap">
         <AdSlot placement="article" />

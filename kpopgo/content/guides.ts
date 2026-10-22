@@ -86,6 +86,51 @@ export type Step = {
   partner?: { id: string; text: string };
 };
 
+/**
+ * A document from somebody else, reproduced on the page.
+ *
+ * Everything else pictured on this site was drawn or rendered for it, which
+ * is the artwork rule and is about portrait and copyright risk. This is the
+ * deliberate exception and it needs its own rules, because the risk is a
+ * different one: an authoritative document is worth reproducing exactly, and
+ * reproducing somebody else's work exactly is only allowed on terms.
+ *
+ * So the terms are data rather than a thing somebody remembers — the same
+ * shape as the paid-link register and for the same reason. A reproduced
+ * document that cannot name its licence and its source does not render, and
+ * the check at the bottom of this file fails the build rather than letting it
+ * ship with the credit missing from exactly the page that gets screenshotted.
+ *
+ * `upstream` is the file at the operator's own address, and it is separate
+ * from `sourceUrl` on purpose: the page can stay up while the image under it
+ * is replaced. `scripts/watch.mjs` fingerprints that file by hash, because the
+ * fingerprinting everywhere else in this repo compares visible text and would
+ * see nothing at all here. The failure it prevents is this site's own premise
+ * turned against it — a stale copy of an official document, served with
+ * confidence, which is precisely what the guides this site replaces are.
+ */
+export type ReproducedDocument = {
+  /** Path under public/, served as-is so the original stays downloadable. */
+  file: string;
+  width: number;
+  height: number;
+  /** Written here, in English. The source's own alt text is Korean. */
+  alt: string;
+  /** One line saying what the document is. */
+  caption: string;
+  /** Who made it. Required by every licence worth reproducing under. */
+  credit: string;
+  /** The licence, named the way the licence names itself. */
+  licence: string;
+  licenceUrl: string;
+  /** The page it was published on, which must be among the guide's sources. */
+  sourceUrl: string;
+  /** The file itself at the operator's address. Watched by hash. */
+  upstream: string;
+  /** The day this copy was taken. */
+  taken: string;
+};
+
 export type Guide = {
   slug: string;
   /** Short label for cards and nav. */
@@ -133,6 +178,8 @@ export type Guide = {
    * key to a component lives in the route that renders it.
    */
   diagram?: "gocheok-bowl";
+  /** An official document reproduced on the page, under a named licence. */
+  document?: ReproducedDocument;
   intro: string[];
   steps: Step[];
   /** Rendered as FAQPage structured data as well as on-page. */
@@ -3037,6 +3084,20 @@ export const guides: Guide[] = [
       "Four levels, one direction, and a single break in the loop. Three digits read correctly will walk you to your block from any entrance, without a map and without knowing which way is north.",
     glyph: "ticket",
     diagram: "gocheok-bowl",
+    document: {
+      file: "docs/gocheok-seat-2026.jpg",
+      width: 653,
+      height: 954,
+      alt: "The venue's seating chart: four rings of numbered blocks around a baseball field, lettered gates A to G outside them, and ticket offices marked 2, 3 and 4.",
+      caption:
+        "The chart this page is read from. It is drawn for baseball — the dugouts are on it — and it is the authority on where a numbered block is, not on what is sold for your show.",
+      credit: "서울시설공단 (Seoul Facilities Corporation)",
+      licence: "공공누리 제1유형: 출처표시 (KOGL Type 1: Attribution)",
+      licenceUrl: "https://www.kogl.or.kr/info/license.do",
+      sourceUrl: "https://www.sisul.or.kr/open_content/skydome/introduce/seat.jsp",
+      upstream: "https://www.sisul.or.kr/open_content/skydome/images/seat2026.jpg",
+      taken: "2026-10-22",
+    },
     status: "sourced",
     lastChecked: "2026-10-22",
     scope:
@@ -3182,6 +3243,44 @@ for (const guide of guides) {
           `content/affiliates.ts, which is what /editorial-policy publishes.`,
       );
     }
+  }
+}
+
+/**
+ * A reproduced document renders its credit or it does not render.
+ *
+ * This is the paid-link rule applied to somebody else's copyright: a credit
+ * that a person has to remember is one that will be missing from the page
+ * that gets screenshotted, and here the cost of that is not an awkward
+ * conversation but a licence breach. Every field is required, `file` is a
+ * path under public/ rather than a remote URL so the copy is the one that was
+ * checked, and the page it came from has to be among the guide's own sources
+ * — a document reproduced from somewhere the guide does not cite is a claim
+ * with no trail back to it.
+ */
+for (const guide of guides) {
+  const doc = guide.document;
+  if (!doc) continue;
+  for (const [key, value] of Object.entries(doc)) {
+    if (typeof value === "string" ? value.trim() === "" : !(value > 0)) {
+      throw new Error(
+        `${guide.slug} reproduces a document with an empty "${key}". Every ` +
+          `field is required: the licence and the credit are the terms the ` +
+          `copy is allowed to exist on.`,
+      );
+    }
+  }
+  if (doc.file.startsWith("/") || doc.file.includes("..")) {
+    throw new Error(
+      `${guide.slug} document.file must be a path under public/img, not ` +
+        `"${doc.file}".`,
+    );
+  }
+  if (!guide.sources.some((x) => x.url === doc.sourceUrl)) {
+    throw new Error(
+      `${guide.slug} reproduces a document from ${doc.sourceUrl}, which is ` +
+        `not among its sources. Cite the page before reproducing what is on it.`,
+    );
   }
 }
 

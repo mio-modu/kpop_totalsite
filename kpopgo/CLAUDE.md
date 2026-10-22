@@ -748,6 +748,49 @@ rendered:
   the band now, on the left flank — the one long stretch of perimeter with no
   gate on it.
 
+**The venue's own chart is now served from this site, and that is the one
+deliberate exception to the artwork rule.** Everything else pictured here was
+drawn or rendered for the site, which is a portrait-and-copyright rule. This
+is a different question: an authoritative document is worth reproducing
+exactly, and the only thing that makes that allowed is the licence. The chart
+page carries `공공누리 제1유형 · 출처표시` — KOGL Type 1, free commercial use
+and modification with attribution — declared on the page itself.
+
+So the terms are **data, not a thing anybody remembers**. `ReproducedDocument`
+in `content/guides.ts` carries the file, the credit, the licence, its URL, the
+page it came from and the day the copy was taken; `components/SourceDocument.tsx`
+renders all of it from that register, so there is no version of the component
+that shows the picture without the credit. A module-scope check fails the
+build on an empty field, on a `file` that is not a path under `public/img`, and
+on a `sourceUrl` the guide does not already cite — reproducing something from
+a page you have not cited is a claim with no trail back to it. That is the
+paid-link rule applied to somebody else's copyright.
+
+**Two checks, because one of them can be silenced.** The upstream file is
+called `seat2026.jpg`, so the operator replacing it is a scheduled event
+rather than a hypothesis, and our copy would go on being served with
+confidence afterwards — this site's premise turned against it.
+`scripts/watch.mjs` fingerprints it by SHA-256, because the text comparison
+every other source gets sees exactly nothing in a JPEG. But `--record` clears
+that warning, and nothing in the script makes anyone replace
+`public/img/docs/` while they do it. So `scripts/documents.test.mjs` asserts
+that the stored baseline is the hash of the file on disk. Re-recording without
+replacing the copy now fails a test instead of producing a green report over a
+stale picture. Proved by appending one byte and watching it fail with both
+hashes named.
+
+Byte-for-byte is blunt on purpose: a re-encode at the same content would read
+as changed. That is a false alarm somebody clears in a minute, and the
+alternative is a similarity threshold nobody can justify on a picture.
+
+The document renders **after** the steps rather than beside the schematic. The
+two do different jobs — the drawing teaches the rule in English and weighs
+nothing, the chart is the authority on where block 417 is and weighs 230KB —
+and the step that says "the venue's chart is the authority" is the step a
+reader leaves from. It is not `priority`, and the original file is linked as
+well as displayed, because `next/image` serves a re-encoded derivative and
+verification wants the bytes that were taken.
+
 **The station rows were wrong, and the shape of the error is what is worth
 keeping.** The venue prints its transit information twice — a four-column
 table and a turn-by-turn list under it — and the first version of the

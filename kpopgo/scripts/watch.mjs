@@ -26,7 +26,7 @@
  *
  * Exits non-zero when something needs a person.
  */
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -465,6 +465,103 @@ async function brands() {
   }
 }
 
+/**
+ * A reproduced document, checked by hash.
+ *
+ * Everything else here compares visible text, which sees exactly nothing in a
+ * JPEG. The site now serves its own copy of the venue's seating chart under
+ * 공공누리 제1유형, and that copy is the one thing on the site that can go
+ * wrong silently in the way this whole script exists to prevent: the file is
+ * literally called seat2026.jpg, so the operator replacing it is a scheduled
+ * event rather than a hypothetical, and our copy would go on being served
+ * with confidence afterwards.
+ *
+ * Byte-for-byte is the right comparison and a blunt one. An image re-encoded
+ * at a different quality with the same content would report as changed, which
+ * is a false alarm — but the alternative is a threshold nobody can justify on
+ * a picture, and the failure this guards against is the expensive one. A
+ * person re-reads the chart and re-records; that is the same deal every other
+ * line in this report offers.
+ */
+async function documents() {
+  const src = await read("content/guides.ts");
+  const urls = [...src.matchAll(/upstream:\s*"(https?:\/\/[^"]+)"/g)].map((m) => m[1]);
+  if (urls.length === 0) return;
+
+  const store = new URL("content/document-fingerprints.json", ROOT);
+  let have = {};
+  try {
+    have = JSON.parse(await readFile(store, "utf8"));
+  } catch {
+    have = {};
+  }
+
+  const { createHash } = await import("node:crypto");
+  const { execFile } = await import("node:child_process");
+  const { promisify } = await import("node:util");
+  let wrote = 0;
+
+  for (const url of [...new Set(urls)]) {
+    const tmp = join(tmpdir(), `kpopgo-doc-${process.pid}-${wrote}.bin`);
+    let bytes;
+    try {
+      await promisify(execFile)(
+        "curl",
+        ["-sS", "-L", "--max-redirs", "10", "--max-time", "40",
+         "--cookie-jar", JAR, "--cookie", JAR, "-A", UA, "-o", tmp, url],
+        { maxBuffer: 1_000_000 },
+      );
+      bytes = await readFile(tmp);
+    } catch (e) {
+      note("fail", `${url} — the reproduced document could not be fetched: ${String(e.message || e)}`);
+      continue;
+    } finally {
+      await rm(tmp, { force: true }).catch(() => {});
+    }
+
+    // A proxy or an error page answers 200 with HTML. Judging that against a
+    // stored image hash would report a change that is really a failed fetch.
+    if (bytes.length < 2000 || bytes.subarray(0, 400).includes(Buffer.from("<html"))) {
+      note("fail", `${url} — came back as ${bytes.length} bytes that are not an image; cannot judge it.`);
+      continue;
+    }
+
+    const sha = createHash("sha256").update(bytes).digest("hex");
+    const seen = have[url];
+
+    if (!seen) {
+      note("info", `${url} — no baseline recorded yet (${bytes.length} bytes).`);
+      if (RECORD || RECORD_NEW) {
+        have[url] = { bytes: bytes.length, sha256: sha, recorded: TODAY };
+        wrote++;
+      }
+      continue;
+    }
+
+    if (seen.sha256 !== sha) {
+      note(
+        "fail",
+        `${url} — the document has been replaced since our copy was taken ` +
+          `(${seen.bytes} → ${bytes.length} bytes, last seen ${seen.recorded}). ` +
+          `public/img/docs holds the old one. Re-read it, replace the file, and ` +
+          `move the guide\u0027s document.taken date.`,
+      );
+      if (RECORD) {
+        have[url] = { bytes: bytes.length, sha256: sha, recorded: TODAY };
+        wrote++;
+      }
+      continue;
+    }
+
+    note("info", `${url} — unchanged since ${seen.recorded}.`);
+  }
+
+  if (wrote) {
+    await writeFile(store, JSON.stringify(have, null, 2) + "\n");
+    note("info", `Recorded ${wrote} document fingerprint(s).`);
+  }
+}
+
 const t0 = Date.now();
 await freshness();
 if (OFFLINE) {
@@ -474,6 +571,7 @@ if (OFFLINE) {
   const urls = await sources();
   await links(urls);
   await brands();
+  await documents();
 }
 
 const fails = findings.filter((f) => f.level === "fail");

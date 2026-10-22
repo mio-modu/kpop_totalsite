@@ -175,14 +175,40 @@ const JA_LABELS = {
 
 /**
  * One guide is deliberately in no language but English, and a second is in
- * two of the five. Both are decisions with reasons, not oversights, and the
- * reasons are here because the counts will keep moving and the reasoning
+ * three of the seven. Both are decisions with reasons, not oversights, and
+ * the reasons are here because the counts will keep moving and the reasoning
  * should not have to be reconstructed each time.
  *
  * Where it stands against twenty-one English guides:
  *
  *   ja, zh-Hant, id   19/21   skip the timezone guide and the customs guide
- *   de, es            20/21   skip the customs guide only
+ *   pt-BR             19/21   skip the timezone guide and the customs guide
+ *   de, es, fr        20/21   skip the customs guide only
+ *
+ * All seven are complete at their intended counts as of 2026-10-22. That
+ * sentence is worth dating, because "in progress" is the state this file was
+ * in for most of its life and the state it will be in again the next time a
+ * language is added — a count that has stopped moving looks identical to a
+ * count nobody is moving.
+ *
+ * `pt-BR` sits with the Asian three rather than with the European ones, and
+ * the region in its code is what makes that decidable instead of arguable.
+ * Brazil abolished daylight saving in 2019, so the timezone guide — which is
+ * really a daylight-saving guide — teaches arithmetic a Brazilian reader
+ * never has to do. Checked against this container's zoneinfo rather than
+ * recalled: America/Sao_Paulo, America/Manaus and America/Recife hold the
+ * same offset in January and July, and 20:00 KST is 08:00 in Sao Paulo on
+ * both dates. Portugal does observe it, which is exactly why a generic `pt`
+ * edition would have to carry that guide for half its readers and waste it
+ * on the other half.
+ *
+ * `fr` carries no region, and that is the honest scope rather than a
+ * shortcut. Brazil's region decided a page; France's would decide nothing.
+ * Its readers are spread across zones that agree on everything this site
+ * covers — Paris, Brussels and Montreal all observe daylight saving — and
+ * the one francophone zone that does not, Dakar, is not a market with a
+ * reader here. It takes the timezone guide for the same reason German and
+ * Spanish do, and refuses the customs guide on the same test.
  *
  * Four editions once skipped the same two. Three arrived there without being
  * planned to, written at different times for different reasons; German was
@@ -12580,6 +12606,1048 @@ export const translations: Translation[] = [
       {
         q: "Qu'advient-il de mes données si je supprime mon compte ?",
         a: "NOL World indique que la suppression est définitive, et liste ce qui part : compte et informations de profil, historique de réservations, voyages et lieux aimés. Les avis et photos laissés pour un lieu sont conservés. Ailleurs, elle précise que la suppression efface aussi votre vérification d'identité, la libérant pour un autre compte, et qu'un compte restreint pour usage abusif ne peut pas être supprimé.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "O vazamento de dados da Weverse: o que vazou de fato, e o único risco que isso cria",
+    summary:
+      "422.584 contas, confirmadas pela própria Weverse. Sem nomes, sem dados de contato, sem números de cartão — um identificador interno e o seu histórico de compras. Essa combinação não é uma conta esvaziada; é a matéria-prima para uma mensagem que sabe o que você comprou.",
+    scope:
+      "Cobre o que a Weverse Company publicou sobre o vazamento que confirmou em setembro de 2026, lido nas versões em inglês e em coreano do aviso. Não somos auditores de segurança e isto não é orientação jurídica: tudo atribuído à Weverse é declaração dela, não uma constatação que verificamos. Um caso de segurança pode evoluir, e esta página carrega a data em que a checamos pela última vez.",
+    intro: [
+      "Em setembro de 2026 o presidente da Weverse Company publicou um aviso confirmando que informações pessoais de clientes haviam vazado. Todo leitor deste site tem uma conta Weverse, então a pergunta não é se isso importa, mas o que isso muda de fato — e a resposta é mais estreita e mais específica do que um dar de ombros ou um pânico.",
+      "O que vem a seguir é o aviso lido com atenção, nos dois idiomas em que foi publicado. A parte útil não é o número. É que a combinação específica de dados que saiu é quase inútil para roubar de você e extraordinariamente boa para convencer você.",
+    ],
+    steps: [
+      {
+        title: "Leia as duas listas, porque a diferença decide tudo",
+        body: "A Weverse discrimina o que vazou sob dois títulos. Como informação pessoal: informação de identificação interna — um número único gerado para identificação do usuário quando você se cadastrou. Como informação geral que ela classifica como não pessoal: tipo de compra, ou seja, forma de pagamento, o nome do gateway de pagamento, a moeda, o valor da compra, o valor do cancelamento, a data e a hora da compra, o status da compra, e a data e a hora do reembolso onde um pedido foi cancelado. A escala é de 422.584 casos contados em unidades de ID de conta. O que não está em nenhuma das duas listas é o ponto: nenhum nome, nenhum dado de contato, nenhum número de cartão ou credencial de pagamento.",
+        pitfall:
+          "Ler 422.584 e preencher o resto com lembranças de outros vazamentos. A resposta a um vazamento de credenciais e a resposta a este são diferentes, então a lista discriminada vale mais que a manchete.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pese a tranquilização da Weverse com justiça, inclusive o limite dela",
+        body: "A Weverse afirma que o identificador interno vazado não é informação que identifique diretamente uma pessoa, como nome ou dados de contato; que é um valor usado apenas dentro dos sistemas internos da Weverse Company e que não pode ser usado externamente; e que falsificação de pagamento ou transferências não autorizadas são improváveis a partir desses itens de dados sozinhos. À primeira vista esse raciocínio se sustenta — um número de linha interno não é uma identidade, e nenhum desses campos é uma credencial. O limite honesto é que um identificador interno passa a identificar no instante em que é cruzado com outro conjunto de dados que também o contenha, e ninguém de fora da empresa consegue medir a probabilidade disso. Essa é a exposição que resta: correlação, não roubo.",
+        pitfall:
+          "Tratar uma tranquilização razoável como garantia, ou tratá-la como lorota. É uma afirmação específica sobre campos específicos, e ela é mais forte justamente onde é mais estreita.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Entenda o risco de verdade: uma mensagem que sabe o que você comprou",
+        body: "Olhe os campos vazados em conjunto — forma de pagamento, gateway, moeda, valor, data, status, data do reembolso. Isso não é o equipamento para cobrar no seu cartão. É o equipamento para escrever uma mensagem que passa no único teste que a maioria das pessoas aplica a um e-mail suspeito, que é se o remetente sabe detalhes reais de um pedido real. Uma mensagem citando o seu valor de compra real, na data real, na moeda real, pelo provedor de pagamento real, é muito mais convincente do que qualquer coisa que um golpista aleatório conseguiria compor.",
+        pitfall:
+          "Usar “eles sabem os detalhes do meu pedido” como prova de que uma mensagem é genuína. Depois deste vazamento esse teste parou de funcionar, e é o teste que quase todo mundo usa.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Saiba por que isso cai em cima de um processo real",
+        body: "Isso importa mais para este público do que para a maioria, porque estranhos legítimos já pedem dinheiro a clientes da Weverse. O Weverse Shop avisa compradores da União Europeia de que eles podem receber instruções de pagamento separadas da aduana local ou da transportadora, e de que não pagar pode atrasar ou impedir a entrega. Então a experiência genuína e a fraudulenta agora se parecem: uma empresa com a qual você não tem relação, citando um pedido que você de fato fez, pedindo um pagamento antes de o seu pacote andar. O vazamento não criou essa sobreposição, mas afiou.",
+        pitfall:
+          "Resolver a ambiguidade pagando, ou ignorando tudo. Um perde dinheiro e o outro perde o pacote.",
+        takes: "—",
+      },
+      {
+        title: "Use uma conferência que não dependa do que a mensagem sabe",
+        body: "O caminho é parar de avaliar a mensagem e começar a avaliar a afirmação. Tire dela o código de rastreio ou a referência do pedido, e então vá você mesmo até a transportadora ou até o Weverse Shop — endereço digitado ou favorito salvo, nunca um link da mensagem — e veja se aquela referência corresponde a um pedido seu e se há de fato algo devido. Se a mensagem for real, a mesma informação está do outro lado. Se não for, não há nada, e você descobriu isso sem clicar em nada.",
+        pitfall:
+          "Seguir o link porque os detalhes estavam certos. Os detalhes estarem certos é agora o estado esperado de uma falsificação.",
+        takes: "5 minutos por mensagem",
+      },
+      {
+        title: "Não confunda trocar a senha com a solução",
+        body: "O reflexo depois de qualquer vazamento é trocar a senha, e aqui isso resolve quase nada: o que foi exposto foi um identificador e metadados de compra por uma API de informações de pagamento, não credenciais de login. Rotacionar a senha não custa nada e não faz mal, então faça se isso acalmar a sua cabeça — mas faça sabendo que é higiene e não remédio, e que o que de fato protege você é o hábito de verificação do passo anterior. Ativar a verificação em duas etapas que o seu provedor de login oferecer vale por princípio geral, e também não é uma resposta a este vazamento.",
+        pitfall:
+          "Trocar a senha, sentir que terminou, e depois confiar na próxima mensagem que citar o seu pedido. Conselho reflexo é confortável e ocupa o lugar do conselho que funciona.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Descubra se você foi afetado pela conta, e não por um guia",
+        body: "A Weverse diz que executou um procedimento separado, conforme os critérios definidos pelas leis e regulamentos aplicáveis, para notificar os clientes cujos dados estavam no vazamento. Então a resposta está na sua própria conta: o endereço de e-mail cadastrado nela e as suas notificações no aplicativo. Nenhum guia pode dizer a você, este inclusive, e qualquer terceiro que diga conferir se você estava no vazamento é motivo de suspeita e não um serviço.",
+        pitfall:
+          "Procurar uma ferramenta de consulta que diga se você foi afetado. Num vazamento de identificadores internos não há nada de relevante que tal ferramenta pudesse conferir, e a própria busca é o que uma página de phishing está esperando.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Anote o que a empresa diz que fez, e o que continua sendo promessa",
+        body: "O relato da Weverse sobre a sua resposta, nas palavras dela: reforçou o controle de acesso na API de processamento de informações de pagamento e removeu dela o identificador interno para que os dados não ficassem expostos externamente; em 4 de setembro protocolou um relatório de incidente de violação junto à Korea Internet & Security Agency; e notificou os clientes afetados. Os planos declarados são uma investigação completa de todas as APIs expostas externamente, controle de acesso mais rígido e informação exposta minimizada, controle mais rígido dos processos de implantação, e monitoramento de segurança mais sensível. Ela também diz ter pedido ao agente externo que acessou os dados que os devolva, e que pretende buscar responsabilização legal. Mantenha as duas categorias separadas: o primeiro grupo são afirmações sobre trabalho concluído que ninguém de fora pode auditar, e o segundo são intenções.",
+        pitfall:
+          "Ler uma lista de melhorias planejadas como uma lista de correções já em funcionamento. O aviso não afirma isso, e um resumo dele também não deveria.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Dê o devido crédito à condução, na medida certa",
+        body: "A linha do tempo que a Weverse descreve é curta: contatada pela KISA em 3 de setembro, depois que um denunciante externo revelou uma vulnerabilidade; inspeção interna imediata e resposta emergencial; relatório de violação protocolado junto à KISA em 4 de setembro; e um aviso público em nome do presidente discriminando o que saiu — inclusive os campos que ela argumenta não serem informação pessoal na lei, que ela não precisava enumerar. Lemos o original em coreano contra o inglês e os dois dizem a mesma coisa, o que é um pequeno sinal em si. Nada disso desfaz um vazamento. Mas um site que só reporta incidentes como escândalos não ensina nada aos seus leitores sobre o que é uma condução competente, e esta está mais perto disso que a maioria.",
+        pitfall:
+          "Concluir de uma avaliação calma que não aconteceu nada. 422.584 contas são uma falha real que uma divulgação rápida não cancela.",
+        takes: "—",
+      },
+      {
+        title: "Pense duas vezes antes de apagar a conta, e saiba o que a exclusão não é",
+        body: "Apagar a conta é o outro reflexo, e é uma decisão maior do que parece. O Weverse Shop e a NOL World amarram coisas reais a uma conta: histórico de pedidos e reservas, endereços salvos, uma assinatura paga, e do lado dos ingressos uma validação de identidade concluída. O ponto decisivo, porém, é mais simples. A exclusão remove os seus dados do serviço daqui para a frente; ela não retrata dados que já saíram. O que estava neste vazamento já estava antes de você decidir qualquer coisa, e fechar a conta depois não alcança isso.",
+        pitfall:
+          "Apagar uma conta como resposta a um vazamento. É uma coisa razoável de se querer e não é um remédio para isto, e custa a você o histórico de que precisaria se alguma compra fosse contestada.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "O meu nome, endereço ou número de cartão vazaram?",
+        a: "Não, segundo a própria discriminação da Weverse. O que ela lista é um número de identificação interna mais metadados de compra — forma de pagamento, nome do gateway de pagamento, moeda, valores de compra e de cancelamento, data e hora da compra, status da compra, e data e hora do reembolso. Nomes, dados de contato e credenciais de pagamento não estão na lista.",
+      },
+      {
+        q: "Devo trocar a minha senha da Weverse?",
+        a: "Não vai fazer mal, e não é a solução. A exposição foi de um identificador e de metadados de compra por uma API de informações de pagamento, e não de credenciais de login, então uma senha nova não resolve isso. Faça se ajudar você a ficar tranquilo, e depois gaste o esforço de verdade em verificar pedidos de pagamento de forma independente, que é o que realmente protege você aqui.",
+      },
+      {
+        q: "Como eu sei se eu fui um dos 422.584?",
+        a: "Pela sua própria conta. A Weverse diz que executou um procedimento separado de notificação aos clientes afetados conforme as leis aplicáveis, então confira o e-mail cadastrado na conta e as suas notificações no aplicativo. Nenhuma ferramenta externa pode dizer a você, e qualquer coisa que anuncie que pode deve ser tratada como tentativa de phishing.",
+      },
+      {
+        q: "Alguém pode usar isso para cobrar no meu cartão?",
+        a: "A Weverse diz que falsificação de pagamento ou transferências não autorizadas são improváveis a partir desses itens sozinhos, e pela cara da lista isso é consistente — nenhum dos campos vazados é um número de cartão ou uma credencial. O risco realista não é uma cobrança direta, e sim uma mensagem convincente que persuada você a fazer um pagamento por conta própria.",
+      },
+      {
+        q: "Se não é informação pessoal, por que isso importa?",
+        a: "Porque utilidade para um atacante e classificação jurídica são perguntas diferentes. Valores de compra, datas, formas de pagamento e moedas são exatamente o que torna uma mensagem fraudulenta crível — e o jeito habitual de as pessoas julgarem um e-mail suspeito é se o remetente sabe detalhes reais de um pedido real. Esse teste já não funciona para ninguém que esteja neste vazamento.",
+      },
+      {
+        q: "Devo apagar a minha conta Weverse?",
+        a: "É uma escolha defensável e não é um remédio. A exclusão interrompe a coleta futura; ela não retrata dados que já saíram, o que inclui tudo o que estava neste vazamento. Ela também custa a você histórico de pedidos e reservas, endereços salvos, qualquer assinatura paga, e do lado dos ingressos uma validação de identidade concluída — então decida pelo fato de você ainda querer o serviço, e não como resposta a isto.",
+      },
+      {
+        q: "O que a Weverse fez de fato?",
+        a: "Pelo relato dela: reforçou o controle de acesso na API de informações de pagamento e removeu dela o identificador interno, protocolou um relatório de incidente de violação junto à KISA em 4 de setembro de 2026, e notificou os clientes afetados. Ela também lista trabalho planejado — auditar todas as APIs expostas externamente, apertar os controles de implantação, elevar a sensibilidade do monitoramento — e diz ter pedido a devolução dos dados ao agente envolvido e pretender buscar responsabilização legal. Os itens concluídos são afirmações dela, e não constatações auditadas.",
+      },
+      {
+        q: "Existe algo mais recente que isto?",
+        a: "Não até a data no topo desta página, que é quando lemos pela última vez a lista de avisos do Weverse Shop. Um assunto de segurança pode evoluir, então essa lista é a versão viva — se existir um aviso posterior, ele estará lá antes de estar aqui.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "La fuite de données Weverse : ce qui a réellement fuité, et le seul risque que cela crée",
+    summary:
+      "422 584 comptes, confirmés par Weverse elle-même. Aucun nom, aucune coordonnée, aucun numéro de carte — un identifiant interne et votre historique d'achats. Cette combinaison n'est pas un compte vidé ; c'est la matière première d'un message qui sait ce que vous avez acheté.",
+    scope:
+      "Couvre ce que Weverse Company a publié sur la fuite qu'elle a confirmée en septembre 2026, lu dans les versions anglaise et coréenne de son avis. Nous ne sommes pas auditeurs en sécurité et ceci n'est pas un conseil juridique : tout ce qui est attribué à Weverse est sa propre déclaration, non une constatation que nous aurions vérifiée. Une affaire de sécurité peut évoluer, et cette page porte la date de notre dernière vérification.",
+    intro: [
+      "En septembre 2026, le président de Weverse Company a publié un avis confirmant que des informations personnelles de clients avaient fuité. Tout lecteur de ce site a un compte Weverse : la question n'est donc pas de savoir si cela compte, mais ce que cela change réellement — et la réponse est plus étroite et plus précise qu'un haussement d'épaules ou qu'une panique.",
+      "Ce qui suit est cet avis lu de près, dans les deux langues où il a paru. La partie utile n'est pas le chiffre. C'est que la combinaison particulière de données qui est sortie est à peu près inutile pour vous voler et singulièrement efficace pour vous convaincre.",
+    ],
+    steps: [
+      {
+        title: "Lisez les deux listes, car c'est leur différence qui décide de tout",
+        body: "Weverse détaille ce qui a fuité sous deux intitulés. Comme information personnelle : une information d'identification interne — un numéro unique généré pour identifier l'utilisateur lors de son inscription. Comme information générale qu'elle classe comme non personnelle : le type d'achat, c'est-à-dire le moyen de paiement, le nom de la passerelle de paiement, la devise, le montant de l'achat, le montant de l'annulation, la date et l'heure de l'achat, le statut de l'achat, et la date et l'heure du remboursement lorsqu'une commande a été annulée. L'ampleur est de 422 584 cas comptés en unités d'identifiant de compte. Ce qui ne figure sur aucune des deux listes est l'essentiel : aucun nom, aucune coordonnée, aucun numéro de carte ni identifiant de paiement.",
+        pitfall:
+          "Lire 422 584 et compléter le reste avec les souvenirs d'autres fuites. La réponse à une fuite d'identifiants de connexion et la réponse à celle-ci sont différentes : la liste détaillée vaut donc davantage que le titre.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Pesez honnêtement la réassurance de Weverse, y compris sa limite",
+        body: "Weverse affirme que l'identifiant interne qui a fuité n'est pas une information identifiant directement une personne, comme un nom ou des coordonnées ; que c'est une valeur utilisée uniquement dans les systèmes internes de Weverse Company et inexploitable à l'extérieur ; et qu'une falsification de paiement ou des virements non autorisés sont peu probables à partir de ces seuls éléments. À première vue ce raisonnement tient — un numéro de ligne interne n'est pas une identité, et aucun de ces champs n'est un identifiant de connexion. La limite honnête est qu'un identifiant interne devient identifiant dès l'instant où il est recoupé avec un autre jeu de données qui le contient aussi, et personne hors de l'entreprise ne peut mesurer la probabilité d'un tel recoupement. C'est l'exposition qui subsiste : la corrélation, pas le vol.",
+        pitfall:
+          "Prendre une réassurance raisonnable pour une garantie, ou la prendre pour de la communication. C'est une affirmation précise sur des champs précis, et elle est la plus solide là précisément où elle est la plus étroite.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Comprenez le vrai risque : un message qui sait ce que vous avez acheté",
+        body: "Regardez les champs qui ont fuité ensemble — moyen de paiement, passerelle, devise, montant, date, statut, date de remboursement. Ce n'est pas l'outillage pour débiter votre carte. C'est l'outillage pour écrire un message qui passe le seul test que la plupart des gens appliquent à un e-mail suspect : le fait que l'expéditeur connaisse de vrais détails d'une vraie commande. Un message citant votre montant d'achat réel, à la date réelle, dans la devise réelle, via le prestataire de paiement réel, est bien plus convaincant que tout ce qu'un escroc au hasard pourrait composer.",
+        pitfall:
+          "Se servir de « ils connaissent les détails de ma commande » comme preuve qu'un message est authentique. Depuis cette fuite, ce test a cessé de fonctionner, et c'est le test que presque tout le monde emploie.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Sachez pourquoi cela tombe sur un processus bien réel",
+        body: "Cela compte davantage pour ce public que pour la plupart, parce que des inconnus légitimes demandent déjà de l'argent aux clients de Weverse. Weverse Shop prévient les acheteurs de l'Union européenne qu'ils peuvent recevoir des instructions de paiement distinctes de la douane locale ou du transporteur, et que ne pas payer peut retarder ou empêcher la livraison. L'expérience authentique et la frauduleuse se ressemblent donc désormais : une entreprise avec laquelle vous n'avez aucune relation, citant une commande que vous avez réellement passée, réclamant un paiement avant que votre colis n'avance. La fuite n'a pas créé ce recouvrement, mais elle l'a aiguisé.",
+        pitfall:
+          "Trancher l'ambiguïté en payant, ou en ignorant tout. L'un perd de l'argent et l'autre perd le colis.",
+        takes: "—",
+      },
+      {
+        title: "Utilisez une vérification qui ne dépend pas de ce que le message sait",
+        body: "La sortie consiste à cesser d'évaluer le message et à commencer à évaluer son affirmation. Extrayez-en le numéro de suivi ou la référence de commande, puis allez vous-même chez le transporteur ou sur Weverse Shop — adresse tapée ou favori enregistré, jamais un lien contenu dans le message — et voyez si cette référence correspond à une de vos commandes et si quelque chose est réellement dû. Si le message est vrai, la même information se trouve de l'autre côté. Sinon, il n'y a rien, et vous l'avez appris sans cliquer sur quoi que ce soit.",
+        pitfall:
+          "Suivre le lien parce que les détails étaient justes. Des détails justes sont désormais l'état attendu d'un faux.",
+        takes: "5 minutes par message",
+      },
+      {
+        title: "Ne confondez pas un changement de mot de passe avec la solution",
+        body: "Le réflexe après toute fuite est de changer le mot de passe, et ici cela ne règle presque rien : ce qui a été exposé est un identifiant et des métadonnées d'achat via une API d'informations de paiement, non des identifiants de connexion. Changer le mot de passe ne coûte rien et ne nuit en rien : faites-le si cela vous apaise — mais faites-le en sachant que c'est de l'hygiène et non un remède, et que ce qui vous protège vraiment est l'habitude de vérification de l'étape précédente. Activer la double authentification que propose votre fournisseur de connexion vaut par principe général, et ce n'est pas davantage une réponse à cette fuite.",
+        pitfall:
+          "Changer le mot de passe, se sentir quitte, puis faire confiance au message suivant qui citera votre commande. Le conseil réflexe est confortable et il prend la place du conseil qui marche.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Découvrez si vous êtes concerné depuis le compte, et non depuis un guide",
+        body: "Weverse indique avoir mené une procédure distincte, conformément aux critères fixés par les lois et règlements applicables, pour notifier les clients dont les données figuraient dans la fuite. La réponse est donc dans votre propre compte : l'adresse e-mail qui y est enregistrée, et vos notifications dans l'application. Aucun guide ne peut vous le dire, celui-ci compris, et tout tiers prétendant vérifier si vous étiez dans la fuite est un motif de méfiance plutôt qu'un service.",
+        pitfall:
+          "Chercher un outil de consultation qui dirait si vous êtes concerné. Pour une fuite d'identifiants internes, un tel outil n'aurait rien de significatif à vérifier, et c'est cette recherche même qu'attend une page d'hameçonnage.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Notez ce que l'entreprise dit avoir fait, et ce qui reste une promesse",
+        body: "Le récit que Weverse fait de sa réponse, dans ses mots : elle a renforcé le contrôle d'accès sur l'API de traitement des informations de paiement et en a retiré l'identifiant interne pour que ces données ne soient pas exposées à l'extérieur ; le 4 septembre elle a déposé un rapport d'incident auprès de la Korea Internet & Security Agency ; et elle a notifié les clients concernés. Ses projets annoncés sont un audit complet de toutes les API exposées à l'extérieur, un contrôle d'accès resserré et une information exposée minimisée, un contrôle plus strict des processus de déploiement, et une surveillance de sécurité plus sensible. Elle indique aussi avoir demandé à l'acteur externe ayant accédé aux données de les restituer, et vouloir engager sa responsabilité juridique. Gardez les deux catégories séparées : le premier groupe est fait d'affirmations sur un travail achevé que personne à l'extérieur ne peut auditer, et le second d'intentions.",
+        pitfall:
+          "Lire une liste d'améliorations prévues comme une liste de correctifs déjà en place. L'avis ne le prétend pas, et un résumé de cet avis ne devrait pas davantage.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Reconnaissez ce que la gestion mérite, à sa juste mesure",
+        body: "La chronologie décrite par Weverse est courte : contactée par la KISA le 3 septembre après qu'un déclarant externe a signalé une vulnérabilité, inspection interne immédiate et réponse d'urgence, rapport d'incident déposé auprès de la KISA le 4 septembre, et un avis public signé du dirigeant détaillant ce qui est sorti — y compris les champs dont elle soutient qu'ils ne sont pas des informations personnelles au sens de la loi, qu'elle n'était pas tenue d'énumérer. Nous avons lu l'original coréen en regard de l'anglais et les deux disent la même chose, ce qui est en soi un petit signal. Rien de cela n'annule une fuite. Mais un site qui ne rapporte jamais un incident que comme un scandale n'apprend rien à ses lecteurs sur ce à quoi ressemble une gestion compétente, et celle-ci en est plus proche que la plupart.",
+        pitfall:
+          "Conclure d'une évaluation posée qu'il ne s'est rien passé. 422 584 comptes sont un échec réel qu'une divulgation rapide n'efface pas.",
+        takes: "—",
+      },
+      {
+        title: "Réfléchissez à deux fois avant de supprimer le compte, et sachez ce que la suppression n'est pas",
+        body: "Supprimer le compte est l'autre réflexe, et c'est une décision plus lourde qu'il n'y paraît. Weverse Shop et NOL World rattachent toutes deux des choses réelles à un compte : historique de commandes et de réservations, adresses enregistrées, un abonnement payant, et du côté billetterie une vérification d'identité achevée. Le point décisif est pourtant plus simple. La suppression retire vos données du service pour l'avenir ; elle ne rappelle pas des données déjà sorties. Ce qui figurait dans cette fuite y figurait avant que vous ne décidiez quoi que ce soit, et fermer le compte après coup ne peut pas l'atteindre.",
+        pitfall:
+          "Supprimer un compte en réponse à une fuite. C'est une envie légitime et ce n'est pas un remède à ceci, et cela vous coûte l'historique dont vous auriez besoin si un achat était un jour contesté.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Mon nom, mon adresse ou mon numéro de carte ont-ils fuité ?",
+        a: "Pas selon le détail donné par Weverse elle-même. Ce qu'elle énumère est un numéro d'identification interne plus des métadonnées d'achat — moyen de paiement, nom de la passerelle de paiement, devise, montants d'achat et d'annulation, date et heure de l'achat, statut de l'achat, et date et heure du remboursement. Les noms, les coordonnées et les identifiants de paiement ne figurent pas sur la liste.",
+      },
+      {
+        q: "Dois-je changer mon mot de passe Weverse ?",
+        a: "Cela ne fera pas de mal, et ce n'est pas la solution. L'exposition portait sur un identifiant et des métadonnées d'achat via une API d'informations de paiement, et non sur des identifiants de connexion : un nouveau mot de passe n'y répond donc pas. Faites-le si cela vous rassure, puis consacrez l'effort réel à vérifier les demandes de paiement de façon indépendante, ce qui est ce qui vous protège vraiment ici.",
+      },
+      {
+        q: "Comment savoir si j'étais l'un des 422 584 ?",
+        a: "Par votre propre compte. Weverse indique avoir mené une procédure de notification distincte pour les clients concernés au titre des lois applicables : vérifiez donc l'adresse e-mail enregistrée sur le compte et vos notifications dans l'application. Aucun outil externe ne peut vous le dire, et tout ce qui prétend le pouvoir est à traiter comme une tentative d'hameçonnage.",
+      },
+      {
+        q: "Quelqu'un peut-il s'en servir pour débiter ma carte ?",
+        a: "Weverse indique qu'une falsification de paiement ou des virements non autorisés sont peu probables à partir de ces seuls éléments, et au vu de la liste cela se tient — aucun des champs sortis n'est un numéro de carte ni un identifiant. Le risque réaliste n'est pas un débit direct mais un message convaincant qui vous persuade de payer vous-même.",
+      },
+      {
+        q: "Si ce ne sont pas des informations personnelles, pourquoi est-ce grave ?",
+        a: "Parce que l'utilité pour un attaquant et la qualification juridique sont deux questions différentes. Des montants d'achat, des dates, des moyens de paiement et des devises sont exactement ce qui rend un message frauduleux crédible — et la façon habituelle dont on juge un e-mail suspect est de voir si l'expéditeur connaît de vrais détails d'une vraie commande. Ce test ne fonctionne plus pour quiconque figure dans cette fuite.",
+      },
+      {
+        q: "Dois-je supprimer mon compte Weverse ?",
+        a: "C'est un choix défendable et ce n'est pas un remède. La suppression arrête la collecte future ; elle ne peut pas rappeler des données déjà sorties, ce qui inclut tout ce qui figurait dans cette fuite. Elle vous coûte aussi l'historique de commandes et de réservations, les adresses enregistrées, tout abonnement payant, et du côté billetterie une vérification d'identité achevée — décidez donc selon que vous voulez encore le service, et non en réponse à ceci.",
+      },
+      {
+        q: "Qu'a réellement fait Weverse ?",
+        a: "De son propre aveu : elle a renforcé le contrôle d'accès sur l'API d'informations de paiement et en a retiré l'identifiant interne, déposé un rapport d'incident auprès de la KISA le 4 septembre 2026, et notifié les clients concernés. Elle énumère aussi un travail à venir — auditer toutes les API exposées à l'extérieur, resserrer les contrôles de déploiement, accroître la sensibilité de la surveillance — et dit avoir demandé la restitution des données à l'acteur concerné et vouloir engager sa responsabilité juridique. Les éléments présentés comme achevés sont ses affirmations, non des constats audités.",
+      },
+      {
+        q: "Y a-t-il quelque chose de plus récent que ceci ?",
+        a: "Pas à la date figurant en haut de cette page, celle de notre dernière lecture de la liste d'avis de Weverse Shop. Une affaire de sécurité peut évoluer : cette liste est donc la version vivante — s'il existe un avis postérieur, il y sera avant d'être ici.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Por que o seu pedido do Weverse Shop está atrasado, e quando ainda dá para cancelar",
+    summary:
+      "O botão de cancelar some numa mudança de status e não num prazo, a União Europeia acabou com a isenção de 150 euros, os Estados Unidos acrescentaram um segundo regime de inspeção por cima do de tributos, e um feriado coreano tem um corte medido no minuto.",
+    scope:
+      "Cobre o que acontece depois de um pedido do Weverse Shop ser feito, a partir dos avisos do próprio Weverse Shop: a janela de cancelamento, as mudanças aduaneiras sobre as quais ele alertou para a UE e os EUA, os atrasos de feriado e de logística, e de quem você está comprando de fato. As datas de feriado são de 2026 e estarão erradas no ano que vem — a página de avisos é a versão viva. A compra em si tem guia próprio.",
+    intro: [
+      "O Weverse Shop publica um fluxo constante de avisos sobre entregas, e quase ninguém os lê até um pacote atrasar. É ali que estão as respostas de verdade: qual mudança aduaneira se aplica a você, qual feriado comeu quatro dias, e o minuto exato em que um pedido deixou de ser cancelável.",
+      "Este é esse fluxo, lido de uma vez. Dois dos itens abaixo são regras genuinamente novas e não atrasos sazonais, e um deles é o momento em que o seu dinheiro deixa de ser reembolsável.",
+    ],
+    steps: [
+      {
+        title: "Saiba que a janela de cancelamento fecha num status, não num relógio",
+        body: "Este é o fato que vale saber antes de qualquer coisa dar errado. O Weverse Shop dá o caminho do cancelamento como o aplicativo Weverse, depois More, depois My Orders, depois Order Details, depois Cancel Order — e afirma que, quando o status do seu pedido muda para Shipping Soon ou In Transit, você não poderá mais cancelar o pedido. Não há período de carência declarado nem regra de horas após a compra. A janela fica aberta até um depósito mudar um status, o que pode acontecer mais cedo do que você espera num lançamento popular.",
+        pitfall:
+          "Decidir durante a noite se mantém uma pré-venda por impulso. O prazo não é um horário que você possa consultar — é um evento que você não controla, e ele pode passar enquanto você dorme.",
+        takes: "5 minutos, imediatamente",
+      },
+      {
+        title: "Se você está na União Europeia, a isenção de 150 euros acabou",
+        body: "O aviso do próprio Weverse Shop é específico onde a cobertura geral é vaga. A partir de 1º de julho de 2026 a UE revisou as suas regras para importações de baixo valor: antes, pedidos abaixo de 150 euros eram isentos de tributos aduaneiros, e essa isenção foi eliminada, então os tributos agora se aplicam independentemente do valor da compra. O detalhe que mais importa é a base — o Weverse diz que isso vale para remessas que passem pelo desembaraço local a partir de 1º de julho de 2026, pela data do desembaraço local e não pela data do pedido. Um pedido feito antes da mudança ainda pode ser pego por ela.",
+        pitfall:
+          "Supor que um pedido pequeno é barato demais para ser tributado. Já não existe um piso, e a data que decide isso é uma que você não enxerga da página do pedido.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Espere que a aduana, ou a transportadora, peça dinheiro diretamente a você",
+        body: "O Weverse Shop diz que os pedidos para a UE podem incorrer em tributos durante o desembaraço local, que você pode receber instruções de pagamento separadas da aduana local ou da transportadora, e que não pagar esses tributos pode atrasar ou impedir a entrega. Essa é uma experiência diferente de uma cobrança no checkout: chega uma mensagem de uma empresa com a qual você não tem relação, pedindo dinheiro antes de um pacote que você já pagou sair do lugar. Não é um golpe por padrão — mas é também exatamente o que um golpe imita, então confira o código de rastreio contra o seu pedido em vez de seguir um link da mensagem.",
+        pitfall:
+          "Ignorar um pedido de pagamento da aduana ou da transportadora como se fosse phishing e deixar o pacote parado. O não pagamento é um dos jeitos documentados de um pedido simplesmente nunca chegar.",
+        takes: "—",
+      },
+      {
+        title: "Se você está nos Estados Unidos, saiba que são duas mudanças separadas, não uma",
+        body: "A mudança tributária fica com toda a cobertura e não é a única coisa atrasando os pacotes americanos. O Weverse Shop alerta separadamente que, a partir de 8 de julho de 2026, a Consumer Product Safety Commission dos EUA passa a exigir uma política obrigatória de eFiling, trazendo inspeções aduaneiras locais mais rígidas sobre todas as mercadorias importadas para os EUA, e que se espera que o desembaraço leve alguns dias a mais que o prazo padrão de entrega. Isso é um regime de registro de segurança de produto e não uma tarifa — então um pedido americano pode ficar lento por um motivo que não tem nada a ver com quanto se deve de tributo.",
+        pitfall:
+          "Ler todo atraso americano como a mudança da isenção e esperar por uma cobrança de tributo que nunca vem. Uma dessas duas mudanças custa dinheiro e a outra custa dias.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Trate um feriado coreano como um corte medido em minutos",
+        body: "O Weverse Shop publica um cronograma de corte para cada feriado coreano, e os horários são precisos. No Chuseok de 2026, o corte de pedidos para endereços fora da Coreia do Sul foi 23 de setembro às 11:00 KST, com a entrega expressa retomando em 28 de setembro; para endereços coreanos o corte da transportadora foi 22 de setembro às 11:00 KST, retomando no mesmo dia. Pedidos feitos depois do corte são enviados em sequência a partir da data de retomada. O Weverse acrescenta duas ressalvas: itens enviados na data do corte ainda podem chegar depois do feriado dependendo da região, e o cronograma vem da transportadora e pode mudar.",
+        pitfall:
+          "Ler essas datas como as deste ano. São os números do Chuseok de 2026, e o padrão — um corte às 11:00 KST um ou dois dias antes, retomada cerca de uma semana depois — é a parte que se repete. As datas em si precisam ser consultadas a cada vez.",
+        takes: "10 minutos antes de um pedido de feriado",
+      },
+      {
+        title: "Se o seu endereço é na China, vale um segundo calendário de feriados",
+        body: "O Weverse Shop emite avisos separados para os feriados chineses, afetando pedidos com endereço de entrega na China, porque as repartições aduaneiras chinesas fecham e o desembaraço para. Para o Festival do Meio do Outono de 2026, de 25 a 27 de setembro, e o Dia Nacional, de 1º a 7 de outubro, ele disse que pedidos integralmente pagos até 15 de setembro às 11:00 KST provavelmente seriam entregues durante o feriado do Dia Nacional, e que pedidos pagos depois disso começariam a ser enviados assim que o feriado terminasse, em 8 de outubro. Note que o que conta é o pagamento estar concluído, e não o pedido ter sido feito.",
+        pitfall:
+          "Uma pré-venda cujo pagamento se conclui mais tarde do que você imagina. Onde o corte é definido pelo pagamento integral, um pedido com pagamento pendente é um pedido do outro lado de um intervalo de três semanas.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Separe uma crise de transporte de um pacote perdido",
+        body: "Alguns atrasos não são nem aduana nem feriado. Em abril de 2026 o Weverse Shop avisou os clientes de atrasos de entrega em toda a Europa e em países selecionados do Oriente Médio, causados por oscilações nas rotas logísticas globais e nos cronogramas de frete aéreo e marítimo, afetando pedidos enviados depois de 1º de abril de 2026 que estavam em trânsito internacional. A parte útil é o que ele diz sobre rastreio: por causa dos desvios de rota, as atualizações de rastreio e as chegadas locais podem demorar mais que o habitual, e o pacote continua em trânsito. Rastreio silencioso durante uma crise conhecida é o sintoma esperado, não prova de extravio.",
+        pitfall:
+          "Abrir uma reclamação de pacote extraviado porque o rastreio não anda há uma semana. Confira primeiro na página de avisos se há uma crise ativa cobrindo a sua região — uma reclamação aberta contra um pacote que está apenas desviado gasta o tempo de que você precisaria numa reclamação de verdade.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Veja se a Weverse é de fato a vendedora",
+        body: "O Weverse Shop afirma nas próprias páginas que alguns produtos são oferecidos por vendedores terceiros individuais, que nesses casos a Weverse Company atua apenas como intermediária de comércio eletrônico e não é parte da transação, e que ela não assume responsabilidade pelas informações do produto nem pelas transações conduzidas por esses vendedores. Isso muda com quem você está lidando quando algo dá errado — num item de terceiro, a contraparte é o vendedor, não a Weverse. Vale estabelecer antes de você precisar reclamar, e não durante.",
+        pitfall:
+          "Supor que tudo na loja tem o mesmo respaldo porque está atrás do mesmo checkout. A ressalva de intermediação é publicada, e é ela que decide quem deve a você uma solução.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Leia os avisos você mesmo, porque esta página vai envelhecer mais rápido que a maioria",
+        body: "Tudo acima veio da página de avisos do Weverse Shop, e essa página é a versão viva. As mudanças aduaneiras são duradouras; os cronogramas de feriado, as crises de frete e os cortes das transportadoras não são — eles são reemitidos a cada ocasião e substituídos sem que o aviso antigo mude. Antes de um pedido de feriado ou quando um pacote atrasar, leia a lista de avisos em vez de confiar nas datas de qualquer guia, este inclusive. A data no topo desta página é quando fizemos isso pela última vez.",
+        pitfall:
+          "Confiar num horário de corte de um guia escrito no ano passado. A estrutura se repete e os números não.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Ainda dá para cancelar o meu pedido?",
+        a: "Só enquanto o status permitir. O caminho do Weverse Shop é o aplicativo Weverse, More, My Orders, Order Details, Cancel Order — e ele afirma que, quando o status muda para Shipping Soon ou In Transit, o cancelamento não é mais possível. Não há período de carência publicado, então a resposta depende do pedido e não do relógio.",
+      },
+      {
+        q: "Eu estou na UE e o meu pedido veio com cobrança aduaneira. Isso está certo?",
+        a: "Provavelmente. O Weverse Shop diz que a partir de 1º de julho de 2026 a UE eliminou a isenção de tributos que antes cobria pedidos abaixo de 150 euros, então os tributos agora se aplicam independentemente do valor, com base em remessas que passem pelo desembaraço local a partir dessa data. Ele também avisa que você pode receber instruções de pagamento separadas da aduana ou da transportadora, e que não pagar pode atrasar ou impedir a entrega.",
+      },
+      {
+        q: "Por que o meu pedido americano está lento se não há tributo a pagar?",
+        a: "Porque são duas mudanças. Além das regras de tributos, o Weverse Shop alerta que a partir de 8 de julho de 2026 a Consumer Product Safety Commission dos EUA passa a exigir eFiling obrigatório, trazendo inspeções mais rígidas sobre todas as mercadorias importadas para os EUA, com desembaraço levando alguns dias a mais. Essa custa tempo em vez de dinheiro.",
+      },
+      {
+        q: "Recebi uma mensagem pedindo que eu pague a aduana. É golpe?",
+        a: "Pode legitimamente ser real — o Weverse Shop diz que clientes da UE podem receber instruções de pagamento separadas da aduana local ou da transportadora. E é também exatamente o que um golpe imita. Verifique casando o código de rastreio com o seu próprio pedido e indo ao site da transportadora por conta própria, em vez de seguir um link da mensagem.",
+      },
+      {
+        q: "Qual é o corte de feriado num pedido de feriado coreano?",
+        a: "O Weverse Shop publica um por feriado, no minuto. No Chuseok de 2026 o corte para endereços fora da Coreia foi 23 de setembro às 11:00 KST, com a entrega expressa retomando em 28 de setembro. Ele avisa que o cronograma vem da transportadora e pode mudar, e que itens enviados no dia do corte ainda podem chegar depois do feriado. Consulte o corte atual em vez de reaproveitar estas datas.",
+      },
+      {
+        q: "O meu rastreio não atualiza há uma semana. O meu pacote se perdeu?",
+        a: "Confira primeiro na página de avisos se há uma crise cobrindo a sua região. Quando o Weverse Shop avisou atrasos para a Europa e o Oriente Médio em abril de 2026, ele disse que o desvio de rotas faz as atualizações de rastreio e as chegadas locais demorarem mais que o habitual e que o pacote continua em trânsito — então um rastreio parado durante uma crise conhecida é o sintoma e não o problema.",
+      },
+      {
+        q: "Tem algo errado com o meu item. Eu trato com a Weverse?",
+        a: "Nem sempre. O Weverse Shop afirma que alguns produtos são vendidos por vendedores terceiros individuais, que a Weverse Company então atua apenas como intermediária e não é parte da transação, e que ela não assume responsabilidade pelas informações de produto nem pelas transações desses vendedores. Veja que tipo de item você comprou antes de decidir a quem procurar.",
+      },
+      {
+        q: "O cronograma de feriados chineses me afeta se eu não estou na China?",
+        a: "Os avisos dizem que esses cronogramas valem para pedidos com endereço de entrega na China, porque as repartições aduaneiras chinesas fecham nos feriados. Se o seu endereço é em outro lugar, os cortes de feriado coreano e qualquer crise de frete ativa são os que você deve acompanhar.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Pourquoi votre commande Weverse Shop est en retard, et quand vous pouvez encore l'annuler",
+    summary:
+      "Le bouton d'annulation disparaît sur un changement de statut et non à une date limite, l'Union européenne a supprimé sa franchise de 150 euros, les États-Unis ont ajouté un second régime d'inspection par-dessus celui des droits, et un jour férié coréen a une heure de clôture fixée à la minute.",
+    scope:
+      "Couvre ce qui se passe après qu'une commande Weverse Shop a été passée, à partir des avis publiés par Weverse Shop : la fenêtre d'annulation, les changements douaniers dont elle a averti pour l'UE et les États-Unis, les retards de jours fériés et de logistique, et l'identité réelle du vendeur. Les dates de jours fériés sont celles de 2026 et seront fausses l'an prochain — la page des avis est la version vivante. La commande elle-même a son propre guide.",
+    intro: [
+      "Weverse Shop publie un flux continu d'avis sur les livraisons, et presque personne ne les lit avant qu'un colis ne soit en retard. C'est pourtant là que se trouvent les vraies réponses : quel changement douanier vous concerne, quel jour férié a mangé quatre jours, et la minute exacte où une commande a cessé d'être annulable.",
+      "Voici ce flux, lu d'un seul tenant. Deux des points ci-dessous sont de véritables règles nouvelles et non des retards saisonniers, et l'un d'eux est le moment où votre argent cesse d'être remboursable.",
+    ],
+    steps: [
+      {
+        title: "Sachez que la fenêtre d'annulation se ferme sur un statut, pas sur une horloge",
+        body: "Voilà le fait à connaître avant que quoi que ce soit n'aille de travers. Weverse Shop donne le chemin d'annulation suivant : l'application Weverse, puis More, puis My Orders, puis Order Details, puis Cancel Order — et précise qu'une fois le statut de votre commande passé à Shipping Soon ou In Transit, vous ne pourrez plus l'annuler. Aucun délai de grâce n'est annoncé, ni aucune règle d'heures après la commande. La fenêtre reste ouverte jusqu'à ce qu'un entrepôt change un statut, ce qui peut arriver plus tôt que vous ne le pensez sur une sortie très demandée.",
+        pitfall:
+          "Décider pendant la nuit si vous gardez une précommande faite sur un coup de tête. La date limite n'est pas une heure que vous pouvez consulter — c'est un événement que vous ne maîtrisez pas, et il peut passer pendant votre sommeil.",
+        takes: "5 minutes, tout de suite",
+      },
+      {
+        title: "Si vous êtes dans l'Union européenne, la franchise de 150 euros a disparu",
+        body: "L'avis de Weverse Shop est précis là où la couverture générale reste vague. À compter du 1er juillet 2026, l'UE a révisé ses règles sur les importations de faible valeur : auparavant les commandes inférieures à 150 euros étaient exonérées de droits de douane, et cette exonération a été supprimée, de sorte que les droits s'appliquent désormais quel que soit le montant de l'achat. Le détail le plus important est la base retenue — Weverse indique que cela vaut pour les envois dédouanés localement à partir du 1er juillet 2026, selon la date de dédouanement local et non la date de commande. Une commande passée avant le changement peut donc malgré tout tomber dedans.",
+        pitfall:
+          "Supposer qu'une petite commande est trop bon marché pour être taxable. Il n'existe plus de plancher, et la date qui en décide est une date que la page de commande ne vous montre pas.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Attendez-vous à ce que la douane, ou le transporteur, vous réclame de l'argent directement",
+        body: "Weverse Shop indique que les commandes vers l'UE peuvent donner lieu à des droits lors du dédouanement local, que vous pouvez recevoir des instructions de paiement distinctes de la douane locale ou du transporteur, et que ne pas acquitter ces droits peut retarder ou empêcher la livraison. C'est une expérience différente d'un prélèvement au moment de payer : un message arrive d'une entreprise avec laquelle vous n'avez aucune relation, réclamant de l'argent avant qu'un colis que vous avez déjà payé ne bouge. Ce n'est pas une arnaque par défaut — mais c'est exactement ce qu'une arnaque imite : vérifiez donc le numéro de suivi par rapport à votre commande plutôt que de suivre un lien contenu dans le message.",
+        pitfall:
+          "Ignorer une demande de paiement douanière ou du transporteur en la prenant pour de l'hameçonnage et laisser le colis attendre. Le non-paiement est l'une des façons documentées dont une commande n'arrive tout simplement jamais.",
+        takes: "—",
+      },
+      {
+        title: "Si vous êtes aux États-Unis, sachez qu'il y a deux changements distincts, pas un",
+        body: "Le changement sur les droits monopolise la couverture et il n'est pas la seule chose qui ralentit les colis américains. Weverse Shop avertit séparément qu'à compter du 8 juillet 2026 la Consumer Product Safety Commission des États-Unis impose une politique obligatoire d'eFiling, entraînant des inspections douanières locales plus strictes sur toutes les marchandises importées aux États-Unis, et que le dédouanement devrait prendre quelques jours de plus que le délai de livraison standard. C'est un régime de déclaration de sécurité des produits et non un droit de douane — une commande américaine peut donc être lente pour une raison qui n'a rien à voir avec le montant dû.",
+        pitfall:
+          "Lire tout retard américain comme le changement de franchise et attendre une facture de droits qui ne vient jamais. L'un de ces deux changements coûte de l'argent et l'autre coûte des jours.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Traitez un jour férié coréen comme une clôture mesurée en minutes",
+        body: "Weverse Shop publie un calendrier de clôture pour chaque jour férié coréen, et les heures sont précises. Pour le Chuseok 2026, la clôture des commandes vers des adresses hors de Corée du Sud était le 23 septembre à 11:00 KST, la livraison express reprenant le 28 septembre ; pour les adresses coréennes, la clôture transporteur était le 22 septembre à 11:00 KST, avec reprise le jour même. Les commandes passées après la clôture partent dans l'ordre à compter de la date de reprise. Weverse ajoute deux réserves : les articles expédiés le jour de la clôture peuvent tout de même arriver après le férié selon la zone, et le calendrier vient du transporteur et peut changer.",
+        pitfall:
+          "Lire ces dates comme celles de cette année. Ce sont les chiffres du Chuseok 2026, et c'est le schéma — une clôture à 11:00 KST un ou deux jours avant, une reprise environ une semaine plus tard — qui se reporte. Les dates elles-mêmes doivent être vérifiées à chaque fois.",
+        takes: "10 minutes avant une commande de période de fêtes",
+      },
+      {
+        title: "Si votre adresse est en Chine, un second calendrier de jours fériés s'applique",
+        body: "Weverse Shop publie des avis distincts pour les jours fériés chinois, qui concernent les commandes dont l'adresse de livraison est en Chine, parce que les bureaux de douane chinois ferment et que le dédouanement s'arrête. Pour la fête de la mi-automne 2026, du 25 au 27 septembre, et la fête nationale, du 1er au 7 octobre, elle a indiqué que les commandes intégralement payées avant le 15 septembre à 11:00 KST seraient probablement livrées pendant la fête nationale, et que les commandes payées après commenceraient à partir une fois le férié terminé, le 8 octobre. Notez que c'est le paiement achevé qui compte, et non la commande passée.",
+        pitfall:
+          "Une précommande dont le paiement s'achève plus tard que vous ne le croyez. Là où la clôture se définit par le paiement intégral, une commande impayée est une commande de l'autre côté d'un trou de trois semaines.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Distinguez une perturbation du fret d'un colis perdu",
+        body: "Certains retards ne relèvent ni de la douane ni des jours fériés. En avril 2026, Weverse Shop a informé ses clients de retards de livraison dans toute l'Europe et dans certains pays du Moyen-Orient, dus à des fluctuations des routes logistiques mondiales et des plannings de fret aérien et maritime, touchant les commandes expédiées après le 1er avril 2026 et se trouvant en transit international. Le plus utile est ce qu'elle en dit sur le suivi : à cause des reroutages, les mises à jour de suivi et les arrivées locales peuvent prendre plus de temps que d'habitude, et le colis est toujours en transit. Un suivi silencieux pendant une perturbation connue est le symptôme attendu, pas la preuve d'une perte.",
+        pitfall:
+          "Ouvrir une réclamation pour colis perdu parce que le suivi n'a pas bougé depuis une semaine. Vérifiez d'abord sur la page des avis qu'aucune perturbation en cours ne couvre votre région — une réclamation déposée pour un colis simplement rerouté consomme le temps dont vous auriez besoin pour une vraie.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Vérifiez si Weverse est bien le vendeur",
+        body: "Weverse Shop indique sur ses propres pages que certains produits sont proposés par des vendeurs tiers individuels, que dans ces cas Weverse Company agit uniquement comme intermédiaire de commerce électronique et n'est pas partie à la transaction, et qu'elle n'assume aucune responsabilité quant aux informations produit ni aux transactions menées par ces vendeurs. Cela change votre interlocuteur quand quelque chose ne va pas — pour un article tiers, la contrepartie est le vendeur, pas Weverse. Mieux vaut l'établir avant d'avoir à réclamer que pendant.",
+        pitfall:
+          "Supposer que tout ce que vend la boutique bénéficie de la même garantie parce que tout passe par le même paiement. La clause d'intermédiation est publiée, et c'est elle qui décide qui vous doit réparation.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Lisez les avis vous-même, car cette page vieillira plus vite que la plupart",
+        body: "Tout ce qui précède vient de la page des avis de Weverse Shop, et cette page est la version vivante. Les changements douaniers sont durables ; les calendriers de jours fériés, les perturbations du fret et les clôtures des transporteurs ne le sont pas — ils sont réédités à chaque occasion et remplacés sans que l'ancien avis change. Avant une commande de période de fêtes, ou quand un colis est en retard, lisez la liste des avis plutôt que de vous fier aux dates d'un guide, celui-ci compris. La date en haut de cette page est celle de notre dernière lecture.",
+        pitfall:
+          "Se fier à une heure de clôture tirée d'un guide écrit l'an dernier. La structure se répète, les chiffres non.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Puis-je encore annuler ma commande ?",
+        a: "Seulement tant que le statut le permet. Le chemin donné par Weverse Shop est l'application Weverse, More, My Orders, Order Details, Cancel Order — et elle précise qu'une fois le statut passé à Shipping Soon ou In Transit, l'annulation n'est plus possible. Aucun délai de grâce n'est publié : la réponse dépend donc de la commande et non de l'horloge.",
+      },
+      {
+        q: "Je suis dans l'UE et ma commande fait l'objet d'une facture douanière. Est-ce normal ?",
+        a: "Probablement. Weverse Shop indique qu'à compter du 1er juillet 2026 l'UE a supprimé l'exonération de droits qui couvrait auparavant les commandes inférieures à 150 euros, de sorte que les droits s'appliquent désormais quel que soit le montant, sur la base des envois dédouanés localement à partir de cette date. Elle avertit aussi que vous pouvez recevoir des instructions de paiement distinctes de la douane ou du transporteur, et que ne pas payer peut retarder ou empêcher la livraison.",
+      },
+      {
+        q: "Pourquoi ma commande américaine est-elle lente s'il n'y a pas de droits à payer ?",
+        a: "Parce qu'il y a deux changements. À côté des règles de droits, Weverse Shop avertit qu'à compter du 8 juillet 2026 la Consumer Product Safety Commission des États-Unis impose l'eFiling obligatoire, entraînant des inspections plus strictes sur toutes les marchandises importées aux États-Unis, avec un dédouanement qui devrait prendre quelques jours de plus. Celui-là coûte du temps plutôt que de l'argent.",
+      },
+      {
+        q: "J'ai reçu un message me demandant de payer la douane. Est-ce une arnaque ?",
+        a: "Cela peut légitimement être authentique — Weverse Shop indique que les clients de l'UE peuvent recevoir des instructions de paiement distinctes de la douane locale ou du transporteur. C'est aussi exactement ce qu'une arnaque imite. Vérifiez en rapprochant le numéro de suivi de votre propre commande et en allant vous-même sur le site du transporteur plutôt qu'en suivant un lien du message.",
+      },
+      {
+        q: "Quelle est l'heure de clôture pour une commande en période de fête coréenne ?",
+        a: "Weverse Shop en publie une par jour férié, à la minute près. Pour le Chuseok 2026, la clôture pour les adresses hors de Corée était le 23 septembre à 11:00 KST, la livraison express reprenant le 28 septembre. Elle prévient que le calendrier vient du transporteur et peut changer, et que les articles expédiés le jour de la clôture peuvent tout de même arriver après le férié. Vérifiez la clôture en vigueur plutôt que de réutiliser ces dates.",
+      },
+      {
+        q: "Mon suivi n'a pas bougé depuis une semaine. Mon colis est-il perdu ?",
+        a: "Vérifiez d'abord sur la page des avis si une perturbation couvre votre région. Quand Weverse Shop a signalé des retards pour l'Europe et le Moyen-Orient en avril 2026, elle indiquait que le reroutage fait que les mises à jour de suivi et les arrivées locales prennent plus de temps que d'habitude et que le colis est toujours en transit — un suivi figé pendant une perturbation connue est donc le symptôme et non le problème.",
+      },
+      {
+        q: "Il y a un problème avec mon article. Est-ce avec Weverse que je dois traiter ?",
+        a: "Pas toujours. Weverse Shop indique que certains produits sont vendus par des vendeurs tiers individuels, que Weverse Company agit alors uniquement comme intermédiaire et n'est pas partie à la transaction, et qu'elle n'assume aucune responsabilité quant aux informations produit ou aux transactions de ces vendeurs. Vérifiez de quel type d'article il s'agit avant de décider à qui vous adresser.",
+      },
+      {
+        q: "Le calendrier des fêtes chinoises me concerne-t-il si je ne suis pas en Chine ?",
+        a: "Les avis précisent que ces calendriers s'appliquent aux commandes dont l'adresse de livraison est en Chine, parce que les bureaux de douane chinois ferment pendant les fêtes. Si votre adresse est ailleurs, ce sont les clôtures des jours fériés coréens et toute perturbation du fret en cours qu'il faut surveiller.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Comprando na Ktown4u: o relógio de seis horas para pagar e as taxas que ninguém menciona",
+    summary:
+      "Um pedido não pago é cancelado depois de seis horas, não de vinte e quatro. Pacotes para os EUA podem carregar uma cobrança de USD 12 recolhida na sua porta. O frete internacional subiu 7% em fevereiro de 2026, e dois países europeus perderam discretamente uma forma de envio inteira.",
+    scope:
+      "Cobre a compra de álbuns físicos e produtos na Ktown4u com entrega fora da Coreia, a partir dos avisos da própria Ktown4u: o relógio do pagamento, taxas e formas de envio, pausas de feriado e horário do atendimento. Se uma compra na Ktown4u é reportada às paradas coreanas de álbuns é respondido pelo próprio registro de lojas certificadas da Hanteo, e não pela Ktown4u. Os avisos são reemitidos e substituídos, então a lista de avisos é a versão viva.",
+    intro: [
+      "A Ktown4u é onde boa parte dos fãs internacionais de fato compra álbuns, e quase nada sobre como ela funciona está escrito em inglês fora da própria página de avisos — que é em inglês, datada, e lida por ninguém até um pacote atrasar.",
+      "Esta é essa página lida de uma vez. O primeiro item é o que custa pedidos às pessoas, e ele mudou em 2025 sem que a maioria dos compradores percebesse.",
+    ],
+    steps: [
+      {
+        title: "Saiba que um pedido não pago morre em seis horas, não num dia",
+        body: "Este é o fato que vale saber antes de você fazer qualquer pedido. A Ktown4u segurava pedidos não pagos por 24 horas e cortou isso para 6, com efeito em 19 de fevereiro de 2025 KST, cancelando automaticamente os pedidos não pagos seis horas depois de feitos. Para um fã comprando à meia-noite na Europa ou nas Américas, seis horas coreanas podem transcorrer inteiras enquanto você dorme — e uma pré-venda feita e não paga é uma pré-venda que nunca existiu.",
+        pitfall:
+          "Reservar o item agora e pagar quando o seu cartão ou o seu dia de pagamento permitir. Isso funcionava na janela antiga e não funciona nesta.",
+        takes: "Pague na hora em que comprar",
+      },
+      {
+        title: "Se você está nos EUA, reserve orçamento para uma cobrança recolhida na sua porta",
+        body: "A partir de 2 de junho de 2025 a Ktown4u aplica uma política de taxa da UPS às remessas para os EUA: onde há tributos aduaneiros, impostos ou outros encargos governamentais devidos, são cobrados USD 12 adicionais se esses tributos não tiverem sido pagos antecipadamente de forma eletrônica antes da entrega. A Ktown4u chama isso de International Collect on Delivery fee, e diz que é faturado ao destinatário nos EUA no momento da entrega. A saída também está publicada — pagar os tributos antecipadamente pelo sistema UPS Import Prepaid Duties and Taxes, que, segundo ela, aceita Apple Pay, Google Pay, ou cartão Visa, Mastercard ou Discover.",
+        pitfall:
+          "Tratar o total do checkout como o total. Essa taxa não é cobrada pela Ktown4u na compra; ela chega com o pacote, e são doze dólares por cima de qualquer tributo que de fato seja devido.",
+        takes: "10 minutos, antes de o pacote sair",
+      },
+      {
+        title: "Calcule o frete pela tarifa atual, não pela do ano passado",
+        body: "A Ktown4u aumentou as taxas de frete internacional em 7% com efeito em 1º de fevereiro de 2026 às 00:00 KST, atribuindo isso a um ajuste regular de tarifas pelas transportadoras. É pouco por pacote e muito numa compra em grupo, e é o tipo de mudança que torna silenciosamente errada uma estimativa de frete de um post de blog de um ano atrás. O número que conta é o que o carrinho mostra a você no momento em que você compra.",
+        pitfall:
+          "Orçar uma compra em grupo a partir de uma planilha que alguém fez na temporada passada. Ajustes de tarifa são regulares, o que significa que haverá outro.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Veja se o seu país ainda tem a forma de envio que você espera",
+        body: "Formas de envio são retiradas por país, e não apenas atrasadas. A Ktown4u suspendeu o serviço K-Packet para a Alemanha e a Espanha a partir de 17 de janeiro de 2025, porque os operadores postais alemão e espanhol saíram do arranjo Prime Group em que ela opera. A conduta declarada é enviar e-mail aos clientes afetados sobre a mudança para outro serviço de envio e o custo adicional — então um pedido já feito pode mudar de preço depois do fato. A forma que você usou da última vez não é uma forma que você ainda tenha.",
+        pitfall:
+          "Escolher a forma mais barata por hábito e não ler o e-mail seguinte. É no e-mail que o serviço substituto e o custo extra são informados.",
+        takes: "5 minutos, no checkout",
+      },
+      {
+        title: "Leia os avisos de interrupção por país, que são incomumente específicos",
+        body: "A Ktown4u publica interrupções de entrega até o nível dos códigos postais. O aviso de EMS para a Eslováquia de 4 de abril de 2025 nomeia os códigos postais afetados — 930 07, 930 06, 930 04, 930 03 e 900 68 — e a causa: um surto de febre aftosa no sudoeste da Eslováquia e um estado de emergência a partir de 25 de março de 2025, com os pacotes retidos na agência postal local e os destinatários notificados. O detalhe é o ponto: quando o rastreio para na sua região, a página de avisos em geral diz por quê, e essa é uma situação diferente de um pacote perdido.",
+        pitfall:
+          "Abrir uma reclamação de extravio durante uma interrupção que está publicada e explicada. Confira a lista de avisos para o seu país antes de gastar a tarde numa reclamação.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Trate um feriado coreano como uma semana sem despacho e sem atendimento",
+        body: "A Ktown4u pausa as duas metades da sua operação nos feriados coreanos, e publica as datas a cada vez. No Ano-Novo Lunar de 2026 a entrega de pacotes ficou pausada de 14 a 18 de fevereiro, com as entregas retomando em sequência a partir de 19 de fevereiro, e o atendimento ao cliente indisponível nos mesmos dias. No Chuseok de 2025 a pausa foi de 3 a 9 de outubro, com os dois retomando no dia 10. Ela avisa a cada vez que os atrasos podem passar da data de retomada por causa do volume de pedidos acumulado atrás dela.",
+        pitfall:
+          "Ler a data de retomada como data de entrega. É o dia em que a fila começa a andar, e o seu pedido está em algum lugar dela.",
+        takes: "10 minutos antes de um pedido de feriado",
+      },
+      {
+        title: "Escreva ao atendimento dentro do horário que ele realmente mantém",
+        body: "A Ktown4u passou o seu canal de atendimento ao cliente para dias úteis das 10:00 às 17:00 KST a partir de 1º de novembro de 2023, com intervalo de almoço das 12:30 às 13:30. É uma janela de cinco horas e meia, em dias úteis coreanos, que para a maioria dos leitores deste site cai no meio da noite. Isso importa mais em combinação com o relógio de seis horas do pagamento: um pedido feito numa sexta à noite na Europa pode expirar antes de haver alguém numa mesa a quem perguntar.",
+        pitfall:
+          "Esperar uma resposta antes de agir. Converta esse horário para o seu uma vez, anote, e não conte com nada fora dele.",
+        takes: "5 minutos, uma vez",
+      },
+      {
+        title: "A Ktown4u é uma loja certificada pela Hanteo, e você mesmo pode conferir",
+        body: "Este guia dizia que a pergunta não podia ser respondida, porque a Ktown4u não declara isso nos próprios avisos. Ela é respondível pelo outro lado: a Hanteo publica as suas lojas Family certificadas, e a Ktown4U está nesse registro com o código de família HF0082KTU001. A Hanteo exige que toda loja Family online exiba a marca Family com link de volta para hanteochart.com, e a própria vitrine da Ktown4u aponta para esse mesmo registro — então a loja e a parada concordam, pelas duas pontas. Confira em vez de aceitar daqui: registros mudam, e a instrução da Hanteo é confirmar o código e o selo de certificação, que é reemitido todo ano.",
+        pitfall:
+          "Ler isso como “o meu pedido vai aparecer em toda parada coreana”. A Hanteo conta as vendas que as suas lojas Family reportam; a Album Chart principal da Circle Chart conta remessas no atacado aos varejistas, então nenhum pedido no varejo a move. E nenhuma das duas publica uma regra sobre se um pedido do exterior é tratado como um doméstico.",
+        takes: "15 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Quanto tempo eu tenho para pagar um pedido da Ktown4u?",
+        a: "Seis horas. A Ktown4u cortou o tempo de retenção de pedidos não pagos de 24 horas para 6, com efeito em 19 de fevereiro de 2025 KST, e diz que pedidos não pagos são automaticamente cancelados seis horas depois de feitos. Pague na hora em que comprar, em vez de planejar voltar depois.",
+      },
+      {
+        q: "O que é a cobrança de USD 12 na minha entrega nos EUA?",
+        a: "É a International Collect on Delivery fee da Ktown4u para remessas da UPS para os EUA, em vigor desde 2 de junho de 2025. Ela se aplica onde há tributos aduaneiros, impostos ou outros encargos governamentais devidos que não tenham sido pagos antecipadamente de forma eletrônica antes da entrega, e é faturada ao destinatário na entrega. Pagar antecipadamente pelo sistema UPS Import Prepaid Duties and Taxes evita a taxa — a Ktown4u lista Apple Pay, Google Pay e Visa, Mastercard ou Discover como as formas de fazer isso.",
+      },
+      {
+        q: "Por que o frete está mais caro do que era?",
+        a: "A Ktown4u aumentou as taxas de frete internacional em 7% a partir de 1º de fevereiro de 2026 às 00:00 KST, atribuindo isso a um ajuste regular de tarifas pelas transportadoras. Regular quer dizer que haverá outro, então calcule uma compra em grupo pelo carrinho e não por uma estimativa antiga.",
+      },
+      {
+        q: "A minha forma de envio de sempre sumiu. O que aconteceu?",
+        a: "Formas são retiradas por país. A Ktown4u suspendeu o K-Packet para a Alemanha e a Espanha a partir de 17 de janeiro de 2025, depois que os operadores postais alemão e espanhol saíram do arranjo Prime Group, e disse que enviaria e-mail aos clientes afetados sobre a troca de serviço e o custo adicional. Se o pedido já tinha sido feito, é nesse e-mail que a nova forma e o novo preço são informados.",
+      },
+      {
+        q: "O meu rastreio não anda. O pacote se perdeu?",
+        a: "Confira primeiro a lista de avisos do seu país. A Ktown4u publica interrupções com detalhe incomum — o aviso de EMS para a Eslováquia de 4 de abril de 2025 nomeou os cinco códigos postais afetados e as medidas de quarentena por trás do atraso, e disse que os pacotes ficariam retidos na agência postal local com os destinatários notificados. Uma interrupção publicada é um problema diferente de um pacote perdido.",
+      },
+      {
+        q: "O que acontece com o meu pedido num feriado coreano?",
+        a: "Despacho e atendimento param os dois. No Ano-Novo Lunar de 2026 a entrega de pacotes ficou pausada de 14 a 18 de fevereiro, retomando em sequência a partir do dia 19, com o atendimento indisponível nos mesmos dias; o Chuseok de 2025 foi de 3 a 9 de outubro, com os dois retomando no dia 10. A Ktown4u avisa a cada vez que o acúmulo pode empurrar as entregas para depois da data de retomada.",
+      },
+      {
+        q: "Quando eu consigo de fato falar com o atendimento?",
+        a: "Dias úteis das 10:00 às 17:00 KST, com intervalo de almoço das 12:30 às 13:30, conforme definido a partir de 1º de novembro de 2023. Converta isso para o seu fuso antes de precisar, porque, combinado com o relógio de seis horas do pagamento, um pedido pode expirar fora desse horário.",
+      },
+      {
+        q: "Comprar na Ktown4u conta para as paradas coreanas?",
+        a: "A Ktown4U é uma loja Family certificada pela Hanteo, listada com o código HF0082KTU001, então para a Hanteo a loja é uma loja que reporta — o que é até onde uma fonte pública vai. A Hanteo não publica uma regra sobre se um pedido do exterior é tratado como um doméstico, e a Circle Chart é outra questão ainda: a sua Album Chart principal conta remessas no atacado aos varejistas e não vendas no varejo, então um pedido ali não muda nada de um jeito nem de outro. Se um lançamento específico é o ponto, o anúncio do próprio artista em geral nomeia os varejistas participantes dele.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Commander chez Ktown4u : l'horloge de six heures pour payer et les frais que personne ne mentionne",
+    summary:
+      "Une commande impayée est annulée au bout de six heures, et non de vingt-quatre. Les colis vers les États-Unis peuvent porter des frais de USD 12 encaissés à votre porte. Les frais de port internationaux ont augmenté de 7% en février 2026, et deux pays européens ont discrètement perdu un mode d'expédition entier.",
+    scope:
+      "Couvre la commande d'albums physiques et de produits chez Ktown4u pour une livraison hors de Corée, à partir des avis publiés par Ktown4u : l'horloge du paiement, les frais et modes d'expédition, les pauses des jours fériés et les horaires du service client. La question de savoir si un achat chez Ktown4u est déclaré aux classements d'albums coréens est tranchée par le registre des boutiques certifiées de Hanteo, non par Ktown4u. Les avis sont réédités et remplacés : la liste des avis est donc la version vivante.",
+    intro: [
+      "Ktown4u est l'endroit où une grande partie des fans internationaux achètent réellement leurs albums, et presque rien de son fonctionnement n'est écrit en anglais hors de sa propre page d'avis — qui est en anglais, datée, et lue par personne jusqu'à ce qu'un colis soit en retard.",
+      "Voici cette page lue d'un seul tenant. Le premier point est celui qui coûte des commandes aux gens, et il a changé en 2025 sans que la plupart des acheteurs le remarquent.",
+    ],
+    steps: [
+      {
+        title: "Sachez qu'une commande impayée meurt en six heures, pas en un jour",
+        body: "Voilà le fait à connaître avant de passer quoi que ce soit. Ktown4u conservait les commandes impayées pendant 24 heures et a ramené ce délai à 6, à compter du 19 février 2025 KST, les commandes impayées étant automatiquement annulées six heures après avoir été passées. Pour un fan qui commande à minuit en Europe ou dans les Amériques, six heures coréennes peuvent s'écouler entièrement pendant son sommeil — et une précommande passée et non payée est une précommande qui n'a jamais existé.",
+        pitfall:
+          "Réserver l'article maintenant et payer quand votre carte ou votre jour de paie le permettra. Cela marchait avec l'ancienne fenêtre et ne marche pas avec celle-ci.",
+        takes: "Payez au moment de commander",
+      },
+      {
+        title: "Si vous êtes aux États-Unis, prévoyez des frais encaissés à votre porte",
+        body: "Depuis le 2 juin 2025, Ktown4u applique une politique de frais UPS aux envois vers les États-Unis : lorsque des droits de douane, taxes ou autres charges publiques sont dus, USD 12 supplémentaires sont facturés si ces droits n'ont pas été prépayés par voie électronique avant la livraison. Ktown4u les nomme International Collect on Delivery fee et indique qu'ils sont facturés au destinataire aux États-Unis au moment de la livraison. La porte de sortie est également publiée — prépayer les droits via le système UPS Import Prepaid Duties and Taxes, qui accepte selon elle Apple Pay, Google Pay, ou une carte Visa, Mastercard ou Discover.",
+        pitfall:
+          "Prendre le total affiché au paiement pour le total. Ces frais ne sont pas prélevés par Ktown4u à l'achat ; ils arrivent avec le colis, et ce sont douze dollars en plus de ce qui est réellement dû au titre des droits.",
+        takes: "10 minutes, avant l'expédition du colis",
+      },
+      {
+        title: "Chiffrez le port au tarif en vigueur, pas à celui de l'an dernier",
+        body: "Ktown4u a relevé ses frais de port internationaux de 7% à compter du 1er février 2026 à 00:00 KST, en l'attribuant à un ajustement tarifaire régulier des transporteurs. C'est peu par colis et beaucoup sur une commande groupée, et c'est le genre de changement qui rend silencieusement fausse une estimation de port tirée d'un billet de blog d'il y a un an. Le chiffre qui compte est celui que le panier vous affiche au moment où vous commandez.",
+        pitfall:
+          "Budgéter une commande groupée à partir d'un tableur fait la saison dernière. Les ajustements tarifaires sont réguliers, ce qui veut dire qu'il y en aura un autre.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Vérifiez que votre pays dispose encore du mode d'expédition attendu",
+        body: "Les modes d'expédition sont retirés par pays, et pas seulement retardés. Ktown4u a suspendu le service K-Packet vers l'Allemagne et l'Espagne à compter du 17 janvier 2025, parce que les opérateurs postaux allemand et espagnol se sont retirés de l'accord Prime Group sur lequel il repose. Sa conduite annoncée est d'écrire aux clients concernés pour leur proposer un autre service d'expédition et leur en indiquer le coût supplémentaire — une commande déjà passée peut donc changer de prix après coup. Le mode que vous avez utilisé la dernière fois n'est pas un mode dont vous disposez encore.",
+        pitfall:
+          "Choisir le mode le moins cher par habitude et ne pas lire l'e-mail qui suit. C'est dans cet e-mail que le service de remplacement et son surcoût sont nommés.",
+        takes: "5 minutes, au moment de payer",
+      },
+      {
+        title: "Lisez les avis de perturbation par pays, d'une précision inhabituelle",
+        body: "Ktown4u publie les perturbations de livraison jusqu'au niveau des codes postaux. Son avis EMS pour la Slovaquie du 4 avril 2025 nomme les codes postaux touchés — 930 07, 930 06, 930 04, 930 03 et 900 68 — et la cause : un foyer de fièvre aphteuse dans le sud-ouest de la Slovaquie et un état d'urgence à compter du 25 mars 2025, les colis étant retenus au bureau de poste local et les destinataires avertis. Le détail est précisément l'intérêt : quand le suivi s'arrête pour votre région, la page des avis en dit généralement la raison, et c'est une situation différente d'un colis perdu.",
+        pitfall:
+          "Ouvrir une réclamation pour colis perdu pendant une perturbation publiée et expliquée. Consultez la liste des avis pour votre pays avant de passer l'après-midi sur une réclamation.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Traitez un jour férié coréen comme une semaine sans expédition ni service client",
+        body: "Ktown4u met en pause les deux moitiés de son activité pendant les jours fériés coréens, et en publie les dates à chaque fois. Pour le Nouvel An lunaire 2026, la livraison des colis a été suspendue du 14 au 18 février, les livraisons reprenant dans l'ordre à partir du 19 février, et le service client était indisponible les mêmes jours. Pour le Chuseok 2025, la pause a couru du 3 au 9 octobre, les deux reprenant le 10. Elle avertit chaque fois que les retards peuvent dépasser la date de reprise, à cause du volume de commandes accumulé derrière.",
+        pitfall:
+          "Lire la date de reprise comme une date de livraison. C'est le jour où la file se remet en mouvement, et votre commande est quelque part dedans.",
+        takes: "10 minutes avant une commande de période de fêtes",
+      },
+      {
+        title: "Écrivez au service client dans les horaires qu'il tient réellement",
+        body: "Ktown4u a déplacé son canal de service client aux jours ouvrés de 10:00 à 17:00 KST à compter du 1er novembre 2023, avec une pause déjeuner de 12:30 à 13:30. Cela fait une fenêtre de cinq heures et demie, en jours ouvrés coréens, qui tombe pour la plupart des lecteurs de ce site au milieu de la nuit. Cela compte surtout combiné à l'horloge de six heures du paiement : une commande passée un vendredi soir en Europe peut expirer avant que quiconque ne soit à un bureau pour répondre.",
+        pitfall:
+          "Attendre une réponse avant d'agir. Convertissez ces horaires dans les vôtres une bonne fois, notez-les, et ne comptez sur rien en dehors.",
+        takes: "5 minutes, une fois",
+      },
+      {
+        title: "Ktown4u est une boutique certifiée Hanteo, et vous pouvez le vérifier vous-même",
+        body: "Ce guide affirmait que la question ne pouvait pas être tranchée, parce que Ktown4u ne le déclare pas dans ses propres avis. Elle se tranche par l'autre bout : Hanteo publie ses boutiques Family certifiées, et Ktown4U figure sur ce registre avec le code de famille HF0082KTU001. Hanteo exige que toute boutique Family en ligne affiche la marque Family avec un lien renvoyant vers hanteochart.com, et la vitrine de Ktown4u renvoie bien vers ce même registre — la boutique et le classement concordent donc, par les deux bouts. Vérifiez-le plutôt que de le prendre d'ici : les registres changent, et la consigne de Hanteo est de confirmer le code ainsi que le sceau de certification, réémis chaque année.",
+        pitfall:
+          "Lire cela comme « ma commande apparaîtra dans tous les classements coréens ». Hanteo compte les ventes que ses boutiques Family déclarent ; l'Album Chart principal de Circle Chart compte les expéditions en gros vers les détaillants, de sorte qu'aucune commande au détail ne le fait bouger. Et ni l'un ni l'autre ne publie de règle sur le traitement d'une commande passée depuis l'étranger par rapport à une commande nationale.",
+        takes: "15 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Combien de temps ai-je pour payer une commande Ktown4u ?",
+        a: "Six heures. Ktown4u a ramené la durée de conservation des commandes impayées de 24 heures à 6, à compter du 19 février 2025 KST, et indique que les commandes impayées sont automatiquement annulées six heures après avoir été passées. Payez au moment de commander plutôt que de prévoir d'y revenir.",
+      },
+      {
+        q: "Qu'est-ce que ces frais de USD 12 sur ma livraison aux États-Unis ?",
+        a: "C'est l'International Collect on Delivery fee de Ktown4u pour les envois UPS vers les États-Unis, en vigueur depuis le 2 juin 2025. Elle s'applique quand des droits de douane, taxes ou autres charges publiques sont dus et n'ont pas été prépayés par voie électronique avant la livraison, et elle est facturée au destinataire à la livraison. Les prépayer via le système UPS Import Prepaid Duties and Taxes l'évite — Ktown4u cite Apple Pay, Google Pay et Visa, Mastercard ou Discover comme moyens de le faire.",
+      },
+      {
+        q: "Pourquoi le port est-il plus cher qu'avant ?",
+        a: "Ktown4u a relevé ses frais de port internationaux de 7% à compter du 1er février 2026 à 00:00 KST, en l'attribuant à un ajustement tarifaire régulier des transporteurs. Régulier signifie qu'il y en aura un autre : chiffrez donc une commande groupée depuis le panier plutôt que depuis une ancienne estimation.",
+      },
+      {
+        q: "Mon mode d'expédition habituel a disparu. Que s'est-il passé ?",
+        a: "Les modes sont retirés par pays. Ktown4u a suspendu le K-Packet vers l'Allemagne et l'Espagne à compter du 17 janvier 2025, après le retrait des opérateurs postaux allemand et espagnol de l'accord Prime Group, et a annoncé qu'elle écrirait aux clients concernés au sujet du changement de service et du coût supplémentaire. Si la commande était déjà passée, c'est dans cet e-mail que le nouveau mode et son prix sont indiqués.",
+      },
+      {
+        q: "Mon suivi ne bouge plus. Le colis est-il perdu ?",
+        a: "Consultez d'abord la liste des avis pour votre pays. Ktown4u publie les perturbations avec un détail inhabituel — son avis EMS pour la Slovaquie du 4 avril 2025 nommait les cinq codes postaux touchés et les mesures de quarantaine à l'origine du retard, et indiquait que les colis seraient retenus au bureau de poste local avec notification des destinataires. Une perturbation publiée est un problème différent d'un colis perdu.",
+      },
+      {
+        q: "Qu'advient-il de ma commande pendant un jour férié coréen ?",
+        a: "L'expédition et le service client s'arrêtent tous les deux. Pour le Nouvel An lunaire 2026, la livraison des colis a été suspendue du 14 au 18 février, avec reprise dans l'ordre à partir du 19, le service client étant indisponible les mêmes jours ; le Chuseok 2025 a couru du 3 au 9 octobre, les deux reprenant le 10. Ktown4u avertit chaque fois que l'arriéré peut repousser les livraisons au-delà de la date de reprise.",
+      },
+      {
+        q: "Quand puis-je réellement joindre le service client ?",
+        a: "Les jours ouvrés de 10:00 à 17:00 KST, avec une pause déjeuner de 12:30 à 13:30, tels que fixés depuis le 1er novembre 2023. Convertissez cela dans votre propre fuseau avant d'en avoir besoin, car combiné à l'horloge de six heures du paiement, une commande peut expirer en dehors de ces horaires.",
+      },
+      {
+        q: "Acheter chez Ktown4u compte-t-il pour les classements coréens ?",
+        a: "Ktown4U est une boutique Family certifiée Hanteo, inscrite sous le code HF0082KTU001 : pour Hanteo, la boutique est donc déclarante — c'est aussi loin qu'une source publique permette d'aller. Hanteo ne publie pas de règle sur le traitement d'une commande passée depuis l'étranger par rapport à une commande nationale, et Circle Chart est encore une autre question : son Album Chart principal compte les expéditions en gros vers les détaillants plutôt que les ventes au détail, de sorte qu'une commande n'y change rien dans un sens comme dans l'autre. Si c'est une sortie précise qui vous intéresse, l'annonce de l'artiste nomme généralement les détaillants participants.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay: um produto só, e quase nada nele pode ser mudado",
+    summary:
+      "Um show e um hotel vendidos como um item único. Você não pode trocar o hotel, as datas nem as diárias, abrir mão do hotel não devolve nada, o assento é aleatório e revelado no dia, e os ingressos são entregues só a você, pessoalmente, no hotel, dentro de uma janela.",
+    scope:
+      "Cobre os pacotes de show mais hotel Play and Stay da NOL World como a NOL World os documenta: o que é fixo, como os ingressos são retirados, as exigências de identidade e de nome, e o que as respostas dela sobre cancelamento de fato dizem. Cada pacote carrega a própria política de cancelamento e os próprios itens inclusos, e a página do produto prevalece. O serviço de traslado é citado apenas onde um pacote inclui um.",
+    intro: [
+      "Um pacote parece a opção fácil: um pagamento, um hotel perto do local do show, uma categoria de assento garantida, nenhuma briga numa fila. Para um fã do exterior com uma só chance de viagem, essa é uma troca genuinamente atraente.",
+      "É também o produto mais rígido da plataforma, e a rigidez não é óbvia no anúncio. Leia as respostas da própria NOL World em sequência e um padrão aparece: o pacote é um item indivisível. Não é um ingresso mais um quarto de hotel que você possa otimizar separadamente — é uma coisa só, comprada uma vez, mudável em quase nenhum ponto. Tudo abaixo decorre desse único fato, inclusive as partes que vão parecer injustas quando você precisar delas.",
+    ],
+    steps: [
+      {
+        title: "Entenda que você está comprando um item, e não duas reservas",
+        body: "Este é o guia inteiro num passo. A NOL World afirma que o número de diárias de um pacote não pode ser modificado, que as datas de check-in e check-out especificadas no pacote não podem ser alteradas, e que trocas de hotel não são permitidas. Também não dá para acrescentar diárias na compra — estadias extras são uma conversa separada com o hotel, ao preço dele e sujeitas à disponibilidade dele. E uma conta pode comprar um item, então isso não é algo que se empilhe.",
+        pitfall:
+          "Comprar o pacote pretendendo ajeitar os detalhes depois: chegar um dia antes, mudar para um hotel mais perto de um amigo, cortar uma diária do fim. Cada uma dessas coisas é um não documentado.",
+        takes: "15 minutos, antes de pagar",
+      },
+      {
+        title: "Aceite que abrir mão do hotel não devolve nada",
+        body: "A pergunta é feita de dois jeitos no FAQ da NOL World e recebe a mesma resposta nas duas vezes: você pode optar por não ficar no hotel, mas reembolsos da parte do hotel não estão disponíveis, e a reserva é intransferível a outra pessoa. Então ficar na casa de um amigo não se converte em dinheiro de volta, e o quarto que você pagou não pode ser passado a ninguém. Usar uma diária e reaver o resto também é recusado — o número de diárias é fixo.",
+        pitfall:
+          "Tratar a metade do hotel como um depósito do qual você pode simplesmente se afastar. É a metade que você não pode revender, não pode dar e não pode reaver.",
+        takes: "—",
+      },
+      {
+        title: "Espere um assento aleatório, e espere descobri-lo no dia",
+        body: "O pacote garante uma categoria, não um lugar. A NOL World diz que a distribuição de assentos dentro de setores e zonas, fora a categoria que você escolheu, é aleatória — e que a sua designação de assento é mostrada quando você retira o ingresso no hotel no dia da apresentação. Você não vai saber onde está sentado até poucas horas antes do show. Ela também fecha a pergunta óbvia que vem depois: estar insatisfeito com o assento não é motivo de reembolso, e uma taxa de cancelamento pode se aplicar de qualquer forma.",
+        pitfall:
+          "Planejar em torno da posição do assento — um lado específico para um projeto de fãs, uma fileira para uma lente. A categoria é a promessa; o resto é um sorteio que você vê no dia.",
+        takes: "—",
+      },
+      {
+        title: "Retire no balcão do hotel, pessoalmente, dentro da janela",
+        body: "Existe exatamente um jeito de pegar esses ingressos. A NOL World diz que a retirada é apenas no balcão de ingressos da NOL World localizado no hotel, apenas durante o horário designado, e que os ingressos são emitidos exclusivamente ao titular da reserva, que precisa retirá-los pessoalmente. Perguntada se alguém com direito a desconto poderia retirar e assistir no lugar, a resposta dela é que os ingressos só podem ser retirados e usados pelo titular da reserva, sem exceções. Perca o horário designado e a resposta publicada é simplesmente que os ingressos estão disponíveis apenas durante o horário especificado.",
+        pitfall:
+          "Montar o dia em torno do local do show. O compromisso que prende é no balcão do hotel, numa janela que outra pessoa definiu, no dia do show.",
+        takes: "Monte o dia em torno disso",
+      },
+      {
+        title: "Leve os documentos que o balcão de fato exige",
+        body: "A NOL World é específica: o documento de identidade original e válido do titular da reserva, mais a confirmação da reserva impressa ou no celular — e, sem isso, os ingressos não podem ser retirados. Para não coreanos, o documento aceito é passaporte ou certificado de registro de estrangeiro. Coreanos têm uma lista mais longa, incluindo carteira de registro de residente, carteira de motorista, passaporte, identidade juvenil ou uma identidade digital emitida pelo Government 24 ou pelo PASS.",
+        pitfall:
+          "Deixar o passaporte no cofre do quarto porque o balcão fica no mesmo prédio. É o documento original que abre o ingresso, e uma foto dele não está na lista.",
+        takes: "5 minutos de preparo",
+      },
+      {
+        title: "Num pacote para dois, os dois precisam estar no balcão",
+        body: "Esta reorganiza um dia e passa fácil despercebida. A NOL World diz que, num pacote para dois, tanto o titular da reserva quanto o acompanhante precisam estar presentes para retirar os ingressos — e que o acompanhante também precisa apresentar documento de identidade, para confirmar que atende à exigência de idade para a entrada. Então a janela de retirada é um compromisso de duas pessoas com dois documentos, e não uma tarefa que um de vocês possa resolver sozinho.",
+        pitfall:
+          "Se separar no dia — um retirando os ingressos enquanto o outro passeia ou fica na fila da loja. O balcão não vai liberar os ingressos para um de vocês.",
+        takes: "—",
+      },
+      {
+        title: "Faça o nome bater exatamente com o passaporte, agora",
+        body: "A NOL World responde isso com as duas consequências numa frase só: se o nome informado na compra não bater com o seu passaporte, a retirada do ingresso e o check-in no hotel não serão possíveis. As duas metades do pacote, travadas pelo mesmo erro. A pergunta que ela responde nomeia os culpados de sempre — um erro de grafia, um nome do meio faltando, maiúsculas, espaçamento. Confira a compra contra a própria página do passaporte, e não contra a memória.",
+        pitfall:
+          "Supor que uma diferença pequena será deixada passar porque o pacote já está pago. Pago não é o que está sendo conferido em nenhum dos dois balcões.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Não espere um e-mail de confirmação do hotel, porque ele não existe",
+        body: "Isso causa pânico evitável, então saiba com antecedência. A NOL World diz que confirmações de reserva de hotel não são enviadas separadamente, e que, se o pagamento passou, a reserva do hotel está confirmada e válida. Mais útil ainda: os dados da reserva só são passados ao hotel cerca de duas semanas antes da estadia, então o hotel genuinamente não consegue achar você antes disso. Se você ligar antes e eles nunca tiverem ouvido falar de você, esse é o estado normal documentado.",
+        pitfall:
+          "Reservar um quarto reserva, ou recomprar o pacote, porque o hotel diz que não há reserva seis semanas antes. Não havia nada errado, e agora há duas reservas.",
+        takes: "2 minutos de tranquilidade",
+      },
+      {
+        title: "Faça o check-in como o comprador, e leia os itens inclusos miúdos",
+        body: "O check-in no hotel depende da mesma pessoa que os ingressos: a NOL World diz que o check-in só está disponível mediante verificação da identidade do titular da reserva, então um acompanhante não pode fazer o check-in primeiro e esperar. Se você for chegar tarde, a instrução dela é avisar o hotel com antecedência — ao mesmo tempo em que adverte que pode não ser possível dependendo do hotel. Mais duas especificidades que vale saber antes de comprar: menores não podem se hospedar sem um responsável legal, e o café da manhã não está incluso a menos que o seu pacote específico o inclua.",
+        pitfall:
+          "Mandar um amigo na frente para deixar as malas e começar a estadia. O quarto abre com a sua identidade, não com o código da reserva.",
+        takes: "—",
+      },
+      {
+        title: "Se houver traslado, trate-o como uma única partida sem segunda chance",
+        body: "Onde um pacote inclui traslado, as respostas da NOL World não têm sentimentalismo. O uso é opcional e não usar não devolve nada. Não há veículos reserva, então chegar tarde ao ponto de embarque significa que ele já foi. Um traslado só de volta é possível. Um acompanhante que não reservou pode pedir ao responsável do traslado no local, mas os assentos são limitados e não podem ser garantidos. E o detalhe que estraga uma noite: você pode levar uma mala para dentro do ônibus, mas o guarda-volumes dentro do ônibus não fica disponível depois que vocês chegam ao local do show. O ponto e o horário de embarque da volta são informados a você quando os ingressos são entregues no hotel.",
+        pitfall:
+          "Levar uma mala ao show porque o ônibus deixou embarcá-la. No local do show não há onde deixá-la, e você a carrega durante a apresentação.",
+        takes: "—",
+      },
+      {
+        title: "Leia as respostas sobre cancelamento antes de comprar, porque elas são não",
+        body: "Este é o passo para levar a sério enquanto a viagem ainda é um plano. A NOL World publica respostas para os dois casos mais difíceis e os dois são recusas. Sobre infecção: após o rebaixamento da classificação de risco da COVID-19, a quarentena deixou de ser obrigatória e, por consequência, nenhuma redução da taxa de cancelamento se aplica mesmo que você esteja infectado. Sobre luto e hospitalização depois de um acidente: reembolsos por motivos pessoais não estão disponíveis, e as taxas de cancelamento se aplicam conforme a política de cada produto. Quer isso soe duro ou apenas claro, ele diz onde o risco está — com você, desde o instante em que você paga. O instrumento feito para carregá-lo é um seguro de viagem contratado antes da partida, e o que ele de fato cobre depende da apólice que você comprar, então leia esse documento em vez de supor.",
+        pitfall:
+          "Carregar o risco sem seguro na suposição de que um motivo grave o bastante será aceito. A NOL World já publicou a resposta dela para os dois motivos mais graves que existem.",
+        takes: "30 minutos com uma apólice de seguro",
+      },
+    ],
+    faq: [
+      {
+        q: "Posso comprar o pacote e não usar o hotel?",
+        a: "Você pode optar por não se hospedar, mas a NOL World afirma que a parte do hotel não é reembolsável e que a reserva não pode ser transferida a mais ninguém. Usar menos diárias do que o pacote contém e reaver a diferença também é recusado, porque o número de diárias não pode ser modificado.",
+      },
+      {
+        q: "Posso estender a estadia, encurtá-la, mudar as datas ou trocar de hotel?",
+        a: "As diárias não podem ser modificadas, as datas de check-in e check-out do pacote não podem ser alteradas, e trocas de hotel não são permitidas. Diárias extras também não podem ser acrescentadas na compra — a instrução da NOL World é falar direto com o hotel sobre disponibilidade e preço, e pode não ser possível. Upgrade de quarto é a mesma coisa: peça ao hotel, e pague ao hotel diretamente na chegada.",
+      },
+      {
+        q: "Quando eu descubro o meu assento?",
+        a: "Quando você retira o ingresso no hotel no dia da apresentação. O pacote garante uma categoria; dentro dessa categoria, a NOL World distribui setores e assentos aleatoriamente. Não gostar do resultado não é motivo de reembolso.",
+      },
+      {
+        q: "Outra pessoa pode retirar os ingressos por mim, ou assistir no meu lugar?",
+        a: "Não. A NOL World diz que os ingressos são emitidos exclusivamente ao titular da reserva e precisam ser retirados pessoalmente, e que eles só podem ser retirados e usados pelo titular da reserva, sem exceções. Num pacote para dois, as duas pessoas precisam estar no balcão, e o acompanhante também precisa apresentar documento para que a idade seja confirmada.",
+      },
+      {
+        q: "Eu não recebi e-mail de confirmação do hotel.",
+        a: "Não existe um. A NOL World diz que confirmações de hotel não são enviadas separadamente, e que um pagamento bem-sucedido significa que a reserva do hotel está confirmada. Ela também diz que os dados da reserva chegam ao hotel apenas cerca de duas semanas antes do check-in, então a confirmação direta só é possível depois disso.",
+      },
+      {
+        q: "Liguei para o hotel e eles não acham a minha reserva.",
+        a: "Esperado, se você ligou cedo. A NOL World diz que os dados são enviados ao hotel cerca de duas semanas antes da estadia e que a confirmação só é possível depois disso, e que uma reserva de pacote devidamente concluída e paga significa que a reserva do hotel está garantida. Não reserve de novo.",
+      },
+      {
+        q: "Eu testei positivo, ou tive uma emergência familiar. A taxa de cancelamento é dispensada?",
+        a: "A resposta publicada da NOL World é não nos dois casos. Ela diz que, com a quarentena da COVID-19 já não sendo obrigatória, nenhuma redução se aplica à taxa de cancelamento mesmo que você esteja infectado; e que reembolsos por motivos pessoais, incluindo luto ou hospitalização depois de um acidente, não estão disponíveis, com taxas aplicadas conforme a política de cada produto. Um seguro de viagem contratado antes de viajar é o mecanismo para esse risco — o que ele cobre depende da apólice, então leia.",
+      },
+      {
+        q: "Eu preciso usar o traslado, e posso levar uma mala nele?",
+        a: "É opcional, e não usar não devolve nada. Uma mala pode entrar no ônibus, mas a NOL World avisa que o guarda-volumes dentro do ônibus não fica disponível depois que vocês chegam ao local do show — então uma mala que você leva é uma mala que você carrega. Não há veículos reserva se você perder a partida, e o ponto e o horário de embarque da volta são informados junto com os ingressos no hotel.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-world-play-stay-package",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL World Play&Stay : un seul produit, et presque rien n'y est modifiable",
+    summary:
+      "Un concert et un hôtel vendus comme un article unique. Vous ne pouvez changer ni l'hôtel, ni les dates, ni le nombre de nuits, renoncer à l'hôtel ne rembourse rien, la place est tirée au sort et révélée le jour même, et les billets ne sont remis qu'à vous, en personne, à l'hôtel, dans une fenêtre donnée.",
+    scope:
+      "Couvre les forfaits concert-plus-hôtel Play and Stay de NOL World tels qu'elle les documente : ce qui est figé, comment les billets se retirent, les exigences d'identité et de nom, et ce que ses réponses sur l'annulation disent réellement. Chaque forfait porte sa propre politique d'annulation et ses propres prestations, et c'est la page produit qui fait foi. La navette n'est évoquée que là où un forfait en comprend une.",
+    intro: [
+      "Un forfait a l'air de la solution de facilité : un seul paiement, un hôtel près de la salle, une catégorie de place garantie, aucune file d'attente à affronter. Pour un fan de l'étranger qui n'a qu'une chance de faire le voyage, c'est un échange réellement séduisant.",
+      "C'est aussi le produit le plus rigide de la plateforme, et cette rigidité ne saute pas aux yeux sur l'annonce. Lisez les réponses de NOL World à la suite et un motif apparaît : le forfait est un article indivisible. Pas un billet et une chambre que vous pourriez optimiser séparément — une seule chose, achetée une fois, modifiable à peu près nulle part. Tout ce qui suit découle de ce seul fait, y compris les passages qui paraîtront injustes le jour où ils vous concerneront.",
+    ],
+    steps: [
+      {
+        title: "Comprenez que vous achetez un article, et non deux réservations",
+        body: "C'est tout le guide en une étape. NOL World indique que le nombre de nuits d'un forfait ne peut pas être modifié, que les dates d'arrivée et de départ précisées dans le forfait ne peuvent pas être changées, et que les changements d'hôtel ne sont pas autorisés. Les nuits ne peuvent pas davantage être ajoutées à l'achat — les séjours supplémentaires sont une conversation distincte avec l'hôtel, à son prix et sous réserve de ses disponibilités. Et un compte peut acheter un article : ce n'est donc pas une chose que l'on empile.",
+        pitfall:
+          "Réserver le forfait en comptant arranger les détails plus tard : arriver un jour plus tôt, changer pour un hôtel plus proche d'un ami, retrancher une nuit à la fin. Chacune de ces choses est un non documenté.",
+        takes: "15 minutes, avant de payer",
+      },
+      {
+        title: "Acceptez que renoncer à l'hôtel ne rembourse rien",
+        body: "La question est posée de deux façons dans la FAQ de NOL World et reçoit deux fois la même réponse : vous pouvez choisir de ne pas séjourner à l'hôtel, mais aucun remboursement de la part hôtelière n'est possible, et la réservation n'est pas transférable à une autre personne. Dormir chez un ami ne se convertit donc pas en argent rendu, et la chambre que vous avez payée ne peut être cédée à personne. Utiliser une nuit et récupérer le reste est également refusé — le nombre de nuits est figé.",
+        pitfall:
+          "Prendre la moitié hôtelière pour une caution dont on peut s'éloigner. C'est la moitié que vous ne pouvez ni revendre, ni donner, ni récupérer.",
+        takes: "—",
+      },
+      {
+        title: "Attendez-vous à une place tirée au sort, et à la découvrir le jour même",
+        body: "Le forfait garantit une catégorie, pas un emplacement. NOL World indique que l'attribution des places à l'intérieur des sections et des zones, en dehors de la catégorie choisie, se fait de façon aléatoire — et que votre place vous est communiquée au moment où vous retirez le billet à l'hôtel, le jour de la représentation. Vous ne saurez pas où vous êtes assis avant quelques heures avant le concert. Elle clôt aussi la question suivante, l'évidente : être mécontent de sa place n'est pas un motif de remboursement, et des frais d'annulation peuvent s'appliquer de toute façon.",
+        pitfall:
+          "Bâtir un plan sur la position de la place — un côté précis pour un projet de fans, un rang pour un objectif photo. La catégorie est la promesse ; le reste est un tirage que vous découvrez le jour même.",
+        takes: "—",
+      },
+      {
+        title: "Retirez au comptoir de l'hôtel, en personne, dans la fenêtre",
+        body: "Il existe exactement une façon d'obtenir ces billets. NOL World indique que le retrait se fait uniquement au comptoir billetterie NOL World situé dans l'hôtel, uniquement pendant les horaires désignés, et que les billets sont délivrés exclusivement au titulaire de la réservation, qui doit les retirer en personne. Interrogée sur le cas d'une personne bénéficiant d'une réduction qui viendrait retirer et assister à sa place, elle répond que les billets ne peuvent être retirés et utilisés que par le titulaire de la réservation, sans exception. Manquez les horaires désignés et la réponse publiée est simplement que les billets ne sont disponibles que pendant la plage indiquée.",
+        pitfall:
+          "Organiser la journée autour de la salle. Le rendez-vous contraignant est au comptoir de l'hôtel, dans une fenêtre fixée par quelqu'un d'autre, le jour du concert.",
+        takes: "Construisez la journée autour",
+      },
+      {
+        title: "Apportez les documents que le comptoir exige réellement",
+        body: "NOL World est précise : la pièce d'identité originale et valide du titulaire de la réservation, plus la confirmation de réservation imprimée ou sur un téléphone — et sans cela, les billets ne peuvent pas être retirés. Pour les ressortissants non coréens, la pièce acceptée est un passeport ou un certificat d'enregistrement d'étranger. Les ressortissants coréens disposent d'une liste plus longue, comprenant la carte d'enregistrement de résident, le permis de conduire, le passeport, la carte d'identité jeunesse ou une identité numérique délivrée via Government 24 ou PASS.",
+        pitfall:
+          "Laisser le passeport dans le coffre de la chambre parce que le comptoir est dans le même bâtiment. C'est la pièce originale qui ouvre le billet, et une photo de celle-ci ne figure pas sur la liste.",
+        takes: "5 minutes de préparation",
+      },
+      {
+        title: "Pour un forfait à deux, vous devez être tous les deux au comptoir",
+        body: "Celle-ci réorganise une journée et se manque facilement. NOL World indique que pour un forfait pour deux personnes, le titulaire de la réservation et son accompagnant doivent tous deux être présents pour retirer les billets — et que l'accompagnant doit lui aussi présenter une pièce d'identité, afin de confirmer qu'il remplit la condition d'âge pour entrer. La fenêtre de retrait est donc un rendez-vous à deux personnes avec deux pièces d'identité, et non une course que l'un de vous peut faire seul.",
+        pitfall:
+          "Se séparer le jour même — l'un retirant les billets pendant que l'autre visite ou fait la queue à la boutique. Le comptoir ne remettra pas les billets à un seul d'entre vous.",
+        takes: "—",
+      },
+      {
+        title: "Faites correspondre le nom au passeport, exactement, dès maintenant",
+        body: "NOL World répond à cela avec les deux conséquences dans une seule phrase : si le nom fourni à la réservation ne correspond pas à votre passeport, le retrait du billet et l'enregistrement à l'hôtel seront impossibles. Les deux moitiés du forfait, bloquées par la même erreur. La question à laquelle elle répond nomme les coupables habituels — une faute d'orthographe, un deuxième prénom manquant, les majuscules, les espaces. Comparez la réservation à la page du passeport elle-même, et non à votre souvenir.",
+        pitfall:
+          "Supposer qu'une petite différence passera parce que le forfait est déjà payé. Payé n'est pas ce que l'on contrôle à l'un ou l'autre comptoir.",
+        takes: "10 minutes",
+      },
+      {
+        title: "N'attendez pas d'e-mail de confirmation de l'hôtel, car il n'y en a pas",
+        body: "Cela provoque une panique évitable : sachez-le à l'avance. NOL World indique que les confirmations de réservation d'hôtel ne sont pas envoyées séparément, et que si le paiement est passé, la réservation d'hôtel est confirmée et valide. Plus utile encore : les détails de la réservation ne sont transmis à l'hôtel qu'environ deux semaines avant le séjour, de sorte que l'hôtel ne peut véritablement pas vous retrouver avant. Si vous appelez plus tôt et que personne n'a entendu parler de vous, c'est l'état normal documenté.",
+        pitfall:
+          "Réserver une chambre de secours, ou racheter le forfait, parce que l'hôtel dit n'avoir aucune réservation six semaines à l'avance. Rien n'allait mal, et il y a maintenant deux réservations.",
+        takes: "2 minutes de réassurance",
+      },
+      {
+        title: "Enregistrez-vous en tant qu'acheteur, et lisez les petites prestations",
+        body: "L'enregistrement à l'hôtel dépend de la même personne que les billets : NOL World indique qu'il n'est possible qu'après vérification de l'identité du titulaire de la réservation, de sorte qu'un accompagnant ne peut pas s'enregistrer en premier et attendre. Si vous arrivez tard, sa consigne est de prévenir l'hôtel à l'avance — tout en avertissant que cela peut se révéler impossible selon l'établissement. Deux précisions de plus à connaître avant de réserver : les mineurs ne peuvent pas séjourner sans représentant légal, et le petit-déjeuner n'est pas compris sauf si votre forfait le comprend.",
+        pitfall:
+          "Envoyer un ami en avance déposer les bagages et commencer le séjour. La chambre s'ouvre sur votre identité, pas sur la référence de réservation.",
+        takes: "—",
+      },
+      {
+        title: "S'il y a une navette, traitez-la comme un départ unique sans seconde chance",
+        body: "Là où un forfait comprend une navette, les réponses de NOL World sont sans sentimentalisme. Son usage est facultatif et ne pas l'utiliser ne rembourse rien. Il n'y a pas de véhicule de secours : arriver en retard au point de ramassage signifie qu'elle est partie. Une navette au retour seulement est possible. Un accompagnant qui n'a pas réservé peut s'adresser au responsable de la navette sur place, mais les places sont limitées et ne peuvent être garanties. Et le détail qui gâche une soirée : vous pouvez monter une valise à bord, mais aucun espace à bagages n'est disponible dans le bus une fois arrivé à la salle. Le point et l'heure d'embarquement du retour vous sont communiqués au moment de la remise des billets à l'hôtel.",
+        pitfall:
+          "Emporter une valise au concert parce que le bus l'a acceptée. À la salle, il n'y a nulle part où la laisser, et vous la portez pendant le spectacle.",
+        takes: "—",
+      },
+      {
+        title: "Lisez les réponses sur l'annulation avant de réserver, parce que ce sont des non",
+        body: "C'est l'étape à prendre au sérieux pendant que le voyage n'est encore qu'un projet. NOL World publie des réponses aux deux cas les plus difficiles et les deux sont des refus. Sur l'infection : à la suite de l'abaissement de la classification de risque du COVID-19, la quarantaine n'est plus obligatoire et, en conséquence, aucune réduction des frais d'annulation ne s'applique même si vous êtes infecté. Sur un deuil et une hospitalisation après un accident : les remboursements pour motifs personnels ne sont pas possibles, et les frais d'annulation s'appliquent selon la politique propre à chaque produit. Que cela paraisse dur ou simplement clair, cela vous dit où se trouve le risque — chez vous, dès l'instant où vous payez. L'instrument prévu pour le porter est une assurance voyage souscrite avant le départ, et ce qu'elle couvre réellement dépend du contrat que vous achetez : lisez donc ce document plutôt que de le supposer.",
+        pitfall:
+          "Porter ce risque sans assurance en supposant qu'un motif assez grave sera accepté. NOL World a déjà publié sa réponse aux deux motifs les plus graves qui soient.",
+        takes: "30 minutes avec un contrat d'assurance",
+      },
+    ],
+    faq: [
+      {
+        q: "Puis-je acheter le forfait et ne pas utiliser l'hôtel ?",
+        a: "Vous pouvez renoncer au séjour, mais NOL World indique que la part hôtelière n'est pas remboursable et que la réservation ne peut être transférée à personne d'autre. Utiliser moins de nuits que n'en comprend le forfait et récupérer la différence est également refusé, parce que le nombre de nuits ne peut pas être modifié.",
+      },
+      {
+        q: "Puis-je prolonger le séjour, le raccourcir, déplacer les dates ou changer d'hôtel ?",
+        a: "Les nuits ne peuvent pas être modifiées, les dates d'arrivée et de départ du forfait ne peuvent pas être changées, et les changements d'hôtel ne sont pas autorisés. Les nuits supplémentaires ne peuvent pas non plus être ajoutées à l'achat — la consigne de NOL World est de contacter directement l'hôtel pour la disponibilité et le prix, et cela peut se révéler impossible. Une montée en gamme de chambre suit la même règle : demandez à l'hôtel, et payez-le directement à l'arrivée.",
+      },
+      {
+        q: "Quand est-ce que je découvre ma place ?",
+        a: "Au moment où vous retirez le billet à l'hôtel, le jour de la représentation. Le forfait garantit une catégorie ; à l'intérieur de celle-ci, NOL World attribue sections et places de façon aléatoire. Être mécontent du résultat n'est pas un motif de remboursement.",
+      },
+      {
+        q: "Quelqu'un peut-il retirer les billets à ma place, ou assister au concert à ma place ?",
+        a: "Non. NOL World indique que les billets sont délivrés exclusivement au titulaire de la réservation et doivent être retirés en personne, et qu'ils ne peuvent être retirés et utilisés que par lui, sans exception. Pour un forfait à deux, les deux personnes doivent être au comptoir, et l'accompagnant doit lui aussi présenter une pièce d'identité pour que son âge soit confirmé.",
+      },
+      {
+        q: "Je n'ai pas reçu d'e-mail de confirmation de l'hôtel.",
+        a: "Il n'y en a pas. NOL World indique que les confirmations d'hôtel ne sont pas envoyées séparément, et qu'un paiement abouti signifie que la réservation d'hôtel est confirmée. Elle précise aussi que les détails de la réservation ne parviennent à l'hôtel qu'environ deux semaines avant l'arrivée : une confirmation directe n'est donc possible qu'après ce moment.",
+      },
+      {
+        q: "J'ai appelé l'hôtel et il ne trouve pas ma réservation.",
+        a: "C'est attendu si vous avez appelé tôt. NOL World indique que les détails sont transmis à l'hôtel environ deux semaines avant le séjour et que la confirmation n'est possible qu'après, et qu'une réservation de forfait correctement finalisée et payée signifie que la réservation d'hôtel est acquise. Ne réservez pas une seconde fois.",
+      },
+      {
+        q: "J'ai été testé positif, ou j'ai eu une urgence familiale. Les frais d'annulation seront-ils levés ?",
+        a: "La réponse publiée par NOL World est non dans les deux cas. Elle indique que, la quarantaine liée au COVID-19 n'étant plus obligatoire, aucune réduction ne s'applique aux frais d'annulation même si vous êtes infecté ; et que les remboursements pour motifs personnels, y compris un deuil ou une hospitalisation après un accident, ne sont pas possibles, les frais s'appliquant selon la politique de chaque produit. Une assurance voyage souscrite avant le départ est le mécanisme prévu pour ce risque — ce qu'elle couvre dépend du contrat, alors lisez-le.",
+      },
+      {
+        q: "Suis-je obligé d'utiliser la navette, et puis-je y monter une valise ?",
+        a: "Elle est facultative, et ne pas l'utiliser ne rembourse rien. Une valise peut monter à bord, mais NOL World prévient qu'aucun espace à bagages n'est disponible dans le bus une fois à la salle — une valise que vous emportez est donc une valise que vous portez. Il n'y a pas de véhicule de secours si vous manquez le départ, et le point et l'heure d'embarquement du retour sont communiqués avec les billets à l'hôtel.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "kpop-ticketing-day-timezone",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "À quelle heure une vente de billets coréenne ouvre chez vous",
+    summary:
+      "La Corée n'applique pas l'heure d'été et votre pays le fait probablement : l'heure à laquelle une vente coréenne tombe sur votre horloge bouge donc deux à quatre fois par an. Voici comment la calculer juste pour la date, et non pour aujourd'hui.",
+    scope:
+      "Couvre la conversion d'une heure de vente coréenne annoncée vers la vôtre, et l'horloge sur laquelle les plateformes fonctionnent ensuite. Ne couvre pas la manière de gagner une file d'attente, qui tient surtout à l'allocation et à la chance. L'annonce officielle de votre concert est la seule autorité sur l'heure elle-même.",
+    intro: [
+      "Tous les guides qui convertissent une heure de vente coréenne vous donnent un seul chiffre. « 20h KST, c'est 6h sur la côte Est. » Ce chiffre est juste environ quatre mois par an et faux le reste du temps, parce que la Corée n'observe pas l'heure d'été et que la plupart des pays qui lisent ceci l'observent.",
+      "Les heures ci-dessous ont été calculées à partir de la base de données de fuseaux horaires IANA, version 2026c — les mêmes données que celles qu'utilise votre système d'exploitation. Le but n'est pas de les retenir. C'est de convertir pour la date de la vente, ce qui donne rarement la même réponse que convertir pour aujourd'hui.",
+    ],
+    steps: [
+      {
+        title: "Prenez l'heure annoncée comme du KST, et ne la corrigez pas",
+        body: "Les ventes coréennes sont annoncées en heure coréenne, et l'heure coréenne ne bouge pas : le KST est UTC+9 toute l'année, sans ajustement estival. Une vente générale est couramment annoncée pour 20:00 KST en semaine, mais c'est une convention et non une règle — 19:00 et 14:00 apparaissent aussi, et les fenêtres de vérification de fan-club ouvrent souvent plus tôt le même jour, selon leur propre calendrier. L'annonce de votre concert est la seule autorité.",
+        pitfall:
+          "Reprendre l'heure d'une tournée précédente en supposant que celle-ci s'y conforme. La plateforme est la même, l'heure souvent non.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Convertissez pour la date de la vente, pas pour aujourd'hui",
+        body: "C'est tout le guide en une phrase. Comme la Corée ne bouge jamais et que vous bougez, l'heure locale d'une vente coréenne dépend du côté de votre propre changement d'heure où tombe la date. À 20:00 KST, une vente tombe à 06:00 à New York en janvier et à 07:00 en juillet. Los Angeles passe de 03:00 à 04:00, Toronto de 06:00 à 07:00, Londres de 11:00 à 12:00, Berlin et Madrid de 12:00 à 13:00.",
+        pitfall:
+          "Faire la conversion aujourd'hui dans un moteur de recherche pour une vente dans trois semaines. Si un changement d'heure tombe entre-temps, la réponse obtenue est fausse d'une heure — et fausse dans le sens où l'on arrive en retard.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Si vous êtes en Australie, l'écart bouge dans l'autre sens",
+        body: "L'heure d'été de l'hémisphère sud fonctionne à l'inverse de celle du nord. À 20:00 KST, une vente a lieu à 22:00 à Sydney en janvier et à 21:00 en juillet — l'écart se resserre pendant l'été du nord au lieu de s'élargir. Santiago fait de même, 08:00 en janvier et 07:00 en juillet, et c'est la seule capitale d'Amérique latine hispanophone dont les horloges bougent. Sur une année entière, le décalage de Sydney varie d'une heure dans le sens opposé à tous les chiffres nord-américains et européens ci-dessus : une conversion empruntée à un fan américain est donc fausse de deux heures.",
+        pitfall:
+          "La plupart des guides sur le sujet sont écrits pour des lecteurs américains. Les fans australiens et néo-zélandais héritent de leur arithmétique et arrivent avec une ou deux heures de retard.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Vérifiez si un changement d'heure tombe entre aujourd'hui et la vente",
+        body: "Les dates de bascule ne sont pas les mêmes d'un pays à l'autre, ce qui crée de courtes périodes où la conversion habituelle est fausse même entre deux pays qui l'observent tous les deux. En 2027, New York change le 14 mars, Londres le 28 mars, Sydney le 4 avril ; Berlin et Madrid changent en même temps que Londres et reviennent en arrière le 31 octobre. La majeure partie de l'Amérique latine hispanophone ne change pas du tout — Bogotá, Lima et Buenos Aires conservent un écart fixe avec la Corée, tout comme Mexico, et Manille également. Pour ces lecteurs, cette étape ne s'applique tout simplement pas, ce qui mérite d'être su en soi. Si la date de la vente se situe de l'autre côté de votre propre bascule, réglez votre réveil sur l'heure convertie pour cette date-là.",
+        pitfall:
+          "Les deux semaines d'écart entre la bascule nord-américaine et l'européenne en mars sont le piège classique, parce que la différence familière entre New York et Londres n'est brièvement pas celle qu'elle est d'habitude.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Notez la date autant que l'heure",
+        body: "Pour la plus grande partie des Amériques, une vente coréenne du soir tombe le même jour calendaire, tôt le matin. Pour Sydney, c'est le même soir. L'heure est la partie que l'on convertit et la date celle que l'on suppose, et un réveil réglé à la bonne heure le mauvais jour vaut l'absence de réveil.",
+        pitfall:
+          "Une vente annoncée pour un mardi soir à Séoul est un mardi matin à New York. Écrire « mardi » dans un agenda sans l'heure convertie, c'est ainsi que l'on se trompe d'un jour.",
+        takes: "1 minute",
+      },
+      {
+        title: "Soyez connecté et vérifié avant la fenêtre, pas dedans",
+        body: "Tout ce qui peut être fait à l'avance doit déjà l'être quand l'heure arrive : compte créé, vérification de client étranger traitée, abonnement de fan-club rattaché, moyen de paiement activé pour l'international et pour le 3-D Secure. Les systèmes de file d'attente laissent couramment une courte fenêtre pour choisir les places et payer avant de libérer la réservation, et aucune de ces minutes n'est de trop.",
+        pitfall:
+          "Ouvrir une fenêtre de navigation privée toute neuve par précaution revient à se connecter et à se re-vérifier à l'intérieur de la file, ce qui coûte plus que cela ne protège.",
+        takes: "30 minutes avant l'ouverture",
+      },
+      {
+        title: "Connaissez aussi l'horloge de fermeture, qui est une autre horloge",
+        body: "L'heure d'ouverture n'est pas la seule échéance qui tourne à l'heure coréenne. Sur YES24 Global, la réservation ferme à 17h la veille pour un concert du mardi au samedi et à 11h le samedi pour un concert du dimanche ou du lundi, et l'annulation suit exactement la même horloge. Ce sont aussi des heures KST, et la même conversion s'applique — dans l'autre sens, au moment où cela compte le plus.",
+        pitfall:
+          "Calculer une annulation à partir de la date du concert plutôt que de l'échéance de la plateforme. Une fois celle-ci passée, il n'y a ni annulation, ni modification, ni remboursement.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "La Corée applique-t-elle l'heure d'été ?",
+        a: "Non. Le KST est UTC+9 toute l'année. La Corée a appliqué l'heure d'été en 1987 et 1988, autour des Jeux olympiques de Séoul, et ne l'a plus fait depuis — la base de données des fuseaux horaires ne montre aucun changement de décalage dans les quatre décennies qui ont suivi. Toute variation de l'écart entre la Corée et votre pays vient donc de votre côté.",
+      },
+      {
+        q: "À quelle heure les ventes de billets coréennes ouvrent-elles généralement ?",
+        a: "Une vente générale est couramment annoncée pour 20:00 KST en semaine, souvent un à trois mois avant le concert. C'est une convention et non une règle — d'autres heures apparaissent régulièrement, et les préventes de fan-club et leurs fenêtres de vérification suivent leur propre calendrier, plus tôt. Lisez l'annonce.",
+      },
+      {
+        q: "Pourquoi ma conversion change-t-elle d'une heure sans arrêt ?",
+        a: "Parce que votre pays change ses horloges et que la Corée ne le fait pas. Convertissez pour la date de la vente plutôt que pour aujourd'hui, et vérifiez si votre propre bascule tombe entre les deux.",
+      },
+      {
+        q: "Je suis en Australie — puis-je utiliser la conversion d'un fan américain ?",
+        a: "Non. L'heure d'été de l'hémisphère sud fonctionne à l'inverse : l'écart de Sydney se resserre quand celui de New York s'élargit. Emprunter une conversion du nord vous décale de deux heures au maximum.",
       },
     ],
     labels: FR_LABELS,

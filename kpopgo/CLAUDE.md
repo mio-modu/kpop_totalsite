@@ -227,12 +227,17 @@ the register, and the machinery landed before the first translated word, as it
 did for paid links, because a translation added to a site with no freshness
 rules becomes the undated guide this site exists to replace.
 
-Seven languages today, none native-reviewed: Japanese, Traditional Chinese and
-Indonesian on 19 of the 21 guides, German and Spanish on 20, and Brazilian
-Portuguese and French **both in progress at 2**, of an intended 19 and 20
-respectively. Each language skips the guides it has no reader for rather than
+Seven languages today, none native-reviewed, and all seven **complete at their
+intended counts** as of 22 October 2026: Japanese, Traditional Chinese,
+Indonesian and Brazilian Portuguese on 19 of the 21 guides, German, Spanish and
+French on 20. Each language skips the guides it has no reader for rather than
 padding to a round number, and `content/translations.ts` records which and why
 at the top.
+
+That completion is worth dating rather than simply asserting, because the file
+spent most of its life in progress and will be again the next time a language
+is added. A count that has stopped moving and a count nobody is moving look
+identical from outside.
 
 **French carries no region, and that is the honest scope rather than a
 shortcut.** Brazil's region decided a page; France's would decide nothing. Its
@@ -256,12 +261,13 @@ appear in honest French text are accepted — plain, no-break, and the narrow
 no-break one typography actually asks for — rather than picking one and
 failing the other two.
 
-**`pt-BR` is in progress and the register says so rather than implying a
-finished edition.** It landed at two guides because one is not allowed: the
+**`pt-BR` opened at two guides, not one, because one is not allowed.** The
 orphan check refuses a translated guide with no sibling in its own language,
 which is the right answer — a language with a single page is a dead end whose
-only route in is the sitemap. Two is the smallest honest increment, and the
-pair is the hub guide and the NOL World guide it links to.
+only route in is the sitemap. Two was the smallest honest increment, and the
+pair was the hub guide and the NOL World guide it links to. It is complete at
+nineteen now, but the constraint is worth keeping written down, because it
+applies again on the first day of the eighth language.
 
 The region in the code is load-bearing rather than decorative. Brazil
 abolished daylight saving in 2019, so the timezone guide — which is really a

@@ -1,6 +1,6 @@
 import { RESEARCH_DATE, type Guide, guides } from "@/content/guides";
 import type { Translation } from "@/content/translations";
-import { LOCALES } from "./i18n";
+import { LOCALES, type Locale } from "./i18n";
 import { site } from "./site";
 
 /**
@@ -134,6 +134,41 @@ export function translatedGuideJsonLd(guide: Guide, tr: Translation) {
   };
 
   return [article, breadcrumb];
+}
+
+/**
+ * The same thing for one language's index.
+ *
+ * `inLanguage` is the field doing the work. An ItemList of nineteen Vietnamese
+ * titles with no language on it invites exactly the wrong inference — that the
+ * site has nineteen more English pages whose titles happen to be unreadable.
+ * The list is also declared as a translation of the English index, so the
+ * relationship a reader can see in the hreflang tags is stated in the graph
+ * too rather than left for a crawler to infer from URL shape.
+ */
+export function localeIndexJsonLd(locale: Exclude<Locale, "en">, items: Translation[]) {
+  const info = LOCALES[locale];
+  const url = `${site.url}${info.prefix}`;
+  const english = `${site.url}/guides`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${site.name} — ${info.english}`,
+    url,
+    inLanguage: info.tag,
+    numberOfItems: items.length,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    isPartOf: { "@id": `${site.url}#site` },
+    isBasedOn: english,
+    translationOfWork: { "@type": "ItemList", "@id": english, url: english },
+    itemListElement: items.map((t, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: t.title,
+      description: t.summary,
+      url: `${url}/guides/${t.slug}`,
+    })),
+  };
 }
 
 /**

@@ -120,6 +120,22 @@ function riskiestPerLocale() {
   ]);
 }
 
+/**
+ * Every language index, one route each.
+ *
+ * Not narrowed to a riskiest one the way the guides are, because there is
+ * nothing to narrow: all ten indexes list the same nineteen titles, so what
+ * differs between them is the script and the word lengths — which is the whole
+ * thing this check is for. Thai stacks marks two deep, Filipino has the
+ * longest words on the site, and the card grid is new template rather than the
+ * guide template with other words in it.
+ */
+function localeIndexes() {
+  const src = fs.readFileSync(new URL("../content/translations.ts", import.meta.url), "utf8");
+  const locales = [...new Set([...src.matchAll(/^    locale: "([A-Za-z-]+)",$/gm)].map((m) => m[1]))];
+  return locales.map((l) => [`hub-${l.toLowerCase()}`, `/${l.toLowerCase()}`]);
+}
+
 const ROUTES = [
   ["home", "/"],
   ["guides", "/guides"],
@@ -135,6 +151,7 @@ const ROUTES = [
   ["report", "/report"],
   // The translated routes are derived, not listed — see riskiestPerLocale().
   ...riskiestPerLocale(),
+  ...localeIndexes(),
 ];
 const WIDTHS = [320, 360, 390, 768, 1280];
 

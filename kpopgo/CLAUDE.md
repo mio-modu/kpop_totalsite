@@ -294,6 +294,38 @@ appear in honest French text are accepted — plain, no-break, and the narrow
 no-break one typography actually asks for — rather than picking one and
 failing the other two.
 
+**Each language has an index page at its own prefix, and until 22 October
+2026 it did not.** `/vi`, `/ja` and the rest were 404s, and the nineteen pages
+of an edition were reachable only from each other through the related rail.
+That graph is connected — checked rather than assumed, every page reachable
+from the hub guide — but its thinnest page had one sibling link, and no page
+anywhere named everything a given language had. On a site whose only channel
+is search, that is the difference between a section and nineteen pages that
+happen to exist.
+
+`app/[lang]/page.tsx` is that index: the language's own name for itself, the
+edition's machine-assistance notice said once for the set, every guide in the
+language in the English editorial order, and one link out to the English
+index. It lists nothing the language does not have — no English titles, no
+"coming soon" rows, no count of what is missing — which is the related rail's
+rule applied to a bigger surface. **Order is the English editorial order and
+not a per-language one.** The lead-order note below is about which guides each
+edition translated first; it has never been a display order, and inventing one
+here would be a claim the file cannot back.
+
+The hreflang is reciprocal by construction: each index names `/guides` as its
+English equivalent and `/guides` names all ten back, because Google discards
+an annotation the other side does not confirm. Both sides read
+`translatedLocales`, so the eleventh language appears in both by existing.
+
+Two invariants keep it from drifting. `generateStaticParams` is driven by the
+register rather than the locale list, so a language declared but not yet
+translated produces no index page instead of an empty one — and a module-scope
+check fails the build if those two lists disagree, so that state is loud. The
+second is in `content/translations.ts`: every entry in a locale must carry the
+same `labels` object by reference, because the index reads its wording off
+whichever entry comes first and must not depend on which that is.
+
 **`pt-BR` opened at two guides, not one, because one is not allowed.** The
 orphan check refuses a translated guide with no sibling in its own language,
 which is the right answer — a language with a single page is a dead end whose

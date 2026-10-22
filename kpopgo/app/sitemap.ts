@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { guides } from "@/content/guides";
 import { site } from "@/lib/site";
-import { translations, translationsFor } from "@/content/translations";
-import { LOCALES } from "@/lib/i18n";
+import { translations, translationsFor, translationsIn } from "@/content/translations";
+import { LOCALES, translatedLocales } from "@/lib/i18n";
 
 export const dynamic = "force-static";
 
@@ -18,7 +18,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: site.url, lastModified: latest, changeFrequency: "weekly", priority: 1 },
-    { url: `${site.url}/guides`, lastModified: latest, changeFrequency: "weekly", priority: 0.9 },
+    {
+      url: `${site.url}/guides`,
+      lastModified: latest,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      // The English index is the x-default for every language index, and the
+      // annotation has to appear on both sides to count.
+      alternates: {
+        languages: {
+          en: `${site.url}/guides`,
+          ...Object.fromEntries(
+            translatedLocales.map((l) => [l.tag, `${site.url}${l.prefix}`]),
+          ),
+        },
+      },
+    },
     // The chooser is the front door for a fan who knows their group and
     // nothing else, so it ranks with the guide index rather than below it.
     {
@@ -52,6 +67,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       }),
     })),
+    // One index per language, ranked between the English hubs and the
+    // translated guides they list. Dated from the newest source check in that
+    // edition rather than from today: the page is a list of translations and
+    // is exactly as fresh as the freshest thing on it.
+    ...translatedLocales
+      .filter((l) => translationsIn(l.code).length > 0)
+      .map((l) => ({
+        url: `${site.url}${l.prefix}`,
+        lastModified: new Date(
+          translationsIn(l.code)
+            .map((t) => t.sourceChecked)
+            .sort()
+            .at(-1) as string,
+        ),
+        changeFrequency: "weekly" as const,
+        priority: 0.75,
+        alternates: {
+          languages: {
+            en: `${site.url}/guides`,
+            ...Object.fromEntries(
+              translatedLocales.map((o) => [o.tag, `${site.url}${o.prefix}`]),
+            ),
+          },
+        },
+      })),
     // A translated guide is its own URL and needs its own entry, dated from
     // the source check it was made against rather than from today — a
     // translation of a page checked in July is not fresh content.

@@ -65,6 +65,20 @@ export type Translation = TranslationMeta & {
     sourceMoved: string;
     /** Shown when the English page has passed its shelf life. */
     sourceStale: string;
+    /**
+     * The four below are the language's own index page, not a guide.
+     *
+     * `reviewedMachine` could not be reused for it: every locale writes that
+     * sentence about *this translation*, singular, which is right on a guide
+     * and wrong on a page that is a list of them. A disclaimer that does not
+     * grammatically cover what it is disclaiming is the one place not to
+     * save four strings.
+     */
+    hubHeading: string;
+    hubIntro: string;
+    hubReview: string;
+    /** Link out to the English index, which has guides this language lacks. */
+    englishIndex: string;
   };
 };
 
@@ -81,6 +95,12 @@ const DE_LABELS = {
     "Die englische Fassung wurde nach dieser Übersetzung erneut geprüft. Bei Abweichungen gilt die englische Fassung.",
   sourceStale:
     "Die englische Fassung, auf der diese Übersetzung beruht, hat ihre Gültigkeitsdauer überschritten. Bitte prüfen Sie den aktuellen Stand in der englischen Fassung und in den Quellen.",
+  hubHeading: "KPOPGO auf Deutsch",
+  hubIntro:
+    "Die Anleitungen, die auf Deutsch vorliegen. Jede ist ein Verfahren, das sich von Anfang bis Ende durchgehen lässt, und an jedem Schritt steht, was dabei tatsächlich schiefgeht.",
+  hubReview:
+    "Diese Übersetzungen wurden maschinell erstellt und nicht von einer Person mit deutscher Muttersprache geprüft. Bei wichtigen Entscheidungen gelten die englische Fassung und die Originalquellen.",
+  englishIndex: "Alle Anleitungen auf Englisch",
 };
 
 const ZH_LABELS = {
@@ -96,6 +116,12 @@ const ZH_LABELS = {
     "英文版在本翻譯完成之後曾再次查核。若內容有出入，以英文版為準。",
   sourceStale:
     "本翻譯所依據的英文版已超過有效期限。請以英文版與資料來源確認目前的狀況。",
+  hubHeading: "KPOPGO 繁體中文版",
+  hubIntro:
+    "目前已有繁體中文版的指南。每一篇都是一套可以從頭跟到尾的流程，並在每個步驟指出實際上最常出錯的地方。",
+  hubReview:
+    "這些翻譯以機器翻譯為基礎，未經母語人士校閱。涉及重要判斷時，請以英文版與原始資料來源為準。",
+  englishIndex: "查看英文版的全部指南",
 };
 
 const ES_LABELS = {
@@ -111,6 +137,12 @@ const ES_LABELS = {
     "La versión en inglés se volvió a verificar después de hacer esta traducción. Si hay discrepancias, la versión en inglés es la que vale.",
   sourceStale:
     "La versión en inglés en la que se basa esta traducción ha superado su plazo de vigencia. Consulte la versión en inglés y sus fuentes para saber cómo están las cosas ahora.",
+  hubHeading: "KPOPGO en español",
+  hubIntro:
+    "Las guías que ya existen en español. Cada una es un procedimiento que se puede seguir de principio a fin, y en cada paso se señala lo que de verdad sale mal.",
+  hubReview:
+    "Estas traducciones se hicieron con ayuda automática y no las ha revisado un hablante nativo de español. Para decisiones importantes, consulta la versión en inglés y las fuentes originales.",
+  englishIndex: "Todas las guías en inglés",
 };
 
 const FR_LABELS = {
@@ -126,6 +158,12 @@ const FR_LABELS = {
     "La version anglaise a été revérifiée après la réalisation de cette traduction. En cas de divergence, c\u0027est la version anglaise qui fait foi.",
   sourceStale:
     "La version anglaise sur laquelle repose cette traduction a dépassé sa durée de validité. Consultez la version anglaise et ses sources pour savoir où en sont les choses aujourd\u0027hui.",
+  hubHeading: "KPOPGO en français",
+  hubIntro:
+    "Les guides qui existent déjà en français. Chacun est une procédure que l\u0027on peut suivre du début à la fin, et à chaque étape est signalé ce qui se passe mal en pratique.",
+  hubReview:
+    "Ces traductions ont été réalisées avec l\u0027aide de la machine et n\u0027ont pas été relues par une personne de langue maternelle française. Pour les décisions importantes, reportez-vous à la version anglaise et aux sources d\u0027origine.",
+  englishIndex: "Tous les guides en anglais",
 };
 
 const VI_LABELS = {
@@ -141,6 +179,12 @@ const VI_LABELS = {
     "Bản tiếng Anh đã được kiểm tra lại sau khi bản dịch này được thực hiện. Nếu có khác biệt, bản tiếng Anh là bản đúng.",
   sourceStale:
     "Bản tiếng Anh mà bản dịch này dựa vào đã quá hạn kiểm tra. Hãy xem bản tiếng Anh và các nguồn của nó để biết tình hình hiện nay.",
+  hubHeading: "KPOPGO bằng tiếng Việt",
+  hubIntro:
+    "Các hướng dẫn đã có bản tiếng Việt. Mỗi bản là một quy trình bạn theo được từ đầu đến cuối, và ở mỗi bước đều nêu đúng chỗ người ta thật sự vướng.",
+  hubReview:
+    "Các bản dịch này được thực hiện với sự hỗ trợ của máy và chưa được người bản ngữ tiếng Việt hiệu đính. Với những quyết định quan trọng, hãy đối chiếu bản tiếng Anh và các nguồn gốc.",
+  englishIndex: "Toàn bộ hướng dẫn bằng tiếng Anh",
 };
 
 const TH_LABELS = {
@@ -156,6 +200,12 @@ const TH_LABELS = {
     "ฉบับภาษาอังกฤษได้รับการตรวจสอบใหม่หลังจากจัดทำคำแปลนี้ หากข้อความขัดแย้งกัน ให้ยึดฉบับภาษาอังกฤษเป็นหลัก",
   sourceStale:
     "ฉบับภาษาอังกฤษที่คำแปลนี้อ้างอิงอยู่เลยกำหนดอายุการตรวจสอบแล้ว โปรดดูฉบับภาษาอังกฤษและแหล่งข้อมูลเพื่อทราบสถานะปัจจุบัน",
+  hubHeading: "KPOPGO ภาษาไทย",
+  hubIntro:
+    "คู่มือที่มีฉบับภาษาไทยแล้ว แต่ละฉบับเป็นขั้นตอนที่ทำตามได้ตั้งแต่ต้นจนจบ และบอกไว้ทุกขั้นว่าจุดที่คนพลาดกันจริง ๆ คือจุดไหน",
+  hubReview:
+    "คำแปลเหล่านี้จัดทำโดยมีเครื่องช่วย และยังไม่ผ่านการตรวจทานจากเจ้าของภาษาไทย สำหรับการตัดสินใจที่สำคัญ โปรดตรวจสอบกับฉบับภาษาอังกฤษและแหล่งข้อมูลต้นทาง",
+  englishIndex: "คู่มือทั้งหมดในภาษาอังกฤษ",
 };
 
 const FIL_LABELS = {
@@ -171,6 +221,12 @@ const FIL_LABELS = {
     "Muling sinuri ang bersyong Ingles matapos gawin ang pagsasaling ito. Kung magkaiba sila, ang bersyong Ingles ang susundin.",
   sourceStale:
     "Lumipas na ang panahon ng pagsusuri ng bersyong Ingles na pinagbatayan ng pagsasaling ito. Tingnan ang bersyong Ingles at ang mga pinagkunan nito para sa kasalukuyang kalagayan.",
+  hubHeading: "KPOPGO sa Filipino",
+  hubIntro:
+    "Ang mga gabay na mayroon nang bersyong Filipino. Bawat isa ay isang prosesong masusundan mula simula hanggang dulo, at sa bawat hakbang ay pinapangalanan ang talagang nasisira.",
+  hubReview:
+    "Ginawa ang mga pagsasaling ito nang may tulong ng makina at hindi pa sinusuri ng isang katutubong nagsasalita ng Filipino. Para sa mahahalagang desisyon, tingnan ang bersyong Ingles at ang mga orihinal na pinagkunan.",
+  englishIndex: "Lahat ng gabay sa Ingles",
 };
 
 const PT_LABELS = {
@@ -186,6 +242,12 @@ const PT_LABELS = {
     "A versão em inglês foi verificada novamente depois que esta tradução foi feita. Havendo divergência, vale a versão em inglês.",
   sourceStale:
     "A versão em inglês em que esta tradução se baseia passou do prazo de validade. Consulte a versão em inglês e suas fontes para saber como está a situação agora.",
+  hubHeading: "KPOPGO em português",
+  hubIntro:
+    "Os guias que já existem em português. Cada um é um procedimento que você segue do início ao fim, e em cada passo está apontado o que de fato dá errado.",
+  hubReview:
+    "Estas traduções foram feitas com apoio de máquina e não passaram pela revisão de um falante nativo de português. Para decisões importantes, consulte a versão em inglês e as fontes originais.",
+  englishIndex: "Todos os guias em inglês",
 };
 
 const ID_LABELS = {
@@ -201,6 +263,12 @@ const ID_LABELS = {
     "Versi bahasa Inggris telah diperiksa ulang setelah terjemahan ini dibuat. Jika ada perbedaan, versi bahasa Inggris yang berlaku.",
   sourceStale:
     "Versi bahasa Inggris yang menjadi dasar terjemahan ini sudah melewati masa berlakunya. Periksa versi bahasa Inggris dan sumbernya untuk keadaan terkini.",
+  hubHeading: "KPOPGO dalam bahasa Indonesia",
+  hubIntro:
+    "Panduan yang sudah tersedia dalam bahasa Indonesia. Masing-masing adalah prosedur yang bisa diikuti dari awal sampai akhir, dan di setiap langkah disebut hal yang benar-benar sering salah.",
+  hubReview:
+    "Terjemahan ini dibuat dengan bantuan mesin dan belum diperiksa oleh penutur asli. Untuk keputusan penting, rujuk versi bahasa Inggris dan sumber aslinya.",
+  englishIndex: "Semua panduan dalam bahasa Inggris",
 };
 
 const JA_LABELS = {
@@ -216,6 +284,12 @@ const JA_LABELS = {
     "この翻訳を作成したあとに英語版が再確認されています。内容が食い違う場合は英語版が正です。",
   sourceStale:
     "この翻訳のもとになった英語版は有効期限を過ぎています。現在の状況は英語版と出典でご確認ください。",
+  hubHeading: "日本語で読むKPOPGO",
+  hubIntro:
+    "日本語版がそろっているガイドです。どれも最初から最後まで通してたどれる手順で、各ステップで実際につまずく箇所を挙げています。",
+  hubReview:
+    "これらの翻訳は機械翻訳をもとにしており、ネイティブによる校閲は受けていません。正確さが重要な判断には英語版と出典をご確認ください。",
+  englishIndex: "英語版のガイド一覧",
 };
 
 /**
@@ -19404,6 +19478,27 @@ export function translationsFor(slug: string): Translation[] {
   return translations.filter((t) => t.slug === slug);
 }
 
+/** Every translated guide in one language, in the English editorial order. */
+export function translationsIn(locale: Locale): Translation[] {
+  const order = new Map(guides.map((g, i) => [g.slug, i]));
+  return translations
+    .filter((t) => t.locale === locale)
+    .sort((a, b) => (order.get(a.slug) ?? 0) - (order.get(b.slug) ?? 0));
+}
+
+/**
+ * The chrome strings for a language, taken from the edition itself.
+ *
+ * Deliberately read off the first translation rather than kept in a second
+ * table keyed by locale. The association already exists — every entry names
+ * its `labels` object — and a parallel registry is a thing that can disagree
+ * with the entries while both look right. The loop below makes the shortcut
+ * safe by refusing an edition whose pages do not all share one object.
+ */
+export function labelsFor(locale: Locale): Translation["labels"] | undefined {
+  return translations.find((t) => t.locale === locale)?.labels;
+}
+
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const REVIEWS: ReviewLevel[] = ["machine-assisted", "native-reviewed"];
 const today = new Date().toISOString().slice(0, 10);
@@ -19460,6 +19555,23 @@ for (const t of translations) {
   // translation of it one answer short while still reporting `current`. The
   // count is the cheap half of catching that; the expensive half is still
   // remembering to translate the new answer.
+  // One labels object per language, by reference.
+  //
+  // The index page at /vi speaks for the whole Vietnamese edition, and it has
+  // to get its wording from somewhere: it reads the first entry in that
+  // locale. That is only honest if every entry in the locale carries the same
+  // object, so this refuses the case where it does not — a second labels
+  // object introduced for one page would otherwise silently decide what the
+  // index says, depending on nothing but array order.
+  const first = translations.find((o) => o.locale === t.locale);
+  if (first && first.labels !== t.labels) {
+    throw new Error(
+      `${t.slug} (${t.locale}): uses a different labels object from ` +
+        `${first.slug} (${first.locale}). One language, one set of chrome ` +
+        `strings — the language index reads them off whichever entry comes ` +
+        `first and must not depend on which that is.`,
+    );
+  }
   for (const [name, mine, theirs] of [
     ["steps", t.steps.length, guide.steps.length],
     ["faq entries", t.faq.length, guide.faq.length],

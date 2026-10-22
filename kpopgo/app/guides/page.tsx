@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { guides } from "@/content/guides";
+import { translatedLocales } from "@/lib/i18n";
 import { guidesIndexJsonLd } from "@/lib/jsonld";
 import { JsonLd } from "@/components/JsonLd";
 import { VerifiedBadge } from "@/components/Badges";
@@ -13,7 +14,23 @@ export const metadata: Metadata = {
   title: "All guides: tickets, presales, cards and albums",
   description:
     "Every KPOPGO guide: ticketing platforms, identity verification, fan club presales, foreign card payments and overseas album orders.",
-  alternates: { canonical: "/guides" },
+  alternates: {
+    canonical: "/guides",
+    /*
+     * The other side of the language indexes' hreflang.
+     *
+     * Each /vi, /ja and so on names this page as its English equivalent, and
+     * Google only honours an annotation the other page confirms — so a
+     * one-sided declaration would have bought nothing. The set lives on
+     * `translatedLocales` rather than being typed out, which means the
+     * eleventh language appears here by existing.
+     */
+    languages: {
+      "x-default": "/guides",
+      en: "/guides",
+      ...Object.fromEntries(translatedLocales.map((l) => [l.tag, l.prefix])),
+    },
+  },
 };
 
 export default function GuidesIndex() {

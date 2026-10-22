@@ -10898,6 +10898,598 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "A fila da NOL World, e o que zera o seu lugar nela",
+    summary:
+      "Atualizar a página apaga a sua posição. Um segundo aparelho encerra o seu primeiro número. Os assentos se atualizam sem recarregar. Tudo isso está no próprio FAQ da NOL World, e tudo isso contraria o que as pessoas fazem por instinto.",
+    scope:
+      "Cobre como a fila, o mapa de assentos e a lista de espera da NOL World se comportam durante uma venda. O cadastro e a validação de cliente do exterior acontecem antes de tudo isso e estão no guia da NOL World. Tudo aqui vem do FAQ publicado pela NOL World.",
+    intro: [
+      "O instinto numa fila de ingressos é atualizar a página e abrir um segundo navegador por garantia, caso o primeiro tenha travado. Na NOL World as duas coisas custam a você exatamente aquilo que você está tentando proteger, e a plataforma diz isso nas próprias páginas de ajuda.",
+      "Esta é a parte de uma venda que nenhum guia cobre, porque não é possível deduzi-la de fora — você só a vê uma vez, por noventa segundos, em pânico.",
+    ],
+    steps: [
+      {
+        title: "Não atualize a página. Atualizar zera a sua posição",
+        body: "A NOL World afirma com todas as letras: você não pode furar a fila, e se atualizar a página a sua posição na fila será zerada. Não reconferida, não reconsultada — zerada. Qualquer número que você estivesse segurando volta para o fim.",
+        pitfall:
+          "Uma página de fila que parece travada em geral é só uma página de fila. A única ação que dá a sensação de estar fazendo algo é a única ação que desfaz a espera que você já cumpriu.",
+        takes: "A fila inteira",
+      },
+      {
+        title: "Uma conta recebe um número de fila, e uma segunda tentativa mata o primeiro",
+        body: "Você só pode receber um número de fila por conta. Se tentar mais — um segundo navegador, um celular ao lado do notebook — a NOL World encerra o primeiro número que você recebeu. Apertar Reservar em outro aparelho enquanto você já está na fila faz aparecer uma escolha entre manter a fila existente ou começar uma nova, e escolher a nova significa esperar de novo desde o começo naquele aparelho.",
+        pitfall:
+          "Abrir um aparelho de reserva é a tática de compra mais comum nas comunidades de fãs e aqui ela é estritamente pior que não fazer nada. O aviso que aparece não está oferecendo uma segunda chance a você; está perguntando qual das duas você quer jogar fora.",
+        takes: "0 minutos, se você resistir",
+      },
+      {
+        title: "Um número de fila não é um ingresso",
+        body: "A NOL World diz que uma posição na fila não garante um ingresso, porque a disponibilidade é limitada e os ingressos são emitidos por ordem. A fila decide quando você vai poder tentar, não se vai sobrar algo quando a sua vez chegar. A fila vale para todo produto comprável na NOL World, e não só para os de alta demanda.",
+        pitfall:
+          "Ler um número baixo de fila como se fosse um resultado. Ele é uma vez na fila, e o estoque pode acabar antes de a sua vez chegar.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Pare de atualizar o mapa de assentos também — ele se atualiza sozinho",
+        body: "O sistema de compra foi reorganizado para que os assentos disponíveis se atualizem em tempo real sem recarregar. Assentos segurados por outros usuários desaparecem e assentos cancelados voltam por conta própria. Se você vê “este assento já foi selecionado”, significa que outro usuário escolheu o mesmo assento quase no mesmo instante — e não que a sua página está velha.",
+        pitfall:
+          "Atualizar o mapa de assentos custa o mesmo que atualizar a fila. O hábito vindo de sites de ingressos mais antigos é exatamente o hábito errado aqui.",
+        takes: "Durante a seleção",
+      },
+      {
+        title: "Leia a taxa de esgotamento pelo que ela mede",
+        body: "Onde uma taxa de esgotamento é mostrada, ela só aparece quando 90% ou mais de todos os assentos já foram pagos, e ela conta ingressos pagos e não ingressos selecionáveis. Contagens de assentos restantes podem não ser mostradas de jeito nenhum: a NOL World diz que quem decide é o organizador, e que em produtos de alta demanda existe uma defasagem entre o que é exibido e o que está realmente disponível.",
+        pitfall:
+          "Tratar uma porcentagem de esgotamento como estoque ao vivo. É um número de ingressos pagos com piso de 90%, e a distância entre ele e a realidade é maior justamente quando você se importa mais.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Se você receber um aviso da lista de espera, você tem seis horas",
+        body: "Se um assento da lista de espera ficar disponível e o pagamento não for concluído dentro de seis horas do aviso, a reserva é automaticamente cancelada e reembolsada, e a oportunidade passa para a próxima pessoa da lista. Seis horas é generoso até você lembrar que o aviso chega no horário comercial coreano e que a maior parte de quem lê isto vai estar dormindo em parte dele.",
+        pitfall:
+          "Uma janela de seis horas que abre às 3h da manhã no seu horário é uma janela de duas horas. Converta a hora do aviso do mesmo jeito que você converteu a hora da venda.",
+        takes: "Dentro de 6 horas",
+      },
+      {
+        title: "Saiba que você não pode trocar o assento depois",
+        body: "Depois que a reserva está concluída, trocas de assento não são possíveis — o único caminho é cancelar e comprar de novo, o que expõe você à taxa de cancelamento do evento e ao risco de o assento ser pego nesse meio-tempo. O mesmo vale para cupons: um cupom não pode ser aplicado depois do pagamento, e usar um significa cancelar e recomprar o mesmo assento com a taxa que isso implica.",
+        pitfall:
+          "Comprar um assento sobre o qual você está em dúvida pretendendo resolver isso depois. Não existe depois.",
+        takes: "Antes de confirmar",
+      },
+    ],
+    faq: [
+      {
+        q: "Atualizar a página me ajuda a passar mais rápido pela fila da NOL World?",
+        a: "O contrário. A NOL World afirma que atualizar a página zera a sua posição na fila, e que a fila não pode ser furada.",
+      },
+      {
+        q: "Posso ficar na fila no celular e no notebook ao mesmo tempo?",
+        a: "Não. Uma conta recebe um número de fila, e tentar conseguir mais encerra o primeiro. Se você apertar Reservar num segundo aparelho, você é perguntado se quer manter a fila existente ou começar de novo no aparelho novo.",
+      },
+      {
+        q: "Preciso atualizar o mapa de assentos para ver assentos novos?",
+        a: "Não. Os assentos se atualizam em tempo real — assentos segurados desaparecem e assentos cancelados voltam sem recarregar. Atualizar custa a você o mesmo que atualizar a fila.",
+      },
+      {
+        q: "O que a taxa de esgotamento quer dizer de verdade?",
+        a: "Ela só aparece quando 90% ou mais dos assentos já foram pagos, e conta ingressos pagos e não assentos que você poderia selecionar. Em shows de alta demanda há uma defasagem conhecida entre o número e a disponibilidade real.",
+      },
+      {
+        q: "Quanto tempo eu tenho depois de um aviso da lista de espera?",
+        a: "Seis horas. Se o pagamento não for concluído nesse prazo, a reserva é automaticamente cancelada e reembolsada e o assento passa para a próxima pessoa da lista de espera.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-world-queue-and-seat-selection",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "La file d'attente NOL World, et ce qui remet votre place à zéro",
+    summary:
+      "Actualiser efface votre position. Un deuxième appareil ferme votre premier numéro. Les places se mettent à jour sans recharger. Tout cela est dans la FAQ de NOL World elle-même, et tout cela contredit ce que les gens font d'instinct.",
+    scope:
+      "Couvre le comportement de la file d'attente, du plan de salle et de la liste d'attente de NOL World pendant une vente. L'inscription et la validation de client étranger ont lieu avant tout cela et sont traitées dans le guide NOL World. Tout ce qui est ici vient de la FAQ publiée par NOL World.",
+    intro: [
+      "L'instinct, dans une file d'attente de billetterie, est d'actualiser la page et d'ouvrir un deuxième navigateur au cas où le premier serait bloqué. Sur NOL World, ces deux gestes vous coûtent précisément ce que vous cherchez à protéger, et la plateforme le dit dans ses propres pages d'aide.",
+      "C'est la partie d'une vente qu'aucun guide ne couvre, parce qu'elle ne peut pas être déduite de l'extérieur — vous ne la voyez qu'une fois, pendant quatre-vingt-dix secondes, en pleine panique.",
+    ],
+    steps: [
+      {
+        title: "N'actualisez pas. Actualiser remet votre position à zéro",
+        body: "NOL World l'écrit noir sur blanc : vous ne pouvez pas sauter la file, et si vous actualisez la page votre position dans la file sera remise à zéro. Pas revérifiée, pas réinterrogée — remise à zéro. Quel que soit le numéro que vous déteniez, il repart à la fin.",
+        pitfall:
+          "Une page de file d'attente qui semble figée n'est généralement qu'une page de file d'attente. Le seul geste qui donne l'impression d'agir est le seul geste qui annule l'attente que vous avez déjà faite.",
+        takes: "Toute la file",
+      },
+      {
+        title: "Un compte reçoit un numéro de file, et une deuxième tentative tue le premier",
+        body: "Vous ne pouvez recevoir qu'un seul numéro de file par compte. Si vous en tentez plusieurs — un deuxième navigateur, un téléphone à côté d'un ordinateur portable — NOL World ferme le premier numéro que vous avez reçu. Appuyer sur Réserver depuis un autre appareil alors que vous êtes déjà dans la file vous propose de conserver la file existante ou d'en démarrer une nouvelle, et choisir la nouvelle signifie attendre de nouveau depuis le début sur cet appareil.",
+        pitfall:
+          "Ouvrir un appareil de secours est la tactique de billetterie la plus répandue dans les communautés de fans et elle est ici strictement pire que ne rien faire. Le message qui s'affiche ne vous offre pas une deuxième chance ; il vous demande laquelle des deux vous voulez jeter.",
+        takes: "0 minute, si vous résistez",
+      },
+      {
+        title: "Un numéro de file n'est pas un billet",
+        body: "NOL World indique qu'une position dans la file ne garantit pas un billet, parce que la disponibilité est limitée et que les billets sont délivrés dans l'ordre. La file décide du moment où vous pourrez essayer, pas de ce qu'il restera quand votre tour viendra. La file s'applique à tous les produits réservables sur NOL World, et non aux seuls produits très demandés.",
+        pitfall:
+          "Lire un petit numéro de file comme un résultat. C'est un tour de passage, et le stock peut être épuisé avant qu'il n'arrive.",
+        takes: "1 minute",
+      },
+      {
+        title: "Cessez d'actualiser le plan de salle aussi — il se met à jour tout seul",
+        body: "Le système de réservation a été réorganisé pour que les places disponibles se mettent à jour en temps réel sans recharger. Les places retenues par d'autres utilisateurs disparaissent et les places annulées reviennent d'elles-mêmes. Si vous voyez « cette place a déjà été sélectionnée », cela veut dire qu'un autre utilisateur a choisi la même place presque au même instant — et non que votre page est périmée.",
+        pitfall:
+          "Actualiser le plan de salle coûte la même chose qu'actualiser la file. L'habitude héritée des anciens sites de billetterie est exactement la mauvaise habitude ici.",
+        takes: "Pendant la sélection",
+      },
+      {
+        title: "Lisez le taux de remplissage pour ce qu'il mesure",
+        body: "Là où un taux de complet est affiché, il n'apparaît qu'une fois que 90% ou plus de l'ensemble des places ont été payées, et il compte les billets payés et non les places sélectionnables. Les décomptes de places restantes peuvent ne pas être affichés du tout : NOL World indique que c'est l'organisateur qui décide, et que pour les produits très demandés il existe un décalage entre ce qui est affiché et ce qui est réellement disponible.",
+        pitfall:
+          "Prendre un pourcentage de complet pour un stock en direct. C'est un chiffre de billets payés avec un plancher de 90%, et l'écart entre lui et la réalité est le plus grand précisément quand il vous importe le plus.",
+        takes: "1 minute",
+      },
+      {
+        title: "Si vous recevez une notification de liste d'attente, vous avez six heures",
+        body: "Si une place en liste d'attente se libère et que le paiement n'est pas effectué dans les six heures suivant la notification, la réservation est automatiquement annulée et remboursée, et l'occasion passe à la personne suivante sur la liste. Six heures paraît généreux jusqu'à ce qu'on se rappelle que la notification arrive aux heures de bureau coréennes et que la plupart des lecteurs de cette page en dormiront une partie.",
+        pitfall:
+          "Une fenêtre de six heures qui s'ouvre à 3h du matin chez vous est une fenêtre de deux heures. Convertissez l'heure de la notification comme vous avez converti l'heure de la vente.",
+        takes: "Sous 6 heures",
+      },
+      {
+        title: "Sachez que vous ne pourrez pas changer de place ensuite",
+        body: "Une fois la réservation terminée, les changements de place sont impossibles — la seule voie est d'annuler et de réserver à nouveau, ce qui vous expose aux frais d'annulation de l'événement et au risque que la place soit prise entre-temps. Il en va de même des codes de réduction : un code ne peut pas être appliqué après le paiement, et en utiliser un revient à annuler puis réserver la même place avec les frais que cela implique.",
+        pitfall:
+          "Réserver une place dont vous n'êtes pas sûr en comptant arranger cela plus tard. Il n'y a pas de plus tard.",
+        takes: "Avant de confirmer",
+      },
+    ],
+    faq: [
+      {
+        q: "Actualiser m'aide-t-il à passer plus vite la file d'attente NOL World ?",
+        a: "C'est l'inverse. NOL World indique qu'actualiser la page remet votre position dans la file à zéro, et que la file ne peut pas être contournée.",
+      },
+      {
+        q: "Puis-je faire la file sur mon téléphone et sur mon ordinateur en même temps ?",
+        a: "Non. Un compte reçoit un seul numéro de file, et tenter d'en obtenir davantage ferme le premier. Si vous appuyez sur Réserver depuis un deuxième appareil, il vous est demandé de conserver la file existante ou de repartir de zéro sur le nouveau.",
+      },
+      {
+        q: "Dois-je actualiser le plan de salle pour voir de nouvelles places ?",
+        a: "Non. Les places se mettent à jour en temps réel — les places retenues disparaissent et les places annulées reviennent sans rechargement. Actualiser vous coûte la même chose qu'actualiser la file.",
+      },
+      {
+        q: "Que signifie réellement le taux de complet ?",
+        a: "Il n'apparaît que lorsque 90% ou plus des places ont été payées, et il compte les billets payés et non les places que vous pourriez sélectionner. Pour les concerts très demandés, il existe un décalage connu entre ce chiffre et la disponibilité réelle.",
+      },
+      {
+        q: "Combien de temps ai-je après une notification de liste d'attente ?",
+        a: "Six heures. Si le paiement n'est pas effectué dans ce délai, la réservation est automatiquement annulée et remboursée et la place passe à la personne suivante sur la liste d'attente.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Verified Member da NOL World: passando no eKYC desde o exterior",
+    summary:
+      "Alguns shows não deixam você comprar de jeito nenhum até o seu passaporte ser validado. A verificação é uma captura ao vivo do passaporte e do rosto, não pode ser refeita de qualquer jeito, e a única instrução que a NOL World dá sobre o momento de fazê-la é justamente a que a maioria ignora.",
+    scope:
+      "Cobre a verificação de identidade Verified Member Only na NOL World, como a NOL World a documenta: quando ela se aplica, o que a captura exige, o que acontece com o nome que ela salva, e o que a zera ou a restringe. Portadores de passaporte coreano são direcionados à NOL Ticket, que é outra verificação em outro site. Nada aqui é um jeito de contornar uma validação.",
+    intro: [
+      "Um show Verified Member Only é um show que você não consegue comprar de jeito nenhum até a sua identidade ser validada. Não é um aviso no checkout — a reserva simplesmente não existe para uma conta não validada. Os fãs descobrem isso no instante em que a venda abre, que é o pior momento possível, porque a validação é uma captura ao vivo do seu passaporte e do seu rosto e leva o tempo que leva.",
+      "A NOL World explica o serviço como uma forma de restringir o acesso para fins não autorizados, como a revenda de ingressos. Vale levar isso ao pé da letra: a verificação existe para amarrar uma pessoa a uma conta, e quase toda regra abaixo decorre disso.",
+    ],
+    steps: [
+      {
+        title: "Veja se o seu show exige isso, e se você está no site certo",
+        body: "Verified Member Only é definido por produto, e não por conta — a NOL World diz que só membros que concluíram a validação de identidade na página do produto podem fazer reservas. Então a primeira pergunta é se o seu show carrega essa marcação. A segunda é se você deveria estar na NOL World: a NOL World manda portadores de passaporte coreano usarem o site NOL Ticket, que roda uma verificação completamente diferente.",
+        pitfall:
+          "Supor que a verificação de identidade é uma tarefa chata avulsa sobre a qual o site vai avisar você. Num show Verified Member Only não existe aviso — a compra simplesmente não está lá.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Faça um ou dois dias antes de a venda abrir",
+        body: "Esta é a instrução da própria NOL World e o fato mais útil desta página: conclua a validação com pelo menos um ou dois dias de antecedência, porque tentá-la perto do horário de abertura dos ingressos significa que o tráfego alto pode causar dificuldades. Uma vez feita, você pode comprar em qualquer show Verified Member Only sem validar de novo. O custo de fazer cedo é uma noite. O custo de fazer tarde é o show.",
+        pitfall:
+          "Começar a captura nos dez minutos antes de uma pré-venda. Uma validação que falha por tráfego não pode ser apressada, e a fila não espera.",
+        takes: "30 minutos, dois dias antes",
+      },
+      {
+        title: "Valide a conta com que você vai comprar de verdade",
+        body: "A validação é única por conta, e a NOL World afirma que os dados validados não podem ser reutilizados — um passaporte valida uma conta. Se você tem mais de uma conta, este é o momento de decidir qual é a de verdade, porque a validação não se muda depois. A NOL World acrescenta que apagar uma conta apaga os seus dados validados e os libera para outra, mas que uma conta restringida por uso indevido não pode ser apagada de jeito nenhum.",
+        pitfall:
+          "Validar na conta em que você por acaso estava logado e depois comprar na outra. A segunda conta é não validada, e o show é Verified Member Only.",
+        takes: "5 minutos de decisão",
+      },
+      {
+        title: "Tenha o passaporte original, válido e dentro da validade",
+        body: "Só passaportes válidos são aceitos, e a NOL World é explícita de que fotos ou cópias não são: nem um escaneamento impresso, nem uma captura de tela, nem uma foto da página numa outra tela. Se o seu passaporte venceu, você precisa renová-lo antes de poder validar — não existe uma rota com outro documento na NOL World para quem não tem passaporte coreano.",
+        pitfall:
+          "Recorrer à foto do passaporte que já está na galeria do seu celular porque o passaporte de verdade está no cofre do hotel. Essa tentativa fica registrada como uma tentativa com cópia.",
+        takes: "—",
+      },
+      {
+        title: "Passe na captura na primeira tentativa",
+        body: "A NOL World publica o que faz a captura falhar, e a lista parece uma lista de coisas que as pessoas fazem com pressa. Alinhe o passaporte e o seu rosto com as guias na tela. Mantenha brilhos e reflexos fora da página do passaporte e do seu rosto. O seu rosto precisa bater com a foto do passaporte. Segure o aparelho firme por pelo menos cinco segundos durante a captura. E se o aparelho for de configuração baixa ou a rede estiver instável, os dados podem não ser salvos corretamente mesmo quando a captura pareceu boa. Quando ela falha, a tela diz o motivo — leia em vez de tentar de novo no escuro.",
+        pitfall:
+          "Fazer isso com uma mão, à noite, sob uma luz de teto que reflete na lâmina plástica. Luz vinda de cima numa página de passaporte é o motivo mais comum de uma captura não ser lida.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Confira o nome que foi realmente salvo",
+        body: "Só nomes em inglês são aceitos. A NOL World diz que, se o nome do seu passaporte não estiver em inglês ou contiver caracteres especiais, a reserva não pode prosseguir, e que você pode ser redirecionado para um pedido de correção de nome — um envio de solicitação, e não uma mudança de configuração. O nome salvo é visível em My Page, que é onde conferi-lo em vez de supor. Isso importa agora porque depois da validação você não pode mais alterar o seu nome, a sua data de nascimento nem o seu e-mail de jeito nenhum: as reservas só podem ser feitas com os dados validados.",
+        pitfall:
+          "Deixar o nome sem conferir porque a validação disse que deu certo. Dar certo e salvar os caracteres certos são duas coisas diferentes, e uma delas já não é editável.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Entenda a ordem do nome — e o que de fato importa na porta",
+        body: "A NOL World mudou a ordem do nome armazenado em 16 de abril de 2025. Membros validados antes dessa data têm Primeiro Nome + (Nome do Meio) + Sobrenome; membros validados depois dela têm Sobrenome + Primeiro Nome + (Nome do Meio). A NOL World afirma com todas as letras que, mesmo que a ordem seja diferente da do seu passaporte, a conferência do ingresso e a entrada no local do evento continuam possíveis — a conferência no local só é restringida se o nome em si for diferente do nome do passaporte. Membros validados antes de 16 de abril de 2025 recebem o novo formato quando revalidam depois do vencimento do passaporte.",
+        pitfall:
+          "Abrir um pedido de correção de nome porque a ordem parece errada. A NOL World diz que a ordem não é o problema; um nome diferente é. Caracteres certos, não sequência.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Saiba o que pode desfazer uma validação que você já passou",
+        body: "Uma validação concluída pode ser cancelada depois. A NOL World nomeia duas causas: tentar a validação com um documento falsificado ou alterado — o que ela define como incluindo cópias impressas e capturas de tela — e o vencimento do passaporte usado na validação. Se a sua for cancelada, revalide usando a conta existente. A NOL World avisa especificamente que tentar uma conta nova no lugar pode levar a falhas repetidas do sistema, e que uma validação que se constate obtida por meios fraudulentos pode custar a você o acesso aos serviços de compra.",
+        pitfall:
+          "Abrir uma conta nova para escapar de um cancelamento. O cancelamento seguiu o documento, não a conta, e a conta nova herda o problema mais a suspeita.",
+        takes: "—",
+      },
+      {
+        title: "Saiba o que a plataforma conta como fraude, e quanto isso custa",
+        body: "O motivo de a verificação ser tão rígida está na política antifraude da NOL World, e as consequências são públicas. Usar documentos roubados ou falsos na validação está listado como uso fraudulento. O mesmo vale para reservar vários ingressos além do uso normal com dados pessoais idênticos ou parecidos — os mesmos dados de contato, endereço de entrega ou dados de pagamento entre contas. As penalidades vão de uma restrição de compra de três meses ou mais até a suspensão permanente da conta e o cancelamento de todo ingresso comprado. O organizador do evento pode acrescentar as suas próprias, incluindo a expulsão do fã-clube. Existe um recurso, e onde a negociação fraudulenta é claramente confirmada não existe.",
+        pitfall:
+          "Validar várias contas da família de um só celular, um só endereço e um só cartão para aumentar as suas chances numa pré-venda. Esse padrão está na lista publicada, e a penalidade declarada alcança todo ingresso em cada uma dessas contas.",
+        takes: "10 minutos de leitura",
+      },
+    ],
+    faq: [
+      {
+        q: "O que Verified Member Only quer dizer de fato numa página de evento?",
+        a: "Que o show está fechado para contas não validadas. A NOL World o descreve como um serviço que permite aos membros validar a sua identidade antes de comprar, em que só membros que concluíram a validação na página do produto podem fazer reservas. Ela declara que a finalidade é restringir o acesso para fins não autorizados, como a revenda de ingressos. Tenha o passaporte e o smartphone à mão, porque a verificação precisa dos dois.",
+      },
+      {
+        q: "Eu tenho passaporte coreano. Posso simplesmente validar na NOL World?",
+        a: "A NOL World manda portadores de passaporte coreano usarem o site de ingressos NOL. É outro site, com outra verificação de identidade — em geral autenticação por celular coreano ou I-PIN — e uma conta separada.",
+      },
+      {
+        q: "Eu sou cidadão coreano morando fora e não tenho número de celular coreano. E agora?",
+        a: "A NOL World publica uma rota documental. Ela direciona cidadãos sul-coreanos residentes no exterior à NOL Ticket, onde a identidade pode ser validada por autenticação de celular ou I-PIN; onde não há número de registro de residente coreano e a autenticação por celular está indisponível, ela aceita documentos comprobatórios do status de coreano no exterior — um Certificado de Registro de Coreano no Exterior junto com um passaporte sul-coreano, enviados pelo formulário de atendimento ao cliente com o ID da sua conta. Ela diz que o certificado pode ser obtido online pela Agência de Coreanos no Exterior, e que um Cartão de Registro de Estrangeiro pode ser aceito como substituto onde o certificado seja difícil de obter. Ela também avisa que documentos falsificados significam restrição imediata.",
+      },
+      {
+        q: "Existe idade mínima para a validação de identidade?",
+        a: "A NOL World diz que não há limite de idade na validação em si, mas que você ainda pode ficar impedido de comprar ou de assistir a produtos com restrição de idade. Validar não é a mesma coisa que ser elegível para um show específico.",
+      },
+      {
+        q: "O meu nome em My Page está numa ordem diferente da do meu passaporte. Vou ser barrado?",
+        a: "A NOL World diz que não. Ela mudou a ordem armazenada em 16 de abril de 2025 e afirma que a conferência do ingresso e a entrada são possíveis mesmo quando a ordem difere da do passaporte. A conferência no local só é restringida se o nome em si for diferente — então confira a grafia e os caracteres, não a sequência.",
+      },
+      {
+        q: "O meu passaporte venceu depois de eu ter validado. Preciso fazer algo?",
+        a: "Sim. A NOL World lista o vencimento do passaporte como causa de cancelamento de uma validação concluída, então uma renovação significa revalidar — na conta existente, não numa nova. Se você foi validado antes de 16 de abril de 2025, é também aqui que a nova ordem de nome é aplicada ao seu registro.",
+      },
+      {
+        q: "Posso validar com o passaporte de um familiar se o meu venceu?",
+        a: "Não, e esta é a única pergunta com uma consequência publicada em vez de uma opinião. A NOL World lista o uso de documentos roubados ou falsos na validação entre as atividades que trata como uso fraudulento, e as penalidades declaradas chegam à suspensão permanente da conta e ao cancelamento de todo ingresso comprado. Ela também diz que a validação de identidade pode ser feita no local do evento e pede que você compre no seu próprio nome e na sua própria conta e leve um documento com foto válido. Um ingresso que não sobrevive à porta não é um ingresso.",
+      },
+      {
+        q: "A minha conta foi restringida. Existe recurso?",
+        a: "A NOL World publica um. Ela diz que em geral se concede aos usuários um prazo de pelo menos um dia para apresentar uma explicação, e que o recurso deve ser uma exposição detalhada incluindo o ID da conta restringida, o nome completo e os dados de contato, sem formato nem modelo exigido, enviado pelo formulário de atendimento ao cliente. A análise leva cerca de 10 a 15 dias e o resultado chega por e-mail. Ela também expõe os limites: perder o prazo ou não afastar a suspeita e as reservas são canceladas à força, e onde a negociação fraudulenta é claramente confirmada os ingressos podem ser cancelados sem recurso algum.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-world-verified-member-ekyc",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Verified Member sur NOL World : passer l'eKYC depuis l'étranger",
+    summary:
+      "Certains concerts ne vous laisseront pas réserver du tout avant que votre passeport n'ait été vérifié. Le contrôle est une capture en direct du passeport et du visage, il ne se refait pas à la légère, et la seule consigne que NOL World donne sur le moment de le faire est celle que la plupart des gens ignorent.",
+    scope:
+      "Couvre le contrôle d'identité Verified Member Only sur NOL World, tel que NOL World le documente : quand il s'applique, ce qu'exige la capture, ce qu'il advient du nom qu'il enregistre, et ce qui l'annule ou le restreint. Les titulaires d'un passeport coréen sont renvoyés vers NOL Ticket, qui est un autre contrôle sur un autre site. Rien ici n'est un moyen de contourner une vérification.",
+    intro: [
+      "Un concert Verified Member Only est un concert que vous ne pouvez pas réserver du tout avant que votre identité n'ait été vérifiée. Ce n'est pas un avertissement au moment de payer — la réservation n'existe tout simplement pas pour un compte non vérifié. Les fans l'apprennent à l'instant où la vente ouvre, c'est-à-dire au pire moment possible, parce que la vérification est une capture en direct de votre passeport et de votre visage et qu'elle prend le temps qu'elle prend.",
+      "NOL World présente le service comme un moyen de restreindre l'accès à des fins non autorisées, telle la revente de billets. Cela vaut d'être pris au mot : le contrôle existe pour lier une personne à un compte, et presque toutes les règles ci-dessous en découlent.",
+    ],
+    steps: [
+      {
+        title: "Vérifiez si votre concert l'exige, et si vous êtes sur le bon site",
+        body: "Verified Member Only se règle par produit et non par compte — NOL World indique que seuls les membres ayant terminé la vérification d'identité sur la page du produit peuvent réserver. La première question est donc de savoir si votre concert porte cette mention. La seconde est de savoir si c'est bien sur NOL World que vous devez être : NOL World demande aux titulaires d'un passeport coréen d'utiliser le site NOL Ticket, qui applique un contrôle entièrement différent.",
+        pitfall:
+          "Croire que le contrôle d'identité est une corvée ponctuelle dont le site vous avertira. Pour un concert Verified Member Only il n'y a pas d'avertissement — la réservation n'est simplement pas là.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Faites-le un à deux jours avant l'ouverture de la vente",
+        body: "C'est la consigne de NOL World elle-même et le fait le plus utile de cette page : terminez la vérification au moins un à deux jours à l'avance, parce que la tenter près de l'heure d'ouverture des billets expose à des difficultés dues au trafic élevé. Une fois faite, vous pouvez réserver n'importe quel concert Verified Member Only sans vérifier à nouveau. Le coût de s'y prendre tôt est une soirée. Le coût de s'y prendre tard est le concert.",
+        pitfall:
+          "Lancer la capture dans les dix minutes qui précèdent une prévente. Une vérification qui échoue à cause du trafic ne peut pas être accélérée, et la file n'attend pas.",
+        takes: "30 minutes, deux jours avant",
+      },
+      {
+        title: "Vérifiez le compte avec lequel vous allez réellement acheter",
+        body: "La vérification se fait une fois par compte, et NOL World précise que les informations vérifiées ne peuvent pas être réutilisées — un passeport vérifie un compte. Si vous avez plus d'un compte, c'est le moment de décider lequel est le vrai, parce que la vérification ne se déplace pas ensuite. NOL World ajoute que supprimer un compte efface ses informations vérifiées et les libère pour un autre, mais qu'un compte restreint pour usage abusif ne peut pas être supprimé du tout.",
+        pitfall:
+          "Vérifier sur le compte où vous étiez connecté par hasard, puis acheter sur l'autre. Le second compte n'est pas vérifié, et le concert est Verified Member Only.",
+        takes: "5 minutes de décision",
+      },
+      {
+        title: "Ayez le passeport original, valide et non périmé",
+        body: "Seuls les passeports valides sont acceptés, et NOL World est explicite : les photos ou copies ne le sont pas — ni un scan imprimé, ni une capture d'écran, ni une photo de la page prise sur un autre écran. Si votre passeport a expiré, vous devez le renouveler avant de pouvoir vous vérifier : il n'existe sur NOL World aucune autre voie documentaire pour qui ne détient pas de passeport coréen.",
+        pitfall:
+          "Attraper la photo de passeport déjà présente dans la galerie de votre téléphone parce que le vrai est dans le coffre de l'hôtel. Cette tentative est enregistrée comme une tentative avec une copie.",
+        takes: "—",
+      },
+      {
+        title: "Réussissez la capture du premier coup",
+        body: "NOL World publie ce qui fait échouer la capture, et la liste ressemble à une liste de ce que les gens font quand ils sont pressés. Alignez le passeport et votre visage sur les repères à l'écran. Tenez éclats et reflets à l'écart de la page du passeport comme de votre visage. Votre visage doit correspondre à la photo du passeport. Tenez l'appareil immobile pendant au moins cinq secondes le temps de la capture. Et si l'appareil est peu puissant ou le réseau instable, les données peuvent ne pas s'enregistrer correctement même quand la capture avait l'air bonne. En cas d'échec, l'écran en indique la raison — lisez-la plutôt que de réessayer à l'aveugle.",
+        pitfall:
+          "Faire cela d'une main, le soir, sous un plafonnier qui se reflète sur la pellicule plastifiée. Une lumière venue d'en haut sur une page de passeport est la raison la plus fréquente d'une capture illisible.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Contrôlez le nom qui a réellement été enregistré",
+        body: "Seuls les noms en anglais sont acceptés. NOL World indique que si le nom de votre passeport n'est pas en anglais ou contient des caractères spéciaux, la réservation ne peut pas aboutir, et que vous pouvez être redirigé vers une demande de correction de nom — un dépôt de demande, et non un changement de réglage. Le nom enregistré est visible sur My Page, et c'est là qu'il faut le contrôler plutôt que de le supposer. Cela compte dès maintenant parce qu'après la vérification vous ne pouvez plus modifier votre nom, votre date de naissance ni votre adresse e-mail du tout : les réservations ne peuvent être faites qu'avec les informations vérifiées.",
+        pitfall:
+          "Laisser le nom sans le contrôler parce que la vérification a annoncé une réussite. Réussir et enregistrer les bons caractères sont deux choses différentes, et l'une des deux n'est plus modifiable.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Comprenez l'ordre du nom — et ce qui compte vraiment à l'entrée",
+        body: "NOL World a changé l'ordre du nom enregistré le 16 avril 2025. Les membres vérifiés avant cette date ont Prénom + (Deuxième prénom) + Nom ; les membres vérifiés après ont Nom + Prénom + (Deuxième prénom). NOL World déclare clairement que même si l'ordre diffère de celui de votre passeport, le contrôle du billet et l'entrée à la salle restent possibles — le contrôle sur place n'est restreint que si le nom lui-même diffère du nom du passeport. Les membres vérifiés avant le 16 avril 2025 reçoivent le nouveau format lorsqu'ils se vérifient à nouveau après l'expiration de leur passeport.",
+        pitfall:
+          "Déposer une demande de correction de nom parce que l'ordre semble faux. NOL World dit que l'ordre n'est pas le problème ; un nom différent l'est. Les bons caractères, pas la séquence.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Sachez ce qui peut défaire une vérification déjà obtenue",
+        body: "Une vérification terminée peut être annulée après coup. NOL World en nomme deux causes : avoir tenté la vérification avec une pièce d'identité falsifiée ou altérée — ce qu'elle définit comme incluant les copies imprimées et les captures d'écran — et l'expiration du passeport utilisé pour la vérification. Si la vôtre est annulée, vérifiez-vous à nouveau avec le compte existant. NOL World prévient expressément qu'essayer un nouveau compte à la place peut entraîner des échecs système répétés, et qu'une vérification dont il s'avère qu'elle a été obtenue par des moyens frauduleux peut vous coûter l'accès aux services de réservation.",
+        pitfall:
+          "Ouvrir un compte neuf pour échapper à une annulation. L'annulation a suivi le document, pas le compte, et le nouveau compte hérite du problème plus du soupçon.",
+        takes: "—",
+      },
+      {
+        title: "Sachez ce que la plateforme compte comme fraude, et ce que cela coûte",
+        body: "La raison de cette sévérité est dans la politique antifraude de NOL World, et les conséquences sont publiées. Utiliser des pièces d'identité volées ou fausses pour la vérification y figure comme un usage frauduleux. De même que réserver plusieurs billets au-delà d'un usage normal avec des informations personnelles identiques ou voisines — mêmes coordonnées, même adresse de livraison ou mêmes informations de paiement d'un compte à l'autre. Les sanctions vont d'une restriction de réservation de trois mois ou plus à la suspension définitive du compte et à l'annulation de tous les billets réservés. L'organisateur de l'événement peut y ajouter les siennes, dont l'exclusion du fan-club. Il existe un recours, et là où un commerce frauduleux est clairement établi il n'en existe pas.",
+        pitfall:
+          "Vérifier plusieurs comptes familiaux depuis un seul téléphone, une seule adresse et une seule carte pour augmenter vos chances en prévente. Ce schéma figure sur la liste publiée, et la sanction annoncée atteint tous les billets de chacun de ces comptes.",
+        takes: "10 minutes de lecture",
+      },
+    ],
+    faq: [
+      {
+        q: "Que veut dire concrètement Verified Member Only sur une page d'événement ?",
+        a: "Que le concert est fermé aux comptes non vérifiés. NOL World le décrit comme un service permettant aux membres de vérifier leur identité avant d'acheter, où seuls les membres ayant terminé la vérification sur la page du produit peuvent réserver. Elle en donne pour but de restreindre l'accès à des fins non autorisées, telle la revente de billets. Ayez votre passeport et votre smartphone sous la main, car le contrôle a besoin des deux.",
+      },
+      {
+        q: "Je détiens un passeport coréen. Puis-je simplement me vérifier sur NOL World ?",
+        a: "NOL World demande aux titulaires d'un passeport coréen d'utiliser le site de billetterie NOL à la place. C'est un autre site, avec un autre contrôle d'identité — généralement l'authentification par mobile coréen ou I-PIN — et un compte distinct.",
+      },
+      {
+        q: "Je suis ressortissant coréen vivant à l'étranger et sans numéro de mobile coréen. Et alors ?",
+        a: "NOL World publie une voie documentaire. Elle renvoie les citoyens sud-coréens résidant à l'étranger vers NOL Ticket, où l'identité peut être vérifiée par authentification mobile ou I-PIN ; en l'absence de numéro d'enregistrement de résident coréen et quand l'authentification mobile n'est pas disponible, elle accepte des pièces justificatives attestant du statut de Coréen de l'étranger — un certificat d'enregistrement de Coréen de l'étranger accompagné d'un passeport sud-coréen, déposés via son formulaire de demande au service client avec l'identifiant de votre compte. Elle indique que le certificat peut être obtenu en ligne auprès de l'Agence des Coréens de l'étranger, et qu'une carte d'enregistrement d'étranger peut être acceptée en substitut là où le certificat est difficile à obtenir. Elle prévient aussi que des documents falsifiés entraînent une restriction immédiate.",
+      },
+      {
+        q: "Y a-t-il un âge minimum pour la vérification d'identité ?",
+        a: "NOL World indique qu'il n'y a pas de limite d'âge pour la vérification elle-même, mais que vous pouvez malgré tout ne pas pouvoir réserver ni assister à des produits soumis à des restrictions d'âge. Être vérifié n'est pas la même chose qu'être éligible à un concert donné.",
+      },
+      {
+        q: "Mon nom sur My Page est dans un ordre différent de celui de mon passeport. Vais-je être refoulé ?",
+        a: "NOL World répond non. Elle a changé l'ordre enregistré le 16 avril 2025 et déclare que le contrôle du billet et l'entrée sont possibles même là où l'ordre diffère de celui du passeport. Le contrôle sur place n'est restreint que si le nom lui-même diffère — contrôlez donc l'orthographe et les caractères, pas la séquence.",
+      },
+      {
+        q: "Mon passeport a expiré après ma vérification. Dois-je faire quelque chose ?",
+        a: "Oui. NOL World cite l'expiration du passeport comme cause d'annulation d'une vérification terminée : un renouvellement implique donc de se vérifier à nouveau — sur le compte existant, pas sur un nouveau. Si vous avez été vérifié avant le 16 avril 2025, c'est aussi à ce moment que le nouvel ordre du nom est appliqué à votre fiche.",
+      },
+      {
+        q: "Puis-je me vérifier avec le passeport d'un proche si le mien a expiré ?",
+        a: "Non, et c'est la seule question dont la réponse est une conséquence publiée plutôt qu'un avis. NOL World cite l'usage de pièces d'identité volées ou fausses pour la vérification parmi les agissements qu'elle traite comme un usage frauduleux, et les sanctions annoncées vont jusqu'à la suspension définitive du compte et l'annulation de tous les billets réservés. Elle indique aussi que la vérification d'identité peut avoir lieu à la salle et vous demande de réserver sous votre propre nom et depuis votre propre compte, et d'apporter une pièce d'identité avec photo valide. Un billet qui ne survit pas à la porte n'est pas un billet.",
+      },
+      {
+        q: "Mon compte a été restreint. Y a-t-il un recours ?",
+        a: "NOL World en publie un. Elle indique qu'un délai d'au moins un jour est généralement accordé aux utilisateurs pour fournir une explication, et que le recours doit être un exposé détaillé comprenant l'identifiant du compte restreint, le nom complet et les coordonnées, sans format ni modèle imposé, envoyé via son formulaire de demande au service client. L'examen prend environ 10 à 15 jours et le résultat arrive par e-mail. Elle en énonce aussi les limites : passer le délai ou ne pas lever le soupçon et les réservations sont annulées d'office, et là où un commerce frauduleux est clairement établi les billets peuvent être annulés sans aucun recours.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL facepass: quem guarda o seu rosto, e para que ele serve",
+    summary:
+      "Você se cadastra uma vez e uma câmera deixa você entrar sem conferência de ingresso. O rosto fica com a Toss e não com a NOL World, ele não pode ser trocado depois, e cancelar o serviço apaga a foto mas mantém uma cópia separada por um ano.",
+    scope:
+      "Cobre o que a NOL World publica sobre o NOL facepass, inclusive o prazo de retenção que ela declara após o cancelamento: o que ele faz, quem guarda os dados faciais, e a que o cadastro compromete você. O suporte é por show, e quem decide é a página do evento. Nada aqui é uma opinião jurídica sobre dados biométricos no seu próprio país.",
+    intro: [
+      "Os locais de evento coreanos estão migrando para o reconhecimento facial na porta, e um fã do exterior encontra isso como uma caixa de seleção durante a compra, com muito pouca explicação em inglês. A pergunta por baixo dela não é pequena: uma empresa com a qual você nunca lidou está a ponto de guardar o seu rosto.",
+      "A NOL World publica respostas, sim. Elas são específicas, são mais tranquilizadoras do que a maioria das empresas consegue ser, e vale lê-las antes da fila e não durante ela — inclusive a que trata do que acontece com os dados depois de você cancelar, que não diz o que uma palavra solta como “apagado” sugeriria.",
+    ],
+    steps: [
+      {
+        title: "Entenda o que ele substitui",
+        body: "A NOL World descreve o facepass como uma forma de reduzir o procedimento e o tempo que a validação de identidade leva na entrada. Uma vez concluído o cadastro do rosto, uma câmera escaneia você na porta e você entra sem conferência de ingresso. É um substituto da conferência de documento no portão, e não uma camada extra em cima dela.",
+        pitfall:
+          "Ler isso como se fosse só um recurso de conveniência. A segunda metade da descrição da própria NOL World é fiscalização, que é o passo seguinte.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Saiba o outro motivo pelo qual ele existe",
+        body: "A NOL World declara a finalidade em dobro: agilizar a validação de identidade e impedir a venda e a distribuição ilegais de ingressos. Um rosto que precisa bater com a conta que comprou o ingresso é um controle de revenda, e ele chega no mesmo período que uma Lei de Espetáculos revisada que alcança a revenda habitual acima do valor de face. Esses dois fatos pertencem um ao lado do outro.",
+        pitfall:
+          "Supor que um ingresso comprado num site de revenda simplesmente vai funcionar num portão com facepass. O sistema existe exatamente para que isso não funcione.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Saiba para onde o rosto vai de fato",
+        body: "Esta é a parte que mais vale saber. A NOL World diz que as informações faciais — a imagem original e os dados de características — são criptografadas e armazenadas pela Toss, a fintech por trás do serviço FaceAccess, e que elas não são fornecidas à NOL World nem a agências em nenhuma circunstância. Só o resultado da autenticação, sucesso ou falha, é compartilhado. A NOL World também diz que os dados não são usados para nenhuma finalidade além da prestação do serviço, e cita a Toss como detentora das certificações ISO 27701 e CBPR.",
+        pitfall:
+          "Essas são declarações da NOL World sobre um terceiro, não uma auditoria. Elas são incomumente específicas para uma página desse tipo, o que é motivo para levá-las a sério e não motivo para parar de ler.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Trate o cadastro como permanente",
+        body: "Depois que um rosto é cadastrado, ele não pode ser modificado. A NOL World dá o motivo com todas as letras — é para impedir o uso fraudulento do serviço. Não existe corrigir um cadastro ruim depois, então as condições em que você se cadastra são as condições com que você fica: iluminação, óculos, o que a câmera tiver capturado.",
+        pitfall:
+          "Cadastrar-se às pressas numa fila, com luz ruim, pretendendo refazer direito depois. Não existe depois.",
+        takes: "10 minutos, com calma",
+      },
+      {
+        title: "Nunca deixe ninguém se cadastrar no seu celular ou na sua conta",
+        body: "A NOL World diz isso diretamente: garanta que mais ninguém use a sua conta, e se alguém cadastrar informações faciais usando o seu celular ou a sua conta, a empresa não se responsabiliza por nenhum problema decorrente. Um aparelho compartilhado em casa no momento em que uma turnê entra em venda é exatamente como isso acontece, e a conta é o que carrega a consequência.",
+        pitfall:
+          "Ajudar um amigo a se cadastrar no seu celular já logado. O rosto que agora está preso à sua conta é o dele, não pode ser modificado, e a isenção de responsabilidade é explícita.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Veja se o seu show tem suporte a isso",
+        body: "O suporte é por evento e não universal — a NOL World mantém uma pergunta especificamente sobre como conferir se um show tem suporte a facepass, que só existe porque a resposta varia. Confira a página do evento do seu show antes de planejar a entrada em torno disso, e deixe a rota comum pronta: número de confirmação e documento de identidade na bilheteria.",
+        pitfall:
+          "Cadastrar-se e depois chegar a um local que ainda faz conferência de documento, com o passaporte deixado no hotel.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Leia a resposta sobre exclusão com atenção — ela não é simplesmente exclusão",
+        body: "A NOL World responde se as informações faciais são apagadas caso você cancele a assinatura, e a resposta tem duas metades. A primeira: a foto do seu rosto é apagada quando você cancela o serviço, e usá-lo de novo significa cadastrar de novo. A segunda: para fins de validação de identidade, os dados são armazenados separadamente e retidos por um ano a partir do momento do cancelamento — usados, diz a NOL World, apenas para a validação de identidade num novo cadastro, e descartados depois do ano. Então cancelar a assinatura apaga a foto e liga um cronômetro em vez de desligar um. Essa é uma política defensável e não é o que a palavra “apagado” sozinha dá a entender, e é por isso que vale lê-la nas palavras deles antes de se cadastrar.",
+        pitfall:
+          "Aceitar o resumo de uma palavra de qualquer terceiro sobre o que acontece com dados biométricos, inclusive o nosso. Leia a frase da retenção, não o título.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "A NOL World vê o meu rosto?",
+        a: "A NOL World diz que não. As informações faciais são criptografadas e ficam com a Toss, e a NOL World afirma que elas não são fornecidas à NOL World nem a agências em nenhuma circunstância — só o sucesso ou a falha da autenticação é compartilhado.",
+      },
+      {
+        q: "Posso cadastrar o meu rosto de novo se a primeira tentativa ficou ruim?",
+        a: "Não. A NOL World diz que um rosto cadastrado não pode ser modificado, para impedir o uso fraudulento do serviço. Cadastre-se com calma na primeira vez.",
+      },
+      {
+        q: "Os meus dados faciais serão apagados se eu cancelar o facepass?",
+        a: "Em parte, e depois num cronômetro. A NOL World diz que a foto do rosto é apagada quando você cancela a assinatura, e que você teria de cadastrar de novo para usar o serviço. Ela também diz que, para fins de validação de identidade, os dados são armazenados separadamente e retidos por um ano a partir do cancelamento, usados apenas para a validação de identidade caso você se cadastre de novo, e descartados depois desse ano. Até 20 de outubro de 2026 esta página dizia que não tínhamos lido essa resposta e se recusava a resumi-la; ela agora está citada acima e registrada nas nossas correções.",
+      },
+      {
+        q: "Todo show usa facepass?",
+        a: "Não. O suporte varia por evento, e a NOL World mantém uma resposta separada sobre como conferir. Confirme na página do evento do seu show, e mantenha disponível a rota comum de retirada.",
+      },
+      {
+        q: "O que acontece se outra pessoa cadastrar o rosto dela na minha conta?",
+        a: "A NOL World diz que a empresa não se responsabiliza por problemas decorrentes disso, e pede que você garanta que mais ninguém use a sua conta. Como um rosto cadastrado não pode ser trocado, isso não é recuperável pela via comum.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-facepass-face-registration",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "NOL facepass : qui détient votre visage, et à quoi il sert",
+    summary:
+      "Vous vous enregistrez une fois et une caméra vous fait entrer sans contrôle de billet. Le visage est conservé par Toss et non par NOL World, il ne peut pas être changé ensuite, et résilier le service supprime la photo mais garde une copie distincte pendant un an.",
+    scope:
+      "Couvre ce que NOL World publie au sujet de NOL facepass, y compris la durée de conservation qu'elle annonce après résiliation : ce qu'il fait, qui stocke les données faciales, et à quoi l'enregistrement vous engage. La prise en charge se décide par concert, et c'est la page de l'événement qui tranche. Rien ici n'est un avis juridique sur les données biométriques dans votre propre pays.",
+    intro: [
+      "Les salles coréennes passent à la reconnaissance faciale à l'entrée, et un fan de l'étranger la rencontre sous la forme d'une case à cocher pendant la réservation, avec très peu d'explications en anglais. La question qu'elle recouvre n'est pas mince : une entreprise avec laquelle vous n'avez jamais eu affaire est sur le point de détenir votre visage.",
+      "NOL World publie bel et bien des réponses. Elles sont précises, elles sont plus rassurantes que ce que la plupart des entreprises parviennent à écrire, et elles valent d'être lues avant la file d'attente plutôt que pendant — y compris celle sur ce que deviennent les données après résiliation, qui ne dit pas ce qu'un mot isolé comme « supprimé » laisserait entendre.",
+    ],
+    steps: [
+      {
+        title: "Comprenez ce qu'il remplace",
+        body: "NOL World décrit facepass comme un moyen de réduire la procédure et le temps que prend la vérification d'identité à l'entrée. Une fois l'enregistrement du visage terminé, une caméra vous scanne à la porte et vous entrez sans contrôle de billet. C'est un remplacement du contrôle documentaire au portique, pas une couche supplémentaire par-dessus.",
+        pitfall:
+          "Y voir une simple commodité. La seconde moitié de la description de NOL World elle-même relève du contrôle, ce qui fait l'objet de l'étape suivante.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Sachez l'autre raison de son existence",
+        body: "NOL World en énonce la finalité deux fois : fluidifier la vérification d'identité, et empêcher la vente et la distribution illégales de billets. Un visage qui doit correspondre au compte ayant acheté le billet est un contrôle de la revente, et il arrive dans la même période qu'une loi révisée sur les spectacles qui atteint la revente habituelle au-dessus de la valeur faciale. Ces deux faits vont ensemble.",
+        pitfall:
+          "Supposer qu'un billet acheté sur une place de revente fonctionnera tout bonnement à un portique facepass. Le système existe précisément pour que cela ne fonctionne pas.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Sachez où va réellement le visage",
+        body: "C'est la partie la plus utile à connaître. NOL World indique que les informations faciales — l'image d'origine et les données caractéristiques — sont chiffrées et stockées par Toss, la fintech derrière le service FaceAccess, et qu'elles ne sont fournies ni à NOL World ni à des agences en aucune circonstance. Seul le résultat de l'authentification, réussite ou échec, est partagé. NOL World ajoute que les données ne servent à aucune finalité au-delà de la fourniture du service, et cite Toss comme titulaire des certifications ISO 27701 et CBPR.",
+        pitfall:
+          "Ce sont des déclarations de NOL World au sujet d'un tiers, pas un audit. Elles sont inhabituellement précises pour ce genre de page, ce qui est une raison de les prendre au sérieux et non une raison d'arrêter de lire.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Considérez l'enregistrement comme définitif",
+        body: "Une fois un visage enregistré, il ne peut plus être modifié. NOL World en donne clairement la raison — c'est pour empêcher l'usage frauduleux du service. Il n'y a pas de correction ultérieure d'un mauvais enregistrement : les conditions dans lesquelles vous vous enregistrez sont donc celles que vous gardez — l'éclairage, les lunettes, ce que la caméra a capté.",
+        pitfall:
+          "S'enregistrer à la hâte dans une file, sous un mauvais éclairage, en comptant refaire cela correctement plus tard. Il n'y a pas de plus tard.",
+        takes: "10 minutes, posément",
+      },
+      {
+        title: "Ne laissez jamais personne s'enregistrer sur votre téléphone ou votre compte",
+        body: "NOL World le dit directement : assurez-vous que personne d'autre n'utilise votre compte, et si quelqu'un enregistre des informations faciales en se servant de votre téléphone ou de votre compte, l'entreprise n'est pas responsable des problèmes qui en découlent. Un appareil familial partagé au moment où une tournée est mise en vente est exactement la façon dont cela arrive, et c'est le compte qui en porte la conséquence.",
+        pitfall:
+          "Aider un ami à s'enregistrer sur votre téléphone resté connecté. Le visage désormais rattaché à votre compte est le sien, il ne peut pas être modifié, et la clause de non-responsabilité est explicite.",
+        takes: "1 minute",
+      },
+      {
+        title: "Vérifiez si votre concert le prend en charge",
+        body: "La prise en charge se décide par événement plutôt qu'universellement — NOL World tient une question portant précisément sur la manière de vérifier si un concert prend en charge facepass, qui n'existe que parce que la réponse varie. Vérifiez la page de l'événement de votre concert avant d'organiser votre entrée là-dessus, et gardez la voie ordinaire prête : numéro de confirmation et pièce d'identité au guichet.",
+        pitfall:
+          "S'enregistrer, puis arriver dans une salle qui fait encore des contrôles documentaires, le passeport laissé à l'hôtel.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Lisez attentivement la réponse sur la suppression — ce n'est pas simplement une suppression",
+        body: "NOL World répond à la question de savoir si les informations faciales sont supprimées lorsque vous résiliez, et la réponse a deux moitiés. La première : la photo de votre visage est supprimée quand vous résiliez le service, et vous en resservir suppose de vous enregistrer à nouveau. La seconde : aux fins de la vérification d'identité, les données sont stockées séparément et conservées pendant un an à compter de la résiliation — utilisées, dit NOL World, uniquement pour la vérification d'identité lors d'un nouvel enregistrement, et détruites après cette année. Résilier supprime donc la photo et lance un compte à rebours au lieu de l'arrêter. C'est une politique défendable et ce n'est pas ce que le mot « supprimé » laisse entendre tout seul, et c'est pourquoi cela vaut d'être lu dans leurs mots avant de vous enregistrer.",
+        pitfall:
+          "Se fier au résumé en un mot d'un tiers quelconque sur le devenir de données biométriques, le nôtre compris. Lisez la phrase sur la conservation, pas le titre.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "NOL World voit-elle mon visage ?",
+        a: "NOL World répond non. Les informations faciales sont chiffrées et détenues par Toss, et NOL World déclare qu'elles ne sont fournies ni à NOL World ni à des agences en aucune circonstance — seule la réussite ou l'échec de l'authentification est partagé.",
+      },
+      {
+        q: "Puis-je enregistrer à nouveau mon visage si la première tentative était mauvaise ?",
+        a: "Non. NOL World indique qu'un visage enregistré ne peut pas être modifié, afin d'empêcher l'usage frauduleux du service. Enregistrez-vous posément la première fois.",
+      },
+      {
+        q: "Mes données faciales seront-elles supprimées si je résilie facepass ?",
+        a: "En partie, puis selon un compte à rebours. NOL World indique que la photo du visage est supprimée quand vous résiliez, et qu'il faudrait vous enregistrer à nouveau pour utiliser le service. Elle précise aussi qu'aux fins de la vérification d'identité, les données sont stockées séparément et conservées pendant un an à compter de la résiliation, utilisées uniquement pour la vérification d'identité si vous vous enregistrez à nouveau, et détruites après cette année. Jusqu'au 20 octobre 2026, cette page indiquait que nous n'avions pas lu cette réponse et se refusait à la résumer ; elle est désormais citée ci-dessus et consignée dans nos corrections.",
+      },
+      {
+        q: "Tous les concerts utilisent-ils facepass ?",
+        a: "Non. La prise en charge varie selon l'événement, et NOL World tient une réponse distincte sur la manière de le vérifier. Confirmez-le sur la page de l'événement de votre concert, et gardez disponible la voie de retrait ordinaire.",
+      },
+      {
+        q: "Que se passe-t-il si quelqu'un d'autre enregistre son visage sur mon compte ?",
+        a: "NOL World indique que l'entreprise n'est pas responsable des problèmes qui en découlent, et vous demande de veiller à ce que personne d'autre n'utilise votre compte. Comme un visage enregistré ne peut pas être changé, cela ne se répare pas par la voie ordinaire.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

@@ -17873,6 +17873,354 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vì sao đơn Weverse Shop của bạn tới muộn, và khi nào bạn còn hủy được",
+    summary:
+      "Cái nút hủy biến mất khi trạng thái thay đổi chứ không theo một thời hạn, EU đã bỏ mức miễn thuế 150 euro, Mỹ thêm một chế độ kiểm tra thứ hai bên cạnh chế độ thuế, và một dịp lễ Hàn Quốc có giờ chốt đơn tính đến từng phút.",
+    scope:
+      "Trang này bao gồm những gì xảy ra sau khi một đơn Weverse Shop được đặt, lấy từ chính các thông báo của Weverse Shop: cửa sổ hủy đơn, những thay đổi hải quan mà họ đã cảnh báo cho EU và Mỹ, các chậm trễ do dịp lễ và do vận chuyển, và bạn thực sự đang mua từ ai. Các mốc ngày lễ là của năm 2026 và sẽ sai vào năm sau — trang thông báo mới là bản sống. Bản thân việc đặt hàng có hướng dẫn riêng.",
+    intro: [
+      "Weverse Shop đăng một dòng thông báo đều đặn về chuyện giao hàng, và gần như không ai đọc chúng cho tới khi một gói hàng tới muộn. Chúng chính là nơi những câu trả lời thật nằm: thay đổi hải quan nào áp cho bạn, dịp lễ nào ăn mất bốn ngày, và cái phút chính xác mà một đơn hàng thôi còn hủy được.",
+      "Đây là dòng thông báo đó, đọc gọn trong một lần. Hai trong số các mục dưới đây là những quy định mới thật sự chứ không phải chậm trễ theo mùa, và một trong số đó là thời điểm tiền của bạn thôi còn hoàn lại được.",
+    ],
+    steps: [
+      {
+        title: "Biết rằng cửa sổ hủy đóng theo một trạng thái, không theo một cái đồng hồ",
+        body: "Đây là điều đáng biết trước khi có gì sai. Weverse Shop đưa đường hủy là ứng dụng Weverse, rồi More, rồi My Orders, rồi Order Details, rồi Cancel Order — và nêu rằng một khi trạng thái đơn của bạn chuyển thành Shipping Soon hoặc In Transit, bạn sẽ không thể hủy đơn. Không có khoảng ân hạn nào được nêu và không có quy định tính theo số giờ sau khi đặt. Cửa sổ còn mở cho tới khi một nhà kho đổi một trạng thái, điều có thể xảy ra sớm hơn bạn tưởng với một bản phát hành được săn.",
+        pitfall:
+          "Để qua đêm mới quyết định có giữ một đơn đặt trước mua theo cảm xúc hay không. Thời hạn không phải một giờ bạn tra ra được — nó là một sự kiện bạn không điều khiển, và nó có thể trôi qua lúc bạn đang ngủ.",
+        takes: "5 phút, ngay lập tức",
+      },
+      {
+        title: "Nếu bạn ở EU, mức miễn 150 euro đã không còn",
+        body: "Thông báo của chính Weverse Shop thì cụ thể ở chỗ các bài báo chung còn mơ hồ. Từ ngày 1 tháng 7 năm 2026, EU đã sửa quy định với hàng nhập giá trị thấp: trước đó các đơn dưới 150 euro được miễn thuế hải quan, và mức miễn đó đã bị xóa bỏ, nên thuế giờ áp bất kể số tiền mua. Chi tiết quan trọng nhất là căn cứ — Weverse nói nó áp cho các lô hàng thông quan tại địa phương từ ngày 1 tháng 7 năm 2026, theo ngày thông quan địa phương chứ không theo ngày đặt. Một đơn đặt trước khi thay đổi vẫn có thể bị nó bắt.",
+        pitfall:
+          "Cho rằng một đơn nhỏ thì quá rẻ để phải chịu thuế. Không còn mức sàn nào nữa, và cái ngày quyết định chuyện đó là ngày bạn không thấy được từ trang đơn hàng.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy chờ hải quan, hoặc đơn vị chuyển phát, đòi tiền bạn trực tiếp",
+        body: "Weverse Shop nói các đơn EU có thể phát sinh thuế trong lúc thông quan địa phương, rằng bạn có thể nhận hướng dẫn thanh toán riêng từ hải quan địa phương hoặc từ đơn vị chuyển phát, và rằng việc không trả các khoản thuế đó có thể làm chậm hoặc chặn việc giao hàng. Đó là một trải nghiệm khác với một khoản thu lúc thanh toán: một tin nhắn đến từ một công ty bạn chẳng có quan hệ gì, đòi tiền trước khi một gói hàng bạn đã trả tiền chịu nhúc nhích. Nó không mặc định là lừa đảo — nhưng nó cũng đúng là thứ mà lừa đảo bắt chước, nên hãy đối chiếu số vận đơn với đơn hàng của bạn thay vì bấm theo một liên kết trong tin nhắn.",
+        pitfall:
+          "Bỏ qua một yêu cầu thanh toán của hải quan hay của đơn vị chuyển phát vì cho là lừa đảo rồi để gói hàng nằm đó. Việc không trả là một trong những cách có ghi nhận khiến một đơn hàng đơn giản là không bao giờ tới.",
+        takes: "—",
+      },
+      {
+        title: "Nếu bạn ở Mỹ, hãy biết có hai thay đổi riêng biệt, không phải một",
+        body: "Thay đổi về thuế được nói tới nhiều nhất và nó không phải thứ duy nhất làm chậm các gói hàng đi Mỹ. Weverse Shop cảnh báo riêng rằng từ ngày 8 tháng 7 năm 2026, Ủy ban An toàn Sản phẩm Tiêu dùng Hoa Kỳ thực thi một chính sách eFiling bắt buộc, kéo theo việc kiểm tra hải quan địa phương nghiêm hơn với mọi hàng hóa nhập vào Mỹ, và rằng việc thông quan dự kiến mất lâu hơn khung thời gian giao hàng chuẩn vài ngày. Đó là một chế độ khai báo an toàn sản phẩm chứ không phải một mức thuế — nên một đơn đi Mỹ có thể chậm vì một lý do chẳng liên quan gì tới số thuế phải trả.",
+        pitfall:
+          "Đọc mọi chậm trễ ở Mỹ như là thay đổi về mức miễn thuế rồi chờ một hóa đơn thuế không bao giờ tới. Một trong hai thay đổi này tốn tiền, cái còn lại tốn ngày.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy coi một dịp lễ Hàn Quốc như một giờ chốt tính theo phút",
+        body: "Weverse Shop đăng một lịch chốt đơn cho mỗi dịp lễ Hàn Quốc, và các mốc giờ thì chính xác. Với Chuseok 2026, giờ chốt đơn cho các địa chỉ ngoài Hàn Quốc là ngày 23 tháng 9 lúc 11:00 KST, với chuyển phát nhanh hoạt động lại từ ngày 28 tháng 9; với địa chỉ trong Hàn Quốc, giờ chốt của đơn vị chuyển phát là ngày 22 tháng 9 lúc 11:00 KST, hoạt động lại trong cùng ngày. Các đơn đặt sau giờ chốt sẽ được gửi lần lượt kể từ ngày hoạt động lại. Weverse thêm hai lưu ý: hàng gửi đúng ngày chốt vẫn có thể tới sau dịp lễ tùy khu vực, và lịch này đến từ đơn vị chuyển phát nên có thể thay đổi.",
+        pitfall:
+          "Đọc những mốc ngày đó như là của năm nay. Chúng là các con số của Chuseok 2026, còn cái khuôn — một giờ chốt lúc 11:00 KST một hai ngày trước, hoạt động lại khoảng một tuần sau — mới là phần truyền lại được. Bản thân các mốc ngày thì phải tra lại mỗi lần.",
+        takes: "10 phút trước một đơn đặt vào dịp lễ",
+      },
+      {
+        title: "Nếu địa chỉ của bạn ở Trung Quốc, một lịch nghỉ thứ hai sẽ áp",
+        body: "Weverse Shop ra các thông báo riêng cho dịp lễ Trung Quốc, ảnh hưởng tới các đơn có địa chỉ nhận ở Trung Quốc, bởi các cơ quan hải quan Trung Quốc đóng cửa và việc thông quan dừng lại. Với Trung thu 2026 từ ngày 25 đến 27 tháng 9 và Quốc khánh từ ngày 1 đến 7 tháng 10, họ nói các đơn đã thanh toán đủ trước ngày 15 tháng 9 lúc 11:00 KST có khả năng được giao trong dịp Quốc khánh, còn các đơn thanh toán sau đó sẽ bắt đầu được gửi khi dịp lễ kết thúc vào ngày 8 tháng 10. Lưu ý rằng điều được tính là việc thanh toán đã hoàn tất, không phải việc đơn đã được đặt.",
+        pitfall:
+          "Một đơn đặt trước mà việc thanh toán hoàn tất muộn hơn bạn nghĩ. Khi giờ chốt được định bằng việc trả đủ tiền, một đơn còn đang chưa trả là một đơn nằm ở bên kia của một khoảng trống ba tuần.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy tách một gián đoạn vận chuyển khỏi một gói hàng bị mất",
+        body: "Có những chậm trễ không phải hải quan mà cũng không phải dịp lễ. Tháng 4 năm 2026, Weverse Shop thông báo với khách về việc giao hàng chậm ở toàn bộ châu Âu và một số nước Trung Đông, do biến động của các tuyến vận chuyển toàn cầu và của lịch vận tải hàng không và đường biển, ảnh hưởng tới các đơn gửi sau ngày 1 tháng 4 năm 2026 đang trên đường quốc tế. Phần hữu ích là điều họ nói về việc theo dõi vận đơn: vì phải đổi tuyến, các cập nhật tra cứu và việc hàng tới địa phương có thể lâu hơn bình thường, và gói hàng vẫn đang trên đường. Một vận đơn im lặng trong một gián đoạn đã biết là triệu chứng được dự liệu, không phải bằng chứng của việc mất hàng.",
+        pitfall:
+          "Mở khiếu nại mất hàng vì vận đơn không nhúc nhích suốt một tuần. Hãy xem trang thông báo tìm một gián đoạn đang có hiệu lực bao trùm khu vực của bạn trước — một khiếu nại nộp cho một gói hàng chỉ đang bị đổi tuyến làm tốn đúng khoảng thời gian bạn sẽ cần cho một khiếu nại thật.",
+        takes: "10 phút",
+      },
+      {
+        title: "Kiểm tra xem Weverse có thực sự là người bán hay không",
+        body: "Weverse Shop nêu trên chính các trang của mình rằng một số sản phẩm được chào bán bởi những người bán bên thứ ba riêng lẻ, rằng trong những trường hợp đó Weverse Company chỉ hoạt động như một trung gian thương mại điện tử và không phải một bên của giao dịch, và rằng họ không nhận trách nhiệm nào về thông tin sản phẩm hay về các giao dịch do những người bán đó thực hiện. Điều đó thay đổi việc bạn đang làm việc với ai khi có gì sai — với một mặt hàng của bên thứ ba, đối tác của bạn là người bán, không phải Weverse. Đáng xác định trước khi bạn cần khiếu nại chứ không phải trong lúc đang khiếu nại.",
+        pitfall:
+          "Cho rằng mọi thứ trong cửa hàng đều có cùng một sự bảo đảm vì chúng nằm sau cùng một trang thanh toán. Lời miễn trách trung gian là có công bố, và nó quyết định ai nợ bạn một cách giải quyết.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy tự đọc các thông báo, vì trang này sẽ cũ đi nhanh hơn phần lớn các trang khác",
+        body: "Mọi điều ở trên đến từ trang thông báo của Weverse Shop, và trang đó là bản sống. Các thay đổi hải quan thì bền; các lịch nghỉ lễ, các gián đoạn vận chuyển và các giờ chốt của đơn vị chuyển phát thì không — chúng được phát lại cho từng dịp và bị thay thế mà thông báo cũ không hề đổi. Trước một đơn đặt vào dịp lễ hoặc khi một gói hàng tới muộn, hãy đọc danh sách thông báo chứ đừng tin các mốc ngày của bất kỳ hướng dẫn nào, kể cả hướng dẫn này. Ngày ở đầu trang này là lần cuối chúng tôi làm việc đó.",
+        pitfall:
+          "Tin một giờ chốt lấy từ một hướng dẫn viết năm ngoái. Cái cấu trúc thì lặp lại còn các con số thì không.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi còn hủy được đơn của mình không?",
+        a: "Chỉ khi trạng thái còn cho phép. Đường đi của Weverse Shop là ứng dụng Weverse, More, My Orders, Order Details, Cancel Order — và họ nêu rằng một khi trạng thái chuyển thành Shipping Soon hoặc In Transit thì việc hủy không còn khả thi. Không có khoảng ân hạn nào được công bố, nên câu trả lời phụ thuộc vào đơn hàng chứ không vào cái đồng hồ.",
+      },
+      {
+        q: "Tôi ở EU và đơn của tôi có một hóa đơn hải quan. Như vậy có đúng không?",
+        a: "Có lẽ đúng. Weverse Shop nói rằng từ ngày 1 tháng 7 năm 2026, EU đã xóa bỏ mức miễn thuế trước đây bao các đơn dưới 150 euro, nên thuế giờ áp bất kể số tiền, căn cứ theo các lô hàng thông quan địa phương từ ngày đó. Họ cũng cảnh báo bạn có thể nhận hướng dẫn thanh toán riêng từ hải quan hoặc đơn vị chuyển phát, và rằng việc không trả có thể làm chậm hoặc chặn việc giao hàng.",
+      },
+      {
+        q: "Vì sao đơn đi Mỹ của tôi chậm nếu không có thuế nào phải trả?",
+        a: "Vì có hai thay đổi. Bên cạnh các quy định về thuế, Weverse Shop cảnh báo rằng từ ngày 8 tháng 7 năm 2026, Ủy ban An toàn Sản phẩm Tiêu dùng Hoa Kỳ thực thi eFiling bắt buộc, kéo theo việc kiểm tra nghiêm hơn với mọi hàng hóa nhập vào Mỹ, với việc thông quan dự kiến mất lâu hơn vài ngày. Thay đổi đó tốn thời gian chứ không tốn tiền.",
+      },
+      {
+        q: "Tôi nhận được một tin nhắn đòi tôi trả tiền hải quan. Đó có phải lừa đảo không?",
+        a: "Nó hoàn toàn có thể là thật — Weverse Shop nói khách ở EU có thể nhận hướng dẫn thanh toán riêng từ hải quan địa phương hoặc từ đơn vị chuyển phát. Nó cũng đúng là thứ mà lừa đảo bắt chước. Hãy xác minh bằng cách khớp số vận đơn với đơn hàng của chính bạn và tự vào trang của đơn vị chuyển phát thay vì bấm theo một liên kết trong tin nhắn.",
+      },
+      {
+        q: "Giờ chốt đơn cho một đơn đặt vào dịp lễ Hàn Quốc là khi nào?",
+        a: "Weverse Shop đăng một giờ chốt cho mỗi dịp lễ, tới từng phút. Với Chuseok 2026, giờ chốt cho các địa chỉ ngoài Hàn Quốc là ngày 23 tháng 9 lúc 11:00 KST, với chuyển phát nhanh hoạt động lại ngày 28 tháng 9. Họ cảnh báo lịch này đến từ đơn vị chuyển phát và có thể thay đổi, và rằng hàng gửi đúng ngày chốt vẫn có thể tới sau dịp lễ. Hãy tra giờ chốt hiện hành chứ đừng dùng lại các mốc ngày này.",
+      },
+      {
+        q: "Vận đơn của tôi một tuần rồi không cập nhật. Gói hàng của tôi mất rồi sao?",
+        a: "Hãy xem trang thông báo tìm một gián đoạn bao trùm khu vực của bạn trước. Khi Weverse Shop thông báo chậm giao cho châu Âu và Trung Đông vào tháng 4 năm 2026, họ nói việc đổi tuyến khiến các cập nhật tra cứu và việc hàng tới địa phương lâu hơn bình thường và gói hàng vẫn đang trên đường — nên một vận đơn bất động trong một gián đoạn đã biết là triệu chứng chứ không phải vấn đề.",
+      },
+      {
+        q: "Có gì không ổn với mặt hàng của tôi. Tôi làm việc với Weverse chứ?",
+        a: "Không phải lúc nào cũng vậy. Weverse Shop nêu rằng một số sản phẩm được bán bởi những người bán bên thứ ba riêng lẻ, rằng Weverse Company khi đó chỉ hoạt động như một trung gian và không phải một bên của giao dịch, và rằng họ không nhận trách nhiệm về thông tin sản phẩm hay giao dịch của những người bán đó. Hãy xem bạn đã mua loại mặt hàng nào trước khi quyết định tìm ai.",
+      },
+      {
+        q: "Lịch nghỉ lễ Trung Quốc có ảnh hưởng tới tôi nếu tôi không ở Trung Quốc không?",
+        a: "Các thông báo nói những lịch đó áp cho các đơn có địa chỉ nhận ở Trung Quốc, bởi các cơ quan hải quan Trung Quốc đóng cửa trong dịp lễ. Nếu địa chỉ của bạn ở nơi khác thì các giờ chốt dịp lễ Hàn Quốc và bất kỳ gián đoạn vận chuyển đang có hiệu lực mới là thứ cần theo.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "ทำไมออเดอร์ Weverse Shop ของคุณมาช้า และเมื่อไรที่คุณยังยกเลิกได้",
+    summary:
+      "ปุ่มยกเลิกหายไปตอนสถานะเปลี่ยน ไม่ใช่ตอนครบกำหนดเวลา สหภาพยุโรปยกเลิกเพดานปลอดภาษี 150 ยูโรไปแล้ว สหรัฐเพิ่มระบบตรวจสอบชุดที่สองซ้อนบนระบบภาษี และวันหยุดเกาหลีมีเวลาปิดรับออเดอร์ที่วัดกันถึงระดับนาที",
+    scope:
+      "หน้านี้ครอบคลุมสิ่งที่เกิดขึ้นหลังสั่งซื้อบน Weverse Shop โดยอ้างจากประกาศของ Weverse Shop เอง ได้แก่ ช่วงเวลาที่ยกเลิกได้ การเปลี่ยนแปลงด้านพิธีการศุลกากรที่มันเตือนไว้สำหรับสหภาพยุโรปและสหรัฐ ความล่าช้าจากวันหยุดและจากการขนส่ง และคนที่คุณกำลังซื้อจากเขาจริง ๆ วันหยุดที่อ้างเป็นของปี 2026 และจะผิดในปีหน้า หน้าประกาศคือฉบับที่ยังมีชีวิต ส่วนการสั่งซื้อเองมีไกด์ของตัวเอง",
+    intro: [
+      "Weverse Shop ปล่อยประกาศเรื่องการจัดส่งออกมาเรื่อย ๆ และแทบไม่มีใครอ่านจนกระทั่งพัสดุมาช้า ประกาศเหล่านั้นคือที่ที่คำตอบจริงอยู่ ว่าการเปลี่ยนแปลงทางศุลกากรข้อไหนใช้กับคุณ วันหยุดไหนกินไปสี่วัน และนาทีที่ออเดอร์หนึ่งหยุดเป็นออเดอร์ที่ยกเลิกได้",
+      "นี่คือสายประกาศนั้น อ่านรวดเดียวจบ สองข้อด้านล่างเป็นกฎใหม่จริง ๆ ไม่ใช่ความล่าช้าตามฤดูกาล และข้อหนึ่งในนั้นคือจุดที่เงินของคุณหยุดเป็นเงินที่ขอคืนได้",
+    ],
+    steps: [
+      {
+        title: "รู้ไว้ว่าช่วงยกเลิกปิดด้วยสถานะ ไม่ใช่ด้วยนาฬิกา",
+        body: "นี่คือข้อเท็จจริงที่ควรรู้ก่อนที่อะไรจะผิดพลาด Weverse Shop ให้เส้นทางการยกเลิกเป็นแอป Weverse แล้ว More แล้ว My Orders แล้ว Order Details แล้ว Cancel Order และระบุว่าเมื่อสถานะออเดอร์ของคุณเปลี่ยนเป็น Shipping Soon หรือ In Transit คุณจะยกเลิกออเดอร์ไม่ได้ ไม่มีช่วงผ่อนผันที่ระบุไว้ และไม่มีกฎแบบนับชั่วโมงหลังสั่ง ช่วงเวลานั้นเปิดอยู่จนกว่าคลังสินค้าจะเปลี่ยนสถานะ ซึ่งเกิดเร็วกว่าที่คุณคาดได้ในสินค้าที่คนแย่งกัน",
+        pitfall:
+          "การเก็บไว้ค้างคืนก่อนตัดสินใจว่าจะเก็บพรีออเดอร์ที่สั่งด้วยอารมณ์ไว้ไหม เส้นตายไม่ใช่เวลาที่คุณเปิดดูได้ มันเป็นเหตุการณ์ที่คุณไม่ได้ควบคุม และมันผ่านไปได้ระหว่างที่คุณหลับ",
+        takes: "5 นาที ทันที",
+      },
+      {
+        title: "ถ้าคุณอยู่ในสหภาพยุโรป การยกเว้นที่ 150 ยูโรหมดไปแล้ว",
+        body: "ประกาศของ Weverse Shop เองเจาะจงในจุดที่ข่าวทั่วไปคลุมเครือ ตั้งแต่วันที่ 1 กรกฎาคม 2026 สหภาพยุโรปแก้กฎสำหรับสินค้านำเข้ามูลค่าต่ำ ก่อนหน้านี้ออเดอร์ที่ต่ำกว่า 150 ยูโรได้รับการยกเว้นภาษีศุลกากร และการยกเว้นนั้นถูกยกเลิกไปแล้ว ดังนั้นภาษีจึงใช้โดยไม่สนยอดซื้อ รายละเอียดที่สำคัญที่สุดคือเกณฑ์ Weverse บอกว่าใช้กับการขนส่งที่ผ่านพิธีการศุลกากรท้องถิ่นตั้งแต่วันที่ 1 กรกฎาคม 2026 โดยนับตามวันที่ผ่านพิธีการท้องถิ่น ไม่ใช่วันที่สั่งซื้อ ออเดอร์ที่สั่งก่อนการเปลี่ยนแปลงก็ยังถูกจับได้",
+        pitfall:
+          "การเหมาว่าออเดอร์เล็ก ๆ ถูกเกินกว่าจะต้องเสียภาษี ไม่มีพื้นขั้นต่ำอีกแล้ว และวันที่ตัดสินเรื่องนี้ก็เป็นวันที่คุณมองไม่เห็นจากหน้าออเดอร์",
+        takes: "10 นาที",
+      },
+      {
+        title: "คาดไว้ว่าศุลกากรหรือบริษัทขนส่งจะมาเก็บเงินกับคุณโดยตรง",
+        body: "Weverse Shop บอกว่าออเดอร์ของสหภาพยุโรปอาจมีภาษีเกิดขึ้นระหว่างพิธีการท้องถิ่น ว่าคุณอาจได้รับคำสั่งชำระเงินแยกจากศุลกากรท้องถิ่นหรือจากบริษัทขนส่ง และว่าการไม่จ่ายภาษีเหล่านั้นอาจทำให้การส่งล่าช้าหรือส่งไม่ได้ นั่นเป็นประสบการณ์ที่ต่างจากการถูกเก็บตอนเช็กเอาต์ คือมีข้อความมาจากบริษัทที่คุณไม่มีความสัมพันธ์ด้วย ขอเงินก่อนที่พัสดุที่คุณจ่ายไปแล้วจะขยับ มันไม่ใช่การหลอกลวงโดยปริยาย แต่มันก็เป็นสิ่งที่การหลอกลวงเลียนแบบเป๊ะ ๆ ดังนั้นให้เทียบเลขติดตามพัสดุกับออเดอร์ของคุณ ไม่ใช่กดลิงก์ในข้อความนั้น",
+        pitfall:
+          "การเมินคำขอชำระเงินจากศุลกากรหรือบริษัทขนส่งว่าเป็นฟิชชิง แล้วปล่อยพัสดุค้างไว้ การไม่จ่ายเป็นหนึ่งในวิธีที่มีบันทึกไว้ว่าทำให้ออเดอร์ไม่มาถึงเลย",
+        takes: "—",
+      },
+      {
+        title: "ถ้าคุณอยู่ในสหรัฐ ให้รู้ว่ามีการเปลี่ยนแปลงสองเรื่องแยกกัน ไม่ใช่เรื่องเดียว",
+        body: "เรื่องภาษีได้พื้นที่ข่าวทั้งหมด และมันไม่ใช่สิ่งเดียวที่ทำให้พัสดุไปสหรัฐช้า Weverse Shop เตือนแยกอีกข้อว่าตั้งแต่วันที่ 8 กรกฎาคม 2026 คณะกรรมการความปลอดภัยสินค้าอุปโภคบริโภคของสหรัฐบังคับใช้นโยบาย eFiling แบบบังคับ ซึ่งนำมาสู่การตรวจของศุลกากรท้องถิ่นที่เข้มขึ้นกับสินค้าทุกชิ้นที่นำเข้าสหรัฐ และคาดว่าพิธีการจะใช้เวลานานกว่ากรอบการจัดส่งมาตรฐานอีกไม่กี่วัน นั่นเป็นระบบการยื่นข้อมูลความปลอดภัยสินค้า ไม่ใช่อัตราภาษี ดังนั้นออเดอร์ไปสหรัฐช้าได้ด้วยเหตุผลที่ไม่เกี่ยวกับว่าต้องเสียภาษีเท่าไร",
+        pitfall:
+          "การอ่านความล่าช้าในสหรัฐทุกครั้งว่าเป็นเรื่องการเปลี่ยนเพดานปลอดภาษี แล้วรอใบเก็บภาษีที่ไม่เคยมา การเปลี่ยนแปลงข้อหนึ่งในสองข้อนี้กินเงิน อีกข้อกินวัน",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถือว่าวันหยุดเกาหลีคือเวลาปิดรับที่วัดเป็นนาที",
+        body: "Weverse Shop ประกาศตารางเวลาปิดรับสำหรับวันหยุดเกาหลีแต่ละครั้ง และเวลานั้นแม่นยำ สำหรับชูซอก 2026 เวลาปิดรับออเดอร์สำหรับที่อยู่นอกเกาหลีใต้คือวันที่ 23 กันยายน เวลา 11:00 KST โดยการส่งด่วนกลับมาเริ่มวันที่ 28 กันยายน ส่วนที่อยู่ในเกาหลี เวลาปิดรับของบริษัทขนส่งคือวันที่ 22 กันยายน เวลา 11:00 KST และกลับมาเริ่มในวันเดียวกัน ออเดอร์ที่สั่งหลังเวลาปิดรับจะถูกส่งเรียงตามลำดับนับจากวันที่กลับมาเริ่ม Weverse เพิ่มข้อแม้สองข้อ คือของที่ส่งในวันปิดรับก็ยังอาจถึงหลังวันหยุดได้ขึ้นกับพื้นที่ และตารางนี้มาจากบริษัทขนส่งจึงเปลี่ยนได้",
+        pitfall:
+          "การอ่านวันที่เหล่านั้นว่าเป็นของปีนี้ มันเป็นตัวเลขของชูซอก 2026 ส่วนรูปแบบ คือเวลาปิดรับที่ 11:00 KST หนึ่งถึงสองวันก่อน และกลับมาเริ่มราวหนึ่งสัปดาห์ถัดมา คือส่วนที่ส่งทอดกันได้ ตัววันที่เองต้องเปิดดูใหม่ทุกครั้ง",
+        takes: "10 นาที ก่อนสั่งในช่วงวันหยุด",
+      },
+      {
+        title: "ถ้าที่อยู่ของคุณอยู่ในจีน จะมีปฏิทินวันหยุดชุดที่สองเข้ามาใช้",
+        body: "Weverse Shop ออกประกาศแยกสำหรับวันหยุดจีน ซึ่งมีผลกับออเดอร์ที่มีที่อยู่จัดส่งในจีน เพราะสำนักงานศุลกากรจีนปิดและพิธีการหยุดเดิน สำหรับเทศกาลไหว้พระจันทร์ 2026 วันที่ 25 ถึง 27 กันยายน และวันชาติตั้งแต่วันที่ 1 ถึง 7 ตุลาคม มันบอกว่าออเดอร์ที่ชำระเงินครบภายในวันที่ 15 กันยายน เวลา 11:00 KST มีแนวโน้มจะได้รับการจัดส่งในช่วงวันหยุดวันชาติ และออเดอร์ที่ชำระหลังจากนั้นจะเริ่มส่งเมื่อวันหยุดจบลงในวันที่ 8 ตุลาคม สังเกตว่าสิ่งที่นับคือการชำระเงินที่ครบถ้วน ไม่ใช่การที่ออเดอร์ถูกสั่ง",
+        pitfall:
+          "พรีออเดอร์ที่การชำระเงินเสร็จช้ากว่าที่คุณคิด เมื่อเวลาปิดรับถูกนิยามด้วยการชำระเงินครบ ออเดอร์ที่ยังไม่จ่ายก็เป็นออเดอร์ที่อยู่อีกฝั่งของช่องว่างสามสัปดาห์",
+        takes: "10 นาที",
+      },
+      {
+        title: "แยกการสะดุดของการขนส่งออกจากพัสดุที่หายไป",
+        body: "ความล่าช้าบางอย่างไม่ใช่ทั้งศุลกากรและวันหยุด ในเดือนเมษายน 2026 Weverse Shop แจ้งลูกค้าเรื่องการจัดส่งล่าช้าทั่วยุโรปและในบางประเทศตะวันออกกลาง ซึ่งเกิดจากความผันผวนของเส้นทางขนส่งทั่วโลกและของตารางขนส่งทางอากาศและทางเรือ มีผลกับออเดอร์ที่ส่งหลังวันที่ 1 เมษายน 2026 ซึ่งอยู่ระหว่างการขนส่งระหว่างประเทศ ส่วนที่ใช้ประโยชน์ได้คือสิ่งที่มันบอกเรื่องการติดตามพัสดุ คือเพราะมีการเปลี่ยนเส้นทาง การอัปเดตการติดตามและการถึงปลายทางท้องถิ่นอาจใช้เวลานานกว่าปกติ และพัสดุยังอยู่ระหว่างขนส่ง การติดตามที่เงียบอยู่ในช่วงการสะดุดที่รู้กันอยู่คืออาการที่คาดไว้แล้ว ไม่ใช่หลักฐานว่าของหาย",
+        pitfall:
+          "การเปิดเคลมพัสดุหายเพราะการติดตามไม่ขยับมาหนึ่งสัปดาห์ ดูหน้าประกาศก่อนว่ามีการสะดุดที่ยังมีผลครอบคลุมภูมิภาคของคุณไหม เคลมที่ยื่นกับพัสดุที่แค่ถูกเปลี่ยนเส้นทางกินเวลาที่คุณจะต้องใช้กับเคลมจริง",
+        takes: "10 นาที",
+      },
+      {
+        title: "ตรวจว่า Weverse เป็นผู้ขายจริงหรือไม่",
+        body: "Weverse Shop ระบุไว้บนหน้าของตัวเองว่าสินค้าบางรายการเสนอขายโดยผู้ขายบุคคลที่สามแต่ละราย ว่าในกรณีเหล่านั้น Weverse Company ทำหน้าที่เพียงเป็นคนกลางด้านอีคอมเมิร์ซและไม่ใช่คู่สัญญาในธุรกรรม และว่ามันไม่รับผิดชอบต่อข้อมูลสินค้าหรือต่อธุรกรรมที่ผู้ขายเหล่านั้นทำ นั่นเปลี่ยนว่าคุณกำลังติดต่อกับใครเมื่อมีอะไรผิดพลาด สำหรับสินค้าของบุคคลที่สาม คู่กรณีของคุณคือผู้ขาย ไม่ใช่ Weverse ควรรู้ให้ชัดก่อนที่คุณจะต้องร้องเรียน ไม่ใช่ตอนกำลังร้องเรียน",
+        pitfall:
+          "การเหมาว่าทุกอย่างในร้านมีการค้ำประกันเหมือนกันเพราะมันอยู่หลังระบบเช็กเอาต์เดียวกัน ข้อสงวนเรื่องการเป็นคนกลางถูกประกาศไว้ และมันตัดสินว่าใครเป็นคนที่ต้องเยียวยาคุณ",
+        takes: "5 นาที",
+      },
+      {
+        title: "อ่านประกาศด้วยตัวเอง เพราะหน้านี้จะเก่าเร็วกว่าหน้าอื่นส่วนใหญ่",
+        body: "ทุกอย่างข้างบนมาจากหน้าประกาศของ Weverse Shop และหน้านั้นคือฉบับที่ยังมีชีวิต การเปลี่ยนแปลงทางศุลกากรนั้นอยู่ยาว ส่วนตารางวันหยุด การสะดุดของการขนส่ง และเวลาปิดรับของบริษัทขนส่งนั้นไม่อยู่ยาว มันถูกออกใหม่ทุกครั้งที่มีโอกาส และถูกแทนที่โดยที่ประกาศเก่าไม่ได้เปลี่ยนอะไรเลย ก่อนสั่งของช่วงวันหยุดหรือเมื่อพัสดุมาช้า ให้อ่านรายการประกาศ แทนที่จะเชื่อวันที่ของไกด์ใด ๆ รวมถึงไกด์นี้ วันที่ด้านบนของหน้านี้คือครั้งสุดท้ายที่เราทำอย่างนั้น",
+        pitfall:
+          "การเชื่อเวลาปิดรับจากไกด์ที่เขียนไว้เมื่อปีก่อน โครงสร้างนั้นซ้ำเดิม ตัวเลขนั้นไม่ซ้ำ",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ฉันยังยกเลิกออเดอร์ได้ไหม",
+        a: "ได้เฉพาะตอนที่สถานะยังอนุญาต เส้นทางของ Weverse Shop คือแอป Weverse แล้ว More แล้ว My Orders แล้ว Order Details แล้ว Cancel Order และมันระบุว่าเมื่อสถานะเปลี่ยนเป็น Shipping Soon หรือ In Transit การยกเลิกจะทำไม่ได้อีก ไม่มีช่วงผ่อนผันที่ประกาศไว้ ดังนั้นคำตอบขึ้นกับตัวออเดอร์ ไม่ใช่นาฬิกา",
+      },
+      {
+        q: "ฉันอยู่ในสหภาพยุโรปและออเดอร์ของฉันมีใบเก็บภาษีศุลกากร อย่างนั้นถูกไหม",
+        a: "น่าจะถูก Weverse Shop บอกว่าตั้งแต่วันที่ 1 กรกฎาคม 2026 สหภาพยุโรปยกเลิกการยกเว้นภาษีที่เคยคุ้มออเดอร์ต่ำกว่า 150 ยูโร ดังนั้นภาษีจึงใช้โดยไม่สนยอด โดยนับจากการขนส่งที่ผ่านพิธีการท้องถิ่นตั้งแต่วันนั้น มันยังเตือนว่าคุณอาจได้รับคำสั่งชำระเงินแยกจากศุลกากรหรือบริษัทขนส่ง และว่าการไม่จ่ายอาจทำให้ส่งล่าช้าหรือส่งไม่ได้",
+      },
+      {
+        q: "ทำไมออเดอร์ไปสหรัฐของฉันช้า ถ้าไม่มีภาษีต้องจ่าย",
+        a: "เพราะมีการเปลี่ยนแปลงสองเรื่อง นอกจากกฎภาษี Weverse Shop เตือนว่าตั้งแต่วันที่ 8 กรกฎาคม 2026 คณะกรรมการความปลอดภัยสินค้าอุปโภคบริโภคของสหรัฐบังคับใช้ eFiling แบบบังคับ ซึ่งนำมาสู่การตรวจที่เข้มขึ้นกับสินค้าทุกชิ้นที่นำเข้าสหรัฐ และคาดว่าพิธีการจะใช้เวลานานขึ้นอีกไม่กี่วัน เรื่องนั้นกินเวลา ไม่ใช่กินเงิน",
+      },
+      {
+        q: "ฉันได้ข้อความขอให้จ่ายค่าภาษีศุลกากร นั่นเป็นการหลอกลวงไหม",
+        a: "มันเป็นของจริงได้โดยชอบ Weverse Shop บอกว่าลูกค้าในสหภาพยุโรปอาจได้รับคำสั่งชำระเงินแยกจากศุลกากรท้องถิ่นหรือจากบริษัทขนส่ง และมันก็เป็นสิ่งที่การหลอกลวงเลียนแบบเป๊ะ ๆ ด้วย ให้ตรวจโดยเทียบเลขติดตามพัสดุกับออเดอร์ของคุณเอง และเข้าเว็บบริษัทขนส่งด้วยตัวเอง แทนที่จะกดลิงก์ในข้อความ",
+      },
+      {
+        q: "เวลาปิดรับสำหรับออเดอร์ช่วงวันหยุดเกาหลีคือเมื่อไร",
+        a: "Weverse Shop ประกาศไว้วันหยุดละหนึ่งครั้ง ละเอียดถึงนาที สำหรับชูซอก 2026 เวลาปิดรับสำหรับที่อยู่นอกเกาหลีคือวันที่ 23 กันยายน เวลา 11:00 KST และการส่งด่วนกลับมาเริ่มวันที่ 28 กันยายน มันเตือนว่าตารางมาจากบริษัทขนส่งและเปลี่ยนได้ และว่าของที่ส่งในวันปิดรับก็ยังอาจถึงหลังวันหยุด ให้เปิดดูตารางปัจจุบันแทนที่จะใช้วันที่เหล่านี้ซ้ำ",
+      },
+      {
+        q: "การติดตามพัสดุของฉันไม่อัปเดตมาหนึ่งสัปดาห์ พัสดุของฉันหายไหม",
+        a: "ดูหน้าประกาศก่อนว่ามีการสะดุดที่ครอบคลุมภูมิภาคของคุณไหม เมื่อ Weverse Shop แจ้งความล่าช้าสำหรับยุโรปและตะวันออกกลางในเดือนเมษายน 2026 มันบอกว่าการเปลี่ยนเส้นทางทำให้การอัปเดตการติดตามและการถึงปลายทางท้องถิ่นใช้เวลานานกว่าปกติ และพัสดุยังอยู่ระหว่างขนส่ง ดังนั้นการติดตามที่นิ่งอยู่ในช่วงการสะดุดที่รู้กันคืออาการ ไม่ใช่ตัวปัญหา",
+      },
+      {
+        q: "สินค้าของฉันมีปัญหา ฉันต้องติดต่อ Weverse ไหม",
+        a: "ไม่เสมอไป Weverse Shop ระบุว่าสินค้าบางรายการขายโดยผู้ขายบุคคลที่สามแต่ละราย ว่า Weverse Company จึงทำหน้าที่เพียงเป็นคนกลางและไม่ใช่คู่สัญญาในธุรกรรม และว่ามันไม่รับผิดชอบต่อข้อมูลสินค้าหรือธุรกรรมของผู้ขายเหล่านั้น ตรวจก่อนว่าคุณซื้อสินค้าแบบไหน ก่อนตัดสินใจว่าจะไปหาใคร",
+      },
+      {
+        q: "ตารางวันหยุดจีนมีผลกับฉันไหมถ้าฉันไม่ได้อยู่ในจีน",
+        a: "ประกาศบอกว่าตารางเหล่านั้นใช้กับออเดอร์ที่มีที่อยู่จัดส่งในจีน เพราะสำนักงานศุลกากรจีนปิดในช่วงวันหยุด ถ้าที่อยู่ของคุณอยู่ที่อื่น สิ่งที่ต้องจับตาคือเวลาปิดรับของวันหยุดเกาหลีและการสะดุดของการขนส่งที่ยังมีผลอยู่",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "weverse-shop-shipping-delays-and-cancellation",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Bakit huli ang order mo sa Weverse Shop, at kailan mo pa ito makakansela",
+    summary:
+      "Nawawala ang pindutan ng pagkansela sa pagbabago ng katayuan at hindi sa isang takdang oras, binuwag ng EU ang 150 euro nitong hangganang walang buwis, nagdagdag ang US ng pangalawang rehimen ng inspeksiyon sa ibabaw ng sa buwis, at may hangganang sinusukat sa minuto ang isang pistang Koreano.",
+    scope:
+      "Sakop nito ang nangyayari matapos maipasa ang isang order sa Weverse Shop, mula sa sariling abiso ng Weverse Shop: ang bintana ng pagkansela, ang mga pagbabago sa customs na binalaan nito para sa EU at US, ang mga pagkaantala dahil sa pista at sa lohistika, at kung kanino ka talaga bumibili. Taong 2026 ang mga petsa ng pista at mali na sila sa susunod na taon — ang pahina ng abiso ang buhay na bersiyon. May sariling gabay ang pag-order mismo.",
+    intro: [
+      "Naglalabas ang Weverse Shop ng tuloy-tuloy na abiso tungkol sa paghahatid, at halos walang nagbabasa nito hangga't hindi huli ang isang parsela. Doon nakatira ang tunay na sagot: aling pagbabago sa customs ang nauukol sa iyo, aling pista ang kumain ng apat na araw, at ang eksaktong minutong tumigil ang isang order sa pagiging makakansela.",
+      "Ito ang agos na iyon, binasa sa isang upuan. Dalawa sa mga bagay sa ibaba ay tunay na mga bagong tuntunin at hindi pana-panahong pagkaantala, at isa sa kanila ang sandaling tumitigil ang pera mo sa pagiging maibabalik.",
+    ],
+    steps: [
+      {
+        title: "Alamin na ang bintana ng pagkansela ay nagsasara sa isang katayuan, hindi sa isang orasan",
+        body: "Ito ang katotohanang mabuting malaman bago may masira. Ibinibigay ng Weverse Shop ang rutang pangkansela bilang ang app ng Weverse, saka More, saka My Orders, saka Order Details, saka Cancel Order — at isinasaad nitong kapag nagbago na ang katayuan ng order mo sa Shipping Soon o In Transit, hindi mo na makakansela ang order. Walang isinasaad na panahon ng palugit at walang tuntuning nakabatay sa oras pagkatapos mag-order. Bukas ang bintana hanggang baguhin ng isang bodega ang isang katayuan, at nangyayari iyon nang mas maaga kaysa sa inaasahan mo sa isang sikat na release.",
+        pitfall:
+          "Ang pagpapasya kinabukasan kung itatago ba ang isang biglaang pre-order. Hindi oras na matitingnan mo ang takdang panahon — isa itong pangyayaring wala sa kontrol mo, at puwede itong lumipas habang natutulog ka.",
+        takes: "5 minuto, agad",
+      },
+      {
+        title: "Kung nasa EU ka, wala na ang eksempsiyong 150 euro",
+        body: "Tiyak ang sariling abiso ng Weverse Shop kung saan malabo ang pangkalahatang balita. Mula 1 Hulyo 2026 ay binago ng EU ang tuntunin nito sa mga angkat na mababa ang halaga: dati ay walang buwis sa customs ang order na mababa sa 150 euro, at binuwag na ang eksempsiyong iyon, kaya nauukol na ngayon ang buwis kahit magkano ang halaga ng pinamili. Ang detalyeng pinakamahalaga ay ang batayan — sinasabi ng Weverse na nauukol ito sa mga kargamentong dumadaan sa lokal na customs mula 1 Hulyo 2026, ayon sa petsa ng lokal na clearance at hindi sa petsa ng order. Puwede pa ring mahuli nito ang orderng ipinasa bago ang pagbabago.",
+        pitfall:
+          "Ang pag-aakalang masyadong mura ang isang maliit na order para mabuwisan. Wala nang sahig, at ang petsang nagpapasya nito ay hindi nakikita mula sa pahina ng order.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Asahang hihingan ka ng pera nang tuwiran ng customs, o ng courier",
+        body: "Sinasabi ng Weverse Shop na puwedeng magkaroon ng buwis ang order sa EU habang nasa lokal na clearance, na puwede kang makatanggap ng hiwalay na tagubilin sa pagbabayad mula sa lokal na customs o sa courier, at na ang pagkabigong bayaran ang mga buwis na iyon ay maaaring magpaantala o magpigil sa paghahatid. Ibang karanasan iyon sa isang bayad sa checkout: may mensaheng dumarating mula sa isang kompanyang wala kang relasyon, na humihingi ng pera bago gumalaw ang parselang binayaran mo na. Hindi ito scam bilang panuntunan — ngunit eksakto rin itong ginagaya ng isang scam, kaya itugma ang tracking number sa order mo sa halip na sundan ang isang link sa mensahe.",
+        pitfall:
+          "Ang pagwawalang-bahala sa kahilingan ng customs o courier na pagbabayad bilang phishing at ang pagpapaupo sa parsela. Isa ang hindi pagbabayad sa mga nadokumentong paraan kung paanong hindi na lang dumarating ang isang order.",
+        takes: "—",
+      },
+      {
+        title: "Kung nasa US ka, alaming dalawang hiwalay na pagbabago ito, hindi isa",
+        body: "Nakukuha ng pagbabago sa buwis ang lahat ng balita at hindi lamang iyon ang nagpapabagal sa parselang papuntang US. Hiwalay na nagbabala ang Weverse Shop na mula 8 Hulyo 2026 ay ipinapatupad ng US Consumer Product Safety Commission ang isang sapilitang patakarang eFiling, na nagdadala ng mas mahigpit na inspeksiyon ng lokal na customs sa lahat ng paninda na iniaangkat sa US, at na inaasahang mas matatagal ang clearance kaysa sa karaniwang panahon ng paghahatid ng ilang araw. Rehimen iyon ng paghahain para sa kaligtasan ng produkto at hindi isang taripa — kaya puwedeng mabagal ang isang order sa US dahil sa isang dahilang walang kinalaman sa kung magkano ang buwis.",
+        pitfall:
+          "Ang pagbasa sa bawat pagkaantala sa US bilang ang pagbabago sa hangganan ng buwis at ang paghihintay sa bill ng buwis na hindi dumarating. Pera ang halaga ng isa sa dalawang pagbabagong ito at araw ang halaga ng isa.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Ituring ang isang pistang Koreano bilang hangganang sinusukat sa minuto",
+        body: "Naglalathala ang Weverse Shop ng talaan ng hangganan para sa bawat pistang Koreano, at tumpak ang mga oras. Para sa Chuseok 2026 ang hangganan ng order para sa address sa labas ng South Korea ay 23 Setyembre nang 11:00 KST, at muling nagpatuloy ang express delivery sa 28 Setyembre; para sa address sa Korea ang hangganan ng courier ay 22 Setyembre nang 11:00 KST, na nagpatuloy sa parehong araw. Ipinapadala nang sunod-sunod ang order na ipinasa matapos ang hangganan mula sa araw ng pagpapatuloy. Dalawang babala ang idinagdag ng Weverse: puwede pa ring dumating matapos ang pista ang bagay na ipinadala sa araw ng hangganan, depende sa lugar, at galing sa courier ang talaan kaya maaari itong magbago.",
+        pitfall:
+          "Ang pagbasa sa mga petsang iyon bilang sa taong ito. Mga bilang sila ng Chuseok 2026, at ang padron — isang hangganan nang 11:00 KST isa o dalawang araw bago, at pagpapatuloy mga isang linggo pagkatapos — ang bahaging nananatili. Ang mga petsa mismo ay kailangang hanapin sa bawat pagkakataon.",
+        takes: "10 minuto bago mag-order sa pista",
+      },
+      {
+        title: "Kung nasa Tsina ang address mo, isang pangalawang kalendaryo ng pista ang nauukol",
+        body: "Naglalabas ang Weverse Shop ng hiwalay na abiso para sa mga pistang Tsino, na nakakaapekto sa order na may address ng paghahatid sa Tsina, dahil nagsasara ang tanggapan ng customs ng Tsina at tumitigil ang clearance. Para sa Mid-Autumn Festival ng 2026 sa 25 hanggang 27 Setyembre at sa National Day mula 1 hanggang 7 Oktubre, sinabi nitong ang orderng lubos na nabayaran bago ang 15 Setyembre nang 11:00 KST ay malamang maihatid sa panahon ng pista ng National Day, at ang orderng nabayaran matapos iyon ay magsisimulang ipadala kapag natapos na ang pista sa 8 Oktubre. Pansinin na ang pagiging kumpleto ng bayad ang binibilang, hindi ang pagkakapasa ng order.",
+        pitfall:
+          "Isang pre-order na natatapos ang bayad nang mas huli kaysa sa pag-aakala mo. Kung saan tinutukoy ng buong bayad ang hangganan, ang orderng nakaupong hindi nababayaran ay orderng nasa kabilang panig ng isang tatlong-linggong bitak.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Ihiwalay ang pagkaabala sa kargamento sa isang nawawalang parsela",
+        body: "May mga pagkaantalang hindi customs at hindi pista. Noong Abril 2026 ay ibinalita ng Weverse Shop sa mga customer ang pagkaantala ng paghahatid sa buong Europa at sa piling bansa sa Gitnang Silangan, na dulot ng pagbabago-bago sa mga pandaigdigang ruta ng lohistika at sa talaan ng kargamento sa himpapawid at dagat, na nakaapekto sa orderng ipinadala matapos ang 1 Abril 2026 na nasa internasyonal na transito. Ang kapaki-pakinabang na bahagi ay ang sinasabi nito tungkol sa tracking: dahil sa muling pagruta, puwedeng tumagal nang mas matagal kaysa sa dati ang pag-update ng tracking at ang pagdating sa lokal, at nasa transito pa rin ang pakete. Ang tahimik na tracking sa panahon ng isang kilalang pagkaabala ay ang inaasahang sintomas at hindi katibayan ng pagkawala.",
+        pitfall:
+          "Ang pagbukas ng habol sa nawawalang parsela dahil hindi gumalaw ang tracking nang isang linggo. Tingnan muna sa pahina ng abiso kung may aktibong pagkaabalang sumasaklaw sa rehiyon mo — ang habol na inihain laban sa parselang muling niruta lamang ay nag-aaksaya ng oras na kakailanganin mo para sa isang tunay.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Tingnan kung ang Weverse nga ang nagtitinda",
+        body: "Isinasaad ng Weverse Shop sa sariling pahina nito na may mga produktong iniaalok ng mga indibidwal na nagtitindang ibang panig, na sa mga kasong iyon ay gumagawi ang Weverse Company bilang tagapamagitan lamang sa e-commerce at hindi panig sa transaksiyon, at na wala itong inaakong responsibilidad sa impormasyon ng produkto o sa transaksiyong isinasagawa ng mga nagtitindang iyon. Binabago niyon kung kanino ka nakikipag-usap kapag may mali — para sa bagay ng ibang panig, ang nagtitinda ang kabila at hindi ang Weverse. Mabuting matiyak bago mo kailanganing magreklamo kaysa habang nagrereklamo.",
+        pitfall:
+          "Ang pag-aakalang may parehong panindigan ang lahat sa tindahan dahil nasa likod sila ng parehong checkout. Nakalathala ang pagtatatwa ng pamamagitan, at ito ang nagpapasya kung sino ang may utang sa iyo ng lunas.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Basahin mo mismo ang mga abiso, dahil mas mabilis maluluma ang pahinang ito kaysa sa karamihan",
+        body: "Lahat ng nasa itaas ay galing sa pahina ng abiso ng Weverse Shop, at ang pahinang iyon ang buhay na bersiyon. Matibay ang mga pagbabago sa customs; hindi matibay ang talaan ng pista, ang pagkaabala sa kargamento at ang hangganan ng courier — inilalabas silang muli sa bawat pagkakataon at napapalitan nang hindi nagbabago ang lumang abiso. Bago mag-order sa pista o kapag huli ang isang parsela, basahin ang listahan ng abiso kaysa pagkatiwalaan ang petsa ng anumang gabay, kasama ang gabay na ito. Ang petsa sa itaas ng pahinang ito ay kung kailan huling ginawa namin iyon.",
+        pitfall:
+          "Ang pagkatiwala sa isang oras ng hangganan mula sa gabay na isinulat noong isang taon. Umuulit ang balangkas at hindi umuulit ang mga bilang.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Makakansela ko pa ba ang order ko?",
+        a: "Habang pinapayagan lamang ng katayuan. Ang ruta ng Weverse Shop ay ang app ng Weverse, More, My Orders, Order Details, Cancel Order — at isinasaad nitong kapag nagbago na ang katayuan sa Shipping Soon o In Transit ay hindi na posible ang pagkansela. Walang inilathalang panahon ng palugit, kaya nasa order ang sagot at hindi sa orasan.",
+      },
+      {
+        q: "Nasa EU ako at may bill ng customs ang order ko. Tama ba iyon?",
+        a: "Malamang. Sinasabi ng Weverse Shop na mula 1 Hulyo 2026 ay binuwag ng EU ang eksempsiyon sa buwis na dating sumasaklaw sa orderng mababa sa 150 euro, kaya nauukol na ngayon ang buwis kahit magkano, batay sa kargamentong dumadaan sa lokal na customs mula sa petsang iyon. Nagbabala rin itong puwede kang makatanggap ng hiwalay na tagubilin sa pagbabayad mula sa customs o sa courier, at na ang hindi pagbabayad ay makakaantala o makakapigil sa paghahatid.",
+      },
+      {
+        q: "Bakit mabagal ang order ko sa US kung walang buwis na babayaran?",
+        a: "Dahil dalawa ang pagbabago. Sa tabi ng tuntunin sa buwis, nagbabala ang Weverse Shop na mula 8 Hulyo 2026 ay ipinapatupad ng US Consumer Product Safety Commission ang sapilitang eFiling, na nagdadala ng mas mahigpit na inspeksiyon sa lahat ng paninda na iniaangkat sa US, at inaasahang mas matatagal ang clearance ng ilang araw. Oras ang halaga ng isang iyon at hindi pera.",
+      },
+      {
+        q: "Nakatanggap ako ng mensaheng nagpapabayad sa akin ng customs. Scam ba ito?",
+        a: "Puwede itong tunay nang lehitimo — sinasabi ng Weverse Shop na puwedeng makatanggap ang customer sa EU ng hiwalay na tagubilin sa pagbabayad mula sa lokal na customs o sa courier. Eksakto rin itong ginagaya ng isang scam. Patunayan sa pamamagitan ng pagtutugma ng tracking number sa sariling order mo at ng pagpunta mismo sa site ng courier kaysa sa pagsunod sa link sa mensahe.",
+      },
+      {
+        q: "Ano ang hangganan para sa isang order sa pistang Koreano?",
+        a: "Naglalathala ang Weverse Shop ng isa kada pista, hanggang sa minuto. Para sa Chuseok 2026 ang hangganan para sa address sa labas ng Korea ay 23 Setyembre nang 11:00 KST, at nagpatuloy ang express delivery sa 28 Setyembre. Nagbabala itong galing sa courier ang talaan at puwedeng magbago, at na puwede pa ring dumating matapos ang pista ang ipinadala sa araw ng hangganan. Hanapin ang kasalukuyan kaysa gamiting muli ang mga petsang ito.",
+      },
+      {
+        q: "Isang linggo nang hindi nag-update ang tracking ko. Nawala na ba ang parsela ko?",
+        a: "Tingnan muna sa pahina ng abiso kung may pagkaabalang sumasaklaw sa rehiyon mo. Noong ibinalita ng Weverse Shop ang pagkaantala para sa Europa at Gitnang Silangan noong Abril 2026, sinabi nitong dahil sa muling pagruta ay tumatagal nang mas matagal kaysa sa dati ang pag-update ng tracking at ang pagdating sa lokal at nasa transito pa rin ang pakete — kaya ang hindi gumagalaw na tracking sa panahon ng kilalang pagkaabala ay sintomas at hindi ang problema.",
+      },
+      {
+        q: "May mali sa bagay na binili ko. Sa Weverse ba ako makikipag-usap?",
+        a: "Hindi palagi. Isinasaad ng Weverse Shop na may mga produktong ipinagbibili ng indibidwal na nagtitindang ibang panig, na gumagawi noon ang Weverse Company bilang tagapamagitan lamang at hindi panig sa transaksiyon, at na wala itong inaakong responsibilidad sa impormasyon ng produkto o sa transaksiyon ng mga nagtitindang iyon. Tingnan kung aling uri ng bagay ang binili mo bago magpasya kung kanino lalapit.",
+      },
+      {
+        q: "Nakakaapekto ba sa akin ang talaan ng pistang Tsino kung hindi ako nasa Tsina?",
+        a: "Sinasabi ng mga abiso na nauukol ang mga talaang iyon sa orderng may address ng paghahatid sa Tsina, dahil nagsasara ang tanggapan ng customs ng Tsina tuwing pista. Kung nasa iba ang address mo, ang hangganan ng pistang Koreano at anumang aktibong pagkaabala sa kargamento ang dapat tingnan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

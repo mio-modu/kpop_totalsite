@@ -13062,6 +13062,224 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Comprando na Ktown4u: o relógio de seis horas para pagar e as taxas que ninguém menciona",
+    summary:
+      "Um pedido não pago é cancelado depois de seis horas, não de vinte e quatro. Pacotes para os EUA podem carregar uma cobrança de USD 12 recolhida na sua porta. O frete internacional subiu 7% em fevereiro de 2026, e dois países europeus perderam discretamente uma forma de envio inteira.",
+    scope:
+      "Cobre a compra de álbuns físicos e produtos na Ktown4u com entrega fora da Coreia, a partir dos avisos da própria Ktown4u: o relógio do pagamento, taxas e formas de envio, pausas de feriado e horário do atendimento. Se uma compra na Ktown4u é reportada às paradas coreanas de álbuns é respondido pelo próprio registro de lojas certificadas da Hanteo, e não pela Ktown4u. Os avisos são reemitidos e substituídos, então a lista de avisos é a versão viva.",
+    intro: [
+      "A Ktown4u é onde boa parte dos fãs internacionais de fato compra álbuns, e quase nada sobre como ela funciona está escrito em inglês fora da própria página de avisos — que é em inglês, datada, e lida por ninguém até um pacote atrasar.",
+      "Esta é essa página lida de uma vez. O primeiro item é o que custa pedidos às pessoas, e ele mudou em 2025 sem que a maioria dos compradores percebesse.",
+    ],
+    steps: [
+      {
+        title: "Saiba que um pedido não pago morre em seis horas, não num dia",
+        body: "Este é o fato que vale saber antes de você fazer qualquer pedido. A Ktown4u segurava pedidos não pagos por 24 horas e cortou isso para 6, com efeito em 19 de fevereiro de 2025 KST, cancelando automaticamente os pedidos não pagos seis horas depois de feitos. Para um fã comprando à meia-noite na Europa ou nas Américas, seis horas coreanas podem transcorrer inteiras enquanto você dorme — e uma pré-venda feita e não paga é uma pré-venda que nunca existiu.",
+        pitfall:
+          "Reservar o item agora e pagar quando o seu cartão ou o seu dia de pagamento permitir. Isso funcionava na janela antiga e não funciona nesta.",
+        takes: "Pague na hora em que comprar",
+      },
+      {
+        title: "Se você está nos EUA, reserve orçamento para uma cobrança recolhida na sua porta",
+        body: "A partir de 2 de junho de 2025 a Ktown4u aplica uma política de taxa da UPS às remessas para os EUA: onde há tributos aduaneiros, impostos ou outros encargos governamentais devidos, são cobrados USD 12 adicionais se esses tributos não tiverem sido pagos antecipadamente de forma eletrônica antes da entrega. A Ktown4u chama isso de International Collect on Delivery fee, e diz que é faturado ao destinatário nos EUA no momento da entrega. A saída também está publicada — pagar os tributos antecipadamente pelo sistema UPS Import Prepaid Duties and Taxes, que, segundo ela, aceita Apple Pay, Google Pay, ou cartão Visa, Mastercard ou Discover.",
+        pitfall:
+          "Tratar o total do checkout como o total. Essa taxa não é cobrada pela Ktown4u na compra; ela chega com o pacote, e são doze dólares por cima de qualquer tributo que de fato seja devido.",
+        takes: "10 minutos, antes de o pacote sair",
+      },
+      {
+        title: "Calcule o frete pela tarifa atual, não pela do ano passado",
+        body: "A Ktown4u aumentou as taxas de frete internacional em 7% com efeito em 1º de fevereiro de 2026 às 00:00 KST, atribuindo isso a um ajuste regular de tarifas pelas transportadoras. É pouco por pacote e muito numa compra em grupo, e é o tipo de mudança que torna silenciosamente errada uma estimativa de frete de um post de blog de um ano atrás. O número que conta é o que o carrinho mostra a você no momento em que você compra.",
+        pitfall:
+          "Orçar uma compra em grupo a partir de uma planilha que alguém fez na temporada passada. Ajustes de tarifa são regulares, o que significa que haverá outro.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Veja se o seu país ainda tem a forma de envio que você espera",
+        body: "Formas de envio são retiradas por país, e não apenas atrasadas. A Ktown4u suspendeu o serviço K-Packet para a Alemanha e a Espanha a partir de 17 de janeiro de 2025, porque os operadores postais alemão e espanhol saíram do arranjo Prime Group em que ela opera. A conduta declarada é enviar e-mail aos clientes afetados sobre a mudança para outro serviço de envio e o custo adicional — então um pedido já feito pode mudar de preço depois do fato. A forma que você usou da última vez não é uma forma que você ainda tenha.",
+        pitfall:
+          "Escolher a forma mais barata por hábito e não ler o e-mail seguinte. É no e-mail que o serviço substituto e o custo extra são informados.",
+        takes: "5 minutos, no checkout",
+      },
+      {
+        title: "Leia os avisos de interrupção por país, que são incomumente específicos",
+        body: "A Ktown4u publica interrupções de entrega até o nível dos códigos postais. O aviso de EMS para a Eslováquia de 4 de abril de 2025 nomeia os códigos postais afetados — 930 07, 930 06, 930 04, 930 03 e 900 68 — e a causa: um surto de febre aftosa no sudoeste da Eslováquia e um estado de emergência a partir de 25 de março de 2025, com os pacotes retidos na agência postal local e os destinatários notificados. O detalhe é o ponto: quando o rastreio para na sua região, a página de avisos em geral diz por quê, e essa é uma situação diferente de um pacote perdido.",
+        pitfall:
+          "Abrir uma reclamação de extravio durante uma interrupção que está publicada e explicada. Confira a lista de avisos para o seu país antes de gastar a tarde numa reclamação.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Trate um feriado coreano como uma semana sem despacho e sem atendimento",
+        body: "A Ktown4u pausa as duas metades da sua operação nos feriados coreanos, e publica as datas a cada vez. No Ano-Novo Lunar de 2026 a entrega de pacotes ficou pausada de 14 a 18 de fevereiro, com as entregas retomando em sequência a partir de 19 de fevereiro, e o atendimento ao cliente indisponível nos mesmos dias. No Chuseok de 2025 a pausa foi de 3 a 9 de outubro, com os dois retomando no dia 10. Ela avisa a cada vez que os atrasos podem passar da data de retomada por causa do volume de pedidos acumulado atrás dela.",
+        pitfall:
+          "Ler a data de retomada como data de entrega. É o dia em que a fila começa a andar, e o seu pedido está em algum lugar dela.",
+        takes: "10 minutos antes de um pedido de feriado",
+      },
+      {
+        title: "Escreva ao atendimento dentro do horário que ele realmente mantém",
+        body: "A Ktown4u passou o seu canal de atendimento ao cliente para dias úteis das 10:00 às 17:00 KST a partir de 1º de novembro de 2023, com intervalo de almoço das 12:30 às 13:30. É uma janela de cinco horas e meia, em dias úteis coreanos, que para a maioria dos leitores deste site cai no meio da noite. Isso importa mais em combinação com o relógio de seis horas do pagamento: um pedido feito numa sexta à noite na Europa pode expirar antes de haver alguém numa mesa a quem perguntar.",
+        pitfall:
+          "Esperar uma resposta antes de agir. Converta esse horário para o seu uma vez, anote, e não conte com nada fora dele.",
+        takes: "5 minutos, uma vez",
+      },
+      {
+        title: "A Ktown4u é uma loja certificada pela Hanteo, e você mesmo pode conferir",
+        body: "Este guia dizia que a pergunta não podia ser respondida, porque a Ktown4u não declara isso nos próprios avisos. Ela é respondível pelo outro lado: a Hanteo publica as suas lojas Family certificadas, e a Ktown4U está nesse registro com o código de família HF0082KTU001. A Hanteo exige que toda loja Family online exiba a marca Family com link de volta para hanteochart.com, e a própria vitrine da Ktown4u aponta para esse mesmo registro — então a loja e a parada concordam, pelas duas pontas. Confira em vez de aceitar daqui: registros mudam, e a instrução da Hanteo é confirmar o código e o selo de certificação, que é reemitido todo ano.",
+        pitfall:
+          "Ler isso como “o meu pedido vai aparecer em toda parada coreana”. A Hanteo conta as vendas que as suas lojas Family reportam; a Album Chart principal da Circle Chart conta remessas no atacado aos varejistas, então nenhum pedido no varejo a move. E nenhuma das duas publica uma regra sobre se um pedido do exterior é tratado como um doméstico.",
+        takes: "15 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Quanto tempo eu tenho para pagar um pedido da Ktown4u?",
+        a: "Seis horas. A Ktown4u cortou o tempo de retenção de pedidos não pagos de 24 horas para 6, com efeito em 19 de fevereiro de 2025 KST, e diz que pedidos não pagos são automaticamente cancelados seis horas depois de feitos. Pague na hora em que comprar, em vez de planejar voltar depois.",
+      },
+      {
+        q: "O que é a cobrança de USD 12 na minha entrega nos EUA?",
+        a: "É a International Collect on Delivery fee da Ktown4u para remessas da UPS para os EUA, em vigor desde 2 de junho de 2025. Ela se aplica onde há tributos aduaneiros, impostos ou outros encargos governamentais devidos que não tenham sido pagos antecipadamente de forma eletrônica antes da entrega, e é faturada ao destinatário na entrega. Pagar antecipadamente pelo sistema UPS Import Prepaid Duties and Taxes evita a taxa — a Ktown4u lista Apple Pay, Google Pay e Visa, Mastercard ou Discover como as formas de fazer isso.",
+      },
+      {
+        q: "Por que o frete está mais caro do que era?",
+        a: "A Ktown4u aumentou as taxas de frete internacional em 7% a partir de 1º de fevereiro de 2026 às 00:00 KST, atribuindo isso a um ajuste regular de tarifas pelas transportadoras. Regular quer dizer que haverá outro, então calcule uma compra em grupo pelo carrinho e não por uma estimativa antiga.",
+      },
+      {
+        q: "A minha forma de envio de sempre sumiu. O que aconteceu?",
+        a: "Formas são retiradas por país. A Ktown4u suspendeu o K-Packet para a Alemanha e a Espanha a partir de 17 de janeiro de 2025, depois que os operadores postais alemão e espanhol saíram do arranjo Prime Group, e disse que enviaria e-mail aos clientes afetados sobre a troca de serviço e o custo adicional. Se o pedido já tinha sido feito, é nesse e-mail que a nova forma e o novo preço são informados.",
+      },
+      {
+        q: "O meu rastreio não anda. O pacote se perdeu?",
+        a: "Confira primeiro a lista de avisos do seu país. A Ktown4u publica interrupções com detalhe incomum — o aviso de EMS para a Eslováquia de 4 de abril de 2025 nomeou os cinco códigos postais afetados e as medidas de quarentena por trás do atraso, e disse que os pacotes ficariam retidos na agência postal local com os destinatários notificados. Uma interrupção publicada é um problema diferente de um pacote perdido.",
+      },
+      {
+        q: "O que acontece com o meu pedido num feriado coreano?",
+        a: "Despacho e atendimento param os dois. No Ano-Novo Lunar de 2026 a entrega de pacotes ficou pausada de 14 a 18 de fevereiro, retomando em sequência a partir do dia 19, com o atendimento indisponível nos mesmos dias; o Chuseok de 2025 foi de 3 a 9 de outubro, com os dois retomando no dia 10. A Ktown4u avisa a cada vez que o acúmulo pode empurrar as entregas para depois da data de retomada.",
+      },
+      {
+        q: "Quando eu consigo de fato falar com o atendimento?",
+        a: "Dias úteis das 10:00 às 17:00 KST, com intervalo de almoço das 12:30 às 13:30, conforme definido a partir de 1º de novembro de 2023. Converta isso para o seu fuso antes de precisar, porque, combinado com o relógio de seis horas do pagamento, um pedido pode expirar fora desse horário.",
+      },
+      {
+        q: "Comprar na Ktown4u conta para as paradas coreanas?",
+        a: "A Ktown4U é uma loja Family certificada pela Hanteo, listada com o código HF0082KTU001, então para a Hanteo a loja é uma loja que reporta — o que é até onde uma fonte pública vai. A Hanteo não publica uma regra sobre se um pedido do exterior é tratado como um doméstico, e a Circle Chart é outra questão ainda: a sua Album Chart principal conta remessas no atacado aos varejistas e não vendas no varejo, então um pedido ali não muda nada de um jeito nem de outro. Se um lançamento específico é o ponto, o anúncio do próprio artista em geral nomeia os varejistas participantes dele.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "ktown4u-ordering-shipping-and-fees",
+    sourceChecked: "2026-10-21",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Commander chez Ktown4u : l'horloge de six heures pour payer et les frais que personne ne mentionne",
+    summary:
+      "Une commande impayée est annulée au bout de six heures, et non de vingt-quatre. Les colis vers les États-Unis peuvent porter des frais de USD 12 encaissés à votre porte. Les frais de port internationaux ont augmenté de 7% en février 2026, et deux pays européens ont discrètement perdu un mode d'expédition entier.",
+    scope:
+      "Couvre la commande d'albums physiques et de produits chez Ktown4u pour une livraison hors de Corée, à partir des avis publiés par Ktown4u : l'horloge du paiement, les frais et modes d'expédition, les pauses des jours fériés et les horaires du service client. La question de savoir si un achat chez Ktown4u est déclaré aux classements d'albums coréens est tranchée par le registre des boutiques certifiées de Hanteo, non par Ktown4u. Les avis sont réédités et remplacés : la liste des avis est donc la version vivante.",
+    intro: [
+      "Ktown4u est l'endroit où une grande partie des fans internationaux achètent réellement leurs albums, et presque rien de son fonctionnement n'est écrit en anglais hors de sa propre page d'avis — qui est en anglais, datée, et lue par personne jusqu'à ce qu'un colis soit en retard.",
+      "Voici cette page lue d'un seul tenant. Le premier point est celui qui coûte des commandes aux gens, et il a changé en 2025 sans que la plupart des acheteurs le remarquent.",
+    ],
+    steps: [
+      {
+        title: "Sachez qu'une commande impayée meurt en six heures, pas en un jour",
+        body: "Voilà le fait à connaître avant de passer quoi que ce soit. Ktown4u conservait les commandes impayées pendant 24 heures et a ramené ce délai à 6, à compter du 19 février 2025 KST, les commandes impayées étant automatiquement annulées six heures après avoir été passées. Pour un fan qui commande à minuit en Europe ou dans les Amériques, six heures coréennes peuvent s'écouler entièrement pendant son sommeil — et une précommande passée et non payée est une précommande qui n'a jamais existé.",
+        pitfall:
+          "Réserver l'article maintenant et payer quand votre carte ou votre jour de paie le permettra. Cela marchait avec l'ancienne fenêtre et ne marche pas avec celle-ci.",
+        takes: "Payez au moment de commander",
+      },
+      {
+        title: "Si vous êtes aux États-Unis, prévoyez des frais encaissés à votre porte",
+        body: "Depuis le 2 juin 2025, Ktown4u applique une politique de frais UPS aux envois vers les États-Unis : lorsque des droits de douane, taxes ou autres charges publiques sont dus, USD 12 supplémentaires sont facturés si ces droits n'ont pas été prépayés par voie électronique avant la livraison. Ktown4u les nomme International Collect on Delivery fee et indique qu'ils sont facturés au destinataire aux États-Unis au moment de la livraison. La porte de sortie est également publiée — prépayer les droits via le système UPS Import Prepaid Duties and Taxes, qui accepte selon elle Apple Pay, Google Pay, ou une carte Visa, Mastercard ou Discover.",
+        pitfall:
+          "Prendre le total affiché au paiement pour le total. Ces frais ne sont pas prélevés par Ktown4u à l'achat ; ils arrivent avec le colis, et ce sont douze dollars en plus de ce qui est réellement dû au titre des droits.",
+        takes: "10 minutes, avant l'expédition du colis",
+      },
+      {
+        title: "Chiffrez le port au tarif en vigueur, pas à celui de l'an dernier",
+        body: "Ktown4u a relevé ses frais de port internationaux de 7% à compter du 1er février 2026 à 00:00 KST, en l'attribuant à un ajustement tarifaire régulier des transporteurs. C'est peu par colis et beaucoup sur une commande groupée, et c'est le genre de changement qui rend silencieusement fausse une estimation de port tirée d'un billet de blog d'il y a un an. Le chiffre qui compte est celui que le panier vous affiche au moment où vous commandez.",
+        pitfall:
+          "Budgéter une commande groupée à partir d'un tableur fait la saison dernière. Les ajustements tarifaires sont réguliers, ce qui veut dire qu'il y en aura un autre.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Vérifiez que votre pays dispose encore du mode d'expédition attendu",
+        body: "Les modes d'expédition sont retirés par pays, et pas seulement retardés. Ktown4u a suspendu le service K-Packet vers l'Allemagne et l'Espagne à compter du 17 janvier 2025, parce que les opérateurs postaux allemand et espagnol se sont retirés de l'accord Prime Group sur lequel il repose. Sa conduite annoncée est d'écrire aux clients concernés pour leur proposer un autre service d'expédition et leur en indiquer le coût supplémentaire — une commande déjà passée peut donc changer de prix après coup. Le mode que vous avez utilisé la dernière fois n'est pas un mode dont vous disposez encore.",
+        pitfall:
+          "Choisir le mode le moins cher par habitude et ne pas lire l'e-mail qui suit. C'est dans cet e-mail que le service de remplacement et son surcoût sont nommés.",
+        takes: "5 minutes, au moment de payer",
+      },
+      {
+        title: "Lisez les avis de perturbation par pays, d'une précision inhabituelle",
+        body: "Ktown4u publie les perturbations de livraison jusqu'au niveau des codes postaux. Son avis EMS pour la Slovaquie du 4 avril 2025 nomme les codes postaux touchés — 930 07, 930 06, 930 04, 930 03 et 900 68 — et la cause : un foyer de fièvre aphteuse dans le sud-ouest de la Slovaquie et un état d'urgence à compter du 25 mars 2025, les colis étant retenus au bureau de poste local et les destinataires avertis. Le détail est précisément l'intérêt : quand le suivi s'arrête pour votre région, la page des avis en dit généralement la raison, et c'est une situation différente d'un colis perdu.",
+        pitfall:
+          "Ouvrir une réclamation pour colis perdu pendant une perturbation publiée et expliquée. Consultez la liste des avis pour votre pays avant de passer l'après-midi sur une réclamation.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Traitez un jour férié coréen comme une semaine sans expédition ni service client",
+        body: "Ktown4u met en pause les deux moitiés de son activité pendant les jours fériés coréens, et en publie les dates à chaque fois. Pour le Nouvel An lunaire 2026, la livraison des colis a été suspendue du 14 au 18 février, les livraisons reprenant dans l'ordre à partir du 19 février, et le service client était indisponible les mêmes jours. Pour le Chuseok 2025, la pause a couru du 3 au 9 octobre, les deux reprenant le 10. Elle avertit chaque fois que les retards peuvent dépasser la date de reprise, à cause du volume de commandes accumulé derrière.",
+        pitfall:
+          "Lire la date de reprise comme une date de livraison. C'est le jour où la file se remet en mouvement, et votre commande est quelque part dedans.",
+        takes: "10 minutes avant une commande de période de fêtes",
+      },
+      {
+        title: "Écrivez au service client dans les horaires qu'il tient réellement",
+        body: "Ktown4u a déplacé son canal de service client aux jours ouvrés de 10:00 à 17:00 KST à compter du 1er novembre 2023, avec une pause déjeuner de 12:30 à 13:30. Cela fait une fenêtre de cinq heures et demie, en jours ouvrés coréens, qui tombe pour la plupart des lecteurs de ce site au milieu de la nuit. Cela compte surtout combiné à l'horloge de six heures du paiement : une commande passée un vendredi soir en Europe peut expirer avant que quiconque ne soit à un bureau pour répondre.",
+        pitfall:
+          "Attendre une réponse avant d'agir. Convertissez ces horaires dans les vôtres une bonne fois, notez-les, et ne comptez sur rien en dehors.",
+        takes: "5 minutes, une fois",
+      },
+      {
+        title: "Ktown4u est une boutique certifiée Hanteo, et vous pouvez le vérifier vous-même",
+        body: "Ce guide affirmait que la question ne pouvait pas être tranchée, parce que Ktown4u ne le déclare pas dans ses propres avis. Elle se tranche par l'autre bout : Hanteo publie ses boutiques Family certifiées, et Ktown4U figure sur ce registre avec le code de famille HF0082KTU001. Hanteo exige que toute boutique Family en ligne affiche la marque Family avec un lien renvoyant vers hanteochart.com, et la vitrine de Ktown4u renvoie bien vers ce même registre — la boutique et le classement concordent donc, par les deux bouts. Vérifiez-le plutôt que de le prendre d'ici : les registres changent, et la consigne de Hanteo est de confirmer le code ainsi que le sceau de certification, réémis chaque année.",
+        pitfall:
+          "Lire cela comme « ma commande apparaîtra dans tous les classements coréens ». Hanteo compte les ventes que ses boutiques Family déclarent ; l'Album Chart principal de Circle Chart compte les expéditions en gros vers les détaillants, de sorte qu'aucune commande au détail ne le fait bouger. Et ni l'un ni l'autre ne publie de règle sur le traitement d'une commande passée depuis l'étranger par rapport à une commande nationale.",
+        takes: "15 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Combien de temps ai-je pour payer une commande Ktown4u ?",
+        a: "Six heures. Ktown4u a ramené la durée de conservation des commandes impayées de 24 heures à 6, à compter du 19 février 2025 KST, et indique que les commandes impayées sont automatiquement annulées six heures après avoir été passées. Payez au moment de commander plutôt que de prévoir d'y revenir.",
+      },
+      {
+        q: "Qu'est-ce que ces frais de USD 12 sur ma livraison aux États-Unis ?",
+        a: "C'est l'International Collect on Delivery fee de Ktown4u pour les envois UPS vers les États-Unis, en vigueur depuis le 2 juin 2025. Elle s'applique quand des droits de douane, taxes ou autres charges publiques sont dus et n'ont pas été prépayés par voie électronique avant la livraison, et elle est facturée au destinataire à la livraison. Les prépayer via le système UPS Import Prepaid Duties and Taxes l'évite — Ktown4u cite Apple Pay, Google Pay et Visa, Mastercard ou Discover comme moyens de le faire.",
+      },
+      {
+        q: "Pourquoi le port est-il plus cher qu'avant ?",
+        a: "Ktown4u a relevé ses frais de port internationaux de 7% à compter du 1er février 2026 à 00:00 KST, en l'attribuant à un ajustement tarifaire régulier des transporteurs. Régulier signifie qu'il y en aura un autre : chiffrez donc une commande groupée depuis le panier plutôt que depuis une ancienne estimation.",
+      },
+      {
+        q: "Mon mode d'expédition habituel a disparu. Que s'est-il passé ?",
+        a: "Les modes sont retirés par pays. Ktown4u a suspendu le K-Packet vers l'Allemagne et l'Espagne à compter du 17 janvier 2025, après le retrait des opérateurs postaux allemand et espagnol de l'accord Prime Group, et a annoncé qu'elle écrirait aux clients concernés au sujet du changement de service et du coût supplémentaire. Si la commande était déjà passée, c'est dans cet e-mail que le nouveau mode et son prix sont indiqués.",
+      },
+      {
+        q: "Mon suivi ne bouge plus. Le colis est-il perdu ?",
+        a: "Consultez d'abord la liste des avis pour votre pays. Ktown4u publie les perturbations avec un détail inhabituel — son avis EMS pour la Slovaquie du 4 avril 2025 nommait les cinq codes postaux touchés et les mesures de quarantaine à l'origine du retard, et indiquait que les colis seraient retenus au bureau de poste local avec notification des destinataires. Une perturbation publiée est un problème différent d'un colis perdu.",
+      },
+      {
+        q: "Qu'advient-il de ma commande pendant un jour férié coréen ?",
+        a: "L'expédition et le service client s'arrêtent tous les deux. Pour le Nouvel An lunaire 2026, la livraison des colis a été suspendue du 14 au 18 février, avec reprise dans l'ordre à partir du 19, le service client étant indisponible les mêmes jours ; le Chuseok 2025 a couru du 3 au 9 octobre, les deux reprenant le 10. Ktown4u avertit chaque fois que l'arriéré peut repousser les livraisons au-delà de la date de reprise.",
+      },
+      {
+        q: "Quand puis-je réellement joindre le service client ?",
+        a: "Les jours ouvrés de 10:00 à 17:00 KST, avec une pause déjeuner de 12:30 à 13:30, tels que fixés depuis le 1er novembre 2023. Convertissez cela dans votre propre fuseau avant d'en avoir besoin, car combiné à l'horloge de six heures du paiement, une commande peut expirer en dehors de ces horaires.",
+      },
+      {
+        q: "Acheter chez Ktown4u compte-t-il pour les classements coréens ?",
+        a: "Ktown4U est une boutique Family certifiée Hanteo, inscrite sous le code HF0082KTU001 : pour Hanteo, la boutique est donc déclarante — c'est aussi loin qu'une source publique permette d'aller. Hanteo ne publie pas de règle sur le traitement d'une commande passée depuis l'étranger par rapport à une commande nationale, et Circle Chart est encore une autre question : son Album Chart principal compte les expéditions en gros vers les détaillants plutôt que les ventes au détail, de sorte qu'une commande n'y change rien dans un sens comme dans l'autre. Si c'est une sortie précise qui vous intéresse, l'annonce de l'artiste nomme généralement les détaillants participants.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

@@ -727,6 +727,29 @@ would have to grow a section to fit a link reads exactly like what it is.
   loses `sponsored`, a link that loses its visible tag, a notice that drifts
   below the steps.
 
+**Four categories are refused regardless of what they pay**, written down
+because every one of them is actively sold to sites like this one and the
+refusal has to survive the next person who is offered money for it:
+
+- **VPNs.** The pitch is that one gets an overseas fan past a Korean
+  restriction. That is the identity-check workaround rule, wearing a
+  subscription. Most of the English guides that currently outrank this site
+  carry a VPN link, which is a reason to be sure, not a reason to match them.
+- **Ticket resale and secondary marketplaces.** The revised Performances Act
+  exists because of touts, and half this site explains the verification that
+  exists to stop them. Taking resale money would contradict the premise.
+- **Korean phone numbers, 본인인증 proxies, "verification help".** The same
+  rule, less disguised.
+- **Anything with no step that already names it.** Not an ethics rule, a
+  content one: a partner that needs a new section written for it is a section
+  that reads exactly like what it is. The Klook link went where it did because
+  NOL World's own answer leaves a reader needing a room this booking will
+  never contain — the gap was already there and already written.
+
+The test for a new partner is the fourth bullet applied first: find the
+sentence it would sit on **before** finding out what it pays. If no sentence
+exists, there is no partnership, however good the rate.
+
 ## Phone width
 
 Most of the traffic will be on a phone, so the narrow layout is not a

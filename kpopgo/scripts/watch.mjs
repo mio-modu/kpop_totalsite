@@ -29,6 +29,21 @@
 import { readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { fetchRelayStatus, relayVerdict, relayFinding } from "./relay.mjs";
+
+/**
+ * The proxy's status document, fetched at most once for the whole run.
+ *
+ * It is only consulted when something fails, so the common case never pays
+ * for it, and a sweep with several unreachable hosts must not ask the gateway
+ * about itself once per URL. `null` — no proxy, as on a GitHub runner — is a
+ * perfectly good cached answer, so the memo stores it rather than retrying.
+ */
+let relayStatusMemo;
+const relayStatus = async () => {
+  if (relayStatusMemo === undefined) relayStatusMemo = await fetchRelayStatus();
+  return relayStatusMemo;
+};
 
 const OFFLINE = process.argv.includes("--offline");
 /** Take a new baseline. Run this after deliberately re-reading the sources. */
@@ -111,7 +126,21 @@ async function read(path) {
  */
 async function sources() {
   const src = await read("content/guides.ts");
-  const urls = [...src.matchAll(/url:\s*"(https?:\/\/[^"]+)"/g)].map((m) => m[1]);
+  // `url:` catches every entry in a guide's `sources`, and `licenceUrl:`
+  // catches the one URL that is not in that list and matters most.
+  //
+  // The site reproduces the venue's seating chart, and the *only* thing that
+  // makes that allowed is 공공누리 제1유형, declared on a page at kogl.or.kr.
+  // That page was watched by nothing: `sources()` matched `url:` alone, a
+  // `licenceUrl` is not spelled that way, and `documents()` watches the
+  // picture's bytes rather than the terms. So the one claim on this site with
+  // a legal consequence rested on a page no check had ever fetched.
+  //
+  // Found by asking why `www.kogl.or.kr` never appeared in a sweep. It is the
+  // `sourceUrl` rule's own logic applied one field over: reproducing
+  // something under a licence you have not re-read is a claim with no trail
+  // back to it.
+  const urls = [...src.matchAll(/(?:url|licenceUrl):\s*"(https?:\/\/[^"]+)"/g)].map((m) => m[1]);
   const unique = [...new Set(urls)];
   if (unique.length < 8) {
     throw new Error(
@@ -345,7 +374,12 @@ function isFixedDocument(url) {
   // kind of fixed document there is — it is where the rules a step was written
   // from actually live. The first version of this pattern missed them and
   // classified YES24's English guide as a storefront.
-  if (/\/(notice|news|press|article|view|blog|release|guide|faq|help|terms|policy|support)/i.test(path))
+  // A licence page belongs here for the same reason `terms` and `policy` do,
+  // and more sharply: the chart on the seat guide is served only because
+  // 공공누리 제1유형 permits it, so a change to that page's wording is the one
+  // source change on this site with a legal consequence rather than an
+  // editorial one. `license.do` matches no other word in this list.
+  if (/\/(notice|news|press|article|view|blog|release|guide|faq|help|terms|policy|support|licen[cs]e)/i.test(path))
     return true;
   // A numeric id deep in the path is an article by another name.
   return /\/[^/]*\d{4,}/.test(path);
@@ -371,7 +405,20 @@ async function links(urls) {
       continue;
     }
     if (!r.ok) {
-      note("fail", `${url} — ${r.status || r.error}. A guide cites this.`);
+      // A `000` behind this container's proxy is three different failures
+      // wearing one number, and only one of them is ours. Ask the proxy which
+      // it was before calling a cited source dead — see `scripts/relay.mjs`
+      // for what each verdict means and which of them cost weeks.
+      //
+      // `relayFinding` returns null wherever there is nothing better to say,
+      // including on a GitHub runner where there is no proxy to ask, so the
+      // line below is still the one this check has always printed.
+      const explained =
+        r.status === 0
+          ? relayFinding(url, new URL(url).hostname, relayVerdict(new URL(url).hostname, await relayStatus()))
+          : null;
+      if (explained) note(explained.level, explained.msg);
+      else note("fail", `${url} — ${r.status || r.error}. A guide cites this.`);
       if (prints[url]) next[url] = prints[url];
       continue;
     }

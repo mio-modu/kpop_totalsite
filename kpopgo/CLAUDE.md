@@ -783,6 +783,19 @@ Byte-for-byte is blunt on purpose: a re-encode at the same content would read
 as changed. That is a false alarm somebody clears in a minute, and the
 alternative is a similarity threshold nobody can justify on a picture.
 
+**The licence itself went unwatched until 22 October 2026, and it is the one
+claim here with a legal consequence.** `sources()` collected `url:` and a
+`licenceUrl` is not spelled that way, while `documents()` watches the
+picture's bytes rather than the terms — so the page that makes reproducing the
+chart allowed at all was the one page no check had ever fetched. It is
+collected now, and `isFixedDocument` counts a licence path alongside `terms`
+and `policy`, so its wording is compared rather than merely link-checked. The
+gap was found by asking why `www.kogl.or.kr` never appeared in a sweep, and it
+is the `sourceUrl` rule's own logic one field over: reproducing something
+under a licence nobody has re-read is a claim with no trail back to it. Its
+first sweep returned the allowlist failure above rather than a baseline, so it
+still needs a `--record-new` once the host is reachable.
+
 The document renders **after** the steps rather than beside the schematic. The
 two do different jobs — the drawing teaches the rule in English and weighs
 nothing, the chart is the authority on where block 417 is and weighs 230KB —
@@ -999,6 +1012,18 @@ verdict:
 curl -sS "$HTTPS_PROXY/__agentproxy/status" | python3 -c \
   "import sys,json;[print(f['host'],f['detail']) for f in json.load(sys.stdin)['recentRelayFailures']]"
 ```
+
+**`scripts/watch.mjs` asks that endpoint now, so the weekly report says which
+it was.** A `000` used to print `✗ … A guide cites this`, one line for all
+three cases, which is how both of the above sat in the handoff for weeks as
+blocked sources. A policy denial is a **fail** naming the allowlist and
+`npm run hosts`, because it is ours and it is one paste; an upstream failure
+or a dropped tunnel is a **warn** that says to open the page in a browser,
+because a reader may well be able to. The classification lives in
+`scripts/relay.mjs` with `scripts/relay.test.mjs` on it, and it degrades to
+exactly the old message where there is no proxy to ask — which is the GitHub
+runner, and is deliberately not the two-code-path mistake recorded above,
+since the request itself still goes through one implementation.
 
 **`403` to CONNECT is the policy refusing the host — add it to the allowlist.
 `502` is the policy allowing it and the fetch failing anyway — the allowlist

@@ -61,12 +61,24 @@ appear in `main` under different ones:
 
 ## Waiting on the owner
 
-- **The allowlist is a partial paste again, and `www.kogl.or.kr` is one of the
-  missing ones.** That is a host the *content* cites — the licence page the
-  Gocheok chart is reproduced under — so the field needs the whole block from
-  `npm run hosts`, supplied **inside a fenced code block** because pasting bare
-  hostnames has twice come back markdown-linkified. Editing the field replaces
-  it, so a partial paste is how hosts go dark.
+- **Three hosts are missing from the allowlist: `www.kogl.or.kr`,
+  `www.clarity.ms`, `www.ksponco.or.kr`.** All three answer 403 at the
+  gateway, so they are absent from the field rather than broken, and the other
+  43 answer. The first is the 공공누리 licence page the Gocheok chart is
+  reproduced under — a host the *content* cites — and the weekly sweep now
+  reports it as a `✗` naming the allowlist. Supply the block from
+  `npm run hosts` **inside a fenced code block**, because pasting bare
+  hostnames has twice come back markdown-linkified, and paste it whole:
+  editing the field replaces it, which is how hosts go dark three at a time.
+- **An allowlist edit does not reach a container that is already running.**
+  Checked on 22 October 2026: the three hosts above were added, and all three
+  still answered 403 at the gateway in this session afterwards. So the venue
+  work that needs `www.ksponco.or.kr` has to start in a **new session**, not
+  in the one where the paste happened. Worth knowing before concluding that a
+  paste failed and re-doing it.
+- **The KOGL licence page needs a `--record-new` once it is reachable.** Its
+  first sweep returned the allowlist failure rather than a baseline, so it is
+  collected and not yet fingerprinted.
 - **Inspire Arena needs a live hostname, and that is the whole blocker.**
   `www.inspirekorea.com` was recorded here for weeks as blocked by the
   allowlist. It was never blocked: the gateway answers **502** to CONNECT for

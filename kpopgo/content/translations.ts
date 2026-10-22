@@ -11940,6 +11940,404 @@ export const translations: Translation[] = [
     ],
     labels: FR_LABELS,
   },
+  {
+    locale: "pt-BR",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Renovação da assinatura Weverse de fora da Coreia",
+    summary:
+      "O Pagamento Automático roda no último dia do seu período na hora em que você pagou da primeira vez, numa moeda que precisa coincidir, e se ele falhar passada a janela de renovação não há volta a não ser comprar de novo.",
+    scope:
+      "Cobre manter rodando uma assinatura Weverse Official Membership existente, e quanto custa deixá-la vencer. Entrar num fã-clube pela primeira vez e se habilitar para uma pré-venda específica são questões separadas, cobertas no guia de pré-venda. Tudo aqui vem do aviso do Weverse Shop de 3 de setembro de 2026 e das páginas de produto para as quais ele aponta.",
+    intro: [
+      "Uma assinatura que vence na semana errada não custa a você uma mensalidade. Custa a pré-venda, porque a elegibilidade é conferida contra uma assinatura que estava ativa antes de um corte, e comprá-la de novo depois não move essa data de jeito nenhum.",
+      "A Weverse acrescentou o Pagamento Automático em 3 de setembro de 2026, o que elimina a forma comum de deixar vencer. Ele também trouxe quatro regras fáceis de errar, e um ponto sem retorno.",
+    ],
+    steps: [
+      {
+        title: "Descubra em qual categoria de assinatura você está",
+        body: "A Weverse mantém assinaturas em três categorias — Global, Japan e USA — e elas são gerenciadas separadamente. Formas de pagamento, moedas e configurações de Pagamento Automático são todas por categoria, e até cinco formas de pagamento podem ser guardadas em cada uma, com uma marcada como principal. Em qual categoria você está não é algo que você escolhe por acaso; é onde a sua assinatura já mora.",
+        pitfall:
+          "Configurar o Pagamento Automático na categoria que você não usa. A tela parece idêntica, e a assinatura que renova é a outra.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Veja se a sua moeda é uma que a categoria realmente aceita",
+        body: "Em 3 de setembro de 2026: uma Global Membership aceita cartões de débito ou crédito sul-coreanos para KRW, e cartões cadastrados no PayPal para JPY, USD ou MXN. Uma Japan Membership aceita cartões de crédito para JPY. Uma US Membership aceita cartões cadastrados no PayPal para USD. Para um fã do exterior numa Global Membership pagando em USD, isso significa que o cartão passa pelo PayPal — não existe opção de cartão direto.",
+        pitfall:
+          "Esperar cadastrar um Visa diretamente numa Global Membership em USD. O mesmo padrão atravessa o Weverse Shop, e é por isso que um cartão que funciona em todo lugar pode falhar aqui.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Faça a moeda da compra coincidir com a forma principal",
+        body: "A Weverse afirma diretamente: a moeda de pagamento usada para comprar a assinatura precisa coincidir com a moeda de pagamento da sua forma principal de Pagamento Automático. Uma divergência não é resolvida a seu favor na hora da renovação — ela é uma renovação que não passa.",
+        pitfall:
+          "Comprar uma assinatura numa moeda e depois acrescentar uma forma principal em outra, o que parece certo nas duas telas e só falha no dia em que importa.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Saiba o momento exato em que ela renova",
+        body: "O Pagamento Automático roda no último dia do período de validade da assinatura atual, na mesma hora do dia em que você pagou da primeira vez. Aquela hora foi marcada num servidor coreano, então para a maioria dos leitores ela cai em algum ponto da noite ou da madrugada. Se falhar, a Weverse manda um e-mail e uma notificação push e tenta de novo uma vez por dia no mesmo horário, enquanto durar o período de renovação.",
+        pitfall:
+          "Um cartão que vence no meio do período, ou um banco que bloqueia a cobrança, vira uma notificação chegando às quatro da manhã no seu horário. A nova tentativa é diária, não de hora em hora — um dia sem ver o e-mail é um dia da janela gasto.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Entenda o que cancelar o Pagamento Automático não faz",
+        body: "Cancelar o Pagamento Automático interrompe as renovações futuras. Não cancela nem reembolsa a assinatura que você já tem, e você continua usando normalmente até o período de validade acabar. O cancelamento e o reembolso da assinatura em si são assunto separado, regido pela página de produto daquela assinatura.",
+        pitfall:
+          "Cancelar o Pagamento Automático esperando dinheiro de volta e, separadamente, cancelá-lo para “pausar” enquanto se fala de uma turnê, que é justamente a semana em que você menos quer que a renovação pare.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Trate o fim do período de renovação como um ponto sem retorno",
+        body: "Se você cancelou o Pagamento Automático, pode reativá-lo — mas só enquanto o período de renovação ainda estiver correndo. Depois que esse período acaba, a reativação não está disponível e o único caminho é comprar a assinatura de novo. A Weverse também dá dois controles manuais dentro da janela: Pay Now para renovar na hora, e Retry Now se um pagamento falhou numa forma que você já corrigiu.",
+        pitfall:
+          "Esperar para ver se as novas tentativas dão certo. Retry Now e Pay Now existem exatamente para você não precisar esperar, e os dois somem quando a janela fecha.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Renove em vez de recomprar, porque o registro é levado adiante",
+        body: "Quando uma assinatura renova pelo Pagamento Automático, as informações de membro cadastradas na assinatura existente são mantidas na seguinte. Esse registro — o nome nele, em particular — é contra o que uma conferência de elegibilidade de pré-venda é rodada. Comprar uma assinatura nova depois de um vencimento começa um registro novo e uma data de início nova, que é a parte que custa uma pré-venda em vez de uma mensalidade.",
+        pitfall:
+          "Supor que a continuidade tem a ver com fidelidade. Ela tem a ver com uma data e um nome num registro, e uma lacuna em qualquer um dos dois é o que a conferência enxerga.",
+        takes: "2 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Posso pagar uma Global Membership com o meu próprio Visa ou Mastercard?",
+        a: "Não diretamente, fora de KRW. Uma Global Membership aceita cartões coreanos para KRW, e cartões cadastrados no PayPal para JPY, USD ou MXN — então o seu cartão chega à Weverse pelo PayPal, e não como pagamento direto por cartão.",
+      },
+      {
+        q: "Quando exatamente o Pagamento Automático me cobra?",
+        a: "No último dia do período de validade da sua assinatura atual, na mesma hora do dia em que você pagou da primeira vez. Essa hora foi marcada num relógio coreano, então converta para o seu.",
+      },
+      {
+        q: "Se o Pagamento Automático falhar, quantas chances eu tenho?",
+        a: "A Weverse avisa você por e-mail e push, e depois tenta de novo uma vez por dia no mesmo horário pelo resto do período de renovação. Você também pode usar o Retry Now depois de corrigir a forma de pagamento, ou o Pay Now para renovar na hora.",
+      },
+      {
+        q: "Eu cancelei o Pagamento Automático. Posso ligar de novo?",
+        a: "Pode, enquanto o período de renovação ainda estiver aberto — existe um controle de reativação exatamente para isso. Depois que o período de renovação acaba, você não pode, e a única opção é comprar a assinatura de novo.",
+      },
+      {
+        q: "Importa se a minha assinatura ficar vencida por alguns dias?",
+        a: "Pode importar mais que o preço. A renovação mantém as informações de membro da assinatura existente; uma recompra começa um registro novo com uma data nova. A elegibilidade para a pré-venda é conferida contra esse registro e o corte dele, e não contra há quanto tempo você é fã.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "weverse-membership-renewal-overseas",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Renouveler son abonnement Weverse depuis l'étranger",
+    summary:
+      "Le Paiement Automatique s'exécute le dernier jour de votre période, à l'heure de votre tout premier paiement, dans une devise qui doit correspondre, et s'il échoue une fois la fenêtre de renouvellement passée, il n'y a pas de retour en arrière : il faut racheter.",
+    scope:
+      "Couvre le fait de maintenir en vie un abonnement Weverse Official Membership existant, et ce que coûte une interruption. Rejoindre un fan-club pour la première fois et se rendre éligible à une prévente précise sont des questions distinctes, traitées dans le guide de prévente. Tout ce qui suit vient de l'avis de Weverse Shop du 3 septembre 2026 et des pages produit auxquelles il renvoie.",
+    intro: [
+      "Un abonnement qui expire la mauvaise semaine ne vous coûte pas un abonnement. Il vous coûte la prévente, parce que l'éligibilité est contrôlée au regard d'un abonnement actif avant une date limite, et le racheter ensuite ne déplace en rien cette date.",
+      "Weverse a ajouté le Paiement Automatique le 3 septembre 2026, ce qui supprime la façon ordinaire de laisser expirer un abonnement. Il a aussi introduit quatre règles faciles à manquer, et un point de non-retour.",
+    ],
+    steps: [
+      {
+        title: "Déterminez dans quelle catégorie d'abonnement vous êtes",
+        body: "Weverse gère les abonnements en trois catégories — Global, Japan et USA — administrées séparément. Moyens de paiement, devises et réglages de Paiement Automatique sont tous propres à une catégorie, et jusqu'à cinq moyens de paiement peuvent y être enregistrés, l'un d'eux marqué comme principal. La catégorie dont vous relevez n'est pas un choix anodin : c'est là où votre abonnement vit déjà.",
+        pitfall:
+          "Configurer le Paiement Automatique sur la catégorie que vous n'utilisez pas. L'écran est identique, et l'abonnement qui se renouvelle est l'autre.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Vérifiez que votre devise est bien acceptée par la catégorie",
+        body: "Au 3 septembre 2026 : un Global Membership accepte les cartes de débit ou de crédit sud-coréennes pour le KRW, et les cartes enregistrées sur PayPal pour le JPY, l'USD ou le MXN. Un Japan Membership accepte les cartes de crédit pour le JPY. Un US Membership accepte les cartes enregistrées sur PayPal pour l'USD. Pour un fan de l'étranger sur un Global Membership réglant en USD, cela veut dire que la carte passe par PayPal — il n'y a pas d'option de carte directe.",
+        pitfall:
+          "S'attendre à enregistrer une Visa directement sur un Global Membership en USD. Le même schéma traverse Weverse Shop, et c'est pourquoi une carte qui marche partout ailleurs peut malgré tout échouer ici.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Faites correspondre la devise d'achat au moyen principal",
+        body: "Weverse l'écrit directement : la devise de paiement utilisée pour acheter l'abonnement doit correspondre à la devise de paiement de votre moyen principal de Paiement Automatique. Un écart n'est pas arbitré en votre faveur au moment du renouvellement — c'est un renouvellement qui ne passe pas.",
+        pitfall:
+          "Acheter un abonnement dans une devise puis ajouter plus tard un moyen principal dans une autre : les deux écrans paraissent corrects et cela n'échoue que le jour où cela compte.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Sachez à quel moment exact il se renouvelle",
+        body: "Le Paiement Automatique s'exécute le dernier jour de la période de validité de l'abonnement en cours, à l'heure de la journée où vous l'avez payé la première fois. Cette heure a été fixée sur un serveur coréen : pour la plupart des lecteurs, elle tombe donc quelque part dans la nuit ou au petit matin. En cas d'échec, Weverse envoie un e-mail et une notification push, puis réessaie une fois par jour à la même heure, aussi longtemps que dure la période de renouvellement.",
+        pitfall:
+          "Une carte qui expire en cours de période, ou une banque qui bloque le débit, se transforme en notification arrivant à quatre heures du matin chez vous. La relance est quotidienne, pas horaire — un jour sans voir l'e-mail est un jour de fenêtre dépensé.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Comprenez ce que résilier le Paiement Automatique ne fait pas",
+        body: "Résilier le Paiement Automatique arrête les renouvellements à venir. Cela n'annule ni ne rembourse l'abonnement que vous détenez déjà, et vous continuez à l'utiliser normalement jusqu'à la fin de la période de validité. L'annulation et le remboursement de l'abonnement lui-même relèvent d'une autre question, régie par la page produit de cet abonnement.",
+        pitfall:
+          "Résilier le Paiement Automatique en espérant un remboursement et, autre cas, le résilier pour « mettre en pause » pendant qu'une tournée se murmure, c'est-à-dire la semaine où vous voulez le moins que le renouvellement s'arrête.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Traitez la fin de la période de renouvellement comme un point de non-retour",
+        body: "Si vous avez résilié le Paiement Automatique, vous pouvez le réactiver — mais seulement tant que la période de renouvellement court encore. Une fois cette période terminée, la réactivation n'est plus proposée et la seule voie est de racheter l'abonnement. Weverse donne aussi deux commandes manuelles à l'intérieur de la fenêtre : Pay Now pour renouveler immédiatement, et Retry Now si un paiement a échoué sur un moyen que vous avez depuis corrigé.",
+        pitfall:
+          "Attendre de voir si les relances aboutissent. Retry Now et Pay Now existent précisément pour que vous n'ayez pas à attendre, et tous deux disparaissent à la fermeture de la fenêtre.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Renouvelez plutôt que de racheter, parce que la fiche est reportée",
+        body: "Quand un abonnement se renouvelle par Paiement Automatique, les informations de membre enregistrées sur l'abonnement existant sont conservées sur le suivant. C'est cette fiche — et son nom en particulier — qui sert de référence à un contrôle d'éligibilité en prévente. Acheter un abonnement neuf après une interruption ouvre une nouvelle fiche et une nouvelle date de début : c'est la partie qui coûte une prévente plutôt qu'un abonnement.",
+        pitfall:
+          "Croire que la continuité est une affaire de fidélité. C'est une affaire de date et de nom sur une fiche, et un trou dans l'un ou l'autre est ce que le contrôle voit.",
+        takes: "2 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Puis-je payer un Global Membership avec ma propre Visa ou Mastercard ?",
+        a: "Pas directement, en dehors du KRW. Un Global Membership accepte les cartes coréennes pour le KRW, et les cartes enregistrées sur PayPal pour le JPY, l'USD ou le MXN — votre carte atteint donc Weverse via PayPal, et non comme un paiement par carte direct.",
+      },
+      {
+        q: "Quand exactement le Paiement Automatique me débite-t-il ?",
+        a: "Le dernier jour de la période de validité de votre abonnement en cours, à l'heure de la journée où vous l'avez payé la première fois. Cette heure a été fixée sur une horloge coréenne : convertissez-la pour la vôtre.",
+      },
+      {
+        q: "Si le Paiement Automatique échoue, combien de chances ai-je ?",
+        a: "Weverse vous prévient par e-mail et par notification, puis réessaie une fois par jour à la même heure pendant tout le reste de la période de renouvellement. Vous pouvez aussi utiliser Retry Now après avoir corrigé le moyen de paiement, ou Pay Now pour renouveler immédiatement.",
+      },
+      {
+        q: "J'ai résilié le Paiement Automatique. Puis-je le réactiver ?",
+        a: "Oui, tant que la période de renouvellement est encore ouverte — il existe une commande de réactivation faite pour cela. Une fois la période de renouvellement terminée, vous ne le pouvez plus, et la seule option est de racheter l'abonnement.",
+      },
+      {
+        q: "Est-ce grave si mon abonnement expire quelques jours ?",
+        a: "Cela peut compter davantage que le prix. Le renouvellement conserve les informations de membre de l'abonnement existant ; un rachat ouvre une nouvelle fiche avec une nouvelle date. L'éligibilité en prévente est contrôlée au regard de cette fiche et de sa date limite, et non de votre ancienneté de fan.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+  {
+    locale: "pt-BR",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Checkout da NOL World: a taxa de serviço, o relógio e a moeda em que você paga",
+    summary:
+      "Um ingresso de show carrega uma taxa de serviço de 8.000 wons, você tem dez minutos para escolher assentos e sete para pagar, e a tela de pagamento pede que você escolha uma moeda. Três decisões de dinheiro e um cronômetro, todos publicados e nenhum deles óbvio.",
+    scope:
+      "Cobre o que a NOL World publica sobre o custo e o tempo do seu checkout: a taxa de serviço por gênero, o cronômetro de compra em duas etapas, a escolha de moeda, os cupons e os limites por pedido. Taxas e cronômetros podem ser definidos por evento e a NOL World diz isso nos dois casos, então a página do seu evento prevalece sobre esta. Nada aqui é orientação sobre qual moeda é mais barata para o seu cartão específico.",
+    intro: [
+      "A maior parte do que dá errado num checkout coreano não é o cartão. É que a página está fazendo três perguntas com dinheiro preso a elas e um cronômetro correndo, e um comprador do exterior encontra tudo isso pela primeira vez com cerca de sete minutos restantes.",
+      "Tudo isso é publicado, e nada disso está na página do produto onde você decidiu que o ingresso cabia no bolso. Então o objetivo desta página é mudar as surpresas para a semana anterior.",
+    ],
+    steps: [
+      {
+        title: "Some a taxa de serviço antes de decidir que o ingresso cabe no bolso",
+        body: "A NOL World publica a sua taxa de serviço por gênero. Musicais e shows carregam 8.000 wons — excluindo certos produtos, como shows online e assinaturas de fã-clube. Outros espetáculos e esportes são 3.000 wons. Lazer e exposições são gratuitos. A NOL World também diz que as taxas podem variar por produto e que se deve conferir na compra, então trate esses valores como a base publicada e não como uma promessa sobre o seu evento.",
+        pitfall:
+          "Comparar o preço de um ingresso coreano com um preço de ingresso no seu país e esquecer que isso vem por cima. Não é um valor alto, e é o tipo de pequena surpresa que faz uma plataforma inteira parecer pouco confiável no pior momento.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Saiba o que a taxa está de fato comprando, porque uma linha dela importa",
+        body: "A NOL World discrimina o que a taxa de serviço cobre: manutenção do site e custos relacionados, processamento de pagamentos que sustenta o seu sistema de detecção de fraude, taxas de tecnologia para impedir compras fraudulentas por bots e macros, e suporte de sistema para reservas globais. O terceiro item é o interessante. A taxa financia em parte a maquinaria antimacro, que é a mesma direção de fiscalização das verificações de identidade e da Lei de Espetáculos revisada — e é por isso que a fila se comporta como um sistema adversarial e não como uma fila.",
+        pitfall:
+          "Ler a taxa como pura margem e a fila como incompetência. A plataforma está dizendo a você que gasta a taxa mantendo compradores automatizados de fora, o que é também o motivo de as regras que ela impõe a você serem rígidas.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Entenda o relógio: dez minutos para escolher, sete para pagar",
+        body: "O cronômetro de compra tem duas etapas e a NOL World informa as duas. A partir da entrada na página de compra você tem até dez minutos para selecionar assentos. Quando você passa para a etapa do preço, os seus assentos ficam segurados por sete minutos enquanto você conclui o pagamento, com um cronômetro no topo da página. Perdeu o prazo e os assentos são liberados automaticamente e você recomeça a compra. Compras sem assento marcado ou de pista também recebem o limite de dez minutos antes do pagamento. A NOL World acrescenta que os limites podem variar por evento e que alguns eventos não têm nenhum.",
+        pitfall:
+          "Abrir o aplicativo do banco para achar um número de cartão dentro dos sete minutos. Dados do cartão, endereço de cobrança e o aplicativo de aprovação do seu banco devem estar prontos antes de você entrar na página de compra, porque o cronômetro não se importa que o seu celular esteja pedindo login de novo.",
+        takes: "17 minutos, se você usar tudo",
+      },
+      {
+        title: "Trate a pergunta da moeda como uma decisão de verdade",
+        body: "A NOL World aceita pagamento em 24 moedas, incluindo won coreano, dólar americano, iene e yuan, e as disponíveis aparecem depois que você informa os dados do cartão. A escolha que ela oferece é entre a moeda do país emissor do seu cartão e o won coreano. São duas taxas de câmbio diferentes definidas por duas partes diferentes — uma por quem converte na tela de pagamento, outra pela bandeira e pelo emissor do seu cartão. Escolher a sua própria moeda é conversão dinâmica de moeda, e quem faz a conversão define a taxa e tira uma margem dela, então pagar em won costuma ser a mais barata das duas. Costuma, não sempre: a tarifa de transação internacional do seu próprio cartão vale nos dois casos, e uma margem ruim do emissor pode fechar a diferença. A metade que você consegue conferir antes do dia são os termos do seu emissor, então confira esses.",
+        pitfall:
+          "Escolher a sua moeda nacional porque o número parece familiar. Aqui o familiar é a opção mais cara com mais frequência do que não, e esta é a única tela em que você escolhe quem faz a conversão.",
+        takes: "10 minutos, com o seu banco, antes",
+      },
+      {
+        title: "Aplique o cupom antes de pagar, porque não existe depois",
+        body: "A NOL World é direta: uma vez concluído o pagamento, você não pode aplicar um cupom. O único caminho que ela oferece é cancelar o mesmo assento e comprar de novo com o cupom aplicado — e ela avisa que cancelar e comprar de novo pode gerar taxas pela política de taxas do próprio evento, então confira essas antes. Pese isso honestamente contra o valor do cupom, e lembre que o assento que você libera não fica reservado para você enquanto compra de novo.",
+        pitfall:
+          "Cancelar um assento que você de fato tem, para economizar um desconto que você talvez não consiga usar. O cupom vale menos que o ingresso, e o estoque não espera.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Espere um limite de ingressos, e espere que ele seja do organizador",
+        body: "A NOL World diz que, dependendo do organizador, pode haver um limite de quantos ingressos podem ser reservados por pedido ou por membro numa dada apresentação — e que, onde ingressos de show são vendidos combinados com um tour ou outros ingressos de entrada, o organizador também pode impor um limite por membro. Então o teto não é um número da plataforma inteira que você possa consultar; ele é definido por show, às vezes por pessoa e não por transação, e é um motivo pelo qual uma compra em grupo pode falhar no último passo.",
+        pitfall:
+          "Planejar um pedido para quatro pessoas com base num limite que você leu em outro show. Um limite por membro também não se resolve dividindo o pedido entre as suas próprias contas — esse padrão está na lista publicada de uso fraudulento da NOL World.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Confirme que a compra existe, no lugar que mostra status",
+        body: "Depois de pagar, abra o site ou o aplicativo da NOL World e vá em Account/My, depois My Reservations. A NOL World diz que os detalhes básicos da reserva e o status ficam visíveis tanto na lista quanto na página de detalhe da compra. Faça isso uma vez enquanto você ainda está numa mesa, em vez de supor que o e-mail de confirmação é toda a verdade — a lista de reservas é onde aparece um status diferente do que você esperava, e é a tela sobre a qual você vai ser perguntado se procurar o suporte.",
+        pitfall:
+          "Tratar um pagamento que passou como uma compra que existe. Em geral são a mesma coisa, e todo o sentido de conferir é a vez em que não são.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Saiba o que “concluído” significa para o que você comprou",
+        body: "Para artes cênicas e shows, a NOL World diz que o processo se conclui no pagamento e que você retira na bilheteria do local. Produtos de turismo e atividades não são uniformes: alguns emitem um QR ou código de barras na sua My Page ou no e-mail que dá entrada direta, e alguns exigem que você apresente o voucher ou a confirmação da compra num balcão no local para trocar por um ingresso físico antes de entrar. A instrução da NOL World é conferir na página do produto qual dos dois se aplica, porque a diferença decide se você precisa achar um balcão antes da entrada.",
+        pitfall:
+          "Supor que um QR code no seu e-mail é um passe de entrada. Num produto do tipo troca, ele é aquilo que você troca num balcão, e o balcão tem horário de funcionamento.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Quanto é a taxa de serviço num ingresso de show?",
+        a: "A NOL World publica 8.000 wons para musicais e shows, excluindo certos produtos como shows online e assinaturas de fã-clube; 3.000 wons para outros espetáculos e esportes; e nada para lazer e exposições. Ela também diz que as taxas podem variar por produto e que se deve conferir na compra, então confirme no seu próprio evento.",
+      },
+      {
+        q: "Quanto tempo eu tenho de fato no checkout?",
+        a: "Dez minutos para selecionar assentos a partir da entrada na página de compra, e depois uma retenção de sete minutos enquanto você paga, com um cronômetro mostrado no topo. Se passar, os assentos são liberados e você recomeça. Pista também recebe os dez minutos. A NOL World diz que os limites podem variar por evento e que alguns eventos não têm nenhum.",
+      },
+      {
+        q: "Devo pagar em won coreano ou na minha própria moeda?",
+        a: "Em geral won. A NOL World aceita 24 moedas e deixa você escolher entre a moeda do país emissor do seu cartão e o won coreano, mostradas depois que você informa os dados do cartão. Escolher a sua própria moeda é conversão dinâmica de moeda, em que quem converte define a taxa e acrescenta uma margem — então o won costuma sair mais barato. A tarifa de transação internacional do seu cartão vale nos dois casos, e é essa a parte a conferir com o seu emissor antes do dia.",
+      },
+      {
+        q: "Esqueci de usar o meu cupom. Posso acrescentar agora?",
+        a: "Não. A NOL World diz que um cupom não pode ser aplicado depois de concluído o pagamento. O único caminho que ela dá é cancelar o mesmo assento e comprar de novo com o cupom, e ela avisa que o cancelamento e a nova compra podem ter taxas pela política do evento. Confira a taxa antes de liberar um assento que você já tem.",
+      },
+      {
+        q: "Por que eu só consigo comprar dois ingressos se o meu amigo comprou quatro?",
+        a: "Porque o limite é do organizador, não da plataforma. A NOL World diz que uma apresentação pode limitar ingressos por pedido ou por membro, e que produtos combinados de show mais tour podem carregar também um limite por membro. Outro show, ou outra rodada de venda, pode ter outro teto.",
+      },
+      {
+        q: "Posso usar um cartão de crédito coreano na NOL World?",
+        a: "Não. A NOL World aceita apenas cartões emitidos fora da Coreia; cartões emitidos na Coreia pertencem a membros domésticos validados no site coreano. Um cartão coreano recusado aqui é a regra funcionando, não um defeito.",
+      },
+      {
+        q: "Onde eu confiro se a minha compra passou?",
+        a: "No site ou no aplicativo da NOL World, em Account/My e depois My Reservations. A NOL World diz que os detalhes da reserva e o status aparecem tanto na lista quanto na página de detalhe. Essa tela, e não o e-mail de confirmação, é o que mostra status.",
+      },
+      {
+        q: "Eu paguei. Sobrou algo para fazer antes do show?",
+        a: "Para um ingresso de show ou de artes cênicas, não — a NOL World diz que o processo está concluído e que você retira na bilheteria do local. Para um produto de turismo ou atividade depende: alguns mandam um QR ou código de barras que dá entrada direta, outros precisam que o voucher seja trocado por um ingresso físico num balcão no local antes. A página do produto diz qual.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+  {
+    locale: "fr",
+    slug: "nol-world-booking-fees-and-checkout-clock",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Le paiement sur NOL World : les frais de réservation, l'horloge et la devise dans laquelle vous payez",
+    summary:
+      "Un billet de concert porte des frais de service de 8 000 wons, vous avez dix minutes pour choisir vos places et sept pour payer, et la page de paiement vous demande de choisir une devise. Trois décisions d'argent et un chronomètre, tous publiés et aucun évident.",
+    scope:
+      "Couvre ce que NOL World publie sur le coût et le minutage de son paiement : les frais de service par genre, le chronomètre d'achat en deux temps, le choix de la devise, les codes de réduction et les limites par commande. Frais et chronomètres peuvent être fixés par événement et NOL World le dit dans les deux cas : la page de votre événement prime donc sur celle-ci. Rien ici n'est un conseil sur la devise la moins chère pour votre carte en particulier.",
+    intro: [
+      "L'essentiel de ce qui tourne mal à un paiement coréen n'est pas la carte. C'est que la page pose trois questions auxquelles de l'argent est attaché pendant qu'un chronomètre tourne, et qu'un acheteur de l'étranger découvre tout cela pour la première fois avec environ sept minutes devant lui.",
+      "Tout cela est publié, et rien de tout cela ne figure sur la page produit où vous avez décidé que le billet était abordable. L'objet de cette page est donc de déplacer les surprises à la semaine d'avant.",
+    ],
+    steps: [
+      {
+        title: "Ajoutez les frais de service avant de décider que le billet est abordable",
+        body: "NOL World publie ses frais de service par genre. Les comédies musicales et les concerts portent 8 000 wons — hors certains produits comme les concerts en ligne et les abonnements de fan-club. Les autres spectacles et le sport sont à 3 000 wons. Les loisirs et les expositions sont gratuits. NOL World précise aussi que les frais peuvent varier selon le produit et qu'il faut vérifier au moment de l'achat : traitez donc ces chiffres comme la base publiée et non comme une promesse portant sur votre événement.",
+        pitfall:
+          "Comparer le prix d'un billet coréen à un prix de billet chez vous en oubliant que cela s'ajoute par-dessus. Le montant n'est pas élevé, et c'est le genre de petite surprise qui fait paraître toute une plateforme peu fiable au pire moment.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Sachez ce que les frais achètent réellement, car une de leurs lignes compte",
+        body: "NOL World détaille ce que couvrent les frais de service : la maintenance du site et les coûts associés, le traitement des paiements qui soutient son système de détection de la fraude, des frais de technologie destinés à empêcher les réservations frauduleuses par bots et macros, et le support système des réservations internationales. Le troisième point est le plus intéressant. Les frais financent en partie la machinerie anti-macro, qui va dans le même sens que les contrôles d'identité et la loi révisée sur les spectacles — et c'est pourquoi la file d'attente se comporte comme un système adversarial plutôt que comme une queue.",
+        pitfall:
+          "Lire ces frais comme une pure marge et la file comme de l'incompétence. La plateforme vous dit qu'elle dépense ces frais à tenir les acheteurs automatisés à l'écart, ce qui explique aussi la sévérité des règles qu'elle vous impose.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Comprenez l'horloge : dix minutes pour choisir, sept pour payer",
+        body: "Le chronomètre d'achat se joue en deux temps et NOL World indique les deux. À partir de l'entrée sur la page de réservation, vous avez jusqu'à dix minutes pour sélectionner vos places. Dès que vous passez à l'étape du prix, vos places sont retenues sept minutes le temps que vous finalisiez le paiement, avec un chronomètre en haut de la page. Dépassez-le et les places sont libérées automatiquement, et vous recommencez la réservation. Les réservations sans place attribuée ou en fosse reçoivent elles aussi la limite de dix minutes avant le paiement. NOL World ajoute que les limites peuvent varier selon l'événement et que certains événements n'en ont aucune.",
+        pitfall:
+          "Ouvrir son application bancaire pour retrouver un numéro de carte dans les sept minutes. Les données de la carte, l'adresse de facturation et l'application de validation de votre banque doivent toutes être prêtes avant d'entrer sur la page de réservation, car le chronomètre se moque que votre téléphone vous redemande de vous connecter.",
+        takes: "17 minutes, si vous les utilisez toutes",
+      },
+      {
+        title: "Traitez la question de la devise comme une vraie décision",
+        body: "NOL World accepte le paiement dans 24 devises dont le won coréen, le dollar américain, le yen et le yuan, et celles qui sont disponibles apparaissent après la saisie de votre carte. Le choix qu'elle propose est entre la devise du pays émetteur de votre carte et le won coréen. Ce sont deux taux de change différents fixés par deux parties différentes — l'un par qui convertit sur la page de paiement, l'autre par le réseau et l'émetteur de votre carte. Choisir votre propre devise, c'est la conversion dynamique de devise, où celui qui convertit fixe le taux et y prend une marge : payer en wons est donc généralement la moins chère des deux options. Généralement, pas toujours : les frais de transaction à l'étranger de votre carte s'appliquent de toute façon, et une mauvaise marge d'émetteur peut combler l'écart. La moitié que vous pouvez réellement vérifier avant le jour J, ce sont les conditions de votre émetteur : vérifiez-les.",
+        pitfall:
+          "Choisir sa devise nationale parce que le chiffre paraît familier. Ici le familier est le plus souvent l'option la plus chère, et c'est le seul écran où vous choisissez qui fait la conversion.",
+        takes: "10 minutes, avec votre banque, à l'avance",
+      },
+      {
+        title: "Appliquez le code de réduction avant de payer, parce qu'il n'y a pas d'après",
+        body: "NOL World est directe là-dessus : une fois le paiement effectué, vous ne pouvez plus appliquer de code. La seule voie qu'elle propose est d'annuler la même place et de réserver à nouveau avec le code appliqué — et elle prévient qu'annuler puis réserver à nouveau peut entraîner des frais au titre de la politique propre à l'événement : vérifiez-les d'abord. Mettez cela honnêtement en balance avec la valeur du code, et rappelez-vous que la place que vous libérez ne vous est pas réservée pendant que vous réservez à nouveau.",
+        pitfall:
+          "Annuler une place que vous détenez vraiment pour économiser une remise que vous n'arriverez peut-être pas à utiliser. Le code vaut moins que le billet, et le stock n'attend pas.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Attendez-vous à une limite de billets, et attendez-vous à ce qu'elle soit celle de l'organisateur",
+        body: "NOL World indique que selon l'organisateur, il peut exister une limite au nombre de billets réservables par commande ou par membre pour une représentation donnée — et que lorsque des billets de concert sont vendus combinés à un circuit ou à d'autres billets d'entrée, l'organisateur peut en outre imposer une limite par membre. Le plafond n'est donc pas un chiffre valable sur toute la plateforme et consultable quelque part ; il se fixe par concert, parfois par personne plutôt que par transaction, et c'est une raison pour laquelle une commande groupée peut échouer à la dernière étape.",
+        pitfall:
+          "Organiser une commande pour quatre personnes autour d'une limite lue sur un autre concert. Une limite par membre ne se résout pas davantage en répartissant la commande sur vos propres comptes — ce schéma figure sur la liste publiée des usages frauduleux de NOL World.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Confirmez que la réservation existe, à l'endroit qui affiche son statut",
+        body: "Après le paiement, ouvrez le site ou l'application NOL World et allez dans Account/My, puis My Reservations. NOL World indique que les détails de base de la réservation et son statut sont visibles à la fois dans la liste et sur la page de détail. Faites-le une fois pendant que vous êtes encore à un bureau, plutôt que de supposer que l'e-mail de confirmation dit toute la vérité — la liste des réservations est l'endroit où apparaît un statut différent de celui que vous attendiez, et c'est l'écran sur lequel on vous interrogera si vous contactez le support.",
+        pitfall:
+          "Prendre un paiement passé pour une réservation existante. Ce sont généralement la même chose, et tout l'intérêt de vérifier tient à la fois où elles ne le sont pas.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Sachez ce que « terminé » veut dire pour ce que vous avez acheté",
+        body: "Pour les arts de la scène et les concerts, NOL World indique que le processus s'achève au paiement et que vous retirez au guichet de la salle. Les produits de tourisme et d'activités ne sont pas uniformes : certains délivrent un QR ou un code-barres sur votre My Page ou par e-mail qui vous fait entrer directement, et d'autres exigent que vous présentiez le bon ou la confirmation de réservation à un comptoir sur place pour l'échanger contre un billet physique avant d'entrer. La consigne de NOL World est de vérifier sur la page produit lequel des deux s'applique, parce que la différence décide si vous devez trouver un comptoir avant l'entrée.",
+        pitfall:
+          "Supposer qu'un QR code dans votre e-mail est un laissez-passer. Pour un produit à échanger, c'est ce que vous troquez à un comptoir, et le comptoir a des horaires.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "À combien s'élèvent les frais de réservation sur un billet de concert ?",
+        a: "NOL World publie 8 000 wons pour les comédies musicales et les concerts, hors certains produits comme les concerts en ligne et les abonnements de fan-club ; 3 000 wons pour les autres spectacles et le sport ; et rien pour les loisirs et les expositions. Elle précise aussi que les frais peuvent varier selon le produit et qu'il faut vérifier à l'achat : confirmez donc sur votre propre événement.",
+      },
+      {
+        q: "Combien de temps ai-je réellement au moment de payer ?",
+        a: "Dix minutes pour sélectionner les places à compter de l'entrée sur la page de réservation, puis une retenue de sept minutes pendant que vous payez, avec un chronomètre affiché en haut. Dépassez-le et les places sont libérées et vous recommencez. La fosse bénéficie aussi des dix minutes. NOL World indique que les limites peuvent varier selon l'événement et que certains n'en ont aucune.",
+      },
+      {
+        q: "Dois-je payer en wons coréens ou dans ma propre devise ?",
+        a: "En général en wons. NOL World accepte 24 devises et vous laisse choisir entre la devise du pays émetteur de votre carte et le won coréen, affichées après la saisie de votre carte. Choisir votre propre devise, c'est la conversion dynamique de devise, où celui qui convertit fixe le taux et ajoute une marge — le won est donc généralement moins cher. Les frais de transaction à l'étranger de votre carte s'appliquent dans les deux cas : c'est la part à vérifier auprès de votre émetteur avant le jour J.",
+      },
+      {
+        q: "J'ai oublié d'utiliser mon code de réduction. Puis-je l'ajouter maintenant ?",
+        a: "Non. NOL World indique qu'un code ne peut pas être appliqué une fois le paiement effectué. La seule voie qu'elle donne est d'annuler la même place et de réserver à nouveau avec le code, et elle prévient que l'annulation et la nouvelle réservation peuvent entraîner des frais au titre de la politique de l'événement. Vérifiez ces frais avant de libérer une place que vous détenez déjà.",
+      },
+      {
+        q: "Pourquoi ne puis-je réserver que deux billets alors que mon ami en a réservé quatre ?",
+        a: "Parce que la limite appartient à l'organisateur et non à la plateforme. NOL World indique qu'une représentation peut limiter les billets par commande ou par membre, et que les produits combinés concert plus circuit peuvent porter en outre une limite par membre. Un autre concert, ou un autre tour de vente, peut avoir un autre plafond.",
+      },
+      {
+        q: "Puis-je utiliser une carte de crédit coréenne sur NOL World ?",
+        a: "Non. NOL World n'accepte que les cartes émises hors de Corée ; les cartes émises en Corée relèvent des membres nationaux vérifiés sur le site coréen. Une carte coréenne refusée ici, c'est la règle qui fonctionne, pas une panne.",
+      },
+      {
+        q: "Où puis-je vérifier que ma réservation est bien passée ?",
+        a: "Sur le site ou l'application NOL World, dans Account/My puis My Reservations. NOL World indique que les détails de la réservation et son statut apparaissent à la fois dans la liste et sur la page de détail. C'est cet écran, et non l'e-mail de confirmation, qui affiche le statut.",
+      },
+      {
+        q: "J'ai payé. Reste-t-il quelque chose à faire avant le concert ?",
+        a: "Pour un billet de concert ou d'arts de la scène, non — NOL World indique que le processus est terminé et que vous retirez au guichet de la salle. Pour un produit de tourisme ou d'activité, cela dépend : certains envoient un QR ou un code-barres qui vous fait entrer directement, d'autres exigent d'échanger d'abord le bon contre un billet physique à un comptoir sur place. La page produit dit lequel.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

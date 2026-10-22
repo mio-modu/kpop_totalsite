@@ -183,6 +183,23 @@ a background wash. That distinction is the whole thing: a photocard's edge
 really is iridescent, so the gradient describes an object rather than
 decorating a box.
 
+**A large vermilion field is not a large version of a small one.** `.flood`
+is right where it is used as a mark — the city ticker is a 48px strip and
+reads as saturated light on a black page, which is the brief. The same fill
+over a 700px section stops being a mark and becomes a room, and in dark mode
+an inverted one: a bright field with near-black text inside a near-black page,
+so the eye adapts twice while scrolling a single page. The rule is **area, not
+hue**. Below the threshold the fill stays vermilion; above it, `.flood-band`
+makes the section black with vermilion light on it — the T09 code the hero
+already uses, 빛은 뒤에서, rather than a new idea. Light mode keeps the fill at
+both sizes, because on cream paper the red band is the dark element and
+nothing inverts.
+
+The hairlines, numerals and Korean subtitle in that band moved from inline
+styles to theme tokens in the same change. `rgba(0,0,0,.22)` was correct on a
+red ground and invisible on a dark one, which is exactly what a token exists
+to stop — if a value has to change with the theme, it cannot live in JSX.
+
 A guide is a **photocard** (`.pc`): a Korean word as its face, an outlined
 tracklist number that fills on hover, and a foil edge that lights only on hover
 or focus. Korean terms are **stickers** (`.sticker`). The verification badge is
@@ -238,6 +255,33 @@ That completion is worth dating rather than simply asserting, because the file
 spent most of its life in progress and will be again the next time a language
 is added. A count that has stopped moving and a count nobody is moving look
 identical from outside.
+
+**Ten is the ceiling. Do not add an eleventh**, decided 22 October 2026 with
+the cost measured rather than estimated. Two edits that same day are the
+evidence, and neither was a translation job:
+
+- Adding the word *Paris* to one line of the timezone guide meant editing
+  three translations of that step.
+- Adding one sentence to Play&Stay step 1, so a paid link had somewhere
+  honest to sit, meant editing **ten**.
+
+Neither is visible to any assertion in the suite. The step and FAQ counts
+catch a translation that is short an *item*; a body string that grew a
+sentence is invisible to every check there is, so the multiplication is
+carried by a person who has to remember. The register already says the real
+cost is maintenance rather than translation — this is the number that
+sentence was missing.
+
+The benefit side does not argue back. The next candidates on the arrivals
+list are markets an existing edition or English already reaches, so an
+eleventh language would multiply every future edit by eleven to reach readers
+who are not currently unreached.
+
+**The precondition for ever raising it** is a check that fails when an
+English field changes and its translations do not — a stored fingerprint per
+translated field, the same shape as `sourceChecked` but for the text rather
+than for the source. Until that exists, adding a language adds a maintenance
+burden no test can see, and ten is the number.
 
 **Vietnamese, Thai and Filipino were chosen from arrivals data, not from a
 sense of which markets feel large** — because that sense is exactly what put

@@ -1817,9 +1817,15 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Understand that you are buying one item, not two bookings",
-        body: "This is the whole guide in one step. NOL World states that the number of nights in a package cannot be modified, that the check-in and check-out dates specified in the package cannot be changed, and that hotel changes are not permitted. Nights cannot be added at purchase either — extra stays are a separate conversation with the hotel, at the hotel's price and subject to its availability. And one account can buy one item, so this is not a thing you stack.",
+        body: "This is the whole guide in one step. NOL World states that the number of nights in a package cannot be modified, that the check-in and check-out dates specified in the package cannot be changed, and that hotel changes are not permitted. Nights cannot be added at purchase either — extra stays are a separate conversation with the hotel, at the hotel's price and subject to its availability. And one account can buy one item, so this is not a thing you stack. If the hotel will not take them, those nights stop being part of this booking at all and become an ordinary hotel reservation you make yourself.",
         pitfall:
           "Booking the package intending to tidy the details later: arrive a day early, move to a hotel nearer a friend, trim a night off the end. Every one of those is a documented no.",
+        // The link sits on the one thing this step already sends a reader
+        // away to do. NOL World's own answer is that the extra nights may
+        // simply not be possible, which leaves the reader needing a room this
+        // booking will never contain — a gap the guide created and did not
+        // close.
+        partner: { id: "klook", text: "Seoul hotels on Klook" },
         takes: "15 minutes, before you pay",
       },
       {

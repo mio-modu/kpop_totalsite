@@ -16,6 +16,18 @@
  * thing, and nothing can quietly shrink.
  *
  * Add a guide citing a new domain and it appears here automatically.
+ *
+ * Two things about the field itself, both learned by hitting them:
+ *
+ *  - **The apex and the www host are different entries.** Adding `klook.com`
+ *    and expecting `www.klook.com` to follow does not work: the apex answered
+ *    301 and the www host answered a 403 policy denial, from the same run.
+ *    Whatever a site actually serves pages from is the host to list, and for
+ *    most of the web that is the www one.
+ *  - **A hand-typed entry survives only until the next paste.** Anything
+ *    added by hand and not printed here is gone the moment somebody runs this
+ *    script and pastes the block, which is the correct behaviour and the
+ *    reason to put a host in the content or in FIXED rather than in the form.
  */
 import { readFile } from "node:fs/promises";
 import { glob } from "node:fs/promises";

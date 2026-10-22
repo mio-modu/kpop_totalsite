@@ -99,10 +99,26 @@ appear in `main` under different ones:
 - The Yahoo rebrand page carries a 9% drift warning that is **standing on
   purpose** — its body does not extract cleanly. Never clear it with a plain
   `--record`; use `--record-new`.
-- `scripts/hosts.mjs` declares `www.kspo.or.kr` as "KSPO Dome operator". That
-  host is the sports foundation's corporate site, not the Olympic Park venue.
-  Nobody has found the right hostname yet, so the comment is wrong and the
-  KSPO guide is blocked on it.
+- **KSPO DOME's host is found: `www.ksponco.or.kr`.** It was declared for
+  weeks as `www.kspo.or.kr` under the comment "KSPO Dome operator", which is
+  the foundation that *owns* the park — a corporate site that answers 302 to a
+  `main.do` and carries no seating chart. The venue's own pages are published
+  by the operating company, 한국체육산업개발, at `ksponco.or.kr/olympicpark`.
+  Both hosts are declared now with what each one is. Still unread: it answers
+  403 at the gateway, so it is waiting on the allowlist, and no guide text can
+  come off it until somebody has actually read it.
+- **Inspire Arena is blocked on sources, not on the allowlist, and three
+  routes to it are now closed.** The official hostname in Mohegan's 2024 press
+  releases, `www.inspirekorea.com`, no longer resolves (NXDOMAIN in a real
+  browser). `inspireer.com`, the other address in circulation, answers 504.
+  And NOL World — which does carry an Inspire Arena venue page and is already
+  declared — answers **403 from CloudFront** to this container, which is the
+  site refusing automation rather than the allowlist refusing the site, the
+  same state `tkglobal.melon.com` is declared under. So the venue has no
+  readable source from here at all. Its ticketing runs through NOL/Interpark,
+  which is worth knowing: a NOL World venue page read by a person is a more
+  honest source for this site's scope than a resort's marketing site would
+  have been.
 
 ## Next, in the order it was agreed
 
@@ -110,7 +126,26 @@ appear in `main` under different ones:
    promises coverage that does not exist. Three or four first.
 2. **The next venue is whichever one actually hosts the most concerts
    reachable by overseas fans** — that needs checking, not assuming. KSPO and
-   Inspire were the obvious guesses and both are blocked anyway.
+   Inspire were the obvious guesses and both were blocked.
+
+   Checked on 22 October 2026 as far as this container allows, which is not
+   far: **no per-venue count of concerts exists in any source reachable from
+   here.** The ticketing sites that hold the answer — Interpark/NOL venue
+   pages, YES24, TicketLink — are either undeclared or block automation, and
+   `world.nol.com` 403s from CloudFront. So the check cannot be completed
+   here, and that is the finding rather than a reason to fall back on the
+   guess.
+
+   What the 2026 schedules visible in search do say, directionally and not as
+   a count: KSPO DOME carries by far the most K-pop dates of the four — NCT
+   Dream over six, ZEROBASEONE three, plus TWS, DAY6, TWICE and BOYNEXTDOOR
+   across the summer — against two aespa dates at Gocheok, a handful at
+   Inspire, and nothing found at KINTEX. It is **also the only one of the
+   three whose official source this site can actually read**, once
+   `www.ksponco.or.kr` is allowlisted. Those are two independent reasons
+   pointing the same way, and neither is the count that was asked for: if a
+   person can open one ticketing site and count dates per venue for a season,
+   that settles it properly in ten minutes.
 3. Translation is finished and **ten languages is a hard ceiling**. CLAUDE.md
    records why, with the cost measured.
 

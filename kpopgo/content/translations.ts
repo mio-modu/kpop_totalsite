@@ -18221,6 +18221,375 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+  {
+    locale: "vi",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Vụ rò rỉ dữ liệu Weverse: thực sự đã rò ra cái gì, và một rủi ro nó tạo ra",
+    summary:
+      "422.584 tài khoản, do chính Weverse xác nhận. Không có tên, không có thông tin liên lạc, không có số thẻ — chỉ một mã nhận dạng nội bộ và lịch sử mua hàng của bạn. Tổ hợp đó không phải một tài khoản bị rút cạn; nó là nguyên liệu thô cho một tin nhắn biết bạn đã mua gì.",
+    scope:
+      "Trang này bao gồm những gì Weverse Company đã công bố về vụ rò rỉ mà họ xác nhận vào tháng 9 năm 2026, đọc ở cả bản tiếng Anh và bản tiếng Hàn của thông báo. Chúng tôi không phải kiểm toán viên an ninh và đây không phải tư vấn pháp lý: mọi điều quy cho Weverse là phát ngôn của chính họ, không phải một phát hiện chúng tôi đã kiểm chứng. Một câu chuyện an ninh có thể còn diễn tiến, và trang này mang ngày chúng tôi kiểm tra lần cuối.",
+    intro: [
+      "Tháng 9 năm 2026, chủ tịch Weverse Company công bố một thông báo xác nhận rằng thông tin cá nhân của khách hàng đã bị rò rỉ. Mọi người đọc trang web này đều có một tài khoản Weverse, nên câu hỏi không phải là nó có quan trọng hay không mà là nó thực sự thay đổi điều gì — và câu trả lời hẹp hơn và cụ thể hơn cả một cái nhún vai lẫn một cơn hoảng.",
+      "Những gì tiếp theo là thông báo đó đọc kỹ, ở cả hai ngôn ngữ nó được công bố. Phần hữu ích không phải con số. Nó là chuyện cái tổ hợp dữ liệu cụ thể đã rời đi gần như vô dụng cho việc lấy tiền của bạn và tốt một cách khác thường cho việc thuyết phục bạn.",
+    ],
+    steps: [
+      {
+        title: "Hãy đọc hai danh sách, vì khác biệt giữa chúng quyết định mọi thứ",
+        body: "Weverse liệt từng mục đã rò rỉ dưới hai đề mục. Là thông tin cá nhân: thông tin nhận dạng nội bộ — một số nội bộ duy nhất được sinh ra để nhận dạng người dùng khi bạn đăng ký. Là thông tin chung mà họ xếp vào loại không phải thông tin cá nhân: loại giao dịch tức phương thức thanh toán, tên cổng thanh toán, loại tiền, số tiền mua, số tiền hủy, ngày và giờ mua, trạng thái giao dịch, và ngày giờ hoàn tiền với các đơn đã hủy. Quy mô là 422.584 trường hợp tính theo đơn vị ID tài khoản. Điều không nằm trên cả hai danh sách mới là điểm chính: không có tên, không có thông tin liên lạc, không có số thẻ hay thông tin xác thực thanh toán.",
+        pitfall:
+          "Đọc con số 422.584 rồi tự điền phần còn lại từ ký ức về những vụ rò rỉ khác. Phản ứng với một vụ rò thông tin đăng nhập và phản ứng với vụ này là khác nhau, nên danh sách liệt từng mục có giá trị hơn cái tiêu đề.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy cân lời bảo đảm của Weverse một cách công bằng, kể cả giới hạn của nó",
+        body: "Weverse nêu rằng mã nhận dạng nội bộ bị rò không phải thông tin trực tiếp nhận dạng một cá nhân, như tên hay thông tin liên lạc; rằng nó là một giá trị chỉ dùng bên trong các hệ thống nội bộ của Weverse Company và không thể dùng ở bên ngoài; và rằng việc làm giả thanh toán hay chuyển tiền trái phép khó xảy ra chỉ từ những hạng mục dữ liệu này. Nhìn bề ngoài, lập luận đó đứng được — một số dòng nội bộ không phải một danh tính, và không trường nào trong số đó là một thông tin xác thực. Giới hạn thật thà là một mã nhận dạng nội bộ trở thành thứ nhận dạng được ngay khi nó được nối với một tập dữ liệu khác cũng chứa nó, và không ai ngoài công ty đo được khả năng đó cao tới đâu. Đó là phần phơi lộ còn lại: sự liên kết, không phải sự trộm.",
+        pitfall:
+          "Coi một lời bảo đảm hợp lý như một bảo chứng, hoặc coi nó như lời tô vẽ. Nó là một khẳng định cụ thể về những trường cụ thể, và nó mạnh nhất đúng ở chỗ nó hẹp nhất.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hiểu rủi ro thật: một tin nhắn biết bạn đã mua gì",
+        body: "Hãy nhìn các trường bị rò cùng nhau — phương thức thanh toán, cổng thanh toán, loại tiền, số tiền, ngày, trạng thái, ngày hoàn tiền. Đó không phải thiết bị để trừ tiền thẻ của bạn. Đó là thiết bị để viết một tin nhắn vượt qua bài kiểm tra duy nhất mà phần lớn người ta áp cho một email đáng ngờ, là liệu người gửi có biết chi tiết thật về một đơn hàng thật hay không. Một lời nhắn dẫn ra đúng số tiền bạn đã mua, vào đúng ngày, bằng đúng loại tiền, qua đúng nhà cung cấp thanh toán, thì thuyết phục hơn nhiều bất cứ thứ gì một kẻ lừa đảo ngẫu nhiên có thể soạn ra.",
+        pitfall:
+          "Lấy chuyện “họ biết chi tiết đơn hàng của tôi” làm bằng chứng rằng một tin nhắn là thật. Sau vụ rò rỉ này, bài kiểm tra đó đã thôi hoạt động, và nó là bài kiểm tra mà gần như mọi người dùng.",
+        takes: "5 phút",
+      },
+      {
+        title: "Biết vì sao chuyện này rơi đúng lên một quy trình thật",
+        body: "Điều này quan trọng với nhóm đọc này hơn với phần lớn người khác, bởi những người lạ hợp pháp vốn đã đòi tiền khách hàng Weverse. Weverse Shop cảnh báo người mua ở EU rằng họ có thể nhận hướng dẫn thanh toán riêng từ hải quan địa phương hoặc từ đơn vị chuyển phát, và rằng việc không trả có thể làm chậm hoặc chặn việc giao hàng. Vậy nên trải nghiệm thật và trải nghiệm gian giờ trông giống nhau: một công ty bạn chẳng có quan hệ gì, dẫn ra một đơn hàng bạn thật sự đã đặt, đòi một khoản thanh toán trước khi gói hàng của bạn nhúc nhích. Vụ rò rỉ không tạo ra sự chồng lấn đó, nhưng nó làm nó sắc hơn.",
+        pitfall:
+          "Giải quyết sự nhập nhằng bằng cách trả tiền, hoặc bằng cách bỏ qua tất cả. Một cách thì mất tiền, cách còn lại thì mất gói hàng.",
+        takes: "—",
+      },
+      {
+        title: "Hãy dùng một cách kiểm tra không phụ thuộc vào việc tin nhắn biết những gì",
+        body: "Con đường vượt qua là ngừng đánh giá tin nhắn và bắt đầu đánh giá lời tuyên bố trong đó. Lấy số vận đơn hay mã đơn hàng ra khỏi tin nhắn, rồi tự vào trang của đơn vị chuyển phát hoặc của Weverse Shop — tự gõ địa chỉ hoặc dùng dấu trang đã lưu, tuyệt đối không phải một liên kết trong tin nhắn — và xem mã đó có khớp với một đơn của bạn hay không và có thật có khoản nào phải trả hay không. Nếu tin nhắn là thật thì cùng thông tin đó nằm ở phía bên kia. Nếu không thì chẳng có gì cả, và bạn đã biết được điều đó mà không phải bấm vào đâu.",
+        pitfall:
+          "Bấm theo liên kết vì các chi tiết đều đúng. Việc các chi tiết đều đúng giờ là trạng thái dự liệu của một tin giả.",
+        takes: "5 phút cho mỗi tin nhắn",
+      },
+      {
+        title: "Đừng nhầm việc đổi mật khẩu với cách giải quyết",
+        body: "Phản xạ sau bất kỳ vụ rò rỉ nào là đổi mật khẩu, và ở đây nó gần như không giải quyết gì: thứ bị phơi lộ là một mã nhận dạng và dữ liệu đặc tả về giao dịch, thông qua một API thông tin thanh toán, không phải thông tin đăng nhập. Việc đổi mật khẩu không tốn gì và không gây hại gì, nên hãy làm nếu nó làm bạn an tâm — nhưng hãy làm với ý thức rằng đó là vệ sinh chứ không phải một phương thuốc, và rằng thứ thật sự bảo vệ bạn là thói quen xác minh ở bước trước. Bật bất cứ tùy chọn hai yếu tố nào mà nhà cung cấp đăng nhập của bạn có là điều đáng làm trên nguyên tắc chung, và nó cũng không phải một phản ứng với vụ rò rỉ này.",
+        pitfall:
+          "Đổi mật khẩu, thấy xong việc, rồi tin ngay tin nhắn kế tiếp dẫn ra đơn hàng của bạn. Lời khuyên theo phản xạ thì dễ chịu và nó chen chỗ của lời khuyên có tác dụng.",
+        takes: "10 phút",
+      },
+      {
+        title: "Tìm ra bạn có bị ảnh hưởng hay không, từ tài khoản chứ không từ một hướng dẫn",
+        body: "Weverse nói họ đã thực hiện một quy trình riêng, theo các tiêu chí mà luật và quy định liên quan đặt ra, để thông báo cho những khách hàng có dữ liệu nằm trong vụ rò rỉ. Vậy nên câu trả lời nằm trong tài khoản của chính bạn: địa chỉ email đã đăng ký trên đó, và các thông báo trong ứng dụng. Không hướng dẫn nào nói được cho bạn, kể cả hướng dẫn này, và bất kỳ bên thứ ba nào tuyên bố kiểm tra giúp bạn có nằm trong vụ rò rỉ hay không đều là lý do để nghi ngờ chứ không phải một dịch vụ.",
+        pitfall:
+          "Đi tìm một công cụ tra cứu sẽ cho bạn biết bạn có bị ảnh hưởng hay không. Với một vụ rò rỉ các mã nhận dạng nội bộ, không có gì có ý nghĩa mà một công cụ như vậy kiểm tra được, và chính việc tìm kiếm đó là thứ một trang lừa đảo đang chờ đợi.",
+        takes: "10 phút",
+      },
+      {
+        title: "Ghi nhận điều công ty nói họ đã làm, và điều còn là một lời hứa",
+        body: "Phần tường thuật của Weverse về cách họ xử lý, theo lời họ: họ đã siết kiểm soát truy cập trên API xử lý thông tin thanh toán và loại mã nhận dạng nội bộ ra khỏi API đó để dữ liệu không bị phơi lộ ra bên ngoài; ngày 4 tháng 9 họ đã nộp báo cáo sự cố rò rỉ cho Cơ quan An toàn Internet Hàn Quốc KISA; và họ đã thông báo cho các khách hàng bị ảnh hưởng. Các kế hoạch họ nêu là điều tra toàn bộ các API phơi lộ ra bên ngoài, siết kiểm soát truy cập và giảm thiểu thông tin bị phơi lộ, siết kiểm soát các quy trình triển khai, và giám sát an ninh nhạy hơn. Họ cũng nói đã yêu cầu bên ngoài đã truy cập dữ liệu trả lại nó, và dự định truy cứu trách nhiệm pháp lý. Hãy giữ hai loại đó tách nhau: nhóm thứ nhất là những khẳng định về việc đã làm mà không ai bên ngoài kiểm toán được, còn nhóm thứ hai là các ý định.",
+        pitfall:
+          "Đọc một danh sách cải thiện dự kiến như một danh sách đã sửa xong. Thông báo không khẳng định điều đó, và một bản tóm tắt nó cũng không nên khẳng định.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy ghi nhận cách xử lý một cách đúng mức",
+        body: "Dòng thời gian mà Weverse mô tả thì ngắn: được KISA liên hệ ngày 3 tháng 9 sau khi một người báo cáo bên ngoài công bố một lỗ hổng, kiểm tra nội bộ và ứng phó khẩn cấp ngay lập tức, một báo cáo rò rỉ nộp cho KISA ngày 4 tháng 9, và một thông báo công khai dưới tên người đứng đầu, liệt từng mục đã rời đi — kể cả những trường mà họ lập luận là không phải thông tin cá nhân theo luật, những trường họ không bắt buộc phải kể ra. Chúng tôi đã đọc bản tiếng Hàn gốc đối chiếu với bản tiếng Anh và chúng nói cùng một điều, bản thân đó là một tín hiệu nhỏ. Không điều nào trong đó làm vụ rò rỉ không còn. Nhưng một trang web chỉ biết tường thuật sự cố như những vụ bê bối thì chẳng dạy người đọc điều gì về việc xử lý có năng lực trông như thế nào, và cái này thì gần với nó hơn phần lớn.",
+        pitfall:
+          "Từ một đánh giá bình tĩnh mà kết luận rằng chẳng có gì xảy ra. 422.584 tài khoản là một thất bại thật mà việc công bố kịp thời không hủy bỏ được.",
+        takes: "—",
+      },
+      {
+        title: "Hãy nghĩ hai lần trước khi xóa tài khoản, và biết việc xóa không phải là gì",
+        body: "Xóa tài khoản là phản xạ còn lại, và nó là một quyết định lớn hơn vẻ ngoài. Weverse Shop và NOL World đều gắn những thứ thật vào một tài khoản: lịch sử đơn hàng và đơn đặt, các địa chỉ đã lưu, một membership đã trả tiền, và ở phía bán vé là một lần xác minh danh tính đã hoàn tất. Dù vậy điểm quyết định thì đơn giản hơn. Việc xóa loại dữ liệu của bạn ra khỏi dịch vụ kể từ đó trở đi; nó không rút lại dữ liệu đã rời đi rồi. Bất cứ thứ gì nằm trong vụ rò rỉ này đã nằm trong đó trước khi bạn quyết định bất cứ điều gì, và việc đóng tài khoản sau đó không chạm tới được nó.",
+        pitfall:
+          "Xóa một tài khoản như một phản ứng với một vụ rò rỉ. Đó là điều hợp lý để muốn và nó không phải phương thuốc cho chuyện này, và nó lấy đi của bạn phần lịch sử bạn sẽ cần nếu một giao dịch có lúc nào bị tranh chấp.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Tên, địa chỉ hay số thẻ của tôi có bị rò không?",
+        a: "Không, theo chính phần liệt kê của Weverse. Thứ họ liệt là một số nhận dạng nội bộ cộng với dữ liệu đặc tả về giao dịch — phương thức thanh toán, tên cổng thanh toán, loại tiền, số tiền mua và số tiền hủy, ngày và giờ mua, trạng thái giao dịch, và ngày giờ hoàn tiền. Tên, thông tin liên lạc và thông tin xác thực thanh toán không nằm trên danh sách.",
+      },
+      {
+        q: "Tôi có nên đổi mật khẩu Weverse không?",
+        a: "Nó không gây hại, và nó không phải cách giải quyết. Thứ bị phơi lộ là một mã nhận dạng và dữ liệu đặc tả về giao dịch qua một API thông tin thanh toán chứ không phải thông tin đăng nhập, nên một mật khẩu mới không xử lý được nó. Hãy làm nếu nó giúp bạn an tâm, rồi dành công sức thật cho việc xác minh các yêu cầu thanh toán một cách độc lập, đó mới là thứ thật sự bảo vệ bạn ở đây.",
+      },
+      {
+        q: "Làm sao tôi biết mình có phải một trong 422.584 người đó?",
+        a: "Qua tài khoản của chính bạn. Weverse nói họ đã chạy một quy trình thông báo riêng cho các khách hàng bị ảnh hưởng theo các luật liên quan, nên hãy kiểm tra email đã đăng ký với tài khoản và các thông báo trong ứng dụng. Không công cụ bên ngoài nào nói được cho bạn, và bất cứ thứ gì quảng cáo rằng nó làm được thì nên bị coi là một nỗ lực lừa đảo.",
+      },
+      {
+        q: "Có ai dùng được chuyện này để trừ tiền thẻ của tôi không?",
+        a: "Weverse nói việc làm giả thanh toán hay chuyển tiền trái phép khó xảy ra chỉ từ những hạng mục này, và nhìn vào danh sách thì điều đó có lý — không trường nào bị rò là một số thẻ hay một thông tin xác thực. Rủi ro thực tế không phải một lần trừ tiền trực tiếp mà là một tin nhắn thuyết phục khiến bạn tự đi thanh toán.",
+      },
+      {
+        q: "Nếu nó không phải thông tin cá nhân thì sao lại quan trọng?",
+        a: "Vì tính hữu dụng với một kẻ tấn công và việc phân loại theo luật là hai câu hỏi khác nhau. Số tiền mua, các mốc ngày, phương thức thanh toán và loại tiền đúng là thứ làm cho một tin nhắn gian trở nên đáng tin — và cách người ta thường đánh giá một email đáng ngờ là xem người gửi có biết chi tiết thật về một đơn hàng thật hay không. Bài kiểm tra đó không còn hoạt động với bất cứ ai nằm trong vụ rò rỉ này.",
+      },
+      {
+        q: "Tôi có nên xóa tài khoản Weverse không?",
+        a: "Đó là một lựa chọn bảo vệ được và nó không phải một phương thuốc. Việc xóa chặn việc thu thập trong tương lai; nó không rút lại được dữ liệu đã rời đi, bao gồm bất cứ thứ gì trong vụ rò rỉ này. Nó cũng lấy đi lịch sử đơn hàng và đơn đặt, các địa chỉ đã lưu, bất kỳ membership đã trả tiền, và ở phía bán vé là một lần xác minh danh tính đã hoàn tất — nên hãy quyết định dựa trên việc bạn còn muốn dùng dịch vụ hay không, chứ không như một phản ứng với chuyện này.",
+      },
+      {
+        q: "Weverse thực sự đã làm gì?",
+        a: "Theo lời của chính họ: siết kiểm soát truy cập trên API thông tin thanh toán và loại mã nhận dạng nội bộ ra khỏi nó, nộp báo cáo sự cố rò rỉ cho KISA ngày 4 tháng 9 năm 2026, và thông báo cho các khách hàng bị ảnh hưởng. Họ cũng liệt các việc dự kiến — kiểm tra toàn bộ các API phơi lộ ra bên ngoài, siết kiểm soát triển khai, nâng độ nhạy của việc giám sát — và nói họ đã yêu cầu bên liên quan trả lại dữ liệu và dự định truy cứu trách nhiệm pháp lý. Các hạng mục đã làm là khẳng định của họ chứ không phải phát hiện đã được kiểm toán.",
+      },
+      {
+        q: "Có gì mới hơn cái này không?",
+        a: "Không, tính tới ngày ở đầu trang này, là lần cuối chúng tôi đọc danh sách thông báo của Weverse Shop. Một chuyện an ninh có thể còn diễn tiến, nên danh sách đó là bản sống — nếu có một thông báo tiếp theo, nó sẽ nằm ở đó trước khi nằm ở đây.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+  {
+    locale: "th",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "เหตุข้อมูลรั่วของ Weverse: อะไรรั่วออกไปจริง และความเสี่ยงหนึ่งข้อที่มันสร้างขึ้น",
+    summary:
+      "422,584 บัญชี ยืนยันโดย Weverse เอง ไม่มีชื่อ ไม่มีข้อมูลติดต่อ ไม่มีเลขบัตร มีแต่รหัสระบุตัวภายในและประวัติการซื้อของคุณ ส่วนผสมนั้นไม่ใช่บัญชีที่ถูกดูดเงินออก มันเป็นวัตถุดิบของข้อความที่รู้ว่าคุณซื้ออะไรไป",
+    scope:
+      "หน้านี้ครอบคลุมสิ่งที่ Weverse Company ประกาศเรื่องการรั่วไหลที่มันยืนยันในเดือนกันยายน 2026 โดยอ่านทั้งฉบับภาษาอังกฤษและภาษาเกาหลีของประกาศนั้น เราไม่ใช่ผู้ตรวจสอบด้านความปลอดภัย และนี่ไม่ใช่คำแนะนำทางกฎหมาย ทุกอย่างที่ยกมาว่าเป็นของ Weverse คือคำแถลงของมันเอง ไม่ใช่ข้อค้นพบที่เราตรวจสอบเอง เรื่องความปลอดภัยคลี่คลายต่อได้ และหน้านี้ระบุวันที่เราตรวจครั้งล่าสุดไว้",
+    intro: [
+      "ในเดือนกันยายน 2026 ประธานของ Weverse Company ออกประกาศยืนยันว่าข้อมูลส่วนบุคคลของลูกค้ารั่วไหลออกไป ผู้อ่านเว็บนี้ทุกคนมีบัญชี Weverse ดังนั้นคำถามไม่ใช่ว่ามันสำคัญไหม แต่คือมันเปลี่ยนอะไรจริง ๆ และคำตอบนั้นแคบกว่าและเจาะจงกว่าทั้งการยักไหล่และการตื่นตระหนก",
+      "ที่ตามมาคือประกาศนั้นที่อ่านอย่างละเอียด ในทั้งสองภาษาที่มันถูกเผยแพร่ ส่วนที่ใช้ประโยชน์ได้ไม่ใช่ตัวเลข มันคือเรื่องที่ว่าชุดข้อมูลชุดนั้นที่หลุดออกไปแทบไร้ประโยชน์ต่อการขโมยเงินจากคุณ และดีอย่างผิดธรรมดาต่อการโน้มน้าวคุณ",
+    ],
+    steps: [
+      {
+        title: "อ่านทั้งสองรายการ เพราะความต่างระหว่างมันตัดสินทุกอย่าง",
+        body: "Weverse แจกแจงสิ่งที่รั่วออกไว้ใต้สองหัวข้อ ในฐานะข้อมูลส่วนบุคคล คือข้อมูลระบุตัวภายใน ซึ่งเป็นหมายเลขภายในเฉพาะที่ถูกสร้างขึ้นเพื่อระบุตัวผู้ใช้ตอนที่คุณลงทะเบียน ในฐานะข้อมูลทั่วไปที่มันจัดว่าไม่ใช่ข้อมูลส่วนบุคคล คือประเภทการซื้อซึ่งหมายถึงวิธีชำระเงิน ชื่อเกตเวย์การชำระเงิน สกุลเงิน ยอดซื้อ ยอดยกเลิก วันและเวลาที่ซื้อ สถานะการซื้อ และวันเวลาที่คืนเงินในกรณีที่ออเดอร์ถูกยกเลิก ขนาดของเหตุคือ 422,584 รายการ นับเป็นหน่วยไอดีบัญชี สิ่งที่ไม่อยู่ในทั้งสองรายการคือประเด็น คือไม่มีชื่อ ไม่มีข้อมูลติดต่อ ไม่มีเลขบัตรหรือข้อมูลรับรองการชำระเงิน",
+        pitfall:
+          "การอ่านเลข 422,584 แล้วเติมส่วนที่เหลือเองจากความจำเรื่องการรั่วไหลครั้งอื่น การตอบสนองต่อการรั่วของข้อมูลรับรองกับการตอบสนองต่อเรื่องนี้ต่างกัน ดังนั้นรายการที่แจกแจงไว้มีค่ามากกว่าพาดหัว",
+        takes: "5 นาที",
+      },
+      {
+        title: "ชั่งคำปลอบของ Weverse อย่างเป็นธรรม รวมถึงขีดจำกัดของมัน",
+        body: "Weverse ระบุว่ารหัสระบุตัวภายในที่รั่วไปไม่ใช่ข้อมูลที่ระบุตัวบุคคลได้โดยตรง อย่างชื่อหรือข้อมูลติดต่อ ว่ามันเป็นค่าที่ใช้เฉพาะภายในระบบภายในของ Weverse Company และใช้จากภายนอกไม่ได้ และว่าการปลอมแปลงการชำระเงินหรือการโอนเงินโดยไม่ได้รับอนุญาตไม่น่าเกิดขึ้นได้จากข้อมูลชุดนี้เพียงลำพัง เมื่อดูผิวหน้า เหตุผลนั้นยืนได้ หมายเลขแถวภายในไม่ใช่ตัวตน และไม่มีฟิลด์ใดในนี้เป็นข้อมูลรับรอง ขีดจำกัดอย่างซื่อสัตย์คือรหัสระบุตัวภายในกลายเป็นสิ่งที่ระบุตัวได้ในวินาทีที่มันถูกเชื่อมกับชุดข้อมูลอื่นที่มีมันอยู่ด้วย และไม่มีใครนอกบริษัทวัดได้ว่าโอกาสนั้นมากเท่าไร นั่นคือการเปิดเผยที่ยังเหลืออยู่ คือการเชื่อมโยง ไม่ใช่การขโมย",
+        pitfall:
+          "การถือคำปลอบที่สมเหตุสมผลเป็นการรับประกัน หรือการถือว่ามันเป็นการแก้ตัว มันเป็นข้ออ้างเจาะจงเกี่ยวกับฟิลด์เจาะจง และมันแข็งแรงที่สุดตรงจุดที่มันแคบที่สุดพอดี",
+        takes: "5 นาที",
+      },
+      {
+        title: "เข้าใจความเสี่ยงจริง คือข้อความที่รู้ว่าคุณซื้ออะไร",
+        body: "ดูฟิลด์ที่รั่วไปพร้อมกันทั้งชุด คือวิธีชำระเงิน เกตเวย์ สกุลเงิน ยอดเงิน วันที่ สถานะ วันคืนเงิน นั่นไม่ใช่อุปกรณ์สำหรับตัดเงินบัตรของคุณ มันเป็นอุปกรณ์สำหรับเขียนข้อความที่ผ่านบททดสอบเดียวที่คนส่วนใหญ่ใช้กับอีเมลที่น่าสงสัย คือผู้ส่งรู้รายละเอียดจริงเกี่ยวกับออเดอร์จริงหรือไม่ ข้อความที่ยกยอดซื้อจริงของคุณขึ้นมา ในวันที่จริง ในสกุลเงินจริง ผ่านผู้ให้บริการชำระเงินจริง น่าเชื่อกว่าอะไรที่นักหลอกลวงสุ่ม ๆ จะแต่งขึ้นได้มาก",
+        pitfall:
+          "การใช้ประโยคที่ว่าเขารู้รายละเอียดออเดอร์ของฉันเป็นหลักฐานว่าข้อความนั้นจริง หลังการรั่วไหลครั้งนี้ บททดสอบนั้นเลิกทำงานแล้ว และมันคือบททดสอบที่แทบทุกคนใช้",
+        takes: "5 นาที",
+      },
+      {
+        title: "รู้ว่าทำไมเรื่องนี้ลงมาทับกระบวนการที่มีอยู่จริง",
+        body: "เรื่องนี้สำคัญกับผู้อ่านกลุ่มนี้มากกว่ากลุ่มอื่นส่วนใหญ่ เพราะคนแปลกหน้าที่ถูกต้องตามกฎหมายก็ขอเงินจากลูกค้า Weverse อยู่แล้ว Weverse Shop เตือนผู้ซื้อในสหภาพยุโรปว่าเขาอาจได้รับคำสั่งชำระเงินแยกจากศุลกากรท้องถิ่นหรือจากบริษัทขนส่ง และว่าการไม่จ่ายอาจทำให้การส่งล่าช้าหรือส่งไม่ได้ ดังนั้นประสบการณ์ของจริงกับของปลอมจึงดูเหมือนกันแล้ว คือบริษัทที่คุณไม่มีความสัมพันธ์ด้วย อ้างออเดอร์ที่คุณสั่งจริง ขอให้ชำระเงินก่อนพัสดุของคุณจะขยับ การรั่วไหลไม่ได้สร้างการทับซ้อนนั้น แต่มันทำให้มันคมขึ้น",
+        pitfall:
+          "การคลี่คลายความคลุมเครือด้วยการจ่าย หรือด้วยการเมินทุกอย่าง ทางหนึ่งเสียเงิน อีกทางเสียพัสดุ",
+        takes: "—",
+      },
+      {
+        title: "ใช้วิธีตรวจที่ไม่ขึ้นกับว่าข้อความรู้อะไรบ้าง",
+        body: "ทางออกคือหยุดประเมินข้อความ แล้วเริ่มประเมินข้ออ้างในนั้น ดึงเลขติดตามพัสดุหรือเลขอ้างอิงออเดอร์ออกมาจากข้อความ แล้วเข้าเว็บบริษัทขนส่งหรือ Weverse Shop ด้วยตัวเอง โดยพิมพ์ที่อยู่เองหรือใช้บุ๊กมาร์กที่บันทึกไว้ ไม่ใช่ลิงก์ในข้อความ แล้วดูว่าเลขอ้างอิงนั้นตรงกับออเดอร์ของคุณไหม และมีอะไรที่ต้องจ่ายจริงไหม ถ้าข้อความนั้นจริง ข้อมูลเดียวกันก็อยู่ที่ฝั่งนั้นด้วย ถ้าไม่จริง ก็ไม่มีอะไรอยู่ที่นั่น และคุณก็ได้รู้โดยไม่ต้องกดอะไรเลย",
+        pitfall:
+          "การกดลิงก์เพราะรายละเอียดถูกต้อง การที่รายละเอียดถูกต้องคือสภาพที่คาดไว้ของของปลอมไปแล้ว",
+        takes: "5 นาทีต่อข้อความหนึ่งฉบับ",
+      },
+      {
+        title: "อย่าเข้าใจผิดว่าการเปลี่ยนรหัสผ่านคือการแก้",
+        body: "ปฏิกิริยาสะท้อนหลังเหตุรั่วไหลครั้งใดก็คือเปลี่ยนรหัสผ่าน และในกรณีนี้มันแก้อะไรแทบไม่ได้ สิ่งที่หลุดออกไปคือรหัสระบุตัวและข้อมูลกำกับการซื้อผ่าน API ข้อมูลการชำระเงิน ไม่ใช่ข้อมูลเข้าสู่ระบบ การเปลี่ยนรหัสผ่านไม่มีต้นทุนและไม่เป็นอันตราย ดังนั้นทำได้ถ้ามันทำให้ใจคุณสงบ แต่ทำโดยรู้ว่ามันเป็นสุขอนามัย ไม่ใช่ยารักษา และสิ่งที่คุ้มครองคุณจริงคือนิสัยการตรวจสอบในขั้นก่อนหน้า การเปิดตัวเลือกยืนยันสองชั้นอะไรก็ได้ที่ผู้ให้บริการเข้าสู่ระบบของคุณมีนั้นควรทำโดยหลักการทั่วไป และมันก็ไม่ใช่การตอบสนองต่อการรั่วไหลครั้งนี้เช่นกัน",
+        pitfall:
+          "การเปลี่ยนรหัสผ่าน รู้สึกว่าเสร็จแล้ว แล้วไปเชื่อข้อความฉบับถัดไปที่ยกออเดอร์ของคุณมาอ้าง คำแนะนำแบบปฏิกิริยาสะท้อนนั้นสบายใจ และมันเบียดที่ของคำแนะนำที่ได้ผล",
+        takes: "10 นาที",
+      },
+      {
+        title: "หาให้รู้ว่าคุณได้รับผลกระทบไหม จากบัญชีของคุณ ไม่ใช่จากไกด์",
+        body: "Weverse บอกว่ามันดำเนินกระบวนการแยกอีกชุด ตามหลักเกณฑ์ที่กฎหมายและระเบียบที่เกี่ยวข้องกำหนด เพื่อแจ้งลูกค้าที่ข้อมูลอยู่ในเหตุรั่วไหล ดังนั้นคำตอบอยู่ในบัญชีของคุณเอง คืออีเมลที่ลงทะเบียนไว้กับบัญชี และการแจ้งเตือนในแอป ไม่มีไกด์ไหนบอกคุณได้ รวมถึงไกด์นี้ และบุคคลที่สามรายใดที่อ้างว่าจะตรวจให้ว่าคุณอยู่ในเหตุรั่วไหลไหม คือเหตุให้สงสัย ไม่ใช่บริการ",
+        pitfall:
+          "การไปหาเครื่องมือค้นที่จะบอกว่าคุณได้รับผลกระทบไหม สำหรับการรั่วของรหัสระบุตัวภายใน ไม่มีอะไรที่มีความหมายให้เครื่องมืออย่างนั้นตรวจได้ และตัวการค้นหานั้นเองคือสิ่งที่หน้าฟิชชิงกำลังรออยู่",
+        takes: "10 นาที",
+      },
+      {
+        title: "จดไว้ว่าบริษัทบอกว่าทำอะไรไปแล้ว และอะไรที่ยังเป็นคำสัญญา",
+        body: "คำบอกเล่าของ Weverse เรื่องการรับมือ ตามคำของมันเอง คือมันเพิ่มความเข้มของการควบคุมการเข้าถึง API ประมวลผลข้อมูลการชำระเงิน และเอารหัสระบุตัวภายในออกจาก API นั้นเพื่อให้ข้อมูลไม่ถูกเปิดเผยออกภายนอก วันที่ 4 กันยายน มันยื่นรายงานเหตุข้อมูลรั่วต่อสำนักงานอินเทอร์เน็ตและความมั่นคงแห่งเกาหลี KISA และมันแจ้งลูกค้าที่ได้รับผลกระทบ แผนที่มันระบุคือการตรวจสอบ API ทุกตัวที่เปิดออกภายนอกอย่างเต็มรูปแบบ การควบคุมการเข้าถึงที่เข้มขึ้นและข้อมูลที่เปิดเผยน้อยที่สุด การควบคุมกระบวนการนำขึ้นระบบที่เข้มขึ้น และการเฝ้าระวังด้านความปลอดภัยที่ไวขึ้น มันยังบอกว่าได้ขอให้ผู้กระทำภายนอกที่เข้าถึงข้อมูลส่งคืนข้อมูลนั้น และตั้งใจจะเอาความรับผิดทางกฎหมาย ให้แยกสองหมวดนี้ออกจากกัน กลุ่มแรกเป็นข้ออ้างเรื่องงานที่เสร็จแล้วซึ่งคนนอกตรวจสอบไม่ได้ และกลุ่มที่สองเป็นความตั้งใจ",
+        pitfall:
+          "การอ่านรายการการปรับปรุงที่วางแผนไว้ว่าเป็นรายการสิ่งที่แก้เสร็จแล้ว ประกาศไม่ได้อ้างอย่างนั้น และบทสรุปของประกาศก็ไม่ควรอ้าง",
+        takes: "5 นาที",
+      },
+      {
+        title: "ให้เครดิตการรับมืออย่างพอเหมาะ",
+        body: "ไทม์ไลน์ที่ Weverse บรรยายไว้นั้นสั้น คือถูก KISA ติดต่อวันที่ 3 กันยายน หลังผู้รายงานจากภายนอกเปิดเผยช่องโหว่ ตามด้วยการตรวจสอบภายในและการรับมือฉุกเฉินทันที การยื่นรายงานเหตุรั่วไหลต่อ KISA วันที่ 4 กันยายน และประกาศสาธารณะในชื่อของผู้บริหารสูงสุด ที่แจกแจงสิ่งที่หลุดออกไป รวมถึงฟิลด์ที่มันให้เหตุผลว่าไม่ใช่ข้อมูลส่วนบุคคลตามกฎหมาย ซึ่งมันไม่จำเป็นต้องไล่เรียงด้วยซ้ำ เราอ่านต้นฉบับภาษาเกาหลีเทียบกับภาษาอังกฤษ และทั้งสองพูดเรื่องเดียวกัน ซึ่งนั่นก็เป็นสัญญาณเล็ก ๆ ในตัวมันเอง ไม่มีข้อไหนในนั้นที่ย้อนการรั่วไหลได้ แต่เว็บที่รายงานเหตุการณ์เป็นเรื่องอื้อฉาวอย่างเดียวนั้นไม่ได้สอนผู้อ่านเลยว่าการรับมืออย่างมีความสามารถหน้าตาเป็นอย่างไร และกรณีนี้ใกล้เคียงกับมันมากกว่าหลายกรณี",
+        pitfall:
+          "การสรุปจากการประเมินอย่างใจเย็นว่าไม่มีอะไรเกิดขึ้น 422,584 บัญชีคือความล้มเหลวจริงที่การเปิดเผยอย่างรวดเร็วไม่ได้ลบล้าง",
+        takes: "—",
+      },
+      {
+        title: "คิดสองรอบก่อนลบบัญชี และรู้ว่าการลบไม่ใช่อะไร",
+        body: "การลบบัญชีคือปฏิกิริยาสะท้อนอีกอย่าง และมันเป็นการตัดสินใจที่ใหญ่กว่าที่เห็น ทั้ง Weverse Shop และ NOL World ผูกของจริงไว้กับบัญชี คือประวัติออเดอร์และการจอง ที่อยู่ที่บันทึกไว้ สมาชิกภาพที่จ่ายเงินแล้ว และทางฝั่งตั๋วคือการยืนยันตัวตนที่ทำเสร็จแล้ว แต่จุดชี้ขาดง่ายกว่านั้น การลบเอาข้อมูลของคุณออกจากบริการนับจากนี้ไป มันไม่ได้ถอนข้อมูลที่หลุดออกไปแล้วกลับมา อะไรที่อยู่ในเหตุรั่วไหลครั้งนี้อยู่ในนั้นก่อนที่คุณจะตัดสินใจอะไรทั้งนั้น และการปิดบัญชีทีหลังก็เอื้อมไปถึงมันไม่ได้",
+        pitfall:
+          "การลบบัญชีเพื่อเป็นการตอบสนองต่อการรั่วไหล มันเป็นสิ่งที่สมเหตุสมผลที่จะอยากทำ และมันไม่ใช่ยารักษาเรื่องนี้ และมันทำให้คุณเสียประวัติที่คุณจะต้องใช้ถ้ามีการโต้แย้งเรื่องการซื้อขึ้นมาวันหนึ่ง",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "ชื่อ ที่อยู่ หรือเลขบัตรของฉันรั่วไปไหม",
+        a: "ไม่ ตามการแจกแจงของ Weverse เอง สิ่งที่มันไล่เรียงคือหมายเลขระบุตัวภายในบวกข้อมูลกำกับการซื้อ คือวิธีชำระเงิน ชื่อเกตเวย์การชำระเงิน สกุลเงิน ยอดซื้อและยอดยกเลิก วันและเวลาที่ซื้อ สถานะการซื้อ และวันเวลาที่คืนเงิน ชื่อ ข้อมูลติดต่อ และข้อมูลรับรองการชำระเงินไม่อยู่ในรายการ",
+      },
+      {
+        q: "ฉันควรเปลี่ยนรหัสผ่าน Weverse ไหม",
+        a: "มันไม่เสียหาย และมันไม่ใช่การแก้ สิ่งที่หลุดคือรหัสระบุตัวและข้อมูลกำกับการซื้อผ่าน API ข้อมูลการชำระเงิน ไม่ใช่ข้อมูลเข้าสู่ระบบ ดังนั้นรหัสผ่านใหม่ไม่ได้แก้มัน ทำถ้ามันช่วยให้คุณสบายใจ แล้วทุ่มแรงจริงไปที่การตรวจสอบคำขอชำระเงินด้วยช่องทางของตัวเอง ซึ่งเป็นสิ่งที่คุ้มครองคุณจริงในเรื่องนี้",
+      },
+      {
+        q: "ฉันจะรู้ได้อย่างไรว่าฉันเป็นหนึ่งใน 422,584 รายนั้น",
+        a: "ผ่านบัญชีของคุณเอง Weverse บอกว่ามันเดินกระบวนการแจ้งแยกสำหรับลูกค้าที่ได้รับผลกระทบตามกฎหมายที่เกี่ยวข้อง ดังนั้นตรวจอีเมลที่ลงทะเบียนไว้กับบัญชีและการแจ้งเตือนในแอป ไม่มีเครื่องมือภายนอกบอกคุณได้ และอะไรที่โฆษณาว่าทำได้ควรถือเป็นความพยายามฟิชชิง",
+      },
+      {
+        q: "มีใครใช้สิ่งนี้ตัดเงินบัตรฉันได้ไหม",
+        a: "Weverse บอกว่าการปลอมแปลงการชำระเงินหรือการโอนโดยไม่ได้รับอนุญาตไม่น่าเกิดจากข้อมูลชุดนี้เพียงลำพัง และเมื่อดูจากรายการก็ฟังขึ้น ไม่มีฟิลด์ที่รั่วไปไหนเป็นเลขบัตรหรือข้อมูลรับรอง ความเสี่ยงที่เป็นจริงไม่ใช่การตัดเงินโดยตรง แต่เป็นข้อความที่น่าเชื่อซึ่งโน้มน้าวให้คุณไปจ่ายเงินเอง",
+      },
+      {
+        q: "ถ้ามันไม่ใช่ข้อมูลส่วนบุคคล แล้วทำไมมันจึงสำคัญ",
+        a: "เพราะความมีประโยชน์ต่อผู้โจมตีกับการจัดประเภทตามกฎหมายเป็นคำถามสองข้อที่ต่างกัน ยอดซื้อ วันที่ วิธีชำระเงิน และสกุลเงินคือสิ่งที่ทำให้ข้อความหลอกลวงน่าเชื่อถือพอดี และวิธีที่คนมักตัดสินอีเมลที่น่าสงสัยก็คือดูว่าผู้ส่งรู้รายละเอียดจริงเกี่ยวกับออเดอร์จริงไหม บททดสอบนั้นเลิกทำงานไปแล้วสำหรับทุกคนที่อยู่ในเหตุรั่วไหลครั้งนี้",
+      },
+      {
+        q: "ฉันควรลบบัญชี Weverse ไหม",
+        a: "เป็นทางเลือกที่พอมีเหตุผลรองรับ และมันไม่ใช่ยารักษา การลบหยุดการเก็บข้อมูลในอนาคต มันถอนข้อมูลที่หลุดไปแล้วกลับมาไม่ได้ ซึ่งรวมถึงอะไรที่อยู่ในเหตุรั่วไหลครั้งนี้ มันยังทำให้คุณเสียประวัติออเดอร์และการจอง ที่อยู่ที่บันทึกไว้ สมาชิกภาพที่จ่ายเงินแล้ว และทางฝั่งตั๋วคือการยืนยันตัวตนที่ทำเสร็จแล้ว ดังนั้นให้ตัดสินจากว่าคุณยังอยากใช้บริการนี้ไหม ไม่ใช่ตัดสินเป็นการตอบสนองต่อเรื่องนี้",
+      },
+      {
+        q: "Weverse ทำอะไรไปแล้วจริง ๆ",
+        a: "ตามคำบอกเล่าของมันเอง คือเพิ่มความเข้มของการควบคุมการเข้าถึง API ข้อมูลการชำระเงินและเอารหัสระบุตัวภายในออกจากมัน ยื่นรายงานเหตุข้อมูลรั่วต่อ KISA วันที่ 4 กันยายน 2026 และแจ้งลูกค้าที่ได้รับผลกระทบ มันยังไล่เรียงงานที่วางแผนไว้ คือการตรวจ API ทุกตัวที่เปิดออกภายนอก การรัดการควบคุมการนำขึ้นระบบ การยกระดับความไวของการเฝ้าระวัง และบอกว่าได้ขอให้ผู้กระทำที่เกี่ยวข้องส่งข้อมูลคืนและตั้งใจจะเอาความรับผิดทางกฎหมาย รายการที่ทำเสร็จแล้วเป็นข้ออ้างของมัน ไม่ใช่ข้อค้นพบที่ผ่านการตรวจสอบ",
+      },
+      {
+        q: "มีอะไรใหม่กว่านี้ไหม",
+        a: "ไม่มี ณ วันที่ที่อยู่ด้านบนของหน้านี้ ซึ่งเป็นครั้งสุดท้ายที่เราอ่านรายการประกาศของ Weverse Shop เรื่องความปลอดภัยคลี่คลายต่อได้ ดังนั้นรายการนั้นคือฉบับที่ยังมีชีวิต ถ้ามีประกาศติดตามผล มันจะอยู่ที่นั่นก่อนจะมาอยู่ที่นี่",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+  {
+    locale: "fil",
+    slug: "weverse-data-leak-what-to-do",
+    sourceChecked: "2026-10-20",
+    translated: "2026-10-22",
+    review: "machine-assisted",
+    title: "Ang pagtagas ng datos sa Weverse: ano talaga ang tumagas, at ang isang panganib na binubuo nito",
+    summary:
+      "422,584 account, kinumpirma ng Weverse mismo. Walang pangalan, walang detalye ng pakikipag-ugnayan, walang numero ng kard — isang panloob na pantukoy at ang kasaysayan ng pamimili mo. Hindi isang naubusang account ang kombinasyong iyon; hilaw na materyales ito para sa isang mensaheng alam ang binili mo.",
+    scope:
+      "Sakop nito ang inilathala ng Weverse Company tungkol sa pagtagas na kinumpirma nito noong Setyembre 2026, binasa sa Ingles at sa Koreanong bersiyon ng abiso nito. Hindi kami auditor sa seguridad at hindi ito payong legal: lahat ng iniuugnay sa Weverse ay sariling pahayag nito, hindi isang natuklasang bineripika namin. Puwedeng umusad ang isang kuwento sa seguridad, at taglay ng pahinang ito ang petsang huling tiningnan namin ito.",
+    intro: [
+      "Noong Setyembre 2026 ay naglathala ang presidente ng Weverse Company ng abisong kumukumpirma na tumagas ang personal na impormasyon ng customer. May account sa Weverse ang bawat mambabasa ng site na ito, kaya ang tanong ay hindi kung mahalaga ito kundi kung ano talaga ang binabago nito — at mas makitid at mas tiyak ang sagot kaysa sa isang pagkibit o isang pag-aalboroto.",
+      "Ang sumusunod ay ang abisong iyon na binasa nang maingat, sa dalawang wikang pinaglathalaan nito. Hindi ang bilang ang kapaki-pakinabang na bahagi. Ito ay na ang partikular na kombinasyon ng datos na umalis ay halos walang silbi para pagnakawan ka at hindi pangkaraniwang mainam para kumbinsihin ka.",
+    ],
+    steps: [
+      {
+        title: "Basahin ang dalawang listahan, dahil ang pagkakaiba nila ang nagpapasya sa lahat",
+        body: "Isa-isang inilalahad ng Weverse ang tumagas sa ilalim ng dalawang pamuhatan. Bilang personal na impormasyon: panloob na impormasyon ng pagkakakilanlan — isang tanging panloob na numerong nabuo para sa pagtukoy sa gumagamit noong nagpatala ka. Bilang pangkalahatang impormasyong iniuuri nitong hindi personal: ang uri ng pagbili na ang ibig sabihin ay paraan ng bayad, ang pangalan ng payment gateway, ang pera, ang halaga ng pinamili, ang halaga ng kinansela, ang petsa at oras ng pagbili, ang katayuan ng pagbili, at ang petsa at oras ng refund kung saan kinansela ang order. Ang laki ay 422,584 kaso, binilang sa yunit ng account ID. Ang wala sa dalawang listahan ang punto: walang pangalan, walang detalye ng pakikipag-ugnayan, walang numero ng kard o kredensiyal ng bayad.",
+        pitfall:
+          "Ang pagbasa sa 422,584 at ang pagpuno sa iba pa mula sa alaala ng ibang paglabag. Magkaiba ang tugon sa pagtagas ng kredensiyal at ang tugon dito, kaya mas malaki ang halaga ng inilahad na listahan kaysa sa pamuhatan.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Timbangin nang patas ang panunumbalik-loob ng Weverse, kasama ang hangganan nito",
+        body: "Isinasaad ng Weverse na ang tumagas na panloob na pantukoy ay hindi impormasyong tuwirang kumikilala sa isang indibidwal, gaya ng pangalan o detalye ng pakikipag-ugnayan; na isa itong halagang ginagamit lamang sa loob ng panloob na sistema ng Weverse Company at hindi magagamit sa labas; at na malabong mangyari ang pamemeke ng bayad o ang hindi awtorisadong paglilipat ng pondo mula sa mga hanay na ito lamang. Sa harap nito ay humahawak ang pangangatwirang iyon — hindi isang pagkakakilanlan ang panloob na numero ng hanay, at wala sa mga patlang na ito ang isang kredensiyal. Ang tapat na hangganan ay nagiging kumikilala ang isang panloob na pantukoy sa sandaling isugpong ito sa ibang pangkat ng datos na mayroon rin nito, at walang nasa labas ng kompanya na makakatantiya kung gaano kalaki ang posibilidad niyon. Iyon ang natitirang pagkalantad: ang pag-uugnay, hindi ang pagnanakaw.",
+        pitfall:
+          "Ang pagturing sa isang mahinahong panunumbalik-loob bilang garantiya, o ang pagturing dito bilang pampaganda. Isa itong tiyak na pagsasaad tungkol sa tiyak na mga patlang, at pinakamalakas ito sa eksaktong puntong pinakamakitid ito.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Unawain ang tunay na panganib: isang mensaheng alam ang binili mo",
+        body: "Tingnan ang tumagas na mga patlang nang sama-sama — paraan ng bayad, gateway, pera, halaga, petsa, katayuan, petsa ng refund. Hindi iyon ang kasangkapan para kaltasan ang kard mo. Kasangkapan iyon para sumulat ng mensaheng pumapasa sa isang pagsusulit lamang na iniaaplay ng karamihan sa isang kahina-hinalang email, na kung alam ba ng nagpadala ang mga tunay na detalye tungkol sa isang tunay na order. Ang isang notang sumisipi sa tunay na halaga ng pinamili mo, sa tunay na petsa, sa tunay na pera, sa tunay na provider ng bayad, ay higit na mapanghikayat kaysa sa maisusulat ng isang basta-bastang manloloko.",
+        pitfall:
+          "Ang paggamit sa “alam nila ang detalye ng order ko” bilang katibayang tunay ang isang mensahe. Matapos ang pagtagas na ito ay tumigil na sa paggana ang pagsusulit na iyon, at ito ang pagsusulit na ginagamit ng halos lahat.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Alamin kung bakit dumadapo ito sa ibabaw ng isang tunay na proseso",
+        body: "Mas mabigat ito para sa mambabasang ito kaysa sa karamihan, dahil may mga lehitimong estranghero nang humihingi ng pera sa customer ng Weverse. Nagbabala ang Weverse Shop sa namimili sa EU na puwede silang makatanggap ng hiwalay na tagubilin sa pagbabayad mula sa lokal na customs o sa courier, at na ang hindi pagbabayad ay makakaantala o makakapigil sa paghahatid. Kaya magkamukha na ngayon ang tunay na karanasan at ang mapandaya: isang kompanyang wala kang relasyon, na tumutukoy sa isang orderng talagang ipinasa mo, at humihingi ng bayad bago gumalaw ang parsela mo. Hindi binuo ng pagtagas ang pagsalikop na iyon, ngunit hinasa nito.",
+        pitfall:
+          "Ang pagwawakas sa kalabuan sa pamamagitan ng pagbabayad, o ng pagwawalang-bahala sa lahat. Nawawalan ng pera ang isa at nawawalan ng parsela ang isa.",
+        takes: "—",
+      },
+      {
+        title: "Gumamit ng pagsusuring hindi nakasalalay sa alam ng mensahe",
+        body: "Ang daan palabas ay tumigil sa pagtimbang sa mensahe at magsimulang timbangin ang sinasabi nito. Hanguin dito ang tracking number o ang sanggunian ng order, saka pumunta mismo sa courier o sa Weverse Shop — itinipang address o nakasaveng bookmark, kahit kailan hindi isang link sa mensahe — at tingnan kung tumutugma ang sangguniang iyon sa isang order mo at kung may talagang utang. Kung tunay ang mensahe ay naroon din ang parehong impormasyon sa kabilang panig. Kung hindi, wala, at natutuhan mo iyon nang walang pinipindot.",
+        pitfall:
+          "Ang pagsunod sa link dahil tama ang mga detalye. Ang pagiging tama ng mga detalye ang inaasahan nang kalagayan ng isang peke.",
+        takes: "5 minuto kada mensahe",
+      },
+      {
+        title: "Huwag ipagkamaling ang pagpapalit ng password ang lunas",
+        body: "Ang pumapasok sa isip matapos ang anumang paglabag ay palitan ang password, at halos walang natutugunan nito rito: ang nalantad ay isang pantukoy at ang datos tungkol sa pagbili, sa pamamagitan ng isang API ng impormasyon ng bayad, at hindi ang kredensiyal ng login. Walang halaga at walang pinsala ang pagpapalit ng password, kaya gawin kung pinapanatag ka nito — ngunit gawin ito nang alam na kalinisan ito at hindi lunas, at na ang tunay na nagsasanggalang sa iyo ay ang hábit ng pagpapatunay sa nakaraang hakbang. Ang pagbukas ng anumang opsiyon sa dalawang hakbang na pagpapatunay na mayroon ang provider ng login mo ay mabuting gawin sa pangkalahatang prinsipyo, at hindi rin ito isang tugon sa pagtagas na ito.",
+        pitfall:
+          "Ang pagpalit ng password, ang pakiramdam na tapos na, at saka ang pagtitiwala sa susunod na mensaheng sumisipi sa order mo. Komportable ang payong hango sa ugali at ipinupuwera nito ang payong gumagana.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Alamin kung naapektuhan ka, mula sa account at hindi mula sa isang gabay",
+        body: "Sinasabi ng Weverse na nagsagawa ito ng hiwalay na proseso, alinsunod sa panukat na itinakda ng nauukol na batas at regulasyon, para abisuhan ang mga customer na nasa pagtagas ang datos. Kaya nasa sariling account mo ang sagot: ang email address na nakapatala rito, at ang abiso sa loob ng app. Walang gabay na makapagsasabi sa iyo, kasama ang gabay na ito, at ang anumang ibang panig na nagsasabing titingnan nito kung nasa pagtagas ka ay dahilan para maghinala at hindi isang serbisyo.",
+        pitfall:
+          "Ang paghahanap ng kasangkapang panghanap na magsasabi sa iyo kung naapektuhan ka. Para sa pagtagas ng panloob na pantukoy ay walang makabuluhang matitingnan ang gayong kasangkapan, at ang paghahanap mismo ang hinihintay ng isang pahina ng phishing.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Tandaan ang sinasabi ng kompanyang nagawa nito, at ang nananatiling pangako",
+        body: "Ang salaysay ng Weverse tungkol sa tugon nito, sa sariling salita: pinalakas nito ang kontrol sa pag-access sa API ng pagproseso ng impormasyon ng bayad at inalis dito ang panloob na pantukoy para hindi malantad sa labas ang datos; noong 4 Setyembre ay naghain ito ng ulat ng pangyayaring paglabag sa Korea Internet & Security Agency na KISA; at inabisuhan nito ang mga naapektuhang customer. Ang isinasaad nitong balak ay isang buong pagsisiyasat sa lahat ng API na nalantad sa labas, mas mahigpit na kontrol sa pag-access at pinakaliit na nalantad na impormasyon, mas mahigpit na kontrol sa proseso ng deployment, at mas sensitibong pagsubaybay sa seguridad. Sinasabi rin nitong hiniling nito sa panlabas na aktor na pumasok sa datos na ibalik ito, at nagnanais nitong habulin ang legal na responsibilidad. Ihiwalay ang dalawang uri: pagsasaad tungkol sa natapos na gawain ang unang pangkat, na walang nasa labas na makakaaudit, at hangarin ang pangalawa.",
+        pitfall:
+          "Ang pagbasa sa listahan ng binabalak na pagpapabuti bilang listahan ng naayos na. Hindi iyon ang sinasabi ng abiso, at hindi rin dapat sabihin ng isang pagbubuod nito.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Ibigay ang nararapat sa paghawak, nang may proporsiyon",
+        body: "Maikli ang takbo ng panahong inilalarawan ng Weverse: nakipag-ugnayan ang KISA noong 3 Setyembre matapos ihayag ng isang panlabas na nag-ulat ang isang kahinaan, agarang panloob na inspeksiyon at pang-emerhensiyang tugon, isang ulat ng paglabag na inihain sa KISA noong 4 Setyembre, at isang pampublikong abiso sa ilalim ng pangalan ng pangunahing pinuno na isa-isang inilahad ang umalis — kasama ang mga patlang na pinapangatwiranan nitong hindi legal na personal na impormasyon, na hindi naman nito kailangang isa-isahin. Binasa namin ang Koreanong orihinal laban sa Ingles at pareho ang sinasabi nila, na isa ring maliit na senyales. Wala sa mga iyon ang nagbabalik sa isang pagtagas. Ngunit ang site na laging nag-uulat ng pangyayari bilang eskandalo lamang ay walang itinuturo sa mambabasa nito tungkol sa kung ano ang hitsura ng maayos na paghawak, at mas malapit dito ito kaysa sa karamihan.",
+        pitfall:
+          "Ang paghinuha mula sa isang mahinahong pagtimbang na walang nangyari. Tunay na pagkabigo ang 422,584 na account na hindi kinakansela ng isang mabilis na paghahayag.",
+        takes: "—",
+      },
+      {
+        title: "Mag-isip nang dalawang beses bago burahin ang account, at alamin kung ano ang hindi pagbura",
+        body: "Ang pagbura ng account ang kabilang ugali, at mas malaking desisyon ito kaysa sa tingin. Kapwa ang Weverse Shop at ang NOL World ay nagtatali ng tunay na bagay sa isang account: ang kasaysayan ng order at reserbasyon, ang mga nakasaveng address, isang bayad na membership, at sa panig ng tiket ay isang natapos na beripikasyon ng pagkakakilanlan. Mas simple naman ang mapagpasyang punto. Inaalis ng pagbura ang datos mo sa serbisyo pasulong; hindi nito binabawi ang datos na umalis na. Anumang nasa pagtagas na ito ay naroon na bago ka magpasya ng anuman, at hindi maaabot ito ng pagsasara ng account pagkatapos.",
+        pitfall:
+          "Ang pagbura ng account bilang tugon sa isang pagtagas. Mahinahong bagay itong naisin at hindi ito lunas dito, at nawawala sa iyo ang kasaysayang kakailanganin mo kung may pagbiling pinagtalunan man.",
+        takes: "—",
+      },
+    ],
+    faq: [
+      {
+        q: "Tumagas ba ang pangalan, address o numero ng kard ko?",
+        a: "Hindi, ayon sa sariling paglalahad ng Weverse. Ang inililista nito ay isang panloob na numero ng pagkakakilanlan kasama ang datos tungkol sa pagbili — paraan ng bayad, pangalan ng payment gateway, pera, halaga ng pinamili at ng kinansela, petsa at oras ng pagbili, katayuan ng pagbili, at petsa at oras ng refund. Wala sa listahan ang pangalan, ang detalye ng pakikipag-ugnayan at ang kredensiyal ng bayad.",
+      },
+      {
+        q: "Dapat ko bang palitan ang password ko sa Weverse?",
+        a: "Hindi ito makakasama, at hindi ito ang lunas. Isang pantukoy at datos tungkol sa pagbili sa pamamagitan ng isang API ng impormasyon ng bayad ang nalantad at hindi kredensiyal ng login, kaya hindi ito tinutugunan ng bagong password. Gawin kung nakakapanatag ito sa iyo, saka ilagay ang tunay na pagsisikap sa hiwalay na pagpapatunay ng kahilingan sa pagbabayad, na ang talagang nagsasanggalang sa iyo dito.",
+      },
+      {
+        q: "Paano ko malalaman kung isa ako sa 422,584?",
+        a: "Sa pamamagitan ng sariling account mo. Sinasabi ng Weverse na nagpatakbo ito ng hiwalay na proseso ng pag-abiso para sa naapektuhang customer sa ilalim ng nauukol na batas, kaya tingnan ang email na nakapatala sa account at ang abiso sa loob ng app. Walang panlabas na kasangkapang makapagsasabi sa iyo, at anumang nag-aanunsiyong kaya nito ay dapat ituring na pagtatangkang phishing.",
+      },
+      {
+        q: "May makakakaltas ba sa kard ko gamit ito?",
+        a: "Sinasabi ng Weverse na malabong mangyari ang pamemeke ng bayad o ang hindi awtorisadong paglilipat mula sa mga bagay na ito lamang, at sa harap ng listahan ay matino iyon — wala sa tumagas na patlang ang isang numero ng kard o isang kredensiyal. Ang makatotohanang panganib ay hindi isang tuwirang kaltas kundi isang mapanghikayat na mensaheng nagpapabayad sa iyo nang ikaw mismo.",
+      },
+      {
+        q: "Kung hindi ito personal na impormasyon, bakit mahalaga?",
+        a: "Dahil magkaibang tanong ang pagiging kapaki-pakinabang sa isang umaatake at ang legal na pag-uuri. Ang halaga ng pinamili, ang petsa, ang paraan ng bayad at ang pera ang eksaktong gumagawang kapani-paniwala sa isang mapandayang mensahe — at ang karaniwang paraan ng paghusga sa isang kahina-hinalang email ay kung alam ba ng nagpadala ang tunay na detalye tungkol sa isang tunay na order. Hindi na gumagana ang pagsusulit na iyon para sa sinumang nasa pagtagas na ito.",
+      },
+      {
+        q: "Dapat ko bang burahin ang account ko sa Weverse?",
+        a: "Maipagtatanggol na pili ito at hindi ito lunas. Pinapatigil ng pagbura ang pangangalap sa hinaharap; hindi nito mababawi ang datos na umalis na, at kasama roon ang anumang nasa pagtagas na ito. Nagkakahalaga rin ito sa iyo ng kasaysayan ng order at reserbasyon, ng mga nakasaveng address, ng anumang bayad na membership, at sa panig ng tiket ng isang natapos na beripikasyon ng pagkakakilanlan — kaya ipasya ito ayon sa kung gusto mo pa ang serbisyo, hindi bilang tugon dito.",
+      },
+      {
+        q: "Ano talaga ang nagawa ng Weverse?",
+        a: "Sa sariling salaysay nito: pinalakas ang kontrol sa pag-access sa API ng impormasyon ng bayad at inalis dito ang panloob na pantukoy, naghain ng ulat ng pangyayaring paglabag sa KISA noong 4 Setyembre 2026, at inabisuhan ang mga naapektuhang customer. Inililista rin nito ang binabalak na gawain — ang pag-audit sa lahat ng API na nalantad sa labas, ang paghihigpit sa kontrol ng deployment, ang pagtataas ng sensitibidad ng pagsubaybay — at sinasabi nitong hiniling nito sa aktor na kasangkot na ibalik ang datos at nagnanais nitong habulin ang legal na responsibilidad. Pagsasaad nito ang mga natapos na bagay at hindi natuklasang naaudit.",
+      },
+      {
+        q: "May bago pa ba kaysa rito?",
+        a: "Wala, sa petsang nasa itaas ng pahinang ito, na kung kailan huling binasa namin ang listahan ng abiso ng Weverse Shop. Puwedeng umusad ang isang bagay sa seguridad, kaya ang listahang iyon ang buhay na bersiyon — kung may kasunod na abiso, naroon ito bago narito.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

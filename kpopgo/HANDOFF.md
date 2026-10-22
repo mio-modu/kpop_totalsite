@@ -13,9 +13,9 @@ is waiting on a person, and what is blocked.
 
 | | |
 | --- | --- |
-| Branch | `claude/serene-ride-3z9bqw` — develop, commit and push here only |
-| Open PR | [#59](https://github.com/mio-modu/kpop_totalsite/pull/59), four commits, awaiting merge |
-| Last merged | #58, `0fff98a` |
+| Branch | a fresh branch off `main` per session — develop, commit and push there only |
+| Open PR | none |
+| Last merged | #60, `2974b58` — the four commits #59 left behind |
 | Build | 267 static pages, 23 English guides, 10 languages, 193 translations |
 | Suite | 61 tests, all passing |
 
@@ -24,18 +24,40 @@ change starts from the merged `main`. PR #58 merged as a merge commit, not a
 squash, so the branch's history is clean — check this each time with
 `git merge-base --is-ancestor <last-sha> origin/main` before assuming.
 
-## What PR #59 contains
+**That check is not a formality, and the pair of PRs below is why.** The venue
+work was five commits on one branch. PR #59 was merged while the session was
+still pushing to it, so `main` took the first commit and left the other four
+behind — 806 lines, including the correction that the first drawing was
+factually wrong, and including this file. Nothing was broken and nothing said
+anything: the PR read as merged, the branch read as pushed, and for a while
+`main` served a guide whose diagram was the false concentric-circle version.
+PR #60 carried those four in. So run the ancestor check on **every** commit a
+branch holds rather than on the last one a PR body names, and run it *after*
+the merge rather than before.
 
-Two new venue guides' worth of work, in four commits:
+**And write the branch name into this table only if you are going to keep it
+current.** The row above used to name a specific branch, which was correct
+while that branch was open and was read, by a later session, as an instruction
+to push to a branch that had already been merged and deleted. A session's own
+branch is assigned to it; the useful statement here is the practice, not the
+name.
+
+## What #59 and #60 contain
+
+Two new venue guides' worth of work, in five commits, **all now in `main`** —
+the SHAs below are the ones from the branch, and #60 rebased its four, so they
+appear in `main` under different ones:
 
 1. `1096c29` — the seat guide (`gocheok-sky-dome-finding-your-seat`), the
    `diagram` field, and a correction to the getting-there guide's station rows
+   (this is the one #59 merged)
 2. `3bf78bc` — the plan redrawn as a horseshoe, after measuring that the break
    in the seating is 44° / 71° / 91° / 96° by level rather than one gap
 3. `77d9aaa` — the clockwise direction re-sourced: the chart's `alt` text is
    the operator saying 시계방향 in its own words
 4. `ec4d6b3` — the venue's chart served from this site under 공공누리 제1유형,
    with hash watching and a test that the served copy is the recorded one
+5. `2a96840` — this file
 
 ## Waiting on the owner
 
@@ -58,7 +80,9 @@ Two new venue guides' worth of work, in four commits:
 
 - `circlechart.kr` will not connect (`ws_closed_mid_exchange`, so it is the
   site failing rather than the allowlist). It is cited by the albums and
-  Ktown4u guides. If it stays dead those citations need re-sourcing.
+  Ktown4u guides. If it stays dead those citations need re-sourcing. Still
+  dead when re-checked on 22 October 2026 — no response at all after 13
+  seconds, which is the same failure rather than a slow page.
 - The Yahoo rebrand page carries a 9% drift warning that is **standing on
   purpose** — its body does not extract cleanly. Never clear it with a plain
   `--record`; use `--record-new`.
@@ -89,9 +113,14 @@ Two new venue guides' worth of work, in four commits:
   keep serving the old bundle on its port, which looks exactly like a change
   that did not apply. If a screenshot is identical to the previous one, check
   what is actually being served (`curl … | grep`) before editing anything.
-- **Playwright** imports as a default export from
-  `/home/user/aiexpert/kpopgo/node_modules/playwright/index.js`
-  (`import pw from …; const { chromium } = pw;` — it is CommonJS). Launch with
+- **Playwright** imports as a default export from this checkout's
+  `kpopgo/node_modules/playwright/index.js`
+  (`import pw from …; const { chromium } = pw;` — it is CommonJS). Resolve it
+  against the repository root rather than writing an absolute path: the
+  checkout directory is per container — `/home/user/kpop_totalsite` in this
+  one, `/home/user/aiexpert` in the one that first wrote this line — and a
+  stale absolute path fails as a missing module, which reads as a broken
+  install rather than as a wrong path. Launch with
   `executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"` and
   `args: ["--no-sandbox"]`. Never run `playwright install`.
 - **After any Korean text** run `node scripts/subset-fonts.mjs` and commit

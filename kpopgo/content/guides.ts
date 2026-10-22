@@ -316,7 +316,7 @@ export const guides: Guide[] = [
         url: "https://concert.weverse.io/",
       },
       {
-        label: "NOL World (formerly interpark Global) — rebrand announcement, 1 Dec 2025",
+        label: "NOL World (formerly interpark Global) — rebrand announcement, dated 3 Dec 2025",
         url: "https://sg.finance.yahoo.com/news/interpark-global-rebrands-nol-world-230000074.html",
       },
       {
@@ -423,7 +423,7 @@ export const guides: Guide[] = [
     ],
     sources: [
       {
-        label: "interpark Global rebrands to NOL World, 1 Dec 2025",
+        label: "interpark Global rebrands to NOL World — announcement dated 3 Dec 2025",
         url: "https://sg.finance.yahoo.com/news/interpark-global-rebrands-nol-world-230000074.html",
       },
       {

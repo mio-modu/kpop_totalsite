@@ -65,7 +65,54 @@ const RECORD = process.argv.includes("--record");
  * cannot clear a warning it did not look at.
  */
 const RECORD_NEW = process.argv.includes("--record-new");
-const WRITES = RECORD || RECORD_NEW;
+
+/**
+ * Re-baseline the sources whose URL contains this string, and nothing else.
+ *
+ *   npm run watch -- --record-only=interpark-global-rebrands
+ *
+ * `--record-new` closed one half of the asymmetry above. This closes the
+ * other, and the Yahoo page is again the case that shows why. Its 9% drift
+ * warning stands on purpose, and the honest way to clear a drift warning is
+ * to re-read the page against the guide that cites it — but the only tool for
+ * writing a baseline after a re-read was `--record`, which re-baselines
+ * *everything it can fetch*. So resolving one warning meant silently
+ * accepting every other page's current wording as read, including any that
+ * had drifted since the last run and had not been looked at yet.
+ *
+ * Which means the warning could not be cleared honestly at all: one option
+ * left it standing forever, the other cleared more than anybody had read. A
+ * check with no honest way to go green is a check people learn to ignore,
+ * which is the same failure as a permanent false alarm, arriving from the
+ * opposite direction.
+ *
+ * Two guards, because a flag that silently records nothing is worse than no
+ * flag: a match that selects no source fails, and a match that selects every
+ * comparable source fails as well — that is `--record` wearing a disguise,
+ * and if that is what somebody means they should type it.
+ */
+const RECORD_ONLY = (() => {
+  const arg = process.argv.find((a) => a.startsWith("--record-only"));
+  if (!arg) return null;
+  const match = arg.includes("=") ? arg.slice(arg.indexOf("=") + 1).trim() : "";
+  if (!match) {
+    throw new Error(
+      "--record-only needs a URL fragment to match, e.g. " +
+        "`--record-only=interpark-global-rebrands`. Without one it would " +
+        "match every source, which is what --record is for.",
+    );
+  }
+  return match;
+})();
+
+if (RECORD && RECORD_ONLY) {
+  throw new Error(
+    "--record and --record-only together are contradictory: one re-baselines " +
+      "everything, the other exactly what you re-read. Pick the one you mean.",
+  );
+}
+
+const WRITES = RECORD || RECORD_NEW || RECORD_ONLY;
 const TODAY = new Date().toISOString().slice(0, 10);
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
@@ -394,6 +441,10 @@ async function links(urls) {
     note("info", "No source fingerprints yet — run `npm run watch -- --record` to take a baseline.");
   }
   const next = {};
+  // Which sources this run actually compared, and which of them
+  // `--record-only` selected. Both guards below read these.
+  const comparable = [];
+  const rebaselined = [];
 
   for (const url of urls) {
     const r = await hit(url);
@@ -447,9 +498,13 @@ async function links(urls) {
     }
 
     const before = prints[url];
-    // --record overwrites; --record-new fills a hole and never overwrites.
+    // --record overwrites; --record-new fills a hole and never overwrites;
+    // --record-only overwrites exactly what its match selects.
     const keep = before?.text;
-    const take = RECORD || (RECORD_NEW && !keep);
+    const picked = RECORD_ONLY !== null && url.includes(RECORD_ONLY);
+    const take = RECORD || (RECORD_NEW && !keep) || picked;
+    comparable.push(url);
+    if (picked) rebaselined.push(url);
     next[url] = {
       words: take ? words : (before?.words ?? words),
       text: take ? text : keep,
@@ -470,6 +525,25 @@ async function links(urls) {
     }
   }
 
+  // Both guards run before anything is written, so a bad match changes
+  // nothing on disk.
+  if (RECORD_ONLY !== null) {
+    if (rebaselined.length === 0) {
+      throw new Error(
+        `--record-only=${RECORD_ONLY} matched none of the ${comparable.length} ` +
+          `comparable sources, so it would have written nothing while reporting ` +
+          `success. Check the fragment against the URL in content/guides.ts.`,
+      );
+    }
+    if (comparable.length > 1 && rebaselined.length === comparable.length) {
+      throw new Error(
+        `--record-only=${RECORD_ONLY} matched every one of the ${comparable.length} ` +
+          `comparable sources. That is --record, and re-baselining a page nobody ` +
+          `re-read is the thing these flags exist to prevent. Narrow the fragment.`,
+      );
+    }
+  }
+
   if (WRITES) {
     await writeFile(path, `${JSON.stringify(next, null, 2)}\n`);
     const held = Object.keys(next).filter((u) => prints[u]?.text).length;
@@ -477,6 +551,15 @@ async function links(urls) {
       `\n  Wrote ${Object.keys(next).length} source fingerprints` +
         (RECORD_NEW ? ` — ${held} existing baselines left untouched.` : "."),
     );
+    // Naming them is the point: a re-baseline is a claim that somebody read
+    // those pages, so the run says which pages it just made that claim about.
+    if (RECORD_ONLY !== null) {
+      console.log(
+        `  Re-baselined ${rebaselined.length} of ${comparable.length} comparable source(s), ` +
+          `on the understanding that these were re-read:`,
+      );
+      for (const u of rebaselined) console.log(`    ${u}`);
+    }
   }
 }
 

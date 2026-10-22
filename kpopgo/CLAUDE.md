@@ -59,7 +59,40 @@ checked source look identical afterwards.
 So `npm run watch -- --record-new` now writes only the entries that are
 missing and leaves every existing baseline untouched. Use it when a new guide
 brings new sources; keep `--record` for a deliberate re-read, which is the one
-case where overwriting is the point. Note the asymmetry is real: that run
+case where overwriting is the point.
+
+**And `--record-only=<url fragment>` closes the other half, which was that a
+single warning could not be cleared honestly at all.** The honest way to clear
+a drift warning is to re-read that page against the guide citing it — but the
+only tool for writing a baseline afterwards was `--record`, which re-baselines
+everything it can fetch. So resolving one warning meant accepting every other
+page's current wording as read. One option left the warning standing forever,
+the other cleared more than anybody had looked at, and a check with no honest
+route to green is a check people learn to ignore — the same failure as a
+permanent false alarm, from the opposite direction. Two guards, since a flag
+that silently records nothing is worse than no flag: a fragment matching no
+source fails, and a fragment matching *every* comparable source fails too,
+because that is `--record` in disguise. The run then names the URLs it
+re-baselined, since a re-baseline is a claim that somebody read those pages.
+All four refusal paths were proved by running them, and nothing is written
+when a guard fires.
+
+**The Yahoo page turned out not to be a case for it, which is worth knowing
+before reaching for the flag.** Its drift was recorded here as "its body does
+not extract cleanly" — true, and too vague to act on. Re-read on 22 October
+2026: of 696 words, most are Yahoo's chrome, including a strip of live index
+prices. Those move daily, so the fingerprint moves daily whatever the article
+does, and a baseline taken today drifts tomorrow. Re-sourcing to the PR
+Newswire original is the fix; re-baselining is not. A warning that no
+re-baseline can clear is a signal about the citation, not about the page.
+
+**Doing what that warning asked found something much worse than drift**, and
+it is recorded in `HANDOFF.md` rather than here because it needs a decision:
+the site dates the NOL World rename to 1 December 2025 in six places, and the
+cited page carries no 1 December date anywhere — Yahoo's byline is the 2nd and
+the press release's own dateline is the 3rd. Twenty-plus translation strings
+carry the date too. Every fact on the page real, one of them in the wrong
+place, nothing in the suite able to see it: the station rows again. Note the asymmetry is real: that run
 reported `1 needing action, 1 worth a look` **after** writing, because leaving
 a warning standing is what it is for.
 

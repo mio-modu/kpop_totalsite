@@ -108,9 +108,38 @@ appear in `main` under different ones:
   Ktown4u guides. If it stays dead those citations need re-sourcing. Still
   dead when re-checked on 22 October 2026 — no response at all after 13
   seconds, which is the same failure rather than a slow page.
-- The Yahoo rebrand page carries a 9% drift warning that is **standing on
-  purpose** — its body does not extract cleanly. Never clear it with a plain
-  `--record`; use `--record-new`.
+- **The Yahoo rebrand page's drift is live market tickers, and it can never be
+  cleared by re-baselining.** It was written down here as "its body does not
+  extract cleanly", which is true and too vague to act on. Re-read on 22
+  October 2026: the page returns 696 words and most of them are Yahoo's
+  chrome — nav, plus a strip of live index prices (Straits Times, Nikkei, Hang
+  Seng, Bitcoin). Those move every day, so the fingerprint moves every day
+  whatever the article does. A baseline taken today drifts tomorrow. The real
+  fix is to re-source to the PR Newswire original the page is a syndication
+  of, which needs `prnewswire.com` on the allowlist first — do not declare it
+  before somebody can read it.
+- **⚠ The site says the rename happened on 1 December 2025 and the cited
+  source does not say that.** Found by doing what the drift warning asks —
+  re-reading the page against the guides that cite it. The page carries no
+  1 December date at all: Yahoo's byline is 2 December 2025 and the press
+  release's own dateline is **SEOUL … Dec. 3, 2025 /PRNewswire/**. The two
+  source *labels* claimed "1 Dec 2025" for the announcement, which is
+  unambiguously wrong about the page they point at, and they are corrected.
+
+  The factual claim is **not** corrected and needs a decision, because it is
+  asserted in six places in `content/guides.ts` — including a guide's own
+  description and two FAQ answers — and carried in **twenty-plus translation
+  strings across at least five languages** (`2025년 12월 1일`, `12月1日`,
+  `1 de diciembre de 2025`, `1 Desember 2025`, `ngày 1 tháng 12`,
+  `1 ธันวาคม`). `CLAUDE.md`'s own rename table says 1 December too.
+
+  Either the rebrand took effect on 1 December and was announced on the 3rd —
+  in which case the claim may be right and this source does not support it, so
+  it needs one that does — or the date is simply wrong and every one of those
+  strings is. Do not guess between those: the one source that would settle it
+  is NOL World's own announcement, and `world.nol.com` 403s from CloudFront
+  here. This is exactly the station-rows shape: every fact real, one of them
+  in the wrong place, and no check in the suite can see it.
 - **KSPO DOME's host is found: `www.ksponco.or.kr`.** It was declared for
   weeks as `www.kspo.or.kr` under the comment "KSPO Dome operator", which is
   the foundation that *owns* the park — a corporate site that answers 302 to a

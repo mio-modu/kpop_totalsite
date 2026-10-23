@@ -61,6 +61,21 @@ appear in `main` under different ones:
 
 ## Waiting on the owner
 
+- **Booking.com, through CJ Affiliate — signed up 23 October 2026, not usable
+  yet.** The CJ publisher account exists and its **Account ID (PID) is
+  `8107329`**, which is the number every Booking link will carry. Nothing is in
+  `content/affiliates.ts` for it, deliberately: CJ approval is two-stage, the
+  Booking.com programme has not approved the application yet, and a registered
+  partner with no working advertiser link is a paid link that earns nothing —
+  which `scripts/affiliate.test.mjs` would refuse anyway, since it has no URL
+  to check attribution on. Six onboarding tasks have to be completed before the
+  application is even submitted; `kpopgo.app` goes in under Promotional
+  Properties, and the tax form for a Korean partner is a W-8BEN. When the
+  programme approves, the things needed here are that PID and one generated
+  advertiser link — the link reveals which CJ redirect domain the account uses
+  (`anrdoezrs.net`, `kqzyfj.com`, `jdoqocy.com` or `tkqlhce.com`), which is
+  what `scripts/hosts.mjs` then needs to declare.
+
 - **`www.ksponco.or.kr` is still missing from the allowlist**, and it is the
   only thing the next venue guide waits on. Of the three hosts added on 22
   October it is the one that did not arrive: `www.kogl.or.kr` and

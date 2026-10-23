@@ -805,6 +805,55 @@ choosing: the table gives Guro as exit 1 while the turn-by-turn directions and
 the venue's own area map both say exit 2. An official source with two answers
 is reported as two answers.
 
+## TicketLink, and what a guide may not say
+
+TicketLink is the fourth Korean ticketing platform and the one the English
+guides leave out. NOL World, Weverse and YES24 are named everywhere; a show
+sold exclusively through TicketLink is one none of those pages can help with.
+`ticketlink-global-ticketing-guide` closes that, written 23 October 2026 from
+NHN LINK's own English pages.
+
+**Its global site is a path, not a subdomain, and this repo had that wrong.**
+`scripts/hosts.mjs` declared `global.ticketlink.co.kr`; a browser outside this
+container answers NXDOMAIN for it. The host never existed — the line was
+written from memory, the same way the `kspo.or.kr` entry names the sports
+foundation's corporate site as a venue operator. Probed rather than guessed
+again: `/global`, `/en` and `/english` all 404, while `/global/en` 302s to
+`/global/en/home` and answers 200, with `/global/ja/` and `/global/zh/`
+beside it.
+
+Reading it took three hosts past the main one, discovered one layer at a
+time, because the global site is a single-page app:
+`tketlink.dn.toastoven.net` serves the shell, `cdn.nhnace.com` the assets,
+and `mapi.ticketlink.co.kr` everything in it. Allowing the CDN alone still
+gave a blank page. Note the proxy distinguishes these: a bare request to a
+CDN host answers `ws_closed_mid_exchange`, which is the site declining, not
+`connect_rejected`, which is the allowlist.
+
+**The three facts worth the page**, all from TicketLink's own English
+documentation: booking requires a PAYCO ID and "our reservation service is
+not offered to non-members", so the account that blocks you is a second
+company's; the seat hold is **eight minutes** and covers everything still
+ahead of you, payment included; and the only delivery route it describes is
+marked **Domestic**, so an overseas buyer collects.
+
+**What the guide refuses to say is the point of it.** TicketLink's payment
+step says a window appears and you choose a method — it never lists one, so
+no page here names a card that works. On-site pickup leans on a confirmation
+SMS and nothing says whether that reaches a foreign number. There is a claim
+circulating in English that this site takes overseas cards with passport
+verification and needs no Korean phone number; it may well be true, it is not
+in the documentation, and the guide says so instead of repeating it. That
+refusal is the whole product: a page that fills a gap confidently is the
+thing this site was built against.
+
+**Five of its sources cannot be fingerprinted, and that is the honest state.**
+`npm run watch` gets TicketLink's WAF challenge rather than content — one
+word of visible text — so it declines to compare, which is the behaviour the
+YES24 note already describes. Those five are link-checked only, by accident
+rather than by the storefront rule. A change in TicketLink's wording will not
+be caught by this repo; it has to be re-read by a person.
+
 ## Advertising
 
 Slots live in `components/AdSlot.tsx` and render nothing until their ids are

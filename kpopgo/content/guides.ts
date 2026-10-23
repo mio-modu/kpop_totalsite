@@ -219,6 +219,10 @@ export const guides: Guide[] = [
         pitfall:
           "Fan accounts aggregate and paraphrase, and they get the platform wrong often enough to cost you the sale. They also rarely update when a date moves.",
         takes: "10 minutes",
+        see: {
+          slug: "ticketlink-global-ticketing-guide",
+          text: "If it names TicketLink, none of the usual three apply",
+        },
       },
       {
         title: "Identify your platform — and do not assume it from the label",
@@ -3213,6 +3217,142 @@ export const guides: Guide[] = [
         label:
           "서울시설공단 고척스카이돔 — 찾아오시는길: the stations, exits and walking distances",
         url: "https://www.sisul.or.kr/open_content/skydome/introduce/location.jsp",
+      },
+    ],
+  },
+  {
+    slug: "ticketlink-global-ticketing-guide",
+    ko: "\uD2F0\uCF13\uB9C1\uD06C",
+    art: "guide-tickets",
+    name: "TicketLink",
+    koLine: "\uD2F0\uCF13\uB9C1\uD06C \uAE00\uB85C\uBC8C \u2014 \uD398\uC774\uCF54 \uACC4\uC815\uC774 \uBA3C\uC800\uC785\uB2C8\uB2E4",
+    title: "TicketLink for overseas buyers: the PAYCO account, the eight-minute clock, and the collection problem",
+    summary:
+      "The fourth Korean ticketing platform, and the one English guides leave out. It has a real English site, it will not let you book without a PAYCO account, and its only documented delivery route is domestic.",
+    glyph: "ticket",
+    status: "sourced",
+    lastChecked: "2026-10-23",
+    scope:
+      "Covers booking on TicketLink from outside Korea, read from the English pages NHN LINK publishes for its global site on 23 October 2026: where the global site actually is, the account it requires, the documented purchase steps and their clock, and every ticket-collection route it describes. It is deliberate about what it does not claim. TicketLink\u0027s English documentation does not state which payment cards it accepts, whether its confirmation SMS can reach a number outside Korea, or what PAYCO asks for at sign-up, and this page says so rather than filling those gaps from elsewhere. Nobody from this site has booked on it.",
+    readMinutes: 7,
+    platforms: ["TicketLink", "PAYCO"],
+    intro: [
+      "English guides to Korean ticketing name three platforms and stop. TicketLink is the fourth, it is run by NHN rather than by any of the other three, and a show sold exclusively through it is a show the other three guides cannot help you with at all.",
+      "It does have an English site. What it also has is an account requirement that sits outside TicketLink entirely, a checkout clock measured in minutes, and a delivery section whose only shipping route is marked Domestic.",
+    ],
+    steps: [
+      {
+        title: "Check whether your show is on TicketLink at all",
+        body: "TicketLink sells concerts, musicals, theatre, classical and dance, family shows, exhibitions and esports, and some concerts carry an Exclusive Sale badge, which means that platform is the only place the show is sold. The official announcement is what tells you; the platform is not something to infer from the artist or the venue. If the announcement names TicketLink, none of the NOL World, Weverse or YES24 procedures apply to you.",
+        pitfall:
+          "Assuming the big three cover everything. They do not, and a reader who learns on sale day that their show is a TicketLink exclusive has lost the time they needed to set up an account.",
+        takes: "5 minutes",
+        see: {
+          slug: "buy-k-pop-concert-tickets-from-overseas",
+          text: "Where the announcement is, and what else it decides",
+        },
+      },
+      {
+        title: "Go to the right address, which is not the one you would guess",
+        body: "The English site is a path on the main domain: www.ticketlink.co.kr/global/en/home. There is no global subdomain \u2014 a browser asked for global.ticketlink.co.kr answers NXDOMAIN, and /global, /en and /english on the main host all return 404. The same global section runs in Japanese and Chinese at /global/ja/ and /global/zh/, so the language you get is decided by the path, not by a setting.",
+        pitfall:
+          "Searching for a TicketLink global site and landing on the Korean one. They are the same host, so nothing warns you; you simply find yourself on a page in Korean with a different help section behind it.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Get a PAYCO account before you need one",
+        body: "This is the step that catches people, and TicketLink states it plainly: you sign in with a PAYCO ID, and \u0022our reservation service is not offered to non-members.\u0022 PAYCO is NHN\u0027s own account and payment service, separate from TicketLink. Its sign-up, as TicketLink describes it, is the Create account link at the foot of the sign-in page, then an email address and a password, and you have to agree to grant PAYCO access to your personal information.",
+        pitfall:
+          "Leaving this to the sale. You are not creating one account under time pressure, you are creating an account on a second company\u0027s service and then using it to sign in, and the eight-minute clock in the next step does not start until you are already signed in.",
+        takes: "20 minutes, days ahead",
+      },
+      {
+        title: "Know the clock: eight minutes from seat to payment",
+        body: "TicketLink documents five steps. Date and round, where the button reads To Be Sold until the sale opens and you refresh to turn it into Reserve. Class and seat, choosing by zone first or by class first, with either automatic assignment or your own pick. Then ticket type and amount, where the page says the seats are held and you must purchase within eight minutes. Then delivery and confirmation, which repeats the eight minutes and requires you to agree to the cancellation fee policy. Then payment. The hold is on the seats, so the clock is the whole of what remains, not one screen of it.",
+        pitfall:
+          "Pop-ups. TicketLink\u0027s own instructions tell you to enable them, because the booking window is a pop-up \u2014 so a blocker set and forgotten takes the sale without an error message anyone would recognise as one.",
+        takes: "8 minutes, and not a minute more",
+        see: {
+          slug: "nol-world-booking-fees-and-checkout-clock",
+          text: "The same clock on NOL World, which runs differently",
+        },
+      },
+      {
+        title: "Plan to collect, because delivery is domestic",
+        body: "TicketLink describes four ways to get a ticket and one of them is closed to you. Delivery arrives within ten business days and the page marks it Domestic. On-site pickup is at the box office, presenting a confirmation SMS or your ticket number, and for performances and exhibitions the window is between one hour and thirty minutes before the show. Home Ticket is a barcode inside the TicketLink app. Smart Ticket is issued to your phone, from midnight on the day for same-day events, and cannot be cancelled once issued.",
+        pitfall:
+          "Two conditions on the app routes that are easy to miss. Everyone on one booking has to enter together on a Home Ticket barcode, so a group that planned to arrive separately cannot; and if you already hold a paper ticket you cannot issue a Smart Ticket, because the two may not exist at once.",
+        takes: "10 minutes, before the day",
+      },
+      {
+        title: "Read what TicketLink does not say, because that is where you are exposed",
+        body: "Three things its English pages do not answer. Step five of the purchase guide says a payment window appears and you select a method; it never lists which methods, so whether your card works is not documented anywhere in English. On-site pickup leans on a confirmation SMS, and nothing says whether that SMS can reach a number outside Korea. And PAYCO sign-up is described by TicketLink in one sentence, so what PAYCO itself asks for is a question for PAYCO. There is a claim circulating in English that this site takes overseas cards with passport verification and needs no Korean phone number. It may be true. It is not in TicketLink\u0027s documentation, and this page will not repeat it until somebody checks.",
+        pitfall:
+          "Treating an undocumented thing as a permitted thing. The gap between \u0022they do not say no\u0022 and \u0022it works\u0022 is where a sale is lost, and it is the whole reason this step exists rather than a confident paragraph.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Ask the right desk, in English",
+        body: "TicketLink runs an English-only customer line on 1644-3850 and prints it on every page of its global help section, alongside a 1:1 Inquiry form and membership@nhnlink.co.kr. Its English FAQ index carries a standing entry titled \u0022Can foreigners also join the membership?\u0022 dated June 2022, and three separate entries about being shown a restricted-access screen or an IP restriction during sign-up, login and booking. Those titles are worth reading before sale day rather than during it. The operator is NHN LINK Corporation, at 586 Gangnam-daero, Gangnam-gu, Seoul.",
+        pitfall:
+          "Reaching for a VPN when a restricted-access screen appears. That is a subscription sold against a problem it does not reliably fix, it can break a payment that was going to work, and this site will not tell you to do it \u2014 the English line exists for exactly this question.",
+        takes: "15 minutes",
+        see: {
+          slug: "nol-world-account-recovery-and-booking-errors",
+          text: "What a booking error usually turns out to be",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Do I need a Korean account to use TicketLink?",
+        a: "You need a PAYCO account, which is NHN\u0027s own service rather than TicketLink\u0027s. TicketLink states that its reservation service is not offered to non-members and that you sign in with a PAYCO ID. It describes PAYCO sign-up as an email address and a password, plus agreeing to grant PAYCO access to your personal information. What PAYCO asks for beyond that is not covered in TicketLink\u0027s English pages.",
+      },
+      {
+        q: "Where is TicketLink\u0027s English site?",
+        a: "At www.ticketlink.co.kr/global/en/home \u2014 a path on the main domain, not a separate one. There is no global.ticketlink.co.kr; that hostname does not resolve. The same section also runs in Japanese at /global/ja/ and Chinese at /global/zh/.",
+      },
+      {
+        q: "How long do I have to pay once I have a seat?",
+        a: "Eight minutes. TicketLink says the seats are held and must be purchased within eight minutes at the ticket-amount step, and repeats the eight minutes at the delivery and confirmation step. The hold is on the seats, so that window covers everything still ahead of you, payment included.",
+      },
+      {
+        q: "Can TicketLink post my tickets to me abroad?",
+        a: "Its documented delivery route is marked Domestic and quoted at ten business days, so plan on collecting instead. The alternatives it describes are on-site pickup at the box office with a confirmation SMS or ticket number, a Home Ticket barcode in the TicketLink app, and a Smart Ticket issued to your phone.",
+      },
+      {
+        q: "Which cards does TicketLink accept from overseas?",
+        a: "Its English documentation does not say. The purchase guide\u0027s payment step says only that a payment window appears and you select a method. Until somebody checks it on a real booking, this page will not name a card that works \u2014 and neither should anything else you read.",
+      },
+      {
+        q: "I get a restricted-access screen. What is it?",
+        a: "TicketLink\u0027s English FAQ index carries three entries on this, about restricted access during booking and an IP restriction during sign-up and login, dated between June 2022 and June 2023. That it is answered three times suggests it is common. Ask the English-only line on 1644-3850 or the 1:1 Inquiry form rather than reaching for a VPN, which is a subscription sold against a problem it may not fix and can break a payment that would otherwise have worked.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "TicketLink Global \u2014 Sign in & Sign Up: the PAYCO requirement and that booking is members-only",
+        url: "https://www.ticketlink.co.kr/global/en/help/guide/signup",
+      },
+      {
+        label:
+          "TicketLink Global \u2014 Purchase tickets: the five steps and the eight-minute seat hold",
+        url: "https://www.ticketlink.co.kr/global/en/help/guide/reservation",
+      },
+      {
+        label:
+          "TicketLink Global \u2014 Ticket Pickup: delivery marked Domestic, on-site pickup, Home Ticket and Smart Ticket",
+        url: "https://www.ticketlink.co.kr/global/en/help/guide/ticket",
+      },
+      {
+        label:
+          "TicketLink Global \u2014 Service Center: the English-only line, the 1:1 Inquiry form and the FAQ index",
+        url: "https://www.ticketlink.co.kr/global/en/help/main",
+      },
+      {
+        label: "TicketLink Global \u2014 home, where the operator and the category list are published",
+        url: "https://www.ticketlink.co.kr/global/en/home",
       },
     ],
   },

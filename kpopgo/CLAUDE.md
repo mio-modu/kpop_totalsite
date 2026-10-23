@@ -907,20 +907,37 @@ timetable copied into a guide stays confident after it stops being true, and a
 reader stranded on a platform is a worse place to meet a stale fact than a
 renamed website is. The page teaches where to look instead.
 
-**It carries four paid links, and what they point at is the whole design.**
-The first draft had none, on the reasoning that a booking link under an
-argument that nobody here can responsibly point at a hotel would be taking the
-position the page had just declined to take. That reasoning was right about
-hotels and wrong about the page: the reader's actual decision is *which
-station*, and a link to live inventory around a named station takes no position
-on any hotel at all.
+**This guide carries four paid links, and placing them took three attempts to
+get honest.** The first draft had none, reasoning that a booking link under an
+argument that nobody here can responsibly point at a hotel would take the
+position the page had just declined to take. That was right about hotels and
+wrong about the page: the reader's decision is *which station*, and a link to
+live inventory around a named station takes no position on any hotel.
 
-So the links are per station, and the stations are not chosen editorially —
-they are the four the venue's own access page names, which is what makes "no
-transfer" a sourced claim rather than a sales line. All four are on the line
-that serves the dome and Sindorim is on Line 2 as well. Four rather than one,
-because picking one to monetise would be the commission choosing the advice,
-which is the rule this would otherwise break.
+The second draft put four station links in and **inverted the guide**, which an
+adversarial read caught and I had not. Every one of the four stations sits in
+the venue's own district — the district a step headed "Expect the venue's own
+district to be the wrong place to sleep" told the reader to leave — and the
+link text sold Guil on "the three-minute walk", the exact phrase the step above
+used to disqualify it. Worse, three of the four are walking distance, so the
+last train, the number the whole page is built on, does not apply to them at
+all. The monetised step reversed the three steps before it.
+
+The fix was not to drop the links but to find the fork the guide had missed:
+**you are either walking home or riding home.** Inside walking distance the
+last train stops mattering, which is precisely what a room near the hall buys;
+further along the line you get a neighbourhood, governed by a departure time.
+The four links are the walking-home half, labelled as that half, and the step
+says in as many words that it is deliberately not a list further along the line
+— because no source this container can reach publishes one, and inventing it
+was the alternative.
+
+Two claims went with that rewrite. "A large hall is built where there is room
+for a large hall, which is rarely where visitors stay" was prose about
+neighbourhood character drawn from a congestion notice, and neither source
+describes what an area is like to stay in. And "no transfer" was underwritten
+by the venue naming the stations, which does not support it — the access page
+names Sindorim *because* reaching the dome from it takes a bus.
 
 `Step.partner` takes one link or a list for this reason, and that generalisation
 is not a licence to stack links on a step that names one thing: the test for a
@@ -962,9 +979,18 @@ application the slower path.
 
 `content/affiliates.ts` is the register. It held nothing for a long time and
 this section said so for longer — it now holds **Klook**, and the site carries
-**one** paid link, on Play&Stay step 1. The sentence claiming the register was
-empty survived the link going in, which is the ordinary way a document starts
-lying: nothing edited it, and nothing could fail because of it. The machinery
+**five** paid links across two guides: one on Play&Stay step 1, and four
+station searches on the accommodation guide.
+
+The sentence here claiming the register was empty survived the first link going
+in, which is the ordinary way a document starts lying: nothing edited it, and
+nothing could fail because of it. It then happened again, in this same
+paragraph, within a day — it was corrected to "one" while four more were being
+added one section above, so the paragraph recording the failure became an
+instance of it a second time. **Counting paid links in prose is the thing that
+keeps breaking.** If it matters enough to assert, assert it in
+`scripts/affiliate.test.mjs`, which reads the files; a number written here is
+a claim nothing can check. The machinery
 exists first on purpose, because knowing a
 section may one day hold a paid link changes how it is written now — a guide
 that already names the real trade-offs can carry a link honestly, and one that
@@ -1237,6 +1263,13 @@ guide, because nothing on it is per-guide — and the guide pages point their
 Length is reported and does not fail. Google rewrites titles and descriptions
 often enough that a character count is a judgement, and a check that fails on
 a judgement is one people learn to ignore. 315 of them are over today.
+
+**Read the fare table to the end.** The accommodation guide quoted Seoul's taxi
+tariff for a ride that happens, by definition, after a concert — and the same
+table carries a late-night surcharge whose windows start at 22:00. The daytime
+rate was the wrong number for every reader of that page. The figures are the
+surcharged ones now. A source read far enough to find the number you went
+looking for is a source you have not finished reading.
 
 ## Before pushing
 

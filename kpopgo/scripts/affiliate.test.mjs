@@ -22,7 +22,10 @@ const read = (rel) => readFile(new URL(`../${rel}`, import.meta.url), "utf8");
 const stripComments = (src) => src.replace(/\/\*[\s\S]*?\*\//g, "");
 
 const AFFILIATE = stripComments(await read("components/Affiliate.tsx"));
-const REGISTRY = await read("content/affiliates.ts");
+// Comment-stripped like the component, and for the same reason: this file is
+// heavily commented, several comments quote example URLs and field names, and
+// a check that reads a comment as a registration is reading fiction.
+const REGISTRY = stripComments(await read("content/affiliates.ts"));
 const GUIDES = await read("content/guides.ts");
 const GUIDE_PAGE = await read("app/guides/[slug]/page.tsx");
 
@@ -70,17 +73,33 @@ test("every paid link in the content names a registered partner", () => {
   const declared = new Set(
     [...REGISTRY.matchAll(/^\s{4}id: "([^"]+)",$/gm)].map((m) => m[1]),
   );
-  // Both shapes. The first version of this matched `partner: { id: "…"` only,
-  // and a step may now declare a list — so the day the accommodation step
-  // landed with four links, this check would have gone on reporting a pass
-  // having read none of them. That is the same failure the translation suite
-  // already records: a check scoped to one shape stops existing when the
-  // second arrives.
-  const used = [
-    ...GUIDES.matchAll(/partner: \{ id: "([^"]+)"/g),
-    ...GUIDES.matchAll(/^\s+\{ id: "([^"]+)", area: "[^"]*", text:/gm),
-  ].map((m) => m[1]);
-  assert.ok(used.length > 0, "no paid links found in guides.ts — the patterns have stopped matching");
+  // Both shapes, each guarded on its own.
+  //
+  // The first version matched `partner: { id: "…"` alone, so the day a step
+  // declared a list it would have reported a pass having read none of the new
+  // links. The second version read both and guarded the *concatenated* result,
+  // which is the same hole one layer along: the single link on Play&Stay keeps
+  // the count above zero while the four area links go unread.
+  //
+  // And neither version survived the fields being written in another order.
+  // `StepPartner` declares them `id`, `text`, `area`, so the type's own order
+  // defeated a pattern hard-coded to `id`, `area`, `text`. Objects are found
+  // first and their keys read individually.
+  const objects = [...GUIDES.matchAll(/\{[^{}]*\bid: "[^"]+"[^{}]*\}/g)].map((m) => m[0]);
+  const key = (obj, name) => obj.match(new RegExp(`\\b${name}: "((?:[^"\\\\]|\\\\.)*)"`))?.[1];
+
+  const singles = [...GUIDES.matchAll(/partner: (\{[^{}]*\})/g)].map((m) => m[1]);
+  const listed = objects.filter((o) => key(o, "area") !== undefined);
+
+  assert.ok(singles.length > 0, "no `partner: { … }` link found in guides.ts — that pattern has stopped matching");
+  assert.ok(listed.length > 0, "no area link object found in guides.ts — that pattern has stopped matching");
+
+  const used = [...singles, ...listed].map((o) => key(o, "id")).filter(Boolean);
+  assert.equal(
+    used.length,
+    singles.length + listed.length,
+    "a paid link object was found with no readable id",
+  );
   for (const id of used) {
     assert.ok(
       declared.has(id),
@@ -98,8 +117,11 @@ test("every registered partner is complete enough to disclose", () => {
     for (const field of ["id", "name", "what", "howWeArePaid", "url", "checked"]) {
       assert.match(b, new RegExp(`${field}: "`), `a partner is missing ${field}`);
     }
-    const url = b.match(/url: "([^"]+)"/)?.[1] ?? "";
-    assert.ok(url.startsWith("https://"), `partner url is not https: ${url}`);
+    // The captured block now contains the nested `areas` array, so a bare
+    // `url: "` match could be satisfied by an area's URL while the partner's
+    // own had been deleted. Read the one at the partner's own indent.
+    const url = b.match(/^ {4}url: "([^"]+)"/m)?.[1] ?? "";
+    assert.ok(url.startsWith("https://"), `the partner's own url is missing or not https: ${url}`);
     assert.match(
       b.match(/checked: "([^"]+)"/)?.[1] ?? "",
       /^\d{4}-\d{2}-\d{2}$/,
@@ -125,15 +147,30 @@ test("every registered partner is complete enough to disclose", () => {
  * last place to break it.
  */
 
-/** Every area block in the registry, as { id, label, query, url }. */
+/**
+ * Every area block in the registry, as { id, label, query, url }.
+ *
+ * Read by key rather than by key order. The first version required all four
+ * fields on consecutive lines in one fixed order, which meant a reordering of
+ * the registry would make this return `[]` — and the two tests below it, the
+ * ones protecting the money and the link text, would then iterate over nothing
+ * and pass. Every caller also asserts it found something, because a helper
+ * that silently returns an empty list is the failure this file keeps meeting.
+ */
 const areaBlocks = () =>
-  [...REGISTRY.matchAll(/\{\s*\n\s+id: "([^"]+)",\s*\n\s+label: "([^"]+)",\s*\n\s+query: "([^"]+)",\s*\n\s+url: "([^"]+)",/g)].map(
-    (m) => ({ id: m[1], label: m[2], query: m[3], url: m[4] }),
-  );
+  [...REGISTRY.matchAll(/\{[^{}]*\bquery: "[^"]*"[^{}]*\}/g)]
+    .map((m) => m[0])
+    .map((b) => ({
+      id: b.match(/\bid: "([^"]+)"/)?.[1],
+      label: b.match(/\blabel: "([^"]+)"/)?.[1],
+      query: b.match(/\bquery: "([^"]+)"/)?.[1],
+      url: b.match(/\burl: "([^"]+)"/)?.[1],
+    }))
+    .filter((a) => a.id && a.label && a.query && a.url);
 
 test("every area a step names is registered", () => {
   const declared = new Set(areaBlocks().map((a) => a.id));
-  const used = [...GUIDES.matchAll(/\{ id: "[^"]+", area: "([^"]+)"/g)].map((m) => m[1]);
+  const used = [...GUIDES.matchAll(/\{[^{}]*\barea: "([^"]+)"[^{}]*\}/g)].map((m) => m[1]);
   assert.ok(used.length > 0, "no area links found in guides.ts — the pattern has stopped matching");
   for (const id of used) {
     assert.ok(
@@ -145,6 +182,7 @@ test("every area a step names is registered", () => {
 });
 
 test("an area link keeps the attribution, or it earns nothing", () => {
+  assert.ok(areaBlocks().length > 0, "no areas parsed from the registry — the pattern has stopped matching");
   const main = REGISTRY.match(/url: "(https:\/\/affiliate\.klook\.com[^"]+)"/)?.[1] ?? "";
   assert.ok(main, "the klook partner url is no longer recognisable");
   // Whatever identifies this site to the network has to survive into every
@@ -166,6 +204,7 @@ test("an area link keeps the attribution, or it earns nothing", () => {
 });
 
 test("an area searches for what its label says it searches for", () => {
+  assert.ok(areaBlocks().length > 0, "no areas parsed from the registry — the pattern has stopped matching");
   for (const area of areaBlocks()) {
     // The query is stored separately precisely so it can be held against the
     // destination: an encoded URL is not something anyone reads by eye.
@@ -195,7 +234,15 @@ test("an area searches for what its label says it searches for", () => {
 });
 
 test("the visible text of an area link names that area", () => {
-  const links = [...GUIDES.matchAll(/\{ id: "[^"]+", area: "([^"]+)", text: "([^"]+)" \}/g)];
+  // Object first, keys after, so the assertion survives the fields being
+  // written in a different order — including `StepPartner`'s own order.
+  const links = [...GUIDES.matchAll(/\{[^{}]*\barea: "[^"]+"[^{}]*\}/g)]
+    .map((m) => m[0])
+    .map((o) => [
+      o,
+      o.match(/\barea: "([^"]+)"/)?.[1],
+      o.match(/\btext: "((?:[^"\\]|\\.)*)"/)?.[1] ?? "",
+    ]);
   assert.ok(links.length > 0, "no area links found in guides.ts — the pattern has stopped matching");
   const byId = new Map(areaBlocks().map((a) => [a.id, a]));
   for (const [, id, text] of links) {
@@ -209,4 +256,48 @@ test("the visible text of an area link names that area", () => {
         `did not promise.`,
     );
   }
+});
+
+/**
+ * An ad unit must not land on the heels of a paid link.
+ *
+ * Today it does not, and only by accident: the step carrying four paid links
+ * happens to be followed by another step, so the in-article `AdSlot` is two
+ * steps down the page. Drop that step, reorder them, or put a `partner` on any
+ * guide's final step, and the ad renders immediately under a stack of four
+ * `rel="sponsored"` boxes — four sponsored surfaces, then one marked
+ * Advertisement.
+ *
+ * They would read as one block, because they nearly are one: `.paid a` and
+ * `.ad-slot` share a background and a border and differ mainly in radius.
+ * CLAUDE.md's advertising rules are about exactly this adjacency — an ad that
+ * reads as a recommendation costs more than it earns, on a page whose product
+ * is trust — and `documents.test.mjs` already asserts the same shape of rule
+ * for the reproduced chart. This is the missing half.
+ *
+ * Asserted structurally: the ad slot is outside the steps section, and the
+ * steps section is where paid links live. That holds however the steps are
+ * reordered, which a check against the last step's content would not.
+ */
+test("the in-article ad renders outside the steps, never under a paid link", () => {
+  const stepsOpen = GUIDE_PAGE.indexOf("{guide.steps.map(");
+  const ad = GUIDE_PAGE.search(/<AdSlot\s+placement="article"/);
+  const paid = GUIDE_PAGE.indexOf("<AffiliateLink");
+
+  assert.ok(stepsOpen > 0, "the guide route no longer maps over guide.steps");
+  assert.ok(ad > 0, "the guide route no longer renders the in-article AdSlot");
+  assert.ok(paid > 0, "the guide route no longer renders <AffiliateLink>");
+
+  assert.ok(
+    paid > stepsOpen,
+    "paid links are no longer rendered inside the steps — this check's assumption has moved",
+  );
+  // The steps section has to close before the ad opens.
+  const sectionClose = GUIDE_PAGE.indexOf("</section>", paid);
+  assert.ok(
+    sectionClose > 0 && ad > sectionClose,
+    "the in-article AdSlot renders inside or immediately after the steps, where it can " +
+      "land directly beneath a step's paid links. Four sponsored boxes followed by an " +
+      "ad box reads as one stack of advertising on a page whose product is trust.",
+  );
 });

@@ -731,9 +731,24 @@ async function affiliates() {
 
   // Read the identifiers off the first registered link rather than hardcoding
   // them, so this keeps working when the account or the campaign changes.
-  const expect = [...urls[0].matchAll(/[?&](aid|aff_adid)=([^&]+)/g)].map((m) => `${m[1]}=${m[2]}`);
+  // Read off whichever registered link carries them, not off the first one.
+  //
+  // Taking them from `urls[0]` alone had a hole big enough to drive the whole
+  // failure through: if every link lost its identifiers in the same edit —
+  // which is exactly what a careless find-and-replace across this file does —
+  // there would be nothing left to compare against, and the check would have
+  // excused itself with a warning at the moment it was most needed.
+  const expect = [
+    ...new Set(
+      urls.flatMap((u) => [...u.matchAll(/[?&](aid|aff_adid)=([^&]+)/g)].map((m) => `${m[1]}=${m[2]}`)),
+    ),
+  ];
   if (expect.length === 0) {
-    note("warn", "The first registered paid link carries no aid/aff_adid — cannot check attribution.");
+    note(
+      "fail",
+      `None of the ${urls.length} registered paid links carries aid or aff_adid. ` +
+        `Every one of them is a click that cannot be credited.`,
+    );
     return;
   }
 
@@ -758,7 +773,16 @@ async function affiliates() {
     }
 
     const short = url.replace(/\?.*$/, "");
-    const query = decodeURIComponent(url).match(/query=([^&]+)/)?.[1] ?? "site-wide";
+    // Decoded until it stops changing. The destination is nested inside a
+    // redirect parameter, so one pass leaves `Guil%20Station` in the line a
+    // person reads — the same double-encoding trap the unit test documents.
+    let readable = url;
+    for (let i = 0; i < 5; i++) {
+      const next = decodeURIComponent(readable);
+      if (next === readable) break;
+      readable = next;
+    }
+    const query = readable.match(/query=([^&]+)/)?.[1] ?? "site-wide";
 
     if (status === 0) {
       const host = new URL(url).hostname;

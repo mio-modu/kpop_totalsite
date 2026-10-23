@@ -3267,8 +3267,8 @@ export const guides: Guide[] = [
     status: "sourced",
     lastChecked: "2026-10-22",
     scope:
-      "Covers how to choose where to stay for a concert night in Seoul, as a rule you apply to your own show: find the venue\u0027s subway line, stay on it, and check the last train for your own station before you book. The worked example is Gocheok Sky Dome, from the Seoul Facilities Corporation pages that operate it, with the subway and taxi figures from Seoul\u0027s own tourism service. It names no hotels and carries no ratings, and the last step says why. Train times are not printed here and must be checked for your station, line and day of the week. KSPO Dome and Inspire Arena need their own pages.",
-    readMinutes: 7,
+      "Covers how to choose where to stay for a concert night in Seoul, as a rule you apply to your own show: find the venue\u0027s subway line, stay on it, and check the last train for your own station before you book. The worked example is Gocheok Sky Dome, from the Seoul Facilities Corporation pages that operate it, with the subway and taxi figures from Seoul\u0027s own tourism service. It names no hotels and carries no ratings, and the last step says why; the four links to accommodation searches around named stations are paid, and marked. Train times are not printed here and must be checked for your station, line and day of the week. What any of these areas is like to stay in is not covered, because neither source describes it and nobody here has walked them. KSPO Dome and Inspire Arena need their own pages.",
+    readMinutes: 8,
     platforms: ["Gocheok Sky Dome"],
     intro: [
       "Almost every English answer to \u0022where should I stay for the concert\u0022 is a list of hotels sorted by how close they are to the building. That sorts on the wrong number. You are not walking to the venue at a time of your choosing \u2014 you are leaving it at the same minute as everyone else, late, on a transit system you do not know, in a city where the trains stop.",
@@ -3294,15 +3294,15 @@ export const guides: Guide[] = [
         takes: "5 minutes",
       },
       {
-        title: "Expect the venue\u0027s own district to be the wrong place to sleep",
-        body: "A large hall is built where there is room for a large hall, which is rarely where visitors stay. Gocheok is the clear case: the venue\u0027s access page does not spend its words on what is next to the building, it spends them on getting people away from it. It tells readers coming from Seoul and the Suwon or Anyang direction to get off a stop early at Guro, and readers coming from Incheon or Bucheon to do the same at Gaebong. A building whose own operator is routing you around its nearest station on a full night is not describing a neighbourhood to spend the evening in.",
+        title: "Decide whether you are walking home or riding home",
+        body: "This is the fork, and it is the one most pages skip. Stay inside walking distance of the hall and the last train stops mattering entirely \u2014 you leave on foot, at your own pace, and the clock this guide is built around does not apply to you. Stay further along the line and you get a neighbourhood with more in it, at the price of being governed by a departure time. Neither is the right answer in general. What the venue\u0027s own access page does tell you is that the nearest station is under pressure on a full night: it asks readers coming from Seoul and the Suwon or Anyang direction to get off a stop early at Guro, and readers from the Incheon or Bucheon direction to do the same at Gaebong. That is advice about arriving, and it is the operator\u0027s own, so take it as what it is \u2014 evidence that Guil does not clear quickly, not a verdict on the area.",
         pitfall:
-          "Treating the nearest station as the centre of things. Guil is a three-minute walk from the dome and is the station the venue steers full-night crowds away from \u2014 the short walk and the good base are different questions with different answers.",
+          "Taking \u0022closest\u0022 and \u0022best\u0022 to be the same question. They are different questions, and this page cannot answer the second one for you \u2014 what is around a station is not something either of its sources describes, and it is not something anybody here has walked.",
         takes: "5 minutes",
       },
       {
         title: "Check the last train for your station, and do not trust a round number",
-        body: "Seoul\u0027s tourism service puts the system at roughly 5:30 in the morning until midnight. That is the right shape and it is not a plan: \u0022around midnight\u0022 is a range, and the last train from the station you will actually be standing in, on your line, on the day of the week your show falls on, is one specific time that can sit either side of it. Look it up for that station before you book the room, not on the day. If the gap between the end of your show and that time is under an hour, you are booking a taxi whether or not you have decided to.",
+        body: "If you chose to ride home, this is your deadline; if you chose to walk, skip it, and that exemption is most of what a room near the hall is buying. Seoul\u0027s tourism service puts the system at roughly 5:30 in the morning until midnight. That is the right shape and it is not a plan: \u0022around midnight\u0022 is a range, and the last train from the station you will actually be standing in, on your line, on the day of the week your show falls on, is one specific time that can sit either side of it. Look it up for that station before you book the room, not on the day. If the gap between the end of your show and that time is under an hour, you are booking a taxi whether or not you have decided to.",
         pitfall:
           "This guide does not print the times, and that is deliberate rather than lazy. A timetable copied into a page is correct until it is quietly not, and a stale time read as current is worse than no time at all \u2014 it is the failure this whole site exists to stop, and a train you planned around is a harsher place to meet it than a rebranded website.",
         takes: "10 minutes, before you book",
@@ -3313,9 +3313,9 @@ export const guides: Guide[] = [
       },
       {
         title: "Price the failure before you book, because it is a known number",
-        body: "Missing the last train is not a disaster, it is a fare, and you can know it in advance. Seoul\u0027s published taxi rates start at 4,800 won covering the first 1.6 kilometres for a regular cab, then 100 won per 131 metres; a deluxe or jumbo cab starts at 7,000 won for the first 3 kilometres, then 200 won per 151 metres. Put your candidate hotel and the venue into that and you have the real cost of the room being further away than it looked. Sometimes the answer is that the cheaper room plus one taxi still wins, and that is a decision rather than a surprise.",
+        body: "Missing the last train is not a disaster, it is a fare, and you can know it in advance \u2014 but not the fare most pages quote. Seoul\u0027s published rates start at 4,800 won for the first 1.6 kilometres in a regular cab, then 100 won per 131 metres, and 7,000 won for the first 3 kilometres in a deluxe or jumbo, then 200 won per 151 metres. **Those are the daytime numbers, and a concert crowd is never in a daytime taxi.** The same table carries a late-night surcharge, and the windows land exactly on the end of a show: from 22:00 to 23:00 the distance charge is 120 won per 131 metres, from 23:00 to 02:00 it is 140, and a deluxe runs at 240 won per 151 metres right through from 22:00 to 04:00. So price the ride you will actually take, which is the surcharged one.",
         pitfall:
-          "Assuming a taxi is simply available outside a hall that has just emptied twenty-five thousand people onto one road. The fare is the easy part of that problem.",
+          "Assuming a taxi is simply available outside a hall that has just emptied a cultural-event crowd of about twenty-five thousand onto one road. The fare is the easy part of that problem.",
         takes: "5 minutes",
       },
       {
@@ -3330,21 +3330,21 @@ export const guides: Guide[] = [
         },
       },
       {
-        title: "Pick the station first, then look at what is around it",
-        body: "The venue\u0027s own access page names four stations, and that list is what makes \u0022no transfer\u0022 a checkable claim rather than a sales line: Guil, Gaebong and Guro are all on Line 1, the line that serves the dome, and Sindorim is on Lines 1 and 2 \u2014 which makes it the one that also works without a transfer if your other plans sit on Line 2. Guil is the three-minute walk. Gaebong is about fifteen minutes, or the 06 village bus. Guro is about twenty minutes on foot, or buses 5712 and 5626, and it is the stop the venue itself suggests to anyone arriving from the Seoul, Suwon or Anyang direction. Sindorim is three stops away by bus with ten routes running. Choose which of those four you want to walk out of at the end of the night, and search for a room around that station rather than around the hall.",
+        title: "If you are walking home, these are the four stations the venue names",
+        body: "This is the walk-home half of the fork, and it is the half this page can actually source. The venue\u0027s own access page names four stations, and all four sit in its own district: Guil is the three-minute walk, Gaebong about fifteen minutes or the 06 village bus, Guro about twenty minutes or buses 5712 and 5626 \u2014 and Guro is the stop the venue itself suggests to anyone arriving from the Seoul, Suwon or Anyang direction. Sindorim is the odd one: it is on Lines 1 and 2, which makes it the only one of the four that connects to Line 2 without changing trains, but reaching the dome from it means a bus, three stops, with ten routes running. Pick which of those you want to walk or ride out of at the end of the night, and search around that station rather than around the hall.",
         pitfall:
-          "Reading this list as a ranking. It is the venue\u0027s four, in its own words, and the right one depends on the direction you are coming from and where the rest of your trip is \u2014 which is exactly why this page will not pick for you.",
+          "Reading this as a ranking, or as the whole answer. It is the venue\u0027s four, in its own words, listed by walking distance because that is the only ordering its source supports \u2014 not by how good a night you will have. And it is deliberately not a list of places further along Line 1, which is the other honest option from step 3: no source this page can reach publishes one, so rather than invent it, this page tells you the rule and leaves you to apply it on a map.",
         takes: "10 minutes",
         partner: [
-          { id: "klook", area: "guil", text: "Stays near Guil Station \u2014 the three-minute walk" },
-          { id: "klook", area: "gaebong", text: "Stays near Gaebong Station \u2014 about fifteen minutes" },
+          { id: "klook", area: "guil", text: "Stays near Guil Station \u2014 closest, and no train home" },
+          { id: "klook", area: "gaebong", text: "Stays near Gaebong Station \u2014 about fifteen minutes on foot" },
           { id: "klook", area: "guro", text: "Stays near Guro Station \u2014 the venue\u0027s own suggested alternative" },
-          { id: "klook", area: "sindorim", text: "Stays near Sindorim Station \u2014 also on Line 2" },
+          { id: "klook", area: "sindorim", text: "Stays near Sindorim Station \u2014 the one that also reaches Line 2" },
         ],
       },
       {
         title: "Know why this page names no hotels",
-        body: "The links in the previous step are searches around a named station, and that is the whole of what they claim. They are paid, they are tagged, and they rank nothing. Three reasons this page stops there. We cannot check a hotel: nobody here has stayed in any of them, and this site does not call a thing verified until a person has walked it. The ratings are not ours: a star average belongs to the platform that collected it, and republishing somebody else\u0027s score as our recommendation would be passing off data we cannot stand behind. And a hotel is the fastest-rotting claim this site could make: management changes, a refurbishment closes a floor, a good year becomes a bad one, and every guide here carries a date precisely so a reader can tell how old a claim is. Twenty hotels would be twenty re-checks a cycle, and a list nobody re-checks is exactly the stale guide this site was built against. A station and a last train do not rot \u2014 which is also why the links point at stations rather than at a list we would have to keep alive.",
+        body: "The links in the previous step are searches around a named station, and that is the whole of what they claim \u2014 not a ranking, not a shortlist, and not a judgement that the venue\u0027s district is where you ought to be. They are paid, they are tagged, and they rank nothing. Three reasons this page stops there. We cannot check a hotel: nobody here has stayed in any of them, and this site does not call a thing verified until a person has walked it. The ratings are not ours: a star average belongs to the platform that collected it, and republishing somebody else\u0027s score as our recommendation would be passing off data we cannot stand behind. And a hotel is the fastest-rotting claim this site could make: management changes, a refurbishment closes a floor, a good year becomes a bad one, and every guide here carries a date precisely so a reader can tell how old a claim is. Twenty hotels would be twenty re-checks a cycle, and a list nobody re-checks is exactly the stale guide this site was built against. A station and a last train do not rot \u2014 which is also why the links point at stations rather than at a list we would have to keep alive.",
         pitfall:
           "Reading a confident, undated hotel ranking as research. Ask when it was checked and who checked it \u2014 of this page too, where the date is at the top.",
         takes: "2 minutes",
@@ -3353,11 +3353,11 @@ export const guides: Guide[] = [
     faq: [
       {
         q: "So which hotel should I actually book?",
-        a: "One on the venue\u0027s line, far enough along it to be somewhere you want to be, and close enough to a station on that line that the walk at the end is short. For a Gocheok show that means Line 1. Apply the filter on whichever booking site you already use \u2014 the rule is the part this page can stand behind, and the inventory changes weekly.",
+        a: "This page will not pick one. The rule it can stand behind is: decide first whether you are walking home or riding home, then stay either inside walking distance of the hall or on the venue\u0027s line \u2014 Line 1 for a Gocheok show \u2014 close enough to a station that the last walk is short. Apply that on whichever booking site you use. The four paid links here cover the walking-distance half only, because that is the half the venue publishes stations for.",
       },
       {
         q: "Is it better to stay right next to the venue?",
-        a: "Usually not, and Gocheok is the example. The venue\u0027s own access page spends its advice on routing arrivals away from the nearest station on busy nights, and the hall sits in an area built around the hall rather than around visitors. The short walk is real and it is the smallest part of the evening.",
+        a: "It depends which problem you are solving, and the honest answer is that it buys one specific thing: inside walking distance you take no train home, so the last train \u2014 the deadline this whole page is built on \u2014 stops applying to you. What it costs is a district the venue\u0027s own access page is busy routing arrivals away from on a full night. That advice is about arriving rather than about the area, and what the area is actually like to stay in is not something either source here describes.",
       },
       {
         q: "What happens if the show overruns and I miss the last train?",
@@ -3380,8 +3380,13 @@ export const guides: Guide[] = [
       },
       {
         label:
-          "Visit Seoul (Seoul Metropolitan Government) \u2014 Transportation: subway operating hours and published taxi fares",
+          "Visit Seoul (Seoul Metropolitan Government) \u2014 Transportation: subway operating hours, published taxi fares and the late-night surcharge",
         url: "https://english.visitseoul.net/transportation",
+      },
+      {
+        label:
+          "\uC11C\uC6B8\uC2DC\uC124\uACF5\uB2E8 \uACE0\uCC99\uC2A4\uCE74\uC774\uB3D4 \u2014 \uC774\uC6A9\uC548\uB0B4: the 25,000 cultural-event capacity this page quotes",
+        url: "https://www.sisul.or.kr/open_content/skydome/guidance/dome.jsp",
       },
     ],
   },

@@ -650,6 +650,10 @@ export const guides: Guide[] = [
         pitfall:
           "Buying on a general marketplace to save money and then discovering it did not count is the standard version of this mistake.",
         takes: "5 minutes",
+        see: {
+          slug: "weverse-shop-vs-ktown4u",
+          text: "The two shops most readers are choosing between, side by side",
+        },
       },
       {
         title: "Check whether the seller reports to the Korean charts",
@@ -3353,6 +3357,158 @@ export const guides: Guide[] = [
       {
         label: "TicketLink Global \u2014 home, where the operator and the category list are published",
         url: "https://www.ticketlink.co.kr/global/en/home",
+      },
+    ],
+  },
+  {
+    slug: "weverse-shop-vs-ktown4u",
+    ko: "\uCD08\uB3D9",
+    art: "album-stack",
+    name: "Shop or Ktown4u",
+    koLine: "\uC704\uBC84\uC2A4\uC0F5 vs \uCF00\uC774\uD0C0\uC6B4\uD3EC\uC720 \u2014 \uB458 \uB2E4 \uD55C\uD130\uC5D0 \uC7A1\uD799\uB2C8\uB2E4",
+    title: "Weverse Shop or Ktown4u: the comparison nobody writes, because both pages are about one store",
+    summary:
+      "They both report to Hanteo, so the chart question does not decide it. What decides it is which store has your release, whose clock you can meet, and \u2014 more than either \u2014 which one publishes the thing you need to know.",
+    glyph: "parcel",
+    status: "sourced",
+    lastChecked: "2026-10-21",
+    scope:
+      "A head-to-head on the two shops an overseas fan actually chooses between for a Korean album. It is assembled from claims this site checked on 21 October 2026 against Hanteo\u0027s certified-store register and each shop\u0027s own notices, which is why it carries that date rather than today\u0027s: the comparison is new, the facts in it are not re-checked. It covers chart reporting, catalogue, payment deadlines, where cost appears, shipping refusals and support hours. It does not rank them on price or speed, because neither is a property of the shop \u2014 both depend on your country, your release and the week.",
+    readMinutes: 8,
+    platforms: ["Weverse Shop", "Ktown4u", "Hanteo"],
+    intro: [
+      "This site has a guide to ordering from Weverse Shop and a guide to ordering from Ktown4u, and neither mentions the other once. That is fine for a reader who has already chosen, and useless for the much larger number who have not.",
+      "The answer is not the one most threads give. Both shops are Hanteo-certified, so the chart argument that usually settles this is not an argument at all. What actually separates them is narrower and stranger: they publish different things, and the gaps are not in the same places.",
+    ],
+    steps: [
+      {
+        title: "Settle the chart question first, because it is the one people get wrong",
+        body: "The common belief is that buying from the official shop counts and buying from a reseller does not. For these two it is simply false, and it is checkable rather than a matter of trust. Hanteo publishes its certified Family stores with a code each: Ktown4U is HF0082KTU001 and Weverse is HF0082BTS001. Hanteo also requires every online Family store to display the Family mark in its footer, linked back to hanteochart.com, so the shop and the register confirm each other from both ends. Certification is reissued each year, so check the code rather than take it from this page.",
+        pitfall:
+          "Choosing the more expensive shop to protect a chart contribution that was never at risk. If the chart is the whole reason you are paying more, you are paying for something you already had.",
+        takes: "5 minutes",
+        see: {
+          slug: "buy-k-pop-albums-from-overseas",
+          text: "What the chart actually counts, and what it does not",
+        },
+      },
+      {
+        title: "Ask which store has your release before you compare anything else",
+        body: "This decides more orders than price does, and it is asymmetric. Ktown4u is a general retailer and carries releases across labels. Weverse Shop is not one store at all: there is a GLOBAL shop and there are region shops, they carry different stock, they run different pre-order windows and they ship from different places. An item a fan in another country ordered may not exist in yours. So the comparison is often not Weverse against Ktown4u \u2014 it is Ktown4u against whichever Weverse Shop you happen to be in.",
+        pitfall:
+          "Reading a pre-order deadline off somebody else\u0027s Weverse Shop. A cut-off in one store tells you nothing about the others, and the inclusions are tied to the window rather than to the album.",
+        takes: "10 minutes",
+        see: {
+          slug: "order-from-weverse-shop-overseas",
+          text: "Working out which Weverse Shop you are in",
+        },
+      },
+      {
+        title: "Know whose clock you have to meet",
+        body: "Ktown4u publishes one and it is short. An unpaid order is cancelled automatically six hours after it is placed \u2014 cut from twenty-four, effective 19 February 2025 KST. For a fan ordering at midnight in Europe or the Americas, six Korean hours can pass entirely while asleep, and a pre-order placed but not paid is a pre-order that was never placed. Weverse Shop publishes no equivalent deadline in the notices this site reads, which is not the same as there being none. The asymmetry is the practical point: one shop tells you how long you have.",
+        pitfall:
+          "Placing a Ktown4u pre-order to secure it and paying in the morning. That is the one habit the six-hour rule exists to defeat, and it defeats it silently \u2014 nothing alerts you, the order is simply gone.",
+        takes: "5 minutes",
+        see: {
+          slug: "ktown4u-ordering-shipping-and-fees",
+          text: "The six-hour clock, and the other Ktown4u rules under it",
+        },
+      },
+      {
+        title: "Expect the cost to appear in different places",
+        body: "Neither shop\u0027s product page is the price you pay, and they diverge after that. Since 3 February 2026 Weverse calculates tax from your shipping and billing address: orders to Korea show tax-inclusive prices throughout, orders anywhere else show the price without tax and add the destination\u0027s tax at checkout once an address is entered. Ktown4u\u0027s additions land later and land differently \u2014 it raised international shipping by 7% effective 1 February 2026, and for US shipments since 2 June 2025 it applies a USD 12 charge where duties are owed and were not prepaid electronically, collected from the recipient at delivery.",
+        pitfall:
+          "Comparing two carts. Weverse has already added the tax by then and Ktown4u has not yet added the twelve dollars, so the cart that looks cheaper at checkout is not reliably the one that costs less at the door.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Check which one will ship to you, in the form each of them says it",
+        body: "Both refuse some destinations and they announce it differently. Weverse maintains a list of countries and regions it cannot ship to from South Korea; the 15 July 2026 revision names Myanmar, the Democratic Republic of the Congo, Iraq, Iran, Lebanon, Mali, Russia, Andorra, Ukraine, Belarus, Afghanistan, the Netherlands Antilles, Israel and Turkey. Ktown4u does it per method rather than per country: it suspended K-Packet to Germany and Spain from 17 January 2025 when those postal operators left the arrangement it runs on, and it publishes disruptions down to individual postal codes. One list tells you whether you can order at all; the other tells you whether the method you used last time still exists.",
+        pitfall:
+          "Assuming a country that appears on neither list is clear. Ktown4u\u0027s stated handling when a method is withdrawn is to email affected customers about moving to another service and the extra cost \u2014 so an order already placed can change price after the fact.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Read the payment lists, and notice that only one shop has them",
+        body: "Weverse publishes what you can pay with, per currency, and the lists are not the same length. USD gets PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay and Grab Pay. JPY gets that list without Grab Pay. CNY drops PayPal. MXN is the shortest at two \u2014 PayPal and Apple Pay, both digital, no cash option. KRW adds Korean cards and the Korean wallets. Your default currency therefore decides your buttons before you reach checkout. Ktown4u publishes no comparable list in its notices, so what it accepts has to be read off its own checkout.",
+        pitfall:
+          "Setting a currency for the price rather than for the payment method. If neither of a short list is set up for you, there is no third button at checkout and no workaround at that point.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Work out who you can reach when it goes wrong, and when",
+        body: "Ktown4u states its hours: customer service on weekdays 10:00 to 17:00 KST since 1 November 2023, with a lunch break from 12:30 to 13:30. That is five and a half hours on Korean weekdays, which for most readers here is the middle of the night, and it compounds with the six-hour payment clock \u2014 an order placed on a Friday evening in Europe can expire before anyone is at a desk. It also pauses both despatch and support over Korean holidays and publishes the dates each time. Weverse Shop does not publish support hours in the same place; its cancellation behaviour is the better-documented half and has a guide of its own here.",
+        pitfall:
+          "Treating a Korean public holiday as a delivery delay. Ktown4u pauses support across the same days, so the week you most want to ask about a parcel is the week nobody answers.",
+        takes: "10 minutes",
+        see: {
+          slug: "weverse-shop-shipping-delays-and-cancellation",
+          text: "When a Weverse Shop order can still be cancelled",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Does a Ktown4u order count toward the Korean charts, or do I have to buy from Weverse?",
+        a: "Both count. Hanteo lists both as certified Family stores \u2014 Ktown4U as HF0082KTU001 and Weverse as HF0082BTS001 \u2014 and requires each to show the Family mark in its footer linked back to the register. Certification is reissued each year, so confirm the code on hanteochart.com rather than taking it from here.",
+      },
+      {
+        q: "Which one is cheaper?",
+        a: "Neither, as a property of the shop. What the album costs you depends on your country, the release and the week: Weverse adds your destination\u0027s tax at checkout, Ktown4u raised international shipping 7% in February 2026 and adds USD 12 on US deliveries where duties were not prepaid. Compare the landed cost for your address on the day, not the two product pages.",
+      },
+      {
+        q: "Which one ships faster?",
+        a: "Not answerable in general, and the question that is answerable matters more: which methods still run to your country. Ktown4u withdraws shipping methods by country \u2014 K-Packet to Germany and Spain from January 2025 \u2014 and publishes disruptions down to postal codes, while Weverse publishes a list of destinations it cannot ship to at all. Check the current notice for your country before comparing delivery estimates.",
+      },
+      {
+        q: "Can I just order the same album from both?",
+        a: "You can, and it is a real strategy for pre-order inclusions, which are tied to the window and often to the specific retailer rather than to the album. Price it as two landed costs rather than two album prices, and remember the inclusions stop when the window closes, not when the album is released.",
+      },
+      {
+        q: "I am in the United States. Does that change the answer?",
+        a: "It changes one line of it. Since 2 June 2025 Ktown4u applies a USD 12 charge on US shipments where duties, taxes or other government charges are owed and were not prepaid electronically before delivery, billed to the recipient at the door. Ktown4u publishes the way out as well: prepay through UPS\u0027s import duties and taxes system. That is a flat addition to compare against whatever tax Weverse adds at your checkout.",
+      },
+      {
+        q: "Why does this page compare so few things?",
+        a: "Because the rest is not published. The honest finding of putting the two side by side is that they document different halves: Ktown4u states its payment deadline, its support hours and its per-country shipping changes; Weverse states its payment methods per currency, its tax behaviour and its shipping exclusions. Where a shop does not publish something this page says so instead of estimating it, which is why there is no speed ranking and no price verdict.",
+      },
+    ],
+    sources: [
+      {
+        label: "Hanteo Chart \u2014 certified Family stores, where Ktown4U is HF0082KTU001 and Weverse is HF0082BTS001",
+        url: "https://www.hanteochart.com/en/family/search",
+      },
+      {
+        label: "Hanteo Chart \u2014 Family store guide: the footer mark, and the instruction to check the code",
+        url: "https://www.hanteochart.com/en/family/guide",
+      },
+      {
+        label: "Weverse Shop \u2014 tax calculated from the shipping and billing address, 3 February 2026",
+        url: "https://shop.weverse.io/en/notices/12149",
+      },
+      {
+        label: "Weverse Shop \u2014 countries and regions Korea cannot ship to, revised 15 July 2026",
+        url: "https://shop.weverse.io/en/notices/216",
+      },
+      {
+        label: "Ktown4u \u2014 unpaid orders cancelled after six hours, effective 19 February 2025",
+        url: "https://www.ktown4u.com/notices/7001",
+      },
+      {
+        label: "Ktown4u \u2014 the USD 12 charge on US deliveries where duties were not prepaid, from 2 June 2025",
+        url: "https://www.ktown4u.com/notices/7123",
+      },
+      {
+        label: "Ktown4u \u2014 international shipping raised 7%, effective 1 February 2026",
+        url: "https://www.ktown4u.com/notices/7360",
+      },
+      {
+        label: "Ktown4u \u2014 K-Packet suspended to Germany and Spain from 17 January 2025",
+        url: "https://www.ktown4u.com/notices/6960",
+      },
+      {
+        label: "Ktown4u \u2014 the notices page, which is the live version of all of the above",
+        url: "https://www.ktown4u.com/notices",
       },
     ],
   },

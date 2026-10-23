@@ -63,6 +63,7 @@ const FIXED = [
   // all 404, while /global/en 302s to /global/en/home and answers 200.
   ["tketlink.dn.toastoven.net", "TicketLink's CDN. The global site renders nothing without it -- a headless load fails 14 requests to this host and leaves a blank page, which reads as a block and is not one"],
   ["cdn.nhnace.com", "NHN asset and bot-protection host, loaded by every TicketLink page"],
+  ["mapi.ticketlink.co.kr", "TicketLink's content API. The global site is a single-page app that renders nothing until this answers, so allowing the CDN alone still gives a blank page"],
   ["www.klook.com", "Where the Klook affiliate link lands. affiliate.klook.com derives from the register; this does not, because the destination sits percent-encoded inside that URL — so without this line nothing here can check that the one paid link on the site reaches a real page"],
   ["kogl.or.kr", "\uacf5\uacf5\ub204\ub9ac apex — the licence the reproduced venue chart is served under"],
   ["www.juso.go.kr", "Korean address lookup — shipping and billing fields"],

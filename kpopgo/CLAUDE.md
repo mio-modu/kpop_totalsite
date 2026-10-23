@@ -1033,10 +1033,11 @@ defects were real and only one of them needed query data:
   so those titles are `Hindi maka-login` and `Não consigo entrar` now. No
   query data was needed: the defect is visible in the text.
 
-The other twelve were left alone. `kuwalipikado`, `o que zera o seu lugar
-nela` and `ang perang ipinambabayad mo` are good writing, and rewriting them
-to hit queries nobody has measured would be invention wearing the clothes of
-optimisation — the same mistake as writing a thin page for a gap that was
+Of the thirty-eight titles across the two editions, four were rewritten
+earlier and seven here; the other twenty-seven were left alone.
+`kuwalipikado`, `o que zera o seu lugar nela` and `ang perang ipinambabayad
+mo` are good writing, and rewriting them to hit queries nobody has measured
+would be invention wearing the clothes of optimisation — the same mistake as writing a thin page for a gap that was
 really a findability problem, recorded two sections above. **An audit's count
 is a hypothesis about how many titles are wrong, not a quota to fill.**
 

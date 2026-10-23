@@ -83,8 +83,42 @@ export type Step = {
    * It goes in only where the thing would have been named anyway. If a step
    * had to be invented to hold it, it does not belong.
    */
-  partner?: { id: string; text: string };
+  /**
+   * One paid link, or several where the step genuinely offers a choice.
+   *
+   * It was a single link, because a step that names one thing has one link.
+   * The accommodation step is the case that is not like that: the reader's
+   * decision is *which station*, four of them are equally valid answers from
+   * the venue's own page, and picking one to monetise would be the commission
+   * choosing the advice — which is the rule this file already refuses to
+   * break. Several links, each to a different real destination, is the honest
+   * shape of "here are your options".
+   *
+   * It is not a licence to stack links on a step that names one thing. The
+   * test for a second link is the test for the first: the reader would have
+   * been sent there anyway.
+   */
+  partner?: StepPartner | StepPartner[];
 };
+
+export type StepPartner = {
+  id: string;
+  text: string;
+  /**
+   * Which of that partner's areas this link goes to.
+   *
+   * Omitted, the link is the partner's site-wide destination. Named, it must
+   * exist in `content/affiliates.ts` — the module-scope check below fails the
+   * build otherwise, for the same reason an unregistered partner does: a
+   * paid link that quietly falls back to a generic destination is a link that
+   * says one thing and does another, and nothing on the page would show it.
+   */
+  area?: string;
+};
+
+/** A step's paid links, however many it declares. */
+export const stepPartners = (step: Step): StepPartner[] =>
+  step.partner ? (Array.isArray(step.partner) ? step.partner : [step.partner]) : [];
 
 /**
  * A document from somebody else, reproduced on the page.
@@ -3296,8 +3330,21 @@ export const guides: Guide[] = [
         },
       },
       {
+        title: "Pick the station first, then look at what is around it",
+        body: "The venue\u0027s own access page names four stations, and that list is what makes \u0022no transfer\u0022 a checkable claim rather than a sales line: Guil, Gaebong and Guro are all on Line 1, the line that serves the dome, and Sindorim is on Lines 1 and 2 \u2014 which makes it the one that also works without a transfer if your other plans sit on Line 2. Guil is the three-minute walk. Gaebong is about fifteen minutes, or the 06 village bus. Guro is about twenty minutes on foot, or buses 5712 and 5626, and it is the stop the venue itself suggests to anyone arriving from the Seoul, Suwon or Anyang direction. Sindorim is three stops away by bus with ten routes running. Choose which of those four you want to walk out of at the end of the night, and search for a room around that station rather than around the hall.",
+        pitfall:
+          "Reading this list as a ranking. It is the venue\u0027s four, in its own words, and the right one depends on the direction you are coming from and where the rest of your trip is \u2014 which is exactly why this page will not pick for you.",
+        takes: "10 minutes",
+        partner: [
+          { id: "klook", area: "guil", text: "Stays near Guil Station \u2014 the three-minute walk" },
+          { id: "klook", area: "gaebong", text: "Stays near Gaebong Station \u2014 about fifteen minutes" },
+          { id: "klook", area: "guro", text: "Stays near Guro Station \u2014 the venue\u0027s own suggested alternative" },
+          { id: "klook", area: "sindorim", text: "Stays near Sindorim Station \u2014 also on Line 2" },
+        ],
+      },
+      {
         title: "Know why this page names no hotels",
-        body: "Three reasons, and all three are the same reason. We cannot check them: nobody here has stayed in any of them, and this site does not call a thing verified until a person has walked it. The ratings are not ours: a star average belongs to the platform that collected it, and republishing somebody else\u0027s score as our recommendation would be passing off data we cannot stand behind. And a hotel is the fastest-rotting claim on this site: management changes, a refurbishment closes a floor, a good year becomes a bad one, and every guide here carries a date precisely so that a reader can tell how old a claim is. A list of twenty hotels would need twenty re-checks on every cycle, and a list nobody re-checks is exactly the stale guide this site was built against. The line and the last train do not rot.",
+        body: "The links in the previous step are searches around a named station, and that is the whole of what they claim. They are paid, they are tagged, and they rank nothing. Three reasons this page stops there. We cannot check a hotel: nobody here has stayed in any of them, and this site does not call a thing verified until a person has walked it. The ratings are not ours: a star average belongs to the platform that collected it, and republishing somebody else\u0027s score as our recommendation would be passing off data we cannot stand behind. And a hotel is the fastest-rotting claim this site could make: management changes, a refurbishment closes a floor, a good year becomes a bad one, and every guide here carries a date precisely so a reader can tell how old a claim is. Twenty hotels would be twenty re-checks a cycle, and a list nobody re-checks is exactly the stale guide this site was built against. A station and a last train do not rot \u2014 which is also why the links point at stations rather than at a list we would have to keep alive.",
         pitfall:
           "Reading a confident, undated hotel ranking as research. Ask when it was checked and who checked it \u2014 of this page too, where the date is at the top.",
         takes: "2 minutes",
@@ -3358,12 +3405,28 @@ for (const guide of guides) {
     // A paid link pointing at a partner that is not on the public register
     // would be an undisclosed paid link, which is the one failure here that
     // is not recoverable. Fail the build rather than ship it.
-    if (step.partner && !partners.some((x) => x.id === step.partner!.id)) {
-      throw new Error(
-        `${guide.slug} → step "${step.title}" has a paid link to an unknown ` +
-          `partner: ${step.partner.id}. Every paid link must be declared in ` +
-          `content/affiliates.ts, which is what /editorial-policy publishes.`,
-      );
+    for (const link of stepPartners(step)) {
+      const partner = partners.find((x) => x.id === link.id);
+      if (!partner) {
+        throw new Error(
+          `${guide.slug} → step "${step.title}" has a paid link to an unknown ` +
+            `partner: ${link.id}. Every paid link must be declared in ` +
+            `content/affiliates.ts, which is what /editorial-policy publishes.`,
+        );
+      }
+      // An area that does not exist would fall back to the partner's site-wide
+      // destination, which is the quiet version of the same failure: the link
+      // says "near Guro Station" and sends the reader to a search for Seoul.
+      // Nothing on the page would show it and no test of the rendering would
+      // catch it, because a perfectly good paid link is what gets rendered.
+      if (link.area && !partner.areas?.some((a) => a.id === link.area)) {
+        throw new Error(
+          `${guide.slug} → step "${step.title}" names the area ` +
+            `"${link.area}" on partner ${link.id}, which has no such area in ` +
+            `content/affiliates.ts. A paid link that falls back to a generic ` +
+            `destination says one thing and does another.`,
+        );
+      }
     }
   }
 }

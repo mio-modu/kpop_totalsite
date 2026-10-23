@@ -907,14 +907,39 @@ timetable copied into a guide stays confident after it stops being true, and a
 reader stranded on a platform is a worse place to meet a stale fact than a
 renamed website is. The page teaches where to look instead.
 
-**It carries no paid link**, though it is the most obviously monetisable page
-on the site and the register already holds a hotel partner. The rule says a
-link goes where the thing would have been named anyway, and the Play&Stay link
-qualifies because that guide creates a specific gap — nights the package will
-not contain. This guide creates no such gap; it argues that no one here can
-responsibly point at a hotel. A booking link underneath that argument would be
-taking the position the page just declined to take, which costs more than the
-commission is worth.
+**It carries four paid links, and what they point at is the whole design.**
+The first draft had none, on the reasoning that a booking link under an
+argument that nobody here can responsibly point at a hotel would be taking the
+position the page had just declined to take. That reasoning was right about
+hotels and wrong about the page: the reader's actual decision is *which
+station*, and a link to live inventory around a named station takes no position
+on any hotel at all.
+
+So the links are per station, and the stations are not chosen editorially —
+they are the four the venue's own access page names, which is what makes "no
+transfer" a sourced claim rather than a sales line. All four are on the line
+that serves the dome and Sindorim is on Line 2 as well. Four rather than one,
+because picking one to monetise would be the commission choosing the advice,
+which is the rule this would otherwise break.
+
+`Step.partner` takes one link or a list for this reason, and that generalisation
+is not a licence to stack links on a step that names one thing: the test for a
+second link is the test for the first — the reader would have been sent there
+anyway.
+
+**Two things about a per-area link fail in total silence**, because what
+renders either way is an ordinary, correctly disclosed paid link. One costs
+money: an area URL that loses `aid` or `aff_adid` earns nothing, and nobody
+finds out until somebody reads a dashboard. The other costs trust, which is
+worse: a link reading "near Guro Station" that searches for somewhere else.
+`scripts/affiliate.test.mjs` holds the attribution of every area URL against
+the partner's own, holds each area's `query` against its `label`, and holds the
+visible link text against the area it points at. All four failures were proved
+by planting them.
+
+The registry carries `query` as a field of its own precisely so that last
+comparison is possible — a doubly-encoded redirect URL is not something anyone
+checks by eye.
 
 ## Advertising
 

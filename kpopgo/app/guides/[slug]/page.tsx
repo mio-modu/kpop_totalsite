@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getGuide, guides, jamo } from "@/content/guides";
+import { getGuide, guides, jamo, stepPartners } from "@/content/guides";
 import { reportsFor } from "@/content/reports";
 import { guideJsonLd } from "@/lib/jsonld";
 import { translationsFor } from "@/content/translations";
@@ -212,9 +212,14 @@ export default async function GuidePage({
                     <p className="t-sm mt-1.5">{step.pitfall}</p>
                   </div>
                 ) : null}
-                {step.partner ? (
-                  <AffiliateLink id={step.partner.id} text={step.partner.text} />
-                ) : null}
+                {stepPartners(step).map((link) => (
+                  <AffiliateLink
+                    key={`${link.id}:${link.area ?? ""}`}
+                    id={link.id}
+                    text={link.text}
+                    area={link.area}
+                  />
+                ))}
                 {step.see ? (
                   <p className="carry">
                     <Link href={`/guides/${step.see.slug}`}>

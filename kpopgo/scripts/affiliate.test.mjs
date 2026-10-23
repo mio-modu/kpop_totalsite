@@ -70,7 +70,17 @@ test("every paid link in the content names a registered partner", () => {
   const declared = new Set(
     [...REGISTRY.matchAll(/^\s{4}id: "([^"]+)",$/gm)].map((m) => m[1]),
   );
-  const used = [...GUIDES.matchAll(/partner: \{ id: "([^"]+)"/g)].map((m) => m[1]);
+  // Both shapes. The first version of this matched `partner: { id: "…"` only,
+  // and a step may now declare a list — so the day the accommodation step
+  // landed with four links, this check would have gone on reporting a pass
+  // having read none of them. That is the same failure the translation suite
+  // already records: a check scoped to one shape stops existing when the
+  // second arrives.
+  const used = [
+    ...GUIDES.matchAll(/partner: \{ id: "([^"]+)"/g),
+    ...GUIDES.matchAll(/^\s+\{ id: "([^"]+)", area: "[^"]*", text:/gm),
+  ].map((m) => m[1]);
+  assert.ok(used.length > 0, "no paid links found in guides.ts — the patterns have stopped matching");
   for (const id of used) {
     assert.ok(
       declared.has(id),
@@ -94,6 +104,109 @@ test("every registered partner is complete enough to disclose", () => {
       b.match(/checked: "([^"]+)"/)?.[1] ?? "",
       /^\d{4}-\d{2}-\d{2}$/,
       "partner checked date is not YYYY-MM-DD",
+    );
+  }
+});
+
+/**
+ * Areas: the per-place destinations, and the two ways they fail quietly.
+ *
+ * A step may send a reader to one partner at one named station rather than to
+ * that partner's site-wide page. Both things that can go wrong with that are
+ * invisible on the page, because what renders either way is a perfectly
+ * ordinary, correctly disclosed paid link.
+ *
+ * The first costs money: an area URL that loses the affiliate attribution
+ * earns nothing, for as long as nobody thinks to check a dashboard.
+ *
+ * The second costs trust, which is worse: a link that reads "near Guro
+ * Station" and searches for somewhere else. This site's whole claim is that
+ * what it says and what it does are the same thing, and a paid link is the
+ * last place to break it.
+ */
+
+/** Every area block in the registry, as { id, label, query, url }. */
+const areaBlocks = () =>
+  [...REGISTRY.matchAll(/\{\s*\n\s+id: "([^"]+)",\s*\n\s+label: "([^"]+)",\s*\n\s+query: "([^"]+)",\s*\n\s+url: "([^"]+)",/g)].map(
+    (m) => ({ id: m[1], label: m[2], query: m[3], url: m[4] }),
+  );
+
+test("every area a step names is registered", () => {
+  const declared = new Set(areaBlocks().map((a) => a.id));
+  const used = [...GUIDES.matchAll(/\{ id: "[^"]+", area: "([^"]+)"/g)].map((m) => m[1]);
+  assert.ok(used.length > 0, "no area links found in guides.ts — the pattern has stopped matching");
+  for (const id of used) {
+    assert.ok(
+      declared.has(id),
+      `guides.ts sends a paid link to area "${id}", which content/affiliates.ts ` +
+        `does not declare. The link would fall back to a generic destination.`,
+    );
+  }
+});
+
+test("an area link keeps the attribution, or it earns nothing", () => {
+  const main = REGISTRY.match(/url: "(https:\/\/affiliate\.klook\.com[^"]+)"/)?.[1] ?? "";
+  assert.ok(main, "the klook partner url is no longer recognisable");
+  // Whatever identifies this site to the network has to survive into every
+  // per-area URL. Read off the partner's own link rather than hardcoded, so
+  // this keeps working when the ids change.
+  const params = [...main.matchAll(/[?&](aid|aff_adid)=([^&]+)/g)].map((m) => `${m[1]}=${m[2]}`);
+  assert.ok(params.length >= 2, "the partner url no longer carries aid and aff_adid");
+
+  for (const area of areaBlocks()) {
+    for (const p of params) {
+      assert.ok(
+        area.url.includes(p),
+        `area "${area.id}" has lost ${p.split("=")[0]} from its URL. It is a ` +
+          `working link that pays nothing, and nothing on the page shows it.`,
+      );
+    }
+    assert.ok(area.url.startsWith("https://"), `area "${area.id}" url is not https`);
+  }
+});
+
+test("an area searches for what its label says it searches for", () => {
+  for (const area of areaBlocks()) {
+    // The query is stored separately precisely so it can be held against the
+    // destination: an encoded URL is not something anyone reads by eye.
+    //
+    // Decoded until it stops changing, because the destination is nested — the
+    // network's redirect carries the storefront URL as a parameter, so the
+    // query inside it is encoded twice. One `decodeURIComponent` leaves
+    // `Guil%20Station` and the comparison fails on a link that is perfectly
+    // correct, which is how a check like this gets deleted rather than fixed.
+    let decoded = area.url;
+    for (let i = 0; i < 5; i++) {
+      const next = decodeURIComponent(decoded);
+      if (next === decoded) break;
+      decoded = next;
+    }
+    assert.ok(
+      decoded.includes(`query=${area.query}`),
+      `area "${area.id}" declares query "${area.query}" and its URL does not carry it`,
+    );
+    // And the label must be the thing being searched for, not a nicer name
+    // for somewhere else.
+    assert.ok(
+      area.query.toLowerCase().includes(area.label.toLowerCase()),
+      `area "${area.id}" is labelled "${area.label}" but searches "${area.query}"`,
+    );
+  }
+});
+
+test("the visible text of an area link names that area", () => {
+  const links = [...GUIDES.matchAll(/\{ id: "[^"]+", area: "([^"]+)", text: "([^"]+)" \}/g)];
+  assert.ok(links.length > 0, "no area links found in guides.ts — the pattern has stopped matching");
+  const byId = new Map(areaBlocks().map((a) => [a.id, a]));
+  for (const [, id, text] of links) {
+    const area = byId.get(id);
+    if (!area) continue; // covered by the registration test above
+    const station = area.label.replace(/ Station$/, "");
+    assert.ok(
+      text.includes(station),
+      `a paid link to area "${id}" reads "${text}", which does not name ` +
+        `${area.label}. A reader clicking it would land somewhere the text ` +
+        `did not promise.`,
     );
   }
 });

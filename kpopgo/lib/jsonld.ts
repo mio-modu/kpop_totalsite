@@ -56,6 +56,20 @@ export function guideJsonLd(guide: Guide) {
   const faq = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    name: guide.title,
+    url,
+    // The same two dates the HowTo carries, and for a stronger reason than
+    // symmetry. An assistant quoting an answer from here quotes the answer,
+    // not the article around it — so the block that holds the answers is the
+    // block that has to say when the answers were last checked. Without this
+    // the FAQ was the one piece of structured data on the page that looked
+    // timeless, which on a site whose whole claim is "not stale" is the worst
+    // thing for it to look.
+    datePublished: RESEARCH_DATE,
+    dateModified: guide.lastChecked,
+    inLanguage: "en",
+    publisher: { "@id": `${site.url}#org` },
+    isPartOf: { "@id": `${site.url}#site` },
     mainEntity: guide.faq.map((item) => ({
       "@type": "Question",
       name: item.q,

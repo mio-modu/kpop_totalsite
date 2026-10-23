@@ -854,6 +854,55 @@ YES24 note already describes. Those five are link-checked only, by accident
 rather than by the storefront rule. A change in TicketLink's wording will not
 be caught by this repo; it has to be re-read by a person.
 
+## llms.txt, and what an assistant should carry away
+
+`/llms.txt` and `/llms-full.txt` are route handlers derived from the content
+register, not files anybody maintains. The index says what exists; the full
+text carries every English guide with its steps, pitfalls, FAQ and sources.
+
+**They lead with the evidence model rather than with a pitch**, because the
+thing worth telling a model that has already decided to answer a Korean
+ticketing question is not that this site is good. It is that every page here
+carries a status and a date, that a weaker claim expires sooner, and that a
+procedure true on one date is not true today. An assistant that quotes a claim
+from here without its date has reproduced exactly the stale guide this site
+exists to replace, so the file asks for the date in as many words.
+
+The two refusals are stated too — no identity-check workaround, and no claim
+the source does not make — so that a model does not go looking here for either.
+
+Every entry repeats `status` and `lastChecked`, and `llms-full.txt` repeats
+them per guide rather than once at the top: a model lifting one section will
+not carry a header fifty guides away. Both carry `revalidate = 86400` for the
+same reason every page showing a derived status does.
+
+**`llms-full.txt` is derived, and the alternative is why that matters.** A
+version of it built by scraping the rendered pages put the booking graphic's
+decorative SVG labels into all twenty-three sections — `팬클럽 정보와
+일치하지 않습니다`, a sample passport name and date of birth, repeated
+verbatim every time — and replaced the actual steps with the words `Steps:
+Step by step · Questions people ask`. It parsed, it served, and it contained
+none of the procedure. `scripts/llms.test.mjs` asserts the derivation instead:
+both files must import the register, neither may name a guide slug literally,
+both must emit `lastChecked` and `displayStatus`, and `llms-full.txt` must
+carry the pitfalls — the one part of a guide that is not already in the
+platform's own documentation.
+
+It is English only. The translated pages are machine-assisted and say so on
+the page; serving them here as equivalent source text would strip the notice
+that qualifies them.
+
+**What was already there and did not need adding**: the visible last-checked
+date. `components/Badges.tsx` prints it twice above the fold — in the header
+badge beside the status label, and again in the status notice with the age in
+days. A third copy would have been duplication, not coverage.
+
+The FAQ block gained `datePublished` and `dateModified` in the same change.
+The HowTo had carried both since it was written and the FAQPage had neither,
+which was the wrong way round: an assistant quoting an answer quotes the
+answer, not the article around it, so the block holding the answers is the one
+that has to say when they were last checked.
+
 ## Advertising
 
 Slots live in `components/AdSlot.tsx` and render nothing until their ids are

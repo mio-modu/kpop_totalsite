@@ -903,6 +903,43 @@ which was the wrong way round: an assistant quoting an answer quotes the
 answer, not the article around it, so the block holding the answers is the one
 that has to say when they were last checked.
 
+## Three pages measured, one written
+
+An AI-citation audit named three gaps and the right answer was to write one
+of them. Before writing, the existing guides were searched for the terms each
+proposed page would own, and two of the three turned out to be covered
+already:
+
+- **Weverse payment methods.** `order-from-weverse-shop-overseas` spends two
+  of its seven steps on currency and payment (currency ×8, PayPal ×7) and
+  `weverse-membership-renewal-overseas` spends two more. A fourth page would
+  have taken traffic from three that already answer it.
+- **Weverse presale.** `fan-club-presale-checklist` is five steps, all of
+  them that subject (presale ×15, membership ×23).
+- **Weverse Shop against Ktown4u.** Real. The Ktown4u guide names Weverse
+  Shop zero times, the Weverse guide names Ktown4u zero times, and the albums
+  guide names them four and one. Nobody comparing the two had a page.
+
+That measurement is the part worth keeping. A citation audit reports a gap in
+*answers*, and a gap in answers can mean a missing page or a page nobody
+finds — and writing for the first when it is the second adds a thin page and
+takes traffic from a good one.
+
+**The comparison's finding is that the usual answer is wrong.** Both shops are
+Hanteo-certified Family stores — Ktown4U as HF0082KTU001, Weverse as
+HF0082BTS001 — so the chart argument that normally settles this settles
+nothing. What separates them is that they document different halves: Ktown4u
+publishes its payment deadline, its support hours and its per-country shipping
+changes; Weverse publishes its payment methods per currency, its tax behaviour
+and its shipping exclusions. The guide says so rather than inventing a price
+or speed verdict, and its last FAQ exists to say why there is no ranking.
+
+**It carries `lastChecked: 2026-10-21`, not the day it was written.** Every
+fact in it was checked on the 21st for the two guides it draws on; the
+comparison is new, the facts are not re-checked. Dating it today would have
+claimed a check nobody did, which is the one thing this field exists to
+prevent.
+
 ## Advertising
 
 Slots live in `components/AdSlot.tsx` and render nothing until their ids are

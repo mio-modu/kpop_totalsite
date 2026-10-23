@@ -183,6 +183,25 @@ export type Guide = {
   koLine: string;
   /** Full <title> / h1. Written as the query a fan actually types. */
   title: string;
+  /**
+   * The `<title>` when the headline above is too long for a search result.
+   *
+   * These were one field doing two jobs badly. A headline earns its length on
+   * the page — it is the first thing a reader sees and it sets up the guide
+   * — while a search result cuts around 60 characters and discards the rest.
+   * Eighteen of twenty-four were over, and what they lost was the end: the
+   * clause that says why the page is worth opening. "Cancelling a NOL World
+   * ticket: the deadline, the fee, and th…" loses *the money you still
+   * lose*, which is the reason anybody clicks.
+   *
+   * So the headline stays whatever length the page needs, and this is what
+   * search is given. Present only where it is needed; absent, the headline is
+   * used. `scripts/seo.test.mjs` fails the build if a headline that would be
+   * cut has no short form, and if a short form is itself too long — a check
+   * nobody has to remember, because a character count is exactly the kind of
+   * thing that drifts back.
+   */
+  searchTitle?: string;
   /** Meta description + card subtitle. */
   summary: string;
   /** Emoji-free glyph key — mapped to an inline SVG in components/Glyph.tsx */
@@ -888,6 +907,7 @@ export const guides: Guide[] = [
     name: "YES24 Global",
     koLine: "예스24 영문 예매 — 계정·결제·수령",
     title: "YES24 Global ticketing: the rules that are not on the English page",
+    searchTitle: "YES24 Global: the rules not on the English page",
     summary:
       "Your existing YES24 account will not work. PayPal only appears if the show is far enough away. Two card types are refused outright, and the venue checks your passport against the name you signed up with.",
     glyph: "ticket",
@@ -1467,6 +1487,7 @@ export const guides: Guide[] = [
     name: "Verified Member",
     koLine: "NOL World 본인인증 — 여권 촬영과 이름 순서",
     title: "NOL World Verified Member: passing the eKYC check from overseas",
+    searchTitle: "NOL World Verified Member: passing eKYC from overseas",
     summary:
       "Some shows will not let you book at all until your passport has been verified. The check is a live passport-and-face capture, it cannot be redone casually, and the one instruction NOL World gives about timing is the one most people ignore.",
     glyph: "id",
@@ -1614,6 +1635,7 @@ export const guides: Guide[] = [
     name: "Cancel and refund",
     koLine: "예매 취소와 환불 — 마감 시각과 환율 손실",
     title: "Cancelling a NOL World ticket: the deadline, the fee, and the money you still lose",
+    searchTitle: "Cancelling a NOL World ticket: deadline, fee, money lost",
     summary:
       "The cancellation deadline is the afternoon before the show in Korean time, Saturdays are earlier than the rest of the week, and a fully refunded ticket can still cost a foreign cardholder money. Also: sending the ticket to your friend takes the cancel button away.",
     glyph: "card",
@@ -1761,6 +1783,7 @@ export const guides: Guide[] = [
     name: "Mobile ticket",
     koLine: "모바일 티켓과 입장 — QR·PIN·대리수령",
     title: "Your NOL World mobile ticket: the QR, the PIN, and getting through the gate",
+    searchTitle: "NOL World mobile ticket: the QR, the PIN, the gate",
     summary:
       "The ticket only opens on a phone, it is English-only and your browser's auto-translate will mangle it, a sent ticket has a 24-hour PIN clock, and arriving late is not a guaranteed entry. The last twenty minutes of the whole process, in order.",
     glyph: "ticket",
@@ -1901,6 +1924,7 @@ export const guides: Guide[] = [
     name: "Play&Stay",
     koLine: "공연+숙박 패키지 — 하나의 상품, 변경 불가",
     title: "NOL World Play&Stay: one product, and almost nothing about it is changeable",
+    searchTitle: "NOL World Play&Stay: one product, almost nothing changeable",
     summary:
       "A concert and a hotel sold as a single item. You cannot change the hotel, the dates or the nights, skipping the hotel refunds nothing, the seat is random and revealed on the day, and the tickets are handed only to you, in person, at the hotel, inside a window.",
     glyph: "star",
@@ -2064,6 +2088,7 @@ export const guides: Guide[] = [
     name: "Customs and duty",
     koLine: "앨범 주문과 관세 — 면세 기준이 사라진 뒤",
     title: "Customs on a K-pop album order: what changed when duty-free went away",
+    searchTitle: "K-pop album customs: what changed when duty-free went",
     summary:
       "The United States suspended its 800-dollar duty-free threshold and the EU removed its low-value exemption in the same year. A Korean album order is now dutiable from the first dollar, and the only question left is whether you pay at checkout or at the door.",
     glyph: "parcel",
@@ -2225,6 +2250,7 @@ export const guides: Guide[] = [
     name: "Fees and the clock",
     koLine: "예매수수료와 결제 시간 — 8천원, 10분, 7분",
     title: "NOL World checkout: the booking fee, the clock, and the currency you pay in",
+    searchTitle: "NOL World checkout: booking fee, clock, currency",
     summary:
       "A concert ticket carries an 8,000 won service fee, you get ten minutes to choose seats and seven to pay, and the payment window asks you to pick a currency. Three money decisions and one timer, all of them published and none of them obvious.",
     glyph: "card",
@@ -2369,6 +2395,7 @@ export const guides: Guide[] = [
     name: "Account and errors",
     koLine: "계정 찾기와 예매 오류 — 로그인 방식이 전부를 결정합니다",
     title: "Locked out of NOL World: finding the account, and fixing the page that will not open",
+    searchTitle: "Locked out of NOL World: find the account, fix the page",
     summary:
       "Which login you used decides every recovery route, password reset exists only for email signups, and an unverified email can make an account hard to find at all. Plus the booking page errors that are not errors.",
     glyph: "id",
@@ -2527,6 +2554,7 @@ export const guides: Guide[] = [
     name: "Shipping and delays",
     koLine: "위버스샵 배송 지연과 주문 취소 — 상태가 바뀌면 끝입니다",
     title: "Why your Weverse Shop order is late, and when you can still cancel it",
+    searchTitle: "Weverse Shop order late: why, and when you can cancel",
     summary:
       "The cancel button disappears on a status change rather than a deadline, the EU scrapped its 150-euro duty-free limit, the US added a second inspection regime on top of the duty one, and a Korean holiday has a cutoff measured to the minute.",
     glyph: "parcel",
@@ -2683,6 +2711,7 @@ export const guides: Guide[] = [
     name: "The data leak",
     koLine: "위버스 개인정보 유출 — 무엇이 유출됐고, 무엇은 아닌가",
     title: "The Weverse data leak: what actually leaked, and the one risk it creates",
+    searchTitle: "The Weverse data leak: what leaked, and the one risk",
     summary:
       "422,584 accounts, confirmed by Weverse itself. No names, no contact details, no card numbers — an internal identifier and your purchase history. That combination is not a drained account; it is the raw material for a message that knows what you bought.",
     glyph: "id",
@@ -2837,6 +2866,7 @@ export const guides: Guide[] = [
     name: "Ktown4u",
     koLine: "케이타운포유 주문 — 6시간 결제 시한과 배송비",
     title: "Ordering from Ktown4u: the six-hour payment clock and the fees nobody mentions",
+    searchTitle: "Ktown4u orders: the 6-hour payment clock and the fees",
     summary:
       "An unpaid order is cancelled after six hours, not twenty-four. US parcels can carry a USD 12 charge collected at your door. International shipping went up 7% in February 2026, and two European countries quietly lost a shipping method entirely.",
     glyph: "parcel",
@@ -2996,6 +3026,7 @@ export const guides: Guide[] = [
     name: "Gocheok Sky Dome",
     koLine: "고척스카이돔 가는 길 — 가장 가까운 역이 정답이 아닙니다",
     title: "Getting to Gocheok Sky Dome: the nearest station is not the right station",
+    searchTitle: "Gocheok Sky Dome: the nearest station is the wrong one",
     summary:
       "Twenty-five thousand people, 484 parking spaces, and a venue that tells you in its own words to get off one stop early. The nearest exit is a three-minute walk and is the one you should probably avoid.",
     glyph: "star",
@@ -3118,6 +3149,7 @@ export const guides: Guide[] = [
     name: "Gocheok seats",
     koLine: "고척스카이돔 좌석번호 — 한 방향으로 돌아갑니다",
     title: "Finding your seat at Gocheok Sky Dome: what the block number on your ticket means",
+    searchTitle: "Gocheok Sky Dome seats: what your block number means",
     summary:
       "Four levels, one direction, and a single break in the loop. Three digits read correctly will walk you to your block from any entrance, without a map and without knowing which way is north.",
     glyph: "ticket",
@@ -3261,6 +3293,7 @@ export const guides: Guide[] = [
     name: "Where to stay",
     koLine: "\uB9C9\uCC28 \u2014 \uACF5\uC5F0\uC774 \uB05D\uB098\uB294 \uC2DC\uAC01\uC774 \uC7A0\uC790\uB9AC\uB97C \uC815\uD569\uB2C8\uB2E4",
     title: "Where to stay for a Seoul concert: pick the line, not the distance",
+    searchTitle: "Where to stay for a Seoul concert: the line, not distance",
     summary:
       "The hour your show ends decides where you sleep, not the distance to the hall. One line, no transfers, and a last train you check yourself \u2014 because a printed time that has moved is worse than none.",
     glyph: "star",

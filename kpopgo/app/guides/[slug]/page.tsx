@@ -32,7 +32,9 @@ export async function generateMetadata({
   const guide = getGuide(slug);
   if (!guide) return {};
   return {
-    title: guide.title,
+    // The headline is for the page; this is for a search result, which cuts
+    // around 60 characters. Falls back to the headline where it already fits.
+    title: guide.searchTitle ?? guide.title,
     description: guide.summary,
     alternates: {
       canonical: `/guides/${guide.slug}`,

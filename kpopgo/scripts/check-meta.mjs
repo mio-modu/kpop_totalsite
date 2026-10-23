@@ -52,7 +52,55 @@ const notes = [];
 const byTitle = new Map();
 const byDesc = new Map();
 
-const field = (head, re) => (head.match(re) ?? [])[1] ?? "";
+/**
+ * What a reader sees, not what the markup spells.
+ *
+ * The first version counted the raw attribute, so `Play&amp;Stay` measured
+ * four characters longer than it displays and `group&#x27;s` five, and two
+ * titles that fit were reported as over. A length check that is wrong about
+ * length is the permanent false alarm this repository keeps writing down:
+ * nobody can fix those two, so everybody learns to skip the whole list.
+ */
+const decode = (s) =>
+  s
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, h) => String.fromCharCode(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCharCode(Number(d)))
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&");
+
+/**
+ * How wide a title reads, not how many characters it holds.
+ *
+ * Search cuts a title on pixels, around 600 of them, and a full-width CJK
+ * glyph takes about twice the room of a Latin one. Counting characters calls
+ * a Japanese title short when it is not and a Chinese one long when it is
+ * fine — measured here, Chinese had *no* over-wide title while seven
+ * Latin-script locales had ninety-nine between them, which a character count
+ * reports almost backwards.
+ */
+const width = (s) => {
+  let w = 0;
+  for (const ch of s) {
+    const o = ch.codePointAt(0);
+    w +=
+      (o >= 0x1100 && o <= 0x115f) ||
+      (o >= 0x2e80 && o <= 0xa4cf) ||
+      (o >= 0xac00 && o <= 0xd7a3) ||
+      (o >= 0xf900 && o <= 0xfaff) ||
+      (o >= 0xfe30 && o <= 0xfe6f) ||
+      (o >= 0xff00 && o <= 0xff60) ||
+      (o >= 0xffe0 && o <= 0xffe6)
+        ? 2
+        : 1;
+  }
+  return w;
+};
+
+const field = (head, re) => decode((head.match(re) ?? [])[1] ?? "");
 
 for (const url of urls) {
   const path = new URL(url).pathname;
@@ -81,8 +129,10 @@ for (const url of urls) {
   if (title) byTitle.set(title, [...(byTitle.get(title) ?? []), path]);
   if (desc) byDesc.set(desc, [...(byDesc.get(desc) ?? []), path]);
 
-  if (title.length > 60) notes.push(`${path} — title is ${title.length} chars; search results cut around 60.`);
-  if (desc.length > 160) notes.push(`${path} — description is ${desc.length} chars; search results cut around 160.`);
+  if (width(title) > 60)
+    notes.push(`${path} — title is ${width(title)} wide; search results cut around 60.`);
+  if (desc.length > 160)
+    notes.push(`${path} — description is ${desc.length} chars; search results cut around 160.`);
 }
 
 // Two pages with one title are two pages competing for one result, and the

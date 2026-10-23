@@ -1260,9 +1260,49 @@ belongs before the click rather than after it. One card per locale, not per
 guide, because nothing on it is per-guide — and the guide pages point their
 `openGraph.images` at it.
 
+**A title and a headline are not the same field, and treating them as one cost
+the click.** A search result cuts around 60 characters. Eighteen of
+twenty-four English headlines were over, and because they are written as
+"Topic: the detail, the detail, and the payoff", what they lost was the
+payoff — `Cancelling a NOL World ticket: the deadline, the fee, and th…`
+loses *the money you still lose*, which is the reason anybody clicks.
+
+Two things fixed it. The site suffix went first: every inner page spent
+` · KPOPGO`, nine of sixty characters, on the one word a reader arriving
+from search already has — and this site has its own evidence of what search
+does with words like that, recorded in `lib/site.ts`, where a home title
+ending in the slogan came back rendered as plain "KPOPGO". The brand is still
+declared through `openGraph.siteName`, which is what search reads for the
+site name above a result. Then `searchTitle` split the two fields: the
+headline keeps whatever length the page needs, and search gets a short form,
+present only on the guides that need one. English titles over the limit went
+from 145 to **0**.
+
+`scripts/seo.test.mjs` holds both, because both drift back: a headline that
+would be cut must have a short form, a short form must be short, the route
+must actually prefer it, and the template must not start appending the site
+name again. All three proved by planting.
+
+**The translated titles were measured and deliberately left alone.** 104 are
+over, and the mechanical fix — cutting at the translator's own punctuation —
+produces a good result for only 35 of them; the rest have a long first clause,
+so what search shows after its own cut is already the sensible part. Adding 35
+strings would buy little and add exactly the per-language maintenance the
+**Languages** section says is the real cost. The measurement is here so nobody
+re-does it.
+
 Length is reported and does not fail. Google rewrites titles and descriptions
-often enough that a character count is a judgement, and a check that fails on
-a judgement is one people learn to ignore. 315 of them are over today.
+often enough that a count is a judgement, and a check that fails on a
+judgement is one people learn to ignore.
+
+**It is measured as width, not as characters**, and that correction mattered:
+search cuts on pixels and a full-width CJK glyph takes about twice the room of
+a Latin one. By character count the check called Chinese titles long and
+Japanese ones short; by width, Chinese has **no** over-wide title at all while
+seven Latin-script locales hold ninety-nine between them — almost the
+reverse. It also decodes entities before counting, after `Play&amp;Stay` and
+`group&#x27;s` were reported as over when they fit. A length check that is
+wrong about length is the permanent false alarm this file keeps describing.
 
 **Read the fare table to the end.** The accommodation guide quoted Seoul's taxi
 tariff for a ride that happens, by definition, after a concert — and the same

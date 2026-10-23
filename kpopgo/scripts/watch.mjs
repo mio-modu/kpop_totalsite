@@ -701,6 +701,96 @@ async function documents() {
   }
 }
 
+/**
+ * Every paid link still resolves, and still carries the attribution.
+ *
+ * This is the one check here whose failure costs money rather than accuracy,
+ * and it is invisible from every other angle. A redirect that stops working,
+ * a programme that ends, a network that rewrites its parameters — the page
+ * goes on rendering a perfectly ordinary, correctly disclosed paid link, the
+ * reader goes on clicking it, and nothing is credited. Nobody finds out until
+ * somebody thinks to read a dashboard, which on a site with no revenue yet
+ * could be months.
+ *
+ * `scripts/affiliate.test.mjs` already holds the *stored* URLs to the
+ * attribution they are supposed to carry. That is a string comparison and it
+ * cannot see the network. This follows one hop and reads what the redirect
+ * actually hands over, which is the only place the truth lives.
+ *
+ * One hop deliberately. The destination is a storefront whose wording is meant
+ * to move, so there is nothing here to fingerprint; what matters is that the
+ * hop happens and that the identifiers survive it.
+ */
+async function affiliates() {
+  const src = await read("content/affiliates.ts");
+  const urls = [...src.matchAll(/url: "(https:\/\/[^"]+)"/g)].map((m) => m[1]);
+  if (urls.length === 0) {
+    note("info", "No paid links registered.");
+    return;
+  }
+
+  // Read the identifiers off the first registered link rather than hardcoding
+  // them, so this keeps working when the account or the campaign changes.
+  const expect = [...urls[0].matchAll(/[?&](aid|aff_adid)=([^&]+)/g)].map((m) => `${m[1]}=${m[2]}`);
+  if (expect.length === 0) {
+    note("warn", "The first registered paid link carries no aid/aff_adid — cannot check attribution.");
+    return;
+  }
+
+  const { execFile } = await import("node:child_process");
+  const { promisify } = await import("node:util");
+
+  for (const url of urls) {
+    let status = 0;
+    let dest = "";
+    try {
+      const { stdout } = await promisify(execFile)(
+        "curl",
+        // No -L: the redirect itself is the thing being read.
+        ["-sS", "-o", "/dev/null", "-w", "%{http_code} %{redirect_url}", "--max-time", "25", "-A", UA, url],
+        { maxBuffer: 1_000_000 },
+      );
+      const [code, ...rest] = stdout.trim().split(" ");
+      status = Number(code) || 0;
+      dest = rest.join(" ");
+    } catch {
+      status = 0;
+    }
+
+    const short = url.replace(/\?.*$/, "");
+    const query = decodeURIComponent(url).match(/query=([^&]+)/)?.[1] ?? "site-wide";
+
+    if (status === 0) {
+      const host = new URL(url).hostname;
+      const explained = relayFinding(url, host, relayVerdict(host, await relayStatus()));
+      if (explained) note(explained.level, explained.msg);
+      else note("fail", `${short} (${query}) — the paid link did not resolve. A reader clicking it gets nothing.`);
+      continue;
+    }
+
+    if (status < 300 || status >= 400 || !dest) {
+      note(
+        "fail",
+        `${short} (${query}) — answered ${status} instead of redirecting. ` +
+          `A paid link that does not hand off is a click that earns nothing.`,
+      );
+      continue;
+    }
+
+    const lost = expect.filter((p) => !dest.includes(p));
+    if (lost.length) {
+      note(
+        "fail",
+        `${short} (${query}) — the redirect dropped ${lost.join(" and ")}. ` +
+          `The link works, the reader books, and none of it is credited.`,
+      );
+      continue;
+    }
+
+    note("info", `${short} (${query}) — resolves, attribution intact.`);
+  }
+}
+
 const t0 = Date.now();
 await freshness();
 if (OFFLINE) {
@@ -711,6 +801,7 @@ if (OFFLINE) {
   await links(urls);
   await brands();
   await documents();
+  await affiliates();
 }
 
 const fails = findings.filter((f) => f.level === "fail");

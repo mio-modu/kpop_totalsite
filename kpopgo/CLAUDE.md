@@ -940,6 +940,59 @@ comparison is new, the facts are not re-checked. Dating it today would have
 claimed a check nobody did, which is the one thing this field exists to
 prevent.
 
+## Titles in the register a reader searches in
+
+A citation audit in Portuguese, Filipino and Thai found questions with zero or
+one cited source whose subject this site already covers. The conclusion it
+drew is the right one: the gap is not content, it is that a translated title
+is written in the register a translator writes in rather than the one a fan
+types in.
+
+The measured Filipino query is the evidence, and it is Taglish:
+
+> `anong oras ang start ng ticketing sa korea converted to ph time`
+
+Local grammar, borrowed nouns. `ticketing`, `converted`, `ph time` are not
+translated because nobody translates them when searching. So a title that
+renders every noun into Filipino is correct and is invisible. Four were
+rewritten on that principle, keeping the words fans already use — `chart`,
+`payment`, `shipping`, `pagamento`, `frete` — inside the local sentence.
+
+`title` is exempt from the length-ratio check in
+`scripts/translations.test.mjs` (the line that skips `.title`, `^title` and
+`.q`), so a title may be reshaped freely. `summary` is **not** exempt and was
+left alone. Both still go through the number and product-name checks, which is
+why this was safe here: all four English titles are number-free.
+
+**Half the targets were not title problems at all, and that is the more useful
+finding.** Two of the four measured gaps point at guides that do not exist in
+those editions, by deliberate exclusion:
+
+- The customs guide is refused in every language, correctly. A Filipino
+  reader's parcel clears the Philippine Bureau of Customs; a page about CBP
+  and the EU exemption is confidently about the wrong country. The measured
+  demand is real and this site is right not to answer it.
+- The timezone guide is refused in the six Asian editions because those
+  readers observe no daylight saving, so the arithmetic it teaches does not
+  exist for them. **That reasoning answers a question nobody asked.** The
+  Filipino query above is not a daylight-saving question. It is a one-off
+  conversion, it has a permanent answer, and the English page does not carry
+  it either: it converts for New York, Los Angeles, Toronto, London, Sydney,
+  Berlin, Madrid and Paris, and for no Asian city at all — because the Asian
+  editions were excluded on the DST reasoning, the Asian cities never went
+  into the English.
+
+So the conversion a Manila reader wants is on no page of this site in any
+language. Verified against this container's zoneinfo rather than recalled:
+20:00 KST is 19:00 in Manila and Taipei and 18:00 in Jakarta, Bangkok and
+Ho Chi Minh City, in January and July alike, with no transition in any of
+them. Tokyo is the same hour as Seoul.
+
+That is the shape of the German commerce-only mistake recorded above, and the
+Paris precedent says what to do about it: the cities belong in the English
+page. Doing it costs an edit to that step in German, Spanish and French, which
+are the editions that carry the guide — not ten.
+
 ## Advertising
 
 Slots live in `components/AdSlot.tsx` and render nothing until their ids are

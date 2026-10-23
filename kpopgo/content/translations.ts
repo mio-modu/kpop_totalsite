@@ -10768,7 +10768,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-21",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Comprando no Weverse Shop de fora da Coreia",
+    title: "Como comprar no Weverse Shop de fora da Coreia: pagamento, preço e frete",
     summary:
       "Em qual loja você está, por que o preço muda no checkout, quais formas de pagamento a sua moeda realmente recebe, e os países para os quais a Coreia não consegue enviar.",
     scope:
@@ -10948,7 +10948,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-21",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Como comprar álbuns de K-pop do exterior para que eles contem",
+    title: "Onde comprar álbum de K-pop morando fora da Coreia para contar no chart",
     summary:
       "Onde você compra decide se a sua compra é contabilizada, quanto você paga de frete e se você recebe os brindes de pré-venda. Veja como escolher.",
     scope:
@@ -14851,7 +14851,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-21",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Paano bumili ng mga album ng K-pop mula sa ibang bansa nang mabilang ang mga ito",
+    title: "Saan bumili ng K-pop album mula sa ibang bansa para mabilang sa chart",
     summary:
       "Ang pinagbilhan mo ang nagpapasya kung mabibilang ba ang binili mo, kung magkano ang babayaran mo sa padala, at kung makukuha mo ba ang mga kasamang pre-order. Narito kung paano pumili.",
     scope:
@@ -15099,7 +15099,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-21",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Pag-order sa Weverse Shop mula sa labas ng Korea",
+    title: "Paano mag-order sa Weverse Shop kapag nasa labas ka ng Korea: payment, presyo at shipping",
     summary:
       "Kung aling tindahan ang kinaroroonan mo, bakit nagbabago ang presyo sa checkout, aling mga paraan ng pagbabayad ang talagang nakukuha ng pera mo, at ang mga bansang hindi mapapadalhan ng Korea.",
     scope:

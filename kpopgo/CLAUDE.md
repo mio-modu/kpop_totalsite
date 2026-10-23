@@ -428,7 +428,10 @@ against the IANA database the guide itself cites, Asia/Tokyo, Asia/Taipei,
 Asia/Jakarta, Asia/Ho_Chi_Minh, Asia/Bangkok and Asia/Manila have no
 transition in the next decade, so the gap to KST is a fixed zero, one or two
 hours permanently. For those readers the arithmetic the guide exists to teach
-does not exist.
+does not exist. What they did need was the converted hour itself, which that
+reasoning talked the site out of carrying anywhere; it is on the English page
+now, and **Titles in the register a reader searches in** below says why the
+editions were still not worth adding.
 
 **A language's edition leads with what its readers came for, but it does not
 stop there — and German is the correction, not the rule.** The Asian editions
@@ -992,6 +995,50 @@ That is the shape of the German commerce-only mistake recorded above, and the
 Paris precedent says what to do about it: the cities belong in the English
 page. Doing it costs an edit to that step in German, Spanish and French, which
 are the editions that carry the guide — not ten.
+
+**Both halves are done, and the second came back smaller than the audit said.**
+The cities went into the English step and into the German, Spanish and French
+translations of it in one commit — the Paris precedent exactly, including the
+part where `lastChecked` does not move, because nobody re-checked a source to
+add an arithmetic fact that was already true.
+
+The step that names Manila as a city the guide does not apply to named it
+*alone*, although five more Asian cities sit in exactly that position. It lists
+all six now. That is navigational the same way the venue's four openings are:
+a reader who does not have to do the arithmetic should be told so by name.
+
+**The six Asian editions still do not carry the guide, and that is now a
+decision rather than the gap it was.** What a Manila reader was missing was a
+number, not a page, and the number is on the English page they can already
+read — English is an official language of the Philippines, which the Filipino
+bet above says in as many words. Translating a daylight-saving guide into six
+editions whose readers have no daylight saving to compute would be six more
+translated pages of maintenance to carry one sentence already answered.
+
+**The title rewrite was sixteen titles on the audit's estimate and seven on
+measurement.** Read against the text rather than against the count, two
+defects were real and only one of them needed query data:
+
+- **The screen's noun, not its Filipinized spelling.** The measured query is
+  the evidence and it is specific: `ticketing`, in English, inside Filipino
+  grammar — not `tiketing`. So `tiket` became `ticket` or `ticketing` in four
+  titles and `kard` became `card` in one, because that is the word on the
+  booking screen *and* the word in the only query anybody has measured. This
+  is the Hangul rule pointed the other way: the site sets 본인인증 because a
+  fan meets it on a real screen, and a Filipino fan meets `Ticket` on that
+  same screen.
+- **A calque of an English metaphor.** "Locked out of" was rendered literally
+  into both editions — `Nakasara sa labas ng`, `Trancado fora da` — and
+  neither language uses the figure. Somebody locked out searches the symptom,
+  so those titles are `Hindi maka-login` and `Não consigo entrar` now. No
+  query data was needed: the defect is visible in the text.
+
+The other twelve were left alone. `kuwalipikado`, `o que zera o seu lugar
+nela` and `ang perang ipinambabayad mo` are good writing, and rewriting them
+to hit queries nobody has measured would be invention wearing the clothes of
+optimisation — the same mistake as writing a thin page for a gap that was
+really a findability problem, recorded two sections above. **An audit's count
+is a hypothesis about how many titles are wrong, not a quota to fill.**
 
 ## Advertising
 

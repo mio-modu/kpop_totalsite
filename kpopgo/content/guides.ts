@@ -1007,7 +1007,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Convert for the date of the sale, not for today",
-        body: "This is the whole guide in one line. Because Korea never shifts and you do, the local hour of a Korean sale depends on which side of your own daylight saving change the date falls on. At 20:00 KST, a sale lands at 06:00 in New York in January and 07:00 in July. Los Angeles moves 03:00 to 04:00, Toronto 06:00 to 07:00, London 11:00 to 12:00, Berlin, Madrid and Paris 12:00 to 13:00.",
+        body: "This is the whole guide in one line. Because Korea never shifts and you do, the local hour of a Korean sale depends on which side of your own daylight saving change the date falls on. At 20:00 KST, a sale lands at 06:00 in New York in January and 07:00 in July. Los Angeles moves 03:00 to 04:00, Toronto 06:00 to 07:00, London 11:00 to 12:00, Berlin, Madrid and Paris 12:00 to 13:00. If your own clocks never move, your gap to Korea never moves either and one line is the whole answer: 20:00 KST is 19:00 in Manila and Taipei, 18:00 in Jakarta, Bangkok and Hanoi, and 20:00 in Tokyo, in January and in July alike.",
         pitfall:
           "Converting in a search box today for a sale three weeks away. If a clock change falls in between, the answer you get is an hour wrong — and it is wrong in the direction of being late.",
         takes: "3 minutes",
@@ -1021,7 +1021,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Check whether a clock change falls between now and the sale",
-        body: "The changeover dates are not the same in each country, which creates short windows where the usual conversion is wrong even between two countries that both observe it. In 2027 New York changes on 14 March, London on 28 March, Sydney on 4 April; Berlin, Madrid and Paris change with London and go back on 31 October. Most of Spanish-speaking Latin America does not change at all \u2014 Bogot\u00e1, Lima and Buenos Aires hold a fixed gap to Korea alongside Mexico City, as does Manila. For those readers this step simply does not apply, which is worth knowing in itself. If the sale date sits on the far side of your own changeover, set your alarm from the converted time for that date.",
+        body: "The changeover dates are not the same in each country, which creates short windows where the usual conversion is wrong even between two countries that both observe it. In 2027 New York changes on 14 March, London on 28 March, Sydney on 4 April; Berlin, Madrid and Paris change with London and go back on 31 October. Most of Spanish-speaking Latin America does not change at all \u2014 Bogot\u00e1, Lima and Buenos Aires hold a fixed gap to Korea alongside Mexico City, as do Manila, Taipei, Jakarta, Bangkok, Hanoi and Tokyo. For those readers this step simply does not apply, which is worth knowing in itself. If the sale date sits on the far side of your own changeover, set your alarm from the converted time for that date.",
         pitfall:
           "The two-week gap between the North American and European changes in March is the one that catches people, because the familiar New York to London difference is briefly not what it normally is.",
         takes: "3 minutes",

@@ -9833,7 +9833,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Rechnen Sie für das Datum des Verkaufs um, nicht für heute",
-        body: "Das ist die ganze Anleitung in einer Zeile. Weil Korea sich nie verschiebt und Sie schon, hängt die Ortszeit eines koreanischen Verkaufs davon ab, auf welcher Seite Ihrer eigenen Zeitumstellung das Datum liegt. Bei 20:00 KST landet ein Verkauf in New York im Januar um 06:00 und im Juli um 07:00. Los Angeles wandert von 03:00 auf 04:00, Toronto von 06:00 auf 07:00, London von 11:00 auf 12:00, Berlin, Madrid und Paris von 12:00 auf 13:00.",
+        body: "Das ist die ganze Anleitung in einer Zeile. Weil Korea sich nie verschiebt und Sie schon, hängt die Ortszeit eines koreanischen Verkaufs davon ab, auf welcher Seite Ihrer eigenen Zeitumstellung das Datum liegt. Bei 20:00 KST landet ein Verkauf in New York im Januar um 06:00 und im Juli um 07:00. Los Angeles wandert von 03:00 auf 04:00, Toronto von 06:00 auf 07:00, London von 11:00 auf 12:00, Berlin, Madrid und Paris von 12:00 auf 13:00. Wenn Ihre eigenen Uhren sich nie verstellen, verschiebt sich auch Ihr Abstand zu Korea nie, und eine Zeile ist die ganze Antwort: 20:00 KST sind 19:00 in Manila und Taipeh, 18:00 in Jakarta, Bangkok und Hanoi und 20:00 in Tokio, im Januar wie im Juli.",
         pitfall:
           "Heute in einem Suchfeld für einen Verkauf in drei Wochen umzurechnen. Fällt dazwischen eine Zeitumstellung, ist die Antwort eine Stunde falsch — und sie ist in die Richtung falsch, zu spät zu kommen.",
         takes: "3 Minuten",
@@ -9847,7 +9847,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Prüfen Sie, ob zwischen jetzt und dem Verkauf eine Zeitumstellung liegt",
-        body: "Die Umstellungstermine sind nicht in jedem Land dieselben, wodurch kurze Fenster entstehen, in denen die gewohnte Umrechnung selbst zwischen zwei Ländern falsch ist, die beide umstellen. 2027 stellt New York am 14. März um, London am 28. März, Sydney am 4. April; Berlin, Madrid und Paris stellen mit London um und am 31. Oktober zurück. Der größte Teil des spanischsprachigen Lateinamerikas stellt überhaupt nicht um — Bogotá, Lima und Buenos Aires halten wie Mexiko-Stadt einen festen Abstand zu Korea, ebenso Manila. Für diese Leserinnen gilt dieser Schritt schlicht nicht, was für sich genommen zu wissen lohnt. Liegt das Verkaufsdatum jenseits Ihrer eigenen Umstellung, stellen Sie den Wecker nach der für dieses Datum umgerechneten Zeit.",
+        body: "Die Umstellungstermine sind nicht in jedem Land dieselben, wodurch kurze Fenster entstehen, in denen die gewohnte Umrechnung selbst zwischen zwei Ländern falsch ist, die beide umstellen. 2027 stellt New York am 14. März um, London am 28. März, Sydney am 4. April; Berlin, Madrid und Paris stellen mit London um und am 31. Oktober zurück. Der größte Teil des spanischsprachigen Lateinamerikas stellt überhaupt nicht um — Bogotá, Lima und Buenos Aires halten wie Mexiko-Stadt einen festen Abstand zu Korea, ebenso Manila, Taipeh, Jakarta, Bangkok, Hanoi und Tokio. Für diese Leserinnen gilt dieser Schritt schlicht nicht, was für sich genommen zu wissen lohnt. Liegt das Verkaufsdatum jenseits Ihrer eigenen Umstellung, stellen Sie den Wecker nach der für dieses Datum umgerechneten Zeit.",
         pitfall:
           "Die zwei Wochen zwischen der nordamerikanischen und der europäischen Umstellung im März sind die Lücke, die Leute erwischt, weil der vertraute Abstand zwischen New York und London kurzzeitig nicht der ist, der er sonst ist.",
         takes: "3 Minuten",
@@ -9919,7 +9919,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Convierte para la fecha de la venta, no para hoy",
-        body: "Esta es la guía entera en una línea. Como Corea nunca se mueve y tú sí, la hora local de una venta coreana depende de a qué lado de tu propio cambio de hora cae la fecha. A las 20:00 KST, una venta cae a las 06:00 en Nueva York en enero y a las 07:00 en julio. Los Ángeles pasa de las 03:00 a las 04:00, Toronto de las 06:00 a las 07:00, Londres de las 11:00 a las 12:00, y Berlín, Madrid y París de las 12:00 a las 13:00.",
+        body: "Esta es la guía entera en una línea. Como Corea nunca se mueve y tú sí, la hora local de una venta coreana depende de a qué lado de tu propio cambio de hora cae la fecha. A las 20:00 KST, una venta cae a las 06:00 en Nueva York en enero y a las 07:00 en julio. Los Ángeles pasa de las 03:00 a las 04:00, Toronto de las 06:00 a las 07:00, Londres de las 11:00 a las 12:00, y Berlín, Madrid y París de las 12:00 a las 13:00. Si tus propios relojes nunca se mueven, tu diferencia con Corea tampoco se mueve y una línea es toda la respuesta: las 20:00 KST son las 19:00 en Manila y Taipéi, las 18:00 en Yakarta, Bangkok y Hanói, y las 20:00 en Tokio, tanto en enero como en julio.",
         pitfall:
           "Convertir hoy en un buscador para una venta que es dentro de tres semanas. Si en medio cae un cambio de hora, la respuesta que obtienes está una hora equivocada — y está equivocada en la dirección de llegar tarde.",
         takes: "3 minutos",
@@ -9933,7 +9933,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Mira si entre hoy y la venta cae un cambio de hora",
-        body: "Las fechas de cambio no son las mismas en cada país, lo que crea ventanas cortas en las que la conversión habitual está equivocada incluso entre dos países que ambos lo aplican. En 2027 Nueva York cambia el 14 de marzo, Londres el 28 de marzo, Sídney el 4 de abril; Berlín, Madrid y París cambian con Londres y vuelven atrás el 31 de octubre. La mayor parte de la América Latina hispanohablante no cambia en absoluto — Bogotá, Lima y Buenos Aires mantienen una diferencia fija con Corea igual que Ciudad de México, y Manila también. Para esos lectores este paso simplemente no aplica, y eso por sí solo vale la pena saberlo. Si la fecha de la venta queda al otro lado de tu propio cambio, pon la alarma desde la hora convertida para esa fecha.",
+        body: "Las fechas de cambio no son las mismas en cada país, lo que crea ventanas cortas en las que la conversión habitual está equivocada incluso entre dos países que ambos lo aplican. En 2027 Nueva York cambia el 14 de marzo, Londres el 28 de marzo, Sídney el 4 de abril; Berlín, Madrid y París cambian con Londres y vuelven atrás el 31 de octubre. La mayor parte de la América Latina hispanohablante no cambia en absoluto — Bogotá, Lima y Buenos Aires mantienen una diferencia fija con Corea igual que Ciudad de México, y también Manila, Taipéi, Yakarta, Bangkok, Hanói y Tokio. Para esos lectores este paso simplemente no aplica, y eso por sí solo vale la pena saberlo. Si la fecha de la venta queda al otro lado de tu propio cambio, pon la alarma desde la hora convertida para esa fecha.",
         pitfall:
           "Las dos semanas entre el cambio norteamericano y el europeo en marzo son las que pillan a la gente, porque la diferencia familiar entre Nueva York y Londres brevemente no es la que suele ser.",
         takes: "3 minutos",
@@ -12524,7 +12524,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-20",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Trancado fora da NOL World: achando a conta e consertando a página que não abre",
+    title: "Não consigo entrar na NOL World: achando a conta e consertando a página que não abre",
     summary:
       "Qual login você usou decide todas as rotas de recuperação, a redefinição de senha existe só para cadastros por e-mail, e um e-mail não verificado pode tornar uma conta difícil de achar. Além dos erros da página de compra que não são erros.",
     scope:
@@ -13745,7 +13745,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Convertissez pour la date de la vente, pas pour aujourd'hui",
-        body: "C'est tout le guide en une phrase. Comme la Corée ne bouge jamais et que vous bougez, l'heure locale d'une vente coréenne dépend du côté de votre propre changement d'heure où tombe la date. À 20:00 KST, une vente tombe à 06:00 à New York en janvier et à 07:00 en juillet. Los Angeles passe de 03:00 à 04:00, Toronto de 06:00 à 07:00, Londres de 11:00 à 12:00, Berlin, Madrid et Paris de 12:00 à 13:00.",
+        body: "C'est tout le guide en une phrase. Comme la Corée ne bouge jamais et que vous bougez, l'heure locale d'une vente coréenne dépend du côté de votre propre changement d'heure où tombe la date. À 20:00 KST, une vente tombe à 06:00 à New York en janvier et à 07:00 en juillet. Los Angeles passe de 03:00 à 04:00, Toronto de 06:00 à 07:00, Londres de 11:00 à 12:00, Berlin, Madrid et Paris de 12:00 à 13:00. Si vos propres horloges ne bougent jamais, votre écart avec la Corée ne bouge pas non plus et une ligne suffit : 20:00 KST, c'est 19:00 à Manille et Taipei, 18:00 à Jakarta, Bangkok et Hanoï, et 20:00 à Tokyo, en janvier comme en juillet.",
         pitfall:
           "Faire la conversion aujourd'hui dans un moteur de recherche pour une vente dans trois semaines. Si un changement d'heure tombe entre-temps, la réponse obtenue est fausse d'une heure — et fausse dans le sens où l'on arrive en retard.",
         takes: "3 minutes",
@@ -13759,7 +13759,7 @@ export const translations: Translation[] = [
       },
       {
         title: "Vérifiez si un changement d'heure tombe entre aujourd'hui et la vente",
-        body: "Les dates de bascule ne sont pas les mêmes d'un pays à l'autre, ce qui crée de courtes périodes où la conversion habituelle est fausse même entre deux pays qui l'observent tous les deux. En 2027, New York change le 14 mars, Londres le 28 mars, Sydney le 4 avril ; Berlin, Madrid et Paris changent en même temps que Londres et reviennent en arrière le 31 octobre. La majeure partie de l'Amérique latine hispanophone ne change pas du tout — Bogotá, Lima et Buenos Aires conservent un écart fixe avec la Corée, tout comme Mexico, et Manille également. Pour ces lecteurs, cette étape ne s'applique tout simplement pas, ce qui mérite d'être su en soi. Si la date de la vente se situe de l'autre côté de votre propre bascule, réglez votre réveil sur l'heure convertie pour cette date-là.",
+        body: "Les dates de bascule ne sont pas les mêmes d'un pays à l'autre, ce qui crée de courtes périodes où la conversion habituelle est fausse même entre deux pays qui l'observent tous les deux. En 2027, New York change le 14 mars, Londres le 28 mars, Sydney le 4 avril ; Berlin, Madrid et Paris changent en même temps que Londres et reviennent en arrière le 31 octobre. La majeure partie de l'Amérique latine hispanophone ne change pas du tout — Bogotá, Lima et Buenos Aires conservent un écart fixe avec la Corée, tout comme Mexico, et également Manille, Taipei, Jakarta, Bangkok, Hanoï et Tokyo. Pour ces lecteurs, cette étape ne s'applique tout simplement pas, ce qui mérite d'être su en soi. Si la date de la vente se situe de l'autre côté de votre propre bascule, réglez votre réveil sur l'heure convertie pour cette date-là.",
         pitfall:
           "Les deux semaines d'écart entre la bascule nord-américaine et l'européenne en mars sont le piège classique, parce que la différence familière entre New York et Londres n'est brièvement pas celle qu'elle est d'habitude.",
         takes: "3 minutes",
@@ -13994,7 +13994,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-14",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Paano bumili ng tiket sa konsiyerto ng K-pop mula sa labas ng Korea",
+    title: "Paano bumili ng K-pop concert ticket mula sa labas ng Korea",
     summary:
       "Ang buong larawan bago ka magsimula: kung saang plataporma ibinebenta ang konsiyerto mo, kung anong pagpapatunay ng pagkakakilanlan ang hinihingi nito, at kung ano ang dapat handa na bago magbukas ang benta.",
     scope:
@@ -14231,7 +14231,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-14",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Mga tiket sa NOL World: ang site na dating Interpark Global",
+    title: "NOL World ticketing: ang site na dating Interpark Global",
     summary:
       "Ang site na dating interpark Global. Pinalitan ito ng pangalan noong 1 Disyembre 2025, karamihan sa mga gabay ay nagtuturo pa rin sa lumang pangalan, at narito ang kasalukuyang ruta nang hakbang-hakbang.",
     scope:
@@ -14647,7 +14647,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-14",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Bakit tinanggihan ang kard mo sa isang Koreanong site ng tiket",
+    title: "Bakit na-decline ang card mo sa Korean ticketing site",
     summary:
       "Tatlong magkaibang sistema ang puwedeng tumanggi sa iisang bayad — ang plataporma, ang network ng kard mo, at ang bangko mo. Magkaiba ang lunas sa bawat isa at isa lamang sa kanila ang mabilis.",
     scope:
@@ -15639,7 +15639,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-20",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Tiket sa YES24 Global: ang mga tuntuning wala sa pahinang Ingles",
+    title: "YES24 Global ticketing: ang mga tuntuning wala sa pahinang Ingles",
     summary:
       "Hindi gagana ang kasalukuyan mong YES24 account. Lumalabas lang ang PayPal kung sapat ang layo ng palabas. Dalawang uri ng kard ang tinatanggihan nang tuwiran, at tinitingnan ng venue ang pasaporte mo laban sa pangalang ipinangrehistro mo.",
     scope:
@@ -17503,7 +17503,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-20",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Pagkansela ng tiket sa NOL World: ang takdang oras, ang bayad, at ang perang nawawala sa iyo pa rin",
+    title: "Pagkansela ng NOL World ticket: ang deadline, ang bayad, at ang perang nawawala sa iyo pa rin",
     summary:
       "Hapon ng araw bago ang palabas, oras ng Korea, ang takdang oras ng pagkansela; mas maaga ang Sabado kaysa sa buong linggo; at puwede pa ring magastusan ang may kard mula sa ibang bansa sa isang tiket na lubos na naibalik ang bayad. Isa pa: inaalis ng pagpapadala ng tiket sa kaibigan mo ang pindutan ng pagkansela sa iyo.",
     scope:
@@ -17865,7 +17865,7 @@ export const translations: Translation[] = [
     sourceChecked: "2026-10-20",
     translated: "2026-10-22",
     review: "machine-assisted",
-    title: "Nakasara sa labas ng NOL World: ang paghanap sa account, at ang pagkumpuni sa pahinang ayaw magbukas",
+    title: "Hindi maka-login sa NOL World: paghanap sa account, at pag-ayos sa page na ayaw magbukas",
     summary:
       "Kung aling login ang ginamit mo ang nagpapasya sa lahat ng rutang pambawi, may pagpapalit ng password lamang para sa nagsign-up sa email, at puwedeng gawing napakahirap mahanap ng isang hindi beripikadong email ang buong account. Dagdag pa: ang mga error sa pahina ng booking na hindi naman error.",
     scope:

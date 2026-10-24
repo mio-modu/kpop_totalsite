@@ -52,9 +52,13 @@ That last sentence was the whole safeguard, and a rule that lives only in a
 sentence gets broken by the next person in a hurry — which here was me.
 Adding the Ktown4u guide left its seven notices with no baseline, and the
 obvious fix, a plain `--record` run, would also have re-baselined the Yahoo
-rebrand page, clearing a 9% drift warning that is standing **on purpose**
-because that page's body does not extract cleanly. A silenced warning and a
-checked source look identical afterwards.
+rebrand page, clearing a 9% drift warning that was left standing **on
+purpose** because that page's body does not extract cleanly. A silenced
+warning and a checked source look identical afterwards.
+
+(That reasoning was right about `--record` and wrong about the warning, which
+turned out to be a false alarm with a diagnosable cause. **A warning nobody
+can ever clear** below has the diff.)
 
 So `npm run watch -- --record-new` now writes only the entries that are
 missing and leaves every existing baseline untouched. Use it when a new guide
@@ -113,6 +117,58 @@ not the header's date or the per-guide day counters, which change on their own
 run regardless, so the current state is never stale; only the notification is
 held back.
 
+**A warning nobody can ever clear is not a warning, and two of these were
+mine.** The weekly sweep reported `3 needing action, 1 worth a look` for
+weeks. All four were false, and both causes were diagnosable rather than
+inherent — which is the korea.net lesson arriving twice more in one sweep.
+
+*The three ✗ were one attempt, not three dead pages.* `circlechart.kr` and
+two TicketLink help pages came back `curl: (35) Recv failure: Connection
+reset by peer`, and the honest-looking conclusion — a guide cites a page that
+is gone — was wrong. Asked five times each they answer **5/5, 4/5 and 5/5**.
+The proxy had already named the cause for all three: `ws_closed_mid_exchange`,
+which this file's TicketLink note already records as *the site declining*
+rather than the allowlist, with an identical signature on two unrelated
+Korean hosts — 517 bytes sent, 39 received, closed after 8 seconds — while
+`www.ticketlink.co.kr` answered on other paths in the same run. A WAF
+resetting some handshakes, not a dead host.
+
+So `hit()` retries a **transport** failure and never an HTTP status. A 404 is
+a 404 and asking again only slows the sweep; a connection reset has a
+different answer a second later. And the report **names the attempt count**,
+which is the half that keeps this from becoming the quiet version of the same
+bug: a silent retry makes a host that needs three goes every week look
+identical to a healthy one. It earns its keep immediately — one TicketLink
+URL now reports `answered on attempt 2 of 3`, so the intermittency is visible
+instead of either crying wolf or disappearing.
+
+*The one `!` was a stock ticker.* The Yahoo rebrand article was reported as 9%
+reworded every week and written off above as a page that does not extract
+cleanly. Diffed token by token rather than reasoned about, the entire
+difference is the market-quote strip Yahoo Finance puts above every article —
+`5,404.02 -7.98 -0.15%` against `5,422.16 +7.02 +0.13%`. **Not one word of
+the article changed**, and those numbers move every trading day, so that
+warning was guaranteed to fire forever.
+
+`CHROME` in `scripts/watch.mjs` drops it, **declared per source rather than
+applied globally, and that scoping is the whole design.** A pattern loose
+enough to drop a market quote is loose enough to drop a fee, and a cited fee
+going from 3,000 to 8,000 is the single thing this script exists to catch.
+Scoped to the host that earned it, it cannot reach another source — and it is
+narrow even there: `8,000`, `150 euro`, `2026-10-24`, `10%` and `3.5%` all
+survive it, while `3.50%` would not, which is a real limitation and the
+reason it is not global. The next page needing an entry states its own reason
+there, with the diff that justified it.
+
+It is applied to **both sides** of the comparison, so baselines taken before
+this change still compare correctly. That matters: the alternative was a
+blanket `--record`, which is exactly the run this file spends five paragraphs
+telling the next person not to make.
+
+The sweep now reports **0 needing action, 0 worth a look**, and that is worth
+more than it sounds. A report with four permanent entries is a report nobody
+reads, so the next real one would have arrived into a habit of skipping.
+
 **The checks did not run on most changes, and now they do.**
 `.github/workflows/kpopgo-watch.yml` sweeps the network weekly and keeps its
 test step, correctly: several assertions are date-dependent and go red as
@@ -124,11 +180,11 @@ and the effect was that a change to the translation register, to `lib/`, to
 this repo was not tested by it.
 
 `.github/workflows/kpopgo-checks.yml` is the per-change gate: the suite and
-`tsc --noEmit` on anything under `kpopgo/`. The suite imports only node
-builtins and local modules only — `scripts/content.mjs`, which parses the two
-content registers as text, and the scripts built on it — so that job installs
-nothing and takes seconds. `next build` is deliberately absent — Vercel builds every push and
-reports it as a commit status — as is `next lint`, which in Next 15.5 prompts
+`tsc --noEmit` on anything under `kpopgo/`. The suite imports node builtins
+and local modules only — `scripts/content.mjs`, which parses the two content
+registers as text, and the scripts built on it — so that job installs nothing
+and takes seconds. `next build` is deliberately absent: Vercel builds every
+push and reports it as a commit status — as is `next lint`, which in Next 15.5 prompts
 for an ESLint config this project does not have and cannot complete
 unattended. The repository is public, so the minutes are free.
 
@@ -1047,8 +1103,8 @@ earlier and seven here; the other twenty-seven were left alone.
 mo` are good writing, and rewriting them to hit queries nobody has measured
 would be invention wearing the clothes of optimisation — the same mistake as
 writing a thin page for a gap that was really a findability problem, recorded
-two sections above. **An audit's count
-is a hypothesis about how many titles are wrong, not a quota to fill.**
+two sections above. **An audit's count is a hypothesis about how many titles
+are wrong, not a quota to fill.**
 
 ## The check that English moved and the translations did not
 

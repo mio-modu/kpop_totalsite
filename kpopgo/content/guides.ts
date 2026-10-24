@@ -177,7 +177,7 @@ export type Guide = {
    * because the content layer is data and stays data — the mapping from this
    * key to a component lives in the route that renders it.
    */
-  diagram?: "gocheok-bowl";
+  diagram?: "gocheok-bowl" | "worldcup-bowl";
   /** An official document reproduced on the page, under a named licence. */
   document?: ReproducedDocument;
   intro: string[];
@@ -3509,6 +3509,196 @@ export const guides: Guide[] = [
       {
         label: "Ktown4u \u2014 the notices page, which is the live version of all of the above",
         url: "https://www.ktown4u.com/notices",
+      },
+    ],
+  },
+  {
+    slug: "seoul-world-cup-stadium-getting-there",
+    ko: "공연장",
+    art: "lightstick",
+    name: "Seoul World Cup Stadium",
+    koLine: "서울월드컵경기장 가는 길 — 역 이름이 경기장 이름과 같습니다",
+    title: "Getting to Seoul World Cup Stadium for a concert",
+    summary:
+      "The stadium in Sangam that stadium-scale tours play, read off the Seoul Facilities Corporation's own pages: the line and exit, the buses and which stop, and which of the two car parks is the one that discounts.",
+    glyph: "star",
+    status: "sourced",
+    lastChecked: "2026-10-24",
+    scope:
+      "Covers reaching Seoul World Cup Stadium in Mapo-gu, from the operator's own transport and parking pages. It does not cover which gate admits you, when doors open, or what you may carry in: those are the promoter's and are set per show, and no page here can tell you them in advance.",
+    readMinutes: 5,
+    platforms: ["Seoul World Cup Stadium"],
+    intro: [
+      "This is the 66,704-seat stadium at Sangam, and the operator says in its own words that it opens for cultural events as well as football. A stadium show there is the largest room a K-pop tour plays in Seoul.",
+      "The useful thing about getting to it is that the subway station is named after the stadium, which removes the guesswork that the Gocheok guide spends a step on. The part worth reading is which exit, which bus stop, and the car park trap.",
+    ],
+    steps: [
+      {
+        title: "Line 6 to 월드컵경기장역, and leave by exit 2",
+        body:
+          "The station carries the stadium's name, so there is no station-choosing problem here. The operator names exit 2 specifically. Seoul World Cup Stadium is at 서울특별시 마포구 월드컵로 240, and the station sits beside it rather than a walk away.",
+        pitfall:
+          "The operator's own website has a second 찾아오시는 길 page under its corporate section, and that one is the Seoul Facilities Corporation's head office in Seongdong-gu, reached from 용두역 on line 2. It is about ten kilometres from the stadium. Read the address before you trust a directions page on a venue's site.",
+        takes: "2 minutes",
+        see: {
+          slug: "seoul-world-cup-stadium-finding-your-seat",
+          text: "Once inside, the block name tells you which side of the stadium you are on.",
+        },
+      },
+      {
+        title: "By bus, aim for the west-side stop",
+        body:
+          "The operator lists 760, 710 and 571 as trunk routes, 7019 and 7715 as branch routes, 마포08 as the local circular and 9711 as the wide-area coach. It singles out 710, 7019 and 7715 as the fastest arrival, set down at the 월드컵경기장 서측 stop, numbered 14-105.",
+        pitfall:
+          "A bus number alone is not enough on a concert night. The same route has stops on more than one side of a stadium this size, and the operator names the west-side stop for a reason.",
+        takes: "2 minutes",
+      },
+      {
+        title: "If you drive, the two car parks are not equivalent",
+        body:
+          "There are two: the stadium's own, on the west side, with 528 spaces, and the Homeplus car park on the east side, with 767. The operator states plainly that the reductions it publishes do not apply at the Homeplus one. The larger car park is the one that does not discount.",
+        pitfall:
+          "Arriving by car at a 66,704-seat venue is the slowest way in and out on a show night, whichever side you park on. The subway station is named after the building.",
+        takes: "1 minute",
+      },
+      {
+        title: "Everything about the night itself is the promoter's",
+        body:
+          "Which gate admits you, when doors open, what you may carry in and how the floor is laid out are set per show and are not on the venue's pages. The operator publishes the building; the promoter publishes the event. Your ticket and the promoter's notice are the authority on all of it.",
+        takes: "1 minute",
+        see: {
+          slug: "nol-world-mobile-ticket-and-entry",
+          text: "What you actually present at the gate, and what has to match.",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Is Seoul World Cup Stadium the same as Gocheok Sky Dome?",
+        a: "No. They are different buildings in different districts, run by the same operator. Gocheok is an indoor dome in Guro-gu seating about 16,600; the World Cup Stadium is an open-air stadium in Mapo-gu seating 66,704. The numbering systems are different too, which is why each has its own page here.",
+      },
+      {
+        q: "Which exit should I use?",
+        a: "Exit 2 of 월드컵경기장역 on line 6, which is the exit the operator names on its own directions page. It does not publish a walking time, so this page does not invent one.",
+      },
+      {
+        q: "Can I park at the stadium?",
+        a: "Yes, on the west side, where there are 528 spaces. The Homeplus car park on the east side has 767, and the operator states that its published reductions do not apply there.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 찾아오시는길: the address, line 6 월드컵경기장역 exit 2, the bus routes and the 14-105 west-side stop",
+        url: "https://www.sisul.or.kr/open_content/worldcup/introduce/location.jsp",
+      },
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 주차 안내: 528 spaces on the west side, 767 at Homeplus on the east, and the statement that reductions do not apply at the latter",
+        url: "https://www.sisul.or.kr/open_content/worldcup/guidance/park.jsp",
+      },
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 주경기장: 66,704 seats, one basement level under six above ground, and the operator's own statement that the stadium opens for cultural events",
+        url: "https://www.sisul.or.kr/open_content/worldcup/guidance/mainst.jsp",
+      },
+    ],
+  },
+  {
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    ko: "좌석",
+    art: "guide-tickets",
+    name: "World Cup Stadium seats",
+    koLine: "서울월드컵경기장 좌석 — 방위가 먼저입니다",
+    title: "Finding your seat at Seoul World Cup Stadium",
+    summary:
+      "How the stadium names its permanent seating, read off the operator's own seat finder: four stands named by compass direction, letters within each, and two letters of the alphabet that are never used.",
+    glyph: "ticket",
+    diagram: "worldcup-bowl",
+    status: "sourced",
+    lastChecked: "2026-10-24",
+    scope:
+      "Covers how Seoul World Cup Stadium names its permanent stands and blocks, from the Seoul Facilities Corporation's own seat finder. It does not cover the floor: at a concert part of the pitch is stage and the rest is laid out by the promoter, so nothing about it is permanent enough for this page to describe.",
+    readMinutes: 6,
+    platforms: ["Seoul World Cup Stadium"],
+    intro: [
+      "A seat here has two coordinates, and the operator's own seat finder is what shows that: it asks for a direction, and then for a letter. Nothing else.",
+      "That makes this building easier to read than Gocheok, where a block number tells you nothing until you know the rule. Here the first half of the name is a compass bearing, so a reader standing outside the west stand already knows that W is the side in front of them.",
+    ],
+    steps: [
+      {
+        title: "Read the direction first — it is a bearing, not a code",
+        body:
+          "The four stands are named 동 (East), 서 (West), 남 (South) and 북 (North), and the venue's seat finder will not look anything up until you have chosen one. A block name that begins with W is on the west side of the stadium. That is the whole of the first coordinate, and it is the part that gets you to the right side of a building holding 66,704 people.",
+        pitfall:
+          "Walking the long way round. At this size the wrong side of the stadium is a substantial walk, and the direction is printed in the block name precisely so you do not have to make that walk twice.",
+        takes: "2 minutes",
+        see: {
+          slug: "seoul-world-cup-stadium-getting-there",
+          text: "Which exit and which bus stop put you nearest.",
+        },
+      },
+      {
+        title: "Then the letter — and two letters do not exist",
+        body:
+          "Within a stand the blocks are lettered from A. The venue's finder offers A to T on the east side, A to P on the north and south, and A to X on the west. Read the sequence carefully and you will see it step from H straight to J, and from N straight to P: I and O are not used anywhere in the building, on any side, because they read as 1 and 0.",
+        pitfall:
+          "Hunting for an I or an O because a letter looks like it was skipped. It was skipped, deliberately, and a block with either letter does not exist here.",
+        takes: "2 minutes",
+      },
+      {
+        title: "West is the long side, and the asymmetry is navigational",
+        body:
+          "The four stands do not carry the same number of blocks. North and south run to P, which is fourteen blocks each once I and O are removed. East runs to T, eighteen. West runs to X, twenty-two — the longest side in the building. If you are counting blocks along a stand and the count feels wrong, check which stand you are in before you doubt the number.",
+        takes: "1 minute",
+      },
+      {
+        title: "The floor is not part of this system at all",
+        body:
+          "Everything above describes the permanent stands, which are concrete and do not move. At a concert the pitch carries the stage and whatever seating the promoter lays out on the rest of it, and that arrangement is designed per show. The stadium's own grass is 117m by 78m, which is the space that gets rearranged. No compass letter describes it.",
+        pitfall:
+          "Assuming a floor block follows the stand lettering. It does not, and it is not the venue's to name.",
+        takes: "1 minute",
+      },
+      {
+        title: "What this page will not tell you, and why",
+        body:
+          "It will not tell you which way the letters run inside a stand. The Gocheok chart publishes a written description of its own layout and states the direction in so many words; this venue publishes a seating graphic and no such description, so the direction is not in the source. It also will not tell you which blocks are sold for your show, which gate admits you, or where the stage is. Those are the promoter's and change per show.",
+        takes: "1 minute",
+        see: {
+          slug: "nol-world-mobile-ticket-and-entry",
+          text: "What you present at the gate, and the name that has to match.",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "What do the letters I and O mean on a ticket here?",
+        a: "Nothing — the venue does not use them. Its own seat finder runs A to H then J, and N then P, on every side. A letter that looks like an I is almost certainly a J, and one that looks like an O is almost certainly a Q or a D.",
+      },
+      {
+        q: "How many blocks are there on each side?",
+        a: "Fourteen on the north and south, eighteen on the east, and twenty-two on the west, counting the letters the operator's seat finder actually offers.",
+      },
+      {
+        q: "Which way do the letters run around a stand?",
+        a: "The venue does not say, so this page does not either. Its chart is the authority on where a given letter sits, and that chart is linked at the foot of this page.",
+      },
+      {
+        q: "Is the floor numbered like the stands?",
+        a: "No. At a concert the pitch is stage plus whatever the promoter lays out, designed per show. The compass-and-letter system describes the permanent stands only.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 주경기장 좌석안내: the seat finder itself, which takes a compass direction and then a letter, and whose own lists give A–T east, A–X west and A–P north and south with I and O absent",
+        url: "https://www.sisul.or.kr/open_content/worldcup/guidance/mainst_seat.jsp",
+      },
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 주경기장: 66,704 seats and a pitch of 117m by 78m, the area a concert floor is laid out on",
+        url: "https://www.sisul.or.kr/open_content/worldcup/guidance/mainst.jsp",
       },
     ],
   },

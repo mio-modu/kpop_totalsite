@@ -10,6 +10,7 @@ import { LanguageLinks } from "@/components/LanguageLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { StackedScreens, SingleScreen, StepObject } from "@/components/Objects";
 import { GocheokBowl } from "@/components/VenuePlan";
+import { WorldCupBowl } from "@/components/StadiumPlan";
 import { SourceDocument } from "@/components/SourceDocument";
 import { Artwork } from "@/components/Artwork";
 import { VerifiedBadge, StatusNotice } from "@/components/Badges";
@@ -128,7 +129,28 @@ export default async function GuidePage({
       {/* ─────────── T21: the booking screens, or the guide's own diagram ───────────
           The screens are right for a guide about buying something and wrong for
           a guide about a building, which is what `diagram` exists to say. */}
-      {guide.diagram === "gocheok-bowl" ? (
+      {guide.diagram === "worldcup-bowl" ? (
+        <div className="wrap mt-10">
+          <div className="flex justify-center">
+            <WorldCupBowl />
+          </div>
+          <p className="t-sm dim mt-4 max-w-[62ch]">
+            Four stands around the pitch, named by compass direction, and that is
+            the whole of the system: the first half of a block&rsquo;s name tells
+            you which side of the building it is on before you know anything else.
+            Letters run from A &mdash; north and south as far as P, east to T, and
+            west, the longest side, to X. <strong>I and O are never used</strong>,
+            which is why the sequence steps from H to J and from N to P.
+          </p>
+          <p className="data-sm dim mt-2.5 max-w-[62ch]">
+            Schematic, drawn from the operator&rsquo;s own seat finder rather than
+            traced from its chart. Which way the letters run inside a stand is not
+            stated in the venue&rsquo;s material, so this plan does not claim one.
+            The floor is left unmarked on purpose: a concert covers part of the
+            pitch and that layout is the promoter&rsquo;s, set per show.
+          </p>
+        </div>
+      ) : guide.diagram === "gocheok-bowl" ? (
         <div className="wrap mt-10">
           <div className="flex justify-center">
             <GocheokBowl />

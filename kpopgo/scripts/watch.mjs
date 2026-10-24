@@ -427,7 +427,20 @@ function isFixedDocument(url) {
   // kind of fixed document there is — it is where the rules a step was written
   // from actually live. The first version of this pattern missed them and
   // classified YES24's English guide as a storefront.
-  if (/\/(notice|news|press|article|view|blog|release|guide|faq|help|terms|policy|support)/i.test(path))
+  //
+  // `guidance` and `introduce` were the same miss a second time, and by one
+  // letter: a venue operator files its seating, parking and access pages under
+  // /guidance/ and /introduce/, and `/guidance` does not contain `/guide`.
+  // Nine pages were affected and every one of them is a fixed document — the
+  // Gocheok seat page most of all, since that guide's entire numbering rule is
+  // read off the description published with that chart. Its wording moving was
+  // exactly the event nothing would have reported. Checked rather than assumed:
+  // those nine are the only URLs in the register whose classification changes.
+  if (
+    /\/(notice|news|press|article|view|blog|release|guide|guidance|introduce|faq|help|terms|policy|support)/i.test(
+      path,
+    )
+  )
     return true;
   // A numeric id deep in the path is an article by another name.
   return /\/[^/]*\d{4,}/.test(path);

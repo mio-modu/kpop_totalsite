@@ -872,6 +872,71 @@ choosing: the table gives Guro as exit 1 while the turn-by-turn directions and
 the venue's own area map both say exit 2. An official source with two answers
 is reported as two answers.
 
+## A second venue, and the one that could not be written
+
+Seoul World Cup Stadium joins Gocheok with the same pair of guides, for the
+same reason: getting there and finding the seat are two different failures.
+
+**KSPO Dome was the intended venue and is not writable.** It is the hall the
+hosts file named as "the main Seoul K-pop arena", on a line this file already
+flagged as written from memory. Probed rather than trusted:
+`www.kspo.or.kr` answers 200 and is the *foundation's* corporate site, titled
+서울올림픽기념국민체육진흥공단, with no venue or seating link on it at all. The
+hall sits in Olympic Park, and `www.olympicpark.co.kr` answers
+`ws_closed_mid_exchange` on every attempt once allowlisted — the site
+declining, not the allowlist, and consistently rather than intermittently, so
+the retry above does not rescue it.
+
+That settles it rather than merely delaying it: **a source this container
+cannot fetch cannot be fingerprinted or link-checked**, so citing it would put
+a dead citation in the weekly report every week — the permanent false alarm
+this file has a rule about. A person reading the page in a browser does not
+fix that, which is why it was not worth asking for.
+
+**The system there is compass-and-letter, and it is the easier of the two to
+teach.** Read off the operator's own seat finder, which is the evidence: the
+form asks for a direction and then a letter, so those are a seat's two
+coordinates. East runs A–T, west A–X, north and south A–P, and **I and O are
+not used anywhere in the building**, which is why the sequence steps from H to
+J and from N to P. At Gocheok a block number says nothing until you know the
+rule; here the first half of the name is a compass bearing, so a reader
+outside the west stand already knows that W is the side in front of them.
+
+**What that guide refuses to say is the direction the letters run.** The
+Gocheok chart publishes a written description with it, stating 시계방향 and
+listing every range, which is what lets that diagram draw an arrow. This venue
+publishes a graphic and no such description, so the direction is not in the
+source and no page here invents one. The same refusal as the TicketLink
+payment step, arriving in a drawing instead of a sentence.
+
+**And the operator's own site has a directions page for the wrong building.**
+Under its corporate section sits a second 찾아오시는 길, and it is the Seoul
+Facilities Corporation head office in Seongdong-gu, reached from 용두역 — about
+ten kilometres from the stadium. It is the Gocheok station-rows error wearing a
+different hat, and it was caught by reading the address rather than the page
+title. The getting-there guide carries it as a pitfall, because a reader who
+searches the operator's site will meet it.
+
+`components/StadiumPlan.tsx` derives the drawing from the letter sets, so a
+stand's range cannot drift from its label. Three things were visible only once
+rendered, which is the Gocheok plan's four passes arriving again: horizontal
+labels on the vertical stands ran off the edge of the drawing and are rotated
+onto the band; the outer corner radius is tied to the band geometry, because at
+any larger value the east and west bands poke outside the outline and read as a
+rendering fault; and it filled 1068px of desktop until it was sized like the
+Gocheok bowl.
+
+**Writing it found a latent defect in the watcher.** `isFixedDocument` missed
+`/guidance/` and `/introduce/` by one letter — `/guidance` does not contain
+`/guide` — so a venue operator files its seating, parking and access pages
+exactly where the pattern stops looking. Nine URLs were affected and every one
+is a fixed document. **The Gocheok seat page most of all**: that guide's entire
+numbering rule is read off the description published with that chart, and its
+wording moving was precisely the event nothing would have reported. Measured
+rather than assumed — those nine are the only URLs in the register whose
+classification changes, and two consecutive sweeps after the change report 0
+needing action.
+
 ## TicketLink, and what a guide may not say
 
 TicketLink is the fourth Korean ticketing platform and the one the English

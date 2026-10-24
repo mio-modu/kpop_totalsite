@@ -125,8 +125,9 @@ this repo was not tested by it.
 
 `.github/workflows/kpopgo-checks.yml` is the per-change gate: the suite and
 `tsc --noEmit` on anything under `kpopgo/`. The suite imports only node
-builtins and one local module, so that job installs nothing and takes
-seconds. `next build` is deliberately absent — Vercel builds every push and
+builtins and local modules only — `scripts/content.mjs`, which parses the two
+content registers as text, and the scripts built on it — so that job installs
+nothing and takes seconds. `next build` is deliberately absent — Vercel builds every push and
 reports it as a commit status — as is `next lint`, which in Next 15.5 prompts
 for an ESLint config this project does not have and cannot complete
 unattended. The repository is public, so the minutes are free.
@@ -277,11 +278,18 @@ list are markets an existing edition or English already reaches, so an
 eleventh language would multiply every future edit by eleven to reach readers
 who are not currently unreached.
 
-**The precondition for ever raising it** is a check that fails when an
-English field changes and its translations do not — a stored fingerprint per
-translated field, the same shape as `sourceChecked` but for the text rather
-than for the source. Until that exists, adding a language adds a maintenance
-burden no test can see, and ten is the number.
+**The precondition for ever raising it** was a check that fails when an
+English field changes and its translations do not — a stored fingerprint for
+the text, the same shape as `sourceChecked` but for what the page says rather
+than for when its source was read. **That check exists now**, and
+**The check that English moved and the translations did not** below is how.
+
+It does not move the number. What it removes is the reason the number could
+not be argued about: the maintenance burden is visible to a test now instead
+of resting on somebody remembering. The benefit side has not changed — the
+next candidates on the arrivals list are still markets an existing edition or
+English already reaches — so ten is the ceiling until somebody makes the
+other half of the case.
 
 **Vietnamese, Thai and Filipino were chosen from arrivals data, not from a
 sense of which markets feel large** — because that sense is exactly what put
@@ -1037,9 +1045,88 @@ Of the thirty-eight titles across the two editions, four were rewritten
 earlier and seven here; the other twenty-seven were left alone.
 `kuwalipikado`, `o que zera o seu lugar nela` and `ang perang ipinambabayad
 mo` are good writing, and rewriting them to hit queries nobody has measured
-would be invention wearing the clothes of optimisation — the same mistake as writing a thin page for a gap that was
-really a findability problem, recorded two sections above. **An audit's count
+would be invention wearing the clothes of optimisation — the same mistake as
+writing a thin page for a gap that was really a findability problem, recorded
+two sections above. **An audit's count
 is a hypothesis about how many titles are wrong, not a quota to fill.**
+
+## The check that English moved and the translations did not
+
+`sourceChecked` catches a source being re-read: when a guide's `lastChecked`
+moves, every translation of it goes `behind` and the page says so. Nothing
+caught the English *text* being edited, and that is the half that kept
+happening — three times in three days, each recorded above:
+
+| Edit | Translations it silently invalidated |
+| --- | --- |
+| *Paris* added to one line of the timezone guide | 3 |
+| One sentence added to Play&Stay step 1 | 10 |
+| The Asian conversions, across two steps | 3 |
+
+None of the three moved `lastChecked`, correctly — nobody re-checked a source
+to add arithmetic that was already true. So every translation went on reading
+`current` while the English underneath it had changed, and the only thing
+standing between a corrected English page and ten editions quietly
+disagreeing with it was a person remembering. The step and FAQ counts catch a
+translation short an *item*; a body string that grew a sentence was invisible
+to every assertion in the suite.
+
+`npm run sourcetext` closes it. Every translation entry carries `sourceText`,
+twelve hex characters of SHA-256 over the English fields that entry mirrors,
+as they stood when the translation was last brought in line; the check fails
+when the English is no longer that. `--record-new` writes only the entries
+with no baseline, `--record` overwrites for the deliberate case where the
+translations have just been fixed — the asymmetry `watch.mjs` earned, for the
+same reason, with the warning printed where somebody in a hurry would read it.
+
+**The baseline was proved clean before it was written, and that is the part
+worth keeping.** A fingerprint recorded over existing drift blesses it
+permanently, and afterwards a clean start and a buried mess look identical —
+the `--record` failure mode, arriving on day one. So the history was walked
+first. Forty-eight commits have touched `content/guides.ts`; ten of them
+changed a mirrored field without touching `content/translations.ts`, and those
+ten are the only places drift could have entered. Then the decisive version:
+for each of the 193 entries, the commit where its own text last changed, and
+that guide's English fingerprint at that commit against today's. **No standing
+drift.** Every translation on this site was made against the English now on
+the page, so the baseline records a fact instead of freezing a mess.
+
+**Field selection is per purpose; the parsing is shared.** The suite reads both
+registers as source text, because it installs nothing, and those primitives
+lived inside `scripts/translations.test.mjs` — correct while it was the only
+thing reading a guide against its translation. `scripts/content.mjs` holds
+them now, because a second reader arrived and this repository has already paid
+for the other version of that: `BRAND_WATCH` went on naming
+`concerts.weverse.io` after every guide had been corrected to the singular
+host, because it was a different list. A fingerprint computed by a parser that
+disagreed with the checks around it would report drift nothing else can see,
+or miss drift everything else reads.
+
+What each caller *selects* stays its own. `parts`, the set the translation
+checks compare, leaves out `takes`; the fingerprint includes it, because
+"2 minutes" becoming "9 minutes" is an edit a reader acts on — and a two-word
+field would fail the length-ratio band if it were added to `parts`. Both
+facts are asserted, so the next person to unify the two sets finds out from a
+test rather than from a false alarm.
+
+**It ignores everything a translation does not mirror**, which is what keeps it
+from becoming the permanent false alarm this file already has a rule about.
+`status`, `lastChecked`, `sources`, `see` and `partner` sit outside the hash: a
+guide gaining a citation or reaching `verified` is not an edit any translation
+has to follow. Proved both ways on the real register rather than in a fixture
+— adding a city to the timezone step named exactly `de, es, fr`, the three
+editions that carry that guide, and failed the suite at exit 1; bumping a
+`lastChecked` and adding a source stayed silent at exit 0.
+
+The canonical form is JSON rather than a concatenation, and there is a test
+saying so, because the cheaper implementation is the obvious one for somebody
+simplifying this later: a sentence cut from a step body and pasted into the
+summary joins to the same string and is an edit both translations have to
+follow.
+
+Nothing renders it. Unlike `behind`, which is honest and temporary, a
+translation whose source text has moved is not a state worth labelling — it is
+simply wrong, and the answer is to fix it.
 
 ## Advertising
 

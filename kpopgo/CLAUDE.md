@@ -937,6 +937,51 @@ rather than assumed — those nine are the only URLs in the register whose
 classification changes, and two consecutive sweeps after the change report 0
 needing action.
 
+## The venue index, and the guide that could not ship without it
+
+Jangchung Arena was measured before it was written, and it failed — **nought
+of the twenty-seven guides mentioned it**, so a lone guide for it had no
+inbound edge and `links.test.mjs` is a hard failure on exactly that. The rule
+says what to do: a guide nothing sends a reader to is not yet part of the
+subject, and adding a decorative link to clear the check is the failure the
+file exists to prevent. So the answer was not to force it through.
+
+**What unblocked it is a page that was already owed.** The Gocheok
+getting-there guide spends a whole step on *Confirm which hall your show is
+actually in*, because Seoul's halls have overlapping English names — and that
+step could name four venues while linking to exactly one, since a step carries
+a single `see`. Worse, a reader going to the World Cup Stadium never sees it:
+it is buried inside a Gocheok guide. That is this file's own "a gap in answers
+can mean a page nobody finds" case, arriving from the other direction — the
+answer existed and was unfindable.
+
+`which-seoul-venue-is-your-show-at` is that answer given its own page: which
+name is which district, which line reaches it, what the shared operator
+confuses, and what no venue page can tell you. It is **a guide rather than a
+route**, and that is load-bearing rather than stylistic: `links.test.mjs` reads
+guide-to-guide `see` edges, so a hand-written page under `app/` could not have
+given any venue guide an inbound and would not have unblocked anything.
+
+Two edges moved with it, and both are more honest than what they replaced.
+The disambiguation step now leads to the **disambiguation page** instead of to
+Gocheok's seat guide, which is what it should always have done. The seat guide
+keeps its inbound from *Understand why the crush is worse than a baseball
+crowd* — the step about the hall holding 16,601 for baseball and about 25,000
+for a concert, which is the same subject one level down.
+
+**Jangchung has no seat guide, and the guide says so in its scope.** Gocheok
+publishes a chart with a written description of its numbering; the World Cup
+Stadium publishes a seat finder; this venue publishes neither, so there is no
+system to teach and inventing one is the thing this site was built against.
+The page says that in its own FAQ rather than leaving a reader wondering why
+the third venue is covered more thinly than the other two.
+
+What that venue does publish is worth the page on its own: **동대입구역 exit 5
+connects to the arena directly**, so the arrival never goes outside — unique
+among the three — and **there is no general parking during events**, out of 63
+spaces total. Of its 4,507 seats, 1,324 are retractable, which is why even the
+floor plan is substantially the promoter's.
+
 ## TicketLink, and what a guide may not say
 
 TicketLink is the fourth Korean ticketing platform and the one the English

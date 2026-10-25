@@ -2986,7 +2986,7 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Confirm which hall your show is actually in",
-        body: "Seoul has several large halls and their English names overlap badly. Gocheok Sky Dome — 고척스카이돔 — is in Guro-gu at 430 Gyeongin-ro, postcode 08223, and is run by the Seoul Facilities Corporation. It is not KSPO Dome, which is inside Olympic Park in Songpa-gu and run by a different organisation entirely, and it is not Inspire Arena, which is in Incheon. Check the venue name on the booking page against the address before you plan anything, because the three are an hour apart from each other.",
+        body: "Seoul has several large halls and their English names overlap badly. Gocheok Sky Dome — 고척스카이돔 — is in Guro-gu at 430 Gyeongin-ro, postcode 08223, and is run by the Seoul Facilities Corporation. It is not KSPO Dome, which is inside Olympic Park in Songpa-gu and run by a different organisation entirely, and it is not Inspire Arena, which is in Incheon. It is also not Seoul World Cup Stadium, which is the open-air stadium at Sangam in Mapo-gu — the same operator runs that one, so a search for the operator's name will offer you both. Check the venue name on the booking page against the address before you plan anything, because they are an hour apart from each other.",
         pitfall:
           "Reading \u0022Dome\u0022 and assuming there is only one. Two of Seoul\u0027s biggest halls have Dome in the name, they are on opposite sides of the city, and a fan who learns this at 18:00 does not make the show.",
         takes: "2 minutes",

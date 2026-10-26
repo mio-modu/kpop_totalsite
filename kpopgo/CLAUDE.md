@@ -1308,8 +1308,100 @@ set, so the site looks finished through the weeks before approval. Rules:
   warning.
 
 Do not apply for AdSense before the guides are verified and there is real
-search data — a rejection carries a cooldown that makes a premature
-application the slower path.
+search data. **The reason is not a cooldown, and this file said it was** until
+26 October 2026, when an outside review checked it: Google publishes no fixed
+waiting period after a rejection. Its own guidance is to fix what was flagged
+and reapply, and the multi-week lockouts people describe are community reports
+rather than policy.
+
+The decision stands on a different footing, which is the honest one. A
+rejection is assessed against the site as it was on the day, and re-review
+queues are slow enough that a premature application spends weeks to learn
+something this site already knows about itself: every guide is `sourced`,
+nobody has walked a flow, and there is no search data to show that anyone
+arrives. Applying before those change asks a reviewer a question we can answer
+ourselves, and the answer is not yet.
+
+Writing it down as a cooldown made a soft argument sound like a hard rule,
+which is the failure mode this file exists to catch — and a site whose only
+asset is being accurate cannot afford an invented fact in its own operating
+document.
+
+## What an outside review got right, and what it measured wrong
+
+An adversarial review of this site arrived on 26 October 2026. Its conclusion
+was correct and is recorded above in other words: the risk is not the content,
+it is twenty-nine flows nobody has walked and a distribution channel that does
+not exist. Three of its sharpest technical findings did not survive
+measurement, and the way they failed is worth keeping.
+
+**The sitemap count was its own fetch limit.** It reported 166 URLs against
+this file's 240 and used the gap to argue that a site running seventy-odd
+assertions cannot count itself. Re-measured: 240, of which 203 are non-English
+— exactly the register's 193 translations plus 10 language indexes. The
+sitemap is 78,490 bytes, the 166th `<loc>` ends at 64,365 and the 167th
+crosses 64,556. That is the 65,536-byte boundary, so the reviewer's fetch was
+truncated at 64 KB and all three of its counts were of the surviving fragment.
+**A number from a tool with an undeclared limit is a measurement of the tool.**
+
+**The translation number check already works the way it was told to.** The
+review warned that checking whether a number "survives" would fail a
+legitimate update when a fee changes, and proposed comparing the English
+against its translation instead. That is what `allPairs()` does: it pairs the
+current English with the current translation, so a fee moving from 3,000 to
+8,000 on both sides passes and only a disagreement fails. The proposed fix was
+a description of the existing implementation.
+
+**The expiry policy exists, is implemented on every surface that should react,
+and is tested.** The review called it an undecided design question. It is not:
+`displayStatus` returns `stale` past the shelf life, `Badges.tsx` renders the
+`만` seal with "This check has expired" and keeps the steps visible as what was
+true then, and both `llms.txt` files emit `expired`. The sitemap deliberately
+does not react — an expired guide is one a crawler should return to, not one
+to demote. `freshness.test.mjs` asserts the ladder's ordering, that CI warns
+before the page degrades for every status, and that expiry is strictly past
+the limit rather than on it.
+
+What the review got right about expiry is the shape: twenty-nine guides fall
+due between 12 and 23 January 2027, which is a cliff rather than a ladder.
+**But the operational date is earlier and is already wired.** `WARN_FRACTION`
+puts the first warning at two thirds of a shelf life, so `npm run watch`
+escalates its first guide from `·` to `!` on **13 December 2026**. That is the
+date to work back from, and the answer to the cliff is re-checking sources
+before they expire rather than new machinery for displaying that they did.
+
+## The four ticketing platforms publish no affiliate programme
+
+Checked on 26 October 2026, because the paid-links rule above says a sentence
+must exist before a partner does — and this site has the sentences. NOL World
+is named in 41 steps, Weverse in 34, YES24 in 8 and TicketLink in 6. The
+missing half was never the sentence; it was whether there is anything to join.
+
+There is not, as far as anything published shows:
+
+- **NOL World** — no affiliate, referral or commission terms anywhere public.
+- **Weverse** — `en.weverse.co/partnership` is a contact form for "a
+  partnership opportunity or an advertisement". A route to ask, not a
+  programme to join.
+- **YES24 Ticket** — its 제휴문의 page runs the *other* direction. It is for a
+  promoter asking YES24 to sell their show: 판매 대행 의뢰, 사업자등록증 and
+  a bank passbook copy, an admin at `tms.yes24.com`, and settlement that pays
+  out **minus** the selling commission. "제휴사" there means the other outlets
+  a ticket is sold through. YES24's LinkPrice affiliate covers the bookstore;
+  whether it reaches the ticket business is unconfirmed, because
+  `www.yes24.com` is not on this container's allowlist.
+- **TicketLink** — nothing found.
+
+Probing the four hosts for `/affiliate`, `/partners` and the rest found
+nothing, and the one apparent hit was a trap worth recording:
+`ticket.yes24.com` answers **200 for every path**. A real page and
+`/zzz-this-page-cannot-exist-9981` both return the identical 834-byte shell,
+so a status code proves nothing there and only the body does.
+
+So the honest state is that those 89 sentences have nowhere to point, and the
+next step is an enquiry to Weverse's partnership form rather than a search for
+a signup page that does not exist. Recorded so that nobody measures this
+twice.
 
 ## Paid links
 

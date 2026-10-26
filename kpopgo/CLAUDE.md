@@ -1313,8 +1313,16 @@ application the slower path.
 
 ## Paid links
 
-`content/affiliates.ts` is the register, and it is empty: this site carries no
-paid link today. The machinery exists first on purpose, because knowing a
+`content/affiliates.ts` is the register. It held nothing for most of this
+site's life, and the sentence above said so for longer than it was true: it
+carries **one partner, Klook**, and the site carries **one paid link**, in the
+Play&Stay guide's accommodation step. Corrected on 26 October 2026 after the
+file was read rather than recalled — the paragraph claiming an empty register
+sat four hundred lines above another one describing the Klook link as
+hand-placed, which is the kind of contradiction a document grows when it is
+edited in two places and read in neither.
+
+The machinery existed before the first partner on purpose, because knowing a
 section may one day hold a paid link changes how it is written now — a guide
 that already names the real trade-offs can carry a link honestly, and one that
 would have to grow a section to fit a link reads exactly like what it is.

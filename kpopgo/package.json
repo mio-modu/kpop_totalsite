@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "watch": "node scripts/watch.mjs",
     "test": "node --test \"scripts/*.test.mjs\"",
-    "hosts": "node scripts/hosts.mjs"
+    "hosts": "node scripts/hosts.mjs",
+    "sourcetext": "node scripts/sourcetext.mjs"
   },
   "dependencies": {
     "next": "^15.5.28",

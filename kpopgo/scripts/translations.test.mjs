@@ -867,6 +867,11 @@ const LATIN_OK = new Set([
   // and the gate marked for R.d-club season-ticket holders is the one gate a
   // reader must recognise as not theirs.
   "FLOOR", "club",
+  // The venue hub exists to match the English name on a booking page against
+  // a district, so those names have to survive into every edition even where
+  // the surrounding prose is not Latin. Districts do not: nobody matches
+  // "Guro-gu" on a screen, so they are written in the reader's own script.
+  "Jangchung", "Seoul", "Cup", "Stadium",
 ]);
 
 /** Locales whose prose should contain no bare Latin words. */

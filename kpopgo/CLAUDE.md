@@ -906,6 +906,21 @@ on a `sourceUrl` the guide does not already cite — reproducing something from
 a page you have not cited is a claim with no trail back to it. That is the
 paid-link rule applied to somebody else's copyright.
 
+**The translated pages do not carry the chart, and that is the answer rather
+than an omission.** `app/[lang]/guides/[slug]/page.tsx` renders no document
+and no diagram, so from 27 October 2026 the seat guide exists in eleven
+editions of which exactly one reproduces the picture. Nothing above changes:
+the conditions bind the page that serves the file, the English one, and the
+ten translations make no copy to attribute. A reader who wants the chart
+follows the already-rendered link to the English edition. The reason to write
+this down is that the paragraphs above read as though every page carrying
+this guide carries the chart, which was true until there was more than one
+page carrying it — and the first instinct on noticing would be to add the
+credit to the translations, which would attribute a reproduction that is not
+there. If a translated template ever starts rendering documents, the
+attribution and the ad-adjacency rule arrive with it, and
+`scripts/documents.test.mjs` is where that gets asserted.
+
 **Two checks, because one of them can be silenced.** The upstream file is
 called `seat2026.jpg`, so the operator replacing it is a scheduled event
 rather than a hypothesis, and our copy would go on being served with

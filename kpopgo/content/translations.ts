@@ -22435,6 +22435,686 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+
+  {
+    locale: "ja",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "あなたの公演は、ソウルのどの会場なのか",
+    summary:
+      "ソウルの大型ホールは英語名が重なっていて、2つは名前にドームが入っていながら市内の反対側にあり、さらに2つは運営者が同じです。それぞれの名前が何を指し、どの区にあり、どの路線で行けるのか。",
+    scope:
+      "ソウルのコンサート会場を名前、区、地下鉄の路線で見分けることを、各運営者自身のページのうち当サイトが読めるものから扱います。どのブロックが売られるか、どのゲートから入れるか、開場がいつかは扱いません。それらは主催者のもので、公演ごとに決まります。",
+    intro: [
+      "これは、手遅れになってから間違いに気づきやすく、そして間違えたときの代償がもっとも大きい問いです。ソウル最大級のホールのうち2つは名前にドームが入っていて、互いに1時間離れています。さらに2つは同じ組織が運営しているので、運営者名で検索すると両方が出てきます。",
+      "会場名は、買う前なら予約ページに、買った後ならチケットに書かれています。名前の響きではなく、区と照らし合わせて読んでください。",
+    ],
+    steps: [
+      {
+        title: "名前を響きではなく区と突き合わせる",
+        body: "Gocheok Sky Dome（고척스카이돔）は西側の九老区。KSPO Domeは南東の松坡区、オリンピック公園の中にあり、運営はまったく別の組織です。Seoul World Cup Stadiumは北西の麻浦区、上岩にあります。Jangchung Arena（장충체육관）は中心部の中区。Inspire Arenaはそもそもソウルではなく、仁川です。区は名前についての事実ですが、名前は区についての事実ではありません。",
+        pitfall:
+          "「ドーム」という字を見て、ドームは一つだと思い込むこと。市内最大級のホールのうち2つが名前にそれを含み、ソウルの反対側にあります。これを18時に知ったファンは公演に間に合いません。",
+        takes: "2分",
+      },
+      {
+        title: "そのうち2つは運営者が同じで、それ自体が罠です",
+        body: "Gocheok Sky Dome、Seoul World Cup Stadium、Jangchung Arenaはいずれもソウル施設公団（서울시설공단）が運営しているので、運営者名で検索すると3つとも出てきて、ページも見分けがつきません。運営者のサイトは企業情報のセクションにも찾아오시는 길を載せていて、そちらは城東区にある公団本部です。どの会場からも10キロほど離れています。案内ページの住所が、自分の行きたい会場と一致しているか確かめてください。",
+        pitfall:
+          "運営者自身のサイトにあるからという理由で案内ページを信じること。3つの会場と本部がそれぞれ案内ページを公開していて、どれも同じように見えます。",
+        takes: "2分",
+      },
+      {
+        title: "規模が、どういう夜になるかを教えてくれます",
+        body: "Jangchung Arenaの座席は4,507席で、そのうち1,324席は可動式です。ファンミーティング向けの規模です。Gocheok Sky Domeは屋内ドームで野球なら約16,600人、コンサートではそれより小さく構成されます。Seoul World Cup Stadiumは66,704席で屋根がなく、11月にはそれが別の話になります。運営者のページにある数字は建物の数字であって、あなたの公演の数字ではありません。そのうちどれだけを売るかは主催者が決めます。",
+        takes: "1分",
+      },
+      {
+        title: "ときには駅がそのまま建物です",
+        body: "この3つは到着の仕方が似ていません。Jangchung Arenaは동대입구역の5番出口から行き、運営者はその出口が建物に直結していると明記しています。外に出る必要がありません。Seoul World Cup Stadiumには会場の名を冠した駅、월드컵경기장역があり、2番出口です。Gocheokは、最寄り駅が当然の答えにならない唯一の会場で、だからこそ専用のページがあります。",
+        takes: "1分",
+      },
+      {
+        title: "どの会場のページも答えられないこと",
+        body: "あなたの公演でどのブロックが売られるか、ステージがどこにあるか、どのゲートから入れるか、開場がいつか、何を持ち込めるか。運営者が公開するのは建物で、主催者が公開するのは公演です。いま挙げたものはどれも公演ごとに決まり、あなたのチケットと主催者の告知にあります。",
+        takes: "1分",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky DomeはKSPO Domeと同じですか。",
+        a: "違います。Gocheok Sky Domeは西側の九老区にあり、ソウル施設公団が運営しています。KSPO Domeは南東の松坡区、オリンピック公園の中にあり、別の組織の運営です。両者は1時間ほど離れています。",
+      },
+      {
+        q: "Inspire Arenaはソウルにありますか。",
+        a: "ありません。仁川です。ソウルから向かう場所であってソウルの中ではなく、計画すべき移動が別のものになります。",
+      },
+      {
+        q: "なぜ運営者自身の案内ページが違う場所を示すのですか。",
+        a: "ソウル施設公団は複数の会場を運営しており、さらに城東区にある自社の本部への案内も公開しているからです。それらのページはすべて同じサイト上にあり、見た目も似ています。ページの見出しではなく住所を突き合わせてください。",
+      },
+      {
+        q: "会場ページの座席数は、自分の公演の規模を教えてくれますか。",
+        a: "いいえ。あれは通常の構成における建物の収容数です。コンサートはフロアの一部をステージが覆い、残りのうちどれだけを売るかは主催者が決めるので、運営者のページの数字は上限であって、あなたの夜の説明ではありません。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "你的場次究竟在首爾的哪一個場館",
+    summary:
+      "首爾的大型場館英文名字互相重疊，其中兩座名字裡都有巨蛋，卻位在城市的兩端，另外兩座共用同一個營運者。每個名字指的是什麼、位在哪一區、哪一條線到得了。",
+    scope:
+      "涵蓋如何靠名字、行政區和地鐵線分辨首爾的演唱會場館，取自各營運者自己的頁面中本站讀得到的部分。不涵蓋哪些區塊會開賣、哪個入口讓你進、何時開放入場：那些屬於主辦方，並逐場決定。",
+    intro: [
+      "這是最容易太晚才弄錯、而弄錯代價又最大的一個問題。首爾最大的場館中有兩座名字裡都有巨蛋，而且相距一小時。另外兩座由同一個組織營運，所以搜尋營運者會同時給你兩個。",
+      "場館名字在你買之前就在預訂頁面上，買完之後在票上。請拿它去對行政區，而不是去對名字聽起來像什麼。",
+    ],
+    steps: [
+      {
+        title: "把名字對到行政區，而不是對到它聽起來的樣子",
+        body: "Gocheok Sky Dome（고척스카이돔）在西邊的九老區。KSPO Dome在東南邊松坡區的奧林匹克公園裡，由完全不同的組織營運。Seoul World Cup Stadium在西北邊麻浦區的上岩。Jangchung Arena（장충체육관）在市中心的中區。Inspire Arena根本不在首爾——它在仁川。行政區是關於名字的事實；名字不是關於行政區的事實。",
+        pitfall:
+          "看到巨蛋二字就以為只有一座。這座城市最大的場館中有兩座名字裡都有它，而且分別在首爾的兩端，在18時才弄懂這件事的粉絲趕不上演出。",
+        takes: "2分鐘",
+      },
+      {
+        title: "其中兩座共用營運者，而那本身就是一個陷阱",
+        body: "Gocheok Sky Dome、Seoul World Cup Stadium與Jangchung Arena都由首爾設施公團（서울시설공단）營運，所以搜尋營運者的名字會同時給你三座，而它們的頁面看起來一模一樣。營運者的網站在企業區塊底下也放了一份찾아오시는 길，而那一份是公團位在城東區的總部——距離上述任何一座都有十公里左右。請確認交通頁面上的地址，和你要去的那座場館一致。",
+        pitfall:
+          "因為交通頁面在營運者自己的網站上就相信它。三座場館加一個總部都各自公布了一份，而它們看起來都一樣。",
+        takes: "2分鐘",
+      },
+      {
+        title: "規模會告訴你這是什麼樣的一個晚上",
+        body: "Jangchung Arena有4,507個座位，其中1,324個是可收納的——一個適合見面會的空間。Gocheok Sky Dome是室內巨蛋，棒球時約16,600人，演唱會會配置得更小。Seoul World Cup Stadium有66,704個座位而且沒有屋頂，這在11月是另一回事。營運者頁面上的數字屬於建築，不屬於你那一場：要賣掉其中多少由主辦方決定。",
+        takes: "1分鐘",
+      },
+      {
+        title: "有時候車站就是那棟建築",
+        body: "這三座在抵達這件事上並不相像。Jangchung Arena從동대입구역的5號出口進入，營運者明確表示那個出口直接連通建築——你不必走到外面。Seoul World Cup Stadium有一個以它命名的車站월드컵경기장역，2號出口。Gocheok是唯一一座最近的車站不是理所當然答案的場館，所以它才有自己的專頁。",
+        takes: "1分鐘",
+      },
+      {
+        title: "任何場館頁面都無法告訴你的事",
+        body: "你那一場有哪些區塊會開賣、舞台在哪裡、哪個入口讓你進、何時開放入場、可以帶什麼進去。營運者公布的是建築，主辦方公布的是場次。上面每一項都是逐場決定的，寫在你的票上和主辦方的公告裡。",
+        takes: "1分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome和KSPO Dome是同一個嗎？",
+        a: "不是。Gocheok Sky Dome在西邊的九老區，由首爾設施公團營運。KSPO Dome在東南邊松坡區的奧林匹克公園裡，由不同的組織負責。兩者相距約一小時。",
+      },
+      {
+        q: "Inspire Arena在首爾嗎？",
+        a: "不在，它在仁川。它是從首爾出發抵達的地方，而不是首爾之內，那是另一段要規劃的路程。",
+      },
+      {
+        q: "為什麼營運者自己的交通頁面顯示的是錯的地點？",
+        a: "因為首爾設施公團營運多座場館，同時也公布前往自己位在城東區的總部的交通方式。那些頁面全都在同一個網站上，而且長得很像。請對地址，不要對頁面標題。",
+      },
+      {
+        q: "場館頁面上的座位數能告訴我我那一場有多大嗎？",
+        a: "不能。那是建築在通常配置下的容量。演唱會會用舞台蓋掉場地的一部分，而剩下的要賣掉多少由主辦方決定，所以營運者頁面上的數字是上限，不是你那一晚的描述。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Venue Seoul mana yang sebenarnya menjadi tempat pertunjukan Anda",
+    summary:
+      "Aula-aula besar Seoul punya nama Inggris yang bertumpang tindih, dua di antaranya memakai kata Dome pada judulnya dan berada di sisi kota yang berlawanan, dan dua lagi berbagi satu pengelola. Apa yang dirujuk setiap nama, ada di distrik mana, dan jalur mana yang mencapainya.",
+    scope:
+      "Mencakup cara membedakan aula konser Seoul berdasarkan nama, distrik dan jalur kereta bawah tanah, dari halaman milik masing-masing pengelola sejauh situs ini dapat membacanya. Tidak mencakup blok mana yang dijual, pintu mana yang memasukkan Anda, atau kapan pintu dibuka: semua itu milik promotor dan ditetapkan per pertunjukan.",
+    intro: [
+      "Inilah pertanyaan yang paling mudah salah dijawab ketika sudah terlambat dan paling mahal kalau salah sama sekali. Dua aula terbesar Seoul memakai kata Dome pada namanya dan berjarak satu jam. Dua lainnya dijalankan organisasi yang sama, jadi mencari pengelolanya menawarkan keduanya kepada Anda.",
+      "Nama venue ada di halaman pemesanan sebelum Anda membeli dan di tiket setelahnya. Bacalah ia terhadap distriknya, bukan terhadap apa yang terdengar dari namanya.",
+    ],
+    steps: [
+      {
+        title: "Cocokkan nama dengan sebuah distrik, bukan dengan apa yang terdengar darinya",
+        body: "Gocheok Sky Dome (고척스카이돔) berada di Guro-gu, di barat. KSPO Dome berada di dalam Olympic Park di Songpa-gu, di tenggara, di bawah organisasi yang sepenuhnya berbeda. Seoul World Cup Stadium berada di Sangam di Mapo-gu, di barat laut. Jangchung Arena (장충체육관) berada di Jung-gu, di pusat kota. Inspire Arena tidak berada di Seoul sama sekali — ia di Incheon. Sebuah distrik adalah fakta tentang sebuah nama; sebuah nama bukan fakta tentang sebuah distrik.",
+        pitfall:
+          "Membaca kata Dome dan menganggap hanya ada satu. Dua aula terbesar kota ini memakainya pada nama mereka, keduanya berada di sisi Seoul yang berlawanan, dan penggemar yang baru memahami itu pada pukul 18:00 tidak akan sampai ke pertunjukannya.",
+        takes: "2 menit",
+      },
+      {
+        title: "Dua di antaranya berbagi pengelola, dan itu sendiri sebuah jebakan",
+        body: "Gocheok Sky Dome, Seoul World Cup Stadium dan Jangchung Arena semuanya dijalankan oleh Seoul Facilities Corporation (서울시설공단), jadi pencarian atas nama pengelolanya menawarkan ketiganya dan halaman-halaman mereka tampak serupa. Situs pengelola itu juga memuat sebuah 찾아오시는 길 di bawah bagian korporatnya, dan yang itu adalah kantor pusat korporasi di Seongdong-gu — sekitar sepuluh kilometer dari mana pun di antara ketiganya. Pastikan alamat pada sebuah halaman petunjuk arah cocok dengan venue yang Anda tuju.",
+        pitfall:
+          "Memercayai sebuah halaman petunjuk arah karena ia ada di situs milik pengelola sendiri. Tiga venue dan satu kantor pusat masing-masing menerbitkan satu, dan semuanya tampak sama.",
+        takes: "2 menit",
+      },
+      {
+        title: "Ukuran memberi tahu Anda ini malam jenis apa",
+        body: "Jangchung Arena berkapasitas 4,507 kursi, dan 1,324 di antaranya dapat ditarik masuk — sebuah ruang untuk acara jumpa penggemar. Gocheok Sky Dome adalah dome dalam ruangan berkapasitas kira-kira 16,600 untuk bisbol, dan dikonfigurasi lebih kecil untuk konser. Seoul World Cup Stadium berkapasitas 66,704 kursi dan terbuka ke langit, yang merupakan proposisi berbeda pada bulan November. Angka pada halaman pengelola adalah angka bangunannya, bukan angka pertunjukan Anda: promotor yang memutuskan seberapa banyak darinya yang dijual.",
+        takes: "1 menit",
+      },
+      {
+        title: "Stasiunnya kadang-kadang adalah bangunannya",
+        body: "Ketiganya tidak serupa saat kedatangan. Jangchung Arena dicapai dari 동대입구역 pintu keluar 5, yang menurut pernyataan pengelola tersambung langsung ke bangunannya — Anda tidak keluar ke jalan. Seoul World Cup Stadium punya stasiun yang dinamai menurutnya, 월드컵경기장역, pintu keluar 2. Gocheok adalah satu-satunya yang stasiun terdekatnya bukan jawaban yang jelas, dan itulah sebabnya ia punya halaman sendiri.",
+        takes: "1 menit",
+      },
+      {
+        title: "Apa yang tidak dapat diberitahukan halaman venue mana pun",
+        body: "Blok mana yang dijual untuk pertunjukan Anda, di mana panggungnya, pintu mana yang memasukkan Anda, kapan pintu dibuka, dan apa yang boleh Anda bawa masuk. Pengelola menerbitkan bangunannya; promotor menerbitkan acaranya. Setiap satu dari hal-hal itu ditetapkan per pertunjukan dan hidup di tiket Anda serta pada pemberitahuan promotor.",
+        takes: "1 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah Gocheok Sky Dome sama dengan KSPO Dome?",
+        a: "Tidak. Gocheok Sky Dome berada di Guro-gu di barat dan dijalankan oleh Seoul Facilities Corporation. KSPO Dome berada di dalam Olympic Park di Songpa-gu di tenggara, di bawah organisasi yang berbeda. Keduanya berjarak sekitar satu jam.",
+      },
+      {
+        q: "Apakah Inspire Arena ada di Seoul?",
+        a: "Tidak, ia di Incheon. Ia dicapai dari Seoul dan bukan berada di dalamnya, dan itu adalah perjalanan berbeda yang harus direncanakan.",
+      },
+      {
+        q: "Mengapa halaman petunjuk arah milik pengelola sendiri menunjukkan tempat yang salah?",
+        a: "Karena Seoul Facilities Corporation menjalankan beberapa venue dan juga menerbitkan petunjuk arah ke kantor pusatnya sendiri di Seongdong-gu. Semua halaman itu berada di situs yang sama dan tampak serupa. Cocokkan alamatnya, bukan judul halamannya.",
+      },
+      {
+        q: "Apakah jumlah kursi pada halaman venue memberi tahu seberapa besar pertunjukan saya?",
+        a: "Tidak. Itu kapasitas bangunan dalam konfigurasi biasanya. Sebuah konser menutupi bagian lantai dengan panggung dan promotor memutuskan seberapa banyak sisanya yang dijual, jadi angka pada halaman pengelola adalah batas atas dan bukan gambaran tentang malam Anda.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "In welcher Seouler Halle Ihre Show tatsächlich stattfindet",
+    summary:
+      "Seouls große Hallen haben englische Namen, die sich überlappen, zwei von ihnen tragen Dome im Titel und liegen an entgegengesetzten Enden der Stadt, und zwei weitere teilen einen Betreiber. Worauf jeder Name verweist, in welchem Bezirk er liegt und welche Linie ihn erreicht.",
+    scope:
+      "Behandelt, wie Seouls Konzerthallen nach Name, Bezirk und U-Bahn-Linie auseinanderzuhalten sind, aus den eigenen Seiten der jeweiligen Betreiber, soweit diese Seite sie lesen kann. Nicht behandelt werden die Frage, welche Blöcke verkauft sind, welches Tor Sie einlässt und wann die Türen öffnen: das gehört dem Veranstalter und wird pro Show festgelegt.",
+    intro: [
+      "Das ist die Frage, die man am leichtesten zu spät falsch beantwortet und deren falsche Antwort am teuersten ist. Zwei der größten Hallen Seouls tragen Dome im Namen und liegen eine Stunde voneinander entfernt. Zwei weitere werden von derselben Organisation geführt, eine Suche nach dem Betreiber bietet Ihnen also beide an.",
+      "Der Name der Halle steht vor dem Kauf auf der Buchungsseite und danach auf dem Ticket. Lesen Sie ihn gegen den Bezirk und nicht gegen das, wonach der Name klingt.",
+    ],
+    steps: [
+      {
+        title: "Ordnen Sie den Namen einem Bezirk zu, nicht dem, wonach er klingt",
+        body: "Der Gocheok Sky Dome (고척스카이돔) liegt in Guro-gu, im Westen. Der KSPO Dome liegt im Olympic Park in Songpa-gu, im Südosten, unter einer völlig anderen Organisation. Das Seoul World Cup Stadium liegt in Sangam in Mapo-gu, im Nordwesten. Die Jangchung Arena (장충체육관) liegt in Jung-gu, in der Mitte. Die Inspire Arena liegt überhaupt nicht in Seoul — sie liegt in Incheon. Ein Bezirk ist eine Tatsache über einen Namen; ein Name ist keine Tatsache über einen Bezirk.",
+        pitfall:
+          "Dome zu lesen und anzunehmen, es gebe nur einen. Zwei der größten Hallen der Stadt tragen es im Namen, sie liegen an entgegengesetzten Enden Seouls, und wer das um 18:00 erfährt, kommt nicht zur Show.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Zwei von ihnen teilen einen Betreiber, und das ist eine eigene Falle",
+        body: "Der Gocheok Sky Dome, das Seoul World Cup Stadium und die Jangchung Arena werden alle von der Seoul Facilities Corporation (서울시설공단) geführt, eine Suche nach dem Namen des Betreibers bietet also alle drei an, und ihre Seiten sehen gleich aus. Die Website des Betreibers trägt unter ihrem Unternehmensbereich außerdem eine 찾아오시는 길, und die führt zur Hauptverwaltung der Gesellschaft in Seongdong-gu — etwa zehn Kilometer von jeder der drei entfernt. Prüfen Sie, dass die Adresse auf einer Anreiseseite zu der Halle passt, die Sie meinen.",
+        pitfall:
+          "Einer Anreiseseite zu vertrauen, weil sie auf der eigenen Website des Betreibers steht. Drei Hallen und eine Hauptverwaltung veröffentlichen je eine, und sie sehen gleich aus.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Die Größe sagt Ihnen, was für ein Abend das wird",
+        body: "Die Jangchung Arena hat 4,507 Plätze, davon 1,324 einfahrbar — ein Raum für Fanmeetings. Der Gocheok Sky Dome ist eine Halle mit Dach, für Baseball ungefähr 16,600, für Konzerte kleiner bestuhlt. Das Seoul World Cup Stadium hat 66,704 Plätze und ist zum Himmel offen, was im November eine andere Sache ist. Die Zahl auf der Seite des Betreibers gehört dem Gebäude und nicht Ihrer Show: wie viel davon verkauft wird, entscheidet der Veranstalter.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Manchmal ist die Station das Gebäude",
+        body: "Diese drei sind bei der Ankunft nicht gleich. Die Jangchung Arena erreicht man von 동대입구역 Ausgang 5, der laut Betreiber direkt mit dem Gebäude verbunden ist — Sie gehen nicht nach draußen. Das Seoul World Cup Stadium hat eine nach ihm benannte Station, 월드컵경기장역, Ausgang 2. Gocheok ist das eine, bei dem die nächste Station nicht die naheliegende Antwort ist, und genau darum hat es eine eigene Seite.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Was keine Hallenseite Ihnen sagen kann",
+        body: "Welche Blöcke für Ihre Show verkauft werden, wo die Bühne steht, welches Tor Sie einlässt, wann die Türen öffnen und was Sie mitbringen dürfen. Der Betreiber veröffentlicht das Gebäude, der Veranstalter die Veranstaltung. Jedes dieser Dinge wird pro Show festgelegt und steht auf Ihrem Ticket und in der Ankündigung des Veranstalters.",
+        takes: "1 Minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Ist der Gocheok Sky Dome dasselbe wie der KSPO Dome?",
+        a: "Nein. Der Gocheok Sky Dome liegt in Guro-gu im Westen und wird von der Seoul Facilities Corporation geführt. Der KSPO Dome liegt im Olympic Park in Songpa-gu im Südosten, unter einer anderen Organisation. Sie liegen etwa eine Stunde voneinander entfernt.",
+      },
+      {
+        q: "Liegt die Inspire Arena in Seoul?",
+        a: "Nein, sie liegt in Incheon. Man erreicht sie von Seoul aus und nicht innerhalb von Seoul, und das ist eine andere Anreise, die geplant werden muss.",
+      },
+      {
+        q: "Warum zeigt die eigene Anreiseseite des Betreibers den falschen Ort?",
+        a: "Weil die Seoul Facilities Corporation mehrere Hallen führt und außerdem die Anreise zu ihrer eigenen Hauptverwaltung in Seongdong-gu veröffentlicht. All diese Seiten liegen auf derselben Website und sehen sich ähnlich. Prüfen Sie die Adresse und nicht den Seitentitel.",
+      },
+      {
+        q: "Sagt mir die Platzzahl auf der Hallenseite, wie groß meine Show ist?",
+        a: "Nein. Das ist die Kapazität des Gebäudes in seiner üblichen Bestuhlung. Ein Konzert deckt einen Teil des Bodens mit einer Bühne ab, und wie viel vom Rest verkauft wird, entscheidet der Veranstalter, die Zahl auf der Seite eines Betreibers ist also eine Obergrenze und keine Beschreibung Ihres Abends.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "En qué recinto de Seúl está realmente tu concierto",
+    summary:
+      "Las grandes salas de Seúl tienen nombres en inglés que se solapan, dos llevan Dome en el título y están en lados opuestos de la ciudad, y otras dos comparten operador. A qué se refiere cada nombre, en qué distrito está y qué línea llega.",
+    scope:
+      "Cubre cómo distinguir las salas de concierto de Seúl por nombre, distrito y línea de metro, a partir de las páginas de cada operador en la medida en que este sitio puede leerlas. No cubre qué bloques se venden, por qué puerta entras ni cuándo abren las puertas: eso es de la promotora y se fija por espectáculo.",
+    intro: [
+      "Esta es la pregunta más fácil de equivocar tarde y la más cara de equivocar a secas. Dos de las salas más grandes de Seúl llevan Dome en el nombre y están a una hora la una de la otra. Otras dos las gestiona la misma organización, así que buscar el operador te ofrece las dos.",
+      "El nombre del recinto está en la página de compra antes de pagar y en la entrada después. Léelo contra el distrito y no contra lo que suena el nombre.",
+    ],
+    steps: [
+      {
+        title: "Empareja el nombre con un distrito, no con lo que parece",
+        body: "El Gocheok Sky Dome (고척스카이돔) está en Guro-gu, al oeste. El KSPO Dome está dentro del Olympic Park, en Songpa-gu, al sureste, bajo una organización completamente distinta. El Seoul World Cup Stadium está en Sangam, en Mapo-gu, al noroeste. El Jangchung Arena (장충체육관) está en Jung-gu, en el centro. El Inspire Arena no está en Seúl en absoluto: está en Incheon. Un distrito es un hecho sobre un nombre; un nombre no es un hecho sobre un distrito.",
+        pitfall:
+          "Leer Dome y dar por hecho que solo hay uno. Dos de las salas más grandes de la ciudad lo llevan en el nombre, están en lados opuestos de Seúl, y quien se entera de eso a las 18:00 no llega al concierto.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Dos de ellos comparten operador, y eso es una trampa en sí misma",
+        body: "El Gocheok Sky Dome, el Seoul World Cup Stadium y el Jangchung Arena los gestiona todos la Seoul Facilities Corporation (서울시설공단), así que una búsqueda por el nombre del operador te ofrece los tres y sus páginas parecen idénticas. La web del operador además publica un 찾아오시는 길 en su sección corporativa, y ese lleva a la sede central de la corporación en Seongdong-gu, a unos diez kilómetros de cualquiera de los tres. Comprueba que la dirección de una página de cómo llegar corresponde al recinto que quieres.",
+        pitfall:
+          "Fiarte de una página de cómo llegar porque está en la web del propio operador. Tres recintos y una sede publican una cada uno, y todas se parecen.",
+        takes: "2 minutos",
+      },
+      {
+        title: "El tamaño te dice qué clase de noche va a ser",
+        body: "El Jangchung Arena tiene 4,507 asientos, y 1,324 de ellos son retráctiles: una sala para fan meetings. El Gocheok Sky Dome es un recinto cubierto de unos 16,600 para el béisbol, configurado más pequeño para conciertos. El Seoul World Cup Stadium tiene 66,704 asientos y está abierto al cielo, lo que en noviembre es otra propuesta. La cifra de la página del operador es la del edificio y no la de tu concierto: cuánta parte se vende lo decide la promotora.",
+        takes: "1 minuto",
+      },
+      {
+        title: "A veces la estación es el edificio",
+        body: "Estos tres no se parecen al llegar. Al Jangchung Arena se llega por la salida 5 de 동대입구역, que según el operador conecta directamente con el edificio: no sales a la calle. El Seoul World Cup Stadium tiene una estación con su nombre, 월드컵경기장역, salida 2. Gocheok es el único donde la estación más cercana no es la respuesta obvia, y por eso tiene una página propia.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Lo que ninguna página de recinto puede decirte",
+        body: "Qué bloques se venden para tu concierto, dónde está el escenario, por qué puerta entras, cuándo abren las puertas y qué puedes llevar dentro. El operador publica el edificio; la promotora publica el evento. Cada una de esas cosas se fija por espectáculo y vive en tu entrada y en el aviso de la promotora.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿El Gocheok Sky Dome es lo mismo que el KSPO Dome?",
+        a: "No. El Gocheok Sky Dome está en Guro-gu, al oeste, y lo gestiona la Seoul Facilities Corporation. El KSPO Dome está dentro del Olympic Park, en Songpa-gu, al sureste, bajo otra organización. Están a una hora aproximadamente.",
+      },
+      {
+        q: "¿El Inspire Arena está en Seúl?",
+        a: "No, está en Incheon. Se llega desde Seúl y no está dentro de la ciudad, y ese es un viaje distinto que hay que planear.",
+      },
+      {
+        q: "¿Por qué la página de cómo llegar del propio operador muestra el sitio equivocado?",
+        a: "Porque la Seoul Facilities Corporation gestiona varios recintos y además publica cómo llegar a su propia sede central en Seongdong-gu. Todas esas páginas están en la misma web y se parecen entre sí. Empareja la dirección, no el título de la página.",
+      },
+      {
+        q: "¿El número de asientos de la página del recinto me dice lo grande que es mi concierto?",
+        a: "No. Es el aforo del edificio en su configuración habitual. Un concierto cubre parte de la pista con un escenario y la promotora decide cuánta parte del resto se vende, así que la cifra de la página de un operador es un techo y no una descripción de tu noche.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Dans quelle salle de Séoul votre concert a-t-il vraiment lieu",
+    summary:
+      "Les grandes salles de Séoul portent des noms anglais qui se recoupent, deux d'entre elles ont Dome dans leur titre et se trouvent aux extrémités opposées de la ville, et deux autres partagent un exploitant. Ce que désigne chaque nom, dans quel arrondissement il se situe, et quelle ligne y mène.",
+    scope:
+      "Couvre la façon de distinguer les salles de concert de Séoul par leur nom, leur arrondissement et leur ligne de métro, d'après les pages de chaque exploitant dans la mesure où ce site peut les lire. Ne couvre pas quels blocs sont mis en vente, par quelle porte vous entrez ni l'heure d'ouverture : cela appartient au promoteur et se fixe par spectacle.",
+    intro: [
+      "C'est la question qu'il est le plus facile de se tromper tard et la plus coûteuse de se tromper tout court. Deux des plus grandes salles de Séoul ont Dome dans leur nom et sont à une heure l'une de l'autre. Deux autres sont gérées par la même organisation, une recherche sur l'exploitant vous propose donc les deux.",
+      "Le nom de la salle figure sur la page de réservation avant l'achat et sur le billet après. Lisez-le face à l'arrondissement et non face à ce que le nom évoque.",
+    ],
+    steps: [
+      {
+        title: "Rapprochez le nom d'un arrondissement, pas de ce qu'il évoque",
+        body: "Le Gocheok Sky Dome (고척스카이돔) est à Guro-gu, à l'ouest. Le KSPO Dome est dans l'Olympic Park à Songpa-gu, au sud-est, sous une organisation entièrement différente. Le Seoul World Cup Stadium est à Sangam, à Mapo-gu, au nord-ouest. La Jangchung Arena (장충체육관) est à Jung-gu, au centre. L'Inspire Arena n'est pas à Séoul du tout — elle est à Incheon. Un arrondissement est un fait au sujet d'un nom ; un nom n'est pas un fait au sujet d'un arrondissement.",
+        pitfall:
+          "Lire Dome et supposer qu'il n'y en a qu'un. Deux des plus grandes salles de la ville l'ont dans leur nom, elles sont aux extrémités opposées de Séoul, et la personne qui l'apprend à 18:00 n'arrive pas au concert.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Deux d'entre elles partagent un exploitant, ce qui est un piège en soi",
+        body: "Le Gocheok Sky Dome, le Seoul World Cup Stadium et la Jangchung Arena sont tous gérés par la Seoul Facilities Corporation (서울시설공단) : une recherche sur le nom de l'exploitant propose donc les trois, et leurs pages se ressemblent. Le site de l'exploitant porte aussi une 찾아오시는 길 dans sa section institutionnelle, et celle-là mène au siège de la société à Seongdong-gu — à une dizaine de kilomètres de chacune des trois. Vérifiez que l'adresse d'une page d'accès correspond bien à la salle que vous visez.",
+        pitfall:
+          "Faire confiance à une page d'accès parce qu'elle se trouve sur le site de l'exploitant lui-même. Trois salles et un siège en publient chacun une, et elles se ressemblent.",
+        takes: "2 minutes",
+      },
+      {
+        title: "La taille vous dit quel genre de soirée ce sera",
+        body: "La Jangchung Arena compte 4,507 places, dont 1,324 escamotables — une salle pour les rencontres avec les fans. Le Gocheok Sky Dome est une salle couverte d'environ 16,600 pour le baseball, configurée plus petit pour les concerts. Le Seoul World Cup Stadium compte 66,704 places et est ouvert au ciel, ce qui n'est pas la même proposition en novembre. Le chiffre sur la page de l'exploitant est celui du bâtiment et non celui de votre concert : la part mise en vente est décidée par le promoteur.",
+        takes: "1 minute",
+      },
+      {
+        title: "Parfois la station est le bâtiment",
+        body: "Ces trois-là ne se ressemblent pas à l'arrivée. On accède à la Jangchung Arena par la sortie 5 de 동대입구역, dont l'exploitant indique qu'elle est directement reliée au bâtiment — vous ne sortez pas dehors. Le Seoul World Cup Stadium a une station à son nom, 월드컵경기장역, sortie 2. Gocheok est la seule dont la station la plus proche n'est pas la réponse évidente, et c'est précisément pourquoi elle a sa propre page.",
+        takes: "1 minute",
+      },
+      {
+        title: "Ce qu'aucune page de salle ne peut vous dire",
+        body: "Quels blocs sont mis en vente pour votre concert, où se trouve la scène, par quelle porte vous entrez, l'heure d'ouverture et ce que vous pouvez apporter. L'exploitant publie le bâtiment ; le promoteur publie l'événement. Chacune de ces choses est fixée par spectacle et vit sur votre billet et dans l'annonce du promoteur.",
+        takes: "1 minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Le Gocheok Sky Dome est-il le même que le KSPO Dome ?",
+        a: "Non. Le Gocheok Sky Dome est à Guro-gu, à l'ouest, et il est géré par la Seoul Facilities Corporation. Le KSPO Dome est dans l'Olympic Park à Songpa-gu, au sud-est, sous une autre organisation. Ils sont à environ une heure l'un de l'autre.",
+      },
+      {
+        q: "L'Inspire Arena est-elle à Séoul ?",
+        a: "Non, elle est à Incheon. On y accède depuis Séoul et non à l'intérieur de Séoul, et c'est un trajet différent à prévoir.",
+      },
+      {
+        q: "Pourquoi la page d'accès de l'exploitant lui-même indique-t-elle le mauvais endroit ?",
+        a: "Parce que la Seoul Facilities Corporation gère plusieurs salles et publie aussi l'accès à son propre siège, à Seongdong-gu. Toutes ces pages se trouvent sur le même site et se ressemblent. Rapprochez l'adresse, pas le titre de la page.",
+      },
+      {
+        q: "Le nombre de places sur la page de la salle me dit-il la taille de mon concert ?",
+        a: "Non. C'est la capacité du bâtiment dans sa configuration habituelle. Un concert recouvre une partie du sol avec une scène et le promoteur décide quelle part du reste est vendue : le chiffre sur la page d'un exploitant est donc un plafond et non une description de votre soirée.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Em qual local de Seul o seu show realmente vai acontecer",
+    summary:
+      "As casas grandes de Seul têm nomes em inglês que se sobrepõem, duas delas têm Dome no título e ficam em lados opostos da cidade, e outras duas dividem o mesmo operador. A que cada nome se refere, em qual distrito fica, e qual linha chega até lá.",
+    scope:
+      "Cobre como diferenciar as casas de show de Seul por nome, distrito e linha de metrô, a partir das páginas de cada operador na medida em que este site consegue lê-las. Não cobre quais blocos são vendidos, por qual portão você entra nem quando os portões abrem: isso é da produtora e é definido por show.",
+    intro: [
+      "Esta é a pergunta mais fácil de errar tarde e a mais cara de errar em geral. Duas das maiores casas de Seul têm Dome no nome e ficam a uma hora uma da outra. Outras duas são administradas pela mesma organização, então procurar pelo operador oferece as duas a você.",
+      "O nome do local está na página de compra antes de você comprar e no ingresso depois. Leia o nome contra o distrito, e não contra o que o nome parece dizer.",
+    ],
+    steps: [
+      {
+        title: "Case o nome com um distrito, e não com o que ele parece ser",
+        body: "O Gocheok Sky Dome (고척스카이돔) fica em Guro-gu, no oeste. O KSPO Dome fica dentro do Olympic Park, em Songpa-gu, no sudeste, sob uma organização completamente diferente. O Seoul World Cup Stadium fica em Sangam, em Mapo-gu, no noroeste. O Jangchung Arena (장충체육관) fica em Jung-gu, no centro. O Inspire Arena não fica em Seul de jeito nenhum — fica em Incheon. Um distrito é um fato sobre um nome; um nome não é um fato sobre um distrito.",
+        pitfall:
+          "Ler Dome e supor que existe apenas um. Duas das maiores casas da cidade têm essa palavra no nome, ficam em lados opostos de Seul, e quem descobre isso às 18:00 não chega ao show.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Duas delas dividem o operador, e isso é uma armadilha por si só",
+        body: "O Gocheok Sky Dome, o Seoul World Cup Stadium e o Jangchung Arena são todos administrados pela Seoul Facilities Corporation (서울시설공단), então uma busca pelo nome do operador oferece os três e as páginas deles parecem iguais. O site do operador também traz um 찾아오시는 길 na seção institucional, e esse leva à sede da corporação em Seongdong-gu — a cerca de dez quilômetros de qualquer um dos três. Confira se o endereço de uma página de como chegar corresponde ao local que você quer.",
+        pitfall:
+          "Confiar numa página de como chegar porque ela está no site do próprio operador. Três locais e uma sede publicam uma cada, e todas parecem iguais.",
+        takes: "2 minutos",
+      },
+      {
+        title: "O tamanho diz que tipo de noite vai ser",
+        body: "O Jangchung Arena tem 4,507 assentos, e 1,324 deles são retráteis — uma sala para fan meeting. O Gocheok Sky Dome é um domo fechado de aproximadamente 16,600 para beisebol, configurado menor para shows. O Seoul World Cup Stadium tem 66,704 assentos e é aberto para o céu, o que é outra proposta em novembro. O número na página do operador é do prédio, não do seu show: quanto dele vai ser vendido é a produtora que decide.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Às vezes a estação é o prédio",
+        body: "Esses três não são parecidos na chegada. O Jangchung Arena é alcançado pela saída 5 da 동대입구역, que o operador afirma ligar direto no prédio — você não vai para a rua. O Seoul World Cup Stadium tem uma estação com o nome dele, 월드컵경기장역, saída 2. O Gocheok é o único em que a estação mais próxima não é a resposta óbvia, e é por isso que ele tem uma página só dele.",
+        takes: "1 minuto",
+      },
+      {
+        title: "O que nenhuma página de local consegue dizer",
+        body: "Quais blocos são vendidos para o seu show, onde fica o palco, por qual portão você entra, quando os portões abrem e o que você pode levar para dentro. O operador publica o prédio; a produtora publica o evento. Cada uma dessas coisas é definida por show e mora no seu ingresso e no aviso da produtora.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "O Gocheok Sky Dome é o mesmo que o KSPO Dome?",
+        a: "Não. O Gocheok Sky Dome fica em Guro-gu, no oeste, e é administrado pela Seoul Facilities Corporation. O KSPO Dome fica dentro do Olympic Park, em Songpa-gu, no sudeste, sob outra organização. Eles ficam a cerca de uma hora de distância.",
+      },
+      {
+        q: "O Inspire Arena fica em Seul?",
+        a: "Não, fica em Incheon. Você chega lá a partir de Seul e não dentro dela, e essa é outra viagem para planejar.",
+      },
+      {
+        q: "Por que a página de como chegar do próprio operador mostra o lugar errado?",
+        a: "Porque a Seoul Facilities Corporation administra vários locais e também publica como chegar à própria sede, em Seongdong-gu. Todas essas páginas ficam no mesmo site e são parecidas. Case o endereço, não o título da página.",
+      },
+      {
+        q: "A contagem de assentos na página do local me diz o tamanho do meu show?",
+        a: "Não. É a capacidade do prédio na configuração usual. Um show cobre parte da pista com um palco e a produtora decide quanto do resto é vendido, então o número na página de um operador é um limite máximo e não uma descrição da sua noite.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Buổi diễn của bạn thực sự ở địa điểm nào tại Seoul",
+    summary:
+      "Các khán phòng lớn của Seoul có tên tiếng Anh trùng lặp nhau, hai nơi trong số đó có chữ Dome trong tên mà lại nằm ở hai đầu thành phố, và hai nơi khác dùng chung một đơn vị vận hành. Mỗi cái tên chỉ nơi nào, nằm ở quận nào, và tuyến nào tới được.",
+    scope:
+      "Bao gồm cách phân biệt các khán phòng hoà nhạc ở Seoul theo tên, theo quận và theo tuyến tàu điện ngầm, dựa trên trang của từng đơn vị vận hành trong phạm vi trang này đọc được. Không bao gồm những khu nào được bán, cửa nào cho bạn vào hay mấy giờ mở cửa: đó là của nhà tổ chức và được đặt theo từng buổi.",
+    intro: [
+      "Đây là câu hỏi dễ bị trả lời sai vào lúc đã muộn nhất, và trả lời sai thì tốn kém nhất. Hai trong số những khán phòng lớn nhất Seoul có chữ Dome trong tên và cách nhau một giờ. Hai nơi khác do cùng một tổ chức điều hành, nên tìm theo tên đơn vị vận hành sẽ đưa ra cả hai.",
+      "Tên địa điểm nằm trên trang đặt vé trước khi bạn mua và nằm trên vé sau khi mua. Hãy đọc nó đối chiếu với quận, chứ không đối chiếu với việc cái tên nghe như thế nào.",
+    ],
+    steps: [
+      {
+        title: "Khớp cái tên với một quận, đừng khớp với âm nghe của nó",
+        body: "Gocheok Sky Dome (고척스카이돔) ở Guro-gu, phía tây. KSPO Dome nằm trong Olympic Park ở Songpa-gu, phía đông nam, thuộc một tổ chức hoàn toàn khác. Seoul World Cup Stadium ở Sangam thuộc Mapo-gu, phía tây bắc. Jangchung Arena (장충체육관) ở Jung-gu, khu trung tâm. Inspire Arena thì không ở Seoul chút nào — nó ở Incheon. Một cái quận là một sự thật về một cái tên; một cái tên không phải là một sự thật về một cái quận.",
+        pitfall:
+          "Đọc chữ Dome rồi cho rằng chỉ có một. Hai trong số những khán phòng lớn nhất thành phố đều có chữ đó trong tên, chúng ở hai đầu Seoul, và người chỉ hiểu ra điều đó vào 18:00 thì không kịp đến buổi diễn.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hai nơi trong số đó dùng chung đơn vị vận hành, và bản thân điều đó là một cái bẫy",
+        body: "Gocheok Sky Dome, Seoul World Cup Stadium và Jangchung Arena đều do Seoul Facilities Corporation (서울시설공단) điều hành, nên tìm theo tên đơn vị vận hành sẽ đưa ra cả ba, và các trang của chúng trông y như nhau. Trang của đơn vị vận hành còn có một 찾아오시는 길 nằm trong mục doanh nghiệp, và trang đó dẫn tới trụ sở chính của công ty ở Seongdong-gu — cách bất cứ nơi nào trong ba nơi kia chừng mười ki lô mét. Hãy kiểm tra xem địa chỉ trên một trang chỉ đường có khớp với địa điểm bạn muốn tới hay không.",
+        pitfall:
+          "Tin một trang chỉ đường chỉ vì nó nằm trên trang của chính đơn vị vận hành. Ba địa điểm và một trụ sở đều công bố một trang như thế, và chúng trông giống nhau.",
+        takes: "2 phút",
+      },
+      {
+        title: "Quy mô cho bạn biết đây sẽ là một tối như thế nào",
+        body: "Jangchung Arena có 4,507 chỗ ngồi, trong đó 1,324 chỗ có thể thu vào — một không gian cho buổi gặp fan. Gocheok Sky Dome là một dome trong nhà, khoảng 16,600 chỗ cho bóng chày, và được bố trí nhỏ hơn cho hoà nhạc. Seoul World Cup Stadium có 66,704 chỗ và lộ thiên, điều này là chuyện khác hẳn vào tháng 11. Con số trên trang của đơn vị vận hành là của toà nhà, không phải của buổi diễn của bạn: bán bao nhiêu phần trong đó là do nhà tổ chức quyết.",
+        takes: "1 phút",
+      },
+      {
+        title: "Có khi nhà ga chính là toà nhà",
+        body: "Ba nơi này không giống nhau ở khâu đến. Jangchung Arena đi vào từ cửa ra 5 của 동대입구역, mà đơn vị vận hành nói rõ rằng cửa đó nối trực tiếp với toà nhà — bạn không phải ra ngoài trời. Seoul World Cup Stadium có một nhà ga mang tên nó, 월드컵경기장역, cửa ra 2. Gocheok là nơi duy nhất mà nhà ga gần nhất không phải câu trả lời hiển nhiên, và đó chính là lý do nó có một trang riêng.",
+        takes: "1 phút",
+      },
+      {
+        title: "Điều không trang địa điểm nào nói được cho bạn",
+        body: "Buổi diễn của bạn bán những khu nào, sân khấu ở đâu, cửa nào cho bạn vào, mấy giờ mở cửa, và bạn được mang gì vào. Đơn vị vận hành công bố toà nhà; nhà tổ chức công bố buổi diễn. Từng điều vừa nêu đều được đặt theo từng buổi và nằm trên vé của bạn cùng thông báo của nhà tổ chức.",
+        takes: "1 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome có phải là KSPO Dome không?",
+        a: "Không. Gocheok Sky Dome ở Guro-gu phía tây và do Seoul Facilities Corporation điều hành. KSPO Dome nằm trong Olympic Park ở Songpa-gu phía đông nam, thuộc một tổ chức khác. Hai nơi cách nhau khoảng một giờ.",
+      },
+      {
+        q: "Inspire Arena có ở Seoul không?",
+        a: "Không, nó ở Incheon. Nó là nơi đi tới từ Seoul chứ không nằm trong Seoul, và đó là một chuyến đi khác cần lên kế hoạch.",
+      },
+      {
+        q: "Vì sao trang chỉ đường của chính đơn vị vận hành lại hiện sai nơi?",
+        a: "Vì Seoul Facilities Corporation điều hành nhiều địa điểm và còn công bố đường tới trụ sở chính của riêng họ ở Seongdong-gu. Tất cả những trang đó nằm trên cùng một trang web và trông giống nhau. Hãy khớp địa chỉ, đừng khớp tiêu đề trang.",
+      },
+      {
+        q: "Số chỗ ngồi trên trang địa điểm có cho tôi biết buổi diễn của tôi lớn cỡ nào không?",
+        a: "Không. Đó là sức chứa của toà nhà ở cách bố trí thường ngày. Một buổi hoà nhạc lấy sân khấu che mất một phần mặt sân, và nhà tổ chức quyết bán bao nhiêu phần còn lại, nên con số trên trang của đơn vị vận hành là mức trần chứ không phải mô tả về tối của bạn.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "งานของคุณอยู่ที่สถานที่จัดงานแห่งไหนในโซลจริง ๆ",
+    summary:
+      "ห้องแสดงขนาดใหญ่ของโซลมีชื่อภาษาอังกฤษที่ทับซ้อนกัน สองแห่งมีคำว่าโดมอยู่ในชื่อแต่ตั้งอยู่คนละฟากของเมือง และอีกสองแห่งใช้ผู้บริหารรายเดียวกัน แต่ละชื่อหมายถึงที่ใด อยู่เขตไหน และสายไหนไปถึง",
+    scope:
+      "ครอบคลุมการแยกแยะห้องแสดงคอนเสิร์ตของโซลด้วยชื่อ เขต และสายรถไฟฟ้าใต้ดิน จากหน้าเว็บของผู้บริหารแต่ละรายเท่าที่เว็บไซต์นี้อ่านได้ ไม่ครอบคลุมว่าบล็อกไหนเปิดขาย ประตูไหนให้คุณเข้า หรือประตูเปิดเมื่อไร เพราะสิ่งเหล่านั้นเป็นของผู้จัดงานและกำหนดเป็นรายงาน",
+    intro: [
+      "นี่คือคำถามที่ตอบผิดได้ง่ายที่สุดเมื่อสายเกินไป และตอบผิดแล้วแพงที่สุด ห้องแสดงที่ใหญ่ที่สุดของโซลสองแห่งมีคำว่าโดมอยู่ในชื่อ และห่างกันหนึ่งชั่วโมง อีกสองแห่งดำเนินการโดยองค์กรเดียวกัน ดังนั้นการค้นหาชื่อผู้บริหารจะให้ผลทั้งสองแห่ง",
+      "ชื่อสถานที่จัดงานอยู่บนหน้าจองก่อนที่คุณจะซื้อ และอยู่บนบัตรหลังจากนั้น โปรดอ่านชื่อโดยเทียบกับเขต ไม่ใช่เทียบกับว่าชื่อฟังดูเป็นอย่างไร",
+    ],
+    steps: [
+      {
+        title: "จับชื่อให้ตรงกับเขต ไม่ใช่ให้ตรงกับเสียงที่มันฟังดู",
+        body: "Gocheok Sky Dome (고척스카이돔) อยู่ในเขตคูโร ทางตะวันตก KSPO Dome อยู่ในสวนโอลิมปิกในเขตซงพา ทางตะวันออกเฉียงใต้ ภายใต้องค์กรที่ต่างกันโดยสิ้นเชิง Seoul World Cup Stadium อยู่ที่ซังอัมในเขตมาโพ ทางตะวันตกเฉียงเหนือ Jangchung Arena (장충체육관) อยู่ในเขตจุง ใจกลางเมือง Inspire Arena ไม่ได้อยู่ในโซลเลย มันอยู่ที่อินชอน เขตเป็นข้อเท็จจริงเกี่ยวกับชื่อ แต่ชื่อไม่ใช่ข้อเท็จจริงเกี่ยวกับเขต",
+        pitfall:
+          "การเห็นคำว่า Dome แล้วคิดว่ามีแห่งเดียว ห้องแสดงที่ใหญ่ที่สุดของเมืองนี้สองแห่งมีคำนั้นอยู่ในชื่อ ทั้งสองอยู่คนละฟากของโซล และแฟนที่เพิ่งเข้าใจเรื่องนี้ตอน 18:00 ก็ไปไม่ทันงาน",
+        takes: "2 นาที",
+      },
+      {
+        title: "สองแห่งในนั้นใช้ผู้บริหารรายเดียวกัน และนั่นเองคือกับดัก",
+        body: "Gocheok Sky Dome, Seoul World Cup Stadium และ Jangchung Arena ล้วนดำเนินการโดย Seoul Facilities Corporation (서울시설공단) ดังนั้นการค้นหาชื่อผู้บริหารจะให้ผลทั้งสามแห่ง และหน้าเว็บของแต่ละแห่งก็ดูเหมือนกันหมด เว็บไซต์ของผู้บริหารยังมี찾아오시는 길 อยู่ใต้ส่วนข้อมูลองค์กรด้วย และหน้านั้นคือสำนักงานใหญ่ของหน่วยงานในเขตซองดง ซึ่งห่างจากทั้งสามแห่งราวสิบกิโลเมตร โปรดตรวจว่าที่อยู่บนหน้าบอกทางตรงกับสถานที่ที่คุณต้องการไป",
+        pitfall:
+          "การเชื่อหน้าบอกทางเพียงเพราะมันอยู่บนเว็บไซต์ของผู้บริหารเอง สามสถานที่จัดงานกับสำนักงานใหญ่หนึ่งแห่งต่างก็เผยแพร่หน้าแบบนั้น และทุกหน้าดูเหมือนกัน",
+        takes: "2 นาที",
+      },
+      {
+        title: "ขนาดจะบอกคุณว่าคืนนี้เป็นคืนแบบไหน",
+        body: "Jangchung Arena มีที่นั่ง 4,507 ที่ โดย 1,324 ที่เป็นแบบเก็บได้ เป็นพื้นที่สำหรับงานพบแฟน Gocheok Sky Dome เป็นโดมในร่ม จุราว 16,600 คนสำหรับเบสบอล และจัดให้เล็กลงสำหรับคอนเสิร์ต Seoul World Cup Stadium มีที่นั่ง 66,704 ที่และเปิดโล่งสู่ท้องฟ้า ซึ่งในเดือน 11 เป็นเรื่องอีกแบบหนึ่ง ตัวเลขบนหน้าของผู้บริหารเป็นตัวเลขของอาคาร ไม่ใช่ของงานของคุณ จะขายไปเท่าไรนั้นผู้จัดงานเป็นคนกำหนด",
+        takes: "1 นาที",
+      },
+      {
+        title: "บางครั้งสถานีก็คือตัวอาคาร",
+        body: "สามแห่งนี้ไม่เหมือนกันในเรื่องการไปถึง Jangchung Arena เข้าได้จากทางออก 5 ของ동대입구역 ซึ่งผู้บริหารระบุว่าทางออกนั้นเชื่อมเข้าอาคารโดยตรง คุณไม่ต้องออกไปข้างนอก Seoul World Cup Stadium มีสถานีที่ตั้งชื่อตามตัวมันเอง คือ월드컵경기장역 ทางออก 2 ส่วน Gocheok เป็นแห่งเดียวที่สถานีใกล้ที่สุดไม่ใช่คำตอบที่ชัดเจน จึงเป็นเหตุให้มันมีหน้าของตัวเอง",
+        takes: "1 นาที",
+      },
+      {
+        title: "สิ่งที่หน้าของสถานที่จัดงานใดก็บอกคุณไม่ได้",
+        body: "งานของคุณเปิดขายบล็อกไหน เวทีอยู่ที่ใด ประตูไหนให้คุณเข้า ประตูเปิดเมื่อไร และนำอะไรเข้าไปได้ ผู้บริหารเผยแพร่เรื่องอาคาร ผู้จัดงานเผยแพร่เรื่องงาน ทุกข้อที่ว่ามากำหนดเป็นรายงาน และอยู่บนบัตรของคุณกับประกาศของผู้จัดงาน",
+        takes: "1 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome กับ KSPO Dome เป็นที่เดียวกันไหม",
+        a: "ไม่ใช่ Gocheok Sky Dome อยู่ในเขตคูโรทางตะวันตก และดำเนินการโดย Seoul Facilities Corporation ส่วน KSPO Dome อยู่ในสวนโอลิมปิกในเขตซงพาทางตะวันออกเฉียงใต้ ภายใต้องค์กรอีกราย ทั้งสองห่างกันราวหนึ่งชั่วโมง",
+      },
+      {
+        q: "Inspire Arena อยู่ในโซลไหม",
+        a: "ไม่ มันอยู่ที่อินชอน เป็นที่ที่เดินทางไปจากโซล ไม่ใช่อยู่ในโซล และนั่นคือการเดินทางอีกแบบที่ต้องวางแผน",
+      },
+      {
+        q: "ทำไมหน้าบอกทางของผู้บริหารเองจึงแสดงสถานที่ผิด",
+        a: "เพราะ Seoul Facilities Corporation ดำเนินการสถานที่จัดงานหลายแห่ง และยังเผยแพร่เส้นทางไปสำนักงานใหญ่ของตัวเองในเขตซองดงด้วย หน้าทั้งหมดนั้นอยู่บนเว็บไซต์เดียวกันและดูคล้ายกัน โปรดจับที่อยู่ให้ตรง ไม่ใช่จับชื่อหน้า",
+      },
+      {
+        q: "จำนวนที่นั่งบนหน้าของสถานที่จัดงานบอกได้ไหมว่างานของฉันใหญ่แค่ไหน",
+        a: "ไม่ได้ นั่นคือความจุของอาคารในการจัดวางตามปกติ คอนเสิร์ตจะใช้เวทีกินพื้นที่ส่วนหนึ่งของพื้นสนาม และผู้จัดงานเป็นคนกำหนดว่าจะขายส่วนที่เหลือเท่าไร ดังนั้นตัวเลขบนหน้าของผู้บริหารจึงเป็นเพดานสูงสุด ไม่ใช่คำบรรยายคืนของคุณ",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Aling venue sa Seoul ang talagang kinalalagyan ng palabas mo",
+    summary:
+      "Magkasalikop ang mga pangalang Ingles ng malalaking bulwagan ng Seoul, may Dome sa pamagat ang dalawa sa kanila at nasa magkabilang panig sila ng lungsod, at may parehong tagapagpatakbo ang dalawa pa. Ano ang tinutukoy ng bawat pangalan, aling distrito ang kinalalagyan nito, at aling linya ang nakakaabot doon.",
+    scope:
+      "Sinasaklaw ang pagkilatis sa mga bulwagan ng konsiyerto sa Seoul batay sa pangalan, distrito at linya ng tren sa ilalim ng lupa, mula sa sariling mga pahina ng bawat tagapagpatakbo hangga't nababasa ng sayt na ito. Hindi nito sinasaklaw kung aling mga bloke ang ipinagbibili, aling tarangkahan ang pumapasok sa iyo o kailan bumubukas ang pinto: sa prodyuser ang mga iyon at itinatakda sa bawat palabas.",
+    intro: [
+      "Ito ang tanong na pinakamadaling mamali kapag huli na at pinakamagastos kapag namali talaga. May Dome sa pangalan ang dalawa sa pinakamalalaking bulwagan ng Seoul at isang oras ang pagitan nila. Pinapatakbo ng parehong organisasyon ang dalawa pa, kaya ang paghahanap sa tagapagpatakbo ay nag-aalok sa iyo ng dalawa.",
+      "Nasa pahina ng pagpa-book ang pangalan ng venue bago ka bumili at nasa tiket ito pagkatapos. Basahin ito katapat ng distrito, at hindi katapat ng kung ano ang pakinggan ng pangalan.",
+    ],
+    steps: [
+      {
+        title: "Itapat ang pangalan sa isang distrito, hindi sa pakinggan nito",
+        body: "Nasa Guro-gu ang Gocheok Sky Dome (고척스카이돔), sa kanluran. Nasa loob ng Olympic Park sa Songpa-gu ang KSPO Dome, sa timog-silangan, sa ilalim ng isang ganap na ibang organisasyon. Nasa Sangam sa Mapo-gu ang Seoul World Cup Stadium, sa hilagang-kanluran. Nasa Jung-gu ang Jangchung Arena (장충체육관), sa gitna. Hindi nasa Seoul ang Inspire Arena — nasa Incheon ito. Ang isang distrito ay isang katotohanan tungkol sa isang pangalan; ang isang pangalan ay hindi katotohanan tungkol sa isang distrito.",
+        pitfall:
+          "Ang pagbasa ng Dome at paniniwalang isa lamang ito. May taglay nitong pangalan ang dalawa sa pinakamalalaking bulwagan ng lungsod, nasa magkabilang panig sila ng Seoul, at ang tagahangang natutunan iyon sa 18:00 ay hindi makakarating sa palabas.",
+        takes: "2 minuto",
+      },
+      {
+        title: "May parehong tagapagpatakbo ang dalawa sa kanila, at bitag na iyon sa sarili nito",
+        body: "Pinapatakbo lahat ng Seoul Facilities Corporation (서울시설공단) ang Gocheok Sky Dome, ang Seoul World Cup Stadium at ang Jangchung Arena, kaya ang paghahanap sa pangalan ng tagapagpatakbo ay nag-aalok ng tatlo at magkamukha ang mga pahina nila. May dala ring isang 찾아오시는 길 ang sayt ng tagapagpatakbo sa ilalim ng seksiyong pangkorporasyon, at ang isang iyon ay ang punong tanggapan ng korporasyon sa Seongdong-gu — mga sampung kilometro mula sa alinman sa kanila. Tiyaking tumutugma sa venue na gusto mo ang adres sa isang pahina ng panuto sa pagpunta.",
+        pitfall:
+          "Ang pagtitiwala sa isang pahina ng panuto dahil nasa sariling sayt ito ng tagapagpatakbo. Tatlong venue at isang punong tanggapan ang bawat isa'y naglalathala ng isa, at magkamukha ang lahat.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Sinasabi ng laki kung anong uri ng gabi ito",
+        body: "May 4,507 na upuan ang Jangchung Arena, at 1,324 sa mga iyon ay maaaring itago — isang silid para sa pakikipagkita sa mga tagahanga. Ang Gocheok Sky Dome ay isang dome na nasa loob, humigit-kumulang 16,600 para sa beysbol, at inaayos nang mas maliit para sa konsiyerto. May 66,704 na upuan ang Seoul World Cup Stadium at bukas ito sa kalangitan, na ibang alok na naman sa Nobyembre. Ang bilang sa pahina ng tagapagpatakbo ay sa gusali at hindi sa palabas mo: ang prodyuser ang nagpapasya kung gaano karami roon ang ipinagbibili.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang istasyon kung minsan ay ang gusali",
+        body: "Hindi magkatulad ang tatlong ito sa pagdating. Naaabot ang Jangchung Arena mula sa labasan 5 ng 동대입구역, na sinasabi ng tagapagpatakbo na tuwirang nakakabit sa gusali — hindi ka lumalabas. May istasyong ipinangalan sa Seoul World Cup Stadium, ang 월드컵경기장역, labasan 2. Ang Gocheok ang isa kung saan hindi malinaw na sagot ang pinakamalapit na istasyon, at iyon ang dahilan kung bakit may sariling pahina ito.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang hindi masasabi sa iyo ng anumang pahina ng venue",
+        body: "Kung aling mga bloke ang ipinagbibili para sa palabas mo, kung nasaan ang entablado, aling tarangkahan ang pumapasok sa iyo, kailan bumubukas ang pinto at ano ang maaari mong ipasok. Inilalathala ng tagapagpatakbo ang gusali; inilalathala ng prodyuser ang kaganapan. Itinatakda sa bawat palabas ang bawat isa sa mga iyon at nabubuhay sila sa tiket mo at sa pabatid ng prodyuser.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Pareho ba ang Gocheok Sky Dome at ang KSPO Dome?",
+        a: "Hindi. Nasa Guro-gu sa kanluran ang Gocheok Sky Dome at pinapatakbo ito ng Seoul Facilities Corporation. Nasa loob ng Olympic Park sa Songpa-gu sa timog-silangan ang KSPO Dome, sa ilalim ng ibang organisasyon. Mga isang oras ang pagitan nila.",
+      },
+      {
+        q: "Nasa Seoul ba ang Inspire Arena?",
+        a: "Hindi, nasa Incheon ito. Naaabot ito mula sa Seoul at hindi sa loob nito, at ibang paglalakbay iyon na dapat planuhin.",
+      },
+      {
+        q: "Bakit ipinapakita ng sariling pahina ng panuto ng tagapagpatakbo ang maling lugar?",
+        a: "Dahil nagpapatakbo ang Seoul Facilities Corporation ng ilang venue at naglalathala rin ng panuto patungo sa sariling punong tanggapan nito sa Seongdong-gu. Nasa parehong sayt ang lahat ng pahinang iyon at magkamukha sila. Itapat ang adres, hindi ang pamagat ng pahina.",
+      },
+      {
+        q: "Sinasabi ba sa akin ng bilang ng upuan sa pahina ng venue kung gaano kalaki ang palabas ko?",
+        a: "Hindi. Kapasidad iyon ng gusali sa karaniwang pagkakaayos nito. Tinatakpan ng isang konsiyerto ang bahagi ng palapag sa pamamagitan ng entablado at ang prodyuser ang nagpapasya kung gaano karami sa natitira ang ipinagbibili, kaya ang bilang sa pahina ng isang tagapagpatakbo ay pinakamataas na hangganan at hindi paglalarawan ng gabi mo.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

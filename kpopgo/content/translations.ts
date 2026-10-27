@@ -319,18 +319,28 @@ const JA_LABELS = {
  * the reasons are here because the counts will keep moving and the reasoning
  * should not have to be reconstructed each time.
  *
- * Where it stands against twenty-one English guides:
+ * Where it stands against twenty-nine English guides:
  *
- *   ja, zh-Hant, id        19/21   skip the timezone guide and the customs guide
- *   vi, th, fil            19/21   skip the timezone guide and the customs guide
- *   pt-BR                  19/21   skip the timezone guide and the customs guide
- *   de, es, fr             20/21   skip the customs guide only
+ *   ja, zh-Hant, id        27/29   skip the timezone guide and the customs guide
+ *   vi, th, fil            27/29   skip the timezone guide and the customs guide
+ *   pt-BR                  27/29   skip the timezone guide and the customs guide
+ *   de, es, fr             28/29   skip the customs guide only
  *
- * All ten are complete at their intended counts as of 2026-10-22. That
+ * All ten are complete at their intended counts as of 2026-10-27. That
  * sentence is worth dating, because "in progress" is the state this file was
  * in for most of its life and the state it will be in again the next time a
  * language is added — a count that has stopped moving looks identical to a
  * count nobody is moving.
+ *
+ * It was 19/21 and 20/21 on 2026-10-22, and the eight guides that closed the
+ * gap are the lesson rather than the arithmetic. Each had been written after
+ * that date and carried no translation and no reason for having none, which
+ * from the outside is indistinguishable from the two exclusions below — those
+ * have a test behind them and these had only a chronology. The two states
+ * look the same in a count, so the note above is the only thing that
+ * separates them, and the next guide written will put the file back into the
+ * state where it does not say which it is. Write the reason down when a guide
+ * is deliberately left in English; a silent gap costs a readership.
  *
  * Vietnamese, Thai and Filipino arrived together and landed on exactly the
  * set the Asian three carry — the same nineteen slugs, not nineteen that
@@ -25051,6 +25061,966 @@ export const translations: Translation[] = [
       {
         q: "Binibigyan ba ng numero ang palapag gaya ng mga tribuna?",
         a: "Hindi. Sa isang konsiyerto ay entablado ang damuhan kasama ang anumang ilatag ng prodyuser, idinisenyo sa bawat palabas. Ang mga permanenteng tribuna lamang ang inilalarawan ng sistemang direksiyon at titik.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse ShopかKtown4uか：誰も書かない比較——どちらのページも片方の店の話だからです",
+    summary:
+      "どちらもHanteoに報告するので、チャートの問いでは決まりません。決めるのは、どちらの店にあなたのリリースがあるか、どちらの時計に間に合うか、そして——その二つよりも——必要なことを公開しているのはどちらかです。",
+    scope:
+      "海外のファンが韓国のアルバムを買うときに実際に選ぶ二つのショップを、正面から比べます。2026年10月21日にHanteoの認定ストア登録と各ショップ自身の告知に対して当サイトが確認した内容から組み立てているので、今日ではなくその日付を掲げています。比較は新しくても、その中の事実は再確認されていません。チャートへの報告、取扱い、決済の締切、費用がどこに現れるか、配送の拒否、サポート時間を扱います。価格や速さで順位は付けません。どちらもショップの性質ではなく、あなたの国、あなたのリリース、そしてその週に左右されるからです。",
+    intro: [
+      "当サイトにはWeverse Shopで注文するガイドとKtown4uで注文するガイドがありますが、どちらも相手に一度も触れていません。すでに決めている読者にはそれで構いませんが、まだ決めていないずっと多くの読者には役に立ちません。",
+      "答えは、多くのスレッドが言うものとは違います。どちらのショップもHanteoの認定なので、普段この話を決着させるチャートの議論は、そもそも議論になりません。実際に両者を分けるのはもっと狭く、もっと奇妙なことです。公開している内容が違い、その空白が同じ場所にないのです。",
+    ],
+    steps: [
+      {
+        title: "まずチャートの問いを片付ける。ここが多くの人が間違えるところです",
+        body: "公式ショップで買えばカウントされ、再販業者で買えばされない、というのがよくある思い込みです。この二つについては単純に誤りで、しかも信用の問題ではなく確認できることです。Hanteoは認定されたFamilyストアをコード付きで公開していて、Ktown4UはHF0082KTU001、WeverseはHF0082BTS001です。Hanteoはさらに、すべてのオンラインFamilyストアにフッターでFamilyマークを表示し、hanteochart.comへリンクすることを求めているので、ショップと登録簿が両側から互いを裏付けます。認定は毎年再発行されるので、このページから取るのではなくコードを確認してください。",
+        pitfall:
+          "はじめから危険にさらされていなかったチャートへの貢献を守るために、高いほうのショップを選ぶこと。チャートが高く払う理由のすべてなら、あなたはすでに持っていたものにお金を払っています。",
+        takes: "5分",
+      },
+      {
+        title: "ほかを比べる前に、どちらの店にあなたのリリースがあるかを尋ねる",
+        body: "価格よりも多くの注文を決めるのはここで、しかも非対称です。Ktown4uは総合小売で、レーベルをまたいで取り扱います。Weverse Shopはそもそも一つの店ではありません。GLOBALのショップがあり、地域別のショップがあり、それぞれ在庫が違い、予約の期間も違い、発送元も違います。他の国のファンが注文した商品が、あなたの国には存在しないことがあります。ですから比較はしばしばWeverse対Ktown4uではなく、Ktown4u対あなたがいるWeverse Shopなのです。",
+        pitfall:
+          "他人のWeverse Shopから予約の締切を読み取ること。ある店の締切は他の店について何も教えませんし、同梱特典はアルバムではなくその期間に紐づいています。",
+        takes: "10分",
+      },
+      {
+        title: "どちらの時計に間に合わなければならないかを知る",
+        body: "Ktown4uは一つ公開していて、しかも短いです。未決済の注文は、注文から6時間後に自動で取り消されます。24時間から短縮され、2025年2月19日KSTから有効です。ヨーロッパや南北アメリカで深夜に注文するファンにとっては、韓国の6時間が眠っている間にまるごと過ぎてしまい、置いたが払っていない予約は、置かれなかった予約です。Weverse Shopは、当サイトが読む告知の中に同等の締切を公開していません。それは存在しないということと同じではありません。実務上の要点は非対称であることです。片方のショップは、あなたにどれだけ時間があるかを教えてくれます。",
+        pitfall:
+          "確保するためにKtown4uの予約を置いて、朝に払うこと。それがまさに6時間のルールが打ち負かすために存在する習慣で、しかも静かに打ち負かします。何の通知もなく、注文は単に消えています。",
+        takes: "5分",
+      },
+      {
+        title: "費用が別の場所に現れることを見込む",
+        body: "どちらのショップも商品ページの価格が支払う額ではなく、そこから先で分かれます。2026年2月3日以降、Weverseは配送先と請求先の住所から税を計算します。韓国への注文は全体を税込みで表示し、それ以外への注文は税抜きの価格を表示して、住所が入力された時点でチェックアウトで配送先の税を加えます。Ktown4uの加算はもっと後に、別の形で現れます。2026年2月1日から国際配送料を7%引き上げ、米国向けには2025年6月2日以降、関税が発生していて電子的に前払いされていない場合にUSD 12の手数料を適用し、配達時に受取人から徴収します。",
+        pitfall:
+          "二つのカートを比べること。その時点でWeverseはすでに税を加えていて、Ktown4uはまだ12ドルを加えていないので、チェックアウトで安く見えるカートが、玄関で安いカートだとは限りません。",
+        takes: "15分",
+      },
+      {
+        title: "どちらがあなたに発送するか、それぞれの言い方で確認する",
+        body: "どちらも一部の宛先を断り、告知の仕方が違います。Weverseは韓国から発送できない国と地域の一覧を維持していて、2026年7月15日の改定では、ミャンマー、コンゴ民主共和国、イラク、イラン、レバノン、マリ、ロシア、アンドラ、ウクライナ、ベラルーシ、アフガニスタン、オランダ領アンティル、イスラエル、トルコが挙げられています。Ktown4uは国ごとではなく方法ごとに行います。2025年1月17日から、ドイツとスペインの郵便事業者が運用している枠組みから離脱したため、両国へのK-Packetを停止し、郵便番号の単位まで障害を公開しています。片方の一覧はそもそも注文できるかを教え、もう片方は前回使った方法がまだ存在するかを教えます。",
+        pitfall:
+          "どちらの一覧にも出てこない国は大丈夫だと思い込むこと。Ktown4uが方法を取り下げたときの対応は、影響を受ける顧客に別のサービスへの切り替えと追加費用についてメールすることだと明記されています。つまり、すでに置いた注文が後から価格を変えることがあります。",
+        takes: "10分",
+      },
+      {
+        title: "決済手段の一覧を読む。そして一覧があるのは片方だけだと気づく",
+        body: "Weverseは通貨ごとに何で払えるかを公開していて、その一覧は同じ長さではありません。USDにはPayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay、Grab Payがあります。JPYはそこからGrab Payを除いたものです。CNYはPayPalが落ちます。MXNは二つで最短です。PayPalとApple Payで、どちらもデジタル、現金の選択肢はありません。KRWは韓国のカードと韓国のウォレットが加わります。つまり既定の通貨が、チェックアウトに着く前にボタンを決めています。Ktown4uは告知の中に同等の一覧を公開していないので、何を受け付けるかは自分のチェックアウトで読み取るしかありません。",
+        pitfall:
+          "決済手段ではなく価格のために通貨を設定すること。短い一覧のどちらもあなたに用意できていないなら、チェックアウトに三つめのボタンはなく、その時点での回避策もありません。",
+        takes: "10分",
+      },
+      {
+        title: "うまくいかなかったとき、誰にいつ連絡できるかを把握する",
+        body: "Ktown4uは時間を明記しています。カスタマーサービスは2023年11月1日以降、平日のKST 10:00から17:00までで、12:30から13:30まで昼休みがあります。韓国の平日に5時間半で、ここの多くの読者にとっては真夜中であり、6時間の決済の時計と重なります。ヨーロッパで金曜の夜に置いた注文は、誰かが席に着く前に期限切れになり得ます。さらに韓国の祝日には発送とサポートの両方を止め、その日程を毎回公開します。Weverse Shopは同じ場所にサポート時間を公開していません。キャンセルの扱いのほうが記録が整っていて、当サイトには専用のガイドがあります。",
+        pitfall:
+          "韓国の祝日を配達の遅れとして扱うこと。Ktown4uは同じ日にサポートも止めるので、荷物について尋ねたい週が、誰も答えない週です。",
+        takes: "10分",
+      },
+    ],
+    faq: [
+      {
+        q: "Ktown4uの注文は韓国のチャートにカウントされますか。それともWeverseで買う必要がありますか。",
+        a: "どちらもカウントされます。HanteoはKtown4UをHF0082KTU001、WeverseをHF0082BTS001として認定Familyストアに挙げており、それぞれフッターに登録簿へリンクしたFamilyマークを表示することを求めています。認定は毎年再発行されるので、ここから取るのではなくhanteochart.comでコードを確認してください。",
+      },
+      {
+        q: "どちらが安いですか。",
+        a: "ショップの性質としては、どちらでもありません。アルバムがいくらになるかは、あなたの国、リリース、そしてその週によります。Weverseはチェックアウトで配送先の税を加え、Ktown4uは2026年2月に国際配送料を7%引き上げ、関税が前払いされていない米国配達にはUSD 12を加えます。二つの商品ページではなく、その日のあなたの住所での到着までの総額を比べてください。",
+      },
+      {
+        q: "どちらが速いですか。",
+        a: "一般には答えられませんし、答えられる問いのほうが重要です。あなたの国へどの方法がまだ走っているか、です。Ktown4uは国ごとに配送方法を取り下げます。2025年1月からドイツとスペインへのK-Packetがそうで、郵便番号の単位まで障害を公開します。一方Weverseはそもそも発送できない宛先の一覧を公開します。配達予想を比べる前に、自分の国の最新の告知を確認してください。",
+      },
+      {
+        q: "同じアルバムを両方で注文してもいいですか。",
+        a: "できますし、予約の同梱特典にとっては実際に有効な戦略です。特典はアルバムではなく期間に、そしてしばしば特定の小売店に紐づいています。二つのアルバム価格ではなく、到着までの二つの総額として見積もってください。そして特典が止まるのはアルバムの発売日ではなく、期間が閉じたときです。",
+      },
+      {
+        q: "私は米国にいます。それで答えは変わりますか。",
+        a: "一行だけ変わります。2025年6月2日以降、Ktown4uは米国向けの配送で、関税、税、その他の政府の課金が発生していて配達前に電子的に前払いされていない場合にUSD 12を適用し、玄関で受取人に請求します。Ktown4uは回避の道も公開しています。UPSの輸入関税と税の仕組みで前払いすることです。あなたのチェックアウトでWeverseが加える税と比べるべき、定額の加算です。",
+      },
+      {
+        q: "なぜこのページは比べる項目がこんなに少ないのですか。",
+        a: "残りが公開されていないからです。二つを並べてみて得られる正直な結論は、記録している半分が互いに違うということです。Ktown4uは決済の締切、サポート時間、国ごとの配送の変更を明記します。Weverseは通貨ごとの決済手段、税の扱い、発送除外を明記します。ショップが公開していないことについては、このページは推定せずにそう書きます。だから速さの順位も価格の結論もありません。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop還是Ktown4u：沒有人寫的那份比較，因為兩邊的頁面都只在講一家店",
+    summary:
+      "兩家都向Hanteo報數，所以榜單問題決定不了這件事。真正決定的是哪一家有你要的發行、你趕得上哪一家的時鐘，以及——比這兩件更重要——哪一家會把你需要知道的事公布出來。",
+    scope:
+      "針對海外粉絲買韓國專輯時實際會二選一的兩家商店做正面比較。它由本站在2026年10月21日對照Hanteo的認證商店名錄與各商店自己的公告所查核的內容組成，這也是它掛的是那個日期而不是今天的原因：比較是新的，裡面的事實並沒有重新查核。它涵蓋榜單報數、商品線、付款期限、費用出現在哪裡、拒運，以及客服時間。它不就價格或速度排名，因為那兩者都不是商店的屬性——都取決於你的國家、你要的發行，以及那一週。",
+    intro: [
+      "本站有一份在Weverse Shop下單的指南，也有一份在Ktown4u下單的指南，而兩份都一次也沒提到對方。對已經做好選擇的讀者而言那沒問題，對人數多得多、還沒選的讀者則毫無用處。",
+      "答案和大多數討論串給的不一樣。兩家商店都是Hanteo認證，所以平常用來拍板的那個榜單論點，根本不構成論點。真正把兩家分開的事更窄也更古怪：它們公布的東西不同，而空白不在同樣的位置。",
+    ],
+    steps: [
+      {
+        title: "先把榜單問題解決掉，因為那是大家最常弄錯的一題",
+        body: "常見的想法是在官方商店買會算，在轉售商買不算。對這兩家來說那純粹是錯的，而且是可以查核的，不是信任問題。Hanteo公布它認證的Family商店並附上代碼，Ktown4U是HF0082KTU001，Weverse是HF0082BTS001。Hanteo還要求每一家線上Family商店在頁尾顯示Family標記並連回hanteochart.com，所以商店與名錄從兩端互相確認。認證每年重新發放，所以請去查代碼，不要從本頁取用。",
+        pitfall:
+          "為了保護一份從來沒有風險的榜單貢獻而選了較貴的那家商店。如果榜單是你多付錢的全部理由，那你是在為自己原本就擁有的東西付錢。",
+        takes: "5分鐘",
+      },
+      {
+        title: "在比較其他任何事之前，先問哪一家有你要的發行",
+        body: "這件事決定的訂單比價格更多，而且不對稱。Ktown4u是綜合零售商，跨公司代理發行。Weverse Shop根本就不是一家店：有一個GLOBAL商店，也有地區商店，它們的庫存不同、預購期間不同、出貨地也不同。別的國家的粉絲訂到的商品，在你的國家可能並不存在。所以這份比較往往不是Weverse對Ktown4u——而是Ktown4u對你剛好所在的那一個Weverse Shop。",
+        pitfall:
+          "從別人的Weverse Shop上讀預購截止時間。一家店的截止時間完全不能說明其他店，而附贈品是綁在那個期間上，不是綁在專輯上。",
+        takes: "10分鐘",
+      },
+      {
+        title: "知道你必須趕上哪一家的時鐘",
+        body: "Ktown4u公布了一個，而且很短。未付款的訂單會在下單後6小時自動取消，由24小時縮短而來，自2025年2月19日KST起生效。對在歐洲或美洲於午夜下單的粉絲來說，韓國的6小時可能整段在睡覺時過完，而下了卻沒付的預購，就是沒下過的預購。Weverse Shop在本站讀到的公告裡沒有公布同等的期限，那和沒有期限並不是同一回事。實務上的重點是這個不對稱：其中一家會告訴你你還有多久。",
+        pitfall:
+          "為了先卡住而下Ktown4u的預購，打算早上再付。那正是6小時規則存在要擊敗的習慣，而且它擊敗得很安靜：沒有任何提醒，訂單就只是消失了。",
+        takes: "5分鐘",
+      },
+      {
+        title: "要預期費用會出現在不同的地方",
+        body: "兩家商店的商品頁價格都不是你付的錢，而從那之後它們就分岔了。自2026年2月3日起，Weverse依你的運送與帳單地址計算稅額：寄到韓國的訂單全程顯示含稅價，寄到其他地方的訂單顯示未稅價，並在輸入地址後於結帳時加上目的地的稅。Ktown4u的加項來得更晚，形式也不同——它自2026年2月1日起把國際運費調高7%，而對美國的寄件，自2025年6月2日起，若有應付關稅而未以電子方式預繳，則加收USD 12，於配送時向收件人收取。",
+        pitfall:
+          "拿兩個購物車相比。到那個時候Weverse已經加了稅，而Ktown4u還沒加上那十二美元，所以結帳時看起來較便宜的那一車，不一定是到門口時花得較少的那一車。",
+        takes: "15分鐘",
+      },
+      {
+        title: "確認哪一家會寄到你那裡，而且要照各自的說法去看",
+        body: "兩家都拒運某些目的地，而公告的方式不同。Weverse維護一份它無法從韓國寄送的國家與地區清單；2026年7月15日的修訂列出緬甸、剛果民主共和國、伊拉克、伊朗、黎巴嫩、馬利、俄羅斯、安道爾、烏克蘭、白俄羅斯、阿富汗、荷屬安地列斯、以色列與土耳其。Ktown4u是按方式而不是按國家處理：自2025年1月17日起，因德國與西班牙的郵政單位退出它所依賴的機制，它暫停了寄往兩國的K-Packet，並且把中斷公布到個別郵遞區號的層級。一份清單告訴你能不能下單；另一份告訴你上次用的那個方式是否還存在。",
+        pitfall:
+          "以為兩份清單上都沒出現的國家就沒問題。Ktown4u明定當一個方式被撤下時的處理方式，是寄電子郵件給受影響的客戶，說明改用其他服務以及額外的費用——所以已經下了的訂單可能事後改變價格。",
+        takes: "10分鐘",
+      },
+      {
+        title: "讀付款方式清單，並注意只有一家有這種清單",
+        body: "Weverse按幣別公布你可以用什麼付款，而那些清單長度並不相同。USD有PayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay與Grab Pay。JPY是那份清單去掉Grab Pay。CNY則少了PayPal。MXN最短，只有兩個：PayPal與Apple Pay，兩者都是數位的，沒有現金選項。KRW加上韓國的卡與韓國的錢包。所以你的預設幣別在你走到結帳之前就決定了你的按鈕。Ktown4u在公告裡沒有公布可相比的清單，所以它接受什麼，只能從它自己的結帳頁面上讀。",
+        pitfall:
+          "為了價格而不是為了付款方式去設定幣別。如果那份短清單上的兩個對你都沒設定好，結帳時不會有第三個按鈕，到那時也沒有變通辦法。",
+        takes: "10分鐘",
+      },
+      {
+        title: "弄清楚出問題時你能找誰、在什麼時候",
+        body: "Ktown4u明定了時間：客服自2023年11月1日起為平日KST 10:00到17:00，中間12:30到13:30午休。那是韓國平日的五個半小時，對這裡大多數讀者而言是深夜，而且會和那個6小時的付款時鐘疊在一起——在歐洲星期五晚上下的訂單，可能在有人上班之前就到期了。它在韓國假日也同時暫停出貨與客服，並且每次公布日期。Weverse Shop沒有在同一個地方公布客服時間；它取消訂單的處理是記錄比較完整的那一半，本站另有專頁。",
+        pitfall:
+          "把韓國的公共假日當成配送延誤。Ktown4u在同樣的日子也停掉客服，所以你最想問包裹的那一週，正是沒有人回答的那一週。",
+        takes: "10分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "Ktown4u的訂單算進韓國的榜單嗎，還是我必須在Weverse買？",
+        a: "兩邊都算。Hanteo把Ktown4U列為HF0082KTU001、Weverse列為HF0082BTS001的認證Family商店，並要求各自在頁尾顯示連回名錄的Family標記。認證每年重新發放，所以請在hanteochart.com上確認代碼，而不是從這裡取用。",
+      },
+      {
+        q: "哪一家比較便宜？",
+        a: "就商店的屬性而言，兩家都不是。一張專輯對你來說要花多少，取決於你的國家、那個發行以及那一週：Weverse在結帳時加上你目的地的稅，Ktown4u在2026年2月把國際運費調高7%，並對未預繳關稅的美國配送加收USD 12。請比較當天寄到你地址的到手總價，而不是比兩個商品頁。",
+      },
+      {
+        q: "哪一家比較快？",
+        a: "一般而言無法回答，而能回答的那個問題更重要：還有哪些方式在跑到你的國家。Ktown4u會按國家撤下寄送方式——自2025年1月起寄往德國與西班牙的K-Packet就是——並且把中斷公布到郵遞區號層級，而Weverse公布的是它完全無法寄送的目的地清單。在比較送達時間之前，請先查你國家目前的公告。",
+      },
+      {
+        q: "我可以在兩家各訂一張同樣的專輯嗎？",
+        a: "可以，而且對預購附贈品來說那是真實有效的策略，因為附贈品綁在那個期間上，而且常常綁在特定零售商而不是綁在專輯上。請把它當成兩筆到手總價來算，而不是兩個專輯售價，並且記得附贈品停止的時點是期間關閉時，不是專輯發行時。",
+      },
+      {
+        q: "我在美國。這會改變答案嗎？",
+        a: "它改變其中一行。自2025年6月2日起，Ktown4u對美國的寄件，若有應付的關稅、稅或其他政府收費而未在配送前以電子方式預繳，則加收USD 12，於門口向收件人收取。Ktown4u也公布了解法：透過UPS的進口關稅與稅系統預繳。那是一筆定額的加項，拿去和Weverse在你結帳時加的稅相比。",
+      },
+      {
+        q: "為什麼本頁比較的項目這麼少？",
+        a: "因為其餘的沒有被公布。把兩家並排放在一起，誠實的結論是它們記錄的是不同的那一半：Ktown4u明定它的付款期限、客服時間與按國家的寄送變動；Weverse明定它按幣別的付款方式、稅的處理與寄送排除。遇到商店沒有公布的事，本頁就直說，而不是去估，這也是為什麼這裡沒有速度排名、也沒有價格結論。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop atau Ktown4u: perbandingan yang tidak ditulis siapa pun, karena kedua halaman itu masing-masing tentang satu toko",
+    summary:
+      "Keduanya melapor ke Hanteo, jadi pertanyaan soal tangga lagu tidak menentukannya. Yang menentukan adalah toko mana yang punya rilisan Anda, jam siapa yang bisa Anda penuhi, dan — lebih daripada keduanya — mana yang menerbitkan hal yang perlu Anda ketahui.",
+    scope:
+      "Perbandingan langsung atas dua toko yang benar-benar dipilih seorang penggemar luar negeri untuk sebuah album Korea. Ia disusun dari klaim yang diperiksa situs ini pada 21 Oktober 2026 terhadap daftar toko bersertifikat Hanteo dan pemberitahuan masing-masing toko, dan itulah sebabnya ia membawa tanggal itu alih-alih tanggal hari ini: perbandingannya baru, fakta di dalamnya tidak diperiksa ulang. Ia mencakup pelaporan tangga lagu, katalog, tenggat pembayaran, di mana biaya muncul, penolakan pengiriman dan jam layanan. Ia tidak memeringkat keduanya berdasarkan harga atau kecepatan, karena keduanya bukan sifat tokonya — keduanya bergantung pada negara Anda, rilisan Anda dan minggunya.",
+    intro: [
+      "Situs ini punya panduan memesan dari Weverse Shop dan panduan memesan dari Ktown4u, dan tidak satu pun menyebut yang lain sekali saja. Itu baik-baik saja untuk pembaca yang sudah memilih, dan tidak berguna bagi jumlah yang jauh lebih besar yang belum memilih.",
+      "Jawabannya bukan yang diberikan kebanyakan utas. Kedua toko bersertifikat Hanteo, jadi argumen tangga lagu yang biasanya menyelesaikan ini sama sekali bukan argumen. Yang benar-benar memisahkan keduanya lebih sempit dan lebih aneh: mereka menerbitkan hal-hal yang berbeda, dan celahnya tidak berada di tempat yang sama.",
+    ],
+    steps: [
+      {
+        title: "Selesaikan dulu pertanyaan tangga lagu, karena itulah yang paling sering disalahpahami",
+        body: "Keyakinan umumnya adalah membeli dari toko resmi dihitung dan membeli dari penjual pihak ketiga tidak. Untuk kedua toko ini hal itu sekadar salah, dan ia bisa diperiksa alih-alih menjadi soal kepercayaan. Hanteo menerbitkan toko Family bersertifikatnya dengan sebuah kode masing-masing: Ktown4U adalah HF0082KTU001 dan Weverse adalah HF0082BTS001. Hanteo juga mewajibkan setiap toko Family daring menampilkan tanda Family di kaki halamannya, ditautkan kembali ke hanteochart.com, jadi toko dan daftar itu saling menegaskan dari kedua ujung. Sertifikasi diterbitkan ulang setiap tahun, jadi periksalah kodenya alih-alih mengambilnya dari halaman ini.",
+        pitfall:
+          "Memilih toko yang lebih mahal untuk melindungi kontribusi tangga lagu yang sejak awal tidak pernah terancam. Kalau tangga lagu adalah seluruh alasan Anda membayar lebih, Anda membayar untuk sesuatu yang sudah Anda miliki.",
+        takes: "5 menit",
+      },
+      {
+        title: "Tanyakan toko mana yang punya rilisan Anda sebelum membandingkan apa pun yang lain",
+        body: "Hal ini menentukan lebih banyak pesanan daripada harga, dan ia asimetris. Ktown4u adalah pengecer umum dan membawa rilisan dari berbagai label. Weverse Shop sama sekali bukan satu toko: ada toko GLOBAL dan ada toko-toko regional, stoknya berbeda, jendela pra-pesannya berbeda dan mereka mengirim dari tempat yang berbeda. Sebuah barang yang dipesan penggemar di negara lain mungkin tidak ada di negara Anda. Jadi perbandingannya seringkali bukan Weverse melawan Ktown4u — melainkan Ktown4u melawan Weverse Shop mana pun yang kebetulan Anda tempati.",
+        pitfall:
+          "Membaca tenggat pra-pesan dari Weverse Shop milik orang lain. Batas waktu di satu toko tidak memberi tahu Anda apa pun tentang yang lain, dan bonusnya terikat pada jendelanya alih-alih pada albumnya.",
+        takes: "10 menit",
+      },
+      {
+        title: "Ketahui jam siapa yang harus Anda penuhi",
+        body: "Ktown4u menerbitkan satu dan ia singkat. Pesanan yang belum dibayar dibatalkan otomatis enam jam setelah dibuat — dipotong dari dua puluh empat, berlaku 19 Februari 2025 KST. Bagi penggemar yang memesan tengah malam di Eropa atau benua Amerika, enam jam Korea bisa lewat seluruhnya selagi tidur, dan pra-pesan yang dibuat tetapi tidak dibayar adalah pra-pesan yang tidak pernah dibuat. Weverse Shop tidak menerbitkan tenggat setara dalam pemberitahuan yang dibaca situs ini, yang tidak sama dengan tidak ada tenggat. Intinya secara praktis adalah asimetrinya: satu toko memberi tahu Anda berapa lama waktu Anda.",
+        pitfall:
+          "Membuat pra-pesan Ktown4u untuk mengamankannya lalu membayar paginya. Itulah satu kebiasaan yang keberadaan aturan enam jam itu bertujuan mengalahkan, dan ia mengalahkannya dengan senyap — tidak ada yang memperingatkan Anda, pesanannya sekadar hilang.",
+        takes: "5 menit",
+      },
+      {
+        title: "Harapkan biayanya muncul di tempat yang berbeda",
+        body: "Harga pada halaman produk kedua toko bukan harga yang Anda bayar, dan setelah itu keduanya menyimpang. Sejak 3 Februari 2026 Weverse menghitung pajak dari alamat pengiriman dan penagihan Anda: pesanan ke Korea menampilkan harga termasuk pajak di seluruh prosesnya, pesanan ke mana pun selain itu menampilkan harga tanpa pajak dan menambahkan pajak tujuan di kasir setelah sebuah alamat dimasukkan. Tambahan Ktown4u mendarat lebih belakangan dan mendarat secara berbeda — ia menaikkan pengiriman internasional 7% berlaku 1 Februari 2026, dan untuk kiriman ke Amerika Serikat sejak 2 Juni 2025 ia menerapkan biaya USD 12 jika bea terutang dan tidak dibayar lebih dulu secara elektronik, dipungut dari penerima saat pengantaran.",
+        pitfall:
+          "Membandingkan dua keranjang. Weverse sudah menambahkan pajaknya pada saat itu dan Ktown4u belum menambahkan dua belas dolarnya, jadi keranjang yang tampak lebih murah di kasir bukan dengan pasti yang lebih murah di depan pintu.",
+        takes: "15 menit",
+      },
+      {
+        title: "Periksa mana yang akan mengirim kepada Anda, dalam bentuk yang masing-masing menyatakannya",
+        body: "Keduanya menolak sebagian tujuan dan keduanya mengumumkannya secara berbeda. Weverse memelihara daftar negara dan wilayah yang tidak dapat dikirimi dari Korea Selatan; revisi 15 Juli 2026 menyebut Myanmar, Republik Demokratik Kongo, Irak, Iran, Lebanon, Mali, Rusia, Andorra, Ukraina, Belarus, Afghanistan, Antilles Belanda, Israel dan Turki. Ktown4u melakukannya per metode alih-alih per negara: ia menangguhkan K-Packet ke Jerman dan Spanyol sejak 17 Januari 2025 ketika operator pos di sana meninggalkan pengaturan yang menjadi dasarnya, dan ia menerbitkan gangguan hingga ke kode pos masing-masing. Satu daftar memberi tahu Anda apakah Anda bisa memesan sama sekali; yang lain memberi tahu apakah metode yang Anda pakai terakhir kali masih ada.",
+        pitfall:
+          "Menganggap sebuah negara yang tidak muncul di kedua daftar itu aman. Penanganan yang dinyatakan Ktown4u ketika sebuah metode ditarik adalah mengirim surel kepada pelanggan terdampak tentang beralih ke layanan lain dan biaya tambahannya — jadi pesanan yang sudah dibuat bisa berubah harga setelah fakta.",
+        takes: "10 menit",
+      },
+      {
+        title: "Baca daftar pembayarannya, dan perhatikan bahwa hanya satu toko yang punya",
+        body: "Weverse menerbitkan apa yang bisa Anda pakai untuk membayar, per mata uang, dan daftarnya tidak sama panjang. USD mendapat PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay dan Grab Pay. JPY mendapat daftar itu tanpa Grab Pay. CNY menanggalkan PayPal. MXN yang terpendek dengan dua — PayPal dan Apple Pay, keduanya digital, tanpa pilihan tunai. KRW menambahkan kartu Korea dan dompet Korea. Mata uang bawaan Anda karenanya menentukan tombol Anda sebelum Anda mencapai kasir. Ktown4u tidak menerbitkan daftar sebanding dalam pemberitahuannya, jadi apa yang ia terima harus dibaca dari kasirnya sendiri.",
+        pitfall:
+          "Menetapkan mata uang untuk harganya alih-alih untuk metode pembayarannya. Kalau tidak satu pun dari daftar pendek itu tersiapkan bagi Anda, tidak ada tombol ketiga di kasir dan tidak ada jalan pintas pada titik itu.",
+        takes: "10 menit",
+      },
+      {
+        title: "Cari tahu siapa yang bisa Anda hubungi ketika ada masalah, dan kapan",
+        body: "Ktown4u menyatakan jamnya: layanan pelanggan pada hari kerja 10:00 sampai 17:00 KST sejak 1 November 2023, dengan istirahat makan dari 12:30 sampai 13:30. Itu lima setengah jam pada hari kerja Korea, yang bagi sebagian besar pembaca di sini adalah tengah malam, dan ia berlipat dengan jam pembayaran enam jam itu — sebuah pesanan yang dibuat pada Jumat malam di Eropa bisa kedaluwarsa sebelum ada orang di meja. Ia juga menghentikan pengiriman maupun layanan selama hari raya Korea dan menerbitkan tanggalnya setiap kali. Weverse Shop tidak menerbitkan jam layanan di tempat yang sama; perilaku pembatalannya adalah separuh yang lebih terdokumentasi dan punya panduan sendiri di sini.",
+        pitfall:
+          "Memperlakukan hari raya umum Korea sebagai penundaan pengantaran. Ktown4u menghentikan layanan pada hari-hari yang sama, jadi minggu ketika Anda paling ingin menanyakan sebuah paket adalah minggu ketika tidak ada yang menjawab.",
+        takes: "10 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah pesanan Ktown4u dihitung untuk tangga lagu Korea, atau saya harus membeli dari Weverse?",
+        a: "Keduanya dihitung. Hanteo mendaftar keduanya sebagai toko Family bersertifikat — Ktown4U sebagai HF0082KTU001 dan Weverse sebagai HF0082BTS001 — dan mewajibkan masing-masing menampilkan tanda Family di kaki halamannya yang ditautkan kembali ke daftar itu. Sertifikasi diterbitkan ulang setiap tahun, jadi pastikan kodenya di hanteochart.com alih-alih mengambilnya dari sini.",
+      },
+      {
+        q: "Mana yang lebih murah?",
+        a: "Tidak ada, sebagai sifat tokonya. Berapa harga album bagi Anda bergantung pada negara Anda, rilisannya dan minggunya: Weverse menambahkan pajak tujuan Anda di kasir, Ktown4u menaikkan pengiriman internasional 7% pada Februari 2026 dan menambahkan USD 12 pada pengantaran ke Amerika Serikat jika bea tidak dibayar lebih dulu. Bandingkan biaya sampai di tangan untuk alamat Anda pada hari itu, bukan kedua halaman produknya.",
+      },
+      {
+        q: "Mana yang mengirim lebih cepat?",
+        a: "Tidak terjawab secara umum, dan pertanyaan yang bisa dijawab lebih penting: metode mana yang masih berjalan ke negara Anda. Ktown4u menarik metode pengiriman per negara — K-Packet ke Jerman dan Spanyol sejak Januari 2025 — dan menerbitkan gangguan hingga ke kode pos, sementara Weverse menerbitkan daftar tujuan yang sama sekali tidak dapat dikiriminya. Periksa pemberitahuan terkini untuk negara Anda sebelum membandingkan perkiraan pengantaran.",
+      },
+      {
+        q: "Bisakah saya memesan album yang sama dari keduanya?",
+        a: "Bisa, dan itu strategi nyata untuk bonus pra-pesan, yang terikat pada jendelanya dan sering pada pengecer tertentu alih-alih pada albumnya. Hitunglah sebagai dua biaya sampai di tangan alih-alih dua harga album, dan ingat bonusnya berhenti saat jendelanya tutup, bukan saat albumnya dirilis.",
+      },
+      {
+        q: "Saya di Amerika Serikat. Apakah itu mengubah jawabannya?",
+        a: "Ia mengubah satu barisnya. Sejak 2 Juni 2025 Ktown4u menerapkan biaya USD 12 pada kiriman ke Amerika Serikat jika bea, pajak atau pungutan pemerintah lain terutang dan tidak dibayar lebih dulu secara elektronik sebelum pengantaran, ditagihkan kepada penerima di depan pintu. Ktown4u juga menerbitkan jalan keluarnya: bayar lebih dulu melalui sistem bea dan pajak impor milik UPS. Itu tambahan tetap untuk dibandingkan dengan pajak apa pun yang ditambahkan Weverse di kasir Anda.",
+      },
+      {
+        q: "Mengapa halaman ini membandingkan begitu sedikit hal?",
+        a: "Karena sisanya tidak diterbitkan. Temuan jujur dari menaruh keduanya berdampingan adalah bahwa mereka mendokumentasikan separuh yang berbeda: Ktown4u menyatakan tenggat pembayarannya, jam layanannya dan perubahan pengirimannya per negara; Weverse menyatakan metode pembayarannya per mata uang, perilaku pajaknya dan pengecualian pengirimannya. Ketika sebuah toko tidak menerbitkan sesuatu, halaman ini mengatakannya alih-alih memperkirakannya, dan itulah sebabnya tidak ada peringkat kecepatan dan tidak ada putusan harga.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop oder Ktown4u: der Vergleich, den niemand schreibt, weil beide Seiten je von einem Shop handeln",
+    summary:
+      "Beide melden an Hanteo, die Chartfrage entscheidet es also nicht. Entscheidend ist, welcher Shop Ihre Veröffentlichung hat, wessen Uhr Sie einhalten können, und — mehr als beides — welcher das veröffentlicht, was Sie wissen müssen.",
+    scope:
+      "Ein direkter Vergleich der zwei Shops, zwischen denen ein Fan im Ausland für ein koreanisches Album tatsächlich wählt. Er ist aus Angaben zusammengesetzt, die diese Seite am 21. Oktober 2026 gegen Hanteos Register zertifizierter Stores und die eigenen Mitteilungen jedes Shops geprüft hat, weshalb er dieses Datum trägt und nicht das heutige: der Vergleich ist neu, die Fakten darin sind nicht erneut geprüft. Er behandelt Chartmeldung, Katalog, Zahlungsfristen, wo die Kosten auftauchen, Versandverweigerungen und Servicezeiten. Er bewertet die beiden nicht nach Preis oder Geschwindigkeit, weil keines von beiden eine Eigenschaft des Shops ist — beide hängen von Ihrem Land, Ihrer Veröffentlichung und der Woche ab.",
+    intro: [
+      "Diese Seite hat eine Anleitung zum Bestellen bei Weverse Shop und eine zum Bestellen bei Ktown4u, und keine erwähnt die andere ein einziges Mal. Für eine Leserin, die schon gewählt hat, ist das in Ordnung, und für die viel größere Zahl derer, die noch nicht gewählt haben, nutzlos.",
+      "Die Antwort ist nicht die, die die meisten Threads geben. Beide Shops sind Hanteo-zertifiziert, das Chartargument, das diese Sache sonst erledigt, ist also überhaupt kein Argument. Was die beiden tatsächlich trennt, ist schmaler und seltsamer: sie veröffentlichen verschiedene Dinge, und die Lücken liegen nicht an denselben Stellen.",
+    ],
+    steps: [
+      {
+        title: "Klären Sie zuerst die Chartfrage, denn das ist die, die am häufigsten falsch beantwortet wird",
+        body: "Die verbreitete Überzeugung ist, dass ein Kauf im offiziellen Shop zählt und einer bei einem Wiederverkäufer nicht. Für diese beiden ist das einfach falsch, und es ist überprüfbar statt eine Frage des Vertrauens. Hanteo veröffentlicht seine zertifizierten Family-Stores jeweils mit einem Code: Ktown4U ist HF0082KTU001 und Weverse ist HF0082BTS001. Hanteo verlangt außerdem von jedem Online-Family-Store, das Family-Zeichen im Fußbereich zu zeigen, verlinkt zurück auf hanteochart.com, Shop und Register bestätigen sich also von beiden Enden her. Die Zertifizierung wird jedes Jahr neu erteilt, prüfen Sie den Code also, anstatt ihn von dieser Seite zu nehmen.",
+        pitfall:
+          "Den teureren Shop zu wählen, um einen Chartbeitrag zu schützen, der nie in Gefahr war. Wenn die Charts der ganze Grund sind, warum Sie mehr zahlen, zahlen Sie für etwas, das Sie schon hatten.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Fragen Sie, welcher Shop Ihre Veröffentlichung hat, bevor Sie irgendetwas anderes vergleichen",
+        body: "Das entscheidet mehr Bestellungen als der Preis, und es ist asymmetrisch. Ktown4u ist ein allgemeiner Händler und führt Veröffentlichungen über Labels hinweg. Weverse Shop ist überhaupt nicht ein Shop: es gibt einen GLOBAL-Shop und es gibt Regionalshops, sie führen anderen Bestand, sie haben andere Vorverkaufsfenster und sie versenden von anderen Orten. Ein Artikel, den ein Fan in einem anderen Land bestellt hat, existiert in Ihrem vielleicht nicht. Der Vergleich ist deshalb oft nicht Weverse gegen Ktown4u — er ist Ktown4u gegen den Weverse Shop, in dem Sie gerade sind.",
+        pitfall:
+          "Eine Vorverkaufsfrist aus dem Weverse Shop von jemand anderem abzulesen. Ein Stichtag in einem Store sagt nichts über die anderen, und die Beigaben hängen am Fenster und nicht am Album.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Wissen Sie, wessen Uhr Sie einhalten müssen",
+        body: "Ktown4u veröffentlicht eine, und sie ist kurz. Eine unbezahlte Bestellung wird sechs Stunden nach der Aufgabe automatisch storniert — gekürzt von vierundzwanzig, gültig ab 19. Februar 2025 KST. Für einen Fan, der um Mitternacht in Europa oder Amerika bestellt, können sechs koreanische Stunden vollständig im Schlaf vergehen, und ein aufgegebener, aber nicht bezahlter Vorverkauf ist ein Vorverkauf, den es nie gab. Weverse Shop veröffentlicht in den Mitteilungen, die diese Seite liest, keine entsprechende Frist, was nicht dasselbe ist, wie keine zu haben. Der praktische Punkt ist die Asymmetrie: ein Shop sagt Ihnen, wie lange Sie haben.",
+        pitfall:
+          "Einen Ktown4u-Vorverkauf aufzugeben, um ihn zu sichern, und morgens zu bezahlen. Das ist die eine Gewohnheit, gegen die die Sechs-Stunden-Regel existiert, und sie besiegt sie lautlos — nichts warnt Sie, die Bestellung ist einfach weg.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Rechnen Sie damit, dass die Kosten an verschiedenen Stellen auftauchen",
+        body: "Bei keinem der beiden Shops ist der Preis auf der Produktseite der, den Sie zahlen, und danach gehen sie auseinander. Seit dem 3. Februar 2026 berechnet Weverse die Steuer aus Ihrer Versand- und Rechnungsadresse: Bestellungen nach Korea zeigen durchweg Preise inklusive Steuer, Bestellungen überall sonst zeigen den Preis ohne Steuer und addieren die Steuer des Ziellandes an der Kasse, sobald eine Adresse eingegeben ist. Die Zuschläge von Ktown4u landen später und landen anders — es hat den internationalen Versand zum 1. Februar 2026 um 7% erhöht, und für Sendungen in die USA wendet es seit dem 2. Juni 2025 eine Gebühr von USD 12 an, wenn Abgaben fällig sind und nicht elektronisch vorausbezahlt wurden, eingezogen beim Empfänger bei der Lieferung.",
+        pitfall:
+          "Zwei Warenkörbe zu vergleichen. Weverse hat die Steuer dann schon addiert und Ktown4u die zwölf Dollar noch nicht, der Korb, der an der Kasse günstiger aussieht, ist also nicht verlässlich der, der an der Tür weniger kostet.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Prüfen Sie, welcher zu Ihnen liefert, und zwar in der Form, in der jeder es sagt",
+        body: "Beide verweigern manche Ziele, und sie kündigen es unterschiedlich an. Weverse führt eine Liste von Ländern und Regionen, in die es aus Südkorea nicht versenden kann; die Fassung vom 15. Juli 2026 nennt Myanmar, die Demokratische Republik Kongo, Irak, Iran, Libanon, Mali, Russland, Andorra, die Ukraine, Belarus, Afghanistan, die Niederländischen Antillen, Israel und die Türkei. Ktown4u macht es pro Methode statt pro Land: es hat K-Packet nach Deutschland und Spanien ab dem 17. Januar 2025 ausgesetzt, als die dortigen Postbetreiber die Vereinbarung verließen, auf der es beruht, und es veröffentlicht Störungen bis auf einzelne Postleitzahlen. Die eine Liste sagt Ihnen, ob Sie überhaupt bestellen können; die andere sagt, ob die Methode, die Sie letztes Mal genutzt haben, noch existiert.",
+        pitfall:
+          "Anzunehmen, ein Land, das auf keiner der beiden Listen steht, sei unproblematisch. Ktown4u gibt als Vorgehen beim Wegfall einer Methode an, betroffene Kunden per E-Mail über den Wechsel zu einem anderen Dienst und die Zusatzkosten zu informieren — eine schon aufgegebene Bestellung kann also nachträglich den Preis ändern.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Lesen Sie die Zahlungslisten, und merken Sie, dass nur ein Shop sie hat",
+        body: "Weverse veröffentlicht je Währung, womit Sie zahlen können, und die Listen sind nicht gleich lang. USD bekommt PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay und Grab Pay. JPY bekommt diese Liste ohne Grab Pay. CNY verliert PayPal. MXN ist mit zwei die kürzeste — PayPal und Apple Pay, beide digital, keine Barzahlung. KRW ergänzt koreanische Karten und die koreanischen Wallets. Ihre Standardwährung entscheidet damit über Ihre Schaltflächen, bevor Sie die Kasse erreichen. Ktown4u veröffentlicht in seinen Mitteilungen keine vergleichbare Liste, was es annimmt, muss also an seiner eigenen Kasse abgelesen werden.",
+        pitfall:
+          "Eine Währung des Preises wegen zu setzen statt der Zahlungsmethode wegen. Wenn keine der beiden auf einer kurzen Liste für Sie eingerichtet ist, gibt es an der Kasse keine dritte Schaltfläche und an dieser Stelle keinen Ausweg.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Finden Sie heraus, wen Sie erreichen können, wenn etwas schiefgeht, und wann",
+        body: "Ktown4u nennt seine Zeiten: Kundenservice an Werktagen von 10:00 bis 17:00 KST seit dem 1. November 2023, mit Mittagspause von 12:30 bis 13:30. Das sind fünfeinhalb Stunden an koreanischen Werktagen, für die meisten Leserinnen hier mitten in der Nacht, und es verschränkt sich mit der Sechs-Stunden-Zahlungsuhr — eine Bestellung, die an einem Freitagabend in Europa aufgegeben wird, kann ablaufen, bevor jemand am Schreibtisch sitzt. Es pausiert außerdem über koreanische Feiertage Versand und Service und veröffentlicht die Daten jedes Mal. Weverse Shop veröffentlicht die Servicezeiten nicht an derselben Stelle; sein Storno-Verhalten ist die besser dokumentierte Hälfte und hat hier eine eigene Anleitung.",
+        pitfall:
+          "Einen koreanischen Feiertag für eine Lieferverzögerung zu halten. Ktown4u pausiert an denselben Tagen auch den Service, die Woche, in der Sie am dringendsten nach einem Paket fragen möchten, ist also die Woche, in der niemand antwortet.",
+        takes: "10 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Zählt eine Ktown4u-Bestellung für die koreanischen Charts, oder muss ich bei Weverse kaufen?",
+        a: "Beide zählen. Hanteo führt beide als zertifizierte Family-Stores — Ktown4U als HF0082KTU001 und Weverse als HF0082BTS001 — und verlangt von jedem, das Family-Zeichen im Fußbereich zu zeigen, verlinkt zurück auf das Register. Die Zertifizierung wird jedes Jahr neu erteilt, bestätigen Sie den Code also auf hanteochart.com, anstatt ihn von hier zu nehmen.",
+      },
+      {
+        q: "Welcher ist günstiger?",
+        a: "Keiner, als Eigenschaft des Shops. Was das Album Sie kostet, hängt von Ihrem Land, der Veröffentlichung und der Woche ab: Weverse addiert an der Kasse die Steuer Ihres Ziellandes, Ktown4u hat den internationalen Versand im Februar 2026 um 7% erhöht und legt auf US-Lieferungen USD 12 auf, wenn Abgaben nicht vorausbezahlt wurden. Vergleichen Sie die Gesamtkosten bis zur Haustür für Ihre Adresse am betreffenden Tag, nicht die beiden Produktseiten.",
+      },
+      {
+        q: "Welcher liefert schneller?",
+        a: "Allgemein nicht beantwortbar, und die beantwortbare Frage zählt mehr: welche Methoden noch in Ihr Land laufen. Ktown4u zieht Versandmethoden pro Land zurück — K-Packet nach Deutschland und Spanien ab Januar 2025 — und veröffentlicht Störungen bis auf Postleitzahlen, während Weverse eine Liste von Zielen veröffentlicht, in die es überhaupt nicht versenden kann. Prüfen Sie die aktuelle Mitteilung für Ihr Land, bevor Sie Lieferschätzungen vergleichen.",
+      },
+      {
+        q: "Kann ich dasselbe Album einfach bei beiden bestellen?",
+        a: "Sie können, und für Vorverkaufsbeigaben ist das eine echte Strategie, denn die hängen am Fenster und oft am konkreten Händler statt am Album. Rechnen Sie es als zwei Gesamtkosten bis zur Haustür statt als zwei Albumpreise, und denken Sie daran, dass die Beigaben enden, wenn das Fenster schließt, und nicht, wenn das Album erscheint.",
+      },
+      {
+        q: "Ich bin in den USA. Ändert das die Antwort?",
+        a: "Es ändert eine Zeile davon. Seit dem 2. Juni 2025 wendet Ktown4u auf US-Sendungen eine Gebühr von USD 12 an, wenn Abgaben, Steuern oder andere staatliche Gebühren fällig sind und vor der Lieferung nicht elektronisch vorausbezahlt wurden, dem Empfänger an der Tür in Rechnung gestellt. Ktown4u veröffentlicht auch den Ausweg: über das System für Einfuhrabgaben und Steuern von UPS vorauszahlen. Das ist ein fester Zuschlag, den Sie gegen die Steuer halten, die Weverse an Ihrer Kasse addiert.",
+      },
+      {
+        q: "Warum vergleicht diese Seite so wenige Dinge?",
+        a: "Weil der Rest nicht veröffentlicht ist. Der ehrliche Befund daraus, die beiden nebeneinanderzustellen, ist, dass sie verschiedene Hälften dokumentieren: Ktown4u nennt seine Zahlungsfrist, seine Servicezeiten und seine Versandänderungen pro Land; Weverse nennt seine Zahlungsmethoden je Währung, sein Steuerverhalten und seine Versandausschlüsse. Wo ein Shop etwas nicht veröffentlicht, sagt diese Seite das, anstatt es zu schätzen, und deshalb gibt es kein Geschwindigkeitsranking und kein Preisurteil.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop o Ktown4u: la comparación que nadie escribe, porque las dos páginas hablan de una sola tienda",
+    summary:
+      "Las dos reportan a Hanteo, así que la cuestión de las listas no lo decide. Lo que lo decide es qué tienda tiene tu lanzamiento, a qué reloj puedes llegar y, más que ninguna de las dos cosas, cuál publica lo que necesitas saber.",
+    scope:
+      "Un cara a cara de las dos tiendas entre las que realmente elige una fan de fuera de Corea para un álbum coreano. Está montado con datos que este sitio comprobó el 21 de octubre de 2026 contra el registro de tiendas certificadas de Hanteo y los avisos de cada tienda, y por eso lleva esa fecha y no la de hoy: la comparación es nueva, los hechos que contiene no están vueltos a comprobar. Cubre el reporte a listas, el catálogo, los plazos de pago, dónde aparece el coste, las negativas de envío y el horario de atención. No las ordena por precio ni por rapidez, porque ninguna de las dos cosas es una propiedad de la tienda: ambas dependen de tu país, de tu lanzamiento y de la semana.",
+    intro: [
+      "Este sitio tiene una guía para pedir en Weverse Shop y una guía para pedir en Ktown4u, y ninguna menciona a la otra ni una vez. Eso está bien para quien ya ha elegido, y es inútil para el número mucho mayor de quienes no.",
+      "La respuesta no es la que dan la mayoría de los hilos. Las dos tiendas están certificadas por Hanteo, así que el argumento de las listas que suele zanjar esto no es un argumento en absoluto. Lo que de verdad las separa es más estrecho y más raro: publican cosas distintas, y los huecos no están en los mismos sitios.",
+    ],
+    steps: [
+      {
+        title: "Zanja primero la cuestión de las listas, porque es la que la gente falla",
+        body: "La creencia habitual es que comprar en la tienda oficial cuenta y comprar en una revendedora no. Para estas dos es simplemente falso, y es comprobable en lugar de ser una cuestión de confianza. Hanteo publica sus tiendas Family certificadas con un código cada una: Ktown4U es HF0082KTU001 y Weverse es HF0082BTS001. Hanteo también exige a toda tienda Family en línea mostrar la marca Family en su pie, enlazada de vuelta a hanteochart.com, así que la tienda y el registro se confirman desde los dos extremos. La certificación se reemite cada año, así que comprueba el código en lugar de tomarlo de esta página.",
+        pitfall:
+          "Elegir la tienda más cara para proteger una aportación a las listas que nunca estuvo en riesgo. Si la lista es toda la razón por la que pagas más, estás pagando por algo que ya tenías.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pregunta qué tienda tiene tu lanzamiento antes de comparar cualquier otra cosa",
+        body: "Esto decide más pedidos que el precio, y es asimétrico. Ktown4u es una minorista general y lleva lanzamientos de varias discográficas. Weverse Shop no es una sola tienda: hay una tienda GLOBAL y hay tiendas regionales, llevan existencias distintas, tienen ventanas de preventa distintas y envían desde sitios distintos. Un artículo que pidió una fan de otro país puede no existir en el tuyo. Así que la comparación a menudo no es Weverse contra Ktown4u, sino Ktown4u contra la Weverse Shop en la que resultas estar.",
+        pitfall:
+          "Leer un plazo de preventa en la Weverse Shop de otra persona. Una fecha de cierre en una tienda no te dice nada de las demás, y los artículos incluidos van ligados a la ventana y no al álbum.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Entérate de a qué reloj tienes que llegar",
+        body: "Ktown4u publica uno y es corto. Un pedido sin pagar se cancela automáticamente seis horas después de hacerse, recortado desde veinticuatro, con efecto desde el 19 de febrero de 2025 KST. Para una fan que pide a medianoche en Europa o en América, seis horas coreanas pueden pasar enteras mientras duerme, y una preventa hecha y no pagada es una preventa que nunca se hizo. Weverse Shop no publica un plazo equivalente en los avisos que este sitio lee, lo que no es lo mismo que no haberlo. El punto práctico es la asimetría: una de las tiendas te dice cuánto tiempo tienes.",
+        pitfall:
+          "Hacer una preventa en Ktown4u para asegurarla y pagar por la mañana. Esa es precisamente la costumbre contra la que existe la regla de las seis horas, y la derrota en silencio: nada te avisa, el pedido simplemente ya no está.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Cuenta con que el coste aparecerá en sitios distintos",
+        body: "En ninguna de las dos tiendas el precio de la página de producto es el que pagas, y a partir de ahí divergen. Desde el 3 de febrero de 2026 Weverse calcula el impuesto a partir de tu dirección de envío y de facturación: los pedidos a Corea muestran precios con impuestos incluidos en todo el proceso, y los pedidos a cualquier otro sitio muestran el precio sin impuestos y añaden el del destino en el pago una vez introducida una dirección. Los añadidos de Ktown4u llegan más tarde y llegan de otra forma: subió el envío internacional un 7% con efecto del 1 de febrero de 2026, y para envíos a Estados Unidos aplica desde el 2 de junio de 2025 un cargo de USD 12 cuando hay aranceles debidos que no se prepagaron electrónicamente, cobrado al destinatario en la entrega.",
+        pitfall:
+          "Comparar dos carritos. A esas alturas Weverse ya ha añadido el impuesto y Ktown4u todavía no ha añadido los doce dólares, así que el carrito que parece más barato al pagar no es de forma fiable el que cuesta menos en la puerta.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Comprueba cuál te enviará, en la forma en que cada una lo dice",
+        body: "Las dos rechazan algunos destinos y lo anuncian de forma distinta. Weverse mantiene una lista de países y regiones a los que no puede enviar desde Corea del Sur; la revisión del 15 de julio de 2026 nombra Myanmar, la República Democrática del Congo, Irak, Irán, Líbano, Malí, Rusia, Andorra, Ucrania, Bielorrusia, Afganistán, las Antillas Neerlandesas, Israel y Turquía. Ktown4u lo hace por método y no por país: suspendió K-Packet a Alemania y España desde el 17 de enero de 2025, cuando esos operadores postales dejaron el acuerdo en el que se basa, y publica las interrupciones hasta el nivel de código postal. Una lista te dice si puedes pedir siquiera; la otra te dice si el método que usaste la última vez todavía existe.",
+        pitfall:
+          "Dar por hecho que un país que no aparece en ninguna de las dos listas está despejado. Lo que Ktown4u dice que hace cuando se retira un método es escribir por correo a los clientes afectados sobre pasar a otro servicio y el coste adicional, así que un pedido ya hecho puede cambiar de precio después.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Lee las listas de pago, y fíjate en que solo una tienda las tiene",
+        body: "Weverse publica con qué puedes pagar, por divisa, y las listas no tienen la misma longitud. USD tiene PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay y Grab Pay. JPY tiene esa lista sin Grab Pay. CNY pierde PayPal. MXN es la más corta, con dos: PayPal y Apple Pay, las dos digitales, sin opción en efectivo. KRW añade tarjetas coreanas y las carteras coreanas. Tu divisa por defecto decide por tanto tus botones antes de que llegues al pago. Ktown4u no publica una lista comparable en sus avisos, así que lo que acepta hay que leerlo en su propio pago.",
+        pitfall:
+          "Fijar una divisa por el precio en lugar de por el método de pago. Si ninguno de los dos de una lista corta está configurado para ti, no hay un tercer botón al pagar ni solución a esas alturas.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Averigua a quién puedes acudir cuando sale mal, y cuándo",
+        body: "Ktown4u declara su horario: atención al cliente los días laborables de 10:00 a 17:00 KST desde el 1 de noviembre de 2023, con pausa de comida de 12:30 a 13:30. Eso son cinco horas y media en días laborables coreanos, que para la mayoría de quienes leen esto es la mitad de la noche, y se suma al reloj de pago de seis horas: un pedido hecho un viernes por la noche en Europa puede caducar antes de que haya alguien en la mesa. También pausa el despacho y la atención durante los festivos coreanos y publica las fechas cada vez. Weverse Shop no publica su horario de atención en el mismo sitio; su comportamiento de cancelación es la mitad mejor documentada y tiene aquí una guía propia.",
+        pitfall:
+          "Tratar un festivo coreano como un retraso de entrega. Ktown4u pausa la atención esos mismos días, así que la semana en la que más quieres preguntar por un paquete es la semana en la que nadie responde.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Un pedido en Ktown4u cuenta para las listas coreanas, o tengo que comprar en Weverse?",
+        a: "Cuentan las dos. Hanteo las lista como tiendas Family certificadas: Ktown4U como HF0082KTU001 y Weverse como HF0082BTS001, y exige a cada una mostrar la marca Family en su pie enlazada de vuelta al registro. La certificación se reemite cada año, así que confirma el código en hanteochart.com en lugar de tomarlo de aquí.",
+      },
+      {
+        q: "¿Cuál es más barata?",
+        a: "Ninguna, como propiedad de la tienda. Lo que te cuesta el álbum depende de tu país, del lanzamiento y de la semana: Weverse añade el impuesto de tu destino al pagar, Ktown4u subió el envío internacional un 7% en febrero de 2026 y añade USD 12 en entregas a Estados Unidos cuando los aranceles no se prepagaron. Compara el coste total hasta tu puerta para tu dirección ese día, no las dos páginas de producto.",
+      },
+      {
+        q: "¿Cuál envía más rápido?",
+        a: "No tiene respuesta en general, y la pregunta que sí la tiene importa más: qué métodos siguen llegando a tu país. Ktown4u retira métodos de envío por país — K-Packet a Alemania y España desde enero de 2025 — y publica interrupciones hasta el código postal, mientras Weverse publica una lista de destinos a los que no puede enviar en absoluto. Consulta el aviso vigente para tu país antes de comparar plazos de entrega.",
+      },
+      {
+        q: "¿Puedo pedir el mismo álbum en las dos?",
+        a: "Puedes, y es una estrategia real para los artículos de preventa, que van ligados a la ventana y a menudo a la minorista concreta y no al álbum. Cuéntalo como dos costes totales hasta la puerta y no como dos precios de álbum, y recuerda que los incluidos se acaban cuando cierra la ventana, no cuando sale el álbum.",
+      },
+      {
+        q: "Estoy en Estados Unidos. ¿Eso cambia la respuesta?",
+        a: "Cambia una línea. Desde el 2 de junio de 2025 Ktown4u aplica un cargo de USD 12 en envíos a Estados Unidos cuando hay aranceles, impuestos u otras tasas públicas debidas que no se prepagaron electrónicamente antes de la entrega, facturado al destinatario en la puerta. Ktown4u publica también la salida: prepagar por el sistema de aranceles e impuestos de importación de UPS. Es un añadido fijo que comparar con el impuesto que Weverse añada en tu pago.",
+      },
+      {
+        q: "¿Por qué esta página compara tan pocas cosas?",
+        a: "Porque el resto no está publicado. El hallazgo honesto de ponerlas una al lado de la otra es que documentan mitades distintas: Ktown4u declara su plazo de pago, su horario de atención y sus cambios de envío por país; Weverse declara sus métodos de pago por divisa, su comportamiento fiscal y sus exclusiones de envío. Donde una tienda no publica algo, esta página lo dice en lugar de estimarlo, y por eso no hay ranking de rapidez ni veredicto de precio.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop ou Ktown4u : la comparaison que personne n'écrit, parce que les deux pages parlent chacune d'une seule boutique",
+    summary:
+      "Toutes deux déclarent à Hanteo, la question des classements ne tranche donc rien. Ce qui tranche, c'est laquelle a votre sortie, quelle horloge vous pouvez tenir, et — plus que l'un ou l'autre — laquelle publie ce que vous avez besoin de savoir.",
+    scope:
+      "Un face-à-face des deux boutiques entre lesquelles une fan hors de Corée choisit réellement pour un album coréen. Il est assemblé à partir d'éléments que ce site a vérifiés le 21 octobre 2026 contre le registre des boutiques certifiées de Hanteo et les avis propres à chaque boutique, et c'est pourquoi il porte cette date et non celle du jour : la comparaison est récente, les faits qu'elle contient ne sont pas revérifiés. Il couvre la déclaration aux classements, le catalogue, les délais de paiement, l'endroit où le coût apparaît, les refus d'expédition et les horaires du service client. Il ne les classe ni par prix ni par rapidité, car ni l'un ni l'autre n'est une propriété de la boutique : les deux dépendent de votre pays, de votre sortie et de la semaine.",
+    intro: [
+      "Ce site a un guide pour commander sur Weverse Shop et un guide pour commander sur Ktown4u, et aucun des deux ne mentionne l'autre une seule fois. C'est très bien pour une lectrice qui a déjà choisi, et inutile pour le nombre beaucoup plus grand de celles qui n'ont pas choisi.",
+      "La réponse n'est pas celle que donnent la plupart des fils de discussion. Les deux boutiques sont certifiées Hanteo : l'argument des classements, qui règle habituellement la question, n'est donc pas un argument du tout. Ce qui les sépare réellement est plus étroit et plus étrange : elles ne publient pas les mêmes choses, et les manques ne sont pas aux mêmes endroits.",
+    ],
+    steps: [
+      {
+        title: "Réglez d'abord la question des classements, car c'est celle que l'on se trompe le plus souvent",
+        body: "La croyance répandue est qu'un achat dans la boutique officielle compte et qu'un achat chez un revendeur ne compte pas. Pour ces deux-là c'est tout simplement faux, et c'est vérifiable plutôt qu'une affaire de confiance. Hanteo publie ses boutiques Family certifiées avec un code pour chacune : Ktown4U est HF0082KTU001 et Weverse est HF0082BTS001. Hanteo exige aussi de chaque boutique Family en ligne qu'elle affiche la marque Family en pied de page, avec un lien vers hanteochart.com, si bien que la boutique et le registre se confirment des deux côtés. La certification est réémise chaque année : vérifiez donc le code plutôt que de le prendre sur cette page.",
+        pitfall:
+          "Choisir la boutique la plus chère pour protéger une contribution aux classements qui n'a jamais été en jeu. Si le classement est la seule raison pour laquelle vous payez plus, vous payez pour quelque chose que vous aviez déjà.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Demandez laquelle a votre sortie avant de comparer quoi que ce soit d'autre",
+        body: "Cela décide plus de commandes que le prix, et c'est asymétrique. Ktown4u est un détaillant généraliste et propose des sorties de plusieurs labels. Weverse Shop n'est pas une seule boutique : il y a une boutique GLOBAL et il y a des boutiques régionales, elles ont des stocks différents, des fenêtres de précommande différentes et elles expédient depuis des endroits différents. Un article qu'une fan d'un autre pays a commandé peut ne pas exister dans le vôtre. La comparaison n'est donc souvent pas Weverse contre Ktown4u, mais Ktown4u contre la Weverse Shop dans laquelle vous vous trouvez.",
+        pitfall:
+          "Relever une date limite de précommande sur la Weverse Shop de quelqu'un d'autre. Une échéance dans une boutique ne vous apprend rien sur les autres, et les contenus offerts sont liés à la fenêtre et non à l'album.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Sachez quelle horloge vous devez tenir",
+        body: "Ktown4u en publie une et elle est courte. Une commande non payée est annulée automatiquement six heures après avoir été passée — ramenée de vingt-quatre, en vigueur depuis le 19 février 2025 KST. Pour une fan qui commande à minuit en Europe ou dans les Amériques, six heures coréennes peuvent passer entièrement pendant son sommeil, et une précommande passée mais non payée est une précommande qui n'a jamais existé. Weverse Shop ne publie pas de délai équivalent dans les avis que ce site lit, ce qui n'équivaut pas à l'absence de délai. Le point pratique est l'asymétrie : une des boutiques vous dit de combien de temps vous disposez.",
+        pitfall:
+          "Passer une précommande Ktown4u pour la sécuriser et payer le matin. C'est précisément l'habitude contre laquelle la règle des six heures existe, et elle la défait en silence : rien ne vous avertit, la commande a simplement disparu.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Attendez-vous à ce que le coût apparaisse à des endroits différents",
+        body: "Chez aucune des deux boutiques le prix de la fiche produit n'est celui que vous payez, et ensuite elles divergent. Depuis le 3 février 2026, Weverse calcule la taxe d'après votre adresse de livraison et de facturation : les commandes vers la Corée affichent des prix taxes comprises tout du long, les commandes vers ailleurs affichent le prix hors taxe et ajoutent la taxe de la destination au paiement une fois l'adresse saisie. Les ajouts de Ktown4u arrivent plus tard et autrement : elle a relevé l'expédition internationale de 7% au 1er février 2026, et pour les envois vers les États-Unis elle applique depuis le 2 juin 2025 des frais de USD 12 lorsque des droits sont dus et n'ont pas été prépayés par voie électronique, perçus auprès du destinataire à la livraison.",
+        pitfall:
+          "Comparer deux paniers. Weverse a déjà ajouté la taxe à ce moment-là et Ktown4u n'a pas encore ajouté les douze dollars : le panier qui paraît moins cher au paiement n'est donc pas de façon fiable celui qui coûte moins à la porte.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Vérifiez laquelle vous livrera, dans la forme où chacune le dit",
+        body: "Les deux refusent certaines destinations et l'annoncent différemment. Weverse tient une liste de pays et de régions vers lesquels elle ne peut pas expédier depuis la Corée du Sud ; la révision du 15 juillet 2026 nomme le Myanmar, la République démocratique du Congo, l'Irak, l'Iran, le Liban, le Mali, la Russie, l'Andorre, l'Ukraine, la Biélorussie, l'Afghanistan, les Antilles néerlandaises, Israël et la Turquie. Ktown4u procède par méthode et non par pays : elle a suspendu K-Packet vers l'Allemagne et l'Espagne à partir du 17 janvier 2025, quand ces opérateurs postaux ont quitté l'accord sur lequel elle fonctionne, et elle publie les perturbations jusqu'au code postal. Une liste vous dit si vous pouvez commander du tout ; l'autre vous dit si la méthode que vous avez utilisée la dernière fois existe encore.",
+        pitfall:
+          "Supposer qu'un pays qui ne figure sur aucune des deux listes est dégagé. Ce que Ktown4u annonce faire quand une méthode est retirée, c'est écrire aux clients concernés pour leur proposer un autre service et le coût supplémentaire — une commande déjà passée peut donc changer de prix après coup.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Lisez les listes de paiement, et notez qu'une seule boutique en a",
+        body: "Weverse publie ce avec quoi vous pouvez payer, par devise, et les listes n'ont pas la même longueur. L'USD obtient PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay et Grab Pay. Le JPY obtient cette liste sans Grab Pay. Le CNY perd PayPal. Le MXN est la plus courte avec deux : PayPal et Apple Pay, toutes deux numériques, aucune option en espèces. Le KRW ajoute les cartes coréennes et les portefeuilles coréens. Votre devise par défaut décide donc de vos boutons avant que vous n'atteigniez le paiement. Ktown4u ne publie pas de liste comparable dans ses avis : ce qu'elle accepte doit donc se lire sur son propre paiement.",
+        pitfall:
+          "Choisir une devise pour le prix plutôt que pour le moyen de paiement. Si aucun des deux d'une liste courte n'est en place pour vous, il n'y a pas de troisième bouton au paiement ni de contournement à ce stade.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Déterminez qui vous pouvez joindre quand cela tourne mal, et quand",
+        body: "Ktown4u indique ses horaires : service client en semaine de 10:00 à 17:00 KST depuis le 1er novembre 2023, avec une pause déjeuner de 12:30 à 13:30. Cela fait cinq heures et demie les jours ouvrés coréens, ce qui pour la plupart des lectrices d'ici est le milieu de la nuit, et cela se cumule avec l'horloge de paiement de six heures : une commande passée un vendredi soir en Europe peut expirer avant que quiconque soit à son bureau. Elle suspend aussi l'expédition et le service pendant les jours fériés coréens et publie les dates chaque fois. Weverse Shop ne publie pas ses horaires au même endroit ; son comportement en matière d'annulation est la moitié la mieux documentée et a son propre guide ici.",
+        pitfall:
+          "Prendre un jour férié coréen pour un retard de livraison. Ktown4u suspend le service les mêmes jours : la semaine où vous voulez le plus poser une question sur un colis est la semaine où personne ne répond.",
+        takes: "10 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Une commande Ktown4u compte-t-elle pour les classements coréens, ou dois-je acheter sur Weverse ?",
+        a: "Les deux comptent. Hanteo les répertorie comme boutiques Family certifiées — Ktown4U sous HF0082KTU001 et Weverse sous HF0082BTS001 — et exige de chacune qu'elle affiche la marque Family en pied de page avec un lien vers le registre. La certification est réémise chaque année : confirmez donc le code sur hanteochart.com plutôt que de le prendre ici.",
+      },
+      {
+        q: "Laquelle est la moins chère ?",
+        a: "Aucune, en tant que propriété de la boutique. Ce que l'album vous coûte dépend de votre pays, de la sortie et de la semaine : Weverse ajoute la taxe de votre destination au paiement, Ktown4u a relevé l'expédition internationale de 7% en février 2026 et ajoute USD 12 sur les livraisons aux États-Unis quand les droits n'ont pas été prépayés. Comparez le coût rendu à votre adresse le jour même, et non les deux fiches produit.",
+      },
+      {
+        q: "Laquelle expédie le plus vite ?",
+        a: "Pas de réponse générale, et la question à laquelle on peut répondre compte davantage : quelles méthodes desservent encore votre pays. Ktown4u retire des méthodes d'expédition pays par pays — K-Packet vers l'Allemagne et l'Espagne depuis janvier 2025 — et publie les perturbations jusqu'au code postal, tandis que Weverse publie une liste de destinations qu'elle ne peut pas desservir du tout. Consultez l'avis en vigueur pour votre pays avant de comparer des estimations de livraison.",
+      },
+      {
+        q: "Puis-je simplement commander le même album chez les deux ?",
+        a: "Vous pouvez, et c'est une vraie stratégie pour les contenus offerts en précommande, qui sont liés à la fenêtre et souvent au détaillant précis plutôt qu'à l'album. Chiffrez-le comme deux coûts rendus et non comme deux prix d'album, et rappelez-vous que les contenus offerts s'arrêtent à la fermeture de la fenêtre, pas à la sortie de l'album.",
+      },
+      {
+        q: "Je suis aux États-Unis. Cela change-t-il la réponse ?",
+        a: "Cela en change une ligne. Depuis le 2 juin 2025, Ktown4u applique des frais de USD 12 sur les envois vers les États-Unis lorsque des droits, taxes ou autres redevances publiques sont dus et n'ont pas été prépayés par voie électronique avant la livraison, facturés au destinataire à la porte. Ktown4u publie aussi la sortie : prépayer via le système de droits et taxes à l'importation d'UPS. C'est un ajout forfaitaire à comparer à la taxe que Weverse ajoute à votre paiement.",
+      },
+      {
+        q: "Pourquoi cette page compare-t-elle si peu de choses ?",
+        a: "Parce que le reste n'est pas publié. Le constat honnête de les mettre côte à côte, c'est qu'elles documentent des moitiés différentes : Ktown4u indique son délai de paiement, ses horaires de service et ses changements d'expédition par pays ; Weverse indique ses moyens de paiement par devise, son traitement de la taxe et ses exclusions d'expédition. Là où une boutique ne publie pas quelque chose, cette page le dit au lieu de l'estimer, et c'est pourquoi il n'y a ni classement de rapidité ni verdict de prix.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop ou Ktown4u: a comparação que ninguém escreve, porque as duas páginas falam de uma loja só",
+    summary:
+      "As duas reportam para a Hanteo, então a questão das paradas não decide isso. O que decide é qual loja tem o seu lançamento, de quem é o relógio que você consegue cumprir e — mais do que qualquer um dos dois — qual delas publica a coisa que você precisa saber.",
+    scope:
+      "Um confronto direto entre as duas lojas que uma fã de fora realmente escolhe para um álbum coreano. Está montado com afirmações que este site conferiu em 21 de outubro de 2026 contra o registro de lojas certificadas da Hanteo e os avisos de cada loja, e é por isso que ele traz essa data e não a de hoje: a comparação é nova, os fatos nela não foram reconferidos. Cobre o reporte às paradas, o catálogo, os prazos de pagamento, onde o custo aparece, as recusas de envio e o horário de atendimento. Não classifica as duas por preço nem por velocidade, porque nenhum dos dois é uma propriedade da loja — os dois dependem do seu país, do seu lançamento e da semana.",
+    intro: [
+      "Este site tem um guia de como pedir na Weverse Shop e um guia de como pedir na Ktown4u, e nenhum dos dois menciona o outro uma única vez. Isso está ótimo para quem já escolheu, e é inútil para o número muito maior de quem não escolheu.",
+      "A resposta não é a que a maioria das discussões dá. As duas lojas são certificadas pela Hanteo, então o argumento das paradas que normalmente encerra isso não é argumento nenhum. O que de fato separa as duas é mais estreito e mais estranho: elas publicam coisas diferentes, e as lacunas não estão nos mesmos lugares.",
+    ],
+    steps: [
+      {
+        title: "Resolva primeiro a questão das paradas, porque é a que as pessoas erram",
+        body: "A crença comum é que comprar na loja oficial conta e comprar de um revendedor não conta. Para estas duas isso é simplesmente falso, e é conferível em vez de ser questão de confiança. A Hanteo publica as lojas Family certificadas dela com um código cada: a Ktown4U é HF0082KTU001 e a Weverse é HF0082BTS001. A Hanteo também exige que toda loja Family online exiba o selo Family no rodapé, com link de volta para hanteochart.com, então a loja e o registro se confirmam pelas duas pontas. A certificação é reemitida todo ano, então confira o código em vez de tirá-lo desta página.",
+        pitfall:
+          "Escolher a loja mais cara para proteger uma contribuição às paradas que nunca esteve em risco. Se a parada é a razão inteira de você pagar mais, você está pagando por algo que já tinha.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pergunte qual loja tem o seu lançamento antes de comparar qualquer outra coisa",
+        body: "Isso decide mais pedidos do que o preço, e é assimétrico. A Ktown4u é uma varejista geral e carrega lançamentos de várias gravadoras. A Weverse Shop não é uma loja só: existe uma loja GLOBAL e existem lojas regionais, elas têm estoques diferentes, janelas de pré-venda diferentes e despacham de lugares diferentes. Um item que uma fã de outro país pediu pode não existir no seu. Então a comparação muitas vezes não é Weverse contra Ktown4u — é Ktown4u contra a Weverse Shop em que você por acaso está.",
+        pitfall:
+          "Ler um prazo de pré-venda na Weverse Shop de outra pessoa. Um corte numa loja não diz nada sobre as outras, e os brindes estão amarrados à janela e não ao álbum.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Saiba de quem é o relógio que você tem de cumprir",
+        body: "A Ktown4u publica um e ele é curto. Um pedido não pago é cancelado automaticamente seis horas depois de ser feito — cortado de vinte e quatro, com efeito em 19 de fevereiro de 2025 KST. Para uma fã que pede à meia-noite na Europa ou nas Américas, seis horas coreanas podem passar inteiras enquanto ela dorme, e uma pré-venda feita mas não paga é uma pré-venda que nunca foi feita. A Weverse Shop não publica prazo equivalente nos avisos que este site lê, o que não é o mesmo que não haver prazo. O ponto prático é a assimetria: uma das lojas te diz quanto tempo você tem.",
+        pitfall:
+          "Fazer uma pré-venda na Ktown4u para garantir e pagar de manhã. Esse é justamente o hábito contra o qual a regra das seis horas existe, e ela o derrota em silêncio — nada te avisa, o pedido simplesmente não está mais lá.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Espere que o custo apareça em lugares diferentes",
+        body: "Em nenhuma das duas lojas o preço da página do produto é o que você paga, e dali em diante elas divergem. Desde 3 de fevereiro de 2026 a Weverse calcula o imposto a partir do seu endereço de entrega e de cobrança: pedidos para a Coreia mostram preços com imposto incluído em todo o processo, e pedidos para qualquer outro lugar mostram o preço sem imposto e somam o imposto do destino no checkout depois que um endereço é inserido. As adições da Ktown4u chegam mais tarde e chegam de outro jeito — ela aumentou o frete internacional em 7% com efeito em 1 de fevereiro de 2026, e para envios aos Estados Unidos aplica desde 2 de junho de 2025 uma cobrança de USD 12 quando há tributos devidos que não foram pré-pagos eletronicamente, recolhida do destinatário na entrega.",
+        pitfall:
+          "Comparar dois carrinhos. A essa altura a Weverse já somou o imposto e a Ktown4u ainda não somou os doze dólares, então o carrinho que parece mais barato no checkout não é com segurança o que custa menos na porta.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Confira qual delas envia para você, na forma em que cada uma diz isso",
+        body: "As duas recusam alguns destinos e anunciam isso de formas diferentes. A Weverse mantém uma lista de países e regiões para os quais não consegue enviar da Coreia do Sul; a revisão de 15 de julho de 2026 cita Mianmar, a República Democrática do Congo, o Iraque, o Irã, o Líbano, o Mali, a Rússia, Andorra, a Ucrânia, Belarus, o Afeganistão, as Antilhas Holandesas, Israel e a Turquia. A Ktown4u faz isso por método e não por país: suspendeu o K-Packet para a Alemanha e a Espanha a partir de 17 de janeiro de 2025, quando aqueles operadores postais saíram do arranjo em que ela se apoia, e publica interrupções até o nível de código postal. Uma lista te diz se você consegue pedir; a outra te diz se o método que você usou na última vez ainda existe.",
+        pitfall:
+          "Supor que um país que não aparece em nenhuma das duas listas está livre. O que a Ktown4u diz fazer quando um método é retirado é mandar e-mail aos clientes afetados sobre migrar para outro serviço e o custo extra — então um pedido já feito pode mudar de preço depois.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Leia as listas de pagamento, e note que só uma loja tem essas listas",
+        body: "A Weverse publica com o que você pode pagar, por moeda, e as listas não têm o mesmo tamanho. USD recebe PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay e Grab Pay. JPY recebe essa lista sem o Grab Pay. CNY perde o PayPal. MXN é a mais curta, com dois — PayPal e Apple Pay, os dois digitais, sem opção em dinheiro. KRW acrescenta cartões coreanos e as carteiras coreanas. A sua moeda padrão, portanto, decide os seus botões antes de você chegar ao checkout. A Ktown4u não publica lista comparável nos avisos dela, então o que ela aceita tem de ser lido no próprio checkout.",
+        pitfall:
+          "Definir uma moeda pelo preço em vez de pelo meio de pagamento. Se nenhum dos dois de uma lista curta está configurado para você, não existe um terceiro botão no checkout nem solução àquela altura.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Descubra quem você consegue alcançar quando dá errado, e quando",
+        body: "A Ktown4u declara o horário dela: atendimento nos dias de semana das 10:00 às 17:00 KST desde 1 de novembro de 2023, com pausa de almoço das 12:30 às 13:30. São cinco horas e meia em dias úteis coreanos, o que para a maioria de quem lê isto é o meio da noite, e isso se soma ao relógio de pagamento de seis horas — um pedido feito numa sexta à noite na Europa pode expirar antes de alguém estar na mesa. Ela também pausa despacho e atendimento nos feriados coreanos e publica as datas todas as vezes. A Weverse Shop não publica horário de atendimento no mesmo lugar; o comportamento de cancelamento dela é a metade melhor documentada e tem um guia próprio aqui.",
+        pitfall:
+          "Tratar um feriado público coreano como atraso de entrega. A Ktown4u pausa o atendimento nos mesmos dias, então a semana em que você mais quer perguntar sobre uma encomenda é a semana em que ninguém responde.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Um pedido na Ktown4u conta para as paradas coreanas, ou eu tenho de comprar na Weverse?",
+        a: "As duas contam. A Hanteo lista as duas como lojas Family certificadas — a Ktown4U como HF0082KTU001 e a Weverse como HF0082BTS001 — e exige que cada uma mostre o selo Family no rodapé com link de volta para o registro. A certificação é reemitida todo ano, então confirme o código em hanteochart.com em vez de tirá-lo daqui.",
+      },
+      {
+        q: "Qual é mais barata?",
+        a: "Nenhuma, como propriedade da loja. Quanto o álbum custa para você depende do seu país, do lançamento e da semana: a Weverse soma o imposto do seu destino no checkout, a Ktown4u aumentou o frete internacional em 7% em fevereiro de 2026 e soma USD 12 em entregas nos Estados Unidos quando os tributos não foram pré-pagos. Compare o custo até a sua porta para o seu endereço no dia, e não as duas páginas de produto.",
+      },
+      {
+        q: "Qual envia mais rápido?",
+        a: "Não é respondível em geral, e a pergunta que é respondível importa mais: quais métodos ainda rodam para o seu país. A Ktown4u retira métodos de envio por país — K-Packet para a Alemanha e a Espanha desde janeiro de 2025 — e publica interrupções até o código postal, enquanto a Weverse publica uma lista de destinos para os quais não consegue enviar de jeito nenhum. Veja o aviso atual para o seu país antes de comparar prazos de entrega.",
+      },
+      {
+        q: "Posso simplesmente pedir o mesmo álbum nas duas?",
+        a: "Pode, e é uma estratégia real para brindes de pré-venda, que estão amarrados à janela e muitas vezes à varejista específica em vez de ao álbum. Calcule como dois custos até a porta e não como dois preços de álbum, e lembre que os brindes param quando a janela fecha, não quando o álbum é lançado.",
+      },
+      {
+        q: "Estou nos Estados Unidos. Isso muda a resposta?",
+        a: "Muda uma linha dela. Desde 2 de junho de 2025 a Ktown4u aplica uma cobrança de USD 12 em envios aos Estados Unidos quando tributos, impostos ou outras taxas governamentais são devidos e não foram pré-pagos eletronicamente antes da entrega, cobrada do destinatário na porta. A Ktown4u publica a saída também: pré-pagar pelo sistema de tributos e impostos de importação da UPS. É uma adição fixa para comparar com qualquer imposto que a Weverse some no seu checkout.",
+      },
+      {
+        q: "Por que esta página compara tão poucas coisas?",
+        a: "Porque o resto não está publicado. A conclusão honesta de colocar as duas lado a lado é que elas documentam metades diferentes: a Ktown4u declara o prazo de pagamento, o horário de atendimento e as mudanças de envio por país; a Weverse declara os meios de pagamento por moeda, o comportamento do imposto e as exclusões de envio. Onde uma loja não publica algo, esta página diz isso em vez de estimar, e é por isso que não existe ranking de velocidade nem veredito de preço.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop hay Ktown4u: bài so sánh không ai viết, vì mỗi trang đều chỉ nói về một cửa hàng",
+    summary:
+      "Cả hai đều báo số cho Hanteo, nên câu hỏi về bảng xếp hạng không quyết định được. Quyết định là cửa hàng nào có bản phát hành của bạn, bạn kịp được chiếc đồng hồ của bên nào, và — hơn cả hai điều đó — bên nào công bố điều bạn cần biết.",
+    scope:
+      "Một bài so sánh trực diện hai cửa hàng mà một người hâm mộ ở nước ngoài thực sự chọn giữa chúng khi mua album Hàn Quốc. Nó được dựng từ những điều trang này đã kiểm tra vào ngày 21 tháng 10 năm 2026 đối chiếu với danh mục cửa hàng được chứng nhận của Hanteo và thông báo của chính mỗi cửa hàng, nên nó mang ngày đó chứ không mang ngày hôm nay: bài so sánh thì mới, còn các dữ kiện trong đó chưa được kiểm tra lại. Nó bao gồm việc báo số cho bảng xếp hạng, danh mục hàng, thời hạn thanh toán, chi phí hiện ra ở đâu, việc từ chối giao hàng và giờ hỗ trợ. Nó không xếp hạng hai bên theo giá hay theo tốc độ, vì không điều nào trong hai điều đó là thuộc tính của cửa hàng — cả hai đều phụ thuộc vào nước bạn, bản phát hành của bạn và tuần đó.",
+    intro: [
+      "Trang này có một bài hướng dẫn đặt hàng ở Weverse Shop và một bài hướng dẫn đặt hàng ở Ktown4u, mà không bài nào nhắc đến bài kia lấy một lần. Điều đó ổn với người đã chọn xong, và vô ích với số người lớn hơn nhiều vẫn chưa chọn.",
+      "Câu trả lời không phải là câu mà phần lớn các chủ đề thảo luận đưa ra. Cả hai cửa hàng đều được Hanteo chứng nhận, nên cái lập luận về bảng xếp hạng vốn thường dùng để chốt chuyện này hoàn toàn không phải một lập luận. Điều thực sự tách hai bên ra thì hẹp hơn và lạ hơn: họ công bố những thứ khác nhau, và các khoảng trống không nằm ở cùng chỗ.",
+    ],
+    steps: [
+      {
+        title: "Giải quyết câu hỏi bảng xếp hạng trước, vì đó là câu người ta hay nhầm",
+        body: "Niềm tin phổ biến là mua ở cửa hàng chính thức thì được tính, mua ở bên bán lại thì không. Với hai bên này điều đó đơn giản là sai, và nó kiểm tra được chứ không phải chuyện tin hay không tin. Hanteo công bố các cửa hàng Family được chứng nhận kèm một mã cho mỗi bên: Ktown4U là HF0082KTU001 và Weverse là HF0082BTS001. Hanteo còn yêu cầu mọi cửa hàng Family trực tuyến hiển thị dấu Family ở chân trang, có liên kết trở về hanteochart.com, nên cửa hàng và danh mục xác nhận lẫn nhau từ hai đầu. Chứng nhận được phát lại mỗi năm, nên hãy tra mã chứ đừng lấy từ trang này.",
+        pitfall:
+          "Chọn cửa hàng đắt hơn để bảo vệ phần đóng góp vào bảng xếp hạng vốn chưa bao giờ bị đe doạ. Nếu bảng xếp hạng là toàn bộ lý do bạn trả thêm, thì bạn đang trả tiền cho điều bạn vốn đã có.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy hỏi cửa hàng nào có bản phát hành của bạn trước khi so sánh bất cứ thứ gì khác",
+        body: "Điều này quyết định nhiều đơn hàng hơn cả giá cả, và nó không đối xứng. Ktown4u là nhà bán lẻ tổng hợp và có hàng của nhiều công ty. Weverse Shop vốn không phải một cửa hàng: có một cửa hàng GLOBAL và có các cửa hàng theo khu vực, hàng tồn khác nhau, thời gian đặt trước khác nhau và nơi gửi hàng cũng khác nhau. Một món mà người hâm mộ ở nước khác đặt được có thể không tồn tại ở nước bạn. Vậy nên bài so sánh thường không phải Weverse đối đầu Ktown4u — mà là Ktown4u đối đầu đúng cái Weverse Shop mà bạn đang ở trong.",
+        pitfall:
+          "Đọc thời hạn đặt trước trên Weverse Shop của người khác. Mốc chốt ở một cửa hàng không nói gì về các cửa hàng còn lại, và quà kèm gắn với khoảng thời gian đó chứ không gắn với album.",
+        takes: "10 phút",
+      },
+      {
+        title: "Biết bạn phải kịp chiếc đồng hồ của bên nào",
+        body: "Ktown4u công bố một mốc, và nó ngắn. Đơn chưa thanh toán bị huỷ tự động sau khi đặt sáu giờ — rút từ hai mươi bốn giờ, có hiệu lực từ ngày 19 tháng 2 năm 2025 KST. Với người hâm mộ đặt hàng lúc nửa đêm ở châu Âu hay châu Mỹ, sáu giờ Hàn Quốc có thể trôi qua trọn vẹn trong lúc ngủ, và một đơn đặt trước đã đặt mà chưa trả là một đơn chưa từng được đặt. Weverse Shop không công bố thời hạn tương đương trong những thông báo mà trang này đọc, và điều đó không giống với việc không có thời hạn. Điểm thực tế là sự bất đối xứng: một bên cho bạn biết bạn còn bao lâu.",
+        pitfall:
+          "Đặt trước ở Ktown4u để giữ chỗ rồi sáng mới trả tiền. Đó đúng là cái thói mà quy tắc sáu giờ tồn tại để đánh bại, và nó đánh bại một cách im lặng — không có gì báo cho bạn, đơn hàng chỉ đơn giản là biến mất.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy lường rằng chi phí hiện ra ở những chỗ khác nhau",
+        body: "Ở cả hai cửa hàng, giá trên trang sản phẩm đều không phải số tiền bạn trả, và từ đó trở đi hai bên tách ra. Từ ngày 3 tháng 2 năm 2026, Weverse tính thuế theo địa chỉ giao hàng và địa chỉ thanh toán của bạn: đơn về Hàn Quốc hiển thị giá đã gồm thuế suốt quá trình, đơn đi mọi nơi khác hiển thị giá chưa thuế rồi cộng thuế của điểm đến khi thanh toán, sau khi địa chỉ được nhập. Các khoản cộng của Ktown4u đến muộn hơn và theo kiểu khác — họ tăng phí gửi quốc tế 7% hiệu lực từ ngày 1 tháng 2 năm 2026, và với hàng gửi tới Hoa Kỳ thì từ ngày 2 tháng 6 năm 2025 họ áp một khoản USD 12 khi có thuế phải trả mà chưa được trả trước bằng phương thức điện tử, thu từ người nhận lúc giao hàng.",
+        pitfall:
+          "So sánh hai giỏ hàng. Vào lúc đó Weverse đã cộng thuế rồi còn Ktown4u thì chưa cộng mười hai đô, nên cái giỏ trông rẻ hơn lúc thanh toán không chắc là cái giỏ tốn ít hơn khi tới cửa nhà.",
+        takes: "15 phút",
+      },
+      {
+        title: "Kiểm tra bên nào sẽ gửi tới chỗ bạn, theo đúng cách mỗi bên nói ra",
+        body: "Cả hai đều từ chối một số điểm đến và cách thông báo thì khác nhau. Weverse duy trì một danh sách các nước và vùng mà họ không thể gửi tới từ Hàn Quốc; bản sửa ngày 15 tháng 7 năm 2026 nêu Myanmar, Cộng hoà Dân chủ Congo, Iraq, Iran, Liban, Mali, Nga, Andorra, Ukraina, Belarus, Afghanistan, Antilles thuộc Hà Lan, Israel và Thổ Nhĩ Kỳ. Ktown4u làm theo từng phương thức chứ không theo từng nước: họ tạm dừng K-Packet đi Đức và Tây Ban Nha từ ngày 17 tháng 1 năm 2025 khi hai bên bưu chính đó rời khỏi thoả thuận mà họ dựa vào, và họ công bố gián đoạn xuống tới từng mã bưu chính. Một danh sách cho bạn biết liệu bạn có đặt được hay không; danh sách kia cho biết phương thức bạn dùng lần trước có còn tồn tại hay không.",
+        pitfall:
+          "Cho rằng một nước không xuất hiện trên cả hai danh sách là ổn. Cách Ktown4u nói họ xử lý khi một phương thức bị rút là gửi email cho khách bị ảnh hưởng về việc chuyển sang dịch vụ khác và khoản phí thêm — nên một đơn đã đặt có thể đổi giá về sau.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy đọc danh sách thanh toán, và để ý rằng chỉ một bên có danh sách đó",
+        body: "Weverse công bố bạn được trả bằng gì, theo từng loại tiền, và các danh sách không dài bằng nhau. USD có PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay và Grab Pay. JPY có đúng danh sách đó trừ Grab Pay. CNY mất PayPal. MXN ngắn nhất với hai lựa chọn — PayPal và Apple Pay, cả hai đều là điện tử, không có lựa chọn tiền mặt. KRW thêm thẻ Hàn Quốc và các ví Hàn Quốc. Vậy nên loại tiền mặc định của bạn quyết định các nút của bạn trước cả khi bạn tới bước thanh toán. Ktown4u không công bố danh sách tương đương trong thông báo của họ, nên họ nhận gì thì phải đọc trên chính trang thanh toán của họ.",
+        pitfall:
+          "Đặt loại tiền vì giá chứ không vì phương thức thanh toán. Nếu không lựa chọn nào trong một danh sách ngắn được thiết lập sẵn cho bạn, thì ở bước thanh toán không có nút thứ ba và lúc đó cũng không có cách lách.",
+        takes: "10 phút",
+      },
+      {
+        title: "Xác định bạn liên hệ được với ai khi có chuyện, và vào lúc nào",
+        body: "Ktown4u nêu rõ giờ của họ: hỗ trợ khách hàng các ngày trong tuần từ 10:00 đến 17:00 KST kể từ ngày 1 tháng 11 năm 2023, nghỉ trưa từ 12:30 đến 13:30. Đó là năm giờ rưỡi trong ngày làm việc ở Hàn Quốc, với phần lớn người đọc ở đây là giữa đêm, và nó cộng dồn với chiếc đồng hồ thanh toán sáu giờ — một đơn đặt vào tối thứ Sáu ở châu Âu có thể hết hạn trước khi có ai ngồi vào bàn. Họ còn tạm dừng cả việc gửi hàng và hỗ trợ trong các ngày lễ Hàn Quốc và công bố ngày mỗi lần. Weverse Shop không công bố giờ hỗ trợ ở cùng một chỗ; cách họ xử lý việc huỷ đơn là nửa được ghi lại rõ hơn và có bài hướng dẫn riêng ở đây.",
+        pitfall:
+          "Coi một ngày lễ công của Hàn Quốc là chuyện giao hàng chậm. Ktown4u dừng cả hỗ trợ trong cùng những ngày đó, nên tuần bạn muốn hỏi về gói hàng nhất lại đúng là tuần không ai trả lời.",
+        takes: "10 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Đơn ở Ktown4u có được tính vào bảng xếp hạng Hàn Quốc không, hay tôi phải mua ở Weverse?",
+        a: "Cả hai đều được tính. Hanteo liệt cả hai là cửa hàng Family được chứng nhận — Ktown4U là HF0082KTU001 và Weverse là HF0082BTS001 — và yêu cầu mỗi bên hiển thị dấu Family ở chân trang có liên kết trở về danh mục. Chứng nhận được phát lại mỗi năm, nên hãy xác nhận mã trên hanteochart.com thay vì lấy từ đây.",
+      },
+      {
+        q: "Bên nào rẻ hơn?",
+        a: "Không bên nào, nếu xét như một thuộc tính của cửa hàng. Album tốn của bạn bao nhiêu thì tuỳ vào nước bạn, bản phát hành và tuần đó: Weverse cộng thuế của điểm đến khi bạn thanh toán, Ktown4u đã tăng phí gửi quốc tế 7% vào tháng 2 năm 2026 và cộng USD 12 cho hàng giao tại Hoa Kỳ khi thuế chưa được trả trước. Hãy so tổng chi phí tới tận địa chỉ của bạn trong ngày đó, chứ không so hai trang sản phẩm.",
+      },
+      {
+        q: "Bên nào gửi nhanh hơn?",
+        a: "Không trả lời được một cách chung chung, và câu hỏi trả lời được thì quan trọng hơn: những phương thức nào còn chạy tới nước bạn. Ktown4u rút phương thức gửi theo từng nước — K-Packet đi Đức và Tây Ban Nha từ tháng 1 năm 2025 — và công bố gián đoạn xuống tới mã bưu chính, còn Weverse công bố danh sách các điểm đến mà họ hoàn toàn không gửi được. Hãy xem thông báo hiện hành cho nước bạn trước khi so sánh thời gian giao dự kiến.",
+      },
+      {
+        q: "Tôi có thể đặt cùng một album ở cả hai bên không?",
+        a: "Được, và đó là một chiến thuật thật sự đối với quà kèm khi đặt trước, vì quà gắn với khoảng thời gian và thường gắn với đúng nhà bán lẻ đó chứ không gắn với album. Hãy tính nó thành hai tổng chi phí tới tận nhà chứ không phải hai giá album, và nhớ rằng quà kèm dừng khi khoảng thời gian đóng lại, không phải khi album phát hành.",
+      },
+      {
+        q: "Tôi ở Hoa Kỳ. Điều đó có đổi câu trả lời không?",
+        a: "Nó đổi một dòng. Từ ngày 2 tháng 6 năm 2025, Ktown4u áp khoản USD 12 lên hàng gửi tới Hoa Kỳ khi có thuế, phí hay các khoản thu khác của nhà nước phải trả mà chưa được trả trước bằng phương thức điện tử trước lúc giao, tính cho người nhận ngay tại cửa. Ktown4u cũng công bố cách thoát: trả trước qua hệ thống thuế nhập khẩu của UPS. Đó là một khoản cộng cố định để đem so với bất cứ khoản thuế nào Weverse cộng vào lúc bạn thanh toán.",
+      },
+      {
+        q: "Vì sao trang này so sánh ít thứ như vậy?",
+        a: "Vì phần còn lại không được công bố. Kết luận trung thực của việc đặt hai bên cạnh nhau là họ ghi lại những nửa khác nhau: Ktown4u nêu rõ thời hạn thanh toán, giờ hỗ trợ và các thay đổi về gửi hàng theo từng nước; Weverse nêu rõ phương thức thanh toán theo từng loại tiền, cách xử lý thuế và các điểm đến bị loại trừ. Chỗ nào một cửa hàng không công bố, trang này nói thẳng là vậy chứ không đi ước lượng, và đó là lý do ở đây không có xếp hạng tốc độ và không có phán quyết về giá.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop หรือ Ktown4u: การเปรียบเทียบที่ไม่มีใครเขียน เพราะทั้งสองหน้าพูดถึงร้านเดียวกันคนละร้าน",
+    summary:
+      "ทั้งสองร้านรายงานต่อ Hanteo ดังนั้นคำถามเรื่องชาร์ตจึงไม่ได้ตัดสิน สิ่งที่ตัดสินคือร้านไหนมีงานที่คุณต้องการ คุณทันนาฬิกาของใคร และ—มากกว่าสองข้อนั้น—ร้านไหนเผยแพร่สิ่งที่คุณจำเป็นต้องรู้",
+    scope:
+      "การเทียบกันตัวต่อตัวของสองร้านที่แฟนในต่างประเทศเลือกจริง ๆ เมื่อจะซื้ออัลบั้มเกาหลี ประกอบขึ้นจากข้อความที่เว็บไซต์นี้ตรวจเมื่อวันที่ 21 ตุลาคม 2026 เทียบกับทะเบียนร้านที่ได้รับการรับรองของ Hanteo และประกาศของแต่ละร้านเอง จึงกำกับวันที่นั้นไว้ไม่ใช่วันนี้ การเปรียบเทียบนั้นใหม่ แต่ข้อเท็จจริงในนั้นไม่ได้ถูกตรวจซ้ำ ครอบคลุมการรายงานต่อชาร์ต รายการสินค้า กำหนดชำระเงิน ค่าใช้จ่ายปรากฏที่ไหน การปฏิเสธจัดส่ง และเวลาให้บริการ ไม่จัดอันดับทั้งสองด้วยราคาหรือความเร็ว เพราะทั้งสองอย่างไม่ใช่คุณสมบัติของร้าน ทั้งคู่ขึ้นกับประเทศของคุณ งานที่คุณจะซื้อ และสัปดาห์นั้น",
+    intro: [
+      "เว็บไซต์นี้มีคู่มือการสั่งซื้อจาก Weverse Shop และคู่มือการสั่งซื้อจาก Ktown4u แต่ทั้งสองไม่เอ่ยถึงกันเลยแม้ครั้งเดียว นั่นไม่เป็นไรสำหรับผู้อ่านที่เลือกแล้ว และไร้ประโยชน์สำหรับคนจำนวนมากกว่านั้นที่ยังไม่เลือก",
+      "คำตอบไม่ใช่คำตอบที่กระทู้ส่วนใหญ่ให้ไว้ ทั้งสองร้านได้รับการรับรองจาก Hanteo ดังนั้นข้อถกเถียงเรื่องชาร์ตที่มักใช้ปิดเรื่องนี้จึงไม่ใช่ข้อถกเถียงเลย สิ่งที่แยกสองร้านออกจากกันจริง ๆ แคบกว่าและแปลกกว่านั้น คือทั้งคู่เผยแพร่ของที่ต่างกัน และช่องว่างก็ไม่ได้อยู่ที่เดียวกัน",
+    ],
+    steps: [
+      {
+        title: "จัดการคำถามเรื่องชาร์ตก่อน เพราะเป็นข้อที่คนเข้าใจผิดกันมากที่สุด",
+        body: "ความเชื่อทั่วไปคือซื้อจากร้านทางการแล้วนับ ซื้อจากผู้ขายต่อแล้วไม่นับ สำหรับสองร้านนี้มันผิดอย่างตรงไปตรงมา และตรวจสอบได้ ไม่ใช่เรื่องของความไว้ใจ Hanteo เผยแพร่ร้าน Family ที่ได้รับการรับรองพร้อมรหัสของแต่ละร้าน Ktown4U คือ HF0082KTU001 และ Weverse คือ HF0082BTS001 Hanteo ยังกำหนดให้ร้าน Family ออนไลน์ทุกแห่งแสดงเครื่องหมาย Family ที่ท้ายหน้า โดยลิงก์กลับไปที่ hanteochart.com ดังนั้นร้านและทะเบียนยืนยันกันเองจากทั้งสองฝั่ง การรับรองออกใหม่ทุกปี โปรดตรวจรหัสเอง ไม่ใช่เอาจากหน้านี้",
+        pitfall:
+          "การเลือกร้านที่แพงกว่าเพื่อปกป้องการมีส่วนต่อชาร์ตซึ่งไม่เคยมีความเสี่ยงเลย ถ้าชาร์ตเป็นเหตุผลทั้งหมดที่คุณจ่ายแพงกว่า คุณกำลังจ่ายเงินให้สิ่งที่คุณมีอยู่แล้ว",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถามว่าร้านไหนมีงานที่คุณต้องการ ก่อนจะเทียบอย่างอื่น",
+        body: "ข้อนี้ตัดสินคำสั่งซื้อมากกว่าราคา และมันไม่สมมาตร Ktown4u เป็นร้านค้าปลีกทั่วไปและมีงานจากหลายค่าย ส่วน Weverse Shop ไม่ใช่ร้านเดียวเลย มีร้าน GLOBAL และมีร้านตามภูมิภาค แต่ละแห่งมีสต็อกไม่เหมือนกัน ช่วงพรีออร์เดอร์ไม่เหมือนกัน และส่งจากที่ไม่เหมือนกัน สินค้าที่แฟนในประเทศอื่นสั่งได้อาจไม่มีอยู่ในประเทศของคุณ ดังนั้นการเปรียบเทียบจึงมักไม่ใช่ Weverse กับ Ktown4u แต่เป็น Ktown4u กับ Weverse Shop แห่งที่คุณบังเอิญอยู่",
+        pitfall:
+          "การอ่านกำหนดปิดพรีออร์เดอร์จาก Weverse Shop ของคนอื่น กำหนดปิดในร้านหนึ่งไม่บอกอะไรเกี่ยวกับร้านอื่น และของแถมผูกกับช่วงเวลานั้น ไม่ได้ผูกกับอัลบั้ม",
+        takes: "10 นาที",
+      },
+      {
+        title: "รู้ว่าคุณต้องทันนาฬิกาของใคร",
+        body: "Ktown4u เผยแพร่ไว้หนึ่งอย่าง และมันสั้น คำสั่งซื้อที่ยังไม่ชำระจะถูกยกเลิกอัตโนมัติหกชั่วโมงหลังสั่ง ลดลงจากยี่สิบสี่ชั่วโมง มีผลตั้งแต่วันที่ 19 กุมภาพันธ์ 2025 KST สำหรับแฟนที่สั่งตอนเที่ยงคืนในยุโรปหรือทวีปอเมริกา หกชั่วโมงของเกาหลีอาจผ่านไปทั้งหมดในระหว่างที่หลับ และพรีออร์เดอร์ที่สั่งแต่ไม่จ่ายก็คือพรีออร์เดอร์ที่ไม่เคยถูกสั่ง ส่วน Weverse Shop ไม่ได้เผยแพร่กำหนดเทียบเท่าในประกาศที่เว็บไซต์นี้อ่าน ซึ่งไม่เหมือนกับการไม่มีกำหนด ประเด็นในทางปฏิบัติคือความไม่สมมาตรนี้ ร้านหนึ่งบอกคุณว่าคุณมีเวลาเท่าไร",
+        pitfall:
+          "การสั่งพรีออร์เดอร์ที่ Ktown4u ไว้ก่อนเพื่อกันไว้ แล้วค่อยจ่ายตอนเช้า นั่นคือพฤติกรรมเดียวที่กฎหกชั่วโมงมีอยู่เพื่อเอาชนะ และมันเอาชนะอย่างเงียบ ๆ ไม่มีอะไรเตือนคุณ คำสั่งซื้อก็เพียงหายไป",
+        takes: "5 นาที",
+      },
+      {
+        title: "คาดไว้ว่าค่าใช้จ่ายจะปรากฏในที่ที่ต่างกัน",
+        body: "ราคาบนหน้าสินค้าของทั้งสองร้านไม่ใช่ราคาที่คุณจ่าย และจากนั้นทั้งคู่ก็แยกทาง ตั้งแต่วันที่ 3 กุมภาพันธ์ 2026 Weverse คำนวณภาษีจากที่อยู่จัดส่งและที่อยู่เรียกเก็บของคุณ คำสั่งซื้อไปเกาหลีแสดงราคารวมภาษีตลอดทั้งกระบวนการ ส่วนคำสั่งซื้อไปที่อื่นแสดงราคาไม่รวมภาษีและเพิ่มภาษีของปลายทางตอนชำระเงินเมื่อกรอกที่อยู่แล้ว ส่วนที่ Ktown4u เพิ่มมาถึงช้ากว่าและมาในรูปแบบอื่น คือขึ้นค่าส่งระหว่างประเทศ 7% มีผลตั้งแต่วันที่ 1 กุมภาพันธ์ 2026 และสำหรับการส่งไปสหรัฐ ตั้งแต่วันที่ 2 มิถุนายน 2025 เก็บค่าธรรมเนียม USD 12 เมื่อมีภาษีที่ต้องชำระและไม่ได้ชำระล่วงหน้าทางอิเล็กทรอนิกส์ โดยเก็บจากผู้รับตอนส่งมอบ",
+        pitfall:
+          "การเทียบตะกร้าสองใบ ตอนนั้น Weverse เพิ่มภาษีไปแล้ว และ Ktown4u ยังไม่เพิ่มสิบสองดอลลาร์ ดังนั้นตะกร้าที่ดูถูกกว่าตอนชำระเงินจึงไม่ใช่ตะกร้าที่ถูกกว่าตอนถึงหน้าประตูอย่างแน่นอน",
+        takes: "15 นาที",
+      },
+      {
+        title: "ตรวจว่าร้านไหนจะส่งถึงคุณ ตามรูปแบบที่แต่ละร้านบอกไว้",
+        body: "ทั้งสองปฏิเสธบางปลายทาง และประกาศด้วยวิธีที่ต่างกัน Weverse รักษารายชื่อประเทศและเขตแดนที่ส่งจากเกาหลีใต้ไปไม่ได้ ฉบับแก้ไขวันที่ 15 กรกฎาคม 2026 ระบุเมียนมา สาธารณรัฐประชาธิปไตยคองโก อิรัก อิหร่าน เลบานอน มาลี รัสเซีย อันดอร์รา ยูเครน เบลารุส อัฟกานิสถาน เนเธอร์แลนด์แอนทิลลิส อิสราเอล และตุรกี ส่วน Ktown4u ทำเป็นรายวิธีไม่ใช่รายประเทศ โดยระงับ K-Packet ไปเยอรมนีและสเปนตั้งแต่วันที่ 17 มกราคม 2025 เมื่อหน่วยไปรษณีย์ของสองประเทศนั้นออกจากข้อตกลงที่มันอาศัยอยู่ และเผยแพร่การขัดข้องลงลึกถึงรหัสไปรษณีย์แต่ละแห่ง รายชื่อหนึ่งบอกคุณว่าจะสั่งได้หรือไม่ อีกรายชื่อบอกว่าวิธีที่คุณใช้ครั้งก่อนยังมีอยู่หรือไม่",
+        pitfall:
+          "การคิดว่าประเทศที่ไม่ปรากฏในรายชื่อทั้งสองย่อมไม่มีปัญหา สิ่งที่ Ktown4u ระบุว่าจะทำเมื่อวิธีหนึ่งถูกถอนออก คือส่งอีเมลหาลูกค้าที่ได้รับผลกระทบเรื่องการย้ายไปใช้บริการอื่นและค่าใช้จ่ายส่วนเพิ่ม ดังนั้นคำสั่งซื้อที่สั่งไปแล้วอาจเปลี่ยนราคาภายหลัง",
+        takes: "10 นาที",
+      },
+      {
+        title: "อ่านรายการวิธีชำระเงิน และสังเกตว่ามีเพียงร้านเดียวที่มีรายการนั้น",
+        body: "Weverse เผยแพร่ว่าคุณจ่ายด้วยอะไรได้ แยกตามสกุลเงิน และรายการเหล่านั้นยาวไม่เท่ากัน USD ได้ PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay และ Grab Pay ส่วน JPY ได้รายการเดียวกันโดยไม่มี Grab Pay CNY ตัด PayPal ออก MXN สั้นที่สุดคือสองอย่าง ได้แก่ PayPal และ Apple Pay ทั้งคู่เป็นดิจิทัล ไม่มีทางเลือกเงินสด ส่วน KRW เพิ่มบัตรเกาหลีและกระเป๋าเงินเกาหลี ดังนั้นสกุลเงินตั้งต้นของคุณจึงกำหนดปุ่มของคุณไว้ก่อนที่คุณจะไปถึงหน้าชำระเงิน Ktown4u ไม่ได้เผยแพร่รายการที่เทียบกันได้ในประกาศของตน จึงต้องอ่านว่ารับอะไรจากหน้าชำระเงินของร้านเอง",
+        pitfall:
+          "การตั้งสกุลเงินเพราะราคา ไม่ใช่เพราะวิธีชำระเงิน ถ้าทั้งสองอย่างในรายการสั้นนั้นไม่ได้ตั้งไว้ให้คุณ ก็ไม่มีปุ่มที่สามในหน้าชำระเงิน และไม่มีทางเลี่ยงในจุดนั้น",
+        takes: "10 นาที",
+      },
+      {
+        title: "หาให้ได้ว่าคุณติดต่อใครได้เมื่อมีปัญหา และเมื่อไร",
+        body: "Ktown4u ระบุเวลาของตน ฝ่ายบริการลูกค้าเปิดวันทำการ 10:00 ถึง 17:00 KST ตั้งแต่วันที่ 1 พฤศจิกายน 2023 โดยพักกลางวัน 12:30 ถึง 13:30 นั่นคือห้าชั่วโมงครึ่งในวันทำการของเกาหลี ซึ่งสำหรับผู้อ่านที่นี่ส่วนใหญ่คือกลางดึก และมันทับซ้อนกับนาฬิกาชำระเงินหกชั่วโมง คำสั่งซื้อที่สั่งเย็นวันศุกร์ในยุโรปอาจหมดอายุก่อนที่จะมีใครนั่งอยู่ที่โต๊ะ ร้านยังหยุดทั้งการจัดส่งและการบริการในวันหยุดของเกาหลี และเผยแพร่วันที่ทุกครั้ง ส่วน Weverse Shop ไม่ได้เผยแพร่เวลาบริการไว้ที่เดียวกัน การจัดการเรื่องยกเลิกคำสั่งซื้อเป็นครึ่งที่มีบันทึกดีกว่า และมีคู่มือของตัวเองที่นี่",
+        pitfall:
+          "การถือเอาวันหยุดราชการของเกาหลีเป็นความล่าช้าของการส่งมอบ Ktown4u หยุดบริการในวันเดียวกันด้วย ดังนั้นสัปดาห์ที่คุณอยากถามเรื่องพัสดุที่สุด ก็คือสัปดาห์ที่ไม่มีใครตอบ",
+        takes: "10 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "คำสั่งซื้อที่ Ktown4u นับเข้าชาร์ตเกาหลีไหม หรือฉันต้องซื้อจาก Weverse",
+        a: "นับทั้งสองร้าน Hanteo ขึ้นทะเบียนทั้งคู่เป็นร้าน Family ที่ได้รับการรับรอง Ktown4U เป็น HF0082KTU001 และ Weverse เป็น HF0082BTS001 และกำหนดให้แต่ละร้านแสดงเครื่องหมาย Family ที่ท้ายหน้าโดยลิงก์กลับไปที่ทะเบียน การรับรองออกใหม่ทุกปี โปรดยืนยันรหัสที่ hanteochart.com แทนที่จะเอาจากที่นี่",
+      },
+      {
+        q: "ร้านไหนถูกกว่า",
+        a: "ไม่มีร้านไหน ถ้าถือเป็นคุณสมบัติของร้าน อัลบั้มจะมีราคาเท่าไรสำหรับคุณขึ้นกับประเทศของคุณ งานที่ออก และสัปดาห์นั้น Weverse เพิ่มภาษีของปลายทางคุณตอนชำระเงิน ส่วน Ktown4u ขึ้นค่าส่งระหว่างประเทศ 7% ในเดือนกุมภาพันธ์ 2026 และเพิ่ม USD 12 สำหรับการส่งในสหรัฐเมื่อไม่ได้ชำระภาษีล่วงหน้า โปรดเทียบราคารวมถึงมือที่อยู่ของคุณในวันนั้น ไม่ใช่เทียบหน้าสินค้าสองหน้า",
+      },
+      {
+        q: "ร้านไหนส่งเร็วกว่า",
+        a: "ตอบแบบทั่วไปไม่ได้ และคำถามที่ตอบได้สำคัญกว่า คือยังมีวิธีใดวิ่งไปถึงประเทศของคุณ Ktown4u ถอนวิธีจัดส่งเป็นรายประเทศ เช่น K-Packet ไปเยอรมนีและสเปนตั้งแต่เดือนมกราคม 2025 และเผยแพร่การขัดข้องลงถึงรหัสไปรษณีย์ ขณะที่ Weverse เผยแพร่รายชื่อปลายทางที่ส่งไปไม่ได้เลย โปรดดูประกาศปัจจุบันของประเทศคุณก่อนเทียบเวลาส่งมอบ",
+      },
+      {
+        q: "ฉันสั่งอัลบั้มเดียวกันจากทั้งสองร้านได้ไหม",
+        a: "ได้ และเป็นกลยุทธ์ที่ใช้ได้จริงสำหรับของแถมพรีออร์เดอร์ ซึ่งผูกกับช่วงเวลาและมักผูกกับร้านค้าปลีกรายนั้นมากกว่าผูกกับอัลบั้ม โปรดคิดเป็นราคารวมถึงมือสองรายการ ไม่ใช่ราคาอัลบั้มสองราคา และจำไว้ว่าของแถมหยุดเมื่อช่วงเวลาปิด ไม่ใช่เมื่ออัลบั้มออก",
+      },
+      {
+        q: "ฉันอยู่ในสหรัฐ นั่นเปลี่ยนคำตอบไหม",
+        a: "เปลี่ยนไปหนึ่งบรรทัด ตั้งแต่วันที่ 2 มิถุนายน 2025 Ktown4u เก็บค่าธรรมเนียม USD 12 สำหรับการส่งไปสหรัฐเมื่อมีภาษี อากร หรือค่าธรรมเนียมของรัฐอื่นที่ต้องชำระและไม่ได้ชำระล่วงหน้าทางอิเล็กทรอนิกส์ก่อนการส่งมอบ โดยเรียกเก็บจากผู้รับที่หน้าประตู Ktown4u เผยแพร่ทางออกไว้ด้วย คือชำระล่วงหน้าผ่านระบบภาษีนำเข้าของ UPS นั่นเป็นส่วนเพิ่มแบบคงที่ที่ควรนำไปเทียบกับภาษีที่ Weverse เพิ่มตอนคุณชำระเงิน",
+      },
+      {
+        q: "ทำไมหน้านี้เทียบของน้อยเหลือเกิน",
+        a: "เพราะส่วนที่เหลือไม่ได้ถูกเผยแพร่ ข้อค้นพบที่ซื่อตรงจากการวางสองร้านไว้ข้างกันคือทั้งคู่บันทึกคนละครึ่ง Ktown4u ระบุกำหนดชำระเงิน เวลาให้บริการ และการเปลี่ยนแปลงการจัดส่งรายประเทศ ส่วน Weverse ระบุวิธีชำระเงินตามสกุลเงิน การคิดภาษี และปลายทางที่ยกเว้น ตรงที่ร้านไม่ได้เผยแพร่ หน้านี้ก็บอกไปตามนั้นแทนที่จะประมาณเอา นี่จึงเป็นเหตุผลที่ไม่มีอันดับความเร็วและไม่มีคำตัดสินเรื่องราคา",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop o Ktown4u: ang paghahambing na hindi isinusulat ninuman, dahil tungkol sa isang tindahan ang bawat isa sa dalawang pahina",
+    summary:
+      "Pareho silang nag-uulat sa Hanteo, kaya hindi ito pinapasya ng tanong tungkol sa tsart. Ang nagpapasya ay kung aling tindahan ang may release mo, kaninong orasan ang kaya mong abutin, at — higit sa alinman sa dalawa — alin ang naglalathala ng bagay na kailangan mong malaman.",
+    scope:
+      "Isang tapat-tapatan sa dalawang tindahang talagang pinipilian ng isang tagahanga sa ibang bansa para sa isang album na Koreano. Binuo ito mula sa mga pahayag na tiningnan ng sayt na ito noong 21 Oktubre 2026 laban sa talaan ng mga tindahang sertipikado ng Hanteo at sa sariling pabatid ng bawat tindahan, at iyon ang dahilan kung bakit taglay nito ang petsang iyon at hindi ang ngayon: bago ang paghahambing, hindi muling tiningnan ang mga katotohanan dito. Sinasaklaw nito ang pag-uulat sa tsart, ang katalogo, ang mga taning sa bayad, kung saan lumilitaw ang gastos, ang mga pagtangging magpadala at ang oras ng suporta. Hindi nito sila niraranggo ayon sa presyo o bilis, dahil wala sa dalawang iyon ang katangian ng tindahan — pareho silang nakadepende sa bansa mo, sa release mo at sa linggo.",
+    intro: [
+      "May gabay ang sayt na ito sa pag-order mula sa Weverse Shop at may gabay sa pag-order mula sa Ktown4u, at ni minsan ay hindi binabanggit ng isa ang isa. Ayos lang iyon para sa mambabasang nakapili na, at walang silbi sa mas marami pang hindi pa nakapili.",
+      "Hindi ang sagot ang ibinibigay ng karamihan sa mga usapan. Sertipikado ng Hanteo ang dalawang tindahan, kaya ang argumento tungkol sa tsart na karaniwang nagwawakas nito ay hindi man lamang argumento. Ang talagang naghihiwalay sa kanila ay mas makitid at mas kakatwa: naglalathala sila ng magkaibang bagay, at hindi nasa parehong lugar ang mga butas.",
+    ],
+    steps: [
+      {
+        title: "Tapusin muna ang tanong tungkol sa tsart, dahil iyon ang namamali sa mga tao",
+        body: "Ang karaniwang paniniwala ay binibilang ang pagbili sa opisyal na tindahan at hindi binibilang ang pagbili sa isang muling nagtitinda. Para sa dalawang ito, mali lamang iyon, at matitingnan ito at hindi usapin ng pagtitiwala. Naglalathala ang Hanteo ng mga sertipikadong tindahang Family nito na may kodigo ang bawat isa: ang Ktown4U ay HF0082KTU001 at ang Weverse ay HF0082BTS001. Hinihingi rin ng Hanteo sa bawat tindahang Family na nasa linya na itanghal ang tanda ng Family sa paanan nito, na nakakawing pabalik sa hanteochart.com, kaya pinapatotohanan ng tindahan at ng talaan ang isa't isa mula sa dalawang dulo. Muling ipinapalabas ang sertipikasyon taon-taon, kaya tingnan ang kodigo at huwag kunin ito sa pahinang ito.",
+        pitfall:
+          "Ang pagpili sa mas mahal na tindahan upang ipagtanggol ang isang ambag sa tsart na hindi kailanman nanganib. Kung ang tsart ang buong dahilan kung bakit mas malaki ang binabayad mo, nagbabayad ka para sa isang bagay na taglay mo na.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Itanong kung aling tindahan ang may release mo bago mo ihambing ang anupaman",
+        body: "Mas marami pang order ang pinapasya nito kaysa sa presyo, at hindi ito simetriko. Isang pangkalahatang tindahan ang Ktown4u at may dala nitong mga release sa kabila ng mga label. Hindi talaga isang tindahan ang Weverse Shop: may tindahang GLOBAL at may mga tindahang pangrehiyon, magkaiba ang kanilang stock, magkaiba ang kanilang panahon ng pre-order at magkaiba ang pinagpapadalhan nila. Ang isang bagay na na-order ng isang tagahanga sa ibang bansa ay maaaring wala sa bansa mo. Kaya madalas na hindi Weverse laban sa Ktown4u ang paghahambing — Ktown4u laban sa anumang Weverse Shop na kinaroroonan mo.",
+        pitfall:
+          "Ang pagbasa ng taning sa pre-order sa Weverse Shop ng iba. Walang sinasabi sa iyo ang isang hangganan sa isang tindahan tungkol sa mga iba, at nakatali ang mga kasama sa panahon at hindi sa album.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Alamin kaninong orasan ang kailangan mong abutin",
+        body: "Isa ang inilalathala ng Ktown4u at maikli ito. Awtomatikong kinakansela ang hindi nabayarang order anim na oras matapos itong gawin — pinaikli mula dalawampu't apat, bisa noong 19 Pebrero 2025 KST. Para sa tagahangang nag-oorder sa hatinggabi sa Europa o sa mga Amerika, maaaring lumipas nang buo ang anim na oras ng Korea habang natutulog, at ang pre-order na nagawa ngunit hindi nabayaran ay pre-order na hindi kailanman nagawa. Hindi naglalathala ang Weverse Shop ng katumbas na taning sa mga pabatid na binabasa ng sayt na ito, at hindi iyon katumbas ng walang taning. Ang praktikal na punto ay ang hindi pagkakapantay: isang tindahan ang nagsasabi sa iyo kung gaano katagal ang mayroon ka.",
+        pitfall:
+          "Ang paggawa ng pre-order sa Ktown4u upang masigurado ito at pagbabayad kinabukasan ng umaga. Iyon ang isang nakagawian na umiiral ang tuntunin ng anim na oras upang talunin, at tinatalo niya iyon nang tahimik — walang nagbababala sa iyo, basta na lamang wala na ang order.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Asahan na lilitaw ang gastos sa magkaibang lugar",
+        body: "Hindi ang presyo sa pahina ng produkto ng dalawang tindahan ang binabayaran mo, at pagkatapos niyon ay naghihiwalay sila. Mula 3 Pebrero 2026 ay kinakalkula ng Weverse ang buwis mula sa adres mo ng pagpapadala at ng pagbili: ang mga order patungong Korea ay nagtatanghal ng presyong may kasamang buwis sa buong proseso, at ang mga order patungo sa iba pa ay nagtatanghal ng presyong walang buwis at idinadagdag ang buwis ng patutunguhan sa kasa kapag naipasok na ang isang adres. Mas huling dumarating ang mga dagdag ng Ktown4u at iba ang paraan — itinaas nito ang pandaigdigang pagpapadala ng 7% na may bisa noong 1 Pebrero 2026, at para sa mga padalang papuntang Estados Unidos ay ipinapataw nito mula 2 Hunyo 2025 ang isang USD 12 kapag may buwis na dapat bayaran at hindi ito nabayaran nang patiuna sa elektronikong paraan, kinokolekta sa tatanggap sa oras ng paghahatid.",
+        pitfall:
+          "Ang paghahambing ng dalawang kariton. Naidagdag na ng Weverse ang buwis nito sa puntong iyon at hindi pa naidagdag ng Ktown4u ang labindalawang dolyar nito, kaya hindi maaasahang ang karitong mukhang mas mura sa kasa ang nagkakahalaga ng mas mababa sa pintuan.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Tingnan kung alin ang magpapadala sa iyo, sa paraang sinasabi iyon ng bawat isa",
+        body: "Pareho silang tumatanggi sa ilang patutunguhan at magkaiba ang paraan ng pag-anunsyo nila. Nagtataglay ang Weverse ng listahan ng mga bansa at rehiyong hindi nito mapapadalhan mula sa Timog Korea; pinapangalanan ng rebisyon noong 15 Hulyo 2026 ang Myanmar, ang Demokratikong Republika ng Congo, ang Iraq, ang Iran, ang Lebanon, ang Mali, ang Russia, ang Andorra, ang Ukraine, ang Belarus, ang Afghanistan, ang Antilles ng Olanda, ang Israel at ang Turkey. Ginagawa iyon ng Ktown4u ayon sa paraan at hindi ayon sa bansa: sinuspinde nito ang K-Packet patungong Alemanya at Espanya mula 17 Enero 2025 nang lisanin ng mga operador ng koreo roon ang kasunduang pinapatakbo nito, at naglalathala ito ng mga abala hanggang sa bawat kodigo ng koreo. Sinasabi sa iyo ng isang listahan kung maaari ka man lamang mag-order; sinasabi ng isa kung umiiral pa ang paraang ginamit mo noong huli.",
+        pitfall:
+          "Ang pag-akalang malinaw ang isang bansang hindi lumilitaw sa alinman sa dalawang listahan. Ang sinasabing pamamaraan ng Ktown4u kapag may paraang inaalis ay ang pag-email sa mga naapektuhang kostumer tungkol sa paglipat sa ibang serbisyo at sa dagdag na gastos — kaya maaaring magbago ng presyo pagkatapos ang isang order na nagawa na.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Basahin ang mga listahan ng pagbabayad, at pansinin na isang tindahan lamang ang may mga iyon",
+        body: "Naglalathala ang Weverse ng puwede mong ipambayad, ayon sa salapi, at hindi pareho ang haba ng mga listahan. Nakukuha ng USD ang PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay at Grab Pay. Nakukuha ng JPY ang listahang iyon nang walang Grab Pay. Nawawala sa CNY ang PayPal. Ang MXN ang pinakamaikli na may dalawa — PayPal at Apple Pay, pawang digital, walang pagpipiliang salaping papel. Nagdadagdag ang KRW ng mga kard na Koreano at ng mga pitakang Koreano. Ang nakatakdang salapi mo kung gayon ang nagpapasya sa mga pindutan mo bago mo pa marating ang kasa. Hindi naglalathala ang Ktown4u ng mapapantayang listahan sa mga pabatid nito, kaya kailangang basahin sa sariling kasa nito ang tinatanggap niya.",
+        pitfall:
+          "Ang pagtatakda ng salapi para sa presyo at hindi para sa paraan ng pagbabayad. Kung wala ni isa sa dalawa sa isang maikling listahan ang nakahanda para sa iyo, walang pangatlong pindutan sa kasa at wala nang paraan sa puntong iyon.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Alamin kung sino ang maaabot mo kapag may masama, at kailan",
+        body: "Sinasabi ng Ktown4u ang oras nito: serbisyo sa kostumer tuwing araw ng trabaho mula 10:00 hanggang 17:00 KST mula 1 Nobyembre 2023, na may pananghalian mula 12:30 hanggang 13:30. Limang oras at kalahati iyon sa mga araw ng trabaho sa Korea, na para sa halos lahat ng mambabasa dito ay hatinggabi, at nagsasalubong ito sa orasan ng pagbabayad na anim na oras — ang isang order na ginawa sa gabi ng Biyernes sa Europa ay maaaring mag-expire bago may taong nasa mesa. Ipinapatigil din nito ang pagpapadala at ang suporta tuwing pista opisyal ng Korea at inilalathala nito ang mga petsa sa bawat pagkakataon. Hindi inilalathala ng Weverse Shop ang oras ng suporta sa parehong lugar; ang pamamaraan nito sa pagkansela ang kalahating mas naitala at may sariling gabay dito.",
+        pitfall:
+          "Ang pagtrato sa isang pista opisyal ng Korea bilang pagkaantala sa paghahatid. Ipinapatigil ng Ktown4u ang suporta sa parehong mga araw, kaya ang linggong pinakagusto mong magtanong tungkol sa isang pakete ay ang linggong walang sumasagot.",
+        takes: "10 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Binibilang ba sa mga tsart na Koreano ang isang order sa Ktown4u, o kailangan kong mamili sa Weverse?",
+        a: "Binibilang ang dalawa. Inililista ng Hanteo ang dalawa bilang sertipikadong tindahang Family — ang Ktown4U bilang HF0082KTU001 at ang Weverse bilang HF0082BTS001 — at hinihingi sa bawat isa na itanghal ang tanda ng Family sa paanan nito na nakakawing pabalik sa talaan. Muling ipinapalabas ang sertipikasyon taon-taon, kaya tiyakin ang kodigo sa hanteochart.com at huwag itong kunin dito.",
+      },
+      {
+        q: "Alin ang mas mura?",
+        a: "Wala, kung katangian ito ng tindahan. Ang halaga ng album sa iyo ay nakadepende sa bansa mo, sa release at sa linggo: idinadagdag ng Weverse ang buwis ng patutunguhan mo sa kasa, itinaas ng Ktown4u ang pandaigdigang pagpapadala ng 7% noong Pebrero 2026 at nagdadagdag ng USD 12 sa mga paghahatid sa Estados Unidos kapag hindi nabayaran nang patiuna ang buwis. Ihambing ang kabuuang gastos hanggang sa adres mo sa araw na iyon, at hindi ang dalawang pahina ng produkto.",
+      },
+      {
+        q: "Alin ang mas mabilis magpadala?",
+        a: "Hindi masasagot sa pangkalahatan, at mas mahalaga ang tanong na masasagot: aling mga paraan ang tumatakbo pa patungo sa bansa mo. Inaalis ng Ktown4u ang mga paraan ng pagpapadala ayon sa bansa — K-Packet patungong Alemanya at Espanya mula Enero 2025 — at naglalathala ng mga abala hanggang sa kodigo ng koreo, samantalang naglalathala ang Weverse ng listahan ng mga patutunguhang hindi talaga nito mapapadalhan. Tingnan ang kasalukuyang pabatid para sa bansa mo bago maghambing ng tantiya sa paghahatid.",
+      },
+      {
+        q: "Puwede ko bang i-order ang parehong album sa dalawa?",
+        a: "Puwede, at tunay na estratehiya iyon para sa mga kasama sa pre-order, na nakatali sa panahon at madalas sa partikular na tindahan at hindi sa album. Ihambing ito bilang dalawang kabuuang gastos hanggang sa pintuan at hindi bilang dalawang presyo ng album, at tandaan na humihinto ang mga kasama kapag nagsara ang panahon, at hindi kapag inilabas ang album.",
+      },
+      {
+        q: "Nasa Estados Unidos ako. Nagbabago ba niyan ang sagot?",
+        a: "Nagbabago ang isang linya nito. Mula 2 Hunyo 2025 ay ipinapataw ng Ktown4u ang isang USD 12 sa mga padalang papuntang Estados Unidos kapag may buwis, tubos o ibang bayarin ng pamahalaang dapat bayaran at hindi nabayaran nang patiuna sa elektronikong paraan bago ang paghahatid, isinasalang sa tatanggap sa pintuan. Inilalathala rin ng Ktown4u ang daang labas: magbayad nang patiuna sa pamamagitan ng sistema ng buwis sa pag-angkat ng UPS. Isa iyong patag na dagdag na ihahambing sa anumang buwis na idinadagdag ng Weverse sa kasa mo.",
+      },
+      {
+        q: "Bakit kakaunti lamang ang inihahambing ng pahinang ito?",
+        a: "Dahil hindi inilathala ang iba pa. Ang tapat na natuklasan sa paglalagay sa kanila nang katabi ay nagtatala sila ng magkaibang kalahati: sinasabi ng Ktown4u ang taning nito sa bayad, ang oras nito ng suporta at ang mga pagbabago nito sa pagpapadala ayon sa bansa; sinasabi ng Weverse ang mga paraan nito ng pagbabayad ayon sa salapi, ang pamamaraan nito sa buwis at ang mga pinagbabawalan nito sa pagpapadala. Kapag may bagay na hindi inilalathala ang isang tindahan, sinasabi iyon ng pahinang ito at hindi tinatantiya, at iyon ang dahilan kung bakit walang ranggo sa bilis at walang hatol sa presyo.",
       },
     ],
     labels: FIL_LABELS,

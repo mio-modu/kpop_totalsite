@@ -227,9 +227,27 @@ function alternatives(text, n) {
   return alts;
 }
 
+/**
+ * "Line 1" is a subway line, not the messaging app.
+ *
+ * The register writes the messaging app as "Line" — "sign in with Google,
+ * Apple or Line" — so the alias has to exist, and it is matched as a
+ * substring, so the venue guides tripped it the moment one of them said
+ * "Guil Station on Line 1". Demanding a counterpart would have put the app's
+ * name into a sentence about a train.
+ *
+ * The two senses are separable by what follows the word and by nothing else:
+ * the subway is always a numbered line. So the numbered sense is removed
+ * from the English before the nouns are read off it, which leaves the app
+ * sense checked exactly as before — a step that says "Google, Apple or Line"
+ * still requires it.
+ */
+const SUBWAY_LINE = /\bLines?\s+\d+(?:\s+and\s+\d+)?/g;
+
 function nounsIn(text) {
   if (!text) return [];
-  return NOUNS.filter((n) => text.includes(n));
+  const prose = text.replace(SUBWAY_LINE, " ");
+  return NOUNS.filter((n) => prose.includes(n));
 }
 
 /** Pair up the fields of a guide and its translation. */
@@ -395,6 +413,24 @@ const BAND = {
   // neither effect is reliable enough to narrow it around.
   fil: [0.9, 1.9],
 };
+
+/**
+ * The subway narrowing has to leave the app sense alone.
+ *
+ * Same reason as the Hangul test above: a check that was loosened without a
+ * test proving it still fires is a check nobody will trust the next time it
+ * is in the way.
+ */
+test("a numbered line is not the messaging app", () => {
+  assert.ok(
+    !nounsIn("Guil Station on Line 1, exit 2, plus Sindorim on Lines 1 and 2.").includes("Line"),
+    "a numbered subway line must not demand the app name",
+  );
+  assert.ok(
+    nounsIn("Sign in with an email address or with Google, Apple or Line.").includes("Line"),
+    "the app sense must still be required",
+  );
+});
 
 test("no translated field is far longer or shorter than its source", () => {
   const bad = [];
@@ -601,11 +637,38 @@ test("Spanish questions and exclamations carry their opening mark", () => {
  */
 const SIMPLIFIED = [..."个们这时会后买卖发为实门关认证单价过还对国韩预费运产业应当问题号码网页请确验账边变处现间开结经续连选择项额显转换银联机构场内"];
 
+/**
+ * Hangul the English of the same field already carries.
+ *
+ * The blanket ban was written against a leak — a 제보자 left inside Japanese
+ * prose — and it is right about that case. It is wrong about the opposite
+ * one, which the venue guides are made of: a Korean venue name, a station
+ * name, or the word printed on a Korean seating chart is in the English
+ * precisely *because* the reader cannot read Korean and has to show it to
+ * somebody or match it on a screen. Dropping it from the translation takes
+ * the most useful string on the page away from the reader who needs it most.
+ *
+ * So the rule is derived rather than declared: a Hangul run may stay if the
+ * English field it translates has the same run. That needs no list to
+ * maintain and cannot drift, because the English is the authority either way.
+ * A leak still fails — nothing in the English of a NOL World step says
+ * 제보자 — and so does a translation that keeps a Korean word the English
+ * only paraphrased.
+ */
+function withoutSharedHangul(en, t) {
+  let out = t;
+  for (const run of en.match(/[가-힣]+/g) ?? []) out = out.split(run).join(" ");
+  return out;
+}
+
 test("no stray script or untranslated word in the translation", () => {
   const bad = [];
   for (const p of allPairs()) {
+    // Only Hangul is removed, so the Cyrillic, kana and CJK patterns below
+    // read the field exactly as written.
+    const probe = withoutSharedHangul(p.en, p.t);
     for (const [re, name] of FORBIDDEN[p.locale] ?? []) {
-      if (re.test(p.t)) bad.push(`${at(p)}: contains ${name}`);
+      if (re.test(probe)) bad.push(`${at(p)}: contains ${name}`);
     }
     if (p.locale === "zh-Hant") {
       const hits = [...new Set(SIMPLIFIED.filter((c) => p.t.includes(c)))];
@@ -636,6 +699,34 @@ test("no stray script or untranslated word in the translation", () => {
  * left alone, because enough English sentences are near enough to German that
  * one can look translated at a glance.
  */
+/**
+ * The narrowing above has to keep catching what the ban was built for.
+ *
+ * Relaxing a check without proving it still fires is how a check becomes
+ * decoration. The leak it was written against — a Korean word the English
+ * never used — is still Hangul the English does not carry, so it still fails;
+ * a venue name quoted in both is not.
+ */
+test("Hangul the English does not carry is still a leak", () => {
+  const leak = withoutSharedHangul(
+    "A tip-off from a reader is not a source.",
+    "読者からの제보자は出典ではありません。",
+  );
+  assert.match(leak, /[가-힣]/, "a word the English never used must survive the strip");
+
+  const quoted = withoutSharedHangul(
+    "Gocheok Sky Dome — 고척스카이돔 — is in Guro-gu.",
+    "고척스카이돔は九老区にあります。",
+  );
+  assert.doesNotMatch(quoted, /[가-힣]/, "a name the English quotes is deliberate");
+
+  const partial = withoutSharedHangul(
+    "The access page is titled 찾아오시는길.",
+    "案内ページの見出しは찾아오시는길で、座席は좌석배치도にあります。",
+  );
+  assert.match(partial, /[가-힣]/, "only the run the English carries is forgiven");
+});
+
 test("no field was left in English", () => {
   const bad = [];
   for (const p of allPairs()) {
@@ -764,6 +855,13 @@ const LATIN_OK = new Set([
   "Exclusive", "Sale", "Sold", "Domestic", "Home", "Smart", "Create", "account",
   "Inquiry",
   "www", "home", "english", "NXDOMAIN", "membership", "nhnlink", "VPN",
+  // Venue names as a booking page prints them. The first step of every venue
+  // guide tells the reader to compare the name on their booking page against
+  // the address, because Seoul has two large halls with Dome in the name on
+  // opposite sides of the city. That comparison is against an English string,
+  // so the English string has to be on the page — the station names around it
+  // are written in the reader's own script, where nothing is being matched.
+  "Gocheok", "Sky", "Dome", "KSPO", "Inspire", "Arena",
 ]);
 
 /** Locales whose prose should contain no bare Latin words. */

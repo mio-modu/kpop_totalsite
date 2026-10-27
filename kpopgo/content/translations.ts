@@ -20585,6 +20585,896 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+
+  {
+    locale: "ja",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "高尺スカイドームへの行き方：最寄り駅が正解ではありません",
+    summary:
+      "2万5千人、484台分の駐車場、そして「一駅前で降りてください」と運営者自身が書いている会場です。最寄りの出口は徒歩3分で、そしておそらく避けたほうがよい出口です。",
+    scope:
+      "コンサートのために高尺スカイドームへ着くまでを、運営するソウル施設公団のページから扱います。駅、出口、徒歩時間、会場自身が公開している混雑の案内、そして駐車場です。意図的に一会場だけに絞っています。KSPO DomeとInspire Arenaはそれぞれ専用のページと運営者自身の出典が必要で、このページはその代わりになりません。ここには公演ごとの情報はありません。持ち込み可否や開場時刻は建物ではなく主催者が決めます。",
+    intro: [
+      "チケットが教えてくれるのはホールと時刻です。そのホールに直結した駅が、ほかのチケット所持者も全員そこから出てくる駅だということは教えてくれません。そして建物の運営者は、それを自社サイトに平易な韓国語で書いています。",
+      "これは一つの会場を、運営する公団の言葉で端から端まで読んだものです。役に立つのは住所ではありません。掲載された4つの駅のうち2つが、最寄り駅から人を逃がすために挙げられているという事実です。",
+    ],
+    steps: [
+      {
+        title: "自分の公演が実際にどのホールなのかを確認する",
+        body: "ソウルには大きなホールがいくつもあり、その英語名は厄介なほど似ています。高尺スカイドーム（고척스카이돔）は九老区の京仁路430、郵便番号08223にあり、ソウル施設公団が運営しています。これはKSPO Domeではありません。あちらは松坡区のオリンピック公園の中にあり、まったく別の組織が運営しています。Inspire Arenaでもありません。あちらは仁川です。ソウルワールドカップ競技場でもありません。あちらは麻浦区の上岩にある屋外競技場で、運営者が同じなので運営者名で検索すると両方が出てきます。予約ページの会場名と住所を照らし合わせてから計画してください。両者は互いに1時間離れています。",
+        pitfall:
+          "「ドーム」という字を見て、ドームは一つだと思い込むこと。ソウル最大級のホールのうち2つが名前にドームを含み、しかも市内の反対側にあります。これを18時に知ったファンは公演に間に合いません。",
+        takes: "2分",
+      },
+      {
+        title: "最寄り駅を知り、それが徒歩3分だと知る",
+        body: "1号線クイル駅の2番出口から、まっすぐ約150メートル。会場はこれを徒歩3分としています。これが最短の接近路で、実際に短いです。会場が公開している残り3つはもっと長い経路です。1号線ケボン駅の2番出口は、まっすぐ200メートル、右へ、それから650メートル進むとドームが右手に見えます。徒歩で約15分、または高尺橋方面の村バス06番。1号線クロ駅は、出口を出て左、まっすぐ1キロ、高尺橋を渡るとドームが左手に見えます。徒歩で約20分、またはバス5712番と5626番。1号線と2号線のシンドリム駅は、1番出口からバスで3停留所、10路線が走っており、その中に160番があります。",
+        pitfall:
+          "徒歩3分を当然の正解として受け取ること。それは最短の経路であり、次のステップは会場自身がなぜそれが正解でないかもしれないかを説明する内容です。そのページの数字の一つは自分自身と食い違っています。駅の表はクロを1番出口としているのに、その下に印刷された道順と会場自身の周辺地図はどちらも2番出口としています。3つのうち2つが2番と言っており、どちらの出口も同じ駅の中なので、間違えて払う代償は1分です。",
+        takes: "5分",
+      },
+      {
+        title: "会場自身が印刷している混雑の案内を読む",
+        body: "ここがこのページの価値のある部分で、ブログからの推測ではなく運営者が公開している内容です。アクセスのページには駅の表の上に2行あります。ソウル方面および水原・安養方面から来る人には、クロ駅で降りれば混雑を避けられると書かれ、仁川・富川方面から来る人には、ケボン駅について同じことが書かれています。つまり建物が、満席の夜には扉の前の駅が捌けないと述べ、どこから乗ったかに応じてどの駅を代わりに使うかを名指ししているのです。",
+        pitfall:
+          "距離を最適化する経路アプリに従うこと。それは毎回クイル駅へ送ります。退場時のあの出口について会場が知っていることを、アプリは知らないからです。",
+        takes: "5分、当日より前に",
+      },
+      {
+        title: "混雑が野球の客より厳しくなる理由を理解する",
+        body: "同じホールが二つの異なる数字を持っています。野球では座席数16,601席とされ、文化イベント——コンサートや授賞式——では一度に約25,000人を収容できるとされています。つまりコンサートの夜は、この建物の通常の用途より約5割多い人数が、同じ扉と同じホームを通ることになります。前のステップの案内の裏にあるのはこの算数です。",
+        pitfall:
+          "野球を観に行った経験から、あるいは行った友人の話から混雑を判断すること。出口の側から見れば、コンサートの配置は別の建物です。",
+        takes: "—",
+      },
+      {
+        title: "駐車する前提で計画しない。そして理由は収容台数ではありません",
+        body: "会場には3層に484台分の駐車場があり、08:00から22:00まで、5分あたり150ウォン、30分で900ウォン、1時間で1,800ウォン、6時間で10,800ウォンです。25,000人のコンサート客に対して52人あたり1台で、それだけでも答えは出ています。ただ運営者は、実際に決定的な一文を加えています。野球およびイベントの日は駐車場が主催者によって全面的に使用され、一般利用は制限される、と。つまり制約は「満車になる」ことではありません。「そもそも開いていないかもしれない」ことです。",
+        pitfall:
+          "道路で向かうのが楽な選択だという前提でタクシーやレンタカーを手配すること。その道路の選択は、主催者がその夜のために押さえた駐車場で行き止まりになります。",
+        takes: "5分",
+      },
+      {
+        title: "建物には、建物が知っていることだけを尋ねる",
+        body: "運営者が答えるのは建物についてです。アクセス、駐車、設備、ドームそのもの。その窓口はドーム運営処の運営チームで、電話は02-2128-2300です。運営者が決めないのはあなたの公演です。入場時刻、持ち込み可否、待機列の位置、開場時刻は主催者のもので、会場ではなく公演ごとにチケッティングのページで公開されます。会場に手荷物の規則を尋ねれば、建物の一般方針について丁寧な答えが返ってきますが、それは必要だった答えではありません。",
+        pitfall:
+          "会場への電話を公演規則の確認として扱うこと。二つは別の権限であり、チケットに書かれているのはそのうち一方だけです。",
+        takes: "10分",
+      },
+    ],
+    faq: [
+      {
+        q: "高尺スカイドームは何駅ですか。",
+        a: "1号線クイル駅の2番出口、約150メートルで徒歩3分です。会場はほかに3つの長い経路も公開しています。ケボン駅の2番出口から徒歩約15分、または高尺橋方面の村バス06番。クロ駅から高尺橋を渡って徒歩約20分、またはバス5712番と5626番。1号線と2号線のシンドリム駅から、1番出口を出てバスで3停留所、10路線が走っており、その中に160番があります。クロが1番出口か2番出口かについては、会場の表と道順の案内が食い違っていて、道順と周辺地図はどちらも2番としています。",
+      },
+      {
+        q: "クイル駅が徒歩3分なら、なぜほかで降りるのですか。",
+        a: "会場がそう言っているからです。アクセスのページは、ソウル方面および水原・安養方面から来る人にはクロ駅で降りて混雑を避けるよう伝え、仁川・富川方面から来る人にはケボン駅で降りるよう伝えています。これは旅行者の意見ではなく、運営者が退場時の自分の駅について述べていることです。",
+      },
+      {
+        q: "コンサートの夜は何人くらい来るのですか。",
+        a: "会場は文化イベントで約25,000人、野球では座席数16,601席としています。通常の試合日より約5割多い人が同じ出口から出ることになり、混雑の案内が存在する理由はそれです。",
+      },
+      {
+        q: "車やタクシーで行って駐車できますか。",
+        a: "できない前提で計画してください。484台分があり、08:00から22:00まで5分150ウォンですが、運営者は野球およびイベントの日は駐車場が主催者により全面的に押さえられ、一般利用は制限されると明記しています。52人に1台という比率は、そもそも開いていればの話です。",
+      },
+      {
+        q: "高尺スカイドームはKSPO Domeと同じですか。",
+        a: "違います。そして互いに近くもありません。高尺スカイドームはソウル西部、九老区の京仁路430にあり、ソウル施設公団が運営しています。KSPO Domeは南東部、松坡区のオリンピック公園の中にあり、別の運営者です。予約ページの会場名と住所を照らし合わせてください。",
+      },
+      {
+        q: "持ち込みの可否は誰に聞けばいいですか。",
+        a: "会場ではなく主催者です。建物が公開するのはアクセス、駐車、設備です。入場時刻、手荷物の規則、待機列の位置、開場時刻は公演ごとに決まり、あなたの公演のチケッティングのページに出ます。会場の窓口はドーム運営処の02-2128-2300で、答えられるのは建物についてだけです。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "前往高尺天空巨蛋：最近的車站不是正確的車站",
+    summary:
+      "兩萬五千人、484個車位，以及一個由營運者自己寫明請你提前一站下車的場館。最近的出口走三分鐘就到，而那大概是你該避開的出口。",
+    scope:
+      "涵蓋為了看演唱會而抵達高尺天空巨蛋的過程，取自營運它的首爾設施公團頁面：車站、出口、步行時間、場館自己公布的人潮建議，以及停車場。刻意只寫一個場館。KSPO Dome與Inspire Arena各自需要自己的頁面與各自營運者的來源，本頁不能替代。這裡沒有任何逐場次的資訊——可攜帶什麼、何時開放入場，由主辦方而不是建築決定。",
+    intro: [
+      "票面告訴你場館和時間。它不會告訴你，連著場館的那個車站也是其他所有持票者正要走出來的車站，而這棟建築的營運者就用平白的韓文寫在自己的網站上。",
+      "這是把一個場館從頭到尾讀完，用營運它的公團自己的說法。有用的不是地址，而是那份名單上的四個車站裡，有兩個的存在是為了把人帶離最近的那一個。",
+    ],
+    steps: [
+      {
+        title: "先確認你的場次究竟在哪一個場館",
+        body: "首爾有好幾座大型場館，而它們的英文名字重疊得很糟。高尺天空巨蛋（고척스카이돔）在九老區京仁路430號，郵遞區號08223，由首爾設施公團營運。它不是KSPO Dome，那一座在松坡區的奧林匹克公園裡，由完全不同的機構營運；它也不是Inspire Arena，那一座在仁川；它更不是首爾世界盃競技場，那是麻浦區上岩的露天競技場——同一個營運者也經營那一座，所以用營運者的名字搜尋會同時給你兩個。先把預訂頁面上的場館名字和地址對一遍再規劃任何事，因為兩者相距一小時。",
+        pitfall:
+          "看到巨蛋二字就以為只有一座。首爾最大的場館中有兩座名字裡都有巨蛋，而且分別在城市的兩端，在18時才弄懂這件事的粉絲趕不上演出。",
+        takes: "5分鐘",
+      },
+      {
+        title: "知道最近的車站，也知道它只要三分鐘",
+        body: "1號線九一站2號出口，直走約150公尺，場館寫的是步行三分鐘。那是最短的路線，而且確實很短。它公布的另外三條都更長。1號線開峰站2號出口，直走200公尺後向右，再走650公尺，巨蛋在你的右手邊：步行約十五分鐘，或搭往高尺橋方向的社區公車06號。1號線九老站，出站後向左，直走一公里，過高尺橋後巨蛋在你的左手邊：步行約二十分鐘，或搭公車5712號與5626號。1號線與2號線的新道林站，從1號出口搭公車三站，有十條路線在跑，其中包括160號。",
+        pitfall:
+          "把三分鐘的步行當成理所當然的答案。那是最短的路線，而下一步就是場館自己解釋為什麼它可能是錯的那一條。那個頁面上有一個數字跟自己不一致：車站表把九老寫成1號出口，但印在它下面的逐步路線和場館自己的周邊地圖都寫2號出口。三個來源裡有兩個說2號，而且兩個出口都在同一座車站裡，所以猜錯的代價是一分鐘。",
+        takes: "5分鐘",
+      },
+      {
+        title: "讀場館自己印出來的人潮建議",
+        body: "這是本頁真正值得的部分，而且是營運者公布的，不是從部落格推論出來的。交通頁面在車站表上方有兩行：從首爾方向以及水原、安養方向來的人，被告知可以在九老站下車以避開擁擠；從仁川、富川方向來的人，則被告知對開峰站做同樣的事。這是建築在告訴你，滿場的夜晚它門口那個車站疏散不完，並且依照你從哪裡上車，指名你該改用哪一站。",
+        pitfall:
+          "聽從一個以距離為最佳解的路線程式。它每次都會把你送到九一站，因為它不知道場館對散場時那個出口所知道的事。",
+        takes: "5分鐘，在當天之前",
+      },
+      {
+        title: "理解為什麼擁擠比棒球的人潮更嚴重",
+        body: "同一座場館有兩個不同的數字。棒球時場館給的是16,601個座位；文化活動——演唱會、頒獎典禮——則說一次可以容納約25,000人。因此演唱會的夜晚，大約比這棟建築日常使用時多出五成的人，要通過同樣的門和同樣的月台。前一步那則建議背後就是這個算術。",
+        pitfall:
+          "用看棒球的經驗，或是用去過的朋友的說法來判斷人潮。就出口而言，演唱會的配置是另一棟建築。",
+        takes: "—",
+      },
+      {
+        title: "不要計畫停車，而原因不是車位數量",
+        body: "場館有三層共484個車位，08:00至22:00開放，每五分鐘收150韓元——三十分鐘900韓元，一小時1,800韓元，六小時10,800韓元。對上25,000人的演唱會人潮，那是每五十二人一個車位，光這一點就已經有答案了。但營運者加上了真正決定這件事的那句話：棒球日與活動日，停車場由主辦方全面接管，一般使用受到限制。所以限制不是它會停滿，而是它可能根本不對你開放。",
+        pitfall:
+          "以為走陸路是比較舒服的選項，於是叫了計程車或租了車。那條陸路的終點是一座主辦方當晚已經接管的停車場。",
+        takes: "5分鐘",
+      },
+      {
+        title: "只問建築知道的事",
+        body: "營運者回答的是關於建築的問題：交通、停車、設施、巨蛋本身。它的聯絡窗口是巨蛋營運處的營運組，電話02-2128-2300。它不決定的是你的場次——入場時間、可攜帶什麼、你的隊伍在哪裡排、何時開放進場，都屬於主辦方，並且是逐場公布在售票頁面上，而不是由場館公布。問場館包包的規定，你會得到一個關於建築一般政策的客氣答覆，而那不是你需要的答案。",
+        pitfall:
+          "把打給場館的電話當成場次規定的確認。兩者是不同的權責，而票面上寫的只有其中一個。",
+        takes: "10分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "高尺天空巨蛋是哪一站？",
+        a: "1號線九一站2號出口，約150公尺，步行三分鐘。它還公布三條較長的路線：開峰站2號出口，步行約十五分鐘，或往高尺橋方向的社區公車06號；九老站，過高尺橋步行約二十分鐘，或公車5712號與5626號；以及1號線與2號線的新道林站，從1號出口搭公車三站，有十條路線在跑，其中包括160號。場館自己的表格和逐步路線對九老是1號還是2號出口說法不一；路線說明和周邊地圖都說2號。",
+      },
+      {
+        q: "既然九一站只要三分鐘，我為什麼要在別站下車？",
+        a: "因為場館這麼說。它的交通頁面告訴從首爾方向以及水原、安養方向來的人在九老站下車以避開擁擠，告訴從仁川、富川方向來的人在開峰站下車。那是營運者在描述散場時它自己的車站，不是旅客的意見。",
+      },
+      {
+        q: "演唱會的夜晚大概有多少人？",
+        a: "場館給文化活動的數字是約25,000人，棒球則是16,601個座位。大致上比平常的比賽日多出五成的人要從同樣的出口離開，這就是那則人潮建議存在的原因。",
+      },
+      {
+        q: "我可以自己開車或搭計程車去那裡停嗎？",
+        a: "請以不行為前提規劃。那裡有484個車位，08:00至22:00開放，每五分鐘150韓元，但營運者明確表示棒球日與活動日停車場由主辦方全面保留，一般使用受到限制。每五十二人一個車位會是問題——前提是那座停車場對你開放。",
+      },
+      {
+        q: "高尺天空巨蛋和KSPO Dome是同一個嗎？",
+        a: "不是，而且兩者也不相鄰。高尺天空巨蛋在首爾西邊九老區的京仁路430號，由首爾設施公團營運。KSPO Dome在東南邊松坡區的奧林匹克公園裡，由不同的營運者負責。請把預訂頁面上的場館名字和地址對一遍。",
+      },
+      {
+        q: "可以帶什麼進場，該問誰？",
+        a: "問主辦方，不是場館。建築公布的是交通、停車和設施；入場時間、包包規定、排隊位置和開場時間是逐場設定的，會出現在你那場的售票頁面上。場館自己的線路是巨蛋營運處的02-2128-2300，而它只能告訴你關於建築的事。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menuju Gocheok Sky Dome: stasiun terdekat bukan stasiun yang tepat",
+    summary:
+      "Dua puluh lima ribu orang, 484 petak parkir, dan sebuah venue yang dengan kata-katanya sendiri menyuruh Anda turun satu perhentian lebih awal. Pintu keluar terdekat berjarak tiga menit jalan kaki dan justru itulah yang sebaiknya Anda hindari.",
+    scope:
+      "Mencakup cara mencapai Gocheok Sky Dome untuk sebuah konser, dari halaman Seoul Facilities Corporation yang mengelolanya: stasiun-stasiunnya, pintu keluarnya, waktu jalan kakinya, anjuran soal kepadatan yang diterbitkan venue itu sendiri, dan tempat parkirnya. Satu venue saja, dan itu disengaja. KSPO Dome dan Inspire Arena membutuhkan halaman sendiri dan sumber dari pengelolanya masing-masing, dan halaman ini bukan penggantinya. Tidak ada yang bersifat per acara di sini — apa yang boleh Anda bawa masuk dan kapan pintu dibuka berasal dari promotor, bukan dari bangunannya.",
+    intro: [
+      "Tiket memberi tahu Anda aula dan jamnya. Ia tidak memberi tahu bahwa stasiun yang menempel pada aula itu juga stasiun yang sedang dilalui semua pemegang tiket lainnya, dan bahwa pengelola bangunan itu menyatakannya di situsnya sendiri dalam bahasa Korea yang lugas.",
+      "Ini satu venue yang dibaca dari awal sampai akhir, dengan kata-kata perusahaan yang mengelolanya. Bagian yang berguna bukanlah alamatnya. Bagian itu adalah bahwa dua dari empat stasiun pada daftarnya ada untuk membawa orang menjauh dari yang terdekat.",
+    ],
+    steps: [
+      {
+        title: "Pastikan aula mana yang sebenarnya menjadi tempat pertunjukan Anda",
+        body: "Seoul punya beberapa aula besar dan nama-nama Inggrisnya bertumpang tindih dengan buruk. Gocheok Sky Dome — 고척스카이돔 — berada di Guro-gu di 430 Gyeongin-ro, kode pos 08223, dan dikelola oleh Seoul Facilities Corporation. Ia bukan KSPO Dome, yang berada di dalam Olympic Park di Songpa-gu dan dikelola organisasi yang sepenuhnya berbeda, dan ia bukan Inspire Arena, yang berada di Incheon. Ia juga bukan Seoul World Cup Stadium, stadion terbuka di Sangam di Mapo-gu — pengelola yang sama menjalankan yang itu, jadi pencarian dengan nama pengelolanya akan menawarkan keduanya kepada Anda. Cocokkan nama venue pada halaman pemesanan dengan alamatnya sebelum merencanakan apa pun, karena keduanya berjarak satu jam.",
+        pitfall:
+          "Membaca kata Dome dan menganggap hanya ada satu. Dua dari aula terbesar Seoul punya kata Dome pada namanya, keduanya berada di sisi kota yang berlawanan, dan penggemar yang baru memahami ini pada pukul 18:00 tidak akan sampai ke pertunjukannya.",
+        takes: "2 menit",
+      },
+      {
+        title: "Kenali stasiun terdekat, dan bahwa jaraknya tiga menit",
+        body: "Line 1, Stasiun Guil, pintu keluar 2: sekitar 150 meter lurus ke depan, yang oleh venue disebut sebagai tiga menit jalan kaki. Itu pendekatan terdekat dan memang benar-benar singkat. Tiga rute lain yang diterbitkannya lebih panjang. Stasiun Gaebong di Line 1, pintu keluar 2 — 200 meter lurus, ke kanan, lalu 650 meter, dan dome berada di sebelah kanan Anda: sekitar lima belas menit, atau bus desa 06 ke arah Jembatan Gocheok. Stasiun Guro di Line 1 — ke kiri dari pintu keluar, satu kilometer lurus, melintasi Jembatan Gocheok dan dome berada di sebelah kiri Anda: sekitar dua puluh menit, atau bus 5712 dan 5626. Sindorim di Line 1 dan 2 — bus dari pintu keluar 1, tiga perhentian, sepuluh rute beroperasi, salah satunya 160.",
+        pitfall:
+          "Menganggap jalan kaki tiga menit itu sebagai jawaban yang sudah jelas. Itu rute terpendek, dan langkah berikutnya adalah venue menjelaskan mengapa rute itu mungkin yang salah. Satu angka pada halaman itu juga bertentangan dengan dirinya sendiri: tabel stasiun menyebut Guro sebagai pintu keluar 1, sementara petunjuk arah yang tercetak di bawahnya dan peta kawasan milik venue sendiri keduanya menyebut pintu keluar 2. Dua dari tiga sumber menyebut 2, dan kedua pintu keluar berada di dalam stasiun yang sama, jadi biaya salah menebak adalah satu menit.",
+        takes: "5 menit",
+      },
+      {
+        title: "Baca anjuran soal kepadatan yang dicetak venue itu sendiri",
+        body: "Inilah bagian yang membuat halaman ini layak dibaca, dan ia diterbitkan oleh pengelola alih-alih disimpulkan dari sebuah blog. Halaman aksesnya memuat dua baris di atas tabel stasiun: orang yang datang dari arah Seoul dan dari arah Suwon atau Anyang diberi tahu bahwa mereka dapat menghindari kepadatan dengan turun di Stasiun Guro, dan orang yang datang dari arah Incheon atau Bucheon diberi tahu hal yang sama tentang Stasiun Gaebong. Bangunan itu sedang memberi tahu Anda bahwa pada malam yang penuh, stasiun di depan pintunya tidak terurai, dan menyebutkan perhentian mana yang harus dipakai sebagai gantinya tergantung dari mana Anda naik.",
+        pitfall:
+          "Mengikuti aplikasi rute yang mengoptimalkan jarak. Aplikasi itu akan mengirim Anda ke Guil setiap kali, karena ia tidak tahu apa yang diketahui venue tentang pintu keluar itu saat bubaran.",
+        takes: "5 menit, sebelum hari acara",
+      },
+      {
+        title: "Pahami mengapa desakannya lebih buruk daripada kerumunan bisbol",
+        body: "Aula yang sama memuat dua angka yang berbeda. Untuk bisbol venue menyebut 16,601 tempat duduk; untuk acara budaya — konser, ajang penghargaan — ia menyebut sekitar 25,000 orang dapat ditampung sekaligus. Oleh karena itu malam konser mengalirkan sekitar lima puluh persen lebih banyak orang melalui pintu yang sama dan ke peron yang sama dibandingkan penggunaan reguler bangunan itu, dan itulah hitungan di balik anjuran pada langkah sebelumnya.",
+        pitfall:
+          "Menilai kerumunan dari kunjungan menonton bisbol, atau dari teman yang pernah ke sana. Sejauh menyangkut pintu keluar, konfigurasi konser adalah bangunan yang berbeda.",
+        takes: "—",
+      },
+      {
+        title: "Jangan berencana memarkir, dan ketahui alasannya bukan kapasitas",
+        body: "Venue punya 484 petak parkir di tiga lantai, buka 08:00 sampai 22:00, dengan tarif 150 won per lima menit — 900 won untuk tiga puluh menit, 1,800 untuk satu jam, 10,800 untuk enam jam. Terhadap kerumunan konser sebanyak 25,000 orang itu berarti satu petak untuk setiap lima puluh dua orang, yang sendirian saja sudah menyelesaikan persoalannya. Tetapi pengelola menambahkan kalimat yang sebenarnya memutuskannya: pada hari bisbol dan hari acara, tempat parkir diambil alih sepenuhnya oleh penyelenggara, dan penggunaan umum dibatasi. Jadi kendalanya bukan bahwa tempat itu penuh. Kendalanya adalah bahwa tempat itu mungkin sama sekali tidak terbuka bagi Anda.",
+        pitfall:
+          "Memesan taksi atau sewa mobil dengan anggapan bahwa datang lewat jalan raya adalah pilihan yang nyaman. Pilihan lewat jalan raya itu berakhir di tempat parkir yang sudah diambil promotor untuk malam itu.",
+        takes: "5 menit",
+      },
+      {
+        title: "Tanyakan kepada bangunan hanya apa yang bangunan itu ketahui",
+        body: "Pengelola menjawab pertanyaan tentang bangunan: akses, parkir, fasilitas, dome itu sendiri. Kontaknya untuk itu adalah Dome Operations Division, tim operasi, di 02-2128-2300. Yang tidak ditetapkannya adalah pertunjukan Anda — waktu masuk, apa yang boleh Anda bawa, di mana barisan Anda terbentuk dan kapan pintu dibuka adalah milik promotor, dan semuanya diterbitkan per acara di halaman tiket alih-alih oleh venue. Menanyakan aturan tas kepada venue memberi Anda jawaban sopan tentang kebijakan umum bangunan itu, yang bukan jawaban yang Anda butuhkan.",
+        pitfall:
+          "Memperlakukan panggilan telepon ke venue sebagai konfirmasi aturan sebuah acara. Keduanya adalah otoritas yang berbeda dan hanya satu di antaranya ada di tiket Anda.",
+        takes: "10 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome ada di stasiun mana?",
+        a: "Stasiun Guil di Line 1, pintu keluar 2, sekitar 150 meter dan tiga menit jalan kaki. Venue juga menerbitkan tiga rute yang lebih panjang: Stasiun Gaebong pintu keluar 2, sekitar lima belas menit jalan kaki atau bus desa 06 ke arah Jembatan Gocheok; Stasiun Guro, sekitar dua puluh menit jalan kaki melintasi Jembatan Gocheok atau bus 5712 dan 5626; dan Sindorim di Line 1 dan 2, tiga perhentian dengan bus dari pintu keluar 1 dengan sepuluh rute beroperasi, salah satunya 160. Tabel milik venue dan petunjuk arahnya sendiri berbeda soal apakah Guro itu pintu keluar 1 atau 2; petunjuk arah dan peta kawasan keduanya menyebut 2.",
+      },
+      {
+        q: "Kalau Guil hanya tiga menit, mengapa saya harus turun di tempat lain?",
+        a: "Karena venue mengatakannya. Halaman aksesnya menyuruh orang yang datang dari arah Seoul dan dari arah Suwon atau Anyang turun di Guro untuk menghindari kepadatan, dan orang yang datang dari Incheon atau Bucheon turun di Gaebong. Itu pengelola yang menggambarkan stasiunnya sendiri saat bubaran, bukan pendapat seorang pelancong.",
+      },
+      {
+        q: "Berapa banyak orang yang ada pada malam konser?",
+        a: "Venue menyebut sekitar 25,000 untuk acara budaya, dibandingkan 16,601 tempat duduk untuk bisbol. Kurang lebih lima puluh persen lebih banyak orang keluar melalui pintu yang sama dibandingkan hari pertandingan biasa, dan itulah mengapa anjuran soal kepadatan itu ada.",
+      },
+      {
+        q: "Bisakah saya menyetir atau naik taksi dan memarkir di sana?",
+        a: "Rencanakan dengan jawaban tidak. Ada 484 petak, buka 08:00 sampai 22:00 dengan tarif 150 won per lima menit, tetapi pengelola menyatakan bahwa pada hari bisbol dan hari acara tempat parkir sepenuhnya dipesan oleh penyelenggara dan penggunaan umum dibatasi. Satu petak untuk lima puluh dua orang akan menjadi masalahnya kalau tempat itu memang terbuka bagi Anda.",
+      },
+      {
+        q: "Apakah Gocheok Sky Dome sama dengan KSPO Dome?",
+        a: "Tidak, dan keduanya tidak berdekatan. Gocheok Sky Dome berada di 430 Gyeongin-ro di Guro-gu, Seoul bagian barat, dikelola oleh Seoul Facilities Corporation. KSPO Dome berada di dalam Olympic Park di Songpa-gu, di sebelah tenggara, di bawah pengelola yang berbeda. Cocokkan nama venue pada halaman pemesanan Anda dengan alamatnya.",
+      },
+      {
+        q: "Kepada siapa saya menanyakan apa yang boleh saya bawa masuk?",
+        a: "Kepada promotor, bukan venue. Bangunan menerbitkan akses, parkir dan fasilitas; waktu masuk, aturan tas, posisi barisan dan waktu pintu dibuka ditetapkan per acara dan muncul di halaman tiket pertunjukan Anda. Saluran milik venue sendiri adalah Dome Operations Division di 02-2128-2300, dan ia hanya bisa memberi tahu Anda tentang bangunannya.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Zum Gocheok Sky Dome: die nächste Station ist nicht die richtige",
+    summary:
+      "Fünfundzwanzigtausend Menschen, 484 Parkplätze und ein Veranstaltungsort, der Ihnen mit eigenen Worten sagt, eine Station früher auszusteigen. Der nächste Ausgang ist drei Minuten entfernt und derjenige, den Sie wahrscheinlich meiden sollten.",
+    scope:
+      "Behandelt die Anreise zum Gocheok Sky Dome für ein Konzert, aus den Seiten der Seoul Facilities Corporation, die ihn betreibt: die Stationen, die Ausgänge, die Gehzeiten, die Hinweise zum Gedränge, die der Veranstaltungsort selbst veröffentlicht, und den Parkplatz. Bewusst nur ein Veranstaltungsort. KSPO Dome und Inspire Arena brauchen eigene Seiten und die Quellen ihrer eigenen Betreiber, für die diese Seite kein Ersatz ist. Nichts hier gilt pro Veranstaltung — was Sie mitbringen dürfen und wann die Türen öffnen, kommt vom Veranstalter und nicht vom Gebäude.",
+    intro: [
+      "Ein Ticket nennt Ihnen die Halle und die Stunde. Es nennt Ihnen nicht, dass die Station direkt an der Halle genau die ist, aus der auch jeder andere Ticketinhaber herauskommt, und dass der Betreiber des Gebäudes das auf seiner eigenen Website in klarem Koreanisch schreibt.",
+      "Das hier ist ein Veranstaltungsort, von vorn bis hinten gelesen, in den Worten der Gesellschaft, die ihn führt. Der nützliche Teil ist nicht die Adresse. Er ist, dass zwei der vier Stationen auf der Liste dazu da sind, Menschen von der nächstgelegenen wegzuführen.",
+    ],
+    steps: [
+      {
+        title: "Klären Sie, in welcher Halle Ihre Show tatsächlich ist",
+        body: "Seoul hat mehrere große Hallen, und ihre englischen Namen überlappen sich unangenehm. Der Gocheok Sky Dome — 고척스카이돔 — liegt in Guro-gu an der 430 Gyeongin-ro, Postleitzahl 08223, und wird von der Seoul Facilities Corporation betrieben. Er ist nicht der KSPO Dome, der im Olympic Park in Songpa-gu liegt und von einer völlig anderen Organisation betrieben wird, und er ist nicht die Inspire Arena, die in Incheon liegt. Er ist auch nicht das Seoul World Cup Stadium, das Freiluftstadion in Sangam in Mapo-gu — dasselbe Unternehmen führt auch dieses, eine Suche nach dem Betreibernamen bietet Ihnen also beide an. Prüfen Sie den Namen des Veranstaltungsorts auf der Buchungsseite gegen die Adresse, bevor Sie irgendetwas planen, denn die beiden liegen eine Stunde voneinander entfernt.",
+        pitfall:
+          "Dome zu lesen und anzunehmen, es gebe nur einen. Zwei der größten Hallen Seouls haben Dome im Namen, sie liegen an entgegengesetzten Enden der Stadt, und wer das um 18:00 erfährt, kommt nicht zur Show.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Kennen Sie die nächste Station, und dass sie drei Minuten entfernt ist",
+        body: "Line 1, Station Guil, Ausgang 2: etwa 150 Meter geradeaus, was der Veranstaltungsort als drei Minuten Fußweg angibt. Das ist die kürzeste Annäherung und wirklich kurz. Die drei anderen Wege, die er veröffentlicht, sind länger. Station Gaebong an der Line 1, Ausgang 2 — 200 Meter geradeaus, nach rechts, dann 650 Meter, und der Dome liegt rechts: etwa fünfzehn Minuten, oder der Ortsbus 06 Richtung Gocheok-Brücke. Station Guro an der Line 1 — links aus dem Ausgang, einen Kilometer geradeaus, über die Gocheok-Brücke, und der Dome liegt links: etwa zwanzig Minuten, oder die Busse 5712 und 5626. Sindorim an den Lines 1 und 2 — Bus ab Ausgang 1, drei Haltestellen, zehn Linien verkehren, darunter die 160.",
+        pitfall:
+          "Die drei Minuten Fußweg als die offensichtliche Antwort zu nehmen. Es ist der kürzeste Weg, und der nächste Schritt ist der Veranstaltungsort, der erklärt, warum er der falsche sein kann. Eine Zahl auf jener Seite widerspricht sich auch selbst: die Stationstabelle nennt für Guro den Ausgang 1, während die darunter gedruckte Wegbeschreibung und der eigene Umgebungsplan des Veranstaltungsorts beide Ausgang 2 nennen. Zwei von drei Quellen sagen 2, und beide Ausgänge liegen in derselben Station, der Preis für ein falsches Raten ist also eine Minute.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Lesen Sie die Gedränge-Hinweise, die der Veranstaltungsort selbst druckt",
+        body: "Das ist der Teil, der diese Seite wert ist, und er wird vom Betreiber veröffentlicht und nicht aus einem Blog abgeleitet. Die Anreiseseite trägt zwei Zeilen über der Stationstabelle: Menschen, die aus Seoul und aus Richtung Suwon oder Anyang kommen, wird gesagt, dass sie das Gedränge umgehen können, indem sie an der Station Guro aussteigen, und Menschen aus Richtung Incheon oder Bucheon wird dasselbe über die Station Gaebong gesagt. Das Gebäude sagt Ihnen damit, dass sich die Station vor seiner Tür an einem vollen Abend nicht leert, und nennt, welchen Halt Sie stattdessen nehmen sollen, je nachdem, wo Sie eingestiegen sind.",
+        pitfall:
+          "Einer Routing-App zu folgen, die auf Entfernung optimiert. Sie schickt Sie jedes Mal nach Guil, weil sie nicht weiß, was der Veranstaltungsort über diesen Ausgang beim Abströmen weiß.",
+        takes: "5 Minuten, vor dem Tag",
+      },
+      {
+        title: "Verstehen Sie, warum das Gedränge schlimmer ist als bei einem Baseballpublikum",
+        body: "Dieselbe Halle trägt zwei verschiedene Zahlen. Für Baseball gibt der Veranstaltungsort 16,601 Sitzplätze an; für kulturelle Veranstaltungen — Konzerte, Preisverleihungen — sagt er, es könnten etwa 25,000 Menschen gleichzeitig untergebracht werden. Ein Konzertabend schickt also rund fünfzig Prozent mehr Menschen durch dieselben Türen und auf denselben Bahnsteig als die reguläre Nutzung des Gebäudes, und das ist die Rechnung hinter dem Hinweis im vorigen Schritt.",
+        pitfall:
+          "Das Gedränge von einem Baseballbesuch aus zu beurteilen, oder von einer Freundin, die bei einem war. Was die Ausgänge betrifft, ist die Konzertbestuhlung ein anderes Gebäude.",
+        takes: "—",
+      },
+      {
+        title: "Planen Sie nicht zu parken, und der Grund ist nicht die Kapazität",
+        body: "Der Veranstaltungsort hat 484 Parkplätze auf drei Ebenen, geöffnet von 08:00 bis 22:00, berechnet mit 150 Won je fünf Minuten — 900 Won für dreißig Minuten, 1,800 für eine Stunde, 10,800 für sechs. Gegen ein Konzertpublikum von 25,000 ist das ein Platz für je zweiundfünfzig Menschen, womit die Frage bereits entschieden wäre. Doch der Betreiber ergänzt den Satz, der sie tatsächlich entscheidet: an Baseball- und Veranstaltungstagen wird der Parkplatz vollständig vom Veranstalter übernommen, und die öffentliche Nutzung ist eingeschränkt. Die Beschränkung ist also nicht, dass er sich füllt. Sie ist, dass er Ihnen überhaupt nicht offenstehen könnte.",
+        pitfall:
+          "Ein Taxi oder einen Mietwagen in der Annahme zu buchen, die Anreise auf der Straße sei die bequeme Variante. Die Straßenvariante endet an einem Parkplatz, den der Veranstalter für den Abend genommen hat.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Fragen Sie das Gebäude nur, was das Gebäude weiß",
+        body: "Der Betreiber beantwortet Fragen zum Gebäude: Anreise, Parken, Einrichtungen, der Dome selbst. Sein Kontakt dafür ist die Dome Operations Division, Betriebsteam, unter 02-2128-2300. Was er nicht festlegt, ist Ihre Show — Einlasszeit, was Sie mitbringen dürfen, wo sich Ihre Schlange bildet und wann die Türen öffnen, gehören dem Veranstalter und werden pro Veranstaltung auf der Ticketseite veröffentlicht, nicht vom Veranstaltungsort. Wer den Veranstaltungsort nach Taschenregeln fragt, erhält eine höfliche Antwort zur allgemeinen Hausordnung, und das ist nicht die Antwort, die man gebraucht hat.",
+        pitfall:
+          "Einen Anruf beim Veranstaltungsort als Bestätigung einer Veranstaltungsregel zu behandeln. Das sind zwei verschiedene Zuständigkeiten, und nur eine davon steht auf Ihrem Ticket.",
+        takes: "10 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Welche Station ist der Gocheok Sky Dome?",
+        a: "Station Guil an der Line 1, Ausgang 2, etwa 150 Meter und drei Minuten Fußweg. Er veröffentlicht auch drei längere Wege: Station Gaebong Ausgang 2, etwa fünfzehn Minuten zu Fuß oder Ortsbus 06 Richtung Gocheok-Brücke; Station Guro, etwa zwanzig Minuten zu Fuß über die Gocheok-Brücke oder die Busse 5712 und 5626; und Sindorim an den Lines 1 und 2, drei Haltestellen mit dem Bus ab Ausgang 1, zehn Linien verkehren, darunter die 160. Die eigene Tabelle des Veranstaltungsorts und seine Wegbeschreibung widersprechen sich, ob Guro Ausgang 1 oder Ausgang 2 ist; die Wegbeschreibung und der Umgebungsplan sagen beide 2.",
+      },
+      {
+        q: "Wenn Guil drei Minuten entfernt ist, warum sollte ich irgendwo anders aussteigen?",
+        a: "Weil der Veranstaltungsort es sagt. Seine Anreiseseite sagt Menschen aus Seoul und aus Richtung Suwon oder Anyang, sie sollten in Guro aussteigen, um das Gedränge zu umgehen, und Menschen aus Incheon oder Bucheon, sie sollten in Gaebong aussteigen. Das ist der Betreiber, der seine eigene Station beim Abströmen beschreibt, und nicht die Meinung einer Reisenden.",
+      },
+      {
+        q: "Wie viele Menschen sind an einem Konzertabend dort?",
+        a: "Der Veranstaltungsort gibt für kulturelle Veranstaltungen etwa 25,000 an, gegenüber 16,601 Sitzplätzen für Baseball. Grob fünfzig Prozent mehr Menschen verlassen das Gebäude durch dieselben Ausgänge als an einem normalen Spieltag, und deshalb gibt es die Gedränge-Hinweise.",
+      },
+      {
+        q: "Kann ich mit dem Auto oder Taxi kommen und dort parken?",
+        a: "Planen Sie mit nein. Es gibt 484 Plätze, geöffnet von 08:00 bis 22:00 zu 150 Won je fünf Minuten, aber der Betreiber erklärt, dass an Baseball- und Veranstaltungstagen der Parkplatz vollständig vom Veranstalter reserviert ist und die öffentliche Nutzung eingeschränkt wird. Ein Platz je zweiundfünfzig Menschen wäre das Problem, wenn er Ihnen überhaupt offenstünde.",
+      },
+      {
+        q: "Ist der Gocheok Sky Dome dasselbe wie der KSPO Dome?",
+        a: "Nein, und sie liegen nicht nahe beieinander. Der Gocheok Sky Dome liegt an der 430 Gyeongin-ro in Guro-gu im Westen Seouls und wird von der Seoul Facilities Corporation betrieben. Der KSPO Dome liegt im Olympic Park in Songpa-gu im Südosten, unter einem anderen Betreiber. Prüfen Sie den Namen des Veranstaltungsorts auf Ihrer Buchungsseite gegen die Adresse.",
+      },
+      {
+        q: "Wen frage ich, was ich mitbringen darf?",
+        a: "Den Veranstalter, nicht den Veranstaltungsort. Das Gebäude veröffentlicht Anreise, Parken und Einrichtungen; Einlasszeit, Taschenregeln, Schlangenposition und Türöffnung werden pro Veranstaltung festgelegt und erscheinen auf der Ticketseite Ihrer Show. Die eigene Leitung des Veranstaltungsorts ist die Dome Operations Division unter 02-2128-2300, und sie kann Ihnen nur etwas über das Gebäude sagen.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Llegar al Gocheok Sky Dome: la estación más cercana no es la estación correcta",
+    summary:
+      "Veinticinco mil personas, 484 plazas de aparcamiento y un recinto que con sus propias palabras te dice que te bajes una parada antes. La salida más cercana queda a tres minutos andando y es la que probablemente deberías evitar.",
+    scope:
+      "Cubre cómo llegar al Gocheok Sky Dome para un concierto, a partir de las páginas de la Seoul Facilities Corporation, que lo gestiona: las estaciones, las salidas, los tiempos a pie, los avisos sobre aglomeración que publica el propio recinto, y el aparcamiento. Un solo recinto, y es deliberado. El KSPO Dome y el Inspire Arena necesitan sus propias páginas y las fuentes de sus propios operadores, y esta página no las sustituye. Aquí no hay nada propio de un evento concreto: qué puedes llevar dentro y cuándo abren las puertas lo decide la promotora, no el edificio.",
+    intro: [
+      "Una entrada te dice la sala y la hora. No te dice que la estación pegada a la sala es la misma por la que están saliendo todos los demás que tienen entrada, y que el operador del edificio lo dice en su propia web en coreano llano.",
+      "Esto es un recinto leído de principio a fin, con las palabras de la corporación que lo gestiona. La parte útil no es la dirección. Es que dos de las cuatro estaciones de la lista existen para alejar a la gente de la más cercana.",
+    ],
+    steps: [
+      {
+        title: "Confirma en qué sala está realmente tu concierto",
+        body: "Seúl tiene varias salas grandes y sus nombres en inglés se solapan de mala manera. El Gocheok Sky Dome — 고척스카이돔 — está en Guro-gu, en el 430 de Gyeongin-ro, código postal 08223, y lo gestiona la Seoul Facilities Corporation. No es el KSPO Dome, que está dentro del Olympic Park, en Songpa-gu, y lo gestiona una organización completamente distinta, y no es el Inspire Arena, que está en Incheon. Tampoco es el Seoul World Cup Stadium, el estadio al aire libre de Sangam, en Mapo-gu: lo gestiona el mismo operador, así que una búsqueda por el nombre del operador te ofrecerá los dos. Comprueba el nombre del recinto en la página de compra contra la dirección antes de planear nada, porque están a una hora el uno del otro.",
+        pitfall:
+          "Leer Dome y dar por hecho que solo hay uno. Dos de las salas más grandes de Seúl llevan Dome en el nombre, están en lados opuestos de la ciudad, y quien se entera de esto a las 18:00 no llega al concierto.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Conoce la estación más cercana, y que está a tres minutos",
+        body: "Line 1, estación de Guil, salida 2: unos 150 metros en línea recta, que el recinto da como tres minutos andando. Es el acceso más corto y de verdad lo es. Las otras tres rutas que publica son más largas. Estación de Gaebong en la Line 1, salida 2: 200 metros recto, a la derecha, luego 650 metros, y el dome queda a tu derecha; unos quince minutos, o el autobús de barrio 06 hacia el puente de Gocheok. Estación de Guro en la Line 1: a la izquierda al salir, un kilómetro recto, cruzando el puente de Gocheok, y el dome queda a tu izquierda; unos veinte minutos, o los autobuses 5712 y 5626. Sindorim, en las Lines 1 y 2: autobús desde la salida 1, tres paradas, con diez líneas en servicio, entre ellas la 160.",
+        pitfall:
+          "Tomar los tres minutos a pie como la respuesta obvia. Es la ruta más corta, y el paso siguiente es el propio recinto explicando por qué puede ser la equivocada. Un número de esa página también se contradice: la tabla de estaciones da Guro como salida 1, mientras que las indicaciones impresas debajo y el plano de la zona del propio recinto dicen las dos salida 2. Dos de tres fuentes dicen 2, y las dos salidas están dentro de la misma estación, así que equivocarse cuesta un minuto.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Lee los avisos sobre aglomeración que imprime el propio recinto",
+        body: "Esta es la parte que justifica la página, y la publica el operador en lugar de deducirse de un blog. La página de acceso lleva dos líneas encima de la tabla de estaciones: a quien venga de Seúl y de la dirección de Suwon o Anyang se le dice que puede evitar la aglomeración bajándose en la estación de Guro, y a quien venga de la dirección de Incheon o Bucheon se le dice lo mismo sobre la estación de Gaebong. El edificio te está diciendo que, en una noche llena, la estación de su puerta no se despeja, y nombrando qué parada usar en su lugar según dónde te hayas subido.",
+        pitfall:
+          "Seguir una aplicación de rutas que optimiza la distancia. Te mandará a Guil siempre, porque no sabe lo que el recinto sabe sobre esa salida a la hora de la salida del público.",
+        takes: "5 minutos, antes del día",
+      },
+      {
+        title: "Entiende por qué el apretón es peor que con un público de béisbol",
+        body: "La misma sala sostiene dos cifras distintas. Para el béisbol el recinto da 16,601 asientos; para eventos culturales — conciertos, galas de premios — dice que caben unas 25,000 personas a la vez. Una noche de concierto mete por tanto alrededor de un cincuenta por ciento más de gente por las mismas puertas y al mismo andén que el uso habitual del edificio, y esa es la aritmética que hay detrás del aviso del paso anterior.",
+        pitfall:
+          "Juzgar la aglomeración por una visita al béisbol, o por una amiga que fue a una. En lo que respecta a las salidas, la configuración de concierto es otro edificio.",
+        takes: "—",
+      },
+      {
+        title: "No planees aparcar, y que sepas que el motivo no es el aforo",
+        body: "El recinto tiene 484 plazas en tres niveles, abiertas de 08:00 a 22:00, a 150 wones por cada cinco minutos: 900 wones por media hora, 1,800 por una hora, 10,800 por seis. Frente a un público de concierto de 25,000 personas, eso es una plaza por cada cincuenta y dos, lo que ya zanjaría el asunto. Pero el operador añade la frase que de verdad lo decide: los días de béisbol y de evento el aparcamiento lo ocupa íntegramente la organización, y el uso público queda restringido. Así que la limitación no es que se llene. Es que puede no estar abierto para ti en absoluto.",
+        pitfall:
+          "Reservar un taxi o un coche de alquiler dando por hecho que llegar por carretera es la opción cómoda. La opción por carretera termina en un aparcamiento que la promotora ha tomado para esa noche.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pregunta al edificio solo lo que el edificio sabe",
+        body: "El operador responde preguntas sobre el edificio: acceso, aparcamiento, instalaciones, el dome en sí. Su contacto para eso es la Dome Operations Division, equipo de operaciones, en el 02-2128-2300. Lo que no fija es tu concierto: la hora de entrada, qué puedes llevar, dónde se forma tu cola y cuándo abren las puertas son de la promotora, y se publican por evento en la página de venta en lugar de por el recinto. Preguntar al recinto por las normas de bolsos te da una respuesta amable sobre la política general del edificio, que no es la respuesta que necesitabas.",
+        pitfall:
+          "Tratar una llamada al recinto como confirmación de una norma del evento. Son dos autoridades distintas y solo una de ellas está en tu entrada.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿En qué estación está el Gocheok Sky Dome?",
+        a: "Estación de Guil en la Line 1, salida 2, unos 150 metros y tres minutos andando. También publica tres rutas más largas: estación de Gaebong salida 2, unos quince minutos a pie o el autobús de barrio 06 hacia el puente de Gocheok; estación de Guro, unos veinte minutos a pie cruzando el puente de Gocheok o los autobuses 5712 y 5626; y Sindorim, en las Lines 1 y 2, tres paradas en autobús desde la salida 1 con diez líneas en servicio, entre ellas la 160. La tabla del propio recinto y sus indicaciones no coinciden en si Guro es la salida 1 o la 2; las indicaciones y el plano de la zona dicen las dos 2.",
+      },
+      {
+        q: "Si Guil está a tres minutos, ¿por qué iba a bajarme en otro sitio?",
+        a: "Porque lo dice el recinto. Su página de acceso dice a quien llega de Seúl y de la dirección de Suwon o Anyang que se baje en Guro para evitar la aglomeración, y a quien llega de Incheon o Bucheon que se baje en Gaebong. Es el operador describiendo su propia estación a la salida del público, no la opinión de un viajero.",
+      },
+      {
+        q: "¿Cuánta gente hay una noche de concierto?",
+        a: "El recinto da unas 25,000 personas para eventos culturales, frente a 16,601 asientos para el béisbol. Alrededor de un cincuenta por ciento más de gente sale por las mismas puertas que un día de partido normal, y por eso existen los avisos sobre aglomeración.",
+      },
+      {
+        q: "¿Puedo ir en coche o en taxi y aparcar allí?",
+        a: "Cuenta con que no. Hay 484 plazas, abiertas de 08:00 a 22:00 a 150 wones por cada cinco minutos, pero el operador declara que los días de béisbol y de evento el aparcamiento queda reservado por completo para la organización y el uso público se restringe. Una plaza por cada cincuenta y dos personas sería el problema si el aparcamiento estuviera abierto para ti.",
+      },
+      {
+        q: "¿El Gocheok Sky Dome es lo mismo que el KSPO Dome?",
+        a: "No, y no están cerca. El Gocheok Sky Dome está en el 430 de Gyeongin-ro, en Guro-gu, al oeste de Seúl, gestionado por la Seoul Facilities Corporation. El KSPO Dome está dentro del Olympic Park, en Songpa-gu, al sureste, con otro operador. Comprueba el nombre del recinto en tu página de compra contra la dirección.",
+      },
+      {
+        q: "¿A quién le pregunto qué puedo llevar dentro?",
+        a: "A la promotora, no al recinto. El edificio publica acceso, aparcamiento e instalaciones; la hora de entrada, las normas de bolsos, la posición de la cola y la apertura de puertas se fijan por evento y aparecen en la página de venta de tu concierto. La línea del propio recinto es la Dome Operations Division en el 02-2128-2300, y solo puede hablarte del edificio.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Se rendre au Gocheok Sky Dome : la station la plus proche n'est pas la bonne",
+    summary:
+      "Vingt-cinq mille personnes, 484 places de stationnement, et une salle qui vous dit dans ses propres mots de descendre une station plus tôt. La sortie la plus proche est à trois minutes à pied et c'est probablement celle qu'il faut éviter.",
+    scope:
+      "Couvre l'accès au Gocheok Sky Dome pour un concert, d'après les pages de la Seoul Facilities Corporation qui l'exploite : les stations, les sorties, les temps de marche, les conseils sur l'affluence que la salle publie elle-même, et le parking. Une seule salle, délibérément. Le KSPO Dome et l'Inspire Arena ont besoin de leurs propres pages et des sources de leurs propres exploitants, auxquelles cette page ne se substitue pas. Rien ici ne dépend de l'événement : ce que vous pouvez apporter et l'heure d'ouverture des portes viennent du promoteur et non du bâtiment.",
+    intro: [
+      "Un billet vous donne la salle et l'heure. Il ne vous dit pas que la station accolée à la salle est celle dont sortent aussi tous les autres détenteurs de billets, et que l'exploitant du bâtiment l'écrit sur son propre site, en coréen simple.",
+      "Voici une salle lue d'un bout à l'autre, dans les mots de la société qui la gère. La partie utile n'est pas l'adresse. C'est que deux des quatre stations de la liste existent pour éloigner les gens de la plus proche.",
+    ],
+    steps: [
+      {
+        title: "Vérifiez dans quelle salle votre concert a vraiment lieu",
+        body: "Séoul compte plusieurs grandes salles et leurs noms anglais se recoupent fâcheusement. Le Gocheok Sky Dome — 고척스카이돔 — se trouve à Guro-gu, au 430 Gyeongin-ro, code postal 08223, et il est exploité par la Seoul Facilities Corporation. Ce n'est pas le KSPO Dome, qui se trouve dans l'Olympic Park à Songpa-gu et qu'exploite une organisation entièrement différente, et ce n'est pas l'Inspire Arena, qui est à Incheon. Ce n'est pas non plus le Seoul World Cup Stadium, le stade à ciel ouvert de Sangam à Mapo-gu — le même exploitant gère celui-là, donc une recherche sur le nom de l'exploitant vous proposera les deux. Comparez le nom de la salle sur la page de réservation avec l'adresse avant de planifier quoi que ce soit, car les deux sont à une heure l'un de l'autre.",
+        pitfall:
+          "Lire Dome et supposer qu'il n'y en a qu'un. Deux des plus grandes salles de Séoul ont Dome dans leur nom, elles sont aux extrémités opposées de la ville, et la personne qui l'apprend à 18:00 n'arrive pas au concert.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Connaissez la station la plus proche, et sachez qu'elle est à trois minutes",
+        body: "Line 1, station Guil, sortie 2 : environ 150 mètres tout droit, ce que la salle donne comme trois minutes à pied. C'est l'approche la plus courte et elle l'est vraiment. Les trois autres itinéraires qu'elle publie sont plus longs. Station Gaebong sur la Line 1, sortie 2 — 200 mètres tout droit, à droite, puis 650 mètres, et le dome est sur votre droite : environ quinze minutes, ou le bus de quartier 06 vers le pont de Gocheok. Station Guro sur la Line 1 — à gauche en sortant, un kilomètre tout droit, par-dessus le pont de Gocheok, et le dome est sur votre gauche : environ vingt minutes, ou les bus 5712 et 5626. Sindorim sur les Lines 1 et 2 — bus depuis la sortie 1, trois arrêts, dix lignes en service, dont la 160.",
+        pitfall:
+          "Prendre les trois minutes à pied pour la réponse évidente. C'est l'itinéraire le plus court, et l'étape suivante est la salle qui explique pourquoi il peut être le mauvais. Un chiffre de cette page se contredit aussi lui-même : le tableau des stations donne Guro à la sortie 1, tandis que l'itinéraire détaillé imprimé en dessous et le plan de quartier de la salle disent tous deux sortie 2. Deux sources sur trois disent 2, et les deux sorties sont dans la même station : se tromper coûte une minute.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Lisez les conseils sur l'affluence que la salle imprime elle-même",
+        body: "C'est la partie qui justifie cette page, et elle est publiée par l'exploitant plutôt que déduite d'un blog. La page d'accès porte deux lignes au-dessus du tableau des stations : on dit aux personnes venant de Séoul et de la direction de Suwon ou d'Anyang qu'elles peuvent éviter l'engorgement en descendant à la station Guro, et aux personnes venant de la direction d'Incheon ou de Bucheon la même chose à propos de la station Gaebong. Le bâtiment vous dit qu'un soir de pleine salle, la station devant sa porte ne se vide pas, et il nomme l'arrêt à utiliser à la place selon l'endroit où vous êtes monté.",
+        pitfall:
+          "Suivre une application d'itinéraire qui optimise la distance. Elle vous envoie à Guil chaque fois, parce qu'elle ne sait pas ce que la salle sait de cette sortie au moment où le public s'écoule.",
+        takes: "5 minutes, avant le jour",
+      },
+      {
+        title: "Comprenez pourquoi la cohue est pire qu'avec un public de baseball",
+        body: "La même salle porte deux chiffres différents. Pour le baseball, la salle donne 16,601 places assises ; pour les événements culturels — concerts, remises de prix — elle dit qu'environ 25,000 personnes peuvent être accueillies à la fois. Un soir de concert fait donc passer à peu près cinquante pour cent de personnes en plus par les mêmes portes et sur le même quai que l'usage courant du bâtiment, et c'est le calcul qui se trouve derrière le conseil de l'étape précédente.",
+        pitfall:
+          "Juger de la foule d'après une visite au baseball, ou d'après une amie qui y est allée. Du point de vue des sorties, la configuration concert est un autre bâtiment.",
+        takes: "—",
+      },
+      {
+        title: "Ne prévoyez pas de vous garer, et la raison n'est pas la capacité",
+        body: "La salle dispose de 484 places sur trois niveaux, ouvertes de 08:00 à 22:00, facturées 150 wons par tranche de cinq minutes — 900 wons pour trente minutes, 1,800 pour une heure, 10,800 pour six. Face à un public de concert de 25,000 personnes, cela fait une place pour cinquante-deux personnes, ce qui trancherait déjà la question. Mais l'exploitant ajoute la phrase qui la tranche réellement : les jours de baseball et d'événement, le parking est entièrement pris par l'organisateur et l'usage public est restreint. La contrainte n'est donc pas qu'il se remplit. C'est qu'il peut ne pas vous être ouvert du tout.",
+        pitfall:
+          "Réserver un taxi ou une voiture de location en supposant que l'arrivée par la route est l'option confortable. L'option routière se termine sur un parking que le promoteur a pris pour la soirée.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Ne demandez au bâtiment que ce que le bâtiment sait",
+        body: "L'exploitant répond aux questions sur le bâtiment : accès, stationnement, installations, le dome lui-même. Son contact pour cela est la Dome Operations Division, équipe d'exploitation, au 02-2128-2300. Ce qu'il ne fixe pas, c'est votre concert — l'heure d'entrée, ce que vous pouvez apporter, l'endroit où votre file se forme et l'heure d'ouverture des portes appartiennent au promoteur, et ils sont publiés par événement sur la page de billetterie plutôt que par la salle. Demander à la salle les règles sur les sacs vous vaut une réponse polie sur le règlement général du bâtiment, qui n'est pas la réponse dont vous aviez besoin.",
+        pitfall:
+          "Traiter un appel à la salle comme la confirmation d'une règle de l'événement. Ce sont deux autorités différentes et une seule des deux figure sur votre billet.",
+        takes: "10 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Quelle est la station du Gocheok Sky Dome ?",
+        a: "La station Guil sur la Line 1, sortie 2, environ 150 mètres et trois minutes à pied. Elle publie aussi trois itinéraires plus longs : station Gaebong sortie 2, environ quinze minutes à pied ou le bus de quartier 06 vers le pont de Gocheok ; station Guro, environ vingt minutes à pied par le pont de Gocheok ou les bus 5712 et 5626 ; et Sindorim sur les Lines 1 et 2, trois arrêts en bus depuis la sortie 1, avec dix lignes en service, dont la 160. Le tableau de la salle et son itinéraire détaillé se contredisent sur la sortie de Guro, 1 ou 2 ; l'itinéraire et le plan de quartier disent tous deux 2.",
+      },
+      {
+        q: "Si Guil est à trois minutes, pourquoi descendrais-je ailleurs ?",
+        a: "Parce que la salle le dit. Sa page d'accès demande aux personnes arrivant de Séoul et de la direction de Suwon ou d'Anyang de descendre à Guro pour éviter l'engorgement, et à celles arrivant d'Incheon ou de Bucheon de descendre à Gaebong. C'est l'exploitant qui décrit sa propre station à l'écoulement du public, et non l'avis d'un voyageur.",
+      },
+      {
+        q: "Combien de personnes y a-t-il un soir de concert ?",
+        a: "La salle donne environ 25,000 personnes pour les événements culturels, contre 16,601 places assises pour le baseball. En gros cinquante pour cent de personnes en plus sortent par les mêmes portes qu'un jour de match ordinaire, et c'est pour cela que les conseils sur l'affluence existent.",
+      },
+      {
+        q: "Puis-je venir en voiture ou en taxi et me garer sur place ?",
+        a: "Partez du principe que non. Il y a 484 places, ouvertes de 08:00 à 22:00 à 150 wons par tranche de cinq minutes, mais l'exploitant indique que les jours de baseball et d'événement le parking est entièrement réservé par l'organisateur et que l'usage public est restreint. Une place pour cinquante-deux personnes serait le problème si le parking vous était ne serait-ce qu'ouvert.",
+      },
+      {
+        q: "Le Gocheok Sky Dome est-il le même que le KSPO Dome ?",
+        a: "Non, et ils ne sont pas proches l'un de l'autre. Le Gocheok Sky Dome est au 430 Gyeongin-ro à Guro-gu, dans l'ouest de Séoul, exploité par la Seoul Facilities Corporation. Le KSPO Dome est dans l'Olympic Park à Songpa-gu, au sud-est, sous un autre exploitant. Comparez le nom de la salle sur votre page de réservation avec l'adresse.",
+      },
+      {
+        q: "À qui demander ce que je peux apporter ?",
+        a: "Au promoteur, pas à la salle. Le bâtiment publie l'accès, le stationnement et les installations ; l'heure d'entrée, les règles sur les sacs, la position de la file et l'heure d'ouverture des portes sont fixées par événement et apparaissent sur la page de billetterie de votre concert. La ligne de la salle elle-même est la Dome Operations Division au 02-2128-2300, et elle ne peut vous renseigner que sur le bâtiment.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Chegando ao Gocheok Sky Dome: a estação mais próxima não é a estação certa",
+    summary:
+      "Vinte e cinco mil pessoas, 484 vagas de estacionamento, e um local que com as próprias palavras manda você descer uma parada antes. A saída mais próxima fica a três minutos de caminhada e é a que você provavelmente deveria evitar.",
+    scope:
+      "Cobre como chegar ao Gocheok Sky Dome para um show, a partir das páginas da Seoul Facilities Corporation, que o administra: as estações, as saídas, os tempos de caminhada, os avisos sobre aglomeração que o próprio local publica, e o estacionamento. Um local só, de propósito. O KSPO Dome e o Inspire Arena precisam de páginas próprias e das fontes dos próprios operadores, e esta página não substitui isso. Nada aqui é específico de um evento — o que você pode levar para dentro e quando os portões abrem vêm da produtora, não do prédio.",
+    intro: [
+      "O ingresso informa a casa de espetáculo e a hora. Ele não informa que a estação encostada na casa é a mesma de onde estão saindo todos os outros que têm ingresso, e que o operador do prédio diz isso no próprio site, em coreano simples.",
+      "Isto é um local lido de ponta a ponta, nas palavras da corporação que o administra. A parte útil não é o endereço. É que duas das quatro estações da lista existem para levar as pessoas longe da mais próxima.",
+    ],
+    steps: [
+      {
+        title: "Confirme em qual casa o seu show realmente vai acontecer",
+        body: "Seul tem várias casas grandes e os nomes em inglês delas se sobrepõem de um jeito ruim. O Gocheok Sky Dome — 고척스카이돔 — fica em Guro-gu, na 430 Gyeongin-ro, CEP 08223, e é administrado pela Seoul Facilities Corporation. Ele não é o KSPO Dome, que fica dentro do Olympic Park, em Songpa-gu, e é administrado por uma organização completamente diferente, e não é o Inspire Arena, que fica em Incheon. Também não é o Seoul World Cup Stadium, o estádio a céu aberto de Sangam, em Mapo-gu — o mesmo operador cuida daquele, então uma busca pelo nome do operador vai oferecer os dois a você. Confira o nome do local na página de compra contra o endereço antes de planejar qualquer coisa, porque os dois ficam a uma hora um do outro.",
+        pitfall:
+          "Ler Dome e supor que existe apenas um. Duas das maiores casas de Seul têm Dome no nome, ficam em lados opostos da cidade, e quem descobre isso às 18:00 não chega ao show.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Saiba qual é a estação mais próxima, e que ela fica a três minutos",
+        body: "Line 1, estação Guil, saída 2: cerca de 150 metros em linha reta, o que o local informa como três minutos de caminhada. É a aproximação mais curta e de fato é curta. As outras três rotas que ele publica são mais longas. Estação Gaebong na Line 1, saída 2 — 200 metros reto, à direita, depois 650 metros, e o dome fica à sua direita: cerca de quinze minutos, ou o ônibus de bairro 06 no sentido da ponte de Gocheok. Estação Guro na Line 1 — à esquerda ao sair, um quilômetro reto, atravessando a ponte de Gocheok, e o dome fica à sua esquerda: cerca de vinte minutos, ou os ônibus 5712 e 5626. Sindorim, nas Lines 1 e 2 — ônibus a partir da saída 1, três paradas, com dez linhas em operação, entre elas a 160.",
+        pitfall:
+          "Tomar os três minutos a pé como a resposta óbvia. É a rota mais curta, e o passo seguinte é o próprio local explicando por que ela pode ser a errada. Um número daquela página também se contradiz: a tabela de estações dá Guro como saída 1, enquanto as instruções impressas abaixo dela e o mapa da região do próprio local dizem as duas saída 2. Duas de três fontes dizem 2, e as duas saídas ficam dentro da mesma estação, então errar o palpite custa um minuto.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Leia os avisos sobre aglomeração que o próprio local imprime",
+        body: "Esta é a parte que vale a página, e ela é publicada pelo operador em vez de deduzida de um blog. A página de acesso traz duas linhas acima da tabela de estações: a quem vem de Seul e do sentido de Suwon ou Anyang é dito que pode evitar a aglomeração descendo na estação Guro, e a quem vem do sentido de Incheon ou Bucheon é dito o mesmo sobre a estação Gaebong. O prédio está dizendo a você que, numa noite cheia, a estação na porta dele não se esvazia, e nomeando qual parada usar no lugar dela conforme onde você embarcou.",
+        pitfall:
+          "Seguir um aplicativo de rotas que otimiza a distância. Ele vai mandar você para Guil toda vez, porque não sabe o que o local sabe sobre aquela saída na hora em que o público sai.",
+        takes: "5 minutos, antes do dia",
+      },
+      {
+        title: "Entenda por que o aperto é pior do que uma plateia de beisebol",
+        body: "A mesma casa carrega dois números diferentes. Para o beisebol o local informa 16,601 assentos; para eventos culturais — shows, premiações — diz que cerca de 25,000 pessoas podem ser acomodadas de uma vez. Uma noite de show, portanto, joga aproximadamente cinquenta por cento mais gente pelas mesmas portas e na mesma plataforma do que o uso regular do prédio, e essa é a aritmética por trás do aviso do passo anterior.",
+        pitfall:
+          "Julgar a multidão por uma ida ao beisebol, ou por uma amiga que foi a um. No que diz respeito às saídas, a configuração de show é outro prédio.",
+        takes: "—",
+      },
+      {
+        title: "Não planeje estacionar, e saiba que o motivo não é a capacidade",
+        body: "O local tem 484 vagas em três níveis, abertas de 08:00 às 22:00, cobradas a 150 wons por cinco minutos — 900 wons por trinta minutos, 1,800 por uma hora, 10,800 por seis. Contra um público de show de 25,000 pessoas, isso é uma vaga para cada cinquenta e duas, o que já resolveria a questão. Mas o operador acrescenta a frase que de fato a decide: em dias de beisebol e de evento o estacionamento é tomado por completo pelo organizador, e o uso público fica restrito. Então a restrição não é que ele enche. É que ele pode não estar aberto para você de jeito nenhum.",
+        pitfall:
+          "Reservar um táxi ou um carro alugado supondo que chegar pela estrada é a opção confortável. A opção pela estrada termina num estacionamento que a produtora tomou para aquela noite.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pergunte ao prédio apenas o que o prédio sabe",
+        body: "O operador responde perguntas sobre o prédio: acesso, estacionamento, instalações, o dome em si. O contato dele para isso é a Dome Operations Division, time de operações, no 02-2128-2300. O que ele não define é o seu show — o horário de entrada, o que você pode levar, onde a sua fila se forma e quando os portões abrem são da produtora, e são publicados por evento na página de ingressos, e não pelo local. Perguntar ao local sobre regras de bolsa rende uma resposta educada sobre a política geral do prédio, que não é a resposta de que você precisava.",
+        pitfall:
+          "Tratar uma ligação para o local como confirmação de uma regra do evento. São duas autoridades diferentes e só uma delas está no seu ingresso.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Em qual estação fica o Gocheok Sky Dome?",
+        a: "Estação Guil na Line 1, saída 2, cerca de 150 metros e três minutos de caminhada. Ele também publica três rotas mais longas: estação Gaebong saída 2, cerca de quinze minutos a pé ou o ônibus de bairro 06 no sentido da ponte de Gocheok; estação Guro, cerca de vinte minutos a pé atravessando a ponte de Gocheok ou os ônibus 5712 e 5626; e Sindorim, nas Lines 1 e 2, três paradas de ônibus a partir da saída 1, com dez linhas em operação, entre elas a 160. A tabela do próprio local e as instruções dele discordam sobre se Guro é a saída 1 ou a 2; as instruções e o mapa da região dizem as duas 2.",
+      },
+      {
+        q: "Se Guil fica a três minutos, por que eu desceria em outro lugar?",
+        a: "Porque o local diz isso. A página de acesso dele manda quem chega de Seul e do sentido de Suwon ou Anyang descer em Guro para evitar a aglomeração, e quem chega de Incheon ou Bucheon descer em Gaebong. É o operador descrevendo a própria estação na hora em que o público sai, não a opinião de um viajante.",
+      },
+      {
+        q: "Quantas pessoas tem numa noite de show?",
+        a: "O local informa cerca de 25,000 para eventos culturais, contra 16,601 assentos para o beisebol. Aproximadamente cinquenta por cento mais gente sai pelas mesmas portas do que num dia de jogo comum, e é por isso que os avisos sobre aglomeração existem.",
+      },
+      {
+        q: "Posso ir de carro ou de táxi e estacionar lá?",
+        a: "Planeje contando que não. São 484 vagas, abertas de 08:00 às 22:00 a 150 wons por cinco minutos, mas o operador afirma que em dias de beisebol e de evento o estacionamento fica inteiramente reservado pelo organizador e o uso público é restrito. Uma vaga para cada cinquenta e duas pessoas seria o problema se o estacionamento estivesse aberto para você.",
+      },
+      {
+        q: "O Gocheok Sky Dome é o mesmo que o KSPO Dome?",
+        a: "Não, e eles não ficam perto um do outro. O Gocheok Sky Dome fica na 430 Gyeongin-ro, em Guro-gu, no oeste de Seul, administrado pela Seoul Facilities Corporation. O KSPO Dome fica dentro do Olympic Park, em Songpa-gu, no sudeste, sob outro operador. Confira o nome do local na sua página de compra contra o endereço.",
+      },
+      {
+        q: "Para quem eu pergunto o que posso levar para dentro?",
+        a: "Para a produtora, não para o local. O prédio publica acesso, estacionamento e instalações; horário de entrada, regras de bolsa, posição da fila e horário dos portões são definidos por evento e aparecem na página de ingressos do seu show. A linha do próprio local é a Dome Operations Division no 02-2128-2300, e ela só pode falar do prédio.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Đến Gocheok Sky Dome: nhà ga gần nhất không phải nhà ga đúng",
+    summary:
+      "Hai mươi lăm nghìn người, 484 chỗ đậu xe, và một địa điểm tự nói bằng lời của mình rằng hãy xuống sớm một bến. Cửa ra gần nhất chỉ cách ba phút đi bộ và đó có lẽ chính là cửa bạn nên tránh.",
+    scope:
+      "Bao gồm việc đến Gocheok Sky Dome để xem một buổi diễn, đọc từ các trang của Seoul Facilities Corporation, đơn vị vận hành nơi này: các nhà ga, các cửa ra, thời gian đi bộ, lời khuyên về đông người do chính địa điểm công bố, và bãi đậu xe. Chỉ một địa điểm, và đó là chủ ý. KSPO Dome và Inspire Arena cần có trang riêng cùng nguồn của chính đơn vị vận hành chúng, và trang này không thay thế cho những trang đó. Ở đây không có gì theo từng buổi diễn — bạn được mang gì vào và mấy giờ mở cửa là do nhà tổ chức quyết định, không phải do toà nhà.",
+    intro: [
+      "Tấm vé cho bạn biết khán phòng và giờ diễn. Nó không cho bạn biết rằng nhà ga gắn liền với khán phòng ấy cũng là nhà ga mà mọi người giữ vé khác đang bước ra, và rằng đơn vị vận hành toà nhà nói đúng điều đó trên trang web của chính họ, bằng tiếng Hàn giản dị.",
+      "Đây là một địa điểm được đọc từ đầu đến cuối, bằng lời của công ty vận hành nó. Phần hữu ích không phải là địa chỉ. Phần hữu ích là hai trong bốn nhà ga trên danh sách tồn tại để đưa người ta rời xa nhà ga gần nhất.",
+    ],
+    steps: [
+      {
+        title: "Xác nhận buổi diễn của bạn thực sự ở khán phòng nào",
+        body: "Seoul có nhiều khán phòng lớn và tên tiếng Anh của chúng trùng lặp một cách khó chịu. Gocheok Sky Dome — 고척스카이돔 — nằm ở Guro-gu, số 430 Gyeongin-ro, mã bưu chính 08223, và do Seoul Facilities Corporation vận hành. Nó không phải KSPO Dome, nơi nằm trong Olympic Park ở Songpa-gu và do một tổ chức hoàn toàn khác vận hành, và nó cũng không phải Inspire Arena, nơi nằm ở Incheon. Nó cũng không phải Seoul World Cup Stadium, sân vận động ngoài trời ở Sangam thuộc Mapo-gu — cùng một đơn vị vận hành nơi đó, nên việc tìm theo tên đơn vị vận hành sẽ đưa ra cả hai. Hãy đối chiếu tên địa điểm trên trang đặt vé với địa chỉ trước khi lên kế hoạch gì, vì hai nơi cách nhau một giờ.",
+        pitfall:
+          "Đọc chữ Dome rồi cho rằng chỉ có một. Hai trong số những khán phòng lớn nhất Seoul đều có chữ Dome trong tên, chúng ở hai đầu đối diện của thành phố, và người chỉ hiểu ra điều này vào 18:00 thì không kịp đến buổi diễn.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết nhà ga gần nhất, và biết rằng nó cách ba phút",
+        body: "Line 1, ga Guil, cửa ra 2: khoảng 150 mét đi thẳng, mà địa điểm ghi là ba phút đi bộ. Đó là đường tiếp cận gần nhất và nó thực sự ngắn. Ba lối còn lại mà họ công bố đều dài hơn. Ga Gaebong trên Line 1, cửa ra 2 — 200 mét đi thẳng, rẽ phải, rồi 650 mét nữa, và dome nằm bên phải bạn: khoảng mười lăm phút, hoặc xe buýt làng 06 theo hướng cầu Gocheok. Ga Guro trên Line 1 — ra khỏi cửa rẽ trái, đi thẳng một ki lô mét, qua cầu Gocheok và dome nằm bên trái bạn: khoảng hai mươi phút, hoặc xe buýt 5712 và 5626. Sindorim trên Line 1 và 2 — đi xe buýt từ cửa ra 1, ba bến, có mười tuyến đang chạy, trong đó có tuyến 160.",
+        pitfall:
+          "Coi ba phút đi bộ là câu trả lời hiển nhiên. Đó là lối ngắn nhất, và bước tiếp theo chính là địa điểm giải thích vì sao nó có thể là lối sai. Một con số trên trang đó còn tự mâu thuẫn: bảng nhà ga ghi Guro là cửa ra 1, trong khi hướng dẫn từng bước in bên dưới và bản đồ khu vực của chính địa điểm đều ghi cửa ra 2. Hai trong ba nguồn nói là 2, và cả hai cửa đều nằm trong cùng một nhà ga, nên đoán sai chỉ mất một phút.",
+        takes: "5 phút",
+      },
+      {
+        title: "Đọc lời khuyên về đông người mà chính địa điểm in ra",
+        body: "Đây là phần làm nên giá trị của trang này, và nó do đơn vị vận hành công bố chứ không phải suy ra từ một blog. Trang hướng dẫn đường đi có hai dòng nằm trên bảng nhà ga: người đến từ hướng Seoul và hướng Suwon hoặc Anyang được bảo rằng có thể tránh chen chúc bằng cách xuống ở ga Guro, còn người đến từ hướng Incheon hoặc Bucheon được bảo điều tương tự về ga Gaebong. Toà nhà đang nói với bạn rằng vào một tối kín chỗ, nhà ga ngay trước cửa nó không giải toả hết, và nêu rõ nên dùng bến nào thay thế tuỳ theo bạn lên tàu từ đâu.",
+        pitfall:
+          "Đi theo một ứng dụng chỉ đường tối ưu theo khoảng cách. Nó sẽ đưa bạn tới Guil mọi lần, vì nó không biết điều mà địa điểm biết về cửa ra đó vào lúc tan buổi diễn.",
+        takes: "5 phút, trước ngày diễn",
+      },
+      {
+        title: "Hiểu vì sao cảnh chen chúc tệ hơn một buổi bóng chày",
+        body: "Cùng một khán phòng mang hai con số khác nhau. Với bóng chày, địa điểm ghi 16,601 chỗ ngồi; với các sự kiện văn hoá — hoà nhạc, lễ trao giải — họ nói có thể chứa khoảng 25,000 người cùng lúc. Vì vậy một tối hoà nhạc đưa nhiều hơn khoảng năm mươi phần trăm số người qua cùng những cánh cửa đó và lên cùng sân ga đó so với lúc toà nhà hoạt động thường lệ, và đó là phép tính nằm sau lời khuyên ở bước trước.",
+        pitfall:
+          "Đánh giá mức đông người từ một lần đi xem bóng chày, hay từ một người bạn đã đi. Về phía các cửa ra, cấu hình hoà nhạc là một toà nhà khác.",
+        takes: "—",
+      },
+      {
+        title: "Đừng tính chuyện đậu xe, và lý do không phải là số chỗ",
+        body: "Địa điểm có 484 chỗ đậu xe trên ba tầng, mở từ 08:00 đến 22:00, tính 150 won cho mỗi năm phút — 900 won cho ba mươi phút, 1,800 cho một giờ, 10,800 cho sáu giờ. So với lượng khán giả hoà nhạc 25,000 người thì đó là một chỗ cho mỗi năm mươi hai người, và chỉ điều đó đã đủ kết luận. Nhưng đơn vị vận hành còn thêm câu thực sự quyết định: vào ngày có bóng chày và ngày có sự kiện, bãi đậu xe bị nhà tổ chức trưng dụng toàn bộ và việc sử dụng công cộng bị hạn chế. Vậy ràng buộc không phải là bãi sẽ chật. Ràng buộc là nó có thể không mở cho bạn chút nào.",
+        pitfall:
+          "Gọi taxi hay thuê xe với giả định rằng đi đường bộ là lựa chọn dễ chịu. Lựa chọn đường bộ ấy kết thúc tại một bãi đậu xe mà nhà tổ chức đã lấy cho tối đó.",
+        takes: "5 phút",
+      },
+      {
+        title: "Chỉ hỏi toà nhà những gì toà nhà biết",
+        body: "Đơn vị vận hành trả lời các câu hỏi về toà nhà: đường đi, đậu xe, tiện ích, bản thân dome. Đầu mối cho việc đó là Dome Operations Division, bộ phận vận hành, số 02-2128-2300. Điều họ không quyết định là buổi diễn của bạn — giờ vào, bạn được mang gì, hàng của bạn xếp ở đâu và mấy giờ mở cửa đều thuộc nhà tổ chức, và được công bố theo từng buổi trên trang bán vé chứ không phải do địa điểm. Hỏi địa điểm về quy định túi xách thì bạn nhận được câu trả lời lịch sự về chính sách chung của toà nhà, mà đó không phải câu trả lời bạn cần.",
+        pitfall:
+          "Coi một cuộc gọi tới địa điểm là xác nhận cho quy định của buổi diễn. Hai bên là hai thẩm quyền khác nhau và chỉ một bên có trên vé của bạn.",
+        takes: "10 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome ở ga nào?",
+        a: "Ga Guil trên Line 1, cửa ra 2, khoảng 150 mét và ba phút đi bộ. Họ cũng công bố ba lối dài hơn: ga Gaebong cửa ra 2, khoảng mười lăm phút đi bộ hoặc xe buýt làng 06 theo hướng cầu Gocheok; ga Guro, khoảng hai mươi phút đi bộ qua cầu Gocheok hoặc xe buýt 5712 và 5626; và Sindorim trên Line 1 và 2, ba bến bằng xe buýt từ cửa ra 1 với mười tuyến đang chạy, trong đó có tuyến 160. Bảng của chính địa điểm và hướng dẫn từng bước của họ không khớp nhau về việc Guro là cửa ra 1 hay 2; phần hướng dẫn và bản đồ khu vực đều ghi 2.",
+      },
+      {
+        q: "Nếu Guil chỉ ba phút thì tại sao tôi phải xuống ở nơi khác?",
+        a: "Vì địa điểm nói vậy. Trang hướng dẫn đường đi của họ bảo người đến từ hướng Seoul và hướng Suwon hoặc Anyang xuống ở Guro để tránh chen chúc, và bảo người đến từ Incheon hoặc Bucheon xuống ở Gaebong. Đó là đơn vị vận hành đang mô tả nhà ga của chính họ vào lúc tan buổi diễn, không phải ý kiến của một người đi du lịch.",
+      },
+      {
+        q: "Một tối hoà nhạc có bao nhiêu người?",
+        a: "Địa điểm ghi khoảng 25,000 người cho sự kiện văn hoá, so với 16,601 chỗ ngồi cho bóng chày. Nhiều hơn chừng năm mươi phần trăm số người đi ra qua cùng những cửa đó so với một ngày thi đấu thường, và đó là lý do lời khuyên về đông người tồn tại.",
+      },
+      {
+        q: "Tôi có thể tự lái xe hoặc đi taxi rồi đậu ở đó không?",
+        a: "Hãy tính là không. Có 484 chỗ, mở từ 08:00 đến 22:00 với giá 150 won cho mỗi năm phút, nhưng đơn vị vận hành ghi rõ rằng vào ngày có bóng chày và ngày có sự kiện, bãi đậu xe được nhà tổ chức giữ toàn bộ và việc sử dụng công cộng bị hạn chế. Một chỗ cho năm mươi hai người sẽ là vấn đề, nếu như bãi đó còn mở cho bạn.",
+      },
+      {
+        q: "Gocheok Sky Dome có phải là KSPO Dome không?",
+        a: "Không, và hai nơi cũng không gần nhau. Gocheok Sky Dome ở số 430 Gyeongin-ro thuộc Guro-gu, phía tây Seoul, do Seoul Facilities Corporation vận hành. KSPO Dome nằm trong Olympic Park ở Songpa-gu, phía đông nam, thuộc một đơn vị vận hành khác. Hãy đối chiếu tên địa điểm trên trang đặt vé của bạn với địa chỉ.",
+      },
+      {
+        q: "Tôi phải hỏi ai về việc được mang gì vào?",
+        a: "Hỏi nhà tổ chức, không phải địa điểm. Toà nhà công bố đường đi, đậu xe và tiện ích; giờ vào, quy định túi xách, vị trí xếp hàng và giờ mở cửa được đặt theo từng buổi và xuất hiện trên trang bán vé của buổi diễn của bạn. Đường dây của chính địa điểm là Dome Operations Division số 02-2128-2300, và họ chỉ có thể nói với bạn về toà nhà.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การไปโกชอกสกายโดม: สถานีที่ใกล้ที่สุดไม่ใช่สถานีที่ถูกต้อง",
+    summary:
+      "สองหมื่นห้าพันคน ที่จอดรถ 484 คัน และสถานที่จัดงานที่เขียนด้วยถ้อยคำของตัวเองให้คุณลงก่อนหนึ่งสถานี ทางออกที่ใกล้ที่สุดเดินสามนาที และเป็นทางออกที่คุณน่าจะควรหลีกเลี่ยง",
+    scope:
+      "ครอบคลุมการเดินทางไปถึง Gocheok Sky Dome เพื่อดูคอนเสิร์ต อ่านจากหน้าเว็บของ Seoul Facilities Corporation ซึ่งเป็นผู้บริหารจัดการที่นี่ ได้แก่ สถานี ทางออก เวลาเดิน คำแนะนำเรื่องความแออัดที่สถานที่จัดงานเผยแพร่เอง และที่จอดรถ จงใจเขียนถึงสถานที่เดียว KSPO Dome และ Inspire Arena ต้องมีหน้าของตัวเองและแหล่งข้อมูลจากผู้บริหารจัดการของตัวเอง หน้านี้ไม่ใช่สิ่งทดแทน ที่นี่ไม่มีข้อมูลเฉพาะของแต่ละงาน สิ่งที่คุณนำเข้าไปได้และเวลาเปิดประตูมาจากผู้จัดงาน ไม่ใช่จากตัวอาคาร",
+    intro: [
+      "บัตรบอกคุณว่าเป็นห้องแสดงไหนและกี่โมง แต่ไม่ได้บอกว่าสถานีที่ติดกับห้องแสดงนั้นคือสถานีที่ผู้ถือบัตรคนอื่นทุกคนก็กำลังเดินออกมาด้วย และผู้บริหารอาคารก็เขียนเรื่องนี้ไว้บนเว็บไซต์ของตัวเองเป็นภาษาเกาหลีอย่างตรงไปตรงมา",
+      "นี่คือสถานที่หนึ่งแห่งที่อ่านตั้งแต่ต้นจนจบ ด้วยถ้อยคำของหน่วยงานที่บริหารมันเอง ส่วนที่มีประโยชน์ไม่ใช่ที่อยู่ แต่เป็นข้อเท็จจริงว่าสองในสี่สถานีในรายการนั้นมีอยู่เพื่อพาคนออกห่างจากสถานีที่ใกล้ที่สุด",
+    ],
+    steps: [
+      {
+        title: "ยืนยันก่อนว่างานของคุณอยู่ที่ห้องแสดงไหนจริง ๆ",
+        body: "โซลมีห้องแสดงขนาดใหญ่หลายแห่ง และชื่อภาษาอังกฤษของมันทับซ้อนกันอย่างน่าปวดหัว Gocheok Sky Dome — 고척스카이돔 — อยู่ในเขตคูโร เลขที่ 430 ถนนคยองอิน รหัสไปรษณีย์ 08223 และบริหารโดย Seoul Facilities Corporation ที่นี่ไม่ใช่ KSPO Dome ซึ่งอยู่ในสวนโอลิมปิกในเขตซงพาและบริหารโดยองค์กรที่ต่างกันโดยสิ้นเชิง และไม่ใช่ Inspire Arena ซึ่งอยู่ที่อินชอน และก็ไม่ใช่สนามกีฬาโซลเวิลด์คัพ ซึ่งเป็นสนามกลางแจ้งที่ซังอัมในเขตมาโพ ผู้บริหารรายเดียวกันดูแลที่นั่นด้วย ดังนั้นการค้นหาชื่อผู้บริหารจะให้ผลทั้งสองแห่ง โปรดเทียบชื่อสถานที่บนหน้าจองกับที่อยู่ก่อนวางแผนสิ่งใด เพราะสองแห่งห่างกันหนึ่งชั่วโมง",
+        pitfall:
+          "การเห็นคำว่า Dome แล้วคิดว่ามีแห่งเดียว ห้องแสดงที่ใหญ่ที่สุดของโซลสองแห่งมีคำว่า Dome ในชื่อ ทั้งสองอยู่คนละฟากของเมือง และแฟนที่เพิ่งรู้เรื่องนี้ตอน 18:00 ก็ไปไม่ทันงาน",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่าสถานีที่ใกล้ที่สุดคือสถานีไหน และรู้ว่าเดินสามนาที",
+        body: "Line 1 สถานีคูอิล ทางออก 2 เดินตรงไปประมาณ 150 เมตร ซึ่งสถานที่จัดงานระบุว่าเป็นการเดินสามนาที นั่นคือเส้นทางที่ใกล้ที่สุดและสั้นจริง อีกสามเส้นทางที่เผยแพร่ไว้ยาวกว่านั้น สถานีแคบง บน Line 1 ทางออก 2 เดินตรง 200 เมตร เลี้ยวขวา แล้วอีก 650 เมตร โดมจะอยู่ทางขวาของคุณ ใช้เวลาเดินประมาณสิบห้านาที หรือรถเมล์ชุมชนสาย 06 ไปทางสะพานโกชอก สถานีคูโร บน Line 1 ออกจากทางออกแล้วเลี้ยวซ้าย เดินตรงหนึ่งกิโลเมตร ข้ามสะพานโกชอก โดมจะอยู่ทางซ้ายของคุณ ใช้เวลาเดินประมาณยี่สิบนาที หรือรถเมล์สาย 5712 และ 5626 สถานีชินโดริม บน Line 1 และ 2 ขึ้นรถเมล์จากทางออก 1 ไปสามป้าย มีสิบสายวิ่งอยู่ รวมถึงสาย 160",
+        pitfall:
+          "การรับเอาการเดินสามนาทีเป็นคำตอบที่ชัดเจนอยู่แล้ว นั่นคือเส้นทางที่สั้นที่สุด และขั้นถัดไปคือสถานที่จัดงานอธิบายเองว่าทำไมมันอาจเป็นเส้นทางที่ผิด ตัวเลขหนึ่งบนหน้านั้นยังขัดกับตัวเองด้วย ตารางสถานีระบุคูโรเป็นทางออก 1 ขณะที่คำบอกทางทีละขั้นที่พิมพ์อยู่ใต้ตารางและแผนที่บริเวณของสถานที่จัดงานเองระบุทั้งคู่ว่าทางออก 2 สองในสามแหล่งบอกว่า 2 และทางออกทั้งสองอยู่ในสถานีเดียวกัน ดังนั้นการเดาผิดมีราคาหนึ่งนาที",
+        takes: "5 นาที",
+      },
+      {
+        title: "อ่านคำแนะนำเรื่องความแออัดที่สถานที่จัดงานพิมพ์ไว้เอง",
+        body: "นี่คือส่วนที่ทำให้หน้านี้มีค่า และเป็นสิ่งที่ผู้บริหารเผยแพร่เอง ไม่ใช่สิ่งที่อนุมานจากบล็อก หน้าการเดินทางมีสองบรรทัดอยู่เหนือตารางสถานี คนที่มาจากทางโซลและจากทางซูวอนหรืออันยัง ได้รับคำบอกว่าเลี่ยงความแออัดได้โดยลงที่สถานีคูโร และคนที่มาจากทางอินชอนหรือพูชอน ได้รับคำบอกแบบเดียวกันเกี่ยวกับสถานีแคบง นั่นคืออาคารกำลังบอกคุณว่าในคืนที่เต็มความจุ สถานีหน้าประตูของมันระบายคนไม่ทัน และระบุชื่อป้ายที่ควรใช้แทนตามจุดที่คุณขึ้นรถไฟมา",
+        pitfall:
+          "การทำตามแอปนำทางที่คิดจากระยะทางเป็นหลัก มันจะส่งคุณไปคูอิลทุกครั้ง เพราะมันไม่รู้สิ่งที่สถานที่จัดงานรู้เกี่ยวกับทางออกนั้นในช่วงคนออกจากงาน",
+        takes: "5 นาที ก่อนถึงวันงาน",
+      },
+      {
+        title: "เข้าใจว่าทำไมความเบียดเสียดหนักกว่าผู้ชมเบสบอล",
+        body: "ห้องแสดงเดียวกันมีตัวเลขสองชุดที่ต่างกัน สำหรับเบสบอล สถานที่จัดงานระบุที่นั่ง 16,601 ที่ ส่วนงานทางวัฒนธรรม เช่น คอนเสิร์ตและงานประกาศรางวัล ระบุว่ารองรับได้ราว 25,000 คนในคราวเดียว ดังนั้นคืนคอนเสิร์ตจึงส่งคนมากกว่าการใช้งานปกติของอาคารประมาณห้าสิบเปอร์เซ็นต์ ผ่านประตูเดียวกันและขึ้นชานชาลาเดียวกัน และนั่นคือการคำนวณที่อยู่เบื้องหลังคำแนะนำในขั้นก่อนหน้า",
+        pitfall:
+          "การตัดสินความแออัดจากการไปดูเบสบอล หรือจากเพื่อนที่เคยไป เมื่อมองจากฝั่งทางออกแล้ว การจัดผังแบบคอนเสิร์ตคืออาคารอีกหลังหนึ่ง",
+        takes: "—",
+      },
+      {
+        title: "อย่าวางแผนจอดรถ และเหตุผลไม่ใช่จำนวนที่จอด",
+        body: "สถานที่จัดงานมีที่จอดรถ 484 คันใน 3 ชั้น เปิด 08:00 ถึง 22:00 คิดค่าบริการ 150 วอนต่อห้านาที สามสิบนาที 900 วอน หนึ่งชั่วโมง 1,800 วอน หกชั่วโมง 10,800 วอน เทียบกับผู้ชมคอนเสิร์ต 25,000 คนแล้ว นั่นคือหนึ่งช่องต่อห้าสิบสองคน ซึ่งลำพังข้อนี้ก็ตัดสินเรื่องได้แล้ว แต่ผู้บริหารยังเพิ่มประโยคที่ตัดสินจริง ๆ ว่าในวันที่มีเบสบอลและวันที่มีงาน ที่จอดรถถูกผู้จัดงานใช้ทั้งหมด และการใช้งานทั่วไปถูกจำกัด ดังนั้นข้อจำกัดไม่ใช่ว่าที่จอดจะเต็ม แต่เป็นว่ามันอาจไม่เปิดให้คุณเลย",
+        pitfall:
+          "การจองแท็กซี่หรือรถเช่าโดยคิดว่าการมาทางถนนเป็นทางเลือกที่สบาย ทางเลือกทางถนนนั้นไปสิ้นสุดที่ลานจอดซึ่งผู้จัดงานยึดไว้สำหรับคืนนั้น",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถามอาคารเฉพาะเรื่องที่อาคารรู้",
+        body: "ผู้บริหารตอบคำถามเกี่ยวกับอาคาร ได้แก่ การเดินทาง ที่จอดรถ สิ่งอำนวยความสะดวก และตัวโดมเอง ช่องทางติดต่อเรื่องนั้นคือ Dome Operations Division ฝ่ายปฏิบัติการ โทร 02-2128-2300 สิ่งที่ผู้บริหารไม่ได้กำหนดคืองานของคุณ เวลาเข้างาน สิ่งที่นำเข้าไปได้ แถวของคุณตั้งที่ไหน และประตูเปิดเมื่อไร เป็นของผู้จัดงาน และเผยแพร่เป็นรายงานบนหน้าขายบัตร ไม่ใช่โดยสถานที่จัดงาน การถามสถานที่จัดงานเรื่องกฎกระเป๋าจะได้คำตอบสุภาพเกี่ยวกับนโยบายทั่วไปของอาคาร ซึ่งไม่ใช่คำตอบที่คุณต้องการ",
+        pitfall:
+          "การถือเอาการโทรหาสถานที่จัดงานเป็นการยืนยันกฎของงาน ทั้งสองเป็นอำนาจที่ต่างกัน และมีเพียงฝ่ายเดียวที่อยู่บนบัตรของคุณ",
+        takes: "10 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome อยู่สถานีอะไร",
+        a: "สถานีคูอิลบน Line 1 ทางออก 2 ประมาณ 150 เมตร เดินสามนาที ที่นี่ยังเผยแพร่เส้นทางที่ยาวกว่าอีกสามเส้นทาง คือ สถานีแคบงทางออก 2 เดินประมาณสิบห้านาที หรือรถเมล์ชุมชนสาย 06 ไปทางสะพานโกชอก สถานีคูโร เดินข้ามสะพานโกชอกประมาณยี่สิบนาที หรือรถเมล์สาย 5712 และ 5626 และสถานีชินโดริมบน Line 1 และ 2 นั่งรถเมล์สามป้ายจากทางออก 1 โดยมีสิบสายวิ่งอยู่ รวมถึงสาย 160 ตารางของสถานที่จัดงานเองกับคำบอกทางทีละขั้นไม่ตรงกันว่าคูโรเป็นทางออก 1 หรือ 2 ส่วนคำบอกทางและแผนที่บริเวณระบุทั้งคู่ว่า 2",
+      },
+      {
+        q: "ถ้าคูอิลเดินแค่สามนาที ทำไมฉันต้องลงที่อื่น",
+        a: "เพราะสถานที่จัดงานบอกเอง หน้าการเดินทางบอกคนที่มาจากทางโซลและจากทางซูวอนหรืออันยังให้ลงที่คูโรเพื่อเลี่ยงความแออัด และบอกคนที่มาจากอินชอนหรือพูชอนให้ลงที่แคบง นั่นคือผู้บริหารกำลังอธิบายสถานีของตัวเองในช่วงคนออกจากงาน ไม่ใช่ความเห็นของนักเดินทาง",
+      },
+      {
+        q: "คืนคอนเสิร์ตมีคนประมาณเท่าไร",
+        a: "สถานที่จัดงานระบุราว 25,000 คนสำหรับงานทางวัฒนธรรม เทียบกับที่นั่ง 16,601 ที่สำหรับเบสบอล โดยคร่าว ๆ มีคนออกจากประตูเดียวกันมากกว่าวันแข่งปกติประมาณห้าสิบเปอร์เซ็นต์ และนั่นคือเหตุผลที่คำแนะนำเรื่องความแออัดมีอยู่",
+      },
+      {
+        q: "ฉันขับรถหรือนั่งแท็กซี่ไปจอดที่นั่นได้ไหม",
+        a: "โปรดวางแผนโดยถือว่าไม่ได้ ที่นั่นมี 484 ช่อง เปิด 08:00 ถึง 22:00 คิด 150 วอนต่อห้านาที แต่ผู้บริหารระบุว่าในวันที่มีเบสบอลและวันที่มีงาน ที่จอดรถถูกผู้จัดงานจองไว้ทั้งหมดและการใช้งานทั่วไปถูกจำกัด อัตราหนึ่งช่องต่อห้าสิบสองคนจะเป็นปัญหาก็ต่อเมื่อลานจอดนั้นเปิดให้คุณ",
+      },
+      {
+        q: "Gocheok Sky Dome กับ KSPO Dome เป็นที่เดียวกันไหม",
+        a: "ไม่ใช่ และทั้งสองก็ไม่ได้อยู่ใกล้กัน Gocheok Sky Dome อยู่เลขที่ 430 ถนนคยองอิน เขตคูโร ทางตะวันตกของโซล บริหารโดย Seoul Facilities Corporation ส่วน KSPO Dome อยู่ในสวนโอลิมปิกในเขตซงพา ทางตะวันออกเฉียงใต้ ภายใต้ผู้บริหารอีกราย โปรดเทียบชื่อสถานที่บนหน้าจองของคุณกับที่อยู่",
+      },
+      {
+        q: "ฉันควรถามใครว่านำอะไรเข้าไปได้",
+        a: "ถามผู้จัดงาน ไม่ใช่สถานที่จัดงาน อาคารเผยแพร่เรื่องการเดินทาง ที่จอดรถ และสิ่งอำนวยความสะดวก ส่วนเวลาเข้างาน กฎกระเป๋า ตำแหน่งแถว และเวลาเปิดประตู ถูกกำหนดเป็นรายงานและปรากฏบนหน้าขายบัตรของงานของคุณ สายของสถานที่จัดงานเองคือ Dome Operations Division โทร 02-2128-2300 และตอบได้เฉพาะเรื่องอาคาร",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Pagtungo sa Gocheok Sky Dome: hindi ang pinakamalapit na istasyon ang tamang istasyon",
+    summary:
+      "Dalawampu't limang libong tao, 484 na puwesto ng paradahan, at isang venue na sa sarili nitong pananalita ay sinasabihan kang bumaba nang isang hinto pa lamang. Tatlong minutong lakad ang pinakamalapit na labasan at iyon ang malamang na dapat mong iwasan.",
+    scope:
+      "Sinasaklaw ang pagtungo sa Gocheok Sky Dome para sa isang konsiyerto, mula sa mga pahina ng Seoul Facilities Corporation na nagpapatakbo nito: ang mga istasyon, ang mga labasan, ang haba ng lakad, ang paalala tungkol sa dagsa na inilalathala ng venue mismo, at ang paradahan. Isang venue lamang, at sinadya iyon. Nangangailangan ang KSPO Dome at ang Inspire Arena ng kanilang sariling mga pahina at ng mga pinagkunan ng kanilang sariling mga tagapagpatakbo, at hindi panghalili ang pahinang ito sa mga iyon. Walang anumang panggiya sa isang partikular na kaganapan dito — ang maaari mong ipasok at ang oras ng pagbukas ng pinto ay nagmumula sa prodyuser at hindi sa gusali.",
+    intro: [
+      "Sinasabi ng tiket ang bulwagan at ang oras. Hindi nito sinasabi na ang istasyong nakakabit sa bulwagan ay ang istasyon ding pinaglalabasan ng lahat ng iba pang may hawak na tiket, at na sinasabi iyon ng tagapagpatakbo ng gusali sa sariling websayt nito sa payak na Koreano.",
+      "Isa itong venue na binasa mula simula hanggang wakas, sa pananalita ng korporasyong nagpapatakbo nito. Hindi ang adres ang mahalagang bahagi. Ang mahalaga ay na dalawa sa apat na istasyon sa listahan ay umiiral upang ilayo ang mga tao mula sa pinakamalapit.",
+    ],
+    steps: [
+      {
+        title: "Tiyakin kung aling bulwagan talaga ang kinalalagyan ng palabas mo",
+        body: "May ilang malalaking bulwagan ang Seoul at magkasalikop nang masama ang kanilang mga pangalang Ingles. Ang Gocheok Sky Dome — 고척스카이돔 — ay nasa Guro-gu sa 430 Gyeongin-ro, may postal code 08223, at pinapatakbo ng Seoul Facilities Corporation. Hindi ito ang KSPO Dome, na nasa loob ng Olympic Park sa Songpa-gu at pinapatakbo ng isang ganap na ibang organisasyon, at hindi ito ang Inspire Arena, na nasa Incheon. Hindi rin ito ang Seoul World Cup Stadium, ang bukas na istadyum sa Sangam sa Mapo-gu — pinapatakbo ng parehong tagapagpatakbo ang isang iyon, kaya ang paghahanap sa pangalan ng tagapagpatakbo ay mag-aalok sa iyo ng dalawa. Itapat ang pangalan ng venue sa pahina ng pagpa-book sa adres bago ka magplano ng anuman, dahil isang oras ang pagitan ng dalawa.",
+        pitfall:
+          "Ang pagbasa ng Dome at paniniwalang isa lamang ito. May Dome sa pangalan ang dalawa sa pinakamalalaking bulwagan ng Seoul, nasa magkabilang dulo sila ng lungsod, at ang tagahangang natutunan ito sa 18:00 ay hindi makakarating sa palabas.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin ang pinakamalapit na istasyon, at na tatlong minuto lamang iyon",
+        body: "Line 1, Istasyong Guil, labasan 2: mga 150 metro nang tuwid sa harapan, na ibinibigay ng venue bilang tatlong minutong lakad. Iyon ang pinakamalapit na daan at talagang maikli iyon. Mas mahaba ang tatlong ibang rutang inilalathala nito. Istasyong Gaebong sa Line 1, labasan 2 — 200 metro nang tuwid, pakanan, pagkatapos ay 650 metro, at nasa kanan mo ang dome: mga labinlimang minuto, o ang bus ng nayon 06 patungo sa Tulay ng Gocheok. Istasyong Guro sa Line 1 — pakaliwa mula sa labasan, isang kilometro nang tuwid, patawid sa Tulay ng Gocheok at nasa kaliwa mo ang dome: mga dalawampung minuto, o ang mga bus 5712 at 5626. Sindorim sa Line 1 at 2 — bus mula sa labasan 1, tatlong hinto, sampung ruta ang tumatakbo, kasama ang 160.",
+        pitfall:
+          "Ang pagtanggap sa tatlong minutong lakad bilang malinaw nang sagot. Iyon ang pinakamaikling ruta, at ang susunod na hakbang ay ang venue na ipinapaliwanag kung bakit maaaring iyon ang mali. Nagkakasalungat din sa sarili nito ang isang bilang sa pahinang iyon: ibinibigay ng talahanayan ng mga istasyon ang Guro bilang labasan 1, samantalang ang hakbang-hakbang na panuto sa ilalim nito at ang sariling mapa ng lugar ng venue ay pawang nagsasabing labasan 2. Dalawa sa tatlong pinagkunan ang nagsasabing 2, at nasa loob ng isang istasyon ang dalawang labasan, kaya isang minuto ang halaga ng maling hula.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Basahin ang paalala tungkol sa dagsa na ini-imprenta mismo ng venue",
+        body: "Ito ang bahaging nagbibigay-halaga sa pahina, at inilalathala ito ng tagapagpatakbo at hindi hinihinuha mula sa isang blog. May dalawang linya ang pahina ng pagpunta sa ibabaw ng talahanayan ng mga istasyon: sinasabihan ang mga taong nanggagaling sa Seoul at sa direksiyon ng Suwon o Anyang na maiiwasan nila ang siksikan kung bababa sila sa Istasyong Guro, at sinasabihan ng gayon ding bagay ang mga nanggagaling sa direksiyon ng Incheon o Bucheon tungkol sa Istasyong Gaebong. Sinasabi sa iyo ng gusali na sa isang punong gabi ay hindi natatapos lumiwanag ang istasyon sa pintuan nito, at pinapangalanan nito kung aling hinto ang gamitin sa halip, batay sa kung saan ka sumakay.",
+        pitfall:
+          "Ang pagsunod sa isang aplikasyon ng ruta na inaayos ang distansiya. Ipapadala ka nito sa Guil sa tuwina, dahil hindi nito alam ang nalalaman ng venue tungkol sa labasang iyon sa oras ng paglabas ng mga tao.",
+        takes: "5 minuto, bago ang araw",
+      },
+      {
+        title: "Unawain kung bakit mas masama ang siksikan kaysa sa dagsa ng beysbol",
+        body: "Dalawang magkaibang bilang ang taglay ng isang bulwagan. Para sa beysbol ay ibinibigay ng venue ang 16,601 na upuan; para sa mga kultural na kaganapan — konsiyerto, gabi ng parangal — sinasabi nitong mga 25,000 katao ang kayang tanggapin nang sabay. Kaya naman ang isang gabi ng konsiyerto ay nagpapadaan ng mga limampung porsiyentong mas maraming tao sa parehong pintuan at sa parehong plataporma kaysa sa karaniwang paggamit ng gusali, at iyon ang aritmetikang nasa likod ng paalala sa naunang hakbang.",
+        pitfall:
+          "Ang paghusga sa dagsa mula sa isang panonood ng beysbol, o mula sa isang kaibigang nakapanood ng gayon. Sa panig ng mga labasan, isa nang ibang gusali ang pagkakaayos para sa konsiyerto.",
+        takes: "—",
+      },
+      {
+        title: "Huwag magplanong magparada, at alamin na hindi kapasidad ang dahilan",
+        body: "May 484 na puwesto ng paradahan ang venue sa tatlong palapag, bukas mula 08:00 hanggang 22:00, na nagkakahalaga ng 150 won kada limang minuto — 900 won para sa tatlumpung minuto, 1,800 para sa isang oras, 10,800 para sa anim. Kontra sa dagsa ng konsiyertong 25,000 katao, isa iyong puwesto sa bawat limampu't dalawang tao, na mag-isa nang sapat upang maisara ang usapin. Ngunit idinadagdag ng tagapagpatakbo ang pangungusap na talagang nagpapasya nito: sa mga araw ng beysbol at ng kaganapan ay buong-buong kinukuha ng organisador ang paradahan, at hinihigpitan ang pampublikong paggamit. Kaya hindi ang pagkapuno ang hadlang. Ang hadlang ay maaaring hindi ito bukas sa iyo kahit kaunti.",
+        pitfall:
+          "Ang pagpa-book ng taksi o rentahang sasakyan sa paniniwalang ang pagdating sa daan ang maginhawang pagpipilian. Nagtatapos ang pagpipiliang iyon sa isang paradahang kinuha na ng prodyuser para sa gabing iyon.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Itanong sa gusali ang nalalaman lamang ng gusali",
+        body: "Sinasagot ng tagapagpatakbo ang mga tanong tungkol sa gusali: pagpunta, paradahan, pasilidad, ang dome mismo. Ang kontak nito para doon ay ang Dome Operations Division, pangkat ng operasyon, sa 02-2128-2300. Ang hindi nito itinatakda ay ang palabas mo — ang oras ng pagpasok, ang maaari mong dalhin, kung saan nabubuo ang pila mo at kailan bumubukas ang pinto ay sa prodyuser, at inilalathala ang mga iyon sa bawat kaganapan sa pahina ng tiket at hindi ng venue. Ang pagtatanong sa venue tungkol sa patakaran sa bag ay nagbibigay sa iyo ng magalang na sagot tungkol sa pangkalahatang patakaran ng gusali, na hindi ang sagot na kailangan mo.",
+        pitfall:
+          "Ang pagtrato sa isang tawag sa venue bilang kumpirmasyon ng patakaran ng isang kaganapan. Magkaibang awtoridad ang dalawa at isa lamang sa kanila ang nasa tiket mo.",
+        takes: "10 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Aling istasyon ang Gocheok Sky Dome?",
+        a: "Istasyong Guil sa Line 1, labasan 2, mga 150 metro at tatlong minutong lakad. Naglalathala rin ito ng tatlong mas mahabang ruta: Istasyong Gaebong labasan 2, mga labinlimang minutong lakad o ang bus ng nayon 06 patungo sa Tulay ng Gocheok; Istasyong Guro, mga dalawampung minutong lakad patawid sa Tulay ng Gocheok o ang mga bus 5712 at 5626; at ang Sindorim sa Line 1 at 2, tatlong hinto sa bus mula sa labasan 1 na may sampung rutang tumatakbo, kasama ang 160. Nagkakasalungat ang sariling talahanayan ng venue at ang hakbang-hakbang na panuto nito kung labasan 1 o labasan 2 ang Guro; pawang nagsasabing 2 ang panuto at ang mapa ng lugar.",
+      },
+      {
+        q: "Kung tatlong minuto lamang ang Guil, bakit ako bababa sa iba?",
+        a: "Dahil sinasabi iyon ng venue. Sinasabihan ng pahina nito ng pagpunta ang mga taong nanggagaling sa Seoul at sa direksiyon ng Suwon o Anyang na bumaba sa Guro upang maiwasan ang siksikan, at ang mga nanggagaling sa Incheon o Bucheon na bumaba sa Gaebong. Iyon ang tagapagpatakbo na inilalarawan ang sariling istasyon nito sa oras ng paglabas, at hindi opinyon ng isang manlalakbay.",
+      },
+      {
+        q: "Ilang tao ang naroon sa isang gabi ng konsiyerto?",
+        a: "Ibinibigay ng venue ang mga 25,000 para sa mga kultural na kaganapan, kontra sa 16,601 na upuan para sa beysbol. Halos limampung porsiyentong mas maraming tao ang lumalabas sa parehong mga labasan kaysa sa isang karaniwang araw ng laro, at iyon ang dahilan kung bakit may paalala tungkol sa dagsa.",
+      },
+      {
+        q: "Puwede ba akong magmaneho o mag-taksi at magparada doon?",
+        a: "Magplano nang hindi. May 484 na puwesto, bukas mula 08:00 hanggang 22:00 sa 150 won kada limang minuto, ngunit sinasabi ng tagapagpatakbo na sa mga araw ng beysbol at ng kaganapan ay buong-buong nirereserba ng organisador ang paradahan at hinihigpitan ang pampublikong paggamit. Ang isang puwesto kada limampu't dalawang tao ang magiging problema kung bukas man lamang sa iyo ang paradahan.",
+      },
+      {
+        q: "Pareho ba ang Gocheok Sky Dome at ang KSPO Dome?",
+        a: "Hindi, at hindi rin magkalapit ang dalawa. Nasa 430 Gyeongin-ro sa Guro-gu ang Gocheok Sky Dome, sa kanlurang Seoul, pinapatakbo ng Seoul Facilities Corporation. Nasa loob ng Olympic Park sa Songpa-gu ang KSPO Dome, sa timog-silangan, sa ilalim ng ibang tagapagpatakbo. Itapat ang pangalan ng venue sa pahina mo ng pagpa-book sa adres.",
+      },
+      {
+        q: "Kanino ko itatanong ang maaari kong ipasok?",
+        a: "Sa prodyuser, hindi sa venue. Inilalathala ng gusali ang pagpunta, ang paradahan at ang mga pasilidad; itinatakda sa bawat kaganapan ang oras ng pagpasok, ang patakaran sa bag, ang puwesto ng pila at ang oras ng pinto, at lumilitaw ang mga iyon sa pahina ng tiket ng palabas mo. Ang sariling linya ng venue ay ang Dome Operations Division sa 02-2128-2300, at tungkol lamang sa gusali ang masasabi nito sa iyo.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

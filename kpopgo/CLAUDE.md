@@ -52,9 +52,13 @@ That last sentence was the whole safeguard, and a rule that lives only in a
 sentence gets broken by the next person in a hurry — which here was me.
 Adding the Ktown4u guide left its seven notices with no baseline, and the
 obvious fix, a plain `--record` run, would also have re-baselined the Yahoo
-rebrand page, clearing a 9% drift warning that is standing **on purpose**
-because that page's body does not extract cleanly. A silenced warning and a
-checked source look identical afterwards.
+rebrand page, clearing a 9% drift warning that was left standing **on
+purpose** because that page's body does not extract cleanly. A silenced
+warning and a checked source look identical afterwards.
+
+(That reasoning was right about `--record` and wrong about the warning, which
+turned out to be a false alarm with a diagnosable cause. **A warning nobody
+can ever clear** below has the diff.)
 
 So `npm run watch -- --record-new` now writes only the entries that are
 missing and leaves every existing baseline untouched. Use it when a new guide
@@ -156,6 +160,58 @@ not the header's date or the per-guide day counters, which change on their own
 run regardless, so the current state is never stale; only the notification is
 held back.
 
+**A warning nobody can ever clear is not a warning, and two of these were
+mine.** The weekly sweep reported `3 needing action, 1 worth a look` for
+weeks. All four were false, and both causes were diagnosable rather than
+inherent — which is the korea.net lesson arriving twice more in one sweep.
+
+*The three ✗ were one attempt, not three dead pages.* `circlechart.kr` and
+two TicketLink help pages came back `curl: (35) Recv failure: Connection
+reset by peer`, and the honest-looking conclusion — a guide cites a page that
+is gone — was wrong. Asked five times each they answer **5/5, 4/5 and 5/5**.
+The proxy had already named the cause for all three: `ws_closed_mid_exchange`,
+which this file's TicketLink note already records as *the site declining*
+rather than the allowlist, with an identical signature on two unrelated
+Korean hosts — 517 bytes sent, 39 received, closed after 8 seconds — while
+`www.ticketlink.co.kr` answered on other paths in the same run. A WAF
+resetting some handshakes, not a dead host.
+
+So `hit()` retries a **transport** failure and never an HTTP status. A 404 is
+a 404 and asking again only slows the sweep; a connection reset has a
+different answer a second later. And the report **names the attempt count**,
+which is the half that keeps this from becoming the quiet version of the same
+bug: a silent retry makes a host that needs three goes every week look
+identical to a healthy one. It earns its keep immediately — one TicketLink
+URL now reports `answered on attempt 2 of 3`, so the intermittency is visible
+instead of either crying wolf or disappearing.
+
+*The one `!` was a stock ticker.* The Yahoo rebrand article was reported as 9%
+reworded every week and written off above as a page that does not extract
+cleanly. Diffed token by token rather than reasoned about, the entire
+difference is the market-quote strip Yahoo Finance puts above every article —
+`5,404.02 -7.98 -0.15%` against `5,422.16 +7.02 +0.13%`. **Not one word of
+the article changed**, and those numbers move every trading day, so that
+warning was guaranteed to fire forever.
+
+`CHROME` in `scripts/watch.mjs` drops it, **declared per source rather than
+applied globally, and that scoping is the whole design.** A pattern loose
+enough to drop a market quote is loose enough to drop a fee, and a cited fee
+going from 3,000 to 8,000 is the single thing this script exists to catch.
+Scoped to the host that earned it, it cannot reach another source — and it is
+narrow even there: `8,000`, `150 euro`, `2026-10-24`, `10%` and `3.5%` all
+survive it, while `3.50%` would not, which is a real limitation and the
+reason it is not global. The next page needing an entry states its own reason
+there, with the diff that justified it.
+
+It is applied to **both sides** of the comparison, so baselines taken before
+this change still compare correctly. That matters: the alternative was a
+blanket `--record`, which is exactly the run this file spends five paragraphs
+telling the next person not to make.
+
+The sweep now reports **0 needing action, 0 worth a look**, and that is worth
+more than it sounds. A report with four permanent entries is a report nobody
+reads, so the next real one would have arrived into a habit of skipping.
+
 **The checks did not run on most changes, and now they do.**
 `.github/workflows/kpopgo-watch.yml` sweeps the network weekly and keeps its
 test step, correctly: several assertions are date-dependent and go red as
@@ -167,10 +223,11 @@ and the effect was that a change to the translation register, to `lib/`, to
 this repo was not tested by it.
 
 `.github/workflows/kpopgo-checks.yml` is the per-change gate: the suite and
-`tsc --noEmit` on anything under `kpopgo/`. The suite imports only node
-builtins and one local module, so that job installs nothing and takes
-seconds. `next build` is deliberately absent — Vercel builds every push and
-reports it as a commit status — as is `next lint`, which in Next 15.5 prompts
+`tsc --noEmit` on anything under `kpopgo/`. The suite imports node builtins
+and local modules only — `scripts/content.mjs`, which parses the two content
+registers as text, and the scripts built on it — so that job installs nothing
+and takes seconds. `next build` is deliberately absent: Vercel builds every
+push and reports it as a commit status — as is `next lint`, which in Next 15.5 prompts
 for an ESLint config this project does not have and cannot complete
 unattended. The repository is public, so the minutes are free.
 
@@ -320,11 +377,18 @@ list are markets an existing edition or English already reaches, so an
 eleventh language would multiply every future edit by eleven to reach readers
 who are not currently unreached.
 
-**The precondition for ever raising it** is a check that fails when an
-English field changes and its translations do not — a stored fingerprint per
-translated field, the same shape as `sourceChecked` but for the text rather
-than for the source. Until that exists, adding a language adds a maintenance
-burden no test can see, and ten is the number.
+**The precondition for ever raising it** was a check that fails when an
+English field changes and its translations do not — a stored fingerprint for
+the text, the same shape as `sourceChecked` but for what the page says rather
+than for when its source was read. **That check exists now**, and
+**The check that English moved and the translations did not** below is how.
+
+It does not move the number. What it removes is the reason the number could
+not be argued about: the maintenance burden is visible to a test now instead
+of resting on somebody remembering. The benefit side has not changed — the
+next candidates on the arrivals list are still markets an existing edition or
+English already reaches — so ten is the ceiling until somebody makes the
+other half of the case.
 
 **Vietnamese, Thai and Filipino were chosen from arrivals data, not from a
 sense of which markets feel large** — because that sense is exactly what put
@@ -471,7 +535,10 @@ against the IANA database the guide itself cites, Asia/Tokyo, Asia/Taipei,
 Asia/Jakarta, Asia/Ho_Chi_Minh, Asia/Bangkok and Asia/Manila have no
 transition in the next decade, so the gap to KST is a fixed zero, one or two
 hours permanently. For those readers the arithmetic the guide exists to teach
-does not exist.
+does not exist. What they did need was the converted hour itself, which that
+reasoning talked the site out of carrying anywhere; it is on the English page
+now, and **Titles in the register a reader searches in** below says why the
+editions were still not worth adding.
 
 **A language's edition leads with what its readers came for, but it does not
 stop there — and German is the correction, not the rule.** The Asian editions
@@ -890,6 +957,428 @@ The same source disagrees with itself, and the page now says so rather than
 choosing: the table gives Guro as exit 1 while the turn-by-turn directions and
 the venue's own area map both say exit 2. An official source with two answers
 is reported as two answers.
+
+## A second venue, and the one that could not be written
+
+Seoul World Cup Stadium joins Gocheok with the same pair of guides, for the
+same reason: getting there and finding the seat are two different failures.
+
+**KSPO Dome was the intended venue and is not writable.** It is the hall the
+hosts file named as "the main Seoul K-pop arena", on a line this file already
+flagged as written from memory. Probed rather than trusted:
+`www.kspo.or.kr` answers 200 and is the *foundation's* corporate site, titled
+서울올림픽기념국민체육진흥공단, with no venue or seating link on it at all. The
+hall sits in Olympic Park, and `www.olympicpark.co.kr` answers
+`ws_closed_mid_exchange` on every attempt once allowlisted — the site
+declining, not the allowlist, and consistently rather than intermittently, so
+the retry above does not rescue it.
+
+That settles it rather than merely delaying it: **a source this container
+cannot fetch cannot be fingerprinted or link-checked**, so citing it would put
+a dead citation in the weekly report every week — the permanent false alarm
+this file has a rule about. A person reading the page in a browser does not
+fix that, which is why it was not worth asking for.
+
+**The system there is compass-and-letter, and it is the easier of the two to
+teach.** Read off the operator's own seat finder, which is the evidence: the
+form asks for a direction and then a letter, so those are a seat's two
+coordinates. East runs A–T, west A–X, north and south A–P, and **I and O are
+not used anywhere in the building**, which is why the sequence steps from H to
+J and from N to P. At Gocheok a block number says nothing until you know the
+rule; here the first half of the name is a compass bearing, so a reader
+outside the west stand already knows that W is the side in front of them.
+
+**What that guide refuses to say is the direction the letters run.** The
+Gocheok chart publishes a written description with it, stating 시계방향 and
+listing every range, which is what lets that diagram draw an arrow. This venue
+publishes a graphic and no such description, so the direction is not in the
+source and no page here invents one. The same refusal as the TicketLink
+payment step, arriving in a drawing instead of a sentence.
+
+**And the operator's own site has a directions page for the wrong building.**
+Under its corporate section sits a second 찾아오시는 길, and it is the Seoul
+Facilities Corporation head office in Seongdong-gu, reached from 용두역 — about
+ten kilometres from the stadium. It is the Gocheok station-rows error wearing a
+different hat, and it was caught by reading the address rather than the page
+title. The getting-there guide carries it as a pitfall, because a reader who
+searches the operator's site will meet it.
+
+`components/StadiumPlan.tsx` derives the drawing from the letter sets, so a
+stand's range cannot drift from its label. Three things were visible only once
+rendered, which is the Gocheok plan's four passes arriving again: horizontal
+labels on the vertical stands ran off the edge of the drawing and are rotated
+onto the band; the outer corner radius is tied to the band geometry, because at
+any larger value the east and west bands poke outside the outline and read as a
+rendering fault; and it filled 1068px of desktop until it was sized like the
+Gocheok bowl.
+
+**Writing it found a latent defect in the watcher.** `isFixedDocument` missed
+`/guidance/` and `/introduce/` by one letter — `/guidance` does not contain
+`/guide` — so a venue operator files its seating, parking and access pages
+exactly where the pattern stops looking. Nine URLs were affected and every one
+is a fixed document. **The Gocheok seat page most of all**: that guide's entire
+numbering rule is read off the description published with that chart, and its
+wording moving was precisely the event nothing would have reported. Measured
+rather than assumed — those nine are the only URLs in the register whose
+classification changes, and two consecutive sweeps after the change report 0
+needing action.
+
+## The venue index, and the guide that could not ship without it
+
+Jangchung Arena was measured before it was written, and it failed — **nought
+of the twenty-seven guides mentioned it**, so a lone guide for it had no
+inbound edge and `links.test.mjs` is a hard failure on exactly that. The rule
+says what to do: a guide nothing sends a reader to is not yet part of the
+subject, and adding a decorative link to clear the check is the failure the
+file exists to prevent. So the answer was not to force it through.
+
+**What unblocked it is a page that was already owed.** The Gocheok
+getting-there guide spends a whole step on *Confirm which hall your show is
+actually in*, because Seoul's halls have overlapping English names — and that
+step could name four venues while linking to exactly one, since a step carries
+a single `see`. Worse, a reader going to the World Cup Stadium never sees it:
+it is buried inside a Gocheok guide. That is this file's own "a gap in answers
+can mean a page nobody finds" case, arriving from the other direction — the
+answer existed and was unfindable.
+
+`which-seoul-venue-is-your-show-at` is that answer given its own page: which
+name is which district, which line reaches it, what the shared operator
+confuses, and what no venue page can tell you. It is **a guide rather than a
+route**, and that is load-bearing rather than stylistic: `links.test.mjs` reads
+guide-to-guide `see` edges, so a hand-written page under `app/` could not have
+given any venue guide an inbound and would not have unblocked anything.
+
+Two edges moved with it, and both are more honest than what they replaced.
+The disambiguation step now leads to the **disambiguation page** instead of to
+Gocheok's seat guide, which is what it should always have done. The seat guide
+keeps its inbound from *Understand why the crush is worse than a baseball
+crowd* — the step about the hall holding 16,601 for baseball and about 25,000
+for a concert, which is the same subject one level down.
+
+**Jangchung has no seat guide, and the guide says so in its scope.** Gocheok
+publishes a chart with a written description of its numbering; the World Cup
+Stadium publishes a seat finder; this venue publishes neither, so there is no
+system to teach and inventing one is the thing this site was built against.
+The page says that in its own FAQ rather than leaving a reader wondering why
+the third venue is covered more thinly than the other two.
+
+What that venue does publish is worth the page on its own: **동대입구역 exit 5
+connects to the arena directly**, so the arrival never goes outside — unique
+among the three — and **there is no general parking during events**, out of 63
+spaces total. Of its 4,507 seats, 1,324 are retractable, which is why even the
+floor plan is substantially the promoter's.
+
+## TicketLink, and what a guide may not say
+
+TicketLink is the fourth Korean ticketing platform and the one the English
+guides leave out. NOL World, Weverse and YES24 are named everywhere; a show
+sold exclusively through TicketLink is one none of those pages can help with.
+`ticketlink-global-ticketing-guide` closes that, written 23 October 2026 from
+NHN LINK's own English pages.
+
+**Its global site is a path, not a subdomain, and this repo had that wrong.**
+`scripts/hosts.mjs` declared `global.ticketlink.co.kr`; a browser outside this
+container answers NXDOMAIN for it. The host never existed — the line was
+written from memory, the same way the `kspo.or.kr` entry names the sports
+foundation's corporate site as a venue operator. Probed rather than guessed
+again: `/global`, `/en` and `/english` all 404, while `/global/en` 302s to
+`/global/en/home` and answers 200, with `/global/ja/` and `/global/zh/`
+beside it.
+
+Reading it took three hosts past the main one, discovered one layer at a
+time, because the global site is a single-page app:
+`tketlink.dn.toastoven.net` serves the shell, `cdn.nhnace.com` the assets,
+and `mapi.ticketlink.co.kr` everything in it. Allowing the CDN alone still
+gave a blank page. Note the proxy distinguishes these: a bare request to a
+CDN host answers `ws_closed_mid_exchange`, which is the site declining, not
+`connect_rejected`, which is the allowlist.
+
+**The three facts worth the page**, all from TicketLink's own English
+documentation: booking requires a PAYCO ID and "our reservation service is
+not offered to non-members", so the account that blocks you is a second
+company's; the seat hold is **eight minutes** and covers everything still
+ahead of you, payment included; and the only delivery route it describes is
+marked **Domestic**, so an overseas buyer collects.
+
+**What the guide refuses to say is the point of it.** TicketLink's payment
+step says a window appears and you choose a method — it never lists one, so
+no page here names a card that works. On-site pickup leans on a confirmation
+SMS and nothing says whether that reaches a foreign number. There is a claim
+circulating in English that this site takes overseas cards with passport
+verification and needs no Korean phone number; it may well be true, it is not
+in the documentation, and the guide says so instead of repeating it. That
+refusal is the whole product: a page that fills a gap confidently is the
+thing this site was built against.
+
+**Five of its sources cannot be fingerprinted, and that is the honest state.**
+`npm run watch` gets TicketLink's WAF challenge rather than content — one
+word of visible text — so it declines to compare, which is the behaviour the
+YES24 note already describes. Those five are link-checked only, by accident
+rather than by the storefront rule. A change in TicketLink's wording will not
+be caught by this repo; it has to be re-read by a person.
+
+## llms.txt, and what an assistant should carry away
+
+`/llms.txt` and `/llms-full.txt` are route handlers derived from the content
+register, not files anybody maintains. The index says what exists; the full
+text carries every English guide with its steps, pitfalls, FAQ and sources.
+
+**They lead with the evidence model rather than with a pitch**, because the
+thing worth telling a model that has already decided to answer a Korean
+ticketing question is not that this site is good. It is that every page here
+carries a status and a date, that a weaker claim expires sooner, and that a
+procedure true on one date is not true today. An assistant that quotes a claim
+from here without its date has reproduced exactly the stale guide this site
+exists to replace, so the file asks for the date in as many words.
+
+The two refusals are stated too — no identity-check workaround, and no claim
+the source does not make — so that a model does not go looking here for either.
+
+Every entry repeats `status` and `lastChecked`, and `llms-full.txt` repeats
+them per guide rather than once at the top: a model lifting one section will
+not carry a header fifty guides away. Both carry `revalidate = 86400` for the
+same reason every page showing a derived status does.
+
+**`llms-full.txt` is derived, and the alternative is why that matters.** A
+version of it built by scraping the rendered pages put the booking graphic's
+decorative SVG labels into all twenty-three sections — `팬클럽 정보와
+일치하지 않습니다`, a sample passport name and date of birth, repeated
+verbatim every time — and replaced the actual steps with the words `Steps:
+Step by step · Questions people ask`. It parsed, it served, and it contained
+none of the procedure. `scripts/llms.test.mjs` asserts the derivation instead:
+both files must import the register, neither may name a guide slug literally,
+both must emit `lastChecked` and `displayStatus`, and `llms-full.txt` must
+carry the pitfalls — the one part of a guide that is not already in the
+platform's own documentation.
+
+It is English only. The translated pages are machine-assisted and say so on
+the page; serving them here as equivalent source text would strip the notice
+that qualifies them.
+
+**What was already there and did not need adding**: the visible last-checked
+date. `components/Badges.tsx` prints it twice above the fold — in the header
+badge beside the status label, and again in the status notice with the age in
+days. A third copy would have been duplication, not coverage.
+
+The FAQ block gained `datePublished` and `dateModified` in the same change.
+The HowTo had carried both since it was written and the FAQPage had neither,
+which was the wrong way round: an assistant quoting an answer quotes the
+answer, not the article around it, so the block holding the answers is the one
+that has to say when they were last checked.
+
+## Three pages measured, one written
+
+An AI-citation audit named three gaps and the right answer was to write one
+of them. Before writing, the existing guides were searched for the terms each
+proposed page would own, and two of the three turned out to be covered
+already:
+
+- **Weverse payment methods.** `order-from-weverse-shop-overseas` spends two
+  of its seven steps on currency and payment (currency ×8, PayPal ×7) and
+  `weverse-membership-renewal-overseas` spends two more. A fourth page would
+  have taken traffic from three that already answer it.
+- **Weverse presale.** `fan-club-presale-checklist` is five steps, all of
+  them that subject (presale ×15, membership ×23).
+- **Weverse Shop against Ktown4u.** Real. The Ktown4u guide names Weverse
+  Shop zero times, the Weverse guide names Ktown4u zero times, and the albums
+  guide names them four and one. Nobody comparing the two had a page.
+
+That measurement is the part worth keeping. A citation audit reports a gap in
+*answers*, and a gap in answers can mean a missing page or a page nobody
+finds — and writing for the first when it is the second adds a thin page and
+takes traffic from a good one.
+
+**The comparison's finding is that the usual answer is wrong.** Both shops are
+Hanteo-certified Family stores — Ktown4U as HF0082KTU001, Weverse as
+HF0082BTS001 — so the chart argument that normally settles this settles
+nothing. What separates them is that they document different halves: Ktown4u
+publishes its payment deadline, its support hours and its per-country shipping
+changes; Weverse publishes its payment methods per currency, its tax behaviour
+and its shipping exclusions. The guide says so rather than inventing a price
+or speed verdict, and its last FAQ exists to say why there is no ranking.
+
+**It carries `lastChecked: 2026-10-21`, not the day it was written.** Every
+fact in it was checked on the 21st for the two guides it draws on; the
+comparison is new, the facts are not re-checked. Dating it today would have
+claimed a check nobody did, which is the one thing this field exists to
+prevent.
+
+## Titles in the register a reader searches in
+
+A citation audit in Portuguese, Filipino and Thai found questions with zero or
+one cited source whose subject this site already covers. The conclusion it
+drew is the right one: the gap is not content, it is that a translated title
+is written in the register a translator writes in rather than the one a fan
+types in.
+
+The measured Filipino query is the evidence, and it is Taglish:
+
+> `anong oras ang start ng ticketing sa korea converted to ph time`
+
+Local grammar, borrowed nouns. `ticketing`, `converted`, `ph time` are not
+translated because nobody translates them when searching. So a title that
+renders every noun into Filipino is correct and is invisible. Four were
+rewritten on that principle, keeping the words fans already use — `chart`,
+`payment`, `shipping`, `pagamento`, `frete` — inside the local sentence.
+
+`title` is exempt from the length-ratio check in
+`scripts/translations.test.mjs` (the line that skips `.title`, `^title` and
+`.q`), so a title may be reshaped freely. `summary` is **not** exempt and was
+left alone. Both still go through the number and product-name checks, which is
+why this was safe here: all four English titles are number-free.
+
+**Half the targets were not title problems at all, and that is the more useful
+finding.** Two of the four measured gaps point at guides that do not exist in
+those editions, by deliberate exclusion:
+
+- The customs guide is refused in every language, correctly. A Filipino
+  reader's parcel clears the Philippine Bureau of Customs; a page about CBP
+  and the EU exemption is confidently about the wrong country. The measured
+  demand is real and this site is right not to answer it.
+- The timezone guide is refused in the six Asian editions because those
+  readers observe no daylight saving, so the arithmetic it teaches does not
+  exist for them. **That reasoning answers a question nobody asked.** The
+  Filipino query above is not a daylight-saving question. It is a one-off
+  conversion, it has a permanent answer, and the English page does not carry
+  it either: it converts for New York, Los Angeles, Toronto, London, Sydney,
+  Berlin, Madrid and Paris, and for no Asian city at all — because the Asian
+  editions were excluded on the DST reasoning, the Asian cities never went
+  into the English.
+
+So the conversion a Manila reader wants is on no page of this site in any
+language. Verified against this container's zoneinfo rather than recalled:
+20:00 KST is 19:00 in Manila and Taipei and 18:00 in Jakarta, Bangkok and
+Ho Chi Minh City, in January and July alike, with no transition in any of
+them. Tokyo is the same hour as Seoul.
+
+That is the shape of the German commerce-only mistake recorded above, and the
+Paris precedent says what to do about it: the cities belong in the English
+page. Doing it costs an edit to that step in German, Spanish and French, which
+are the editions that carry the guide — not ten.
+
+**Both halves are done, and the second came back smaller than the audit said.**
+The cities went into the English step and into the German, Spanish and French
+translations of it in one commit — the Paris precedent exactly, including the
+part where `lastChecked` does not move, because nobody re-checked a source to
+add an arithmetic fact that was already true.
+
+The step that names Manila as a city the guide does not apply to named it
+*alone*, although five more Asian cities sit in exactly that position. It lists
+all six now. That is navigational the same way the venue's four openings are:
+a reader who does not have to do the arithmetic should be told so by name.
+
+**The six Asian editions still do not carry the guide, and that is now a
+decision rather than the gap it was.** What a Manila reader was missing was a
+number, not a page, and the number is on the English page they can already
+read — English is an official language of the Philippines, which the Filipino
+bet above says in as many words. Translating a daylight-saving guide into six
+editions whose readers have no daylight saving to compute would be six more
+translated pages of maintenance to carry one sentence already answered.
+
+**The title rewrite was sixteen titles on the audit's estimate and seven on
+measurement.** Read against the text rather than against the count, two
+defects were real and only one of them needed query data:
+
+- **The screen's noun, not its Filipinized spelling.** The measured query is
+  the evidence and it is specific: `ticketing`, in English, inside Filipino
+  grammar — not `tiketing`. So `tiket` became `ticket` or `ticketing` in four
+  titles and `kard` became `card` in one, because that is the word on the
+  booking screen *and* the word in the only query anybody has measured. This
+  is the Hangul rule pointed the other way: the site sets 본인인증 because a
+  fan meets it on a real screen, and a Filipino fan meets `Ticket` on that
+  same screen.
+- **A calque of an English metaphor.** "Locked out of" was rendered literally
+  into both editions — `Nakasara sa labas ng`, `Trancado fora da` — and
+  neither language uses the figure. Somebody locked out searches the symptom,
+  so those titles are `Hindi maka-login` and `Não consigo entrar` now. No
+  query data was needed: the defect is visible in the text.
+
+Of the thirty-eight titles across the two editions, four were rewritten
+earlier and seven here; the other twenty-seven were left alone.
+`kuwalipikado`, `o que zera o seu lugar nela` and `ang perang ipinambabayad
+mo` are good writing, and rewriting them to hit queries nobody has measured
+would be invention wearing the clothes of optimisation — the same mistake as
+writing a thin page for a gap that was really a findability problem, recorded
+two sections above. **An audit's count is a hypothesis about how many titles
+are wrong, not a quota to fill.**
+
+## The check that English moved and the translations did not
+
+`sourceChecked` catches a source being re-read: when a guide's `lastChecked`
+moves, every translation of it goes `behind` and the page says so. Nothing
+caught the English *text* being edited, and that is the half that kept
+happening — three times in three days, each recorded above:
+
+| Edit | Translations it silently invalidated |
+| --- | --- |
+| *Paris* added to one line of the timezone guide | 3 |
+| One sentence added to Play&Stay step 1 | 10 |
+| The Asian conversions, across two steps | 3 |
+
+None of the three moved `lastChecked`, correctly — nobody re-checked a source
+to add arithmetic that was already true. So every translation went on reading
+`current` while the English underneath it had changed, and the only thing
+standing between a corrected English page and ten editions quietly
+disagreeing with it was a person remembering. The step and FAQ counts catch a
+translation short an *item*; a body string that grew a sentence was invisible
+to every assertion in the suite.
+
+`npm run sourcetext` closes it. Every translation entry carries `sourceText`,
+twelve hex characters of SHA-256 over the English fields that entry mirrors,
+as they stood when the translation was last brought in line; the check fails
+when the English is no longer that. `--record-new` writes only the entries
+with no baseline, `--record` overwrites for the deliberate case where the
+translations have just been fixed — the asymmetry `watch.mjs` earned, for the
+same reason, with the warning printed where somebody in a hurry would read it.
+
+**The baseline was proved clean before it was written, and that is the part
+worth keeping.** A fingerprint recorded over existing drift blesses it
+permanently, and afterwards a clean start and a buried mess look identical —
+the `--record` failure mode, arriving on day one. So the history was walked
+first. Forty-eight commits have touched `content/guides.ts`; ten of them
+changed a mirrored field without touching `content/translations.ts`, and those
+ten are the only places drift could have entered. Then the decisive version:
+for each of the 193 entries, the commit where its own text last changed, and
+that guide's English fingerprint at that commit against today's. **No standing
+drift.** Every translation on this site was made against the English now on
+the page, so the baseline records a fact instead of freezing a mess.
+
+**Field selection is per purpose; the parsing is shared.** The suite reads both
+registers as source text, because it installs nothing, and those primitives
+lived inside `scripts/translations.test.mjs` — correct while it was the only
+thing reading a guide against its translation. `scripts/content.mjs` holds
+them now, because a second reader arrived and this repository has already paid
+for the other version of that: `BRAND_WATCH` went on naming
+`concerts.weverse.io` after every guide had been corrected to the singular
+host, because it was a different list. A fingerprint computed by a parser that
+disagreed with the checks around it would report drift nothing else can see,
+or miss drift everything else reads.
+
+What each caller *selects* stays its own. `parts`, the set the translation
+checks compare, leaves out `takes`; the fingerprint includes it, because
+"2 minutes" becoming "9 minutes" is an edit a reader acts on — and a two-word
+field would fail the length-ratio band if it were added to `parts`. Both
+facts are asserted, so the next person to unify the two sets finds out from a
+test rather than from a false alarm.
+
+**It ignores everything a translation does not mirror**, which is what keeps it
+from becoming the permanent false alarm this file already has a rule about.
+`status`, `lastChecked`, `sources`, `see` and `partner` sit outside the hash: a
+guide gaining a citation or reaching `verified` is not an edit any translation
+has to follow. Proved both ways on the real register rather than in a fixture
+— adding a city to the timezone step named exactly `de, es, fr`, the three
+editions that carry that guide, and failed the suite at exit 1; bumping a
+`lastChecked` and adding a source stayed silent at exit 0.
+
+The canonical form is JSON rather than a concatenation, and there is a test
+saying so, because the cheaper implementation is the obvious one for somebody
+simplifying this later: a sentence cut from a step body and pasted into the
+summary joins to the same string and is an edit both translations have to
+follow.
+
+Nothing renders it. Unlike `behind`, which is honest and temporary, a
+translation whose source text has moved is not a state worth labelling — it is
+simply wrong, and the answer is to fix it.
 
 **The accommodation guide names no hotels, and that refusal is the guide.**
 `where-to-stay-seoul-concert-night` teaches one rule — find the venue's subway

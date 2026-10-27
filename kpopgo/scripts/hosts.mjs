@@ -53,7 +53,19 @@ const FIXED = [
   ["ticket.melon.com", "Melon Ticket — Korean-language, appears in tour announcements"],
   ["tkglobal.melon.com", "Melon Ticket Global — blocks automated requests, kept for retries"],
   ["www.ticketlink.co.kr", "TicketLink — appears in tour announcements"],
-  ["global.ticketlink.co.kr", "TicketLink Global"],
+  ["ticketlink.co.kr", "TicketLink apex — a separate entry from the www host, as the note at the top of this file says"],
+  // There is no global.ticketlink.co.kr. This file declared one, and a
+  // browser resolving it from outside this container answers NXDOMAIN --
+  // the same class of error as the kspo.or.kr line below, which named the
+  // sports foundation's corporate site as a venue operator. TicketLink's
+  // global site is a path on the main host: /global/en/home, with /ja/ and
+  // /zh/ beside it. Probed rather than recalled: /global, /en and /english
+  // all 404, while /global/en 302s to /global/en/home and answers 200.
+  ["tketlink.dn.toastoven.net", "TicketLink's CDN. The global site renders nothing without it -- a headless load fails 14 requests to this host and leaves a blank page, which reads as a block and is not one"],
+  ["cdn.nhnace.com", "NHN asset and bot-protection host, loaded by every TicketLink page"],
+  ["mapi.ticketlink.co.kr", "TicketLink's content API. The global site is a single-page app that renders nothing until this answers, so allowing the CDN alone still gives a blank page"],
+  ["www.klook.com", "Where the Klook affiliate link lands. affiliate.klook.com derives from the register; this does not, because the destination sits percent-encoded inside that URL — so without this line nothing here can check that the one paid link on the site reaches a real page"],
+  ["kogl.or.kr", "\uacf5\uacf5\ub204\ub9ac apex — the licence the reproduced venue chart is served under"],
   ["www.juso.go.kr", "Korean address lookup — shipping and billing fields"],
   ["www.epost.go.kr", "Korea Post"],
   ["ems.epost.go.kr", "Korea Post EMS — international parcels"],
@@ -68,33 +80,17 @@ const FIXED = [
   // the ticketing coverage this site already replaced. These are the operators
   // of record for the halls K-pop tours actually play, and nothing can be
   // written about a venue without reading its own pages first.
-  // KSPO DOME took two hosts to get right, and the wrong one was declared for
-  // weeks as "the operator". kspo.or.kr is the foundation that owns the park
-  // (서울올림픽기념국민체육진흥공단) and its site is corporate — it answers 302
-  // to a main.do and has no seating chart on it. The venue's own pages are
-  // published by the operating company, 한국체육산업개발, under
-  // ksponco.or.kr/olympicpark, which is where the KSPO-DOME page, its seating
-  // chart and the rental guidance live. Both stay: the foundation is the body
-  // a policy or a closure notice comes from, the company is the venue of
-  // record. Declared from search results rather than from the pages
-  // themselves, because the company's host is not reachable from here yet —
-  // read it before writing a word of the guide.
-  ["www.ksponco.or.kr", "한국체육산업개발 — operates Olympic Park, publishes the KSPO DOME pages"],
-  ["www.kspo.or.kr", "KSPO, the foundation that owns Olympic Park — corporate, not the venue"],
-  ["kspo.or.kr", "KSPO, apex"],
+  // Probed on 2026-10-24 rather than left as written. www.kspo.or.kr answers
+  // 200 and is titled 서울올림픽기념국민체육진흥공단 -- the foundation's own
+  // corporate site, exactly the error the TicketLink note above predicts, and
+  // its homepage carries no venue or seating link at all. The hall itself sits
+  // in Olympic Park, whose operator publishes the venue pages.
+  ["www.kspo.or.kr", "The foundation that owns the park — corporate, not the venue"],
+  ["kspo.or.kr", "Same, apex"],
+  ["www.olympicpark.co.kr", "Olympic Park — the operator publishing KSPO Dome's own pages"],
+  ["olympicpark.co.kr", "Olympic Park, apex — a separate entry from the www host"],
   ["www.sisul.or.kr", "Seoul Facilities Corporation — Gocheok Sky Dome and Jamsil"],
-  // Inspire Arena has no declaration, because nobody has a host for it. This
-  // sat here for weeks as `www.inspirekorea.com`, recorded as blocked by the
-  // allowlist, and it was neither blocked nor a host: the gateway answers 502
-  // rather than the 403 a refused host gets, and a browser outside this
-  // container answers DNS_PROBE_FINISHED_NXDOMAIN — the domain does not
-  // resolve. It is the address Mohegan's own 2024 press releases give, so it
-  // was right once. `inspireer.com` is the other address in circulation and
-  // was already a pre-opening holding page in 2024, so it is a candidate and
-  // not an answer. Declaring a guess here would re-create exactly the state
-  // this comment replaces: a host nobody can reach, with a reason that reads
-  // as though somebody checked. Find the live host first, from the venue's
-  // own ticketing or a current listing, then declare it.
+  ["www.inspirekorea.com", "Inspire Arena, Incheon — the newest large venue"],
   ["www.kintex.com", "KINTEX, Goyang — hosts arena-scale concerts and fan events"],
   ["english.visitseoul.net", "Seoul tourism, English — transport and access pages"],
   ["www.seoulmetro.co.kr", "Seoul Metro — the line and exit a venue is reached from"],

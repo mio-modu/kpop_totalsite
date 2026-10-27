@@ -55,9 +55,11 @@ jobs:
         with:
           node-version: 22
 
-      # Every assertion in the suite imports node builtins and one local
-      # module, so there is nothing to install. Keeping it that way is what
-      # makes this job a few seconds rather than a minute.
+      # Every assertion in the suite imports node builtins and local modules
+      # only — `scripts/content.mjs`, which parses the two content registers as
+      # text, and the scripts that build on it — so there is nothing to
+      # install. Keeping it that way is what makes this job a few seconds
+      # rather than a minute.
       - name: Test suite
         working-directory: kpopgo
         run: node --test "scripts/*.test.mjs"

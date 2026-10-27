@@ -230,7 +230,7 @@ export type Guide = {
    * because the content layer is data and stays data — the mapping from this
    * key to a component lives in the route that renders it.
    */
-  diagram?: "gocheok-bowl";
+  diagram?: "gocheok-bowl" | "worldcup-bowl";
   /** An official document reproduced on the page, under a named licence. */
   document?: ReproducedDocument;
   intro: string[];
@@ -272,6 +272,10 @@ export const guides: Guide[] = [
         pitfall:
           "Fan accounts aggregate and paraphrase, and they get the platform wrong often enough to cost you the sale. They also rarely update when a date moves.",
         takes: "10 minutes",
+        see: {
+          slug: "ticketlink-global-ticketing-guide",
+          text: "If it names TicketLink, none of the usual three apply",
+        },
       },
       {
         title: "Identify your platform — and do not assume it from the label",
@@ -369,8 +373,8 @@ export const guides: Guide[] = [
         url: "https://concert.weverse.io/",
       },
       {
-        label: "NOL World (formerly interpark Global) — rebrand announcement, dated 3 Dec 2025",
-        url: "https://sg.finance.yahoo.com/news/interpark-global-rebrands-nol-world-230000074.html",
+        label: "NOL World (formerly interpark Global) — Nol Universe\u0027s own announcement on the wire, dated 3 Dec 2025",
+        url: "https://www.prnewswire.com/apac/news-releases/interpark-global-rebrands-as-nol-world-a-new-travel-hub-for-global-k-pop-fans-visiting-korea-302629816.html",
       },
       {
         label: "Korea.net — government briefing on the ticket resale crackdown",
@@ -476,8 +480,8 @@ export const guides: Guide[] = [
     ],
     sources: [
       {
-        label: "interpark Global rebrands to NOL World — announcement dated 3 Dec 2025",
-        url: "https://sg.finance.yahoo.com/news/interpark-global-rebrands-nol-world-230000074.html",
+        label: "interpark Global rebrands to NOL World — Nol Universe\u0027s own announcement on the wire, dated 3 Dec 2025",
+        url: "https://www.prnewswire.com/apac/news-releases/interpark-global-rebrands-as-nol-world-a-new-travel-hub-for-global-k-pop-fans-visiting-korea-302629816.html",
       },
       {
         label: "Chosun — Yanolja Core brand consolidation under NOL",
@@ -699,6 +703,10 @@ export const guides: Guide[] = [
         pitfall:
           "Buying on a general marketplace to save money and then discovering it did not count is the standard version of this mistake.",
         takes: "5 minutes",
+        see: {
+          slug: "weverse-shop-vs-ktown4u",
+          text: "The two shops most readers are choosing between, side by side",
+        },
       },
       {
         title: "Check whether the seller reports to the Korean charts",
@@ -1053,7 +1061,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Convert for the date of the sale, not for today",
-        body: "This is the whole guide in one line. Because Korea never shifts and you do, the local hour of a Korean sale depends on which side of your own daylight saving change the date falls on. At 20:00 KST, a sale lands at 06:00 in New York in January and 07:00 in July. Los Angeles moves 03:00 to 04:00, Toronto 06:00 to 07:00, London 11:00 to 12:00, Berlin, Madrid and Paris 12:00 to 13:00.",
+        body: "This is the whole guide in one line. Because Korea never shifts and you do, the local hour of a Korean sale depends on which side of your own daylight saving change the date falls on. At 20:00 KST, a sale lands at 06:00 in New York in January and 07:00 in July. Los Angeles moves 03:00 to 04:00, Toronto 06:00 to 07:00, London 11:00 to 12:00, Berlin, Madrid and Paris 12:00 to 13:00. If your own clocks never move, your gap to Korea never moves either and one line is the whole answer: 20:00 KST is 19:00 in Manila and Taipei, 18:00 in Jakarta, Bangkok and Hanoi, and 20:00 in Tokyo, in January and in July alike.",
         pitfall:
           "Converting in a search box today for a sale three weeks away. If a clock change falls in between, the answer you get is an hour wrong — and it is wrong in the direction of being late.",
         takes: "3 minutes",
@@ -1067,7 +1075,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Check whether a clock change falls between now and the sale",
-        body: "The changeover dates are not the same in each country, which creates short windows where the usual conversion is wrong even between two countries that both observe it. In 2027 New York changes on 14 March, London on 28 March, Sydney on 4 April; Berlin, Madrid and Paris change with London and go back on 31 October. Most of Spanish-speaking Latin America does not change at all \u2014 Bogot\u00e1, Lima and Buenos Aires hold a fixed gap to Korea alongside Mexico City, as does Manila. For those readers this step simply does not apply, which is worth knowing in itself. If the sale date sits on the far side of your own changeover, set your alarm from the converted time for that date.",
+        body: "The changeover dates are not the same in each country, which creates short windows where the usual conversion is wrong even between two countries that both observe it. In 2027 New York changes on 14 March, London on 28 March, Sydney on 4 April; Berlin, Madrid and Paris change with London and go back on 31 October. Most of Spanish-speaking Latin America does not change at all \u2014 Bogot\u00e1, Lima and Buenos Aires hold a fixed gap to Korea alongside Mexico City, as do Manila, Taipei, Jakarta, Bangkok, Hanoi and Tokyo. For those readers this step simply does not apply, which is worth knowing in itself. If the sale date sits on the far side of your own changeover, set your alarm from the converted time for that date.",
         pitfall:
           "The two-week gap between the North American and European changes in March is the one that catches people, because the familiar New York to London difference is briefly not what it normally is.",
         takes: "3 minutes",
@@ -3043,13 +3051,13 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Confirm which hall your show is actually in",
-        body: "Seoul has several large halls and their English names overlap badly. Gocheok Sky Dome — 고척스카이돔 — is in Guro-gu at 430 Gyeongin-ro, postcode 08223, and is run by the Seoul Facilities Corporation. It is not KSPO Dome, which is inside Olympic Park in Songpa-gu and run by a different organisation entirely, and it is not Inspire Arena, which is in Incheon. Check the venue name on the booking page against the address before you plan anything, because the three are an hour apart from each other.",
+        body: "Seoul has several large halls and their English names overlap badly. Gocheok Sky Dome — 고척스카이돔 — is in Guro-gu at 430 Gyeongin-ro, postcode 08223, and is run by the Seoul Facilities Corporation. It is not KSPO Dome, which is inside Olympic Park in Songpa-gu and run by a different organisation entirely, and it is not Inspire Arena, which is in Incheon. It is also not Seoul World Cup Stadium, which is the open-air stadium at Sangam in Mapo-gu — the same operator runs that one, so a search for the operator's name will offer you both. Check the venue name on the booking page against the address before you plan anything, because they are an hour apart from each other.",
         pitfall:
           "Reading \u0022Dome\u0022 and assuming there is only one. Two of Seoul\u0027s biggest halls have Dome in the name, they are on opposite sides of the city, and a fan who learns this at 18:00 does not make the show.",
         takes: "2 minutes",
         see: {
-          slug: "gocheok-sky-dome-finding-your-seat",
-          text: "And what the block number on that ticket is telling you",
+          slug: "which-seoul-venue-is-your-show-at",
+          text: "Which of Seoul's halls your ticket means, and what changes with it",
         },
       },
       {
@@ -3076,6 +3084,10 @@ export const guides: Guide[] = [
         pitfall:
           "Judging the crowd from a baseball visit, or from a friend who went to one. The concert configuration is a different building as far as the exits are concerned.",
         takes: "—",
+        see: {
+          slug: "gocheok-sky-dome-finding-your-seat",
+          text: "And what the block number on your ticket is telling you",
+        },
       },
       {
         title: "Do not plan to park, and know the reason is not capacity",
@@ -3283,6 +3295,693 @@ export const guides: Guide[] = [
         label:
           "서울시설공단 고척스카이돔 — 찾아오시는길: the stations, exits and walking distances",
         url: "https://www.sisul.or.kr/open_content/skydome/introduce/location.jsp",
+      },
+    ],
+  },
+  {
+    slug: "ticketlink-global-ticketing-guide",
+    ko: "\uD2F0\uCF13\uB9C1\uD06C",
+    art: "guide-tickets",
+    name: "TicketLink",
+    koLine: "\uD2F0\uCF13\uB9C1\uD06C \uAE00\uB85C\uBC8C \u2014 \uD398\uC774\uCF54 \uACC4\uC815\uC774 \uBA3C\uC800\uC785\uB2C8\uB2E4",
+    title: "TicketLink for overseas buyers: the PAYCO account, the eight-minute clock, and the collection problem",
+    searchTitle: "TicketLink from overseas: PAYCO first, then an 8-min clock",
+    summary:
+      "The fourth Korean ticketing platform, and the one English guides leave out. It has a real English site, it will not let you book without a PAYCO account, and its only documented delivery route is domestic.",
+    glyph: "ticket",
+    status: "sourced",
+    lastChecked: "2026-10-23",
+    scope:
+      "Covers booking on TicketLink from outside Korea, read from the English pages NHN LINK publishes for its global site on 23 October 2026: where the global site actually is, the account it requires, the documented purchase steps and their clock, and every ticket-collection route it describes. It is deliberate about what it does not claim. TicketLink\u0027s English documentation does not state which payment cards it accepts, whether its confirmation SMS can reach a number outside Korea, or what PAYCO asks for at sign-up, and this page says so rather than filling those gaps from elsewhere. Nobody from this site has booked on it.",
+    readMinutes: 7,
+    platforms: ["TicketLink", "PAYCO"],
+    intro: [
+      "English guides to Korean ticketing name three platforms and stop. TicketLink is the fourth, it is run by NHN rather than by any of the other three, and a show sold exclusively through it is a show the other three guides cannot help you with at all.",
+      "It does have an English site. What it also has is an account requirement that sits outside TicketLink entirely, a checkout clock measured in minutes, and a delivery section whose only shipping route is marked Domestic.",
+    ],
+    steps: [
+      {
+        title: "Check whether your show is on TicketLink at all",
+        body: "TicketLink sells concerts, musicals, theatre, classical and dance, family shows, exhibitions and esports, and some concerts carry an Exclusive Sale badge, which means that platform is the only place the show is sold. The official announcement is what tells you; the platform is not something to infer from the artist or the venue. If the announcement names TicketLink, none of the NOL World, Weverse or YES24 procedures apply to you.",
+        pitfall:
+          "Assuming the big three cover everything. They do not, and a reader who learns on sale day that their show is a TicketLink exclusive has lost the time they needed to set up an account.",
+        takes: "5 minutes",
+        see: {
+          slug: "buy-k-pop-concert-tickets-from-overseas",
+          text: "Where the announcement is, and what else it decides",
+        },
+      },
+      {
+        title: "Go to the right address, which is not the one you would guess",
+        body: "The English site is a path on the main domain: www.ticketlink.co.kr/global/en/home. There is no global subdomain \u2014 a browser asked for global.ticketlink.co.kr answers NXDOMAIN, and /global, /en and /english on the main host all return 404. The same global section runs in Japanese and Chinese at /global/ja/ and /global/zh/, so the language you get is decided by the path, not by a setting.",
+        pitfall:
+          "Searching for a TicketLink global site and landing on the Korean one. They are the same host, so nothing warns you; you simply find yourself on a page in Korean with a different help section behind it.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Get a PAYCO account before you need one",
+        body: "This is the step that catches people, and TicketLink states it plainly: you sign in with a PAYCO ID, and \u0022our reservation service is not offered to non-members.\u0022 PAYCO is NHN\u0027s own account and payment service, separate from TicketLink. Its sign-up, as TicketLink describes it, is the Create account link at the foot of the sign-in page, then an email address and a password, and you have to agree to grant PAYCO access to your personal information.",
+        pitfall:
+          "Leaving this to the sale. You are not creating one account under time pressure, you are creating an account on a second company\u0027s service and then using it to sign in, and the eight-minute clock in the next step does not start until you are already signed in.",
+        takes: "20 minutes, days ahead",
+      },
+      {
+        title: "Know the clock: eight minutes from seat to payment",
+        body: "TicketLink documents five steps. Date and round, where the button reads To Be Sold until the sale opens and you refresh to turn it into Reserve. Class and seat, choosing by zone first or by class first, with either automatic assignment or your own pick. Then ticket type and amount, where the page says the seats are held and you must purchase within eight minutes. Then delivery and confirmation, which repeats the eight minutes and requires you to agree to the cancellation fee policy. Then payment. The hold is on the seats, so the clock is the whole of what remains, not one screen of it.",
+        pitfall:
+          "Pop-ups. TicketLink\u0027s own instructions tell you to enable them, because the booking window is a pop-up \u2014 so a blocker set and forgotten takes the sale without an error message anyone would recognise as one.",
+        takes: "8 minutes, and not a minute more",
+        see: {
+          slug: "nol-world-booking-fees-and-checkout-clock",
+          text: "The same clock on NOL World, which runs differently",
+        },
+      },
+      {
+        title: "Plan to collect, because delivery is domestic",
+        body: "TicketLink describes four ways to get a ticket and one of them is closed to you. Delivery arrives within ten business days and the page marks it Domestic. On-site pickup is at the box office, presenting a confirmation SMS or your ticket number, and for performances and exhibitions the window is between one hour and thirty minutes before the show. Home Ticket is a barcode inside the TicketLink app. Smart Ticket is issued to your phone, from midnight on the day for same-day events, and cannot be cancelled once issued.",
+        pitfall:
+          "Two conditions on the app routes that are easy to miss. Everyone on one booking has to enter together on a Home Ticket barcode, so a group that planned to arrive separately cannot; and if you already hold a paper ticket you cannot issue a Smart Ticket, because the two may not exist at once.",
+        takes: "10 minutes, before the day",
+      },
+      {
+        title: "Read what TicketLink does not say, because that is where you are exposed",
+        body: "Three things its English pages do not answer. Step five of the purchase guide says a payment window appears and you select a method; it never lists which methods, so whether your card works is not documented anywhere in English. On-site pickup leans on a confirmation SMS, and nothing says whether that SMS can reach a number outside Korea. And PAYCO sign-up is described by TicketLink in one sentence, so what PAYCO itself asks for is a question for PAYCO. There is a claim circulating in English that this site takes overseas cards with passport verification and needs no Korean phone number. It may be true. It is not in TicketLink\u0027s documentation, and this page will not repeat it until somebody checks.",
+        pitfall:
+          "Treating an undocumented thing as a permitted thing. The gap between \u0022they do not say no\u0022 and \u0022it works\u0022 is where a sale is lost, and it is the whole reason this step exists rather than a confident paragraph.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Ask the right desk, in English",
+        body: "TicketLink runs an English-only customer line on 1644-3850 and prints it on every page of its global help section, alongside a 1:1 Inquiry form and membership@nhnlink.co.kr. Its English FAQ index carries a standing entry titled \u0022Can foreigners also join the membership?\u0022 dated June 2022, and three separate entries about being shown a restricted-access screen or an IP restriction during sign-up, login and booking. Those titles are worth reading before sale day rather than during it. The operator is NHN LINK Corporation, at 586 Gangnam-daero, Gangnam-gu, Seoul.",
+        pitfall:
+          "Reaching for a VPN when a restricted-access screen appears. That is a subscription sold against a problem it does not reliably fix, it can break a payment that was going to work, and this site will not tell you to do it \u2014 the English line exists for exactly this question.",
+        takes: "15 minutes",
+        see: {
+          slug: "nol-world-account-recovery-and-booking-errors",
+          text: "What a booking error usually turns out to be",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Do I need a Korean account to use TicketLink?",
+        a: "You need a PAYCO account, which is NHN\u0027s own service rather than TicketLink\u0027s. TicketLink states that its reservation service is not offered to non-members and that you sign in with a PAYCO ID. It describes PAYCO sign-up as an email address and a password, plus agreeing to grant PAYCO access to your personal information. What PAYCO asks for beyond that is not covered in TicketLink\u0027s English pages.",
+      },
+      {
+        q: "Where is TicketLink\u0027s English site?",
+        a: "At www.ticketlink.co.kr/global/en/home \u2014 a path on the main domain, not a separate one. There is no global.ticketlink.co.kr; that hostname does not resolve. The same section also runs in Japanese at /global/ja/ and Chinese at /global/zh/.",
+      },
+      {
+        q: "How long do I have to pay once I have a seat?",
+        a: "Eight minutes. TicketLink says the seats are held and must be purchased within eight minutes at the ticket-amount step, and repeats the eight minutes at the delivery and confirmation step. The hold is on the seats, so that window covers everything still ahead of you, payment included.",
+      },
+      {
+        q: "Can TicketLink post my tickets to me abroad?",
+        a: "Its documented delivery route is marked Domestic and quoted at ten business days, so plan on collecting instead. The alternatives it describes are on-site pickup at the box office with a confirmation SMS or ticket number, a Home Ticket barcode in the TicketLink app, and a Smart Ticket issued to your phone.",
+      },
+      {
+        q: "Which cards does TicketLink accept from overseas?",
+        a: "Its English documentation does not say. The purchase guide\u0027s payment step says only that a payment window appears and you select a method. Until somebody checks it on a real booking, this page will not name a card that works \u2014 and neither should anything else you read.",
+      },
+      {
+        q: "I get a restricted-access screen. What is it?",
+        a: "TicketLink\u0027s English FAQ index carries three entries on this, about restricted access during booking and an IP restriction during sign-up and login, dated between June 2022 and June 2023. That it is answered three times suggests it is common. Ask the English-only line on 1644-3850 or the 1:1 Inquiry form rather than reaching for a VPN, which is a subscription sold against a problem it may not fix and can break a payment that would otherwise have worked.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "TicketLink Global \u2014 Sign in & Sign Up: the PAYCO requirement and that booking is members-only",
+        url: "https://www.ticketlink.co.kr/global/en/help/guide/signup",
+      },
+      {
+        label:
+          "TicketLink Global \u2014 Purchase tickets: the five steps and the eight-minute seat hold",
+        url: "https://www.ticketlink.co.kr/global/en/help/guide/reservation",
+      },
+      {
+        label:
+          "TicketLink Global \u2014 Ticket Pickup: delivery marked Domestic, on-site pickup, Home Ticket and Smart Ticket",
+        url: "https://www.ticketlink.co.kr/global/en/help/guide/ticket",
+      },
+      {
+        label:
+          "TicketLink Global \u2014 Service Center: the English-only line, the 1:1 Inquiry form and the FAQ index",
+        url: "https://www.ticketlink.co.kr/global/en/help/main",
+      },
+      {
+        label: "TicketLink Global \u2014 home, where the operator and the category list are published",
+        url: "https://www.ticketlink.co.kr/global/en/home",
+      },
+    ],
+  },
+  {
+    slug: "weverse-shop-vs-ktown4u",
+    ko: "\uCD08\uB3D9",
+    art: "album-stack",
+    name: "Shop or Ktown4u",
+    koLine: "\uC704\uBC84\uC2A4\uC0F5 vs \uCF00\uC774\uD0C0\uC6B4\uD3EC\uC720 \u2014 \uB458 \uB2E4 \uD55C\uD130\uC5D0 \uC7A1\uD799\uB2C8\uB2E4",
+    title: "Weverse Shop or Ktown4u: the comparison nobody writes, because both pages are about one store",
+    searchTitle: "Weverse Shop or Ktown4u: the comparison nobody writes",
+    summary:
+      "They both report to Hanteo, so the chart question does not decide it. What decides it is which store has your release, whose clock you can meet, and \u2014 more than either \u2014 which one publishes the thing you need to know.",
+    glyph: "parcel",
+    status: "sourced",
+    lastChecked: "2026-10-21",
+    scope:
+      "A head-to-head on the two shops an overseas fan actually chooses between for a Korean album. It is assembled from claims this site checked on 21 October 2026 against Hanteo\u0027s certified-store register and each shop\u0027s own notices, which is why it carries that date rather than today\u0027s: the comparison is new, the facts in it are not re-checked. It covers chart reporting, catalogue, payment deadlines, where cost appears, shipping refusals and support hours. It does not rank them on price or speed, because neither is a property of the shop \u2014 both depend on your country, your release and the week.",
+    readMinutes: 8,
+    platforms: ["Weverse Shop", "Ktown4u", "Hanteo"],
+    intro: [
+      "This site has a guide to ordering from Weverse Shop and a guide to ordering from Ktown4u, and neither mentions the other once. That is fine for a reader who has already chosen, and useless for the much larger number who have not.",
+      "The answer is not the one most threads give. Both shops are Hanteo-certified, so the chart argument that usually settles this is not an argument at all. What actually separates them is narrower and stranger: they publish different things, and the gaps are not in the same places.",
+    ],
+    steps: [
+      {
+        title: "Settle the chart question first, because it is the one people get wrong",
+        body: "The common belief is that buying from the official shop counts and buying from a reseller does not. For these two it is simply false, and it is checkable rather than a matter of trust. Hanteo publishes its certified Family stores with a code each: Ktown4U is HF0082KTU001 and Weverse is HF0082BTS001. Hanteo also requires every online Family store to display the Family mark in its footer, linked back to hanteochart.com, so the shop and the register confirm each other from both ends. Certification is reissued each year, so check the code rather than take it from this page.",
+        pitfall:
+          "Choosing the more expensive shop to protect a chart contribution that was never at risk. If the chart is the whole reason you are paying more, you are paying for something you already had.",
+        takes: "5 minutes",
+        see: {
+          slug: "buy-k-pop-albums-from-overseas",
+          text: "What the chart actually counts, and what it does not",
+        },
+      },
+      {
+        title: "Ask which store has your release before you compare anything else",
+        body: "This decides more orders than price does, and it is asymmetric. Ktown4u is a general retailer and carries releases across labels. Weverse Shop is not one store at all: there is a GLOBAL shop and there are region shops, they carry different stock, they run different pre-order windows and they ship from different places. An item a fan in another country ordered may not exist in yours. So the comparison is often not Weverse against Ktown4u \u2014 it is Ktown4u against whichever Weverse Shop you happen to be in.",
+        pitfall:
+          "Reading a pre-order deadline off somebody else\u0027s Weverse Shop. A cut-off in one store tells you nothing about the others, and the inclusions are tied to the window rather than to the album.",
+        takes: "10 minutes",
+        see: {
+          slug: "order-from-weverse-shop-overseas",
+          text: "Working out which Weverse Shop you are in",
+        },
+      },
+      {
+        title: "Know whose clock you have to meet",
+        body: "Ktown4u publishes one and it is short. An unpaid order is cancelled automatically six hours after it is placed \u2014 cut from twenty-four, effective 19 February 2025 KST. For a fan ordering at midnight in Europe or the Americas, six Korean hours can pass entirely while asleep, and a pre-order placed but not paid is a pre-order that was never placed. Weverse Shop publishes no equivalent deadline in the notices this site reads, which is not the same as there being none. The asymmetry is the practical point: one shop tells you how long you have.",
+        pitfall:
+          "Placing a Ktown4u pre-order to secure it and paying in the morning. That is the one habit the six-hour rule exists to defeat, and it defeats it silently \u2014 nothing alerts you, the order is simply gone.",
+        takes: "5 minutes",
+        see: {
+          slug: "ktown4u-ordering-shipping-and-fees",
+          text: "The six-hour clock, and the other Ktown4u rules under it",
+        },
+      },
+      {
+        title: "Expect the cost to appear in different places",
+        body: "Neither shop\u0027s product page is the price you pay, and they diverge after that. Since 3 February 2026 Weverse calculates tax from your shipping and billing address: orders to Korea show tax-inclusive prices throughout, orders anywhere else show the price without tax and add the destination\u0027s tax at checkout once an address is entered. Ktown4u\u0027s additions land later and land differently \u2014 it raised international shipping by 7% effective 1 February 2026, and for US shipments since 2 June 2025 it applies a USD 12 charge where duties are owed and were not prepaid electronically, collected from the recipient at delivery.",
+        pitfall:
+          "Comparing two carts. Weverse has already added the tax by then and Ktown4u has not yet added the twelve dollars, so the cart that looks cheaper at checkout is not reliably the one that costs less at the door.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Check which one will ship to you, in the form each of them says it",
+        body: "Both refuse some destinations and they announce it differently. Weverse maintains a list of countries and regions it cannot ship to from South Korea; the 15 July 2026 revision names Myanmar, the Democratic Republic of the Congo, Iraq, Iran, Lebanon, Mali, Russia, Andorra, Ukraine, Belarus, Afghanistan, the Netherlands Antilles, Israel and Turkey. Ktown4u does it per method rather than per country: it suspended K-Packet to Germany and Spain from 17 January 2025 when those postal operators left the arrangement it runs on, and it publishes disruptions down to individual postal codes. One list tells you whether you can order at all; the other tells you whether the method you used last time still exists.",
+        pitfall:
+          "Assuming a country that appears on neither list is clear. Ktown4u\u0027s stated handling when a method is withdrawn is to email affected customers about moving to another service and the extra cost \u2014 so an order already placed can change price after the fact.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Read the payment lists, and notice that only one shop has them",
+        body: "Weverse publishes what you can pay with, per currency, and the lists are not the same length. USD gets PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay and Grab Pay. JPY gets that list without Grab Pay. CNY drops PayPal. MXN is the shortest at two \u2014 PayPal and Apple Pay, both digital, no cash option. KRW adds Korean cards and the Korean wallets. Your default currency therefore decides your buttons before you reach checkout. Ktown4u publishes no comparable list in its notices, so what it accepts has to be read off its own checkout.",
+        pitfall:
+          "Setting a currency for the price rather than for the payment method. If neither of a short list is set up for you, there is no third button at checkout and no workaround at that point.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Work out who you can reach when it goes wrong, and when",
+        body: "Ktown4u states its hours: customer service on weekdays 10:00 to 17:00 KST since 1 November 2023, with a lunch break from 12:30 to 13:30. That is five and a half hours on Korean weekdays, which for most readers here is the middle of the night, and it compounds with the six-hour payment clock \u2014 an order placed on a Friday evening in Europe can expire before anyone is at a desk. It also pauses both despatch and support over Korean holidays and publishes the dates each time. Weverse Shop does not publish support hours in the same place; its cancellation behaviour is the better-documented half and has a guide of its own here.",
+        pitfall:
+          "Treating a Korean public holiday as a delivery delay. Ktown4u pauses support across the same days, so the week you most want to ask about a parcel is the week nobody answers.",
+        takes: "10 minutes",
+        see: {
+          slug: "weverse-shop-shipping-delays-and-cancellation",
+          text: "When a Weverse Shop order can still be cancelled",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Does a Ktown4u order count toward the Korean charts, or do I have to buy from Weverse?",
+        a: "Both count. Hanteo lists both as certified Family stores \u2014 Ktown4U as HF0082KTU001 and Weverse as HF0082BTS001 \u2014 and requires each to show the Family mark in its footer linked back to the register. Certification is reissued each year, so confirm the code on hanteochart.com rather than taking it from here.",
+      },
+      {
+        q: "Which one is cheaper?",
+        a: "Neither, as a property of the shop. What the album costs you depends on your country, the release and the week: Weverse adds your destination\u0027s tax at checkout, Ktown4u raised international shipping 7% in February 2026 and adds USD 12 on US deliveries where duties were not prepaid. Compare the landed cost for your address on the day, not the two product pages.",
+      },
+      {
+        q: "Which one ships faster?",
+        a: "Not answerable in general, and the question that is answerable matters more: which methods still run to your country. Ktown4u withdraws shipping methods by country \u2014 K-Packet to Germany and Spain from January 2025 \u2014 and publishes disruptions down to postal codes, while Weverse publishes a list of destinations it cannot ship to at all. Check the current notice for your country before comparing delivery estimates.",
+      },
+      {
+        q: "Can I just order the same album from both?",
+        a: "You can, and it is a real strategy for pre-order inclusions, which are tied to the window and often to the specific retailer rather than to the album. Price it as two landed costs rather than two album prices, and remember the inclusions stop when the window closes, not when the album is released.",
+      },
+      {
+        q: "I am in the United States. Does that change the answer?",
+        a: "It changes one line of it. Since 2 June 2025 Ktown4u applies a USD 12 charge on US shipments where duties, taxes or other government charges are owed and were not prepaid electronically before delivery, billed to the recipient at the door. Ktown4u publishes the way out as well: prepay through UPS\u0027s import duties and taxes system. That is a flat addition to compare against whatever tax Weverse adds at your checkout.",
+      },
+      {
+        q: "Why does this page compare so few things?",
+        a: "Because the rest is not published. The honest finding of putting the two side by side is that they document different halves: Ktown4u states its payment deadline, its support hours and its per-country shipping changes; Weverse states its payment methods per currency, its tax behaviour and its shipping exclusions. Where a shop does not publish something this page says so instead of estimating it, which is why there is no speed ranking and no price verdict.",
+      },
+    ],
+    sources: [
+      {
+        label: "Hanteo Chart \u2014 certified Family stores, where Ktown4U is HF0082KTU001 and Weverse is HF0082BTS001",
+        url: "https://www.hanteochart.com/en/family/search",
+      },
+      {
+        label: "Hanteo Chart \u2014 Family store guide: the footer mark, and the instruction to check the code",
+        url: "https://www.hanteochart.com/en/family/guide",
+      },
+      {
+        label: "Weverse Shop \u2014 tax calculated from the shipping and billing address, 3 February 2026",
+        url: "https://shop.weverse.io/en/notices/12149",
+      },
+      {
+        label: "Weverse Shop \u2014 countries and regions Korea cannot ship to, revised 15 July 2026",
+        url: "https://shop.weverse.io/en/notices/216",
+      },
+      {
+        label: "Ktown4u \u2014 unpaid orders cancelled after six hours, effective 19 February 2025",
+        url: "https://www.ktown4u.com/notices/7001",
+      },
+      {
+        label: "Ktown4u \u2014 the USD 12 charge on US deliveries where duties were not prepaid, from 2 June 2025",
+        url: "https://www.ktown4u.com/notices/7123",
+      },
+      {
+        label: "Ktown4u \u2014 international shipping raised 7%, effective 1 February 2026",
+        url: "https://www.ktown4u.com/notices/7360",
+      },
+      {
+        label: "Ktown4u \u2014 K-Packet suspended to Germany and Spain from 17 January 2025",
+        url: "https://www.ktown4u.com/notices/6960",
+      },
+      {
+        label: "Ktown4u \u2014 the notices page, which is the live version of all of the above",
+        url: "https://www.ktown4u.com/notices",
+      },
+    ],
+  },
+  {
+    slug: "seoul-world-cup-stadium-getting-there",
+    ko: "공연장",
+    art: "lightstick",
+    name: "Seoul World Cup Stadium",
+    koLine: "서울월드컵경기장 가는 길 — 역 이름이 경기장 이름과 같습니다",
+    title: "Getting to Seoul World Cup Stadium for a concert",
+    summary:
+      "The stadium in Sangam that stadium-scale tours play, read off the Seoul Facilities Corporation's own pages: the line and exit, the buses and which stop, and which of the two car parks is the one that discounts.",
+    glyph: "star",
+    status: "sourced",
+    lastChecked: "2026-10-24",
+    scope:
+      "Covers reaching Seoul World Cup Stadium in Mapo-gu, from the operator's own transport and parking pages. It does not cover which gate admits you, when doors open, or what you may carry in: those are the promoter's and are set per show, and no page here can tell you them in advance.",
+    readMinutes: 5,
+    platforms: ["Seoul World Cup Stadium"],
+    intro: [
+      "This is the 66,704-seat stadium at Sangam, and the operator says in its own words that it opens for cultural events as well as football. A stadium show there is the largest room a K-pop tour plays in Seoul.",
+      "The useful thing about getting to it is that the subway station is named after the stadium, which removes the guesswork that the Gocheok guide spends a step on. The part worth reading is which exit, which bus stop, and the car park trap.",
+    ],
+    steps: [
+      {
+        title: "Line 6 to 월드컵경기장역, and leave by exit 2",
+        body:
+          "The station carries the stadium's name, so there is no station-choosing problem here. The operator names exit 2 specifically. Seoul World Cup Stadium is at 서울특별시 마포구 월드컵로 240, and the station sits beside it rather than a walk away.",
+        pitfall:
+          "The operator's own website has a second 찾아오시는 길 page under its corporate section, and that one is the Seoul Facilities Corporation's head office in Seongdong-gu, reached from 용두역 on line 2. It is about ten kilometres from the stadium. Read the address before you trust a directions page on a venue's site.",
+        takes: "2 minutes",
+        see: {
+          slug: "seoul-world-cup-stadium-finding-your-seat",
+          text: "Once inside, the block name tells you which side of the stadium you are on.",
+        },
+      },
+      {
+        title: "By bus, aim for the west-side stop",
+        body:
+          "The operator lists 760, 710 and 571 as trunk routes, 7019 and 7715 as branch routes, 마포08 as the local circular and 9711 as the wide-area coach. It singles out 710, 7019 and 7715 as the fastest arrival, set down at the 월드컵경기장 서측 stop, numbered 14-105.",
+        pitfall:
+          "A bus number alone is not enough on a concert night. The same route has stops on more than one side of a stadium this size, and the operator names the west-side stop for a reason.",
+        takes: "2 minutes",
+      },
+      {
+        title: "If you drive, the two car parks are not equivalent",
+        body:
+          "There are two: the stadium's own, on the west side, with 528 spaces, and the Homeplus car park on the east side, with 767. The operator states plainly that the reductions it publishes do not apply at the Homeplus one. The larger car park is the one that does not discount.",
+        pitfall:
+          "Arriving by car at a 66,704-seat venue is the slowest way in and out on a show night, whichever side you park on. The subway station is named after the building.",
+        takes: "1 minute",
+      },
+      {
+        title: "Everything about the night itself is the promoter's",
+        body:
+          "Which gate admits you, when doors open, what you may carry in and how the floor is laid out are set per show and are not on the venue's pages. The operator publishes the building; the promoter publishes the event. Your ticket and the promoter's notice are the authority on all of it.",
+        takes: "1 minute",
+        see: {
+          slug: "nol-world-mobile-ticket-and-entry",
+          text: "What you actually present at the gate, and what has to match.",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Is Seoul World Cup Stadium the same as Gocheok Sky Dome?",
+        a: "No. They are different buildings in different districts, run by the same operator. Gocheok is an indoor dome in Guro-gu seating about 16,600; the World Cup Stadium is an open-air stadium in Mapo-gu seating 66,704. The numbering systems are different too, which is why each has its own page here.",
+      },
+      {
+        q: "Which exit should I use?",
+        a: "Exit 2 of 월드컵경기장역 on line 6, which is the exit the operator names on its own directions page. It does not publish a walking time, so this page does not invent one.",
+      },
+      {
+        q: "Can I park at the stadium?",
+        a: "Yes, on the west side, where there are 528 spaces. The Homeplus car park on the east side has 767, and the operator states that its published reductions do not apply there.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 찾아오시는길: the address, line 6 월드컵경기장역 exit 2, the bus routes and the 14-105 west-side stop",
+        url: "https://www.sisul.or.kr/open_content/worldcup/introduce/location.jsp",
+      },
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 주차 안내: 528 spaces on the west side, 767 at Homeplus on the east, and the statement that reductions do not apply at the latter",
+        url: "https://www.sisul.or.kr/open_content/worldcup/guidance/park.jsp",
+      },
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 주경기장: 66,704 seats, one basement level under six above ground, and the operator's own statement that the stadium opens for cultural events",
+        url: "https://www.sisul.or.kr/open_content/worldcup/guidance/mainst.jsp",
+      },
+    ],
+  },
+  {
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    ko: "좌석",
+    art: "guide-tickets",
+    name: "World Cup Stadium seats",
+    koLine: "서울월드컵경기장 좌석 — 방위가 먼저입니다",
+    title: "Finding your seat at Seoul World Cup Stadium",
+    summary:
+      "How the stadium names its permanent seating, read off the operator's own seat finder: four stands named by compass direction, letters within each, and two letters of the alphabet that are never used.",
+    glyph: "ticket",
+    diagram: "worldcup-bowl",
+    status: "sourced",
+    lastChecked: "2026-10-24",
+    scope:
+      "Covers how Seoul World Cup Stadium names its permanent stands and blocks, from the Seoul Facilities Corporation's own seat finder. It does not cover the floor: at a concert part of the pitch is stage and the rest is laid out by the promoter, so nothing about it is permanent enough for this page to describe.",
+    readMinutes: 6,
+    platforms: ["Seoul World Cup Stadium"],
+    intro: [
+      "A seat here has two coordinates, and the operator's own seat finder is what shows that: it asks for a direction, and then for a letter. Nothing else.",
+      "That makes this building easier to read than Gocheok, where a block number tells you nothing until you know the rule. Here the first half of the name is a compass bearing, so a reader standing outside the west stand already knows that W is the side in front of them.",
+    ],
+    steps: [
+      {
+        title: "Read the direction first — it is a bearing, not a code",
+        body:
+          "The four stands are named 동 (East), 서 (West), 남 (South) and 북 (North), and the venue's seat finder will not look anything up until you have chosen one. A block name that begins with W is on the west side of the stadium. That is the whole of the first coordinate, and it is the part that gets you to the right side of a building holding 66,704 people.",
+        pitfall:
+          "Walking the long way round. At this size the wrong side of the stadium is a substantial walk, and the direction is printed in the block name precisely so you do not have to make that walk twice.",
+        takes: "2 minutes",
+        see: {
+          slug: "seoul-world-cup-stadium-getting-there",
+          text: "Which exit and which bus stop put you nearest.",
+        },
+      },
+      {
+        title: "Then the letter — and two letters do not exist",
+        body:
+          "Within a stand the blocks are lettered from A. The venue's finder offers A to T on the east side, A to P on the north and south, and A to X on the west. Read the sequence carefully and you will see it step from H straight to J, and from N straight to P: I and O are not used anywhere in the building, on any side, because they read as 1 and 0.",
+        pitfall:
+          "Hunting for an I or an O because a letter looks like it was skipped. It was skipped, deliberately, and a block with either letter does not exist here.",
+        takes: "2 minutes",
+      },
+      {
+        title: "West is the long side, and the asymmetry is navigational",
+        body:
+          "The four stands do not carry the same number of blocks. North and south run to P, which is fourteen blocks each once I and O are removed. East runs to T, eighteen. West runs to X, twenty-two — the longest side in the building. If you are counting blocks along a stand and the count feels wrong, check which stand you are in before you doubt the number.",
+        takes: "1 minute",
+      },
+      {
+        title: "The floor is not part of this system at all",
+        body:
+          "Everything above describes the permanent stands, which are concrete and do not move. At a concert the pitch carries the stage and whatever seating the promoter lays out on the rest of it, and that arrangement is designed per show. The stadium's own grass is 117m by 78m, which is the space that gets rearranged. No compass letter describes it.",
+        pitfall:
+          "Assuming a floor block follows the stand lettering. It does not, and it is not the venue's to name.",
+        takes: "1 minute",
+      },
+      {
+        title: "What this page will not tell you, and why",
+        body:
+          "It will not tell you which way the letters run inside a stand. The Gocheok chart publishes a written description of its own layout and states the direction in so many words; this venue publishes a seating graphic and no such description, so the direction is not in the source. It also will not tell you which blocks are sold for your show, which gate admits you, or where the stage is. Those are the promoter's and change per show.",
+        takes: "1 minute",
+        see: {
+          slug: "nol-world-mobile-ticket-and-entry",
+          text: "What you present at the gate, and the name that has to match.",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "What do the letters I and O mean on a ticket here?",
+        a: "Nothing — the venue does not use them. Its own seat finder runs A to H then J, and N then P, on every side. A letter that looks like an I is almost certainly a J, and one that looks like an O is almost certainly a Q or a D.",
+      },
+      {
+        q: "How many blocks are there on each side?",
+        a: "Fourteen on the north and south, eighteen on the east, and twenty-two on the west, counting the letters the operator's seat finder actually offers.",
+      },
+      {
+        q: "Which way do the letters run around a stand?",
+        a: "The venue does not say, so this page does not either. Its chart is the authority on where a given letter sits, and that chart is linked at the foot of this page.",
+      },
+      {
+        q: "Is the floor numbered like the stands?",
+        a: "No. At a concert the pitch is stage plus whatever the promoter lays out, designed per show. The compass-and-letter system describes the permanent stands only.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 주경기장 좌석안내: the seat finder itself, which takes a compass direction and then a letter, and whose own lists give A–T east, A–X west and A–P north and south with I and O absent",
+        url: "https://www.sisul.or.kr/open_content/worldcup/guidance/mainst_seat.jsp",
+      },
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 주경기장: 66,704 seats and a pitch of 117m by 78m, the area a concert floor is laid out on",
+        url: "https://www.sisul.or.kr/open_content/worldcup/guidance/mainst.jsp",
+      },
+    ],
+  },
+  {
+    slug: "which-seoul-venue-is-your-show-at",
+    ko: "공연장",
+    art: "lightstick",
+    name: "Which Seoul venue",
+    koLine: "서울 공연장 구분 — 이름이 겹칩니다",
+    title: "Which Seoul venue is your show actually at",
+    summary:
+      "Seoul's large halls have English names that overlap, two of them have Dome in the title and sit on opposite sides of the city, and two more share an operator. What each name refers to, which district it is in, and which line reaches it.",
+    glyph: "star",
+    status: "sourced",
+    lastChecked: "2026-10-25",
+    scope:
+      "Covers telling Seoul's concert halls apart by name, district and subway line, from each operator's own pages where this site can read them. It does not cover which blocks are sold, which gate admits you or when doors open: those are the promoter's and are set per show.",
+    readMinutes: 5,
+    platforms: ["Gocheok Sky Dome", "Seoul World Cup Stadium", "Jangchung Arena"],
+    intro: [
+      "This is the question that is easiest to get wrong late and most expensive to get wrong at all. Two of Seoul's biggest halls have Dome in the name and are an hour apart. Two more are run by the same organisation, so searching the operator offers you both.",
+      "The venue name is on the booking page before you buy and on the ticket afterwards. Read it against the district, not against what the name sounds like.",
+    ],
+    steps: [
+      {
+        title: "Match the name to a district, not to what it sounds like",
+        body:
+          "Gocheok Sky Dome (고척스카이돔) is in Guro-gu, in the west. KSPO Dome is inside Olympic Park in Songpa-gu, in the south-east, under a different organisation entirely. Seoul World Cup Stadium is at Sangam in Mapo-gu, in the north-west. Jangchung Arena (장충체육관) is in Jung-gu, in the centre. Inspire Arena is not in Seoul at all — it is in Incheon. A district is a fact about a name; a name is not a fact about a district.",
+        pitfall:
+          "Reading \u0022Dome\u0022 and assuming there is only one. Two of the city's biggest halls have it in the name, they are on opposite sides of Seoul, and a fan who learns that at 18:00 does not make the show.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Two of them share an operator, which is its own trap",
+        body:
+          "Gocheok Sky Dome, Seoul World Cup Stadium and Jangchung Arena are all run by the Seoul Facilities Corporation (서울시설공단), so a search for the operator's name offers all three and their pages look identical. The operator's site also carries a 찾아오시는 길 under its corporate section, and that one is the corporation's head office in Seongdong-gu — about ten kilometres from any of them. Check that the address on a directions page matches the venue you want.",
+        pitfall:
+          "Trusting a directions page because it is on the operator's own site. Three venues and a head office all publish one, and they look the same.",
+        takes: "2 minutes",
+        see: {
+          slug: "gocheok-sky-dome-getting-there",
+          text: "Gocheok Sky Dome: the line, the exit, and why not to drive.",
+        },
+      },
+      {
+        title: "Size tells you what kind of night it is",
+        body:
+          "Jangchung Arena seats 4,507, and 1,324 of those are retractable — a fan meeting room. Gocheok Sky Dome is an indoor dome of roughly 16,600 for baseball, configured smaller for concerts. Seoul World Cup Stadium seats 66,704 and is open to the sky, which is a different proposition in November. The number on the operator's page is the building's, not your show's: the promoter decides how much of it is sold.",
+        takes: "1 minute",
+        see: {
+          slug: "seoul-world-cup-stadium-getting-there",
+          text: "Seoul World Cup Stadium: line 6, the west-side stop, and the car park that does not discount.",
+        },
+      },
+      {
+        title: "The station is sometimes the building",
+        body:
+          "These three are not alike on arrival. Jangchung Arena is reached from 동대입구역 exit 5, which the operator states connects to the building directly — you do not go outside. Seoul World Cup Stadium has a station named after it, 월드컵경기장역, exit 2. Gocheok is the one where the nearest station is not the obvious answer, which is why it has a page of its own.",
+        takes: "1 minute",
+        see: {
+          slug: "jangchung-arena-getting-there",
+          text: "Jangchung Arena: the exit that is indoors, and why parking is not an option.",
+        },
+      },
+      {
+        title: "What no venue page can tell you",
+        body:
+          "Which blocks are sold for your show, where the stage is, which gate admits you, when doors open and what you may carry in. The operator publishes the building; the promoter publishes the event. Every one of those is set per show and lives on your ticket and the promoter's notice.",
+        takes: "1 minute",
+        see: {
+          slug: "nol-world-mobile-ticket-and-entry",
+          text: "What you present at the gate, and the name that has to match.",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Is Gocheok Sky Dome the same as KSPO Dome?",
+        a: "No. Gocheok Sky Dome is in Guro-gu in the west and is run by the Seoul Facilities Corporation. KSPO Dome is inside Olympic Park in Songpa-gu in the south-east, under a different organisation. They are about an hour apart.",
+      },
+      {
+        q: "Is Inspire Arena in Seoul?",
+        a: "No, it is in Incheon. It is reached from Seoul, not within it, and that is a different journey to plan.",
+      },
+      {
+        q: "Why does the operator's own directions page show the wrong place?",
+        a: "Because the Seoul Facilities Corporation runs several venues and also publishes directions to its own head office in Seongdong-gu. All of those pages sit on the same site and look alike. Match the address, not the page title.",
+      },
+      {
+        q: "Does the seat count on the venue page tell me how big my show is?",
+        a: "No. It is the building's capacity in its usual configuration. A concert covers part of the floor with a stage and the promoter decides how much of the rest is sold, so the number on an operator's page is an upper bound and not a description of your night.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 찾아오시는길: the Mapo-gu address and line 6 월드컵경기장역 exit 2",
+        url: "https://www.sisul.or.kr/open_content/worldcup/introduce/location.jsp",
+      },
+      {
+        label:
+          "서울시설공단 장충체육관 — 찾아오시는길: the Jung-gu address and the statement that 동대입구역 exit 5 connects to the building directly",
+        url: "https://www.sisul.or.kr/open_content/jangchung/introduce/location.jsp",
+      },
+      {
+        label:
+          "서울시설공단 장충체육관 — 시설안내: 4,507 seats including 1,324 retractable, and 63 parking spaces",
+        url: "https://www.sisul.or.kr/open_content/jangchung/introduce/facility.jsp",
+      },
+      {
+        label:
+          "서울시설공단 서울월드컵경기장 — 주경기장: 66,704 seats, and the operator's statement that the stadium opens for cultural events",
+        url: "https://www.sisul.or.kr/open_content/worldcup/guidance/mainst.jsp",
+      },
+    ],
+  },
+  {
+    slug: "jangchung-arena-getting-there",
+    ko: "공연장",
+    art: "lightstick",
+    name: "Jangchung Arena",
+    koLine: "장충체육관 가는 길 — 5번 출구가 건물 안입니다",
+    title: "Getting to Jangchung Arena for a fan meeting or concert",
+    summary:
+      "The 4,507-seat arena in Jung-gu that fan meetings and smaller shows play, read off the Seoul Facilities Corporation's own pages: the exit that connects indoors, the buses, and why driving is not an option on an event day.",
+    glyph: "star",
+    status: "sourced",
+    lastChecked: "2026-10-25",
+    scope:
+      "Covers reaching Jangchung Arena in Jung-gu, from the operator's own transport and facility pages. It does not cover the seating layout: unlike Gocheok and the World Cup Stadium, this venue publishes no seating chart or seat finder, so there is no numbering system here to teach and this page does not invent one.",
+    readMinutes: 4,
+    platforms: ["Jangchung Arena"],
+    intro: [
+      "This is the small room of the three Seoul venues this site covers — 4,507 seats, of which 1,324 are retractable. It is a volleyball arena that the operator says is also used for concerts, which in practice means fan meetings and smaller shows rather than tours.",
+      "Two facts about it are worth more than everything else: the subway exit connects to the building without going outside, and on an event day there is no general parking at all.",
+    ],
+    steps: [
+      {
+        title: "Line 3 to 동대입구역, exit 5 — and you are already inside",
+        body:
+          "The operator states that exit 5 connects to the arena directly. On a wet November evening, or in a Seoul winter, that is a different arrival from any other venue on this site: you do not surface, cross a road or look for a door. The address is 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Leaving by a different exit because the platform signage sends you up the nearest stairs. The direct connection is exit 5 specifically, and any other exit puts you outside the building you were already in.",
+        takes: "2 minutes",
+        see: {
+          slug: "which-seoul-venue-is-your-show-at",
+          text: "And whether your ticket means this hall or one of the others.",
+        },
+      },
+      {
+        title: "By bus, there are two stops with the arena's own name",
+        body:
+          "The operator lists 장충체육관앞 as stops 02-201 and 02-202, both served by N13, 144, 301 and 7212, and 동대입구역·장충동 as stop 02-222, served by 05, 02 and 03. The two arena stops sit on opposite sides of the road, which matters only in that one of them means crossing it.",
+        takes: "1 minute",
+      },
+      {
+        title: "Do not plan to drive, and the reason is in the operator's own words",
+        body:
+          "There are 63 parking spaces in total, and of those, two are accessible bays, two are for buses, eight are reserved for women and five for VIPs. The operator then states plainly that during events there is no general parking. For a room of 4,507 people that is not a shortage, it is a closure.",
+        pitfall:
+          "Treating a small venue as the easy one to drive to. The car park is smaller in proportion than at either of the larger venues, and on the night it is not open to you at all.",
+        takes: "1 minute",
+      },
+      {
+        title: "There is no seating chart to read, and that changes what to expect",
+        body:
+          "Gocheok publishes a chart with a written description of its numbering, and the World Cup Stadium publishes a seat finder. This venue publishes neither. With 1,324 of its 4,507 seats retractable, the floor arrangement for a fan meeting is substantially the promoter's to build, so the seating you are sold may not correspond to any permanent plan. Your ticket and the promoter's seating image are the only authority.",
+        takes: "1 minute",
+        see: {
+          slug: "nol-world-mobile-ticket-and-entry",
+          text: "What you present at the gate, and the name that has to match.",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Which exit connects to the building?",
+        a: "Exit 5 of 동대입구역 on line 3. The operator states the connection to the arena is direct, which is why this page names that exit rather than the station alone.",
+      },
+      {
+        q: "Can I park at Jangchung Arena?",
+        a: "Not on an event day. The operator publishes 63 spaces in the north-side car park and states that general parking is not available during events.",
+      },
+      {
+        q: "Why is there no seat guide for this venue?",
+        a: "Because the operator publishes no seating chart and no seat finder for it, so there is no numbering system to read off. Writing one would mean inventing it, and this site does not do that. The Gocheok and World Cup Stadium pages exist because those venues publish the material.",
+      },
+      {
+        q: "How big is it?",
+        a: "4,507 seats, including 1,324 retractable ones, over two basement levels and three above ground. It is a volleyball arena in its ordinary use and the home of two professional teams.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "서울시설공단 장충체육관 — 찾아오시는길: the Jung-gu address, 3호선 동대입구역 exit 5 connecting to the arena directly, the bus stops and routes, and the statement that general parking is unavailable during events",
+        url: "https://www.sisul.or.kr/open_content/jangchung/introduce/location.jsp",
+      },
+      {
+        label:
+          "서울시설공단 장충체육관 — 시설안내: 4,507 seats including 1,324 retractable, two basement levels and three above ground, and 63 parking spaces with their reservations",
+        url: "https://www.sisul.or.kr/open_content/jangchung/introduce/facility.jsp",
+      },
+      {
+        label:
+          "서울시설공단 장충체육관 — 주경기장: the operator's own description of the hall as a venue for indoor sport, international conferences, events and concerts, and the home of two professional volleyball teams",
+        url: "https://www.sisul.or.kr/open_content/jangchung/guidance/maingym.jsp",
       },
     ],
   },

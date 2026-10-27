@@ -290,12 +290,47 @@ const JAR = join(tmpdir(), `kpopgo-watch-${process.pid}.cookies`);
  * on a GitHub runner, so the path exercised while writing a change was never
  * the path that ran in CI. One implementation is worth more here than the few
  * milliseconds the other saved, and curl is present in both places.
+ *
+ * **One attempt was reporting three live pages as dead citations**, which is
+ * the korea.net mistake with a different cause. `circlechart.kr` has been
+ * written down in this repo as permanently unreachable; it answers 200 five
+ * times out of five when asked five times. Two TicketLink help pages were in
+ * the same report, and the proxy named the cause for all three:
+ * `ws_closed_mid_exchange`, the site declining, with an identical signature —
+ * 517 bytes sent, 39 received, closed after 8 seconds. Two unrelated Korean
+ * hosts resetting the TLS handshake the same way, on some requests and not
+ * others, while `www.ticketlink.co.kr` answered on other paths in the same
+ * run. That is a WAF, not a dead host.
+ *
+ * So a transport failure is retried and an HTTP status never is. A 404 is a
+ * 404 and asking again only slows the sweep; a connection reset is a question
+ * that has a different answer a second later. Three attempts takes a
+ * one-in-five reset to well under one in a hundred.
+ *
+ * **It reports how many attempts it took**, and that is the part that keeps
+ * this from becoming the quiet version of the same bug. A silent retry makes
+ * a host that needs three goes every week look identical to a healthy one,
+ * which is exactly how the report stops being worth reading.
  */
-async function hit(url) {
+const SETTLE = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function hit(url, tries = 3) {
   const { execFile } = await import("node:child_process");
   const { promisify } = await import("node:util");
+  const run = promisify(execFile);
+  let error = "";
+  for (let attempt = 1; attempt <= tries; attempt++) {
+    const r = await once(url, run, attempt);
+    if (!r.transportFailure) return r;
+    error = r.error;
+    if (attempt < tries) await SETTLE(attempt * 1500);
+  }
+  return { ok: false, status: 0, body: "", error, attempts: tries };
+}
+
+async function once(url, run, attempt) {
   try {
-    const { stdout } = await promisify(execFile)(
+    const { stdout } = await run(
       "curl",
       [
         "-sS", "-L",
@@ -312,9 +347,11 @@ async function hit(url) {
     const at = stdout.lastIndexOf("\n__STATUS__");
     const status = Number(stdout.slice(at + 11).trim()) || 0;
     const body = at === -1 ? stdout : stdout.slice(0, at);
-    return { ok: status >= 200 && status < 400, status, body };
+    // Any answer from curl is an answer, including a 404. Only a transport
+    // failure — curl exiting non-zero — is worth asking again.
+    return { ok: status >= 200 && status < 400, status, body, attempts: attempt };
   } catch (e) {
-    return { ok: false, status: 0, body: "", error: String(e.message || e) };
+    return { transportFailure: true, error: String(e.message || e) };
   }
 }
 
@@ -403,6 +440,51 @@ function similarity(a, b) {
 const DRIFT_LIMIT = 0.97;
 
 /**
+ * Page chrome that moves on its own, declared per source.
+ *
+ * The Yahoo rebrand article reported 9% drift every week, and this repo wrote
+ * it off as a page whose "body does not extract cleanly" and left the warning
+ * standing on purpose. That was the korea.net failure wearing a different
+ * cause: a warning that can never be cleared teaches everyone reading the
+ * report to skip that line, and then the next one like it.
+ *
+ * Diffed rather than reasoned about. Every differing token, both directions:
+ *
+ *   stored   5,404.02 -7.98 -0.15% 64,075.42 -841.28 -1.30% …
+ *   live     5,422.16 +7.02 +0.13% 62,693.16 -214.68 -0.34% …
+ *
+ * It is the market-ticker strip Yahoo Finance puts above every article. Not
+ * one word of the article changed, and the numbers change every trading day,
+ * so that warning was guaranteed to fire forever.
+ *
+ * **Declared per source rather than applied globally**, which is the whole
+ * design of it. A pattern loose enough to drop a market quote is also loose
+ * enough to drop a fee, and a cited fee changing from 3,000 to 8,000 is the
+ * single thing this script exists to catch. Scoped to the host that earned
+ * it, it cannot reach any other source — and the next page needing one has
+ * to state its own reason here, with the diff that justified it.
+ */
+const CHROME = [
+  {
+    host: "sg.finance.yahoo.com",
+    // A market quote: optional sign, grouped digits, exactly two decimals,
+    // optional percent. Deliberately not "any number".
+    drop: /(?<=^|\s)[+-]?\d[\d,]*\.\d{2}%?(?=\s|$)/g,
+    why: "the market-ticker strip above every Yahoo Finance article",
+  },
+];
+
+/** The same reduction on both sides, so old baselines still compare. */
+function stripChrome(url, text) {
+  let out = text;
+  for (const c of CHROME) {
+    if (!url.includes(c.host)) continue;
+    out = out.replace(c.drop, " ");
+  }
+  return out.replace(/\s+/g, " ").trim();
+}
+
+/**
  * Which cited URLs are worth comparing week to week.
  *
  * A notice or an article is a fixed document: it says one thing, and if the
@@ -426,16 +508,32 @@ function isFixedDocument(url) {
   // 공공누리 제1유형 permits it, so a change to that page's wording is the one
   // source change on this site with a legal consequence rather than an
   // editorial one. `license.do` matches no other word in this list.
-  // `transport` joined this list the day a guide started quoting taxi fares off
-  // Seoul's tourism transport page. It is worth being honest about what that
-  // means: this heuristic reads the URL, and the question it is standing in for
-  // is "does a guide quote figures from this page?" — which a path cannot
-  // answer. The two agree often enough to be useful and will disagree again.
-  // **When you add a source you quote a number from, check the next sweep
-  // compares it rather than reporting it link-checked only.** A storefront
-  // whose wording is meant to move is the case this list exists to exclude;
-  // a page you took a fare, a deadline or a fee from is never that.
-  if (/\/(notice|news|press|article|view|blog|release|guide|faq|help|terms|policy|support|licen[cs]e|transport)/i.test(path))
+  //
+  // `transport` joined the day a guide started quoting taxi fares off Seoul's
+  // tourism transport page. Be honest about what that means: this heuristic
+  // reads a URL, and the question it stands in for is "does a guide quote
+  // figures from this page?" — which a path cannot answer. The two agree often
+  // enough to be useful and will disagree again. **When you add a source you
+  // quote a number from, check the next sweep compares it rather than
+  // reporting it link-checked only.**
+  //
+  // `guidance` and `introduce` were the same miss again, and by one letter: a
+  // venue operator files its seating, parking and access pages under
+  // /guidance/ and /introduce/, and `/guidance` does not contain `/guide`.
+  // Nine pages were affected and every one is a fixed document — the Gocheok
+  // seat page most of all, since that guide's whole numbering rule is read off
+  // the description published with that chart. Its wording moving was exactly
+  // the event nothing would have reported. Checked rather than assumed: those
+  // nine are the only URLs in the register whose classification changes.
+  //
+  // Three misses, three additions, one shape: a storefront whose wording is
+  // meant to move is what this list exists to exclude, and a page you took a
+  // fare, a deadline, a fee or a rule from is never that.
+  if (
+    /\/(notice|news|press|article|view|blog|release|guide|guidance|introduce|faq|help|terms|policy|support|licen[cs]e|transport)/i.test(
+      path,
+    )
+  )
     return true;
   // A numeric id deep in the path is an article by another name.
   return /\/[^/]*\d{4,}/.test(path);
@@ -472,18 +570,33 @@ async function links(urls) {
       //
       // `relayFinding` returns null wherever there is nothing better to say,
       // including on a GitHub runner where there is no proxy to ask, so the
-      // line below is still the one this check has always printed.
+      // fallback below is the line this check has always printed — now with
+      // the retry count, since "failed once" and "failed three times" are
+      // different claims about a host.
+      const tried = r.attempts > 1 ? ` after ${r.attempts} attempts` : "";
       const explained =
         r.status === 0
           ? relayFinding(url, new URL(url).hostname, relayVerdict(new URL(url).hostname, await relayStatus()))
           : null;
-      if (explained) note(explained.level, explained.msg);
-      else note("fail", `${url} — ${r.status || r.error}. A guide cites this.`);
+      if (explained) note(explained.level, `${explained.msg}${tried}`);
+      else note("fail", `${url} — ${r.status || r.error}${tried}. A guide cites this.`);
       if (prints[url]) next[url] = prints[url];
       continue;
     }
+    // A page that answered only on the second or third go is working and is
+    // not healthy, and the report has to be able to say both. Silently
+    // retrying until something succeeds is how a host that resets most
+    // requests comes to look identical to one that never does.
+    if (r.attempts > 1) {
+      const n = r.attempts - 1;
+      note(
+        "info",
+        `${url} — answered on attempt ${r.attempts} of 3; ` +
+          `${n === 1 ? "the first was" : `the first ${n} were`} refused at the transport.`,
+      );
+    }
 
-    let text = visibleText(r.body);
+    let text = stripChrome(url, visibleText(r.body));
     // A client-rendered page gives up almost nothing to the markup pass, so
     // fall back to its payload rather than skipping the comparison.
     if (text.split(" ").filter(Boolean).length < 200) {
@@ -523,7 +636,7 @@ async function links(urls) {
       note("info", `${url} — no baseline recorded yet (${words} words).`);
       continue;
     }
-    const same = similarity(before.text, text);
+    const same = similarity(stripChrome(url, before.text), text);
     if (same < DRIFT_LIMIT) {
       note(
         "warn",

@@ -76,14 +76,18 @@ appear in `main` under different ones:
   (`anrdoezrs.net`, `kqzyfj.com`, `jdoqocy.com` or `tkqlhce.com`), which is
   what `scripts/hosts.mjs` then needs to declare.
 
-- **`www.ksponco.or.kr` is still missing from the allowlist**, and it is the
-  only thing the next venue guide waits on. Of the three hosts added on 22
-  October it is the one that did not arrive: `www.kogl.or.kr` and
-  `www.clarity.ms` both answer 200 now, this one still answers 403 at the
-  gateway. Supply it **inside a fenced code block**, since pasting bare
-  hostnames has twice come back markdown-linkified, and paste the whole block
-  from `npm run hosts`: editing the field replaces it, which is how hosts go
-  dark three at a time.
+- **Nothing is waiting on `www.ksponco.or.kr`, and that line was wrong.** It
+  was offered here as the KSPO DOME host on the strength of search results,
+  flagged as unread, and a later session settled it by probing instead:
+  `www.kspo.or.kr` answers 200 and is the foundation's corporate site with no
+  venue page on it, and the hall's own operator is Olympic Park, whose host
+  drops the connection on every attempt even once allowlisted. KSPO DOME is
+  not writable from here at all — see the venue section in `CLAUDE.md`.
+  Allowlisting one more host does not change that.
+
+  The transferable part is the mistake: a hostname taken from search results
+  reads exactly like one taken from the site, and the only difference is
+  whether anybody fetched it. Probe before declaring.
 - **An allowlist edit does reach a running container — it just is not
   instant.** An earlier version of this file said the opposite, and said it
   from one measurement: the three hosts were pasted, all three still answered
@@ -159,14 +163,15 @@ appear in `main` under different ones:
   `world.nol.com` 403s from CloudFront. Read it, confirm it gives 1 December,
   and add it to both guides' `sources`. Until then the site's most-repeated
   date rests on a page that does not contain it.
-- **KSPO DOME's host is found: `www.ksponco.or.kr`.** It was declared for
-  weeks as `www.kspo.or.kr` under the comment "KSPO Dome operator", which is
-  the foundation that *owns* the park — a corporate site that answers 302 to a
-  `main.do` and carries no seating chart. The venue's own pages are published
-  by the operating company, 한국체육산업개발, at `ksponco.or.kr/olympicpark`.
-  Both hosts are declared now with what each one is. Still unread: it answers
-  403 at the gateway, so it is waiting on the allowlist, and no guide text can
-  come off it until somebody has actually read it.
+- **KSPO DOME is closed, not pending.** The old `www.kspo.or.kr` declaration
+  calling it "KSPO Dome operator" was wrong — that is the foundation that owns
+  the park, and its site carries no seating page. `www.ksponco.or.kr` was my
+  replacement guess and it was no better, because it came from search results
+  rather than from a fetch. Probed properly, the operator is Olympic Park and
+  its host closes the connection every time once allowlisted, which means the
+  source cannot be fingerprinted or link-checked and citing it would put a
+  dead citation in the weekly report forever. Seoul World Cup Stadium was
+  written instead.
 - **Inspire Arena is blocked on sources, not on the allowlist, and three
   routes to it are now closed.** The official hostname in Mohegan's 2024 press
   releases, `www.inspirekorea.com`, no longer resolves (NXDOMAIN in a real
@@ -200,12 +205,14 @@ appear in `main` under different ones:
    a count: KSPO DOME carries by far the most K-pop dates of the four — NCT
    Dream over six, ZEROBASEONE three, plus TWS, DAY6, TWICE and BOYNEXTDOOR
    across the summer — against two aespa dates at Gocheok, a handful at
-   Inspire, and nothing found at KINTEX. It is **also the only one of the
-   three whose official source this site can actually read**, once
-   `www.ksponco.or.kr` is allowlisted. Those are two independent reasons
-   pointing the same way, and neither is the count that was asked for: if a
-   person can open one ticketing site and count dates per venue for a season,
-   that settles it properly in ten minutes.
+   Inspire, and nothing found at KINTEX. The second half of that reasoning
+   has since been overtaken: KSPO DOME looked like the only one whose official
+   source this site could read, and probing found the opposite — its
+   operator's host will not serve this container at all. Venue choice
+   therefore runs on what is *fetchable* as much as on what is busy, which is
+   how Seoul World Cup Stadium came to be second. The count itself is still
+   the thing nobody has: a person with one ticketing site open settles it in
+   ten minutes.
 3. Translation is finished and **ten languages is a hard ceiling**. CLAUDE.md
    records why, with the cost measured.
 

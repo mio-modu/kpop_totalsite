@@ -748,6 +748,22 @@ const LATIN_OK = new Set([
   // called on the bill and in the portal. Discover joins the card networks.
   "Ktown", "UPS", "EMS", "Packet", "Prime", "Group", "Discover",
   "International", "Collect", "Delivery", "Import", "Prepaid", "Duties", "Taxes",
+  // TicketLink, and the strings a reader has to match on its screens. The
+  // guide's whole argument is that this platform is documented in English and
+  // almost nowhere else, so a reader is being told to recognise English labels
+  // on an English page: the "Exclusive Sale" badge that means the show is sold
+  // nowhere else, the button that reads "To Be Sold" until it turns into
+  // "Reserve", the delivery row marked "Domestic" that is the reason to plan on
+  // collecting, "Home Ticket" and "Smart Ticket" as the two app routes, the
+  // "Create account" link, and the "1:1 Inquiry" form. Translating any of those
+  // breaks the only instruction that matters. The rest are identifiers: the
+  // operator NHN LINK Corporation, the host and the path pieces of the one
+  // address that works, NXDOMAIN for the one that does not, and the mailbox.
+  // VPN is here because the guide tells a reader not to reach for one.
+  "TicketLink", "ticketlink", "NHN", "LINK", "Corporation",
+  "Exclusive", "Sale", "Sold", "Domestic", "Home", "Smart", "Create", "account",
+  "Inquiry",
+  "www", "home", "english", "NXDOMAIN", "membership", "nhnlink", "VPN",
 ]);
 
 /** Locales whose prose should contain no bare Latin words. */

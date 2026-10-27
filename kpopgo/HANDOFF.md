@@ -1,4 +1,4 @@
-# Handoff — 22 October 2026
+# Handoff — 27 October 2026
 
 Written at the end of a long session, for whoever picks this up next.
 
@@ -15,9 +15,9 @@ is waiting on a person, and what is blocked.
 | --- | --- |
 | Branch | a fresh branch off `main` per session — develop, commit and push there only |
 | Open PR | none |
-| Last merged | #60, `2974b58` — the four commits #59 left behind |
-| Build | 267 static pages, 23 English guides, 10 languages, 193 translations |
-| Suite | 61 tests, all passing |
+| Last merged | #68, `0694bbc` — the venue index and the Jangchung guide |
+| Build | 322 static pages, 321 in the sitemap, 30 English guides, 10 languages, 273 translations |
+| Suite | 101 tests, all passing |
 
 Working practice in this repo: push to the branch, the owner merges, the next
 change starts from the merged `main`. PR #58 merged as a merge commit, not a
@@ -41,6 +41,55 @@ while that branch was open and was read, by a later session, as an instruction
 to push to a branch that had already been merged and deleted. A session's own
 branch is assigned to it; the useful statement here is the practice, not the
 name.
+
+## 27 October: the eight untranslated guides, and why they were a gap
+
+The register was complete at its intended counts on 22 October, measured
+against **twenty-one** English guides. There were twenty-nine by 27 October,
+and the eight written in between carried no translation and no recorded
+reason for having none. That is the state worth naming, because in a count it
+is indistinguishable from the two guides that are deliberately English-only —
+the timezone and customs guides, which have a documented test behind them
+(a page whose subject is a jurisdiction the reader is not in). These eight
+had only a chronology.
+
+All eight are now in all ten languages: the TicketLink platform guide, both
+halves of Gocheok, both halves of Seoul World Cup Stadium, Jangchung, the
+venue hub, and the Weverse Shop / Ktown4u comparison. **Eighty pages.** The
+sitemap went 240 → 321 and `check-meta` passes over every one of them with no
+duplicate titles or descriptions.
+
+Three checks had to be looked at rather than worked around, and each
+narrowing carries a test that fires on the case the original check was built
+for:
+
+- **Hangul is no longer banned outright in a translation.** It may stay when
+  the English field it translates carries the same run — which is the venue
+  guides' whole case, since 고척스카이돔 and 시계방향 are in the English
+  *because* the reader cannot read Korean and has to show the name to a taxi
+  driver or match it on a chart. Derived from the English rather than
+  declared in a list, so it cannot drift. A leak still fails: no English step
+  says 제보자.
+- **`Line` is in ALIASES for the messaging app**, and a venue guide saying
+  "Guil Station on Line 1" demanded the app's name in a sentence about a
+  train. The numbered sense is removed from the English before the nouns are
+  read off it.
+- **`--record-new` could not see a staged `sourceText: ""`.** The field is
+  required by the type, so a new entry has to carry it empty; the pattern
+  wanted at least one hex character, so the script inserted a *second*
+  `sourceText` above each empty one. The later key wins in JavaScript, so
+  every hash it reported writing was dead on arrival and the whole suite
+  agreed. Only `tsc` objected, as TS1117.
+
+`CLAUDE.md` now records where the KOGL conditions bind: the seat guide exists
+in eleven editions and exactly one reproduces the chart, because the
+translated template renders no document and no diagram. The instinct on
+noticing would be to add the credit to the ten translations, which would
+attribute a reproduction that is not there.
+
+**Still true and still waiting on a person:** no guide is `verified`. Every
+one is `sourced` or `reported`. That rung needs somebody to walk a flow —
+`VERIFY.md` Session A.
 
 ## What #59 and #60 contain
 

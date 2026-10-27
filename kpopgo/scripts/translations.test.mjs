@@ -872,6 +872,11 @@ const LATIN_OK = new Set([
   // the surrounding prose is not Latin. Districts do not: nobody matches
   // "Guro-gu" on a screen, so they are written in the reader's own script.
   "Jangchung", "Seoul", "Cup", "Stadium",
+  // The east-side car park at the World Cup Stadium is signed with the
+  // retailer's name, and the operator's point is that the reductions do not
+  // apply at that one — so the reader has to recognise which sign they are
+  // looking at.
+  "Homeplus",
 ]);
 
 /** Locales whose prose should contain no bare Latin words. */

@@ -23745,6 +23745,1316 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+
+  {
+    locale: "ja",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "コンサートのためにソウルワールドカップ競技場へ行く",
+    summary:
+      "スタジアム規模のツアーが公演する上岩の競技場です。運営するソウル施設公団自身のページから、路線と出口、バスとどの停留所か、そして2つある駐車場のうち割引があるのはどちらかを読み取ります。",
+    scope:
+      "麻浦区にあるソウルワールドカップ競技場への到着を、運営者自身の交通と駐車のページから扱います。どのゲートから入れるか、開場がいつか、何を持ち込めるかは扱いません。それらは主催者のもので公演ごとに決まり、ここのどのページも事前に教えることはできません。",
+    intro: [
+      "ここは上岩にある66,704席の競技場で、運営者はサッカーだけでなく文化イベントのためにも開くと自身の言葉で述べています。ここでのスタジアム公演は、K-POPのツアーがソウルで使う最大の部屋です。",
+      "ここへ行くことについて役に立つのは、地下鉄の駅が競技場の名を冠しているので、高尺のガイドが1ステップ費やしている推測の問題がないということです。読む価値があるのは、どの出口か、どのバス停か、そして駐車場の罠です。",
+    ],
+    steps: [
+      {
+        title: "6号線で월드컵경기장역、そして2番出口から出る",
+        body: "駅は競技場の名を冠しているので、ここに駅を選ぶという問題はありません。運営者は2番出口を具体的に名指ししています。ソウルワールドカップ競技場は서울특별시 마포구 월드컵로240にあり、駅は歩く距離ではなくすぐ隣にあります。",
+        pitfall:
+          "運営者自身のサイトには企業情報のセクションの下にもう一つ찾아오시는 길のページがあり、そちらはソウル施設公団の城東区にある本部で、2号線용두역から行きます。競技場からは10キロほど離れています。会場サイトの案内ページを信じる前に、住所を読んでください。",
+        takes: "2分",
+      },
+      {
+        title: "バスなら西側の停留所を狙う",
+        body: "運営者は幹線路線として760番、710番、571番、支線路線として7019番と7715番、地域循環として마포08番、広域バスとして9711番を挙げています。そのうち710番、7019番、7715番を最速の到着として挙げ、14-105番の월드컵경기장 서측停留所で降ろされると記しています。",
+        pitfall:
+          "コンサートの夜にバスの番号だけでは足りません。この規模の競技場では同じ路線が複数の側に停留所を持ちますし、運営者が西側の停留所を名指ししているのには理由があります。",
+        takes: "2分",
+      },
+      {
+        title: "車で行くなら、2つの駐車場は同等ではありません",
+        body: "2つあります。西側にある競技場自身の駐車場で528台分、そして東側のHomeplusの駐車場で767台分です。運営者は、公開している割引がHomeplusの側には適用されないとはっきり述べています。大きいほうの駐車場が、割引のないほうです。",
+        pitfall:
+          "66,704席の会場に車で着くことは、どちらの側に停めても公演の夜の出入りで最も遅い方法です。地下鉄の駅はこの建物の名を冠しています。",
+        takes: "1分",
+      },
+      {
+        title: "その夜そのものについては、すべて主催者のものです",
+        body: "どのゲートから入れるか、開場がいつか、何を持ち込めるか、フロアがどう配置されるかは公演ごとに決まり、会場のページには載っていません。運営者が公開するのは建物で、主催者が公開するのは公演です。それらすべての権威は、あなたのチケットと主催者の告知です。",
+        takes: "1分",
+      },
+    ],
+    faq: [
+      {
+        q: "ソウルワールドカップ競技場は高尺スカイドームと同じですか。",
+        a: "違います。運営者は同じですが、別の区にある別の建物です。高尺は九老区にある屋内ドームで約16,600席、ワールドカップ競技場は麻浦区にある屋外の競技場で66,704席です。番号体系も異なり、だからこそここでは別々のページになっています。",
+      },
+      {
+        q: "どの出口を使えばいいですか。",
+        a: "6号線월드컵경기장역の2番出口です。運営者が自身の案内ページで名指ししている出口です。徒歩時間は公開していないので、このページもそれを作り出しません。",
+      },
+      {
+        q: "競技場に駐車できますか。",
+        a: "できます。西側に528台分あります。東側のHomeplusの駐車場は767台分で、運営者は公開している割引がそちらには適用されないと述べています。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "為了演唱會前往首爾世界盃競技場",
+    summary:
+      "位在上岩、供體育場規模巡演使用的競技場。取自營運它的首爾設施公團自己的頁面：線路與出口、公車與該在哪一站下，以及兩座停車場中有折扣的是哪一座。",
+    scope:
+      "涵蓋抵達位在麻浦區的首爾世界盃競技場，取自營運者自己的交通與停車頁面。不涵蓋哪個入口讓你進、何時開放入場，或可以帶什麼進去：那些屬於主辦方並逐場決定，這裡沒有任何頁面能事先告訴你。",
+    intro: [
+      "這是位在上岩、擁有66,704個座位的競技場，而營運者用自己的話說它除了足球之外也為文化活動開放。在這裡的體育場演出，是K-POP巡演在首爾會用到的最大的一個房間。",
+      "關於前往它，有用的一點是地鐵站以競技場命名，所以不存在高尺那份指南花掉一整步處理的猜測問題。值得讀的部分是哪一個出口、哪一個公車站，以及停車場的陷阱。",
+    ],
+    steps: [
+      {
+        title: "搭6號線到월드컵경기장역，然後從2號出口出去",
+        body: "車站用的就是競技場的名字，所以這裡沒有選車站的問題。營運者明確指名2號出口。首爾世界盃競技場位在서울특별시 마포구 월드컵로240，而車站就在它旁邊，不是需要走一段路的距離。",
+        pitfall:
+          "營運者自己的網站在企業區塊底下還有另一份찾아오시는 길頁面，而那一份是首爾設施公團位在城東區的總部，從2號線용두역過去。它距離競技場約十公里。在相信一個場館網站上的交通頁面之前，請先讀地址。",
+        takes: "2分鐘",
+      },
+      {
+        title: "搭公車的話，瞄準西側那一站",
+        body: "營運者列出760、710與571為幹線路線，7019與7715為支線路線，마포08為地區循環線，9711為廣域客運。它特別點出710、7019與7715為最快抵達，下車處是編號14-105的월드컵경기장 서측站。",
+        pitfall:
+          "在演唱會的夜晚，光有公車號碼不夠。這種規模的競技場，同一條路線在不止一側都有站，而營運者指名西側那一站是有原因的。",
+        takes: "2分鐘",
+      },
+      {
+        title: "如果你開車，兩座停車場並不等價",
+        body: "共有兩座：西側是競技場自己的停車場，有528個車位；東側是Homeplus的停車場，有767個。營運者直白地表示，它公布的減免不適用於Homeplus那一座。比較大的那座停車場，正是沒有折扣的那座。",
+        pitfall:
+          "在演出之夜開車抵達一座66,704個座位的場館，不論你停在哪一側，都是進出最慢的方式。地鐵站用的就是這棟建築的名字。",
+        takes: "1分鐘",
+      },
+      {
+        title: "關於那一晚本身的一切都屬於主辦方",
+        body: "哪個入口讓你進、何時開放入場、可以帶什麼進去，以及場地怎麼配置，都是逐場決定的，不在場館的頁面上。營運者公布的是建築，主辦方公布的是場次。以上全部的權威是你的票和主辦方的公告。",
+        takes: "1分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "首爾世界盃競技場和高尺天空巨蛋是同一個嗎？",
+        a: "不是。它們是位在不同行政區的不同建築，由同一個營運者負責。高尺是九老區的室內巨蛋，約16,600個座位；世界盃競技場是麻浦區的露天競技場，66,704個座位。編號系統也不同，這就是這裡各自有一頁的原因。",
+      },
+      {
+        q: "我該走哪一個出口？",
+        a: "6號線월드컵경기장역的2號出口，也就是營運者在自己的交通頁面上指名的出口。它沒有公布步行時間，所以本頁也不憑空造一個。",
+      },
+      {
+        q: "我可以在競技場停車嗎？",
+        a: "可以，在西側，那裡有528個車位。東側的Homeplus停車場有767個，而營運者表示它公布的減免不適用於那裡。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menuju Seoul World Cup Stadium untuk sebuah konser",
+    summary:
+      "Stadion di Sangam tempat tur berskala stadion berlangsung, dibaca dari halaman milik Seoul Facilities Corporation sendiri: jalur dan pintu keluarnya, bus-busnya dan perhentian yang mana, dan tempat parkir mana di antara keduanya yang memberi potongan.",
+    scope:
+      "Mencakup cara mencapai Seoul World Cup Stadium di Mapo-gu, dari halaman transportasi dan parkir milik pengelolanya. Tidak mencakup pintu mana yang memasukkan Anda, kapan pintu dibuka, atau apa yang boleh Anda bawa masuk: semua itu milik promotor dan ditetapkan per pertunjukan, dan tidak ada halaman di sini yang dapat memberitahukannya kepada Anda sebelumnya.",
+    intro: [
+      "Inilah stadion berkapasitas 66,704 kursi di Sangam, dan pengelolanya mengatakan dengan kata-katanya sendiri bahwa stadion itu dibuka untuk acara budaya selain sepak bola. Sebuah pertunjukan stadion di sana adalah ruang terbesar yang dimainkan sebuah tur K-pop di Seoul.",
+      "Hal yang berguna soal mencapainya adalah bahwa stasiun kereta bawah tanahnya dinamai menurut stadion itu, yang menghilangkan soal menduga-duga yang dihabiskan satu langkah penuh oleh panduan Gocheok. Bagian yang patut dibaca adalah pintu keluar mana, perhentian bus mana, dan jebakan tempat parkirnya.",
+    ],
+    steps: [
+      {
+        title: "Line 6 ke 월드컵경기장역, lalu keluar lewat pintu keluar 2",
+        body: "Stasiun itu memakai nama stadionnya, jadi di sini tidak ada persoalan memilih stasiun. Pengelola menyebut pintu keluar 2 secara khusus. Seoul World Cup Stadium berada di 서울특별시 마포구 월드컵로 240, dan stasiunnya berada tepat di sebelahnya alih-alih sejauh jalan kaki.",
+        pitfall:
+          "Situs milik pengelola sendiri punya halaman 찾아오시는 길 kedua di bawah bagian korporatnya, dan yang itu adalah kantor pusat Seoul Facilities Corporation di Seongdong-gu, yang dicapai dari 용두역 di Line 2. Jaraknya sekitar sepuluh kilometer dari stadion. Bacalah alamatnya sebelum Anda memercayai sebuah halaman petunjuk arah di situs sebuah venue.",
+        takes: "2 menit",
+      },
+      {
+        title: "Dengan bus, tujulah perhentian di sisi barat",
+        body: "Pengelola mendaftar 760, 710 dan 571 sebagai rute utama, 7019 dan 7715 sebagai rute cabang, 마포08 sebagai lingkar lokal dan 9711 sebagai bus antarwilayah. Ia menyebut khusus 710, 7019 dan 7715 sebagai kedatangan tercepat, yang menurunkan Anda di perhentian 월드컵경기장 서측, bernomor 14-105.",
+        pitfall:
+          "Nomor bus saja tidak cukup pada malam konser. Rute yang sama punya perhentian di lebih dari satu sisi stadion sebesar ini, dan pengelola menyebut perhentian sisi barat dengan alasan.",
+        takes: "2 menit",
+      },
+      {
+        title: "Kalau Anda menyetir, kedua tempat parkirnya tidak setara",
+        body: "Ada dua: milik stadion sendiri, di sisi barat, dengan 528 petak, dan tempat parkir Homeplus di sisi timur, dengan 767. Pengelola menyatakan terang-terangan bahwa potongan yang diterbitkannya tidak berlaku di yang Homeplus. Tempat parkir yang lebih besar adalah yang tidak memberi potongan.",
+        pitfall:
+          "Datang dengan mobil ke venue berkapasitas 66,704 kursi adalah cara paling lambat untuk masuk dan keluar pada malam pertunjukan, di sisi mana pun Anda parkir. Stasiun kereta bawah tanahnya dinamai menurut bangunan itu.",
+        takes: "1 menit",
+      },
+      {
+        title: "Segalanya tentang malam itu sendiri adalah milik promotor",
+        body: "Pintu mana yang memasukkan Anda, kapan pintu dibuka, apa yang boleh Anda bawa masuk dan bagaimana lantainya ditata ditetapkan per pertunjukan dan tidak ada di halaman venue. Pengelola menerbitkan bangunannya; promotor menerbitkan acaranya. Tiket Anda dan pemberitahuan promotor adalah otoritas atas semuanya.",
+        takes: "1 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah Seoul World Cup Stadium sama dengan Gocheok Sky Dome?",
+        a: "Tidak. Keduanya bangunan berbeda di distrik berbeda, dijalankan pengelola yang sama. Gocheok adalah dome dalam ruangan di Guro-gu berkapasitas sekitar 16,600; World Cup Stadium adalah stadion terbuka di Mapo-gu berkapasitas 66,704. Sistem penomorannya juga berbeda, dan itulah sebabnya masing-masing punya halaman sendiri di sini.",
+      },
+      {
+        q: "Pintu keluar mana yang harus saya pakai?",
+        a: "Pintu keluar 2 dari 월드컵경기장역 di Line 6, yakni pintu keluar yang disebut pengelola di halaman petunjuk arahnya sendiri. Ia tidak menerbitkan waktu jalan kaki, jadi halaman ini tidak mengarangnya.",
+      },
+      {
+        q: "Bisakah saya memarkir di stadion?",
+        a: "Bisa, di sisi barat, yang punya 528 petak. Tempat parkir Homeplus di sisi timur punya 767, dan pengelola menyatakan bahwa potongan yang diterbitkannya tidak berlaku di sana.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Zum Seoul World Cup Stadium für ein Konzert",
+    summary:
+      "Das Stadion in Sangam, in dem Tourneen in Stadiongröße spielen, abgelesen an den eigenen Seiten der Seoul Facilities Corporation: die Linie und der Ausgang, die Busse und welche Haltestelle, und welcher der beiden Parkplätze derjenige mit der Ermäßigung ist.",
+    scope:
+      "Behandelt die Anreise zum Seoul World Cup Stadium in Mapo-gu, aus den eigenen Verkehrs- und Parkseiten des Betreibers. Nicht behandelt wird, welches Tor Sie einlässt, wann die Türen öffnen oder was Sie mitbringen dürfen: das gehört dem Veranstalter und wird pro Show festgelegt, und keine Seite hier kann es Ihnen vorab sagen.",
+    intro: [
+      "Das ist das Stadion mit 66,704 Plätzen in Sangam, und der Betreiber sagt mit eigenen Worten, dass es neben Fußball auch für kulturelle Veranstaltungen öffnet. Eine Stadionshow dort ist der größte Saal, den eine K-POP-Tour in Seoul spielt.",
+      "Das Nützliche an der Anreise ist, dass die U-Bahn-Station nach dem Stadion benannt ist, was das Rätselraten erspart, dem die Gocheok-Anleitung einen ganzen Schritt widmet. Lesenswert ist, welcher Ausgang, welche Bushaltestelle, und die Parkplatzfalle.",
+    ],
+    steps: [
+      {
+        title: "Line 6 bis 월드컵경기장역, und hinaus über Ausgang 2",
+        body: "Die Station trägt den Namen des Stadions, es gibt hier also kein Problem der Stationswahl. Der Betreiber nennt ausdrücklich Ausgang 2. Das Seoul World Cup Stadium liegt an der 서울특별시 마포구 월드컵로 240, und die Station liegt daneben und nicht einen Fußweg entfernt.",
+        pitfall:
+          "Die eigene Website des Betreibers hat unter ihrem Unternehmensbereich eine zweite 찾아오시는 길-Seite, und die führt zur Hauptverwaltung der Seoul Facilities Corporation in Seongdong-gu, erreichbar von 용두역 an der Line 2. Sie liegt etwa zehn Kilometer vom Stadion entfernt. Lesen Sie die Adresse, bevor Sie einer Anreiseseite auf der Website einer Halle vertrauen.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Mit dem Bus halten Sie auf die Haltestelle an der Westseite zu",
+        body: "Der Betreiber führt 760, 710 und 571 als Hauptlinien, 7019 und 7715 als Zweiglinien, 마포08 als lokale Ringlinie und 9711 als Überlandbus. Er hebt 710, 7019 und 7715 als die schnellste Ankunft hervor, mit Ausstieg an der Haltestelle 월드컵경기장 서측, Nummer 14-105.",
+        pitfall:
+          "Eine Busnummer allein genügt an einem Konzertabend nicht. Dieselbe Linie hat an einem Stadion dieser Größe Haltestellen auf mehr als einer Seite, und der Betreiber nennt die Haltestelle an der Westseite aus einem Grund.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wenn Sie fahren, sind die beiden Parkplätze nicht gleichwertig",
+        body: "Es gibt zwei: den eigenen des Stadions auf der Westseite mit 528 Plätzen und den Homeplus-Parkplatz auf der Ostseite mit 767. Der Betreiber erklärt klar, dass die von ihm veröffentlichten Ermäßigungen am Homeplus-Parkplatz nicht gelten. Der größere Parkplatz ist der ohne Ermäßigung.",
+        pitfall:
+          "Mit dem Auto an einer Halle mit 66,704 Plätzen anzukommen, ist an einem Showabend der langsamste Weg hinein und hinaus, auf welcher Seite Sie auch parken. Die U-Bahn-Station ist nach dem Gebäude benannt.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Alles am Abend selbst gehört dem Veranstalter",
+        body: "Welches Tor Sie einlässt, wann die Türen öffnen, was Sie mitbringen dürfen und wie der Boden angeordnet ist, wird pro Show festgelegt und steht nicht auf den Seiten der Halle. Der Betreiber veröffentlicht das Gebäude, der Veranstalter die Veranstaltung. Ihr Ticket und die Ankündigung des Veranstalters sind die Autorität über all das.",
+        takes: "1 Minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Ist das Seoul World Cup Stadium dasselbe wie der Gocheok Sky Dome?",
+        a: "Nein. Es sind verschiedene Gebäude in verschiedenen Bezirken, geführt vom selben Betreiber. Gocheok ist eine Halle mit Dach in Guro-gu mit etwa 16,600 Plätzen; das World Cup Stadium ist ein Freiluftstadion in Mapo-gu mit 66,704. Auch die Numerierungssysteme unterscheiden sich, weshalb hier jedes seine eigene Seite hat.",
+      },
+      {
+        q: "Welchen Ausgang soll ich nehmen?",
+        a: "Ausgang 2 von 월드컵경기장역 an der Line 6, den der Betreiber auf seiner eigenen Anreiseseite nennt. Eine Gehzeit veröffentlicht er nicht, diese Seite erfindet also keine.",
+      },
+      {
+        q: "Kann ich am Stadion parken?",
+        a: "Ja, auf der Westseite, wo es 528 Plätze gibt. Der Homeplus-Parkplatz auf der Ostseite hat 767, und der Betreiber erklärt, dass seine veröffentlichten Ermäßigungen dort nicht gelten.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Llegar al Seoul World Cup Stadium para un concierto",
+    summary:
+      "El estadio de Sangam donde se celebran las giras a escala de estadio, leído en las propias páginas de la Seoul Facilities Corporation: la línea y la salida, los autobuses y qué parada, y cuál de los dos aparcamientos es el que aplica descuento.",
+    scope:
+      "Cubre cómo llegar al Seoul World Cup Stadium, en Mapo-gu, a partir de las páginas de transporte y aparcamiento del propio operador. No cubre por qué puerta entras, cuándo abren las puertas ni qué puedes llevar dentro: eso es de la promotora y se fija por espectáculo, y ninguna página de aquí puede decírtelo por adelantado.",
+    intro: [
+      "Este es el estadio de 66,704 asientos de Sangam, y el operador dice con sus propias palabras que abre para eventos culturales además del fútbol. Un concierto de estadio allí es la sala más grande en la que toca una gira de K-POP en Seúl.",
+      "Lo útil de llegar hasta él es que la estación de metro lleva el nombre del estadio, lo que elimina las conjeturas a las que la guía de Gocheok dedica un paso entero. Lo que vale la pena leer es qué salida, qué parada de autobús, y la trampa del aparcamiento.",
+    ],
+    steps: [
+      {
+        title: "Line 6 hasta 월드컵경기장역, y sal por la salida 2",
+        body: "La estación lleva el nombre del estadio, así que aquí no hay problema de elegir estación. El operador nombra la salida 2 específicamente. El Seoul World Cup Stadium está en 서울특별시 마포구 월드컵로 240, y la estación queda al lado y no a un paseo.",
+        pitfall:
+          "La web del propio operador tiene una segunda página 찾아오시는 길 en su sección corporativa, y esa es la sede central de la Seoul Facilities Corporation en Seongdong-gu, a la que se llega desde 용두역 en la Line 2. Está a unos diez kilómetros del estadio. Lee la dirección antes de fiarte de una página de cómo llegar en la web de un recinto.",
+        takes: "2 minutos",
+      },
+      {
+        title: "En autobús, apunta a la parada del lado oeste",
+        body: "El operador enumera las líneas 760, 710 y 571 como rutas troncales, 7019 y 7715 como ramales, 마포08 como circular local y 9711 como autocar interurbano. Destaca la 710, la 7019 y la 7715 como la llegada más rápida, con parada en 월드컵경기장 서측, numerada 14-105.",
+        pitfall:
+          "Un número de autobús por sí solo no basta una noche de concierto. La misma línea tiene paradas en más de un lado de un estadio de este tamaño, y el operador nombra la parada del oeste por algo.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Si vas en coche, los dos aparcamientos no son equivalentes",
+        body: "Hay dos: el del propio estadio, en el lado oeste, con 528 plazas, y el aparcamiento de Homeplus en el lado este, con 767. El operador declara sin rodeos que las reducciones que publica no se aplican en el de Homeplus. El aparcamiento más grande es el que no descuenta.",
+        pitfall:
+          "Llegar en coche a un recinto de 66,704 asientos es la forma más lenta de entrar y salir una noche de espectáculo, en cualquiera de los dos lados que aparques. La estación de metro lleva el nombre del edificio.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Todo lo relativo a la noche en sí es de la promotora",
+        body: "Por qué puerta entras, cuándo abren las puertas, qué puedes llevar dentro y cómo se distribuye la pista se fijan por espectáculo y no están en las páginas del recinto. El operador publica el edificio; la promotora publica el evento. Tu entrada y el aviso de la promotora son la autoridad sobre todo ello.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿El Seoul World Cup Stadium es lo mismo que el Gocheok Sky Dome?",
+        a: "No. Son edificios distintos en distritos distintos, gestionados por el mismo operador. Gocheok es un recinto cubierto en Guro-gu con unos 16,600 asientos; el World Cup Stadium es un estadio al aire libre en Mapo-gu con 66,704. Los sistemas de numeración también son distintos, y por eso cada uno tiene aquí su propia página.",
+      },
+      {
+        q: "¿Qué salida debo usar?",
+        a: "La salida 2 de 월드컵경기장역 en la Line 6, que es la salida que el operador nombra en su propia página de cómo llegar. No publica un tiempo a pie, así que esta página no se lo inventa.",
+      },
+      {
+        q: "¿Puedo aparcar en el estadio?",
+        a: "Sí, en el lado oeste, donde hay 528 plazas. El aparcamiento de Homeplus en el lado este tiene 767, y el operador declara que sus reducciones publicadas no se aplican allí.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Se rendre au Seoul World Cup Stadium pour un concert",
+    summary:
+      "Le stade de Sangam où se jouent les tournées à l'échelle d'un stade, d'après les pages de la Seoul Facilities Corporation elle-même : la ligne et la sortie, les bus et quel arrêt, et lequel des deux parkings accorde la réduction.",
+    scope:
+      "Couvre l'accès au Seoul World Cup Stadium à Mapo-gu, d'après les pages de transport et de stationnement de l'exploitant lui-même. Ne couvre pas par quelle porte vous entrez, l'heure d'ouverture ni ce que vous pouvez apporter : cela appartient au promoteur et se fixe par spectacle, et aucune page ici ne peut vous le dire à l'avance.",
+    intro: [
+      "C'est le stade de 66,704 places à Sangam, et l'exploitant dit dans ses propres mots qu'il ouvre pour des événements culturels autant que pour le football. Un concert de stade là-bas est la plus grande salle qu'une tournée K-POP joue à Séoul.",
+      "Ce qui est utile à savoir pour y aller, c'est que la station de métro porte le nom du stade, ce qui supprime les devinettes auxquelles le guide de Gocheok consacre une étape entière. Ce qui mérite lecture, c'est quelle sortie, quel arrêt de bus, et le piège du parking.",
+    ],
+    steps: [
+      {
+        title: "Line 6 jusqu'à 월드컵경기장역, et sortez par la sortie 2",
+        body: "La station porte le nom du stade, il n'y a donc pas ici de problème de choix de station. L'exploitant nomme précisément la sortie 2. Le Seoul World Cup Stadium se trouve au 서울특별시 마포구 월드컵로 240, et la station est juste à côté et non à une marche de là.",
+        pitfall:
+          "Le site de l'exploitant lui-même comporte une seconde page 찾아오시는 길 dans sa section institutionnelle, et celle-là mène au siège de la Seoul Facilities Corporation à Seongdong-gu, accessible depuis 용두역 sur la Line 2. Il se trouve à une dizaine de kilomètres du stade. Lisez l'adresse avant de faire confiance à une page d'accès sur le site d'une salle.",
+        takes: "2 minutes",
+      },
+      {
+        title: "En bus, visez l'arrêt du côté ouest",
+        body: "L'exploitant indique les 760, 710 et 571 comme lignes principales, les 7019 et 7715 comme lignes secondaires, 마포08 comme circulaire locale et 9711 comme autocar interurbain. Il distingue les 710, 7019 et 7715 comme l'arrivée la plus rapide, avec dépose à l'arrêt 월드컵경기장 서측, numéroté 14-105.",
+        pitfall:
+          "Un numéro de bus seul ne suffit pas un soir de concert. La même ligne dessert des arrêts sur plus d'un côté d'un stade de cette taille, et l'exploitant nomme l'arrêt ouest pour une raison.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Si vous venez en voiture, les deux parkings ne sont pas équivalents",
+        body: "Il y en a deux : celui du stade, côté ouest, avec 528 places, et le parking Homeplus côté est, avec 767. L'exploitant indique clairement que les réductions qu'il publie ne s'appliquent pas à celui de Homeplus. Le plus grand parking est celui qui n'accorde pas de réduction.",
+        pitfall:
+          "Arriver en voiture à une salle de 66,704 places est le moyen le plus lent d'entrer et de sortir un soir de spectacle, de quelque côté que vous vous gariez. La station de métro porte le nom du bâtiment.",
+        takes: "1 minute",
+      },
+      {
+        title: "Tout ce qui concerne la soirée elle-même appartient au promoteur",
+        body: "Par quelle porte vous entrez, l'heure d'ouverture, ce que vous pouvez apporter et la façon dont le parterre est agencé se fixent par spectacle et ne figurent pas sur les pages de la salle. L'exploitant publie le bâtiment ; le promoteur publie l'événement. Votre billet et l'annonce du promoteur font autorité sur tout cela.",
+        takes: "1 minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Le Seoul World Cup Stadium est-il le même que le Gocheok Sky Dome ?",
+        a: "Non. Ce sont des bâtiments différents dans des arrondissements différents, gérés par le même exploitant. Gocheok est une salle couverte à Guro-gu d'environ 16,600 places ; le World Cup Stadium est un stade à ciel ouvert à Mapo-gu de 66,704 places. Les systèmes de numérotation diffèrent aussi, et c'est pourquoi chacun a ici sa propre page.",
+      },
+      {
+        q: "Quelle sortie dois-je prendre ?",
+        a: "La sortie 2 de 월드컵경기장역 sur la Line 6, celle que l'exploitant nomme sur sa propre page d'accès. Il ne publie pas de temps de marche, cette page n'en invente donc pas.",
+      },
+      {
+        q: "Puis-je me garer au stade ?",
+        a: "Oui, du côté ouest, où il y a 528 places. Le parking Homeplus côté est en compte 767, et l'exploitant indique que ses réductions publiées ne s'y appliquent pas.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Chegando ao Seoul World Cup Stadium para um show",
+    summary:
+      "O estádio em Sangam onde acontecem as turnês em escala de estádio, lido nas próprias páginas da Seoul Facilities Corporation: a linha e a saída, os ônibus e qual parada, e qual dos dois estacionamentos é o que dá desconto.",
+    scope:
+      "Cobre como chegar ao Seoul World Cup Stadium, em Mapo-gu, a partir das páginas de transporte e estacionamento do próprio operador. Não cobre por qual portão você entra, quando os portões abrem, nem o que você pode levar para dentro: isso é da produtora e é definido por show, e nenhuma página aqui pode te dizer isso de antemão.",
+    intro: [
+      "Este é o estádio de 66,704 lugares em Sangam, e o operador diz com as próprias palavras que ele abre para eventos culturais além do futebol. Um show de estádio ali é a maior sala em que uma turnê de K-POP toca em Seul.",
+      "O que é útil sobre chegar nele é que a estação de metrô leva o nome do estádio, o que elimina a adivinhação a que o guia do Gocheok dedica um passo inteiro. A parte que vale ler é qual saída, qual parada de ônibus, e a armadilha do estacionamento.",
+    ],
+    steps: [
+      {
+        title: "Line 6 até 월드컵경기장역, e saia pela saída 2",
+        body: "A estação leva o nome do estádio, então aqui não existe o problema de escolher estação. O operador nomeia a saída 2 especificamente. O Seoul World Cup Stadium fica na 서울특별시 마포구 월드컵로 240, e a estação fica ao lado dele, e não a uma caminhada de distância.",
+        pitfall:
+          "O site do próprio operador tem uma segunda página 찾아오시는 길 na seção institucional, e essa é a sede da Seoul Facilities Corporation em Seongdong-gu, alcançada a partir da 용두역 na Line 2. Fica a cerca de dez quilômetros do estádio. Leia o endereço antes de confiar numa página de como chegar no site de um local.",
+        takes: "2 minutos",
+      },
+      {
+        title: "De ônibus, mire na parada do lado oeste",
+        body: "O operador lista 760, 710 e 571 como linhas troncais, 7019 e 7715 como linhas alimentadoras, 마포08 como a circular local e 9711 como o ônibus intermunicipal. Ele destaca 710, 7019 e 7715 como a chegada mais rápida, com desembarque na parada 월드컵경기장 서측, de número 14-105.",
+        pitfall:
+          "Um número de ônibus sozinho não basta numa noite de show. A mesma linha tem paradas em mais de um lado de um estádio desse tamanho, e o operador nomeia a parada do oeste por um motivo.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Se você for de carro, os dois estacionamentos não são equivalentes",
+        body: "Há dois: o do próprio estádio, no lado oeste, com 528 vagas, e o estacionamento do Homeplus no lado leste, com 767. O operador afirma com todas as letras que as reduções que ele publica não valem no do Homeplus. O estacionamento maior é justamente o que não dá desconto.",
+        pitfall:
+          "Chegar de carro a um local de 66,704 lugares é a forma mais lenta de entrar e sair numa noite de show, em qualquer dos lados em que você estacione. A estação de metrô leva o nome do prédio.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Tudo sobre a noite em si é da produtora",
+        body: "Por qual portão você entra, quando os portões abrem, o que você pode levar para dentro e como a pista é montada são definidos por show e não estão nas páginas do local. O operador publica o prédio; a produtora publica o evento. O seu ingresso e o aviso da produtora são a autoridade sobre tudo isso.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "O Seoul World Cup Stadium é o mesmo que o Gocheok Sky Dome?",
+        a: "Não. São prédios diferentes em distritos diferentes, administrados pelo mesmo operador. O Gocheok é um domo fechado em Guro-gu com cerca de 16,600 lugares; o World Cup Stadium é um estádio a céu aberto em Mapo-gu com 66,704. Os sistemas de numeração também são diferentes, e é por isso que cada um tem a própria página aqui.",
+      },
+      {
+        q: "Qual saída eu devo usar?",
+        a: "A saída 2 da 월드컵경기장역 na Line 6, que é a saída que o operador nomeia na própria página de como chegar. Ele não publica um tempo de caminhada, então esta página não inventa um.",
+      },
+      {
+        q: "Posso estacionar no estádio?",
+        a: "Pode, no lado oeste, onde há 528 vagas. O estacionamento do Homeplus no lado leste tem 767, e o operador afirma que as reduções publicadas por ele não valem lá.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Đến Seoul World Cup Stadium để xem hoà nhạc",
+    summary:
+      "Sân vận động ở Sangam, nơi các chuyến lưu diễn quy mô sân vận động biểu diễn, đọc từ chính các trang của Seoul Facilities Corporation: tuyến và cửa ra, các tuyến xe buýt và bến nào, và trong hai bãi đậu xe thì bãi nào có giảm giá.",
+    scope:
+      "Bao gồm việc đến Seoul World Cup Stadium ở Mapo-gu, từ các trang giao thông và đậu xe của chính đơn vị vận hành. Không bao gồm cửa nào cho bạn vào, mấy giờ mở cửa, hay bạn được mang gì vào: những điều đó thuộc nhà tổ chức và được đặt theo từng buổi, và không trang nào ở đây có thể nói trước cho bạn.",
+    intro: [
+      "Đây là sân vận động 66,704 chỗ ở Sangam, và đơn vị vận hành nói bằng chính lời của họ rằng nơi này mở cho cả các sự kiện văn hoá chứ không chỉ bóng đá. Một buổi diễn sân vận động ở đó là khán phòng lớn nhất mà một chuyến lưu diễn K-POP dùng tại Seoul.",
+      "Điều hữu ích về việc đến đây là nhà ga tàu điện ngầm mang tên sân vận động, nên không còn chuyện phải đoán như bài hướng dẫn Gocheok phải dành trọn một bước để xử lý. Phần đáng đọc là cửa ra nào, bến xe buýt nào, và cái bẫy ở bãi đậu xe.",
+    ],
+    steps: [
+      {
+        title: "Line 6 tới 월드컵경기장역, và đi ra bằng cửa ra 2",
+        body: "Nhà ga mang đúng tên sân vận động, nên ở đây không có chuyện phải chọn nhà ga. Đơn vị vận hành nêu rõ cửa ra 2. Seoul World Cup Stadium ở 서울특별시 마포구 월드컵로 240, và nhà ga nằm ngay bên cạnh chứ không cách một đoạn đi bộ.",
+        pitfall:
+          "Trang web của chính đơn vị vận hành có một trang 찾아오시는 길 thứ hai nằm trong mục doanh nghiệp, và trang đó là trụ sở chính của Seoul Facilities Corporation ở Seongdong-gu, đi tới từ 용두역 trên Line 2. Nó cách sân vận động chừng mười ki lô mét. Hãy đọc địa chỉ trước khi tin một trang chỉ đường trên trang web của một địa điểm.",
+        takes: "2 phút",
+      },
+      {
+        title: "Đi xe buýt thì nhắm bến phía tây",
+        body: "Đơn vị vận hành ghi 760, 710 và 571 là các tuyến trục, 7019 và 7715 là các tuyến nhánh, 마포08 là tuyến vòng nội khu và 9711 là xe khách liên vùng. Họ nêu riêng 710, 7019 và 7715 là cách đến nhanh nhất, trả khách tại bến 월드컵경기장 서측, số 14-105.",
+        pitfall:
+          "Chỉ có số xe buýt thôi là không đủ trong tối hoà nhạc. Cùng một tuyến có bến ở hơn một phía của một sân vận động cỡ này, và đơn vị vận hành nêu tên bến phía tây là có lý do.",
+        takes: "2 phút",
+      },
+      {
+        title: "Nếu bạn lái xe, hai bãi đậu không tương đương nhau",
+        body: "Có hai bãi: bãi của chính sân vận động ở phía tây với 528 chỗ, và bãi Homeplus ở phía đông với 767 chỗ. Đơn vị vận hành nói rõ rằng các mức giảm mà họ công bố không áp dụng ở bãi Homeplus. Bãi lớn hơn chính là bãi không giảm giá.",
+        pitfall:
+          "Đến bằng xe hơi tại một địa điểm 66,704 chỗ là cách vào và ra chậm nhất trong tối có buổi diễn, bất kể bạn đậu ở phía nào. Nhà ga tàu điện ngầm mang tên toà nhà này.",
+        takes: "1 phút",
+      },
+      {
+        title: "Mọi thứ về chính buổi tối đó đều thuộc nhà tổ chức",
+        body: "Cửa nào cho bạn vào, mấy giờ mở cửa, bạn được mang gì vào và mặt sân được bố trí thế nào đều đặt theo từng buổi và không nằm trên các trang của địa điểm. Đơn vị vận hành công bố toà nhà; nhà tổ chức công bố buổi diễn. Vé của bạn và thông báo của nhà tổ chức là thẩm quyền về tất cả những điều đó.",
+        takes: "1 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Seoul World Cup Stadium có phải là Gocheok Sky Dome không?",
+        a: "Không. Đó là hai toà nhà khác nhau ở hai quận khác nhau, do cùng một đơn vị vận hành. Gocheok là một dome trong nhà ở Guro-gu với khoảng 16,600 chỗ; World Cup Stadium là sân vận động lộ thiên ở Mapo-gu với 66,704 chỗ. Hệ thống đánh số cũng khác nhau, và đó là lý do mỗi nơi có một trang riêng ở đây.",
+      },
+      {
+        q: "Tôi nên dùng cửa ra nào?",
+        a: "Cửa ra 2 của 월드컵경기장역 trên Line 6, chính là cửa mà đơn vị vận hành nêu trên trang chỉ đường của họ. Họ không công bố thời gian đi bộ, nên trang này cũng không bày ra một con số.",
+      },
+      {
+        q: "Tôi có thể đậu xe ở sân vận động không?",
+        a: "Có, ở phía tây, nơi có 528 chỗ. Bãi Homeplus ở phía đông có 767 chỗ, và đơn vị vận hành nói rằng các mức giảm họ công bố không áp dụng ở đó.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การไปสนามกีฬาโซลเวิลด์คัพเพื่อดูคอนเสิร์ต",
+    summary:
+      "สนามกีฬาที่ซังอัมซึ่งทัวร์ระดับสนามกีฬามาแสดง อ่านจากหน้าเว็บของ Seoul Facilities Corporation เอง ได้แก่ สายและทางออก รถเมล์และป้ายไหน และลานจอดรถสองแห่งนั้นแห่งไหนที่มีส่วนลด",
+    scope:
+      "ครอบคลุมการไปถึง Seoul World Cup Stadium ในเขตมาโพ จากหน้าการเดินทางและที่จอดรถของผู้บริหารเอง ไม่ครอบคลุมว่าประตูไหนให้คุณเข้า ประตูเปิดเมื่อไร หรือนำอะไรเข้าไปได้ เพราะสิ่งเหล่านั้นเป็นของผู้จัดงานและกำหนดเป็นรายงาน และไม่มีหน้าใดที่นี่บอกคุณล่วงหน้าได้",
+    intro: [
+      "นี่คือสนามกีฬาความจุ 66,704 ที่นั่งที่ซังอัม และผู้บริหารกล่าวด้วยถ้อยคำของตนว่าสนามเปิดสำหรับงานทางวัฒนธรรมด้วย ไม่ใช่เฉพาะฟุตบอล การแสดงระดับสนามกีฬาที่นั่นคือห้องที่ใหญ่ที่สุดที่ทัวร์ K-POP ใช้ในโซล",
+      "สิ่งที่มีประโยชน์เกี่ยวกับการไปถึงที่นั่นคือสถานีรถไฟฟ้าใต้ดินตั้งชื่อตามสนามกีฬา จึงไม่มีปัญหาการคาดเดาที่คู่มือโกชอกต้องใช้ไปทั้งขั้นหนึ่ง ส่วนที่ควรอ่านคือทางออกไหน ป้ายรถเมล์ไหน และกับดักเรื่องที่จอดรถ",
+    ],
+    steps: [
+      {
+        title: "สาย 6 ไป월드컵경기장역 แล้วออกทางออก 2",
+        body: "สถานีใช้ชื่อสนามกีฬา ดังนั้นที่นี่ไม่มีปัญหาเรื่องการเลือกสถานี ผู้บริหารระบุทางออก 2 ไว้อย่างเฉพาะเจาะจง Seoul World Cup Stadium อยู่ที่ 서울특별시 마포구 월드컵로 240 และสถานีอยู่ติดกับสนาม ไม่ใช่ระยะที่ต้องเดิน",
+        pitfall:
+          "เว็บไซต์ของผู้บริหารเองมีหน้า찾아오시는 길 อีกหน้าหนึ่งอยู่ใต้ส่วนข้อมูลองค์กร และหน้านั้นคือสำนักงานใหญ่ของ Seoul Facilities Corporation ในเขตซองดง ซึ่งไปจาก용두역 บน Line 2 มันอยู่ห่างจากสนามราวสิบกิโลเมตร โปรดอ่านที่อยู่ก่อนจะเชื่อหน้าบอกทางบนเว็บไซต์ของสถานที่จัดงาน",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถ้าไปรถเมล์ ให้เล็งป้ายฝั่งตะวันตก",
+        body: "ผู้บริหารระบุสาย 760, 710 และ 571 เป็นสายหลัก สาย 7019 และ 7715 เป็นสายย่อย สาย마포08 เป็นสายวนในพื้นที่ และสาย 9711 เป็นรถโดยสารข้ามเขต โดยชี้เฉพาะสาย 710, 7019 และ 7715 ว่าไปถึงเร็วที่สุด ลงที่ป้าย월드컵경기장 서측 หมายเลข 14-105",
+        pitfall:
+          "ในคืนคอนเสิร์ต แค่หมายเลขรถเมล์ยังไม่พอ สนามขนาดนี้สายเดียวกันมีป้ายอยู่มากกว่าหนึ่งฝั่ง และผู้บริหารระบุชื่อป้ายฝั่งตะวันตกไว้ด้วยเหตุผล",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถ้าคุณขับรถ ลานจอดสองแห่งไม่เท่ากัน",
+        body: "มีสองแห่ง คือลานของสนามเองอยู่ฝั่งตะวันตก มี 528 ช่อง และลานจอดของ Homeplus อยู่ฝั่งตะวันออก มี 767 ช่อง ผู้บริหารระบุอย่างตรงไปตรงมาว่าส่วนลดที่ตนประกาศไว้ไม่ใช้กับลานของ Homeplus ลานที่ใหญ่กว่าคือลานที่ไม่มีส่วนลด",
+        pitfall:
+          "การมาถึงสถานที่ความจุ 66,704 ที่นั่งด้วยรถยนต์เป็นวิธีเข้าและออกที่ช้าที่สุดในคืนที่มีการแสดง ไม่ว่าคุณจะจอดฝั่งไหน สถานีรถไฟฟ้าใต้ดินตั้งชื่อตามอาคารนี้",
+        takes: "1 นาที",
+      },
+      {
+        title: "ทุกอย่างเกี่ยวกับคืนนั้นเองเป็นของผู้จัดงาน",
+        body: "ประตูไหนให้คุณเข้า ประตูเปิดเมื่อไร นำอะไรเข้าไปได้ และพื้นสนามจัดวางอย่างไร ถูกกำหนดเป็นรายงานและไม่อยู่บนหน้าของสถานที่จัดงาน ผู้บริหารเผยแพร่เรื่องอาคาร ผู้จัดงานเผยแพร่เรื่องงาน บัตรของคุณและประกาศของผู้จัดงานเป็นผู้มีอำนาจในเรื่องทั้งหมดนั้น",
+        takes: "1 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "Seoul World Cup Stadium กับ Gocheok Sky Dome เป็นที่เดียวกันไหม",
+        a: "ไม่ใช่ เป็นอาคารต่างกันในเขตต่างกัน บริหารโดยผู้บริหารรายเดียวกัน โกชอกเป็นโดมในร่มในเขตคูโร จุราว 16,600 ที่นั่ง ส่วนสนามเวิลด์คัพเป็นสนามกลางแจ้งในเขตมาโพ จุ 66,704 ที่นั่ง ระบบหมายเลขก็ต่างกันด้วย ซึ่งเป็นเหตุผลที่แต่ละแห่งมีหน้าของตัวเองที่นี่",
+      },
+      {
+        q: "ฉันควรใช้ทางออกไหน",
+        a: "ทางออก 2 ของ월드컵경기장역 บนสาย 6 ซึ่งเป็นทางออกที่ผู้บริหารระบุไว้บนหน้าบอกทางของตนเอง ผู้บริหารไม่ได้เผยแพร่เวลาเดิน ดังนั้นหน้านี้ก็ไม่คิดขึ้นมาเอง",
+      },
+      {
+        q: "ฉันจอดรถที่สนามได้ไหม",
+        a: "ได้ ที่ฝั่งตะวันตก ซึ่งมี 528 ช่อง ลานจอดของ Homeplus ฝั่งตะวันออกมี 767 ช่อง และผู้บริหารระบุว่าส่วนลดที่ตนประกาศไว้ไม่ใช้ที่นั่น",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Pagtungo sa Seoul World Cup Stadium para sa isang konsiyerto",
+    summary:
+      "Ang istadyum sa Sangam kung saan ginaganap ang mga tour na pang-istadyum, binasa mula sa sariling mga pahina ng Seoul Facilities Corporation: ang linya at ang labasan, ang mga bus at aling hintuan, at alin sa dalawang paradahan ang nagbibigay ng bawas.",
+    scope:
+      "Sinasaklaw ang pagtungo sa Seoul World Cup Stadium sa Mapo-gu, mula sa sariling mga pahina ng tagapagpatakbo tungkol sa transportasyon at paradahan. Hindi nito sinasaklaw kung aling tarangkahan ang pumapasok sa iyo, kailan bumubukas ang pinto, o ano ang maaari mong ipasok: sa prodyuser ang mga iyon at itinatakda sa bawat palabas, at walang pahina dito na makapagsasabi sa iyo nang patiuna.",
+    intro: [
+      "Ito ang istadyum na may 66,704 na upuan sa Sangam, at sinasabi ng tagapagpatakbo sa sariling pananalita nito na bumubukas ito para sa mga kultural na kaganapan at hindi lamang para sa putbol. Ang isang palabas na pang-istadyum doon ang pinakamalaking silid na tinutugtugan ng isang tour na K-POP sa Seoul.",
+      "Ang kapaki-pakinabang sa pagtungo doon ay ipinangalan sa istadyum ang istasyon ng tren sa ilalim ng lupa, na nag-aalis ng panghuhula na pinagkakaabalahan ng isang buong hakbang sa gabay ng Gocheok. Ang bahaging sulit basahin ay kung aling labasan, aling hintuan ng bus, at ang bitag sa paradahan.",
+    ],
+    steps: [
+      {
+        title: "Line 6 patungong 월드컵경기장역, at lumabas sa labasan 2",
+        body: "Taglay ng istasyon ang pangalan ng istadyum, kaya wala ritong problema sa pagpili ng istasyon. Pinapangalanan ng tagapagpatakbo ang labasan 2 nang tiyakan. Nasa 서울특별시 마포구 월드컵로 240 ang Seoul World Cup Stadium, at nasa tabi nito ang istasyon at hindi isang lakad ang layo.",
+        pitfall:
+          "May ikalawang pahinang 찾아오시는 길 ang sariling websayt ng tagapagpatakbo sa ilalim ng seksiyong pangkorporasyon, at ang isang iyon ay ang punong tanggapan ng Seoul Facilities Corporation sa Seongdong-gu, na naaabot mula sa 용두역 sa Line 2. Mga sampung kilometro ito mula sa istadyum. Basahin ang adres bago ka magtiwala sa isang pahina ng panuto sa sayt ng isang venue.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Sa bus, tumutok sa hintuan sa panig na kanluran",
+        body: "Inililista ng tagapagpatakbo ang 760, 710 at 571 bilang mga pangunahing ruta, ang 7019 at 7715 bilang mga sangang ruta, ang 마포08 bilang lokal na pabalik-balik at ang 9711 bilang bus na pang-malawakang lugar. Itinatangi nito ang 710, 7019 at 7715 bilang ang pinakamabilis na pagdating, na nagbababa sa iyo sa hintuang 월드컵경기장 서측, may numerong 14-105.",
+        pitfall:
+          "Hindi sapat ang numero ng bus lamang sa gabi ng konsiyerto. May hintuan ang parehong ruta sa mahigit isang panig ng istadyum na ganito kalaki, at may dahilan kung bakit pinapangalanan ng tagapagpatakbo ang hintuan sa kanluran.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Kung magmamaneho ka, hindi magkapantay ang dalawang paradahan",
+        body: "May dalawa: ang sariling paradahan ng istadyum sa panig na kanluran, na may 528 na puwesto, at ang paradahan ng Homeplus sa panig na silangan, na may 767. Tahasang sinasabi ng tagapagpatakbo na hindi naaangkop sa Homeplus ang mga bawas na inilalathala nito. Ang mas malaking paradahan ang hindi nagbibigay ng bawas.",
+        pitfall:
+          "Ang pagdating nang nakakotse sa isang venueng may 66,704 na upuan ay ang pinakamabagal na paraan ng pagpasok at paglabas sa gabi ng palabas, saang panig ka man magparada. Ipinangalan sa gusali ang istasyon ng tren sa ilalim ng lupa.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang lahat tungkol sa gabi mismo ay sa prodyuser",
+        body: "Itinatakda sa bawat palabas kung aling tarangkahan ang pumapasok sa iyo, kailan bumubukas ang pinto, ano ang maaari mong ipasok at paano inilalatag ang palapag, at wala ang mga iyon sa mga pahina ng venue. Inilalathala ng tagapagpatakbo ang gusali; inilalathala ng prodyuser ang kaganapan. Ang tiket mo at ang pabatid ng prodyuser ang awtoridad sa lahat ng iyon.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Pareho ba ang Seoul World Cup Stadium at ang Gocheok Sky Dome?",
+        a: "Hindi. Magkaibang gusali sila sa magkaibang distrito, pinapatakbo ng parehong tagapagpatakbo. Ang Gocheok ay isang dome na nasa loob sa Guro-gu na may mga 16,600 na upuan; ang World Cup Stadium ay isang bukas na istadyum sa Mapo-gu na may 66,704. Magkaiba rin ang mga sistema ng pagnunumero, at iyon ang dahilan kung bakit may sariling pahina ang bawat isa dito.",
+      },
+      {
+        q: "Aling labasan ang dapat kong gamitin?",
+        a: "Ang labasan 2 ng 월드컵경기장역 sa Line 6, na ang labasang pinapangalanan ng tagapagpatakbo sa sariling pahina nito ng panuto. Hindi nito inilalathala ang haba ng lakad, kaya hindi iyon kinakatha ng pahinang ito.",
+      },
+      {
+        q: "Puwede ba akong magparada sa istadyum?",
+        a: "Oo, sa panig na kanluran, kung saan may 528 na puwesto. May 767 ang paradahan ng Homeplus sa panig na silangan, at sinasabi ng tagapagpatakbo na hindi naaangkop doon ang mga inilathala nitong bawas.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "ソウルワールドカップ競技場で自分の席を見つける",
+    summary:
+      "この競技場が常設席にどう名前を付けているかを、運営者自身の座席検索から読み取ります。方位で名付けられた4つのスタンド、各スタンド内のアルファベット、そして決して使われない2つの文字です。",
+    scope:
+      "ソウルワールドカップ競技場が常設のスタンドとブロックにどう名前を付けているかを、ソウル施設公団自身の座席検索から扱います。フロアは扱いません。コンサートではピッチの一部がステージで、残りは主催者が配置するので、このページが記述できるほど恒久的なものは何もありません。",
+    intro: [
+      "ここの席には座標が2つあり、それを示しているのは運営者自身の座席検索です。方位を選ばせ、それからアルファベットを選ばせます。それだけです。",
+      "そのおかげでこの建物は高尺より読みやすくなっています。高尺ではブロック番号は規則を知るまで何も教えてくれません。ここでは名前の前半が方位なので、西スタンドの外に立っている読者は、目の前にあるのがWの側だとすでに分かっています。",
+    ],
+    steps: [
+      {
+        title: "まず方位を読む——それは記号ではなく方角です",
+        body: "4つのスタンドは동（東）、서（西）、남（南）、북（北）と名付けられており、会場の座席検索はどれかを選ぶまで何も検索してくれません。Wで始まるブロック名は競技場の西側にあります。それが第一の座標のすべてで、66,704人が入る建物の正しい側へあなたを連れて行く部分です。",
+        pitfall:
+          "遠回りして歩くこと。この規模では競技場の反対側はかなりの距離になり、方位がブロック名に印刷されているのは、まさにその距離を二度歩かなくて済むようにするためです。",
+        takes: "2分",
+      },
+      {
+        title: "次にアルファベット——そして2つの文字は存在しません",
+        body: "スタンド内のブロックはAから順にアルファベットで振られます。会場の検索は東側でAからT、北側と南側でAからP、西側でAからXを提示します。並びを注意して読むと、HからそのままJへ、NからそのままPへ飛ぶことが分かります。IとOはこの建物のどの側でも使われていません。1と0に見えるからです。",
+        pitfall:
+          "文字が飛ばされているように見えるのでIやOを探すこと。飛ばされているのは意図的で、どちらの文字のブロックもここには存在しません。",
+        takes: "2分",
+      },
+      {
+        title: "西は長い側で、その非対称は歩く上で意味を持ちます",
+        body: "4つのスタンドが持つブロックの数は同じではありません。北と南はPまでで、IとOを除けばそれぞれ14ブロックです。東はTまでで18。西はXまでで22——建物の中で最も長い側です。スタンドに沿ってブロックを数えていて数が合わない感じがするなら、数字を疑う前に自分がどのスタンドにいるかを確かめてください。",
+        takes: "1分",
+      },
+      {
+        title: "フロアはこの体系の一部ではまったくありません",
+        body: "ここまでのすべては常設のスタンドの説明で、それはコンクリートで動きません。コンサートではピッチがステージと、その残りに主催者が配置する座席を載せ、その配置は公演ごとに設計されます。競技場自身の芝は117メートル×78メートルで、それが組み替えられる空間です。どの方位の文字もそれを記述しません。",
+        pitfall:
+          "フロアのブロックがスタンドのアルファベットに従うと思い込むこと。従いませんし、それは会場が名付けるものでもありません。",
+        takes: "1分",
+      },
+      {
+        title: "このページが教えないこと、そしてその理由",
+        body: "スタンド内でアルファベットがどちら向きに進むかは教えません。高尺の配置図は自身の配置についての文章による説明を公開し、向きを言葉で明示していますが、この会場は座席の図を公開していてそうした説明はないので、向きは出典の中にありません。また、あなたの公演でどのブロックが売られるか、どのゲートから入れるか、ステージがどこかも教えません。それらは主催者のもので、公演ごとに変わります。",
+        takes: "1分",
+      },
+    ],
+    faq: [
+      {
+        q: "ここでチケットに書かれたIとOの文字は何を意味しますか。",
+        a: "何も意味しません。会場はそれらを使っていません。会場自身の座席検索は、どの側でもAからHのあとJへ、NのあとPへと進みます。Iに見える文字はほぼ確実にJで、Oに見える文字はほぼ確実にQかDです。",
+      },
+      {
+        q: "各側にブロックはいくつありますか。",
+        a: "北と南は14、東は18、西は22です。運営者の座席検索が実際に提示している文字を数えた数です。",
+      },
+      {
+        q: "スタンドの周りでアルファベットはどちら向きに進みますか。",
+        a: "会場が述べていないので、このページも述べません。どの文字がどこに位置するかについての権威は会場の図で、その図はこのページの末尾にリンクされています。",
+      },
+      {
+        q: "フロアはスタンドと同じように番号が振られていますか。",
+        a: "いいえ。コンサートではピッチはステージと、主催者が配置するものであり、公演ごとに設計されます。方位とアルファベットの体系が記述するのは常設のスタンドだけです。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "在首爾世界盃競技場找到你的座位",
+    summary:
+      "這座競技場如何為常設座位命名，取自營運者自己的座位查詢：以方位命名的四個看台、每個看台裡的字母，以及兩個從不被使用的字母。",
+    scope:
+      "涵蓋首爾世界盃競技場如何為常設看台與區塊命名，取自首爾設施公團自己的座位查詢。不涵蓋場地：演唱會時草皮的一部分是舞台，其餘由主辦方配置，所以沒有任何部分穩定到足以讓本頁描述。",
+    intro: [
+      "這裡的一個座位有兩個座標，而營運者自己的座位查詢正是展示這件事的東西：它先問你一個方位，然後問你一個字母。沒有別的了。",
+      "這讓這棟建築比高尺容易讀。在高尺，區塊號碼在你知道規則之前什麼也不會告訴你。這裡名字的前半是方位，所以站在西看台外面的讀者，已經知道眼前這一側就是W。",
+    ],
+    steps: [
+      {
+        title: "先讀方位——它是方向，不是代號",
+        body: "四個看台名為동（東）、서（西）、남（南）與북（北），而場館的座位查詢在你選一個之前什麼都不會查。以W開頭的區塊名在競技場的西側。那就是第一個座標的全部，也是把你帶到一棟容納66,704人的建築正確一側的那一部分。",
+        pitfall:
+          "繞遠路走。在這種尺度下，走錯邊是相當長的一段路，而方位之所以印在區塊名裡，正是為了讓你不必把那段路走兩次。",
+        takes: "2分鐘",
+      },
+      {
+        title: "然後是字母——而兩個字母並不存在",
+        body: "一個看台裡的區塊從A開始以字母編排。場館的查詢在東側提供A到T，在北側與南側提供A到P，在西側提供A到X。仔細讀那個序列，你會看到它從H直接跳到J，從N直接跳到P：I與O在這棟建築的任何一側都不使用，因為它們讀起來像1和0。",
+        pitfall:
+          "因為看起來有字母被跳過而去找I或O。它們確實被跳過了，而且是刻意的，帶這兩個字母的區塊在這裡並不存在。",
+        takes: "2分鐘",
+      },
+      {
+        title: "西側是長的那一邊，而這個不對稱和找路有關",
+        body: "四個看台所帶的區塊數量並不相同。北與南排到P，在去掉I與O之後各是14個區塊。東排到T，18個。西排到X，22個——是建築裡最長的一側。如果你沿著看台數區塊而覺得數目不對，先確認自己在哪一個看台，再去懷疑數字。",
+        takes: "1分鐘",
+      },
+      {
+        title: "場地完全不屬於這套系統",
+        body: "以上一切描述的是常設看台，它們是混凝土而且不會移動。演唱會時草皮承載舞台，以及主辦方在其餘部分配置的任何座位，而那個配置是逐場設計的。競技場自己的草皮是117公尺乘78公尺，那就是會被重新安排的空間。沒有任何方位字母描述它。",
+        pitfall:
+          "以為場地的區塊會跟著看台的字母走。它不會，而那也不是場館要命名的東西。",
+        takes: "1分鐘",
+      },
+      {
+        title: "本頁不會告訴你的事，以及原因",
+        body: "它不會告訴你字母在一個看台裡朝哪個方向排。高尺的配置圖公布了關於自身配置的文字說明，並明確用文字寫出方向；這座場館公布的是一張座位圖而沒有那樣的說明，所以方向不在來源裡。它也不會告訴你你那一場有哪些區塊開賣、哪個入口讓你進，或舞台在哪裡。那些屬於主辦方，並且逐場改變。",
+        takes: "1分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "這裡票上的I和O這兩個字母是什麼意思？",
+        a: "沒有意思——場館不使用它們。它自己的座位查詢在每一側都是A到H然後J，以及N然後P。看起來像I的字母幾乎一定是J，看起來像O的幾乎一定是Q或D。",
+      },
+      {
+        q: "每一側有幾個區塊？",
+        a: "北與南各14個，東側18個，西側22個，依營運者座位查詢實際提供的字母計算。",
+      },
+      {
+        q: "字母繞著看台朝哪個方向排？",
+        a: "場館沒有說，所以本頁也不說。關於某個字母位在哪裡，權威是場館的圖，而那張圖連結在本頁末尾。",
+      },
+      {
+        q: "場地的編號和看台一樣嗎？",
+        a: "不一樣。演唱會時草皮是舞台加上主辦方配置的東西，逐場設計。方位加字母的系統只描述常設看台。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menemukan tempat duduk Anda di Seoul World Cup Stadium",
+    summary:
+      "Bagaimana stadion ini menamai tempat duduk permanennya, dibaca dari pencari kursi milik pengelolanya sendiri: empat tribun yang dinamai menurut arah mata angin, huruf-huruf di dalam masing-masing, dan dua huruf alfabet yang tidak pernah dipakai.",
+    scope:
+      "Mencakup bagaimana Seoul World Cup Stadium menamai tribun dan blok permanennya, dari pencari kursi milik Seoul Facilities Corporation sendiri. Tidak mencakup lapangannya: pada sebuah konser sebagian rumput menjadi panggung dan sisanya ditata oleh promotor, jadi tidak ada apa pun tentangnya yang cukup permanen untuk digambarkan halaman ini.",
+    intro: [
+      "Sebuah kursi di sini punya dua koordinat, dan pencari kursi milik pengelola sendirilah yang memperlihatkannya: ia menanyakan sebuah arah, lalu sebuah huruf. Tidak ada yang lain.",
+      "Itu membuat bangunan ini lebih mudah dibaca daripada Gocheok, di mana nomor blok tidak memberi tahu Anda apa pun sampai Anda tahu aturannya. Di sini separuh pertama nama itu adalah arah mata angin, jadi pembaca yang berdiri di luar tribun barat sudah tahu bahwa W adalah sisi di depannya.",
+    ],
+    steps: [
+      {
+        title: "Baca arahnya lebih dulu — ia sebuah arah, bukan sebuah kode",
+        body: "Keempat tribun dinamai 동 (Timur), 서 (Barat), 남 (Selatan) dan 북 (Utara), dan pencari kursi venue itu tidak akan mencari apa pun sampai Anda memilih salah satunya. Nama blok yang dimulai dengan W berada di sisi barat stadion. Itulah seluruh koordinat pertama, dan itulah bagian yang membawa Anda ke sisi yang benar dari bangunan berisi 66,704 orang.",
+        pitfall:
+          "Berjalan memutar jalan panjang. Pada ukuran seperti ini, sisi stadion yang salah adalah jalan kaki yang jauh, dan arahnya dicetak pada nama blok justru supaya Anda tidak harus menempuh jalan itu dua kali.",
+        takes: "2 menit",
+      },
+      {
+        title: "Lalu hurufnya — dan dua huruf tidak ada",
+        body: "Di dalam satu tribun, blok-bloknya diberi huruf mulai dari A. Pencari venue itu menawarkan A sampai T di sisi timur, A sampai P di utara dan selatan, dan A sampai X di barat. Bacalah urutannya dengan teliti dan Anda akan melihatnya melangkah dari H langsung ke J, dan dari N langsung ke P: I dan O tidak dipakai di mana pun dalam bangunan ini, di sisi mana pun, karena keduanya terbaca sebagai 1 dan 0.",
+        pitfall:
+          "Mencari-cari I atau O karena sebuah huruf tampak terlewat. Ia memang dilewati, dengan sengaja, dan blok dengan huruf mana pun di antara keduanya tidak ada di sini.",
+        takes: "2 menit",
+      },
+      {
+        title: "Barat adalah sisi yang panjang, dan ketidaksimetrisannya berguna untuk menjelajah",
+        body: "Keempat tribun tidak membawa jumlah blok yang sama. Utara dan selatan berjalan sampai P, yang berarti 14 blok masing-masing setelah I dan O dihapus. Timur berjalan sampai T, 18. Barat berjalan sampai X, 22 — sisi terpanjang dalam bangunan ini. Kalau Anda sedang menghitung blok sepanjang sebuah tribun dan hitungannya terasa salah, periksalah dulu Anda ada di tribun mana sebelum Anda meragukan angkanya.",
+        takes: "1 menit",
+      },
+      {
+        title: "Lapangan sama sekali bukan bagian dari sistem ini",
+        body: "Semua di atas menggambarkan tribun permanen, yang terbuat dari beton dan tidak berpindah. Pada sebuah konser, rumput itu menanggung panggung dan tempat duduk apa pun yang ditata promotor di sisanya, dan susunan itu dirancang per pertunjukan. Rumput stadion itu sendiri berukuran 117 meter kali 78 meter, dan itulah ruang yang ditata ulang. Tidak ada huruf arah mata angin yang menggambarkannya.",
+        pitfall:
+          "Menganggap sebuah blok lapangan mengikuti penghurufan tribun. Ia tidak mengikutinya, dan ia bukan milik venue untuk dinamai.",
+        takes: "1 menit",
+      },
+      {
+        title: "Apa yang tidak akan diberitahukan halaman ini, dan mengapa",
+        body: "Ia tidak akan memberi tahu Anda ke arah mana huruf-huruf itu berjalan di dalam sebuah tribun. Bagan Gocheok menerbitkan keterangan tertulis tentang tata letaknya sendiri dan menyatakan arahnya dengan kata-kata; venue ini menerbitkan sebuah grafik tempat duduk dan tanpa keterangan semacam itu, jadi arahnya tidak ada dalam sumbernya. Ia juga tidak akan memberi tahu blok mana yang dijual untuk pertunjukan Anda, pintu mana yang memasukkan Anda, atau di mana panggungnya. Semua itu milik promotor dan berubah per pertunjukan.",
+        takes: "1 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apa arti huruf I dan O pada sebuah tiket di sini?",
+        a: "Tidak ada artinya — venue ini tidak memakainya. Pencari kursinya sendiri berjalan A sampai H lalu J, dan N lalu P, di setiap sisi. Huruf yang tampak seperti I hampir pasti sebuah J, dan yang tampak seperti O hampir pasti sebuah Q atau sebuah D.",
+      },
+      {
+        q: "Ada berapa blok di setiap sisi?",
+        a: "Empat belas di utara dan selatan, delapan belas di timur, dan dua puluh dua di barat, dengan menghitung huruf-huruf yang benar-benar ditawarkan pencari kursi pengelolanya.",
+      },
+      {
+        q: "Ke arah mana huruf-huruf itu berjalan mengelilingi sebuah tribun?",
+        a: "Venue tidak mengatakannya, jadi halaman ini juga tidak. Bagannya adalah otoritas atas di mana sebuah huruf tertentu berada, dan bagan itu ditautkan di kaki halaman ini.",
+      },
+      {
+        q: "Apakah lapangan dinomori seperti tribun?",
+        a: "Tidak. Pada sebuah konser, rumputnya adalah panggung ditambah apa pun yang ditata promotor, dirancang per pertunjukan. Sistem arah mata angin dan huruf menggambarkan tribun permanen saja.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Den Platz im Seoul World Cup Stadium finden",
+    summary:
+      "Wie das Stadion seine festen Plätze benennt, abgelesen an der eigenen Platzsuche des Betreibers: vier Tribünen, nach Himmelsrichtungen benannt, Buchstaben innerhalb jeder einzelnen, und zwei Buchstaben des Alphabets, die nie verwendet werden.",
+    scope:
+      "Behandelt, wie das Seoul World Cup Stadium seine festen Tribünen und Blöcke benennt, aus der eigenen Platzsuche der Seoul Facilities Corporation. Nicht behandelt wird der Boden: bei einem Konzert ist ein Teil des Rasens Bühne und der Rest wird vom Veranstalter angelegt, nichts daran ist also dauerhaft genug, dass diese Seite es beschreiben könnte.",
+    intro: [
+      "Ein Platz hier hat zwei Koordinaten, und die eigene Platzsuche des Betreibers ist das, was das zeigt: sie fragt nach einer Richtung und dann nach einem Buchstaben. Nach nichts weiter.",
+      "Damit ist dieses Gebäude leichter zu lesen als Gocheok, wo eine Blocknummer nichts sagt, solange man die Regel nicht kennt. Hier ist die erste Hälfte des Namens eine Himmelsrichtung, wer also außen vor der Westtribüne steht, weiß bereits, dass W die Seite vor ihm ist.",
+    ],
+    steps: [
+      {
+        title: "Lesen Sie zuerst die Richtung — sie ist eine Peilung und kein Code",
+        body: "Die vier Tribünen heißen 동 (Ost), 서 (West), 남 (Süd) und 북 (Nord), und die Platzsuche der Halle sucht nichts, solange Sie keine davon gewählt haben. Ein Blockname, der mit W beginnt, liegt auf der Westseite des Stadions. Das ist die gesamte erste Koordinate, und es ist der Teil, der Sie in einem Gebäude für 66,704 Menschen auf die richtige Seite bringt.",
+        pitfall:
+          "Den weiten Weg herum zu gehen. In dieser Größe ist die falsche Seite des Stadions ein erheblicher Fußweg, und die Richtung steht im Blocknamen genau deshalb, damit Sie diesen Weg nicht zweimal machen müssen.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Dann der Buchstabe — und zwei Buchstaben gibt es nicht",
+        body: "Innerhalb einer Tribüne sind die Blöcke ab A mit Buchstaben versehen. Die Suche der Halle bietet A bis T auf der Ostseite, A bis P im Norden und Süden und A bis X im Westen. Lesen Sie die Reihe genau, und Sie sehen, dass sie von H direkt zu J und von N direkt zu P springt: I und O werden nirgends im Gebäude verwendet, auf keiner Seite, weil sie als 1 und 0 gelesen werden.",
+        pitfall:
+          "Nach einem I oder einem O zu suchen, weil ein Buchstabe übersprungen zu sein scheint. Er wurde übersprungen, absichtlich, und einen Block mit einem der beiden Buchstaben gibt es hier nicht.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "West ist die lange Seite, und die Asymmetrie ist für die Orientierung wichtig",
+        body: "Die vier Tribünen tragen nicht gleich viele Blöcke. Nord und Süd laufen bis P, nach dem Wegfall von I und O also je 14 Blöcke. Ost läuft bis T, 18. West läuft bis X, 22 — die längste Seite im Gebäude. Wenn Sie Blöcke entlang einer Tribüne abzählen und die Zahl sich falsch anfühlt, prüfen Sie zuerst, auf welcher Tribüne Sie sind, bevor Sie an der Zahl zweifeln.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Der Boden gehört überhaupt nicht zu diesem System",
+        body: "Alles oben beschreibt die festen Tribünen, die aus Beton sind und sich nicht verschieben. Bei einem Konzert trägt der Rasen die Bühne und dazu jene Bestuhlung, die der Veranstalter auf dem Rest anlegt, und diese Anordnung wird pro Show entworfen. Der Rasen des Stadions selbst misst 117 Meter mal 78 Meter, und das ist die Fläche, die umgebaut wird. Kein Himmelsrichtungs-Buchstabe beschreibt sie.",
+        pitfall:
+          "Anzunehmen, ein Bodenblock folge der Tribünenbeschriftung. Er tut es nicht, und es ist auch nicht Sache der Halle, ihn zu benennen.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Was diese Seite Ihnen nicht sagt, und warum",
+        body: "Sie sagt Ihnen nicht, in welche Richtung die Buchstaben innerhalb einer Tribüne laufen. Der Gocheok-Plan veröffentlicht eine schriftliche Beschreibung seiner eigenen Anordnung und nennt die Richtung ausdrücklich; diese Halle veröffentlicht eine Sitzgrafik und keine solche Beschreibung, die Richtung steht also nicht in der Quelle. Sie sagt Ihnen auch nicht, welche Blöcke für Ihre Show verkauft werden, welches Tor Sie einlässt oder wo die Bühne steht. Das gehört dem Veranstalter und ändert sich pro Show.",
+        takes: "1 Minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Was bedeuten die Buchstaben I und O hier auf einem Ticket?",
+        a: "Nichts — die Halle verwendet sie nicht. Ihre eigene Platzsuche läuft auf jeder Seite A bis H, dann J, und N, dann P. Ein Buchstabe, der wie ein I aussieht, ist fast sicher ein J, und einer, der wie ein O aussieht, fast sicher ein Q oder ein D.",
+      },
+      {
+        q: "Wie viele Blöcke gibt es auf jeder Seite?",
+        a: "Vierzehn im Norden und Süden, achtzehn im Osten und zweiundzwanzig im Westen, gezählt nach den Buchstaben, die die Platzsuche des Betreibers tatsächlich anbietet.",
+      },
+      {
+        q: "In welche Richtung laufen die Buchstaben um eine Tribüne?",
+        a: "Die Halle sagt es nicht, diese Seite also auch nicht. Ihr Plan ist die Autorität dafür, wo ein bestimmter Buchstabe liegt, und dieser Plan ist am Fuß dieser Seite verlinkt.",
+      },
+      {
+        q: "Ist der Boden wie die Tribünen numeriert?",
+        a: "Nein. Bei einem Konzert ist der Rasen Bühne plus das, was der Veranstalter anlegt, pro Show entworfen. Das System aus Himmelsrichtung und Buchstabe beschreibt ausschließlich die festen Tribünen.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Encontrar tu asiento en el Seoul World Cup Stadium",
+    summary:
+      "Cómo nombra el estadio sus asientos permanentes, leído en el buscador de butacas del propio operador: cuatro gradas nombradas por el punto cardinal, letras dentro de cada una, y dos letras del alfabeto que nunca se usan.",
+    scope:
+      "Cubre cómo nombra el Seoul World Cup Stadium sus gradas y bloques permanentes, a partir del buscador de butacas de la propia Seoul Facilities Corporation. No cubre la pista: en un concierto parte del césped es escenario y el resto lo distribuye la promotora, así que nada de ello es lo bastante permanente para que esta página lo describa.",
+    intro: [
+      "Un asiento aquí tiene dos coordenadas, y el propio buscador de butacas del operador es lo que lo demuestra: pide una dirección y después una letra. Nada más.",
+      "Eso hace que este edificio sea más fácil de leer que Gocheok, donde un número de bloque no te dice nada hasta que conoces la regla. Aquí la primera mitad del nombre es un punto cardinal, así que quien está fuera de la grada oeste ya sabe que W es el lado que tiene delante.",
+    ],
+    steps: [
+      {
+        title: "Lee primero la dirección: es un rumbo, no un código",
+        body: "Las cuatro gradas se llaman 동 (Este), 서 (Oeste), 남 (Sur) y 북 (Norte), y el buscador de butacas del recinto no busca nada hasta que has elegido una. Un nombre de bloque que empieza por W está en el lado oeste del estadio. Esa es toda la primera coordenada, y es la parte que te lleva al lado correcto de un edificio que alberga a 66,704 personas.",
+        pitfall:
+          "Dar la vuelta larga a pie. A este tamaño, el lado equivocado del estadio es una caminata considerable, y la dirección va impresa en el nombre del bloque precisamente para que no tengas que hacer esa caminata dos veces.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Después la letra, y dos letras no existen",
+        body: "Dentro de una grada, los bloques se letrean desde la A. El buscador del recinto ofrece de la A a la T en el lado este, de la A a la P en el norte y el sur, y de la A a la X en el oeste. Lee la secuencia con atención y verás que salta de la H directamente a la J, y de la N directamente a la P: la I y la O no se usan en ninguna parte del edificio, en ningún lado, porque se leen como 1 y 0.",
+        pitfall:
+          "Buscar una I o una O porque parece que falta una letra. Falta, a propósito, y un bloque con cualquiera de esas dos letras no existe aquí.",
+        takes: "2 minutos",
+      },
+      {
+        title: "El oeste es el lado largo, y la asimetría sirve para orientarse",
+        body: "Las cuatro gradas no llevan el mismo número de bloques. El norte y el sur llegan hasta la P, lo que son 14 bloques cada uno una vez quitadas la I y la O. El este llega hasta la T, 18. El oeste llega hasta la X, 22: el lado más largo del edificio. Si estás contando bloques a lo largo de una grada y la cuenta te parece rara, comprueba en qué grada estás antes de dudar del número.",
+        takes: "1 minuto",
+      },
+      {
+        title: "La pista no forma parte de este sistema en absoluto",
+        body: "Todo lo anterior describe las gradas permanentes, que son de hormigón y no se mueven. En un concierto el césped lleva el escenario y los asientos que la promotora distribuya en el resto, y esa disposición se diseña por espectáculo. El propio césped del estadio mide 117 metros por 78, que es el espacio que se reorganiza. Ninguna letra cardinal lo describe.",
+        pitfall:
+          "Dar por hecho que un bloque de pista sigue el letreado de las gradas. No lo sigue, y además no le corresponde al recinto nombrarlo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Lo que esta página no te va a decir, y por qué",
+        body: "No te va a decir en qué dirección corren las letras dentro de una grada. El plano de Gocheok publica una descripción escrita de su propia distribución y declara la dirección con todas las palabras; este recinto publica un gráfico de asientos y ninguna descripción así, de modo que la dirección no está en la fuente. Tampoco te va a decir qué bloques se venden para tu concierto, por qué puerta entras ni dónde está el escenario. Eso es de la promotora y cambia por espectáculo.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Qué significan las letras I y O en una entrada de aquí?",
+        a: "Nada: el recinto no las usa. Su propio buscador de butacas va de la A a la H y luego la J, y de la N a la P, en todos los lados. Una letra que parece una I casi seguro es una J, y una que parece una O casi seguro es una Q o una D.",
+      },
+      {
+        q: "¿Cuántos bloques hay en cada lado?",
+        a: "Catorce en el norte y el sur, dieciocho en el este y veintidós en el oeste, contando las letras que el buscador de butacas del operador ofrece de verdad.",
+      },
+      {
+        q: "¿En qué dirección corren las letras alrededor de una grada?",
+        a: "El recinto no lo dice, así que esta página tampoco. Su plano es la autoridad sobre dónde está una letra concreta, y ese plano va enlazado al pie de esta página.",
+      },
+      {
+        q: "¿La pista está numerada como las gradas?",
+        a: "No. En un concierto el césped es escenario más lo que distribuya la promotora, diseñado por espectáculo. El sistema de punto cardinal y letra describe únicamente las gradas permanentes.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Trouver sa place au Seoul World Cup Stadium",
+    summary:
+      "Comment le stade nomme son placement permanent, d'après la recherche de place de l'exploitant lui-même : quatre tribunes nommées par point cardinal, des lettres à l'intérieur de chacune, et deux lettres de l'alphabet qui ne servent jamais.",
+    scope:
+      "Couvre la façon dont le Seoul World Cup Stadium nomme ses tribunes et ses blocs permanents, d'après la recherche de place de la Seoul Facilities Corporation elle-même. Ne couvre pas la pelouse : lors d'un concert une partie du gazon est la scène et le reste est agencé par le promoteur, rien n'y est donc assez permanent pour que cette page le décrive.",
+    intro: [
+      "Une place ici a deux coordonnées, et c'est la recherche de place de l'exploitant qui le montre : elle demande une direction, puis une lettre. Rien d'autre.",
+      "Cela rend ce bâtiment plus lisible que Gocheok, où un numéro de bloc ne vous apprend rien avant que vous connaissiez la règle. Ici la première moitié du nom est un relèvement, si bien que la personne qui se tient devant la tribune ouest sait déjà que W est le côté qu'elle a devant elle.",
+    ],
+    steps: [
+      {
+        title: "Lisez d'abord la direction — c'est un relèvement et non un code",
+        body: "Les quatre tribunes s'appellent 동 (Est), 서 (Ouest), 남 (Sud) et 북 (Nord), et la recherche de place de la salle ne cherche rien avant que vous en ayez choisi une. Un nom de bloc qui commence par W se trouve du côté ouest du stade. C'est toute la première coordonnée, et c'est la part qui vous amène du bon côté d'un bâtiment accueillant 66,704 personnes.",
+        pitfall:
+          "Faire le grand tour à pied. À cette taille, le mauvais côté du stade représente une marche considérable, et la direction figure dans le nom du bloc précisément pour que vous n'ayez pas à faire cette marche deux fois.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Puis la lettre — et deux lettres n'existent pas",
+        body: "À l'intérieur d'une tribune, les blocs sont lettrés à partir de A. La recherche de la salle propose A à T côté est, A à P au nord et au sud, et A à X à l'ouest. Lisez la suite attentivement et vous la verrez passer de H directement à J, et de N directement à P : I et O ne servent nulle part dans le bâtiment, d'aucun côté, parce qu'elles se lisent comme 1 et 0.",
+        pitfall:
+          "Chercher un I ou un O parce qu'une lettre semble avoir été sautée. Elle l'a été, délibérément, et un bloc portant l'une de ces deux lettres n'existe pas ici.",
+        takes: "2 minutes",
+      },
+      {
+        title: "L'ouest est le côté long, et l'asymétrie sert à se repérer",
+        body: "Les quatre tribunes ne portent pas le même nombre de blocs. Le nord et le sud vont jusqu'à P, soit 14 blocs chacun une fois I et O retirés. L'est va jusqu'à T, 18. L'ouest va jusqu'à X, 22 — le côté le plus long du bâtiment. Si vous comptez les blocs le long d'une tribune et que le compte vous semble faux, vérifiez dans quelle tribune vous êtes avant de douter du nombre.",
+        takes: "1 minute",
+      },
+      {
+        title: "La pelouse ne fait pas partie de ce système du tout",
+        body: "Tout ce qui précède décrit les tribunes permanentes, qui sont en béton et ne bougent pas. Lors d'un concert, le gazon porte la scène et le placement que le promoteur installe sur le reste, et cet agencement est conçu par spectacle. Le gazon du stade mesure 117 mètres sur 78, et c'est l'espace qui est réaménagé. Aucune lettre de direction ne le décrit.",
+        pitfall:
+          "Supposer qu'un bloc de pelouse suit le lettrage des tribunes. Il ne le suit pas, et ce n'est pas à la salle de le nommer.",
+        takes: "1 minute",
+      },
+      {
+        title: "Ce que cette page ne vous dira pas, et pourquoi",
+        body: "Elle ne vous dira pas dans quel sens courent les lettres à l'intérieur d'une tribune. Le plan de Gocheok publie une description écrite de sa propre disposition et énonce la direction en toutes lettres ; cette salle publie un graphique de placement et aucune description de ce genre, la direction n'est donc pas dans la source. Elle ne vous dira pas non plus quels blocs sont mis en vente pour votre concert, par quelle porte vous entrez, ni où se trouve la scène. Cela appartient au promoteur et change par spectacle.",
+        takes: "1 minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Que signifient les lettres I et O sur un billet ici ?",
+        a: "Rien — la salle ne les emploie pas. Sa propre recherche de place va de A à H puis J, et de N puis P, de chaque côté. Une lettre qui ressemble à un I est presque sûrement un J, et une qui ressemble à un O presque sûrement un Q ou un D.",
+      },
+      {
+        q: "Combien y a-t-il de blocs de chaque côté ?",
+        a: "Quatorze au nord et au sud, dix-huit à l'est et vingt-deux à l'ouest, en comptant les lettres que la recherche de place de l'exploitant propose réellement.",
+      },
+      {
+        q: "Dans quel sens courent les lettres autour d'une tribune ?",
+        a: "La salle ne le dit pas, donc cette page non plus. Son plan fait autorité sur l'emplacement d'une lettre donnée, et ce plan est lié au pied de cette page.",
+      },
+      {
+        q: "La pelouse est-elle numérotée comme les tribunes ?",
+        a: "Non. Lors d'un concert, le gazon est la scène plus ce que le promoteur installe, conçu par spectacle. Le système point cardinal plus lettre décrit uniquement les tribunes permanentes.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Achando seu lugar no Seoul World Cup Stadium",
+    summary:
+      "Como o estádio nomeia os assentos permanentes dele, lido no buscador de lugares do próprio operador: quatro setores nomeados por ponto cardeal, letras dentro de cada um, e duas letras do alfabeto que nunca são usadas.",
+    scope:
+      "Cobre como o Seoul World Cup Stadium nomeia os setores e blocos permanentes dele, a partir do buscador de lugares da própria Seoul Facilities Corporation. Não cobre a pista: num show parte do gramado é palco e o resto é montado pela produtora, então nada ali é permanente o bastante para esta página descrever.",
+    intro: [
+      "Um lugar aqui tem duas coordenadas, e o próprio buscador de lugares do operador é o que mostra isso: ele pede uma direção e depois uma letra. Nada mais.",
+      "Isso deixa este prédio mais fácil de ler que o Gocheok, onde o número do bloco não te diz nada até você saber a regra. Aqui a primeira metade do nome é um ponto cardeal, então quem está em pé do lado de fora do setor oeste já sabe que W é o lado na frente dele.",
+    ],
+    steps: [
+      {
+        title: "Leia a direção primeiro — ela é um rumo, não um código",
+        body: "Os quatro setores se chamam 동 (Leste), 서 (Oeste), 남 (Sul) e 북 (Norte), e o buscador de lugares do local não vai procurar nada até você escolher um. Um nome de bloco que começa com W fica no lado oeste do estádio. Isso é toda a primeira coordenada, e é a parte que te leva ao lado certo de um prédio que recebe 66,704 pessoas.",
+        pitfall:
+          "Dar a volta longa a pé. Nesse tamanho, o lado errado do estádio é uma caminhada considerável, e a direção vem impressa no nome do bloco justamente para você não ter de fazer essa caminhada duas vezes.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Depois a letra — e duas letras não existem",
+        body: "Dentro de um setor os blocos recebem letras a partir do A. O buscador do local oferece A até T no lado leste, A até P no norte e no sul, e A até X no oeste. Leia a sequência com atenção e você vai ver que ela salta do H direto para o J, e do N direto para o P: I e O não são usados em lugar nenhum do prédio, em nenhum lado, porque são lidos como 1 e 0.",
+        pitfall:
+          "Caçar um I ou um O porque parece que uma letra foi pulada. Ela foi pulada, de propósito, e um bloco com qualquer uma dessas duas letras não existe aqui.",
+        takes: "2 minutos",
+      },
+      {
+        title: "O oeste é o lado comprido, e a assimetria serve para se achar",
+        body: "Os quatro setores não têm a mesma quantidade de blocos. Norte e sul vão até o P, o que dá 14 blocos cada um depois de tirar I e O. O leste vai até o T, 18. O oeste vai até o X, 22 — o lado mais comprido do prédio. Se você estiver contando blocos ao longo de um setor e a conta parecer errada, confira em qual setor você está antes de duvidar do número.",
+        takes: "1 minuto",
+      },
+      {
+        title: "A pista não faz parte deste sistema de jeito nenhum",
+        body: "Tudo acima descreve os setores permanentes, que são de concreto e não se mexem. Num show o gramado carrega o palco e os assentos que a produtora montar no resto dele, e esse arranjo é desenhado por show. O próprio gramado do estádio tem 117 metros por 78, que é o espaço reorganizado. Nenhuma letra de ponto cardeal descreve isso.",
+        pitfall:
+          "Supor que um bloco de pista segue as letras dos setores. Ele não segue, e também não é do local nomeá-lo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "O que esta página não vai te dizer, e por quê",
+        body: "Ela não vai te dizer para que lado as letras correm dentro de um setor. O mapa do Gocheok publica uma descrição escrita do próprio layout e declara a direção com todas as palavras; este local publica um gráfico de assentos e nenhuma descrição desse tipo, então a direção não está na fonte. Ela também não vai te dizer quais blocos são vendidos para o seu show, por qual portão você entra, nem onde fica o palco. Isso é da produtora e muda por show.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "O que as letras I e O querem dizer num ingresso daqui?",
+        a: "Nada — o local não as usa. O buscador de lugares dele vai de A até H e então J, e de N então P, em todos os lados. Uma letra que parece um I é quase certamente um J, e uma que parece um O é quase certamente um Q ou um D.",
+      },
+      {
+        q: "Quantos blocos existem em cada lado?",
+        a: "Quatorze no norte e no sul, dezoito no leste e vinte e dois no oeste, contando as letras que o buscador de lugares do operador realmente oferece.",
+      },
+      {
+        q: "Para que lado as letras correm em volta de um setor?",
+        a: "O local não diz, então esta página também não. O mapa dele é a autoridade sobre onde uma letra fica, e esse mapa está linkado no pé desta página.",
+      },
+      {
+        q: "A pista é numerada como os setores?",
+        a: "Não. Num show o gramado é palco mais o que a produtora montar, desenhado por show. O sistema de ponto cardeal com letra descreve apenas os setores permanentes.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Tìm chỗ ngồi của bạn ở Seoul World Cup Stadium",
+    summary:
+      "Cách sân vận động đặt tên cho chỗ ngồi cố định, đọc từ công cụ tra chỗ của chính đơn vị vận hành: bốn khán đài đặt tên theo hướng, các chữ cái trong từng khán đài, và hai chữ cái trong bảng chữ cái không bao giờ được dùng.",
+    scope:
+      "Bao gồm cách Seoul World Cup Stadium đặt tên cho các khán đài và khu cố định, từ công cụ tra chỗ của chính Seoul Facilities Corporation. Không bao gồm mặt sân: trong một buổi hoà nhạc, một phần mặt cỏ là sân khấu và phần còn lại do nhà tổ chức bố trí, nên không có gì ở đó cố định đủ để trang này mô tả.",
+    intro: [
+      "Một chỗ ngồi ở đây có hai toạ độ, và chính công cụ tra chỗ của đơn vị vận hành là thứ cho thấy điều đó: nó hỏi một hướng, rồi hỏi một chữ cái. Không gì khác.",
+      "Điều đó làm toà nhà này dễ đọc hơn Gocheok, nơi một con số khu không cho bạn biết gì cho tới khi bạn biết quy tắc. Ở đây nửa đầu của cái tên là một hướng, nên người đang đứng ngoài khán đài phía tây đã biết rằng W là phía ngay trước mặt mình.",
+    ],
+    steps: [
+      {
+        title: "Đọc hướng trước — nó là một phương hướng, không phải một mã",
+        body: "Bốn khán đài có tên là 동 (Đông), 서 (Tây), 남 (Nam) và 북 (Bắc), và công cụ tra chỗ của địa điểm sẽ không tra gì cho tới khi bạn chọn một trong số đó. Tên khu bắt đầu bằng W nằm ở phía tây sân vận động. Đó là toàn bộ toạ độ thứ nhất, và đó là phần đưa bạn tới đúng phía của một toà nhà chứa 66,704 người.",
+        pitfall:
+          "Đi vòng đường dài. Ở quy mô này, đi sai phía sân vận động là một đoạn đi bộ đáng kể, và hướng được in trong tên khu chính là để bạn không phải đi đoạn đó hai lần.",
+        takes: "2 phút",
+      },
+      {
+        title: "Rồi đến chữ cái — và hai chữ cái không tồn tại",
+        body: "Trong một khán đài, các khu được đặt chữ cái bắt đầu từ A. Công cụ tra của địa điểm đưa ra A đến T ở phía đông, A đến P ở phía bắc và nam, và A đến X ở phía tây. Đọc kỹ dãy đó và bạn sẽ thấy nó nhảy từ H thẳng sang J, và từ N thẳng sang P: I và O không được dùng ở bất cứ đâu trong toà nhà, ở bất cứ phía nào, vì chúng đọc ra thành 1 và 0.",
+        pitfall:
+          "Đi tìm một chữ I hay một chữ O vì có một chữ cái trông như bị bỏ qua. Nó bị bỏ qua thật, một cách cố ý, và khu mang bất kỳ chữ nào trong hai chữ đó không tồn tại ở đây.",
+        takes: "2 phút",
+      },
+      {
+        title: "Phía tây là mặt dài, và sự bất đối xứng ấy có ích khi tìm đường",
+        body: "Bốn khán đài không có cùng số khu. Bắc và nam chạy đến P, nghĩa là mỗi bên 14 khu sau khi bỏ I và O. Đông chạy đến T, 18 khu. Tây chạy đến X, 22 khu — mặt dài nhất của toà nhà. Nếu bạn đang đếm khu dọc một khán đài mà thấy con số có vẻ sai, hãy kiểm tra xem mình đang ở khán đài nào trước khi nghi ngờ con số.",
+        takes: "1 phút",
+      },
+      {
+        title: "Mặt sân hoàn toàn không thuộc hệ thống này",
+        body: "Mọi điều ở trên mô tả các khán đài cố định, chúng bằng bê tông và không di chuyển. Trong một buổi hoà nhạc, mặt cỏ mang sân khấu cùng với bất kỳ chỗ ngồi nào mà nhà tổ chức bố trí trên phần còn lại, và cách bố trí đó được thiết kế theo từng buổi. Mặt cỏ của sân rộng 117 mét nhân 78 mét, và đó là không gian được xếp lại. Không có chữ cái chỉ hướng nào mô tả nó.",
+        pitfall:
+          "Cho rằng một khu trên mặt sân đi theo cách đặt chữ cái của khán đài. Nó không đi theo, và đặt tên cho nó cũng không phải việc của địa điểm.",
+        takes: "1 phút",
+      },
+      {
+        title: "Điều trang này sẽ không nói với bạn, và lý do",
+        body: "Nó sẽ không nói các chữ cái chạy theo hướng nào bên trong một khán đài. Sơ đồ Gocheok công bố phần mô tả bằng chữ về cách bố trí của chính nó và nêu rõ hướng bằng lời; địa điểm này công bố một hình chỗ ngồi mà không có phần mô tả như vậy, nên hướng không nằm trong nguồn. Nó cũng sẽ không nói buổi diễn của bạn bán những khu nào, cửa nào cho bạn vào, hay sân khấu ở đâu. Những điều đó thuộc nhà tổ chức và thay đổi theo từng buổi.",
+        takes: "1 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Chữ I và chữ O trên vé ở đây nghĩa là gì?",
+        a: "Không nghĩa gì — địa điểm này không dùng chúng. Công cụ tra chỗ của họ chạy A đến H rồi J, và N rồi P, ở mọi phía. Chữ nhìn như I thì gần như chắc chắn là J, và chữ nhìn như O thì gần như chắc chắn là Q hoặc D.",
+      },
+      {
+        q: "Mỗi phía có bao nhiêu khu?",
+        a: "Mười bốn ở phía bắc và nam, mười tám ở phía đông, và hai mươi hai ở phía tây, tính theo đúng những chữ cái mà công cụ tra chỗ của đơn vị vận hành thực sự đưa ra.",
+      },
+      {
+        q: "Các chữ cái chạy theo hướng nào quanh một khán đài?",
+        a: "Địa điểm không nói, nên trang này cũng không nói. Sơ đồ của họ là thẩm quyền về việc một chữ cái cụ thể nằm ở đâu, và sơ đồ đó được dẫn liên kết ở cuối trang này.",
+      },
+      {
+        q: "Mặt sân có được đánh số như các khán đài không?",
+        a: "Không. Trong một buổi hoà nhạc, mặt cỏ là sân khấu cộng với những gì nhà tổ chức bố trí, thiết kế theo từng buổi. Hệ thống hướng cộng chữ cái chỉ mô tả các khán đài cố định.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การหาที่นั่งของคุณในสนามกีฬาโซลเวิลด์คัพ",
+    summary:
+      "วิธีที่สนามกีฬาตั้งชื่อที่นั่งถาวรของตน อ่านจากเครื่องมือค้นที่นั่งของผู้บริหารเอง ได้แก่ อัฒจันทร์สี่ด้านที่ตั้งชื่อตามทิศ ตัวอักษรภายในแต่ละด้าน และตัวอักษรสองตัวที่ไม่เคยถูกใช้",
+    scope:
+      "ครอบคลุมวิธีที่ Seoul World Cup Stadium ตั้งชื่ออัฒจันทร์และบล็อกถาวรของตน จากเครื่องมือค้นที่นั่งของ Seoul Facilities Corporation เอง ไม่ครอบคลุมพื้นสนาม เพราะในคอนเสิร์ตส่วนหนึ่งของสนามหญ้าเป็นเวทีและส่วนที่เหลือผู้จัดงานจัดวาง จึงไม่มีอะไรในนั้นถาวรพอให้หน้านี้บรรยายได้",
+    intro: [
+      "ที่นั่งที่นี่มีพิกัดสองอย่าง และเครื่องมือค้นที่นั่งของผู้บริหารเองก็แสดงสิ่งนั้น มันถามทิศก่อน แล้วถามตัวอักษร ไม่มีอย่างอื่น",
+      "นั่นทำให้อาคารนี้อ่านง่ายกว่าโกชอก ซึ่งเลขบล็อกไม่บอกคุณอะไรเลยจนกว่าคุณจะรู้กฎ ที่นี่ครึ่งแรกของชื่อคือทิศ ดังนั้นผู้อ่านที่ยืนอยู่นอกอัฒจันทร์ด้านตะวันตกก็รู้อยู่แล้วว่าด้านที่อยู่ตรงหน้าคือ W",
+    ],
+    steps: [
+      {
+        title: "อ่านทิศก่อน มันคือทิศ ไม่ใช่รหัส",
+        body: "อัฒจันทร์สี่ด้านมีชื่อว่า동 (ตะวันออก), 서 (ตะวันตก), 남 (ใต้) และ북 (เหนือ) และเครื่องมือค้นที่นั่งของสถานที่จัดงานจะไม่ค้นอะไรเลยจนกว่าคุณจะเลือกด้านหนึ่ง ชื่อบล็อกที่เริ่มด้วย W อยู่ทางด้านตะวันตกของสนาม นั่นคือพิกัดแรกทั้งหมด และเป็นส่วนที่พาคุณไปยังด้านที่ถูกต้องของอาคารที่จุคน 66,704 คน",
+        pitfall:
+          "การเดินอ้อมทางไกล ในขนาดเท่านี้ การไปผิดด้านของสนามคือการเดินที่ยาวพอสมควร และทิศถูกพิมพ์อยู่ในชื่อบล็อกก็เพื่อให้คุณไม่ต้องเดินระยะนั้นสองครั้ง",
+        takes: "2 นาที",
+      },
+      {
+        title: "แล้วจึงถึงตัวอักษร และตัวอักษรสองตัวไม่มีอยู่",
+        body: "ภายในอัฒจันทร์หนึ่งด้าน บล็อกถูกใส่ตัวอักษรเริ่มจาก A เครื่องมือค้นของสถานที่จัดงานให้ A ถึง T ทางด้านตะวันออก, A ถึง P ทางด้านเหนือและใต้ และ A ถึง X ทางด้านตะวันตก อ่านลำดับอย่างละเอียดแล้วคุณจะเห็นว่ามันข้ามจาก H ไป J เลย และจาก N ไป P เลย ตัวอักษร I และ O ไม่ถูกใช้ที่ใดในอาคารนี้ ไม่ว่าด้านใด เพราะมันอ่านดูเหมือน 1 และ 0",
+        pitfall:
+          "การไปตามหา I หรือ O เพราะดูเหมือนมีตัวอักษรถูกข้ามไป มันถูกข้ามจริง และเป็นการข้ามอย่างตั้งใจ บล็อกที่ใช้ตัวอักษรทั้งสองนั้นไม่มีอยู่ที่นี่",
+        takes: "2 นาที",
+      },
+      {
+        title: "ด้านตะวันตกคือด้านยาว และความไม่สมมาตรนั้นมีผลต่อการหาทาง",
+        body: "อัฒจันทร์สี่ด้านมีจำนวนบล็อกไม่เท่ากัน ด้านเหนือและใต้ไปถึง P ซึ่งเท่ากับ 14 บล็อกต่อด้านเมื่อตัด I และ O ออก ด้านตะวันออกไปถึง T คือ 18 ด้านตะวันตกไปถึง X คือ 22 ซึ่งเป็นด้านที่ยาวที่สุดในอาคาร ถ้าคุณกำลังนับบล็อกไปตามอัฒจันทร์แล้วรู้สึกว่าจำนวนไม่ถูก ให้ตรวจก่อนว่าคุณอยู่อัฒจันทร์ด้านไหน ก่อนจะสงสัยตัวเลข",
+        takes: "1 นาที",
+      },
+      {
+        title: "พื้นสนามไม่ได้เป็นส่วนหนึ่งของระบบนี้เลย",
+        body: "ทุกอย่างข้างต้นบรรยายอัฒจันทร์ถาวร ซึ่งเป็นคอนกรีตและไม่ขยับ ในคอนเสิร์ต สนามหญ้ารับเวทีและที่นั่งใดก็ตามที่ผู้จัดงานจัดวางบนส่วนที่เหลือ และการจัดวางนั้นออกแบบเป็นรายงาน สนามหญ้าของสนามกีฬาเองมีขนาด 117 เมตรคูณ 78 เมตร ซึ่งคือพื้นที่ที่ถูกจัดใหม่ ไม่มีตัวอักษรบอกทิศใดบรรยายมัน",
+        pitfall:
+          "การคิดว่าบล็อกบนพื้นสนามเป็นไปตามตัวอักษรของอัฒจันทร์ มันไม่เป็นเช่นนั้น และไม่ใช่สิ่งที่สถานที่จัดงานตั้งชื่อ",
+        takes: "1 นาที",
+      },
+      {
+        title: "สิ่งที่หน้านี้ไม่บอกคุณ และเหตุผล",
+        body: "มันจะไม่บอกคุณว่าตัวอักษรไล่ไปทางไหนภายในอัฒจันทร์หนึ่งด้าน ผังของโกชอกเผยแพร่คำบรรยายเป็นข้อความถึงการจัดวางของตนเองและระบุทิศทางไว้ด้วยถ้อยคำ ส่วนสถานที่นี้เผยแพร่ภาพที่นั่งโดยไม่มีคำบรรยายเช่นนั้น จึงไม่มีทิศทางอยู่ในแหล่งข้อมูล และมันก็จะไม่บอกคุณว่างานของคุณเปิดขายบล็อกไหน ประตูไหนให้คุณเข้า หรือเวทีอยู่ที่ใด สิ่งเหล่านั้นเป็นของผู้จัดงานและเปลี่ยนไปในแต่ละงาน",
+        takes: "1 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ตัวอักษร I และ O บนบัตรที่นี่หมายถึงอะไร",
+        a: "ไม่หมายถึงอะไร สถานที่จัดงานไม่ใช้มัน เครื่องมือค้นที่นั่งของที่นี่ไล่จาก A ถึง H แล้วไป J และจาก N แล้วไป P ในทุกด้าน ตัวอักษรที่ดูเหมือน I แทบจะแน่นอนว่าเป็น J และตัวที่ดูเหมือน O แทบจะแน่นอนว่าเป็น Q หรือ D",
+      },
+      {
+        q: "แต่ละด้านมีกี่บล็อก",
+        a: "สิบสี่บล็อกทางด้านเหนือและใต้ สิบแปดทางด้านตะวันออก และยี่สิบสองทางด้านตะวันตก นับตามตัวอักษรที่เครื่องมือค้นที่นั่งของผู้บริหารให้ไว้จริง",
+      },
+      {
+        q: "ตัวอักษรไล่ไปทางไหนรอบอัฒจันทร์",
+        a: "สถานที่จัดงานไม่ได้บอก ดังนั้นหน้านี้ก็ไม่บอก ผังของที่นั่นเป็นผู้มีอำนาจเรื่องว่าตัวอักษรใดอยู่ตำแหน่งใด และผังนั้นมีลิงก์อยู่ท้ายหน้านี้",
+      },
+      {
+        q: "พื้นสนามให้หมายเลขแบบเดียวกับอัฒจันทร์ไหม",
+        a: "ไม่ ในคอนเสิร์ต สนามหญ้าคือเวทีบวกกับสิ่งที่ผู้จัดงานจัดวาง ออกแบบเป็นรายงาน ระบบทิศบวกตัวอักษรบรรยายเฉพาะอัฒจันทร์ถาวรเท่านั้น",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Paghahanap ng upuan mo sa Seoul World Cup Stadium",
+    summary:
+      "Kung paano pinapangalanan ng istadyum ang permanenteng upuan nito, binasa mula sa sariling panghanap ng upuan ng tagapagpatakbo: apat na tribunang pinangalanan ayon sa direksiyon, mga titik sa loob ng bawat isa, at dalawang titik ng alpabetong hindi kailanman ginagamit.",
+    scope:
+      "Sinasaklaw kung paano pinapangalanan ng Seoul World Cup Stadium ang permanenteng mga tribuna at bloke nito, mula sa sariling panghanap ng upuan ng Seoul Facilities Corporation. Hindi nito sinasaklaw ang palapag: sa isang konsiyerto ay entablado ang bahagi ng damuhan at inilalatag ng prodyuser ang natitira, kaya walang anuman doon na permanente nang sapat upang ilarawan ng pahinang ito.",
+    intro: [
+      "May dalawang koordinado ang isang upuan dito, at ang sariling panghanap ng upuan ng tagapagpatakbo ang nagpapakita niyon: humihingi ito ng isang direksiyon, at pagkatapos ng isang titik. Wala nang iba.",
+      "Dahil doon ay mas madaling basahin ang gusaling ito kaysa sa Gocheok, kung saan walang sinasabi sa iyo ang numero ng bloke hangga't hindi mo alam ang tuntunin. Dito ay direksiyon ang unang kalahati ng pangalan, kaya alam na ng mambabasang nakatayo sa labas ng tribuna sa kanluran na ang W ang panig na nasa harap niya.",
+    ],
+    steps: [
+      {
+        title: "Basahin muna ang direksiyon — direksiyon iyon at hindi kodigo",
+        body: "Ang apat na tribuna ay pinangalanang 동 (Silangan), 서 (Kanluran), 남 (Timog) at 북 (Hilaga), at walang hahanapin ang panghanap ng upuan ng venue hangga't wala kang napipili sa kanila. Ang pangalan ng blokeng nagsisimula sa W ay nasa panig na kanluran ng istadyum. Iyon ang buong unang koordinado, at iyon ang bahaging naghahatid sa iyo sa tamang panig ng isang gusaling may 66,704 katao.",
+        pitfall:
+          "Ang paglalakad sa mahabang paikot. Sa laking ito, ang maling panig ng istadyum ay isang mahabang lakad, at nakaimprenta ang direksiyon sa pangalan ng bloke nang tiyakan upang hindi mo na kailangang lakarin iyon nang dalawang beses.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Pagkatapos ang titik — at dalawang titik ang hindi umiiral",
+        body: "Sa loob ng isang tribuna ay binibigyan ng titik ang mga bloke mula sa A. Nag-aalok ang panghanap ng venue ng A hanggang T sa panig na silangan, A hanggang P sa hilaga at timog, at A hanggang X sa kanluran. Basahing mabuti ang pagkakasunod at makikita mong tumatalon ito mula H nang tuwiran sa J, at mula N nang tuwiran sa P: hindi ginagamit ang I at O saanman sa gusali, sa alinmang panig, dahil nababasa sila bilang 1 at 0.",
+        pitfall:
+          "Ang paghahanap ng isang I o isang O dahil mukhang may titik na nilaktawan. Nilaktawan nga ito, nang sinadya, at hindi umiiral dito ang isang blokeng may alinman sa dalawang titik na iyon.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Ang kanluran ang mahabang panig, at kapaki-pakinabang sa paglibot ang hindi pagkakapantay na iyon",
+        body: "Hindi pareho ang bilang ng blokeng taglay ng apat na tribuna. Umaabot ang hilaga at timog hanggang P, na 14 na bloke bawat isa kapag inalis na ang I at O. Umaabot ang silangan hanggang T, 18. Umaabot ang kanluran hanggang X, 22 — ang pinakamahabang panig sa gusali. Kung nagbibilang ka ng bloke sa haba ng isang tribuna at mukhang mali ang bilang, tingnan muna kung saang tribuna ka bago ka mag-alinlangan sa numero.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Hindi talaga bahagi ng sistemang ito ang palapag",
+        body: "Inilalarawan ng lahat ng nasa itaas ang permanenteng mga tribuna, na semento at hindi nagagalaw. Sa isang konsiyerto ay nagtataglay ang damuhan ng entablado at ng anumang upuang inilalatag ng prodyuser sa natitirang bahagi nito, at idinidisenyo ang pagkakaayos na iyon sa bawat palabas. Ang damuhan mismo ng istadyum ay 117 metro sa 78 metro, at iyon ang espasyong isinasaayos muli. Walang titik ng direksiyong naglalarawan nito.",
+        pitfall:
+          "Ang pag-akalang sumusunod sa pagbibigay-titik ng tribuna ang isang bloke sa palapag. Hindi ito sumusunod, at hindi rin sa venue ang pagpapangalan nito.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang hindi sasabihin sa iyo ng pahinang ito, at kung bakit",
+        body: "Hindi nito sasabihin sa iyo kung saang direksiyon tumatakbo ang mga titik sa loob ng isang tribuna. Naglalathala ang tsart ng Gocheok ng nakasulat na paglalarawan ng sariling pagkakaayos nito at tahasang sinasabi ang direksiyon; naglalathala ang venueng ito ng isang grapiko ng upuan at walang gayong paglalarawan, kaya wala sa pinagkunan ang direksiyon. Hindi rin nito sasabihin kung aling mga bloke ang ipinagbibili para sa palabas mo, aling tarangkahan ang pumapasok sa iyo, o kung nasaan ang entablado. Sa prodyuser ang mga iyon at nagbabago sila sa bawat palabas.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Ano ang ibig sabihin ng mga titik na I at O sa isang tiket dito?",
+        a: "Wala — hindi ginagamit ng venue ang mga iyon. Tumatakbo ang sariling panghanap ng upuan nito mula A hanggang H at pagkatapos J, at N at pagkatapos P, sa bawat panig. Ang titik na mukhang I ay halos tiyak na isang J, at ang mukhang O ay halos tiyak na isang Q o isang D.",
+      },
+      {
+        q: "Ilang bloke ang nasa bawat panig?",
+        a: "Labing-apat sa hilaga at timog, labingwalo sa silangan, at dalawampu't dalawa sa kanluran, kung bibilangin ang mga titik na talagang iniaalok ng panghanap ng upuan ng tagapagpatakbo.",
+      },
+      {
+        q: "Saang direksiyon tumatakbo ang mga titik palibot sa isang tribuna?",
+        a: "Hindi sinasabi ng venue, kaya hindi rin sinasabi ng pahinang ito. Ang tsart nito ang awtoridad kung saan nakalagay ang isang partikular na titik, at nakakawing ang tsart na iyon sa paanan ng pahinang ito.",
+      },
+      {
+        q: "Binibigyan ba ng numero ang palapag gaya ng mga tribuna?",
+        a: "Hindi. Sa isang konsiyerto ay entablado ang damuhan kasama ang anumang ilatag ng prodyuser, idinisenyo sa bawat palabas. Ang mga permanenteng tribuna lamang ang inilalarawan ng sistemang direksiyon at titik.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

@@ -23115,6 +23115,636 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+
+  {
+    locale: "ja",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "ファンミーティングやコンサートのために奬忠体育館へ行く",
+    summary:
+      "ファンミーティングや小規模な公演が行われる、中区にある4,507席のアリーナです。運営するソウル施設公団自身のページから、屋内で直結している出口、バス、そしてイベントの日に車で行くという選択肢がない理由を読み取ります。",
+    scope:
+      "中区にある奬忠体育館への到着を、運営者自身の交通と施設のページから扱います。座席の配置は扱いません。高尺やワールドカップ競技場と違い、この会場は座席配置図も座席検索も公開していないので、ここで教えられる番号体系は存在せず、このページはそれを作り出しません。",
+    intro: [
+      "当サイトが扱うソウルの3会場のうち、ここが小さい部屋です。4,507席で、そのうち1,324席は可動式です。運営者がコンサートにも使われると述べているバレーボールのアリーナで、実際にはツアーではなくファンミーティングや小規模な公演を意味します。",
+      "この会場についての2つの事実が、ほかのすべてより価値を持ちます。地下鉄の出口が外に出ずに建物へ直結していること、そしてイベントの日には一般の駐車がまったくないことです。",
+    ],
+    steps: [
+      {
+        title: "3号線で동대입구역、5番出口——そこでもう建物の中です",
+        body: "運営者は、5番出口がアリーナに直結していると述べています。雨の11月の夕方や、ソウルの冬には、これは当サイトのほかのどの会場とも違う到着になります。地上に出ず、道路を渡らず、入口を探す必要がありません。住所は서울특별시 중구 동호로241です。",
+        pitfall:
+          "ホームの案内表示が最も近い階段へ誘導するので、別の出口から出てしまうこと。直結しているのは5番出口だけで、それ以外の出口はどれも、すでに中にいた建物の外へあなたを出します。",
+        takes: "2分",
+      },
+      {
+        title: "バスなら、アリーナの名を冠した停留所が2つあります",
+        body: "運営者は장충체육관앞を02-201と02-202の2つの停留所として挙げており、どちらもN13番、144番、301番、7212番が停まります。동대입구역·장충동は02-222の停留所で、05番、02番、03番が停まります。アリーナの2つの停留所は道路を挟んで向かい合っているので、違いは一方が道路を渡ることになるという点だけです。",
+        takes: "1分",
+      },
+      {
+        title: "車で行く前提で計画しない。理由は運営者自身の言葉にあります",
+        body: "駐車場は合計63台分で、そのうち2台分は障がい者用、2台分はバス用、8台分は女性専用、5台分は貴賓用です。そして運営者は、イベント開催中は一般の駐車はないとはっきり述べています。4,507人が入る部屋に対して、これは不足ではなく閉鎖です。",
+        pitfall:
+          "小さい会場だから車で行きやすいと考えること。駐車場は大きい2つの会場より比率で見ても小さく、しかもその夜はあなたに開かれていません。",
+        takes: "1分",
+      },
+      {
+        title: "読むべき座席配置図がなく、それが期待の仕方を変えます",
+        body: "高尺は番号体系の文章による説明とともに配置図を公開し、ワールドカップ競技場は座席検索を公開しています。この会場はどちらも公開していません。4,507席のうち1,324席が可動式なので、ファンミーティングのフロア構成はかなりの部分が主催者の作るものであり、あなたに売られた座席がどの常設の図とも対応しないことがあります。あなたのチケットと主催者の座席画像だけが権威です。",
+        takes: "1分",
+      },
+    ],
+    faq: [
+      {
+        q: "建物に直結している出口はどれですか。",
+        a: "3号線동대입구역の5番出口です。運営者はアリーナへの接続が直結であると述べていて、だからこのページは駅名だけでなくその出口を名指ししています。",
+      },
+      {
+        q: "奬忠体育館に駐車できますか。",
+        a: "イベントの日はできません。運営者は北側駐車場に63台分を公開しており、イベント開催中は一般の駐車は利用できないと述べています。",
+      },
+      {
+        q: "なぜこの会場には座席ガイドがないのですか。",
+        a: "運営者がこの会場の座席配置図も座席検索も公開していないので、読み取れる番号体系が存在しないからです。書くことはそれを作り出すことになり、当サイトはそれをしません。高尺とワールドカップ競技場のページがあるのは、その会場が材料を公開しているからです。",
+      },
+      {
+        q: "どれくらいの規模ですか。",
+        a: "4,507席で、そのうち1,324席は可動式です。地下2層と地上3階にわたります。通常の用途ではバレーボールのアリーナで、プロ2チームの本拠地です。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "為了見面會或演唱會前往奬忠體育館",
+    summary:
+      "位在中區、有4,507個座位的體育館，見面會與較小型的演出在這裡舉行。取自營運它的首爾設施公團自己的頁面：室內直通的出口、公車，以及為什麼活動日開車不是一個選項。",
+    scope:
+      "涵蓋抵達位在中區的奬忠體育館，取自營運者自己的交通與設施頁面。不涵蓋座位配置：和高尺與世界盃競技場不同，這座場館沒有公布座位配置圖也沒有座位查詢，所以這裡沒有可教的編號系統，本頁也不會憑空造一套。",
+    intro: [
+      "在本站涵蓋的三座首爾場館裡，這是小的那一間——4,507個座位，其中1,324個是可收納的。它是一座排球館，營運者說它也用於演唱會，實際上意味著見面會與較小型的演出，而不是巡演。",
+      "關於它的兩個事實比其他一切都值錢：地鐵出口不必走到戶外就直通建築，而在活動日根本沒有一般停車。",
+    ],
+    steps: [
+      {
+        title: "搭3號線到동대입구역，5號出口——你已經在建築裡了",
+        body: "營運者表示5號出口直接連通體育館。在下雨的11月傍晚，或在首爾的冬天，這是和本站其他任何場館都不同的抵達方式：你不必上到地面、不必穿越馬路、不必找門。地址是서울특별시 중구 동호로241。",
+        pitfall:
+          "因為月台指示把你往最近的樓梯送，結果從別的出口出去。直通的是5號出口而不是別的，而任何其他出口都會把你送到你本來已經身在其中的那棟建築外面。",
+        takes: "2分鐘",
+      },
+      {
+        title: "搭公車的話，有兩個站名就是體育館的名字",
+        body: "營運者把장충체육관앞列為02-201與02-202兩個站，兩站都有N13、144、301與7212停靠；동대입구역·장충동是02-222站，由05、02與03停靠。體育館的那兩個站分別在馬路兩側，差別只在於其中一個意味著要穿越馬路。",
+        takes: "1分鐘",
+      },
+      {
+        title: "不要計畫開車，而理由就在營運者自己的話裡",
+        body: "停車位總共63個，其中2個是無障礙車位、2個給巴士、8個保留給女性、5個給貴賓。接著營運者直白地表示，活動期間沒有一般停車。對一個容納4,507人的場地而言，這不是不足，而是關閉。",
+        pitfall:
+          "把小場館當成容易開車去的那一個。它的停車場按比例還比兩座較大的場館更小，而且在那個晚上它根本不對你開放。",
+        takes: "1分鐘",
+      },
+      {
+        title: "這裡沒有座位配置圖可讀，而那會改變你該有的預期",
+        body: "高尺公布了配置圖，還附上以文字說明的編號方式，世界盃競技場公布了座位查詢。這座場館兩者都沒有。它4,507個座位裡有1,324個是可收納的，所以見面會的場地配置有相當大部分是主辦方自己搭的，你買到的座位可能不對應任何永久的圖。你的票與主辦方的座位圖才是唯一的權威。",
+        takes: "1分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "哪一個出口直通建築？",
+        a: "3號線동대입구역的5號出口。營運者表示通往體育館是直接連通的，這就是本頁指名那個出口而不只是指名車站的原因。",
+      },
+      {
+        q: "我可以在奬忠體育館停車嗎？",
+        a: "活動日不行。營運者公布北側停車場有63個車位，並表示活動期間一般停車無法使用。",
+      },
+      {
+        q: "為什麼這座場館沒有座位指南？",
+        a: "因為營運者沒有為它公布座位配置圖也沒有座位查詢，所以沒有可以讀取的編號系統。寫出來就等於憑空造出來，而本站不做那件事。高尺與世界盃競技場的頁面存在，是因為那些場館公布了所需的資料。",
+      },
+      {
+        q: "它有多大？",
+        a: "4,507個座位，其中包含1,324個可收納的，分布在地下2層與地上3層。它在平常的用途上是一座排球館，也是兩支職業球隊的主場。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menuju Jangchung Arena untuk sebuah fan meeting atau konser",
+    summary:
+      "Arena berkapasitas 4,507 kursi di Jung-gu tempat fan meeting dan pertunjukan yang lebih kecil berlangsung, dibaca dari halaman milik Seoul Facilities Corporation sendiri: pintu keluar yang tersambung di dalam ruangan, bus-busnya, dan mengapa menyetir bukan pilihan pada hari acara.",
+    scope:
+      "Mencakup cara mencapai Jangchung Arena di Jung-gu, dari halaman transportasi dan fasilitas milik pengelolanya. Tidak mencakup tata letak tempat duduk: berbeda dari Gocheok dan World Cup Stadium, venue ini tidak menerbitkan bagan tempat duduk maupun pencari kursi, jadi tidak ada sistem penomoran untuk diajarkan di sini dan halaman ini tidak mengarangnya.",
+    intro: [
+      "Inilah ruang kecil dari ketiga venue Seoul yang dicakup situs ini — 4,507 kursi, yang 1,324 di antaranya dapat ditarik masuk. Ia sebuah arena bola voli yang menurut pengelolanya juga dipakai untuk konser, yang dalam praktiknya berarti fan meeting dan pertunjukan yang lebih kecil alih-alih tur.",
+      "Dua fakta tentangnya lebih bernilai daripada segala hal lain: pintu keluar kereta bawah tanah tersambung ke bangunan tanpa keluar ke jalan, dan pada hari acara sama sekali tidak ada parkir umum.",
+    ],
+    steps: [
+      {
+        title: "Line 3 ke 동대입구역, pintu keluar 5 — dan Anda sudah di dalam",
+        body: "Pengelola menyatakan bahwa pintu keluar 5 tersambung langsung ke arena. Pada sore November yang basah, atau pada musim dingin Seoul, itu kedatangan yang berbeda dari venue mana pun di situs ini: Anda tidak naik ke permukaan, tidak menyeberang jalan, dan tidak mencari pintu. Alamatnya 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Keluar lewat pintu lain karena papan petunjuk di peron mengarahkan Anda ke tangga terdekat. Sambungan langsung itu khusus pintu keluar 5, dan pintu keluar lain mana pun menaruh Anda di luar bangunan yang tadinya sudah Anda tempati.",
+        takes: "2 menit",
+      },
+      {
+        title: "Dengan bus, ada dua perhentian yang memakai nama arena itu sendiri",
+        body: "Pengelola mendaftar 장충체육관앞 sebagai perhentian 02-201 dan 02-202, keduanya dilayani N13, 144, 301 dan 7212, serta 동대입구역·장충동 sebagai perhentian 02-222, yang dilayani 05, 02 dan 03. Kedua perhentian arena itu berada di sisi jalan yang berlawanan, yang hanya berarti bahwa salah satunya mengharuskan Anda menyeberang.",
+        takes: "1 menit",
+      },
+      {
+        title: "Jangan berencana menyetir, dan alasannya ada dalam kata-kata pengelolanya sendiri",
+        body: "Ada 63 petak parkir seluruhnya, dan dari jumlah itu dua adalah petak aksesibel, dua untuk bus, delapan dicadangkan bagi perempuan dan lima bagi tamu kehormatan. Pengelola kemudian menyatakan terang-terangan bahwa selama acara tidak ada parkir umum. Untuk sebuah ruang berisi 4,507 orang itu bukan kekurangan, itu penutupan.",
+        pitfall:
+          "Menganggap venue kecil sebagai venue yang mudah didatangi dengan mobil. Tempat parkirnya secara proporsional lebih kecil daripada di kedua venue yang lebih besar, dan pada malam itu ia sama sekali tidak terbuka bagi Anda.",
+        takes: "1 menit",
+      },
+      {
+        title: "Tidak ada bagan tempat duduk untuk dibaca, dan itu mengubah apa yang harus diharapkan",
+        body: "Gocheok menerbitkan bagan beserta keterangan tertulis tentang penomorannya, dan World Cup Stadium menerbitkan pencari kursi. Venue ini tidak menerbitkan keduanya. Dengan 1,324 dari 4,507 kursinya dapat ditarik masuk, susunan lantai untuk sebuah fan meeting sebagian besar adalah milik promotor untuk dibangun, jadi tempat duduk yang dijual kepada Anda mungkin tidak berpadanan dengan rencana permanen mana pun. Tiket Anda dan gambar tempat duduk dari promotor adalah satu-satunya otoritas.",
+        takes: "1 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Pintu keluar mana yang tersambung ke bangunan?",
+        a: "Pintu keluar 5 dari 동대입구역 di Line 3. Pengelola menyatakan sambungan ke arena itu langsung, dan itulah sebabnya halaman ini menyebut pintu keluar tersebut alih-alih hanya stasiunnya.",
+      },
+      {
+        q: "Bisakah saya memarkir di Jangchung Arena?",
+        a: "Tidak pada hari acara. Pengelola menerbitkan 63 petak di tempat parkir sisi utara dan menyatakan bahwa parkir umum tidak tersedia selama acara.",
+      },
+      {
+        q: "Mengapa tidak ada panduan tempat duduk untuk venue ini?",
+        a: "Karena pengelolanya tidak menerbitkan bagan tempat duduk maupun pencari kursi untuknya, jadi tidak ada sistem penomoran yang bisa dibaca. Menulisnya berarti mengarangnya, dan situs ini tidak melakukan itu. Halaman Gocheok dan World Cup Stadium ada karena venue-venue itu menerbitkan bahannya.",
+      },
+      {
+        q: "Seberapa besar ia?",
+        a: "4,507 kursi, termasuk 1,324 yang dapat ditarik masuk, di atas dua lantai basemen dan tiga lantai di atas tanah. Ia sebuah arena bola voli dalam penggunaan biasanya dan markas dua klub profesional.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Zur Jangchung Arena für ein Fanmeeting oder ein Konzert",
+    summary:
+      "Die Halle mit 4,507 Plätzen in Jung-gu, in der Fanmeetings und kleinere Shows spielen, abgelesen an den eigenen Seiten der Seoul Facilities Corporation: der Ausgang, der innen anschließt, die Busse, und warum Autofahren an einem Veranstaltungstag keine Option ist.",
+    scope:
+      "Behandelt die Anreise zur Jangchung Arena in Jung-gu, aus den eigenen Verkehrs- und Gebäudeseiten des Betreibers. Nicht behandelt wird die Sitzordnung: anders als Gocheok und das World Cup Stadium veröffentlicht diese Halle weder Sitzplan noch Platzsuche, es gibt hier also kein Numerierungssystem zu erklären, und diese Seite erfindet keines.",
+    intro: [
+      "Das ist der kleine Saal unter den drei Seouler Hallen, die diese Seite behandelt — 4,507 Plätze, davon 1,324 einfahrbar. Es ist eine Volleyballhalle, die laut Betreiber auch für Konzerte genutzt wird, was in der Praxis Fanmeetings und kleinere Shows und nicht Tourneen bedeutet.",
+      "Zwei Tatsachen darüber sind mehr wert als alles andere: der U-Bahn-Ausgang schließt an das Gebäude an, ohne dass man nach draußen geht, und an einem Veranstaltungstag gibt es überhaupt kein öffentliches Parken.",
+    ],
+    steps: [
+      {
+        title: "Line 3 bis 동대입구역, Ausgang 5 — und Sie sind schon drinnen",
+        body: "Der Betreiber erklärt, dass Ausgang 5 direkt an die Halle anschließt. An einem nassen Novemberabend oder in einem Seouler Winter ist das eine andere Ankunft als bei jeder anderen Halle auf dieser Seite: Sie kommen nicht nach oben, überqueren keine Straße und suchen keine Tür. Die Adresse ist 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Über einen anderen Ausgang hinauszugehen, weil die Beschilderung am Bahnsteig Sie zur nächsten Treppe schickt. Die direkte Verbindung ist genau Ausgang 5, und jeder andere Ausgang setzt Sie vor das Gebäude, in dem Sie schon waren.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Mit dem Bus gibt es zwei Haltestellen mit dem Namen der Halle",
+        body: "Der Betreiber führt 장충체육관앞 als die Haltestellen 02-201 und 02-202, beide bedient von N13, 144, 301 und 7212, und 동대입구역·장충동 als Haltestelle 02-222, bedient von 05, 02 und 03. Die beiden Hallenhaltestellen liegen auf gegenüberliegenden Straßenseiten, was nur insofern zählt, als eine von ihnen das Überqueren bedeutet.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Planen Sie nicht mit dem Auto, und der Grund steht in den Worten des Betreibers",
+        body: "Es gibt insgesamt 63 Parkplätze, davon zwei Behindertenplätze, zwei für Busse, acht für Frauen reserviert und fünf für Ehrengäste. Der Betreiber erklärt dann klar, dass es während Veranstaltungen kein öffentliches Parken gibt. Für einen Saal mit 4,507 Menschen ist das kein Mangel, das ist eine Schließung.",
+        pitfall:
+          "Eine kleine Halle für die zu halten, zu der man bequem fährt. Der Parkplatz ist im Verhältnis kleiner als bei den beiden größeren Hallen, und am Abend steht er Ihnen überhaupt nicht offen.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Es gibt keinen Sitzplan zu lesen, und das ändert, was zu erwarten ist",
+        body: "Gocheok veröffentlicht einen Plan samt schriftlicher Beschreibung seiner Numerierung, und das World Cup Stadium veröffentlicht eine Platzsuche. Diese Halle veröffentlicht keines von beiden. Da 1,324 ihrer 4,507 Plätze einfahrbar sind, ist die Bodenanordnung für ein Fanmeeting zu einem erheblichen Teil Sache des Veranstalters, die Bestuhlung, die man Ihnen verkauft, muss also keinem dauerhaften Plan entsprechen. Ihr Ticket und das Sitzbild des Veranstalters sind die einzige Autorität.",
+        takes: "1 Minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Welcher Ausgang schließt an das Gebäude an?",
+        a: "Ausgang 5 von 동대입구역 an der Line 3. Der Betreiber erklärt die Verbindung zur Halle als direkt, und deshalb nennt diese Seite jenen Ausgang und nicht nur die Station.",
+      },
+      {
+        q: "Kann ich an der Jangchung Arena parken?",
+        a: "Nicht an einem Veranstaltungstag. Der Betreiber veröffentlicht 63 Plätze auf dem Parkplatz an der Nordseite und erklärt, dass öffentliches Parken während Veranstaltungen nicht verfügbar ist.",
+      },
+      {
+        q: "Warum gibt es für diese Halle keinen Sitzplatzführer?",
+        a: "Weil der Betreiber für sie weder Sitzplan noch Platzsuche veröffentlicht, es also kein Numerierungssystem zum Ablesen gibt. Einen zu schreiben hieße, ihn zu erfinden, und das tut diese Seite nicht. Die Seiten zu Gocheok und zum World Cup Stadium existieren, weil jene Hallen das Material veröffentlichen.",
+      },
+      {
+        q: "Wie groß ist sie?",
+        a: "4,507 Plätze, darunter 1,324 einfahrbare, über zwei Kellerebenen und drei Geschossen über der Erde. In ihrer gewöhnlichen Nutzung ist sie eine Volleyballhalle und die Heimstätte zweier Profimannschaften.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Llegar al Jangchung Arena para un fan meeting o un concierto",
+    summary:
+      "El pabellón de 4,507 asientos en Jung-gu donde se celebran fan meetings y espectáculos más pequeños, leído en las propias páginas de la Seoul Facilities Corporation: la salida que conecta por dentro, los autobuses, y por qué ir en coche no es una opción un día de evento.",
+    scope:
+      "Cubre cómo llegar al Jangchung Arena, en Jung-gu, a partir de las páginas de transporte e instalaciones del propio operador. No cubre la distribución de asientos: a diferencia de Gocheok y del World Cup Stadium, este recinto no publica plano de asientos ni buscador de butacas, así que aquí no hay un sistema de numeración que enseñar y esta página no se lo inventa.",
+    intro: [
+      "Esta es la sala pequeña de los tres recintos de Seúl que cubre este sitio: 4,507 asientos, de los que 1,324 son retráctiles. Es un pabellón de voleibol que, según el operador, se usa también para conciertos, lo que en la práctica significa fan meetings y espectáculos pequeños más que giras.",
+      "Dos hechos sobre él valen más que todo lo demás: la salida del metro conecta con el edificio sin salir a la calle, y un día de evento no hay ningún aparcamiento público.",
+    ],
+    steps: [
+      {
+        title: "Line 3 hasta 동대입구역, salida 5, y ya estás dentro",
+        body: "El operador declara que la salida 5 conecta directamente con el pabellón. Una tarde lluviosa de noviembre, o en un invierno de Seúl, esa es una llegada distinta a la de cualquier otro recinto de este sitio: no sales a la superficie, no cruzas una calle y no buscas una puerta. La dirección es 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Salir por otra salida porque la señalización del andén te manda a la escalera más cercana. La conexión directa es la salida 5 concretamente, y cualquier otra te deja fuera del edificio en el que ya estabas.",
+        takes: "2 minutos",
+      },
+      {
+        title: "En autobús hay dos paradas con el nombre del propio pabellón",
+        body: "El operador enumera 장충체육관앞 como las paradas 02-201 y 02-202, servidas ambas por N13, 144, 301 y 7212, y 동대입구역·장충동 como la parada 02-222, servida por 05, 02 y 03. Las dos paradas del pabellón están en lados opuestos de la calle, lo que solo importa en que una de ellas implica cruzarla.",
+        takes: "1 minuto",
+      },
+      {
+        title: "No planees ir en coche, y el motivo está en las palabras del propio operador",
+        body: "Hay 63 plazas de aparcamiento en total, y de ellas dos son plazas accesibles, dos para autobuses, ocho reservadas para mujeres y cinco para invitados de honor. El operador declara después, sin rodeos, que durante los eventos no hay aparcamiento público. Para una sala de 4,507 personas eso no es escasez, es un cierre.",
+        pitfall:
+          "Tratar un recinto pequeño como el fácil para ir en coche. El aparcamiento es proporcionalmente más pequeño que en cualquiera de los dos recintos grandes, y esa noche no está abierto para ti en absoluto.",
+        takes: "1 minuto",
+      },
+      {
+        title: "No hay plano de asientos que leer, y eso cambia qué esperar",
+        body: "Gocheok publica un plano con una descripción escrita de su numeración, y el World Cup Stadium publica un buscador de butacas. Este recinto no publica ninguno de los dos. Con 1,324 de sus 4,507 asientos retráctiles, la disposición de la pista para un fan meeting la monta en buena medida la promotora, así que los asientos que te venden pueden no corresponder a ningún plano permanente. Tu entrada y la imagen de asientos de la promotora son la única autoridad.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Qué salida conecta con el edificio?",
+        a: "La salida 5 de 동대입구역, en la Line 3. El operador declara que la conexión con el pabellón es directa, y por eso esta página nombra esa salida y no solo la estación.",
+      },
+      {
+        q: "¿Puedo aparcar en el Jangchung Arena?",
+        a: "No un día de evento. El operador publica 63 plazas en el aparcamiento del lado norte y declara que el aparcamiento público no está disponible durante los eventos.",
+      },
+      {
+        q: "¿Por qué no hay guía de asientos para este recinto?",
+        a: "Porque el operador no publica plano de asientos ni buscador de butacas para él, así que no hay un sistema de numeración que leer. Escribirlo sería inventarlo, y este sitio no hace eso. Las páginas de Gocheok y del World Cup Stadium existen porque esos recintos publican el material.",
+      },
+      {
+        q: "¿De qué tamaño es?",
+        a: "4,507 asientos, incluidos 1,324 retráctiles, sobre dos niveles de sótano y tres plantas sobre el suelo. En su uso habitual es un pabellón de voleibol y la sede de dos equipos profesionales.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Se rendre à la Jangchung Arena pour une rencontre avec les fans ou un concert",
+    summary:
+      "La salle de 4,507 places à Jung-gu où se jouent les rencontres avec les fans et les spectacles plus modestes, d'après les pages de la Seoul Facilities Corporation elle-même : la sortie qui débouche à l'intérieur, les bus, et pourquoi la voiture n'est pas une option un jour d'événement.",
+    scope:
+      "Couvre l'accès à la Jangchung Arena à Jung-gu, d'après les pages de transport et d'installations de l'exploitant lui-même. Ne couvre pas le plan de salle : contrairement à Gocheok et au World Cup Stadium, cette salle ne publie ni plan de placement ni recherche de place, il n'y a donc ici aucun système de numérotation à enseigner et cette page n'en invente pas.",
+    intro: [
+      "C'est la petite salle parmi les trois salles de Séoul que couvre ce site — 4,507 places, dont 1,324 escamotables. C'est une salle de volley-ball dont l'exploitant dit qu'elle sert aussi aux concerts, ce qui en pratique désigne des rencontres avec les fans et des spectacles plus modestes plutôt que des tournées.",
+      "Deux faits à son sujet valent plus que tout le reste : la sortie de métro débouche dans le bâtiment sans passer dehors, et un jour d'événement il n'y a aucun stationnement public.",
+    ],
+    steps: [
+      {
+        title: "Line 3 jusqu'à 동대입구역, sortie 5 — et vous êtes déjà à l'intérieur",
+        body: "L'exploitant indique que la sortie 5 débouche directement dans la salle. Par un soir de novembre humide, ou dans un hiver séoulien, c'est une arrivée différente de celle de toute autre salle de ce site : vous ne remontez pas, vous ne traversez pas de rue et vous ne cherchez pas de porte. L'adresse est 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Sortir par une autre issue parce que la signalétique du quai vous envoie vers l'escalier le plus proche. La liaison directe est la sortie 5 et pas une autre, et n'importe quelle autre sortie vous dépose à l'extérieur du bâtiment où vous étiez déjà.",
+        takes: "2 minutes",
+      },
+      {
+        title: "En bus, deux arrêts portent le nom de la salle",
+        body: "L'exploitant indique 장충체육관앞 comme les arrêts 02-201 et 02-202, tous deux desservis par les N13, 144, 301 et 7212, et 동대입구역·장충동 comme l'arrêt 02-222, desservi par les 05, 02 et 03. Les deux arrêts de la salle se font face de part et d'autre de la chaussée, ce qui ne compte que parce que l'un des deux implique de la traverser.",
+        takes: "1 minute",
+      },
+      {
+        title: "Ne prévoyez pas la voiture, et la raison tient aux mots de l'exploitant",
+        body: "Il y a 63 places de stationnement en tout, dont deux places accessibles, deux pour les autocars, huit réservées aux femmes et cinq aux invités d'honneur. L'exploitant indique ensuite sans détour que pendant les événements il n'y a pas de stationnement public. Pour une salle de 4,507 personnes, ce n'est pas une pénurie, c'est une fermeture.",
+        pitfall:
+          "Prendre une petite salle pour celle où la voiture est commode. Son parking est proportionnellement plus petit que dans l'une ou l'autre des deux grandes salles, et le soir même il ne vous est pas ouvert du tout.",
+        takes: "1 minute",
+      },
+      {
+        title: "Il n'y a pas de plan de salle à lire, et cela change ce qu'il faut attendre",
+        body: "Gocheok publie un plan accompagné d'une description écrite de sa numérotation, et le World Cup Stadium publie une recherche de place. Cette salle ne publie ni l'un ni l'autre. Avec 1,324 de ses 4,507 places escamotables, l'agencement du parterre pour une rencontre avec les fans relève pour une bonne part du promoteur, si bien que le placement qu'on vous vend peut ne correspondre à aucun plan permanent. Votre billet et l'image de placement du promoteur sont la seule autorité.",
+        takes: "1 minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Quelle sortie débouche dans le bâtiment ?",
+        a: "La sortie 5 de 동대입구역 sur la Line 3. L'exploitant indique que la liaison avec la salle est directe, et c'est pourquoi cette page nomme cette sortie et pas seulement la station.",
+      },
+      {
+        q: "Puis-je me garer à la Jangchung Arena ?",
+        a: "Pas un jour d'événement. L'exploitant publie 63 places sur le parking côté nord et indique que le stationnement public n'est pas disponible pendant les événements.",
+      },
+      {
+        q: "Pourquoi n'y a-t-il pas de guide des places pour cette salle ?",
+        a: "Parce que l'exploitant ne publie pour elle ni plan de placement ni recherche de place : il n'y a donc aucun système de numérotation à relever. En écrire un reviendrait à l'inventer, et ce site ne fait pas cela. Les pages de Gocheok et du World Cup Stadium existent parce que ces salles publient la matière.",
+      },
+      {
+        q: "Quelle est sa taille ?",
+        a: "4,507 places, dont 1,324 escamotables, réparties sur deux niveaux de sous-sol et trois étages au-dessus du sol. Dans son usage ordinaire, c'est une salle de volley-ball et le domicile de deux clubs professionnels.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Chegando ao Jangchung Arena para um fan meeting ou show",
+    summary:
+      "O ginásio de 4,507 lugares em Jung-gu onde acontecem fan meetings e shows menores, lido nas próprias páginas da Seoul Facilities Corporation: a saída que conecta por dentro, os ônibus, e por que dirigir não é uma opção em dia de evento.",
+    scope:
+      "Cobre como chegar ao Jangchung Arena, em Jung-gu, a partir das páginas de transporte e instalações do próprio operador. Não cobre o layout dos assentos: diferente do Gocheok e do World Cup Stadium, este local não publica mapa de assentos nem buscador de lugares, então não existe aqui um sistema de numeração para ensinar e esta página não inventa um.",
+    intro: [
+      "Esta é a sala pequena entre os três locais de Seul que este site cobre — 4,507 lugares, dos quais 1,324 são retráteis. É um ginásio de vôlei que, segundo o operador, também é usado para shows, o que na prática quer dizer fan meetings e shows menores, e não turnês.",
+      "Dois fatos sobre ele valem mais do que todo o resto: a saída do metrô conecta ao prédio sem você ir para a rua, e em dia de evento não existe estacionamento público nenhum.",
+    ],
+    steps: [
+      {
+        title: "Line 3 até 동대입구역, saída 5 — e você já está dentro",
+        body: "O operador afirma que a saída 5 conecta direto ao ginásio. Numa tarde chuvosa de novembro, ou num inverno de Seul, essa é uma chegada diferente de qualquer outro local deste site: você não sobe à superfície, não cruza uma rua e não procura uma porta. O endereço é 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Sair por outra saída porque a sinalização da plataforma te manda para a escada mais próxima. A ligação direta é a saída 5 especificamente, e qualquer outra te coloca fora do prédio em que você já estava.",
+        takes: "2 minutos",
+      },
+      {
+        title: "De ônibus, há duas paradas com o nome do próprio ginásio",
+        body: "O operador lista 장충체육관앞 como as paradas 02-201 e 02-202, as duas atendidas por N13, 144, 301 e 7212, e 동대입구역·장충동 como a parada 02-222, atendida por 05, 02 e 03. As duas paradas do ginásio ficam em lados opostos da rua, o que só importa porque uma delas quer dizer atravessar.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Não planeje dirigir, e o motivo está nas palavras do próprio operador",
+        body: "São 63 vagas de estacionamento no total, e dessas duas são vagas acessíveis, duas são para ônibus, oito são reservadas para mulheres e cinco para convidados de honra. O operador então afirma com todas as letras que durante eventos não há estacionamento público. Para uma sala de 4,507 pessoas isso não é escassez, é fechamento.",
+        pitfall:
+          "Tratar um local pequeno como o fácil de ir de carro. O estacionamento é proporcionalmente menor que nos dois locais maiores, e na noite ele não está aberto para você de jeito nenhum.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Não existe mapa de assentos para ler, e isso muda o que esperar",
+        body: "O Gocheok publica um mapa com uma descrição escrita da numeração dele, e o World Cup Stadium publica um buscador de lugares. Este local não publica nenhum dos dois. Com 1,324 dos seus 4,507 assentos retráteis, o arranjo da pista para um fan meeting é em boa parte da produtora para montar, então os assentos vendidos a você podem não corresponder a nenhum plano permanente. O seu ingresso e a imagem de assentos da produtora são a única autoridade.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Qual saída conecta ao prédio?",
+        a: "A saída 5 da 동대입구역 na Line 3. O operador afirma que a ligação com o ginásio é direta, e é por isso que esta página nomeia aquela saída e não apenas a estação.",
+      },
+      {
+        q: "Posso estacionar no Jangchung Arena?",
+        a: "Não em dia de evento. O operador publica 63 vagas no estacionamento do lado norte e afirma que o estacionamento público não fica disponível durante eventos.",
+      },
+      {
+        q: "Por que não existe um guia de assentos para este local?",
+        a: "Porque o operador não publica mapa de assentos nem buscador de lugares para ele, então não existe sistema de numeração para ler. Escrever um seria inventá-lo, e este site não faz isso. As páginas do Gocheok e do World Cup Stadium existem porque aqueles locais publicam o material.",
+      },
+      {
+        q: "Qual é o tamanho dele?",
+        a: "4,507 lugares, incluindo 1,324 retráteis, distribuídos em dois níveis de subsolo e três acima do solo. No uso comum é um ginásio de vôlei e a casa de dois times profissionais.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Đến Jangchung Arena để dự buổi gặp fan hoặc hoà nhạc",
+    summary:
+      "Nhà thi đấu 4,507 chỗ ở Jung-gu, nơi diễn ra các buổi gặp fan và những buổi diễn nhỏ hơn, đọc từ chính các trang của Seoul Facilities Corporation: cửa ra nối thẳng vào trong nhà, các tuyến xe buýt, và vì sao lái xe không phải một lựa chọn vào ngày có sự kiện.",
+    scope:
+      "Bao gồm việc đến Jangchung Arena ở Jung-gu, từ các trang giao thông và tiện ích của chính đơn vị vận hành. Không bao gồm cách bố trí chỗ ngồi: khác với Gocheok và World Cup Stadium, địa điểm này không công bố sơ đồ chỗ ngồi hay công cụ tra chỗ, nên ở đây không có hệ thống đánh số nào để dạy và trang này không bày ra một hệ thống như vậy.",
+    intro: [
+      "Đây là phòng nhỏ trong ba địa điểm ở Seoul mà trang này đề cập — 4,507 chỗ ngồi, trong đó 1,324 chỗ có thể thu vào. Nó là một nhà thi đấu bóng chuyền mà đơn vị vận hành nói cũng được dùng cho hoà nhạc, trên thực tế nghĩa là các buổi gặp fan và những buổi diễn nhỏ hơn, chứ không phải các chuyến lưu diễn.",
+      "Hai điều về nơi này đáng giá hơn mọi thứ khác: cửa ra tàu điện ngầm nối vào toà nhà mà không phải ra ngoài trời, và vào ngày có sự kiện thì hoàn toàn không có chỗ đậu xe cho khách thường.",
+    ],
+    steps: [
+      {
+        title: "Line 3 tới 동대입구역, cửa ra 5 — và bạn đã ở bên trong",
+        body: "Đơn vị vận hành nói rằng cửa ra 5 nối thẳng vào nhà thi đấu. Vào một buổi tối tháng 11 mưa ướt, hay trong mùa đông Seoul, đó là cách đến khác với mọi địa điểm khác trên trang này: bạn không phải lên mặt đất, không phải băng qua đường, không phải tìm cửa. Địa chỉ là 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Đi ra bằng một cửa khác vì bảng chỉ dẫn trên sân ga đưa bạn lên cầu thang gần nhất. Cửa nối thẳng là cửa ra 5 chứ không phải cửa nào khác, và bất cứ cửa nào khác đều đặt bạn ra bên ngoài toà nhà mà bạn vốn đã ở trong.",
+        takes: "2 phút",
+      },
+      {
+        title: "Đi xe buýt thì có hai bến mang đúng tên nhà thi đấu",
+        body: "Đơn vị vận hành ghi 장충체육관앞 là hai bến 02-201 và 02-202, cả hai đều có N13, 144, 301 và 7212 chạy qua, còn 동대입구역·장충동 là bến 02-222, có 05, 02 và 03 chạy qua. Hai bến của nhà thi đấu nằm ở hai bên đường, điều đó chỉ đáng kể ở chỗ một trong hai bến nghĩa là bạn phải băng qua đường.",
+        takes: "1 phút",
+      },
+      {
+        title: "Đừng tính chuyện lái xe, và lý do nằm trong chính lời của đơn vị vận hành",
+        body: "Tổng cộng có 63 chỗ đậu xe, trong đó hai chỗ dành cho người khuyết tật, hai chỗ cho xe buýt, tám chỗ dành riêng cho phụ nữ và năm chỗ cho khách mời danh dự. Rồi đơn vị vận hành nói thẳng rằng trong thời gian có sự kiện thì không có chỗ đậu xe cho khách thường. Với một phòng chứa 4,507 người thì đó không phải là thiếu, đó là đóng.",
+        pitfall:
+          "Coi một địa điểm nhỏ là nơi dễ lái xe tới. Bãi đậu xe của nó còn nhỏ hơn về tỷ lệ so với hai địa điểm lớn hơn, và vào tối đó nó hoàn toàn không mở cho bạn.",
+        takes: "1 phút",
+      },
+      {
+        title: "Không có sơ đồ chỗ ngồi để đọc, và điều đó thay đổi những gì bạn nên trông đợi",
+        body: "Gocheok công bố sơ đồ kèm phần mô tả bằng chữ về cách đánh số, còn World Cup Stadium công bố công cụ tra chỗ. Địa điểm này không công bố cái nào cả. Với 1,324 trong 4,507 chỗ ngồi có thể thu vào, cách bố trí mặt sàn cho một buổi gặp fan phần lớn là do nhà tổ chức dựng nên, nên chỗ ngồi bán cho bạn có thể không ứng với bất kỳ sơ đồ cố định nào. Vé của bạn và hình chỗ ngồi của nhà tổ chức là thẩm quyền duy nhất.",
+        takes: "1 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Cửa nào nối thẳng vào toà nhà?",
+        a: "Cửa ra 5 của 동대입구역 trên Line 3. Đơn vị vận hành nói rằng kết nối vào nhà thi đấu là nối thẳng, và đó là lý do trang này nêu tên đúng cửa đó chứ không chỉ nêu tên nhà ga.",
+      },
+      {
+        q: "Tôi có thể đậu xe ở Jangchung Arena không?",
+        a: "Không, vào ngày có sự kiện thì không. Đơn vị vận hành công bố 63 chỗ ở bãi đậu phía bắc và nói rằng chỗ đậu xe cho khách thường không có trong thời gian có sự kiện.",
+      },
+      {
+        q: "Vì sao không có hướng dẫn chỗ ngồi cho địa điểm này?",
+        a: "Vì đơn vị vận hành không công bố sơ đồ chỗ ngồi cũng không công bố công cụ tra chỗ cho nó, nên không có hệ thống đánh số nào để đọc ra. Viết một bài như vậy sẽ là bày ra nó, và trang này không làm thế. Các trang về Gocheok và World Cup Stadium tồn tại vì những địa điểm đó công bố tài liệu.",
+      },
+      {
+        q: "Nơi này lớn cỡ nào?",
+        a: "4,507 chỗ ngồi, trong đó có 1,324 chỗ thu vào được, trải trên hai tầng hầm và ba tầng trên mặt đất. Trong công dụng thường ngày nó là nhà thi đấu bóng chuyền và là sân nhà của hai câu lạc bộ chuyên nghiệp.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การไปจางชุงอารีนาเพื่อดูงานพบแฟนหรือคอนเสิร์ต",
+    summary:
+      "สนามความจุ 4,507 ที่นั่งในเขตจุง ซึ่งงานพบแฟนและการแสดงขนาดเล็กกว่าจัดที่นี่ อ่านจากหน้าเว็บของ Seoul Facilities Corporation เอง ได้แก่ ทางออกที่เชื่อมเข้าในอาคาร รถเมล์ และเหตุผลที่การขับรถไปไม่ใช่ทางเลือกในวันที่มีงาน",
+    scope:
+      "ครอบคลุมการไปถึง Jangchung Arena ในเขตจุง จากหน้าการเดินทางและสิ่งอำนวยความสะดวกของผู้บริหารเอง ไม่ครอบคลุมผังที่นั่ง ต่างจากโกชอกและสนามเวิลด์คัพ สถานที่นี้ไม่ได้เผยแพร่ผังที่นั่งหรือเครื่องมือค้นที่นั่ง จึงไม่มีระบบหมายเลขให้สอนที่นี่ และหน้านี้ไม่คิดขึ้นมาเอง",
+    intro: [
+      "นี่คือห้องเล็กในสามสถานที่จัดงานของโซลที่เว็บไซต์นี้ครอบคลุม คือ 4,507 ที่นั่ง โดย 1,324 ที่เป็นแบบเก็บได้ มันเป็นสนามวอลเลย์บอลที่ผู้บริหารบอกว่าใช้จัดคอนเสิร์ตได้ด้วย ซึ่งในทางปฏิบัติหมายถึงงานพบแฟนและการแสดงขนาดเล็กกว่า ไม่ใช่ทัวร์คอนเสิร์ต",
+      "ข้อเท็จจริงสองข้อเกี่ยวกับที่นี่มีค่ามากกว่าทุกอย่างที่เหลือ คือทางออกรถไฟฟ้าใต้ดินเชื่อมเข้าอาคารโดยไม่ต้องออกไปข้างนอก และในวันที่มีงานไม่มีที่จอดรถสำหรับคนทั่วไปเลย",
+    ],
+    steps: [
+      {
+        title: "สาย 3 ไป동대입구역 ทางออก 5 แล้วคุณก็อยู่ในอาคารแล้ว",
+        body: "ผู้บริหารระบุว่าทางออก 5 เชื่อมเข้าสนามโดยตรง ในเย็นเดือน 11 ที่ฝนตก หรือในฤดูหนาวของโซล นั่นคือการไปถึงที่ต่างจากสถานที่จัดงานอื่นใดบนเว็บไซต์นี้ คุณไม่ต้องขึ้นสู่ระดับถนน ไม่ต้องข้ามถนน ไม่ต้องหาประตู ที่อยู่คือ 서울특별시 중구 동호로 241",
+        pitfall:
+          "การออกทางอื่นเพราะป้ายบนชานชาลาพาคุณขึ้นบันไดที่ใกล้ที่สุด ทางเชื่อมตรงคือทางออก 5 เท่านั้น และทางออกอื่นใดก็พาคุณออกไปอยู่นอกอาคารที่คุณอยู่ในนั้นแล้ว",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถ้าไปรถเมล์ มีสองป้ายที่ใช้ชื่อสนามเอง",
+        body: "ผู้บริหารระบุ장충체육관앞 เป็นป้าย 02-201 และ 02-202 ทั้งสองป้ายมีสาย N13, 144, 301 และ 7212 ผ่าน และ동대입구역·장충동 เป็นป้าย 02-222 มีสาย 05, 02 และ 03 ผ่าน ป้ายของสนามสองป้ายนั้นอยู่คนละฝั่งถนน ซึ่งสำคัญเพียงในแง่ที่ว่าป้ายหนึ่งหมายถึงคุณต้องข้ามถนน",
+        takes: "1 นาที",
+      },
+      {
+        title: "อย่าวางแผนขับรถไป และเหตุผลอยู่ในถ้อยคำของผู้บริหารเอง",
+        body: "มีที่จอดรถทั้งหมด 63 คัน โดยในจำนวนนั้นสองช่องเป็นช่องสำหรับผู้พิการ สองช่องสำหรับรถบัส แปดช่องสงวนไว้ให้ผู้หญิง และห้าช่องสำหรับแขกพิเศษ แล้วผู้บริหารก็ระบุอย่างตรงไปตรงมาว่าในระหว่างมีงาน ไม่มีที่จอดรถสำหรับคนทั่วไป สำหรับห้องที่จุคน 4,507 คน นั่นไม่ใช่การขาดแคลน แต่เป็นการปิด",
+        pitfall:
+          "การคิดว่าสถานที่เล็กคือที่ที่ขับรถไปง่าย ลานจอดของที่นี่เล็กกว่าสองสถานที่ที่ใหญ่กว่าเมื่อเทียบตามสัดส่วนด้วย และในคืนนั้นมันไม่เปิดให้คุณเลย",
+        takes: "1 นาที",
+      },
+      {
+        title: "ไม่มีผังที่นั่งให้อ่าน และนั่นเปลี่ยนสิ่งที่ควรคาดหวัง",
+        body: "โกชอกเผยแพร่ผังพร้อมคำอธิบายเป็นข้อความถึงวิธีให้หมายเลข และสนามเวิลด์คัพเผยแพร่เครื่องมือค้นที่นั่ง สถานที่นี้ไม่เผยแพร่ทั้งสองอย่าง เมื่อ 1,324 ที่จาก 4,507 ที่นั่งเป็นแบบเก็บได้ การจัดพื้นสนามสำหรับงานพบแฟนจึงเป็นสิ่งที่ผู้จัดงานสร้างขึ้นเป็นส่วนใหญ่ ดังนั้นที่นั่งที่ขายให้คุณอาจไม่ตรงกับผังถาวรใด ๆ บัตรของคุณและภาพที่นั่งของผู้จัดงานเป็นผู้มีอำนาจเพียงสองอย่างเท่านั้น",
+        takes: "1 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ทางออกไหนเชื่อมเข้าอาคาร",
+        a: "ทางออก 5 ของ동대입구역 บนสาย 3 ผู้บริหารระบุว่าการเชื่อมเข้าสนามเป็นการเชื่อมโดยตรง ซึ่งเป็นเหตุผลที่หน้านี้ระบุชื่อทางออกนั้น ไม่ใช่ระบุแค่ชื่อสถานี",
+      },
+      {
+        q: "ฉันจอดรถที่ Jangchung Arena ได้ไหม",
+        a: "วันที่มีงานไม่ได้ ผู้บริหารเผยแพร่ว่ามี 63 ช่องในลานจอดด้านทิศเหนือ และระบุว่าที่จอดรถสำหรับคนทั่วไปไม่เปิดให้ใช้ระหว่างมีงาน",
+      },
+      {
+        q: "ทำไมสถานที่นี้ไม่มีคู่มือที่นั่ง",
+        a: "เพราะผู้บริหารไม่ได้เผยแพร่ผังที่นั่งและไม่ได้เผยแพร่เครื่องมือค้นที่นั่งสำหรับที่นี่ จึงไม่มีระบบหมายเลขให้อ่าน การเขียนขึ้นก็เท่ากับคิดมันขึ้นมาเอง และเว็บไซต์นี้ไม่ทำเช่นนั้น หน้าของโกชอกและสนามเวิลด์คัพมีอยู่เพราะสถานที่เหล่านั้นเผยแพร่ข้อมูลไว้",
+      },
+      {
+        q: "ที่นี่ใหญ่แค่ไหน",
+        a: "4,507 ที่นั่ง รวมถึง 1,324 ที่ที่เก็บได้ กระจายอยู่บนชั้นใต้ดินสองชั้นและเหนือพื้นดินสามชั้น ในการใช้งานตามปกติมันเป็นสนามวอลเลย์บอล และเป็นสนามเหย้าของทีมอาชีพสองทีม",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Pagtungo sa Jangchung Arena para sa isang fan meeting o konsiyerto",
+    summary:
+      "Ang arenang may 4,507 na upuan sa Jung-gu kung saan ginaganap ang mga fan meeting at mas maliliit na palabas, binasa mula sa sariling mga pahina ng Seoul Facilities Corporation: ang labasang nakakabit sa loob, ang mga bus, at kung bakit hindi pagpipilian ang pagmamaneho sa araw ng kaganapan.",
+    scope:
+      "Sinasaklaw ang pagtungo sa Jangchung Arena sa Jung-gu, mula sa sariling mga pahina ng tagapagpatakbo tungkol sa transportasyon at pasilidad. Hindi nito sinasaklaw ang pagkakaayos ng upuan: hindi tulad ng Gocheok at ng World Cup Stadium, walang inilalathalang tsart ng upuan o panghanap ng upuan ang venue na ito, kaya walang sistema ng pagnunumerong maituturo dito at hindi iyon kinakatha ng pahinang ito.",
+    intro: [
+      "Ito ang maliit na silid sa tatlong venue sa Seoul na sinasaklaw ng sayt na ito — 4,507 na upuan, at 1,324 sa mga iyon ay maaaring itago. Isa itong arena ng volleyball na ayon sa tagapagpatakbo ay ginagamit din para sa konsiyerto, na sa praktika ay nangangahulugang mga fan meeting at mas maliliit na palabas at hindi mga tour.",
+      "Dalawang katotohanan tungkol dito ang mas mahalaga kaysa sa lahat ng iba: nakakabit sa gusali ang labasan ng tren sa ilalim ng lupa nang hindi lumalabas sa kalye, at sa araw ng kaganapan ay wala talagang pampublikong paradahan.",
+    ],
+    steps: [
+      {
+        title: "Line 3 patungong 동대입구역, labasan 5 — at nasa loob ka na",
+        body: "Sinasabi ng tagapagpatakbo na tuwirang nakakabit sa arena ang labasan 5. Sa isang basang gabi ng Nobyembre, o sa taglamig ng Seoul, ibang pagdating iyon kaysa sa alinmang venue sa sayt na ito: hindi ka umaahon, hindi ka tumatawid sa kalsada at hindi ka humahanap ng pinto. Ang adres ay 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Ang paglabas sa ibang labasan dahil pinapaakyat ka ng karatula sa plataporma sa pinakamalapit na hagdan. Ang tuwirang kabit ay ang labasan 5 nang tiyakan, at inilalagay ka ng alinmang iba pang labasan sa labas ng gusaling kinaroroonan mo na.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Sa bus, may dalawang hintuang gamit ang pangalan mismo ng arena",
+        body: "Inililista ng tagapagpatakbo ang 장충체육관앞 bilang mga hintuang 02-201 at 02-202, na pawang pinagdadaanan ng N13, 144, 301 at 7212, at ang 동대입구역·장충동 bilang hintuang 02-222, na pinagdadaanan ng 05, 02 at 03. Nasa magkabilang panig ng kalsada ang dalawang hintuan ng arena, at mahalaga iyon lamang dahil ang isa sa kanila ay nangangahulugang tumawid.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Huwag magplanong magmaneho, at nasa sariling pananalita ng tagapagpatakbo ang dahilan",
+        body: "May 63 na puwesto ng paradahan sa kabuuan, at sa mga iyon ay dalawa ang puwestong madaling marating, dalawa ang para sa bus, walo ang nakalaan sa kababaihan at lima ang para sa mga panauhing pandangal. Pagkatapos ay tahasang sinasabi ng tagapagpatakbo na walang pampublikong paradahan sa panahon ng mga kaganapan. Para sa isang silid na may 4,507 katao, hindi iyon kakulangan, pagsasara iyon.",
+        pitfall:
+          "Ang pagtrato sa isang maliit na venue bilang ang madaling puntahan nang nakakotse. Mas maliit pa ang paradahan nito sa proporsiyon kaysa sa alinman sa dalawang mas malaking venue, at sa gabing iyon ay hindi talaga ito bukas sa iyo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Walang tsart ng upuang mababasa, at binabago niyan ang dapat asahan",
+        body: "Naglalathala ang Gocheok ng tsart kasama ang nakasulat na paliwanag ng pagnunumero nito, at naglalathala ang World Cup Stadium ng panghanap ng upuan. Wala ni isa sa mga iyon ang inilalathala ng venueng ito. Dahil 1,324 sa 4,507 na upuan nito ay maaaring itago, ang pagkakaayos ng palapag para sa isang fan meeting ay higit sa lahat sa prodyuser na itayo, kaya maaaring hindi tumugma sa anumang permanenteng plano ang upuang ipinagbili sa iyo. Ang tiket mo at ang larawan ng upuan mula sa prodyuser ang tanging awtoridad.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Aling labasan ang nakakabit sa gusali?",
+        a: "Ang labasan 5 ng 동대입구역 sa Line 3. Sinasabi ng tagapagpatakbo na tuwiran ang kabit sa arena, at iyon ang dahilan kung bakit pinapangalanan ng pahinang ito ang labasang iyon at hindi lamang ang istasyon.",
+      },
+      {
+        q: "Puwede ba akong magparada sa Jangchung Arena?",
+        a: "Hindi sa araw ng kaganapan. Naglalathala ang tagapagpatakbo ng 63 na puwesto sa paradahan sa panig na hilaga at sinasabing hindi available ang pampublikong paradahan sa panahon ng mga kaganapan.",
+      },
+      {
+        q: "Bakit walang gabay sa upuan para sa venueng ito?",
+        a: "Dahil walang inilalathalang tsart ng upuan at walang panghanap ng upuan ang tagapagpatakbo para dito, kaya walang sistema ng pagnunumerong mababasa. Ang pagsulat ng isa ay pagkatha nito, at hindi iyon ginagawa ng sayt na ito. Umiiral ang mga pahina ng Gocheok at ng World Cup Stadium dahil inilalathala ng mga venueng iyon ang materyal.",
+      },
+      {
+        q: "Gaano ito kalaki?",
+        a: "4,507 na upuan, kasama ang 1,324 na maaaring itago, sa dalawang antas ng basement at tatlo sa ibabaw ng lupa. Sa karaniwang paggamit nito ay isa itong arena ng volleyball at tahanan ng dalawang propesyonal na koponan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

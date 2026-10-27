@@ -862,6 +862,11 @@ const LATIN_OK = new Set([
   // so the English string has to be on the page — the station names around it
   // are written in the reader's own script, where nothing is being matched.
   "Gocheok", "Sky", "Dome", "KSPO", "Inspire", "Arena",
+  // Two more strings off the seating chart. FLOOR is what a floor ticket says
+  // instead of a block number, printed in capitals beside the Korean 플로어,
+  // and the gate marked for R.d-club season-ticket holders is the one gate a
+  // reader must recognise as not theirs.
+  "FLOOR", "club",
 ]);
 
 /** Locales whose prose should contain no bare Latin words. */

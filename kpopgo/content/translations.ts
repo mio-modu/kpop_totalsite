@@ -21475,6 +21475,966 @@ export const translations: Translation[] = [
     ],
     labels: FIL_LABELS,
   },
+
+  {
+    locale: "ja",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "高尺スカイドームで自分の席を見つける：チケットのブロック番号が意味すること",
+    summary:
+      "4層、一方向、そしてループの切れ目は一か所だけ。3桁を正しく読めば、地図なしでも、どちらが北かを知らなくても、どの入口からでも自分のブロックまで歩けます。",
+    scope:
+      "高尺スカイドームが常設席にどう番号を振っているかを、ソウル施設公団自身の座席配置図と施設案内のページから読み取って扱います。4つの層、番号が回る向き、連番が切れる場所、そしてゲートと窓口がその並びに対してどこに位置するか。読み取った配置図は野球用に描かれており、ダグアウトが載っています。スタンドのブロックはコンクリートで固定されていて動かないので、コンサートのチケットにブロック304と書かれていればそれはこの304です。ただし、どのブロックが売られるか、フロアに何が置かれるか、自分のチケットがどのゲートから入れるか、開場がいつかは主催者のもので、公演ごとに決まります。ここにあるものは、あなた自身の予約ページにある配置図の代わりにはなりません。一会場だけです。KSPO DomeとInspire Arenaは番号の振り方が違い、それぞれ専用のページが必要です。",
+    intro: [
+      "座席配置図は、建物がどう構成されているかをすでに知っている人のために描かれています。それは123個の番号が並んだ平面の絵で、家で抱く問い——これはいい席か——には答えますが、18時40分に、自分のものではない番号が書かれたコンクリートの壁の前に立っているときの問いには答えません。",
+      "その二番目の問いには短い答えがあります。番号付けは一覧ではなく仕組みだからです。4つの層、一つの向き、一か所の切れ目。この三つを覚えれば、配置図はもう必要なくなります。",
+    ],
+    steps: [
+      {
+        title: "まず自分の席が建物の中かフロアの上かを判別する",
+        body: "101から435までの3桁は、スタンドの常設ブロックを意味し、このページの残りはそれを探し当てるためのものです。それ以外——単独のアルファベット、FLOOR、플로어、スタンディングのゾーン、テーブルやボックスの名前——はフィールド上であり、そこには常設席が一つもありません。フィールドは素の床で、主催者が公演ごとに覆い、区切り、名前を付けます。ですからそれを位置づけられるのは、その公演自身の配置図だけです。",
+        pitfall:
+          "チケットのアルファベットを会場の配置図のアルファベットに突き合わせること。この一つの建物には三つの異なるアルファベットがあります。7つのゲートはAからGで振られ、配置図はフィールド高さの野球用ゾーンをT、S、Dの系列で印刷し、コンサートのフロアブロックは主催者がアルファベットで振ります。アルファベットは、それを発行したものの隣でしか意味を持ちません。",
+        takes: "2分",
+      },
+      {
+        title: "最初の桁が層で、層は4つあります",
+        body: "101から132がフロアにいちばん近い最下段のリング。201から222が短い2層目。301から334が3層目。401から435が最上段です。これは会場が説明している建物と一致します。地上4階、地下2層の上に積まれた構造です。つまり百の位は階数であって、ゾーンの名前ではありません。4はこの建物の最も高いところです。",
+        pitfall:
+          "200番台の層がほかと同じように振る舞うと思い込むこと。ここは最も短く、32、34、35に対して22ブロックしかなく、しかも途中に穴があるのはこの層だけです。配置図では、建物の向こう側に沿った区間に200番台の席がまったくない箇所が示されています。そこでは連続した番号が、地上で必ずしも隣同士ではありません。",
+        takes: "1分",
+      },
+      {
+        title: "残りの2桁は、一方向に回るループ上の位置です",
+        body: "一つの層の中で番号は一方向にぐるりと回ります。これは絵から測ったことではなく会場自身の言葉です。配置図とともに公開されている説明には、ブロックは内野側の右下から始まって시계방향——時計回り——に進むと書かれ、続いてその順にブロックが列挙されています。どの層も建物の同じ側から始まります。ですから401から405への移動は、301から305への移動と同じ回転で、向きも同じで、高さだけが違います。左半分と右半分を覚える必要はなく、奇数側・偶数側もありません。",
+        pitfall:
+          "層がブロック単位で真上に積まれていると思い込むこと。各層は32、22、34、35ブロックを持つので、回るにつれてずれていきます。共有しているのは出発する線だけです。417は317の上ではなく、210にいる友人はあなたの310の下にはいません。",
+        takes: "2分",
+      },
+      {
+        title: "ループの切れ目はちょうど一か所で、そこにゲートはありません",
+        body: "客席は完全な円に閉じていません。配置図が右側に描いている辺には、どの層にも席のない楔形の建物部分があり、そこが番号の振り直し点です。132と101はそこを挟んで向かい合い、435と401も同じです。その切れ目の幅は一定ではありません。配置図から測ると、100番台で約44度、200番台で71度、300番台で91度、400番台で96度です。上層のデッキがその角の手前で終わる一方、最下段のリングはほぼ閉じているからです。客席は、高くなるほど開く馬蹄形です。7つのゲートは番号と同じ向きに時計回りに並びます。手前側にA、B、C、D、E、向こう側にFとGです。Aは切れ目の次の最初のゲート、Gはその手前の最後のゲートです。ゲートのアルファベットとブロック番号は一つの目盛りであり、だからこそこの建物は方位磁石なしで歩けます。",
+        pitfall:
+          "見えているゲートが使えるゲートだと思い込むこと。会場自身の配置図は、中央にあるゲートCを一般用ではなくR.d-clubとスカイボックスの年間会員のための入口として記しています。いちばん近い扉が自分の扉とは限りません。",
+        takes: "3分",
+      },
+      {
+        title: "対処できる側に着く",
+        body: "1号線クイル駅の2番出口は会場から約150メートル、徒歩3分です。そしてコンサートの夜には、運営者が一駅前で降りる案内を公開しています。ソウル方面または水原・安養方面から乗ったならクロ駅、仁川・富川方面から来たならケボン駅です。どちらを選ぶかで最初に着く外周の位置が変わり、したがって回り込む距離も変わります。次のステップの法則は変わりません。あれはどの入口からでも使えます。",
+        pitfall:
+          "建物までの歩きだけを計画して、建物を回る歩きを計画しないこと。2万5千人が周長およそ600メートルのリングに着き、あなたの最後の200メートルこそが人混みの中にある200メートルです。",
+        takes: "5分、当日より前に",
+      },
+      {
+        title: "壁の前でブロック番号を二つ読めば、歩く向きが分かる",
+        body: "配置図の上がどの方位を指すかを知る必要はありませんし、会場もそれを公開していません。必要なのは連続した二つの番号です。立っている場所のブロック番号を読み、数メートル歩いて、次の番号を読む。これで番号が増える向きが分かります。自分の番号が大きければそのまま進み、小さければ引き返します。どの層でもループは一方向に回るので、建物の外側で得た答えは階段でも、コンコースでも、そのまま正しいままです。",
+        pitfall:
+          "表示ではなく床を頼りに進むこと。ドームには外の景色がなく、コンコースはどの区間も同じように見えます。建物の中で自分がどこにいるかを教えてくれるのはブロック番号だけです。この二つ読みの法則が通じない唯一の場所は切れ目で、そこは番号が途切れるので自ずと分かります。",
+        takes: "当日5分",
+      },
+      {
+        title: "このうちどちらの半分を主催者が決めるのかを知る",
+        body: "建物が決めるのはブロック番号、4つの層、ゲートのアルファベット、そして窓口です。配置図は窓口を3つ、2番、3番、4番として記し、内野側の一つはゲートEのそばに、外野側の二つはゲートFとGを挟むように置かれています。主催者が決めるのは公演ごとに変わるすべてです。そもそもどのブロックが売られるか——フロアの片端に立つステージはその裏のブロックを潰します——フロアの区画が何と呼ばれるか、自分のチケットがどのゲートから入れるか、そして開場がいつか。自分のチケットとこのページが食い違うなら、正しいのはチケットです。",
+        pitfall:
+          "会場の配置図を自分の公演の配置図として扱うこと。あれは野球用に描かれ、ダグアウトが載っています。304がどこにあるかについての権威であり、あなたの夜のそれ以外については権威ではありません。",
+        takes: "5分",
+      },
+    ],
+    faq: [
+      {
+        q: "304のようなブロック番号は、実際に何を教えてくれるのですか。",
+        a: "二つです。3は層で、最下段のリングを1と数えたときの4層のうち3層目です。04はその層をぐるりと一方向に回るループ上の位置で、建物の決まった側から始まります。つまり304は番号が小さいほうで、番号付けが始まる場所の近く、客席の切れ目から時計回りに少し歩いたあたりです。",
+      },
+      {
+        q: "番号はどちらの向きに回るのですか。",
+        a: "時計回りで、会場自身がそう述べています。配置図とともに公開されている説明には시계방향とあり、内野側の右下から始まると書かれていて、続いて列挙されるブロックの範囲も両側で絵と一致します。どの層も同じ向きです。ゲートのアルファベットも同じ向きに進みます。手前側にA、B、C、D、E、向こう側にF、Gです。つまりアルファベットと番号は一緒に増えます。ゲートEへ向かう途中でゲートDを通り過ぎたなら、ブロック番号も増えているということです。",
+      },
+      {
+        q: "ブロック417はブロック317の真上ですか。",
+        a: "違います。各層が持つブロックの数は異なり、下から32、22、34、35です。共有しているのは番号付けが始まる線だけで、そこから先はずれていきます。歩くときは友人がいる層ではなく、自分が実際にいる層を使ってください。",
+      },
+      {
+        q: "なぜ番号が途切れて、また始まるのですか。",
+        a: "客席がリングではなく馬蹄形だからです。どの層にも席のない楔形の建物部分があり、番号はそこで振り直されます。132はそこを挟んで101と向かい合い、435は401と向かい合います。そこは外周のうちゲートが一つもない唯一の区間でもあり、だから見分けやすいのです。高いところほど幅が広く、100番台では円のおよそ44度に対して400番台では96度です。つまり上の層ではリングの欠けている部分が大きく、遠回りの代償も大きくなります。",
+      },
+      {
+        q: "いちばん近いゲートから入ってもいいですか。",
+        a: "必ずしもよくありません。ゲートの出入りは公演ごとに主催者が決め、チケットに印刷されます。そして普通の日でも一般用でないゲートが少なくとも一つあります。会場の配置図は、中央のゲートをR.d-clubとスカイボックスの年間会員のための入口として記しています。まずチケットを読み、それからそのゲートを探してください。",
+      },
+      {
+        q: "会場サイトの配置図は野球場のように見えます。これで合っているのですか。",
+        a: "このページが答える問いには正しい配置図で、それ以外のほとんどの問いには誤った配置図です。あれは野球用に描かれ、ダグアウトも含まれていて、会場の収容は試合で16,601席、コンサートでは約25,000人です。つまりコンサートは同じ建物の別の配置です。変わらないのはコンクリートで、番号の付いたブロックは常設なので、配置図は304がどこかを教えてくれます。304があなたの公演で売られているかどうか、フロアに何があるかは教えてくれません。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "在高尺天空巨蛋找到你的座位：票上的區塊號碼在說什麼",
+    summary:
+      "四層、一個方向，以及整圈裡只有一處斷口。把三位數讀對，你就能從任何入口走到自己的區塊，不需要地圖，也不需要知道哪邊是北。",
+    scope:
+      "涵蓋高尺天空巨蛋如何為常設座位編號，取自首爾設施公團自己的座位配置圖與場館設施頁面：四個層、號碼轉動的方向、連號中斷的位置，以及入口與售票窗口相對於這套編號的位置。本頁所讀的那張配置圖是為棒球畫的，上面有球員休息區。看台的區塊是澆築的混凝土，不會移動，所以演唱會票上寫區塊304，指的就是這個304；但哪些區塊會開賣、場地上放什麼、你的票從哪個入口進、何時開放入場，都屬於主辦方並逐場決定，這裡的任何內容都不能取代你自己預訂頁面上的配置圖。只寫一個場館。KSPO Dome與Inspire Arena的編號方式不同，需要各自的頁面。",
+    intro: [
+      "座位配置圖是為已經知道這棟建築如何組織的人畫的。它是一張有123個號碼的平面圖，回答的是你在家裡會有的問題——這個位子好不好——而不是你在18時40分、站在一面寫著不屬於你的號碼的混凝土牆前時會有的問題。",
+      "第二個問題有一個簡短的答案，因為這套編號是一個系統，而不是一份清單。四個層、一個方向、一處斷口。把這三件事記住，你就不再需要配置圖。",
+    ],
+    steps: [
+      {
+        title: "先判斷你的座位在建築裡還是在場地上",
+        body: "101到435之間的三位數代表看台上的常設區塊，本頁其餘部分就是用來把它找出來的。其他任何形式——單獨的字母、FLOOR、플로어、站位區、桌位或包廂的名字——都在場地上，而場地根本沒有任何常設座位。場地是裸的地板，由主辦方逐場鋪設、分區並命名，所以只有那一場自己的配置圖才能定位它。",
+        pitfall:
+          "拿票上的字母去對場館配置圖上的字母。這一棟建築上有三套不同的字母：七個入口以A到G編號，配置圖以T、S、D系列印出場地高度的棒球分區，而演唱會的場地區塊是由主辦方編字母的。字母只有在發出它的那個東西旁邊才有意義。",
+        takes: "2分鐘",
+      },
+      {
+        title: "第一位數是層，而層有四個",
+        body: "101到132是最靠近場地的最低一圈。201到222是較短的第二層。301到334是第三層。401到435是最上層。這和場館自己描述的建築一致：地上四層，底下還有兩層地下。所以百位數是樓層號碼，不是分區名稱。4就是這棟建築最高的地方。",
+        pitfall:
+          "以為200層會和其他層一樣。它最短，只有22個區塊，對上32、34和35，而且它是唯一中間有缺口的：配置圖顯示建築遠側沿線有幾段完全沒有200層的座位。在那裡，連號並不代表地面上相鄰。",
+        takes: "1分鐘",
+      },
+      {
+        title: "另外兩位數是一個只朝一個方向轉的圈上的位置",
+        body: "在同一層裡，號碼朝單一方向繞行一整圈，而這是場館自己的用詞，不是從圖上量出來的：與配置圖一起公布的文字說明寫著區塊從內野側的右下開始，依시계방향——順時針——排列，接著就按那個順序列出它們。每一層都從建築的同一側開始。所以從401走到405，和從301走到305是同一個轉向，方向相同，只是高度不同。沒有左半邊右半邊要記，也沒有單號側雙號側。",
+        pitfall:
+          "以為各層會一塊對一塊地疊起來。它們分別有32、22、34和35個區塊，所以越繞越偏離：它們共用的只有起始的那一條線。417不在317的上方，而在210的朋友也不在你310的下方。",
+        takes: "2分鐘",
+      },
+      {
+        title: "這個圈剛好有一處斷口，而那裡沒有入口",
+        body: "座位並沒有圍成完整的圓。在配置圖畫在右側的那一邊，有一塊楔形的建築在任何層都沒有座位，而編號就是在那裡重新開始的——132與101隔著它相對，435與401也一樣。那處斷口的寬度不是固定的：從圖上量，100層約44度，200層71度，300層91度，400層96度，因為上層看台在那個角落之前就結束了，而最低一圈幾乎繞了過去。座位是一個越往上越開口的馬蹄形。七個入口和號碼同向順時針排列：近側是A、B、C、D、E，遠側是F和G。A是斷口之後的第一個入口，G是斷口之前的最後一個。入口字母和區塊號碼是同一把尺，而這正是這棟建築可以不用指北針就走通的原因。",
+        pitfall:
+          "以為看得到的入口就是可以用的入口。場館自己的配置圖把位於中央的C入口標為保留給R.d-club與包廂季票持有者的入口，而不是一般入口。最近的那道門不一定是你的。",
+        takes: "3分鐘",
+      },
+      {
+        title: "從一個你應付得來的方向抵達",
+        body: "1號線九一站2號出口距場館約150公尺，步行三分鐘；而在演唱會的夜晚，營運者公布的建議是提前一站下車——若你是從首爾方向或水原、安養方向上車，就在九老站；若你從仁川或富川方向過來，就在開峰站。你選哪一個，會改變你最先抵達外圍的哪一段，因此也改變你要繞多遠。它不會改變下一步的規則，那條規則從任何入口都適用。",
+        pitfall:
+          "只規劃走到建築的那段路，卻沒規劃繞著建築走的那段。兩萬五千人會抵達一個周長約600公尺的圈，而你最後那200公尺，正是裡面有人潮的200公尺。",
+        takes: "5分鐘，在當天之前",
+      },
+      {
+        title: "在牆邊讀兩個區塊號碼，你就知道該往哪邊走",
+        body: "你不需要知道配置圖的上方指向哪個方位，場館也沒有公布。你需要的是連續兩個號碼。讀你站的位置的區塊號碼，走幾公尺，再讀下一個。現在你知道號碼往哪個方向遞增了。如果你的號碼更大就繼續走，更小就轉身。因為每一層的圈都只朝一個方向轉，你在建築外側得到的答案，在樓梯上仍然成立，在走道上也仍然成立。",
+        pitfall:
+          "靠地板而不是靠標示判斷方向。巨蛋裡看不到外面，每一段走道看起來都和其他段一樣；區塊號碼是這棟建築裡唯一會告訴你身在何處的東西。這個兩號碼規則唯一失效的地方是斷口，而斷口會自己宣告，因為號碼停了。",
+        takes: "當天5分鐘",
+      },
+      {
+        title: "知道這裡面哪一半是主辦方決定的",
+        body: "建築決定的是區塊號碼、四個層、入口字母和售票窗口——配置圖標了三個，編號為2、3、4號，內野那個在E入口旁邊，外野那兩個分別位在F與G入口兩側。主辦方決定的是每場都會變的一切：哪些區塊根本會不會開賣，因為舞台靠著場地的一端就會毀掉它後方的區塊；場地分區叫什麼名字；你的票從哪個入口進；以及何時開放入場。你的票和本頁說法不一致時，正確的是你的票。",
+        pitfall:
+          "把場館的配置圖當成你那一場的配置圖。它是為棒球畫的，上面有球員休息區。它是關於304在哪裡的權威，而關於你那一晚的其他一切都不是。",
+        takes: "5分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "像304這樣的區塊號碼究竟在告訴我什麼？",
+        a: "兩件事。3是層，把最低一圈算作1的話，它是四層裡的第三層。04是那一層上朝單一方向繞行一整圈的位置，從建築固定的一側開始。所以304是小號碼那一端，位置靠近編號開始的地方，從座位的斷口順時針走一小段就到。",
+      },
+      {
+        q: "號碼是朝哪個方向排的？",
+        a: "順時針，而且是場館自己說的：與配置圖一起公布的說明寫著시계방향，從內野側的右下開始，而它接著列出的區塊範圍在兩側都和圖相符。每一層都是同一個方向。入口字母也是同向：近側A、B、C、D、E，遠側F、G。這表示字母和號碼是一起遞增的——如果你在前往E入口的路上經過了D入口，你的區塊號碼也正在變大。",
+      },
+      {
+        q: "區塊417就在區塊317的正上方嗎？",
+        a: "不是。各層的區塊數量不同——由下往上是32、22、34和35——所以它們只共用編號起始的那一條線，從那裡開始就逐漸偏離。請用你實際所在的那一層來找路，不要用你朋友所在的那一層。",
+      },
+      {
+        q: "為什麼號碼會停下來然後重新開始？",
+        a: "因為座位是馬蹄形，不是一個圈。有一塊楔形的建築在任何層都沒有座位，編號就在那裡重新開始：132隔著它面對101，435面對401。那裡也是整個外圍唯一沒有入口的一段，所以很容易辨認。你所在的位置越高，它就越寬——100層大約是整圈的44度，而400層是96度——所以在最上層，缺掉的部分更多，繞遠路的代價也更大。",
+      },
+      {
+        q: "我可以從最近的入口進去嗎？",
+        a: "不一定。入口的使用由主辦方逐場設定並印在你的票上，而且就算是平常的日子也至少有一個入口不是一般使用的——場館的配置圖把中央那個入口標為R.d-club與包廂季票持有者的入口。先讀你的票，再去找那個入口。",
+      },
+      {
+        q: "場館網站上的配置圖看起來像棒球場。這一張對嗎？",
+        a: "對本頁要回答的問題來說它是對的那一張，對其他大多數問題來說是錯的那一張。它是為棒球畫的，連球員休息區都有，而場館在比賽時是16,601個座位，演唱會約25,000人——所以演唱會是同一棟建築的另一種配置。不變的是混凝土：編了號的區塊是永久的，所以配置圖能告訴你304在哪裡。它不能告訴你304在你那一場有沒有開賣，也不能告訴你場地上放了什麼。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menemukan tempat duduk Anda di Gocheok Sky Dome: apa arti nomor blok pada tiket Anda",
+    summary:
+      "Empat lantai, satu arah, dan satu putus tunggal pada lingkarannya. Tiga angka yang dibaca dengan benar akan menuntun Anda ke blok Anda dari pintu masuk mana pun, tanpa peta dan tanpa perlu tahu arah utara.",
+    scope:
+      "Mencakup cara Gocheok Sky Dome menomori tempat duduk permanennya, dibaca dari bagan tempat duduk dan halaman fasilitas milik Seoul Facilities Corporation sendiri: keempat lantainya, arah penomorannya berjalan, di mana urutannya terputus, dan di mana pintu-pintu serta loket berada relatif terhadap urutan itu. Bagan yang menjadi sumbernya digambar untuk bisbol — ada ruang pemain di atasnya. Blok-blok di tribun adalah beton tuang dan tidak berpindah, jadi tiket konser yang menyebut blok 304 berarti 304 yang ini; tetapi blok mana yang dijual, apa yang berdiri di lapangan, pintu mana yang boleh Anda lewati, dan kapan pintu dibuka adalah milik promotor, ditetapkan per pertunjukan, dan tidak ada apa pun di sini yang menggantikan bagan di halaman pemesanan Anda sendiri. Satu venue. KSPO Dome dan Inspire Arena menomori diri mereka secara berbeda dan membutuhkan halaman sendiri.",
+    intro: [
+      "Sebuah bagan tempat duduk digambar untuk orang yang sudah tahu bagaimana bangunan itu disusun. Ia adalah gambar datar berisi 123 angka, dan ia menjawab pertanyaan yang Anda punya di rumah — apakah ini kursi yang bagus — alih-alih pertanyaan yang Anda punya pada 18:40 sambil berdiri menghadap dinding beton bernomor yang bukan nomor Anda.",
+      "Pertanyaan kedua itu punya jawaban singkat, karena penomorannya adalah sebuah sistem dan bukan sebuah daftar. Empat lantai, satu arah, satu putus. Pelajari ketiga hal itu dan Anda berhenti membutuhkan bagannya.",
+    ],
+    steps: [
+      {
+        title: "Tentukan dulu apakah kursi Anda di dalam bangunan atau di lapangan",
+        body: "Tiga angka antara 101 dan 435 berarti sebuah blok permanen di tribun, dan sisa halaman ini bertugas menemukannya. Apa pun selain itu — satu huruf berdiri sendiri, FLOOR, 플로어, zona berdiri, nama meja atau box — berada di lapangan, yang sama sekali tidak punya kursi permanen. Lapangan itu lantai kosong yang ditutup, dibagi dan diberi nama oleh promotor untuk setiap pertunjukan, jadi hanya bagan pertunjukan itu sendiri yang dapat menempatkannya.",
+        pitfall:
+          "Mencocokkan huruf pada tiket Anda dengan huruf pada bagan venue. Ada tiga abjad berbeda pada satu bangunan ini: ketujuh pintu berhuruf A sampai G, bagan itu mencetak zona bisbol setinggi lapangan dalam seri T, S dan D, dan blok lapangan sebuah konser diberi huruf oleh promotor. Sebuah huruf hanya berarti di samping benda yang menerbitkannya.",
+        takes: "2 menit",
+      },
+      {
+        title: "Angka pertama adalah lantainya, dan lantainya ada empat",
+        body: "101 sampai 132 adalah cincin terbawah, yang paling dekat ke lapangan. 201 sampai 222 adalah tingkat kedua yang pendek. 301 sampai 334 adalah yang ketiga. 401 sampai 435 adalah yang teratas. Itu cocok dengan bangunan yang digambarkan venue — empat lantai di atas tanah di atas dua lantai basemen — jadi angka ratusan adalah nomor lantai, bukan nama zona. Angka 4 adalah setinggi bangunan ini bisa.",
+        pitfall:
+          "Mengharapkan lantai 200 berperilaku seperti yang lain. Ia yang terpendek, 22 blok melawan 32, 34 dan 35, dan ia satu-satunya yang berlubang di tengahnya: bagan itu memperlihatkan bentangan di sisi jauh bangunan yang sama sekali tidak memuat tempat duduk lantai 200. Di situ angka yang berurutan belum tentu bertetangga di tanah.",
+        takes: "1 menit",
+      },
+      {
+        title: "Dua angka lainnya adalah posisi pada lingkaran yang berputar satu arah",
+        body: "Di dalam satu lantai, angka-angka berjalan dalam satu arah sepanjang lingkarannya, dan itu kata venue sendiri alih-alih sesuatu yang diukur dari gambarnya: keterangan yang diterbitkan bersama bagan itu menyatakan bahwa blok-bloknya berjalan 시계방향 — searah jarum jam — dimulai dari kanan bawah sisi dalam lapangan, lalu mendaftarnya dalam urutan itu. Setiap lantai dimulai dari sisi bangunan yang sama. Jadi langkah dari 401 ke 405 adalah rotasi yang sama dengan langkah dari 301 ke 305, dalam arah yang sama, pada ketinggian yang berbeda. Tidak ada separuh kiri dan separuh kanan untuk dihafal, dan tidak ada sisi ganjil dan sisi genap.",
+        pitfall:
+          "Mengharapkan lantai-lantainya bertumpuk blok demi blok. Mereka memuat 32, 22, 34 dan 35 blok, jadi mereka menyimpang satu dari yang lain sambil berputar: hanya garis tempat mereka bermula yang sama. 417 tidak berada di atas 317, dan seorang teman di 210 tidak berada di bawah Anda di 310.",
+        takes: "2 menit",
+      },
+      {
+        title: "Lingkarannya punya tepat satu putus, dan tidak ada pintu di dalamnya",
+        body: "Tempat duduknya tidak menutup menjadi lingkaran penuh. Pada sisi yang digambar bagan itu di sebelah kanan ada sebidang bangunan berbentuk pasak tanpa kursi di lantai mana pun, dan di situlah penomorannya dimulai ulang — 132 dan 101 berhadapan melintasinya, demikian pula 435 dan 401. Putus itu tidak selebar sama: diukur dari bagan, kira-kira 44 derajat di lantai 100, 71 di lantai 200, 91 di lantai 300 dan 96 di lantai 400, karena dek-dek atas berhenti sebelum sudut itu sementara cincin terbawah hampir menutup di sekelilingnya. Tempat duduknya adalah sepatu kuda yang makin membuka seiring naik. Ketujuh pintu berjalan searah jarum jam dalam arah yang sama dengan angkanya: A, B, C, D dan E di sisi dekat, lalu F dan G melintasi sisi jauh. A adalah pintu pertama setelah putusnya; G adalah yang terakhir sebelumnya. Huruf pintu dan nomor blok adalah satu skala, dan itulah seluruh alasan bangunan ini bisa dijelajahi tanpa kompas.",
+        pitfall:
+          "Menganggap pintu yang bisa Anda lihat adalah pintu yang boleh Anda pakai. Bagan venue sendiri menandai pintu C, yang di tengah, sebagai pintu masuk yang disediakan bagi pemegang tiket musiman R.d-club dan skybox alih-alih pintu umum. Pintu terdekat tidak selalu pintu Anda.",
+        takes: "3 menit",
+      },
+      {
+        title: "Tiba di sisi yang bisa Anda kerjakan",
+        body: "Stasiun Guil di Line 1, pintu keluar 2, berjarak sekitar 150 meter dan tiga menit dari venue, dan pada malam konser pengelola menerbitkan anjuran untuk turun satu perhentian lebih awal — Guro kalau Anda naik dari Seoul atau dari arah Suwon dan Anyang, Gaebong kalau Anda datang dari Incheon atau Bucheon. Yang Anda ambil mengubah bagian keliling bangunan mana yang Anda capai lebih dulu, dan karenanya seberapa jauh Anda berjalan memutar. Ia tidak mengubah aturan pada langkah berikutnya, yang bekerja dari pintu masuk mana pun.",
+        pitfall:
+          "Merencanakan jalan menuju bangunannya dan bukan jalan memutarinya. Dua puluh lima ribu orang tiba di sebuah cincin dengan keliling kira-kira 600 meter, dan dua ratus meter terakhir Anda adalah meter-meter yang ada kerumunan di dalamnya.",
+        takes: "5 menit, sebelum hari acara",
+      },
+      {
+        title: "Di dinding, baca dua nomor blok dan Anda tahu harus berjalan ke mana",
+        body: "Anda tidak perlu tahu arah mata angin mana yang ditunjuk bagian atas bagan itu, dan venue tidak menerbitkannya. Yang Anda perlukan adalah dua angka berurutan. Baca nomor blok tempat Anda berdiri, berjalan beberapa meter, baca yang berikutnya. Sekarang Anda tahu ke arah mana urutannya naik. Kalau nomor Anda lebih besar, teruskan; kalau lebih kecil, berbalik. Karena lingkarannya berputar satu arah di setiap lantai, jawaban yang Anda dapat di luar bangunan tetap benar di tangga dan tetap benar di selasar.",
+        pitfall:
+          "Mengemudi dengan lantai alih-alih dengan tanda. Sebuah dome tidak punya pemandangan ke luar dan setiap bentangan selasar tampak seperti bentangan lainnya; nomor blok adalah satu-satunya hal di dalam bangunan yang memberi tahu Anda sedang di mana. Satu-satunya tempat aturan dua angka itu gagal adalah putusnya, dan putusnya mengumumkan dirinya sendiri, karena angkanya berhenti.",
+        takes: "5 menit pada malam itu",
+      },
+      {
+        title: "Ketahui separuh mana dari ini yang diputuskan promotor",
+        body: "Bangunan menetapkan nomor blok, keempat lantai, huruf pintu dan loketnya — bagan itu menandai tiga, bernomor 2, 3 dan 4, dengan yang di sisi dalam lapangan di samping pintu E dan dua yang di sisi luar mengapit pintu F dan G. Promotor menetapkan segala yang berubah per pertunjukan: blok mana yang dijual sama sekali, karena panggung yang menempel pada satu ujung lapangan mematikan blok-blok di belakangnya; apa nama bagian-bagian lapangan; pintu mana yang boleh Anda lewati; dan kapan pintunya dibuka. Di mana tiket Anda dan halaman ini berselisih, tiket Anda yang benar.",
+        pitfall:
+          "Memperlakukan bagan venue sebagai bagan pertunjukan Anda. Ia digambar untuk bisbol dan ada ruang pemain di atasnya. Ia adalah otoritas soal di mana 304 berada dan soal tidak ada hal lain tentang malam Anda.",
+        takes: "5 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apa yang sebenarnya diberitahukan nomor blok seperti 304 kepada saya?",
+        a: "Dua hal. Angka 3 adalah lantainya — yang ketiga dari empat, dengan cincin terbawah dihitung sebagai 1. Angka 04 adalah posisi pada lingkaran yang berjalan satu arah sepanjang lantai itu, dimulai dari sisi bangunan yang tetap. Jadi 304 bernomor rendah, yang menempatkannya dekat tempat penomorannya dimulai, berjalan sebentar searah jarum jam dari putusnya tempat duduk.",
+      },
+      {
+        q: "Ke arah mana angka-angkanya berjalan?",
+        a: "Searah jarum jam, dan venue mengatakannya sendiri: keterangan yang diterbitkan bersama bagannya berbunyi 시계방향, dimulai dari kanan bawah sisi dalam lapangan, dan rentang blok yang kemudian didaftarnya cocok dengan gambarnya di kedua sisi. Arah yang sama di setiap lantai. Huruf pintunya berjalan dengan cara yang sama: A, B, C, D, E di sisi dekat dan F, G melintasi sisi jauh. Itu berarti huruf dan angka naik bersama — kalau Anda melewati pintu D dalam perjalanan ke pintu E, nomor blok Anda juga sedang naik.",
+      },
+      {
+        q: "Apakah blok 417 tepat di atas blok 317?",
+        a: "Tidak. Lantainya memuat jumlah blok yang berbeda — 32, 22, 34 dan 35 dari bawah ke atas — jadi mereka hanya sama pada garis tempat penomorannya bermula dan menyimpang dari situ. Pakailah lantai yang sedang Anda tempati untuk menjelajah, bukan lantai yang ditempati teman Anda.",
+      },
+      {
+        q: "Mengapa angkanya berhenti lalu mulai lagi?",
+        a: "Karena tempat duduknya adalah sepatu kuda, bukan cincin. Ada sebidang bangunan tanpa kursi di dalamnya di lantai mana pun, dan penomorannya dimulai ulang di situ: 132 menghadap 101 melintasinya, 435 menghadap 401. Ia juga satu-satunya bentangan keliling yang tidak ada pintunya, yang membuatnya mudah dikenali. Ia makin lebar semakin tinggi Anda berada — sekitar 44 derajat dari lingkarannya di lantai 100 melawan 96 di lantai 400 — jadi di lantai teratas lebih banyak bagian cincinnya yang hilang dan berjalan memutar jalan panjang lebih mahal.",
+      },
+      {
+        q: "Bisakah saya masuk lewat pintu mana saja yang terdekat?",
+        a: "Belum tentu. Akses pintu ditetapkan per acara oleh promotor dan dicetak pada tiket Anda, dan setidaknya satu pintu bukan pintu umum bahkan pada hari biasa — bagan venue menandai pintu tengah sebagai pintu masuk bagi pemegang tiket musiman R.d-club dan skybox. Baca tiket Anda, lalu temukan pintu itu.",
+      },
+      {
+        q: "Bagan di situs venue tampak seperti stadion bisbol. Apakah itu yang benar?",
+        a: "Ia bagan yang benar untuk pertanyaan yang dijawab halaman ini dan yang salah untuk kebanyakan pertanyaan lain. Ia digambar untuk bisbol, lengkap dengan ruang pemain, dan venue menampung 16,601 untuk sebuah pertandingan melawan sekitar 25,000 untuk sebuah konser — jadi konser adalah susunan yang berbeda dari bangunan yang sama. Yang tidak berubah adalah betonnya: blok-blok bernomor itu permanen, jadi bagan itu memberi tahu Anda di mana 304 berada. Ia tidak dapat memberi tahu apakah 304 dijual untuk pertunjukan Anda, atau apa yang ada di lapangan.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Den Platz im Gocheok Sky Dome finden: was die Blocknummer auf Ihrem Ticket bedeutet",
+    summary:
+      "Vier Ebenen, eine Richtung und genau eine Unterbrechung im Ring. Drei richtig gelesene Ziffern führen Sie von jedem Eingang aus zu Ihrem Block, ohne Plan und ohne zu wissen, wo Norden ist.",
+    scope:
+      "Behandelt, wie der Gocheok Sky Dome seine festen Plätze numeriert, abgelesen am eigenen Sitzplan und an den Gebäudeseiten der Seoul Facilities Corporation: die vier Ebenen, in welche Richtung die Nummern laufen, wo die Reihenfolge abbricht und wo die Tore und Kassen dazu liegen. Der Plan, aus dem das abgelesen ist, ist für Baseball gezeichnet — die Spielerbänke sind darauf. Die Blöcke im Rund sind gegossener Beton und verschieben sich nicht, ein Konzertticket mit Block 304 meint also diesen 304; welche Blöcke überhaupt verkauft werden, was auf dem Feld steht, durch welches Tor Ihr Ticket Sie lässt und wann die Türen öffnen, gehört aber dem Veranstalter, wird pro Show festgelegt, und nichts hier ersetzt den Plan auf Ihrer eigenen Buchungsseite. Ein Veranstaltungsort. KSPO Dome und Inspire Arena numerieren sich anders und brauchen eigene Seiten.",
+    intro: [
+      "Ein Sitzplan ist für jemanden gezeichnet, der schon weiß, wie das Gebäude geordnet ist. Er ist ein flaches Bild von 123 Nummern und beantwortet die Frage, die Sie zu Hause haben — ist das ein guter Platz — und nicht die Frage, die Sie um 18:40 haben, wenn Sie vor einer Betonwand mit einer Nummer stehen, die nicht Ihre ist.",
+      "Diese zweite Frage hat eine kurze Antwort, denn die Numerierung ist ein System und keine Liste. Vier Ebenen, eine Richtung, eine Unterbrechung. Lernen Sie diese drei Dinge, und Sie brauchen den Plan nicht mehr.",
+    ],
+    steps: [
+      {
+        title: "Entscheiden Sie zuerst, ob Ihr Platz im Gebäude oder auf dem Feld ist",
+        body: "Drei Ziffern zwischen 101 und 435 bedeuten einen festen Block im Rund, und der Rest dieser Seite findet ihn. Alles andere — ein einzelner Buchstabe, FLOOR, 플로어, eine Stehzone, ein Tisch- oder Logenname — liegt auf dem Feld, das überhaupt keine festen Plätze hat. Das Feld ist nackter Boden, den der Veranstalter für jede Show abdeckt, teilt und benennt, also kann ihn nur der Plan dieser Show selbst verorten.",
+        pitfall:
+          "Einen Buchstaben auf Ihrem Ticket mit einem Buchstaben auf dem Plan des Veranstaltungsorts abzugleichen. An diesem einen Gebäude gibt es drei verschiedene Alphabete: die sieben Tore sind mit A bis G beschriftet, der Plan druckt Baseballzonen auf Feldhöhe in den Reihen T, S und D, und die Feldblöcke eines Konzerts beschriftet der Veranstalter. Ein Buchstabe ist nur neben dem sinnvoll, was ihn ausgegeben hat.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Die erste Ziffer ist die Ebene, und es gibt vier davon",
+        body: "101 bis 132 ist der unterste Ring, dem Feld am nächsten. 201 bis 222 ist ein kurzer zweiter Rang. 301 bis 334 ist der dritte. 401 bis 435 ist der oberste. Das passt zu dem Gebäude, das der Veranstaltungsort beschreibt — vier Stockwerke über der Erde über zwei Kellerebenen — die Hunderterstelle ist also eine Geschosszahl und kein Zonenname. Eine 4 ist so hoch, wie das Gebäude reicht.",
+        pitfall:
+          "Zu erwarten, dass die 200er-Ebene sich wie die anderen verhält. Sie ist die kürzeste, 22 Blöcke gegen 32, 34 und 35, und sie ist die einzige mit Löchern in der Mitte: der Plan zeigt Abschnitte entlang der gegenüberliegenden Seite des Gebäudes, die überhaupt keine Plätze der 200er-Ebene tragen. Fortlaufende Nummern sind dort nicht zwangsläufig Nachbarn am Boden.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Die beiden anderen Ziffern sind eine Position auf einem Ring, der in eine Richtung läuft",
+        body: "Innerhalb einer Ebene laufen die Nummern in einer einzigen Richtung ganz herum, und das ist das eigene Wort des Veranstaltungsorts und nichts aus dem Bild Gemessenes: die mit dem Plan veröffentlichte Beschreibung sagt, die Blöcke laufen 시계방향 — im Uhrzeigersinn — beginnend rechts unten auf der Infield-Seite, und zählt sie dann in dieser Reihenfolge auf. Jede Ebene beginnt an derselben Seite des Gebäudes. Der Schritt von 401 zu 405 ist also dieselbe Drehung wie der Schritt von 301 zu 305, in derselben Richtung, auf anderer Höhe. Es gibt keine linke und rechte Hälfte zu lernen und keine gerade und ungerade Seite.",
+        pitfall:
+          "Zu erwarten, dass die Ebenen Block für Block übereinanderliegen. Sie tragen 32, 22, 34 und 35 Blöcke, driften also im Herumlaufen auseinander: geteilt wird nur die Linie, an der sie beginnen. 417 liegt nicht über 317, und eine Freundin in 210 ist nicht unter Ihnen in 310.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Der Ring hat genau eine Unterbrechung, und darin liegt kein Tor",
+        body: "Die Tribüne schließt sich nicht zum vollen Kreis. An der Seite, die der Plan rechts zeichnet, liegt ein Keil des Gebäudes ohne Plätze auf irgendeiner Ebene, und dort setzt die Numerierung neu an — 132 und 101 stehen sich darüber hinweg gegenüber, und 435 und 401 ebenso. Diese Unterbrechung hat nicht eine Breite: am Plan gemessen sind es etwa 44 Grad auf der 100er-Ebene, 71 auf der 200er, 91 auf der 300er und 96 auf der 400er, weil die oberen Ränge vor dieser Ecke enden, während der unterste Ring sich beinahe darum schließt. Die Tribüne ist ein Hufeisen, das sich nach oben öffnet. Die sieben Tore laufen im Uhrzeigersinn in derselben Richtung wie die Nummern: A, B, C, D und E entlang der nahen Seite, dann F und G auf der gegenüberliegenden. A ist das erste Tor nach der Unterbrechung, G das letzte davor. Torbuchstaben und Blocknummern sind eine Skala, und genau deshalb lässt sich dieses Gebäude ohne Kompass begehen.",
+        pitfall:
+          "Anzunehmen, ein Tor, das Sie sehen, sei ein Tor, das Sie benutzen dürfen. Der eigene Plan des Veranstaltungsorts markiert Tor C, das in der Mitte, als Eingang für Dauerkarteninhaber des R.d-club und der Skyboxen und nicht als allgemeinen. Die nächste Tür ist nicht immer Ihre.",
+        takes: "3 Minuten",
+      },
+      {
+        title: "Kommen Sie auf einer Seite an, mit der Sie arbeiten können",
+        body: "Die Station Guil an der Line 1, Ausgang 2, liegt etwa 150 Meter und drei Minuten vom Veranstaltungsort entfernt, und an einem Konzertabend veröffentlicht der Betreiber den Hinweis, eine Station früher auszusteigen — Guro, wenn Sie aus Seoul oder aus Richtung Suwon und Anyang eingestiegen sind, Gaebong, wenn Sie aus Incheon oder Bucheon kommen. Welche Sie nehmen, ändert, welchen Teil des Umlaufs Sie zuerst erreichen, und damit, wie weit Sie herumgehen. Es ändert nicht die Regel im nächsten Schritt, die von jedem Eingang aus funktioniert.",
+        pitfall:
+          "Den Weg zum Gebäude zu planen und nicht den Weg um es herum. Fünfundzwanzigtausend Menschen kommen an einem Ring von etwa 600 Metern Umfang an, und Ihre letzten zweihundert Meter sind die mit der Menge darin.",
+        takes: "5 Minuten, vor dem Tag",
+      },
+      {
+        title: "An der Wand zwei Blocknummern lesen, und Sie wissen, wohin Sie gehen",
+        body: "Sie müssen nicht wissen, in welche Himmelsrichtung das Obere des Plans zeigt, und der Veranstaltungsort veröffentlicht es nicht. Sie brauchen zwei Nummern in Folge. Lesen Sie eine Blocknummer dort, wo Sie stehen, gehen Sie ein paar Meter, lesen Sie die nächste. Jetzt wissen Sie, in welche Richtung die Reihe steigt. Ist Ihre höher, gehen Sie weiter; ist sie niedriger, drehen Sie um. Weil der Ring auf jeder Ebene in eine Richtung läuft, gilt die Antwort, die Sie außen am Gebäude bekommen, noch im Treppenhaus und noch im Umlauf.",
+        pitfall:
+          "Sich am Boden statt an den Schildern zu orientieren. Ein Dome hat keinen Blick nach draußen, und jeder Abschnitt des Umlaufs sieht wie jeder andere aus; die Blocknummern sind das Einzige im Gebäude, das Ihnen sagt, wo Sie sind. Die eine Stelle, an der die Zwei-Nummern-Regel versagt, ist die Unterbrechung, und die kündigt sich selbst an, weil die Nummern aufhören.",
+        takes: "5 Minuten am Abend",
+      },
+      {
+        title: "Wissen Sie, welche Hälfte davon der Veranstalter entscheidet",
+        body: "Das Gebäude legt die Blocknummern, die vier Ebenen, die Torbuchstaben und die Kassen fest — der Plan markiert drei, numeriert mit 2, 3 und 4, die eine an der Infield-Seite neben Tor E und die zwei im Außenfeld links und rechts der Tore F und G. Der Veranstalter legt alles fest, was sich pro Show ändert: welche Blöcke überhaupt verkauft werden, denn eine Bühne an einem Ende des Feldes tötet die Blöcke dahinter; wie die Feldsektionen heißen; durch welches Tor Ihr Ticket Sie lässt; und wann die Türen öffnen. Wo Ihr Ticket und diese Seite sich widersprechen, hat Ihr Ticket recht.",
+        pitfall:
+          "Den Plan des Veranstaltungsorts als den Plan Ihrer Show zu behandeln. Er ist für Baseball gezeichnet und hat Spielerbänke darauf. Er ist die Autorität dafür, wo 304 liegt, und für nichts anderes an Ihrem Abend.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Was sagt mir eine Blocknummer wie 304 eigentlich?",
+        a: "Zwei Dinge. Die 3 ist die Ebene — die dritte von vier, wenn man den untersten Ring als 1 zählt. Die 04 ist eine Position auf einem Ring, der auf dieser Ebene in eine Richtung ganz herumläuft und an einer festen Seite des Gebäudes beginnt. 304 ist also niedrig numeriert, liegt somit nahe dort, wo die Numerierung beginnt, einen kurzen Weg im Uhrzeigersinn von der Unterbrechung der Tribüne entfernt.",
+      },
+      {
+        q: "In welche Richtung laufen die Nummern?",
+        a: "Im Uhrzeigersinn, und der Veranstaltungsort sagt es selbst: die mit seinem Plan veröffentlichte Beschreibung liest 시계방향, beginnend rechts unten auf der Infield-Seite, und die Blockbereiche, die sie dann aufzählt, passen auf beiden Seiten zum Bild. Dieselbe Richtung auf jeder Ebene. Die Torbuchstaben laufen genauso: A, B, C, D, E entlang der nahen Seite und F, G auf der gegenüberliegenden. Das heißt, Buchstaben und Nummern steigen gemeinsam — wenn Sie auf dem Weg zu Tor E an Tor D vorbeigehen, steigen auch Ihre Blocknummern.",
+      },
+      {
+        q: "Liegt Block 417 direkt über Block 317?",
+        a: "Nein. Die Ebenen tragen unterschiedlich viele Blöcke — von unten nach oben 32, 22, 34 und 35 — sie teilen also nur die Linie, an der ihre Numerierung beginnt, und driften von dort auseinander. Orientieren Sie sich an der Ebene, auf der Sie wirklich sind, nicht an der Ihrer Freundin.",
+      },
+      {
+        q: "Warum hören die Nummern auf und beginnen wieder?",
+        a: "Weil die Tribüne ein Hufeisen ist und kein Ring. Es gibt einen Keil des Gebäudes ohne Plätze auf jeder Ebene, und dort setzt die Numerierung neu an: 132 steht 101 darüber hinweg gegenüber, 435 steht 401 gegenüber. Es ist außerdem der eine Abschnitt des Umlaufs ohne Tor, was ihn leicht erkennbar macht. Er ist breiter, je höher Sie sind — etwa 44 Grad des Kreises auf der 100er-Ebene gegen 96 auf der 400er — auf der obersten Ebene fehlt also mehr vom Ring, und der weite Weg herum kostet mehr.",
+      },
+      {
+        q: "Kann ich durch das Tor hineingehen, das am nächsten ist?",
+        a: "Nicht zwangsläufig. Der Torzugang wird pro Veranstaltung vom Veranstalter festgelegt und auf Ihr Ticket gedruckt, und mindestens ein Tor ist selbst an einem gewöhnlichen Tag kein allgemeines — der Plan des Veranstaltungsorts markiert das mittlere Tor als Eingang für Dauerkarteninhaber des R.d-club und der Skyboxen. Lesen Sie Ihr Ticket, dann suchen Sie dieses Tor.",
+      },
+      {
+        q: "Der Plan auf der Seite des Veranstaltungsorts sieht wie ein Baseballstadion aus. Ist es der richtige?",
+        a: "Er ist der richtige Plan für die Frage, die diese Seite beantwortet, und der falsche für die meisten anderen. Er ist für Baseball gezeichnet, Spielerbänke inklusive, und der Veranstaltungsort bietet 16,601 Plätze für ein Spiel gegen etwa 25,000 für ein Konzert — ein Konzert ist also eine andere Anordnung desselben Gebäudes. Was sich nicht ändert, ist der Beton: die numerierten Blöcke sind dauerhaft, der Plan sagt Ihnen also, wo 304 ist. Er kann Ihnen nicht sagen, ob 304 für Ihre Show verkauft wird oder was auf dem Feld steht.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Encontrar tu asiento en el Gocheok Sky Dome: qué significa el número de bloque de tu entrada",
+    summary:
+      "Cuatro niveles, una dirección y una sola interrupción en el anillo. Tres cifras bien leídas te llevan a tu bloque desde cualquier entrada, sin plano y sin saber dónde está el norte.",
+    scope:
+      "Cubre cómo numera el Gocheok Sky Dome sus asientos permanentes, leído en el propio plano de asientos y en las páginas de instalaciones de la Seoul Facilities Corporation: los cuatro niveles, en qué dirección corren los números, dónde se rompe la secuencia, y dónde quedan las puertas y las taquillas respecto a ella. El plano del que se lee está dibujado para el béisbol: tiene los banquillos marcados. Los bloques del graderío son hormigón y no se mueven, así que una entrada de concierto que diga bloque 304 se refiere a este 304; pero qué bloques se venden, qué se monta en la pista, por qué puerta te admite tu entrada y cuándo abren las puertas son de la promotora, se fijan por espectáculo, y nada de aquí sustituye al plano de tu propia página de compra. Un solo recinto. El KSPO Dome y el Inspire Arena se numeran de otra manera y necesitan sus propias páginas.",
+    intro: [
+      "Un plano de asientos está dibujado para alguien que ya sabe cómo está organizado el edificio. Es una imagen plana con 123 números, y responde a la pregunta que tienes en casa — ¿es un buen asiento? — y no a la que tienes a las 18:40, de pie contra un muro de hormigón con un número que no es el tuyo.",
+      "Esa segunda pregunta tiene una respuesta corta, porque la numeración es un sistema y no una lista. Cuatro niveles, una dirección, una interrupción. Apréndete esas tres cosas y dejas de necesitar el plano.",
+    ],
+    steps: [
+      {
+        title: "Decide primero si tu asiento está en el edificio o en la pista",
+        body: "Tres cifras entre 101 y 435 significan un bloque permanente del graderío, y el resto de esta página sirve para localizarlo. Cualquier otra cosa — una letra sola, FLOOR, 플로어, una zona de pie, el nombre de una mesa o de un palco — está en el campo, que no tiene ningún asiento permanente. El campo es suelo desnudo que la promotora cubre, divide y nombra para cada espectáculo, así que solo el plano de ese espectáculo puede situarlo.",
+        pitfall:
+          "Cotejar una letra de tu entrada con una letra del plano del recinto. En este mismo edificio hay tres alfabetos distintos: las siete puertas van de la A a la G, el plano imprime las zonas de béisbol a nivel de campo en series T, S y D, y los bloques de pista de un concierto los letrea la promotora. Una letra solo significa algo al lado de lo que la emitió.",
+        takes: "2 minutos",
+      },
+      {
+        title: "La primera cifra es el nivel, y hay cuatro",
+        body: "Del 101 al 132 es el anillo más bajo, el más cercano a la pista. Del 201 al 222 es un segundo nivel corto. Del 301 al 334 es el tercero. Del 401 al 435 es el más alto. Eso encaja con el edificio que describe el recinto — cuatro plantas sobre el suelo encima de dos niveles de sótano — así que la cifra de las centenas es un número de planta y no un nombre de zona. Un 4 es lo más alto que llega el edificio.",
+        pitfall:
+          "Esperar que el nivel 200 se comporte como los demás. Es el más corto, 22 bloques frente a 32, 34 y 35, y es el único con huecos en medio: el plano muestra tramos del lado opuesto del edificio sin ningún asiento del nivel 200. Allí, números consecutivos no son necesariamente vecinos en el suelo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Las otras dos cifras son una posición en un anillo que gira en un solo sentido",
+        body: "Dentro de un nivel los números corren en un único sentido todo alrededor, y esa es la propia palabra del recinto y no algo medido sobre la imagen: la descripción publicada con el plano dice que los bloques van 시계방향 — en el sentido de las agujas del reloj — empezando por la esquina inferior derecha del lado del infield, y después los enumera en ese orden. Todos los niveles arrancan del mismo lado del edificio. Así que el paso del 401 al 405 es el mismo giro que el paso del 301 al 305, en el mismo sentido, a otra altura. No hay mitad izquierda y mitad derecha que aprender, ni lado par e impar.",
+        pitfall:
+          "Esperar que los niveles se apilen bloque a bloque. Tienen 32, 22, 34 y 35 bloques, así que se van desfasando a medida que giran: solo comparten la línea de la que parten. El 417 no está encima del 317, y una amiga en el 210 no está debajo de ti en el 310.",
+        takes: "2 minutos",
+      },
+      {
+        title: "El anillo tiene exactamente una interrupción, y ahí no hay puerta",
+        body: "El graderío no se cierra en círculo completo. En el lado que el plano dibuja a la derecha hay una cuña de edificio sin asientos en ningún nivel, y ahí es donde la numeración vuelve a empezar: el 132 y el 101 se miran de frente a través de ella, y el 435 y el 401 igual. Esa interrupción no tiene una sola anchura: medida sobre el plano son unos 44 grados en el nivel 100, 71 en el 200, 91 en el 300 y 96 en el 400, porque las gradas altas se quedan cortas en esa esquina mientras el anillo más bajo casi la rodea. El graderío es una herradura que se abre a medida que sube. Las siete puertas van en el sentido de las agujas del reloj, el mismo que los números: A, B, C, D y E por el lado cercano, luego F y G por el lado opuesto. La A es la primera puerta después de la interrupción; la G es la última antes de ella. Las letras de puerta y los números de bloque son una sola escala, y esa es toda la razón por la que este edificio se puede recorrer sin brújula.",
+        pitfall:
+          "Suponer que una puerta que ves es una puerta que puedes usar. El propio plano del recinto marca la puerta C, la del centro, como entrada reservada a los abonados del R.d-club y de los palcos, y no como una puerta general. La puerta más cercana no siempre es la tuya.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Llega por un lado con el que puedas trabajar",
+        body: "La estación de Guil en la Line 1, salida 2, está a unos 150 metros y tres minutos del recinto, y en una noche de concierto el operador publica el consejo de bajarse una parada antes: Guro si te has subido en Seúl o en la dirección de Suwon y Anyang, Gaebong si vienes de Incheon o de Bucheon. La que elijas cambia a qué parte del perímetro llegas primero y, por tanto, cuánto tienes que rodear. No cambia la regla del paso siguiente, que funciona desde cualquier entrada.",
+        pitfall:
+          "Planear el camino hasta el edificio y no el camino alrededor. Veinticinco mil personas llegan a un anillo de unos 600 metros de perímetro, y tus últimos doscientos metros son los que tienen gente dentro.",
+        takes: "5 minutos, antes del día",
+      },
+      {
+        title: "En el muro, lee dos números de bloque y ya sabes hacia dónde caminar",
+        body: "No necesitas saber a qué punto cardinal apunta la parte de arriba del plano, y el recinto no lo publica. Necesitas dos números seguidos. Lee el número de bloque donde estás, camina unos metros, lee el siguiente. Ya sabes en qué dirección sube la serie. Si el tuyo es más alto, sigue; si es más bajo, date la vuelta. Como el anillo gira en un solo sentido en todos los niveles, la respuesta que obtienes por fuera del edificio sigue siendo cierta en las escaleras y sigue siendo cierta en el pasillo.",
+        pitfall:
+          "Guiarte por el suelo en lugar de por los carteles. Un dome no tiene vistas al exterior y cada tramo de pasillo se parece a todos los demás; los números de bloque son lo único en el edificio que te dice dónde estás. El único sitio donde la regla de los dos números falla es la interrupción, y la interrupción se anuncia sola, porque los números se acaban.",
+        takes: "5 minutos esa noche",
+      },
+      {
+        title: "Sabe qué mitad de esto la decide la promotora",
+        body: "El edificio fija los números de bloque, los cuatro niveles, las letras de las puertas y las taquillas: el plano marca tres, numeradas 2, 3 y 4, con la del infield junto a la puerta E y las dos del outfield flanqueando las puertas F y G. La promotora fija todo lo que cambia por espectáculo: qué bloques se venden siquiera, porque un escenario pegado a un extremo de la pista mata los bloques que quedan detrás; cómo se llaman las secciones de pista; por qué puerta te admite tu entrada; y cuándo abren las puertas. Donde tu entrada y esta página no coincidan, tu entrada tiene razón.",
+        pitfall:
+          "Tratar el plano del recinto como el plano de tu espectáculo. Está dibujado para el béisbol y tiene banquillos. Es la autoridad sobre dónde está el 304 y sobre nada más de tu noche.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Qué me dice realmente un número de bloque como el 304?",
+        a: "Dos cosas. El 3 es el nivel: el tercero de cuatro, contando el anillo más bajo como 1. El 04 es una posición en un anillo que recorre ese nivel en un solo sentido, partiendo de un lado fijo del edificio. Así que el 304 tiene número bajo, lo que lo sitúa cerca de donde empieza la numeración, a un paseo corto en el sentido de las agujas del reloj desde la interrupción del graderío.",
+      },
+      {
+        q: "¿En qué dirección corren los números?",
+        a: "En el sentido de las agujas del reloj, y lo dice el propio recinto: la descripción publicada con su plano pone 시계방향, empezando por la esquina inferior derecha del lado del infield, y los rangos de bloques que enumera después coinciden con la imagen por los dos lados. La misma dirección en todos los niveles. Las letras de puerta van igual: A, B, C, D, E por el lado cercano y F, G por el opuesto. Eso significa que letras y números suben juntos: si pasas la puerta D camino de la puerta E, tus números de bloque también están subiendo.",
+      },
+      {
+        q: "¿El bloque 417 está justo encima del bloque 317?",
+        a: "No. Los niveles tienen distinto número de bloques — 32, 22, 34 y 35 de abajo arriba — así que solo comparten la línea donde empieza su numeración y se desfasan desde ahí. Orientáte por el nivel en el que estás tú, no por el de tu amiga.",
+      },
+      {
+        q: "¿Por qué los números se paran y vuelven a empezar?",
+        a: "Porque el graderío es una herradura y no un anillo. Hay una cuña del edificio sin asientos en ningún nivel, y la numeración vuelve a empezar ahí: el 132 mira al 101 a través de ella, el 435 mira al 401. Es también el único tramo del perímetro sin ninguna puerta, lo que lo hace fácil de reconocer. Es más ancha cuanto más arriba estás — unos 44 grados del círculo en el nivel 100 frente a 96 en el 400 — así que en el nivel más alto falta más anillo y dar la vuelta larga cuesta más.",
+      },
+      {
+        q: "¿Puedo entrar por la puerta que tenga más cerca?",
+        a: "No necesariamente. El acceso por puertas lo fija la promotora para cada evento y va impreso en tu entrada, y al menos una puerta no es general ni en un día normal: el plano del recinto marca la puerta central como entrada para abonados del R.d-club y de los palcos. Lee tu entrada y luego busca esa puerta.",
+      },
+      {
+        q: "El plano de la web del recinto parece un estadio de béisbol. ¿Es el correcto?",
+        a: "Es el plano correcto para la pregunta que responde esta página y el equivocado para casi todas las demás. Está dibujado para el béisbol, banquillos incluidos, y el recinto tiene 16,601 asientos para un partido frente a unas 25,000 personas para un concierto, así que un concierto es otra disposición del mismo edificio. Lo que no cambia es el hormigón: los bloques numerados son permanentes, así que el plano te dice dónde está el 304. No te puede decir si el 304 se vende para tu espectáculo, ni qué hay en la pista.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Trouver sa place au Gocheok Sky Dome : ce que signifie le numéro de bloc sur votre billet",
+    summary:
+      "Quatre niveaux, un sens, et une seule rupture dans l'anneau. Trois chiffres lus correctement vous mènent à votre bloc depuis n'importe quelle entrée, sans plan et sans savoir où est le nord.",
+    scope:
+      "Couvre la façon dont le Gocheok Sky Dome numérote ses places fixes, d'après le plan de salle et les pages d'installations de la Seoul Facilities Corporation elle-même : les quatre niveaux, le sens dans lequel courent les numéros, l'endroit où la suite s'interrompt, et la position des portes et des guichets par rapport à elle. Le plan dont tout cela est lu est dessiné pour le baseball — les abris de joueurs y figurent. Les blocs du pourtour sont en béton coulé et ne bougent pas, donc un billet de concert indiquant le bloc 304 désigne bien ce 304 ; mais quels blocs sont mis en vente, ce qui est installé sur la pelouse, par quelle porte votre billet vous fait entrer et l'heure d'ouverture appartiennent au promoteur, sont fixés par spectacle, et rien ici ne remplace le plan de votre propre page de réservation. Une seule salle. Le KSPO Dome et l'Inspire Arena se numérotent autrement et ont besoin de leurs propres pages.",
+    intro: [
+      "Un plan de salle est dessiné pour quelqu'un qui sait déjà comment le bâtiment est organisé. C'est une image plate de 123 numéros, et elle répond à la question que vous vous posez chez vous — est-ce une bonne place — plutôt qu'à celle que vous vous posez à 18:40, debout contre un mur de béton portant un numéro qui n'est pas le vôtre.",
+      "Cette seconde question a une réponse courte, parce que la numérotation est un système et non une liste. Quatre niveaux, un sens, une rupture. Apprenez ces trois choses et vous n'avez plus besoin du plan.",
+    ],
+    steps: [
+      {
+        title: "Déterminez d'abord si votre place est dans le bâtiment ou sur la pelouse",
+        body: "Trois chiffres entre 101 et 435 désignent un bloc permanent du pourtour, et le reste de cette page sert à le situer. Tout le reste — une lettre seule, FLOOR, 플로어, une zone debout, un nom de table ou de loge — se trouve sur le terrain, qui n'a aucune place fixe. Le terrain est un sol nu que le promoteur recouvre, divise et nomme pour chaque spectacle : seul le plan de ce spectacle peut donc le situer.",
+        pitfall:
+          "Rapprocher une lettre de votre billet d'une lettre du plan de la salle. Il y a trois alphabets différents sur ce seul bâtiment : les sept portes vont de A à G, le plan imprime les zones de baseball au niveau du terrain en séries T, S et D, et les blocs de pelouse d'un concert sont lettrés par le promoteur. Une lettre n'a de sens qu'à côté de ce qui l'a émise.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Le premier chiffre est le niveau, et il y en a quatre",
+        body: "101 à 132 est l'anneau le plus bas, le plus proche de la pelouse. 201 à 222 est un deuxième niveau court. 301 à 334 est le troisième. 401 à 435 est le plus haut. Cela correspond au bâtiment que décrit la salle — quatre étages au-dessus du sol par-dessus deux niveaux de sous-sol — le chiffre des centaines est donc un numéro d'étage et non un nom de zone. Un 4 est aussi haut que monte le bâtiment.",
+        pitfall:
+          "Attendre du niveau 200 qu'il se comporte comme les autres. C'est le plus court, 22 blocs contre 32, 34 et 35, et le seul à être troué en son milieu : le plan montre des portions, le long du côté opposé du bâtiment, qui ne portent aucune place de niveau 200. Là, des numéros consécutifs ne sont pas nécessairement voisins au sol.",
+        takes: "1 minute",
+      },
+      {
+        title: "Les deux autres chiffres sont une position sur un anneau qui tourne dans un seul sens",
+        body: "À l'intérieur d'un niveau, les numéros courent dans un seul sens sur tout le tour, et c'est le mot de la salle elle-même et non une mesure prise sur l'image : la description publiée avec le plan indique que les blocs vont 시계방향 — dans le sens des aiguilles d'une montre — en partant du bas à droite du côté de l'infield, puis les énumère dans cet ordre. Chaque niveau part du même côté du bâtiment. Le passage de 401 à 405 est donc la même rotation que le passage de 301 à 305, dans le même sens, à une autre hauteur. Il n'y a pas de moitié gauche et de moitié droite à retenir, ni de côté pair et impair.",
+        pitfall:
+          "Attendre des niveaux qu'ils se superposent bloc par bloc. Ils comptent 32, 22, 34 et 35 blocs : ils se décalent donc à mesure qu'ils tournent, et ne partagent que la ligne dont ils partent. 417 n'est pas au-dessus de 317, et une amie en 210 n'est pas sous vous en 310.",
+        takes: "2 minutes",
+      },
+      {
+        title: "L'anneau a exactement une rupture, et il n'y a pas de porte dedans",
+        body: "Les tribunes ne se referment pas en cercle complet. Du côté que le plan dessine à droite se trouve un coin de bâtiment sans places à aucun niveau, et c'est là que la numérotation repart — 132 et 101 se font face de part et d'autre, et 435 et 401 de même. Cette rupture n'a pas une seule largeur : mesurée sur le plan, elle fait environ 44 degrés au niveau 100, 71 au 200, 91 au 300 et 96 au 400, parce que les étages supérieurs s'arrêtent avant cet angle tandis que l'anneau le plus bas se referme presque autour. Les tribunes sont un fer à cheval qui s'ouvre en montant. Les sept portes tournent dans le sens des aiguilles d'une montre, le même que les numéros : A, B, C, D et E le long du côté proche, puis F et G de l'autre côté. A est la première porte après la rupture ; G est la dernière avant elle. Lettres de porte et numéros de bloc sont une seule échelle, et c'est toute la raison pour laquelle ce bâtiment se parcourt sans boussole.",
+        pitfall:
+          "Supposer qu'une porte que vous voyez est une porte que vous pouvez emprunter. Le plan de la salle marque la porte C, celle du centre, comme une entrée réservée aux abonnés du R.d-club et des loges plutôt qu'une entrée générale. La porte la plus proche n'est pas toujours la vôtre.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Arrivez par un côté avec lequel vous pouvez travailler",
+        body: "La station Guil sur la Line 1, sortie 2, est à environ 150 mètres et trois minutes de la salle, et un soir de concert l'exploitant publie le conseil de descendre une station plus tôt — Guro si vous êtes monté à Séoul ou dans la direction de Suwon et Anyang, Gaebong si vous venez d'Incheon ou de Bucheon. Celle que vous prenez change la partie du pourtour que vous atteignez d'abord, et donc la distance que vous parcourez autour. Elle ne change pas la règle de l'étape suivante, qui fonctionne depuis n'importe quelle entrée.",
+        pitfall:
+          "Prévoir le trajet jusqu'au bâtiment et non le trajet autour. Vingt-cinq mille personnes arrivent sur un anneau d'environ 600 mètres de pourtour, et vos deux cents derniers mètres sont ceux où se trouve la foule.",
+        takes: "5 minutes, avant le jour",
+      },
+      {
+        title: "Au mur, lisez deux numéros de bloc et vous savez de quel côté marcher",
+        body: "Vous n'avez pas besoin de savoir vers quel point cardinal pointe le haut du plan, et la salle ne le publie pas. Il vous faut deux numéros d'affilée. Lisez un numéro de bloc là où vous êtes, marchez quelques mètres, lisez le suivant. Vous savez maintenant dans quel sens la suite monte. Si le vôtre est plus élevé, continuez ; s'il est plus bas, faites demi-tour. Comme l'anneau tourne dans un seul sens à chaque niveau, la réponse obtenue à l'extérieur du bâtiment reste vraie dans les escaliers et reste vraie dans la coursive.",
+        pitfall:
+          "Se repérer au sol plutôt qu'aux panneaux. Un dome n'offre aucune vue vers l'extérieur et chaque portion de coursive ressemble à toutes les autres ; les numéros de bloc sont la seule chose dans le bâtiment qui vous dise où vous êtes. Le seul endroit où la règle des deux numéros échoue est la rupture, et la rupture s'annonce elle-même, parce que les numéros s'arrêtent.",
+        takes: "5 minutes le soir même",
+      },
+      {
+        title: "Sachez quelle moitié de tout cela le promoteur décide",
+        body: "Le bâtiment fixe les numéros de bloc, les quatre niveaux, les lettres des portes et les guichets — le plan en marque trois, numérotés 2, 3 et 4, celui de l'infield à côté de la porte E et les deux de l'outfield de part et d'autre des portes F et G. Le promoteur fixe tout ce qui change par spectacle : quels blocs sont mis en vente, car une scène contre un bout de la pelouse tue les blocs derrière elle ; comment s'appellent les sections de pelouse ; par quelle porte votre billet vous fait entrer ; et l'heure d'ouverture. Là où votre billet et cette page se contredisent, c'est votre billet qui a raison.",
+        pitfall:
+          "Traiter le plan de la salle comme le plan de votre spectacle. Il est dessiné pour le baseball et porte des abris de joueurs. Il fait autorité sur l'emplacement du 304 et sur rien d'autre de votre soirée.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Que m'apprend réellement un numéro de bloc comme 304 ?",
+        a: "Deux choses. Le 3 est le niveau — le troisième sur quatre, en comptant l'anneau le plus bas comme 1. Le 04 est une position sur un anneau qui parcourt ce niveau dans un seul sens, en partant d'un côté fixe du bâtiment. 304 est donc un numéro bas, ce qui le place près de l'endroit où la numérotation commence, à une courte marche dans le sens des aiguilles d'une montre depuis la rupture des tribunes.",
+      },
+      {
+        q: "Dans quel sens courent les numéros ?",
+        a: "Dans le sens des aiguilles d'une montre, et la salle le dit elle-même : la description publiée avec son plan porte 시계방향, en partant du bas à droite du côté de l'infield, et les plages de blocs qu'elle énumère ensuite correspondent à l'image des deux côtés. Le même sens à chaque niveau. Les lettres des portes suivent le même : A, B, C, D, E le long du côté proche et F, G de l'autre côté. Cela veut dire que lettres et numéros montent ensemble — si vous passez la porte D en allant vers la porte E, vos numéros de bloc montent aussi.",
+      },
+      {
+        q: "Le bloc 417 est-il directement au-dessus du bloc 317 ?",
+        a: "Non. Les niveaux comptent des nombres de blocs différents — 32, 22, 34 et 35 de bas en haut — ils ne partagent donc que la ligne dont part leur numérotation et se décalent ensuite. Repérez-vous avec le niveau où vous êtes réellement, pas avec celui de votre amie.",
+      },
+      {
+        q: "Pourquoi les numéros s'arrêtent-ils puis repartent-ils ?",
+        a: "Parce que les tribunes sont un fer à cheval et non un anneau. Il y a un coin du bâtiment sans places à aucun niveau, et la numérotation y repart : 132 fait face à 101 de part et d'autre, 435 fait face à 401. C'est aussi la seule portion du pourtour sans aucune porte, ce qui la rend facile à reconnaître. Elle est plus large à mesure que vous montez — environ 44 degrés du cercle au niveau 100 contre 96 au 400 — donc au dernier niveau il manque davantage d'anneau et faire le grand tour coûte plus cher.",
+      },
+      {
+        q: "Puis-je entrer par la porte la plus proche ?",
+        a: "Pas forcément. L'accès par porte est fixé par événement par le promoteur et imprimé sur votre billet, et au moins une porte n'est pas générale même un jour ordinaire — le plan de la salle marque la porte centrale comme entrée pour les abonnés du R.d-club et des loges. Lisez votre billet, puis cherchez cette porte.",
+      },
+      {
+        q: "Le plan sur le site de la salle ressemble à un stade de baseball. Est-ce le bon ?",
+        a: "C'est le bon plan pour la question à laquelle cette page répond et le mauvais pour la plupart des autres. Il est dessiné pour le baseball, abris de joueurs compris, et la salle offre 16,601 places pour un match contre environ 25,000 pour un concert — un concert est donc une autre disposition du même bâtiment. Ce qui ne change pas, c'est le béton : les blocs numérotés sont permanents, donc le plan vous dit où se trouve le 304. Il ne peut pas vous dire si le 304 est vendu pour votre spectacle, ni ce qu'il y a sur la pelouse.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Achando seu lugar no Gocheok Sky Dome: o que o número do bloco no seu ingresso quer dizer",
+    summary:
+      "Quatro níveis, uma direção, e uma única quebra no anel. Três dígitos lidos do jeito certo levam você até o seu bloco a partir de qualquer entrada, sem mapa e sem saber onde fica o norte.",
+    scope:
+      "Cobre como o Gocheok Sky Dome numera os assentos permanentes dele, lido no próprio mapa de assentos e nas páginas de instalações da Seoul Facilities Corporation: os quatro níveis, em que direção os números correm, onde a sequência quebra, e onde ficam os portões e as bilheterias em relação a ela. O mapa de onde isso foi lido é desenhado para beisebol — os dugouts estão nele. Os blocos da arquibancada são concreto moldado e não se mexem, então um ingresso de show que diz bloco 304 quer dizer este 304; mas quais blocos são vendidos, o que fica na pista, por qual portão o seu ingresso permite entrar e quando os portões abrem são da produtora, definidos por show, e nada aqui substitui o mapa da sua própria página de compra. Um local só. O KSPO Dome e o Inspire Arena se numeram de outro jeito e precisam de páginas próprias.",
+    intro: [
+      "Um mapa de assentos é desenhado para quem já sabe como o prédio está organizado. Ele é uma figura plana com 123 números, e responde à pergunta que você tem em casa — este lugar é bom — e não à pergunta que você tem às 18:40, de pé diante de uma parede de concreto com um número que não é o seu.",
+      "Essa segunda pergunta tem uma resposta curta, porque a numeração é um sistema e não uma lista. Quatro níveis, uma direção, uma quebra. Aprenda essas três coisas e você para de precisar do mapa.",
+    ],
+    steps: [
+      {
+        title: "Decida primeiro se o seu lugar fica no prédio ou na pista",
+        body: "Três dígitos entre 101 e 435 querem dizer um bloco permanente na arquibancada, e o resto desta página serve para localizá-lo. Qualquer outra coisa — uma letra sozinha, FLOOR, 플로어, uma área em pé, o nome de uma mesa ou de um camarote — fica no campo, que não tem assento permanente nenhum. O campo é piso nu que a produtora cobre, divide e nomeia para cada show, então só o mapa daquele show consegue situá-lo.",
+        pitfall:
+          "Casar uma letra do seu ingresso com uma letra do mapa do local. Há três alfabetos diferentes neste mesmo prédio: os sete portões vão de A a G, o mapa imprime as áreas de beisebol no nível do campo em séries T, S e D, e os blocos de pista de um show são letrados pela produtora. Uma letra só significa algo ao lado daquilo que a emitiu.",
+        takes: "2 minutos",
+      },
+      {
+        title: "O primeiro dígito é o nível, e existem quatro deles",
+        body: "De 101 a 132 é o anel mais baixo, o mais perto da pista. De 201 a 222 é um segundo nível curto. De 301 a 334 é o terceiro. De 401 a 435 é o mais alto. Isso bate com o prédio que o local descreve — quatro andares acima do solo sobre dois níveis de subsolo — então o dígito da centena é um número de andar, e não um nome de setor. Um 4 é o mais alto que o prédio vai.",
+        pitfall:
+          "Esperar que o nível 200 se comporte como os outros. Ele é o mais curto, 22 blocos contra 32, 34 e 35, e é o único com buracos no meio: o mapa mostra trechos ao longo do lado oposto do prédio sem nenhum assento do nível 200. Ali, números consecutivos não são necessariamente vizinhos no chão.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Os outros dois dígitos são uma posição num anel que gira para um lado só",
+        body: "Dentro de um nível os números correm numa única direção pelo anel inteiro, e essa é a palavra do próprio local, e não algo medido na figura: a descrição publicada junto do mapa diz que os blocos seguem 시계방향 — no sentido do relógio — começando pelo canto inferior direito do lado do infield, e depois os lista nessa ordem. Todo nível começa do mesmo lado do prédio. Então o passo de 401 para 405 é a mesma rotação do passo de 301 para 305, na mesma direção, em outra altura. Não há metade esquerda e metade direita para decorar, nem lado par e lado ímpar.",
+        pitfall:
+          "Esperar que os níveis se empilhem bloco a bloco. Eles têm 32, 22, 34 e 35 blocos, então vão se desencontrando conforme giram: só a linha de onde partem é compartilhada. O 417 não fica acima do 317, e uma amiga no 210 não fica abaixo de você no 310.",
+        takes: "2 minutos",
+      },
+      {
+        title: "O anel tem exatamente uma quebra, e não há portão nela",
+        body: "A arquibancada não se fecha num círculo completo. No lado que o mapa desenha à direita existe uma cunha de prédio sem assentos em nível nenhum, e é ali que a numeração reinicia — o 132 e o 101 se encaram atravessando essa cunha, e o 435 e o 401 também. Essa quebra não tem uma largura só: medida no mapa, são cerca de 44 graus no nível 100, 71 no 200, 91 no 300 e 96 no 400, porque os anéis de cima param antes daquele canto enquanto o anel mais baixo quase se fecha em volta dele. A arquibancada é uma ferradura que vai se abrindo à medida que sobe. Os sete portões correm no sentido do relógio, na mesma direção dos números: A, B, C, D e E ao longo do lado próximo, depois F e G no lado oposto. O A é o primeiro portão depois da quebra; o G é o último antes dela. Letras de portão e números de bloco são uma única escala, e essa é a razão inteira de este prédio poder ser percorrido sem bússola.",
+        pitfall:
+          "Supor que um portão que você vê é um portão que você pode usar. O mapa do próprio local marca o portão C, o do centro, como entrada reservada para sócios do R.d-club e dos camarotes, e não como portão geral. A porta mais perto não é sempre a sua.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Chegue por um lado com o qual você consiga trabalhar",
+        body: "A estação Guil na Line 1, saída 2, fica a cerca de 150 metros e três minutos do local, e numa noite de show o operador publica a orientação de descer uma parada antes — Guro se você embarcou em Seul ou no sentido de Suwon e Anyang, Gaebong se você veio de Incheon ou Bucheon. Qual delas você pega muda que parte do perímetro você alcança primeiro e, portanto, o quanto você caminha em volta. Não muda a regra do passo seguinte, que funciona a partir de qualquer entrada.",
+        pitfall:
+          "Planejar a caminhada até o prédio e não a caminhada em volta dele. Vinte e cinco mil pessoas chegam a um anel de mais ou menos 600 metros de perímetro, e os seus últimos duzentos metros são os que têm multidão dentro.",
+        takes: "5 minutos, antes do dia",
+      },
+      {
+        title: "Na parede, leia dois números de bloco e você sabe para que lado andar",
+        body: "Você não precisa saber para que ponto cardeal aponta o topo do mapa, e o local não publica isso. Você precisa de dois números em sequência. Leia o número do bloco onde você está, ande alguns metros, leia o próximo. Agora você sabe para que lado a sequência sobe. Se o seu for mais alto, siga; se for mais baixo, vire. Porque o anel gira para um lado só em todos os níveis, a resposta que você obtém do lado de fora do prédio continua valendo na escada e continua valendo no corredor.",
+        pitfall:
+          "Se guiar pelo piso em vez de pelas placas. Um dome não tem vista para fora e cada trecho de corredor parece igual a todos os outros; os números dos blocos são a única coisa dentro do prédio que diz onde você está. O único lugar em que a regra dos dois números falha é a quebra, e a quebra se anuncia sozinha, porque os números param.",
+        takes: "5 minutos na noite",
+      },
+      {
+        title: "Saiba qual metade disso a produtora decide",
+        body: "O prédio fixa os números dos blocos, os quatro níveis, as letras dos portões e as bilheterias — o mapa marca três, numeradas 2, 3 e 4, com a do infield ao lado do portão E e as duas do outfield flanqueando os portões F e G. A produtora fixa tudo o que muda por show: quais blocos são vendidos, porque um palco encostado numa ponta da pista mata os blocos atrás dele; como se chamam os setores de pista; por qual portão o seu ingresso permite entrar; e quando os portões abrem. Onde o seu ingresso e esta página discordarem, o seu ingresso está certo.",
+        pitfall:
+          "Tratar o mapa do local como o mapa do seu show. Ele é desenhado para beisebol e tem dugouts nele. Ele é a autoridade sobre onde fica o 304 e sobre mais nada da sua noite.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "O que um número de bloco como 304 realmente me diz?",
+        a: "Duas coisas. O 3 é o nível — o terceiro de quatro, contando o anel mais baixo como 1. O 04 é uma posição num anel que corre numa direção só por todo aquele nível, começando de um lado fixo do prédio. Então o 304 tem número baixo, o que o coloca perto de onde a numeração começa, a uma caminhada curta no sentido do relógio a partir da quebra da arquibancada.",
+      },
+      {
+        q: "Para que direção os números correm?",
+        a: "No sentido do relógio, e o próprio local diz isso: a descrição publicada junto do mapa dele traz 시계방향, começando pelo canto inferior direito do lado do infield, e as faixas de blocos que ela lista depois batem com a figura nos dois lados. A mesma direção em todos os níveis. As letras dos portões correm do mesmo jeito: A, B, C, D, E ao longo do lado próximo e F, G no lado oposto. Isso quer dizer que letras e números sobem juntos — se você passa pelo portão D a caminho do portão E, os seus números de bloco também estão subindo.",
+      },
+      {
+        q: "O bloco 417 fica exatamente acima do bloco 317?",
+        a: "Não. Os níveis têm quantidades diferentes de blocos — 32, 22, 34 e 35 de baixo para cima — então eles só compartilham a linha de onde a numeração parte e se desencontram a partir dali. Use o nível em que você está de fato para se achar, não o nível em que a sua amiga está.",
+      },
+      {
+        q: "Por que os números param e começam de novo?",
+        a: "Porque a arquibancada é uma ferradura, não um anel. Existe uma cunha do prédio sem assentos em nível nenhum, e a numeração reinicia ali: o 132 encara o 101 atravessando a cunha, o 435 encara o 401. Também é o único trecho do perímetro sem portão nenhum, o que o deixa fácil de reconhecer. Ela é mais larga quanto mais alto você está — cerca de 44 graus do círculo no nível 100 contra 96 no 400 — então no nível de cima falta mais anel e dar a volta longa custa mais.",
+      },
+      {
+        q: "Posso entrar pelo portão que estiver mais perto?",
+        a: "Não necessariamente. O acesso por portão é definido por evento pela produtora e impresso no seu ingresso, e pelo menos um portão não é geral nem num dia comum — o mapa do local marca o portão central como entrada para sócios do R.d-club e dos camarotes. Leia o seu ingresso e depois ache aquele portão.",
+      },
+      {
+        q: "O mapa no site do local parece um estádio de beisebol. É o certo?",
+        a: "É o mapa certo para a pergunta que esta página responde e o errado para quase todas as outras. Ele é desenhado para beisebol, dugouts inclusive, e o local acomoda 16,601 para um jogo contra cerca de 25,000 para um show — então um show é outro arranjo do mesmo prédio. O que não muda é o concreto: os blocos numerados são permanentes, então o mapa diz onde fica o 304. Ele não pode dizer se o 304 está sendo vendido para o seu show, nem o que está na pista.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Tìm chỗ ngồi của bạn ở Gocheok Sky Dome: con số khu trên vé có nghĩa gì",
+    summary:
+      "Bốn tầng, một chiều, và vòng tròn chỉ có duy nhất một chỗ hở. Đọc đúng ba chữ số là bạn đi được tới khu của mình từ bất cứ cửa vào nào, không cần bản đồ và không cần biết hướng bắc ở đâu.",
+    scope:
+      "Bao gồm cách Gocheok Sky Dome đánh số các chỗ ngồi cố định, đọc từ chính sơ đồ chỗ ngồi và các trang tiện ích của Seoul Facilities Corporation: bốn tầng, số chạy theo chiều nào, dãy số đứt ở đâu, và các cửa cùng phòng vé nằm ở đâu so với dãy số đó. Sơ đồ được đọc ở đây vẽ cho bóng chày — trên đó có khu ngồi của cầu thủ. Các khu trên khán đài là bê tông đúc và không di chuyển, nên vé hoà nhạc ghi khu 304 có nghĩa là đúng khu 304 này; nhưng những khu nào được bán, trên sân dựng gì, vé của bạn vào bằng cửa nào và mấy giờ mở cửa thì thuộc nhà tổ chức, được đặt theo từng buổi, và không có gì ở đây thay thế sơ đồ trên trang đặt vé của chính bạn. Chỉ một địa điểm. KSPO Dome và Inspire Arena đánh số theo cách khác và cần trang riêng.",
+    intro: [
+      "Một sơ đồ chỗ ngồi được vẽ cho người đã biết toà nhà được tổ chức ra sao. Nó là một hình phẳng gồm 123 con số, và nó trả lời câu hỏi bạn có ở nhà — đây có phải chỗ tốt không — chứ không trả lời câu hỏi bạn có vào 18:40, khi đang đứng trước một bức tường bê tông mang con số không phải của bạn.",
+      "Câu hỏi thứ hai đó có câu trả lời ngắn, vì cách đánh số là một hệ thống chứ không phải một danh sách. Bốn tầng, một chiều, một chỗ hở. Học ba điều đó rồi bạn không cần sơ đồ nữa.",
+    ],
+    steps: [
+      {
+        title: "Trước tiên hãy xác định chỗ của bạn ở trong toà nhà hay ở trên sân",
+        body: "Ba chữ số trong khoảng 101 đến 435 nghĩa là một khu cố định trên khán đài, và phần còn lại của trang này dùng để định vị nó. Bất cứ thứ gì khác — một chữ cái đứng một mình, FLOOR, 플로어, một khu đứng, tên một bàn hay một lô — đều ở trên sân, nơi hoàn toàn không có chỗ ngồi cố định nào. Sân là mặt sàn trống mà nhà tổ chức phủ, chia và đặt tên cho từng buổi diễn, nên chỉ sơ đồ của chính buổi diễn đó mới định vị được.",
+        pitfall:
+          "Đem chữ cái trên vé của bạn ra khớp với chữ cái trên sơ đồ của địa điểm. Chỉ trên một toà nhà này đã có ba bộ chữ cái khác nhau: bảy cửa được ghi từ A đến G, sơ đồ in các khu bóng chày ở cao độ mặt sân theo dãy T, S và D, còn các khu trên sân của một buổi hoà nhạc thì do nhà tổ chức đặt chữ cái. Một chữ cái chỉ có nghĩa khi đứng cạnh thứ đã phát ra nó.",
+        takes: "2 phút",
+      },
+      {
+        title: "Chữ số đầu tiên là tầng, và có bốn tầng",
+        body: "101 đến 132 là vòng thấp nhất, gần sân nhất. 201 đến 222 là tầng hai ngắn. 301 đến 334 là tầng ba. 401 đến 435 là tầng trên cùng. Điều đó khớp với toà nhà mà địa điểm mô tả — bốn tầng trên mặt đất nằm trên hai tầng hầm — nên chữ số hàng trăm là số tầng, không phải tên khu. Số 4 là mức cao nhất của toà nhà.",
+        pitfall:
+          "Trông đợi tầng 200 hành xử như các tầng khác. Nó ngắn nhất, 22 khu so với 32, 34 và 35, và nó là tầng duy nhất bị hở ở giữa: sơ đồ cho thấy những đoạn dọc phía bên kia toà nhà hoàn toàn không có chỗ ngồi tầng 200. Ở đó, những con số liên tiếp không nhất thiết là láng giềng trên mặt đất.",
+        takes: "1 phút",
+      },
+      {
+        title: "Hai chữ số còn lại là vị trí trên một vòng chỉ quay theo một chiều",
+        body: "Trong cùng một tầng, các số chạy theo một chiều duy nhất suốt cả vòng, và đó là từ của chính địa điểm chứ không phải điều đo được từ hình vẽ: phần mô tả công bố kèm sơ đồ nói rằng các khu chạy 시계방향 — theo chiều kim đồng hồ — bắt đầu từ phía dưới bên phải của mé trong sân, rồi liệt kê chúng theo đúng thứ tự đó. Mọi tầng đều bắt đầu từ cùng một phía của toà nhà. Vì vậy bước từ 401 sang 405 là cùng một vòng quay với bước từ 301 sang 305, cùng chiều, chỉ khác độ cao. Không có nửa trái nửa phải nào để học, cũng không có bên số chẵn bên số lẻ.",
+        pitfall:
+          "Trông đợi các tầng xếp thẳng khu lên khu. Chúng có 32, 22, 34 và 35 khu, nên càng đi vòng càng lệch nhau: thứ duy nhất chúng chia sẻ là đường vạch nơi chúng bắt đầu. 417 không nằm trên 317, và người bạn ở 210 không ở dưới bạn tại 310.",
+        takes: "2 phút",
+      },
+      {
+        title: "Vòng này có đúng một chỗ hở, và trong đó không có cửa nào",
+        body: "Khán đài không khép lại thành một vòng tròn trọn vẹn. Ở phía mà sơ đồ vẽ bên phải có một nêm toà nhà không có chỗ ngồi ở bất kỳ tầng nào, và đó là nơi số bắt đầu lại — 132 và 101 đối diện nhau qua chỗ đó, 435 và 401 cũng vậy. Chỗ hở ấy không có một bề rộng duy nhất: đo trên sơ đồ thì khoảng 44 độ ở tầng 100, 71 ở tầng 200, 91 ở tầng 300 và 96 ở tầng 400, vì các tầng trên dừng lại trước góc đó còn vòng thấp nhất thì gần như khép quanh nó. Khán đài là một hình móng ngựa càng lên cao càng mở. Bảy cửa chạy theo chiều kim đồng hồ cùng chiều với các số: A, B, C, D và E dọc phía gần, rồi F và G ở phía xa. A là cửa đầu tiên sau chỗ hở; G là cửa cuối cùng trước nó. Chữ cái của cửa và số của khu là cùng một thước đo, và đó chính là lý do toà nhà này có thể đi mà không cần la bàn.",
+        pitfall:
+          "Cho rằng cửa bạn nhìn thấy là cửa bạn được dùng. Sơ đồ của chính địa điểm ghi cửa C ở giữa là cửa dành riêng cho người giữ vé cả mùa của R.d-club và của các lô, chứ không phải cửa chung. Cánh cửa gần nhất không phải lúc nào cũng là cửa của bạn.",
+        takes: "3 phút",
+      },
+      {
+        title: "Hãy đến từ phía mà bạn xử lý được",
+        body: "Ga Guil trên Line 1, cửa ra 2, cách địa điểm khoảng 150 mét và ba phút đi bộ, và vào tối hoà nhạc đơn vị vận hành công bố lời khuyên xuống sớm một bến — Guro nếu bạn lên tàu từ Seoul hoặc từ hướng Suwon và Anyang, Gaebong nếu bạn đến từ Incheon hoặc Bucheon. Bạn chọn bến nào sẽ thay đổi phần vành ngoài nào bạn tới trước, và do đó thay đổi việc bạn phải đi vòng bao xa. Nó không thay đổi quy tắc ở bước sau, quy tắc đó dùng được từ bất cứ cửa vào nào.",
+        pitfall:
+          "Lên kế hoạch cho đoạn đi tới toà nhà mà không tính đoạn đi quanh nó. Hai mươi lăm nghìn người cùng đến một vòng có chu vi chừng 600 mét, và hai trăm mét cuối của bạn chính là hai trăm mét có đám đông ở trong.",
+        takes: "5 phút, trước ngày diễn",
+      },
+      {
+        title: "Ở bức tường, đọc hai con số khu là bạn biết phải đi hướng nào",
+        body: "Bạn không cần biết phía trên của sơ đồ chỉ về hướng nào, và địa điểm cũng không công bố điều đó. Bạn cần hai con số liền nhau. Đọc số khu ở nơi bạn đang đứng, đi vài mét, đọc số tiếp theo. Giờ bạn biết dãy số tăng theo chiều nào. Nếu số của bạn lớn hơn thì đi tiếp; nếu nhỏ hơn thì quay lại. Vì vòng ở mọi tầng đều quay theo một chiều, câu trả lời bạn có được ở bên ngoài toà nhà vẫn đúng trên bậc thang và vẫn đúng ở hành lang.",
+        pitfall:
+          "Định hướng theo mặt sàn thay vì theo bảng chỉ dẫn. Một dome không có tầm nhìn ra ngoài và mọi đoạn hành lang trông giống nhau; số khu là thứ duy nhất trong toà nhà cho bạn biết mình đang ở đâu. Chỗ duy nhất quy tắc hai con số không dùng được là chỗ hở, và chỗ hở tự thông báo, vì các số dừng lại.",
+        takes: "5 phút trong tối diễn",
+      },
+      {
+        title: "Biết nửa nào trong chuyện này là do nhà tổ chức quyết",
+        body: "Toà nhà cố định số khu, bốn tầng, chữ cái của cửa và các phòng vé — sơ đồ ghi ba phòng vé, đánh số 2, 3 và 4, phòng ở mé trong sân nằm cạnh cửa E còn hai phòng phía ngoài sân nằm hai bên cửa F và G. Nhà tổ chức cố định mọi thứ thay đổi theo từng buổi: những khu nào được bán, vì sân khấu dựng sát một đầu sân sẽ làm chết các khu phía sau nó; các khu trên sân được gọi tên là gì; vé của bạn vào bằng cửa nào; và mấy giờ mở cửa. Nơi nào vé của bạn và trang này nói khác nhau, vé của bạn là đúng.",
+        pitfall:
+          "Coi sơ đồ của địa điểm là sơ đồ của buổi diễn của bạn. Nó vẽ cho bóng chày và có khu ngồi của cầu thủ trên đó. Nó là thẩm quyền về việc 304 nằm ở đâu, và không phải thẩm quyền về bất cứ điều gì khác trong tối của bạn.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Một con số khu như 304 thực sự cho tôi biết điều gì?",
+        a: "Hai điều. Số 3 là tầng — tầng thứ ba trong bốn tầng, tính vòng thấp nhất là 1. Số 04 là vị trí trên một vòng chạy theo một chiều quanh tầng đó, bắt đầu từ một phía cố định của toà nhà. Vậy 304 là số nhỏ, tức là nó nằm gần nơi cách đánh số bắt đầu, đi bộ một đoạn ngắn theo chiều kim đồng hồ từ chỗ hở của khán đài.",
+      },
+      {
+        q: "Các số chạy theo chiều nào?",
+        a: "Theo chiều kim đồng hồ, và chính địa điểm nói vậy: phần mô tả công bố kèm sơ đồ của họ ghi 시계방향, bắt đầu từ phía dưới bên phải của mé trong sân, và các dải khu mà họ liệt kê sau đó khớp với hình vẽ ở cả hai phía. Cùng một chiều ở mọi tầng. Chữ cái của cửa cũng chạy cùng chiều: A, B, C, D, E dọc phía gần và F, G ở phía xa. Nghĩa là chữ cái và số cùng tăng lên — nếu bạn đi qua cửa D trên đường tới cửa E thì số khu của bạn cũng đang tăng.",
+      },
+      {
+        q: "Khu 417 có nằm ngay trên khu 317 không?",
+        a: "Không. Các tầng có số lượng khu khác nhau — từ dưới lên là 32, 22, 34 và 35 — nên chúng chỉ chia sẻ đường vạch nơi cách đánh số bắt đầu, rồi từ đó lệch dần. Hãy định hướng bằng tầng bạn đang thực sự đứng, không phải tầng của bạn bè.",
+      },
+      {
+        q: "Vì sao các số dừng lại rồi bắt đầu lại?",
+        a: "Vì khán đài là hình móng ngựa, không phải một vòng tròn. Có một nêm toà nhà không có chỗ ngồi ở bất kỳ tầng nào, và số bắt đầu lại ở đó: 132 đối diện 101 qua nêm ấy, 435 đối diện 401. Đó cũng là đoạn vành ngoài duy nhất không có cửa nào, nên rất dễ nhận ra. Bạn càng ở cao thì nó càng rộng — khoảng 44 độ của vòng tròn ở tầng 100 so với 96 ở tầng 400 — nên ở tầng trên cùng, phần vòng bị thiếu nhiều hơn và đi vòng đường dài tốn hơn.",
+      },
+      {
+        q: "Tôi có thể vào bằng cửa nào gần nhất không?",
+        a: "Không hẳn. Việc vào bằng cửa nào do nhà tổ chức đặt theo từng buổi và in trên vé của bạn, và ngay trong một ngày thường cũng có ít nhất một cửa không dành cho khách chung — sơ đồ của địa điểm ghi cửa ở giữa là cửa dành cho người giữ vé cả mùa của R.d-club và của các lô. Hãy đọc vé của bạn, rồi đi tìm đúng cửa đó.",
+      },
+      {
+        q: "Sơ đồ trên trang của địa điểm trông như một sân bóng chày. Đó có phải sơ đồ đúng không?",
+        a: "Đó là sơ đồ đúng cho câu hỏi mà trang này trả lời, và là sơ đồ sai cho phần lớn câu hỏi khác. Nó vẽ cho bóng chày, có cả khu ngồi của cầu thủ, và địa điểm chứa 16,601 chỗ cho một trận đấu so với khoảng 25,000 người cho một buổi hoà nhạc — nên hoà nhạc là một cách bố trí khác của cùng toà nhà. Thứ không thay đổi là bê tông: các khu đã đánh số là cố định, nên sơ đồ cho bạn biết 304 ở đâu. Nó không thể cho bạn biết 304 có được bán cho buổi diễn của bạn hay không, cũng không cho biết trên sân có gì.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การหาที่นั่งของคุณในโกชอกสกายโดม: เลขบล็อกบนบัตรของคุณหมายถึงอะไร",
+    summary:
+      "สี่ชั้น หนึ่งทิศทาง และวงแหวนที่ขาดอยู่เพียงจุดเดียว อ่านเลขสามหลักให้ถูก คุณก็เดินไปถึงบล็อกของตัวเองได้จากทางเข้าใดก็ได้ โดยไม่ต้องมีแผนผังและไม่ต้องรู้ว่าทิศเหนืออยู่ไหน",
+    scope:
+      "ครอบคลุมวิธีที่ Gocheok Sky Dome ให้หมายเลขที่นั่งถาวรของตน อ่านจากผังที่นั่งและหน้าข้อมูลสิ่งอำนวยความสะดวกของ Seoul Facilities Corporation เอง ได้แก่ สี่ชั้น ทิศทางที่หมายเลขไล่ไป จุดที่ลำดับขาด และตำแหน่งของประตูกับห้องจำหน่ายบัตรเทียบกับลำดับนั้น ผังที่ใช้อ่านวาดขึ้นเพื่อเบสบอล มีที่พักนักกีฬาอยู่บนผังด้วย บล็อกบนอัฒจันทร์เป็นคอนกรีตหล่อและไม่ขยับ ดังนั้นบัตรคอนเสิร์ตที่ระบุบล็อก 304 ก็หมายถึง 304 นี้ แต่บล็อกไหนจะเปิดขาย มีอะไรตั้งอยู่บนพื้นสนาม บัตรของคุณให้เข้าทางประตูไหน และประตูเปิดเมื่อไร เป็นของผู้จัดงานและกำหนดเป็นรายงาน ไม่มีสิ่งใดที่นี่แทนผังบนหน้าจองของคุณเองได้ สถานที่เดียวเท่านั้น KSPO Dome และ Inspire Arena ให้หมายเลขต่างกันและต้องมีหน้าของตัวเอง",
+    intro: [
+      "ผังที่นั่งวาดขึ้นสำหรับคนที่รู้อยู่แล้วว่าอาคารจัดวางอย่างไร มันเป็นภาพแบนที่มีตัวเลข 123 ตัว และตอบคำถามที่คุณมีตอนอยู่บ้านว่าที่นั่งนี้ดีไหม ไม่ได้ตอบคำถามที่คุณมีตอน 18:40 ขณะยืนอยู่หน้ากำแพงคอนกรีตที่มีหมายเลขซึ่งไม่ใช่ของคุณ",
+      "คำถามที่สองนั้นมีคำตอบสั้น ๆ เพราะระบบหมายเลขเป็นระบบ ไม่ใช่รายการ สี่ชั้น หนึ่งทิศทาง หนึ่งจุดขาด จำสามอย่างนี้ได้แล้วคุณก็ไม่ต้องใช้ผังอีก",
+    ],
+    steps: [
+      {
+        title: "ตัดสินก่อนว่าที่นั่งของคุณอยู่ในอาคารหรืออยู่บนพื้นสนาม",
+        body: "เลขสามหลักระหว่าง 101 ถึง 435 หมายถึงบล็อกถาวรบนอัฒจันทร์ และส่วนที่เหลือของหน้านี้มีไว้เพื่อหามันให้เจอ อย่างอื่นทั้งหมด เช่น ตัวอักษรเดี่ยว FLOOR 플로어 โซนยืน ชื่อโต๊ะหรือชื่อบ็อกซ์ อยู่บนสนาม ซึ่งไม่มีที่นั่งถาวรเลย สนามเป็นพื้นเปล่าที่ผู้จัดงานปูทับ แบ่งส่วน และตั้งชื่อใหม่ทุกงาน ดังนั้นมีเพียงผังของงานนั้นเองที่ระบุตำแหน่งได้",
+        pitfall:
+          "การเอาตัวอักษรบนบัตรไปจับกับตัวอักษรบนผังของสถานที่จัดงาน อาคารหลังเดียวนี้มีชุดตัวอักษรที่ต่างกันถึงสามชุด ประตูเจ็ดบานใช้ A ถึง G ผังพิมพ์โซนเบสบอลระดับพื้นสนามเป็นชุด T, S และ D ส่วนบล็อกพื้นสนามของคอนเสิร์ตผู้จัดงานตั้งตัวอักษรเอง ตัวอักษรมีความหมายเฉพาะเมื่ออยู่ข้างสิ่งที่ออกมันมาให้",
+        takes: "2 นาที",
+      },
+      {
+        title: "หลักแรกคือชั้น และมีสี่ชั้น",
+        body: "101 ถึง 132 คือวงล่างสุด ใกล้พื้นสนามที่สุด 201 ถึง 222 คือชั้นสองที่สั้น 301 ถึง 334 คือชั้นสาม 401 ถึง 435 คือชั้นบนสุด ตรงกับอาคารที่สถานที่จัดงานอธิบายไว้ คือสี่ชั้นเหนือพื้นดินวางอยู่บนสองชั้นใต้ดิน ดังนั้นหลักร้อยคือหมายเลขชั้น ไม่ใช่ชื่อโซน เลข 4 คือจุดสูงสุดที่อาคารนี้ไปถึง",
+        pitfall:
+          "การคาดว่าชั้น 200 จะเป็นเหมือนชั้นอื่น มันสั้นที่สุด มี 22 บล็อก เทียบกับ 32, 34 และ 35 และเป็นชั้นเดียวที่มีช่องโหว่อยู่กลาง ผังแสดงช่วงตามด้านไกลของอาคารที่ไม่มีที่นั่งชั้น 200 เลย ตรงนั้นหมายเลขที่ต่อเนื่องกันไม่จำเป็นต้องอยู่ติดกันบนพื้นจริง",
+        takes: "1 นาที",
+      },
+      {
+        title: "อีกสองหลักคือตำแหน่งบนวงที่หมุนไปทางเดียว",
+        body: "ภายในชั้นหนึ่ง หมายเลขไล่ไปทางเดียวรอบวงทั้งหมด และนี่เป็นคำของสถานที่จัดงานเอง ไม่ใช่สิ่งที่วัดจากรูป คำอธิบายที่เผยแพร่พร้อมผังระบุว่าบล็อกไล่ไป시계방향 คือตามเข็มนาฬิกา เริ่มจากมุมขวาล่างด้านในสนาม แล้วไล่รายชื่อตามลำดับนั้น ทุกชั้นเริ่มจากด้านเดียวกันของอาคาร ดังนั้นการขยับจาก 401 ไป 405 คือการหมุนแบบเดียวกับการขยับจาก 301 ไป 305 ทิศเดียวกัน ต่างกันแค่ความสูง ไม่มีครึ่งซ้ายครึ่งขวาให้จำ และไม่มีฝั่งเลขคู่เลขคี่",
+        pitfall:
+          "การคาดว่าแต่ละชั้นจะวางซ้อนกันบล็อกต่อบล็อก แต่ละชั้นมี 32, 22, 34 และ 35 บล็อก จึงค่อย ๆ เคลื่อนห่างกันเมื่อไล่ไปรอบวง สิ่งเดียวที่ร่วมกันคือเส้นที่เริ่มนับ 417 ไม่ได้อยู่เหนือ 317 และเพื่อนที่อยู่ 210 ก็ไม่ได้อยู่ใต้คุณที่ 310",
+        takes: "2 นาที",
+      },
+      {
+        title: "วงนี้ขาดเพียงจุดเดียวพอดี และที่นั่นไม่มีประตู",
+        body: "อัฒจันทร์ไม่ได้ปิดเป็นวงกลมเต็ม ด้านที่ผังวาดไว้ทางขวามีส่วนอาคารรูปลิ่มที่ไม่มีที่นั่งในชั้นใดเลย และนั่นคือจุดที่การนับหมายเลขเริ่มใหม่ 132 กับ 101 หันหน้าเข้าหากันคร่อมช่องนั้น และ 435 กับ 401 ก็เช่นกัน ช่องขาดนั้นไม่ได้กว้างเท่ากันทุกชั้น วัดจากผังได้ราว 44 องศาที่ชั้น 100, 71 องศาที่ชั้น 200, 91 องศาที่ชั้น 300 และ 96 องศาที่ชั้น 400 เพราะชั้นบนหยุดก่อนถึงมุมนั้น ขณะที่วงล่างสุดเกือบโค้งปิดรอบมัน อัฒจันทร์เป็นเกือกม้าที่เปิดกว้างขึ้นเมื่อสูงขึ้น ประตูทั้งเจ็ดไล่ตามเข็มนาฬิกาในทิศเดียวกับหมายเลข คือ A, B, C, D และ E ตามด้านใกล้ แล้ว F กับ G อยู่ด้านไกล A คือประตูแรกหลังช่องขาด G คือประตูสุดท้ายก่อนถึงมัน ตัวอักษรของประตูและหมายเลขบล็อกเป็นมาตรเดียวกัน และนั่นคือเหตุผลทั้งหมดที่อาคารนี้เดินได้โดยไม่ต้องใช้เข็มทิศ",
+        pitfall:
+          "การคิดว่าประตูที่มองเห็นคือประตูที่ใช้ได้ ผังของสถานที่จัดงานเองระบุประตู C ซึ่งอยู่ตรงกลาง ว่าเป็นทางเข้าสำหรับผู้ถือตั๋วปีของ R.d-club และสกายบ็อกซ์ ไม่ใช่ประตูทั่วไป ประตูที่ใกล้ที่สุดไม่ใช่ประตูของคุณเสมอไป",
+        takes: "3 นาที",
+      },
+      {
+        title: "มาถึงจากด้านที่คุณรับมือได้",
+        body: "สถานีคูอิลบน Line 1 ทางออก 2 อยู่ห่างจากสถานที่จัดงานราว 150 เมตร เดินสามนาที และในคืนคอนเสิร์ตผู้บริหารเผยแพร่คำแนะนำให้ลงก่อนหนึ่งสถานี คือคูโรถ้าคุณขึ้นมาจากโซลหรือจากทางซูวอนและอันยัง และแคบงถ้าคุณมาจากอินชอนหรือพูชอน การเลือกสถานีเปลี่ยนว่าคุณจะไปถึงส่วนไหนของแนวรอบอาคารก่อน จึงเปลี่ยนระยะที่คุณต้องเดินวนด้วย แต่ไม่เปลี่ยนกฎในขั้นถัดไป กฎนั้นใช้ได้จากทางเข้าใดก็ได้",
+        pitfall:
+          "การวางแผนเฉพาะการเดินไปถึงอาคาร แต่ไม่วางแผนการเดินวนรอบอาคาร คนสองหมื่นห้าพันคนมาถึงวงที่มีเส้นรอบราว 600 เมตร และ 200 เมตรสุดท้ายของคุณคือ 200 เมตรที่มีฝูงคนอยู่ข้างใน",
+        takes: "5 นาที ก่อนถึงวันงาน",
+      },
+      {
+        title: "ที่กำแพง อ่านเลขบล็อกสองเลขแล้วคุณจะรู้ว่าต้องเดินทางไหน",
+        body: "คุณไม่จำเป็นต้องรู้ว่าด้านบนของผังชี้ไปทิศใด และสถานที่จัดงานก็ไม่ได้เผยแพร่ไว้ คุณต้องการเลขสองเลขที่ติดกัน อ่านเลขบล็อกตรงที่คุณยืน เดินไปสองสามเมตร แล้วอ่านเลขถัดไป ตอนนี้คุณรู้แล้วว่าลำดับเพิ่มขึ้นไปทางไหน ถ้าเลขของคุณมากกว่าก็เดินต่อ ถ้าน้อยกว่าก็หันกลับ เพราะทุกชั้นวงหมุนไปทางเดียว คำตอบที่คุณได้จากด้านนอกอาคารจึงยังจริงอยู่บนบันได และยังจริงอยู่บนทางเดินวน",
+        pitfall:
+          "การใช้พื้นนำทางแทนการใช้ป้าย โดมไม่มีทัศนียภาพออกไปข้างนอก และทางเดินวนทุกช่วงดูเหมือนกันหมด เลขบล็อกเป็นสิ่งเดียวในอาคารที่บอกคุณว่าอยู่ที่ไหน ที่เดียวที่กฎสองเลขใช้ไม่ได้คือช่องขาด และช่องขาดประกาศตัวเอง เพราะหมายเลขหยุดลง",
+        takes: "5 นาทีในคืนงาน",
+      },
+      {
+        title: "รู้ว่าครึ่งไหนของเรื่องนี้ผู้จัดงานเป็นคนกำหนด",
+        body: "อาคารกำหนดเลขบล็อก สี่ชั้น ตัวอักษรของประตู และห้องจำหน่ายบัตร ผังระบุไว้สามห้อง หมายเลข 2, 3 และ 4 ห้องด้านในสนามอยู่ข้างประตู E และสองห้องด้านนอกสนามขนาบประตู F กับ G ผู้จัดงานกำหนดทุกอย่างที่เปลี่ยนไปในแต่ละงาน คือบล็อกไหนจะเปิดขายบ้าง เพราะเวทีที่ชิดปลายด้านหนึ่งของพื้นสนามจะทำให้บล็อกที่อยู่หลังเวทีใช้ไม่ได้ ส่วนพื้นสนามเรียกชื่ออะไร บัตรของคุณให้เข้าทางประตูไหน และประตูเปิดเมื่อไร ตรงที่บัตรของคุณขัดกับหน้านี้ บัตรของคุณถูก",
+        pitfall:
+          "การถือเอาผังของสถานที่จัดงานเป็นผังของงานของคุณ มันวาดขึ้นเพื่อเบสบอลและมีที่พักนักกีฬาอยู่บนผัง มันเป็นผู้มีอำนาจเรื่องว่า 304 อยู่ที่ไหน และไม่มีอำนาจเรื่องอื่นใดในคืนของคุณ",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "เลขบล็อกอย่าง 304 บอกอะไรฉันจริง ๆ",
+        a: "สองอย่าง เลข 3 คือชั้น เป็นชั้นที่สามจากสี่ชั้น โดยนับวงล่างสุดเป็น 1 เลข 04 คือตำแหน่งบนวงที่ไล่ไปทางเดียวรอบชั้นนั้น เริ่มจากด้านที่ตรึงไว้ของอาคาร ดังนั้น 304 เป็นเลขน้อย ซึ่งทำให้มันอยู่ใกล้จุดที่เริ่มนับหมายเลข เดินตามเข็มนาฬิกาจากช่องขาดของอัฒจันทร์ไปไม่ไกล",
+      },
+      {
+        q: "หมายเลขไล่ไปทางไหน",
+        a: "ตามเข็มนาฬิกา และสถานที่จัดงานบอกเอง คำอธิบายที่เผยแพร่พร้อมผังระบุว่า시계방향 เริ่มจากมุมขวาล่างด้านในสนาม และช่วงบล็อกที่ไล่รายชื่อต่อจากนั้นก็ตรงกับรูปทั้งสองด้าน ทิศเดียวกันทุกชั้น ตัวอักษรของประตูก็ไล่ไปทางเดียวกัน คือ A, B, C, D, E ตามด้านใกล้ และ F, G ด้านไกล นั่นหมายความว่าตัวอักษรและหมายเลขเพิ่มขึ้นไปด้วยกัน ถ้าคุณเดินผ่านประตู D ขณะมุ่งไปประตู E เลขบล็อกของคุณก็กำลังเพิ่มขึ้นเช่นกัน",
+      },
+      {
+        q: "บล็อก 417 อยู่เหนือบล็อก 317 พอดีไหม",
+        a: "ไม่ใช่ แต่ละชั้นมีจำนวนบล็อกไม่เท่ากัน คือ 32, 22, 34 และ 35 จากล่างขึ้นบน จึงร่วมกันเฉพาะเส้นที่เริ่มนับหมายเลข แล้วเคลื่อนห่างกันจากจุดนั้น โปรดใช้ชั้นที่คุณอยู่จริงในการหาทาง ไม่ใช่ชั้นที่เพื่อนของคุณอยู่",
+      },
+      {
+        q: "ทำไมหมายเลขหยุดแล้วเริ่มใหม่",
+        a: "เพราะอัฒจันทร์เป็นเกือกม้า ไม่ใช่วงแหวน มีส่วนอาคารรูปลิ่มที่ไม่มีที่นั่งในชั้นใดเลย และหมายเลขเริ่มใหม่ที่นั่น 132 หันหน้าเข้าหา 101 คร่อมช่องนั้น และ 435 หันหน้าเข้าหา 401 ที่นั่นยังเป็นช่วงเดียวของแนวรอบอาคารที่ไม่มีประตูเลย จึงจำได้ง่าย ยิ่งอยู่สูงยิ่งกว้างขึ้น ราว 44 องศาของวงที่ชั้น 100 เทียบกับ 96 องศาที่ชั้น 400 ดังนั้นบนชั้นสูงสุดวงจะขาดไปมากกว่า และการเดินวนทางยาวก็แพงกว่า",
+      },
+      {
+        q: "ฉันเข้าประตูที่ใกล้ที่สุดได้ไหม",
+        a: "ไม่จำเป็นว่าได้ การเข้าประตูกำหนดเป็นรายงานโดยผู้จัดงานและพิมพ์อยู่บนบัตรของคุณ และแม้ในวันธรรมดาก็มีประตูอย่างน้อยหนึ่งบานที่ไม่ใช่ประตูทั่วไป ผังของสถานที่จัดงานระบุประตูกลางว่าเป็นทางเข้าสำหรับผู้ถือตั๋วปีของ R.d-club และสกายบ็อกซ์ โปรดอ่านบัตรของคุณก่อน แล้วไปหาประตูนั้น",
+      },
+      {
+        q: "ผังบนเว็บของสถานที่จัดงานดูเหมือนสนามเบสบอล นี่คือผังที่ถูกไหม",
+        a: "เป็นผังที่ถูกสำหรับคำถามที่หน้านี้ตอบ และเป็นผังที่ผิดสำหรับคำถามอื่นเกือบทั้งหมด มันวาดขึ้นเพื่อเบสบอล รวมถึงที่พักนักกีฬา และสถานที่จัดงานจุคน 16,601 ที่สำหรับการแข่งขัน เทียบกับราว 25,000 คนสำหรับคอนเสิร์ต ดังนั้นคอนเสิร์ตคือการจัดวางแบบอื่นของอาคารเดียวกัน สิ่งที่ไม่เปลี่ยนคือคอนกรีต บล็อกที่ให้หมายเลขไว้เป็นของถาวร ผังจึงบอกคุณได้ว่า 304 อยู่ที่ไหน แต่บอกไม่ได้ว่า 304 เปิดขายในงานของคุณหรือไม่ และบอกไม่ได้ว่าบนพื้นสนามมีอะไร",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Paghahanap ng upuan mo sa Gocheok Sky Dome: ang ibig sabihin ng numero ng bloke sa tiket mo",
+    summary:
+      "Apat na palapag, isang direksiyon, at isang putol lamang sa singsing. Tatlong numerong tama ang pagbasa ang maglalakad sa iyo patungo sa bloke mo mula sa alinmang pasukan, walang mapa at walang pangangailangang alamin kung saan ang hilaga.",
+    scope:
+      "Sinasaklaw kung paano binibigyan ng numero ng Gocheok Sky Dome ang permanenteng mga upuan nito, binasa mula sa sariling tsart ng upuan at mga pahina ng pasilidad ng Seoul Facilities Corporation: ang apat na palapag, kung saang direksiyon tumatakbo ang mga numero, kung saan nababali ang pagkakasunod, at kung saan nakalagay ang mga tarangkahan at takilya kaugnay nito. Ang tsart na pinagbasahan ay iginuhit para sa beysbol — nasa loob nito ang mga dugout. Semento ang mga bloke sa tribuna at hindi nagagalaw, kaya ang tiket sa konsiyertong nagsasabing bloke 304 ay nangangahulugang itong 304; ngunit kung aling mga bloke ang ipinagbibili, ano ang nakatayo sa palapag, aling tarangkahan ang pinapasok ng tiket mo, at kailan bumubukas ang pinto ay sa prodyuser, itinatakda sa bawat palabas, at walang anuman dito ang humahalili sa tsart sa sariling pahina mo ng pagpa-book. Isang venue. Iba ang pagnunumero ng KSPO Dome at ng Inspire Arena at nangangailangan sila ng kanilang sariling mga pahina.",
+    intro: [
+      "Iginuhit ang isang tsart ng upuan para sa isang taong alam na kung paano isinaayos ang gusali. Isa itong patag na larawan ng 123 numero, at sinasagot nito ang tanong na nasa isip mo sa bahay — maganda ba ang upuang ito — at hindi ang tanong na nasa isip mo sa 18:40 habang nakatayo sa harap ng pader na semento na may numerong hindi sa iyo.",
+      "May maikling sagot ang ikalawang tanong na iyon, dahil ang pagnunumero ay isang sistema at hindi isang listahan. Apat na palapag, isang direksiyon, isang putol. Alamin ang tatlong bagay na iyon at titigil mo nang kailanganin ang tsart.",
+    ],
+    steps: [
+      {
+        title: "Pagpasyahan muna kung nasa gusali o nasa palapag ang upuan mo",
+        body: "Ang tatlong numero sa pagitan ng 101 at 435 ay nangangahulugang isang permanenteng bloke sa tribuna, at ang natitirang bahagi ng pahinang ito ang hahanap nito. Ang anuman pang iba — isang titik na nag-iisa, FLOOR, 플로어, isang sonang tayuan, isang pangalan ng mesa o ng box — ay nasa larangan, na wala talagang permanenteng upuan. Hubad na sahig ang larangan na tinatakpan, hinahati at pinapangalanan ng prodyuser para sa bawat palabas, kaya ang tsart lamang ng palabas na iyon ang makapagtatakda nito.",
+        pitfall:
+          "Ang pagtutugma ng isang titik sa tiket mo sa isang titik sa tsart ng venue. May tatlong magkaibang alpabeto sa isang gusaling ito: ang pitong tarangkahan ay may titik A hanggang G, ini-imprenta ng tsart ang mga sona ng beysbol sa taas ng larangan sa seryeng T, S at D, at ang mga bloke sa palapag ng isang konsiyerto ay binibigyan ng titik ng prodyuser. May kahulugan lamang ang isang titik katabi ng bagay na naglabas nito.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Ang unang numero ay ang palapag, at apat ang mga iyon",
+        body: "Ang 101 hanggang 132 ang pinakamababang singsing, ang pinakamalapit sa palapag. Ang 201 hanggang 222 ay isang maikling ikalawang antas. Ang 301 hanggang 334 ang ikatlo. Ang 401 hanggang 435 ang pinakamataas. Tumutugma iyon sa gusaling inilalarawan ng venue — apat na palapag sa ibabaw ng lupa na nakapatong sa dalawang antas ng basement — kaya ang numero ng daanan ay bilang ng palapag at hindi pangalan ng sona. Ang 4 ang pinakamataas na naaabot ng gusali.",
+        pitfall:
+          "Ang pag-asang kikilos ang palapag 200 tulad ng iba. Ito ang pinakamaikli, 22 bloke kontra 32, 34 at 35, at ito lamang ang may mga butas sa gitna: ipinapakita ng tsart ang mga bahagi sa kabilang panig ng gusali na wala talagang upuan sa palapag 200. Doon, hindi kinakailangang magkatabi sa lupa ang magkasunod na numero.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang dalawa pang numero ay isang puwesto sa isang singsing na umiikot sa isang direksiyon",
+        body: "Sa loob ng isang palapag, tumatakbo ang mga numero sa isang direksiyon sa buong paligid, at salita iyon ng venue mismo at hindi isang bagay na sinukat mula sa larawan: sinasabi ng paliwanag na inilathala kasama ng tsart na tumatakbo ang mga bloke nang 시계방향 — pakanan ng orasan — na nagsisimula sa kanang ibaba ng panig ng infield, at pagkatapos ay inililista ang mga iyon sa ayos na iyon. Nagsisimula ang bawat palapag sa parehong panig ng gusali. Kaya ang hakbang mula 401 hanggang 405 ay ang parehong pag-ikot ng hakbang mula 301 hanggang 305, sa parehong direksiyon, sa ibang taas. Walang kaliwang kalahati at kanang kalahating dapat alamin, at walang panig na gansal at pantay.",
+        pitfall:
+          "Ang pag-asang magkakapatong ang mga palapag nang bloke sa bloke. Taglay nila ang 32, 22, 34 at 35 na bloke, kaya naghihiwalay sila habang umiikot: ang linya lamang kung saan sila nagsisimula ang pinagsasaluhan nila. Hindi nasa itaas ng 317 ang 417, at hindi nasa ilalim mo sa 310 ang isang kaibigang nasa 210.",
+        takes: "2 minuto",
+      },
+      {
+        title: "May tiyak na isang putol ang singsing, at walang tarangkahan doon",
+        body: "Hindi nagsasara ang upuan tungo sa isang buong bilog. Sa panig na iginuhit ng tsart sa kanan ay may isang tipak ng gusaling walang upuan sa anumang palapag, at doon nagsisimulang muli ang pagnunumero — magkaharap ang 132 at 101 sa kabila nito, at gayundin ang 435 at 401. Hindi isa ang lapad ng putol na iyon: sinukat mula sa tsart, mga 44 digri sa palapag 100, 71 sa 200, 91 sa 300 at 96 sa 400, dahil humihinto ang mga itaas na antas bago ang sulok na iyon samantalang halos nakapaligid sa kanya ang pinakamababang singsing. Isang bakya ang upuan na bumubuka habang pumapaitaas. Tumatakbo ang pitong tarangkahan pakanan ng orasan sa parehong direksiyon ng mga numero: A, B, C, D at E sa panig na malapit, pagkatapos ay F at G sa kabilang panig. Ang A ang unang tarangkahan matapos ang putol; ang G ang huli bago ito. Isang eskala ang mga titik ng tarangkahan at ang mga numero ng bloke, at iyon ang buong dahilan kung bakit malilibot ang gusaling ito nang walang kompas.",
+        pitfall:
+          "Ang pag-akalang ang tarangkahang nakikita mo ay tarangkahang puwede mong gamitin. Minamarkahan ng sariling tsart ng venue ang tarangkahang C, ang nasa gitna, bilang pasukang nakalaan sa mga may tiket na pang-season ng R.d-club at ng skybox at hindi bilang pangkalahatan. Hindi laging sa iyo ang pintong pinakamalapit.",
+        takes: "3 minuto",
+      },
+      {
+        title: "Dumating sa isang panig na kaya mong pakitunguhan",
+        body: "Ang Istasyong Guil sa Line 1, labasan 2, ay mga 150 metro at tatlong minuto mula sa venue, at sa isang gabi ng konsiyerto ay naglalathala ang tagapagpatakbo ng paalalang bumaba nang isang hinto pa lamang — Guro kung sumakay ka mula sa Seoul o sa direksiyon ng Suwon at Anyang, Gaebong kung nanggaling ka sa Incheon o Bucheon. Binabago ng pinili mo kung aling bahagi ng paligid ang unang maaabot mo, at dahil doon kung gaano kalayo ang lalakarin mo paikot. Hindi nito binabago ang tuntunin sa susunod na hakbang, na gumagana mula sa alinmang pasukan.",
+        pitfall:
+          "Ang pagpaplano ng lakad patungo sa gusali at hindi ng lakad paikot nito. Dalawampu't limang libong tao ang dumarating sa isang singsing na may paligid na mga 600 metro, at ang huling dalawandaang metro mo ang mga metrong may dagsa sa loob.",
+        takes: "5 minuto, bago ang araw",
+      },
+      {
+        title: "Sa pader, basahin ang dalawang numero ng bloke at malalaman mo kung saan lalakad",
+        body: "Hindi mo kailangang malaman kung saang direksiyon nakaturo ang itaas ng tsart, at hindi iyon inilalathala ng venue. Kailangan mo ng dalawang numerong magkasunod. Basahin ang numero ng bloke kung saan ka nakatayo, maglakad ng ilang metro, basahin ang susunod. Alam mo na ngayon kung saang direksiyon umaakyat ang pagkakasunod. Kung mas mataas ang sa iyo, magpatuloy; kung mas mababa, bumalik. Dahil umiikot ang singsing sa isang direksiyon sa bawat palapag, ang sagot na nakuha mo sa labas ng gusali ay totoo pa rin sa hagdan at totoo pa rin sa pasilyo.",
+        pitfall:
+          "Ang pagtutok sa sahig at hindi sa mga karatula. Walang tanawin palabas ang isang dome at magkamukha ang bawat bahagi ng pasilyo; ang mga numero ng bloke ang tanging bagay sa gusaling nagsasabi sa iyo kung nasaan ka. Ang isang lugar na hindi gumagana ang tuntunin ng dalawang numero ay ang putol, at ipinapahayag ng putol ang sarili nito, dahil humihinto ang mga numero.",
+        takes: "5 minuto sa gabi mismo",
+      },
+      {
+        title: "Alamin kung aling kalahati nito ang pinagpapasyahan ng prodyuser",
+        body: "Itinatakda ng gusali ang mga numero ng bloke, ang apat na palapag, ang mga titik ng tarangkahan at ang mga takilya — minamarkahan ng tsart ang tatlo, may numerong 2, 3 at 4, kung saan ang nasa infield ay katabi ng tarangkahang E at ang dalawang nasa outfield ay nakapalibot sa mga tarangkahang F at G. Itinatakda ng prodyuser ang lahat ng nagbabago sa bawat palabas: kung aling mga bloke ang talagang ipinagbibili, dahil pinapatay ng entabladong nakasandal sa isang dulo ng palapag ang mga bloke sa likod nito; kung anong pangalan ng mga seksiyon sa palapag; aling tarangkahan ang pinapasok ng tiket mo; at kailan bumubukas ang pinto. Kung saan nagkakasalungat ang tiket mo at ang pahinang ito, tama ang tiket mo.",
+        pitfall:
+          "Ang pagtrato sa tsart ng venue bilang tsart ng palabas mo. Iginuhit ito para sa beysbol at may mga dugout. Ito ang awtoridad kung nasaan ang 304 at hindi awtoridad sa anupaman tungkol sa gabi mo.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Ano talaga ang sinasabi sa akin ng numero ng blokeng tulad ng 304?",
+        a: "Dalawang bagay. Ang 3 ang palapag — ang ikatlo sa apat, kung ibibilang ang pinakamababang singsing bilang 1. Ang 04 ay isang puwesto sa isang singsing na tumatakbo sa isang direksiyon sa buong palapag na iyon, na nagsisimula sa isang tiyak na panig ng gusali. Kaya mababa ang numero ng 304, na naglalagay nito malapit sa simula ng pagnunumero, isang maikling lakad pakanan ng orasan mula sa putol ng upuan.",
+      },
+      {
+        q: "Saang direksiyon tumatakbo ang mga numero?",
+        a: "Pakanan ng orasan, at sinasabi iyon mismo ng venue: nakasaad sa paliwanag na inilathala kasama ng tsart nito ang 시계방향, na nagsisimula sa kanang ibaba ng panig ng infield, at tumutugma sa larawan sa magkabilang panig ang saklaw ng mga blokeng inililista nito pagkatapos. Parehong direksiyon sa bawat palapag. Gayon din tumatakbo ang mga titik ng tarangkahan: A, B, C, D, E sa panig na malapit at F, G sa kabilang panig. Nangangahulugan iyon na sabay umaakyat ang mga titik at ang mga numero — kung madadaanan mo ang tarangkahang D patungo sa tarangkahang E, umaakyat din ang mga numero ng bloke mo.",
+      },
+      {
+        q: "Nasa tuwid na itaas ba ng bloke 317 ang bloke 417?",
+        a: "Hindi. Magkaiba ang bilang ng bloke na taglay ng mga palapag — 32, 22, 34 at 35 mula sa ibaba paitaas — kaya ang linya lamang kung saan nagsisimula ang pagnunumero nila ang pinagsasaluhan nila at naghihiwalay sila mula roon. Gamitin ang palapag na talagang kinalalagyan mo sa paglibot, hindi ang kinalalagyan ng kaibigan mo.",
+      },
+      {
+        q: "Bakit humihinto ang mga numero at nagsisimulang muli?",
+        a: "Dahil isang bakya ang upuan, at hindi isang singsing. May isang tipak ng gusaling walang upuan sa anumang palapag, at nagsisimulang muli ang pagnunumero doon: nakaharap ang 132 sa 101 sa kabila nito, nakaharap ang 435 sa 401. Ito rin ang tanging bahagi ng paligid na walang tarangkahan, na nagpapadali sa pagkilala nito. Lumalapad ito habang tumataas ka — mga 44 digri ng bilog sa palapag 100 kontra 96 sa 400 — kaya sa pinakamataas na palapag ay mas malaki ang nawawalang bahagi ng singsing at mas mahal ang maglakad sa mahabang paikot.",
+      },
+      {
+        q: "Puwede ba akong pumasok sa alinmang tarangkahang pinakamalapit?",
+        a: "Hindi kinakailangan. Itinatakda ng prodyuser sa bawat kaganapan ang akses sa tarangkahan at ini-imprenta iyon sa tiket mo, at may kahit isang tarangkahang hindi pangkalahatan kahit sa isang ordinaryong araw — minamarkahan ng tsart ng venue ang tarangkahan sa gitna bilang pasukan para sa mga may tiket na pang-season ng R.d-club at ng skybox. Basahin ang tiket mo, pagkatapos ay hanapin ang tarangkahang iyon.",
+      },
+      {
+        q: "Mukhang istadyum ng beysbol ang tsart sa sayt ng venue. Tama ba iyon?",
+        a: "Tama iyon para sa tanong na sinasagot ng pahinang ito at mali para sa halos lahat ng iba. Iginuhit ito para sa beysbol, kasama ang mga dugout, at tumatanggap ang venue ng 16,601 para sa isang laban kontra mga 25,000 para sa isang konsiyerto — kaya ibang pagkakaayos ng parehong gusali ang isang konsiyerto. Ang hindi nagbabago ay ang semento: permanente ang mga blokeng may numero, kaya sinasabi sa iyo ng tsart kung nasaan ang 304. Hindi nito masasabi kung ipinagbibili ang 304 para sa palabas mo, o kung ano ang nasa palapag.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
 ];
 
 /** Every locale that actually has at least one translated guide. */

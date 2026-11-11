@@ -137,7 +137,16 @@ export function storedEntries(src) {
     out.push({
       locale: marks[i][1],
       slug,
-      stored: body.match(/^ {4}sourceText: "([0-9a-f]+)",$/m)?.[1] ?? null,
+      // `*` rather than `+`, and `||` rather than `??`, both for the same
+      // entry: one written with `sourceText: ""`. The field is required by
+      // the type, so staging a new translation means writing the key with
+      // nothing in it, and a `+` pattern does not see that key at all. Ten
+      // entries went in that way and `--record-new` inserted a second
+      // `sourceText` above each empty one instead of filling it. In
+      // JavaScript the later key wins, so every hash it had just written was
+      // dead on arrival, the report said it had written them, and the suite
+      // agreed — only `tsc` caught it, as TS1117. An empty value is no value.
+      stored: body.match(/^ {4}sourceText: "([0-9a-f]*)",$/m)?.[1] || null,
       from,
       to,
     });
@@ -191,7 +200,9 @@ async function record(all) {
   let src = TRANSLATIONS;
   for (const r of [...targets].sort((a, b) => b.from - a.from)) {
     const body = src.slice(r.from, r.to);
-    const line = body.match(/^ {4}sourceText: "[0-9a-f]+",$/m);
+    // Matches an empty value too, so a staged entry is filled in place
+    // rather than gaining a second key. See the note in storedEntries.
+    const line = body.match(/^ {4}sourceText: "[0-9a-f]*",$/m);
     let next;
     if (line) {
       next = body.replace(line[0], `    sourceText: "${r.want}",`);

@@ -29,6 +29,21 @@
 import { readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { fetchRelayStatus, relayVerdict, relayFinding } from "./relay.mjs";
+
+/**
+ * The proxy's status document, fetched at most once for the whole run.
+ *
+ * It is only consulted when something fails, so the common case never pays
+ * for it, and a sweep with several unreachable hosts must not ask the gateway
+ * about itself once per URL. `null` — no proxy, as on a GitHub runner — is a
+ * perfectly good cached answer, so the memo stores it rather than retrying.
+ */
+let relayStatusMemo;
+const relayStatus = async () => {
+  if (relayStatusMemo === undefined) relayStatusMemo = await fetchRelayStatus();
+  return relayStatusMemo;
+};
 
 const OFFLINE = process.argv.includes("--offline");
 /** Take a new baseline. Run this after deliberately re-reading the sources. */
@@ -50,7 +65,54 @@ const RECORD = process.argv.includes("--record");
  * cannot clear a warning it did not look at.
  */
 const RECORD_NEW = process.argv.includes("--record-new");
-const WRITES = RECORD || RECORD_NEW;
+
+/**
+ * Re-baseline the sources whose URL contains this string, and nothing else.
+ *
+ *   npm run watch -- --record-only=interpark-global-rebrands
+ *
+ * `--record-new` closed one half of the asymmetry above. This closes the
+ * other, and the Yahoo page is again the case that shows why. Its 9% drift
+ * warning stands on purpose, and the honest way to clear a drift warning is
+ * to re-read the page against the guide that cites it — but the only tool for
+ * writing a baseline after a re-read was `--record`, which re-baselines
+ * *everything it can fetch*. So resolving one warning meant silently
+ * accepting every other page's current wording as read, including any that
+ * had drifted since the last run and had not been looked at yet.
+ *
+ * Which means the warning could not be cleared honestly at all: one option
+ * left it standing forever, the other cleared more than anybody had read. A
+ * check with no honest way to go green is a check people learn to ignore,
+ * which is the same failure as a permanent false alarm, arriving from the
+ * opposite direction.
+ *
+ * Two guards, because a flag that silently records nothing is worse than no
+ * flag: a match that selects no source fails, and a match that selects every
+ * comparable source fails as well — that is `--record` wearing a disguise,
+ * and if that is what somebody means they should type it.
+ */
+const RECORD_ONLY = (() => {
+  const arg = process.argv.find((a) => a.startsWith("--record-only"));
+  if (!arg) return null;
+  const match = arg.includes("=") ? arg.slice(arg.indexOf("=") + 1).trim() : "";
+  if (!match) {
+    throw new Error(
+      "--record-only needs a URL fragment to match, e.g. " +
+        "`--record-only=interpark-global-rebrands`. Without one it would " +
+        "match every source, which is what --record is for.",
+    );
+  }
+  return match;
+})();
+
+if (RECORD && RECORD_ONLY) {
+  throw new Error(
+    "--record and --record-only together are contradictory: one re-baselines " +
+      "everything, the other exactly what you re-read. Pick the one you mean.",
+  );
+}
+
+const WRITES = RECORD || RECORD_NEW || RECORD_ONLY;
 const TODAY = new Date().toISOString().slice(0, 10);
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
@@ -111,7 +173,21 @@ async function read(path) {
  */
 async function sources() {
   const src = await read("content/guides.ts");
-  const urls = [...src.matchAll(/url:\s*"(https?:\/\/[^"]+)"/g)].map((m) => m[1]);
+  // `url:` catches every entry in a guide's `sources`, and `licenceUrl:`
+  // catches the one URL that is not in that list and matters most.
+  //
+  // The site reproduces the venue's seating chart, and the *only* thing that
+  // makes that allowed is 공공누리 제1유형, declared on a page at kogl.or.kr.
+  // That page was watched by nothing: `sources()` matched `url:` alone, a
+  // `licenceUrl` is not spelled that way, and `documents()` watches the
+  // picture's bytes rather than the terms. So the one claim on this site with
+  // a legal consequence rested on a page no check had ever fetched.
+  //
+  // Found by asking why `www.kogl.or.kr` never appeared in a sweep. It is the
+  // `sourceUrl` rule's own logic applied one field over: reproducing
+  // something under a licence you have not re-read is a claim with no trail
+  // back to it.
+  const urls = [...src.matchAll(/(?:url|licenceUrl):\s*"(https?:\/\/[^"]+)"/g)].map((m) => m[1]);
   const unique = [...new Set(urls)];
   if (unique.length < 8) {
     throw new Error(
@@ -427,17 +503,34 @@ function isFixedDocument(url) {
   // kind of fixed document there is — it is where the rules a step was written
   // from actually live. The first version of this pattern missed them and
   // classified YES24's English guide as a storefront.
+  // A licence page belongs here for the same reason `terms` and `policy` do,
+  // and more sharply: the chart on the seat guide is served only because
+  // 공공누리 제1유형 permits it, so a change to that page's wording is the one
+  // source change on this site with a legal consequence rather than an
+  // editorial one. `license.do` matches no other word in this list.
   //
-  // `guidance` and `introduce` were the same miss a second time, and by one
-  // letter: a venue operator files its seating, parking and access pages under
+  // `transport` joined the day a guide started quoting taxi fares off Seoul's
+  // tourism transport page. Be honest about what that means: this heuristic
+  // reads a URL, and the question it stands in for is "does a guide quote
+  // figures from this page?" — which a path cannot answer. The two agree often
+  // enough to be useful and will disagree again. **When you add a source you
+  // quote a number from, check the next sweep compares it rather than
+  // reporting it link-checked only.**
+  //
+  // `guidance` and `introduce` were the same miss again, and by one letter: a
+  // venue operator files its seating, parking and access pages under
   // /guidance/ and /introduce/, and `/guidance` does not contain `/guide`.
-  // Nine pages were affected and every one of them is a fixed document — the
-  // Gocheok seat page most of all, since that guide's entire numbering rule is
-  // read off the description published with that chart. Its wording moving was
-  // exactly the event nothing would have reported. Checked rather than assumed:
-  // those nine are the only URLs in the register whose classification changes.
+  // Nine pages were affected and every one is a fixed document — the Gocheok
+  // seat page most of all, since that guide's whole numbering rule is read off
+  // the description published with that chart. Its wording moving was exactly
+  // the event nothing would have reported. Checked rather than assumed: those
+  // nine are the only URLs in the register whose classification changes.
+  //
+  // Three misses, three additions, one shape: a storefront whose wording is
+  // meant to move is what this list exists to exclude, and a page you took a
+  // fare, a deadline, a fee or a rule from is never that.
   if (
-    /\/(notice|news|press|article|view|blog|release|guide|guidance|introduce|faq|help|terms|policy|support)/i.test(
+    /\/(notice|news|press|article|view|blog|release|guide|guidance|introduce|faq|help|terms|policy|support|licen[cs]e|transport)/i.test(
       path,
     )
   )
@@ -455,6 +548,10 @@ async function links(urls) {
     note("info", "No source fingerprints yet — run `npm run watch -- --record` to take a baseline.");
   }
   const next = {};
+  // Which sources this run actually compared, and which of them
+  // `--record-only` selected. Both guards below read these.
+  const comparable = [];
+  const rebaselined = [];
 
   for (const url of urls) {
     const r = await hit(url);
@@ -466,8 +563,23 @@ async function links(urls) {
       continue;
     }
     if (!r.ok) {
+      // A `000` behind this container's proxy is three different failures
+      // wearing one number, and only one of them is ours. Ask the proxy which
+      // it was before calling a cited source dead — see `scripts/relay.mjs`
+      // for what each verdict means and which of them cost weeks.
+      //
+      // `relayFinding` returns null wherever there is nothing better to say,
+      // including on a GitHub runner where there is no proxy to ask, so the
+      // fallback below is the line this check has always printed — now with
+      // the retry count, since "failed once" and "failed three times" are
+      // different claims about a host.
       const tried = r.attempts > 1 ? ` after ${r.attempts} attempts` : "";
-      note("fail", `${url} — ${r.status || r.error}${tried}. A guide cites this.`);
+      const explained =
+        r.status === 0
+          ? relayFinding(url, new URL(url).hostname, relayVerdict(new URL(url).hostname, await relayStatus()))
+          : null;
+      if (explained) note(explained.level, `${explained.msg}${tried}`);
+      else note("fail", `${url} — ${r.status || r.error}${tried}. A guide cites this.`);
       if (prints[url]) next[url] = prints[url];
       continue;
     }
@@ -508,9 +620,13 @@ async function links(urls) {
     }
 
     const before = prints[url];
-    // --record overwrites; --record-new fills a hole and never overwrites.
+    // --record overwrites; --record-new fills a hole and never overwrites;
+    // --record-only overwrites exactly what its match selects.
     const keep = before?.text;
-    const take = RECORD || (RECORD_NEW && !keep);
+    const picked = RECORD_ONLY !== null && url.includes(RECORD_ONLY);
+    const take = RECORD || (RECORD_NEW && !keep) || picked;
+    comparable.push(url);
+    if (picked) rebaselined.push(url);
     next[url] = {
       words: take ? words : (before?.words ?? words),
       text: take ? text : keep,
@@ -531,6 +647,25 @@ async function links(urls) {
     }
   }
 
+  // Both guards run before anything is written, so a bad match changes
+  // nothing on disk.
+  if (RECORD_ONLY !== null) {
+    if (rebaselined.length === 0) {
+      throw new Error(
+        `--record-only=${RECORD_ONLY} matched none of the ${comparable.length} ` +
+          `comparable sources, so it would have written nothing while reporting ` +
+          `success. Check the fragment against the URL in content/guides.ts.`,
+      );
+    }
+    if (comparable.length > 1 && rebaselined.length === comparable.length) {
+      throw new Error(
+        `--record-only=${RECORD_ONLY} matched every one of the ${comparable.length} ` +
+          `comparable sources. That is --record, and re-baselining a page nobody ` +
+          `re-read is the thing these flags exist to prevent. Narrow the fragment.`,
+      );
+    }
+  }
+
   if (WRITES) {
     await writeFile(path, `${JSON.stringify(next, null, 2)}\n`);
     const held = Object.keys(next).filter((u) => prints[u]?.text).length;
@@ -538,6 +673,15 @@ async function links(urls) {
       `\n  Wrote ${Object.keys(next).length} source fingerprints` +
         (RECORD_NEW ? ` — ${held} existing baselines left untouched.` : "."),
     );
+    // Naming them is the point: a re-baseline is a claim that somebody read
+    // those pages, so the run says which pages it just made that claim about.
+    if (RECORD_ONLY !== null) {
+      console.log(
+        `  Re-baselined ${rebaselined.length} of ${comparable.length} comparable source(s), ` +
+          `on the understanding that these were re-read:`,
+      );
+      for (const u of rebaselined) console.log(`    ${u}`);
+    }
   }
 }
 
@@ -670,6 +814,120 @@ async function documents() {
   }
 }
 
+/**
+ * Every paid link still resolves, and still carries the attribution.
+ *
+ * This is the one check here whose failure costs money rather than accuracy,
+ * and it is invisible from every other angle. A redirect that stops working,
+ * a programme that ends, a network that rewrites its parameters — the page
+ * goes on rendering a perfectly ordinary, correctly disclosed paid link, the
+ * reader goes on clicking it, and nothing is credited. Nobody finds out until
+ * somebody thinks to read a dashboard, which on a site with no revenue yet
+ * could be months.
+ *
+ * `scripts/affiliate.test.mjs` already holds the *stored* URLs to the
+ * attribution they are supposed to carry. That is a string comparison and it
+ * cannot see the network. This follows one hop and reads what the redirect
+ * actually hands over, which is the only place the truth lives.
+ *
+ * One hop deliberately. The destination is a storefront whose wording is meant
+ * to move, so there is nothing here to fingerprint; what matters is that the
+ * hop happens and that the identifiers survive it.
+ */
+async function affiliates() {
+  const src = await read("content/affiliates.ts");
+  const urls = [...src.matchAll(/url: "(https:\/\/[^"]+)"/g)].map((m) => m[1]);
+  if (urls.length === 0) {
+    note("info", "No paid links registered.");
+    return;
+  }
+
+  // Read the identifiers off the first registered link rather than hardcoding
+  // them, so this keeps working when the account or the campaign changes.
+  // Read off whichever registered link carries them, not off the first one.
+  //
+  // Taking them from `urls[0]` alone had a hole big enough to drive the whole
+  // failure through: if every link lost its identifiers in the same edit —
+  // which is exactly what a careless find-and-replace across this file does —
+  // there would be nothing left to compare against, and the check would have
+  // excused itself with a warning at the moment it was most needed.
+  const expect = [
+    ...new Set(
+      urls.flatMap((u) => [...u.matchAll(/[?&](aid|aff_adid)=([^&]+)/g)].map((m) => `${m[1]}=${m[2]}`)),
+    ),
+  ];
+  if (expect.length === 0) {
+    note(
+      "fail",
+      `None of the ${urls.length} registered paid links carries aid or aff_adid. ` +
+        `Every one of them is a click that cannot be credited.`,
+    );
+    return;
+  }
+
+  const { execFile } = await import("node:child_process");
+  const { promisify } = await import("node:util");
+
+  for (const url of urls) {
+    let status = 0;
+    let dest = "";
+    try {
+      const { stdout } = await promisify(execFile)(
+        "curl",
+        // No -L: the redirect itself is the thing being read.
+        ["-sS", "-o", "/dev/null", "-w", "%{http_code} %{redirect_url}", "--max-time", "25", "-A", UA, url],
+        { maxBuffer: 1_000_000 },
+      );
+      const [code, ...rest] = stdout.trim().split(" ");
+      status = Number(code) || 0;
+      dest = rest.join(" ");
+    } catch {
+      status = 0;
+    }
+
+    const short = url.replace(/\?.*$/, "");
+    // Decoded until it stops changing. The destination is nested inside a
+    // redirect parameter, so one pass leaves `Guil%20Station` in the line a
+    // person reads — the same double-encoding trap the unit test documents.
+    let readable = url;
+    for (let i = 0; i < 5; i++) {
+      const next = decodeURIComponent(readable);
+      if (next === readable) break;
+      readable = next;
+    }
+    const query = readable.match(/query=([^&]+)/)?.[1] ?? "site-wide";
+
+    if (status === 0) {
+      const host = new URL(url).hostname;
+      const explained = relayFinding(url, host, relayVerdict(host, await relayStatus()));
+      if (explained) note(explained.level, explained.msg);
+      else note("fail", `${short} (${query}) — the paid link did not resolve. A reader clicking it gets nothing.`);
+      continue;
+    }
+
+    if (status < 300 || status >= 400 || !dest) {
+      note(
+        "fail",
+        `${short} (${query}) — answered ${status} instead of redirecting. ` +
+          `A paid link that does not hand off is a click that earns nothing.`,
+      );
+      continue;
+    }
+
+    const lost = expect.filter((p) => !dest.includes(p));
+    if (lost.length) {
+      note(
+        "fail",
+        `${short} (${query}) — the redirect dropped ${lost.join(" and ")}. ` +
+          `The link works, the reader books, and none of it is credited.`,
+      );
+      continue;
+    }
+
+    note("info", `${short} (${query}) — resolves, attribution intact.`);
+  }
+}
+
 const t0 = Date.now();
 await freshness();
 if (OFFLINE) {
@@ -680,6 +938,7 @@ if (OFFLINE) {
   await links(urls);
   await brands();
   await documents();
+  await affiliates();
 }
 
 const fails = findings.filter((f) => f.level === "fail");

@@ -63,7 +63,50 @@ can ever clear** below has the diff.)
 So `npm run watch -- --record-new` now writes only the entries that are
 missing and leaves every existing baseline untouched. Use it when a new guide
 brings new sources; keep `--record` for a deliberate re-read, which is the one
-case where overwriting is the point. Note the asymmetry is real: that run
+case where overwriting is the point.
+
+**And `--record-only=<url fragment>` closes the other half, which was that a
+single warning could not be cleared honestly at all.** The honest way to clear
+a drift warning is to re-read that page against the guide citing it — but the
+only tool for writing a baseline afterwards was `--record`, which re-baselines
+everything it can fetch. So resolving one warning meant accepting every other
+page's current wording as read. One option left the warning standing forever,
+the other cleared more than anybody had looked at, and a check with no honest
+route to green is a check people learn to ignore — the same failure as a
+permanent false alarm, from the opposite direction. Two guards, since a flag
+that silently records nothing is worse than no flag: a fragment matching no
+source fails, and a fragment matching *every* comparable source fails too,
+because that is `--record` in disguise. The run then names the URLs it
+re-baselined, since a re-baseline is a claim that somebody read those pages.
+All four refusal paths were proved by running them, and nothing is written
+when a guard fires.
+
+**The Yahoo page turned out not to be a case for it, which is worth knowing
+before reaching for the flag.** Its drift was recorded here as "its body does
+not extract cleanly" — true, and too vague to act on. Re-read on 22 October
+2026: of 696 words, most are Yahoo's chrome, including a strip of live index
+prices. Those move daily, so the fingerprint moves daily whatever the article
+does, and a baseline taken today drifts tomorrow. Re-sourcing to the PR
+Newswire original is the fix; re-baselining is not. A warning that no
+re-baseline can clear is a signal about the citation, not about the page.
+
+**Doing what that warning asked found a sourcing gap under the site's
+most-repeated date.** The rename is dated 1 December 2025 in six places here
+and in twenty-plus translation strings, and the page cited for it carries no
+1 December date at all — Yahoo's byline is the 2nd, the press release's own
+dateline the 3rd, because it announces a change that had already happened.
+The date itself survived checking and stands; what does not is the citation.
+Details and the page to cite instead are in `HANDOFF.md`.
+
+**The useful part is the order those two things were established in.** The
+tempting move on finding a cited page that does not support its claim is to
+correct the claim — which here would have been wrong, and would have rewritten
+a date across ten editions. The second tempting move, having confirmed the
+date from several places, is to consider it sourced; but a convergent reading
+of search results is not a source this site accepts, and the distinction is
+the entire premise. So the claim stands, the labels that misdescribed the page
+are fixed, and the gap is written down as a gap rather than closed with the
+evidence that happened to be reachable. Note the asymmetry is real: that run
 reported `1 needing action, 1 worth a look` **after** writing, because leaving
 a warning standing is what it is for.
 
@@ -823,6 +866,36 @@ exactly, and the only thing that makes that allowed is the licence. The chart
 page carries `공공누리 제1유형 · 출처표시` — KOGL Type 1, free commercial use
 and modification with attribution — declared on the page itself.
 
+**That licence has two conditions beyond attribution, and neither was checked
+until the licence page was finally read on 22 October 2026.** It had never
+been fetched by anything — see the `licenceUrl` note below — so "free
+commercial use and modification with attribution" was quoted here from the
+mark rather than from the terms. It is true and it is not all of them:
+
+- **The hyperlink is a term, not manners.** 제1유형's 개별조건 say that where a
+  hyperlink to the source is possible online, it must be provided. The fields
+  render from the register so they cannot go missing, but nothing stopped them
+  being rendered as plain text — which would satisfy every other check and
+  breach the licence. `scripts/documents.test.mjs` now asserts the component
+  renders `sourceUrl` and `licenceUrl` as `href`s.
+- **Nothing may suggest the institution sponsors us.** The same conditions
+  forbid any presentation that would have a third party mistake the public
+  body for a sponsor or a partner. The in-article ad slot was rendering
+  *directly beneath* 서울시설공단's own chart, with the credit line between
+  them, and only on document guides — the document section was the one thing
+  that came between the steps and that slot. The slot moved above the
+  document, which changes nothing on every other guide, and the order is
+  asserted rather than left to a comment in the route.
+
+Both assertions were proved by planting the violation: the licence link
+rendered as a `<span>`, and the ad slot put back below the document. Both go
+red, and green again on restore.
+
+The no-crop decision is a licence matter too, not only taste: 제1유형 asks that
+a modified work respect the author's moral rights, and gives cropping a
+photograph so that it differs markedly from the author's intent as its own
+example. The chart is served whole, and the untouched original is linked.
+
 So the terms are **data, not a thing anybody remembers**. `ReproducedDocument`
 in `content/guides.ts` carries the file, the credit, the licence, its URL, the
 page it came from and the day the copy was taken; `components/SourceDocument.tsx`
@@ -832,6 +905,21 @@ build on an empty field, on a `file` that is not a path under `public/img`, and
 on a `sourceUrl` the guide does not already cite — reproducing something from
 a page you have not cited is a claim with no trail back to it. That is the
 paid-link rule applied to somebody else's copyright.
+
+**The translated pages do not carry the chart, and that is the answer rather
+than an omission.** `app/[lang]/guides/[slug]/page.tsx` renders no document
+and no diagram, so from 27 October 2026 the seat guide exists in eleven
+editions of which exactly one reproduces the picture. Nothing above changes:
+the conditions bind the page that serves the file, the English one, and the
+ten translations make no copy to attribute. A reader who wants the chart
+follows the already-rendered link to the English edition. The reason to write
+this down is that the paragraphs above read as though every page carrying
+this guide carries the chart, which was true until there was more than one
+page carrying it — and the first instinct on noticing would be to add the
+credit to the translations, which would attribute a reproduction that is not
+there. If a translated template ever starts rendering documents, the
+attribution and the ad-adjacency rule arrive with it, and
+`scripts/documents.test.mjs` is where that gets asserted.
 
 **Two checks, because one of them can be silenced.** The upstream file is
 called `seat2026.jpg`, so the operator replacing it is a scheduled event
@@ -849,6 +937,19 @@ hashes named.
 Byte-for-byte is blunt on purpose: a re-encode at the same content would read
 as changed. That is a false alarm somebody clears in a minute, and the
 alternative is a similarity threshold nobody can justify on a picture.
+
+**The licence itself went unwatched until 22 October 2026, and it is the one
+claim here with a legal consequence.** `sources()` collected `url:` and a
+`licenceUrl` is not spelled that way, while `documents()` watches the
+picture's bytes rather than the terms — so the page that makes reproducing the
+chart allowed at all was the one page no check had ever fetched. It is
+collected now, and `isFixedDocument` counts a licence path alongside `terms`
+and `policy`, so its wording is compared rather than merely link-checked. The
+gap was found by asking why `www.kogl.or.kr` never appeared in a sweep, and it
+is the `sourceUrl` rule's own logic one field over: reproducing something
+under a licence nobody has re-read is a claim with no trail back to it. Its
+first sweep returned the allowlist failure above rather than a baseline, so it
+still needs a `--record-new` once the host is reachable.
 
 The document renders **after** the steps rather than beside the schematic. The
 two do different jobs — the drawing teaches the rule in English and weighs
@@ -1294,6 +1395,73 @@ Nothing renders it. Unlike `behind`, which is honest and temporary, a
 translation whose source text has moved is not a state worth labelling — it is
 simply wrong, and the answer is to fix it.
 
+**The accommodation guide names no hotels, and that refusal is the guide.**
+`where-to-stay-seoul-concert-night` teaches one rule — find the venue's subway
+line, stay on it, check the last train for your own station, price the taxi —
+and the worked example is Gocheok, off the operator's own access page and
+Seoul's published subway hours and taxi fares. What it will not do is list
+hotels or carry ratings, for three reasons that are one reason: nobody here has
+stayed in them, a star average belongs to the platform that collected it, and a
+hotel is the fastest-rotting claim this site could make. Twenty hotels would be
+twenty re-checks a cycle, and a list nobody re-checks is precisely the stale
+guide this site exists to replace. A line and a last train do not rot.
+
+It also prints no train times, deliberately, and says so on the page. A
+timetable copied into a guide stays confident after it stops being true, and a
+reader stranded on a platform is a worse place to meet a stale fact than a
+renamed website is. The page teaches where to look instead.
+
+**This guide carries four paid links, and placing them took three attempts to
+get honest.** The first draft had none, reasoning that a booking link under an
+argument that nobody here can responsibly point at a hotel would take the
+position the page had just declined to take. That was right about hotels and
+wrong about the page: the reader's decision is *which station*, and a link to
+live inventory around a named station takes no position on any hotel.
+
+The second draft put four station links in and **inverted the guide**, which an
+adversarial read caught and I had not. Every one of the four stations sits in
+the venue's own district — the district a step headed "Expect the venue's own
+district to be the wrong place to sleep" told the reader to leave — and the
+link text sold Guil on "the three-minute walk", the exact phrase the step above
+used to disqualify it. Worse, three of the four are walking distance, so the
+last train, the number the whole page is built on, does not apply to them at
+all. The monetised step reversed the three steps before it.
+
+The fix was not to drop the links but to find the fork the guide had missed:
+**you are either walking home or riding home.** Inside walking distance the
+last train stops mattering, which is precisely what a room near the hall buys;
+further along the line you get a neighbourhood, governed by a departure time.
+The four links are the walking-home half, labelled as that half, and the step
+says in as many words that it is deliberately not a list further along the line
+— because no source this container can reach publishes one, and inventing it
+was the alternative.
+
+Two claims went with that rewrite. "A large hall is built where there is room
+for a large hall, which is rarely where visitors stay" was prose about
+neighbourhood character drawn from a congestion notice, and neither source
+describes what an area is like to stay in. And "no transfer" was underwritten
+by the venue naming the stations, which does not support it — the access page
+names Sindorim *because* reaching the dome from it takes a bus.
+
+`Step.partner` takes one link or a list for this reason, and that generalisation
+is not a licence to stack links on a step that names one thing: the test for a
+second link is the test for the first — the reader would have been sent there
+anyway.
+
+**Two things about a per-area link fail in total silence**, because what
+renders either way is an ordinary, correctly disclosed paid link. One costs
+money: an area URL that loses `aid` or `aff_adid` earns nothing, and nobody
+finds out until somebody reads a dashboard. The other costs trust, which is
+worse: a link reading "near Guro Station" that searches for somewhere else.
+`scripts/affiliate.test.mjs` holds the attribution of every area URL against
+the partner's own, holds each area's `query` against its `label`, and holds the
+visible link text against the area it points at. All four failures were proved
+by planting them.
+
+The registry carries `query` as a field of its own precisely so that last
+comparison is possible — a doubly-encoded redirect URL is not something anyone
+checks by eye.
+
 ## Advertising
 
 Slots live in `components/AdSlot.tsx` and render nothing until their ids are
@@ -1313,8 +1481,21 @@ application the slower path.
 
 ## Paid links
 
-`content/affiliates.ts` is the register, and it is empty: this site carries no
-paid link today. The machinery exists first on purpose, because knowing a
+`content/affiliates.ts` is the register. It held nothing for a long time and
+this section said so for longer — it now holds **Klook**, and the site carries
+**five** paid links across two guides: one on Play&Stay step 1, and four
+station searches on the accommodation guide.
+
+The sentence here claiming the register was empty survived the first link going
+in, which is the ordinary way a document starts lying: nothing edited it, and
+nothing could fail because of it. It then happened again, in this same
+paragraph, within a day — it was corrected to "one" while four more were being
+added one section above, so the paragraph recording the failure became an
+instance of it a second time. **Counting paid links in prose is the thing that
+keeps breaking.** If it matters enough to assert, assert it in
+`scripts/affiliate.test.mjs`, which reads the files; a number written here is
+a claim nothing can check. The machinery
+exists first on purpose, because knowing a
 section may one day hold a paid link changes how it is written now — a guide
 that already names the real trade-offs can carry a link honestly, and one that
 would have to grow a section to fit a link reads exactly like what it is.
@@ -1477,6 +1658,57 @@ browser *inside* the container, so excluding them would have the layout check
 render a page no reader gets. `schema.org` is deliberately absent: it is a
 JSON-LD namespace and nothing fetches it.
 
+**A denied host and a broken host both read as `000`, and the gateway knows
+which is which.** `curl` reports `000` either way, so a host missing from the
+allowlist is indistinguishable from a site that will not answer — which is how
+`www.inspirekorea.com` spent weeks recorded as "blocked, waiting on the
+allowlist" while the allowlist was not its problem at all. The proxy keeps the
+verdict:
+
+```bash
+curl -sS "$HTTPS_PROXY/__agentproxy/status" | python3 -c \
+  "import sys,json;[print(f['host'],f['detail']) for f in json.load(sys.stdin)['recentRelayFailures']]"
+```
+
+**`scripts/watch.mjs` asks that endpoint now, so the weekly report says which
+it was.** A `000` used to print `✗ … A guide cites this`, one line for all
+three cases, which is how both of the above sat in the handoff for weeks as
+blocked sources. A policy denial is a **fail** naming the allowlist and
+`npm run hosts`, because it is ours and it is one paste; an upstream failure
+or a dropped tunnel is a **warn** that says to open the page in a browser,
+because a reader may well be able to. The classification lives in
+`scripts/relay.mjs` with `scripts/relay.test.mjs` on it, and it degrades to
+exactly the old message where there is no proxy to ask — which is the GitHub
+runner, and is deliberately not the two-code-path mistake recorded above,
+since the request itself still goes through one implementation.
+
+**`403` to CONNECT is the policy refusing the host — add it to the allowlist.
+`502` is the policy allowing it and the fetch failing anyway — the allowlist
+will never fix that one.** Checked on 22 October 2026: `www.kogl.or.kr`,
+`www.ksponco.or.kr` and the apex `inspirekorea.com` answer 403, so they are
+simply absent from the field; `www.inspirekorea.com` answers 502 on every
+attempt, so it is declared, permitted, and failing upstream. The 403 list is
+also the proof that the field is a partial paste again — `www.kogl.or.kr` is
+*cited by the content*, and it is the licence page the Gocheok chart is
+reproduced under.
+
+There is a third verdict and it is the one that is nobody's to fix here:
+`tunnel closed (code 1006) after Ns` means the host was permitted, the gateway
+reached it, and the site dropped the exchange. `circlechart.kr`,
+`badeuldon.co.kr` and `unipass.customs.go.kr` all answer that way, which is why
+the first of them is written down as a dead citation rather than as a blocked
+one. Sweeping all 46 declared hosts on 22 October 2026 put eight at `000` and
+those eight into exactly these three groups — three denied, two permitted and
+failing upstream, three dropped by the site — and one more,
+`www.seoulmetro.co.kr`, that answered `000` once and `200` on the retry, which
+is the reason to re-probe a single failure before recording it.
+
+Do not use container DNS to tell these apart. `getent hosts` resolves some
+allowlisted hosts and not others — `www.ktown4u.com` resolves,
+`www.kogl.or.kr` does not, and both are declared — because the gateway does the
+resolving for some of them. A blank from `getent` says nothing about whether a
+domain exists.
+
 ## Commands
 
 ```bash
@@ -1496,9 +1728,98 @@ chromium.launch({
 })
 ```
 
+## What a page owes a crawler and a paste
+
+`scripts/check-meta.mjs` fetches every URL in the sitemap and reads the things
+that are invisible on the page and expensive off it: that it serves at all,
+that it has a title, a description, a canonical and a share card, that it has
+exactly one `h1`, and that no two pages claim the same title or description.
+It needs a production build, for the reason the layout check does — what it
+measures is `generateMetadata` and the `opengraph-image` routes.
+
+```bash
+npm run build && npx next start -p 3000 &
+BASE_URL=http://localhost:3000 node scripts/check-meta.mjs
+```
+
+**It exists because its first run found 203 of 234 pages with no `og:image`** —
+every translated guide and every language index, which is the whole site
+outside English. Nothing could have seen it. The suite reads content and source
+files, the layout check measures rendered width, and a missing share card is
+invisible to both and to anyone looking at the page in a browser. This site's
+early distribution is a link pasted into a fan community, so a blank preview is
+a distribution cost paid silently — on exactly the pages pasted into the
+communities the translations exist for.
+
+**The translated card carries no prose, and that is the constraint rather than
+a shortcut.** `ImageResponse` ships a Latin font, which is why the English
+cards are documented as Latin-only; a translated title would need CJK and Thai
+fonts in the build. Pointing those pages at the English card was the other
+option and is worse — this repository already refuses English artwork on a
+translated page, and a card is seen *before* the click, so it would
+misrepresent the page's language to the reader who chose it for the language.
+So the card says what is true in any language: the locale, the guide count,
+the evidence rung, and that the translation is machine-assisted. That last one
+belongs before the click rather than after it. One card per locale, not per
+guide, because nothing on it is per-guide — and the guide pages point their
+`openGraph.images` at it.
+
+**A title and a headline are not the same field, and treating them as one cost
+the click.** A search result cuts around 60 characters. Eighteen of
+twenty-four English headlines were over, and because they are written as
+"Topic: the detail, the detail, and the payoff", what they lost was the
+payoff — `Cancelling a NOL World ticket: the deadline, the fee, and th…`
+loses *the money you still lose*, which is the reason anybody clicks.
+
+Two things fixed it. The site suffix went first: every inner page spent
+` · KPOPGO`, nine of sixty characters, on the one word a reader arriving
+from search already has — and this site has its own evidence of what search
+does with words like that, recorded in `lib/site.ts`, where a home title
+ending in the slogan came back rendered as plain "KPOPGO". The brand is still
+declared through `openGraph.siteName`, which is what search reads for the
+site name above a result. Then `searchTitle` split the two fields: the
+headline keeps whatever length the page needs, and search gets a short form,
+present only on the guides that need one. English titles over the limit went
+from 145 to **0**.
+
+`scripts/seo.test.mjs` holds both, because both drift back: a headline that
+would be cut must have a short form, a short form must be short, the route
+must actually prefer it, and the template must not start appending the site
+name again. All three proved by planting.
+
+**The translated titles were measured and deliberately left alone.** 104 are
+over, and the mechanical fix — cutting at the translator's own punctuation —
+produces a good result for only 35 of them; the rest have a long first clause,
+so what search shows after its own cut is already the sensible part. Adding 35
+strings would buy little and add exactly the per-language maintenance the
+**Languages** section says is the real cost. The measurement is here so nobody
+re-does it.
+
+Length is reported and does not fail. Google rewrites titles and descriptions
+often enough that a count is a judgement, and a check that fails on a
+judgement is one people learn to ignore.
+
+**It is measured as width, not as characters**, and that correction mattered:
+search cuts on pixels and a full-width CJK glyph takes about twice the room of
+a Latin one. By character count the check called Chinese titles long and
+Japanese ones short; by width, Chinese has **no** over-wide title at all while
+seven Latin-script locales hold ninety-nine between them — almost the
+reverse. It also decodes entities before counting, after `Play&amp;Stay` and
+`group&#x27;s` were reported as over when they fit. A length check that is
+wrong about length is the permanent false alarm this file keeps describing.
+
+**Read the fare table to the end.** The accommodation guide quoted Seoul's taxi
+tariff for a ride that happens, by definition, after a concert — and the same
+table carries a late-night surcharge whose windows start at 22:00. The daytime
+rate was the wrong number for every reader of that page. The figures are the
+surcharged ones now. A source read far enough to find the number you went
+looking for is a source you have not finished reading.
+
 ## Before pushing
 
 - `npm run typecheck` and `npm run build` both clean
 - Check both themes and phone width — the hero headline must stay legible over
   the scrim, and nothing may scroll sideways
+- `node scripts/check-meta.mjs` against the production build, if routes or
+  metadata changed
 - Any new claim carries a source and a date

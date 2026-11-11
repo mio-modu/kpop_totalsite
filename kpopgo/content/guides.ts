@@ -83,8 +83,42 @@ export type Step = {
    * It goes in only where the thing would have been named anyway. If a step
    * had to be invented to hold it, it does not belong.
    */
-  partner?: { id: string; text: string };
+  /**
+   * One paid link, or several where the step genuinely offers a choice.
+   *
+   * It was a single link, because a step that names one thing has one link.
+   * The accommodation step is the case that is not like that: the reader's
+   * decision is *which station*, four of them are equally valid answers from
+   * the venue's own page, and picking one to monetise would be the commission
+   * choosing the advice — which is the rule this file already refuses to
+   * break. Several links, each to a different real destination, is the honest
+   * shape of "here are your options".
+   *
+   * It is not a licence to stack links on a step that names one thing. The
+   * test for a second link is the test for the first: the reader would have
+   * been sent there anyway.
+   */
+  partner?: StepPartner | StepPartner[];
 };
+
+export type StepPartner = {
+  id: string;
+  text: string;
+  /**
+   * Which of that partner's areas this link goes to.
+   *
+   * Omitted, the link is the partner's site-wide destination. Named, it must
+   * exist in `content/affiliates.ts` — the module-scope check below fails the
+   * build otherwise, for the same reason an unregistered partner does: a
+   * paid link that quietly falls back to a generic destination is a link that
+   * says one thing and does another, and nothing on the page would show it.
+   */
+  area?: string;
+};
+
+/** A step's paid links, however many it declares. */
+export const stepPartners = (step: Step): StepPartner[] =>
+  step.partner ? (Array.isArray(step.partner) ? step.partner : [step.partner]) : [];
 
 /**
  * A document from somebody else, reproduced on the page.
@@ -149,6 +183,25 @@ export type Guide = {
   koLine: string;
   /** Full <title> / h1. Written as the query a fan actually types. */
   title: string;
+  /**
+   * The `<title>` when the headline above is too long for a search result.
+   *
+   * These were one field doing two jobs badly. A headline earns its length on
+   * the page — it is the first thing a reader sees and it sets up the guide
+   * — while a search result cuts around 60 characters and discards the rest.
+   * Eighteen of twenty-four were over, and what they lost was the end: the
+   * clause that says why the page is worth opening. "Cancelling a NOL World
+   * ticket: the deadline, the fee, and th…" loses *the money you still
+   * lose*, which is the reason anybody clicks.
+   *
+   * So the headline stays whatever length the page needs, and this is what
+   * search is given. Present only where it is needed; absent, the headline is
+   * used. `scripts/seo.test.mjs` fails the build if a headline that would be
+   * cut has no short form, and if a short form is itself too long — a check
+   * nobody has to remember, because a character count is exactly the kind of
+   * thing that drifts back.
+   */
+  searchTitle?: string;
   /** Meta description + card subtitle. */
   summary: string;
   /** Emoji-free glyph key — mapped to an inline SVG in components/Glyph.tsx */
@@ -320,8 +373,8 @@ export const guides: Guide[] = [
         url: "https://concert.weverse.io/",
       },
       {
-        label: "NOL World (formerly interpark Global) — rebrand announcement, 1 Dec 2025",
-        url: "https://sg.finance.yahoo.com/news/interpark-global-rebrands-nol-world-230000074.html",
+        label: "NOL World (formerly interpark Global) — Nol Universe\u0027s own announcement on the wire, dated 3 Dec 2025",
+        url: "https://www.prnewswire.com/apac/news-releases/interpark-global-rebrands-as-nol-world-a-new-travel-hub-for-global-k-pop-fans-visiting-korea-302629816.html",
       },
       {
         label: "Korea.net — government briefing on the ticket resale crackdown",
@@ -427,8 +480,8 @@ export const guides: Guide[] = [
     ],
     sources: [
       {
-        label: "interpark Global rebrands to NOL World, 1 Dec 2025",
-        url: "https://sg.finance.yahoo.com/news/interpark-global-rebrands-nol-world-230000074.html",
+        label: "interpark Global rebrands to NOL World — Nol Universe\u0027s own announcement on the wire, dated 3 Dec 2025",
+        url: "https://www.prnewswire.com/apac/news-releases/interpark-global-rebrands-as-nol-world-a-new-travel-hub-for-global-k-pop-fans-visiting-korea-302629816.html",
       },
       {
         label: "Chosun — Yanolja Core brand consolidation under NOL",
@@ -862,6 +915,7 @@ export const guides: Guide[] = [
     name: "YES24 Global",
     koLine: "예스24 영문 예매 — 계정·결제·수령",
     title: "YES24 Global ticketing: the rules that are not on the English page",
+    searchTitle: "YES24 Global: the rules not on the English page",
     summary:
       "Your existing YES24 account will not work. PayPal only appears if the show is far enough away. Two card types are refused outright, and the venue checks your passport against the name you signed up with.",
     glyph: "ticket",
@@ -1441,6 +1495,7 @@ export const guides: Guide[] = [
     name: "Verified Member",
     koLine: "NOL World 본인인증 — 여권 촬영과 이름 순서",
     title: "NOL World Verified Member: passing the eKYC check from overseas",
+    searchTitle: "NOL World Verified Member: passing eKYC from overseas",
     summary:
       "Some shows will not let you book at all until your passport has been verified. The check is a live passport-and-face capture, it cannot be redone casually, and the one instruction NOL World gives about timing is the one most people ignore.",
     glyph: "id",
@@ -1588,6 +1643,7 @@ export const guides: Guide[] = [
     name: "Cancel and refund",
     koLine: "예매 취소와 환불 — 마감 시각과 환율 손실",
     title: "Cancelling a NOL World ticket: the deadline, the fee, and the money you still lose",
+    searchTitle: "Cancelling a NOL World ticket: deadline, fee, money lost",
     summary:
       "The cancellation deadline is the afternoon before the show in Korean time, Saturdays are earlier than the rest of the week, and a fully refunded ticket can still cost a foreign cardholder money. Also: sending the ticket to your friend takes the cancel button away.",
     glyph: "card",
@@ -1735,6 +1791,7 @@ export const guides: Guide[] = [
     name: "Mobile ticket",
     koLine: "모바일 티켓과 입장 — QR·PIN·대리수령",
     title: "Your NOL World mobile ticket: the QR, the PIN, and getting through the gate",
+    searchTitle: "NOL World mobile ticket: the QR, the PIN, the gate",
     summary:
       "The ticket only opens on a phone, it is English-only and your browser's auto-translate will mangle it, a sent ticket has a 24-hour PIN clock, and arriving late is not a guaranteed entry. The last twenty minutes of the whole process, in order.",
     glyph: "ticket",
@@ -1875,6 +1932,7 @@ export const guides: Guide[] = [
     name: "Play&Stay",
     koLine: "공연+숙박 패키지 — 하나의 상품, 변경 불가",
     title: "NOL World Play&Stay: one product, and almost nothing about it is changeable",
+    searchTitle: "NOL World Play&Stay: one product, almost nothing changeable",
     summary:
       "A concert and a hotel sold as a single item. You cannot change the hotel, the dates or the nights, skipping the hotel refunds nothing, the seat is random and revealed on the day, and the tickets are handed only to you, in person, at the hotel, inside a window.",
     glyph: "star",
@@ -2038,6 +2096,7 @@ export const guides: Guide[] = [
     name: "Customs and duty",
     koLine: "앨범 주문과 관세 — 면세 기준이 사라진 뒤",
     title: "Customs on a K-pop album order: what changed when duty-free went away",
+    searchTitle: "K-pop album customs: what changed when duty-free went",
     summary:
       "The United States suspended its 800-dollar duty-free threshold and the EU removed its low-value exemption in the same year. A Korean album order is now dutiable from the first dollar, and the only question left is whether you pay at checkout or at the door.",
     glyph: "parcel",
@@ -2199,6 +2258,7 @@ export const guides: Guide[] = [
     name: "Fees and the clock",
     koLine: "예매수수료와 결제 시간 — 8천원, 10분, 7분",
     title: "NOL World checkout: the booking fee, the clock, and the currency you pay in",
+    searchTitle: "NOL World checkout: booking fee, clock, currency",
     summary:
       "A concert ticket carries an 8,000 won service fee, you get ten minutes to choose seats and seven to pay, and the payment window asks you to pick a currency. Three money decisions and one timer, all of them published and none of them obvious.",
     glyph: "card",
@@ -2343,6 +2403,7 @@ export const guides: Guide[] = [
     name: "Account and errors",
     koLine: "계정 찾기와 예매 오류 — 로그인 방식이 전부를 결정합니다",
     title: "Locked out of NOL World: finding the account, and fixing the page that will not open",
+    searchTitle: "Locked out of NOL World: find the account, fix the page",
     summary:
       "Which login you used decides every recovery route, password reset exists only for email signups, and an unverified email can make an account hard to find at all. Plus the booking page errors that are not errors.",
     glyph: "id",
@@ -2501,6 +2562,7 @@ export const guides: Guide[] = [
     name: "Shipping and delays",
     koLine: "위버스샵 배송 지연과 주문 취소 — 상태가 바뀌면 끝입니다",
     title: "Why your Weverse Shop order is late, and when you can still cancel it",
+    searchTitle: "Weverse Shop order late: why, and when you can cancel",
     summary:
       "The cancel button disappears on a status change rather than a deadline, the EU scrapped its 150-euro duty-free limit, the US added a second inspection regime on top of the duty one, and a Korean holiday has a cutoff measured to the minute.",
     glyph: "parcel",
@@ -2657,6 +2719,7 @@ export const guides: Guide[] = [
     name: "The data leak",
     koLine: "위버스 개인정보 유출 — 무엇이 유출됐고, 무엇은 아닌가",
     title: "The Weverse data leak: what actually leaked, and the one risk it creates",
+    searchTitle: "The Weverse data leak: what leaked, and the one risk",
     summary:
       "422,584 accounts, confirmed by Weverse itself. No names, no contact details, no card numbers — an internal identifier and your purchase history. That combination is not a drained account; it is the raw material for a message that knows what you bought.",
     glyph: "id",
@@ -2811,6 +2874,7 @@ export const guides: Guide[] = [
     name: "Ktown4u",
     koLine: "케이타운포유 주문 — 6시간 결제 시한과 배송비",
     title: "Ordering from Ktown4u: the six-hour payment clock and the fees nobody mentions",
+    searchTitle: "Ktown4u orders: the 6-hour payment clock and the fees",
     summary:
       "An unpaid order is cancelled after six hours, not twenty-four. US parcels can carry a USD 12 charge collected at your door. International shipping went up 7% in February 2026, and two European countries quietly lost a shipping method entirely.",
     glyph: "parcel",
@@ -2970,6 +3034,7 @@ export const guides: Guide[] = [
     name: "Gocheok Sky Dome",
     koLine: "고척스카이돔 가는 길 — 가장 가까운 역이 정답이 아닙니다",
     title: "Getting to Gocheok Sky Dome: the nearest station is not the right station",
+    searchTitle: "Gocheok Sky Dome: the nearest station is the wrong one",
     summary:
       "Twenty-five thousand people, 484 parking spaces, and a venue that tells you in its own words to get off one stop early. The nearest exit is a three-minute walk and is the one you should probably avoid.",
     glyph: "star",
@@ -3008,6 +3073,10 @@ export const guides: Guide[] = [
         pitfall:
           "Following a route app that optimises for distance. It will send you to Guil every time, because it does not know what the venue knows about the exit at turnout.",
         takes: "5 minutes, before the day",
+        see: {
+          slug: "where-to-stay-seoul-concert-night",
+          text: "The same line, applied to where you sleep that night",
+        },
       },
       {
         title: "Understand why the crush is worse than a baseball crowd",
@@ -3092,6 +3161,7 @@ export const guides: Guide[] = [
     name: "Gocheok seats",
     koLine: "고척스카이돔 좌석번호 — 한 방향으로 돌아갑니다",
     title: "Finding your seat at Gocheok Sky Dome: what the block number on your ticket means",
+    searchTitle: "Gocheok Sky Dome seats: what your block number means",
     summary:
       "Four levels, one direction, and a single break in the loop. Three digits read correctly will walk you to your block from any entrance, without a map and without knowing which way is north.",
     glyph: "ticket",
@@ -3235,6 +3305,7 @@ export const guides: Guide[] = [
     name: "TicketLink",
     koLine: "\uD2F0\uCF13\uB9C1\uD06C \uAE00\uB85C\uBC8C \u2014 \uD398\uC774\uCF54 \uACC4\uC815\uC774 \uBA3C\uC800\uC785\uB2C8\uB2E4",
     title: "TicketLink for overseas buyers: the PAYCO account, the eight-minute clock, and the collection problem",
+    searchTitle: "TicketLink from overseas: PAYCO first, then an 8-min clock",
     summary:
       "The fourth Korean ticketing platform, and the one English guides leave out. It has a real English site, it will not let you book without a PAYCO account, and its only documented delivery route is domestic.",
     glyph: "ticket",
@@ -3371,6 +3442,7 @@ export const guides: Guide[] = [
     name: "Shop or Ktown4u",
     koLine: "\uC704\uBC84\uC2A4\uC0F5 vs \uCF00\uC774\uD0C0\uC6B4\uD3EC\uC720 \u2014 \uB458 \uB2E4 \uD55C\uD130\uC5D0 \uC7A1\uD799\uB2C8\uB2E4",
     title: "Weverse Shop or Ktown4u: the comparison nobody writes, because both pages are about one store",
+    searchTitle: "Weverse Shop or Ktown4u: the comparison nobody writes",
     summary:
       "They both report to Hanteo, so the chart question does not decide it. What decides it is which store has your release, whose clock you can meet, and \u2014 more than either \u2014 which one publishes the thing you need to know.",
     glyph: "parcel",
@@ -3913,6 +3985,143 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "where-to-stay-seoul-concert-night",
+    ko: "막차",
+    art: "fan-kit",
+    name: "Where to stay",
+    koLine: "\uB9C9\uCC28 \u2014 \uACF5\uC5F0\uC774 \uB05D\uB098\uB294 \uC2DC\uAC01\uC774 \uC7A0\uC790\uB9AC\uB97C \uC815\uD569\uB2C8\uB2E4",
+    title: "Where to stay for a Seoul concert: pick the line, not the distance",
+    searchTitle: "Where to stay for a Seoul concert: the line, not distance",
+    summary:
+      "The hour your show ends decides where you sleep, not the distance to the hall. One line, no transfers, and a last train you check yourself \u2014 because a printed time that has moved is worse than none.",
+    glyph: "star",
+    status: "sourced",
+    lastChecked: "2026-10-22",
+    scope:
+      "Covers how to choose where to stay for a concert night in Seoul, as a rule you apply to your own show: find the venue\u0027s subway line, stay on it, and check the last train for your own station before you book. The worked example is Gocheok Sky Dome, from the Seoul Facilities Corporation pages that operate it, with the subway and taxi figures from Seoul\u0027s own tourism service. It names no hotels and carries no ratings, and the last step says why; the four links to accommodation searches around named stations are paid, and marked. Train times are not printed here and must be checked for your station, line and day of the week. What any of these areas is like to stay in is not covered, because neither source describes it and nobody here has walked them. KSPO Dome and Inspire Arena need their own pages.",
+    readMinutes: 8,
+    platforms: ["Gocheok Sky Dome"],
+    intro: [
+      "Almost every English answer to \u0022where should I stay for the concert\u0022 is a list of hotels sorted by how close they are to the building. That sorts on the wrong number. You are not walking to the venue at a time of your choosing \u2014 you are leaving it at the same minute as everyone else, late, on a transit system you do not know, in a city where the trains stop.",
+      "The number that decides the night is the gap between when your show ends and when the last train leaves the station you are standing in. Everything else follows from it, including which hotels are even worth looking at.",
+    ],
+    steps: [
+      {
+        title: "Find the venue\u0027s subway line before you look at a single room",
+        body: "Not the address, not the district \u2014 the line. Gocheok Sky Dome is at 430 Gyeongin-ro in Guro-gu and the stations the venue itself publishes are Guil, Gaebong and Guro on Line 1, plus Sindorim on Lines 1 and 2 with a bus. So for a show at Gocheok the answer is Line 1, and that single fact is worth more than any hotel list, because it turns an open question into a filter you can apply to a booking site in one minute.",
+        pitfall:
+          "Searching \u0022hotels near Gocheok Sky Dome\u0022 and booking the nearest result. Distance to the hall is the thing you will spend the least time caring about: three minutes of walking against forty minutes of getting back across the city.",
+        takes: "2 minutes",
+        see: {
+          slug: "gocheok-sky-dome-getting-there",
+          text: "The stations, exits and walking times the venue publishes",
+        },
+      },
+      {
+        title: "Stay on that line, because a transfer is where the night goes wrong",
+        body: "One line means one platform, one direction and one decision, taken while tired in a crowd. A transfer means finding a connecting platform inside an unfamiliar station, and it means the last train that matters is no longer one train but two \u2014 miss the connection and the first train was no help. The rule is not that transfers are hard. It is that after a concert you are solving the problem at the worst possible moment, and every change you remove is a failure you cannot have.",
+        pitfall:
+          "Judging a hotel by how many minutes a route planner says, at a time of day you will not be travelling. A planner that routes you through two changes at 23:40 is describing a journey that may not exist by the time you make it.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Decide whether you are walking home or riding home",
+        body: "This is the fork, and it is the one most pages skip. Stay inside walking distance of the hall and the last train stops mattering entirely \u2014 you leave on foot, at your own pace, and the clock this guide is built around does not apply to you. Stay further along the line and you get a neighbourhood with more in it, at the price of being governed by a departure time. Neither is the right answer in general. What the venue\u0027s own access page does tell you is that the nearest station is under pressure on a full night: it asks readers coming from Seoul and the Suwon or Anyang direction to get off a stop early at Guro, and readers from the Incheon or Bucheon direction to do the same at Gaebong. That is advice about arriving, and it is the operator\u0027s own, so take it as what it is \u2014 evidence that Guil does not clear quickly, not a verdict on the area.",
+        pitfall:
+          "Taking \u0022closest\u0022 and \u0022best\u0022 to be the same question. They are different questions, and this page cannot answer the second one for you \u2014 what is around a station is not something either of its sources describes, and it is not something anybody here has walked.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Check the last train for your station, and do not trust a round number",
+        body: "If you chose to ride home, this is your deadline; if you chose to walk, skip it, and that exemption is most of what a room near the hall is buying. Seoul\u0027s tourism service puts the system at roughly 5:30 in the morning until midnight. That is the right shape and it is not a plan: \u0022around midnight\u0022 is a range, and the last train from the station you will actually be standing in, on your line, on the day of the week your show falls on, is one specific time that can sit either side of it. Look it up for that station before you book the room, not on the day. If the gap between the end of your show and that time is under an hour, you are booking a taxi whether or not you have decided to.",
+        pitfall:
+          "This guide does not print the times, and that is deliberate rather than lazy. A timetable copied into a page is correct until it is quietly not, and a stale time read as current is worse than no time at all \u2014 it is the failure this whole site exists to stop, and a train you planned around is a harsher place to meet it than a rebranded website.",
+        takes: "10 minutes, before you book",
+        see: {
+          slug: "kpop-ticketing-day-timezone",
+          text: "Working in Korean time, which is the other clock this trip runs on",
+        },
+      },
+      {
+        title: "Price the failure before you book, because it is a known number",
+        body: "Missing the last train is not a disaster, it is a fare, and you can know it in advance \u2014 but not the fare most pages quote. Seoul\u0027s published rates start at 4,800 won for the first 1.6 kilometres in a regular cab, then 100 won per 131 metres, and 7,000 won for the first 3 kilometres in a deluxe or jumbo, then 200 won per 151 metres. **Those are the daytime numbers, and a concert crowd is never in a daytime taxi.** The same table carries a late-night surcharge, and the windows land exactly on the end of a show: from 22:00 to 23:00 the distance charge is 120 won per 131 metres, from 23:00 to 02:00 it is 140, and a deluxe runs at 240 won per 151 metres right through from 22:00 to 04:00. So price the ride you will actually take, which is the surcharged one.",
+        pitfall:
+          "Assuming a taxi is simply available outside a hall that has just emptied a cultural-event crowd of about twenty-five thousand onto one road. The fare is the easy part of that problem.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Book the room against the ticket you hold, not the trip you imagined",
+        body: "A ticket names the hall and the start. It does not name the end, and end times are the promoter\u0027s business and move with the show \u2014 an encore is not in any published schedule. So the room has to work for a night that runs long, not for the running time you hope for. If you are buying a package that bundles the hotel, the night is chosen for you and the constraints are much tighter, which is a different guide and worth reading before you decide which way to buy.",
+        pitfall:
+          "Booking a room whose plan only works if the show finishes on time and the first train you want is running. Two assumptions, one night, no second attempt.",
+        takes: "5 minutes",
+        see: {
+          slug: "nol-world-play-stay-package",
+          text: "What a bundled concert-and-hotel package fixes for you, and what it refuses to change",
+        },
+      },
+      {
+        title: "If you are walking home, these are the four stations the venue names",
+        body: "This is the walk-home half of the fork, and it is the half this page can actually source. The venue\u0027s own access page names four stations, and all four sit in its own district: Guil is the three-minute walk, Gaebong about fifteen minutes or the 06 village bus, Guro about twenty minutes or buses 5712 and 5626 \u2014 and Guro is the stop the venue itself suggests to anyone arriving from the Seoul, Suwon or Anyang direction. Sindorim is the odd one: it is on Lines 1 and 2, which makes it the only one of the four that connects to Line 2 without changing trains, but reaching the dome from it means a bus, three stops, with ten routes running. Pick which of those you want to walk or ride out of at the end of the night, and search around that station rather than around the hall.",
+        pitfall:
+          "Reading this as a ranking, or as the whole answer. It is the venue\u0027s four, in its own words, listed by walking distance because that is the only ordering its source supports \u2014 not by how good a night you will have. And it is deliberately not a list of places further along Line 1, which is the other honest option from step 3: no source this page can reach publishes one, so rather than invent it, this page tells you the rule and leaves you to apply it on a map.",
+        takes: "10 minutes",
+        partner: [
+          { id: "klook", area: "guil", text: "Stays near Guil Station \u2014 closest, and no train home" },
+          { id: "klook", area: "gaebong", text: "Stays near Gaebong Station \u2014 about fifteen minutes on foot" },
+          { id: "klook", area: "guro", text: "Stays near Guro Station \u2014 the venue\u0027s own suggested alternative" },
+          { id: "klook", area: "sindorim", text: "Stays near Sindorim Station \u2014 the one that also reaches Line 2" },
+        ],
+      },
+      {
+        title: "Know why this page names no hotels",
+        body: "The links in the previous step are searches around a named station, and that is the whole of what they claim \u2014 not a ranking, not a shortlist, and not a judgement that the venue\u0027s district is where you ought to be. They are paid, they are tagged, and they rank nothing. Three reasons this page stops there. We cannot check a hotel: nobody here has stayed in any of them, and this site does not call a thing verified until a person has walked it. The ratings are not ours: a star average belongs to the platform that collected it, and republishing somebody else\u0027s score as our recommendation would be passing off data we cannot stand behind. And a hotel is the fastest-rotting claim this site could make: management changes, a refurbishment closes a floor, a good year becomes a bad one, and every guide here carries a date precisely so a reader can tell how old a claim is. Twenty hotels would be twenty re-checks a cycle, and a list nobody re-checks is exactly the stale guide this site was built against. A station and a last train do not rot \u2014 which is also why the links point at stations rather than at a list we would have to keep alive.",
+        pitfall:
+          "Reading a confident, undated hotel ranking as research. Ask when it was checked and who checked it \u2014 of this page too, where the date is at the top.",
+        takes: "2 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "So which hotel should I actually book?",
+        a: "This page will not pick one. The rule it can stand behind is: decide first whether you are walking home or riding home, then stay either inside walking distance of the hall or on the venue\u0027s line \u2014 Line 1 for a Gocheok show \u2014 close enough to a station that the last walk is short. Apply that on whichever booking site you use. The four paid links here cover the walking-distance half only, because that is the half the venue publishes stations for.",
+      },
+      {
+        q: "Is it better to stay right next to the venue?",
+        a: "It depends which problem you are solving, and the honest answer is that it buys one specific thing: inside walking distance you take no train home, so the last train \u2014 the deadline this whole page is built on \u2014 stops applying to you. What it costs is a district the venue\u0027s own access page is busy routing arrivals away from on a full night. That advice is about arriving rather than about the area, and what the area is actually like to stay in is not something either source here describes.",
+      },
+      {
+        q: "What happens if the show overruns and I miss the last train?",
+        a: "You take a taxi, and you can price it before you book the room. Seoul publishes the rates: 4,800 won for the first 1.6 km in a regular cab and 100 won per 131 m after it, or 7,000 won for the first 3 km in a deluxe or jumbo and 200 won per 151 m. The harder half is that a hall emptying at once is a bad place to find a cab, so treat the fare as the floor rather than the whole cost.",
+      },
+      {
+        q: "Why will you not just print the last train times?",
+        a: "Because they change, they differ by station and by day of the week, and a time copied into a page stays confident after it stops being true. That is the failure this site exists to prevent, and a reader stranded at a platform is a worse place to discover a stale fact than a renamed website. Check your own station before you book.",
+      },
+      {
+        q: "Does this apply to KSPO Dome or Inspire Arena?",
+        a: "The rule does \u2014 find the line, stay on it, check the last train, price the taxi. The specifics do not: this page works the Gocheok example from the Seoul Facilities Corporation pages that operate that building, and the other halls have different operators, different lines and their own published advice. Those pages do not exist here yet, and inventing their details would be the thing this guide\u0027s last step refuses.",
+      },
+    ],
+    sources: [
+      {
+        label:
+          "\uC11C\uC6B8\uC2DC\uC124\uACF5\uB2E8 \uACE0\uCC99\uC2A4\uCE74\uC774\uB3D4 \u2014 \uCC3E\uC544\uC624\uC2DC\uB294\uAE38: the stations, exits, walking distances and the crowd advice",
+        url: "https://www.sisul.or.kr/open_content/skydome/introduce/location.jsp",
+      },
+      {
+        label:
+          "Visit Seoul (Seoul Metropolitan Government) \u2014 Transportation: subway operating hours, published taxi fares and the late-night surcharge",
+        url: "https://english.visitseoul.net/transportation",
+      },
+      {
+        label:
+          "\uC11C\uC6B8\uC2DC\uC124\uACF5\uB2E8 \uACE0\uCC99\uC2A4\uCE74\uC774\uB3D4 \u2014 \uC774\uC6A9\uC548\uB0B4: the 25,000 cultural-event capacity this page quotes",
+        url: "https://www.sisul.or.kr/open_content/skydome/guidance/dome.jsp",
+      },
+    ],
+  },
 ];
 
 /**
@@ -3933,12 +4142,28 @@ for (const guide of guides) {
     // A paid link pointing at a partner that is not on the public register
     // would be an undisclosed paid link, which is the one failure here that
     // is not recoverable. Fail the build rather than ship it.
-    if (step.partner && !partners.some((x) => x.id === step.partner!.id)) {
-      throw new Error(
-        `${guide.slug} → step "${step.title}" has a paid link to an unknown ` +
-          `partner: ${step.partner.id}. Every paid link must be declared in ` +
-          `content/affiliates.ts, which is what /editorial-policy publishes.`,
-      );
+    for (const link of stepPartners(step)) {
+      const partner = partners.find((x) => x.id === link.id);
+      if (!partner) {
+        throw new Error(
+          `${guide.slug} → step "${step.title}" has a paid link to an unknown ` +
+            `partner: ${link.id}. Every paid link must be declared in ` +
+            `content/affiliates.ts, which is what /editorial-policy publishes.`,
+        );
+      }
+      // An area that does not exist would fall back to the partner's site-wide
+      // destination, which is the quiet version of the same failure: the link
+      // says "near Guro Station" and sends the reader to a search for Seoul.
+      // Nothing on the page would show it and no test of the rendering would
+      // catch it, because a perfectly good paid link is what gets rendered.
+      if (link.area && !partner.areas?.some((a) => a.id === link.area)) {
+        throw new Error(
+          `${guide.slug} → step "${step.title}" names the area ` +
+            `"${link.area}" on partner ${link.id}, which has no such area in ` +
+            `content/affiliates.ts. A paid link that falls back to a generic ` +
+            `destination says one thing and does another.`,
+        );
+      }
     }
   }
 }

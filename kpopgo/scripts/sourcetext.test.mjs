@@ -137,3 +137,33 @@ test("the fingerprint ignores fields no translation mirrors", () => {
     assert.equal(fingerprint(block), fingerprint(block.replace(from, to)), `${from} should not matter`);
   }
 });
+
+/**
+ * An entry staged with an empty value is missing, not adrift.
+ *
+ * `sourceText` is required by the type, so a newly written translation has to
+ * carry the key with nothing in it until the baseline is recorded. That is the
+ * normal way a translation arrives, and it used to read as a drift: the stored
+ * pattern wanted at least one hex character, so it did not see the key, and
+ * `--record-new` added a second `sourceText` above the empty one rather than
+ * filling it. The later key wins in JavaScript, so the hash it reported
+ * writing was never the hash in force. Ten entries went in that way in one
+ * sitting and only `tsc` objected, as TS1117 — nothing in this suite did,
+ * which is why this test is here rather than a comment.
+ */
+test("a staged entry with an empty baseline reads as missing", () => {
+  const slug = rows.find((r) => r.want !== null).slug;
+  const staged = [
+    "export const translations: Translation[] = [",
+    "  {",
+    '    locale: "ja",',
+    `    slug: "${slug}",`,
+    '    sourceChecked: "2026-10-23",',
+    '    sourceText: "",',
+    "  },",
+    "];",
+  ].join("\n");
+  const [row] = audit(GUIDES, staged).rows;
+  assert.equal(row.state, "missing", "an empty baseline is no baseline");
+  assert.equal(row.stored, null, "an empty value must not be read as a hash");
+});

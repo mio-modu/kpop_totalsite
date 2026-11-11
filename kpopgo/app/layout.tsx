@@ -71,7 +71,19 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: `${site.headline} · ${site.name}`,
-    template: `%s · ${site.name}`,
+    /*
+     * No ` · KPOPGO` on inner pages, and the reason is written a few lines
+     * above in lib/site.ts: this site submitted a home title ending in its
+     * own slogan and Google rendered it as plain "KPOPGO". Search discards
+     * words it judges useless to a searcher, and on a site nobody yet
+     * searches by name the brand is exactly that — nine characters of a
+     * sixty-character budget, spent on the one word a reader already has.
+     *
+     * The brand is not lost: `openGraph.siteName` still declares it, which
+     * is what search reads for the site name it shows above a result, and
+     * the domain is on that line anyway.
+     */
+    template: "%s",
   },
   description: site.description,
   openGraph: {

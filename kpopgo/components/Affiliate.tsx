@@ -1,4 +1,4 @@
-import type { Guide } from "@/content/guides";
+import { stepPartners, type Guide } from "@/content/guides";
 import { getPartner } from "@/content/affiliates";
 
 /**
@@ -19,7 +19,7 @@ import { getPartner } from "@/content/affiliates";
  * under a 5,000px page has not been read by anybody.
  */
 export function PaidDisclosure({ guide }: { guide: Guide }) {
-  const ids = [...new Set(guide.steps.flatMap((s) => (s.partner ? [s.partner.id] : [])))];
+  const ids = [...new Set(guide.steps.flatMap((s) => stepPartners(s).map((p) => p.id)))];
   if (ids.length === 0) return null;
 
   const names = ids.map((id) => getPartner(id)?.name ?? id);
@@ -62,13 +62,29 @@ export function PaidDisclosure({ guide }: { guide: Guide }) {
  * already fails on one (content/guides.ts), so this only ever fires if that
  * check is removed — in which case silence is the safe direction.
  */
-export function AffiliateLink({ id, text }: { id: string; text: string }) {
+export function AffiliateLink({
+  id,
+  text,
+  area,
+}: {
+  id: string;
+  text: string;
+  area?: string;
+}) {
   const partner = getPartner(id);
   if (!partner) return null;
+
+  // A named area that does not resolve renders nothing, rather than silently
+  // becoming the site-wide link. The build already fails on one
+  // (content/guides.ts), so this only fires if that check is removed — and
+  // then no link is safer than a link whose text and destination disagree.
+  const place = area ? partner.areas?.find((a) => a.id === area) : undefined;
+  if (area && !place) return null;
+
   return (
     <p className="paid">
       <a
-        href={partner.url}
+        href={place?.url ?? partner.url}
         target="_blank"
         rel="sponsored nofollow noopener noreferrer"
       >

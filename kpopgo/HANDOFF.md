@@ -1,4 +1,4 @@
-# Handoff — 22 October 2026
+# Handoff — 27 October 2026
 
 Written at the end of a long session, for whoever picks this up next.
 
@@ -15,9 +15,9 @@ is waiting on a person, and what is blocked.
 | --- | --- |
 | Branch | a fresh branch off `main` per session — develop, commit and push there only |
 | Open PR | none |
-| Last merged | #60, `2974b58` — the four commits #59 left behind |
-| Build | 267 static pages, 23 English guides, 10 languages, 193 translations |
-| Suite | 61 tests, all passing |
+| Last merged | #68, `0694bbc` — the venue index and the Jangchung guide |
+| Build | 322 static pages, 321 in the sitemap, 30 English guides, 10 languages, 273 translations |
+| Suite | 101 tests, all passing |
 
 Working practice in this repo: push to the branch, the owner merges, the next
 change starts from the merged `main`. PR #58 merged as a merge commit, not a
@@ -42,6 +42,55 @@ to push to a branch that had already been merged and deleted. A session's own
 branch is assigned to it; the useful statement here is the practice, not the
 name.
 
+## 27 October: the eight untranslated guides, and why they were a gap
+
+The register was complete at its intended counts on 22 October, measured
+against **twenty-one** English guides. There were twenty-nine by 27 October,
+and the eight written in between carried no translation and no recorded
+reason for having none. That is the state worth naming, because in a count it
+is indistinguishable from the two guides that are deliberately English-only —
+the timezone and customs guides, which have a documented test behind them
+(a page whose subject is a jurisdiction the reader is not in). These eight
+had only a chronology.
+
+All eight are now in all ten languages: the TicketLink platform guide, both
+halves of Gocheok, both halves of Seoul World Cup Stadium, Jangchung, the
+venue hub, and the Weverse Shop / Ktown4u comparison. **Eighty pages.** The
+sitemap went 240 → 321 and `check-meta` passes over every one of them with no
+duplicate titles or descriptions.
+
+Three checks had to be looked at rather than worked around, and each
+narrowing carries a test that fires on the case the original check was built
+for:
+
+- **Hangul is no longer banned outright in a translation.** It may stay when
+  the English field it translates carries the same run — which is the venue
+  guides' whole case, since 고척스카이돔 and 시계방향 are in the English
+  *because* the reader cannot read Korean and has to show the name to a taxi
+  driver or match it on a chart. Derived from the English rather than
+  declared in a list, so it cannot drift. A leak still fails: no English step
+  says 제보자.
+- **`Line` is in ALIASES for the messaging app**, and a venue guide saying
+  "Guil Station on Line 1" demanded the app's name in a sentence about a
+  train. The numbered sense is removed from the English before the nouns are
+  read off it.
+- **`--record-new` could not see a staged `sourceText: ""`.** The field is
+  required by the type, so a new entry has to carry it empty; the pattern
+  wanted at least one hex character, so the script inserted a *second*
+  `sourceText` above each empty one. The later key wins in JavaScript, so
+  every hash it reported writing was dead on arrival and the whole suite
+  agreed. Only `tsc` objected, as TS1117.
+
+`CLAUDE.md` now records where the KOGL conditions bind: the seat guide exists
+in eleven editions and exactly one reproduces the chart, because the
+translated template renders no document and no diagram. The instinct on
+noticing would be to add the credit to the ten translations, which would
+attribute a reproduction that is not there.
+
+**Still true and still waiting on a person:** no guide is `verified`. Every
+one is `sourced` or `reported`. That rung needs somebody to walk a flow —
+`VERIFY.md` Session A.
+
 ## What #59 and #60 contain
 
 Two new venue guides' worth of work, in five commits, **all now in `main`** —
@@ -61,11 +110,55 @@ appear in `main` under different ones:
 
 ## Waiting on the owner
 
-- **`www.inspirekorea.com` is still blocked.** Pasting it into the proxy
-  allowlist has twice been converted to a markdown link
-  (`[www.inspirekorea.com](https://...)`) by the client, which makes the entry
-  invalid. Supply the list from `npm run hosts` **inside a fenced code block**
-  and have them paste the whole thing. The Inspire Arena guide waits on this.
+- **Booking.com, through CJ Affiliate — signed up 23 October 2026, not usable
+  yet.** The CJ publisher account exists and its **Account ID (PID) is
+  `8107329`**, which is the number every Booking link will carry. Nothing is in
+  `content/affiliates.ts` for it, deliberately: CJ approval is two-stage, the
+  Booking.com programme has not approved the application yet, and a registered
+  partner with no working advertiser link is a paid link that earns nothing —
+  which `scripts/affiliate.test.mjs` would refuse anyway, since it has no URL
+  to check attribution on. Six onboarding tasks have to be completed before the
+  application is even submitted; `kpopgo.app` goes in under Promotional
+  Properties, and the tax form for a Korean partner is a W-8BEN. When the
+  programme approves, the things needed here are that PID and one generated
+  advertiser link — the link reveals which CJ redirect domain the account uses
+  (`anrdoezrs.net`, `kqzyfj.com`, `jdoqocy.com` or `tkqlhce.com`), which is
+  what `scripts/hosts.mjs` then needs to declare.
+
+- **Nothing is waiting on `www.ksponco.or.kr`, and that line was wrong.** It
+  was offered here as the KSPO DOME host on the strength of search results,
+  flagged as unread, and a later session settled it by probing instead:
+  `www.kspo.or.kr` answers 200 and is the foundation's corporate site with no
+  venue page on it, and the hall's own operator is Olympic Park, whose host
+  drops the connection on every attempt even once allowlisted. KSPO DOME is
+  not writable from here at all — see the venue section in `CLAUDE.md`.
+  Allowlisting one more host does not change that.
+
+  The transferable part is the mistake: a hostname taken from search results
+  reads exactly like one taken from the site, and the only difference is
+  whether anybody fetched it. Probe before declaring.
+- **An allowlist edit does reach a running container — it just is not
+  instant.** An earlier version of this file said the opposite, and said it
+  from one measurement: the three hosts were pasted, all three still answered
+  403 a minute later, and that was written down as "needs a new session". Two
+  of them answered 200 on a retry some minutes afterwards. The wrong half of
+  that conclusion is the expensive half, because it sends the next session to
+  open a new one for nothing. **Re-probe a denied host after a few minutes
+  before concluding anything about the paste** — and note the shape of the
+  error: one measurement, written up as a rule, in a session whose whole
+  subject was that exact mistake.
+- **Inspire Arena needs a live hostname, and that is the whole blocker.**
+  `www.inspirekorea.com` was recorded here for weeks as blocked by the
+  allowlist. It was never blocked: the gateway answers **502** to CONNECT for
+  it where a refused host answers **403**, and a browser outside this container
+  answers `DNS_PROBE_FINISHED_NXDOMAIN` — **the domain does not resolve.** It
+  is the address Mohegan's own 2024 press releases give, so it was right once
+  and is not now. The declaration is gone, with that evidence in
+  `scripts/hosts.mjs` rather than a guess in its place. `inspireer.com` is the
+  other address in circulation and was a pre-opening holding page in 2024, so
+  it is a candidate to check and not an answer. Nothing in this container can
+  resolve a domain the gateway has not been given, so finding the live host
+  takes a browser or a current listing — not a paste.
 - **GA4** — confirm the `scroll` key event and the internal-traffic filter are
   set to 사용 rather than 테스트.
 - **Klook** — the accommodation commission rate is still unknown.
@@ -83,13 +176,63 @@ appear in `main` under different ones:
   Ktown4u guides. If it stays dead those citations need re-sourcing. Still
   dead when re-checked on 22 October 2026 — no response at all after 13
   seconds, which is the same failure rather than a slow page.
-- The Yahoo rebrand page carries a 9% drift warning that is **standing on
-  purpose** — its body does not extract cleanly. Never clear it with a plain
-  `--record`; use `--record-new`.
-- `scripts/hosts.mjs` declares `www.kspo.or.kr` as "KSPO Dome operator". That
-  host is the sports foundation's corporate site, not the Olympic Park venue.
-  Nobody has found the right hostname yet, so the comment is wrong and the
-  KSPO guide is blocked on it.
+- **The Yahoo rebrand page's drift is live market tickers, and it can never be
+  cleared by re-baselining.** It was written down here as "its body does not
+  extract cleanly", which is true and too vague to act on. Re-read on 22
+  October 2026: the page returns 696 words and most of them are Yahoo's
+  chrome — nav, plus a strip of live index prices (Straits Times, Nikkei, Hang
+  Seng, Bitcoin). Those move every day, so the fingerprint moves every day
+  whatever the article does. A baseline taken today drifts tomorrow. The real
+  fix is to re-source to the PR Newswire original the page is a syndication
+  of, which needs `prnewswire.com` on the allowlist first — do not declare it
+  before somebody can read it.
+- **1 December 2025 is right, and nothing we cite says so. That is the open
+  item — a sourcing gap, not a factual error.** Found by doing what the drift
+  warning asks: re-reading the page against the guides citing it. The Yahoo
+  page carries no 1 December date anywhere — its byline is 2 December 2025 and
+  the press release's own dateline is **SEOUL … Dec. 3, 2025 /PRNewswire/**.
+
+  The site asserts 1 December in six places in `content/guides.ts` and in
+  twenty-plus translation strings across at least five languages, so it was
+  worth settling rather than guessing. It is settled, and the date stands:
+  NOL World's own account announced the change as taking effect 1 December,
+  its site ran a rebranding giveaway from 1 to 24 December, 디지털데일리 and
+  파이낸셜뉴스 reported the 개편 on 2 December, and 나무위키 records 1 December.
+  The press release is the announcement of a change that had already
+  happened, which is why its dateline is later. Both source *labels* claimed
+  "1 Dec 2025" for that announcement and are corrected to the date it
+  actually carries.
+
+  **What is left is a citation that states the date.** The convergent evidence
+  above came from search results, not from a page anybody here read, and that
+  is not what this site counts as a source. The one to cite is NOL World's own
+  rebranding article —
+  `world.nol.com/en/content/articles/46e54f60-eb89-4f75-b1de-d33536f3b1f3`
+  ("We're rebranding") — which cannot be read from this container, since
+  `world.nol.com` 403s from CloudFront. Read it, confirm it gives 1 December,
+  and add it to both guides' `sources`. Until then the site's most-repeated
+  date rests on a page that does not contain it.
+- **KSPO DOME is closed, not pending.** The old `www.kspo.or.kr` declaration
+  calling it "KSPO Dome operator" was wrong — that is the foundation that owns
+  the park, and its site carries no seating page. `www.ksponco.or.kr` was my
+  replacement guess and it was no better, because it came from search results
+  rather than from a fetch. Probed properly, the operator is Olympic Park and
+  its host closes the connection every time once allowlisted, which means the
+  source cannot be fingerprinted or link-checked and citing it would put a
+  dead citation in the weekly report forever. Seoul World Cup Stadium was
+  written instead.
+- **Inspire Arena is blocked on sources, not on the allowlist, and three
+  routes to it are now closed.** The official hostname in Mohegan's 2024 press
+  releases, `www.inspirekorea.com`, no longer resolves (NXDOMAIN in a real
+  browser). `inspireer.com`, the other address in circulation, answers 504.
+  And NOL World — which does carry an Inspire Arena venue page and is already
+  declared — answers **403 from CloudFront** to this container, which is the
+  site refusing automation rather than the allowlist refusing the site, the
+  same state `tkglobal.melon.com` is declared under. So the venue has no
+  readable source from here at all. Its ticketing runs through NOL/Interpark,
+  which is worth knowing: a NOL World venue page read by a person is a more
+  honest source for this site's scope than a resort's marketing site would
+  have been.
 
 ## Next, in the order it was agreed
 
@@ -97,7 +240,28 @@ appear in `main` under different ones:
    promises coverage that does not exist. Three or four first.
 2. **The next venue is whichever one actually hosts the most concerts
    reachable by overseas fans** — that needs checking, not assuming. KSPO and
-   Inspire were the obvious guesses and both are blocked anyway.
+   Inspire were the obvious guesses and both were blocked.
+
+   Checked on 22 October 2026 as far as this container allows, which is not
+   far: **no per-venue count of concerts exists in any source reachable from
+   here.** The ticketing sites that hold the answer — Interpark/NOL venue
+   pages, YES24, TicketLink — are either undeclared or block automation, and
+   `world.nol.com` 403s from CloudFront. So the check cannot be completed
+   here, and that is the finding rather than a reason to fall back on the
+   guess.
+
+   What the 2026 schedules visible in search do say, directionally and not as
+   a count: KSPO DOME carries by far the most K-pop dates of the four — NCT
+   Dream over six, ZEROBASEONE three, plus TWS, DAY6, TWICE and BOYNEXTDOOR
+   across the summer — against two aespa dates at Gocheok, a handful at
+   Inspire, and nothing found at KINTEX. The second half of that reasoning
+   has since been overtaken: KSPO DOME looked like the only one whose official
+   source this site could read, and probing found the opposite — its
+   operator's host will not serve this container at all. Venue choice
+   therefore runs on what is *fetchable* as much as on what is busy, which is
+   how Seoul World Cup Stadium came to be second. The count itself is still
+   the thing nobody has: a person with one ticketing site open settles it in
+   ten minutes.
 3. Translation is finished and **ten languages is a hard ceiling**. CLAUDE.md
    records why, with the cost measured.
 

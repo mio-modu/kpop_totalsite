@@ -319,18 +319,28 @@ const JA_LABELS = {
  * the reasons are here because the counts will keep moving and the reasoning
  * should not have to be reconstructed each time.
  *
- * Where it stands against twenty-one English guides:
+ * Where it stands against twenty-nine English guides:
  *
- *   ja, zh-Hant, id        19/21   skip the timezone guide and the customs guide
- *   vi, th, fil            19/21   skip the timezone guide and the customs guide
- *   pt-BR                  19/21   skip the timezone guide and the customs guide
- *   de, es, fr             20/21   skip the customs guide only
+ *   ja, zh-Hant, id        27/29   skip the timezone guide and the customs guide
+ *   vi, th, fil            27/29   skip the timezone guide and the customs guide
+ *   pt-BR                  27/29   skip the timezone guide and the customs guide
+ *   de, es, fr             28/29   skip the customs guide only
  *
- * All ten are complete at their intended counts as of 2026-10-22. That
+ * All ten are complete at their intended counts as of 2026-10-27. That
  * sentence is worth dating, because "in progress" is the state this file was
  * in for most of its life and the state it will be in again the next time a
  * language is added — a count that has stopped moving looks identical to a
  * count nobody is moving.
+ *
+ * It was 19/21 and 20/21 on 2026-10-22, and the eight guides that closed the
+ * gap are the lesson rather than the arithmetic. Each had been written after
+ * that date and carried no translation and no reason for having none, which
+ * from the outside is indistinguishable from the two exclusions below — those
+ * have a test behind them and these had only a chronology. The two states
+ * look the same in a count, so the note above is the only thing that
+ * separates them, and the next guide written will put the file back into the
+ * state where it does not say which it is. Write the reason down when a guide
+ * is deliberately left in English; a silent gap costs a readership.
  *
  * Vietnamese, Thai and Filipino arrived together and landed on exactly the
  * set the Asian three carry — the same nineteen slugs, not nineteen that
@@ -19621,6 +19631,6396 @@ export const translations: Translation[] = [
       {
         q: "Kailangan ko bang gamitin ang shuttle, at puwede ba akong magdala ng maleta dito?",
         a: "Opsiyonal ito, at walang naibabalik sa hindi paggamit. Puwedeng sumama ang maleta sa bus, ngunit nagbababala ang NOL World na walang imbakan ng bagahe sa loob ng bus kapag narating mo na ang venue — kaya ang maletang dinala mo ay maletang dala-dala mo. Walang pang-reserbang sasakyan kung malampasan mo ang pag-alis, at ibinibigay ang sakayan at oras ng pagbalik kasama ang tiket sa hotel.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "TicketLinkを海外から使う：PAYCOアカウント、8分の制限時間、そして受け取りの問題",
+    summary:
+      "韓国で4つめのチケッティングプラットフォームであり、英語のガイドが抜かすのはここです。英語サイトは実在し、PAYCOアカウントなしでは予約させてくれず、公式に記載された配送手段は国内向けのみです。",
+    scope:
+      "韓国国外からTicketLinkで予約する手順を扱います。NHN LINKがグローバルサイト向けに公開している英語ページを2026年10月23日に読んで書いたものです。グローバルサイトが実際にどこにあるか、必要なアカウント、公式に記載された購入手順とその制限時間、そして記載されているチケット受け取り手段のすべてを扱います。主張しないことについても意図的です。TicketLinkの英語ドキュメントは、どの決済カードが使えるか、確認のSMSが韓国国外の番号に届くか、PAYCOの新規登録で何を求められるかを明記していません。このページはそれらの空白を別の場所から埋めるのではなく、空白だと書きます。当サイトの者が実際に予約したわけではありません。",
+    intro: [
+      "韓国のチケッティングを扱う英語のガイドは、3つのプラットフォームを挙げて終わります。TicketLinkは4つめで、運営は他の3社ではなくNHNです。ここでしか売られない公演は、他の3つのガイドではまったく助けにならない公演です。",
+      "英語サイトは確かにあります。同時にあるのは、TicketLinkの外側にあるアカウント要件、分単位で計られる決済の制限時間、そして唯一の配送手段がDomesticと記された受け取りの説明です。",
+    ],
+    steps: [
+      {
+        title: "自分の公演がそもそもTicketLinkで売られているか確かめる",
+        body: "TicketLinkはコンサート、ミュージカル、演劇、クラシックとダンス、ファミリー向け公演、展示、eスポーツを扱います。コンサートの一部にはExclusive Saleのバッジが付き、その公演がそのプラットフォームでしか売られないことを意味します。どこで売られるかを教えてくれるのは公式告知です。アーティストや会場から推測するものではありません。告知にTicketLinkと書かれていれば、NOL World、Weverse、YES24の手順はどれもあなたには当てはまりません。",
+        pitfall:
+          "大手3つで全部カバーされていると思い込むこと。実際はそうではなく、自分の公演がTicketLink独占だと販売日に知った読者は、アカウントを用意するのに必要だった時間を失っています。",
+        takes: "5分",
+      },
+      {
+        title: "正しいアドレスへ行く。推測したものとは違います",
+        body: "英語サイトはメインドメイン上のパスです。www.ticketlink.co.kr/global/en/home です。グローバル用のサブドメインはありません。global.ticketlink.co.kr をブラウザに入れるとNXDOMAINが返り、メインホストの /global、/en、/english はいずれも404を返します。同じグローバルセクションは /global/ja/ で日本語、/global/zh/ で中国語として動くので、表示される言語は設定ではなくパスで決まります。",
+        pitfall:
+          "TicketLinkのグローバルサイトを検索して、韓国語のほうに着いてしまうこと。同じホストなので何も警告は出ません。気づけば韓国語のページにいて、その裏にあるヘルプも別物です。",
+        takes: "2分",
+      },
+      {
+        title: "必要になる前にPAYCOアカウントを作る",
+        body: "ここでつまずく人が多く、TicketLink自身がはっきり書いています。サインインはPAYCO IDで行い、「予約サービスは会員以外には提供されません」とあります。PAYCOはNHN自身のアカウント兼決済サービスで、TicketLinkとは別です。TicketLinkの説明によれば新規登録は、サインインページ下部のCreate accountのリンクから、メールアドレスとパスワードを入力し、PAYCOが個人情報にアクセスすることへの同意が必要です。",
+        pitfall:
+          "これを販売当日まで残すこと。時間に追われながら1つのアカウントを作るのではなく、別会社のサービスでアカウントを作り、それでサインインするという話です。次のステップの8分の制限時間は、サインインを終えてからようやく始まります。",
+        takes: "20分、数日前に",
+      },
+      {
+        title: "制限時間を知る。座席から決済まで8分です",
+        body: "TicketLinkは5つの手順を記載しています。まず日付と回。販売開始までボタンはTo Be Soldと表示され、更新するとReserveに変わります。次にクラスと座席。ゾーンから選ぶかクラスから選ぶかを決め、自動割り当てか自分で指定します。次にチケット種別と枚数。ここでページは座席が確保されており8分以内に購入しなければならないと書いています。次に受け取り方法と確認。ここでも8分が繰り返され、キャンセル手数料の規定への同意が必要です。最後に決済です。確保されているのは座席なので、制限時間は残りの全部であって、1画面分ではありません。",
+        pitfall:
+          "ポップアップです。予約画面がポップアップなので、TicketLink自身の案内も有効にするよう指示しています。設定したまま忘れていたブロッカーは、エラーと認識できるメッセージを出さずに販売の機会を奪います。",
+        takes: "8分、1分も超えられません",
+      },
+      {
+        title: "受け取る前提で計画する。配送は国内向けです",
+        body: "TicketLinkはチケットの受け取り方を4つ挙げており、そのうち1つはあなたには閉じています。配送は10営業日以内に届き、ページにはDomesticと記されています。現地受け取りは窓口で、確認のSMSかチケット番号を提示します。公演と展示では受け取りの時間は開演1時間前から30分前までです。Home Ticketはアプリ内のバーコードです。Smart Ticketは携帯に発行され、当日のイベントでは当日0時から発行でき、発行後は取り消せません。",
+        pitfall:
+          "アプリ経由の2つには見落としやすい条件があります。Home Ticketのバーコードでは同じ予約の全員が一緒に入場しなければならないので、別々に着く予定だったグループはそれができません。すでに紙のチケットを持っている場合はSmart Ticketを発行できません。両方が同時に存在してはならないからです。",
+        takes: "10分、当日より前に",
+      },
+      {
+        title: "TicketLinkが書いていないことを読む。危ないのはそこです",
+        body: "英語ページが答えていないことが3つあります。購入ガイドの手順5は、決済ウィンドウが開いて方法を選ぶと書くだけで、どの方法が使えるかを列挙していません。つまり自分のカードが通るかは英語のどこにも記載がありません。現地受け取りは確認のSMSに依存していますが、そのSMSが韓国国外の番号に届くかは書かれていません。PAYCOの新規登録についてTicketLinkの説明は一文だけなので、PAYCO自身が何を求めるかはPAYCOに聞く話です。このサイトはパスポートによる確認で海外カードが使え、韓国の電話番号は不要だという主張が英語圏に流れています。本当かもしれません。ただTicketLinkのドキュメントにはなく、誰かが確かめるまでこのページはそれを繰り返しません。",
+        pitfall:
+          "記載がないことを、許されていることとして扱うこと。「否定していない」と「使える」の間の隙間で販売の機会は失われます。このステップが自信ありげな一段落ではなくこの形で存在する理由がそれです。",
+        takes: "5分",
+      },
+      {
+        title: "正しい窓口に、英語で聞く",
+        body: "TicketLinkは英語専用の問い合わせ窓口1644-3850を運営し、グローバルヘルプの全ページに掲載しています。あわせて1:1 Inquiryのフォームとmembership@nhnlink.co.krがあります。英語のFAQ一覧には「外国人も会員登録できますか」という常設の項目が2022年6月付けで載っており、新規登録、ログイン、予約の各場面でアクセス制限の画面やIP制限が出ることについて、別々に3件の項目があります。これらの見出しは販売日の最中ではなく、その前に読んでおく価値があります。運営はNHN LINK Corporation、所在地はソウル特別市江南区江南大路586です。",
+        pitfall:
+          "アクセス制限の画面が出たときにVPNに手を伸ばすこと。それは確実には解決しない問題に対して売られている有料サービスで、通るはずだった決済を壊すこともあります。当サイトはそれを勧めません。この質問のためにこそ英語の窓口があります。",
+        takes: "15分",
+      },
+    ],
+    faq: [
+      {
+        q: "TicketLinkを使うのに韓国のアカウントは必要ですか。",
+        a: "必要なのはPAYCOアカウントで、これはTicketLinkのものではなくNHN自身のサービスです。TicketLinkは、予約サービスは会員以外には提供されないこと、サインインはPAYCO IDで行うことを明記しています。PAYCOの新規登録については、メールアドレスとパスワード、そしてPAYCOが個人情報にアクセスすることへの同意と説明しています。それ以上にPAYCOが何を求めるかは、TicketLinkの英語ページでは扱われていません。",
+      },
+      {
+        q: "TicketLinkの英語サイトはどこですか。",
+        a: "www.ticketlink.co.kr/global/en/home です。別のドメインではなくメインドメイン上のパスです。global.ticketlink.co.kr は存在せず、そのホスト名は解決しません。同じセクションは /global/ja/ で日本語、/global/zh/ で中国語でも動きます。",
+      },
+      {
+        q: "座席を取ったあと、決済まで何分ありますか。",
+        a: "8分です。TicketLinkはチケット枚数の手順で、座席は確保されており8分以内に購入しなければならないと書き、受け取りと確認の手順でも8分を繰り返しています。確保されているのは座席なので、その時間は決済を含めてこの先の全部をカバーします。",
+      },
+      {
+        q: "TicketLinkはチケットを海外に送ってくれますか。",
+        a: "記載されている配送手段はDomesticと記され、10営業日とされているので、受け取る前提で計画してください。ほかに挙げられているのは、確認のSMSかチケット番号を持って窓口で受け取る方法、TicketLinkアプリ内のHome Ticketのバーコード、そして携帯に発行されるSmart Ticketです。",
+      },
+      {
+        q: "TicketLinkは海外のカードのうちどれを受け付けますか。",
+        a: "英語のドキュメントには書かれていません。購入ガイドの決済手順は、決済ウィンドウが開いて方法を選ぶとしか書いていません。誰かが実際の予約で確かめるまで、このページは使えるカードの名前を挙げません。ほかで読むものも挙げるべきではありません。",
+      },
+      {
+        q: "アクセス制限の画面が出ます。これは何ですか。",
+        a: "TicketLinkの英語FAQ一覧にはこれについて3件の項目があり、予約中のアクセス制限と、新規登録およびログイン時のIP制限についてで、2022年6月から2023年6月の日付が付いています。3回も答えられているのは、よくある事象だということです。VPNに手を伸ばすのではなく、英語専用の窓口1644-3850か1:1 Inquiryのフォームで聞いてください。VPNは解決するとは限らない問題に対して売られている有料サービスで、通るはずだった決済を壊すこともあります。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "從海外使用TicketLink：先有PAYCO帳號，再面對8分鐘的倒數，以及取票的問題",
+    summary:
+      "韓國第四個售票平台，也是英文指南漏掉的那一個。它確實有英文網站，沒有PAYCO帳號就不讓你訂票，而它唯一寫明的配送方式只送韓國境內。",
+    scope:
+      "涵蓋從韓國境外在TicketLink訂票的流程，依據NHN LINK為其全球網站發布的英文頁面，於2026年10月23日閱讀：全球網站實際在哪裡、它要求的帳號、寫明的購票步驟與倒數時間，以及它描述的每一種取票方式。本頁對自己不主張的部分同樣刻意。TicketLink的英文文件沒有說明它接受哪些支付卡、確認簡訊能否送到韓國境外的號碼，也沒有說明PAYCO註冊時會要求什麼，本頁因此直接寫出這些空白，而不從別處補上。本站沒有人實際在上面訂過票。",
+    intro: [
+      "談韓國售票的英文指南列出三個平台就停了。TicketLink是第四個，營運者是NHN而不是另外三家，而只在這裡開賣的場次，那三份指南完全幫不上你。",
+      "它確實有英文網站。它同時還有一個落在TicketLink之外的帳號要求、以分鐘計算的結帳倒數，以及一段取票說明，其中唯一的配送方式標示為Domestic。",
+    ],
+    steps: [
+      {
+        title: "先確認你的場次是否真的在TicketLink開賣",
+        body: "TicketLink賣演唱會、音樂劇、話劇、古典與舞蹈、親子節目、展覽與電子競技，部分演唱會會掛上Exclusive Sale標記，意思是該場次只在這個平台販售。告訴你答案的是官方公告；平台不是能從藝人或場館推論出來的東西。公告若寫的是TicketLink，那麼NOL World、Weverse或YES24的流程對你都不適用。",
+        pitfall:
+          "以為三大平台就涵蓋一切。並沒有，而在開賣當天才發現自己的場次是TicketLink獨家的讀者，已經失去了用來準備帳號的時間。",
+        takes: "5分鐘",
+      },
+      {
+        title: "前往正確的網址，而它不是你會猜到的那一個",
+        body: "英文網站是主網域底下的一個路徑：www.ticketlink.co.kr/global/en/home。沒有全球版的子網域——瀏覽器輸入 global.ticketlink.co.kr 會得到NXDOMAIN，而主機上的 /global、/en 與 /english 全部回傳404。同一個全球區塊在 /global/ja/ 以日文、/global/zh/ 以中文運作，所以你看到的語言由路徑決定，不是由設定決定。",
+        pitfall:
+          "搜尋TicketLink的全球網站，卻落在韓文那一邊。兩者是同一台主機，所以不會有任何提示；你只會發現自己在一個韓文頁面上，後面接的是另一套說明。",
+        takes: "2分鐘",
+      },
+      {
+        title: "在需要之前先把PAYCO帳號辦好",
+        body: "這一步最容易把人攔下來，而TicketLink自己寫得很清楚：你用PAYCO ID登入，而且「本預約服務不提供給非會員」。PAYCO是NHN自家的帳號與支付服務，與TicketLink各自獨立。依TicketLink的描述，註冊是從登入頁下方的Create account連結開始，填電子郵件與密碼，並且必須同意讓PAYCO取用你的個人資料。",
+        pitfall:
+          "把這件事留到開賣當天。你要做的不是在時間壓力下開一個帳號，而是在另一家公司的服務上開帳號，再用它登入；下一步那8分鐘的倒數，要等你已經登入之後才開始算。",
+        takes: "20分鐘，提前幾天",
+      },
+      {
+        title: "認清倒數：從選位到付款只有8分鐘",
+        body: "TicketLink寫明五個步驟。先是日期與場次，開賣前按鈕顯示To Be Sold，重新整理後才變成Reserve。接著是票區與座位，先選區或先選等級，可以自動配位或自己挑。然後是票種與張數，頁面在這裡說座位已為你保留，必須在8分鐘內完成購買。接著是取票方式與確認，這裡再次出現8分鐘，並要求你同意退票手續費規定。最後是付款。保留的是座位，所以倒數涵蓋的是剩下的全部，而不是其中一個畫面。",
+        pitfall:
+          "彈出視窗。訂票視窗本身就是彈出視窗，所以TicketLink自己的說明也要你允許它；設了之後就忘掉的封鎖程式，會在不給出任何看得懂的錯誤訊息的情況下讓你買不到。",
+        takes: "8分鐘，一分鐘也不能多",
+      },
+      {
+        title: "按取票來安排，因為配送只送境內",
+        body: "TicketLink列出四種拿到票的方式，其中一種對你是關著的。配送在10個工作日內送達，頁面標示為Domestic。現場取票在售票窗口，出示確認簡訊或票號；表演與展覽的取票時間是開演前1小時到30分鐘之間。Home Ticket是TicketLink應用程式裡的條碼。Smart Ticket發到你的手機，當日活動從當天0時起可發行，一經發行就無法取消。",
+        pitfall:
+          "應用程式那兩種方式各有一個容易漏掉的條件。用Home Ticket條碼時，同一筆訂單的所有人必須一起入場，所以原本打算分開抵達的團體辦不到；而如果你已經持有紙本票，就不能發行Smart Ticket，因為兩者不得同時存在。",
+        takes: "10分鐘，在當天之前",
+      },
+      {
+        title: "讀它沒有說的部分，因為風險就在那裡",
+        body: "它的英文頁面有三件事沒有回答。購票指南的第五步只說會出現付款視窗、請你選擇方式，從未列出有哪些方式，所以你的卡能不能用，英文文件裡任何地方都沒有寫。現場取票依賴一則確認簡訊，而沒有任何地方說明那則簡訊能不能送到韓國境外的號碼。至於PAYCO註冊，TicketLink只用一句話描述，所以PAYCO本身要求什麼，要去問PAYCO。英文圈流傳一種說法，說這個網站以護照驗證就接受海外卡、不需要韓國電話號碼。它可能是真的。但它不在TicketLink的文件裡，在有人查證之前，本頁不會重複它。",
+        pitfall:
+          "把沒有寫明的事當成被允許的事。「它沒有說不行」與「它可以用」之間的縫隙，就是你買不到票的地方，而這也正是這一步存在、而不是寫成一段自信說明的全部理由。",
+        takes: "5分鐘",
+      },
+      {
+        title: "找對窗口，用英文問",
+        body: "TicketLink設有只用英文的客服專線1644-3850，並印在全球說明區塊的每一頁上，旁邊還有1:1 Inquiry表單與membership@nhnlink.co.kr。它的英文FAQ索引裡有一條長期存在的項目，標題是「外國人也能加入會員嗎」，日期為2022年6月；另外有三條分別談註冊、登入與訂票過程中出現存取受限畫面或IP限制。這些標題值得在開賣日之前讀，而不是在當天讀。營運者是NHN LINK Corporation，地址在首爾江南區江南大路586。",
+        pitfall:
+          "看到存取受限畫面就去找VPN。那是針對一個它未必能可靠解決的問題所販售的訂閱服務，還可能弄壞本來會成功的付款；本站不會叫你這麼做——英文專線的存在正是為了這個問題。",
+        takes: "15分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "使用TicketLink需要韓國的帳號嗎？",
+        a: "你需要的是PAYCO帳號，而那是NHN自家的服務，不是TicketLink的。TicketLink明確表示其預約服務不提供給非會員，並且要用PAYCO ID登入。關於PAYCO註冊，它描述為填電子郵件與密碼，加上同意讓PAYCO取用你的個人資料。除此之外PAYCO還會要求什麼，TicketLink的英文頁面沒有涵蓋。",
+      },
+      {
+        q: "TicketLink的英文網站在哪裡？",
+        a: "在 www.ticketlink.co.kr/global/en/home——那是主網域上的一個路徑，不是另一個網域。並沒有 global.ticketlink.co.kr，那個主機名稱無法解析。同一個區塊也在 /global/ja/ 以日文、/global/zh/ 以中文運作。",
+      },
+      {
+        q: "選到位子之後有多久可以付款？",
+        a: "8分鐘。TicketLink在票數那一步說座位已保留、必須在8分鐘內完成購買，並在取票與確認那一步再次寫出8分鐘。保留的是座位，所以那段時間涵蓋你後面的全部，付款也算在內。",
+      },
+      {
+        q: "TicketLink可以把票寄到國外給我嗎？",
+        a: "它寫明的配送方式標示為Domestic，並列為10個工作日，所以請按現場取票來安排。它描述的其他方式是帶著確認簡訊或票號到售票窗口取票、TicketLink應用程式裡的Home Ticket條碼，以及發到手機上的Smart Ticket。",
+      },
+      {
+        q: "TicketLink接受海外哪些卡？",
+        a: "它的英文文件沒有說。購票指南的付款步驟只說會出現付款視窗、請你選擇方式。在有人用真實訂票查證之前，本頁不會指名哪張卡可以用——你讀到的其他東西也不該指名。",
+      },
+      {
+        q: "我看到存取受限的畫面。那是什麼？",
+        a: "TicketLink的英文FAQ索引裡有三條在談這件事，分別是訂票過程中的存取受限，以及註冊與登入時的IP限制，日期落在2022年6月到2023年6月之間。同一件事被回答三次，說明它很常見。請打只用英文的專線1644-3850或用1:1 Inquiry表單詢問，而不是去找VPN——那是針對它未必能解決的問題所販售的訂閱服務，還可能弄壞本來會成功的付款。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "TicketLink untuk pembeli luar negeri: akun PAYCO, hitungan delapan menit, dan masalah pengambilan tiket",
+    summary:
+      "Platform tiket keempat di Korea, dan satu-satunya yang ditinggalkan panduan berbahasa Inggris. Situs bahasa Inggrisnya benar-benar ada, ia tidak akan mengizinkan Anda memesan tanpa akun PAYCO, dan satu-satunya jalur pengiriman yang tercatat hanya untuk dalam negeri.",
+    scope:
+      "Mencakup pemesanan di TicketLink dari luar Korea, dibaca dari halaman bahasa Inggris yang diterbitkan NHN LINK untuk situs globalnya pada 23 Oktober 2026: di mana situs global itu sebenarnya berada, akun yang diwajibkannya, langkah pembelian yang tercatat beserta hitungan waktunya, dan setiap jalur pengambilan tiket yang dijelaskannya. Halaman ini juga sengaja menahan diri soal apa yang tidak dapat dinyatakannya. Dokumentasi bahasa Inggris TicketLink tidak menyebutkan kartu pembayaran mana yang diterimanya, apakah SMS konfirmasinya dapat mencapai nomor di luar Korea, atau apa yang diminta PAYCO saat pendaftaran, dan halaman ini menyatakan hal itu alih-alih menambal celahnya dari sumber lain. Belum ada orang dari situs ini yang memesan di sana.",
+    intro: [
+      "Panduan berbahasa Inggris tentang tiket Korea menyebut tiga platform lalu berhenti. TicketLink adalah yang keempat, dijalankan oleh NHN dan bukan oleh salah satu dari ketiga yang lain, dan pertunjukan yang dijual secara eksklusif melaluinya adalah pertunjukan yang sama sekali tidak terbantu oleh ketiga panduan itu.",
+      "Situs bahasa Inggrisnya memang ada. Yang juga ada adalah syarat akun yang sepenuhnya berada di luar TicketLink, hitungan waktu pembayaran dalam satuan menit, dan bagian pengambilan tiket yang satu-satunya jalur pengirimannya ditandai Domestic.",
+    ],
+    steps: [
+      {
+        title: "Pastikan dulu apakah pertunjukan Anda memang dijual di TicketLink",
+        body: "TicketLink menjual konser, musikal, teater, klasik dan tari, pertunjukan keluarga, pameran, dan esports, dan sebagian konser membawa lencana Exclusive Sale, yang berarti platform itulah satu-satunya tempat pertunjukan tersebut dijual. Pengumuman resmilah yang memberi tahu Anda; platform bukan sesuatu yang bisa disimpulkan dari artisnya atau dari venuenya. Jika pengumuman menyebut TicketLink, tidak ada satu pun prosedur NOL World, Weverse, atau YES24 yang berlaku untuk Anda.",
+        pitfall:
+          "Menganggap tiga platform besar sudah mencakup segalanya. Tidak, dan pembaca yang baru tahu pada hari penjualan bahwa pertunjukannya eksklusif di TicketLink sudah kehilangan waktu yang ia butuhkan untuk menyiapkan akun.",
+        takes: "5 menit",
+      },
+      {
+        title: "Masuk ke alamat yang benar, dan itu bukan alamat yang akan Anda duga",
+        body: "Situs bahasa Inggrisnya adalah sebuah jalur di domain utama: www.ticketlink.co.kr/global/en/home. Tidak ada subdomain global — peramban yang diminta membuka global.ticketlink.co.kr menjawab NXDOMAIN, dan /global, /en, serta /english di host utama semuanya mengembalikan 404. Bagian global yang sama berjalan dalam bahasa Jepang dan Mandarin di /global/ja/ dan /global/zh/, jadi bahasa yang Anda dapatkan ditentukan oleh jalurnya, bukan oleh pengaturan.",
+        pitfall:
+          "Mencari situs global TicketLink lalu mendarat di situs berbahasa Korea. Keduanya host yang sama, jadi tidak ada yang memperingatkan Anda; Anda hanya tiba-tiba berada di halaman berbahasa Korea dengan bagian bantuan yang berbeda di belakangnya.",
+        takes: "2 menit",
+      },
+      {
+        title: "Buat akun PAYCO sebelum Anda membutuhkannya",
+        body: "Inilah langkah yang menjegal orang, dan TicketLink menyatakannya terang-terangan: Anda masuk dengan PAYCO ID, dan layanan reservasinya tidak ditawarkan kepada non-anggota. PAYCO adalah layanan akun dan pembayaran milik NHN sendiri, terpisah dari TicketLink. Pendaftarannya, seperti yang digambarkan TicketLink, dimulai dari tautan Create account di bagian bawah halaman masuk, lalu alamat surel dan kata sandi, dan Anda harus menyetujui pemberian akses PAYCO ke data pribadi Anda.",
+        pitfall:
+          "Menunda ini sampai hari penjualan. Anda bukan sedang membuat satu akun di bawah tekanan waktu, Anda membuat akun di layanan perusahaan kedua lalu memakainya untuk masuk, dan hitungan delapan menit pada langkah berikutnya baru mulai setelah Anda sudah masuk.",
+        takes: "20 menit, beberapa hari sebelumnya",
+      },
+      {
+        title: "Kenali hitungannya: delapan menit dari kursi sampai pembayaran",
+        body: "TicketLink mencatat lima langkah. Tanggal dan sesi, di mana tombolnya berbunyi To Be Sold sampai penjualan dibuka dan Anda menyegarkan halaman untuk mengubahnya menjadi Reserve. Kelas dan kursi, memilih berdasarkan zona lebih dulu atau kelas lebih dulu, dengan penempatan otomatis atau pilihan Anda sendiri. Lalu jenis dan jumlah tiket, di mana halaman itu menyatakan kursi sedang ditahan dan Anda harus menyelesaikan pembelian dalam delapan menit. Lalu pengambilan dan konfirmasi, yang mengulang delapan menit itu dan mewajibkan Anda menyetujui kebijakan biaya pembatalan. Lalu pembayaran. Yang ditahan adalah kursinya, jadi hitungan itu mencakup seluruh sisa prosesnya, bukan satu layar saja.",
+        pitfall:
+          "Pop-up. Petunjuk TicketLink sendiri meminta Anda mengizinkannya, karena jendela pemesanan itu adalah pop-up — jadi pemblokir yang dulu dipasang lalu terlupakan akan mengambil kesempatan itu tanpa pesan kesalahan yang bisa dikenali siapa pun sebagai kesalahan.",
+        takes: "8 menit, tidak lebih semenit pun",
+      },
+      {
+        title: "Rencanakan untuk mengambil sendiri, karena pengiriman hanya dalam negeri",
+        body: "TicketLink menjelaskan empat cara mendapatkan tiket dan satu di antaranya tertutup bagi Anda. Pengiriman tiba dalam sepuluh hari kerja dan halamannya menandainya Domestic. Pengambilan di lokasi dilakukan di loket, dengan menunjukkan SMS konfirmasi atau nomor tiket Anda, dan untuk pertunjukan serta pameran jendelanya antara satu jam dan tiga puluh menit sebelum acara. Home Ticket adalah barcode di dalam aplikasi TicketLink. Smart Ticket diterbitkan ke ponsel Anda, mulai tengah malam pada hari acara untuk acara hari itu, dan tidak dapat dibatalkan setelah diterbitkan.",
+        pitfall:
+          "Dua syarat pada jalur aplikasi yang mudah terlewat. Semua orang dalam satu pemesanan harus masuk bersama-sama dengan barcode Home Ticket, jadi kelompok yang berencana datang terpisah tidak bisa; dan jika Anda sudah memegang tiket kertas, Anda tidak dapat menerbitkan Smart Ticket, karena keduanya tidak boleh ada sekaligus.",
+        takes: "10 menit, sebelum hari acara",
+      },
+      {
+        title: "Baca apa yang tidak dikatakan TicketLink, karena di situlah Anda terekspos",
+        body: "Ada tiga hal yang tidak dijawab halaman bahasa Inggrisnya. Langkah kelima panduan pembelian mengatakan sebuah jendela pembayaran muncul dan Anda memilih sebuah metode; ia tidak pernah merinci metode apa saja, jadi apakah kartu Anda berfungsi tidak tercatat di mana pun dalam bahasa Inggris. Pengambilan di lokasi bersandar pada SMS konfirmasi, dan tidak ada yang menyatakan apakah SMS itu dapat mencapai nomor di luar Korea. Dan pendaftaran PAYCO digambarkan TicketLink dalam satu kalimat, jadi apa yang diminta PAYCO sendiri adalah pertanyaan untuk PAYCO. Ada klaim yang beredar dalam bahasa Inggris bahwa situs ini menerima kartu luar negeri dengan verifikasi paspor dan tidak memerlukan nomor telepon Korea. Itu mungkin benar. Itu tidak ada dalam dokumentasi TicketLink, dan halaman ini tidak akan mengulanginya sampai ada yang memeriksanya.",
+        pitfall:
+          "Memperlakukan hal yang tidak tercatat sebagai hal yang diizinkan. Celah antara mereka tidak mengatakan tidak dan itu berfungsi adalah tempat sebuah penjualan hilang, dan itulah seluruh alasan langkah ini ada alih-alih sebuah paragraf yang penuh percaya diri.",
+        takes: "5 menit",
+      },
+      {
+        title: "Tanyakan ke meja yang benar, dalam bahasa Inggris",
+        body: "TicketLink menjalankan saluran pelanggan khusus bahasa Inggris di 1644-3850 dan mencetaknya di setiap halaman bagian bantuan globalnya, bersama formulir 1:1 Inquiry dan membership@nhnlink.co.kr. Indeks FAQ bahasa Inggrisnya memuat satu entri tetap berjudul apakah orang asing juga dapat menjadi anggota, bertanggal Juni 2022, dan tiga entri terpisah tentang munculnya layar akses terbatas atau pembatasan IP saat pendaftaran, masuk, dan pemesanan. Judul-judul itu layak dibaca sebelum hari penjualan, bukan saat hari itu berlangsung. Operatornya adalah NHN LINK Corporation, di 586 Gangnam-daero, Gangnam-gu, Seoul.",
+        pitfall:
+          "Langsung mencari VPN ketika layar akses terbatas muncul. Itu langganan yang dijual untuk masalah yang tidak dapat diperbaikinya secara andal, ia bisa merusak pembayaran yang sebenarnya akan berhasil, dan situs ini tidak akan menyuruh Anda melakukannya — saluran bahasa Inggris itu ada justru untuk pertanyaan ini.",
+        takes: "15 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah saya perlu akun Korea untuk memakai TicketLink?",
+        a: "Yang Anda perlukan adalah akun PAYCO, yang merupakan layanan milik NHN sendiri dan bukan milik TicketLink. TicketLink menyatakan bahwa layanan reservasinya tidak ditawarkan kepada non-anggota dan bahwa Anda masuk dengan PAYCO ID. Ia menggambarkan pendaftaran PAYCO sebagai alamat surel dan kata sandi, ditambah menyetujui pemberian akses PAYCO ke data pribadi Anda. Apa yang diminta PAYCO di luar itu tidak tercakup dalam halaman bahasa Inggris TicketLink.",
+      },
+      {
+        q: "Di mana situs bahasa Inggris TicketLink?",
+        a: "Di www.ticketlink.co.kr/global/en/home — sebuah jalur di domain utama, bukan domain tersendiri. Tidak ada global.ticketlink.co.kr; nama host itu tidak dapat diresolusi. Bagian yang sama juga berjalan dalam bahasa Jepang di /global/ja/ dan Mandarin di /global/zh/.",
+      },
+      {
+        q: "Berapa lama waktu saya untuk membayar setelah mendapat kursi?",
+        a: "Delapan menit. TicketLink mengatakan kursi sedang ditahan dan harus dibeli dalam delapan menit pada langkah jumlah tiket, dan mengulang delapan menit itu pada langkah pengambilan dan konfirmasi. Yang ditahan adalah kursinya, jadi jendela waktu itu mencakup segala hal yang masih ada di depan Anda, termasuk pembayaran.",
+      },
+      {
+        q: "Bisakah TicketLink mengirim tiket saya ke luar negeri?",
+        a: "Jalur pengiriman yang tercatat ditandai Domestic dan disebutkan sepuluh hari kerja, jadi rencanakan untuk mengambil sendiri. Alternatif yang dijelaskannya adalah pengambilan di loket dengan SMS konfirmasi atau nomor tiket, barcode Home Ticket di aplikasi TicketLink, dan Smart Ticket yang diterbitkan ke ponsel Anda.",
+      },
+      {
+        q: "Kartu mana yang diterima TicketLink dari luar negeri?",
+        a: "Dokumentasi bahasa Inggrisnya tidak menyebutkannya. Langkah pembayaran pada panduan pembelian hanya mengatakan sebuah jendela pembayaran muncul dan Anda memilih sebuah metode. Sampai ada yang memeriksanya pada pemesanan sungguhan, halaman ini tidak akan menyebut kartu yang berfungsi — dan apa pun lain yang Anda baca juga seharusnya tidak.",
+      },
+      {
+        q: "Saya mendapat layar akses terbatas. Apa itu?",
+        a: "Indeks FAQ bahasa Inggris TicketLink memuat tiga entri tentang ini, mengenai akses terbatas saat pemesanan dan pembatasan IP saat pendaftaran dan masuk, bertanggal antara Juni 2022 dan Juni 2023. Bahwa hal itu dijawab tiga kali menunjukkan bahwa ia umum terjadi. Tanyakan ke saluran khusus bahasa Inggris di 1644-3850 atau lewat formulir 1:1 Inquiry alih-alih mencari VPN, yang merupakan langganan yang dijual untuk masalah yang mungkin tidak diperbaikinya dan bisa merusak pembayaran yang seharusnya berhasil.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "TicketLink für Käufer aus dem Ausland: das PAYCO-Konto, die Acht-Minuten-Uhr und das Problem der Abholung",
+    summary:
+      "Die vierte koreanische Ticketplattform und diejenige, die englischsprachige Anleitungen weglassen. Sie hat eine echte englische Seite, sie lässt Sie ohne PAYCO-Konto nicht buchen, und ihr einziger dokumentierter Versandweg gilt nur innerhalb Koreas.",
+    scope:
+      "Behandelt das Buchen bei TicketLink von außerhalb Koreas, gelesen aus den englischen Seiten, die NHN LINK für seine globale Website veröffentlicht, am 23. Oktober 2026: wo diese globale Seite tatsächlich liegt, welches Konto sie verlangt, welche Kaufschritte dokumentiert sind und mit welcher Uhr, und jeder Weg zur Ticketabholung, den sie beschreibt. Die Seite ist auch bewusst darin, was sie nicht behauptet. Die englische Dokumentation von TicketLink nennt nicht, welche Zahlungskarten sie annimmt, ob ihre Bestätigungs-SMS eine Nummer außerhalb Koreas erreichen kann oder was PAYCO bei der Anmeldung verlangt, und diese Seite sagt das, anstatt die Lücken von anderswoher zu füllen. Niemand von dieser Seite hat dort gebucht.",
+    intro: [
+      "Englischsprachige Anleitungen zum koreanischen Ticketverkauf nennen drei Plattformen und hören dann auf. TicketLink ist die vierte, betrieben von NHN und nicht von einer der anderen drei, und eine Show, die ausschließlich darüber verkauft wird, ist eine Show, bei der jene drei Anleitungen Ihnen überhaupt nicht helfen.",
+      "Eine englische Seite gibt es tatsächlich. Was es außerdem gibt, ist eine Kontopflicht, die vollständig außerhalb von TicketLink liegt, eine in Minuten gemessene Uhr an der Kasse und einen Abschnitt zur Zustellung, dessen einziger Versandweg mit Domestic gekennzeichnet ist.",
+    ],
+    steps: [
+      {
+        title: "Prüfen Sie überhaupt erst, ob Ihre Show bei TicketLink läuft",
+        body: "TicketLink verkauft Konzerte, Musicals, Theater, Klassik und Tanz, Familienvorstellungen, Ausstellungen und Esports, und einige Konzerte tragen ein Exclusive Sale-Abzeichen, was bedeutet, dass die Show nur auf dieser Plattform verkauft wird. Was es Ihnen sagt, ist die offizielle Ankündigung; die Plattform ist nichts, was sich von der Künstlerin oder vom Veranstaltungsort ableiten lässt. Nennt die Ankündigung TicketLink, dann gilt für Sie keines der Verfahren von NOL World, Weverse oder YES24.",
+        pitfall:
+          "Anzunehmen, die großen drei deckten alles ab. Sie tun es nicht, und wer am Verkaufstag erfährt, dass die eigene Show exklusiv bei TicketLink läuft, hat genau die Zeit verloren, die für das Einrichten eines Kontos nötig war.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Gehen Sie zur richtigen Adresse, und das ist nicht die, die Sie vermuten würden",
+        body: "Die englische Seite ist ein Pfad auf der Hauptdomain: www.ticketlink.co.kr/global/en/home. Es gibt keine globale Subdomain — ein Browser, der global.ticketlink.co.kr aufruft, erhält NXDOMAIN, und /global, /en und /english auf dem Hauptserver geben alle 404 zurück. Derselbe globale Bereich läuft auf Japanisch und Chinesisch unter /global/ja/ und /global/zh/, die Sprache entscheidet also der Pfad und nicht eine Einstellung.",
+        pitfall:
+          "Nach einer globalen TicketLink-Seite suchen und auf der koreanischen landen. Es ist derselbe Server, es warnt Sie also nichts; Sie finden sich einfach auf einer koreanischen Seite wieder, hinter der ein anderer Hilfebereich liegt.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Richten Sie ein PAYCO-Konto ein, bevor Sie es brauchen",
+        body: "Das ist der Schritt, an dem es scheitert, und TicketLink sagt es unmissverständlich: Sie melden sich mit einer PAYCO-ID an, und der Reservierungsdienst wird Nichtmitgliedern nicht angeboten. PAYCO ist der eigene Konto- und Zahlungsdienst von NHN, getrennt von TicketLink. Die Anmeldung läuft laut TicketLink über den Link Create account am Fuß der Anmeldeseite, dann E-Mail-Adresse und Passwort, und Sie müssen zustimmen, PAYCO Zugriff auf Ihre persönlichen Daten zu gewähren.",
+        pitfall:
+          "Das auf den Verkauf zu verschieben. Sie richten nicht unter Zeitdruck ein Konto ein, Sie richten ein Konto beim Dienst eines zweiten Unternehmens ein und melden sich damit an, und die Acht-Minuten-Uhr im nächsten Schritt startet erst, wenn Sie bereits angemeldet sind.",
+        takes: "20 Minuten, Tage vorher",
+      },
+      {
+        title: "Kennen Sie die Uhr: acht Minuten vom Platz bis zur Zahlung",
+        body: "TicketLink dokumentiert fünf Schritte. Datum und Vorstellung, wobei die Schaltfläche To Be Sold heißt, bis der Verkauf öffnet und Sie neu laden, damit sie zu Reserve wird. Kategorie und Platz, Auswahl zuerst nach Block oder zuerst nach Kategorie, mit automatischer Zuweisung oder eigener Wahl. Dann Ticketart und Anzahl, wo die Seite sagt, die Plätze seien reserviert und Sie müssten innerhalb von acht Minuten kaufen. Dann Zustellung und Bestätigung, wo die acht Minuten wiederholt werden und Sie den Stornogebühren zustimmen müssen. Dann die Zahlung. Reserviert sind die Plätze, die Uhr umfasst also alles, was noch kommt, und nicht einen einzelnen Bildschirm davon.",
+        pitfall:
+          "Pop-ups. TicketLink weist in der eigenen Anleitung an, sie zuzulassen, weil das Buchungsfenster ein Pop-up ist — ein einmal gesetzter und dann vergessener Blocker nimmt Ihnen den Verkauf also ohne eine Fehlermeldung, die irgendjemand als solche erkennen würde.",
+        takes: "8 Minuten, und keine Minute mehr",
+      },
+      {
+        title: "Planen Sie mit Abholung, denn der Versand ist innerkoreanisch",
+        body: "TicketLink beschreibt vier Wege zum Ticket, und einer davon ist Ihnen verschlossen. Die Zustellung erfolgt innerhalb von zehn Werktagen, und die Seite kennzeichnet sie mit Domestic. Die Abholung vor Ort erfolgt an der Kasse, gegen Vorzeigen einer Bestätigungs-SMS oder Ihrer Ticketnummer, und bei Vorstellungen und Ausstellungen liegt das Fenster zwischen einer Stunde und dreißig Minuten vor Beginn. Home Ticket ist ein Barcode in der TicketLink-App. Smart Ticket wird auf Ihr Telefon ausgestellt, bei Veranstaltungen am selben Tag ab Mitternacht, und kann nach dem Ausstellen nicht storniert werden.",
+        pitfall:
+          "Zwei Bedingungen bei den App-Wegen, die leicht zu überlesen sind. Alle einer Buchung müssen mit einem Home Ticket-Barcode gemeinsam eintreten, eine Gruppe, die getrennt ankommen wollte, kann das also nicht; und wenn Sie schon ein Papierticket haben, können Sie kein Smart Ticket ausstellen, weil beide nicht gleichzeitig bestehen dürfen.",
+        takes: "10 Minuten, vor dem Tag",
+      },
+      {
+        title: "Lesen Sie, was TicketLink nicht sagt, denn genau dort sind Sie ungeschützt",
+        body: "Drei Dinge, die die englischen Seiten nicht beantworten. Schritt fünf der Kaufanleitung sagt, ein Zahlungsfenster erscheine und Sie wählten eine Methode; welche Methoden es sind, wird nie aufgeführt, ob Ihre Karte also funktioniert, ist auf Englisch nirgends dokumentiert. Die Abholung vor Ort stützt sich auf eine Bestätigungs-SMS, und nichts sagt, ob diese SMS eine Nummer außerhalb Koreas erreichen kann. Und die PAYCO-Anmeldung beschreibt TicketLink in einem Satz, was PAYCO selbst verlangt, ist also eine Frage an PAYCO. Es kursiert auf Englisch die Behauptung, diese Seite nehme ausländische Karten mit Passprüfung und brauche keine koreanische Telefonnummer. Das kann stimmen. Es steht nicht in der Dokumentation von TicketLink, und diese Seite wiederholt es nicht, solange es niemand geprüft hat.",
+        pitfall:
+          "Etwas Undokumentiertes als etwas Erlaubtes zu behandeln. Der Abstand zwischen sie sagen nicht nein und es funktioniert ist genau die Stelle, an der ein Verkauf verloren geht, und das ist der ganze Grund, warum dieser Schritt existiert und nicht ein selbstsicherer Absatz.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Fragen Sie an der richtigen Stelle, auf Englisch",
+        body: "TicketLink betreibt eine ausschließlich englischsprachige Kundenlinie unter 1644-3850 und druckt sie auf jede Seite des globalen Hilfebereichs, daneben ein Formular 1:1 Inquiry und membership@nhnlink.co.kr. Der englische FAQ-Index enthält einen dauerhaften Eintrag mit dem Titel, ob auch Ausländer die Mitgliedschaft abschließen können, datiert Juni 2022, und drei getrennte Einträge dazu, dass bei Anmeldung, Login und Buchung ein Bildschirm mit beschränktem Zugriff oder eine IP-Beschränkung erscheint. Diese Titel lohnt es sich vor dem Verkaufstag zu lesen und nicht während er läuft. Betreiber ist die NHN LINK Corporation, 586 Gangnam-daero, Gangnam-gu, Seoul.",
+        pitfall:
+          "Zum VPN zu greifen, wenn ein Bildschirm mit beschränktem Zugriff erscheint. Das ist ein Abonnement, verkauft gegen ein Problem, das es nicht zuverlässig löst, es kann eine Zahlung zerstören, die funktioniert hätte, und diese Seite wird Ihnen das nicht empfehlen — die englische Linie existiert genau für diese Frage.",
+        takes: "15 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Brauche ich ein koreanisches Konto, um TicketLink zu nutzen?",
+        a: "Sie brauchen ein PAYCO-Konto, und das ist der eigene Dienst von NHN und nicht der von TicketLink. TicketLink erklärt, dass der Reservierungsdienst Nichtmitgliedern nicht angeboten wird und dass Sie sich mit einer PAYCO-ID anmelden. Die PAYCO-Anmeldung beschreibt es als E-Mail-Adresse und Passwort, dazu die Zustimmung, PAYCO Zugriff auf Ihre persönlichen Daten zu gewähren. Was PAYCO darüber hinaus verlangt, behandeln die englischen Seiten von TicketLink nicht.",
+      },
+      {
+        q: "Wo ist die englische Seite von TicketLink?",
+        a: "Unter www.ticketlink.co.kr/global/en/home — ein Pfad auf der Hauptdomain, nicht eine eigene. Es gibt kein global.ticketlink.co.kr; dieser Hostname löst nicht auf. Derselbe Bereich läuft auch auf Japanisch unter /global/ja/ und auf Chinesisch unter /global/zh/.",
+      },
+      {
+        q: "Wie lange habe ich Zeit zu zahlen, wenn ich einen Platz habe?",
+        a: "Acht Minuten. TicketLink sagt beim Schritt zur Ticketanzahl, die Plätze seien reserviert und müssten innerhalb von acht Minuten gekauft werden, und wiederholt die acht Minuten beim Schritt zu Zustellung und Bestätigung. Reserviert sind die Plätze, dieses Fenster umfasst also alles, was noch vor Ihnen liegt, die Zahlung eingeschlossen.",
+      },
+      {
+        q: "Kann TicketLink mir die Tickets ins Ausland schicken?",
+        a: "Der dokumentierte Versandweg ist mit Domestic gekennzeichnet und mit zehn Werktagen angegeben, planen Sie also mit Abholung. Die beschriebenen Alternativen sind die Abholung an der Kasse mit Bestätigungs-SMS oder Ticketnummer, ein Home Ticket-Barcode in der TicketLink-App und ein Smart Ticket, das auf Ihr Telefon ausgestellt wird.",
+      },
+      {
+        q: "Welche Karten nimmt TicketLink aus dem Ausland an?",
+        a: "Die englische Dokumentation sagt es nicht. Der Zahlungsschritt der Kaufanleitung sagt nur, ein Zahlungsfenster erscheine und Sie wählten eine Methode. Solange das niemand an einer echten Buchung geprüft hat, nennt diese Seite keine Karte, die funktioniert — und nichts anderes, was Sie lesen, sollte das tun.",
+      },
+      {
+        q: "Ich sehe einen Bildschirm mit beschränktem Zugriff. Was ist das?",
+        a: "Der englische FAQ-Index von TicketLink enthält dazu drei Einträge, zu beschränktem Zugriff während der Buchung und zu einer IP-Beschränkung bei Anmeldung und Login, datiert zwischen Juni 2022 und Juni 2023. Dass es dreimal beantwortet wird, legt nahe, dass es häufig vorkommt. Fragen Sie die ausschließlich englischsprachige Linie unter 1644-3850 oder das Formular 1:1 Inquiry, anstatt zum VPN zu greifen, das ein Abonnement gegen ein Problem ist, das es vielleicht nicht löst, und eine Zahlung zerstören kann, die sonst funktioniert hätte.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "TicketLink para compradores desde el extranjero: la cuenta de PAYCO, el reloj de ocho minutos y el problema de la recogida",
+    summary:
+      "La cuarta plataforma coreana de venta de entradas, y la que las guías en inglés se dejan fuera. Tiene un sitio en inglés de verdad, no te dejará reservar sin una cuenta de PAYCO, y su única vía de envío documentada es solo dentro de Corea.",
+    scope:
+      "Cubre la reserva en TicketLink desde fuera de Corea, leída en las páginas en inglés que NHN LINK publica para su sitio global el 23 de octubre de 2026: dónde está realmente ese sitio global, qué cuenta exige, qué pasos de compra están documentados y con qué reloj, y todas las vías de recogida de entradas que describe. La página también es deliberada sobre lo que no afirma. La documentación en inglés de TicketLink no dice qué tarjetas de pago acepta, ni si su SMS de confirmación puede llegar a un número de fuera de Corea, ni qué pide PAYCO al registrarse, y esta página lo dice en lugar de rellenar esos huecos con material de otra parte. Nadie de este sitio ha reservado en él.",
+    intro: [
+      "Las guías en inglés sobre la venta de entradas en Corea nombran tres plataformas y se detienen ahí. TicketLink es la cuarta, la gestiona NHN y no ninguna de las otras tres, y un concierto vendido en exclusiva a través de ella es un concierto en el que esas tres guías no te sirven de nada.",
+      "El sitio en inglés sí existe. Lo que también existe es un requisito de cuenta que queda por completo fuera de TicketLink, un reloj de pago medido en minutos y un apartado de entrega cuya única vía de envío está marcada como Domestic.",
+    ],
+    steps: [
+      {
+        title: "Comprueba primero si tu concierto se vende en TicketLink",
+        body: "TicketLink vende conciertos, musicales, teatro, clásica y danza, espectáculos familiares, exposiciones y esports, y algunos conciertos llevan una insignia Exclusive Sale, que significa que esa plataforma es el único sitio donde se vende el espectáculo. Lo que te lo dice es el anuncio oficial; la plataforma no es algo que se deduzca del artista ni del recinto. Si el anuncio nombra TicketLink, no se te aplica ninguno de los procedimientos de NOL World, Weverse o YES24.",
+        pitfall:
+          "Dar por hecho que las tres grandes lo cubren todo. No lo hacen, y quien se entera el día de la venta de que su concierto es exclusivo de TicketLink ya ha perdido el tiempo que necesitaba para preparar una cuenta.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Ve a la dirección correcta, que no es la que imaginarías",
+        body: "El sitio en inglés es una ruta del dominio principal: www.ticketlink.co.kr/global/en/home. No hay subdominio global: un navegador que pide global.ticketlink.co.kr recibe NXDOMAIN, y /global, /en y /english en el servidor principal devuelven todos 404. La misma sección global funciona en japonés y en chino en /global/ja/ y /global/zh/, así que el idioma que te toca lo decide la ruta y no un ajuste.",
+        pitfall:
+          "Buscar un sitio global de TicketLink y acabar en el coreano. Es el mismo servidor, así que nada te avisa; simplemente te encuentras en una página en coreano con una sección de ayuda distinta detrás.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Consigue una cuenta de PAYCO antes de necesitarla",
+        body: "Este es el paso en el que la gente se queda atascada, y TicketLink lo dice sin rodeos: inicias sesión con un identificador de PAYCO, y su servicio de reserva no se ofrece a quien no sea miembro. PAYCO es el servicio de cuenta y pago propio de NHN, separado de TicketLink. El registro, tal como lo describe TicketLink, empieza por el enlace Create account al pie de la página de inicio de sesión, luego una dirección de correo y una contraseña, y tienes que aceptar que PAYCO acceda a tus datos personales.",
+        pitfall:
+          "Dejar esto para el día de la venta. No estás creando una cuenta con prisa, estás creando una cuenta en el servicio de una segunda empresa y usándola después para entrar, y el reloj de ocho minutos del paso siguiente no arranca hasta que ya has iniciado sesión.",
+        takes: "20 minutos, con días de antelación",
+      },
+      {
+        title: "Conoce el reloj: ocho minutos desde el asiento hasta el pago",
+        body: "TicketLink documenta cinco pasos. Fecha y función, donde el botón dice To Be Sold hasta que abre la venta y recargas para que se convierta en Reserve. Categoría y asiento, eligiendo primero por zona o primero por categoría, con asignación automática o con tu propia elección. Luego tipo de entrada y cantidad, donde la página dice que los asientos están retenidos y que debes completar la compra en ocho minutos. Luego entrega y confirmación, que repite los ocho minutos y exige que aceptes la política de gastos de cancelación. Luego el pago. Lo retenido son los asientos, así que el reloj abarca todo lo que queda y no una sola de esas pantallas.",
+        pitfall:
+          "Las ventanas emergentes. Las propias instrucciones de TicketLink te piden permitirlas, porque la ventana de reserva es una ventana emergente: un bloqueador puesto y olvidado te quita la venta sin un mensaje de error que nadie reconocería como tal.",
+        takes: "8 minutos, y ni uno más",
+      },
+      {
+        title: "Planifica recogerla, porque el envío es nacional",
+        body: "TicketLink describe cuatro formas de conseguir la entrada y una de ellas te está cerrada. El envío llega en diez días laborables y la página lo marca como Domestic. La recogida en el recinto es en taquilla, presentando un SMS de confirmación o tu número de entrada, y para espectáculos y exposiciones la franja va de una hora a treinta minutos antes de empezar. Home Ticket es un código de barras dentro de la aplicación de TicketLink. Smart Ticket se emite en tu teléfono, desde la medianoche del día en los eventos del mismo día, y no se puede cancelar una vez emitida.",
+        pitfall:
+          "Dos condiciones de las vías por aplicación que es fácil pasar por alto. Con un código de barras de Home Ticket todos los de una misma reserva tienen que entrar juntos, así que un grupo que pensaba llegar por separado no puede; y si ya tienes una entrada en papel no puedes emitir una Smart Ticket, porque las dos no pueden existir a la vez.",
+        takes: "10 minutos, antes del día",
+      },
+      {
+        title: "Lee lo que TicketLink no dice, porque ahí es donde estás expuesto",
+        body: "Tres cosas que sus páginas en inglés no responden. El paso cinco de la guía de compra dice que aparece una ventana de pago y que eliges un método; nunca enumera qué métodos, así que si tu tarjeta funciona no está documentado en inglés en ninguna parte. La recogida en el recinto se apoya en un SMS de confirmación, y nada dice si ese SMS puede llegar a un número de fuera de Corea. Y el registro en PAYCO lo describe TicketLink en una sola frase, así que lo que pide PAYCO es una pregunta para PAYCO. Circula en inglés la afirmación de que este sitio acepta tarjetas extranjeras con verificación de pasaporte y no necesita un número de teléfono coreano. Puede que sea cierta. No está en la documentación de TicketLink, y esta página no la repetirá hasta que alguien lo compruebe.",
+        pitfall:
+          "Tratar algo no documentado como algo permitido. El hueco entre no dicen que no y funciona es exactamente donde se pierde una venta, y es la razón entera de que este paso exista en lugar de un párrafo seguro de sí mismo.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pregunta en la ventanilla correcta, en inglés",
+        body: "TicketLink tiene una línea de atención solo en inglés en el 1644-3850 y la imprime en todas las páginas de su sección de ayuda global, junto a un formulario 1:1 Inquiry y membership@nhnlink.co.kr. Su índice de preguntas frecuentes en inglés mantiene una entrada fija sobre si los extranjeros también pueden darse de alta como miembros, fechada en junio de 2022, y tres entradas separadas sobre que aparezca una pantalla de acceso restringido o una restricción de IP durante el registro, el inicio de sesión y la reserva. Vale la pena leer esos títulos antes del día de la venta y no durante. La operadora es NHN LINK Corporation, en 586 Gangnam-daero, Gangnam-gu, Seúl.",
+        pitfall:
+          "Recurrir a una VPN cuando aparece una pantalla de acceso restringido. Es una suscripción vendida contra un problema que no resuelve de forma fiable, puede romper un pago que iba a salir bien, y este sitio no te dirá que lo hagas: la línea en inglés existe justo para esta pregunta.",
+        takes: "15 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Necesito una cuenta coreana para usar TicketLink?",
+        a: "Necesitas una cuenta de PAYCO, que es el servicio propio de NHN y no el de TicketLink. TicketLink declara que su servicio de reserva no se ofrece a quien no sea miembro y que se inicia sesión con un identificador de PAYCO. Describe el registro en PAYCO como una dirección de correo y una contraseña, más aceptar que PAYCO acceda a tus datos personales. Lo que PAYCO pida más allá de eso no lo cubren las páginas en inglés de TicketLink.",
+      },
+      {
+        q: "¿Dónde está el sitio en inglés de TicketLink?",
+        a: "En www.ticketlink.co.kr/global/en/home, una ruta del dominio principal y no un dominio aparte. No existe global.ticketlink.co.kr; ese nombre de servidor no resuelve. La misma sección funciona también en japonés en /global/ja/ y en chino en /global/zh/.",
+      },
+      {
+        q: "¿Cuánto tiempo tengo para pagar una vez tengo asiento?",
+        a: "Ocho minutos. TicketLink dice en el paso de la cantidad de entradas que los asientos están retenidos y hay que comprarlos en ocho minutos, y repite los ocho minutos en el paso de entrega y confirmación. Lo retenido son los asientos, así que esa franja cubre todo lo que te queda por delante, el pago incluido.",
+      },
+      {
+        q: "¿Puede TicketLink enviarme las entradas al extranjero?",
+        a: "Su vía de envío documentada está marcada como Domestic y fijada en diez días laborables, así que cuenta con recogerlas. Las alternativas que describe son la recogida en taquilla con un SMS de confirmación o el número de entrada, un código de barras de Home Ticket en la aplicación de TicketLink y una Smart Ticket emitida en tu teléfono.",
+      },
+      {
+        q: "¿Qué tarjetas acepta TicketLink desde el extranjero?",
+        a: "Su documentación en inglés no lo dice. El paso de pago de la guía de compra solo dice que aparece una ventana de pago y que eliges un método. Hasta que alguien lo compruebe en una reserva real, esta página no nombrará una tarjeta que funcione, y nada de lo que leas en otro sitio debería hacerlo tampoco.",
+      },
+      {
+        q: "Me sale una pantalla de acceso restringido. ¿Qué es?",
+        a: "El índice de preguntas frecuentes en inglés de TicketLink tiene tres entradas sobre esto, sobre el acceso restringido durante la reserva y sobre una restricción de IP durante el registro y el inicio de sesión, fechadas entre junio de 2022 y junio de 2023. Que se responda tres veces sugiere que es frecuente. Pregunta a la línea solo en inglés del 1644-3850 o por el formulario 1:1 Inquiry en lugar de recurrir a una VPN, que es una suscripción vendida contra un problema que puede no resolver y que es capaz de romper un pago que habría salido bien.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "TicketLink pour les acheteurs de l'étranger : le compte PAYCO, le chrono de huit minutes et le problème du retrait",
+    summary:
+      "La quatrième plateforme de billetterie coréenne, et celle que les guides en anglais laissent de côté. Elle a un vrai site en anglais, elle ne vous laissera pas réserver sans un compte PAYCO, et sa seule voie de livraison documentée reste à l'intérieur de la Corée.",
+    scope:
+      "Couvre la réservation sur TicketLink depuis l'extérieur de la Corée, à partir des pages en anglais que NHN LINK publie pour son site global, lues le 23 octobre 2026 : où se trouve réellement ce site global, quel compte il exige, quelles étapes d'achat sont documentées et avec quel chrono, et chacune des voies de retrait qu'il décrit. Cette page est tout aussi délibérée sur ce qu'elle n'affirme pas. La documentation en anglais de TicketLink ne dit pas quelles cartes de paiement elle accepte, ni si son SMS de confirmation peut atteindre un numéro situé hors de Corée, ni ce que PAYCO demande à l'inscription, et cette page le dit plutôt que de combler ces vides avec ce qui se raconte ailleurs. Personne de ce site n'y a réservé.",
+    intro: [
+      "Les guides en anglais sur la billetterie coréenne nomment trois plateformes puis s'arrêtent. TicketLink est la quatrième, elle est exploitée par NHN et non par l'une des trois autres, et un concert vendu exclusivement par son intermédiaire est un concert pour lequel ces trois guides ne vous servent à rien.",
+      "Le site en anglais existe bel et bien. Ce qui existe aussi, c'est une obligation de compte qui se situe entièrement en dehors de TicketLink, un chrono de paiement compté en minutes, et une section de retrait dont la seule voie d'expédition porte la mention Domestic.",
+    ],
+    steps: [
+      {
+        title: "Vérifiez d'abord si votre concert est bien vendu sur TicketLink",
+        body: "TicketLink vend des concerts, des comédies musicales, du théâtre, de la musique classique et de la danse, des spectacles pour la famille, des expositions et de l'esport, et certains concerts portent une mention Exclusive Sale, qui signifie que cette plateforme est le seul endroit où le spectacle est vendu. Ce qui vous l'apprend, c'est l'annonce officielle ; la plateforme ne se déduit ni de l'artiste ni de la salle. Si l'annonce nomme TicketLink, aucune des procédures de NOL World, de Weverse ou de YES24 ne s'applique à vous.",
+        pitfall:
+          "Supposer que les trois grandes couvrent tout. Ce n'est pas le cas, et la personne qui apprend le jour de la vente que son concert est une exclusivité TicketLink a déjà perdu le temps qu'il lui fallait pour créer un compte.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Allez à la bonne adresse, qui n'est pas celle que vous devineriez",
+        body: "Le site en anglais est un chemin sur le domaine principal : www.ticketlink.co.kr/global/en/home. Il n'y a pas de sous-domaine global — un navigateur qui demande global.ticketlink.co.kr reçoit NXDOMAIN, et /global, /en et /english sur l'hôte principal renvoient tous 404. La même section globale existe en japonais et en chinois sur /global/ja/ et /global/zh/, la langue que vous obtenez est donc décidée par le chemin et non par un réglage.",
+        pitfall:
+          "Chercher un site global TicketLink et atterrir sur le site coréen. C'est le même hôte, donc rien ne vous avertit ; vous vous retrouvez simplement sur une page en coréen, avec une autre section d'aide derrière elle.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Créez un compte PAYCO avant d'en avoir besoin",
+        body: "C'est l'étape qui bloque les gens, et TicketLink le dit sans détour : vous vous connectez avec un identifiant PAYCO, et son service de réservation n'est pas proposé aux personnes qui ne sont pas membres. PAYCO est le service de compte et de paiement propre à NHN, distinct de TicketLink. L'inscription, telle que TicketLink la décrit, passe par le lien Create account au bas de la page de connexion, puis une adresse électronique et un mot de passe, et vous devez accepter d'accorder à PAYCO l'accès à vos données personnelles.",
+        pitfall:
+          "Remettre cela au jour de la vente. Vous ne créez pas un compte sous la pression du temps, vous créez un compte sur le service d'une deuxième entreprise puis vous vous en servez pour vous connecter, et le chrono de huit minutes de l'étape suivante ne démarre qu'une fois que vous êtes déjà connecté.",
+        takes: "20 minutes, plusieurs jours à l'avance",
+      },
+      {
+        title: "Connaissez le chrono : huit minutes de la place au paiement",
+        body: "TicketLink documente cinq étapes. La date et la représentation, où le bouton indique To Be Sold jusqu'à l'ouverture de la vente, et vous rafraîchissez la page pour qu'il devienne Reserve. La catégorie et la place, en choisissant d'abord par zone ou d'abord par catégorie, avec attribution automatique ou choix personnel. Puis le type et le nombre de billets, où la page indique que les places sont retenues et que vous devez acheter dans les huit minutes. Puis le retrait et la confirmation, qui répètent les huit minutes et exigent que vous acceptiez la politique de frais d'annulation. Puis le paiement. Ce qui est retenu, ce sont les places : le chrono couvre donc tout ce qui reste et non un seul de ces écrans.",
+        pitfall:
+          "Les fenêtres surgissantes. Les instructions de TicketLink vous demandent elles-mêmes de les autoriser, parce que la fenêtre de réservation en est une — un bloqueur installé puis oublié vous prend donc la vente sans un message d'erreur que quiconque reconnaîtrait comme tel.",
+        takes: "8 minutes, pas une de plus",
+      },
+      {
+        title: "Prévoyez de retirer sur place, parce que la livraison est nationale",
+        body: "TicketLink décrit quatre façons d'obtenir un billet et l'une d'elles vous est fermée. La livraison arrive sous dix jours ouvrés et la page la marque Domestic. Le retrait sur place se fait au guichet, en présentant un SMS de confirmation ou votre numéro de billet, et pour les spectacles et les expositions le créneau va d'une heure à trente minutes avant le début. Home Ticket est un code-barres dans l'application TicketLink. Smart Ticket est émis sur votre téléphone, à partir de minuit le jour même pour les événements du jour, et ne peut plus être annulé une fois émis.",
+        pitfall:
+          "Deux conditions sur les voies par application, faciles à manquer. Tout le monde sur une même réservation doit entrer ensemble avec un code-barres Home Ticket, un groupe qui comptait arriver séparément ne peut donc pas ; et si vous détenez déjà un billet papier, vous ne pouvez pas émettre de Smart Ticket, parce que les deux ne peuvent pas exister en même temps.",
+        takes: "10 minutes, avant le jour même",
+      },
+      {
+        title: "Lisez ce que TicketLink ne dit pas, car c'est là que vous êtes exposé",
+        body: "Trois choses auxquelles ses pages en anglais ne répondent pas. L'étape cinq du guide d'achat dit qu'une fenêtre de paiement apparaît et que vous choisissez un moyen ; elle n'énumère jamais lesquels, donc le fait que votre carte fonctionne n'est documenté nulle part en anglais. Le retrait sur place s'appuie sur un SMS de confirmation, et rien ne dit si ce SMS peut atteindre un numéro hors de Corée. Et l'inscription à PAYCO est décrite par TicketLink en une phrase : ce que PAYCO demande lui-même est donc une question à poser à PAYCO. Une affirmation circule en anglais selon laquelle ce site accepte les cartes étrangères avec une vérification de passeport et n'exige pas de numéro de téléphone coréen. C'est peut-être vrai. Cela ne figure pas dans la documentation de TicketLink, et cette page ne le répétera pas avant que quelqu'un l'ait vérifié.",
+        pitfall:
+          "Traiter une chose non documentée comme une chose autorisée. L'écart entre ils ne disent pas non et cela fonctionne est exactement l'endroit où une vente se perd, et c'est toute la raison pour laquelle cette étape existe plutôt qu'un paragraphe sûr de lui.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Adressez-vous au bon guichet, en anglais",
+        body: "TicketLink tient une ligne clientèle uniquement en anglais au 1644-3850 et l'imprime sur chaque page de sa section d'aide globale, à côté d'un formulaire 1:1 Inquiry et de membership@nhnlink.co.kr. Son index de questions fréquentes en anglais comporte une entrée permanente demandant si les étrangers peuvent aussi devenir membres, datée de juin 2022, et trois entrées distinctes sur l'apparition d'un écran d'accès restreint ou d'une restriction d'IP lors de l'inscription, de la connexion et de la réservation. Ces titres méritent d'être lus avant le jour de la vente plutôt que pendant. L'exploitant est NHN LINK Corporation, au 586 Gangnam-daero, Gangnam-gu, Séoul.",
+        pitfall:
+          "Se tourner vers un VPN quand un écran d'accès restreint apparaît. C'est un abonnement vendu contre un problème qu'il ne règle pas de façon fiable, il peut casser un paiement qui allait aboutir, et ce site ne vous dira pas de le faire : la ligne en anglais existe précisément pour cette question.",
+        takes: "15 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Ai-je besoin d'un compte coréen pour utiliser TicketLink ?",
+        a: "Il vous faut un compte PAYCO, qui est le service propre à NHN et non celui de TicketLink. TicketLink indique que son service de réservation n'est pas proposé aux personnes qui ne sont pas membres et que la connexion se fait avec un identifiant PAYCO. Il décrit l'inscription à PAYCO comme une adresse électronique et un mot de passe, plus l'acceptation d'accorder à PAYCO l'accès à vos données personnelles. Ce que PAYCO demande au-delà n'est pas couvert par les pages en anglais de TicketLink.",
+      },
+      {
+        q: "Où est le site en anglais de TicketLink ?",
+        a: "À www.ticketlink.co.kr/global/en/home — un chemin sur le domaine principal, et non un domaine séparé. Il n'existe pas de global.ticketlink.co.kr ; ce nom d'hôte ne se résout pas. La même section existe aussi en japonais sur /global/ja/ et en chinois sur /global/zh/.",
+      },
+      {
+        q: "Combien de temps ai-je pour payer une fois que j'ai une place ?",
+        a: "Huit minutes. TicketLink dit à l'étape du nombre de billets que les places sont retenues et doivent être achetées dans les huit minutes, et répète ces huit minutes à l'étape du retrait et de la confirmation. Ce qui est retenu, ce sont les places : ce créneau couvre donc tout ce qui reste devant vous, paiement compris.",
+      },
+      {
+        q: "TicketLink peut-il m'envoyer mes billets à l'étranger ?",
+        a: "Sa voie de livraison documentée porte la mention Domestic et est annoncée sous dix jours ouvrés : prévoyez donc de retirer sur place. Les solutions qu'il décrit sont le retrait au guichet avec un SMS de confirmation ou un numéro de billet, un code-barres Home Ticket dans l'application TicketLink, et un Smart Ticket émis sur votre téléphone.",
+      },
+      {
+        q: "Quelles cartes TicketLink accepte-t-il depuis l'étranger ?",
+        a: "Sa documentation en anglais ne le dit pas. L'étape de paiement du guide d'achat dit seulement qu'une fenêtre de paiement apparaît et que vous choisissez un moyen. Tant que personne ne l'a vérifié sur une réservation réelle, cette page ne nommera pas une carte qui fonctionne — et rien d'autre de ce que vous lisez ne devrait le faire.",
+      },
+      {
+        q: "J'obtiens un écran d'accès restreint. Qu'est-ce que c'est ?",
+        a: "L'index des questions fréquentes en anglais de TicketLink comporte trois entrées à ce sujet, sur l'accès restreint pendant la réservation et sur une restriction d'IP pendant l'inscription et la connexion, datées entre juin 2022 et juin 2023. Qu'on y réponde trois fois suggère que c'est fréquent. Demandez à la ligne uniquement en anglais au 1644-3850 ou par le formulaire 1:1 Inquiry plutôt que de vous tourner vers un VPN, qui est un abonnement vendu contre un problème qu'il ne règle peut-être pas et qui peut casser un paiement qui aurait abouti.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "TicketLink para quem compra de fora: a conta do PAYCO, o relógio de oito minutos e o problema da retirada",
+    summary:
+      "A quarta plataforma coreana de ingressos, e a que os guias em inglês deixam de fora. Ela tem um site em inglês de verdade, não deixa você reservar sem uma conta do PAYCO, e a única via de entrega documentada é só dentro da Coreia.",
+    scope:
+      "Cobre a reserva no TicketLink de fora da Coreia, lida nas páginas em inglês que a NHN LINK publica para o seu site global, em 23 de outubro de 2026: onde esse site global realmente fica, que conta ele exige, quais passos de compra estão documentados e com que relógio, e cada via de retirada de ingresso que ele descreve. A página também é deliberada sobre o que não afirma. A documentação em inglês do TicketLink não diz quais cartões de pagamento ela aceita, nem se o SMS de confirmação consegue chegar a um número fora da Coreia, nem o que o PAYCO pede no cadastro, e esta página diz isso em vez de preencher essas lacunas com material de outro lugar. Ninguém deste site reservou nele.",
+    intro: [
+      "Os guias em inglês sobre ingressos na Coreia citam três plataformas e param ali. O TicketLink é a quarta, é operado pela NHN e não por nenhuma das outras três, e um show vendido exclusivamente por ela é um show em que aqueles três guias não ajudam em nada.",
+      "O site em inglês existe mesmo. O que também existe é uma exigência de conta que fica inteiramente fora do TicketLink, um relógio de pagamento medido em minutos, e uma seção de retirada cuja única via de envio vem marcada como Domestic.",
+    ],
+    steps: [
+      {
+        title: "Confira primeiro se o seu show está mesmo sendo vendido no TicketLink",
+        body: "O TicketLink vende shows, musicais, teatro, clássica e dança, espetáculos para a família, exposições e esports, e alguns shows trazem um selo Exclusive Sale, que significa que aquela plataforma é o único lugar onde o espetáculo é vendido. Quem conta isso para você é o anúncio oficial; a plataforma não é algo que se deduza do artista nem da casa de espetáculo. Se o anúncio citar o TicketLink, nenhum dos procedimentos do NOL World, do Weverse ou do YES24 se aplica a você.",
+        pitfall:
+          "Supor que as três grandes cobrem tudo. Não cobrem, e quem descobre no dia da venda que o seu show é exclusivo do TicketLink já perdeu o tempo de que precisava para montar uma conta.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Vá para o endereço certo, que não é o que você imaginaria",
+        body: "O site em inglês é um caminho no domínio principal: www.ticketlink.co.kr/global/en/home. Não existe subdomínio global — um navegador que pede global.ticketlink.co.kr recebe NXDOMAIN, e /global, /en e /english no host principal devolvem todos 404. A mesma seção global roda em japonês e em chinês em /global/ja/ e /global/zh/, então o idioma que você recebe é decidido pelo caminho, e não por uma configuração.",
+        pitfall:
+          "Procurar um site global do TicketLink e cair no coreano. É o mesmo host, então nada avisa você; você simplesmente se vê numa página em coreano, com outra seção de ajuda por trás dela.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Crie uma conta do PAYCO antes de precisar dela",
+        body: "Este é o passo em que as pessoas travam, e o TicketLink diz isso com todas as letras: você entra com um ID do PAYCO, e o serviço de reserva dele não é oferecido a quem não é membro. O PAYCO é o serviço de conta e pagamento da própria NHN, separado do TicketLink. O cadastro, como o TicketLink o descreve, começa no link Create account no pé da página de entrada, depois um endereço de e-mail e uma senha, e você precisa concordar em dar ao PAYCO acesso aos seus dados pessoais.",
+        pitfall:
+          "Deixar isso para o dia da venda. Você não está criando uma conta sob pressão de tempo, está criando uma conta no serviço de uma segunda empresa e depois usando ela para entrar, e o relógio de oito minutos do passo seguinte só começa depois que você já entrou.",
+        takes: "20 minutos, com dias de antecedência",
+      },
+      {
+        title: "Conheça o relógio: oito minutos do assento até o pagamento",
+        body: "O TicketLink documenta cinco passos. Data e sessão, em que o botão diz To Be Sold até a venda abrir e você atualizar a página para ele virar Reserve. Setor e assento, escolhendo primeiro por área ou primeiro por setor, com atribuição automática ou escolha sua. Depois tipo e quantidade de ingressos, em que a página diz que os assentos estão reservados e que você precisa concluir a compra em oito minutos. Depois retirada e confirmação, que repete os oito minutos e exige que você concorde com a política de taxa de cancelamento. Depois o pagamento. O que está reservado são os assentos, então o relógio cobre todo o resto do processo, e não uma tela só.",
+        pitfall:
+          "Pop-ups. As próprias instruções do TicketLink mandam você liberá-los, porque a janela de reserva é um pop-up — então um bloqueador configurado e esquecido tira a venda de você sem uma mensagem de erro que alguém reconheceria como erro.",
+        takes: "8 minutos, e nem um a mais",
+      },
+      {
+        title: "Planeje retirar, porque a entrega é nacional",
+        body: "O TicketLink descreve quatro formas de conseguir o ingresso e uma delas está fechada para você. A entrega chega em dez dias úteis e a página a marca como Domestic. A retirada no local é na bilheteria, apresentando um SMS de confirmação ou o seu número de ingresso, e para espetáculos e exposições a janela vai de uma hora a trinta minutos antes de começar. O Home Ticket é um código de barras dentro do aplicativo do TicketLink. O Smart Ticket é emitido no seu celular, a partir da meia-noite do dia em eventos do mesmo dia, e não pode ser cancelado depois de emitido.",
+        pitfall:
+          "Duas condições nas vias por aplicativo que passam fácil. Todos de uma mesma reserva têm de entrar juntos com um código de barras do Home Ticket, então um grupo que planejava chegar separado não consegue; e se você já tem um ingresso em papel, não pode emitir um Smart Ticket, porque os dois não podem existir ao mesmo tempo.",
+        takes: "10 minutos, antes do dia",
+      },
+      {
+        title: "Leia o que o TicketLink não diz, porque é ali que você fica exposto",
+        body: "Três coisas que as páginas em inglês dele não respondem. O passo cinco do guia de compra diz que aparece uma janela de pagamento e que você escolhe um meio; ele nunca lista quais meios, então se o seu cartão funciona não está documentado em inglês em lugar nenhum. A retirada no local se apoia num SMS de confirmação, e nada diz se esse SMS consegue chegar a um número fora da Coreia. E o cadastro no PAYCO o TicketLink descreve em uma frase, então o que o PAYCO pede é pergunta para o PAYCO. Circula em inglês a afirmação de que este site aceita cartões estrangeiros com verificação de passaporte e não exige número de telefone coreano. Pode ser verdade. Não está na documentação do TicketLink, e esta página não vai repetir isso até que alguém verifique.",
+        pitfall:
+          "Tratar algo não documentado como algo permitido. A distância entre eles não dizem que não e isso funciona é exatamente onde uma venda se perde, e é a razão inteira de este passo existir em vez de um parágrafo cheio de confiança.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pergunte no balcão certo, em inglês",
+        body: "O TicketLink mantém uma linha de atendimento só em inglês no 1644-3850 e a imprime em todas as páginas da sua seção de ajuda global, ao lado de um formulário 1:1 Inquiry e de membership@nhnlink.co.kr. O índice de perguntas frequentes em inglês traz uma entrada permanente sobre se estrangeiros também podem se tornar membros, datada de junho de 2022, e três entradas separadas sobre aparecer uma tela de acesso restrito ou uma restrição de IP durante o cadastro, a entrada e a reserva. Vale ler esses títulos antes do dia da venda, e não durante. A operadora é a NHN LINK Corporation, na 586 Gangnam-daero, Gangnam-gu, Seul.",
+        pitfall:
+          "Apelar para uma VPN quando aparece uma tela de acesso restrito. É uma assinatura vendida contra um problema que ela não resolve de forma confiável, pode quebrar um pagamento que ia dar certo, e este site não vai dizer para você fazer isso — a linha em inglês existe justamente para esta pergunta.",
+        takes: "15 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Preciso de uma conta coreana para usar o TicketLink?",
+        a: "Você precisa de uma conta do PAYCO, que é o serviço da própria NHN e não do TicketLink. O TicketLink afirma que o seu serviço de reserva não é oferecido a quem não é membro e que a entrada é feita com um ID do PAYCO. Ele descreve o cadastro no PAYCO como um endereço de e-mail e uma senha, mais concordar em dar ao PAYCO acesso aos seus dados pessoais. O que o PAYCO pede além disso não está coberto nas páginas em inglês do TicketLink.",
+      },
+      {
+        q: "Onde fica o site em inglês do TicketLink?",
+        a: "Em www.ticketlink.co.kr/global/en/home — um caminho no domínio principal, não um domínio separado. Não existe global.ticketlink.co.kr; esse nome de host não resolve. A mesma seção também roda em japonês em /global/ja/ e em chinês em /global/zh/.",
+      },
+      {
+        q: "Quanto tempo eu tenho para pagar depois de pegar um assento?",
+        a: "Oito minutos. O TicketLink diz, no passo da quantidade de ingressos, que os assentos estão reservados e precisam ser comprados em oito minutos, e repete os oito minutos no passo de retirada e confirmação. O que está reservado são os assentos, então essa janela cobre tudo o que ainda está à sua frente, o pagamento incluído.",
+      },
+      {
+        q: "O TicketLink pode enviar meus ingressos para o exterior?",
+        a: "A via de entrega documentada vem marcada como Domestic e cotada em dez dias úteis, então planeje retirar. As alternativas que ele descreve são a retirada na bilheteria com um SMS de confirmação ou número de ingresso, um código de barras do Home Ticket no aplicativo do TicketLink, e um Smart Ticket emitido no seu celular.",
+      },
+      {
+        q: "Quais cartões o TicketLink aceita do exterior?",
+        a: "A documentação em inglês dele não diz. O passo de pagamento do guia de compra diz apenas que aparece uma janela de pagamento e que você escolhe um meio. Até alguém verificar isso numa reserva real, esta página não vai citar um cartão que funciona — e nada mais que você leia deveria citar.",
+      },
+      {
+        q: "Aparece uma tela de acesso restrito. O que é isso?",
+        a: "O índice de perguntas frequentes em inglês do TicketLink traz três entradas sobre isso, sobre acesso restrito durante a reserva e sobre uma restrição de IP durante o cadastro e a entrada, datadas entre junho de 2022 e junho de 2023. O fato de ser respondido três vezes sugere que é comum. Pergunte na linha só em inglês do 1644-3850 ou pelo formulário 1:1 Inquiry em vez de apelar para uma VPN, que é uma assinatura vendida contra um problema que ela pode não resolver e que é capaz de quebrar um pagamento que teria dado certo.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "TicketLink cho người mua từ nước ngoài: tài khoản PAYCO, đồng hồ tám phút và vấn đề nhận vé",
+    summary:
+      "Nền tảng bán vé thứ tư của Hàn Quốc, và là nền tảng mà các hướng dẫn tiếng Anh bỏ sót. Nó có một trang tiếng Anh thật sự, nó không cho bạn đặt vé nếu không có tài khoản PAYCO, và tuyến giao vé duy nhất được ghi lại chỉ dành cho trong nước.",
+    scope:
+      "Bao gồm việc đặt vé trên TicketLink từ ngoài Hàn Quốc, đọc từ các trang tiếng Anh mà NHN LINK công bố cho trang toàn cầu của họ, vào ngày 23 tháng 10 năm 2026: trang toàn cầu đó thực sự nằm ở đâu, nó đòi tài khoản gì, các bước mua được ghi lại cùng đồng hồ của chúng, và mọi tuyến nhận vé mà nó mô tả. Trang này cũng có chủ ý về những điều nó không khẳng định. Tài liệu tiếng Anh của TicketLink không nói nó nhận những thẻ thanh toán nào, không nói tin nhắn xác nhận có đến được số điện thoại ngoài Hàn Quốc hay không, cũng không nói PAYCO đòi gì khi đăng ký, và trang này nói thẳng như vậy thay vì lấp những chỗ trống đó bằng thông tin từ nơi khác. Chưa ai từ trang này đặt vé trên đó.",
+    intro: [
+      "Các hướng dẫn tiếng Anh về việc bán vé ở Hàn Quốc nêu ba nền tảng rồi dừng lại. TicketLink là nền tảng thứ tư, do NHN vận hành chứ không phải một trong ba bên kia, và một buổi diễn chỉ bán độc quyền qua đây là buổi diễn mà ba hướng dẫn kia không giúp được gì cho bạn.",
+      "Trang tiếng Anh thì có thật. Thứ cũng có thật là một yêu cầu về tài khoản nằm hoàn toàn bên ngoài TicketLink, một đồng hồ thanh toán tính bằng phút, và một phần nhận vé mà tuyến giao duy nhất của nó được ghi là Domestic.",
+    ],
+    steps: [
+      {
+        title: "Kiểm tra xem buổi diễn của bạn có bán trên TicketLink hay không",
+        body: "TicketLink bán vé hòa nhạc, nhạc kịch, kịch nói, nhạc cổ điển và múa, chương trình gia đình, triển lãm và thể thao điện tử, và một số buổi hòa nhạc có nhãn Exclusive Sale, nghĩa là nền tảng đó là nơi duy nhất bán buổi diễn ấy. Thứ cho bạn biết điều này là thông báo chính thức; nền tảng không phải thứ suy ra được từ nghệ sĩ hay từ địa điểm. Nếu thông báo nêu TicketLink thì không quy trình nào của NOL World, Weverse hay YES24 áp dụng cho bạn.",
+        pitfall:
+          "Cho rằng ba nền tảng lớn đã bao gồm hết. Không phải vậy, và người đến ngày mở bán mới biết buổi diễn của mình là độc quyền của TicketLink thì đã mất đúng khoảng thời gian cần để lập một tài khoản.",
+        takes: "5 phút",
+      },
+      {
+        title: "Vào đúng địa chỉ, và đó không phải địa chỉ bạn đoán",
+        body: "Trang tiếng Anh là một đường dẫn trên tên miền chính: www.ticketlink.co.kr/global/en/home. Không có tên miền phụ cho trang toàn cầu — trình duyệt gọi global.ticketlink.co.kr sẽ nhận NXDOMAIN, còn /global, /en và /english trên máy chủ chính đều trả về 404. Cùng phần toàn cầu đó chạy bằng tiếng Nhật và tiếng Trung ở /global/ja/ và /global/zh/, nên ngôn ngữ bạn nhận được do đường dẫn quyết định chứ không phải do một thiết lập nào.",
+        pitfall:
+          "Tìm trang toàn cầu của TicketLink rồi lại đáp xuống trang tiếng Hàn. Cùng một máy chủ nên không có gì cảnh báo bạn; bạn chỉ thấy mình đang ở một trang tiếng Hàn, phía sau là một phần trợ giúp khác.",
+        takes: "2 phút",
+      },
+      {
+        title: "Lập tài khoản PAYCO trước khi bạn cần đến nó",
+        body: "Đây là bước chặn người ta lại, và TicketLink nói rõ điều đó: bạn đăng nhập bằng PAYCO ID, và dịch vụ đặt chỗ của họ không dành cho người không phải thành viên. PAYCO là dịch vụ tài khoản và thanh toán của chính NHN, tách khỏi TicketLink. Theo cách TicketLink mô tả, việc đăng ký bắt đầu từ liên kết Create account ở chân trang đăng nhập, rồi một địa chỉ thư điện tử và một mật khẩu, và bạn phải đồng ý cho PAYCO truy cập dữ liệu cá nhân của mình.",
+        pitfall:
+          "Để việc này đến ngày mở bán. Bạn không lập một tài khoản dưới áp lực thời gian, bạn lập tài khoản trên dịch vụ của một công ty thứ hai rồi dùng nó để đăng nhập, và đồng hồ tám phút ở bước sau chỉ bắt đầu chạy khi bạn đã đăng nhập xong.",
+        takes: "20 phút, trước đó vài ngày",
+      },
+      {
+        title: "Nắm rõ đồng hồ: tám phút từ chỗ ngồi đến thanh toán",
+        body: "TicketLink ghi lại năm bước. Ngày và suất diễn, nơi nút bấm hiện To Be Sold cho đến khi mở bán và bạn tải lại trang để nó thành Reserve. Hạng vé và chỗ ngồi, chọn theo khu trước hay theo hạng trước, với xếp chỗ tự động hoặc tự bạn chọn. Rồi loại vé và số lượng, nơi trang viết rằng chỗ ngồi đang được giữ và bạn phải hoàn tất việc mua trong tám phút. Rồi nhận vé và xác nhận, nhắc lại tám phút đó và yêu cầu bạn đồng ý với quy định phí hủy. Rồi thanh toán. Thứ được giữ là chỗ ngồi, nên đồng hồ bao trùm toàn bộ phần còn lại chứ không phải một màn hình trong đó.",
+        pitfall:
+          "Cửa sổ bật lên. Chính hướng dẫn của TicketLink yêu cầu bạn cho phép chúng, vì cửa sổ đặt vé là một cửa sổ bật lên — nên một trình chặn đã bật rồi quên mất sẽ lấy đi cơ hội mua mà không hiện thông báo lỗi nào ai nhận ra được là lỗi.",
+        takes: "8 phút, không hơn một phút nào",
+      },
+      {
+        title: "Hãy tính là tự đi nhận, vì giao vé chỉ trong nước",
+        body: "TicketLink mô tả bốn cách lấy vé và một trong số đó đóng với bạn. Giao vé đến trong vòng mười ngày làm việc và trang ghi nó là Domestic. Nhận tại chỗ là ở quầy vé, xuất trình tin nhắn xác nhận hoặc số vé của bạn, và với các buổi diễn và triển lãm thì khoảng nhận là từ một giờ đến ba mươi phút trước khi bắt đầu. Home Ticket là một mã vạch trong ứng dụng TicketLink. Smart Ticket được phát hành lên điện thoại của bạn, từ nửa đêm của ngày diễn với sự kiện trong ngày, và không thể hủy sau khi đã phát hành.",
+        pitfall:
+          "Hai điều kiện ở các tuyến qua ứng dụng rất dễ bỏ sót. Với mã vạch Home Ticket thì tất cả những người trong cùng một đơn phải vào cùng nhau, nên một nhóm đã tính đến riêng lẻ sẽ không làm được; và nếu bạn đã giữ vé giấy thì không thể phát hành Smart Ticket, vì hai thứ đó không được tồn tại cùng lúc.",
+        takes: "10 phút, trước ngày diễn",
+      },
+      {
+        title: "Đọc cả những điều TicketLink không nói, vì chỗ đó mới là chỗ bạn hở",
+        body: "Có ba điều mà các trang tiếng Anh của họ không trả lời. Bước năm của hướng dẫn mua vé nói rằng một cửa sổ thanh toán hiện ra và bạn chọn một phương thức; nó không bao giờ liệt kê những phương thức nào, nên việc thẻ của bạn có dùng được hay không thì tiếng Anh không ghi ở đâu cả. Việc nhận tại chỗ dựa vào một tin nhắn xác nhận, mà không chỗ nào nói tin nhắn đó có đến được số điện thoại ngoài Hàn Quốc hay không. Còn việc đăng ký PAYCO thì TicketLink mô tả trong đúng một câu, nên PAYCO đòi gì là câu hỏi dành cho PAYCO. Có một tuyên bố đang lan truyền trong tiếng Anh rằng trang này nhận thẻ nước ngoài với xác minh hộ chiếu và không cần số điện thoại Hàn Quốc. Điều đó có thể đúng. Nó không có trong tài liệu của TicketLink, và trang này sẽ không nhắc lại cho đến khi có ai kiểm chứng.",
+        pitfall:
+          "Coi một điều không được ghi lại là một điều được cho phép. Khoảng cách giữa họ không nói là không và nó dùng được chính là chỗ người ta mất cơ hội mua vé, và đó là toàn bộ lý do bước này tồn tại thay vì một đoạn văn đầy tự tin.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hỏi đúng nơi, bằng tiếng Anh",
+        body: "TicketLink có một đường dây hỗ trợ chỉ bằng tiếng Anh ở số 1644-3850 và in nó trên mọi trang của phần trợ giúp toàn cầu, bên cạnh mẫu 1:1 Inquiry và membership@nhnlink.co.kr. Mục hỏi đáp tiếng Anh của họ có một mục thường trực hỏi người nước ngoài có đăng ký thành viên được không, ghi ngày tháng 6 năm 2022, và ba mục riêng về việc hiện ra màn hình hạn chế truy cập hoặc hạn chế IP khi đăng ký, đăng nhập và đặt vé. Những tiêu đề đó nên đọc trước ngày mở bán chứ không phải trong lúc đang mở bán. Bên vận hành là NHN LINK Corporation, tại 586 Gangnam-daero, Gangnam-gu, Seoul.",
+        pitfall:
+          "Tìm đến VPN khi màn hình hạn chế truy cập hiện ra. Đó là một dịch vụ thuê bao bán cho một vấn đề mà nó không chắc giải quyết được, nó có thể làm hỏng một giao dịch vốn sẽ thành công, và trang này sẽ không bảo bạn làm vậy — đường dây tiếng Anh tồn tại đúng cho câu hỏi này.",
+        takes: "15 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Tôi có cần một tài khoản Hàn Quốc để dùng TicketLink không?",
+        a: "Bạn cần một tài khoản PAYCO, và đó là dịch vụ của chính NHN chứ không phải của TicketLink. TicketLink nêu rõ rằng dịch vụ đặt chỗ của họ không dành cho người không phải thành viên và rằng bạn đăng nhập bằng PAYCO ID. Họ mô tả việc đăng ký PAYCO là một địa chỉ thư điện tử và một mật khẩu, cộng với việc đồng ý cho PAYCO truy cập dữ liệu cá nhân của bạn. Ngoài những điều đó thì PAYCO đòi gì không được các trang tiếng Anh của TicketLink nói đến.",
+      },
+      {
+        q: "Trang tiếng Anh của TicketLink ở đâu?",
+        a: "Ở www.ticketlink.co.kr/global/en/home — một đường dẫn trên tên miền chính, không phải một tên miền riêng. Không có global.ticketlink.co.kr; tên máy chủ đó không phân giải được. Cùng phần đó cũng chạy bằng tiếng Nhật ở /global/ja/ và tiếng Trung ở /global/zh/.",
+      },
+      {
+        q: "Tôi có bao lâu để thanh toán sau khi đã có chỗ ngồi?",
+        a: "Tám phút. Ở bước số lượng vé, TicketLink nói chỗ ngồi đang được giữ và phải mua trong tám phút, rồi nhắc lại tám phút đó ở bước nhận vé và xác nhận. Thứ được giữ là chỗ ngồi, nên khoảng thời gian đó bao trùm toàn bộ những gì còn ở phía trước bạn, kể cả thanh toán.",
+      },
+      {
+        q: "TicketLink có gửi vé ra nước ngoài cho tôi không?",
+        a: "Tuyến giao vé được ghi lại của họ mang nhãn Domestic và nêu là mười ngày làm việc, nên hãy tính đến việc tự đi nhận. Những cách khác mà họ mô tả là nhận ở quầy vé bằng tin nhắn xác nhận hoặc số vé, mã vạch Home Ticket trong ứng dụng TicketLink, và Smart Ticket phát hành lên điện thoại của bạn.",
+      },
+      {
+        q: "TicketLink nhận những thẻ nào từ nước ngoài?",
+        a: "Tài liệu tiếng Anh của họ không nói. Bước thanh toán trong hướng dẫn mua vé chỉ nói rằng một cửa sổ thanh toán hiện ra và bạn chọn một phương thức. Cho đến khi có người kiểm chứng trên một lần đặt vé thật, trang này sẽ không nêu tên một loại thẻ dùng được — và những gì khác bạn đọc cũng không nên nêu.",
+      },
+      {
+        q: "Tôi gặp màn hình hạn chế truy cập. Đó là gì?",
+        a: "Mục hỏi đáp tiếng Anh của TicketLink có ba mục về việc này, về hạn chế truy cập trong lúc đặt vé và về hạn chế IP trong lúc đăng ký và đăng nhập, ghi ngày trong khoảng tháng 6 năm 2022 đến tháng 6 năm 2023. Việc nó được trả lời tới ba lần cho thấy đây là chuyện thường gặp. Hãy hỏi đường dây chỉ bằng tiếng Anh ở số 1644-3850 hoặc dùng mẫu 1:1 Inquiry thay vì tìm đến VPN, một dịch vụ thuê bao bán cho một vấn đề mà nó có thể không giải quyết được và có thể làm hỏng một giao dịch vốn sẽ thành công.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "TicketLink สำหรับผู้ซื้อจากต่างประเทศ: บัญชี PAYCO นาฬิกาแปดนาที และปัญหาเรื่องการรับบัตร",
+    summary:
+      "แพลตฟอร์มขายบัตรรายที่สี่ของเกาหลี และเป็นรายที่คู่มือภาษาอังกฤษมองข้าม มีเว็บไซต์ภาษาอังกฤษจริง ไม่ยอมให้คุณจองถ้าไม่มีบัญชี PAYCO และช่องทางจัดส่งเดียวที่ระบุไว้มีเฉพาะในประเทศ",
+    scope:
+      "ครอบคลุมการจองบัตรบน TicketLink จากนอกประเทศเกาหลี อ่านจากหน้าภาษาอังกฤษที่ NHN LINK เผยแพร่สำหรับเว็บไซต์ระดับโลกของตน เมื่อวันที่ 23 ตุลาคม 2026 ว่าเว็บไซต์ระดับโลกนั้นอยู่ที่ใดจริง ๆ ต้องใช้บัญชีอะไร มีขั้นตอนการซื้อที่ระบุไว้อย่างไรและจับเวลาเท่าไร และมีช่องทางรับบัตรใดบ้างที่อธิบายไว้ หน้านี้ตั้งใจเท่ากันกับสิ่งที่ไม่ยืนยัน เอกสารภาษาอังกฤษของ TicketLink ไม่ได้บอกว่ารับบัตรชำระเงินใบใด ไม่ได้บอกว่าข้อความยืนยันส่งถึงเบอร์นอกประเทศเกาหลีได้หรือไม่ และไม่ได้บอกว่า PAYCO ขออะไรตอนสมัคร หน้านี้จึงบอกตามนั้นแทนที่จะเอาข้อมูลจากที่อื่นมาเติมช่องว่าง ยังไม่มีใครจากเว็บไซต์นี้จองบนนั้น",
+    intro: [
+      "คู่มือภาษาอังกฤษเรื่องการซื้อบัตรในเกาหลีเอ่ยถึงสามแพลตฟอร์มแล้วก็หยุด TicketLink เป็นรายที่สี่ ดำเนินการโดย NHN ไม่ใช่รายใดในสามรายนั้น และงานที่ขายผ่านช่องทางนี้เพียงที่เดียวคืองานที่คู่มือทั้งสามฉบับช่วยคุณไม่ได้เลย",
+      "เว็บไซต์ภาษาอังกฤษมีอยู่จริง สิ่งที่มีอยู่ด้วยคือเงื่อนไขเรื่องบัญชีที่อยู่นอก TicketLink ทั้งหมด นาฬิกาจับเวลาตอนชำระเงินที่นับเป็นนาที และส่วนรับบัตรที่ช่องทางจัดส่งเดียวของมันถูกกำกับว่า Domestic",
+    ],
+    steps: [
+      {
+        title: "ตรวจก่อนว่างานของคุณขายบน TicketLink จริงหรือไม่",
+        body: "TicketLink ขายบัตรคอนเสิร์ต ละครเพลง ละครเวที ดนตรีคลาสสิกและการเต้น การแสดงสำหรับครอบครัว นิทรรศการ และอีสปอร์ต และคอนเสิร์ตบางงานมีป้าย Exclusive Sale ซึ่งหมายความว่าแพลตฟอร์มนั้นเป็นที่เดียวที่ขายงานนี้ สิ่งที่บอกคุณคือประกาศทางการ แพลตฟอร์มไม่ใช่สิ่งที่เดาได้จากศิลปินหรือจากสถานที่จัดงาน ถ้าประกาศระบุ TicketLink ขั้นตอนของ NOL World, Weverse หรือ YES24 ก็ไม่มีข้อใดใช้กับคุณ",
+        pitfall:
+          "การคิดว่าสามรายใหญ่ครอบคลุมทุกอย่าง ซึ่งไม่ใช่ และคนที่มารู้ในวันขายว่างานของตนเป็นงานเฉพาะของ TicketLink ก็เสียเวลาที่ต้องใช้เตรียมบัญชีไปแล้ว",
+        takes: "5 นาที",
+      },
+      {
+        title: "ไปที่ที่อยู่ที่ถูกต้อง ซึ่งไม่ใช่ที่คุณจะเดา",
+        body: "เว็บไซต์ภาษาอังกฤษเป็นพาธบนโดเมนหลัก คือ www.ticketlink.co.kr/global/en/home ไม่มีซับโดเมนสำหรับเว็บระดับโลก เบราว์เซอร์ที่เรียก global.ticketlink.co.kr จะได้ NXDOMAIN และ /global, /en กับ /english บนโฮสต์หลักคืนค่า 404 ทั้งหมด ส่วนระดับโลกเดียวกันนี้ทำงานเป็นภาษาญี่ปุ่นและภาษาจีนที่ /global/ja/ และ /global/zh/ ดังนั้นภาษาที่คุณได้จึงถูกกำหนดด้วยพาธ ไม่ใช่ด้วยการตั้งค่า",
+        pitfall:
+          "ค้นหาเว็บระดับโลกของ TicketLink แล้วไปลงที่เว็บภาษาเกาหลี ทั้งสองเป็นโฮสต์เดียวกันจึงไม่มีอะไรเตือนคุณ คุณเพียงพบว่าตัวเองอยู่บนหน้าภาษาเกาหลี โดยมีส่วนช่วยเหลืออีกชุดอยู่ข้างหลัง",
+        takes: "2 นาที",
+      },
+      {
+        title: "สมัครบัญชี PAYCO ก่อนที่จะต้องใช้",
+        body: "นี่คือขั้นที่ทำให้คนสะดุด และ TicketLink ก็เขียนไว้ตรง ๆ ว่าคุณเข้าสู่ระบบด้วย PAYCO ID และบริการจองของเขาไม่ได้ให้บริการแก่ผู้ที่ไม่ได้เป็นสมาชิก PAYCO เป็นบริการบัญชีและการชำระเงินของ NHN เอง แยกจาก TicketLink การสมัครตามที่ TicketLink อธิบายคือเริ่มจากลิงก์ Create account ที่ท้ายหน้าเข้าสู่ระบบ แล้วกรอกอีเมลและรหัสผ่าน และคุณต้องยอมรับการให้ PAYCO เข้าถึงข้อมูลส่วนบุคคลของคุณ",
+        pitfall:
+          "การปล่อยเรื่องนี้ไว้ถึงวันขาย คุณไม่ได้กำลังสมัครบัญชีเดียวภายใต้ความกดดันเรื่องเวลา คุณกำลังสมัครบัญชีบนบริการของบริษัทที่สอง แล้วใช้มันเข้าสู่ระบบ และนาฬิกาแปดนาทีในขั้นถัดไปจะยังไม่เริ่มจนกว่าคุณจะเข้าสู่ระบบแล้ว",
+        takes: "20 นาที ล่วงหน้าหลายวัน",
+      },
+      {
+        title: "รู้จักนาฬิกา: แปดนาทีจากที่นั่งถึงการชำระเงิน",
+        body: "TicketLink ระบุไว้ห้าขั้น ขั้นวันที่และรอบการแสดง ซึ่งปุ่มจะขึ้นว่า To Be Sold จนกว่าจะเปิดขายและคุณรีเฟรชให้มันเปลี่ยนเป็น Reserve ขั้นประเภทที่นั่งและที่นั่ง เลือกจากโซนก่อนหรือจากประเภทก่อน โดยให้ระบบจัดให้อัตโนมัติหรือเลือกเองก็ได้ ต่อมาคือชนิดบัตรและจำนวน ซึ่งหน้าเว็บบอกว่าที่นั่งถูกถือไว้แล้วและคุณต้องซื้อให้เสร็จภายในแปดนาที ต่อมาคือการรับบัตรและการยืนยัน ซึ่งย้ำแปดนาทีอีกครั้งและให้คุณยอมรับนโยบายค่าธรรมเนียมการยกเลิก แล้วจึงถึงการชำระเงิน สิ่งที่ถูกถือไว้คือที่นั่ง ดังนั้นเวลาที่จับไว้จึงครอบคลุมทุกอย่างที่เหลือ ไม่ใช่เพียงหน้าจอเดียว",
+        pitfall:
+          "ป๊อปอัป คำแนะนำของ TicketLink เองก็บอกให้คุณอนุญาตมัน เพราะหน้าต่างจองเป็นป๊อปอัป ตัวบล็อกที่ตั้งไว้แล้วลืมไปจึงพรากโอกาสซื้อไปโดยไม่มีข้อความแจ้งข้อผิดพลาดที่ใครจะรู้ว่าเป็นข้อผิดพลาด",
+        takes: "8 นาที ไม่เกินแม้นาทีเดียว",
+      },
+      {
+        title: "วางแผนไปรับเอง เพราะการจัดส่งมีเฉพาะในประเทศ",
+        body: "TicketLink อธิบายสี่วิธีในการได้บัตร และหนึ่งในนั้นปิดสำหรับคุณ การจัดส่งถึงภายในสิบวันทำการ และหน้าเว็บกำกับว่า Domestic การรับที่สถานที่จัดงานทำที่ห้องจำหน่ายบัตร โดยแสดงข้อความยืนยันหรือเลขที่บัตรของคุณ และสำหรับการแสดงกับนิทรรศการ ช่วงเวลารับอยู่ระหว่างหนึ่งชั่วโมงถึงสามสิบนาทีก่อนเริ่มงาน Home Ticket คือบาร์โค้ดในแอป TicketLink ส่วน Smart Ticket ออกให้บนโทรศัพท์ของคุณ โดยออกได้ตั้งแต่เที่ยงคืนของวันนั้นสำหรับงานในวันเดียวกัน และยกเลิกไม่ได้เมื่อออกแล้ว",
+        pitfall:
+          "สองเงื่อนไขของช่องทางผ่านแอปที่พลาดได้ง่าย ทุกคนในการจองเดียวกันต้องเข้างานพร้อมกันเมื่อใช้บาร์โค้ด Home Ticket ดังนั้นกลุ่มที่วางแผนมาถึงแยกกันจึงทำไม่ได้ และถ้าคุณถือบัตรกระดาษอยู่แล้ว คุณจะออก Smart Ticket ไม่ได้ เพราะทั้งสองอย่างมีอยู่พร้อมกันไม่ได้",
+        takes: "10 นาที ก่อนถึงวันงาน",
+      },
+      {
+        title: "อ่านสิ่งที่ TicketLink ไม่ได้บอก เพราะนั่นคือจุดที่คุณไม่มีอะไรคุ้มกัน",
+        body: "มีสามเรื่องที่หน้าภาษาอังกฤษของเขาไม่ตอบ ขั้นที่ห้าของคู่มือการซื้อบอกว่าหน้าต่างชำระเงินจะปรากฏขึ้นและคุณเลือกวิธีหนึ่ง แต่ไม่เคยไล่รายการว่ามีวิธีใดบ้าง ดังนั้นบัตรของคุณใช้ได้หรือไม่จึงไม่มีบันทึกไว้ในภาษาอังกฤษที่ใดเลย การรับที่สถานที่จัดงานอาศัยข้อความยืนยัน และไม่มีที่ใดบอกว่าข้อความนั้นส่งถึงเบอร์นอกประเทศเกาหลีได้หรือไม่ ส่วนการสมัคร PAYCO นั้น TicketLink อธิบายไว้ประโยคเดียว ดังนั้นสิ่งที่ PAYCO เองขอจึงเป็นคำถามที่ต้องถาม PAYCO มีคำกล่าวแพร่อยู่ในภาษาอังกฤษว่าเว็บนี้รับบัตรต่างประเทศโดยยืนยันตัวตนด้วยหนังสือเดินทางและไม่ต้องมีเบอร์โทรศัพท์เกาหลี มันอาจจริง แต่มันไม่อยู่ในเอกสารของ TicketLink และหน้านี้จะไม่พูดซ้ำจนกว่าจะมีใครไปตรวจ",
+        pitfall:
+          "การถือเอาสิ่งที่ไม่มีบันทึกไว้ว่าเป็นสิ่งที่ได้รับอนุญาต ช่องว่างระหว่างเขาไม่ได้บอกว่าไม่ได้ กับมันใช้ได้ คือที่ที่โอกาสซื้อบัตรหลุดไป และนั่นคือเหตุผลทั้งหมดที่ขั้นนี้มีอยู่ แทนที่จะเป็นย่อหน้าที่เขียนอย่างมั่นใจ",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถามให้ถูกช่องทาง เป็นภาษาอังกฤษ",
+        body: "TicketLink มีสายบริการลูกค้าภาษาอังกฤษเท่านั้นที่หมายเลข 1644-3850 และพิมพ์ไว้บนทุกหน้าของส่วนช่วยเหลือระดับโลก ข้างกันคือแบบฟอร์ม 1:1 Inquiry และ membership@nhnlink.co.kr สารบัญคำถามที่พบบ่อยภาษาอังกฤษของเขามีรายการประจำหัวข้อว่าชาวต่างชาติสมัครสมาชิกได้หรือไม่ ลงวันที่เดือนมิถุนายน 2022 และมีอีกสามรายการแยกกันเรื่องการพบหน้าจอจำกัดการเข้าถึงหรือการจำกัด IP ระหว่างการสมัคร การเข้าสู่ระบบ และการจอง หัวข้อเหล่านั้นควรอ่านก่อนวันขาย ไม่ใช่อ่านระหว่างวันขาย ผู้ดำเนินการคือ NHN LINK Corporation ที่ 586 Gangnam-daero, Gangnam-gu, Seoul",
+        pitfall:
+          "การหันไปใช้ VPN เมื่อหน้าจอจำกัดการเข้าถึงปรากฏขึ้น นั่นคือบริการแบบสมัครสมาชิกที่ขายไว้แก้ปัญหาซึ่งมันแก้ได้ไม่แน่นอน มันอาจทำให้การชำระเงินที่กำลังจะสำเร็จพังลง และเว็บไซต์นี้จะไม่บอกให้คุณทำเช่นนั้น สายภาษาอังกฤษมีอยู่เพื่อคำถามนี้โดยเฉพาะ",
+        takes: "15 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ต้องมีบัญชีของเกาหลีไหมถ้าจะใช้ TicketLink",
+        a: "สิ่งที่คุณต้องมีคือบัญชี PAYCO ซึ่งเป็นบริการของ NHN เอง ไม่ใช่ของ TicketLink TicketLink ระบุว่าบริการจองของเขาไม่ได้ให้บริการแก่ผู้ที่ไม่ได้เป็นสมาชิก และว่าคุณเข้าสู่ระบบด้วย PAYCO ID เขาอธิบายการสมัคร PAYCO ว่าเป็นอีเมลกับรหัสผ่าน บวกกับการยอมรับให้ PAYCO เข้าถึงข้อมูลส่วนบุคคลของคุณ นอกเหนือจากนั้น PAYCO ขออะไรอีกไม่ได้ครอบคลุมอยู่ในหน้าภาษาอังกฤษของ TicketLink",
+      },
+      {
+        q: "เว็บไซต์ภาษาอังกฤษของ TicketLink อยู่ที่ไหน",
+        a: "อยู่ที่ www.ticketlink.co.kr/global/en/home ซึ่งเป็นพาธบนโดเมนหลัก ไม่ใช่โดเมนแยก ไม่มี global.ticketlink.co.kr ชื่อโฮสต์นั้นแปลงที่อยู่ไม่ได้ ส่วนเดียวกันนี้ยังทำงานเป็นภาษาญี่ปุ่นที่ /global/ja/ และภาษาจีนที่ /global/zh/",
+      },
+      {
+        q: "ได้ที่นั่งแล้วมีเวลาชำระเงินนานเท่าไร",
+        a: "แปดนาที TicketLink บอกในขั้นจำนวนบัตรว่าที่นั่งถูกถือไว้และต้องซื้อภายในแปดนาที และย้ำแปดนาทีอีกครั้งในขั้นการรับบัตรและการยืนยัน สิ่งที่ถูกถือไว้คือที่นั่ง ดังนั้นช่วงเวลานั้นจึงครอบคลุมทุกอย่างที่ยังอยู่ข้างหน้าคุณ รวมถึงการชำระเงิน",
+      },
+      {
+        q: "TicketLink ส่งบัตรไปต่างประเทศให้ฉันได้ไหม",
+        a: "ช่องทางจัดส่งที่ระบุไว้ถูกกำกับว่า Domestic และแจ้งไว้ที่สิบวันทำการ จึงควรวางแผนไปรับเอง ทางเลือกที่เขาอธิบายไว้คือการรับที่ห้องจำหน่ายบัตรด้วยข้อความยืนยันหรือเลขที่บัตร บาร์โค้ด Home Ticket ในแอป TicketLink และ Smart Ticket ที่ออกให้บนโทรศัพท์ของคุณ",
+      },
+      {
+        q: "TicketLink รับบัตรใบไหนจากต่างประเทศ",
+        a: "เอกสารภาษาอังกฤษของเขาไม่ได้บอก ขั้นการชำระเงินในคู่มือการซื้อบอกเพียงว่าหน้าต่างชำระเงินจะปรากฏขึ้นและคุณเลือกวิธีหนึ่ง จนกว่าจะมีใครไปตรวจกับการจองจริง หน้านี้จะไม่ระบุชื่อบัตรที่ใช้ได้ และสิ่งอื่นที่คุณอ่านก็ไม่ควรระบุด้วย",
+      },
+      {
+        q: "ฉันเจอหน้าจอจำกัดการเข้าถึง นั่นคืออะไร",
+        a: "สารบัญคำถามที่พบบ่อยภาษาอังกฤษของ TicketLink มีสามรายการเรื่องนี้ เกี่ยวกับการจำกัดการเข้าถึงระหว่างการจอง และการจำกัด IP ระหว่างการสมัครกับการเข้าสู่ระบบ ลงวันที่ระหว่างเดือนมิถุนายน 2022 ถึงเดือนมิถุนายน 2023 การที่มันถูกตอบถึงสามครั้งบ่งว่าเป็นเรื่องที่พบบ่อย โปรดถามสายภาษาอังกฤษเท่านั้นที่หมายเลข 1644-3850 หรือใช้แบบฟอร์ม 1:1 Inquiry แทนการหันไปใช้ VPN ซึ่งเป็นบริการแบบสมัครสมาชิกที่ขายไว้แก้ปัญหาที่มันอาจแก้ไม่ได้ และอาจทำให้การชำระเงินที่น่าจะสำเร็จพังลง",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "ticketlink-global-ticketing-guide",
+    sourceChecked: "2026-10-23",
+    sourceText: "0252925aacb3",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Ang TicketLink para sa mga bumibili mula sa ibang bansa: ang account sa PAYCO, ang walong minutong orasan, at ang problema sa pagkuha ng tiket",
+    summary:
+      "Ang pang-apat na plataporma ng tiket sa Korea, at ang isang iniiwan ng mga gabay sa Ingles. May totoo itong sayt sa Ingles, hindi ka nito papayagang magpa-book nang wala kang account sa PAYCO, at ang tanging nakatalang paraan ng paghahatid nito ay panloob sa Korea lamang.",
+    scope:
+      "Sinasaklaw ang pagpa-book sa TicketLink mula sa labas ng Korea, binasa mula sa mga pahinang Ingles na inilalathala ng NHN LINK para sa pandaigdigang sayt nito noong 23 Oktubre 2026: kung saan talaga naroon ang pandaigdigang sayt na iyon, kung anong account ang hinihingi nito, kung anong mga hakbang sa pagbili ang nakatala at kung gaano kahabang orasan ang kasama nila, at ang bawat paraan ng pagkuha ng tiket na inilalarawan nito. Sadya rin ang pahinang ito tungkol sa mga bagay na hindi nito sinasabi. Hindi sinasabi ng dokumentasyong Ingles ng TicketLink kung anong mga payment card ang tinatanggap nito, kung kayang abutin ng SMS ng kumpirmasyon nito ang isang numerong nasa labas ng Korea, o kung ano ang hinihingi ng PAYCO sa pag-sign up, at sinasabi ng pahinang ito ang bagay na iyon sa halip na punuin ang mga butas na iyon mula sa ibang pinagkunan. Walang sinuman mula sa sayt na ito ang nagpa-book doon.",
+    intro: [
+      "Tatlong plataporma ang pinapangalanan ng mga gabay sa Ingles tungkol sa tiket sa Korea, at doon na sila humihinto. Ang TicketLink ang pang-apat, pinapatakbo ito ng NHN at hindi ng alinman sa tatlong iba, at ang palabas na eksklusibong ipinagbibili sa pamamagitan nito ay palabas na talagang hindi matutulungan ng tatlong gabay na iyon.",
+      "May sayt nga ito sa Ingles. Ang mayroon din dito ay isang kinakailangang account na ganap na nasa labas ng TicketLink, isang orasan sa pagbabayad na sinusukat sa minuto, at isang bahagi para sa pagkuha ng tiket na ang tanging paraan ng pagpapadala ay nakamarka bilang Domestic.",
+    ],
+    steps: [
+      {
+        title: "Tiyakin muna kung talagang ipinagbibili sa TicketLink ang palabas mo",
+        body: "Nagbebenta ang TicketLink ng konsiyerto, musikal, teatro, klasikal at sayaw, palabas para sa pamilya, eksibisyon at esports, at may mga konsiyertong may tatak na Exclusive Sale, na nangangahulugang ang plataporma lamang na iyon ang tanging lugar kung saan ipinagbibili ang palabas. Ang opisyal na anunsyo ang nagsasabi nito sa iyo; hindi ang plataporma ay isang bagay na mahuhulaan mula sa artista o mula sa venue. Kapag pinangalanan ng anunsyo ang TicketLink, wala ni isa sa mga proseso ng NOL World, Weverse o YES24 ang naaangkop sa iyo.",
+        pitfall:
+          "Ang paniniwalang sinasaklaw na ng tatlong malalaki ang lahat. Hindi nila sinasaklaw, at ang mambabasang sa araw na ng pagbebenta nalaman na eksklusibo sa TicketLink ang palabas niya ay nawalan na ng panahong kailangan niya para makapaghanda ng account.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Pumunta sa tamang adres, at hindi ito ang mahuhulaan mo",
+        body: "Ang sayt sa Ingles ay isang path sa pangunahing domain: www.ticketlink.co.kr/global/en/home. Walang pandaigdigang subdomain — ang browser na humihingi ng global.ticketlink.co.kr ay tumatanggap ng NXDOMAIN, at ang /global, /en at /english sa pangunahing host ay pawang nagbabalik ng 404. Tumatakbo rin ang parehong pandaigdigang bahagi sa Hapon at sa Tsino sa /global/ja/ at /global/zh/, kaya ang path ang nagpapasya sa wikang matatanggap mo, hindi ang isang setting.",
+        pitfall:
+          "Ang paghahanap ng pandaigdigang sayt ng TicketLink at pagkatapos ay pagdating sa sayt na Koreano. Isang host lamang sila, kaya walang nagbababala sa iyo; basta na lamang matatagpuan mo ang sarili mo sa isang pahinang Koreano, na may ibang bahagi ng tulong sa likod nito.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Kumuha ng account sa PAYCO bago mo ito kailanganin",
+        body: "Ito ang hakbang na nakakahuli sa mga tao, at malinaw itong sinasabi ng TicketLink: nagsa-sign in ka gamit ang isang PAYCO ID, at ang serbisyong pagpapareserba nito ay hindi ibinibigay sa mga hindi miyembro. Ang PAYCO ay sariling serbisyo ng NHN para sa account at pagbabayad, hiwalay sa TicketLink. Ang pag-sign up nito, gaya ng pagkakalarawan ng TicketLink, ay nagsisimula sa link na Create account sa ibaba ng pahina ng pag-sign in, pagkatapos ay isang email address at isang password, at kailangan mong pumayag na bigyan ang PAYCO ng akses sa personal na impormasyon mo.",
+        pitfall:
+          "Ang pag-iwan nito hanggang sa araw ng pagbebenta. Hindi ka gumagawa ng isang account sa ilalim ng pagmamadali, gumagawa ka ng account sa serbisyo ng ikalawang kompanya at pagkatapos ay ginagamit ito para makapasok, at hindi nagsisimula ang walong minutong orasan sa susunod na hakbang hanggang hindi ka pa naka-sign in.",
+        takes: "20 minuto, mga araw bago pa",
+      },
+      {
+        title: "Kilalanin ang orasan: walong minuto mula sa upuan hanggang sa bayad",
+        body: "Limang hakbang ang nakatala sa TicketLink. Ang petsa at ang palabas, kung saan nakasulat sa pindutan ang To Be Sold hanggang bumukas ang pagbebenta at i-refresh mo ito para maging Reserve. Ang klase at ang upuan, pumipili ayon sa sona o ayon sa klase, na may awtomatikong pagtatalaga o sarili mong pinili. Pagkatapos ang uri at bilang ng tiket, kung saan sinasabi ng pahina na nakareserba ang mga upuan at kailangan mong matapos ang pagbili sa loob ng walong minuto. Pagkatapos ang pagkuha at ang kumpirmasyon, na muling nagsasabi ng walong minuto at humihinging pumayag ka sa patakaran sa bayad sa pagkansela. Pagkatapos ang pagbabayad. Ang mga upuan ang nakareserba, kaya ang orasan ay ang buong natitira pa at hindi isang screen lamang nito.",
+        pitfall:
+          "Ang mga pop-up. Ang sariling panuto ng TicketLink ay nagsasabing payagan mo ang mga ito, dahil pop-up ang bintana ng pagpa-book — kaya ang blocker na naitakda noon at nakalimutan na ay kukunin ang pagbebenta mula sa iyo nang walang mensahe ng error na makikilala ninuman na error.",
+        takes: "8 minuto, at wala nang hihigit pa",
+      },
+      {
+        title: "Magplanong pumunta para kunin ito, dahil panloob lamang ang paghahatid",
+        body: "Apat na paraan ng pagkuha ng tiket ang inilalarawan ng TicketLink at isa sa mga iyon ay sarado sa iyo. Dumarating ang paghahatid sa loob ng sampung araw ng trabaho at minamarkahan ito ng pahina bilang Domestic. Ang pagkuha sa lugar ng palabas ay sa takilya, ipinapakita ang SMS ng kumpirmasyon o ang numero ng tiket mo, at para sa mga palabas at eksibisyon ang itinakdang panahon ay sa pagitan ng isang oras at tatlumpung minuto bago magsimula. Ang Home Ticket ay isang barcode sa loob ng aplikasyon ng TicketLink. Ang Smart Ticket ay ibinibigay sa telepono mo, mula hatinggabi ng araw para sa mga kaganapan sa parehong araw, at hindi na makakansela kapag naibigay na.",
+        pitfall:
+          "Dalawang kondisyon sa mga paraan sa aplikasyon na madaling malampasan. Kailangang sabay-sabay na pumasok ang lahat ng nasa isang booking kapag barcode ng Home Ticket ang gamit, kaya hindi magagawa ito ng grupong nagplanong magkahiwalay na dumating; at kung may hawak ka nang papel na tiket, hindi ka makakapaglabas ng Smart Ticket, dahil hindi maaaring sabay na umiral ang dalawa.",
+        takes: "10 minuto, bago ang araw",
+      },
+      {
+        title: "Basahin ang hindi sinasabi ng TicketLink, dahil doon ka nakalantad",
+        body: "May tatlong bagay na hindi sinasagot ng mga pahinang Ingles nito. Sinasabi ng ikalimang hakbang ng gabay sa pagbili na lilitaw ang isang bintana ng pagbabayad at pipili ka ng paraan; hindi nito inililista kung anong mga paraan, kaya kung gumagana ang card mo ay wala itong talaan saanman sa Ingles. Nakasandal ang pagkuha sa lugar ng palabas sa isang SMS ng kumpirmasyon, at walang nagsasabi kung kayang abutin ng SMS na iyon ang isang numerong nasa labas ng Korea. At ang pag-sign up sa PAYCO ay inilarawan ng TicketLink sa isang pangungusap, kaya ang hinihingi ng PAYCO mismo ay tanong para sa PAYCO. May umiikot na pahayag sa Ingles na tinatanggap ng sayt na ito ang mga card na dayuhan sa pamamagitan ng beripikasyon sa pasaporte at hindi nangangailangan ng numero ng telepono sa Korea. Maaaring totoo iyon. Wala iyon sa dokumentasyon ng TicketLink, at hindi ito uulitin ng pahinang ito hanggang may sumuri.",
+        pitfall:
+          "Ang pagtrato sa isang bagay na walang talaan na parang isang bagay na pinapayagan. Ang agwat sa pagitan ng hindi naman sila nagsabi ng hindi at gumagana naman ito ay ang lugar kung saan nawawala ang isang pagbebenta, at iyon ang buong dahilan kung bakit may hakbang na ito at hindi isang talatang puno ng kumpiyansa.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Magtanong sa tamang tanggapan, sa Ingles",
+        body: "Nagpapatakbo ang TicketLink ng linya para sa kostumer na Ingles lamang sa 1644-3850 at ipinipinta nito ito sa bawat pahina ng pandaigdigang bahagi ng tulong, katabi ng pormularyong 1:1 Inquiry at ng membership@nhnlink.co.kr. May nananatiling entri sa indise ng mga karaniwang tanong sa Ingles nito na nagtatanong kung maaari ring sumali ang mga dayuhan sa pagkamiyembro, may petsang Hunyo 2022, at tatlong hiwalay na entri tungkol sa paglitaw ng screen ng limitadong akses o ng isang paghihigpit sa IP habang nagsa-sign up, nagpapasok at nagpa-book. Mas mabuting basahin ang mga pamagat na iyon bago ang araw ng pagbebenta at hindi habang nangyayari ito. Ang tagapagpatakbo ay ang NHN LINK Corporation, sa 586 Gangnam-daero, Gangnam-gu, Seoul.",
+        pitfall:
+          "Ang paghahanap kaagad ng VPN kapag lumitaw ang screen ng limitadong akses. Isa iyong suskrisyong ipinagbibili laban sa problemang hindi naman nito maaasahang naitatama, kaya nitong wasakin ang isang pagbabayad na sana ay nagtagumpay, at hindi sasabihin ng sayt na ito na gawin mo iyon — umiiral ang linyang Ingles para sa tanong na ito mismo.",
+        takes: "15 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Kailangan ba ako ng account na Koreano para gamitin ang TicketLink?",
+        a: "Ang kailangan mo ay isang account sa PAYCO, at sariling serbisyo iyon ng NHN at hindi ng TicketLink. Sinasabi ng TicketLink na ang serbisyong pagpapareserba nito ay hindi ibinibigay sa mga hindi miyembro at na nagsa-sign in ka gamit ang isang PAYCO ID. Inilalarawan nito ang pag-sign up sa PAYCO bilang isang email address at isang password, kasama ang pagpayag na bigyan ang PAYCO ng akses sa personal na impormasyon mo. Ang hinihingi ng PAYCO bukod doon ay hindi sinasaklaw ng mga pahinang Ingles ng TicketLink.",
+      },
+      {
+        q: "Nasaan ang sayt sa Ingles ng TicketLink?",
+        a: "Sa www.ticketlink.co.kr/global/en/home — isang path sa pangunahing domain, at hindi isang hiwalay na domain. Walang global.ticketlink.co.kr; hindi nareresolba ang hostname na iyon. Tumatakbo rin ang parehong bahagi sa Hapon sa /global/ja/ at sa Tsino sa /global/zh/.",
+      },
+      {
+        q: "Gaano katagal ang ibinibigay sa akin para magbayad kapag may upuan na ako?",
+        a: "Walong minuto. Sinasabi ng TicketLink sa hakbang ng bilang ng tiket na nakareserba ang mga upuan at kailangang mabili sa loob ng walong minuto, at muli nitong sinasabi ang walong minuto sa hakbang ng pagkuha at ng kumpirmasyon. Ang mga upuan ang nakareserba, kaya sinasaklaw ng panahong iyon ang lahat ng nasa harap mo pa, kasama ang pagbabayad.",
+      },
+      {
+        q: "Kaya ba akong padalhan ng TicketLink ng tiket sa ibang bansa?",
+        a: "Nakamarka bilang Domestic ang nakatalang paraan ng paghahatid nito at nakasaad na sampung araw ng trabaho, kaya magplano nang pumunta para kunin ito. Ang mga alternatibong inilalarawan nito ay ang pagkuha sa takilya gamit ang SMS ng kumpirmasyon o ang numero ng tiket, ang barcode ng Home Ticket sa aplikasyon ng TicketLink, at ang Smart Ticket na ibinibigay sa telepono mo.",
+      },
+      {
+        q: "Anong mga card ang tinatanggap ng TicketLink mula sa ibang bansa?",
+        a: "Hindi sinasabi ng dokumentasyong Ingles nito. Sinasabi lamang ng hakbang ng pagbabayad sa gabay sa pagbili na lilitaw ang isang bintana ng pagbabayad at pipili ka ng paraan. Hanggang may sumuri nito sa isang tunay na booking, hindi magbibigay ng pangalan ang pahinang ito ng card na gumagana — at hindi rin dapat magbigay ang anumang iba pang binabasa mo.",
+      },
+      {
+        q: "May lumalabas na screen ng limitadong akses. Ano iyon?",
+        a: "May tatlong entri sa indise ng mga karaniwang tanong sa Ingles ng TicketLink tungkol dito, hinggil sa limitadong akses habang nagpa-book at sa isang paghihigpit sa IP habang nagsa-sign up at nagpapasok, may petsa sa pagitan ng Hunyo 2022 at Hunyo 2023. Ang pagkakasagot nito nang tatlong beses ay nagpapahiwatig na karaniwan ito. Magtanong sa linyang Ingles lamang sa 1644-3850 o sa pormularyong 1:1 Inquiry sa halip na humanap kaagad ng VPN, na isang suskrisyong ipinagbibili laban sa problemang maaaring hindi naman nito maitama at kayang wasakin ang isang pagbabayad na sana ay nagtagumpay.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "高尺スカイドームへの行き方：最寄り駅が正解ではありません",
+    summary:
+      "2万5千人、484台分の駐車場、そして「一駅前で降りてください」と運営者自身が書いている会場です。最寄りの出口は徒歩3分で、そしておそらく避けたほうがよい出口です。",
+    scope:
+      "コンサートのために高尺スカイドームへ着くまでを、運営するソウル施設公団のページから扱います。駅、出口、徒歩時間、会場自身が公開している混雑の案内、そして駐車場です。意図的に一会場だけに絞っています。KSPO DomeとInspire Arenaはそれぞれ専用のページと運営者自身の出典が必要で、このページはその代わりになりません。ここには公演ごとの情報はありません。持ち込み可否や開場時刻は建物ではなく主催者が決めます。",
+    intro: [
+      "チケットが教えてくれるのはホールと時刻です。そのホールに直結した駅が、ほかのチケット所持者も全員そこから出てくる駅だということは教えてくれません。そして建物の運営者は、それを自社サイトに平易な韓国語で書いています。",
+      "これは一つの会場を、運営する公団の言葉で端から端まで読んだものです。役に立つのは住所ではありません。掲載された4つの駅のうち2つが、最寄り駅から人を逃がすために挙げられているという事実です。",
+    ],
+    steps: [
+      {
+        title: "自分の公演が実際にどのホールなのかを確認する",
+        body: "ソウルには大きなホールがいくつもあり、その英語名は厄介なほど似ています。高尺スカイドーム（고척스카이돔）は九老区の京仁路430、郵便番号08223にあり、ソウル施設公団が運営しています。これはKSPO Domeではありません。あちらは松坡区のオリンピック公園の中にあり、まったく別の組織が運営しています。Inspire Arenaでもありません。あちらは仁川です。ソウルワールドカップ競技場でもありません。あちらは麻浦区の上岩にある屋外競技場で、運営者が同じなので運営者名で検索すると両方が出てきます。予約ページの会場名と住所を照らし合わせてから計画してください。両者は互いに1時間離れています。",
+        pitfall:
+          "「ドーム」という字を見て、ドームは一つだと思い込むこと。ソウル最大級のホールのうち2つが名前にドームを含み、しかも市内の反対側にあります。これを18時に知ったファンは公演に間に合いません。",
+        takes: "2分",
+      },
+      {
+        title: "最寄り駅を知り、それが徒歩3分だと知る",
+        body: "1号線クイル駅の2番出口から、まっすぐ約150メートル。会場はこれを徒歩3分としています。これが最短の接近路で、実際に短いです。会場が公開している残り3つはもっと長い経路です。1号線ケボン駅の2番出口は、まっすぐ200メートル、右へ、それから650メートル進むとドームが右手に見えます。徒歩で約15分、または高尺橋方面の村バス06番。1号線クロ駅は、出口を出て左、まっすぐ1キロ、高尺橋を渡るとドームが左手に見えます。徒歩で約20分、またはバス5712番と5626番。1号線と2号線のシンドリム駅は、1番出口からバスで3停留所、10路線が走っており、その中に160番があります。",
+        pitfall:
+          "徒歩3分を当然の正解として受け取ること。それは最短の経路であり、次のステップは会場自身がなぜそれが正解でないかもしれないかを説明する内容です。そのページの数字の一つは自分自身と食い違っています。駅の表はクロを1番出口としているのに、その下に印刷された道順と会場自身の周辺地図はどちらも2番出口としています。3つのうち2つが2番と言っており、どちらの出口も同じ駅の中なので、間違えて払う代償は1分です。",
+        takes: "5分",
+      },
+      {
+        title: "会場自身が印刷している混雑の案内を読む",
+        body: "ここがこのページの価値のある部分で、ブログからの推測ではなく運営者が公開している内容です。アクセスのページには駅の表の上に2行あります。ソウル方面および水原・安養方面から来る人には、クロ駅で降りれば混雑を避けられると書かれ、仁川・富川方面から来る人には、ケボン駅について同じことが書かれています。つまり建物が、満席の夜には扉の前の駅が捌けないと述べ、どこから乗ったかに応じてどの駅を代わりに使うかを名指ししているのです。",
+        pitfall:
+          "距離を最適化する経路アプリに従うこと。それは毎回クイル駅へ送ります。退場時のあの出口について会場が知っていることを、アプリは知らないからです。",
+        takes: "5分、当日より前に",
+      },
+      {
+        title: "混雑が野球の客より厳しくなる理由を理解する",
+        body: "同じホールが二つの異なる数字を持っています。野球では座席数16,601席とされ、文化イベント——コンサートや授賞式——では一度に約25,000人を収容できるとされています。つまりコンサートの夜は、この建物の通常の用途より約5割多い人数が、同じ扉と同じホームを通ることになります。前のステップの案内の裏にあるのはこの算数です。",
+        pitfall:
+          "野球を観に行った経験から、あるいは行った友人の話から混雑を判断すること。出口の側から見れば、コンサートの配置は別の建物です。",
+        takes: "—",
+      },
+      {
+        title: "駐車する前提で計画しない。そして理由は収容台数ではありません",
+        body: "会場には3層に484台分の駐車場があり、08:00から22:00まで、5分あたり150ウォン、30分で900ウォン、1時間で1,800ウォン、6時間で10,800ウォンです。25,000人のコンサート客に対して52人あたり1台で、それだけでも答えは出ています。ただ運営者は、実際に決定的な一文を加えています。野球およびイベントの日は駐車場が主催者によって全面的に使用され、一般利用は制限される、と。つまり制約は「満車になる」ことではありません。「そもそも開いていないかもしれない」ことです。",
+        pitfall:
+          "道路で向かうのが楽な選択だという前提でタクシーやレンタカーを手配すること。その道路の選択は、主催者がその夜のために押さえた駐車場で行き止まりになります。",
+        takes: "5分",
+      },
+      {
+        title: "建物には、建物が知っていることだけを尋ねる",
+        body: "運営者が答えるのは建物についてです。アクセス、駐車、設備、ドームそのもの。その窓口はドーム運営処の運営チームで、電話は02-2128-2300です。運営者が決めないのはあなたの公演です。入場時刻、持ち込み可否、待機列の位置、開場時刻は主催者のもので、会場ではなく公演ごとにチケッティングのページで公開されます。会場に手荷物の規則を尋ねれば、建物の一般方針について丁寧な答えが返ってきますが、それは必要だった答えではありません。",
+        pitfall:
+          "会場への電話を公演規則の確認として扱うこと。二つは別の権限であり、チケットに書かれているのはそのうち一方だけです。",
+        takes: "10分",
+      },
+    ],
+    faq: [
+      {
+        q: "高尺スカイドームは何駅ですか。",
+        a: "1号線クイル駅の2番出口、約150メートルで徒歩3分です。会場はほかに3つの長い経路も公開しています。ケボン駅の2番出口から徒歩約15分、または高尺橋方面の村バス06番。クロ駅から高尺橋を渡って徒歩約20分、またはバス5712番と5626番。1号線と2号線のシンドリム駅から、1番出口を出てバスで3停留所、10路線が走っており、その中に160番があります。クロが1番出口か2番出口かについては、会場の表と道順の案内が食い違っていて、道順と周辺地図はどちらも2番としています。",
+      },
+      {
+        q: "クイル駅が徒歩3分なら、なぜほかで降りるのですか。",
+        a: "会場がそう言っているからです。アクセスのページは、ソウル方面および水原・安養方面から来る人にはクロ駅で降りて混雑を避けるよう伝え、仁川・富川方面から来る人にはケボン駅で降りるよう伝えています。これは旅行者の意見ではなく、運営者が退場時の自分の駅について述べていることです。",
+      },
+      {
+        q: "コンサートの夜は何人くらい来るのですか。",
+        a: "会場は文化イベントで約25,000人、野球では座席数16,601席としています。通常の試合日より約5割多い人が同じ出口から出ることになり、混雑の案内が存在する理由はそれです。",
+      },
+      {
+        q: "車やタクシーで行って駐車できますか。",
+        a: "できない前提で計画してください。484台分があり、08:00から22:00まで5分150ウォンですが、運営者は野球およびイベントの日は駐車場が主催者により全面的に押さえられ、一般利用は制限されると明記しています。52人に1台という比率は、そもそも開いていればの話です。",
+      },
+      {
+        q: "高尺スカイドームはKSPO Domeと同じですか。",
+        a: "違います。そして互いに近くもありません。高尺スカイドームはソウル西部、九老区の京仁路430にあり、ソウル施設公団が運営しています。KSPO Domeは南東部、松坡区のオリンピック公園の中にあり、別の運営者です。予約ページの会場名と住所を照らし合わせてください。",
+      },
+      {
+        q: "持ち込みの可否は誰に聞けばいいですか。",
+        a: "会場ではなく主催者です。建物が公開するのはアクセス、駐車、設備です。入場時刻、手荷物の規則、待機列の位置、開場時刻は公演ごとに決まり、あなたの公演のチケッティングのページに出ます。会場の窓口はドーム運営処の02-2128-2300で、答えられるのは建物についてだけです。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "前往高尺天空巨蛋：最近的車站不是正確的車站",
+    summary:
+      "兩萬五千人、484個車位，以及一個由營運者自己寫明請你提前一站下車的場館。最近的出口走三分鐘就到，而那大概是你該避開的出口。",
+    scope:
+      "涵蓋為了看演唱會而抵達高尺天空巨蛋的過程，取自營運它的首爾設施公團頁面：車站、出口、步行時間、場館自己公布的人潮建議，以及停車場。刻意只寫一個場館。KSPO Dome與Inspire Arena各自需要自己的頁面與各自營運者的來源，本頁不能替代。這裡沒有任何逐場次的資訊——可攜帶什麼、何時開放入場，由主辦方而不是建築決定。",
+    intro: [
+      "票面告訴你場館和時間。它不會告訴你，連著場館的那個車站也是其他所有持票者正要走出來的車站，而這棟建築的營運者就用平白的韓文寫在自己的網站上。",
+      "這是把一個場館從頭到尾讀完，用營運它的公團自己的說法。有用的不是地址，而是那份名單上的四個車站裡，有兩個的存在是為了把人帶離最近的那一個。",
+    ],
+    steps: [
+      {
+        title: "先確認你的場次究竟在哪一個場館",
+        body: "首爾有好幾座大型場館，而它們的英文名字重疊得很糟。高尺天空巨蛋（고척스카이돔）在九老區京仁路430號，郵遞區號08223，由首爾設施公團營運。它不是KSPO Dome，那一座在松坡區的奧林匹克公園裡，由完全不同的機構營運；它也不是Inspire Arena，那一座在仁川；它更不是首爾世界盃競技場，那是麻浦區上岩的露天競技場——同一個營運者也經營那一座，所以用營運者的名字搜尋會同時給你兩個。先把預訂頁面上的場館名字和地址對一遍再規劃任何事，因為兩者相距一小時。",
+        pitfall:
+          "看到巨蛋二字就以為只有一座。首爾最大的場館中有兩座名字裡都有巨蛋，而且分別在城市的兩端，在18時才弄懂這件事的粉絲趕不上演出。",
+        takes: "5分鐘",
+      },
+      {
+        title: "知道最近的車站，也知道它只要三分鐘",
+        body: "1號線九一站2號出口，直走約150公尺，場館寫的是步行三分鐘。那是最短的路線，而且確實很短。它公布的另外三條都更長。1號線開峰站2號出口，直走200公尺後向右，再走650公尺，巨蛋在你的右手邊：步行約十五分鐘，或搭往高尺橋方向的社區公車06號。1號線九老站，出站後向左，直走一公里，過高尺橋後巨蛋在你的左手邊：步行約二十分鐘，或搭公車5712號與5626號。1號線與2號線的新道林站，從1號出口搭公車三站，有十條路線在跑，其中包括160號。",
+        pitfall:
+          "把三分鐘的步行當成理所當然的答案。那是最短的路線，而下一步就是場館自己解釋為什麼它可能是錯的那一條。那個頁面上有一個數字跟自己不一致：車站表把九老寫成1號出口，但印在它下面的逐步路線和場館自己的周邊地圖都寫2號出口。三個來源裡有兩個說2號，而且兩個出口都在同一座車站裡，所以猜錯的代價是一分鐘。",
+        takes: "5分鐘",
+      },
+      {
+        title: "讀場館自己印出來的人潮建議",
+        body: "這是本頁真正值得的部分，而且是營運者公布的，不是從部落格推論出來的。交通頁面在車站表上方有兩行：從首爾方向以及水原、安養方向來的人，被告知可以在九老站下車以避開擁擠；從仁川、富川方向來的人，則被告知對開峰站做同樣的事。這是建築在告訴你，滿場的夜晚它門口那個車站疏散不完，並且依照你從哪裡上車，指名你該改用哪一站。",
+        pitfall:
+          "聽從一個以距離為最佳解的路線程式。它每次都會把你送到九一站，因為它不知道場館對散場時那個出口所知道的事。",
+        takes: "5分鐘，在當天之前",
+      },
+      {
+        title: "理解為什麼擁擠比棒球的人潮更嚴重",
+        body: "同一座場館有兩個不同的數字。棒球時場館給的是16,601個座位；文化活動——演唱會、頒獎典禮——則說一次可以容納約25,000人。因此演唱會的夜晚，大約比這棟建築日常使用時多出五成的人，要通過同樣的門和同樣的月台。前一步那則建議背後就是這個算術。",
+        pitfall:
+          "用看棒球的經驗，或是用去過的朋友的說法來判斷人潮。就出口而言，演唱會的配置是另一棟建築。",
+        takes: "—",
+      },
+      {
+        title: "不要計畫停車，而原因不是車位數量",
+        body: "場館有三層共484個車位，08:00至22:00開放，每五分鐘收150韓元——三十分鐘900韓元，一小時1,800韓元，六小時10,800韓元。對上25,000人的演唱會人潮，那是每五十二人一個車位，光這一點就已經有答案了。但營運者加上了真正決定這件事的那句話：棒球日與活動日，停車場由主辦方全面接管，一般使用受到限制。所以限制不是它會停滿，而是它可能根本不對你開放。",
+        pitfall:
+          "以為走陸路是比較舒服的選項，於是叫了計程車或租了車。那條陸路的終點是一座主辦方當晚已經接管的停車場。",
+        takes: "5分鐘",
+      },
+      {
+        title: "只問建築知道的事",
+        body: "營運者回答的是關於建築的問題：交通、停車、設施、巨蛋本身。它的聯絡窗口是巨蛋營運處的營運組，電話02-2128-2300。它不決定的是你的場次——入場時間、可攜帶什麼、你的隊伍在哪裡排、何時開放進場，都屬於主辦方，並且是逐場公布在售票頁面上，而不是由場館公布。問場館包包的規定，你會得到一個關於建築一般政策的客氣答覆，而那不是你需要的答案。",
+        pitfall:
+          "把打給場館的電話當成場次規定的確認。兩者是不同的權責，而票面上寫的只有其中一個。",
+        takes: "10分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "高尺天空巨蛋是哪一站？",
+        a: "1號線九一站2號出口，約150公尺，步行三分鐘。它還公布三條較長的路線：開峰站2號出口，步行約十五分鐘，或往高尺橋方向的社區公車06號；九老站，過高尺橋步行約二十分鐘，或公車5712號與5626號；以及1號線與2號線的新道林站，從1號出口搭公車三站，有十條路線在跑，其中包括160號。場館自己的表格和逐步路線對九老是1號還是2號出口說法不一；路線說明和周邊地圖都說2號。",
+      },
+      {
+        q: "既然九一站只要三分鐘，我為什麼要在別站下車？",
+        a: "因為場館這麼說。它的交通頁面告訴從首爾方向以及水原、安養方向來的人在九老站下車以避開擁擠，告訴從仁川、富川方向來的人在開峰站下車。那是營運者在描述散場時它自己的車站，不是旅客的意見。",
+      },
+      {
+        q: "演唱會的夜晚大概有多少人？",
+        a: "場館給文化活動的數字是約25,000人，棒球則是16,601個座位。大致上比平常的比賽日多出五成的人要從同樣的出口離開，這就是那則人潮建議存在的原因。",
+      },
+      {
+        q: "我可以自己開車或搭計程車去那裡停嗎？",
+        a: "請以不行為前提規劃。那裡有484個車位，08:00至22:00開放，每五分鐘150韓元，但營運者明確表示棒球日與活動日停車場由主辦方全面保留，一般使用受到限制。每五十二人一個車位會是問題——前提是那座停車場對你開放。",
+      },
+      {
+        q: "高尺天空巨蛋和KSPO Dome是同一個嗎？",
+        a: "不是，而且兩者也不相鄰。高尺天空巨蛋在首爾西邊九老區的京仁路430號，由首爾設施公團營運。KSPO Dome在東南邊松坡區的奧林匹克公園裡，由不同的營運者負責。請把預訂頁面上的場館名字和地址對一遍。",
+      },
+      {
+        q: "可以帶什麼進場，該問誰？",
+        a: "問主辦方，不是場館。建築公布的是交通、停車和設施；入場時間、包包規定、排隊位置和開場時間是逐場設定的，會出現在你那場的售票頁面上。場館自己的線路是巨蛋營運處的02-2128-2300，而它只能告訴你關於建築的事。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menuju Gocheok Sky Dome: stasiun terdekat bukan stasiun yang tepat",
+    summary:
+      "Dua puluh lima ribu orang, 484 petak parkir, dan sebuah venue yang dengan kata-katanya sendiri menyuruh Anda turun satu perhentian lebih awal. Pintu keluar terdekat berjarak tiga menit jalan kaki dan justru itulah yang sebaiknya Anda hindari.",
+    scope:
+      "Mencakup cara mencapai Gocheok Sky Dome untuk sebuah konser, dari halaman Seoul Facilities Corporation yang mengelolanya: stasiun-stasiunnya, pintu keluarnya, waktu jalan kakinya, anjuran soal kepadatan yang diterbitkan venue itu sendiri, dan tempat parkirnya. Satu venue saja, dan itu disengaja. KSPO Dome dan Inspire Arena membutuhkan halaman sendiri dan sumber dari pengelolanya masing-masing, dan halaman ini bukan penggantinya. Tidak ada yang bersifat per acara di sini — apa yang boleh Anda bawa masuk dan kapan pintu dibuka berasal dari promotor, bukan dari bangunannya.",
+    intro: [
+      "Tiket memberi tahu Anda aula dan jamnya. Ia tidak memberi tahu bahwa stasiun yang menempel pada aula itu juga stasiun yang sedang dilalui semua pemegang tiket lainnya, dan bahwa pengelola bangunan itu menyatakannya di situsnya sendiri dalam bahasa Korea yang lugas.",
+      "Ini satu venue yang dibaca dari awal sampai akhir, dengan kata-kata perusahaan yang mengelolanya. Bagian yang berguna bukanlah alamatnya. Bagian itu adalah bahwa dua dari empat stasiun pada daftarnya ada untuk membawa orang menjauh dari yang terdekat.",
+    ],
+    steps: [
+      {
+        title: "Pastikan aula mana yang sebenarnya menjadi tempat pertunjukan Anda",
+        body: "Seoul punya beberapa aula besar dan nama-nama Inggrisnya bertumpang tindih dengan buruk. Gocheok Sky Dome — 고척스카이돔 — berada di Guro-gu di 430 Gyeongin-ro, kode pos 08223, dan dikelola oleh Seoul Facilities Corporation. Ia bukan KSPO Dome, yang berada di dalam Olympic Park di Songpa-gu dan dikelola organisasi yang sepenuhnya berbeda, dan ia bukan Inspire Arena, yang berada di Incheon. Ia juga bukan Seoul World Cup Stadium, stadion terbuka di Sangam di Mapo-gu — pengelola yang sama menjalankan yang itu, jadi pencarian dengan nama pengelolanya akan menawarkan keduanya kepada Anda. Cocokkan nama venue pada halaman pemesanan dengan alamatnya sebelum merencanakan apa pun, karena keduanya berjarak satu jam.",
+        pitfall:
+          "Membaca kata Dome dan menganggap hanya ada satu. Dua dari aula terbesar Seoul punya kata Dome pada namanya, keduanya berada di sisi kota yang berlawanan, dan penggemar yang baru memahami ini pada pukul 18:00 tidak akan sampai ke pertunjukannya.",
+        takes: "2 menit",
+      },
+      {
+        title: "Kenali stasiun terdekat, dan bahwa jaraknya tiga menit",
+        body: "Line 1, Stasiun Guil, pintu keluar 2: sekitar 150 meter lurus ke depan, yang oleh venue disebut sebagai tiga menit jalan kaki. Itu pendekatan terdekat dan memang benar-benar singkat. Tiga rute lain yang diterbitkannya lebih panjang. Stasiun Gaebong di Line 1, pintu keluar 2 — 200 meter lurus, ke kanan, lalu 650 meter, dan dome berada di sebelah kanan Anda: sekitar lima belas menit, atau bus desa 06 ke arah Jembatan Gocheok. Stasiun Guro di Line 1 — ke kiri dari pintu keluar, satu kilometer lurus, melintasi Jembatan Gocheok dan dome berada di sebelah kiri Anda: sekitar dua puluh menit, atau bus 5712 dan 5626. Sindorim di Line 1 dan 2 — bus dari pintu keluar 1, tiga perhentian, sepuluh rute beroperasi, salah satunya 160.",
+        pitfall:
+          "Menganggap jalan kaki tiga menit itu sebagai jawaban yang sudah jelas. Itu rute terpendek, dan langkah berikutnya adalah venue menjelaskan mengapa rute itu mungkin yang salah. Satu angka pada halaman itu juga bertentangan dengan dirinya sendiri: tabel stasiun menyebut Guro sebagai pintu keluar 1, sementara petunjuk arah yang tercetak di bawahnya dan peta kawasan milik venue sendiri keduanya menyebut pintu keluar 2. Dua dari tiga sumber menyebut 2, dan kedua pintu keluar berada di dalam stasiun yang sama, jadi biaya salah menebak adalah satu menit.",
+        takes: "5 menit",
+      },
+      {
+        title: "Baca anjuran soal kepadatan yang dicetak venue itu sendiri",
+        body: "Inilah bagian yang membuat halaman ini layak dibaca, dan ia diterbitkan oleh pengelola alih-alih disimpulkan dari sebuah blog. Halaman aksesnya memuat dua baris di atas tabel stasiun: orang yang datang dari arah Seoul dan dari arah Suwon atau Anyang diberi tahu bahwa mereka dapat menghindari kepadatan dengan turun di Stasiun Guro, dan orang yang datang dari arah Incheon atau Bucheon diberi tahu hal yang sama tentang Stasiun Gaebong. Bangunan itu sedang memberi tahu Anda bahwa pada malam yang penuh, stasiun di depan pintunya tidak terurai, dan menyebutkan perhentian mana yang harus dipakai sebagai gantinya tergantung dari mana Anda naik.",
+        pitfall:
+          "Mengikuti aplikasi rute yang mengoptimalkan jarak. Aplikasi itu akan mengirim Anda ke Guil setiap kali, karena ia tidak tahu apa yang diketahui venue tentang pintu keluar itu saat bubaran.",
+        takes: "5 menit, sebelum hari acara",
+      },
+      {
+        title: "Pahami mengapa desakannya lebih buruk daripada kerumunan bisbol",
+        body: "Aula yang sama memuat dua angka yang berbeda. Untuk bisbol venue menyebut 16,601 tempat duduk; untuk acara budaya — konser, ajang penghargaan — ia menyebut sekitar 25,000 orang dapat ditampung sekaligus. Oleh karena itu malam konser mengalirkan sekitar lima puluh persen lebih banyak orang melalui pintu yang sama dan ke peron yang sama dibandingkan penggunaan reguler bangunan itu, dan itulah hitungan di balik anjuran pada langkah sebelumnya.",
+        pitfall:
+          "Menilai kerumunan dari kunjungan menonton bisbol, atau dari teman yang pernah ke sana. Sejauh menyangkut pintu keluar, konfigurasi konser adalah bangunan yang berbeda.",
+        takes: "—",
+      },
+      {
+        title: "Jangan berencana memarkir, dan ketahui alasannya bukan kapasitas",
+        body: "Venue punya 484 petak parkir di tiga lantai, buka 08:00 sampai 22:00, dengan tarif 150 won per lima menit — 900 won untuk tiga puluh menit, 1,800 untuk satu jam, 10,800 untuk enam jam. Terhadap kerumunan konser sebanyak 25,000 orang itu berarti satu petak untuk setiap lima puluh dua orang, yang sendirian saja sudah menyelesaikan persoalannya. Tetapi pengelola menambahkan kalimat yang sebenarnya memutuskannya: pada hari bisbol dan hari acara, tempat parkir diambil alih sepenuhnya oleh penyelenggara, dan penggunaan umum dibatasi. Jadi kendalanya bukan bahwa tempat itu penuh. Kendalanya adalah bahwa tempat itu mungkin sama sekali tidak terbuka bagi Anda.",
+        pitfall:
+          "Memesan taksi atau sewa mobil dengan anggapan bahwa datang lewat jalan raya adalah pilihan yang nyaman. Pilihan lewat jalan raya itu berakhir di tempat parkir yang sudah diambil promotor untuk malam itu.",
+        takes: "5 menit",
+      },
+      {
+        title: "Tanyakan kepada bangunan hanya apa yang bangunan itu ketahui",
+        body: "Pengelola menjawab pertanyaan tentang bangunan: akses, parkir, fasilitas, dome itu sendiri. Kontaknya untuk itu adalah Dome Operations Division, tim operasi, di 02-2128-2300. Yang tidak ditetapkannya adalah pertunjukan Anda — waktu masuk, apa yang boleh Anda bawa, di mana barisan Anda terbentuk dan kapan pintu dibuka adalah milik promotor, dan semuanya diterbitkan per acara di halaman tiket alih-alih oleh venue. Menanyakan aturan tas kepada venue memberi Anda jawaban sopan tentang kebijakan umum bangunan itu, yang bukan jawaban yang Anda butuhkan.",
+        pitfall:
+          "Memperlakukan panggilan telepon ke venue sebagai konfirmasi aturan sebuah acara. Keduanya adalah otoritas yang berbeda dan hanya satu di antaranya ada di tiket Anda.",
+        takes: "10 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome ada di stasiun mana?",
+        a: "Stasiun Guil di Line 1, pintu keluar 2, sekitar 150 meter dan tiga menit jalan kaki. Venue juga menerbitkan tiga rute yang lebih panjang: Stasiun Gaebong pintu keluar 2, sekitar lima belas menit jalan kaki atau bus desa 06 ke arah Jembatan Gocheok; Stasiun Guro, sekitar dua puluh menit jalan kaki melintasi Jembatan Gocheok atau bus 5712 dan 5626; dan Sindorim di Line 1 dan 2, tiga perhentian dengan bus dari pintu keluar 1 dengan sepuluh rute beroperasi, salah satunya 160. Tabel milik venue dan petunjuk arahnya sendiri berbeda soal apakah Guro itu pintu keluar 1 atau 2; petunjuk arah dan peta kawasan keduanya menyebut 2.",
+      },
+      {
+        q: "Kalau Guil hanya tiga menit, mengapa saya harus turun di tempat lain?",
+        a: "Karena venue mengatakannya. Halaman aksesnya menyuruh orang yang datang dari arah Seoul dan dari arah Suwon atau Anyang turun di Guro untuk menghindari kepadatan, dan orang yang datang dari Incheon atau Bucheon turun di Gaebong. Itu pengelola yang menggambarkan stasiunnya sendiri saat bubaran, bukan pendapat seorang pelancong.",
+      },
+      {
+        q: "Berapa banyak orang yang ada pada malam konser?",
+        a: "Venue menyebut sekitar 25,000 untuk acara budaya, dibandingkan 16,601 tempat duduk untuk bisbol. Kurang lebih lima puluh persen lebih banyak orang keluar melalui pintu yang sama dibandingkan hari pertandingan biasa, dan itulah mengapa anjuran soal kepadatan itu ada.",
+      },
+      {
+        q: "Bisakah saya menyetir atau naik taksi dan memarkir di sana?",
+        a: "Rencanakan dengan jawaban tidak. Ada 484 petak, buka 08:00 sampai 22:00 dengan tarif 150 won per lima menit, tetapi pengelola menyatakan bahwa pada hari bisbol dan hari acara tempat parkir sepenuhnya dipesan oleh penyelenggara dan penggunaan umum dibatasi. Satu petak untuk lima puluh dua orang akan menjadi masalahnya kalau tempat itu memang terbuka bagi Anda.",
+      },
+      {
+        q: "Apakah Gocheok Sky Dome sama dengan KSPO Dome?",
+        a: "Tidak, dan keduanya tidak berdekatan. Gocheok Sky Dome berada di 430 Gyeongin-ro di Guro-gu, Seoul bagian barat, dikelola oleh Seoul Facilities Corporation. KSPO Dome berada di dalam Olympic Park di Songpa-gu, di sebelah tenggara, di bawah pengelola yang berbeda. Cocokkan nama venue pada halaman pemesanan Anda dengan alamatnya.",
+      },
+      {
+        q: "Kepada siapa saya menanyakan apa yang boleh saya bawa masuk?",
+        a: "Kepada promotor, bukan venue. Bangunan menerbitkan akses, parkir dan fasilitas; waktu masuk, aturan tas, posisi barisan dan waktu pintu dibuka ditetapkan per acara dan muncul di halaman tiket pertunjukan Anda. Saluran milik venue sendiri adalah Dome Operations Division di 02-2128-2300, dan ia hanya bisa memberi tahu Anda tentang bangunannya.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Zum Gocheok Sky Dome: die nächste Station ist nicht die richtige",
+    summary:
+      "Fünfundzwanzigtausend Menschen, 484 Parkplätze und ein Veranstaltungsort, der Ihnen mit eigenen Worten sagt, eine Station früher auszusteigen. Der nächste Ausgang ist drei Minuten entfernt und derjenige, den Sie wahrscheinlich meiden sollten.",
+    scope:
+      "Behandelt die Anreise zum Gocheok Sky Dome für ein Konzert, aus den Seiten der Seoul Facilities Corporation, die ihn betreibt: die Stationen, die Ausgänge, die Gehzeiten, die Hinweise zum Gedränge, die der Veranstaltungsort selbst veröffentlicht, und den Parkplatz. Bewusst nur ein Veranstaltungsort. KSPO Dome und Inspire Arena brauchen eigene Seiten und die Quellen ihrer eigenen Betreiber, für die diese Seite kein Ersatz ist. Nichts hier gilt pro Veranstaltung — was Sie mitbringen dürfen und wann die Türen öffnen, kommt vom Veranstalter und nicht vom Gebäude.",
+    intro: [
+      "Ein Ticket nennt Ihnen die Halle und die Stunde. Es nennt Ihnen nicht, dass die Station direkt an der Halle genau die ist, aus der auch jeder andere Ticketinhaber herauskommt, und dass der Betreiber des Gebäudes das auf seiner eigenen Website in klarem Koreanisch schreibt.",
+      "Das hier ist ein Veranstaltungsort, von vorn bis hinten gelesen, in den Worten der Gesellschaft, die ihn führt. Der nützliche Teil ist nicht die Adresse. Er ist, dass zwei der vier Stationen auf der Liste dazu da sind, Menschen von der nächstgelegenen wegzuführen.",
+    ],
+    steps: [
+      {
+        title: "Klären Sie, in welcher Halle Ihre Show tatsächlich ist",
+        body: "Seoul hat mehrere große Hallen, und ihre englischen Namen überlappen sich unangenehm. Der Gocheok Sky Dome — 고척스카이돔 — liegt in Guro-gu an der 430 Gyeongin-ro, Postleitzahl 08223, und wird von der Seoul Facilities Corporation betrieben. Er ist nicht der KSPO Dome, der im Olympic Park in Songpa-gu liegt und von einer völlig anderen Organisation betrieben wird, und er ist nicht die Inspire Arena, die in Incheon liegt. Er ist auch nicht das Seoul World Cup Stadium, das Freiluftstadion in Sangam in Mapo-gu — dasselbe Unternehmen führt auch dieses, eine Suche nach dem Betreibernamen bietet Ihnen also beide an. Prüfen Sie den Namen des Veranstaltungsorts auf der Buchungsseite gegen die Adresse, bevor Sie irgendetwas planen, denn die beiden liegen eine Stunde voneinander entfernt.",
+        pitfall:
+          "Dome zu lesen und anzunehmen, es gebe nur einen. Zwei der größten Hallen Seouls haben Dome im Namen, sie liegen an entgegengesetzten Enden der Stadt, und wer das um 18:00 erfährt, kommt nicht zur Show.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Kennen Sie die nächste Station, und dass sie drei Minuten entfernt ist",
+        body: "Line 1, Station Guil, Ausgang 2: etwa 150 Meter geradeaus, was der Veranstaltungsort als drei Minuten Fußweg angibt. Das ist die kürzeste Annäherung und wirklich kurz. Die drei anderen Wege, die er veröffentlicht, sind länger. Station Gaebong an der Line 1, Ausgang 2 — 200 Meter geradeaus, nach rechts, dann 650 Meter, und der Dome liegt rechts: etwa fünfzehn Minuten, oder der Ortsbus 06 Richtung Gocheok-Brücke. Station Guro an der Line 1 — links aus dem Ausgang, einen Kilometer geradeaus, über die Gocheok-Brücke, und der Dome liegt links: etwa zwanzig Minuten, oder die Busse 5712 und 5626. Sindorim an den Lines 1 und 2 — Bus ab Ausgang 1, drei Haltestellen, zehn Linien verkehren, darunter die 160.",
+        pitfall:
+          "Die drei Minuten Fußweg als die offensichtliche Antwort zu nehmen. Es ist der kürzeste Weg, und der nächste Schritt ist der Veranstaltungsort, der erklärt, warum er der falsche sein kann. Eine Zahl auf jener Seite widerspricht sich auch selbst: die Stationstabelle nennt für Guro den Ausgang 1, während die darunter gedruckte Wegbeschreibung und der eigene Umgebungsplan des Veranstaltungsorts beide Ausgang 2 nennen. Zwei von drei Quellen sagen 2, und beide Ausgänge liegen in derselben Station, der Preis für ein falsches Raten ist also eine Minute.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Lesen Sie die Gedränge-Hinweise, die der Veranstaltungsort selbst druckt",
+        body: "Das ist der Teil, der diese Seite wert ist, und er wird vom Betreiber veröffentlicht und nicht aus einem Blog abgeleitet. Die Anreiseseite trägt zwei Zeilen über der Stationstabelle: Menschen, die aus Seoul und aus Richtung Suwon oder Anyang kommen, wird gesagt, dass sie das Gedränge umgehen können, indem sie an der Station Guro aussteigen, und Menschen aus Richtung Incheon oder Bucheon wird dasselbe über die Station Gaebong gesagt. Das Gebäude sagt Ihnen damit, dass sich die Station vor seiner Tür an einem vollen Abend nicht leert, und nennt, welchen Halt Sie stattdessen nehmen sollen, je nachdem, wo Sie eingestiegen sind.",
+        pitfall:
+          "Einer Routing-App zu folgen, die auf Entfernung optimiert. Sie schickt Sie jedes Mal nach Guil, weil sie nicht weiß, was der Veranstaltungsort über diesen Ausgang beim Abströmen weiß.",
+        takes: "5 Minuten, vor dem Tag",
+      },
+      {
+        title: "Verstehen Sie, warum das Gedränge schlimmer ist als bei einem Baseballpublikum",
+        body: "Dieselbe Halle trägt zwei verschiedene Zahlen. Für Baseball gibt der Veranstaltungsort 16,601 Sitzplätze an; für kulturelle Veranstaltungen — Konzerte, Preisverleihungen — sagt er, es könnten etwa 25,000 Menschen gleichzeitig untergebracht werden. Ein Konzertabend schickt also rund fünfzig Prozent mehr Menschen durch dieselben Türen und auf denselben Bahnsteig als die reguläre Nutzung des Gebäudes, und das ist die Rechnung hinter dem Hinweis im vorigen Schritt.",
+        pitfall:
+          "Das Gedränge von einem Baseballbesuch aus zu beurteilen, oder von einer Freundin, die bei einem war. Was die Ausgänge betrifft, ist die Konzertbestuhlung ein anderes Gebäude.",
+        takes: "—",
+      },
+      {
+        title: "Planen Sie nicht zu parken, und der Grund ist nicht die Kapazität",
+        body: "Der Veranstaltungsort hat 484 Parkplätze auf drei Ebenen, geöffnet von 08:00 bis 22:00, berechnet mit 150 Won je fünf Minuten — 900 Won für dreißig Minuten, 1,800 für eine Stunde, 10,800 für sechs. Gegen ein Konzertpublikum von 25,000 ist das ein Platz für je zweiundfünfzig Menschen, womit die Frage bereits entschieden wäre. Doch der Betreiber ergänzt den Satz, der sie tatsächlich entscheidet: an Baseball- und Veranstaltungstagen wird der Parkplatz vollständig vom Veranstalter übernommen, und die öffentliche Nutzung ist eingeschränkt. Die Beschränkung ist also nicht, dass er sich füllt. Sie ist, dass er Ihnen überhaupt nicht offenstehen könnte.",
+        pitfall:
+          "Ein Taxi oder einen Mietwagen in der Annahme zu buchen, die Anreise auf der Straße sei die bequeme Variante. Die Straßenvariante endet an einem Parkplatz, den der Veranstalter für den Abend genommen hat.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Fragen Sie das Gebäude nur, was das Gebäude weiß",
+        body: "Der Betreiber beantwortet Fragen zum Gebäude: Anreise, Parken, Einrichtungen, der Dome selbst. Sein Kontakt dafür ist die Dome Operations Division, Betriebsteam, unter 02-2128-2300. Was er nicht festlegt, ist Ihre Show — Einlasszeit, was Sie mitbringen dürfen, wo sich Ihre Schlange bildet und wann die Türen öffnen, gehören dem Veranstalter und werden pro Veranstaltung auf der Ticketseite veröffentlicht, nicht vom Veranstaltungsort. Wer den Veranstaltungsort nach Taschenregeln fragt, erhält eine höfliche Antwort zur allgemeinen Hausordnung, und das ist nicht die Antwort, die man gebraucht hat.",
+        pitfall:
+          "Einen Anruf beim Veranstaltungsort als Bestätigung einer Veranstaltungsregel zu behandeln. Das sind zwei verschiedene Zuständigkeiten, und nur eine davon steht auf Ihrem Ticket.",
+        takes: "10 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Welche Station ist der Gocheok Sky Dome?",
+        a: "Station Guil an der Line 1, Ausgang 2, etwa 150 Meter und drei Minuten Fußweg. Er veröffentlicht auch drei längere Wege: Station Gaebong Ausgang 2, etwa fünfzehn Minuten zu Fuß oder Ortsbus 06 Richtung Gocheok-Brücke; Station Guro, etwa zwanzig Minuten zu Fuß über die Gocheok-Brücke oder die Busse 5712 und 5626; und Sindorim an den Lines 1 und 2, drei Haltestellen mit dem Bus ab Ausgang 1, zehn Linien verkehren, darunter die 160. Die eigene Tabelle des Veranstaltungsorts und seine Wegbeschreibung widersprechen sich, ob Guro Ausgang 1 oder Ausgang 2 ist; die Wegbeschreibung und der Umgebungsplan sagen beide 2.",
+      },
+      {
+        q: "Wenn Guil drei Minuten entfernt ist, warum sollte ich irgendwo anders aussteigen?",
+        a: "Weil der Veranstaltungsort es sagt. Seine Anreiseseite sagt Menschen aus Seoul und aus Richtung Suwon oder Anyang, sie sollten in Guro aussteigen, um das Gedränge zu umgehen, und Menschen aus Incheon oder Bucheon, sie sollten in Gaebong aussteigen. Das ist der Betreiber, der seine eigene Station beim Abströmen beschreibt, und nicht die Meinung einer Reisenden.",
+      },
+      {
+        q: "Wie viele Menschen sind an einem Konzertabend dort?",
+        a: "Der Veranstaltungsort gibt für kulturelle Veranstaltungen etwa 25,000 an, gegenüber 16,601 Sitzplätzen für Baseball. Grob fünfzig Prozent mehr Menschen verlassen das Gebäude durch dieselben Ausgänge als an einem normalen Spieltag, und deshalb gibt es die Gedränge-Hinweise.",
+      },
+      {
+        q: "Kann ich mit dem Auto oder Taxi kommen und dort parken?",
+        a: "Planen Sie mit nein. Es gibt 484 Plätze, geöffnet von 08:00 bis 22:00 zu 150 Won je fünf Minuten, aber der Betreiber erklärt, dass an Baseball- und Veranstaltungstagen der Parkplatz vollständig vom Veranstalter reserviert ist und die öffentliche Nutzung eingeschränkt wird. Ein Platz je zweiundfünfzig Menschen wäre das Problem, wenn er Ihnen überhaupt offenstünde.",
+      },
+      {
+        q: "Ist der Gocheok Sky Dome dasselbe wie der KSPO Dome?",
+        a: "Nein, und sie liegen nicht nahe beieinander. Der Gocheok Sky Dome liegt an der 430 Gyeongin-ro in Guro-gu im Westen Seouls und wird von der Seoul Facilities Corporation betrieben. Der KSPO Dome liegt im Olympic Park in Songpa-gu im Südosten, unter einem anderen Betreiber. Prüfen Sie den Namen des Veranstaltungsorts auf Ihrer Buchungsseite gegen die Adresse.",
+      },
+      {
+        q: "Wen frage ich, was ich mitbringen darf?",
+        a: "Den Veranstalter, nicht den Veranstaltungsort. Das Gebäude veröffentlicht Anreise, Parken und Einrichtungen; Einlasszeit, Taschenregeln, Schlangenposition und Türöffnung werden pro Veranstaltung festgelegt und erscheinen auf der Ticketseite Ihrer Show. Die eigene Leitung des Veranstaltungsorts ist die Dome Operations Division unter 02-2128-2300, und sie kann Ihnen nur etwas über das Gebäude sagen.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Llegar al Gocheok Sky Dome: la estación más cercana no es la estación correcta",
+    summary:
+      "Veinticinco mil personas, 484 plazas de aparcamiento y un recinto que con sus propias palabras te dice que te bajes una parada antes. La salida más cercana queda a tres minutos andando y es la que probablemente deberías evitar.",
+    scope:
+      "Cubre cómo llegar al Gocheok Sky Dome para un concierto, a partir de las páginas de la Seoul Facilities Corporation, que lo gestiona: las estaciones, las salidas, los tiempos a pie, los avisos sobre aglomeración que publica el propio recinto, y el aparcamiento. Un solo recinto, y es deliberado. El KSPO Dome y el Inspire Arena necesitan sus propias páginas y las fuentes de sus propios operadores, y esta página no las sustituye. Aquí no hay nada propio de un evento concreto: qué puedes llevar dentro y cuándo abren las puertas lo decide la promotora, no el edificio.",
+    intro: [
+      "Una entrada te dice la sala y la hora. No te dice que la estación pegada a la sala es la misma por la que están saliendo todos los demás que tienen entrada, y que el operador del edificio lo dice en su propia web en coreano llano.",
+      "Esto es un recinto leído de principio a fin, con las palabras de la corporación que lo gestiona. La parte útil no es la dirección. Es que dos de las cuatro estaciones de la lista existen para alejar a la gente de la más cercana.",
+    ],
+    steps: [
+      {
+        title: "Confirma en qué sala está realmente tu concierto",
+        body: "Seúl tiene varias salas grandes y sus nombres en inglés se solapan de mala manera. El Gocheok Sky Dome — 고척스카이돔 — está en Guro-gu, en el 430 de Gyeongin-ro, código postal 08223, y lo gestiona la Seoul Facilities Corporation. No es el KSPO Dome, que está dentro del Olympic Park, en Songpa-gu, y lo gestiona una organización completamente distinta, y no es el Inspire Arena, que está en Incheon. Tampoco es el Seoul World Cup Stadium, el estadio al aire libre de Sangam, en Mapo-gu: lo gestiona el mismo operador, así que una búsqueda por el nombre del operador te ofrecerá los dos. Comprueba el nombre del recinto en la página de compra contra la dirección antes de planear nada, porque están a una hora el uno del otro.",
+        pitfall:
+          "Leer Dome y dar por hecho que solo hay uno. Dos de las salas más grandes de Seúl llevan Dome en el nombre, están en lados opuestos de la ciudad, y quien se entera de esto a las 18:00 no llega al concierto.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Conoce la estación más cercana, y que está a tres minutos",
+        body: "Line 1, estación de Guil, salida 2: unos 150 metros en línea recta, que el recinto da como tres minutos andando. Es el acceso más corto y de verdad lo es. Las otras tres rutas que publica son más largas. Estación de Gaebong en la Line 1, salida 2: 200 metros recto, a la derecha, luego 650 metros, y el dome queda a tu derecha; unos quince minutos, o el autobús de barrio 06 hacia el puente de Gocheok. Estación de Guro en la Line 1: a la izquierda al salir, un kilómetro recto, cruzando el puente de Gocheok, y el dome queda a tu izquierda; unos veinte minutos, o los autobuses 5712 y 5626. Sindorim, en las Lines 1 y 2: autobús desde la salida 1, tres paradas, con diez líneas en servicio, entre ellas la 160.",
+        pitfall:
+          "Tomar los tres minutos a pie como la respuesta obvia. Es la ruta más corta, y el paso siguiente es el propio recinto explicando por qué puede ser la equivocada. Un número de esa página también se contradice: la tabla de estaciones da Guro como salida 1, mientras que las indicaciones impresas debajo y el plano de la zona del propio recinto dicen las dos salida 2. Dos de tres fuentes dicen 2, y las dos salidas están dentro de la misma estación, así que equivocarse cuesta un minuto.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Lee los avisos sobre aglomeración que imprime el propio recinto",
+        body: "Esta es la parte que justifica la página, y la publica el operador en lugar de deducirse de un blog. La página de acceso lleva dos líneas encima de la tabla de estaciones: a quien venga de Seúl y de la dirección de Suwon o Anyang se le dice que puede evitar la aglomeración bajándose en la estación de Guro, y a quien venga de la dirección de Incheon o Bucheon se le dice lo mismo sobre la estación de Gaebong. El edificio te está diciendo que, en una noche llena, la estación de su puerta no se despeja, y nombrando qué parada usar en su lugar según dónde te hayas subido.",
+        pitfall:
+          "Seguir una aplicación de rutas que optimiza la distancia. Te mandará a Guil siempre, porque no sabe lo que el recinto sabe sobre esa salida a la hora de la salida del público.",
+        takes: "5 minutos, antes del día",
+      },
+      {
+        title: "Entiende por qué el apretón es peor que con un público de béisbol",
+        body: "La misma sala sostiene dos cifras distintas. Para el béisbol el recinto da 16,601 asientos; para eventos culturales — conciertos, galas de premios — dice que caben unas 25,000 personas a la vez. Una noche de concierto mete por tanto alrededor de un cincuenta por ciento más de gente por las mismas puertas y al mismo andén que el uso habitual del edificio, y esa es la aritmética que hay detrás del aviso del paso anterior.",
+        pitfall:
+          "Juzgar la aglomeración por una visita al béisbol, o por una amiga que fue a una. En lo que respecta a las salidas, la configuración de concierto es otro edificio.",
+        takes: "—",
+      },
+      {
+        title: "No planees aparcar, y que sepas que el motivo no es el aforo",
+        body: "El recinto tiene 484 plazas en tres niveles, abiertas de 08:00 a 22:00, a 150 wones por cada cinco minutos: 900 wones por media hora, 1,800 por una hora, 10,800 por seis. Frente a un público de concierto de 25,000 personas, eso es una plaza por cada cincuenta y dos, lo que ya zanjaría el asunto. Pero el operador añade la frase que de verdad lo decide: los días de béisbol y de evento el aparcamiento lo ocupa íntegramente la organización, y el uso público queda restringido. Así que la limitación no es que se llene. Es que puede no estar abierto para ti en absoluto.",
+        pitfall:
+          "Reservar un taxi o un coche de alquiler dando por hecho que llegar por carretera es la opción cómoda. La opción por carretera termina en un aparcamiento que la promotora ha tomado para esa noche.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pregunta al edificio solo lo que el edificio sabe",
+        body: "El operador responde preguntas sobre el edificio: acceso, aparcamiento, instalaciones, el dome en sí. Su contacto para eso es la Dome Operations Division, equipo de operaciones, en el 02-2128-2300. Lo que no fija es tu concierto: la hora de entrada, qué puedes llevar, dónde se forma tu cola y cuándo abren las puertas son de la promotora, y se publican por evento en la página de venta en lugar de por el recinto. Preguntar al recinto por las normas de bolsos te da una respuesta amable sobre la política general del edificio, que no es la respuesta que necesitabas.",
+        pitfall:
+          "Tratar una llamada al recinto como confirmación de una norma del evento. Son dos autoridades distintas y solo una de ellas está en tu entrada.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿En qué estación está el Gocheok Sky Dome?",
+        a: "Estación de Guil en la Line 1, salida 2, unos 150 metros y tres minutos andando. También publica tres rutas más largas: estación de Gaebong salida 2, unos quince minutos a pie o el autobús de barrio 06 hacia el puente de Gocheok; estación de Guro, unos veinte minutos a pie cruzando el puente de Gocheok o los autobuses 5712 y 5626; y Sindorim, en las Lines 1 y 2, tres paradas en autobús desde la salida 1 con diez líneas en servicio, entre ellas la 160. La tabla del propio recinto y sus indicaciones no coinciden en si Guro es la salida 1 o la 2; las indicaciones y el plano de la zona dicen las dos 2.",
+      },
+      {
+        q: "Si Guil está a tres minutos, ¿por qué iba a bajarme en otro sitio?",
+        a: "Porque lo dice el recinto. Su página de acceso dice a quien llega de Seúl y de la dirección de Suwon o Anyang que se baje en Guro para evitar la aglomeración, y a quien llega de Incheon o Bucheon que se baje en Gaebong. Es el operador describiendo su propia estación a la salida del público, no la opinión de un viajero.",
+      },
+      {
+        q: "¿Cuánta gente hay una noche de concierto?",
+        a: "El recinto da unas 25,000 personas para eventos culturales, frente a 16,601 asientos para el béisbol. Alrededor de un cincuenta por ciento más de gente sale por las mismas puertas que un día de partido normal, y por eso existen los avisos sobre aglomeración.",
+      },
+      {
+        q: "¿Puedo ir en coche o en taxi y aparcar allí?",
+        a: "Cuenta con que no. Hay 484 plazas, abiertas de 08:00 a 22:00 a 150 wones por cada cinco minutos, pero el operador declara que los días de béisbol y de evento el aparcamiento queda reservado por completo para la organización y el uso público se restringe. Una plaza por cada cincuenta y dos personas sería el problema si el aparcamiento estuviera abierto para ti.",
+      },
+      {
+        q: "¿El Gocheok Sky Dome es lo mismo que el KSPO Dome?",
+        a: "No, y no están cerca. El Gocheok Sky Dome está en el 430 de Gyeongin-ro, en Guro-gu, al oeste de Seúl, gestionado por la Seoul Facilities Corporation. El KSPO Dome está dentro del Olympic Park, en Songpa-gu, al sureste, con otro operador. Comprueba el nombre del recinto en tu página de compra contra la dirección.",
+      },
+      {
+        q: "¿A quién le pregunto qué puedo llevar dentro?",
+        a: "A la promotora, no al recinto. El edificio publica acceso, aparcamiento e instalaciones; la hora de entrada, las normas de bolsos, la posición de la cola y la apertura de puertas se fijan por evento y aparecen en la página de venta de tu concierto. La línea del propio recinto es la Dome Operations Division en el 02-2128-2300, y solo puede hablarte del edificio.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Se rendre au Gocheok Sky Dome : la station la plus proche n'est pas la bonne",
+    summary:
+      "Vingt-cinq mille personnes, 484 places de stationnement, et une salle qui vous dit dans ses propres mots de descendre une station plus tôt. La sortie la plus proche est à trois minutes à pied et c'est probablement celle qu'il faut éviter.",
+    scope:
+      "Couvre l'accès au Gocheok Sky Dome pour un concert, d'après les pages de la Seoul Facilities Corporation qui l'exploite : les stations, les sorties, les temps de marche, les conseils sur l'affluence que la salle publie elle-même, et le parking. Une seule salle, délibérément. Le KSPO Dome et l'Inspire Arena ont besoin de leurs propres pages et des sources de leurs propres exploitants, auxquelles cette page ne se substitue pas. Rien ici ne dépend de l'événement : ce que vous pouvez apporter et l'heure d'ouverture des portes viennent du promoteur et non du bâtiment.",
+    intro: [
+      "Un billet vous donne la salle et l'heure. Il ne vous dit pas que la station accolée à la salle est celle dont sortent aussi tous les autres détenteurs de billets, et que l'exploitant du bâtiment l'écrit sur son propre site, en coréen simple.",
+      "Voici une salle lue d'un bout à l'autre, dans les mots de la société qui la gère. La partie utile n'est pas l'adresse. C'est que deux des quatre stations de la liste existent pour éloigner les gens de la plus proche.",
+    ],
+    steps: [
+      {
+        title: "Vérifiez dans quelle salle votre concert a vraiment lieu",
+        body: "Séoul compte plusieurs grandes salles et leurs noms anglais se recoupent fâcheusement. Le Gocheok Sky Dome — 고척스카이돔 — se trouve à Guro-gu, au 430 Gyeongin-ro, code postal 08223, et il est exploité par la Seoul Facilities Corporation. Ce n'est pas le KSPO Dome, qui se trouve dans l'Olympic Park à Songpa-gu et qu'exploite une organisation entièrement différente, et ce n'est pas l'Inspire Arena, qui est à Incheon. Ce n'est pas non plus le Seoul World Cup Stadium, le stade à ciel ouvert de Sangam à Mapo-gu — le même exploitant gère celui-là, donc une recherche sur le nom de l'exploitant vous proposera les deux. Comparez le nom de la salle sur la page de réservation avec l'adresse avant de planifier quoi que ce soit, car les deux sont à une heure l'un de l'autre.",
+        pitfall:
+          "Lire Dome et supposer qu'il n'y en a qu'un. Deux des plus grandes salles de Séoul ont Dome dans leur nom, elles sont aux extrémités opposées de la ville, et la personne qui l'apprend à 18:00 n'arrive pas au concert.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Connaissez la station la plus proche, et sachez qu'elle est à trois minutes",
+        body: "Line 1, station Guil, sortie 2 : environ 150 mètres tout droit, ce que la salle donne comme trois minutes à pied. C'est l'approche la plus courte et elle l'est vraiment. Les trois autres itinéraires qu'elle publie sont plus longs. Station Gaebong sur la Line 1, sortie 2 — 200 mètres tout droit, à droite, puis 650 mètres, et le dome est sur votre droite : environ quinze minutes, ou le bus de quartier 06 vers le pont de Gocheok. Station Guro sur la Line 1 — à gauche en sortant, un kilomètre tout droit, par-dessus le pont de Gocheok, et le dome est sur votre gauche : environ vingt minutes, ou les bus 5712 et 5626. Sindorim sur les Lines 1 et 2 — bus depuis la sortie 1, trois arrêts, dix lignes en service, dont la 160.",
+        pitfall:
+          "Prendre les trois minutes à pied pour la réponse évidente. C'est l'itinéraire le plus court, et l'étape suivante est la salle qui explique pourquoi il peut être le mauvais. Un chiffre de cette page se contredit aussi lui-même : le tableau des stations donne Guro à la sortie 1, tandis que l'itinéraire détaillé imprimé en dessous et le plan de quartier de la salle disent tous deux sortie 2. Deux sources sur trois disent 2, et les deux sorties sont dans la même station : se tromper coûte une minute.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Lisez les conseils sur l'affluence que la salle imprime elle-même",
+        body: "C'est la partie qui justifie cette page, et elle est publiée par l'exploitant plutôt que déduite d'un blog. La page d'accès porte deux lignes au-dessus du tableau des stations : on dit aux personnes venant de Séoul et de la direction de Suwon ou d'Anyang qu'elles peuvent éviter l'engorgement en descendant à la station Guro, et aux personnes venant de la direction d'Incheon ou de Bucheon la même chose à propos de la station Gaebong. Le bâtiment vous dit qu'un soir de pleine salle, la station devant sa porte ne se vide pas, et il nomme l'arrêt à utiliser à la place selon l'endroit où vous êtes monté.",
+        pitfall:
+          "Suivre une application d'itinéraire qui optimise la distance. Elle vous envoie à Guil chaque fois, parce qu'elle ne sait pas ce que la salle sait de cette sortie au moment où le public s'écoule.",
+        takes: "5 minutes, avant le jour",
+      },
+      {
+        title: "Comprenez pourquoi la cohue est pire qu'avec un public de baseball",
+        body: "La même salle porte deux chiffres différents. Pour le baseball, la salle donne 16,601 places assises ; pour les événements culturels — concerts, remises de prix — elle dit qu'environ 25,000 personnes peuvent être accueillies à la fois. Un soir de concert fait donc passer à peu près cinquante pour cent de personnes en plus par les mêmes portes et sur le même quai que l'usage courant du bâtiment, et c'est le calcul qui se trouve derrière le conseil de l'étape précédente.",
+        pitfall:
+          "Juger de la foule d'après une visite au baseball, ou d'après une amie qui y est allée. Du point de vue des sorties, la configuration concert est un autre bâtiment.",
+        takes: "—",
+      },
+      {
+        title: "Ne prévoyez pas de vous garer, et la raison n'est pas la capacité",
+        body: "La salle dispose de 484 places sur trois niveaux, ouvertes de 08:00 à 22:00, facturées 150 wons par tranche de cinq minutes — 900 wons pour trente minutes, 1,800 pour une heure, 10,800 pour six. Face à un public de concert de 25,000 personnes, cela fait une place pour cinquante-deux personnes, ce qui trancherait déjà la question. Mais l'exploitant ajoute la phrase qui la tranche réellement : les jours de baseball et d'événement, le parking est entièrement pris par l'organisateur et l'usage public est restreint. La contrainte n'est donc pas qu'il se remplit. C'est qu'il peut ne pas vous être ouvert du tout.",
+        pitfall:
+          "Réserver un taxi ou une voiture de location en supposant que l'arrivée par la route est l'option confortable. L'option routière se termine sur un parking que le promoteur a pris pour la soirée.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Ne demandez au bâtiment que ce que le bâtiment sait",
+        body: "L'exploitant répond aux questions sur le bâtiment : accès, stationnement, installations, le dome lui-même. Son contact pour cela est la Dome Operations Division, équipe d'exploitation, au 02-2128-2300. Ce qu'il ne fixe pas, c'est votre concert — l'heure d'entrée, ce que vous pouvez apporter, l'endroit où votre file se forme et l'heure d'ouverture des portes appartiennent au promoteur, et ils sont publiés par événement sur la page de billetterie plutôt que par la salle. Demander à la salle les règles sur les sacs vous vaut une réponse polie sur le règlement général du bâtiment, qui n'est pas la réponse dont vous aviez besoin.",
+        pitfall:
+          "Traiter un appel à la salle comme la confirmation d'une règle de l'événement. Ce sont deux autorités différentes et une seule des deux figure sur votre billet.",
+        takes: "10 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Quelle est la station du Gocheok Sky Dome ?",
+        a: "La station Guil sur la Line 1, sortie 2, environ 150 mètres et trois minutes à pied. Elle publie aussi trois itinéraires plus longs : station Gaebong sortie 2, environ quinze minutes à pied ou le bus de quartier 06 vers le pont de Gocheok ; station Guro, environ vingt minutes à pied par le pont de Gocheok ou les bus 5712 et 5626 ; et Sindorim sur les Lines 1 et 2, trois arrêts en bus depuis la sortie 1, avec dix lignes en service, dont la 160. Le tableau de la salle et son itinéraire détaillé se contredisent sur la sortie de Guro, 1 ou 2 ; l'itinéraire et le plan de quartier disent tous deux 2.",
+      },
+      {
+        q: "Si Guil est à trois minutes, pourquoi descendrais-je ailleurs ?",
+        a: "Parce que la salle le dit. Sa page d'accès demande aux personnes arrivant de Séoul et de la direction de Suwon ou d'Anyang de descendre à Guro pour éviter l'engorgement, et à celles arrivant d'Incheon ou de Bucheon de descendre à Gaebong. C'est l'exploitant qui décrit sa propre station à l'écoulement du public, et non l'avis d'un voyageur.",
+      },
+      {
+        q: "Combien de personnes y a-t-il un soir de concert ?",
+        a: "La salle donne environ 25,000 personnes pour les événements culturels, contre 16,601 places assises pour le baseball. En gros cinquante pour cent de personnes en plus sortent par les mêmes portes qu'un jour de match ordinaire, et c'est pour cela que les conseils sur l'affluence existent.",
+      },
+      {
+        q: "Puis-je venir en voiture ou en taxi et me garer sur place ?",
+        a: "Partez du principe que non. Il y a 484 places, ouvertes de 08:00 à 22:00 à 150 wons par tranche de cinq minutes, mais l'exploitant indique que les jours de baseball et d'événement le parking est entièrement réservé par l'organisateur et que l'usage public est restreint. Une place pour cinquante-deux personnes serait le problème si le parking vous était ne serait-ce qu'ouvert.",
+      },
+      {
+        q: "Le Gocheok Sky Dome est-il le même que le KSPO Dome ?",
+        a: "Non, et ils ne sont pas proches l'un de l'autre. Le Gocheok Sky Dome est au 430 Gyeongin-ro à Guro-gu, dans l'ouest de Séoul, exploité par la Seoul Facilities Corporation. Le KSPO Dome est dans l'Olympic Park à Songpa-gu, au sud-est, sous un autre exploitant. Comparez le nom de la salle sur votre page de réservation avec l'adresse.",
+      },
+      {
+        q: "À qui demander ce que je peux apporter ?",
+        a: "Au promoteur, pas à la salle. Le bâtiment publie l'accès, le stationnement et les installations ; l'heure d'entrée, les règles sur les sacs, la position de la file et l'heure d'ouverture des portes sont fixées par événement et apparaissent sur la page de billetterie de votre concert. La ligne de la salle elle-même est la Dome Operations Division au 02-2128-2300, et elle ne peut vous renseigner que sur le bâtiment.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Chegando ao Gocheok Sky Dome: a estação mais próxima não é a estação certa",
+    summary:
+      "Vinte e cinco mil pessoas, 484 vagas de estacionamento, e um local que com as próprias palavras manda você descer uma parada antes. A saída mais próxima fica a três minutos de caminhada e é a que você provavelmente deveria evitar.",
+    scope:
+      "Cobre como chegar ao Gocheok Sky Dome para um show, a partir das páginas da Seoul Facilities Corporation, que o administra: as estações, as saídas, os tempos de caminhada, os avisos sobre aglomeração que o próprio local publica, e o estacionamento. Um local só, de propósito. O KSPO Dome e o Inspire Arena precisam de páginas próprias e das fontes dos próprios operadores, e esta página não substitui isso. Nada aqui é específico de um evento — o que você pode levar para dentro e quando os portões abrem vêm da produtora, não do prédio.",
+    intro: [
+      "O ingresso informa a casa de espetáculo e a hora. Ele não informa que a estação encostada na casa é a mesma de onde estão saindo todos os outros que têm ingresso, e que o operador do prédio diz isso no próprio site, em coreano simples.",
+      "Isto é um local lido de ponta a ponta, nas palavras da corporação que o administra. A parte útil não é o endereço. É que duas das quatro estações da lista existem para levar as pessoas longe da mais próxima.",
+    ],
+    steps: [
+      {
+        title: "Confirme em qual casa o seu show realmente vai acontecer",
+        body: "Seul tem várias casas grandes e os nomes em inglês delas se sobrepõem de um jeito ruim. O Gocheok Sky Dome — 고척스카이돔 — fica em Guro-gu, na 430 Gyeongin-ro, CEP 08223, e é administrado pela Seoul Facilities Corporation. Ele não é o KSPO Dome, que fica dentro do Olympic Park, em Songpa-gu, e é administrado por uma organização completamente diferente, e não é o Inspire Arena, que fica em Incheon. Também não é o Seoul World Cup Stadium, o estádio a céu aberto de Sangam, em Mapo-gu — o mesmo operador cuida daquele, então uma busca pelo nome do operador vai oferecer os dois a você. Confira o nome do local na página de compra contra o endereço antes de planejar qualquer coisa, porque os dois ficam a uma hora um do outro.",
+        pitfall:
+          "Ler Dome e supor que existe apenas um. Duas das maiores casas de Seul têm Dome no nome, ficam em lados opostos da cidade, e quem descobre isso às 18:00 não chega ao show.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Saiba qual é a estação mais próxima, e que ela fica a três minutos",
+        body: "Line 1, estação Guil, saída 2: cerca de 150 metros em linha reta, o que o local informa como três minutos de caminhada. É a aproximação mais curta e de fato é curta. As outras três rotas que ele publica são mais longas. Estação Gaebong na Line 1, saída 2 — 200 metros reto, à direita, depois 650 metros, e o dome fica à sua direita: cerca de quinze minutos, ou o ônibus de bairro 06 no sentido da ponte de Gocheok. Estação Guro na Line 1 — à esquerda ao sair, um quilômetro reto, atravessando a ponte de Gocheok, e o dome fica à sua esquerda: cerca de vinte minutos, ou os ônibus 5712 e 5626. Sindorim, nas Lines 1 e 2 — ônibus a partir da saída 1, três paradas, com dez linhas em operação, entre elas a 160.",
+        pitfall:
+          "Tomar os três minutos a pé como a resposta óbvia. É a rota mais curta, e o passo seguinte é o próprio local explicando por que ela pode ser a errada. Um número daquela página também se contradiz: a tabela de estações dá Guro como saída 1, enquanto as instruções impressas abaixo dela e o mapa da região do próprio local dizem as duas saída 2. Duas de três fontes dizem 2, e as duas saídas ficam dentro da mesma estação, então errar o palpite custa um minuto.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Leia os avisos sobre aglomeração que o próprio local imprime",
+        body: "Esta é a parte que vale a página, e ela é publicada pelo operador em vez de deduzida de um blog. A página de acesso traz duas linhas acima da tabela de estações: a quem vem de Seul e do sentido de Suwon ou Anyang é dito que pode evitar a aglomeração descendo na estação Guro, e a quem vem do sentido de Incheon ou Bucheon é dito o mesmo sobre a estação Gaebong. O prédio está dizendo a você que, numa noite cheia, a estação na porta dele não se esvazia, e nomeando qual parada usar no lugar dela conforme onde você embarcou.",
+        pitfall:
+          "Seguir um aplicativo de rotas que otimiza a distância. Ele vai mandar você para Guil toda vez, porque não sabe o que o local sabe sobre aquela saída na hora em que o público sai.",
+        takes: "5 minutos, antes do dia",
+      },
+      {
+        title: "Entenda por que o aperto é pior do que uma plateia de beisebol",
+        body: "A mesma casa carrega dois números diferentes. Para o beisebol o local informa 16,601 assentos; para eventos culturais — shows, premiações — diz que cerca de 25,000 pessoas podem ser acomodadas de uma vez. Uma noite de show, portanto, joga aproximadamente cinquenta por cento mais gente pelas mesmas portas e na mesma plataforma do que o uso regular do prédio, e essa é a aritmética por trás do aviso do passo anterior.",
+        pitfall:
+          "Julgar a multidão por uma ida ao beisebol, ou por uma amiga que foi a um. No que diz respeito às saídas, a configuração de show é outro prédio.",
+        takes: "—",
+      },
+      {
+        title: "Não planeje estacionar, e saiba que o motivo não é a capacidade",
+        body: "O local tem 484 vagas em três níveis, abertas de 08:00 às 22:00, cobradas a 150 wons por cinco minutos — 900 wons por trinta minutos, 1,800 por uma hora, 10,800 por seis. Contra um público de show de 25,000 pessoas, isso é uma vaga para cada cinquenta e duas, o que já resolveria a questão. Mas o operador acrescenta a frase que de fato a decide: em dias de beisebol e de evento o estacionamento é tomado por completo pelo organizador, e o uso público fica restrito. Então a restrição não é que ele enche. É que ele pode não estar aberto para você de jeito nenhum.",
+        pitfall:
+          "Reservar um táxi ou um carro alugado supondo que chegar pela estrada é a opção confortável. A opção pela estrada termina num estacionamento que a produtora tomou para aquela noite.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pergunte ao prédio apenas o que o prédio sabe",
+        body: "O operador responde perguntas sobre o prédio: acesso, estacionamento, instalações, o dome em si. O contato dele para isso é a Dome Operations Division, time de operações, no 02-2128-2300. O que ele não define é o seu show — o horário de entrada, o que você pode levar, onde a sua fila se forma e quando os portões abrem são da produtora, e são publicados por evento na página de ingressos, e não pelo local. Perguntar ao local sobre regras de bolsa rende uma resposta educada sobre a política geral do prédio, que não é a resposta de que você precisava.",
+        pitfall:
+          "Tratar uma ligação para o local como confirmação de uma regra do evento. São duas autoridades diferentes e só uma delas está no seu ingresso.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Em qual estação fica o Gocheok Sky Dome?",
+        a: "Estação Guil na Line 1, saída 2, cerca de 150 metros e três minutos de caminhada. Ele também publica três rotas mais longas: estação Gaebong saída 2, cerca de quinze minutos a pé ou o ônibus de bairro 06 no sentido da ponte de Gocheok; estação Guro, cerca de vinte minutos a pé atravessando a ponte de Gocheok ou os ônibus 5712 e 5626; e Sindorim, nas Lines 1 e 2, três paradas de ônibus a partir da saída 1, com dez linhas em operação, entre elas a 160. A tabela do próprio local e as instruções dele discordam sobre se Guro é a saída 1 ou a 2; as instruções e o mapa da região dizem as duas 2.",
+      },
+      {
+        q: "Se Guil fica a três minutos, por que eu desceria em outro lugar?",
+        a: "Porque o local diz isso. A página de acesso dele manda quem chega de Seul e do sentido de Suwon ou Anyang descer em Guro para evitar a aglomeração, e quem chega de Incheon ou Bucheon descer em Gaebong. É o operador descrevendo a própria estação na hora em que o público sai, não a opinião de um viajante.",
+      },
+      {
+        q: "Quantas pessoas tem numa noite de show?",
+        a: "O local informa cerca de 25,000 para eventos culturais, contra 16,601 assentos para o beisebol. Aproximadamente cinquenta por cento mais gente sai pelas mesmas portas do que num dia de jogo comum, e é por isso que os avisos sobre aglomeração existem.",
+      },
+      {
+        q: "Posso ir de carro ou de táxi e estacionar lá?",
+        a: "Planeje contando que não. São 484 vagas, abertas de 08:00 às 22:00 a 150 wons por cinco minutos, mas o operador afirma que em dias de beisebol e de evento o estacionamento fica inteiramente reservado pelo organizador e o uso público é restrito. Uma vaga para cada cinquenta e duas pessoas seria o problema se o estacionamento estivesse aberto para você.",
+      },
+      {
+        q: "O Gocheok Sky Dome é o mesmo que o KSPO Dome?",
+        a: "Não, e eles não ficam perto um do outro. O Gocheok Sky Dome fica na 430 Gyeongin-ro, em Guro-gu, no oeste de Seul, administrado pela Seoul Facilities Corporation. O KSPO Dome fica dentro do Olympic Park, em Songpa-gu, no sudeste, sob outro operador. Confira o nome do local na sua página de compra contra o endereço.",
+      },
+      {
+        q: "Para quem eu pergunto o que posso levar para dentro?",
+        a: "Para a produtora, não para o local. O prédio publica acesso, estacionamento e instalações; horário de entrada, regras de bolsa, posição da fila e horário dos portões são definidos por evento e aparecem na página de ingressos do seu show. A linha do próprio local é a Dome Operations Division no 02-2128-2300, e ela só pode falar do prédio.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Đến Gocheok Sky Dome: nhà ga gần nhất không phải nhà ga đúng",
+    summary:
+      "Hai mươi lăm nghìn người, 484 chỗ đậu xe, và một địa điểm tự nói bằng lời của mình rằng hãy xuống sớm một bến. Cửa ra gần nhất chỉ cách ba phút đi bộ và đó có lẽ chính là cửa bạn nên tránh.",
+    scope:
+      "Bao gồm việc đến Gocheok Sky Dome để xem một buổi diễn, đọc từ các trang của Seoul Facilities Corporation, đơn vị vận hành nơi này: các nhà ga, các cửa ra, thời gian đi bộ, lời khuyên về đông người do chính địa điểm công bố, và bãi đậu xe. Chỉ một địa điểm, và đó là chủ ý. KSPO Dome và Inspire Arena cần có trang riêng cùng nguồn của chính đơn vị vận hành chúng, và trang này không thay thế cho những trang đó. Ở đây không có gì theo từng buổi diễn — bạn được mang gì vào và mấy giờ mở cửa là do nhà tổ chức quyết định, không phải do toà nhà.",
+    intro: [
+      "Tấm vé cho bạn biết khán phòng và giờ diễn. Nó không cho bạn biết rằng nhà ga gắn liền với khán phòng ấy cũng là nhà ga mà mọi người giữ vé khác đang bước ra, và rằng đơn vị vận hành toà nhà nói đúng điều đó trên trang web của chính họ, bằng tiếng Hàn giản dị.",
+      "Đây là một địa điểm được đọc từ đầu đến cuối, bằng lời của công ty vận hành nó. Phần hữu ích không phải là địa chỉ. Phần hữu ích là hai trong bốn nhà ga trên danh sách tồn tại để đưa người ta rời xa nhà ga gần nhất.",
+    ],
+    steps: [
+      {
+        title: "Xác nhận buổi diễn của bạn thực sự ở khán phòng nào",
+        body: "Seoul có nhiều khán phòng lớn và tên tiếng Anh của chúng trùng lặp một cách khó chịu. Gocheok Sky Dome — 고척스카이돔 — nằm ở Guro-gu, số 430 Gyeongin-ro, mã bưu chính 08223, và do Seoul Facilities Corporation vận hành. Nó không phải KSPO Dome, nơi nằm trong Olympic Park ở Songpa-gu và do một tổ chức hoàn toàn khác vận hành, và nó cũng không phải Inspire Arena, nơi nằm ở Incheon. Nó cũng không phải Seoul World Cup Stadium, sân vận động ngoài trời ở Sangam thuộc Mapo-gu — cùng một đơn vị vận hành nơi đó, nên việc tìm theo tên đơn vị vận hành sẽ đưa ra cả hai. Hãy đối chiếu tên địa điểm trên trang đặt vé với địa chỉ trước khi lên kế hoạch gì, vì hai nơi cách nhau một giờ.",
+        pitfall:
+          "Đọc chữ Dome rồi cho rằng chỉ có một. Hai trong số những khán phòng lớn nhất Seoul đều có chữ Dome trong tên, chúng ở hai đầu đối diện của thành phố, và người chỉ hiểu ra điều này vào 18:00 thì không kịp đến buổi diễn.",
+        takes: "2 phút",
+      },
+      {
+        title: "Biết nhà ga gần nhất, và biết rằng nó cách ba phút",
+        body: "Line 1, ga Guil, cửa ra 2: khoảng 150 mét đi thẳng, mà địa điểm ghi là ba phút đi bộ. Đó là đường tiếp cận gần nhất và nó thực sự ngắn. Ba lối còn lại mà họ công bố đều dài hơn. Ga Gaebong trên Line 1, cửa ra 2 — 200 mét đi thẳng, rẽ phải, rồi 650 mét nữa, và dome nằm bên phải bạn: khoảng mười lăm phút, hoặc xe buýt làng 06 theo hướng cầu Gocheok. Ga Guro trên Line 1 — ra khỏi cửa rẽ trái, đi thẳng một ki lô mét, qua cầu Gocheok và dome nằm bên trái bạn: khoảng hai mươi phút, hoặc xe buýt 5712 và 5626. Sindorim trên Line 1 và 2 — đi xe buýt từ cửa ra 1, ba bến, có mười tuyến đang chạy, trong đó có tuyến 160.",
+        pitfall:
+          "Coi ba phút đi bộ là câu trả lời hiển nhiên. Đó là lối ngắn nhất, và bước tiếp theo chính là địa điểm giải thích vì sao nó có thể là lối sai. Một con số trên trang đó còn tự mâu thuẫn: bảng nhà ga ghi Guro là cửa ra 1, trong khi hướng dẫn từng bước in bên dưới và bản đồ khu vực của chính địa điểm đều ghi cửa ra 2. Hai trong ba nguồn nói là 2, và cả hai cửa đều nằm trong cùng một nhà ga, nên đoán sai chỉ mất một phút.",
+        takes: "5 phút",
+      },
+      {
+        title: "Đọc lời khuyên về đông người mà chính địa điểm in ra",
+        body: "Đây là phần làm nên giá trị của trang này, và nó do đơn vị vận hành công bố chứ không phải suy ra từ một blog. Trang hướng dẫn đường đi có hai dòng nằm trên bảng nhà ga: người đến từ hướng Seoul và hướng Suwon hoặc Anyang được bảo rằng có thể tránh chen chúc bằng cách xuống ở ga Guro, còn người đến từ hướng Incheon hoặc Bucheon được bảo điều tương tự về ga Gaebong. Toà nhà đang nói với bạn rằng vào một tối kín chỗ, nhà ga ngay trước cửa nó không giải toả hết, và nêu rõ nên dùng bến nào thay thế tuỳ theo bạn lên tàu từ đâu.",
+        pitfall:
+          "Đi theo một ứng dụng chỉ đường tối ưu theo khoảng cách. Nó sẽ đưa bạn tới Guil mọi lần, vì nó không biết điều mà địa điểm biết về cửa ra đó vào lúc tan buổi diễn.",
+        takes: "5 phút, trước ngày diễn",
+      },
+      {
+        title: "Hiểu vì sao cảnh chen chúc tệ hơn một buổi bóng chày",
+        body: "Cùng một khán phòng mang hai con số khác nhau. Với bóng chày, địa điểm ghi 16,601 chỗ ngồi; với các sự kiện văn hoá — hoà nhạc, lễ trao giải — họ nói có thể chứa khoảng 25,000 người cùng lúc. Vì vậy một tối hoà nhạc đưa nhiều hơn khoảng năm mươi phần trăm số người qua cùng những cánh cửa đó và lên cùng sân ga đó so với lúc toà nhà hoạt động thường lệ, và đó là phép tính nằm sau lời khuyên ở bước trước.",
+        pitfall:
+          "Đánh giá mức đông người từ một lần đi xem bóng chày, hay từ một người bạn đã đi. Về phía các cửa ra, cấu hình hoà nhạc là một toà nhà khác.",
+        takes: "—",
+      },
+      {
+        title: "Đừng tính chuyện đậu xe, và lý do không phải là số chỗ",
+        body: "Địa điểm có 484 chỗ đậu xe trên ba tầng, mở từ 08:00 đến 22:00, tính 150 won cho mỗi năm phút — 900 won cho ba mươi phút, 1,800 cho một giờ, 10,800 cho sáu giờ. So với lượng khán giả hoà nhạc 25,000 người thì đó là một chỗ cho mỗi năm mươi hai người, và chỉ điều đó đã đủ kết luận. Nhưng đơn vị vận hành còn thêm câu thực sự quyết định: vào ngày có bóng chày và ngày có sự kiện, bãi đậu xe bị nhà tổ chức trưng dụng toàn bộ và việc sử dụng công cộng bị hạn chế. Vậy ràng buộc không phải là bãi sẽ chật. Ràng buộc là nó có thể không mở cho bạn chút nào.",
+        pitfall:
+          "Gọi taxi hay thuê xe với giả định rằng đi đường bộ là lựa chọn dễ chịu. Lựa chọn đường bộ ấy kết thúc tại một bãi đậu xe mà nhà tổ chức đã lấy cho tối đó.",
+        takes: "5 phút",
+      },
+      {
+        title: "Chỉ hỏi toà nhà những gì toà nhà biết",
+        body: "Đơn vị vận hành trả lời các câu hỏi về toà nhà: đường đi, đậu xe, tiện ích, bản thân dome. Đầu mối cho việc đó là Dome Operations Division, bộ phận vận hành, số 02-2128-2300. Điều họ không quyết định là buổi diễn của bạn — giờ vào, bạn được mang gì, hàng của bạn xếp ở đâu và mấy giờ mở cửa đều thuộc nhà tổ chức, và được công bố theo từng buổi trên trang bán vé chứ không phải do địa điểm. Hỏi địa điểm về quy định túi xách thì bạn nhận được câu trả lời lịch sự về chính sách chung của toà nhà, mà đó không phải câu trả lời bạn cần.",
+        pitfall:
+          "Coi một cuộc gọi tới địa điểm là xác nhận cho quy định của buổi diễn. Hai bên là hai thẩm quyền khác nhau và chỉ một bên có trên vé của bạn.",
+        takes: "10 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome ở ga nào?",
+        a: "Ga Guil trên Line 1, cửa ra 2, khoảng 150 mét và ba phút đi bộ. Họ cũng công bố ba lối dài hơn: ga Gaebong cửa ra 2, khoảng mười lăm phút đi bộ hoặc xe buýt làng 06 theo hướng cầu Gocheok; ga Guro, khoảng hai mươi phút đi bộ qua cầu Gocheok hoặc xe buýt 5712 và 5626; và Sindorim trên Line 1 và 2, ba bến bằng xe buýt từ cửa ra 1 với mười tuyến đang chạy, trong đó có tuyến 160. Bảng của chính địa điểm và hướng dẫn từng bước của họ không khớp nhau về việc Guro là cửa ra 1 hay 2; phần hướng dẫn và bản đồ khu vực đều ghi 2.",
+      },
+      {
+        q: "Nếu Guil chỉ ba phút thì tại sao tôi phải xuống ở nơi khác?",
+        a: "Vì địa điểm nói vậy. Trang hướng dẫn đường đi của họ bảo người đến từ hướng Seoul và hướng Suwon hoặc Anyang xuống ở Guro để tránh chen chúc, và bảo người đến từ Incheon hoặc Bucheon xuống ở Gaebong. Đó là đơn vị vận hành đang mô tả nhà ga của chính họ vào lúc tan buổi diễn, không phải ý kiến của một người đi du lịch.",
+      },
+      {
+        q: "Một tối hoà nhạc có bao nhiêu người?",
+        a: "Địa điểm ghi khoảng 25,000 người cho sự kiện văn hoá, so với 16,601 chỗ ngồi cho bóng chày. Nhiều hơn chừng năm mươi phần trăm số người đi ra qua cùng những cửa đó so với một ngày thi đấu thường, và đó là lý do lời khuyên về đông người tồn tại.",
+      },
+      {
+        q: "Tôi có thể tự lái xe hoặc đi taxi rồi đậu ở đó không?",
+        a: "Hãy tính là không. Có 484 chỗ, mở từ 08:00 đến 22:00 với giá 150 won cho mỗi năm phút, nhưng đơn vị vận hành ghi rõ rằng vào ngày có bóng chày và ngày có sự kiện, bãi đậu xe được nhà tổ chức giữ toàn bộ và việc sử dụng công cộng bị hạn chế. Một chỗ cho năm mươi hai người sẽ là vấn đề, nếu như bãi đó còn mở cho bạn.",
+      },
+      {
+        q: "Gocheok Sky Dome có phải là KSPO Dome không?",
+        a: "Không, và hai nơi cũng không gần nhau. Gocheok Sky Dome ở số 430 Gyeongin-ro thuộc Guro-gu, phía tây Seoul, do Seoul Facilities Corporation vận hành. KSPO Dome nằm trong Olympic Park ở Songpa-gu, phía đông nam, thuộc một đơn vị vận hành khác. Hãy đối chiếu tên địa điểm trên trang đặt vé của bạn với địa chỉ.",
+      },
+      {
+        q: "Tôi phải hỏi ai về việc được mang gì vào?",
+        a: "Hỏi nhà tổ chức, không phải địa điểm. Toà nhà công bố đường đi, đậu xe và tiện ích; giờ vào, quy định túi xách, vị trí xếp hàng và giờ mở cửa được đặt theo từng buổi và xuất hiện trên trang bán vé của buổi diễn của bạn. Đường dây của chính địa điểm là Dome Operations Division số 02-2128-2300, và họ chỉ có thể nói với bạn về toà nhà.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การไปโกชอกสกายโดม: สถานีที่ใกล้ที่สุดไม่ใช่สถานีที่ถูกต้อง",
+    summary:
+      "สองหมื่นห้าพันคน ที่จอดรถ 484 คัน และสถานที่จัดงานที่เขียนด้วยถ้อยคำของตัวเองให้คุณลงก่อนหนึ่งสถานี ทางออกที่ใกล้ที่สุดเดินสามนาที และเป็นทางออกที่คุณน่าจะควรหลีกเลี่ยง",
+    scope:
+      "ครอบคลุมการเดินทางไปถึง Gocheok Sky Dome เพื่อดูคอนเสิร์ต อ่านจากหน้าเว็บของ Seoul Facilities Corporation ซึ่งเป็นผู้บริหารจัดการที่นี่ ได้แก่ สถานี ทางออก เวลาเดิน คำแนะนำเรื่องความแออัดที่สถานที่จัดงานเผยแพร่เอง และที่จอดรถ จงใจเขียนถึงสถานที่เดียว KSPO Dome และ Inspire Arena ต้องมีหน้าของตัวเองและแหล่งข้อมูลจากผู้บริหารจัดการของตัวเอง หน้านี้ไม่ใช่สิ่งทดแทน ที่นี่ไม่มีข้อมูลเฉพาะของแต่ละงาน สิ่งที่คุณนำเข้าไปได้และเวลาเปิดประตูมาจากผู้จัดงาน ไม่ใช่จากตัวอาคาร",
+    intro: [
+      "บัตรบอกคุณว่าเป็นห้องแสดงไหนและกี่โมง แต่ไม่ได้บอกว่าสถานีที่ติดกับห้องแสดงนั้นคือสถานีที่ผู้ถือบัตรคนอื่นทุกคนก็กำลังเดินออกมาด้วย และผู้บริหารอาคารก็เขียนเรื่องนี้ไว้บนเว็บไซต์ของตัวเองเป็นภาษาเกาหลีอย่างตรงไปตรงมา",
+      "นี่คือสถานที่หนึ่งแห่งที่อ่านตั้งแต่ต้นจนจบ ด้วยถ้อยคำของหน่วยงานที่บริหารมันเอง ส่วนที่มีประโยชน์ไม่ใช่ที่อยู่ แต่เป็นข้อเท็จจริงว่าสองในสี่สถานีในรายการนั้นมีอยู่เพื่อพาคนออกห่างจากสถานีที่ใกล้ที่สุด",
+    ],
+    steps: [
+      {
+        title: "ยืนยันก่อนว่างานของคุณอยู่ที่ห้องแสดงไหนจริง ๆ",
+        body: "โซลมีห้องแสดงขนาดใหญ่หลายแห่ง และชื่อภาษาอังกฤษของมันทับซ้อนกันอย่างน่าปวดหัว Gocheok Sky Dome — 고척스카이돔 — อยู่ในเขตคูโร เลขที่ 430 ถนนคยองอิน รหัสไปรษณีย์ 08223 และบริหารโดย Seoul Facilities Corporation ที่นี่ไม่ใช่ KSPO Dome ซึ่งอยู่ในสวนโอลิมปิกในเขตซงพาและบริหารโดยองค์กรที่ต่างกันโดยสิ้นเชิง และไม่ใช่ Inspire Arena ซึ่งอยู่ที่อินชอน และก็ไม่ใช่สนามกีฬาโซลเวิลด์คัพ ซึ่งเป็นสนามกลางแจ้งที่ซังอัมในเขตมาโพ ผู้บริหารรายเดียวกันดูแลที่นั่นด้วย ดังนั้นการค้นหาชื่อผู้บริหารจะให้ผลทั้งสองแห่ง โปรดเทียบชื่อสถานที่บนหน้าจองกับที่อยู่ก่อนวางแผนสิ่งใด เพราะสองแห่งห่างกันหนึ่งชั่วโมง",
+        pitfall:
+          "การเห็นคำว่า Dome แล้วคิดว่ามีแห่งเดียว ห้องแสดงที่ใหญ่ที่สุดของโซลสองแห่งมีคำว่า Dome ในชื่อ ทั้งสองอยู่คนละฟากของเมือง และแฟนที่เพิ่งรู้เรื่องนี้ตอน 18:00 ก็ไปไม่ทันงาน",
+        takes: "2 นาที",
+      },
+      {
+        title: "รู้ว่าสถานีที่ใกล้ที่สุดคือสถานีไหน และรู้ว่าเดินสามนาที",
+        body: "Line 1 สถานีคูอิล ทางออก 2 เดินตรงไปประมาณ 150 เมตร ซึ่งสถานที่จัดงานระบุว่าเป็นการเดินสามนาที นั่นคือเส้นทางที่ใกล้ที่สุดและสั้นจริง อีกสามเส้นทางที่เผยแพร่ไว้ยาวกว่านั้น สถานีแคบง บน Line 1 ทางออก 2 เดินตรง 200 เมตร เลี้ยวขวา แล้วอีก 650 เมตร โดมจะอยู่ทางขวาของคุณ ใช้เวลาเดินประมาณสิบห้านาที หรือรถเมล์ชุมชนสาย 06 ไปทางสะพานโกชอก สถานีคูโร บน Line 1 ออกจากทางออกแล้วเลี้ยวซ้าย เดินตรงหนึ่งกิโลเมตร ข้ามสะพานโกชอก โดมจะอยู่ทางซ้ายของคุณ ใช้เวลาเดินประมาณยี่สิบนาที หรือรถเมล์สาย 5712 และ 5626 สถานีชินโดริม บน Line 1 และ 2 ขึ้นรถเมล์จากทางออก 1 ไปสามป้าย มีสิบสายวิ่งอยู่ รวมถึงสาย 160",
+        pitfall:
+          "การรับเอาการเดินสามนาทีเป็นคำตอบที่ชัดเจนอยู่แล้ว นั่นคือเส้นทางที่สั้นที่สุด และขั้นถัดไปคือสถานที่จัดงานอธิบายเองว่าทำไมมันอาจเป็นเส้นทางที่ผิด ตัวเลขหนึ่งบนหน้านั้นยังขัดกับตัวเองด้วย ตารางสถานีระบุคูโรเป็นทางออก 1 ขณะที่คำบอกทางทีละขั้นที่พิมพ์อยู่ใต้ตารางและแผนที่บริเวณของสถานที่จัดงานเองระบุทั้งคู่ว่าทางออก 2 สองในสามแหล่งบอกว่า 2 และทางออกทั้งสองอยู่ในสถานีเดียวกัน ดังนั้นการเดาผิดมีราคาหนึ่งนาที",
+        takes: "5 นาที",
+      },
+      {
+        title: "อ่านคำแนะนำเรื่องความแออัดที่สถานที่จัดงานพิมพ์ไว้เอง",
+        body: "นี่คือส่วนที่ทำให้หน้านี้มีค่า และเป็นสิ่งที่ผู้บริหารเผยแพร่เอง ไม่ใช่สิ่งที่อนุมานจากบล็อก หน้าการเดินทางมีสองบรรทัดอยู่เหนือตารางสถานี คนที่มาจากทางโซลและจากทางซูวอนหรืออันยัง ได้รับคำบอกว่าเลี่ยงความแออัดได้โดยลงที่สถานีคูโร และคนที่มาจากทางอินชอนหรือพูชอน ได้รับคำบอกแบบเดียวกันเกี่ยวกับสถานีแคบง นั่นคืออาคารกำลังบอกคุณว่าในคืนที่เต็มความจุ สถานีหน้าประตูของมันระบายคนไม่ทัน และระบุชื่อป้ายที่ควรใช้แทนตามจุดที่คุณขึ้นรถไฟมา",
+        pitfall:
+          "การทำตามแอปนำทางที่คิดจากระยะทางเป็นหลัก มันจะส่งคุณไปคูอิลทุกครั้ง เพราะมันไม่รู้สิ่งที่สถานที่จัดงานรู้เกี่ยวกับทางออกนั้นในช่วงคนออกจากงาน",
+        takes: "5 นาที ก่อนถึงวันงาน",
+      },
+      {
+        title: "เข้าใจว่าทำไมความเบียดเสียดหนักกว่าผู้ชมเบสบอล",
+        body: "ห้องแสดงเดียวกันมีตัวเลขสองชุดที่ต่างกัน สำหรับเบสบอล สถานที่จัดงานระบุที่นั่ง 16,601 ที่ ส่วนงานทางวัฒนธรรม เช่น คอนเสิร์ตและงานประกาศรางวัล ระบุว่ารองรับได้ราว 25,000 คนในคราวเดียว ดังนั้นคืนคอนเสิร์ตจึงส่งคนมากกว่าการใช้งานปกติของอาคารประมาณห้าสิบเปอร์เซ็นต์ ผ่านประตูเดียวกันและขึ้นชานชาลาเดียวกัน และนั่นคือการคำนวณที่อยู่เบื้องหลังคำแนะนำในขั้นก่อนหน้า",
+        pitfall:
+          "การตัดสินความแออัดจากการไปดูเบสบอล หรือจากเพื่อนที่เคยไป เมื่อมองจากฝั่งทางออกแล้ว การจัดผังแบบคอนเสิร์ตคืออาคารอีกหลังหนึ่ง",
+        takes: "—",
+      },
+      {
+        title: "อย่าวางแผนจอดรถ และเหตุผลไม่ใช่จำนวนที่จอด",
+        body: "สถานที่จัดงานมีที่จอดรถ 484 คันใน 3 ชั้น เปิด 08:00 ถึง 22:00 คิดค่าบริการ 150 วอนต่อห้านาที สามสิบนาที 900 วอน หนึ่งชั่วโมง 1,800 วอน หกชั่วโมง 10,800 วอน เทียบกับผู้ชมคอนเสิร์ต 25,000 คนแล้ว นั่นคือหนึ่งช่องต่อห้าสิบสองคน ซึ่งลำพังข้อนี้ก็ตัดสินเรื่องได้แล้ว แต่ผู้บริหารยังเพิ่มประโยคที่ตัดสินจริง ๆ ว่าในวันที่มีเบสบอลและวันที่มีงาน ที่จอดรถถูกผู้จัดงานใช้ทั้งหมด และการใช้งานทั่วไปถูกจำกัด ดังนั้นข้อจำกัดไม่ใช่ว่าที่จอดจะเต็ม แต่เป็นว่ามันอาจไม่เปิดให้คุณเลย",
+        pitfall:
+          "การจองแท็กซี่หรือรถเช่าโดยคิดว่าการมาทางถนนเป็นทางเลือกที่สบาย ทางเลือกทางถนนนั้นไปสิ้นสุดที่ลานจอดซึ่งผู้จัดงานยึดไว้สำหรับคืนนั้น",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถามอาคารเฉพาะเรื่องที่อาคารรู้",
+        body: "ผู้บริหารตอบคำถามเกี่ยวกับอาคาร ได้แก่ การเดินทาง ที่จอดรถ สิ่งอำนวยความสะดวก และตัวโดมเอง ช่องทางติดต่อเรื่องนั้นคือ Dome Operations Division ฝ่ายปฏิบัติการ โทร 02-2128-2300 สิ่งที่ผู้บริหารไม่ได้กำหนดคืองานของคุณ เวลาเข้างาน สิ่งที่นำเข้าไปได้ แถวของคุณตั้งที่ไหน และประตูเปิดเมื่อไร เป็นของผู้จัดงาน และเผยแพร่เป็นรายงานบนหน้าขายบัตร ไม่ใช่โดยสถานที่จัดงาน การถามสถานที่จัดงานเรื่องกฎกระเป๋าจะได้คำตอบสุภาพเกี่ยวกับนโยบายทั่วไปของอาคาร ซึ่งไม่ใช่คำตอบที่คุณต้องการ",
+        pitfall:
+          "การถือเอาการโทรหาสถานที่จัดงานเป็นการยืนยันกฎของงาน ทั้งสองเป็นอำนาจที่ต่างกัน และมีเพียงฝ่ายเดียวที่อยู่บนบัตรของคุณ",
+        takes: "10 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome อยู่สถานีอะไร",
+        a: "สถานีคูอิลบน Line 1 ทางออก 2 ประมาณ 150 เมตร เดินสามนาที ที่นี่ยังเผยแพร่เส้นทางที่ยาวกว่าอีกสามเส้นทาง คือ สถานีแคบงทางออก 2 เดินประมาณสิบห้านาที หรือรถเมล์ชุมชนสาย 06 ไปทางสะพานโกชอก สถานีคูโร เดินข้ามสะพานโกชอกประมาณยี่สิบนาที หรือรถเมล์สาย 5712 และ 5626 และสถานีชินโดริมบน Line 1 และ 2 นั่งรถเมล์สามป้ายจากทางออก 1 โดยมีสิบสายวิ่งอยู่ รวมถึงสาย 160 ตารางของสถานที่จัดงานเองกับคำบอกทางทีละขั้นไม่ตรงกันว่าคูโรเป็นทางออก 1 หรือ 2 ส่วนคำบอกทางและแผนที่บริเวณระบุทั้งคู่ว่า 2",
+      },
+      {
+        q: "ถ้าคูอิลเดินแค่สามนาที ทำไมฉันต้องลงที่อื่น",
+        a: "เพราะสถานที่จัดงานบอกเอง หน้าการเดินทางบอกคนที่มาจากทางโซลและจากทางซูวอนหรืออันยังให้ลงที่คูโรเพื่อเลี่ยงความแออัด และบอกคนที่มาจากอินชอนหรือพูชอนให้ลงที่แคบง นั่นคือผู้บริหารกำลังอธิบายสถานีของตัวเองในช่วงคนออกจากงาน ไม่ใช่ความเห็นของนักเดินทาง",
+      },
+      {
+        q: "คืนคอนเสิร์ตมีคนประมาณเท่าไร",
+        a: "สถานที่จัดงานระบุราว 25,000 คนสำหรับงานทางวัฒนธรรม เทียบกับที่นั่ง 16,601 ที่สำหรับเบสบอล โดยคร่าว ๆ มีคนออกจากประตูเดียวกันมากกว่าวันแข่งปกติประมาณห้าสิบเปอร์เซ็นต์ และนั่นคือเหตุผลที่คำแนะนำเรื่องความแออัดมีอยู่",
+      },
+      {
+        q: "ฉันขับรถหรือนั่งแท็กซี่ไปจอดที่นั่นได้ไหม",
+        a: "โปรดวางแผนโดยถือว่าไม่ได้ ที่นั่นมี 484 ช่อง เปิด 08:00 ถึง 22:00 คิด 150 วอนต่อห้านาที แต่ผู้บริหารระบุว่าในวันที่มีเบสบอลและวันที่มีงาน ที่จอดรถถูกผู้จัดงานจองไว้ทั้งหมดและการใช้งานทั่วไปถูกจำกัด อัตราหนึ่งช่องต่อห้าสิบสองคนจะเป็นปัญหาก็ต่อเมื่อลานจอดนั้นเปิดให้คุณ",
+      },
+      {
+        q: "Gocheok Sky Dome กับ KSPO Dome เป็นที่เดียวกันไหม",
+        a: "ไม่ใช่ และทั้งสองก็ไม่ได้อยู่ใกล้กัน Gocheok Sky Dome อยู่เลขที่ 430 ถนนคยองอิน เขตคูโร ทางตะวันตกของโซล บริหารโดย Seoul Facilities Corporation ส่วน KSPO Dome อยู่ในสวนโอลิมปิกในเขตซงพา ทางตะวันออกเฉียงใต้ ภายใต้ผู้บริหารอีกราย โปรดเทียบชื่อสถานที่บนหน้าจองของคุณกับที่อยู่",
+      },
+      {
+        q: "ฉันควรถามใครว่านำอะไรเข้าไปได้",
+        a: "ถามผู้จัดงาน ไม่ใช่สถานที่จัดงาน อาคารเผยแพร่เรื่องการเดินทาง ที่จอดรถ และสิ่งอำนวยความสะดวก ส่วนเวลาเข้างาน กฎกระเป๋า ตำแหน่งแถว และเวลาเปิดประตู ถูกกำหนดเป็นรายงานและปรากฏบนหน้าขายบัตรของงานของคุณ สายของสถานที่จัดงานเองคือ Dome Operations Division โทร 02-2128-2300 และตอบได้เฉพาะเรื่องอาคาร",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "gocheok-sky-dome-getting-there",
+    sourceChecked: "2026-10-22",
+    sourceText: "cf27dbd362ae",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Pagtungo sa Gocheok Sky Dome: hindi ang pinakamalapit na istasyon ang tamang istasyon",
+    summary:
+      "Dalawampu't limang libong tao, 484 na puwesto ng paradahan, at isang venue na sa sarili nitong pananalita ay sinasabihan kang bumaba nang isang hinto pa lamang. Tatlong minutong lakad ang pinakamalapit na labasan at iyon ang malamang na dapat mong iwasan.",
+    scope:
+      "Sinasaklaw ang pagtungo sa Gocheok Sky Dome para sa isang konsiyerto, mula sa mga pahina ng Seoul Facilities Corporation na nagpapatakbo nito: ang mga istasyon, ang mga labasan, ang haba ng lakad, ang paalala tungkol sa dagsa na inilalathala ng venue mismo, at ang paradahan. Isang venue lamang, at sinadya iyon. Nangangailangan ang KSPO Dome at ang Inspire Arena ng kanilang sariling mga pahina at ng mga pinagkunan ng kanilang sariling mga tagapagpatakbo, at hindi panghalili ang pahinang ito sa mga iyon. Walang anumang panggiya sa isang partikular na kaganapan dito — ang maaari mong ipasok at ang oras ng pagbukas ng pinto ay nagmumula sa prodyuser at hindi sa gusali.",
+    intro: [
+      "Sinasabi ng tiket ang bulwagan at ang oras. Hindi nito sinasabi na ang istasyong nakakabit sa bulwagan ay ang istasyon ding pinaglalabasan ng lahat ng iba pang may hawak na tiket, at na sinasabi iyon ng tagapagpatakbo ng gusali sa sariling websayt nito sa payak na Koreano.",
+      "Isa itong venue na binasa mula simula hanggang wakas, sa pananalita ng korporasyong nagpapatakbo nito. Hindi ang adres ang mahalagang bahagi. Ang mahalaga ay na dalawa sa apat na istasyon sa listahan ay umiiral upang ilayo ang mga tao mula sa pinakamalapit.",
+    ],
+    steps: [
+      {
+        title: "Tiyakin kung aling bulwagan talaga ang kinalalagyan ng palabas mo",
+        body: "May ilang malalaking bulwagan ang Seoul at magkasalikop nang masama ang kanilang mga pangalang Ingles. Ang Gocheok Sky Dome — 고척스카이돔 — ay nasa Guro-gu sa 430 Gyeongin-ro, may postal code 08223, at pinapatakbo ng Seoul Facilities Corporation. Hindi ito ang KSPO Dome, na nasa loob ng Olympic Park sa Songpa-gu at pinapatakbo ng isang ganap na ibang organisasyon, at hindi ito ang Inspire Arena, na nasa Incheon. Hindi rin ito ang Seoul World Cup Stadium, ang bukas na istadyum sa Sangam sa Mapo-gu — pinapatakbo ng parehong tagapagpatakbo ang isang iyon, kaya ang paghahanap sa pangalan ng tagapagpatakbo ay mag-aalok sa iyo ng dalawa. Itapat ang pangalan ng venue sa pahina ng pagpa-book sa adres bago ka magplano ng anuman, dahil isang oras ang pagitan ng dalawa.",
+        pitfall:
+          "Ang pagbasa ng Dome at paniniwalang isa lamang ito. May Dome sa pangalan ang dalawa sa pinakamalalaking bulwagan ng Seoul, nasa magkabilang dulo sila ng lungsod, at ang tagahangang natutunan ito sa 18:00 ay hindi makakarating sa palabas.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Alamin ang pinakamalapit na istasyon, at na tatlong minuto lamang iyon",
+        body: "Line 1, Istasyong Guil, labasan 2: mga 150 metro nang tuwid sa harapan, na ibinibigay ng venue bilang tatlong minutong lakad. Iyon ang pinakamalapit na daan at talagang maikli iyon. Mas mahaba ang tatlong ibang rutang inilalathala nito. Istasyong Gaebong sa Line 1, labasan 2 — 200 metro nang tuwid, pakanan, pagkatapos ay 650 metro, at nasa kanan mo ang dome: mga labinlimang minuto, o ang bus ng nayon 06 patungo sa Tulay ng Gocheok. Istasyong Guro sa Line 1 — pakaliwa mula sa labasan, isang kilometro nang tuwid, patawid sa Tulay ng Gocheok at nasa kaliwa mo ang dome: mga dalawampung minuto, o ang mga bus 5712 at 5626. Sindorim sa Line 1 at 2 — bus mula sa labasan 1, tatlong hinto, sampung ruta ang tumatakbo, kasama ang 160.",
+        pitfall:
+          "Ang pagtanggap sa tatlong minutong lakad bilang malinaw nang sagot. Iyon ang pinakamaikling ruta, at ang susunod na hakbang ay ang venue na ipinapaliwanag kung bakit maaaring iyon ang mali. Nagkakasalungat din sa sarili nito ang isang bilang sa pahinang iyon: ibinibigay ng talahanayan ng mga istasyon ang Guro bilang labasan 1, samantalang ang hakbang-hakbang na panuto sa ilalim nito at ang sariling mapa ng lugar ng venue ay pawang nagsasabing labasan 2. Dalawa sa tatlong pinagkunan ang nagsasabing 2, at nasa loob ng isang istasyon ang dalawang labasan, kaya isang minuto ang halaga ng maling hula.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Basahin ang paalala tungkol sa dagsa na ini-imprenta mismo ng venue",
+        body: "Ito ang bahaging nagbibigay-halaga sa pahina, at inilalathala ito ng tagapagpatakbo at hindi hinihinuha mula sa isang blog. May dalawang linya ang pahina ng pagpunta sa ibabaw ng talahanayan ng mga istasyon: sinasabihan ang mga taong nanggagaling sa Seoul at sa direksiyon ng Suwon o Anyang na maiiwasan nila ang siksikan kung bababa sila sa Istasyong Guro, at sinasabihan ng gayon ding bagay ang mga nanggagaling sa direksiyon ng Incheon o Bucheon tungkol sa Istasyong Gaebong. Sinasabi sa iyo ng gusali na sa isang punong gabi ay hindi natatapos lumiwanag ang istasyon sa pintuan nito, at pinapangalanan nito kung aling hinto ang gamitin sa halip, batay sa kung saan ka sumakay.",
+        pitfall:
+          "Ang pagsunod sa isang aplikasyon ng ruta na inaayos ang distansiya. Ipapadala ka nito sa Guil sa tuwina, dahil hindi nito alam ang nalalaman ng venue tungkol sa labasang iyon sa oras ng paglabas ng mga tao.",
+        takes: "5 minuto, bago ang araw",
+      },
+      {
+        title: "Unawain kung bakit mas masama ang siksikan kaysa sa dagsa ng beysbol",
+        body: "Dalawang magkaibang bilang ang taglay ng isang bulwagan. Para sa beysbol ay ibinibigay ng venue ang 16,601 na upuan; para sa mga kultural na kaganapan — konsiyerto, gabi ng parangal — sinasabi nitong mga 25,000 katao ang kayang tanggapin nang sabay. Kaya naman ang isang gabi ng konsiyerto ay nagpapadaan ng mga limampung porsiyentong mas maraming tao sa parehong pintuan at sa parehong plataporma kaysa sa karaniwang paggamit ng gusali, at iyon ang aritmetikang nasa likod ng paalala sa naunang hakbang.",
+        pitfall:
+          "Ang paghusga sa dagsa mula sa isang panonood ng beysbol, o mula sa isang kaibigang nakapanood ng gayon. Sa panig ng mga labasan, isa nang ibang gusali ang pagkakaayos para sa konsiyerto.",
+        takes: "—",
+      },
+      {
+        title: "Huwag magplanong magparada, at alamin na hindi kapasidad ang dahilan",
+        body: "May 484 na puwesto ng paradahan ang venue sa tatlong palapag, bukas mula 08:00 hanggang 22:00, na nagkakahalaga ng 150 won kada limang minuto — 900 won para sa tatlumpung minuto, 1,800 para sa isang oras, 10,800 para sa anim. Kontra sa dagsa ng konsiyertong 25,000 katao, isa iyong puwesto sa bawat limampu't dalawang tao, na mag-isa nang sapat upang maisara ang usapin. Ngunit idinadagdag ng tagapagpatakbo ang pangungusap na talagang nagpapasya nito: sa mga araw ng beysbol at ng kaganapan ay buong-buong kinukuha ng organisador ang paradahan, at hinihigpitan ang pampublikong paggamit. Kaya hindi ang pagkapuno ang hadlang. Ang hadlang ay maaaring hindi ito bukas sa iyo kahit kaunti.",
+        pitfall:
+          "Ang pagpa-book ng taksi o rentahang sasakyan sa paniniwalang ang pagdating sa daan ang maginhawang pagpipilian. Nagtatapos ang pagpipiliang iyon sa isang paradahang kinuha na ng prodyuser para sa gabing iyon.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Itanong sa gusali ang nalalaman lamang ng gusali",
+        body: "Sinasagot ng tagapagpatakbo ang mga tanong tungkol sa gusali: pagpunta, paradahan, pasilidad, ang dome mismo. Ang kontak nito para doon ay ang Dome Operations Division, pangkat ng operasyon, sa 02-2128-2300. Ang hindi nito itinatakda ay ang palabas mo — ang oras ng pagpasok, ang maaari mong dalhin, kung saan nabubuo ang pila mo at kailan bumubukas ang pinto ay sa prodyuser, at inilalathala ang mga iyon sa bawat kaganapan sa pahina ng tiket at hindi ng venue. Ang pagtatanong sa venue tungkol sa patakaran sa bag ay nagbibigay sa iyo ng magalang na sagot tungkol sa pangkalahatang patakaran ng gusali, na hindi ang sagot na kailangan mo.",
+        pitfall:
+          "Ang pagtrato sa isang tawag sa venue bilang kumpirmasyon ng patakaran ng isang kaganapan. Magkaibang awtoridad ang dalawa at isa lamang sa kanila ang nasa tiket mo.",
+        takes: "10 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Aling istasyon ang Gocheok Sky Dome?",
+        a: "Istasyong Guil sa Line 1, labasan 2, mga 150 metro at tatlong minutong lakad. Naglalathala rin ito ng tatlong mas mahabang ruta: Istasyong Gaebong labasan 2, mga labinlimang minutong lakad o ang bus ng nayon 06 patungo sa Tulay ng Gocheok; Istasyong Guro, mga dalawampung minutong lakad patawid sa Tulay ng Gocheok o ang mga bus 5712 at 5626; at ang Sindorim sa Line 1 at 2, tatlong hinto sa bus mula sa labasan 1 na may sampung rutang tumatakbo, kasama ang 160. Nagkakasalungat ang sariling talahanayan ng venue at ang hakbang-hakbang na panuto nito kung labasan 1 o labasan 2 ang Guro; pawang nagsasabing 2 ang panuto at ang mapa ng lugar.",
+      },
+      {
+        q: "Kung tatlong minuto lamang ang Guil, bakit ako bababa sa iba?",
+        a: "Dahil sinasabi iyon ng venue. Sinasabihan ng pahina nito ng pagpunta ang mga taong nanggagaling sa Seoul at sa direksiyon ng Suwon o Anyang na bumaba sa Guro upang maiwasan ang siksikan, at ang mga nanggagaling sa Incheon o Bucheon na bumaba sa Gaebong. Iyon ang tagapagpatakbo na inilalarawan ang sariling istasyon nito sa oras ng paglabas, at hindi opinyon ng isang manlalakbay.",
+      },
+      {
+        q: "Ilang tao ang naroon sa isang gabi ng konsiyerto?",
+        a: "Ibinibigay ng venue ang mga 25,000 para sa mga kultural na kaganapan, kontra sa 16,601 na upuan para sa beysbol. Halos limampung porsiyentong mas maraming tao ang lumalabas sa parehong mga labasan kaysa sa isang karaniwang araw ng laro, at iyon ang dahilan kung bakit may paalala tungkol sa dagsa.",
+      },
+      {
+        q: "Puwede ba akong magmaneho o mag-taksi at magparada doon?",
+        a: "Magplano nang hindi. May 484 na puwesto, bukas mula 08:00 hanggang 22:00 sa 150 won kada limang minuto, ngunit sinasabi ng tagapagpatakbo na sa mga araw ng beysbol at ng kaganapan ay buong-buong nirereserba ng organisador ang paradahan at hinihigpitan ang pampublikong paggamit. Ang isang puwesto kada limampu't dalawang tao ang magiging problema kung bukas man lamang sa iyo ang paradahan.",
+      },
+      {
+        q: "Pareho ba ang Gocheok Sky Dome at ang KSPO Dome?",
+        a: "Hindi, at hindi rin magkalapit ang dalawa. Nasa 430 Gyeongin-ro sa Guro-gu ang Gocheok Sky Dome, sa kanlurang Seoul, pinapatakbo ng Seoul Facilities Corporation. Nasa loob ng Olympic Park sa Songpa-gu ang KSPO Dome, sa timog-silangan, sa ilalim ng ibang tagapagpatakbo. Itapat ang pangalan ng venue sa pahina mo ng pagpa-book sa adres.",
+      },
+      {
+        q: "Kanino ko itatanong ang maaari kong ipasok?",
+        a: "Sa prodyuser, hindi sa venue. Inilalathala ng gusali ang pagpunta, ang paradahan at ang mga pasilidad; itinatakda sa bawat kaganapan ang oras ng pagpasok, ang patakaran sa bag, ang puwesto ng pila at ang oras ng pinto, at lumilitaw ang mga iyon sa pahina ng tiket ng palabas mo. Ang sariling linya ng venue ay ang Dome Operations Division sa 02-2128-2300, at tungkol lamang sa gusali ang masasabi nito sa iyo.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "高尺スカイドームで自分の席を見つける：チケットのブロック番号が意味すること",
+    summary:
+      "4層、一方向、そしてループの切れ目は一か所だけ。3桁を正しく読めば、地図なしでも、どちらが北かを知らなくても、どの入口からでも自分のブロックまで歩けます。",
+    scope:
+      "高尺スカイドームが常設席にどう番号を振っているかを、ソウル施設公団自身の座席配置図と施設案内のページから読み取って扱います。4つの層、番号が回る向き、連番が切れる場所、そしてゲートと窓口がその並びに対してどこに位置するか。読み取った配置図は野球用に描かれており、ダグアウトが載っています。スタンドのブロックはコンクリートで固定されていて動かないので、コンサートのチケットにブロック304と書かれていればそれはこの304です。ただし、どのブロックが売られるか、フロアに何が置かれるか、自分のチケットがどのゲートから入れるか、開場がいつかは主催者のもので、公演ごとに決まります。ここにあるものは、あなた自身の予約ページにある配置図の代わりにはなりません。一会場だけです。KSPO DomeとInspire Arenaは番号の振り方が違い、それぞれ専用のページが必要です。",
+    intro: [
+      "座席配置図は、建物がどう構成されているかをすでに知っている人のために描かれています。それは123個の番号が並んだ平面の絵で、家で抱く問い——これはいい席か——には答えますが、18時40分に、自分のものではない番号が書かれたコンクリートの壁の前に立っているときの問いには答えません。",
+      "その二番目の問いには短い答えがあります。番号付けは一覧ではなく仕組みだからです。4つの層、一つの向き、一か所の切れ目。この三つを覚えれば、配置図はもう必要なくなります。",
+    ],
+    steps: [
+      {
+        title: "まず自分の席が建物の中かフロアの上かを判別する",
+        body: "101から435までの3桁は、スタンドの常設ブロックを意味し、このページの残りはそれを探し当てるためのものです。それ以外——単独のアルファベット、FLOOR、플로어、スタンディングのゾーン、テーブルやボックスの名前——はフィールド上であり、そこには常設席が一つもありません。フィールドは素の床で、主催者が公演ごとに覆い、区切り、名前を付けます。ですからそれを位置づけられるのは、その公演自身の配置図だけです。",
+        pitfall:
+          "チケットのアルファベットを会場の配置図のアルファベットに突き合わせること。この一つの建物には三つの異なるアルファベットがあります。7つのゲートはAからGで振られ、配置図はフィールド高さの野球用ゾーンをT、S、Dの系列で印刷し、コンサートのフロアブロックは主催者がアルファベットで振ります。アルファベットは、それを発行したものの隣でしか意味を持ちません。",
+        takes: "2分",
+      },
+      {
+        title: "最初の桁が層で、層は4つあります",
+        body: "101から132がフロアにいちばん近い最下段のリング。201から222が短い2層目。301から334が3層目。401から435が最上段です。これは会場が説明している建物と一致します。地上4階、地下2層の上に積まれた構造です。つまり百の位は階数であって、ゾーンの名前ではありません。4はこの建物の最も高いところです。",
+        pitfall:
+          "200番台の層がほかと同じように振る舞うと思い込むこと。ここは最も短く、32、34、35に対して22ブロックしかなく、しかも途中に穴があるのはこの層だけです。配置図では、建物の向こう側に沿った区間に200番台の席がまったくない箇所が示されています。そこでは連続した番号が、地上で必ずしも隣同士ではありません。",
+        takes: "1分",
+      },
+      {
+        title: "残りの2桁は、一方向に回るループ上の位置です",
+        body: "一つの層の中で番号は一方向にぐるりと回ります。これは絵から測ったことではなく会場自身の言葉です。配置図とともに公開されている説明には、ブロックは内野側の右下から始まって시계방향——時計回り——に進むと書かれ、続いてその順にブロックが列挙されています。どの層も建物の同じ側から始まります。ですから401から405への移動は、301から305への移動と同じ回転で、向きも同じで、高さだけが違います。左半分と右半分を覚える必要はなく、奇数側・偶数側もありません。",
+        pitfall:
+          "層がブロック単位で真上に積まれていると思い込むこと。各層は32、22、34、35ブロックを持つので、回るにつれてずれていきます。共有しているのは出発する線だけです。417は317の上ではなく、210にいる友人はあなたの310の下にはいません。",
+        takes: "2分",
+      },
+      {
+        title: "ループの切れ目はちょうど一か所で、そこにゲートはありません",
+        body: "客席は完全な円に閉じていません。配置図が右側に描いている辺には、どの層にも席のない楔形の建物部分があり、そこが番号の振り直し点です。132と101はそこを挟んで向かい合い、435と401も同じです。その切れ目の幅は一定ではありません。配置図から測ると、100番台で約44度、200番台で71度、300番台で91度、400番台で96度です。上層のデッキがその角の手前で終わる一方、最下段のリングはほぼ閉じているからです。客席は、高くなるほど開く馬蹄形です。7つのゲートは番号と同じ向きに時計回りに並びます。手前側にA、B、C、D、E、向こう側にFとGです。Aは切れ目の次の最初のゲート、Gはその手前の最後のゲートです。ゲートのアルファベットとブロック番号は一つの目盛りであり、だからこそこの建物は方位磁石なしで歩けます。",
+        pitfall:
+          "見えているゲートが使えるゲートだと思い込むこと。会場自身の配置図は、中央にあるゲートCを一般用ではなくR.d-clubとスカイボックスの年間会員のための入口として記しています。いちばん近い扉が自分の扉とは限りません。",
+        takes: "3分",
+      },
+      {
+        title: "対処できる側に着く",
+        body: "1号線クイル駅の2番出口は会場から約150メートル、徒歩3分です。そしてコンサートの夜には、運営者が一駅前で降りる案内を公開しています。ソウル方面または水原・安養方面から乗ったならクロ駅、仁川・富川方面から来たならケボン駅です。どちらを選ぶかで最初に着く外周の位置が変わり、したがって回り込む距離も変わります。次のステップの法則は変わりません。あれはどの入口からでも使えます。",
+        pitfall:
+          "建物までの歩きだけを計画して、建物を回る歩きを計画しないこと。2万5千人が周長およそ600メートルのリングに着き、あなたの最後の200メートルこそが人混みの中にある200メートルです。",
+        takes: "5分、当日より前に",
+      },
+      {
+        title: "壁の前でブロック番号を二つ読めば、歩く向きが分かる",
+        body: "配置図の上がどの方位を指すかを知る必要はありませんし、会場もそれを公開していません。必要なのは連続した二つの番号です。立っている場所のブロック番号を読み、数メートル歩いて、次の番号を読む。これで番号が増える向きが分かります。自分の番号が大きければそのまま進み、小さければ引き返します。どの層でもループは一方向に回るので、建物の外側で得た答えは階段でも、コンコースでも、そのまま正しいままです。",
+        pitfall:
+          "表示ではなく床を頼りに進むこと。ドームには外の景色がなく、コンコースはどの区間も同じように見えます。建物の中で自分がどこにいるかを教えてくれるのはブロック番号だけです。この二つ読みの法則が通じない唯一の場所は切れ目で、そこは番号が途切れるので自ずと分かります。",
+        takes: "当日5分",
+      },
+      {
+        title: "このうちどちらの半分を主催者が決めるのかを知る",
+        body: "建物が決めるのはブロック番号、4つの層、ゲートのアルファベット、そして窓口です。配置図は窓口を3つ、2番、3番、4番として記し、内野側の一つはゲートEのそばに、外野側の二つはゲートFとGを挟むように置かれています。主催者が決めるのは公演ごとに変わるすべてです。そもそもどのブロックが売られるか——フロアの片端に立つステージはその裏のブロックを潰します——フロアの区画が何と呼ばれるか、自分のチケットがどのゲートから入れるか、そして開場がいつか。自分のチケットとこのページが食い違うなら、正しいのはチケットです。",
+        pitfall:
+          "会場の配置図を自分の公演の配置図として扱うこと。あれは野球用に描かれ、ダグアウトが載っています。304がどこにあるかについての権威であり、あなたの夜のそれ以外については権威ではありません。",
+        takes: "5分",
+      },
+    ],
+    faq: [
+      {
+        q: "304のようなブロック番号は、実際に何を教えてくれるのですか。",
+        a: "二つです。3は層で、最下段のリングを1と数えたときの4層のうち3層目です。04はその層をぐるりと一方向に回るループ上の位置で、建物の決まった側から始まります。つまり304は番号が小さいほうで、番号付けが始まる場所の近く、客席の切れ目から時計回りに少し歩いたあたりです。",
+      },
+      {
+        q: "番号はどちらの向きに回るのですか。",
+        a: "時計回りで、会場自身がそう述べています。配置図とともに公開されている説明には시계방향とあり、内野側の右下から始まると書かれていて、続いて列挙されるブロックの範囲も両側で絵と一致します。どの層も同じ向きです。ゲートのアルファベットも同じ向きに進みます。手前側にA、B、C、D、E、向こう側にF、Gです。つまりアルファベットと番号は一緒に増えます。ゲートEへ向かう途中でゲートDを通り過ぎたなら、ブロック番号も増えているということです。",
+      },
+      {
+        q: "ブロック417はブロック317の真上ですか。",
+        a: "違います。各層が持つブロックの数は異なり、下から32、22、34、35です。共有しているのは番号付けが始まる線だけで、そこから先はずれていきます。歩くときは友人がいる層ではなく、自分が実際にいる層を使ってください。",
+      },
+      {
+        q: "なぜ番号が途切れて、また始まるのですか。",
+        a: "客席がリングではなく馬蹄形だからです。どの層にも席のない楔形の建物部分があり、番号はそこで振り直されます。132はそこを挟んで101と向かい合い、435は401と向かい合います。そこは外周のうちゲートが一つもない唯一の区間でもあり、だから見分けやすいのです。高いところほど幅が広く、100番台では円のおよそ44度に対して400番台では96度です。つまり上の層ではリングの欠けている部分が大きく、遠回りの代償も大きくなります。",
+      },
+      {
+        q: "いちばん近いゲートから入ってもいいですか。",
+        a: "必ずしもよくありません。ゲートの出入りは公演ごとに主催者が決め、チケットに印刷されます。そして普通の日でも一般用でないゲートが少なくとも一つあります。会場の配置図は、中央のゲートをR.d-clubとスカイボックスの年間会員のための入口として記しています。まずチケットを読み、それからそのゲートを探してください。",
+      },
+      {
+        q: "会場サイトの配置図は野球場のように見えます。これで合っているのですか。",
+        a: "このページが答える問いには正しい配置図で、それ以外のほとんどの問いには誤った配置図です。あれは野球用に描かれ、ダグアウトも含まれていて、会場の収容は試合で16,601席、コンサートでは約25,000人です。つまりコンサートは同じ建物の別の配置です。変わらないのはコンクリートで、番号の付いたブロックは常設なので、配置図は304がどこかを教えてくれます。304があなたの公演で売られているかどうか、フロアに何があるかは教えてくれません。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "在高尺天空巨蛋找到你的座位：票上的區塊號碼在說什麼",
+    summary:
+      "四層、一個方向，以及整圈裡只有一處斷口。把三位數讀對，你就能從任何入口走到自己的區塊，不需要地圖，也不需要知道哪邊是北。",
+    scope:
+      "涵蓋高尺天空巨蛋如何為常設座位編號，取自首爾設施公團自己的座位配置圖與場館設施頁面：四個層、號碼轉動的方向、連號中斷的位置，以及入口與售票窗口相對於這套編號的位置。本頁所讀的那張配置圖是為棒球畫的，上面有球員休息區。看台的區塊是澆築的混凝土，不會移動，所以演唱會票上寫區塊304，指的就是這個304；但哪些區塊會開賣、場地上放什麼、你的票從哪個入口進、何時開放入場，都屬於主辦方並逐場決定，這裡的任何內容都不能取代你自己預訂頁面上的配置圖。只寫一個場館。KSPO Dome與Inspire Arena的編號方式不同，需要各自的頁面。",
+    intro: [
+      "座位配置圖是為已經知道這棟建築如何組織的人畫的。它是一張有123個號碼的平面圖，回答的是你在家裡會有的問題——這個位子好不好——而不是你在18時40分、站在一面寫著不屬於你的號碼的混凝土牆前時會有的問題。",
+      "第二個問題有一個簡短的答案，因為這套編號是一個系統，而不是一份清單。四個層、一個方向、一處斷口。把這三件事記住，你就不再需要配置圖。",
+    ],
+    steps: [
+      {
+        title: "先判斷你的座位在建築裡還是在場地上",
+        body: "101到435之間的三位數代表看台上的常設區塊，本頁其餘部分就是用來把它找出來的。其他任何形式——單獨的字母、FLOOR、플로어、站位區、桌位或包廂的名字——都在場地上，而場地根本沒有任何常設座位。場地是裸的地板，由主辦方逐場鋪設、分區並命名，所以只有那一場自己的配置圖才能定位它。",
+        pitfall:
+          "拿票上的字母去對場館配置圖上的字母。這一棟建築上有三套不同的字母：七個入口以A到G編號，配置圖以T、S、D系列印出場地高度的棒球分區，而演唱會的場地區塊是由主辦方編字母的。字母只有在發出它的那個東西旁邊才有意義。",
+        takes: "2分鐘",
+      },
+      {
+        title: "第一位數是層，而層有四個",
+        body: "101到132是最靠近場地的最低一圈。201到222是較短的第二層。301到334是第三層。401到435是最上層。這和場館自己描述的建築一致：地上四層，底下還有兩層地下。所以百位數是樓層號碼，不是分區名稱。4就是這棟建築最高的地方。",
+        pitfall:
+          "以為200層會和其他層一樣。它最短，只有22個區塊，對上32、34和35，而且它是唯一中間有缺口的：配置圖顯示建築遠側沿線有幾段完全沒有200層的座位。在那裡，連號並不代表地面上相鄰。",
+        takes: "1分鐘",
+      },
+      {
+        title: "另外兩位數是一個只朝一個方向轉的圈上的位置",
+        body: "在同一層裡，號碼朝單一方向繞行一整圈，而這是場館自己的用詞，不是從圖上量出來的：與配置圖一起公布的文字說明寫著區塊從內野側的右下開始，依시계방향——順時針——排列，接著就按那個順序列出它們。每一層都從建築的同一側開始。所以從401走到405，和從301走到305是同一個轉向，方向相同，只是高度不同。沒有左半邊右半邊要記，也沒有單號側雙號側。",
+        pitfall:
+          "以為各層會一塊對一塊地疊起來。它們分別有32、22、34和35個區塊，所以越繞越偏離：它們共用的只有起始的那一條線。417不在317的上方，而在210的朋友也不在你310的下方。",
+        takes: "2分鐘",
+      },
+      {
+        title: "這個圈剛好有一處斷口，而那裡沒有入口",
+        body: "座位並沒有圍成完整的圓。在配置圖畫在右側的那一邊，有一塊楔形的建築在任何層都沒有座位，而編號就是在那裡重新開始的——132與101隔著它相對，435與401也一樣。那處斷口的寬度不是固定的：從圖上量，100層約44度，200層71度，300層91度，400層96度，因為上層看台在那個角落之前就結束了，而最低一圈幾乎繞了過去。座位是一個越往上越開口的馬蹄形。七個入口和號碼同向順時針排列：近側是A、B、C、D、E，遠側是F和G。A是斷口之後的第一個入口，G是斷口之前的最後一個。入口字母和區塊號碼是同一把尺，而這正是這棟建築可以不用指北針就走通的原因。",
+        pitfall:
+          "以為看得到的入口就是可以用的入口。場館自己的配置圖把位於中央的C入口標為保留給R.d-club與包廂季票持有者的入口，而不是一般入口。最近的那道門不一定是你的。",
+        takes: "3分鐘",
+      },
+      {
+        title: "從一個你應付得來的方向抵達",
+        body: "1號線九一站2號出口距場館約150公尺，步行三分鐘；而在演唱會的夜晚，營運者公布的建議是提前一站下車——若你是從首爾方向或水原、安養方向上車，就在九老站；若你從仁川或富川方向過來，就在開峰站。你選哪一個，會改變你最先抵達外圍的哪一段，因此也改變你要繞多遠。它不會改變下一步的規則，那條規則從任何入口都適用。",
+        pitfall:
+          "只規劃走到建築的那段路，卻沒規劃繞著建築走的那段。兩萬五千人會抵達一個周長約600公尺的圈，而你最後那200公尺，正是裡面有人潮的200公尺。",
+        takes: "5分鐘，在當天之前",
+      },
+      {
+        title: "在牆邊讀兩個區塊號碼，你就知道該往哪邊走",
+        body: "你不需要知道配置圖的上方指向哪個方位，場館也沒有公布。你需要的是連續兩個號碼。讀你站的位置的區塊號碼，走幾公尺，再讀下一個。現在你知道號碼往哪個方向遞增了。如果你的號碼更大就繼續走，更小就轉身。因為每一層的圈都只朝一個方向轉，你在建築外側得到的答案，在樓梯上仍然成立，在走道上也仍然成立。",
+        pitfall:
+          "靠地板而不是靠標示判斷方向。巨蛋裡看不到外面，每一段走道看起來都和其他段一樣；區塊號碼是這棟建築裡唯一會告訴你身在何處的東西。這個兩號碼規則唯一失效的地方是斷口，而斷口會自己宣告，因為號碼停了。",
+        takes: "當天5分鐘",
+      },
+      {
+        title: "知道這裡面哪一半是主辦方決定的",
+        body: "建築決定的是區塊號碼、四個層、入口字母和售票窗口——配置圖標了三個，編號為2、3、4號，內野那個在E入口旁邊，外野那兩個分別位在F與G入口兩側。主辦方決定的是每場都會變的一切：哪些區塊根本會不會開賣，因為舞台靠著場地的一端就會毀掉它後方的區塊；場地分區叫什麼名字；你的票從哪個入口進；以及何時開放入場。你的票和本頁說法不一致時，正確的是你的票。",
+        pitfall:
+          "把場館的配置圖當成你那一場的配置圖。它是為棒球畫的，上面有球員休息區。它是關於304在哪裡的權威，而關於你那一晚的其他一切都不是。",
+        takes: "5分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "像304這樣的區塊號碼究竟在告訴我什麼？",
+        a: "兩件事。3是層，把最低一圈算作1的話，它是四層裡的第三層。04是那一層上朝單一方向繞行一整圈的位置，從建築固定的一側開始。所以304是小號碼那一端，位置靠近編號開始的地方，從座位的斷口順時針走一小段就到。",
+      },
+      {
+        q: "號碼是朝哪個方向排的？",
+        a: "順時針，而且是場館自己說的：與配置圖一起公布的說明寫著시계방향，從內野側的右下開始，而它接著列出的區塊範圍在兩側都和圖相符。每一層都是同一個方向。入口字母也是同向：近側A、B、C、D、E，遠側F、G。這表示字母和號碼是一起遞增的——如果你在前往E入口的路上經過了D入口，你的區塊號碼也正在變大。",
+      },
+      {
+        q: "區塊417就在區塊317的正上方嗎？",
+        a: "不是。各層的區塊數量不同——由下往上是32、22、34和35——所以它們只共用編號起始的那一條線，從那裡開始就逐漸偏離。請用你實際所在的那一層來找路，不要用你朋友所在的那一層。",
+      },
+      {
+        q: "為什麼號碼會停下來然後重新開始？",
+        a: "因為座位是馬蹄形，不是一個圈。有一塊楔形的建築在任何層都沒有座位，編號就在那裡重新開始：132隔著它面對101，435面對401。那裡也是整個外圍唯一沒有入口的一段，所以很容易辨認。你所在的位置越高，它就越寬——100層大約是整圈的44度，而400層是96度——所以在最上層，缺掉的部分更多，繞遠路的代價也更大。",
+      },
+      {
+        q: "我可以從最近的入口進去嗎？",
+        a: "不一定。入口的使用由主辦方逐場設定並印在你的票上，而且就算是平常的日子也至少有一個入口不是一般使用的——場館的配置圖把中央那個入口標為R.d-club與包廂季票持有者的入口。先讀你的票，再去找那個入口。",
+      },
+      {
+        q: "場館網站上的配置圖看起來像棒球場。這一張對嗎？",
+        a: "對本頁要回答的問題來說它是對的那一張，對其他大多數問題來說是錯的那一張。它是為棒球畫的，連球員休息區都有，而場館在比賽時是16,601個座位，演唱會約25,000人——所以演唱會是同一棟建築的另一種配置。不變的是混凝土：編了號的區塊是永久的，所以配置圖能告訴你304在哪裡。它不能告訴你304在你那一場有沒有開賣，也不能告訴你場地上放了什麼。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menemukan tempat duduk Anda di Gocheok Sky Dome: apa arti nomor blok pada tiket Anda",
+    summary:
+      "Empat lantai, satu arah, dan satu putus tunggal pada lingkarannya. Tiga angka yang dibaca dengan benar akan menuntun Anda ke blok Anda dari pintu masuk mana pun, tanpa peta dan tanpa perlu tahu arah utara.",
+    scope:
+      "Mencakup cara Gocheok Sky Dome menomori tempat duduk permanennya, dibaca dari bagan tempat duduk dan halaman fasilitas milik Seoul Facilities Corporation sendiri: keempat lantainya, arah penomorannya berjalan, di mana urutannya terputus, dan di mana pintu-pintu serta loket berada relatif terhadap urutan itu. Bagan yang menjadi sumbernya digambar untuk bisbol — ada ruang pemain di atasnya. Blok-blok di tribun adalah beton tuang dan tidak berpindah, jadi tiket konser yang menyebut blok 304 berarti 304 yang ini; tetapi blok mana yang dijual, apa yang berdiri di lapangan, pintu mana yang boleh Anda lewati, dan kapan pintu dibuka adalah milik promotor, ditetapkan per pertunjukan, dan tidak ada apa pun di sini yang menggantikan bagan di halaman pemesanan Anda sendiri. Satu venue. KSPO Dome dan Inspire Arena menomori diri mereka secara berbeda dan membutuhkan halaman sendiri.",
+    intro: [
+      "Sebuah bagan tempat duduk digambar untuk orang yang sudah tahu bagaimana bangunan itu disusun. Ia adalah gambar datar berisi 123 angka, dan ia menjawab pertanyaan yang Anda punya di rumah — apakah ini kursi yang bagus — alih-alih pertanyaan yang Anda punya pada 18:40 sambil berdiri menghadap dinding beton bernomor yang bukan nomor Anda.",
+      "Pertanyaan kedua itu punya jawaban singkat, karena penomorannya adalah sebuah sistem dan bukan sebuah daftar. Empat lantai, satu arah, satu putus. Pelajari ketiga hal itu dan Anda berhenti membutuhkan bagannya.",
+    ],
+    steps: [
+      {
+        title: "Tentukan dulu apakah kursi Anda di dalam bangunan atau di lapangan",
+        body: "Tiga angka antara 101 dan 435 berarti sebuah blok permanen di tribun, dan sisa halaman ini bertugas menemukannya. Apa pun selain itu — satu huruf berdiri sendiri, FLOOR, 플로어, zona berdiri, nama meja atau box — berada di lapangan, yang sama sekali tidak punya kursi permanen. Lapangan itu lantai kosong yang ditutup, dibagi dan diberi nama oleh promotor untuk setiap pertunjukan, jadi hanya bagan pertunjukan itu sendiri yang dapat menempatkannya.",
+        pitfall:
+          "Mencocokkan huruf pada tiket Anda dengan huruf pada bagan venue. Ada tiga abjad berbeda pada satu bangunan ini: ketujuh pintu berhuruf A sampai G, bagan itu mencetak zona bisbol setinggi lapangan dalam seri T, S dan D, dan blok lapangan sebuah konser diberi huruf oleh promotor. Sebuah huruf hanya berarti di samping benda yang menerbitkannya.",
+        takes: "2 menit",
+      },
+      {
+        title: "Angka pertama adalah lantainya, dan lantainya ada empat",
+        body: "101 sampai 132 adalah cincin terbawah, yang paling dekat ke lapangan. 201 sampai 222 adalah tingkat kedua yang pendek. 301 sampai 334 adalah yang ketiga. 401 sampai 435 adalah yang teratas. Itu cocok dengan bangunan yang digambarkan venue — empat lantai di atas tanah di atas dua lantai basemen — jadi angka ratusan adalah nomor lantai, bukan nama zona. Angka 4 adalah setinggi bangunan ini bisa.",
+        pitfall:
+          "Mengharapkan lantai 200 berperilaku seperti yang lain. Ia yang terpendek, 22 blok melawan 32, 34 dan 35, dan ia satu-satunya yang berlubang di tengahnya: bagan itu memperlihatkan bentangan di sisi jauh bangunan yang sama sekali tidak memuat tempat duduk lantai 200. Di situ angka yang berurutan belum tentu bertetangga di tanah.",
+        takes: "1 menit",
+      },
+      {
+        title: "Dua angka lainnya adalah posisi pada lingkaran yang berputar satu arah",
+        body: "Di dalam satu lantai, angka-angka berjalan dalam satu arah sepanjang lingkarannya, dan itu kata venue sendiri alih-alih sesuatu yang diukur dari gambarnya: keterangan yang diterbitkan bersama bagan itu menyatakan bahwa blok-bloknya berjalan 시계방향 — searah jarum jam — dimulai dari kanan bawah sisi dalam lapangan, lalu mendaftarnya dalam urutan itu. Setiap lantai dimulai dari sisi bangunan yang sama. Jadi langkah dari 401 ke 405 adalah rotasi yang sama dengan langkah dari 301 ke 305, dalam arah yang sama, pada ketinggian yang berbeda. Tidak ada separuh kiri dan separuh kanan untuk dihafal, dan tidak ada sisi ganjil dan sisi genap.",
+        pitfall:
+          "Mengharapkan lantai-lantainya bertumpuk blok demi blok. Mereka memuat 32, 22, 34 dan 35 blok, jadi mereka menyimpang satu dari yang lain sambil berputar: hanya garis tempat mereka bermula yang sama. 417 tidak berada di atas 317, dan seorang teman di 210 tidak berada di bawah Anda di 310.",
+        takes: "2 menit",
+      },
+      {
+        title: "Lingkarannya punya tepat satu putus, dan tidak ada pintu di dalamnya",
+        body: "Tempat duduknya tidak menutup menjadi lingkaran penuh. Pada sisi yang digambar bagan itu di sebelah kanan ada sebidang bangunan berbentuk pasak tanpa kursi di lantai mana pun, dan di situlah penomorannya dimulai ulang — 132 dan 101 berhadapan melintasinya, demikian pula 435 dan 401. Putus itu tidak selebar sama: diukur dari bagan, kira-kira 44 derajat di lantai 100, 71 di lantai 200, 91 di lantai 300 dan 96 di lantai 400, karena dek-dek atas berhenti sebelum sudut itu sementara cincin terbawah hampir menutup di sekelilingnya. Tempat duduknya adalah sepatu kuda yang makin membuka seiring naik. Ketujuh pintu berjalan searah jarum jam dalam arah yang sama dengan angkanya: A, B, C, D dan E di sisi dekat, lalu F dan G melintasi sisi jauh. A adalah pintu pertama setelah putusnya; G adalah yang terakhir sebelumnya. Huruf pintu dan nomor blok adalah satu skala, dan itulah seluruh alasan bangunan ini bisa dijelajahi tanpa kompas.",
+        pitfall:
+          "Menganggap pintu yang bisa Anda lihat adalah pintu yang boleh Anda pakai. Bagan venue sendiri menandai pintu C, yang di tengah, sebagai pintu masuk yang disediakan bagi pemegang tiket musiman R.d-club dan skybox alih-alih pintu umum. Pintu terdekat tidak selalu pintu Anda.",
+        takes: "3 menit",
+      },
+      {
+        title: "Tiba di sisi yang bisa Anda kerjakan",
+        body: "Stasiun Guil di Line 1, pintu keluar 2, berjarak sekitar 150 meter dan tiga menit dari venue, dan pada malam konser pengelola menerbitkan anjuran untuk turun satu perhentian lebih awal — Guro kalau Anda naik dari Seoul atau dari arah Suwon dan Anyang, Gaebong kalau Anda datang dari Incheon atau Bucheon. Yang Anda ambil mengubah bagian keliling bangunan mana yang Anda capai lebih dulu, dan karenanya seberapa jauh Anda berjalan memutar. Ia tidak mengubah aturan pada langkah berikutnya, yang bekerja dari pintu masuk mana pun.",
+        pitfall:
+          "Merencanakan jalan menuju bangunannya dan bukan jalan memutarinya. Dua puluh lima ribu orang tiba di sebuah cincin dengan keliling kira-kira 600 meter, dan dua ratus meter terakhir Anda adalah meter-meter yang ada kerumunan di dalamnya.",
+        takes: "5 menit, sebelum hari acara",
+      },
+      {
+        title: "Di dinding, baca dua nomor blok dan Anda tahu harus berjalan ke mana",
+        body: "Anda tidak perlu tahu arah mata angin mana yang ditunjuk bagian atas bagan itu, dan venue tidak menerbitkannya. Yang Anda perlukan adalah dua angka berurutan. Baca nomor blok tempat Anda berdiri, berjalan beberapa meter, baca yang berikutnya. Sekarang Anda tahu ke arah mana urutannya naik. Kalau nomor Anda lebih besar, teruskan; kalau lebih kecil, berbalik. Karena lingkarannya berputar satu arah di setiap lantai, jawaban yang Anda dapat di luar bangunan tetap benar di tangga dan tetap benar di selasar.",
+        pitfall:
+          "Mengemudi dengan lantai alih-alih dengan tanda. Sebuah dome tidak punya pemandangan ke luar dan setiap bentangan selasar tampak seperti bentangan lainnya; nomor blok adalah satu-satunya hal di dalam bangunan yang memberi tahu Anda sedang di mana. Satu-satunya tempat aturan dua angka itu gagal adalah putusnya, dan putusnya mengumumkan dirinya sendiri, karena angkanya berhenti.",
+        takes: "5 menit pada malam itu",
+      },
+      {
+        title: "Ketahui separuh mana dari ini yang diputuskan promotor",
+        body: "Bangunan menetapkan nomor blok, keempat lantai, huruf pintu dan loketnya — bagan itu menandai tiga, bernomor 2, 3 dan 4, dengan yang di sisi dalam lapangan di samping pintu E dan dua yang di sisi luar mengapit pintu F dan G. Promotor menetapkan segala yang berubah per pertunjukan: blok mana yang dijual sama sekali, karena panggung yang menempel pada satu ujung lapangan mematikan blok-blok di belakangnya; apa nama bagian-bagian lapangan; pintu mana yang boleh Anda lewati; dan kapan pintunya dibuka. Di mana tiket Anda dan halaman ini berselisih, tiket Anda yang benar.",
+        pitfall:
+          "Memperlakukan bagan venue sebagai bagan pertunjukan Anda. Ia digambar untuk bisbol dan ada ruang pemain di atasnya. Ia adalah otoritas soal di mana 304 berada dan soal tidak ada hal lain tentang malam Anda.",
+        takes: "5 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apa yang sebenarnya diberitahukan nomor blok seperti 304 kepada saya?",
+        a: "Dua hal. Angka 3 adalah lantainya — yang ketiga dari empat, dengan cincin terbawah dihitung sebagai 1. Angka 04 adalah posisi pada lingkaran yang berjalan satu arah sepanjang lantai itu, dimulai dari sisi bangunan yang tetap. Jadi 304 bernomor rendah, yang menempatkannya dekat tempat penomorannya dimulai, berjalan sebentar searah jarum jam dari putusnya tempat duduk.",
+      },
+      {
+        q: "Ke arah mana angka-angkanya berjalan?",
+        a: "Searah jarum jam, dan venue mengatakannya sendiri: keterangan yang diterbitkan bersama bagannya berbunyi 시계방향, dimulai dari kanan bawah sisi dalam lapangan, dan rentang blok yang kemudian didaftarnya cocok dengan gambarnya di kedua sisi. Arah yang sama di setiap lantai. Huruf pintunya berjalan dengan cara yang sama: A, B, C, D, E di sisi dekat dan F, G melintasi sisi jauh. Itu berarti huruf dan angka naik bersama — kalau Anda melewati pintu D dalam perjalanan ke pintu E, nomor blok Anda juga sedang naik.",
+      },
+      {
+        q: "Apakah blok 417 tepat di atas blok 317?",
+        a: "Tidak. Lantainya memuat jumlah blok yang berbeda — 32, 22, 34 dan 35 dari bawah ke atas — jadi mereka hanya sama pada garis tempat penomorannya bermula dan menyimpang dari situ. Pakailah lantai yang sedang Anda tempati untuk menjelajah, bukan lantai yang ditempati teman Anda.",
+      },
+      {
+        q: "Mengapa angkanya berhenti lalu mulai lagi?",
+        a: "Karena tempat duduknya adalah sepatu kuda, bukan cincin. Ada sebidang bangunan tanpa kursi di dalamnya di lantai mana pun, dan penomorannya dimulai ulang di situ: 132 menghadap 101 melintasinya, 435 menghadap 401. Ia juga satu-satunya bentangan keliling yang tidak ada pintunya, yang membuatnya mudah dikenali. Ia makin lebar semakin tinggi Anda berada — sekitar 44 derajat dari lingkarannya di lantai 100 melawan 96 di lantai 400 — jadi di lantai teratas lebih banyak bagian cincinnya yang hilang dan berjalan memutar jalan panjang lebih mahal.",
+      },
+      {
+        q: "Bisakah saya masuk lewat pintu mana saja yang terdekat?",
+        a: "Belum tentu. Akses pintu ditetapkan per acara oleh promotor dan dicetak pada tiket Anda, dan setidaknya satu pintu bukan pintu umum bahkan pada hari biasa — bagan venue menandai pintu tengah sebagai pintu masuk bagi pemegang tiket musiman R.d-club dan skybox. Baca tiket Anda, lalu temukan pintu itu.",
+      },
+      {
+        q: "Bagan di situs venue tampak seperti stadion bisbol. Apakah itu yang benar?",
+        a: "Ia bagan yang benar untuk pertanyaan yang dijawab halaman ini dan yang salah untuk kebanyakan pertanyaan lain. Ia digambar untuk bisbol, lengkap dengan ruang pemain, dan venue menampung 16,601 untuk sebuah pertandingan melawan sekitar 25,000 untuk sebuah konser — jadi konser adalah susunan yang berbeda dari bangunan yang sama. Yang tidak berubah adalah betonnya: blok-blok bernomor itu permanen, jadi bagan itu memberi tahu Anda di mana 304 berada. Ia tidak dapat memberi tahu apakah 304 dijual untuk pertunjukan Anda, atau apa yang ada di lapangan.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Den Platz im Gocheok Sky Dome finden: was die Blocknummer auf Ihrem Ticket bedeutet",
+    summary:
+      "Vier Ebenen, eine Richtung und genau eine Unterbrechung im Ring. Drei richtig gelesene Ziffern führen Sie von jedem Eingang aus zu Ihrem Block, ohne Plan und ohne zu wissen, wo Norden ist.",
+    scope:
+      "Behandelt, wie der Gocheok Sky Dome seine festen Plätze numeriert, abgelesen am eigenen Sitzplan und an den Gebäudeseiten der Seoul Facilities Corporation: die vier Ebenen, in welche Richtung die Nummern laufen, wo die Reihenfolge abbricht und wo die Tore und Kassen dazu liegen. Der Plan, aus dem das abgelesen ist, ist für Baseball gezeichnet — die Spielerbänke sind darauf. Die Blöcke im Rund sind gegossener Beton und verschieben sich nicht, ein Konzertticket mit Block 304 meint also diesen 304; welche Blöcke überhaupt verkauft werden, was auf dem Feld steht, durch welches Tor Ihr Ticket Sie lässt und wann die Türen öffnen, gehört aber dem Veranstalter, wird pro Show festgelegt, und nichts hier ersetzt den Plan auf Ihrer eigenen Buchungsseite. Ein Veranstaltungsort. KSPO Dome und Inspire Arena numerieren sich anders und brauchen eigene Seiten.",
+    intro: [
+      "Ein Sitzplan ist für jemanden gezeichnet, der schon weiß, wie das Gebäude geordnet ist. Er ist ein flaches Bild von 123 Nummern und beantwortet die Frage, die Sie zu Hause haben — ist das ein guter Platz — und nicht die Frage, die Sie um 18:40 haben, wenn Sie vor einer Betonwand mit einer Nummer stehen, die nicht Ihre ist.",
+      "Diese zweite Frage hat eine kurze Antwort, denn die Numerierung ist ein System und keine Liste. Vier Ebenen, eine Richtung, eine Unterbrechung. Lernen Sie diese drei Dinge, und Sie brauchen den Plan nicht mehr.",
+    ],
+    steps: [
+      {
+        title: "Entscheiden Sie zuerst, ob Ihr Platz im Gebäude oder auf dem Feld ist",
+        body: "Drei Ziffern zwischen 101 und 435 bedeuten einen festen Block im Rund, und der Rest dieser Seite findet ihn. Alles andere — ein einzelner Buchstabe, FLOOR, 플로어, eine Stehzone, ein Tisch- oder Logenname — liegt auf dem Feld, das überhaupt keine festen Plätze hat. Das Feld ist nackter Boden, den der Veranstalter für jede Show abdeckt, teilt und benennt, also kann ihn nur der Plan dieser Show selbst verorten.",
+        pitfall:
+          "Einen Buchstaben auf Ihrem Ticket mit einem Buchstaben auf dem Plan des Veranstaltungsorts abzugleichen. An diesem einen Gebäude gibt es drei verschiedene Alphabete: die sieben Tore sind mit A bis G beschriftet, der Plan druckt Baseballzonen auf Feldhöhe in den Reihen T, S und D, und die Feldblöcke eines Konzerts beschriftet der Veranstalter. Ein Buchstabe ist nur neben dem sinnvoll, was ihn ausgegeben hat.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Die erste Ziffer ist die Ebene, und es gibt vier davon",
+        body: "101 bis 132 ist der unterste Ring, dem Feld am nächsten. 201 bis 222 ist ein kurzer zweiter Rang. 301 bis 334 ist der dritte. 401 bis 435 ist der oberste. Das passt zu dem Gebäude, das der Veranstaltungsort beschreibt — vier Stockwerke über der Erde über zwei Kellerebenen — die Hunderterstelle ist also eine Geschosszahl und kein Zonenname. Eine 4 ist so hoch, wie das Gebäude reicht.",
+        pitfall:
+          "Zu erwarten, dass die 200er-Ebene sich wie die anderen verhält. Sie ist die kürzeste, 22 Blöcke gegen 32, 34 und 35, und sie ist die einzige mit Löchern in der Mitte: der Plan zeigt Abschnitte entlang der gegenüberliegenden Seite des Gebäudes, die überhaupt keine Plätze der 200er-Ebene tragen. Fortlaufende Nummern sind dort nicht zwangsläufig Nachbarn am Boden.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Die beiden anderen Ziffern sind eine Position auf einem Ring, der in eine Richtung läuft",
+        body: "Innerhalb einer Ebene laufen die Nummern in einer einzigen Richtung ganz herum, und das ist das eigene Wort des Veranstaltungsorts und nichts aus dem Bild Gemessenes: die mit dem Plan veröffentlichte Beschreibung sagt, die Blöcke laufen 시계방향 — im Uhrzeigersinn — beginnend rechts unten auf der Infield-Seite, und zählt sie dann in dieser Reihenfolge auf. Jede Ebene beginnt an derselben Seite des Gebäudes. Der Schritt von 401 zu 405 ist also dieselbe Drehung wie der Schritt von 301 zu 305, in derselben Richtung, auf anderer Höhe. Es gibt keine linke und rechte Hälfte zu lernen und keine gerade und ungerade Seite.",
+        pitfall:
+          "Zu erwarten, dass die Ebenen Block für Block übereinanderliegen. Sie tragen 32, 22, 34 und 35 Blöcke, driften also im Herumlaufen auseinander: geteilt wird nur die Linie, an der sie beginnen. 417 liegt nicht über 317, und eine Freundin in 210 ist nicht unter Ihnen in 310.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Der Ring hat genau eine Unterbrechung, und darin liegt kein Tor",
+        body: "Die Tribüne schließt sich nicht zum vollen Kreis. An der Seite, die der Plan rechts zeichnet, liegt ein Keil des Gebäudes ohne Plätze auf irgendeiner Ebene, und dort setzt die Numerierung neu an — 132 und 101 stehen sich darüber hinweg gegenüber, und 435 und 401 ebenso. Diese Unterbrechung hat nicht eine Breite: am Plan gemessen sind es etwa 44 Grad auf der 100er-Ebene, 71 auf der 200er, 91 auf der 300er und 96 auf der 400er, weil die oberen Ränge vor dieser Ecke enden, während der unterste Ring sich beinahe darum schließt. Die Tribüne ist ein Hufeisen, das sich nach oben öffnet. Die sieben Tore laufen im Uhrzeigersinn in derselben Richtung wie die Nummern: A, B, C, D und E entlang der nahen Seite, dann F und G auf der gegenüberliegenden. A ist das erste Tor nach der Unterbrechung, G das letzte davor. Torbuchstaben und Blocknummern sind eine Skala, und genau deshalb lässt sich dieses Gebäude ohne Kompass begehen.",
+        pitfall:
+          "Anzunehmen, ein Tor, das Sie sehen, sei ein Tor, das Sie benutzen dürfen. Der eigene Plan des Veranstaltungsorts markiert Tor C, das in der Mitte, als Eingang für Dauerkarteninhaber des R.d-club und der Skyboxen und nicht als allgemeinen. Die nächste Tür ist nicht immer Ihre.",
+        takes: "3 Minuten",
+      },
+      {
+        title: "Kommen Sie auf einer Seite an, mit der Sie arbeiten können",
+        body: "Die Station Guil an der Line 1, Ausgang 2, liegt etwa 150 Meter und drei Minuten vom Veranstaltungsort entfernt, und an einem Konzertabend veröffentlicht der Betreiber den Hinweis, eine Station früher auszusteigen — Guro, wenn Sie aus Seoul oder aus Richtung Suwon und Anyang eingestiegen sind, Gaebong, wenn Sie aus Incheon oder Bucheon kommen. Welche Sie nehmen, ändert, welchen Teil des Umlaufs Sie zuerst erreichen, und damit, wie weit Sie herumgehen. Es ändert nicht die Regel im nächsten Schritt, die von jedem Eingang aus funktioniert.",
+        pitfall:
+          "Den Weg zum Gebäude zu planen und nicht den Weg um es herum. Fünfundzwanzigtausend Menschen kommen an einem Ring von etwa 600 Metern Umfang an, und Ihre letzten zweihundert Meter sind die mit der Menge darin.",
+        takes: "5 Minuten, vor dem Tag",
+      },
+      {
+        title: "An der Wand zwei Blocknummern lesen, und Sie wissen, wohin Sie gehen",
+        body: "Sie müssen nicht wissen, in welche Himmelsrichtung das Obere des Plans zeigt, und der Veranstaltungsort veröffentlicht es nicht. Sie brauchen zwei Nummern in Folge. Lesen Sie eine Blocknummer dort, wo Sie stehen, gehen Sie ein paar Meter, lesen Sie die nächste. Jetzt wissen Sie, in welche Richtung die Reihe steigt. Ist Ihre höher, gehen Sie weiter; ist sie niedriger, drehen Sie um. Weil der Ring auf jeder Ebene in eine Richtung läuft, gilt die Antwort, die Sie außen am Gebäude bekommen, noch im Treppenhaus und noch im Umlauf.",
+        pitfall:
+          "Sich am Boden statt an den Schildern zu orientieren. Ein Dome hat keinen Blick nach draußen, und jeder Abschnitt des Umlaufs sieht wie jeder andere aus; die Blocknummern sind das Einzige im Gebäude, das Ihnen sagt, wo Sie sind. Die eine Stelle, an der die Zwei-Nummern-Regel versagt, ist die Unterbrechung, und die kündigt sich selbst an, weil die Nummern aufhören.",
+        takes: "5 Minuten am Abend",
+      },
+      {
+        title: "Wissen Sie, welche Hälfte davon der Veranstalter entscheidet",
+        body: "Das Gebäude legt die Blocknummern, die vier Ebenen, die Torbuchstaben und die Kassen fest — der Plan markiert drei, numeriert mit 2, 3 und 4, die eine an der Infield-Seite neben Tor E und die zwei im Außenfeld links und rechts der Tore F und G. Der Veranstalter legt alles fest, was sich pro Show ändert: welche Blöcke überhaupt verkauft werden, denn eine Bühne an einem Ende des Feldes tötet die Blöcke dahinter; wie die Feldsektionen heißen; durch welches Tor Ihr Ticket Sie lässt; und wann die Türen öffnen. Wo Ihr Ticket und diese Seite sich widersprechen, hat Ihr Ticket recht.",
+        pitfall:
+          "Den Plan des Veranstaltungsorts als den Plan Ihrer Show zu behandeln. Er ist für Baseball gezeichnet und hat Spielerbänke darauf. Er ist die Autorität dafür, wo 304 liegt, und für nichts anderes an Ihrem Abend.",
+        takes: "5 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Was sagt mir eine Blocknummer wie 304 eigentlich?",
+        a: "Zwei Dinge. Die 3 ist die Ebene — die dritte von vier, wenn man den untersten Ring als 1 zählt. Die 04 ist eine Position auf einem Ring, der auf dieser Ebene in eine Richtung ganz herumläuft und an einer festen Seite des Gebäudes beginnt. 304 ist also niedrig numeriert, liegt somit nahe dort, wo die Numerierung beginnt, einen kurzen Weg im Uhrzeigersinn von der Unterbrechung der Tribüne entfernt.",
+      },
+      {
+        q: "In welche Richtung laufen die Nummern?",
+        a: "Im Uhrzeigersinn, und der Veranstaltungsort sagt es selbst: die mit seinem Plan veröffentlichte Beschreibung liest 시계방향, beginnend rechts unten auf der Infield-Seite, und die Blockbereiche, die sie dann aufzählt, passen auf beiden Seiten zum Bild. Dieselbe Richtung auf jeder Ebene. Die Torbuchstaben laufen genauso: A, B, C, D, E entlang der nahen Seite und F, G auf der gegenüberliegenden. Das heißt, Buchstaben und Nummern steigen gemeinsam — wenn Sie auf dem Weg zu Tor E an Tor D vorbeigehen, steigen auch Ihre Blocknummern.",
+      },
+      {
+        q: "Liegt Block 417 direkt über Block 317?",
+        a: "Nein. Die Ebenen tragen unterschiedlich viele Blöcke — von unten nach oben 32, 22, 34 und 35 — sie teilen also nur die Linie, an der ihre Numerierung beginnt, und driften von dort auseinander. Orientieren Sie sich an der Ebene, auf der Sie wirklich sind, nicht an der Ihrer Freundin.",
+      },
+      {
+        q: "Warum hören die Nummern auf und beginnen wieder?",
+        a: "Weil die Tribüne ein Hufeisen ist und kein Ring. Es gibt einen Keil des Gebäudes ohne Plätze auf jeder Ebene, und dort setzt die Numerierung neu an: 132 steht 101 darüber hinweg gegenüber, 435 steht 401 gegenüber. Es ist außerdem der eine Abschnitt des Umlaufs ohne Tor, was ihn leicht erkennbar macht. Er ist breiter, je höher Sie sind — etwa 44 Grad des Kreises auf der 100er-Ebene gegen 96 auf der 400er — auf der obersten Ebene fehlt also mehr vom Ring, und der weite Weg herum kostet mehr.",
+      },
+      {
+        q: "Kann ich durch das Tor hineingehen, das am nächsten ist?",
+        a: "Nicht zwangsläufig. Der Torzugang wird pro Veranstaltung vom Veranstalter festgelegt und auf Ihr Ticket gedruckt, und mindestens ein Tor ist selbst an einem gewöhnlichen Tag kein allgemeines — der Plan des Veranstaltungsorts markiert das mittlere Tor als Eingang für Dauerkarteninhaber des R.d-club und der Skyboxen. Lesen Sie Ihr Ticket, dann suchen Sie dieses Tor.",
+      },
+      {
+        q: "Der Plan auf der Seite des Veranstaltungsorts sieht wie ein Baseballstadion aus. Ist es der richtige?",
+        a: "Er ist der richtige Plan für die Frage, die diese Seite beantwortet, und der falsche für die meisten anderen. Er ist für Baseball gezeichnet, Spielerbänke inklusive, und der Veranstaltungsort bietet 16,601 Plätze für ein Spiel gegen etwa 25,000 für ein Konzert — ein Konzert ist also eine andere Anordnung desselben Gebäudes. Was sich nicht ändert, ist der Beton: die numerierten Blöcke sind dauerhaft, der Plan sagt Ihnen also, wo 304 ist. Er kann Ihnen nicht sagen, ob 304 für Ihre Show verkauft wird oder was auf dem Feld steht.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Encontrar tu asiento en el Gocheok Sky Dome: qué significa el número de bloque de tu entrada",
+    summary:
+      "Cuatro niveles, una dirección y una sola interrupción en el anillo. Tres cifras bien leídas te llevan a tu bloque desde cualquier entrada, sin plano y sin saber dónde está el norte.",
+    scope:
+      "Cubre cómo numera el Gocheok Sky Dome sus asientos permanentes, leído en el propio plano de asientos y en las páginas de instalaciones de la Seoul Facilities Corporation: los cuatro niveles, en qué dirección corren los números, dónde se rompe la secuencia, y dónde quedan las puertas y las taquillas respecto a ella. El plano del que se lee está dibujado para el béisbol: tiene los banquillos marcados. Los bloques del graderío son hormigón y no se mueven, así que una entrada de concierto que diga bloque 304 se refiere a este 304; pero qué bloques se venden, qué se monta en la pista, por qué puerta te admite tu entrada y cuándo abren las puertas son de la promotora, se fijan por espectáculo, y nada de aquí sustituye al plano de tu propia página de compra. Un solo recinto. El KSPO Dome y el Inspire Arena se numeran de otra manera y necesitan sus propias páginas.",
+    intro: [
+      "Un plano de asientos está dibujado para alguien que ya sabe cómo está organizado el edificio. Es una imagen plana con 123 números, y responde a la pregunta que tienes en casa — ¿es un buen asiento? — y no a la que tienes a las 18:40, de pie contra un muro de hormigón con un número que no es el tuyo.",
+      "Esa segunda pregunta tiene una respuesta corta, porque la numeración es un sistema y no una lista. Cuatro niveles, una dirección, una interrupción. Apréndete esas tres cosas y dejas de necesitar el plano.",
+    ],
+    steps: [
+      {
+        title: "Decide primero si tu asiento está en el edificio o en la pista",
+        body: "Tres cifras entre 101 y 435 significan un bloque permanente del graderío, y el resto de esta página sirve para localizarlo. Cualquier otra cosa — una letra sola, FLOOR, 플로어, una zona de pie, el nombre de una mesa o de un palco — está en el campo, que no tiene ningún asiento permanente. El campo es suelo desnudo que la promotora cubre, divide y nombra para cada espectáculo, así que solo el plano de ese espectáculo puede situarlo.",
+        pitfall:
+          "Cotejar una letra de tu entrada con una letra del plano del recinto. En este mismo edificio hay tres alfabetos distintos: las siete puertas van de la A a la G, el plano imprime las zonas de béisbol a nivel de campo en series T, S y D, y los bloques de pista de un concierto los letrea la promotora. Una letra solo significa algo al lado de lo que la emitió.",
+        takes: "2 minutos",
+      },
+      {
+        title: "La primera cifra es el nivel, y hay cuatro",
+        body: "Del 101 al 132 es el anillo más bajo, el más cercano a la pista. Del 201 al 222 es un segundo nivel corto. Del 301 al 334 es el tercero. Del 401 al 435 es el más alto. Eso encaja con el edificio que describe el recinto — cuatro plantas sobre el suelo encima de dos niveles de sótano — así que la cifra de las centenas es un número de planta y no un nombre de zona. Un 4 es lo más alto que llega el edificio.",
+        pitfall:
+          "Esperar que el nivel 200 se comporte como los demás. Es el más corto, 22 bloques frente a 32, 34 y 35, y es el único con huecos en medio: el plano muestra tramos del lado opuesto del edificio sin ningún asiento del nivel 200. Allí, números consecutivos no son necesariamente vecinos en el suelo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Las otras dos cifras son una posición en un anillo que gira en un solo sentido",
+        body: "Dentro de un nivel los números corren en un único sentido todo alrededor, y esa es la propia palabra del recinto y no algo medido sobre la imagen: la descripción publicada con el plano dice que los bloques van 시계방향 — en el sentido de las agujas del reloj — empezando por la esquina inferior derecha del lado del infield, y después los enumera en ese orden. Todos los niveles arrancan del mismo lado del edificio. Así que el paso del 401 al 405 es el mismo giro que el paso del 301 al 305, en el mismo sentido, a otra altura. No hay mitad izquierda y mitad derecha que aprender, ni lado par e impar.",
+        pitfall:
+          "Esperar que los niveles se apilen bloque a bloque. Tienen 32, 22, 34 y 35 bloques, así que se van desfasando a medida que giran: solo comparten la línea de la que parten. El 417 no está encima del 317, y una amiga en el 210 no está debajo de ti en el 310.",
+        takes: "2 minutos",
+      },
+      {
+        title: "El anillo tiene exactamente una interrupción, y ahí no hay puerta",
+        body: "El graderío no se cierra en círculo completo. En el lado que el plano dibuja a la derecha hay una cuña de edificio sin asientos en ningún nivel, y ahí es donde la numeración vuelve a empezar: el 132 y el 101 se miran de frente a través de ella, y el 435 y el 401 igual. Esa interrupción no tiene una sola anchura: medida sobre el plano son unos 44 grados en el nivel 100, 71 en el 200, 91 en el 300 y 96 en el 400, porque las gradas altas se quedan cortas en esa esquina mientras el anillo más bajo casi la rodea. El graderío es una herradura que se abre a medida que sube. Las siete puertas van en el sentido de las agujas del reloj, el mismo que los números: A, B, C, D y E por el lado cercano, luego F y G por el lado opuesto. La A es la primera puerta después de la interrupción; la G es la última antes de ella. Las letras de puerta y los números de bloque son una sola escala, y esa es toda la razón por la que este edificio se puede recorrer sin brújula.",
+        pitfall:
+          "Suponer que una puerta que ves es una puerta que puedes usar. El propio plano del recinto marca la puerta C, la del centro, como entrada reservada a los abonados del R.d-club y de los palcos, y no como una puerta general. La puerta más cercana no siempre es la tuya.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Llega por un lado con el que puedas trabajar",
+        body: "La estación de Guil en la Line 1, salida 2, está a unos 150 metros y tres minutos del recinto, y en una noche de concierto el operador publica el consejo de bajarse una parada antes: Guro si te has subido en Seúl o en la dirección de Suwon y Anyang, Gaebong si vienes de Incheon o de Bucheon. La que elijas cambia a qué parte del perímetro llegas primero y, por tanto, cuánto tienes que rodear. No cambia la regla del paso siguiente, que funciona desde cualquier entrada.",
+        pitfall:
+          "Planear el camino hasta el edificio y no el camino alrededor. Veinticinco mil personas llegan a un anillo de unos 600 metros de perímetro, y tus últimos doscientos metros son los que tienen gente dentro.",
+        takes: "5 minutos, antes del día",
+      },
+      {
+        title: "En el muro, lee dos números de bloque y ya sabes hacia dónde caminar",
+        body: "No necesitas saber a qué punto cardinal apunta la parte de arriba del plano, y el recinto no lo publica. Necesitas dos números seguidos. Lee el número de bloque donde estás, camina unos metros, lee el siguiente. Ya sabes en qué dirección sube la serie. Si el tuyo es más alto, sigue; si es más bajo, date la vuelta. Como el anillo gira en un solo sentido en todos los niveles, la respuesta que obtienes por fuera del edificio sigue siendo cierta en las escaleras y sigue siendo cierta en el pasillo.",
+        pitfall:
+          "Guiarte por el suelo en lugar de por los carteles. Un dome no tiene vistas al exterior y cada tramo de pasillo se parece a todos los demás; los números de bloque son lo único en el edificio que te dice dónde estás. El único sitio donde la regla de los dos números falla es la interrupción, y la interrupción se anuncia sola, porque los números se acaban.",
+        takes: "5 minutos esa noche",
+      },
+      {
+        title: "Sabe qué mitad de esto la decide la promotora",
+        body: "El edificio fija los números de bloque, los cuatro niveles, las letras de las puertas y las taquillas: el plano marca tres, numeradas 2, 3 y 4, con la del infield junto a la puerta E y las dos del outfield flanqueando las puertas F y G. La promotora fija todo lo que cambia por espectáculo: qué bloques se venden siquiera, porque un escenario pegado a un extremo de la pista mata los bloques que quedan detrás; cómo se llaman las secciones de pista; por qué puerta te admite tu entrada; y cuándo abren las puertas. Donde tu entrada y esta página no coincidan, tu entrada tiene razón.",
+        pitfall:
+          "Tratar el plano del recinto como el plano de tu espectáculo. Está dibujado para el béisbol y tiene banquillos. Es la autoridad sobre dónde está el 304 y sobre nada más de tu noche.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Qué me dice realmente un número de bloque como el 304?",
+        a: "Dos cosas. El 3 es el nivel: el tercero de cuatro, contando el anillo más bajo como 1. El 04 es una posición en un anillo que recorre ese nivel en un solo sentido, partiendo de un lado fijo del edificio. Así que el 304 tiene número bajo, lo que lo sitúa cerca de donde empieza la numeración, a un paseo corto en el sentido de las agujas del reloj desde la interrupción del graderío.",
+      },
+      {
+        q: "¿En qué dirección corren los números?",
+        a: "En el sentido de las agujas del reloj, y lo dice el propio recinto: la descripción publicada con su plano pone 시계방향, empezando por la esquina inferior derecha del lado del infield, y los rangos de bloques que enumera después coinciden con la imagen por los dos lados. La misma dirección en todos los niveles. Las letras de puerta van igual: A, B, C, D, E por el lado cercano y F, G por el opuesto. Eso significa que letras y números suben juntos: si pasas la puerta D camino de la puerta E, tus números de bloque también están subiendo.",
+      },
+      {
+        q: "¿El bloque 417 está justo encima del bloque 317?",
+        a: "No. Los niveles tienen distinto número de bloques — 32, 22, 34 y 35 de abajo arriba — así que solo comparten la línea donde empieza su numeración y se desfasan desde ahí. Orientáte por el nivel en el que estás tú, no por el de tu amiga.",
+      },
+      {
+        q: "¿Por qué los números se paran y vuelven a empezar?",
+        a: "Porque el graderío es una herradura y no un anillo. Hay una cuña del edificio sin asientos en ningún nivel, y la numeración vuelve a empezar ahí: el 132 mira al 101 a través de ella, el 435 mira al 401. Es también el único tramo del perímetro sin ninguna puerta, lo que lo hace fácil de reconocer. Es más ancha cuanto más arriba estás — unos 44 grados del círculo en el nivel 100 frente a 96 en el 400 — así que en el nivel más alto falta más anillo y dar la vuelta larga cuesta más.",
+      },
+      {
+        q: "¿Puedo entrar por la puerta que tenga más cerca?",
+        a: "No necesariamente. El acceso por puertas lo fija la promotora para cada evento y va impreso en tu entrada, y al menos una puerta no es general ni en un día normal: el plano del recinto marca la puerta central como entrada para abonados del R.d-club y de los palcos. Lee tu entrada y luego busca esa puerta.",
+      },
+      {
+        q: "El plano de la web del recinto parece un estadio de béisbol. ¿Es el correcto?",
+        a: "Es el plano correcto para la pregunta que responde esta página y el equivocado para casi todas las demás. Está dibujado para el béisbol, banquillos incluidos, y el recinto tiene 16,601 asientos para un partido frente a unas 25,000 personas para un concierto, así que un concierto es otra disposición del mismo edificio. Lo que no cambia es el hormigón: los bloques numerados son permanentes, así que el plano te dice dónde está el 304. No te puede decir si el 304 se vende para tu espectáculo, ni qué hay en la pista.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Trouver sa place au Gocheok Sky Dome : ce que signifie le numéro de bloc sur votre billet",
+    summary:
+      "Quatre niveaux, un sens, et une seule rupture dans l'anneau. Trois chiffres lus correctement vous mènent à votre bloc depuis n'importe quelle entrée, sans plan et sans savoir où est le nord.",
+    scope:
+      "Couvre la façon dont le Gocheok Sky Dome numérote ses places fixes, d'après le plan de salle et les pages d'installations de la Seoul Facilities Corporation elle-même : les quatre niveaux, le sens dans lequel courent les numéros, l'endroit où la suite s'interrompt, et la position des portes et des guichets par rapport à elle. Le plan dont tout cela est lu est dessiné pour le baseball — les abris de joueurs y figurent. Les blocs du pourtour sont en béton coulé et ne bougent pas, donc un billet de concert indiquant le bloc 304 désigne bien ce 304 ; mais quels blocs sont mis en vente, ce qui est installé sur la pelouse, par quelle porte votre billet vous fait entrer et l'heure d'ouverture appartiennent au promoteur, sont fixés par spectacle, et rien ici ne remplace le plan de votre propre page de réservation. Une seule salle. Le KSPO Dome et l'Inspire Arena se numérotent autrement et ont besoin de leurs propres pages.",
+    intro: [
+      "Un plan de salle est dessiné pour quelqu'un qui sait déjà comment le bâtiment est organisé. C'est une image plate de 123 numéros, et elle répond à la question que vous vous posez chez vous — est-ce une bonne place — plutôt qu'à celle que vous vous posez à 18:40, debout contre un mur de béton portant un numéro qui n'est pas le vôtre.",
+      "Cette seconde question a une réponse courte, parce que la numérotation est un système et non une liste. Quatre niveaux, un sens, une rupture. Apprenez ces trois choses et vous n'avez plus besoin du plan.",
+    ],
+    steps: [
+      {
+        title: "Déterminez d'abord si votre place est dans le bâtiment ou sur la pelouse",
+        body: "Trois chiffres entre 101 et 435 désignent un bloc permanent du pourtour, et le reste de cette page sert à le situer. Tout le reste — une lettre seule, FLOOR, 플로어, une zone debout, un nom de table ou de loge — se trouve sur le terrain, qui n'a aucune place fixe. Le terrain est un sol nu que le promoteur recouvre, divise et nomme pour chaque spectacle : seul le plan de ce spectacle peut donc le situer.",
+        pitfall:
+          "Rapprocher une lettre de votre billet d'une lettre du plan de la salle. Il y a trois alphabets différents sur ce seul bâtiment : les sept portes vont de A à G, le plan imprime les zones de baseball au niveau du terrain en séries T, S et D, et les blocs de pelouse d'un concert sont lettrés par le promoteur. Une lettre n'a de sens qu'à côté de ce qui l'a émise.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Le premier chiffre est le niveau, et il y en a quatre",
+        body: "101 à 132 est l'anneau le plus bas, le plus proche de la pelouse. 201 à 222 est un deuxième niveau court. 301 à 334 est le troisième. 401 à 435 est le plus haut. Cela correspond au bâtiment que décrit la salle — quatre étages au-dessus du sol par-dessus deux niveaux de sous-sol — le chiffre des centaines est donc un numéro d'étage et non un nom de zone. Un 4 est aussi haut que monte le bâtiment.",
+        pitfall:
+          "Attendre du niveau 200 qu'il se comporte comme les autres. C'est le plus court, 22 blocs contre 32, 34 et 35, et le seul à être troué en son milieu : le plan montre des portions, le long du côté opposé du bâtiment, qui ne portent aucune place de niveau 200. Là, des numéros consécutifs ne sont pas nécessairement voisins au sol.",
+        takes: "1 minute",
+      },
+      {
+        title: "Les deux autres chiffres sont une position sur un anneau qui tourne dans un seul sens",
+        body: "À l'intérieur d'un niveau, les numéros courent dans un seul sens sur tout le tour, et c'est le mot de la salle elle-même et non une mesure prise sur l'image : la description publiée avec le plan indique que les blocs vont 시계방향 — dans le sens des aiguilles d'une montre — en partant du bas à droite du côté de l'infield, puis les énumère dans cet ordre. Chaque niveau part du même côté du bâtiment. Le passage de 401 à 405 est donc la même rotation que le passage de 301 à 305, dans le même sens, à une autre hauteur. Il n'y a pas de moitié gauche et de moitié droite à retenir, ni de côté pair et impair.",
+        pitfall:
+          "Attendre des niveaux qu'ils se superposent bloc par bloc. Ils comptent 32, 22, 34 et 35 blocs : ils se décalent donc à mesure qu'ils tournent, et ne partagent que la ligne dont ils partent. 417 n'est pas au-dessus de 317, et une amie en 210 n'est pas sous vous en 310.",
+        takes: "2 minutes",
+      },
+      {
+        title: "L'anneau a exactement une rupture, et il n'y a pas de porte dedans",
+        body: "Les tribunes ne se referment pas en cercle complet. Du côté que le plan dessine à droite se trouve un coin de bâtiment sans places à aucun niveau, et c'est là que la numérotation repart — 132 et 101 se font face de part et d'autre, et 435 et 401 de même. Cette rupture n'a pas une seule largeur : mesurée sur le plan, elle fait environ 44 degrés au niveau 100, 71 au 200, 91 au 300 et 96 au 400, parce que les étages supérieurs s'arrêtent avant cet angle tandis que l'anneau le plus bas se referme presque autour. Les tribunes sont un fer à cheval qui s'ouvre en montant. Les sept portes tournent dans le sens des aiguilles d'une montre, le même que les numéros : A, B, C, D et E le long du côté proche, puis F et G de l'autre côté. A est la première porte après la rupture ; G est la dernière avant elle. Lettres de porte et numéros de bloc sont une seule échelle, et c'est toute la raison pour laquelle ce bâtiment se parcourt sans boussole.",
+        pitfall:
+          "Supposer qu'une porte que vous voyez est une porte que vous pouvez emprunter. Le plan de la salle marque la porte C, celle du centre, comme une entrée réservée aux abonnés du R.d-club et des loges plutôt qu'une entrée générale. La porte la plus proche n'est pas toujours la vôtre.",
+        takes: "3 minutes",
+      },
+      {
+        title: "Arrivez par un côté avec lequel vous pouvez travailler",
+        body: "La station Guil sur la Line 1, sortie 2, est à environ 150 mètres et trois minutes de la salle, et un soir de concert l'exploitant publie le conseil de descendre une station plus tôt — Guro si vous êtes monté à Séoul ou dans la direction de Suwon et Anyang, Gaebong si vous venez d'Incheon ou de Bucheon. Celle que vous prenez change la partie du pourtour que vous atteignez d'abord, et donc la distance que vous parcourez autour. Elle ne change pas la règle de l'étape suivante, qui fonctionne depuis n'importe quelle entrée.",
+        pitfall:
+          "Prévoir le trajet jusqu'au bâtiment et non le trajet autour. Vingt-cinq mille personnes arrivent sur un anneau d'environ 600 mètres de pourtour, et vos deux cents derniers mètres sont ceux où se trouve la foule.",
+        takes: "5 minutes, avant le jour",
+      },
+      {
+        title: "Au mur, lisez deux numéros de bloc et vous savez de quel côté marcher",
+        body: "Vous n'avez pas besoin de savoir vers quel point cardinal pointe le haut du plan, et la salle ne le publie pas. Il vous faut deux numéros d'affilée. Lisez un numéro de bloc là où vous êtes, marchez quelques mètres, lisez le suivant. Vous savez maintenant dans quel sens la suite monte. Si le vôtre est plus élevé, continuez ; s'il est plus bas, faites demi-tour. Comme l'anneau tourne dans un seul sens à chaque niveau, la réponse obtenue à l'extérieur du bâtiment reste vraie dans les escaliers et reste vraie dans la coursive.",
+        pitfall:
+          "Se repérer au sol plutôt qu'aux panneaux. Un dome n'offre aucune vue vers l'extérieur et chaque portion de coursive ressemble à toutes les autres ; les numéros de bloc sont la seule chose dans le bâtiment qui vous dise où vous êtes. Le seul endroit où la règle des deux numéros échoue est la rupture, et la rupture s'annonce elle-même, parce que les numéros s'arrêtent.",
+        takes: "5 minutes le soir même",
+      },
+      {
+        title: "Sachez quelle moitié de tout cela le promoteur décide",
+        body: "Le bâtiment fixe les numéros de bloc, les quatre niveaux, les lettres des portes et les guichets — le plan en marque trois, numérotés 2, 3 et 4, celui de l'infield à côté de la porte E et les deux de l'outfield de part et d'autre des portes F et G. Le promoteur fixe tout ce qui change par spectacle : quels blocs sont mis en vente, car une scène contre un bout de la pelouse tue les blocs derrière elle ; comment s'appellent les sections de pelouse ; par quelle porte votre billet vous fait entrer ; et l'heure d'ouverture. Là où votre billet et cette page se contredisent, c'est votre billet qui a raison.",
+        pitfall:
+          "Traiter le plan de la salle comme le plan de votre spectacle. Il est dessiné pour le baseball et porte des abris de joueurs. Il fait autorité sur l'emplacement du 304 et sur rien d'autre de votre soirée.",
+        takes: "5 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Que m'apprend réellement un numéro de bloc comme 304 ?",
+        a: "Deux choses. Le 3 est le niveau — le troisième sur quatre, en comptant l'anneau le plus bas comme 1. Le 04 est une position sur un anneau qui parcourt ce niveau dans un seul sens, en partant d'un côté fixe du bâtiment. 304 est donc un numéro bas, ce qui le place près de l'endroit où la numérotation commence, à une courte marche dans le sens des aiguilles d'une montre depuis la rupture des tribunes.",
+      },
+      {
+        q: "Dans quel sens courent les numéros ?",
+        a: "Dans le sens des aiguilles d'une montre, et la salle le dit elle-même : la description publiée avec son plan porte 시계방향, en partant du bas à droite du côté de l'infield, et les plages de blocs qu'elle énumère ensuite correspondent à l'image des deux côtés. Le même sens à chaque niveau. Les lettres des portes suivent le même : A, B, C, D, E le long du côté proche et F, G de l'autre côté. Cela veut dire que lettres et numéros montent ensemble — si vous passez la porte D en allant vers la porte E, vos numéros de bloc montent aussi.",
+      },
+      {
+        q: "Le bloc 417 est-il directement au-dessus du bloc 317 ?",
+        a: "Non. Les niveaux comptent des nombres de blocs différents — 32, 22, 34 et 35 de bas en haut — ils ne partagent donc que la ligne dont part leur numérotation et se décalent ensuite. Repérez-vous avec le niveau où vous êtes réellement, pas avec celui de votre amie.",
+      },
+      {
+        q: "Pourquoi les numéros s'arrêtent-ils puis repartent-ils ?",
+        a: "Parce que les tribunes sont un fer à cheval et non un anneau. Il y a un coin du bâtiment sans places à aucun niveau, et la numérotation y repart : 132 fait face à 101 de part et d'autre, 435 fait face à 401. C'est aussi la seule portion du pourtour sans aucune porte, ce qui la rend facile à reconnaître. Elle est plus large à mesure que vous montez — environ 44 degrés du cercle au niveau 100 contre 96 au 400 — donc au dernier niveau il manque davantage d'anneau et faire le grand tour coûte plus cher.",
+      },
+      {
+        q: "Puis-je entrer par la porte la plus proche ?",
+        a: "Pas forcément. L'accès par porte est fixé par événement par le promoteur et imprimé sur votre billet, et au moins une porte n'est pas générale même un jour ordinaire — le plan de la salle marque la porte centrale comme entrée pour les abonnés du R.d-club et des loges. Lisez votre billet, puis cherchez cette porte.",
+      },
+      {
+        q: "Le plan sur le site de la salle ressemble à un stade de baseball. Est-ce le bon ?",
+        a: "C'est le bon plan pour la question à laquelle cette page répond et le mauvais pour la plupart des autres. Il est dessiné pour le baseball, abris de joueurs compris, et la salle offre 16,601 places pour un match contre environ 25,000 pour un concert — un concert est donc une autre disposition du même bâtiment. Ce qui ne change pas, c'est le béton : les blocs numérotés sont permanents, donc le plan vous dit où se trouve le 304. Il ne peut pas vous dire si le 304 est vendu pour votre spectacle, ni ce qu'il y a sur la pelouse.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Achando seu lugar no Gocheok Sky Dome: o que o número do bloco no seu ingresso quer dizer",
+    summary:
+      "Quatro níveis, uma direção, e uma única quebra no anel. Três dígitos lidos do jeito certo levam você até o seu bloco a partir de qualquer entrada, sem mapa e sem saber onde fica o norte.",
+    scope:
+      "Cobre como o Gocheok Sky Dome numera os assentos permanentes dele, lido no próprio mapa de assentos e nas páginas de instalações da Seoul Facilities Corporation: os quatro níveis, em que direção os números correm, onde a sequência quebra, e onde ficam os portões e as bilheterias em relação a ela. O mapa de onde isso foi lido é desenhado para beisebol — os dugouts estão nele. Os blocos da arquibancada são concreto moldado e não se mexem, então um ingresso de show que diz bloco 304 quer dizer este 304; mas quais blocos são vendidos, o que fica na pista, por qual portão o seu ingresso permite entrar e quando os portões abrem são da produtora, definidos por show, e nada aqui substitui o mapa da sua própria página de compra. Um local só. O KSPO Dome e o Inspire Arena se numeram de outro jeito e precisam de páginas próprias.",
+    intro: [
+      "Um mapa de assentos é desenhado para quem já sabe como o prédio está organizado. Ele é uma figura plana com 123 números, e responde à pergunta que você tem em casa — este lugar é bom — e não à pergunta que você tem às 18:40, de pé diante de uma parede de concreto com um número que não é o seu.",
+      "Essa segunda pergunta tem uma resposta curta, porque a numeração é um sistema e não uma lista. Quatro níveis, uma direção, uma quebra. Aprenda essas três coisas e você para de precisar do mapa.",
+    ],
+    steps: [
+      {
+        title: "Decida primeiro se o seu lugar fica no prédio ou na pista",
+        body: "Três dígitos entre 101 e 435 querem dizer um bloco permanente na arquibancada, e o resto desta página serve para localizá-lo. Qualquer outra coisa — uma letra sozinha, FLOOR, 플로어, uma área em pé, o nome de uma mesa ou de um camarote — fica no campo, que não tem assento permanente nenhum. O campo é piso nu que a produtora cobre, divide e nomeia para cada show, então só o mapa daquele show consegue situá-lo.",
+        pitfall:
+          "Casar uma letra do seu ingresso com uma letra do mapa do local. Há três alfabetos diferentes neste mesmo prédio: os sete portões vão de A a G, o mapa imprime as áreas de beisebol no nível do campo em séries T, S e D, e os blocos de pista de um show são letrados pela produtora. Uma letra só significa algo ao lado daquilo que a emitiu.",
+        takes: "2 minutos",
+      },
+      {
+        title: "O primeiro dígito é o nível, e existem quatro deles",
+        body: "De 101 a 132 é o anel mais baixo, o mais perto da pista. De 201 a 222 é um segundo nível curto. De 301 a 334 é o terceiro. De 401 a 435 é o mais alto. Isso bate com o prédio que o local descreve — quatro andares acima do solo sobre dois níveis de subsolo — então o dígito da centena é um número de andar, e não um nome de setor. Um 4 é o mais alto que o prédio vai.",
+        pitfall:
+          "Esperar que o nível 200 se comporte como os outros. Ele é o mais curto, 22 blocos contra 32, 34 e 35, e é o único com buracos no meio: o mapa mostra trechos ao longo do lado oposto do prédio sem nenhum assento do nível 200. Ali, números consecutivos não são necessariamente vizinhos no chão.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Os outros dois dígitos são uma posição num anel que gira para um lado só",
+        body: "Dentro de um nível os números correm numa única direção pelo anel inteiro, e essa é a palavra do próprio local, e não algo medido na figura: a descrição publicada junto do mapa diz que os blocos seguem 시계방향 — no sentido do relógio — começando pelo canto inferior direito do lado do infield, e depois os lista nessa ordem. Todo nível começa do mesmo lado do prédio. Então o passo de 401 para 405 é a mesma rotação do passo de 301 para 305, na mesma direção, em outra altura. Não há metade esquerda e metade direita para decorar, nem lado par e lado ímpar.",
+        pitfall:
+          "Esperar que os níveis se empilhem bloco a bloco. Eles têm 32, 22, 34 e 35 blocos, então vão se desencontrando conforme giram: só a linha de onde partem é compartilhada. O 417 não fica acima do 317, e uma amiga no 210 não fica abaixo de você no 310.",
+        takes: "2 minutos",
+      },
+      {
+        title: "O anel tem exatamente uma quebra, e não há portão nela",
+        body: "A arquibancada não se fecha num círculo completo. No lado que o mapa desenha à direita existe uma cunha de prédio sem assentos em nível nenhum, e é ali que a numeração reinicia — o 132 e o 101 se encaram atravessando essa cunha, e o 435 e o 401 também. Essa quebra não tem uma largura só: medida no mapa, são cerca de 44 graus no nível 100, 71 no 200, 91 no 300 e 96 no 400, porque os anéis de cima param antes daquele canto enquanto o anel mais baixo quase se fecha em volta dele. A arquibancada é uma ferradura que vai se abrindo à medida que sobe. Os sete portões correm no sentido do relógio, na mesma direção dos números: A, B, C, D e E ao longo do lado próximo, depois F e G no lado oposto. O A é o primeiro portão depois da quebra; o G é o último antes dela. Letras de portão e números de bloco são uma única escala, e essa é a razão inteira de este prédio poder ser percorrido sem bússola.",
+        pitfall:
+          "Supor que um portão que você vê é um portão que você pode usar. O mapa do próprio local marca o portão C, o do centro, como entrada reservada para sócios do R.d-club e dos camarotes, e não como portão geral. A porta mais perto não é sempre a sua.",
+        takes: "3 minutos",
+      },
+      {
+        title: "Chegue por um lado com o qual você consiga trabalhar",
+        body: "A estação Guil na Line 1, saída 2, fica a cerca de 150 metros e três minutos do local, e numa noite de show o operador publica a orientação de descer uma parada antes — Guro se você embarcou em Seul ou no sentido de Suwon e Anyang, Gaebong se você veio de Incheon ou Bucheon. Qual delas você pega muda que parte do perímetro você alcança primeiro e, portanto, o quanto você caminha em volta. Não muda a regra do passo seguinte, que funciona a partir de qualquer entrada.",
+        pitfall:
+          "Planejar a caminhada até o prédio e não a caminhada em volta dele. Vinte e cinco mil pessoas chegam a um anel de mais ou menos 600 metros de perímetro, e os seus últimos duzentos metros são os que têm multidão dentro.",
+        takes: "5 minutos, antes do dia",
+      },
+      {
+        title: "Na parede, leia dois números de bloco e você sabe para que lado andar",
+        body: "Você não precisa saber para que ponto cardeal aponta o topo do mapa, e o local não publica isso. Você precisa de dois números em sequência. Leia o número do bloco onde você está, ande alguns metros, leia o próximo. Agora você sabe para que lado a sequência sobe. Se o seu for mais alto, siga; se for mais baixo, vire. Porque o anel gira para um lado só em todos os níveis, a resposta que você obtém do lado de fora do prédio continua valendo na escada e continua valendo no corredor.",
+        pitfall:
+          "Se guiar pelo piso em vez de pelas placas. Um dome não tem vista para fora e cada trecho de corredor parece igual a todos os outros; os números dos blocos são a única coisa dentro do prédio que diz onde você está. O único lugar em que a regra dos dois números falha é a quebra, e a quebra se anuncia sozinha, porque os números param.",
+        takes: "5 minutos na noite",
+      },
+      {
+        title: "Saiba qual metade disso a produtora decide",
+        body: "O prédio fixa os números dos blocos, os quatro níveis, as letras dos portões e as bilheterias — o mapa marca três, numeradas 2, 3 e 4, com a do infield ao lado do portão E e as duas do outfield flanqueando os portões F e G. A produtora fixa tudo o que muda por show: quais blocos são vendidos, porque um palco encostado numa ponta da pista mata os blocos atrás dele; como se chamam os setores de pista; por qual portão o seu ingresso permite entrar; e quando os portões abrem. Onde o seu ingresso e esta página discordarem, o seu ingresso está certo.",
+        pitfall:
+          "Tratar o mapa do local como o mapa do seu show. Ele é desenhado para beisebol e tem dugouts nele. Ele é a autoridade sobre onde fica o 304 e sobre mais nada da sua noite.",
+        takes: "5 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "O que um número de bloco como 304 realmente me diz?",
+        a: "Duas coisas. O 3 é o nível — o terceiro de quatro, contando o anel mais baixo como 1. O 04 é uma posição num anel que corre numa direção só por todo aquele nível, começando de um lado fixo do prédio. Então o 304 tem número baixo, o que o coloca perto de onde a numeração começa, a uma caminhada curta no sentido do relógio a partir da quebra da arquibancada.",
+      },
+      {
+        q: "Para que direção os números correm?",
+        a: "No sentido do relógio, e o próprio local diz isso: a descrição publicada junto do mapa dele traz 시계방향, começando pelo canto inferior direito do lado do infield, e as faixas de blocos que ela lista depois batem com a figura nos dois lados. A mesma direção em todos os níveis. As letras dos portões correm do mesmo jeito: A, B, C, D, E ao longo do lado próximo e F, G no lado oposto. Isso quer dizer que letras e números sobem juntos — se você passa pelo portão D a caminho do portão E, os seus números de bloco também estão subindo.",
+      },
+      {
+        q: "O bloco 417 fica exatamente acima do bloco 317?",
+        a: "Não. Os níveis têm quantidades diferentes de blocos — 32, 22, 34 e 35 de baixo para cima — então eles só compartilham a linha de onde a numeração parte e se desencontram a partir dali. Use o nível em que você está de fato para se achar, não o nível em que a sua amiga está.",
+      },
+      {
+        q: "Por que os números param e começam de novo?",
+        a: "Porque a arquibancada é uma ferradura, não um anel. Existe uma cunha do prédio sem assentos em nível nenhum, e a numeração reinicia ali: o 132 encara o 101 atravessando a cunha, o 435 encara o 401. Também é o único trecho do perímetro sem portão nenhum, o que o deixa fácil de reconhecer. Ela é mais larga quanto mais alto você está — cerca de 44 graus do círculo no nível 100 contra 96 no 400 — então no nível de cima falta mais anel e dar a volta longa custa mais.",
+      },
+      {
+        q: "Posso entrar pelo portão que estiver mais perto?",
+        a: "Não necessariamente. O acesso por portão é definido por evento pela produtora e impresso no seu ingresso, e pelo menos um portão não é geral nem num dia comum — o mapa do local marca o portão central como entrada para sócios do R.d-club e dos camarotes. Leia o seu ingresso e depois ache aquele portão.",
+      },
+      {
+        q: "O mapa no site do local parece um estádio de beisebol. É o certo?",
+        a: "É o mapa certo para a pergunta que esta página responde e o errado para quase todas as outras. Ele é desenhado para beisebol, dugouts inclusive, e o local acomoda 16,601 para um jogo contra cerca de 25,000 para um show — então um show é outro arranjo do mesmo prédio. O que não muda é o concreto: os blocos numerados são permanentes, então o mapa diz onde fica o 304. Ele não pode dizer se o 304 está sendo vendido para o seu show, nem o que está na pista.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Tìm chỗ ngồi của bạn ở Gocheok Sky Dome: con số khu trên vé có nghĩa gì",
+    summary:
+      "Bốn tầng, một chiều, và vòng tròn chỉ có duy nhất một chỗ hở. Đọc đúng ba chữ số là bạn đi được tới khu của mình từ bất cứ cửa vào nào, không cần bản đồ và không cần biết hướng bắc ở đâu.",
+    scope:
+      "Bao gồm cách Gocheok Sky Dome đánh số các chỗ ngồi cố định, đọc từ chính sơ đồ chỗ ngồi và các trang tiện ích của Seoul Facilities Corporation: bốn tầng, số chạy theo chiều nào, dãy số đứt ở đâu, và các cửa cùng phòng vé nằm ở đâu so với dãy số đó. Sơ đồ được đọc ở đây vẽ cho bóng chày — trên đó có khu ngồi của cầu thủ. Các khu trên khán đài là bê tông đúc và không di chuyển, nên vé hoà nhạc ghi khu 304 có nghĩa là đúng khu 304 này; nhưng những khu nào được bán, trên sân dựng gì, vé của bạn vào bằng cửa nào và mấy giờ mở cửa thì thuộc nhà tổ chức, được đặt theo từng buổi, và không có gì ở đây thay thế sơ đồ trên trang đặt vé của chính bạn. Chỉ một địa điểm. KSPO Dome và Inspire Arena đánh số theo cách khác và cần trang riêng.",
+    intro: [
+      "Một sơ đồ chỗ ngồi được vẽ cho người đã biết toà nhà được tổ chức ra sao. Nó là một hình phẳng gồm 123 con số, và nó trả lời câu hỏi bạn có ở nhà — đây có phải chỗ tốt không — chứ không trả lời câu hỏi bạn có vào 18:40, khi đang đứng trước một bức tường bê tông mang con số không phải của bạn.",
+      "Câu hỏi thứ hai đó có câu trả lời ngắn, vì cách đánh số là một hệ thống chứ không phải một danh sách. Bốn tầng, một chiều, một chỗ hở. Học ba điều đó rồi bạn không cần sơ đồ nữa.",
+    ],
+    steps: [
+      {
+        title: "Trước tiên hãy xác định chỗ của bạn ở trong toà nhà hay ở trên sân",
+        body: "Ba chữ số trong khoảng 101 đến 435 nghĩa là một khu cố định trên khán đài, và phần còn lại của trang này dùng để định vị nó. Bất cứ thứ gì khác — một chữ cái đứng một mình, FLOOR, 플로어, một khu đứng, tên một bàn hay một lô — đều ở trên sân, nơi hoàn toàn không có chỗ ngồi cố định nào. Sân là mặt sàn trống mà nhà tổ chức phủ, chia và đặt tên cho từng buổi diễn, nên chỉ sơ đồ của chính buổi diễn đó mới định vị được.",
+        pitfall:
+          "Đem chữ cái trên vé của bạn ra khớp với chữ cái trên sơ đồ của địa điểm. Chỉ trên một toà nhà này đã có ba bộ chữ cái khác nhau: bảy cửa được ghi từ A đến G, sơ đồ in các khu bóng chày ở cao độ mặt sân theo dãy T, S và D, còn các khu trên sân của một buổi hoà nhạc thì do nhà tổ chức đặt chữ cái. Một chữ cái chỉ có nghĩa khi đứng cạnh thứ đã phát ra nó.",
+        takes: "2 phút",
+      },
+      {
+        title: "Chữ số đầu tiên là tầng, và có bốn tầng",
+        body: "101 đến 132 là vòng thấp nhất, gần sân nhất. 201 đến 222 là tầng hai ngắn. 301 đến 334 là tầng ba. 401 đến 435 là tầng trên cùng. Điều đó khớp với toà nhà mà địa điểm mô tả — bốn tầng trên mặt đất nằm trên hai tầng hầm — nên chữ số hàng trăm là số tầng, không phải tên khu. Số 4 là mức cao nhất của toà nhà.",
+        pitfall:
+          "Trông đợi tầng 200 hành xử như các tầng khác. Nó ngắn nhất, 22 khu so với 32, 34 và 35, và nó là tầng duy nhất bị hở ở giữa: sơ đồ cho thấy những đoạn dọc phía bên kia toà nhà hoàn toàn không có chỗ ngồi tầng 200. Ở đó, những con số liên tiếp không nhất thiết là láng giềng trên mặt đất.",
+        takes: "1 phút",
+      },
+      {
+        title: "Hai chữ số còn lại là vị trí trên một vòng chỉ quay theo một chiều",
+        body: "Trong cùng một tầng, các số chạy theo một chiều duy nhất suốt cả vòng, và đó là từ của chính địa điểm chứ không phải điều đo được từ hình vẽ: phần mô tả công bố kèm sơ đồ nói rằng các khu chạy 시계방향 — theo chiều kim đồng hồ — bắt đầu từ phía dưới bên phải của mé trong sân, rồi liệt kê chúng theo đúng thứ tự đó. Mọi tầng đều bắt đầu từ cùng một phía của toà nhà. Vì vậy bước từ 401 sang 405 là cùng một vòng quay với bước từ 301 sang 305, cùng chiều, chỉ khác độ cao. Không có nửa trái nửa phải nào để học, cũng không có bên số chẵn bên số lẻ.",
+        pitfall:
+          "Trông đợi các tầng xếp thẳng khu lên khu. Chúng có 32, 22, 34 và 35 khu, nên càng đi vòng càng lệch nhau: thứ duy nhất chúng chia sẻ là đường vạch nơi chúng bắt đầu. 417 không nằm trên 317, và người bạn ở 210 không ở dưới bạn tại 310.",
+        takes: "2 phút",
+      },
+      {
+        title: "Vòng này có đúng một chỗ hở, và trong đó không có cửa nào",
+        body: "Khán đài không khép lại thành một vòng tròn trọn vẹn. Ở phía mà sơ đồ vẽ bên phải có một nêm toà nhà không có chỗ ngồi ở bất kỳ tầng nào, và đó là nơi số bắt đầu lại — 132 và 101 đối diện nhau qua chỗ đó, 435 và 401 cũng vậy. Chỗ hở ấy không có một bề rộng duy nhất: đo trên sơ đồ thì khoảng 44 độ ở tầng 100, 71 ở tầng 200, 91 ở tầng 300 và 96 ở tầng 400, vì các tầng trên dừng lại trước góc đó còn vòng thấp nhất thì gần như khép quanh nó. Khán đài là một hình móng ngựa càng lên cao càng mở. Bảy cửa chạy theo chiều kim đồng hồ cùng chiều với các số: A, B, C, D và E dọc phía gần, rồi F và G ở phía xa. A là cửa đầu tiên sau chỗ hở; G là cửa cuối cùng trước nó. Chữ cái của cửa và số của khu là cùng một thước đo, và đó chính là lý do toà nhà này có thể đi mà không cần la bàn.",
+        pitfall:
+          "Cho rằng cửa bạn nhìn thấy là cửa bạn được dùng. Sơ đồ của chính địa điểm ghi cửa C ở giữa là cửa dành riêng cho người giữ vé cả mùa của R.d-club và của các lô, chứ không phải cửa chung. Cánh cửa gần nhất không phải lúc nào cũng là cửa của bạn.",
+        takes: "3 phút",
+      },
+      {
+        title: "Hãy đến từ phía mà bạn xử lý được",
+        body: "Ga Guil trên Line 1, cửa ra 2, cách địa điểm khoảng 150 mét và ba phút đi bộ, và vào tối hoà nhạc đơn vị vận hành công bố lời khuyên xuống sớm một bến — Guro nếu bạn lên tàu từ Seoul hoặc từ hướng Suwon và Anyang, Gaebong nếu bạn đến từ Incheon hoặc Bucheon. Bạn chọn bến nào sẽ thay đổi phần vành ngoài nào bạn tới trước, và do đó thay đổi việc bạn phải đi vòng bao xa. Nó không thay đổi quy tắc ở bước sau, quy tắc đó dùng được từ bất cứ cửa vào nào.",
+        pitfall:
+          "Lên kế hoạch cho đoạn đi tới toà nhà mà không tính đoạn đi quanh nó. Hai mươi lăm nghìn người cùng đến một vòng có chu vi chừng 600 mét, và hai trăm mét cuối của bạn chính là hai trăm mét có đám đông ở trong.",
+        takes: "5 phút, trước ngày diễn",
+      },
+      {
+        title: "Ở bức tường, đọc hai con số khu là bạn biết phải đi hướng nào",
+        body: "Bạn không cần biết phía trên của sơ đồ chỉ về hướng nào, và địa điểm cũng không công bố điều đó. Bạn cần hai con số liền nhau. Đọc số khu ở nơi bạn đang đứng, đi vài mét, đọc số tiếp theo. Giờ bạn biết dãy số tăng theo chiều nào. Nếu số của bạn lớn hơn thì đi tiếp; nếu nhỏ hơn thì quay lại. Vì vòng ở mọi tầng đều quay theo một chiều, câu trả lời bạn có được ở bên ngoài toà nhà vẫn đúng trên bậc thang và vẫn đúng ở hành lang.",
+        pitfall:
+          "Định hướng theo mặt sàn thay vì theo bảng chỉ dẫn. Một dome không có tầm nhìn ra ngoài và mọi đoạn hành lang trông giống nhau; số khu là thứ duy nhất trong toà nhà cho bạn biết mình đang ở đâu. Chỗ duy nhất quy tắc hai con số không dùng được là chỗ hở, và chỗ hở tự thông báo, vì các số dừng lại.",
+        takes: "5 phút trong tối diễn",
+      },
+      {
+        title: "Biết nửa nào trong chuyện này là do nhà tổ chức quyết",
+        body: "Toà nhà cố định số khu, bốn tầng, chữ cái của cửa và các phòng vé — sơ đồ ghi ba phòng vé, đánh số 2, 3 và 4, phòng ở mé trong sân nằm cạnh cửa E còn hai phòng phía ngoài sân nằm hai bên cửa F và G. Nhà tổ chức cố định mọi thứ thay đổi theo từng buổi: những khu nào được bán, vì sân khấu dựng sát một đầu sân sẽ làm chết các khu phía sau nó; các khu trên sân được gọi tên là gì; vé của bạn vào bằng cửa nào; và mấy giờ mở cửa. Nơi nào vé của bạn và trang này nói khác nhau, vé của bạn là đúng.",
+        pitfall:
+          "Coi sơ đồ của địa điểm là sơ đồ của buổi diễn của bạn. Nó vẽ cho bóng chày và có khu ngồi của cầu thủ trên đó. Nó là thẩm quyền về việc 304 nằm ở đâu, và không phải thẩm quyền về bất cứ điều gì khác trong tối của bạn.",
+        takes: "5 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Một con số khu như 304 thực sự cho tôi biết điều gì?",
+        a: "Hai điều. Số 3 là tầng — tầng thứ ba trong bốn tầng, tính vòng thấp nhất là 1. Số 04 là vị trí trên một vòng chạy theo một chiều quanh tầng đó, bắt đầu từ một phía cố định của toà nhà. Vậy 304 là số nhỏ, tức là nó nằm gần nơi cách đánh số bắt đầu, đi bộ một đoạn ngắn theo chiều kim đồng hồ từ chỗ hở của khán đài.",
+      },
+      {
+        q: "Các số chạy theo chiều nào?",
+        a: "Theo chiều kim đồng hồ, và chính địa điểm nói vậy: phần mô tả công bố kèm sơ đồ của họ ghi 시계방향, bắt đầu từ phía dưới bên phải của mé trong sân, và các dải khu mà họ liệt kê sau đó khớp với hình vẽ ở cả hai phía. Cùng một chiều ở mọi tầng. Chữ cái của cửa cũng chạy cùng chiều: A, B, C, D, E dọc phía gần và F, G ở phía xa. Nghĩa là chữ cái và số cùng tăng lên — nếu bạn đi qua cửa D trên đường tới cửa E thì số khu của bạn cũng đang tăng.",
+      },
+      {
+        q: "Khu 417 có nằm ngay trên khu 317 không?",
+        a: "Không. Các tầng có số lượng khu khác nhau — từ dưới lên là 32, 22, 34 và 35 — nên chúng chỉ chia sẻ đường vạch nơi cách đánh số bắt đầu, rồi từ đó lệch dần. Hãy định hướng bằng tầng bạn đang thực sự đứng, không phải tầng của bạn bè.",
+      },
+      {
+        q: "Vì sao các số dừng lại rồi bắt đầu lại?",
+        a: "Vì khán đài là hình móng ngựa, không phải một vòng tròn. Có một nêm toà nhà không có chỗ ngồi ở bất kỳ tầng nào, và số bắt đầu lại ở đó: 132 đối diện 101 qua nêm ấy, 435 đối diện 401. Đó cũng là đoạn vành ngoài duy nhất không có cửa nào, nên rất dễ nhận ra. Bạn càng ở cao thì nó càng rộng — khoảng 44 độ của vòng tròn ở tầng 100 so với 96 ở tầng 400 — nên ở tầng trên cùng, phần vòng bị thiếu nhiều hơn và đi vòng đường dài tốn hơn.",
+      },
+      {
+        q: "Tôi có thể vào bằng cửa nào gần nhất không?",
+        a: "Không hẳn. Việc vào bằng cửa nào do nhà tổ chức đặt theo từng buổi và in trên vé của bạn, và ngay trong một ngày thường cũng có ít nhất một cửa không dành cho khách chung — sơ đồ của địa điểm ghi cửa ở giữa là cửa dành cho người giữ vé cả mùa của R.d-club và của các lô. Hãy đọc vé của bạn, rồi đi tìm đúng cửa đó.",
+      },
+      {
+        q: "Sơ đồ trên trang của địa điểm trông như một sân bóng chày. Đó có phải sơ đồ đúng không?",
+        a: "Đó là sơ đồ đúng cho câu hỏi mà trang này trả lời, và là sơ đồ sai cho phần lớn câu hỏi khác. Nó vẽ cho bóng chày, có cả khu ngồi của cầu thủ, và địa điểm chứa 16,601 chỗ cho một trận đấu so với khoảng 25,000 người cho một buổi hoà nhạc — nên hoà nhạc là một cách bố trí khác của cùng toà nhà. Thứ không thay đổi là bê tông: các khu đã đánh số là cố định, nên sơ đồ cho bạn biết 304 ở đâu. Nó không thể cho bạn biết 304 có được bán cho buổi diễn của bạn hay không, cũng không cho biết trên sân có gì.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การหาที่นั่งของคุณในโกชอกสกายโดม: เลขบล็อกบนบัตรของคุณหมายถึงอะไร",
+    summary:
+      "สี่ชั้น หนึ่งทิศทาง และวงแหวนที่ขาดอยู่เพียงจุดเดียว อ่านเลขสามหลักให้ถูก คุณก็เดินไปถึงบล็อกของตัวเองได้จากทางเข้าใดก็ได้ โดยไม่ต้องมีแผนผังและไม่ต้องรู้ว่าทิศเหนืออยู่ไหน",
+    scope:
+      "ครอบคลุมวิธีที่ Gocheok Sky Dome ให้หมายเลขที่นั่งถาวรของตน อ่านจากผังที่นั่งและหน้าข้อมูลสิ่งอำนวยความสะดวกของ Seoul Facilities Corporation เอง ได้แก่ สี่ชั้น ทิศทางที่หมายเลขไล่ไป จุดที่ลำดับขาด และตำแหน่งของประตูกับห้องจำหน่ายบัตรเทียบกับลำดับนั้น ผังที่ใช้อ่านวาดขึ้นเพื่อเบสบอล มีที่พักนักกีฬาอยู่บนผังด้วย บล็อกบนอัฒจันทร์เป็นคอนกรีตหล่อและไม่ขยับ ดังนั้นบัตรคอนเสิร์ตที่ระบุบล็อก 304 ก็หมายถึง 304 นี้ แต่บล็อกไหนจะเปิดขาย มีอะไรตั้งอยู่บนพื้นสนาม บัตรของคุณให้เข้าทางประตูไหน และประตูเปิดเมื่อไร เป็นของผู้จัดงานและกำหนดเป็นรายงาน ไม่มีสิ่งใดที่นี่แทนผังบนหน้าจองของคุณเองได้ สถานที่เดียวเท่านั้น KSPO Dome และ Inspire Arena ให้หมายเลขต่างกันและต้องมีหน้าของตัวเอง",
+    intro: [
+      "ผังที่นั่งวาดขึ้นสำหรับคนที่รู้อยู่แล้วว่าอาคารจัดวางอย่างไร มันเป็นภาพแบนที่มีตัวเลข 123 ตัว และตอบคำถามที่คุณมีตอนอยู่บ้านว่าที่นั่งนี้ดีไหม ไม่ได้ตอบคำถามที่คุณมีตอน 18:40 ขณะยืนอยู่หน้ากำแพงคอนกรีตที่มีหมายเลขซึ่งไม่ใช่ของคุณ",
+      "คำถามที่สองนั้นมีคำตอบสั้น ๆ เพราะระบบหมายเลขเป็นระบบ ไม่ใช่รายการ สี่ชั้น หนึ่งทิศทาง หนึ่งจุดขาด จำสามอย่างนี้ได้แล้วคุณก็ไม่ต้องใช้ผังอีก",
+    ],
+    steps: [
+      {
+        title: "ตัดสินก่อนว่าที่นั่งของคุณอยู่ในอาคารหรืออยู่บนพื้นสนาม",
+        body: "เลขสามหลักระหว่าง 101 ถึง 435 หมายถึงบล็อกถาวรบนอัฒจันทร์ และส่วนที่เหลือของหน้านี้มีไว้เพื่อหามันให้เจอ อย่างอื่นทั้งหมด เช่น ตัวอักษรเดี่ยว FLOOR 플로어 โซนยืน ชื่อโต๊ะหรือชื่อบ็อกซ์ อยู่บนสนาม ซึ่งไม่มีที่นั่งถาวรเลย สนามเป็นพื้นเปล่าที่ผู้จัดงานปูทับ แบ่งส่วน และตั้งชื่อใหม่ทุกงาน ดังนั้นมีเพียงผังของงานนั้นเองที่ระบุตำแหน่งได้",
+        pitfall:
+          "การเอาตัวอักษรบนบัตรไปจับกับตัวอักษรบนผังของสถานที่จัดงาน อาคารหลังเดียวนี้มีชุดตัวอักษรที่ต่างกันถึงสามชุด ประตูเจ็ดบานใช้ A ถึง G ผังพิมพ์โซนเบสบอลระดับพื้นสนามเป็นชุด T, S และ D ส่วนบล็อกพื้นสนามของคอนเสิร์ตผู้จัดงานตั้งตัวอักษรเอง ตัวอักษรมีความหมายเฉพาะเมื่ออยู่ข้างสิ่งที่ออกมันมาให้",
+        takes: "2 นาที",
+      },
+      {
+        title: "หลักแรกคือชั้น และมีสี่ชั้น",
+        body: "101 ถึง 132 คือวงล่างสุด ใกล้พื้นสนามที่สุด 201 ถึง 222 คือชั้นสองที่สั้น 301 ถึง 334 คือชั้นสาม 401 ถึง 435 คือชั้นบนสุด ตรงกับอาคารที่สถานที่จัดงานอธิบายไว้ คือสี่ชั้นเหนือพื้นดินวางอยู่บนสองชั้นใต้ดิน ดังนั้นหลักร้อยคือหมายเลขชั้น ไม่ใช่ชื่อโซน เลข 4 คือจุดสูงสุดที่อาคารนี้ไปถึง",
+        pitfall:
+          "การคาดว่าชั้น 200 จะเป็นเหมือนชั้นอื่น มันสั้นที่สุด มี 22 บล็อก เทียบกับ 32, 34 และ 35 และเป็นชั้นเดียวที่มีช่องโหว่อยู่กลาง ผังแสดงช่วงตามด้านไกลของอาคารที่ไม่มีที่นั่งชั้น 200 เลย ตรงนั้นหมายเลขที่ต่อเนื่องกันไม่จำเป็นต้องอยู่ติดกันบนพื้นจริง",
+        takes: "1 นาที",
+      },
+      {
+        title: "อีกสองหลักคือตำแหน่งบนวงที่หมุนไปทางเดียว",
+        body: "ภายในชั้นหนึ่ง หมายเลขไล่ไปทางเดียวรอบวงทั้งหมด และนี่เป็นคำของสถานที่จัดงานเอง ไม่ใช่สิ่งที่วัดจากรูป คำอธิบายที่เผยแพร่พร้อมผังระบุว่าบล็อกไล่ไป시계방향 คือตามเข็มนาฬิกา เริ่มจากมุมขวาล่างด้านในสนาม แล้วไล่รายชื่อตามลำดับนั้น ทุกชั้นเริ่มจากด้านเดียวกันของอาคาร ดังนั้นการขยับจาก 401 ไป 405 คือการหมุนแบบเดียวกับการขยับจาก 301 ไป 305 ทิศเดียวกัน ต่างกันแค่ความสูง ไม่มีครึ่งซ้ายครึ่งขวาให้จำ และไม่มีฝั่งเลขคู่เลขคี่",
+        pitfall:
+          "การคาดว่าแต่ละชั้นจะวางซ้อนกันบล็อกต่อบล็อก แต่ละชั้นมี 32, 22, 34 และ 35 บล็อก จึงค่อย ๆ เคลื่อนห่างกันเมื่อไล่ไปรอบวง สิ่งเดียวที่ร่วมกันคือเส้นที่เริ่มนับ 417 ไม่ได้อยู่เหนือ 317 และเพื่อนที่อยู่ 210 ก็ไม่ได้อยู่ใต้คุณที่ 310",
+        takes: "2 นาที",
+      },
+      {
+        title: "วงนี้ขาดเพียงจุดเดียวพอดี และที่นั่นไม่มีประตู",
+        body: "อัฒจันทร์ไม่ได้ปิดเป็นวงกลมเต็ม ด้านที่ผังวาดไว้ทางขวามีส่วนอาคารรูปลิ่มที่ไม่มีที่นั่งในชั้นใดเลย และนั่นคือจุดที่การนับหมายเลขเริ่มใหม่ 132 กับ 101 หันหน้าเข้าหากันคร่อมช่องนั้น และ 435 กับ 401 ก็เช่นกัน ช่องขาดนั้นไม่ได้กว้างเท่ากันทุกชั้น วัดจากผังได้ราว 44 องศาที่ชั้น 100, 71 องศาที่ชั้น 200, 91 องศาที่ชั้น 300 และ 96 องศาที่ชั้น 400 เพราะชั้นบนหยุดก่อนถึงมุมนั้น ขณะที่วงล่างสุดเกือบโค้งปิดรอบมัน อัฒจันทร์เป็นเกือกม้าที่เปิดกว้างขึ้นเมื่อสูงขึ้น ประตูทั้งเจ็ดไล่ตามเข็มนาฬิกาในทิศเดียวกับหมายเลข คือ A, B, C, D และ E ตามด้านใกล้ แล้ว F กับ G อยู่ด้านไกล A คือประตูแรกหลังช่องขาด G คือประตูสุดท้ายก่อนถึงมัน ตัวอักษรของประตูและหมายเลขบล็อกเป็นมาตรเดียวกัน และนั่นคือเหตุผลทั้งหมดที่อาคารนี้เดินได้โดยไม่ต้องใช้เข็มทิศ",
+        pitfall:
+          "การคิดว่าประตูที่มองเห็นคือประตูที่ใช้ได้ ผังของสถานที่จัดงานเองระบุประตู C ซึ่งอยู่ตรงกลาง ว่าเป็นทางเข้าสำหรับผู้ถือตั๋วปีของ R.d-club และสกายบ็อกซ์ ไม่ใช่ประตูทั่วไป ประตูที่ใกล้ที่สุดไม่ใช่ประตูของคุณเสมอไป",
+        takes: "3 นาที",
+      },
+      {
+        title: "มาถึงจากด้านที่คุณรับมือได้",
+        body: "สถานีคูอิลบน Line 1 ทางออก 2 อยู่ห่างจากสถานที่จัดงานราว 150 เมตร เดินสามนาที และในคืนคอนเสิร์ตผู้บริหารเผยแพร่คำแนะนำให้ลงก่อนหนึ่งสถานี คือคูโรถ้าคุณขึ้นมาจากโซลหรือจากทางซูวอนและอันยัง และแคบงถ้าคุณมาจากอินชอนหรือพูชอน การเลือกสถานีเปลี่ยนว่าคุณจะไปถึงส่วนไหนของแนวรอบอาคารก่อน จึงเปลี่ยนระยะที่คุณต้องเดินวนด้วย แต่ไม่เปลี่ยนกฎในขั้นถัดไป กฎนั้นใช้ได้จากทางเข้าใดก็ได้",
+        pitfall:
+          "การวางแผนเฉพาะการเดินไปถึงอาคาร แต่ไม่วางแผนการเดินวนรอบอาคาร คนสองหมื่นห้าพันคนมาถึงวงที่มีเส้นรอบราว 600 เมตร และ 200 เมตรสุดท้ายของคุณคือ 200 เมตรที่มีฝูงคนอยู่ข้างใน",
+        takes: "5 นาที ก่อนถึงวันงาน",
+      },
+      {
+        title: "ที่กำแพง อ่านเลขบล็อกสองเลขแล้วคุณจะรู้ว่าต้องเดินทางไหน",
+        body: "คุณไม่จำเป็นต้องรู้ว่าด้านบนของผังชี้ไปทิศใด และสถานที่จัดงานก็ไม่ได้เผยแพร่ไว้ คุณต้องการเลขสองเลขที่ติดกัน อ่านเลขบล็อกตรงที่คุณยืน เดินไปสองสามเมตร แล้วอ่านเลขถัดไป ตอนนี้คุณรู้แล้วว่าลำดับเพิ่มขึ้นไปทางไหน ถ้าเลขของคุณมากกว่าก็เดินต่อ ถ้าน้อยกว่าก็หันกลับ เพราะทุกชั้นวงหมุนไปทางเดียว คำตอบที่คุณได้จากด้านนอกอาคารจึงยังจริงอยู่บนบันได และยังจริงอยู่บนทางเดินวน",
+        pitfall:
+          "การใช้พื้นนำทางแทนการใช้ป้าย โดมไม่มีทัศนียภาพออกไปข้างนอก และทางเดินวนทุกช่วงดูเหมือนกันหมด เลขบล็อกเป็นสิ่งเดียวในอาคารที่บอกคุณว่าอยู่ที่ไหน ที่เดียวที่กฎสองเลขใช้ไม่ได้คือช่องขาด และช่องขาดประกาศตัวเอง เพราะหมายเลขหยุดลง",
+        takes: "5 นาทีในคืนงาน",
+      },
+      {
+        title: "รู้ว่าครึ่งไหนของเรื่องนี้ผู้จัดงานเป็นคนกำหนด",
+        body: "อาคารกำหนดเลขบล็อก สี่ชั้น ตัวอักษรของประตู และห้องจำหน่ายบัตร ผังระบุไว้สามห้อง หมายเลข 2, 3 และ 4 ห้องด้านในสนามอยู่ข้างประตู E และสองห้องด้านนอกสนามขนาบประตู F กับ G ผู้จัดงานกำหนดทุกอย่างที่เปลี่ยนไปในแต่ละงาน คือบล็อกไหนจะเปิดขายบ้าง เพราะเวทีที่ชิดปลายด้านหนึ่งของพื้นสนามจะทำให้บล็อกที่อยู่หลังเวทีใช้ไม่ได้ ส่วนพื้นสนามเรียกชื่ออะไร บัตรของคุณให้เข้าทางประตูไหน และประตูเปิดเมื่อไร ตรงที่บัตรของคุณขัดกับหน้านี้ บัตรของคุณถูก",
+        pitfall:
+          "การถือเอาผังของสถานที่จัดงานเป็นผังของงานของคุณ มันวาดขึ้นเพื่อเบสบอลและมีที่พักนักกีฬาอยู่บนผัง มันเป็นผู้มีอำนาจเรื่องว่า 304 อยู่ที่ไหน และไม่มีอำนาจเรื่องอื่นใดในคืนของคุณ",
+        takes: "5 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "เลขบล็อกอย่าง 304 บอกอะไรฉันจริง ๆ",
+        a: "สองอย่าง เลข 3 คือชั้น เป็นชั้นที่สามจากสี่ชั้น โดยนับวงล่างสุดเป็น 1 เลข 04 คือตำแหน่งบนวงที่ไล่ไปทางเดียวรอบชั้นนั้น เริ่มจากด้านที่ตรึงไว้ของอาคาร ดังนั้น 304 เป็นเลขน้อย ซึ่งทำให้มันอยู่ใกล้จุดที่เริ่มนับหมายเลข เดินตามเข็มนาฬิกาจากช่องขาดของอัฒจันทร์ไปไม่ไกล",
+      },
+      {
+        q: "หมายเลขไล่ไปทางไหน",
+        a: "ตามเข็มนาฬิกา และสถานที่จัดงานบอกเอง คำอธิบายที่เผยแพร่พร้อมผังระบุว่า시계방향 เริ่มจากมุมขวาล่างด้านในสนาม และช่วงบล็อกที่ไล่รายชื่อต่อจากนั้นก็ตรงกับรูปทั้งสองด้าน ทิศเดียวกันทุกชั้น ตัวอักษรของประตูก็ไล่ไปทางเดียวกัน คือ A, B, C, D, E ตามด้านใกล้ และ F, G ด้านไกล นั่นหมายความว่าตัวอักษรและหมายเลขเพิ่มขึ้นไปด้วยกัน ถ้าคุณเดินผ่านประตู D ขณะมุ่งไปประตู E เลขบล็อกของคุณก็กำลังเพิ่มขึ้นเช่นกัน",
+      },
+      {
+        q: "บล็อก 417 อยู่เหนือบล็อก 317 พอดีไหม",
+        a: "ไม่ใช่ แต่ละชั้นมีจำนวนบล็อกไม่เท่ากัน คือ 32, 22, 34 และ 35 จากล่างขึ้นบน จึงร่วมกันเฉพาะเส้นที่เริ่มนับหมายเลข แล้วเคลื่อนห่างกันจากจุดนั้น โปรดใช้ชั้นที่คุณอยู่จริงในการหาทาง ไม่ใช่ชั้นที่เพื่อนของคุณอยู่",
+      },
+      {
+        q: "ทำไมหมายเลขหยุดแล้วเริ่มใหม่",
+        a: "เพราะอัฒจันทร์เป็นเกือกม้า ไม่ใช่วงแหวน มีส่วนอาคารรูปลิ่มที่ไม่มีที่นั่งในชั้นใดเลย และหมายเลขเริ่มใหม่ที่นั่น 132 หันหน้าเข้าหา 101 คร่อมช่องนั้น และ 435 หันหน้าเข้าหา 401 ที่นั่นยังเป็นช่วงเดียวของแนวรอบอาคารที่ไม่มีประตูเลย จึงจำได้ง่าย ยิ่งอยู่สูงยิ่งกว้างขึ้น ราว 44 องศาของวงที่ชั้น 100 เทียบกับ 96 องศาที่ชั้น 400 ดังนั้นบนชั้นสูงสุดวงจะขาดไปมากกว่า และการเดินวนทางยาวก็แพงกว่า",
+      },
+      {
+        q: "ฉันเข้าประตูที่ใกล้ที่สุดได้ไหม",
+        a: "ไม่จำเป็นว่าได้ การเข้าประตูกำหนดเป็นรายงานโดยผู้จัดงานและพิมพ์อยู่บนบัตรของคุณ และแม้ในวันธรรมดาก็มีประตูอย่างน้อยหนึ่งบานที่ไม่ใช่ประตูทั่วไป ผังของสถานที่จัดงานระบุประตูกลางว่าเป็นทางเข้าสำหรับผู้ถือตั๋วปีของ R.d-club และสกายบ็อกซ์ โปรดอ่านบัตรของคุณก่อน แล้วไปหาประตูนั้น",
+      },
+      {
+        q: "ผังบนเว็บของสถานที่จัดงานดูเหมือนสนามเบสบอล นี่คือผังที่ถูกไหม",
+        a: "เป็นผังที่ถูกสำหรับคำถามที่หน้านี้ตอบ และเป็นผังที่ผิดสำหรับคำถามอื่นเกือบทั้งหมด มันวาดขึ้นเพื่อเบสบอล รวมถึงที่พักนักกีฬา และสถานที่จัดงานจุคน 16,601 ที่สำหรับการแข่งขัน เทียบกับราว 25,000 คนสำหรับคอนเสิร์ต ดังนั้นคอนเสิร์ตคือการจัดวางแบบอื่นของอาคารเดียวกัน สิ่งที่ไม่เปลี่ยนคือคอนกรีต บล็อกที่ให้หมายเลขไว้เป็นของถาวร ผังจึงบอกคุณได้ว่า 304 อยู่ที่ไหน แต่บอกไม่ได้ว่า 304 เปิดขายในงานของคุณหรือไม่ และบอกไม่ได้ว่าบนพื้นสนามมีอะไร",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "gocheok-sky-dome-finding-your-seat",
+    sourceChecked: "2026-10-22",
+    sourceText: "080db85d6999",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Paghahanap ng upuan mo sa Gocheok Sky Dome: ang ibig sabihin ng numero ng bloke sa tiket mo",
+    summary:
+      "Apat na palapag, isang direksiyon, at isang putol lamang sa singsing. Tatlong numerong tama ang pagbasa ang maglalakad sa iyo patungo sa bloke mo mula sa alinmang pasukan, walang mapa at walang pangangailangang alamin kung saan ang hilaga.",
+    scope:
+      "Sinasaklaw kung paano binibigyan ng numero ng Gocheok Sky Dome ang permanenteng mga upuan nito, binasa mula sa sariling tsart ng upuan at mga pahina ng pasilidad ng Seoul Facilities Corporation: ang apat na palapag, kung saang direksiyon tumatakbo ang mga numero, kung saan nababali ang pagkakasunod, at kung saan nakalagay ang mga tarangkahan at takilya kaugnay nito. Ang tsart na pinagbasahan ay iginuhit para sa beysbol — nasa loob nito ang mga dugout. Semento ang mga bloke sa tribuna at hindi nagagalaw, kaya ang tiket sa konsiyertong nagsasabing bloke 304 ay nangangahulugang itong 304; ngunit kung aling mga bloke ang ipinagbibili, ano ang nakatayo sa palapag, aling tarangkahan ang pinapasok ng tiket mo, at kailan bumubukas ang pinto ay sa prodyuser, itinatakda sa bawat palabas, at walang anuman dito ang humahalili sa tsart sa sariling pahina mo ng pagpa-book. Isang venue. Iba ang pagnunumero ng KSPO Dome at ng Inspire Arena at nangangailangan sila ng kanilang sariling mga pahina.",
+    intro: [
+      "Iginuhit ang isang tsart ng upuan para sa isang taong alam na kung paano isinaayos ang gusali. Isa itong patag na larawan ng 123 numero, at sinasagot nito ang tanong na nasa isip mo sa bahay — maganda ba ang upuang ito — at hindi ang tanong na nasa isip mo sa 18:40 habang nakatayo sa harap ng pader na semento na may numerong hindi sa iyo.",
+      "May maikling sagot ang ikalawang tanong na iyon, dahil ang pagnunumero ay isang sistema at hindi isang listahan. Apat na palapag, isang direksiyon, isang putol. Alamin ang tatlong bagay na iyon at titigil mo nang kailanganin ang tsart.",
+    ],
+    steps: [
+      {
+        title: "Pagpasyahan muna kung nasa gusali o nasa palapag ang upuan mo",
+        body: "Ang tatlong numero sa pagitan ng 101 at 435 ay nangangahulugang isang permanenteng bloke sa tribuna, at ang natitirang bahagi ng pahinang ito ang hahanap nito. Ang anuman pang iba — isang titik na nag-iisa, FLOOR, 플로어, isang sonang tayuan, isang pangalan ng mesa o ng box — ay nasa larangan, na wala talagang permanenteng upuan. Hubad na sahig ang larangan na tinatakpan, hinahati at pinapangalanan ng prodyuser para sa bawat palabas, kaya ang tsart lamang ng palabas na iyon ang makapagtatakda nito.",
+        pitfall:
+          "Ang pagtutugma ng isang titik sa tiket mo sa isang titik sa tsart ng venue. May tatlong magkaibang alpabeto sa isang gusaling ito: ang pitong tarangkahan ay may titik A hanggang G, ini-imprenta ng tsart ang mga sona ng beysbol sa taas ng larangan sa seryeng T, S at D, at ang mga bloke sa palapag ng isang konsiyerto ay binibigyan ng titik ng prodyuser. May kahulugan lamang ang isang titik katabi ng bagay na naglabas nito.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Ang unang numero ay ang palapag, at apat ang mga iyon",
+        body: "Ang 101 hanggang 132 ang pinakamababang singsing, ang pinakamalapit sa palapag. Ang 201 hanggang 222 ay isang maikling ikalawang antas. Ang 301 hanggang 334 ang ikatlo. Ang 401 hanggang 435 ang pinakamataas. Tumutugma iyon sa gusaling inilalarawan ng venue — apat na palapag sa ibabaw ng lupa na nakapatong sa dalawang antas ng basement — kaya ang numero ng daanan ay bilang ng palapag at hindi pangalan ng sona. Ang 4 ang pinakamataas na naaabot ng gusali.",
+        pitfall:
+          "Ang pag-asang kikilos ang palapag 200 tulad ng iba. Ito ang pinakamaikli, 22 bloke kontra 32, 34 at 35, at ito lamang ang may mga butas sa gitna: ipinapakita ng tsart ang mga bahagi sa kabilang panig ng gusali na wala talagang upuan sa palapag 200. Doon, hindi kinakailangang magkatabi sa lupa ang magkasunod na numero.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang dalawa pang numero ay isang puwesto sa isang singsing na umiikot sa isang direksiyon",
+        body: "Sa loob ng isang palapag, tumatakbo ang mga numero sa isang direksiyon sa buong paligid, at salita iyon ng venue mismo at hindi isang bagay na sinukat mula sa larawan: sinasabi ng paliwanag na inilathala kasama ng tsart na tumatakbo ang mga bloke nang 시계방향 — pakanan ng orasan — na nagsisimula sa kanang ibaba ng panig ng infield, at pagkatapos ay inililista ang mga iyon sa ayos na iyon. Nagsisimula ang bawat palapag sa parehong panig ng gusali. Kaya ang hakbang mula 401 hanggang 405 ay ang parehong pag-ikot ng hakbang mula 301 hanggang 305, sa parehong direksiyon, sa ibang taas. Walang kaliwang kalahati at kanang kalahating dapat alamin, at walang panig na gansal at pantay.",
+        pitfall:
+          "Ang pag-asang magkakapatong ang mga palapag nang bloke sa bloke. Taglay nila ang 32, 22, 34 at 35 na bloke, kaya naghihiwalay sila habang umiikot: ang linya lamang kung saan sila nagsisimula ang pinagsasaluhan nila. Hindi nasa itaas ng 317 ang 417, at hindi nasa ilalim mo sa 310 ang isang kaibigang nasa 210.",
+        takes: "2 minuto",
+      },
+      {
+        title: "May tiyak na isang putol ang singsing, at walang tarangkahan doon",
+        body: "Hindi nagsasara ang upuan tungo sa isang buong bilog. Sa panig na iginuhit ng tsart sa kanan ay may isang tipak ng gusaling walang upuan sa anumang palapag, at doon nagsisimulang muli ang pagnunumero — magkaharap ang 132 at 101 sa kabila nito, at gayundin ang 435 at 401. Hindi isa ang lapad ng putol na iyon: sinukat mula sa tsart, mga 44 digri sa palapag 100, 71 sa 200, 91 sa 300 at 96 sa 400, dahil humihinto ang mga itaas na antas bago ang sulok na iyon samantalang halos nakapaligid sa kanya ang pinakamababang singsing. Isang bakya ang upuan na bumubuka habang pumapaitaas. Tumatakbo ang pitong tarangkahan pakanan ng orasan sa parehong direksiyon ng mga numero: A, B, C, D at E sa panig na malapit, pagkatapos ay F at G sa kabilang panig. Ang A ang unang tarangkahan matapos ang putol; ang G ang huli bago ito. Isang eskala ang mga titik ng tarangkahan at ang mga numero ng bloke, at iyon ang buong dahilan kung bakit malilibot ang gusaling ito nang walang kompas.",
+        pitfall:
+          "Ang pag-akalang ang tarangkahang nakikita mo ay tarangkahang puwede mong gamitin. Minamarkahan ng sariling tsart ng venue ang tarangkahang C, ang nasa gitna, bilang pasukang nakalaan sa mga may tiket na pang-season ng R.d-club at ng skybox at hindi bilang pangkalahatan. Hindi laging sa iyo ang pintong pinakamalapit.",
+        takes: "3 minuto",
+      },
+      {
+        title: "Dumating sa isang panig na kaya mong pakitunguhan",
+        body: "Ang Istasyong Guil sa Line 1, labasan 2, ay mga 150 metro at tatlong minuto mula sa venue, at sa isang gabi ng konsiyerto ay naglalathala ang tagapagpatakbo ng paalalang bumaba nang isang hinto pa lamang — Guro kung sumakay ka mula sa Seoul o sa direksiyon ng Suwon at Anyang, Gaebong kung nanggaling ka sa Incheon o Bucheon. Binabago ng pinili mo kung aling bahagi ng paligid ang unang maaabot mo, at dahil doon kung gaano kalayo ang lalakarin mo paikot. Hindi nito binabago ang tuntunin sa susunod na hakbang, na gumagana mula sa alinmang pasukan.",
+        pitfall:
+          "Ang pagpaplano ng lakad patungo sa gusali at hindi ng lakad paikot nito. Dalawampu't limang libong tao ang dumarating sa isang singsing na may paligid na mga 600 metro, at ang huling dalawandaang metro mo ang mga metrong may dagsa sa loob.",
+        takes: "5 minuto, bago ang araw",
+      },
+      {
+        title: "Sa pader, basahin ang dalawang numero ng bloke at malalaman mo kung saan lalakad",
+        body: "Hindi mo kailangang malaman kung saang direksiyon nakaturo ang itaas ng tsart, at hindi iyon inilalathala ng venue. Kailangan mo ng dalawang numerong magkasunod. Basahin ang numero ng bloke kung saan ka nakatayo, maglakad ng ilang metro, basahin ang susunod. Alam mo na ngayon kung saang direksiyon umaakyat ang pagkakasunod. Kung mas mataas ang sa iyo, magpatuloy; kung mas mababa, bumalik. Dahil umiikot ang singsing sa isang direksiyon sa bawat palapag, ang sagot na nakuha mo sa labas ng gusali ay totoo pa rin sa hagdan at totoo pa rin sa pasilyo.",
+        pitfall:
+          "Ang pagtutok sa sahig at hindi sa mga karatula. Walang tanawin palabas ang isang dome at magkamukha ang bawat bahagi ng pasilyo; ang mga numero ng bloke ang tanging bagay sa gusaling nagsasabi sa iyo kung nasaan ka. Ang isang lugar na hindi gumagana ang tuntunin ng dalawang numero ay ang putol, at ipinapahayag ng putol ang sarili nito, dahil humihinto ang mga numero.",
+        takes: "5 minuto sa gabi mismo",
+      },
+      {
+        title: "Alamin kung aling kalahati nito ang pinagpapasyahan ng prodyuser",
+        body: "Itinatakda ng gusali ang mga numero ng bloke, ang apat na palapag, ang mga titik ng tarangkahan at ang mga takilya — minamarkahan ng tsart ang tatlo, may numerong 2, 3 at 4, kung saan ang nasa infield ay katabi ng tarangkahang E at ang dalawang nasa outfield ay nakapalibot sa mga tarangkahang F at G. Itinatakda ng prodyuser ang lahat ng nagbabago sa bawat palabas: kung aling mga bloke ang talagang ipinagbibili, dahil pinapatay ng entabladong nakasandal sa isang dulo ng palapag ang mga bloke sa likod nito; kung anong pangalan ng mga seksiyon sa palapag; aling tarangkahan ang pinapasok ng tiket mo; at kailan bumubukas ang pinto. Kung saan nagkakasalungat ang tiket mo at ang pahinang ito, tama ang tiket mo.",
+        pitfall:
+          "Ang pagtrato sa tsart ng venue bilang tsart ng palabas mo. Iginuhit ito para sa beysbol at may mga dugout. Ito ang awtoridad kung nasaan ang 304 at hindi awtoridad sa anupaman tungkol sa gabi mo.",
+        takes: "5 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Ano talaga ang sinasabi sa akin ng numero ng blokeng tulad ng 304?",
+        a: "Dalawang bagay. Ang 3 ang palapag — ang ikatlo sa apat, kung ibibilang ang pinakamababang singsing bilang 1. Ang 04 ay isang puwesto sa isang singsing na tumatakbo sa isang direksiyon sa buong palapag na iyon, na nagsisimula sa isang tiyak na panig ng gusali. Kaya mababa ang numero ng 304, na naglalagay nito malapit sa simula ng pagnunumero, isang maikling lakad pakanan ng orasan mula sa putol ng upuan.",
+      },
+      {
+        q: "Saang direksiyon tumatakbo ang mga numero?",
+        a: "Pakanan ng orasan, at sinasabi iyon mismo ng venue: nakasaad sa paliwanag na inilathala kasama ng tsart nito ang 시계방향, na nagsisimula sa kanang ibaba ng panig ng infield, at tumutugma sa larawan sa magkabilang panig ang saklaw ng mga blokeng inililista nito pagkatapos. Parehong direksiyon sa bawat palapag. Gayon din tumatakbo ang mga titik ng tarangkahan: A, B, C, D, E sa panig na malapit at F, G sa kabilang panig. Nangangahulugan iyon na sabay umaakyat ang mga titik at ang mga numero — kung madadaanan mo ang tarangkahang D patungo sa tarangkahang E, umaakyat din ang mga numero ng bloke mo.",
+      },
+      {
+        q: "Nasa tuwid na itaas ba ng bloke 317 ang bloke 417?",
+        a: "Hindi. Magkaiba ang bilang ng bloke na taglay ng mga palapag — 32, 22, 34 at 35 mula sa ibaba paitaas — kaya ang linya lamang kung saan nagsisimula ang pagnunumero nila ang pinagsasaluhan nila at naghihiwalay sila mula roon. Gamitin ang palapag na talagang kinalalagyan mo sa paglibot, hindi ang kinalalagyan ng kaibigan mo.",
+      },
+      {
+        q: "Bakit humihinto ang mga numero at nagsisimulang muli?",
+        a: "Dahil isang bakya ang upuan, at hindi isang singsing. May isang tipak ng gusaling walang upuan sa anumang palapag, at nagsisimulang muli ang pagnunumero doon: nakaharap ang 132 sa 101 sa kabila nito, nakaharap ang 435 sa 401. Ito rin ang tanging bahagi ng paligid na walang tarangkahan, na nagpapadali sa pagkilala nito. Lumalapad ito habang tumataas ka — mga 44 digri ng bilog sa palapag 100 kontra 96 sa 400 — kaya sa pinakamataas na palapag ay mas malaki ang nawawalang bahagi ng singsing at mas mahal ang maglakad sa mahabang paikot.",
+      },
+      {
+        q: "Puwede ba akong pumasok sa alinmang tarangkahang pinakamalapit?",
+        a: "Hindi kinakailangan. Itinatakda ng prodyuser sa bawat kaganapan ang akses sa tarangkahan at ini-imprenta iyon sa tiket mo, at may kahit isang tarangkahang hindi pangkalahatan kahit sa isang ordinaryong araw — minamarkahan ng tsart ng venue ang tarangkahan sa gitna bilang pasukan para sa mga may tiket na pang-season ng R.d-club at ng skybox. Basahin ang tiket mo, pagkatapos ay hanapin ang tarangkahang iyon.",
+      },
+      {
+        q: "Mukhang istadyum ng beysbol ang tsart sa sayt ng venue. Tama ba iyon?",
+        a: "Tama iyon para sa tanong na sinasagot ng pahinang ito at mali para sa halos lahat ng iba. Iginuhit ito para sa beysbol, kasama ang mga dugout, at tumatanggap ang venue ng 16,601 para sa isang laban kontra mga 25,000 para sa isang konsiyerto — kaya ibang pagkakaayos ng parehong gusali ang isang konsiyerto. Ang hindi nagbabago ay ang semento: permanente ang mga blokeng may numero, kaya sinasabi sa iyo ng tsart kung nasaan ang 304. Hindi nito masasabi kung ipinagbibili ang 304 para sa palabas mo, o kung ano ang nasa palapag.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "あなたの公演は、ソウルのどの会場なのか",
+    summary:
+      "ソウルの大型ホールは英語名が重なっていて、2つは名前にドームが入っていながら市内の反対側にあり、さらに2つは運営者が同じです。それぞれの名前が何を指し、どの区にあり、どの路線で行けるのか。",
+    scope:
+      "ソウルのコンサート会場を名前、区、地下鉄の路線で見分けることを、各運営者自身のページのうち当サイトが読めるものから扱います。どのブロックが売られるか、どのゲートから入れるか、開場がいつかは扱いません。それらは主催者のもので、公演ごとに決まります。",
+    intro: [
+      "これは、手遅れになってから間違いに気づきやすく、そして間違えたときの代償がもっとも大きい問いです。ソウル最大級のホールのうち2つは名前にドームが入っていて、互いに1時間離れています。さらに2つは同じ組織が運営しているので、運営者名で検索すると両方が出てきます。",
+      "会場名は、買う前なら予約ページに、買った後ならチケットに書かれています。名前の響きではなく、区と照らし合わせて読んでください。",
+    ],
+    steps: [
+      {
+        title: "名前を響きではなく区と突き合わせる",
+        body: "Gocheok Sky Dome（고척스카이돔）は西側の九老区。KSPO Domeは南東の松坡区、オリンピック公園の中にあり、運営はまったく別の組織です。Seoul World Cup Stadiumは北西の麻浦区、上岩にあります。Jangchung Arena（장충체육관）は中心部の中区。Inspire Arenaはそもそもソウルではなく、仁川です。区は名前についての事実ですが、名前は区についての事実ではありません。",
+        pitfall:
+          "「ドーム」という字を見て、ドームは一つだと思い込むこと。市内最大級のホールのうち2つが名前にそれを含み、ソウルの反対側にあります。これを18時に知ったファンは公演に間に合いません。",
+        takes: "2分",
+      },
+      {
+        title: "そのうち2つは運営者が同じで、それ自体が罠です",
+        body: "Gocheok Sky Dome、Seoul World Cup Stadium、Jangchung Arenaはいずれもソウル施設公団（서울시설공단）が運営しているので、運営者名で検索すると3つとも出てきて、ページも見分けがつきません。運営者のサイトは企業情報のセクションにも찾아오시는 길を載せていて、そちらは城東区にある公団本部です。どの会場からも10キロほど離れています。案内ページの住所が、自分の行きたい会場と一致しているか確かめてください。",
+        pitfall:
+          "運営者自身のサイトにあるからという理由で案内ページを信じること。3つの会場と本部がそれぞれ案内ページを公開していて、どれも同じように見えます。",
+        takes: "2分",
+      },
+      {
+        title: "規模が、どういう夜になるかを教えてくれます",
+        body: "Jangchung Arenaの座席は4,507席で、そのうち1,324席は可動式です。ファンミーティング向けの規模です。Gocheok Sky Domeは屋内ドームで野球なら約16,600人、コンサートではそれより小さく構成されます。Seoul World Cup Stadiumは66,704席で屋根がなく、11月にはそれが別の話になります。運営者のページにある数字は建物の数字であって、あなたの公演の数字ではありません。そのうちどれだけを売るかは主催者が決めます。",
+        takes: "1分",
+      },
+      {
+        title: "ときには駅がそのまま建物です",
+        body: "この3つは到着の仕方が似ていません。Jangchung Arenaは동대입구역の5番出口から行き、運営者はその出口が建物に直結していると明記しています。外に出る必要がありません。Seoul World Cup Stadiumには会場の名を冠した駅、월드컵경기장역があり、2番出口です。Gocheokは、最寄り駅が当然の答えにならない唯一の会場で、だからこそ専用のページがあります。",
+        takes: "1分",
+      },
+      {
+        title: "どの会場のページも答えられないこと",
+        body: "あなたの公演でどのブロックが売られるか、ステージがどこにあるか、どのゲートから入れるか、開場がいつか、何を持ち込めるか。運営者が公開するのは建物で、主催者が公開するのは公演です。いま挙げたものはどれも公演ごとに決まり、あなたのチケットと主催者の告知にあります。",
+        takes: "1分",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky DomeはKSPO Domeと同じですか。",
+        a: "違います。Gocheok Sky Domeは西側の九老区にあり、ソウル施設公団が運営しています。KSPO Domeは南東の松坡区、オリンピック公園の中にあり、別の組織の運営です。両者は1時間ほど離れています。",
+      },
+      {
+        q: "Inspire Arenaはソウルにありますか。",
+        a: "ありません。仁川です。ソウルから向かう場所であってソウルの中ではなく、計画すべき移動が別のものになります。",
+      },
+      {
+        q: "なぜ運営者自身の案内ページが違う場所を示すのですか。",
+        a: "ソウル施設公団は複数の会場を運営しており、さらに城東区にある自社の本部への案内も公開しているからです。それらのページはすべて同じサイト上にあり、見た目も似ています。ページの見出しではなく住所を突き合わせてください。",
+      },
+      {
+        q: "会場ページの座席数は、自分の公演の規模を教えてくれますか。",
+        a: "いいえ。あれは通常の構成における建物の収容数です。コンサートはフロアの一部をステージが覆い、残りのうちどれだけを売るかは主催者が決めるので、運営者のページの数字は上限であって、あなたの夜の説明ではありません。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "你的場次究竟在首爾的哪一個場館",
+    summary:
+      "首爾的大型場館英文名字互相重疊，其中兩座名字裡都有巨蛋，卻位在城市的兩端，另外兩座共用同一個營運者。每個名字指的是什麼、位在哪一區、哪一條線到得了。",
+    scope:
+      "涵蓋如何靠名字、行政區和地鐵線分辨首爾的演唱會場館，取自各營運者自己的頁面中本站讀得到的部分。不涵蓋哪些區塊會開賣、哪個入口讓你進、何時開放入場：那些屬於主辦方，並逐場決定。",
+    intro: [
+      "這是最容易太晚才弄錯、而弄錯代價又最大的一個問題。首爾最大的場館中有兩座名字裡都有巨蛋，而且相距一小時。另外兩座由同一個組織營運，所以搜尋營運者會同時給你兩個。",
+      "場館名字在你買之前就在預訂頁面上，買完之後在票上。請拿它去對行政區，而不是去對名字聽起來像什麼。",
+    ],
+    steps: [
+      {
+        title: "把名字對到行政區，而不是對到它聽起來的樣子",
+        body: "Gocheok Sky Dome（고척스카이돔）在西邊的九老區。KSPO Dome在東南邊松坡區的奧林匹克公園裡，由完全不同的組織營運。Seoul World Cup Stadium在西北邊麻浦區的上岩。Jangchung Arena（장충체육관）在市中心的中區。Inspire Arena根本不在首爾——它在仁川。行政區是關於名字的事實；名字不是關於行政區的事實。",
+        pitfall:
+          "看到巨蛋二字就以為只有一座。這座城市最大的場館中有兩座名字裡都有它，而且分別在首爾的兩端，在18時才弄懂這件事的粉絲趕不上演出。",
+        takes: "2分鐘",
+      },
+      {
+        title: "其中兩座共用營運者，而那本身就是一個陷阱",
+        body: "Gocheok Sky Dome、Seoul World Cup Stadium與Jangchung Arena都由首爾設施公團（서울시설공단）營運，所以搜尋營運者的名字會同時給你三座，而它們的頁面看起來一模一樣。營運者的網站在企業區塊底下也放了一份찾아오시는 길，而那一份是公團位在城東區的總部——距離上述任何一座都有十公里左右。請確認交通頁面上的地址，和你要去的那座場館一致。",
+        pitfall:
+          "因為交通頁面在營運者自己的網站上就相信它。三座場館加一個總部都各自公布了一份，而它們看起來都一樣。",
+        takes: "2分鐘",
+      },
+      {
+        title: "規模會告訴你這是什麼樣的一個晚上",
+        body: "Jangchung Arena有4,507個座位，其中1,324個是可收納的——一個適合見面會的空間。Gocheok Sky Dome是室內巨蛋，棒球時約16,600人，演唱會會配置得更小。Seoul World Cup Stadium有66,704個座位而且沒有屋頂，這在11月是另一回事。營運者頁面上的數字屬於建築，不屬於你那一場：要賣掉其中多少由主辦方決定。",
+        takes: "1分鐘",
+      },
+      {
+        title: "有時候車站就是那棟建築",
+        body: "這三座在抵達這件事上並不相像。Jangchung Arena從동대입구역的5號出口進入，營運者明確表示那個出口直接連通建築——你不必走到外面。Seoul World Cup Stadium有一個以它命名的車站월드컵경기장역，2號出口。Gocheok是唯一一座最近的車站不是理所當然答案的場館，所以它才有自己的專頁。",
+        takes: "1分鐘",
+      },
+      {
+        title: "任何場館頁面都無法告訴你的事",
+        body: "你那一場有哪些區塊會開賣、舞台在哪裡、哪個入口讓你進、何時開放入場、可以帶什麼進去。營運者公布的是建築，主辦方公布的是場次。上面每一項都是逐場決定的，寫在你的票上和主辦方的公告裡。",
+        takes: "1分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome和KSPO Dome是同一個嗎？",
+        a: "不是。Gocheok Sky Dome在西邊的九老區，由首爾設施公團營運。KSPO Dome在東南邊松坡區的奧林匹克公園裡，由不同的組織負責。兩者相距約一小時。",
+      },
+      {
+        q: "Inspire Arena在首爾嗎？",
+        a: "不在，它在仁川。它是從首爾出發抵達的地方，而不是首爾之內，那是另一段要規劃的路程。",
+      },
+      {
+        q: "為什麼營運者自己的交通頁面顯示的是錯的地點？",
+        a: "因為首爾設施公團營運多座場館，同時也公布前往自己位在城東區的總部的交通方式。那些頁面全都在同一個網站上，而且長得很像。請對地址，不要對頁面標題。",
+      },
+      {
+        q: "場館頁面上的座位數能告訴我我那一場有多大嗎？",
+        a: "不能。那是建築在通常配置下的容量。演唱會會用舞台蓋掉場地的一部分，而剩下的要賣掉多少由主辦方決定，所以營運者頁面上的數字是上限，不是你那一晚的描述。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Venue Seoul mana yang sebenarnya menjadi tempat pertunjukan Anda",
+    summary:
+      "Aula-aula besar Seoul punya nama Inggris yang bertumpang tindih, dua di antaranya memakai kata Dome pada judulnya dan berada di sisi kota yang berlawanan, dan dua lagi berbagi satu pengelola. Apa yang dirujuk setiap nama, ada di distrik mana, dan jalur mana yang mencapainya.",
+    scope:
+      "Mencakup cara membedakan aula konser Seoul berdasarkan nama, distrik dan jalur kereta bawah tanah, dari halaman milik masing-masing pengelola sejauh situs ini dapat membacanya. Tidak mencakup blok mana yang dijual, pintu mana yang memasukkan Anda, atau kapan pintu dibuka: semua itu milik promotor dan ditetapkan per pertunjukan.",
+    intro: [
+      "Inilah pertanyaan yang paling mudah salah dijawab ketika sudah terlambat dan paling mahal kalau salah sama sekali. Dua aula terbesar Seoul memakai kata Dome pada namanya dan berjarak satu jam. Dua lainnya dijalankan organisasi yang sama, jadi mencari pengelolanya menawarkan keduanya kepada Anda.",
+      "Nama venue ada di halaman pemesanan sebelum Anda membeli dan di tiket setelahnya. Bacalah ia terhadap distriknya, bukan terhadap apa yang terdengar dari namanya.",
+    ],
+    steps: [
+      {
+        title: "Cocokkan nama dengan sebuah distrik, bukan dengan apa yang terdengar darinya",
+        body: "Gocheok Sky Dome (고척스카이돔) berada di Guro-gu, di barat. KSPO Dome berada di dalam Olympic Park di Songpa-gu, di tenggara, di bawah organisasi yang sepenuhnya berbeda. Seoul World Cup Stadium berada di Sangam di Mapo-gu, di barat laut. Jangchung Arena (장충체육관) berada di Jung-gu, di pusat kota. Inspire Arena tidak berada di Seoul sama sekali — ia di Incheon. Sebuah distrik adalah fakta tentang sebuah nama; sebuah nama bukan fakta tentang sebuah distrik.",
+        pitfall:
+          "Membaca kata Dome dan menganggap hanya ada satu. Dua aula terbesar kota ini memakainya pada nama mereka, keduanya berada di sisi Seoul yang berlawanan, dan penggemar yang baru memahami itu pada pukul 18:00 tidak akan sampai ke pertunjukannya.",
+        takes: "2 menit",
+      },
+      {
+        title: "Dua di antaranya berbagi pengelola, dan itu sendiri sebuah jebakan",
+        body: "Gocheok Sky Dome, Seoul World Cup Stadium dan Jangchung Arena semuanya dijalankan oleh Seoul Facilities Corporation (서울시설공단), jadi pencarian atas nama pengelolanya menawarkan ketiganya dan halaman-halaman mereka tampak serupa. Situs pengelola itu juga memuat sebuah 찾아오시는 길 di bawah bagian korporatnya, dan yang itu adalah kantor pusat korporasi di Seongdong-gu — sekitar sepuluh kilometer dari mana pun di antara ketiganya. Pastikan alamat pada sebuah halaman petunjuk arah cocok dengan venue yang Anda tuju.",
+        pitfall:
+          "Memercayai sebuah halaman petunjuk arah karena ia ada di situs milik pengelola sendiri. Tiga venue dan satu kantor pusat masing-masing menerbitkan satu, dan semuanya tampak sama.",
+        takes: "2 menit",
+      },
+      {
+        title: "Ukuran memberi tahu Anda ini malam jenis apa",
+        body: "Jangchung Arena berkapasitas 4,507 kursi, dan 1,324 di antaranya dapat ditarik masuk — sebuah ruang untuk acara jumpa penggemar. Gocheok Sky Dome adalah dome dalam ruangan berkapasitas kira-kira 16,600 untuk bisbol, dan dikonfigurasi lebih kecil untuk konser. Seoul World Cup Stadium berkapasitas 66,704 kursi dan terbuka ke langit, yang merupakan proposisi berbeda pada bulan November. Angka pada halaman pengelola adalah angka bangunannya, bukan angka pertunjukan Anda: promotor yang memutuskan seberapa banyak darinya yang dijual.",
+        takes: "1 menit",
+      },
+      {
+        title: "Stasiunnya kadang-kadang adalah bangunannya",
+        body: "Ketiganya tidak serupa saat kedatangan. Jangchung Arena dicapai dari 동대입구역 pintu keluar 5, yang menurut pernyataan pengelola tersambung langsung ke bangunannya — Anda tidak keluar ke jalan. Seoul World Cup Stadium punya stasiun yang dinamai menurutnya, 월드컵경기장역, pintu keluar 2. Gocheok adalah satu-satunya yang stasiun terdekatnya bukan jawaban yang jelas, dan itulah sebabnya ia punya halaman sendiri.",
+        takes: "1 menit",
+      },
+      {
+        title: "Apa yang tidak dapat diberitahukan halaman venue mana pun",
+        body: "Blok mana yang dijual untuk pertunjukan Anda, di mana panggungnya, pintu mana yang memasukkan Anda, kapan pintu dibuka, dan apa yang boleh Anda bawa masuk. Pengelola menerbitkan bangunannya; promotor menerbitkan acaranya. Setiap satu dari hal-hal itu ditetapkan per pertunjukan dan hidup di tiket Anda serta pada pemberitahuan promotor.",
+        takes: "1 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah Gocheok Sky Dome sama dengan KSPO Dome?",
+        a: "Tidak. Gocheok Sky Dome berada di Guro-gu di barat dan dijalankan oleh Seoul Facilities Corporation. KSPO Dome berada di dalam Olympic Park di Songpa-gu di tenggara, di bawah organisasi yang berbeda. Keduanya berjarak sekitar satu jam.",
+      },
+      {
+        q: "Apakah Inspire Arena ada di Seoul?",
+        a: "Tidak, ia di Incheon. Ia dicapai dari Seoul dan bukan berada di dalamnya, dan itu adalah perjalanan berbeda yang harus direncanakan.",
+      },
+      {
+        q: "Mengapa halaman petunjuk arah milik pengelola sendiri menunjukkan tempat yang salah?",
+        a: "Karena Seoul Facilities Corporation menjalankan beberapa venue dan juga menerbitkan petunjuk arah ke kantor pusatnya sendiri di Seongdong-gu. Semua halaman itu berada di situs yang sama dan tampak serupa. Cocokkan alamatnya, bukan judul halamannya.",
+      },
+      {
+        q: "Apakah jumlah kursi pada halaman venue memberi tahu seberapa besar pertunjukan saya?",
+        a: "Tidak. Itu kapasitas bangunan dalam konfigurasi biasanya. Sebuah konser menutupi bagian lantai dengan panggung dan promotor memutuskan seberapa banyak sisanya yang dijual, jadi angka pada halaman pengelola adalah batas atas dan bukan gambaran tentang malam Anda.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "In welcher Seouler Halle Ihre Show tatsächlich stattfindet",
+    summary:
+      "Seouls große Hallen haben englische Namen, die sich überlappen, zwei von ihnen tragen Dome im Titel und liegen an entgegengesetzten Enden der Stadt, und zwei weitere teilen einen Betreiber. Worauf jeder Name verweist, in welchem Bezirk er liegt und welche Linie ihn erreicht.",
+    scope:
+      "Behandelt, wie Seouls Konzerthallen nach Name, Bezirk und U-Bahn-Linie auseinanderzuhalten sind, aus den eigenen Seiten der jeweiligen Betreiber, soweit diese Seite sie lesen kann. Nicht behandelt werden die Frage, welche Blöcke verkauft sind, welches Tor Sie einlässt und wann die Türen öffnen: das gehört dem Veranstalter und wird pro Show festgelegt.",
+    intro: [
+      "Das ist die Frage, die man am leichtesten zu spät falsch beantwortet und deren falsche Antwort am teuersten ist. Zwei der größten Hallen Seouls tragen Dome im Namen und liegen eine Stunde voneinander entfernt. Zwei weitere werden von derselben Organisation geführt, eine Suche nach dem Betreiber bietet Ihnen also beide an.",
+      "Der Name der Halle steht vor dem Kauf auf der Buchungsseite und danach auf dem Ticket. Lesen Sie ihn gegen den Bezirk und nicht gegen das, wonach der Name klingt.",
+    ],
+    steps: [
+      {
+        title: "Ordnen Sie den Namen einem Bezirk zu, nicht dem, wonach er klingt",
+        body: "Der Gocheok Sky Dome (고척스카이돔) liegt in Guro-gu, im Westen. Der KSPO Dome liegt im Olympic Park in Songpa-gu, im Südosten, unter einer völlig anderen Organisation. Das Seoul World Cup Stadium liegt in Sangam in Mapo-gu, im Nordwesten. Die Jangchung Arena (장충체육관) liegt in Jung-gu, in der Mitte. Die Inspire Arena liegt überhaupt nicht in Seoul — sie liegt in Incheon. Ein Bezirk ist eine Tatsache über einen Namen; ein Name ist keine Tatsache über einen Bezirk.",
+        pitfall:
+          "Dome zu lesen und anzunehmen, es gebe nur einen. Zwei der größten Hallen der Stadt tragen es im Namen, sie liegen an entgegengesetzten Enden Seouls, und wer das um 18:00 erfährt, kommt nicht zur Show.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Zwei von ihnen teilen einen Betreiber, und das ist eine eigene Falle",
+        body: "Der Gocheok Sky Dome, das Seoul World Cup Stadium und die Jangchung Arena werden alle von der Seoul Facilities Corporation (서울시설공단) geführt, eine Suche nach dem Namen des Betreibers bietet also alle drei an, und ihre Seiten sehen gleich aus. Die Website des Betreibers trägt unter ihrem Unternehmensbereich außerdem eine 찾아오시는 길, und die führt zur Hauptverwaltung der Gesellschaft in Seongdong-gu — etwa zehn Kilometer von jeder der drei entfernt. Prüfen Sie, dass die Adresse auf einer Anreiseseite zu der Halle passt, die Sie meinen.",
+        pitfall:
+          "Einer Anreiseseite zu vertrauen, weil sie auf der eigenen Website des Betreibers steht. Drei Hallen und eine Hauptverwaltung veröffentlichen je eine, und sie sehen gleich aus.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Die Größe sagt Ihnen, was für ein Abend das wird",
+        body: "Die Jangchung Arena hat 4,507 Plätze, davon 1,324 einfahrbar — ein Raum für Fanmeetings. Der Gocheok Sky Dome ist eine Halle mit Dach, für Baseball ungefähr 16,600, für Konzerte kleiner bestuhlt. Das Seoul World Cup Stadium hat 66,704 Plätze und ist zum Himmel offen, was im November eine andere Sache ist. Die Zahl auf der Seite des Betreibers gehört dem Gebäude und nicht Ihrer Show: wie viel davon verkauft wird, entscheidet der Veranstalter.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Manchmal ist die Station das Gebäude",
+        body: "Diese drei sind bei der Ankunft nicht gleich. Die Jangchung Arena erreicht man von 동대입구역 Ausgang 5, der laut Betreiber direkt mit dem Gebäude verbunden ist — Sie gehen nicht nach draußen. Das Seoul World Cup Stadium hat eine nach ihm benannte Station, 월드컵경기장역, Ausgang 2. Gocheok ist das eine, bei dem die nächste Station nicht die naheliegende Antwort ist, und genau darum hat es eine eigene Seite.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Was keine Hallenseite Ihnen sagen kann",
+        body: "Welche Blöcke für Ihre Show verkauft werden, wo die Bühne steht, welches Tor Sie einlässt, wann die Türen öffnen und was Sie mitbringen dürfen. Der Betreiber veröffentlicht das Gebäude, der Veranstalter die Veranstaltung. Jedes dieser Dinge wird pro Show festgelegt und steht auf Ihrem Ticket und in der Ankündigung des Veranstalters.",
+        takes: "1 Minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Ist der Gocheok Sky Dome dasselbe wie der KSPO Dome?",
+        a: "Nein. Der Gocheok Sky Dome liegt in Guro-gu im Westen und wird von der Seoul Facilities Corporation geführt. Der KSPO Dome liegt im Olympic Park in Songpa-gu im Südosten, unter einer anderen Organisation. Sie liegen etwa eine Stunde voneinander entfernt.",
+      },
+      {
+        q: "Liegt die Inspire Arena in Seoul?",
+        a: "Nein, sie liegt in Incheon. Man erreicht sie von Seoul aus und nicht innerhalb von Seoul, und das ist eine andere Anreise, die geplant werden muss.",
+      },
+      {
+        q: "Warum zeigt die eigene Anreiseseite des Betreibers den falschen Ort?",
+        a: "Weil die Seoul Facilities Corporation mehrere Hallen führt und außerdem die Anreise zu ihrer eigenen Hauptverwaltung in Seongdong-gu veröffentlicht. All diese Seiten liegen auf derselben Website und sehen sich ähnlich. Prüfen Sie die Adresse und nicht den Seitentitel.",
+      },
+      {
+        q: "Sagt mir die Platzzahl auf der Hallenseite, wie groß meine Show ist?",
+        a: "Nein. Das ist die Kapazität des Gebäudes in seiner üblichen Bestuhlung. Ein Konzert deckt einen Teil des Bodens mit einer Bühne ab, und wie viel vom Rest verkauft wird, entscheidet der Veranstalter, die Zahl auf der Seite eines Betreibers ist also eine Obergrenze und keine Beschreibung Ihres Abends.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "En qué recinto de Seúl está realmente tu concierto",
+    summary:
+      "Las grandes salas de Seúl tienen nombres en inglés que se solapan, dos llevan Dome en el título y están en lados opuestos de la ciudad, y otras dos comparten operador. A qué se refiere cada nombre, en qué distrito está y qué línea llega.",
+    scope:
+      "Cubre cómo distinguir las salas de concierto de Seúl por nombre, distrito y línea de metro, a partir de las páginas de cada operador en la medida en que este sitio puede leerlas. No cubre qué bloques se venden, por qué puerta entras ni cuándo abren las puertas: eso es de la promotora y se fija por espectáculo.",
+    intro: [
+      "Esta es la pregunta más fácil de equivocar tarde y la más cara de equivocar a secas. Dos de las salas más grandes de Seúl llevan Dome en el nombre y están a una hora la una de la otra. Otras dos las gestiona la misma organización, así que buscar el operador te ofrece las dos.",
+      "El nombre del recinto está en la página de compra antes de pagar y en la entrada después. Léelo contra el distrito y no contra lo que suena el nombre.",
+    ],
+    steps: [
+      {
+        title: "Empareja el nombre con un distrito, no con lo que parece",
+        body: "El Gocheok Sky Dome (고척스카이돔) está en Guro-gu, al oeste. El KSPO Dome está dentro del Olympic Park, en Songpa-gu, al sureste, bajo una organización completamente distinta. El Seoul World Cup Stadium está en Sangam, en Mapo-gu, al noroeste. El Jangchung Arena (장충체육관) está en Jung-gu, en el centro. El Inspire Arena no está en Seúl en absoluto: está en Incheon. Un distrito es un hecho sobre un nombre; un nombre no es un hecho sobre un distrito.",
+        pitfall:
+          "Leer Dome y dar por hecho que solo hay uno. Dos de las salas más grandes de la ciudad lo llevan en el nombre, están en lados opuestos de Seúl, y quien se entera de eso a las 18:00 no llega al concierto.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Dos de ellos comparten operador, y eso es una trampa en sí misma",
+        body: "El Gocheok Sky Dome, el Seoul World Cup Stadium y el Jangchung Arena los gestiona todos la Seoul Facilities Corporation (서울시설공단), así que una búsqueda por el nombre del operador te ofrece los tres y sus páginas parecen idénticas. La web del operador además publica un 찾아오시는 길 en su sección corporativa, y ese lleva a la sede central de la corporación en Seongdong-gu, a unos diez kilómetros de cualquiera de los tres. Comprueba que la dirección de una página de cómo llegar corresponde al recinto que quieres.",
+        pitfall:
+          "Fiarte de una página de cómo llegar porque está en la web del propio operador. Tres recintos y una sede publican una cada uno, y todas se parecen.",
+        takes: "2 minutos",
+      },
+      {
+        title: "El tamaño te dice qué clase de noche va a ser",
+        body: "El Jangchung Arena tiene 4,507 asientos, y 1,324 de ellos son retráctiles: una sala para fan meetings. El Gocheok Sky Dome es un recinto cubierto de unos 16,600 para el béisbol, configurado más pequeño para conciertos. El Seoul World Cup Stadium tiene 66,704 asientos y está abierto al cielo, lo que en noviembre es otra propuesta. La cifra de la página del operador es la del edificio y no la de tu concierto: cuánta parte se vende lo decide la promotora.",
+        takes: "1 minuto",
+      },
+      {
+        title: "A veces la estación es el edificio",
+        body: "Estos tres no se parecen al llegar. Al Jangchung Arena se llega por la salida 5 de 동대입구역, que según el operador conecta directamente con el edificio: no sales a la calle. El Seoul World Cup Stadium tiene una estación con su nombre, 월드컵경기장역, salida 2. Gocheok es el único donde la estación más cercana no es la respuesta obvia, y por eso tiene una página propia.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Lo que ninguna página de recinto puede decirte",
+        body: "Qué bloques se venden para tu concierto, dónde está el escenario, por qué puerta entras, cuándo abren las puertas y qué puedes llevar dentro. El operador publica el edificio; la promotora publica el evento. Cada una de esas cosas se fija por espectáculo y vive en tu entrada y en el aviso de la promotora.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿El Gocheok Sky Dome es lo mismo que el KSPO Dome?",
+        a: "No. El Gocheok Sky Dome está en Guro-gu, al oeste, y lo gestiona la Seoul Facilities Corporation. El KSPO Dome está dentro del Olympic Park, en Songpa-gu, al sureste, bajo otra organización. Están a una hora aproximadamente.",
+      },
+      {
+        q: "¿El Inspire Arena está en Seúl?",
+        a: "No, está en Incheon. Se llega desde Seúl y no está dentro de la ciudad, y ese es un viaje distinto que hay que planear.",
+      },
+      {
+        q: "¿Por qué la página de cómo llegar del propio operador muestra el sitio equivocado?",
+        a: "Porque la Seoul Facilities Corporation gestiona varios recintos y además publica cómo llegar a su propia sede central en Seongdong-gu. Todas esas páginas están en la misma web y se parecen entre sí. Empareja la dirección, no el título de la página.",
+      },
+      {
+        q: "¿El número de asientos de la página del recinto me dice lo grande que es mi concierto?",
+        a: "No. Es el aforo del edificio en su configuración habitual. Un concierto cubre parte de la pista con un escenario y la promotora decide cuánta parte del resto se vende, así que la cifra de la página de un operador es un techo y no una descripción de tu noche.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Dans quelle salle de Séoul votre concert a-t-il vraiment lieu",
+    summary:
+      "Les grandes salles de Séoul portent des noms anglais qui se recoupent, deux d'entre elles ont Dome dans leur titre et se trouvent aux extrémités opposées de la ville, et deux autres partagent un exploitant. Ce que désigne chaque nom, dans quel arrondissement il se situe, et quelle ligne y mène.",
+    scope:
+      "Couvre la façon de distinguer les salles de concert de Séoul par leur nom, leur arrondissement et leur ligne de métro, d'après les pages de chaque exploitant dans la mesure où ce site peut les lire. Ne couvre pas quels blocs sont mis en vente, par quelle porte vous entrez ni l'heure d'ouverture : cela appartient au promoteur et se fixe par spectacle.",
+    intro: [
+      "C'est la question qu'il est le plus facile de se tromper tard et la plus coûteuse de se tromper tout court. Deux des plus grandes salles de Séoul ont Dome dans leur nom et sont à une heure l'une de l'autre. Deux autres sont gérées par la même organisation, une recherche sur l'exploitant vous propose donc les deux.",
+      "Le nom de la salle figure sur la page de réservation avant l'achat et sur le billet après. Lisez-le face à l'arrondissement et non face à ce que le nom évoque.",
+    ],
+    steps: [
+      {
+        title: "Rapprochez le nom d'un arrondissement, pas de ce qu'il évoque",
+        body: "Le Gocheok Sky Dome (고척스카이돔) est à Guro-gu, à l'ouest. Le KSPO Dome est dans l'Olympic Park à Songpa-gu, au sud-est, sous une organisation entièrement différente. Le Seoul World Cup Stadium est à Sangam, à Mapo-gu, au nord-ouest. La Jangchung Arena (장충체육관) est à Jung-gu, au centre. L'Inspire Arena n'est pas à Séoul du tout — elle est à Incheon. Un arrondissement est un fait au sujet d'un nom ; un nom n'est pas un fait au sujet d'un arrondissement.",
+        pitfall:
+          "Lire Dome et supposer qu'il n'y en a qu'un. Deux des plus grandes salles de la ville l'ont dans leur nom, elles sont aux extrémités opposées de Séoul, et la personne qui l'apprend à 18:00 n'arrive pas au concert.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Deux d'entre elles partagent un exploitant, ce qui est un piège en soi",
+        body: "Le Gocheok Sky Dome, le Seoul World Cup Stadium et la Jangchung Arena sont tous gérés par la Seoul Facilities Corporation (서울시설공단) : une recherche sur le nom de l'exploitant propose donc les trois, et leurs pages se ressemblent. Le site de l'exploitant porte aussi une 찾아오시는 길 dans sa section institutionnelle, et celle-là mène au siège de la société à Seongdong-gu — à une dizaine de kilomètres de chacune des trois. Vérifiez que l'adresse d'une page d'accès correspond bien à la salle que vous visez.",
+        pitfall:
+          "Faire confiance à une page d'accès parce qu'elle se trouve sur le site de l'exploitant lui-même. Trois salles et un siège en publient chacun une, et elles se ressemblent.",
+        takes: "2 minutes",
+      },
+      {
+        title: "La taille vous dit quel genre de soirée ce sera",
+        body: "La Jangchung Arena compte 4,507 places, dont 1,324 escamotables — une salle pour les rencontres avec les fans. Le Gocheok Sky Dome est une salle couverte d'environ 16,600 pour le baseball, configurée plus petit pour les concerts. Le Seoul World Cup Stadium compte 66,704 places et est ouvert au ciel, ce qui n'est pas la même proposition en novembre. Le chiffre sur la page de l'exploitant est celui du bâtiment et non celui de votre concert : la part mise en vente est décidée par le promoteur.",
+        takes: "1 minute",
+      },
+      {
+        title: "Parfois la station est le bâtiment",
+        body: "Ces trois-là ne se ressemblent pas à l'arrivée. On accède à la Jangchung Arena par la sortie 5 de 동대입구역, dont l'exploitant indique qu'elle est directement reliée au bâtiment — vous ne sortez pas dehors. Le Seoul World Cup Stadium a une station à son nom, 월드컵경기장역, sortie 2. Gocheok est la seule dont la station la plus proche n'est pas la réponse évidente, et c'est précisément pourquoi elle a sa propre page.",
+        takes: "1 minute",
+      },
+      {
+        title: "Ce qu'aucune page de salle ne peut vous dire",
+        body: "Quels blocs sont mis en vente pour votre concert, où se trouve la scène, par quelle porte vous entrez, l'heure d'ouverture et ce que vous pouvez apporter. L'exploitant publie le bâtiment ; le promoteur publie l'événement. Chacune de ces choses est fixée par spectacle et vit sur votre billet et dans l'annonce du promoteur.",
+        takes: "1 minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Le Gocheok Sky Dome est-il le même que le KSPO Dome ?",
+        a: "Non. Le Gocheok Sky Dome est à Guro-gu, à l'ouest, et il est géré par la Seoul Facilities Corporation. Le KSPO Dome est dans l'Olympic Park à Songpa-gu, au sud-est, sous une autre organisation. Ils sont à environ une heure l'un de l'autre.",
+      },
+      {
+        q: "L'Inspire Arena est-elle à Séoul ?",
+        a: "Non, elle est à Incheon. On y accède depuis Séoul et non à l'intérieur de Séoul, et c'est un trajet différent à prévoir.",
+      },
+      {
+        q: "Pourquoi la page d'accès de l'exploitant lui-même indique-t-elle le mauvais endroit ?",
+        a: "Parce que la Seoul Facilities Corporation gère plusieurs salles et publie aussi l'accès à son propre siège, à Seongdong-gu. Toutes ces pages se trouvent sur le même site et se ressemblent. Rapprochez l'adresse, pas le titre de la page.",
+      },
+      {
+        q: "Le nombre de places sur la page de la salle me dit-il la taille de mon concert ?",
+        a: "Non. C'est la capacité du bâtiment dans sa configuration habituelle. Un concert recouvre une partie du sol avec une scène et le promoteur décide quelle part du reste est vendue : le chiffre sur la page d'un exploitant est donc un plafond et non une description de votre soirée.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Em qual local de Seul o seu show realmente vai acontecer",
+    summary:
+      "As casas grandes de Seul têm nomes em inglês que se sobrepõem, duas delas têm Dome no título e ficam em lados opostos da cidade, e outras duas dividem o mesmo operador. A que cada nome se refere, em qual distrito fica, e qual linha chega até lá.",
+    scope:
+      "Cobre como diferenciar as casas de show de Seul por nome, distrito e linha de metrô, a partir das páginas de cada operador na medida em que este site consegue lê-las. Não cobre quais blocos são vendidos, por qual portão você entra nem quando os portões abrem: isso é da produtora e é definido por show.",
+    intro: [
+      "Esta é a pergunta mais fácil de errar tarde e a mais cara de errar em geral. Duas das maiores casas de Seul têm Dome no nome e ficam a uma hora uma da outra. Outras duas são administradas pela mesma organização, então procurar pelo operador oferece as duas a você.",
+      "O nome do local está na página de compra antes de você comprar e no ingresso depois. Leia o nome contra o distrito, e não contra o que o nome parece dizer.",
+    ],
+    steps: [
+      {
+        title: "Case o nome com um distrito, e não com o que ele parece ser",
+        body: "O Gocheok Sky Dome (고척스카이돔) fica em Guro-gu, no oeste. O KSPO Dome fica dentro do Olympic Park, em Songpa-gu, no sudeste, sob uma organização completamente diferente. O Seoul World Cup Stadium fica em Sangam, em Mapo-gu, no noroeste. O Jangchung Arena (장충체육관) fica em Jung-gu, no centro. O Inspire Arena não fica em Seul de jeito nenhum — fica em Incheon. Um distrito é um fato sobre um nome; um nome não é um fato sobre um distrito.",
+        pitfall:
+          "Ler Dome e supor que existe apenas um. Duas das maiores casas da cidade têm essa palavra no nome, ficam em lados opostos de Seul, e quem descobre isso às 18:00 não chega ao show.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Duas delas dividem o operador, e isso é uma armadilha por si só",
+        body: "O Gocheok Sky Dome, o Seoul World Cup Stadium e o Jangchung Arena são todos administrados pela Seoul Facilities Corporation (서울시설공단), então uma busca pelo nome do operador oferece os três e as páginas deles parecem iguais. O site do operador também traz um 찾아오시는 길 na seção institucional, e esse leva à sede da corporação em Seongdong-gu — a cerca de dez quilômetros de qualquer um dos três. Confira se o endereço de uma página de como chegar corresponde ao local que você quer.",
+        pitfall:
+          "Confiar numa página de como chegar porque ela está no site do próprio operador. Três locais e uma sede publicam uma cada, e todas parecem iguais.",
+        takes: "2 minutos",
+      },
+      {
+        title: "O tamanho diz que tipo de noite vai ser",
+        body: "O Jangchung Arena tem 4,507 assentos, e 1,324 deles são retráteis — uma sala para fan meeting. O Gocheok Sky Dome é um domo fechado de aproximadamente 16,600 para beisebol, configurado menor para shows. O Seoul World Cup Stadium tem 66,704 assentos e é aberto para o céu, o que é outra proposta em novembro. O número na página do operador é do prédio, não do seu show: quanto dele vai ser vendido é a produtora que decide.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Às vezes a estação é o prédio",
+        body: "Esses três não são parecidos na chegada. O Jangchung Arena é alcançado pela saída 5 da 동대입구역, que o operador afirma ligar direto no prédio — você não vai para a rua. O Seoul World Cup Stadium tem uma estação com o nome dele, 월드컵경기장역, saída 2. O Gocheok é o único em que a estação mais próxima não é a resposta óbvia, e é por isso que ele tem uma página só dele.",
+        takes: "1 minuto",
+      },
+      {
+        title: "O que nenhuma página de local consegue dizer",
+        body: "Quais blocos são vendidos para o seu show, onde fica o palco, por qual portão você entra, quando os portões abrem e o que você pode levar para dentro. O operador publica o prédio; a produtora publica o evento. Cada uma dessas coisas é definida por show e mora no seu ingresso e no aviso da produtora.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "O Gocheok Sky Dome é o mesmo que o KSPO Dome?",
+        a: "Não. O Gocheok Sky Dome fica em Guro-gu, no oeste, e é administrado pela Seoul Facilities Corporation. O KSPO Dome fica dentro do Olympic Park, em Songpa-gu, no sudeste, sob outra organização. Eles ficam a cerca de uma hora de distância.",
+      },
+      {
+        q: "O Inspire Arena fica em Seul?",
+        a: "Não, fica em Incheon. Você chega lá a partir de Seul e não dentro dela, e essa é outra viagem para planejar.",
+      },
+      {
+        q: "Por que a página de como chegar do próprio operador mostra o lugar errado?",
+        a: "Porque a Seoul Facilities Corporation administra vários locais e também publica como chegar à própria sede, em Seongdong-gu. Todas essas páginas ficam no mesmo site e são parecidas. Case o endereço, não o título da página.",
+      },
+      {
+        q: "A contagem de assentos na página do local me diz o tamanho do meu show?",
+        a: "Não. É a capacidade do prédio na configuração usual. Um show cobre parte da pista com um palco e a produtora decide quanto do resto é vendido, então o número na página de um operador é um limite máximo e não uma descrição da sua noite.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Buổi diễn của bạn thực sự ở địa điểm nào tại Seoul",
+    summary:
+      "Các khán phòng lớn của Seoul có tên tiếng Anh trùng lặp nhau, hai nơi trong số đó có chữ Dome trong tên mà lại nằm ở hai đầu thành phố, và hai nơi khác dùng chung một đơn vị vận hành. Mỗi cái tên chỉ nơi nào, nằm ở quận nào, và tuyến nào tới được.",
+    scope:
+      "Bao gồm cách phân biệt các khán phòng hoà nhạc ở Seoul theo tên, theo quận và theo tuyến tàu điện ngầm, dựa trên trang của từng đơn vị vận hành trong phạm vi trang này đọc được. Không bao gồm những khu nào được bán, cửa nào cho bạn vào hay mấy giờ mở cửa: đó là của nhà tổ chức và được đặt theo từng buổi.",
+    intro: [
+      "Đây là câu hỏi dễ bị trả lời sai vào lúc đã muộn nhất, và trả lời sai thì tốn kém nhất. Hai trong số những khán phòng lớn nhất Seoul có chữ Dome trong tên và cách nhau một giờ. Hai nơi khác do cùng một tổ chức điều hành, nên tìm theo tên đơn vị vận hành sẽ đưa ra cả hai.",
+      "Tên địa điểm nằm trên trang đặt vé trước khi bạn mua và nằm trên vé sau khi mua. Hãy đọc nó đối chiếu với quận, chứ không đối chiếu với việc cái tên nghe như thế nào.",
+    ],
+    steps: [
+      {
+        title: "Khớp cái tên với một quận, đừng khớp với âm nghe của nó",
+        body: "Gocheok Sky Dome (고척스카이돔) ở Guro-gu, phía tây. KSPO Dome nằm trong Olympic Park ở Songpa-gu, phía đông nam, thuộc một tổ chức hoàn toàn khác. Seoul World Cup Stadium ở Sangam thuộc Mapo-gu, phía tây bắc. Jangchung Arena (장충체육관) ở Jung-gu, khu trung tâm. Inspire Arena thì không ở Seoul chút nào — nó ở Incheon. Một cái quận là một sự thật về một cái tên; một cái tên không phải là một sự thật về một cái quận.",
+        pitfall:
+          "Đọc chữ Dome rồi cho rằng chỉ có một. Hai trong số những khán phòng lớn nhất thành phố đều có chữ đó trong tên, chúng ở hai đầu Seoul, và người chỉ hiểu ra điều đó vào 18:00 thì không kịp đến buổi diễn.",
+        takes: "2 phút",
+      },
+      {
+        title: "Hai nơi trong số đó dùng chung đơn vị vận hành, và bản thân điều đó là một cái bẫy",
+        body: "Gocheok Sky Dome, Seoul World Cup Stadium và Jangchung Arena đều do Seoul Facilities Corporation (서울시설공단) điều hành, nên tìm theo tên đơn vị vận hành sẽ đưa ra cả ba, và các trang của chúng trông y như nhau. Trang của đơn vị vận hành còn có một 찾아오시는 길 nằm trong mục doanh nghiệp, và trang đó dẫn tới trụ sở chính của công ty ở Seongdong-gu — cách bất cứ nơi nào trong ba nơi kia chừng mười ki lô mét. Hãy kiểm tra xem địa chỉ trên một trang chỉ đường có khớp với địa điểm bạn muốn tới hay không.",
+        pitfall:
+          "Tin một trang chỉ đường chỉ vì nó nằm trên trang của chính đơn vị vận hành. Ba địa điểm và một trụ sở đều công bố một trang như thế, và chúng trông giống nhau.",
+        takes: "2 phút",
+      },
+      {
+        title: "Quy mô cho bạn biết đây sẽ là một tối như thế nào",
+        body: "Jangchung Arena có 4,507 chỗ ngồi, trong đó 1,324 chỗ có thể thu vào — một không gian cho buổi gặp fan. Gocheok Sky Dome là một dome trong nhà, khoảng 16,600 chỗ cho bóng chày, và được bố trí nhỏ hơn cho hoà nhạc. Seoul World Cup Stadium có 66,704 chỗ và lộ thiên, điều này là chuyện khác hẳn vào tháng 11. Con số trên trang của đơn vị vận hành là của toà nhà, không phải của buổi diễn của bạn: bán bao nhiêu phần trong đó là do nhà tổ chức quyết.",
+        takes: "1 phút",
+      },
+      {
+        title: "Có khi nhà ga chính là toà nhà",
+        body: "Ba nơi này không giống nhau ở khâu đến. Jangchung Arena đi vào từ cửa ra 5 của 동대입구역, mà đơn vị vận hành nói rõ rằng cửa đó nối trực tiếp với toà nhà — bạn không phải ra ngoài trời. Seoul World Cup Stadium có một nhà ga mang tên nó, 월드컵경기장역, cửa ra 2. Gocheok là nơi duy nhất mà nhà ga gần nhất không phải câu trả lời hiển nhiên, và đó chính là lý do nó có một trang riêng.",
+        takes: "1 phút",
+      },
+      {
+        title: "Điều không trang địa điểm nào nói được cho bạn",
+        body: "Buổi diễn của bạn bán những khu nào, sân khấu ở đâu, cửa nào cho bạn vào, mấy giờ mở cửa, và bạn được mang gì vào. Đơn vị vận hành công bố toà nhà; nhà tổ chức công bố buổi diễn. Từng điều vừa nêu đều được đặt theo từng buổi và nằm trên vé của bạn cùng thông báo của nhà tổ chức.",
+        takes: "1 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome có phải là KSPO Dome không?",
+        a: "Không. Gocheok Sky Dome ở Guro-gu phía tây và do Seoul Facilities Corporation điều hành. KSPO Dome nằm trong Olympic Park ở Songpa-gu phía đông nam, thuộc một tổ chức khác. Hai nơi cách nhau khoảng một giờ.",
+      },
+      {
+        q: "Inspire Arena có ở Seoul không?",
+        a: "Không, nó ở Incheon. Nó là nơi đi tới từ Seoul chứ không nằm trong Seoul, và đó là một chuyến đi khác cần lên kế hoạch.",
+      },
+      {
+        q: "Vì sao trang chỉ đường của chính đơn vị vận hành lại hiện sai nơi?",
+        a: "Vì Seoul Facilities Corporation điều hành nhiều địa điểm và còn công bố đường tới trụ sở chính của riêng họ ở Seongdong-gu. Tất cả những trang đó nằm trên cùng một trang web và trông giống nhau. Hãy khớp địa chỉ, đừng khớp tiêu đề trang.",
+      },
+      {
+        q: "Số chỗ ngồi trên trang địa điểm có cho tôi biết buổi diễn của tôi lớn cỡ nào không?",
+        a: "Không. Đó là sức chứa của toà nhà ở cách bố trí thường ngày. Một buổi hoà nhạc lấy sân khấu che mất một phần mặt sân, và nhà tổ chức quyết bán bao nhiêu phần còn lại, nên con số trên trang của đơn vị vận hành là mức trần chứ không phải mô tả về tối của bạn.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "งานของคุณอยู่ที่สถานที่จัดงานแห่งไหนในโซลจริง ๆ",
+    summary:
+      "ห้องแสดงขนาดใหญ่ของโซลมีชื่อภาษาอังกฤษที่ทับซ้อนกัน สองแห่งมีคำว่าโดมอยู่ในชื่อแต่ตั้งอยู่คนละฟากของเมือง และอีกสองแห่งใช้ผู้บริหารรายเดียวกัน แต่ละชื่อหมายถึงที่ใด อยู่เขตไหน และสายไหนไปถึง",
+    scope:
+      "ครอบคลุมการแยกแยะห้องแสดงคอนเสิร์ตของโซลด้วยชื่อ เขต และสายรถไฟฟ้าใต้ดิน จากหน้าเว็บของผู้บริหารแต่ละรายเท่าที่เว็บไซต์นี้อ่านได้ ไม่ครอบคลุมว่าบล็อกไหนเปิดขาย ประตูไหนให้คุณเข้า หรือประตูเปิดเมื่อไร เพราะสิ่งเหล่านั้นเป็นของผู้จัดงานและกำหนดเป็นรายงาน",
+    intro: [
+      "นี่คือคำถามที่ตอบผิดได้ง่ายที่สุดเมื่อสายเกินไป และตอบผิดแล้วแพงที่สุด ห้องแสดงที่ใหญ่ที่สุดของโซลสองแห่งมีคำว่าโดมอยู่ในชื่อ และห่างกันหนึ่งชั่วโมง อีกสองแห่งดำเนินการโดยองค์กรเดียวกัน ดังนั้นการค้นหาชื่อผู้บริหารจะให้ผลทั้งสองแห่ง",
+      "ชื่อสถานที่จัดงานอยู่บนหน้าจองก่อนที่คุณจะซื้อ และอยู่บนบัตรหลังจากนั้น โปรดอ่านชื่อโดยเทียบกับเขต ไม่ใช่เทียบกับว่าชื่อฟังดูเป็นอย่างไร",
+    ],
+    steps: [
+      {
+        title: "จับชื่อให้ตรงกับเขต ไม่ใช่ให้ตรงกับเสียงที่มันฟังดู",
+        body: "Gocheok Sky Dome (고척스카이돔) อยู่ในเขตคูโร ทางตะวันตก KSPO Dome อยู่ในสวนโอลิมปิกในเขตซงพา ทางตะวันออกเฉียงใต้ ภายใต้องค์กรที่ต่างกันโดยสิ้นเชิง Seoul World Cup Stadium อยู่ที่ซังอัมในเขตมาโพ ทางตะวันตกเฉียงเหนือ Jangchung Arena (장충체육관) อยู่ในเขตจุง ใจกลางเมือง Inspire Arena ไม่ได้อยู่ในโซลเลย มันอยู่ที่อินชอน เขตเป็นข้อเท็จจริงเกี่ยวกับชื่อ แต่ชื่อไม่ใช่ข้อเท็จจริงเกี่ยวกับเขต",
+        pitfall:
+          "การเห็นคำว่า Dome แล้วคิดว่ามีแห่งเดียว ห้องแสดงที่ใหญ่ที่สุดของเมืองนี้สองแห่งมีคำนั้นอยู่ในชื่อ ทั้งสองอยู่คนละฟากของโซล และแฟนที่เพิ่งเข้าใจเรื่องนี้ตอน 18:00 ก็ไปไม่ทันงาน",
+        takes: "2 นาที",
+      },
+      {
+        title: "สองแห่งในนั้นใช้ผู้บริหารรายเดียวกัน และนั่นเองคือกับดัก",
+        body: "Gocheok Sky Dome, Seoul World Cup Stadium และ Jangchung Arena ล้วนดำเนินการโดย Seoul Facilities Corporation (서울시설공단) ดังนั้นการค้นหาชื่อผู้บริหารจะให้ผลทั้งสามแห่ง และหน้าเว็บของแต่ละแห่งก็ดูเหมือนกันหมด เว็บไซต์ของผู้บริหารยังมี찾아오시는 길 อยู่ใต้ส่วนข้อมูลองค์กรด้วย และหน้านั้นคือสำนักงานใหญ่ของหน่วยงานในเขตซองดง ซึ่งห่างจากทั้งสามแห่งราวสิบกิโลเมตร โปรดตรวจว่าที่อยู่บนหน้าบอกทางตรงกับสถานที่ที่คุณต้องการไป",
+        pitfall:
+          "การเชื่อหน้าบอกทางเพียงเพราะมันอยู่บนเว็บไซต์ของผู้บริหารเอง สามสถานที่จัดงานกับสำนักงานใหญ่หนึ่งแห่งต่างก็เผยแพร่หน้าแบบนั้น และทุกหน้าดูเหมือนกัน",
+        takes: "2 นาที",
+      },
+      {
+        title: "ขนาดจะบอกคุณว่าคืนนี้เป็นคืนแบบไหน",
+        body: "Jangchung Arena มีที่นั่ง 4,507 ที่ โดย 1,324 ที่เป็นแบบเก็บได้ เป็นพื้นที่สำหรับงานพบแฟน Gocheok Sky Dome เป็นโดมในร่ม จุราว 16,600 คนสำหรับเบสบอล และจัดให้เล็กลงสำหรับคอนเสิร์ต Seoul World Cup Stadium มีที่นั่ง 66,704 ที่และเปิดโล่งสู่ท้องฟ้า ซึ่งในเดือน 11 เป็นเรื่องอีกแบบหนึ่ง ตัวเลขบนหน้าของผู้บริหารเป็นตัวเลขของอาคาร ไม่ใช่ของงานของคุณ จะขายไปเท่าไรนั้นผู้จัดงานเป็นคนกำหนด",
+        takes: "1 นาที",
+      },
+      {
+        title: "บางครั้งสถานีก็คือตัวอาคาร",
+        body: "สามแห่งนี้ไม่เหมือนกันในเรื่องการไปถึง Jangchung Arena เข้าได้จากทางออก 5 ของ동대입구역 ซึ่งผู้บริหารระบุว่าทางออกนั้นเชื่อมเข้าอาคารโดยตรง คุณไม่ต้องออกไปข้างนอก Seoul World Cup Stadium มีสถานีที่ตั้งชื่อตามตัวมันเอง คือ월드컵경기장역 ทางออก 2 ส่วน Gocheok เป็นแห่งเดียวที่สถานีใกล้ที่สุดไม่ใช่คำตอบที่ชัดเจน จึงเป็นเหตุให้มันมีหน้าของตัวเอง",
+        takes: "1 นาที",
+      },
+      {
+        title: "สิ่งที่หน้าของสถานที่จัดงานใดก็บอกคุณไม่ได้",
+        body: "งานของคุณเปิดขายบล็อกไหน เวทีอยู่ที่ใด ประตูไหนให้คุณเข้า ประตูเปิดเมื่อไร และนำอะไรเข้าไปได้ ผู้บริหารเผยแพร่เรื่องอาคาร ผู้จัดงานเผยแพร่เรื่องงาน ทุกข้อที่ว่ามากำหนดเป็นรายงาน และอยู่บนบัตรของคุณกับประกาศของผู้จัดงาน",
+        takes: "1 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "Gocheok Sky Dome กับ KSPO Dome เป็นที่เดียวกันไหม",
+        a: "ไม่ใช่ Gocheok Sky Dome อยู่ในเขตคูโรทางตะวันตก และดำเนินการโดย Seoul Facilities Corporation ส่วน KSPO Dome อยู่ในสวนโอลิมปิกในเขตซงพาทางตะวันออกเฉียงใต้ ภายใต้องค์กรอีกราย ทั้งสองห่างกันราวหนึ่งชั่วโมง",
+      },
+      {
+        q: "Inspire Arena อยู่ในโซลไหม",
+        a: "ไม่ มันอยู่ที่อินชอน เป็นที่ที่เดินทางไปจากโซล ไม่ใช่อยู่ในโซล และนั่นคือการเดินทางอีกแบบที่ต้องวางแผน",
+      },
+      {
+        q: "ทำไมหน้าบอกทางของผู้บริหารเองจึงแสดงสถานที่ผิด",
+        a: "เพราะ Seoul Facilities Corporation ดำเนินการสถานที่จัดงานหลายแห่ง และยังเผยแพร่เส้นทางไปสำนักงานใหญ่ของตัวเองในเขตซองดงด้วย หน้าทั้งหมดนั้นอยู่บนเว็บไซต์เดียวกันและดูคล้ายกัน โปรดจับที่อยู่ให้ตรง ไม่ใช่จับชื่อหน้า",
+      },
+      {
+        q: "จำนวนที่นั่งบนหน้าของสถานที่จัดงานบอกได้ไหมว่างานของฉันใหญ่แค่ไหน",
+        a: "ไม่ได้ นั่นคือความจุของอาคารในการจัดวางตามปกติ คอนเสิร์ตจะใช้เวทีกินพื้นที่ส่วนหนึ่งของพื้นสนาม และผู้จัดงานเป็นคนกำหนดว่าจะขายส่วนที่เหลือเท่าไร ดังนั้นตัวเลขบนหน้าของผู้บริหารจึงเป็นเพดานสูงสุด ไม่ใช่คำบรรยายคืนของคุณ",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "which-seoul-venue-is-your-show-at",
+    sourceChecked: "2026-10-25",
+    sourceText: "21dac6a21d3f",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Aling venue sa Seoul ang talagang kinalalagyan ng palabas mo",
+    summary:
+      "Magkasalikop ang mga pangalang Ingles ng malalaking bulwagan ng Seoul, may Dome sa pamagat ang dalawa sa kanila at nasa magkabilang panig sila ng lungsod, at may parehong tagapagpatakbo ang dalawa pa. Ano ang tinutukoy ng bawat pangalan, aling distrito ang kinalalagyan nito, at aling linya ang nakakaabot doon.",
+    scope:
+      "Sinasaklaw ang pagkilatis sa mga bulwagan ng konsiyerto sa Seoul batay sa pangalan, distrito at linya ng tren sa ilalim ng lupa, mula sa sariling mga pahina ng bawat tagapagpatakbo hangga't nababasa ng sayt na ito. Hindi nito sinasaklaw kung aling mga bloke ang ipinagbibili, aling tarangkahan ang pumapasok sa iyo o kailan bumubukas ang pinto: sa prodyuser ang mga iyon at itinatakda sa bawat palabas.",
+    intro: [
+      "Ito ang tanong na pinakamadaling mamali kapag huli na at pinakamagastos kapag namali talaga. May Dome sa pangalan ang dalawa sa pinakamalalaking bulwagan ng Seoul at isang oras ang pagitan nila. Pinapatakbo ng parehong organisasyon ang dalawa pa, kaya ang paghahanap sa tagapagpatakbo ay nag-aalok sa iyo ng dalawa.",
+      "Nasa pahina ng pagpa-book ang pangalan ng venue bago ka bumili at nasa tiket ito pagkatapos. Basahin ito katapat ng distrito, at hindi katapat ng kung ano ang pakinggan ng pangalan.",
+    ],
+    steps: [
+      {
+        title: "Itapat ang pangalan sa isang distrito, hindi sa pakinggan nito",
+        body: "Nasa Guro-gu ang Gocheok Sky Dome (고척스카이돔), sa kanluran. Nasa loob ng Olympic Park sa Songpa-gu ang KSPO Dome, sa timog-silangan, sa ilalim ng isang ganap na ibang organisasyon. Nasa Sangam sa Mapo-gu ang Seoul World Cup Stadium, sa hilagang-kanluran. Nasa Jung-gu ang Jangchung Arena (장충체육관), sa gitna. Hindi nasa Seoul ang Inspire Arena — nasa Incheon ito. Ang isang distrito ay isang katotohanan tungkol sa isang pangalan; ang isang pangalan ay hindi katotohanan tungkol sa isang distrito.",
+        pitfall:
+          "Ang pagbasa ng Dome at paniniwalang isa lamang ito. May taglay nitong pangalan ang dalawa sa pinakamalalaking bulwagan ng lungsod, nasa magkabilang panig sila ng Seoul, at ang tagahangang natutunan iyon sa 18:00 ay hindi makakarating sa palabas.",
+        takes: "2 minuto",
+      },
+      {
+        title: "May parehong tagapagpatakbo ang dalawa sa kanila, at bitag na iyon sa sarili nito",
+        body: "Pinapatakbo lahat ng Seoul Facilities Corporation (서울시설공단) ang Gocheok Sky Dome, ang Seoul World Cup Stadium at ang Jangchung Arena, kaya ang paghahanap sa pangalan ng tagapagpatakbo ay nag-aalok ng tatlo at magkamukha ang mga pahina nila. May dala ring isang 찾아오시는 길 ang sayt ng tagapagpatakbo sa ilalim ng seksiyong pangkorporasyon, at ang isang iyon ay ang punong tanggapan ng korporasyon sa Seongdong-gu — mga sampung kilometro mula sa alinman sa kanila. Tiyaking tumutugma sa venue na gusto mo ang adres sa isang pahina ng panuto sa pagpunta.",
+        pitfall:
+          "Ang pagtitiwala sa isang pahina ng panuto dahil nasa sariling sayt ito ng tagapagpatakbo. Tatlong venue at isang punong tanggapan ang bawat isa'y naglalathala ng isa, at magkamukha ang lahat.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Sinasabi ng laki kung anong uri ng gabi ito",
+        body: "May 4,507 na upuan ang Jangchung Arena, at 1,324 sa mga iyon ay maaaring itago — isang silid para sa pakikipagkita sa mga tagahanga. Ang Gocheok Sky Dome ay isang dome na nasa loob, humigit-kumulang 16,600 para sa beysbol, at inaayos nang mas maliit para sa konsiyerto. May 66,704 na upuan ang Seoul World Cup Stadium at bukas ito sa kalangitan, na ibang alok na naman sa Nobyembre. Ang bilang sa pahina ng tagapagpatakbo ay sa gusali at hindi sa palabas mo: ang prodyuser ang nagpapasya kung gaano karami roon ang ipinagbibili.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang istasyon kung minsan ay ang gusali",
+        body: "Hindi magkatulad ang tatlong ito sa pagdating. Naaabot ang Jangchung Arena mula sa labasan 5 ng 동대입구역, na sinasabi ng tagapagpatakbo na tuwirang nakakabit sa gusali — hindi ka lumalabas. May istasyong ipinangalan sa Seoul World Cup Stadium, ang 월드컵경기장역, labasan 2. Ang Gocheok ang isa kung saan hindi malinaw na sagot ang pinakamalapit na istasyon, at iyon ang dahilan kung bakit may sariling pahina ito.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang hindi masasabi sa iyo ng anumang pahina ng venue",
+        body: "Kung aling mga bloke ang ipinagbibili para sa palabas mo, kung nasaan ang entablado, aling tarangkahan ang pumapasok sa iyo, kailan bumubukas ang pinto at ano ang maaari mong ipasok. Inilalathala ng tagapagpatakbo ang gusali; inilalathala ng prodyuser ang kaganapan. Itinatakda sa bawat palabas ang bawat isa sa mga iyon at nabubuhay sila sa tiket mo at sa pabatid ng prodyuser.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Pareho ba ang Gocheok Sky Dome at ang KSPO Dome?",
+        a: "Hindi. Nasa Guro-gu sa kanluran ang Gocheok Sky Dome at pinapatakbo ito ng Seoul Facilities Corporation. Nasa loob ng Olympic Park sa Songpa-gu sa timog-silangan ang KSPO Dome, sa ilalim ng ibang organisasyon. Mga isang oras ang pagitan nila.",
+      },
+      {
+        q: "Nasa Seoul ba ang Inspire Arena?",
+        a: "Hindi, nasa Incheon ito. Naaabot ito mula sa Seoul at hindi sa loob nito, at ibang paglalakbay iyon na dapat planuhin.",
+      },
+      {
+        q: "Bakit ipinapakita ng sariling pahina ng panuto ng tagapagpatakbo ang maling lugar?",
+        a: "Dahil nagpapatakbo ang Seoul Facilities Corporation ng ilang venue at naglalathala rin ng panuto patungo sa sariling punong tanggapan nito sa Seongdong-gu. Nasa parehong sayt ang lahat ng pahinang iyon at magkamukha sila. Itapat ang adres, hindi ang pamagat ng pahina.",
+      },
+      {
+        q: "Sinasabi ba sa akin ng bilang ng upuan sa pahina ng venue kung gaano kalaki ang palabas ko?",
+        a: "Hindi. Kapasidad iyon ng gusali sa karaniwang pagkakaayos nito. Tinatakpan ng isang konsiyerto ang bahagi ng palapag sa pamamagitan ng entablado at ang prodyuser ang nagpapasya kung gaano karami sa natitira ang ipinagbibili, kaya ang bilang sa pahina ng isang tagapagpatakbo ay pinakamataas na hangganan at hindi paglalarawan ng gabi mo.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "ファンミーティングやコンサートのために奬忠体育館へ行く",
+    summary:
+      "ファンミーティングや小規模な公演が行われる、中区にある4,507席のアリーナです。運営するソウル施設公団自身のページから、屋内で直結している出口、バス、そしてイベントの日に車で行くという選択肢がない理由を読み取ります。",
+    scope:
+      "中区にある奬忠体育館への到着を、運営者自身の交通と施設のページから扱います。座席の配置は扱いません。高尺やワールドカップ競技場と違い、この会場は座席配置図も座席検索も公開していないので、ここで教えられる番号体系は存在せず、このページはそれを作り出しません。",
+    intro: [
+      "当サイトが扱うソウルの3会場のうち、ここが小さい部屋です。4,507席で、そのうち1,324席は可動式です。運営者がコンサートにも使われると述べているバレーボールのアリーナで、実際にはツアーではなくファンミーティングや小規模な公演を意味します。",
+      "この会場についての2つの事実が、ほかのすべてより価値を持ちます。地下鉄の出口が外に出ずに建物へ直結していること、そしてイベントの日には一般の駐車がまったくないことです。",
+    ],
+    steps: [
+      {
+        title: "3号線で동대입구역、5番出口——そこでもう建物の中です",
+        body: "運営者は、5番出口がアリーナに直結していると述べています。雨の11月の夕方や、ソウルの冬には、これは当サイトのほかのどの会場とも違う到着になります。地上に出ず、道路を渡らず、入口を探す必要がありません。住所は서울특별시 중구 동호로241です。",
+        pitfall:
+          "ホームの案内表示が最も近い階段へ誘導するので、別の出口から出てしまうこと。直結しているのは5番出口だけで、それ以外の出口はどれも、すでに中にいた建物の外へあなたを出します。",
+        takes: "2分",
+      },
+      {
+        title: "バスなら、アリーナの名を冠した停留所が2つあります",
+        body: "運営者は장충체육관앞を02-201と02-202の2つの停留所として挙げており、どちらもN13番、144番、301番、7212番が停まります。동대입구역·장충동は02-222の停留所で、05番、02番、03番が停まります。アリーナの2つの停留所は道路を挟んで向かい合っているので、違いは一方が道路を渡ることになるという点だけです。",
+        takes: "1分",
+      },
+      {
+        title: "車で行く前提で計画しない。理由は運営者自身の言葉にあります",
+        body: "駐車場は合計63台分で、そのうち2台分は障がい者用、2台分はバス用、8台分は女性専用、5台分は貴賓用です。そして運営者は、イベント開催中は一般の駐車はないとはっきり述べています。4,507人が入る部屋に対して、これは不足ではなく閉鎖です。",
+        pitfall:
+          "小さい会場だから車で行きやすいと考えること。駐車場は大きい2つの会場より比率で見ても小さく、しかもその夜はあなたに開かれていません。",
+        takes: "1分",
+      },
+      {
+        title: "読むべき座席配置図がなく、それが期待の仕方を変えます",
+        body: "高尺は番号体系の文章による説明とともに配置図を公開し、ワールドカップ競技場は座席検索を公開しています。この会場はどちらも公開していません。4,507席のうち1,324席が可動式なので、ファンミーティングのフロア構成はかなりの部分が主催者の作るものであり、あなたに売られた座席がどの常設の図とも対応しないことがあります。あなたのチケットと主催者の座席画像だけが権威です。",
+        takes: "1分",
+      },
+    ],
+    faq: [
+      {
+        q: "建物に直結している出口はどれですか。",
+        a: "3号線동대입구역の5番出口です。運営者はアリーナへの接続が直結であると述べていて、だからこのページは駅名だけでなくその出口を名指ししています。",
+      },
+      {
+        q: "奬忠体育館に駐車できますか。",
+        a: "イベントの日はできません。運営者は北側駐車場に63台分を公開しており、イベント開催中は一般の駐車は利用できないと述べています。",
+      },
+      {
+        q: "なぜこの会場には座席ガイドがないのですか。",
+        a: "運営者がこの会場の座席配置図も座席検索も公開していないので、読み取れる番号体系が存在しないからです。書くことはそれを作り出すことになり、当サイトはそれをしません。高尺とワールドカップ競技場のページがあるのは、その会場が材料を公開しているからです。",
+      },
+      {
+        q: "どれくらいの規模ですか。",
+        a: "4,507席で、そのうち1,324席は可動式です。地下2層と地上3階にわたります。通常の用途ではバレーボールのアリーナで、プロ2チームの本拠地です。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "為了見面會或演唱會前往奬忠體育館",
+    summary:
+      "位在中區、有4,507個座位的體育館，見面會與較小型的演出在這裡舉行。取自營運它的首爾設施公團自己的頁面：室內直通的出口、公車，以及為什麼活動日開車不是一個選項。",
+    scope:
+      "涵蓋抵達位在中區的奬忠體育館，取自營運者自己的交通與設施頁面。不涵蓋座位配置：和高尺與世界盃競技場不同，這座場館沒有公布座位配置圖也沒有座位查詢，所以這裡沒有可教的編號系統，本頁也不會憑空造一套。",
+    intro: [
+      "在本站涵蓋的三座首爾場館裡，這是小的那一間——4,507個座位，其中1,324個是可收納的。它是一座排球館，營運者說它也用於演唱會，實際上意味著見面會與較小型的演出，而不是巡演。",
+      "關於它的兩個事實比其他一切都值錢：地鐵出口不必走到戶外就直通建築，而在活動日根本沒有一般停車。",
+    ],
+    steps: [
+      {
+        title: "搭3號線到동대입구역，5號出口——你已經在建築裡了",
+        body: "營運者表示5號出口直接連通體育館。在下雨的11月傍晚，或在首爾的冬天，這是和本站其他任何場館都不同的抵達方式：你不必上到地面、不必穿越馬路、不必找門。地址是서울특별시 중구 동호로241。",
+        pitfall:
+          "因為月台指示把你往最近的樓梯送，結果從別的出口出去。直通的是5號出口而不是別的，而任何其他出口都會把你送到你本來已經身在其中的那棟建築外面。",
+        takes: "2分鐘",
+      },
+      {
+        title: "搭公車的話，有兩個站名就是體育館的名字",
+        body: "營運者把장충체육관앞列為02-201與02-202兩個站，兩站都有N13、144、301與7212停靠；동대입구역·장충동是02-222站，由05、02與03停靠。體育館的那兩個站分別在馬路兩側，差別只在於其中一個意味著要穿越馬路。",
+        takes: "1分鐘",
+      },
+      {
+        title: "不要計畫開車，而理由就在營運者自己的話裡",
+        body: "停車位總共63個，其中2個是無障礙車位、2個給巴士、8個保留給女性、5個給貴賓。接著營運者直白地表示，活動期間沒有一般停車。對一個容納4,507人的場地而言，這不是不足，而是關閉。",
+        pitfall:
+          "把小場館當成容易開車去的那一個。它的停車場按比例還比兩座較大的場館更小，而且在那個晚上它根本不對你開放。",
+        takes: "1分鐘",
+      },
+      {
+        title: "這裡沒有座位配置圖可讀，而那會改變你該有的預期",
+        body: "高尺公布了配置圖，還附上以文字說明的編號方式，世界盃競技場公布了座位查詢。這座場館兩者都沒有。它4,507個座位裡有1,324個是可收納的，所以見面會的場地配置有相當大部分是主辦方自己搭的，你買到的座位可能不對應任何永久的圖。你的票與主辦方的座位圖才是唯一的權威。",
+        takes: "1分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "哪一個出口直通建築？",
+        a: "3號線동대입구역的5號出口。營運者表示通往體育館是直接連通的，這就是本頁指名那個出口而不只是指名車站的原因。",
+      },
+      {
+        q: "我可以在奬忠體育館停車嗎？",
+        a: "活動日不行。營運者公布北側停車場有63個車位，並表示活動期間一般停車無法使用。",
+      },
+      {
+        q: "為什麼這座場館沒有座位指南？",
+        a: "因為營運者沒有為它公布座位配置圖也沒有座位查詢，所以沒有可以讀取的編號系統。寫出來就等於憑空造出來，而本站不做那件事。高尺與世界盃競技場的頁面存在，是因為那些場館公布了所需的資料。",
+      },
+      {
+        q: "它有多大？",
+        a: "4,507個座位，其中包含1,324個可收納的，分布在地下2層與地上3層。它在平常的用途上是一座排球館，也是兩支職業球隊的主場。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menuju Jangchung Arena untuk sebuah fan meeting atau konser",
+    summary:
+      "Arena berkapasitas 4,507 kursi di Jung-gu tempat fan meeting dan pertunjukan yang lebih kecil berlangsung, dibaca dari halaman milik Seoul Facilities Corporation sendiri: pintu keluar yang tersambung di dalam ruangan, bus-busnya, dan mengapa menyetir bukan pilihan pada hari acara.",
+    scope:
+      "Mencakup cara mencapai Jangchung Arena di Jung-gu, dari halaman transportasi dan fasilitas milik pengelolanya. Tidak mencakup tata letak tempat duduk: berbeda dari Gocheok dan World Cup Stadium, venue ini tidak menerbitkan bagan tempat duduk maupun pencari kursi, jadi tidak ada sistem penomoran untuk diajarkan di sini dan halaman ini tidak mengarangnya.",
+    intro: [
+      "Inilah ruang kecil dari ketiga venue Seoul yang dicakup situs ini — 4,507 kursi, yang 1,324 di antaranya dapat ditarik masuk. Ia sebuah arena bola voli yang menurut pengelolanya juga dipakai untuk konser, yang dalam praktiknya berarti fan meeting dan pertunjukan yang lebih kecil alih-alih tur.",
+      "Dua fakta tentangnya lebih bernilai daripada segala hal lain: pintu keluar kereta bawah tanah tersambung ke bangunan tanpa keluar ke jalan, dan pada hari acara sama sekali tidak ada parkir umum.",
+    ],
+    steps: [
+      {
+        title: "Line 3 ke 동대입구역, pintu keluar 5 — dan Anda sudah di dalam",
+        body: "Pengelola menyatakan bahwa pintu keluar 5 tersambung langsung ke arena. Pada sore November yang basah, atau pada musim dingin Seoul, itu kedatangan yang berbeda dari venue mana pun di situs ini: Anda tidak naik ke permukaan, tidak menyeberang jalan, dan tidak mencari pintu. Alamatnya 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Keluar lewat pintu lain karena papan petunjuk di peron mengarahkan Anda ke tangga terdekat. Sambungan langsung itu khusus pintu keluar 5, dan pintu keluar lain mana pun menaruh Anda di luar bangunan yang tadinya sudah Anda tempati.",
+        takes: "2 menit",
+      },
+      {
+        title: "Dengan bus, ada dua perhentian yang memakai nama arena itu sendiri",
+        body: "Pengelola mendaftar 장충체육관앞 sebagai perhentian 02-201 dan 02-202, keduanya dilayani N13, 144, 301 dan 7212, serta 동대입구역·장충동 sebagai perhentian 02-222, yang dilayani 05, 02 dan 03. Kedua perhentian arena itu berada di sisi jalan yang berlawanan, yang hanya berarti bahwa salah satunya mengharuskan Anda menyeberang.",
+        takes: "1 menit",
+      },
+      {
+        title: "Jangan berencana menyetir, dan alasannya ada dalam kata-kata pengelolanya sendiri",
+        body: "Ada 63 petak parkir seluruhnya, dan dari jumlah itu dua adalah petak aksesibel, dua untuk bus, delapan dicadangkan bagi perempuan dan lima bagi tamu kehormatan. Pengelola kemudian menyatakan terang-terangan bahwa selama acara tidak ada parkir umum. Untuk sebuah ruang berisi 4,507 orang itu bukan kekurangan, itu penutupan.",
+        pitfall:
+          "Menganggap venue kecil sebagai venue yang mudah didatangi dengan mobil. Tempat parkirnya secara proporsional lebih kecil daripada di kedua venue yang lebih besar, dan pada malam itu ia sama sekali tidak terbuka bagi Anda.",
+        takes: "1 menit",
+      },
+      {
+        title: "Tidak ada bagan tempat duduk untuk dibaca, dan itu mengubah apa yang harus diharapkan",
+        body: "Gocheok menerbitkan bagan beserta keterangan tertulis tentang penomorannya, dan World Cup Stadium menerbitkan pencari kursi. Venue ini tidak menerbitkan keduanya. Dengan 1,324 dari 4,507 kursinya dapat ditarik masuk, susunan lantai untuk sebuah fan meeting sebagian besar adalah milik promotor untuk dibangun, jadi tempat duduk yang dijual kepada Anda mungkin tidak berpadanan dengan rencana permanen mana pun. Tiket Anda dan gambar tempat duduk dari promotor adalah satu-satunya otoritas.",
+        takes: "1 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Pintu keluar mana yang tersambung ke bangunan?",
+        a: "Pintu keluar 5 dari 동대입구역 di Line 3. Pengelola menyatakan sambungan ke arena itu langsung, dan itulah sebabnya halaman ini menyebut pintu keluar tersebut alih-alih hanya stasiunnya.",
+      },
+      {
+        q: "Bisakah saya memarkir di Jangchung Arena?",
+        a: "Tidak pada hari acara. Pengelola menerbitkan 63 petak di tempat parkir sisi utara dan menyatakan bahwa parkir umum tidak tersedia selama acara.",
+      },
+      {
+        q: "Mengapa tidak ada panduan tempat duduk untuk venue ini?",
+        a: "Karena pengelolanya tidak menerbitkan bagan tempat duduk maupun pencari kursi untuknya, jadi tidak ada sistem penomoran yang bisa dibaca. Menulisnya berarti mengarangnya, dan situs ini tidak melakukan itu. Halaman Gocheok dan World Cup Stadium ada karena venue-venue itu menerbitkan bahannya.",
+      },
+      {
+        q: "Seberapa besar ia?",
+        a: "4,507 kursi, termasuk 1,324 yang dapat ditarik masuk, di atas dua lantai basemen dan tiga lantai di atas tanah. Ia sebuah arena bola voli dalam penggunaan biasanya dan markas dua klub profesional.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Zur Jangchung Arena für ein Fanmeeting oder ein Konzert",
+    summary:
+      "Die Halle mit 4,507 Plätzen in Jung-gu, in der Fanmeetings und kleinere Shows spielen, abgelesen an den eigenen Seiten der Seoul Facilities Corporation: der Ausgang, der innen anschließt, die Busse, und warum Autofahren an einem Veranstaltungstag keine Option ist.",
+    scope:
+      "Behandelt die Anreise zur Jangchung Arena in Jung-gu, aus den eigenen Verkehrs- und Gebäudeseiten des Betreibers. Nicht behandelt wird die Sitzordnung: anders als Gocheok und das World Cup Stadium veröffentlicht diese Halle weder Sitzplan noch Platzsuche, es gibt hier also kein Numerierungssystem zu erklären, und diese Seite erfindet keines.",
+    intro: [
+      "Das ist der kleine Saal unter den drei Seouler Hallen, die diese Seite behandelt — 4,507 Plätze, davon 1,324 einfahrbar. Es ist eine Volleyballhalle, die laut Betreiber auch für Konzerte genutzt wird, was in der Praxis Fanmeetings und kleinere Shows und nicht Tourneen bedeutet.",
+      "Zwei Tatsachen darüber sind mehr wert als alles andere: der U-Bahn-Ausgang schließt an das Gebäude an, ohne dass man nach draußen geht, und an einem Veranstaltungstag gibt es überhaupt kein öffentliches Parken.",
+    ],
+    steps: [
+      {
+        title: "Line 3 bis 동대입구역, Ausgang 5 — und Sie sind schon drinnen",
+        body: "Der Betreiber erklärt, dass Ausgang 5 direkt an die Halle anschließt. An einem nassen Novemberabend oder in einem Seouler Winter ist das eine andere Ankunft als bei jeder anderen Halle auf dieser Seite: Sie kommen nicht nach oben, überqueren keine Straße und suchen keine Tür. Die Adresse ist 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Über einen anderen Ausgang hinauszugehen, weil die Beschilderung am Bahnsteig Sie zur nächsten Treppe schickt. Die direkte Verbindung ist genau Ausgang 5, und jeder andere Ausgang setzt Sie vor das Gebäude, in dem Sie schon waren.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Mit dem Bus gibt es zwei Haltestellen mit dem Namen der Halle",
+        body: "Der Betreiber führt 장충체육관앞 als die Haltestellen 02-201 und 02-202, beide bedient von N13, 144, 301 und 7212, und 동대입구역·장충동 als Haltestelle 02-222, bedient von 05, 02 und 03. Die beiden Hallenhaltestellen liegen auf gegenüberliegenden Straßenseiten, was nur insofern zählt, als eine von ihnen das Überqueren bedeutet.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Planen Sie nicht mit dem Auto, und der Grund steht in den Worten des Betreibers",
+        body: "Es gibt insgesamt 63 Parkplätze, davon zwei Behindertenplätze, zwei für Busse, acht für Frauen reserviert und fünf für Ehrengäste. Der Betreiber erklärt dann klar, dass es während Veranstaltungen kein öffentliches Parken gibt. Für einen Saal mit 4,507 Menschen ist das kein Mangel, das ist eine Schließung.",
+        pitfall:
+          "Eine kleine Halle für die zu halten, zu der man bequem fährt. Der Parkplatz ist im Verhältnis kleiner als bei den beiden größeren Hallen, und am Abend steht er Ihnen überhaupt nicht offen.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Es gibt keinen Sitzplan zu lesen, und das ändert, was zu erwarten ist",
+        body: "Gocheok veröffentlicht einen Plan samt schriftlicher Beschreibung seiner Numerierung, und das World Cup Stadium veröffentlicht eine Platzsuche. Diese Halle veröffentlicht keines von beiden. Da 1,324 ihrer 4,507 Plätze einfahrbar sind, ist die Bodenanordnung für ein Fanmeeting zu einem erheblichen Teil Sache des Veranstalters, die Bestuhlung, die man Ihnen verkauft, muss also keinem dauerhaften Plan entsprechen. Ihr Ticket und das Sitzbild des Veranstalters sind die einzige Autorität.",
+        takes: "1 Minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Welcher Ausgang schließt an das Gebäude an?",
+        a: "Ausgang 5 von 동대입구역 an der Line 3. Der Betreiber erklärt die Verbindung zur Halle als direkt, und deshalb nennt diese Seite jenen Ausgang und nicht nur die Station.",
+      },
+      {
+        q: "Kann ich an der Jangchung Arena parken?",
+        a: "Nicht an einem Veranstaltungstag. Der Betreiber veröffentlicht 63 Plätze auf dem Parkplatz an der Nordseite und erklärt, dass öffentliches Parken während Veranstaltungen nicht verfügbar ist.",
+      },
+      {
+        q: "Warum gibt es für diese Halle keinen Sitzplatzführer?",
+        a: "Weil der Betreiber für sie weder Sitzplan noch Platzsuche veröffentlicht, es also kein Numerierungssystem zum Ablesen gibt. Einen zu schreiben hieße, ihn zu erfinden, und das tut diese Seite nicht. Die Seiten zu Gocheok und zum World Cup Stadium existieren, weil jene Hallen das Material veröffentlichen.",
+      },
+      {
+        q: "Wie groß ist sie?",
+        a: "4,507 Plätze, darunter 1,324 einfahrbare, über zwei Kellerebenen und drei Geschossen über der Erde. In ihrer gewöhnlichen Nutzung ist sie eine Volleyballhalle und die Heimstätte zweier Profimannschaften.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Llegar al Jangchung Arena para un fan meeting o un concierto",
+    summary:
+      "El pabellón de 4,507 asientos en Jung-gu donde se celebran fan meetings y espectáculos más pequeños, leído en las propias páginas de la Seoul Facilities Corporation: la salida que conecta por dentro, los autobuses, y por qué ir en coche no es una opción un día de evento.",
+    scope:
+      "Cubre cómo llegar al Jangchung Arena, en Jung-gu, a partir de las páginas de transporte e instalaciones del propio operador. No cubre la distribución de asientos: a diferencia de Gocheok y del World Cup Stadium, este recinto no publica plano de asientos ni buscador de butacas, así que aquí no hay un sistema de numeración que enseñar y esta página no se lo inventa.",
+    intro: [
+      "Esta es la sala pequeña de los tres recintos de Seúl que cubre este sitio: 4,507 asientos, de los que 1,324 son retráctiles. Es un pabellón de voleibol que, según el operador, se usa también para conciertos, lo que en la práctica significa fan meetings y espectáculos pequeños más que giras.",
+      "Dos hechos sobre él valen más que todo lo demás: la salida del metro conecta con el edificio sin salir a la calle, y un día de evento no hay ningún aparcamiento público.",
+    ],
+    steps: [
+      {
+        title: "Line 3 hasta 동대입구역, salida 5, y ya estás dentro",
+        body: "El operador declara que la salida 5 conecta directamente con el pabellón. Una tarde lluviosa de noviembre, o en un invierno de Seúl, esa es una llegada distinta a la de cualquier otro recinto de este sitio: no sales a la superficie, no cruzas una calle y no buscas una puerta. La dirección es 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Salir por otra salida porque la señalización del andén te manda a la escalera más cercana. La conexión directa es la salida 5 concretamente, y cualquier otra te deja fuera del edificio en el que ya estabas.",
+        takes: "2 minutos",
+      },
+      {
+        title: "En autobús hay dos paradas con el nombre del propio pabellón",
+        body: "El operador enumera 장충체육관앞 como las paradas 02-201 y 02-202, servidas ambas por N13, 144, 301 y 7212, y 동대입구역·장충동 como la parada 02-222, servida por 05, 02 y 03. Las dos paradas del pabellón están en lados opuestos de la calle, lo que solo importa en que una de ellas implica cruzarla.",
+        takes: "1 minuto",
+      },
+      {
+        title: "No planees ir en coche, y el motivo está en las palabras del propio operador",
+        body: "Hay 63 plazas de aparcamiento en total, y de ellas dos son plazas accesibles, dos para autobuses, ocho reservadas para mujeres y cinco para invitados de honor. El operador declara después, sin rodeos, que durante los eventos no hay aparcamiento público. Para una sala de 4,507 personas eso no es escasez, es un cierre.",
+        pitfall:
+          "Tratar un recinto pequeño como el fácil para ir en coche. El aparcamiento es proporcionalmente más pequeño que en cualquiera de los dos recintos grandes, y esa noche no está abierto para ti en absoluto.",
+        takes: "1 minuto",
+      },
+      {
+        title: "No hay plano de asientos que leer, y eso cambia qué esperar",
+        body: "Gocheok publica un plano con una descripción escrita de su numeración, y el World Cup Stadium publica un buscador de butacas. Este recinto no publica ninguno de los dos. Con 1,324 de sus 4,507 asientos retráctiles, la disposición de la pista para un fan meeting la monta en buena medida la promotora, así que los asientos que te venden pueden no corresponder a ningún plano permanente. Tu entrada y la imagen de asientos de la promotora son la única autoridad.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Qué salida conecta con el edificio?",
+        a: "La salida 5 de 동대입구역, en la Line 3. El operador declara que la conexión con el pabellón es directa, y por eso esta página nombra esa salida y no solo la estación.",
+      },
+      {
+        q: "¿Puedo aparcar en el Jangchung Arena?",
+        a: "No un día de evento. El operador publica 63 plazas en el aparcamiento del lado norte y declara que el aparcamiento público no está disponible durante los eventos.",
+      },
+      {
+        q: "¿Por qué no hay guía de asientos para este recinto?",
+        a: "Porque el operador no publica plano de asientos ni buscador de butacas para él, así que no hay un sistema de numeración que leer. Escribirlo sería inventarlo, y este sitio no hace eso. Las páginas de Gocheok y del World Cup Stadium existen porque esos recintos publican el material.",
+      },
+      {
+        q: "¿De qué tamaño es?",
+        a: "4,507 asientos, incluidos 1,324 retráctiles, sobre dos niveles de sótano y tres plantas sobre el suelo. En su uso habitual es un pabellón de voleibol y la sede de dos equipos profesionales.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Se rendre à la Jangchung Arena pour une rencontre avec les fans ou un concert",
+    summary:
+      "La salle de 4,507 places à Jung-gu où se jouent les rencontres avec les fans et les spectacles plus modestes, d'après les pages de la Seoul Facilities Corporation elle-même : la sortie qui débouche à l'intérieur, les bus, et pourquoi la voiture n'est pas une option un jour d'événement.",
+    scope:
+      "Couvre l'accès à la Jangchung Arena à Jung-gu, d'après les pages de transport et d'installations de l'exploitant lui-même. Ne couvre pas le plan de salle : contrairement à Gocheok et au World Cup Stadium, cette salle ne publie ni plan de placement ni recherche de place, il n'y a donc ici aucun système de numérotation à enseigner et cette page n'en invente pas.",
+    intro: [
+      "C'est la petite salle parmi les trois salles de Séoul que couvre ce site — 4,507 places, dont 1,324 escamotables. C'est une salle de volley-ball dont l'exploitant dit qu'elle sert aussi aux concerts, ce qui en pratique désigne des rencontres avec les fans et des spectacles plus modestes plutôt que des tournées.",
+      "Deux faits à son sujet valent plus que tout le reste : la sortie de métro débouche dans le bâtiment sans passer dehors, et un jour d'événement il n'y a aucun stationnement public.",
+    ],
+    steps: [
+      {
+        title: "Line 3 jusqu'à 동대입구역, sortie 5 — et vous êtes déjà à l'intérieur",
+        body: "L'exploitant indique que la sortie 5 débouche directement dans la salle. Par un soir de novembre humide, ou dans un hiver séoulien, c'est une arrivée différente de celle de toute autre salle de ce site : vous ne remontez pas, vous ne traversez pas de rue et vous ne cherchez pas de porte. L'adresse est 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Sortir par une autre issue parce que la signalétique du quai vous envoie vers l'escalier le plus proche. La liaison directe est la sortie 5 et pas une autre, et n'importe quelle autre sortie vous dépose à l'extérieur du bâtiment où vous étiez déjà.",
+        takes: "2 minutes",
+      },
+      {
+        title: "En bus, deux arrêts portent le nom de la salle",
+        body: "L'exploitant indique 장충체육관앞 comme les arrêts 02-201 et 02-202, tous deux desservis par les N13, 144, 301 et 7212, et 동대입구역·장충동 comme l'arrêt 02-222, desservi par les 05, 02 et 03. Les deux arrêts de la salle se font face de part et d'autre de la chaussée, ce qui ne compte que parce que l'un des deux implique de la traverser.",
+        takes: "1 minute",
+      },
+      {
+        title: "Ne prévoyez pas la voiture, et la raison tient aux mots de l'exploitant",
+        body: "Il y a 63 places de stationnement en tout, dont deux places accessibles, deux pour les autocars, huit réservées aux femmes et cinq aux invités d'honneur. L'exploitant indique ensuite sans détour que pendant les événements il n'y a pas de stationnement public. Pour une salle de 4,507 personnes, ce n'est pas une pénurie, c'est une fermeture.",
+        pitfall:
+          "Prendre une petite salle pour celle où la voiture est commode. Son parking est proportionnellement plus petit que dans l'une ou l'autre des deux grandes salles, et le soir même il ne vous est pas ouvert du tout.",
+        takes: "1 minute",
+      },
+      {
+        title: "Il n'y a pas de plan de salle à lire, et cela change ce qu'il faut attendre",
+        body: "Gocheok publie un plan accompagné d'une description écrite de sa numérotation, et le World Cup Stadium publie une recherche de place. Cette salle ne publie ni l'un ni l'autre. Avec 1,324 de ses 4,507 places escamotables, l'agencement du parterre pour une rencontre avec les fans relève pour une bonne part du promoteur, si bien que le placement qu'on vous vend peut ne correspondre à aucun plan permanent. Votre billet et l'image de placement du promoteur sont la seule autorité.",
+        takes: "1 minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Quelle sortie débouche dans le bâtiment ?",
+        a: "La sortie 5 de 동대입구역 sur la Line 3. L'exploitant indique que la liaison avec la salle est directe, et c'est pourquoi cette page nomme cette sortie et pas seulement la station.",
+      },
+      {
+        q: "Puis-je me garer à la Jangchung Arena ?",
+        a: "Pas un jour d'événement. L'exploitant publie 63 places sur le parking côté nord et indique que le stationnement public n'est pas disponible pendant les événements.",
+      },
+      {
+        q: "Pourquoi n'y a-t-il pas de guide des places pour cette salle ?",
+        a: "Parce que l'exploitant ne publie pour elle ni plan de placement ni recherche de place : il n'y a donc aucun système de numérotation à relever. En écrire un reviendrait à l'inventer, et ce site ne fait pas cela. Les pages de Gocheok et du World Cup Stadium existent parce que ces salles publient la matière.",
+      },
+      {
+        q: "Quelle est sa taille ?",
+        a: "4,507 places, dont 1,324 escamotables, réparties sur deux niveaux de sous-sol et trois étages au-dessus du sol. Dans son usage ordinaire, c'est une salle de volley-ball et le domicile de deux clubs professionnels.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Chegando ao Jangchung Arena para um fan meeting ou show",
+    summary:
+      "O ginásio de 4,507 lugares em Jung-gu onde acontecem fan meetings e shows menores, lido nas próprias páginas da Seoul Facilities Corporation: a saída que conecta por dentro, os ônibus, e por que dirigir não é uma opção em dia de evento.",
+    scope:
+      "Cobre como chegar ao Jangchung Arena, em Jung-gu, a partir das páginas de transporte e instalações do próprio operador. Não cobre o layout dos assentos: diferente do Gocheok e do World Cup Stadium, este local não publica mapa de assentos nem buscador de lugares, então não existe aqui um sistema de numeração para ensinar e esta página não inventa um.",
+    intro: [
+      "Esta é a sala pequena entre os três locais de Seul que este site cobre — 4,507 lugares, dos quais 1,324 são retráteis. É um ginásio de vôlei que, segundo o operador, também é usado para shows, o que na prática quer dizer fan meetings e shows menores, e não turnês.",
+      "Dois fatos sobre ele valem mais do que todo o resto: a saída do metrô conecta ao prédio sem você ir para a rua, e em dia de evento não existe estacionamento público nenhum.",
+    ],
+    steps: [
+      {
+        title: "Line 3 até 동대입구역, saída 5 — e você já está dentro",
+        body: "O operador afirma que a saída 5 conecta direto ao ginásio. Numa tarde chuvosa de novembro, ou num inverno de Seul, essa é uma chegada diferente de qualquer outro local deste site: você não sobe à superfície, não cruza uma rua e não procura uma porta. O endereço é 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Sair por outra saída porque a sinalização da plataforma te manda para a escada mais próxima. A ligação direta é a saída 5 especificamente, e qualquer outra te coloca fora do prédio em que você já estava.",
+        takes: "2 minutos",
+      },
+      {
+        title: "De ônibus, há duas paradas com o nome do próprio ginásio",
+        body: "O operador lista 장충체육관앞 como as paradas 02-201 e 02-202, as duas atendidas por N13, 144, 301 e 7212, e 동대입구역·장충동 como a parada 02-222, atendida por 05, 02 e 03. As duas paradas do ginásio ficam em lados opostos da rua, o que só importa porque uma delas quer dizer atravessar.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Não planeje dirigir, e o motivo está nas palavras do próprio operador",
+        body: "São 63 vagas de estacionamento no total, e dessas duas são vagas acessíveis, duas são para ônibus, oito são reservadas para mulheres e cinco para convidados de honra. O operador então afirma com todas as letras que durante eventos não há estacionamento público. Para uma sala de 4,507 pessoas isso não é escassez, é fechamento.",
+        pitfall:
+          "Tratar um local pequeno como o fácil de ir de carro. O estacionamento é proporcionalmente menor que nos dois locais maiores, e na noite ele não está aberto para você de jeito nenhum.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Não existe mapa de assentos para ler, e isso muda o que esperar",
+        body: "O Gocheok publica um mapa com uma descrição escrita da numeração dele, e o World Cup Stadium publica um buscador de lugares. Este local não publica nenhum dos dois. Com 1,324 dos seus 4,507 assentos retráteis, o arranjo da pista para um fan meeting é em boa parte da produtora para montar, então os assentos vendidos a você podem não corresponder a nenhum plano permanente. O seu ingresso e a imagem de assentos da produtora são a única autoridade.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Qual saída conecta ao prédio?",
+        a: "A saída 5 da 동대입구역 na Line 3. O operador afirma que a ligação com o ginásio é direta, e é por isso que esta página nomeia aquela saída e não apenas a estação.",
+      },
+      {
+        q: "Posso estacionar no Jangchung Arena?",
+        a: "Não em dia de evento. O operador publica 63 vagas no estacionamento do lado norte e afirma que o estacionamento público não fica disponível durante eventos.",
+      },
+      {
+        q: "Por que não existe um guia de assentos para este local?",
+        a: "Porque o operador não publica mapa de assentos nem buscador de lugares para ele, então não existe sistema de numeração para ler. Escrever um seria inventá-lo, e este site não faz isso. As páginas do Gocheok e do World Cup Stadium existem porque aqueles locais publicam o material.",
+      },
+      {
+        q: "Qual é o tamanho dele?",
+        a: "4,507 lugares, incluindo 1,324 retráteis, distribuídos em dois níveis de subsolo e três acima do solo. No uso comum é um ginásio de vôlei e a casa de dois times profissionais.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Đến Jangchung Arena để dự buổi gặp fan hoặc hoà nhạc",
+    summary:
+      "Nhà thi đấu 4,507 chỗ ở Jung-gu, nơi diễn ra các buổi gặp fan và những buổi diễn nhỏ hơn, đọc từ chính các trang của Seoul Facilities Corporation: cửa ra nối thẳng vào trong nhà, các tuyến xe buýt, và vì sao lái xe không phải một lựa chọn vào ngày có sự kiện.",
+    scope:
+      "Bao gồm việc đến Jangchung Arena ở Jung-gu, từ các trang giao thông và tiện ích của chính đơn vị vận hành. Không bao gồm cách bố trí chỗ ngồi: khác với Gocheok và World Cup Stadium, địa điểm này không công bố sơ đồ chỗ ngồi hay công cụ tra chỗ, nên ở đây không có hệ thống đánh số nào để dạy và trang này không bày ra một hệ thống như vậy.",
+    intro: [
+      "Đây là phòng nhỏ trong ba địa điểm ở Seoul mà trang này đề cập — 4,507 chỗ ngồi, trong đó 1,324 chỗ có thể thu vào. Nó là một nhà thi đấu bóng chuyền mà đơn vị vận hành nói cũng được dùng cho hoà nhạc, trên thực tế nghĩa là các buổi gặp fan và những buổi diễn nhỏ hơn, chứ không phải các chuyến lưu diễn.",
+      "Hai điều về nơi này đáng giá hơn mọi thứ khác: cửa ra tàu điện ngầm nối vào toà nhà mà không phải ra ngoài trời, và vào ngày có sự kiện thì hoàn toàn không có chỗ đậu xe cho khách thường.",
+    ],
+    steps: [
+      {
+        title: "Line 3 tới 동대입구역, cửa ra 5 — và bạn đã ở bên trong",
+        body: "Đơn vị vận hành nói rằng cửa ra 5 nối thẳng vào nhà thi đấu. Vào một buổi tối tháng 11 mưa ướt, hay trong mùa đông Seoul, đó là cách đến khác với mọi địa điểm khác trên trang này: bạn không phải lên mặt đất, không phải băng qua đường, không phải tìm cửa. Địa chỉ là 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Đi ra bằng một cửa khác vì bảng chỉ dẫn trên sân ga đưa bạn lên cầu thang gần nhất. Cửa nối thẳng là cửa ra 5 chứ không phải cửa nào khác, và bất cứ cửa nào khác đều đặt bạn ra bên ngoài toà nhà mà bạn vốn đã ở trong.",
+        takes: "2 phút",
+      },
+      {
+        title: "Đi xe buýt thì có hai bến mang đúng tên nhà thi đấu",
+        body: "Đơn vị vận hành ghi 장충체육관앞 là hai bến 02-201 và 02-202, cả hai đều có N13, 144, 301 và 7212 chạy qua, còn 동대입구역·장충동 là bến 02-222, có 05, 02 và 03 chạy qua. Hai bến của nhà thi đấu nằm ở hai bên đường, điều đó chỉ đáng kể ở chỗ một trong hai bến nghĩa là bạn phải băng qua đường.",
+        takes: "1 phút",
+      },
+      {
+        title: "Đừng tính chuyện lái xe, và lý do nằm trong chính lời của đơn vị vận hành",
+        body: "Tổng cộng có 63 chỗ đậu xe, trong đó hai chỗ dành cho người khuyết tật, hai chỗ cho xe buýt, tám chỗ dành riêng cho phụ nữ và năm chỗ cho khách mời danh dự. Rồi đơn vị vận hành nói thẳng rằng trong thời gian có sự kiện thì không có chỗ đậu xe cho khách thường. Với một phòng chứa 4,507 người thì đó không phải là thiếu, đó là đóng.",
+        pitfall:
+          "Coi một địa điểm nhỏ là nơi dễ lái xe tới. Bãi đậu xe của nó còn nhỏ hơn về tỷ lệ so với hai địa điểm lớn hơn, và vào tối đó nó hoàn toàn không mở cho bạn.",
+        takes: "1 phút",
+      },
+      {
+        title: "Không có sơ đồ chỗ ngồi để đọc, và điều đó thay đổi những gì bạn nên trông đợi",
+        body: "Gocheok công bố sơ đồ kèm phần mô tả bằng chữ về cách đánh số, còn World Cup Stadium công bố công cụ tra chỗ. Địa điểm này không công bố cái nào cả. Với 1,324 trong 4,507 chỗ ngồi có thể thu vào, cách bố trí mặt sàn cho một buổi gặp fan phần lớn là do nhà tổ chức dựng nên, nên chỗ ngồi bán cho bạn có thể không ứng với bất kỳ sơ đồ cố định nào. Vé của bạn và hình chỗ ngồi của nhà tổ chức là thẩm quyền duy nhất.",
+        takes: "1 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Cửa nào nối thẳng vào toà nhà?",
+        a: "Cửa ra 5 của 동대입구역 trên Line 3. Đơn vị vận hành nói rằng kết nối vào nhà thi đấu là nối thẳng, và đó là lý do trang này nêu tên đúng cửa đó chứ không chỉ nêu tên nhà ga.",
+      },
+      {
+        q: "Tôi có thể đậu xe ở Jangchung Arena không?",
+        a: "Không, vào ngày có sự kiện thì không. Đơn vị vận hành công bố 63 chỗ ở bãi đậu phía bắc và nói rằng chỗ đậu xe cho khách thường không có trong thời gian có sự kiện.",
+      },
+      {
+        q: "Vì sao không có hướng dẫn chỗ ngồi cho địa điểm này?",
+        a: "Vì đơn vị vận hành không công bố sơ đồ chỗ ngồi cũng không công bố công cụ tra chỗ cho nó, nên không có hệ thống đánh số nào để đọc ra. Viết một bài như vậy sẽ là bày ra nó, và trang này không làm thế. Các trang về Gocheok và World Cup Stadium tồn tại vì những địa điểm đó công bố tài liệu.",
+      },
+      {
+        q: "Nơi này lớn cỡ nào?",
+        a: "4,507 chỗ ngồi, trong đó có 1,324 chỗ thu vào được, trải trên hai tầng hầm và ba tầng trên mặt đất. Trong công dụng thường ngày nó là nhà thi đấu bóng chuyền và là sân nhà của hai câu lạc bộ chuyên nghiệp.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การไปจางชุงอารีนาเพื่อดูงานพบแฟนหรือคอนเสิร์ต",
+    summary:
+      "สนามความจุ 4,507 ที่นั่งในเขตจุง ซึ่งงานพบแฟนและการแสดงขนาดเล็กกว่าจัดที่นี่ อ่านจากหน้าเว็บของ Seoul Facilities Corporation เอง ได้แก่ ทางออกที่เชื่อมเข้าในอาคาร รถเมล์ และเหตุผลที่การขับรถไปไม่ใช่ทางเลือกในวันที่มีงาน",
+    scope:
+      "ครอบคลุมการไปถึง Jangchung Arena ในเขตจุง จากหน้าการเดินทางและสิ่งอำนวยความสะดวกของผู้บริหารเอง ไม่ครอบคลุมผังที่นั่ง ต่างจากโกชอกและสนามเวิลด์คัพ สถานที่นี้ไม่ได้เผยแพร่ผังที่นั่งหรือเครื่องมือค้นที่นั่ง จึงไม่มีระบบหมายเลขให้สอนที่นี่ และหน้านี้ไม่คิดขึ้นมาเอง",
+    intro: [
+      "นี่คือห้องเล็กในสามสถานที่จัดงานของโซลที่เว็บไซต์นี้ครอบคลุม คือ 4,507 ที่นั่ง โดย 1,324 ที่เป็นแบบเก็บได้ มันเป็นสนามวอลเลย์บอลที่ผู้บริหารบอกว่าใช้จัดคอนเสิร์ตได้ด้วย ซึ่งในทางปฏิบัติหมายถึงงานพบแฟนและการแสดงขนาดเล็กกว่า ไม่ใช่ทัวร์คอนเสิร์ต",
+      "ข้อเท็จจริงสองข้อเกี่ยวกับที่นี่มีค่ามากกว่าทุกอย่างที่เหลือ คือทางออกรถไฟฟ้าใต้ดินเชื่อมเข้าอาคารโดยไม่ต้องออกไปข้างนอก และในวันที่มีงานไม่มีที่จอดรถสำหรับคนทั่วไปเลย",
+    ],
+    steps: [
+      {
+        title: "สาย 3 ไป동대입구역 ทางออก 5 แล้วคุณก็อยู่ในอาคารแล้ว",
+        body: "ผู้บริหารระบุว่าทางออก 5 เชื่อมเข้าสนามโดยตรง ในเย็นเดือน 11 ที่ฝนตก หรือในฤดูหนาวของโซล นั่นคือการไปถึงที่ต่างจากสถานที่จัดงานอื่นใดบนเว็บไซต์นี้ คุณไม่ต้องขึ้นสู่ระดับถนน ไม่ต้องข้ามถนน ไม่ต้องหาประตู ที่อยู่คือ 서울특별시 중구 동호로 241",
+        pitfall:
+          "การออกทางอื่นเพราะป้ายบนชานชาลาพาคุณขึ้นบันไดที่ใกล้ที่สุด ทางเชื่อมตรงคือทางออก 5 เท่านั้น และทางออกอื่นใดก็พาคุณออกไปอยู่นอกอาคารที่คุณอยู่ในนั้นแล้ว",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถ้าไปรถเมล์ มีสองป้ายที่ใช้ชื่อสนามเอง",
+        body: "ผู้บริหารระบุ장충체육관앞 เป็นป้าย 02-201 และ 02-202 ทั้งสองป้ายมีสาย N13, 144, 301 และ 7212 ผ่าน และ동대입구역·장충동 เป็นป้าย 02-222 มีสาย 05, 02 และ 03 ผ่าน ป้ายของสนามสองป้ายนั้นอยู่คนละฝั่งถนน ซึ่งสำคัญเพียงในแง่ที่ว่าป้ายหนึ่งหมายถึงคุณต้องข้ามถนน",
+        takes: "1 นาที",
+      },
+      {
+        title: "อย่าวางแผนขับรถไป และเหตุผลอยู่ในถ้อยคำของผู้บริหารเอง",
+        body: "มีที่จอดรถทั้งหมด 63 คัน โดยในจำนวนนั้นสองช่องเป็นช่องสำหรับผู้พิการ สองช่องสำหรับรถบัส แปดช่องสงวนไว้ให้ผู้หญิง และห้าช่องสำหรับแขกพิเศษ แล้วผู้บริหารก็ระบุอย่างตรงไปตรงมาว่าในระหว่างมีงาน ไม่มีที่จอดรถสำหรับคนทั่วไป สำหรับห้องที่จุคน 4,507 คน นั่นไม่ใช่การขาดแคลน แต่เป็นการปิด",
+        pitfall:
+          "การคิดว่าสถานที่เล็กคือที่ที่ขับรถไปง่าย ลานจอดของที่นี่เล็กกว่าสองสถานที่ที่ใหญ่กว่าเมื่อเทียบตามสัดส่วนด้วย และในคืนนั้นมันไม่เปิดให้คุณเลย",
+        takes: "1 นาที",
+      },
+      {
+        title: "ไม่มีผังที่นั่งให้อ่าน และนั่นเปลี่ยนสิ่งที่ควรคาดหวัง",
+        body: "โกชอกเผยแพร่ผังพร้อมคำอธิบายเป็นข้อความถึงวิธีให้หมายเลข และสนามเวิลด์คัพเผยแพร่เครื่องมือค้นที่นั่ง สถานที่นี้ไม่เผยแพร่ทั้งสองอย่าง เมื่อ 1,324 ที่จาก 4,507 ที่นั่งเป็นแบบเก็บได้ การจัดพื้นสนามสำหรับงานพบแฟนจึงเป็นสิ่งที่ผู้จัดงานสร้างขึ้นเป็นส่วนใหญ่ ดังนั้นที่นั่งที่ขายให้คุณอาจไม่ตรงกับผังถาวรใด ๆ บัตรของคุณและภาพที่นั่งของผู้จัดงานเป็นผู้มีอำนาจเพียงสองอย่างเท่านั้น",
+        takes: "1 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ทางออกไหนเชื่อมเข้าอาคาร",
+        a: "ทางออก 5 ของ동대입구역 บนสาย 3 ผู้บริหารระบุว่าการเชื่อมเข้าสนามเป็นการเชื่อมโดยตรง ซึ่งเป็นเหตุผลที่หน้านี้ระบุชื่อทางออกนั้น ไม่ใช่ระบุแค่ชื่อสถานี",
+      },
+      {
+        q: "ฉันจอดรถที่ Jangchung Arena ได้ไหม",
+        a: "วันที่มีงานไม่ได้ ผู้บริหารเผยแพร่ว่ามี 63 ช่องในลานจอดด้านทิศเหนือ และระบุว่าที่จอดรถสำหรับคนทั่วไปไม่เปิดให้ใช้ระหว่างมีงาน",
+      },
+      {
+        q: "ทำไมสถานที่นี้ไม่มีคู่มือที่นั่ง",
+        a: "เพราะผู้บริหารไม่ได้เผยแพร่ผังที่นั่งและไม่ได้เผยแพร่เครื่องมือค้นที่นั่งสำหรับที่นี่ จึงไม่มีระบบหมายเลขให้อ่าน การเขียนขึ้นก็เท่ากับคิดมันขึ้นมาเอง และเว็บไซต์นี้ไม่ทำเช่นนั้น หน้าของโกชอกและสนามเวิลด์คัพมีอยู่เพราะสถานที่เหล่านั้นเผยแพร่ข้อมูลไว้",
+      },
+      {
+        q: "ที่นี่ใหญ่แค่ไหน",
+        a: "4,507 ที่นั่ง รวมถึง 1,324 ที่ที่เก็บได้ กระจายอยู่บนชั้นใต้ดินสองชั้นและเหนือพื้นดินสามชั้น ในการใช้งานตามปกติมันเป็นสนามวอลเลย์บอล และเป็นสนามเหย้าของทีมอาชีพสองทีม",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "jangchung-arena-getting-there",
+    sourceChecked: "2026-10-25",
+    sourceText: "fc5239101e60",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Pagtungo sa Jangchung Arena para sa isang fan meeting o konsiyerto",
+    summary:
+      "Ang arenang may 4,507 na upuan sa Jung-gu kung saan ginaganap ang mga fan meeting at mas maliliit na palabas, binasa mula sa sariling mga pahina ng Seoul Facilities Corporation: ang labasang nakakabit sa loob, ang mga bus, at kung bakit hindi pagpipilian ang pagmamaneho sa araw ng kaganapan.",
+    scope:
+      "Sinasaklaw ang pagtungo sa Jangchung Arena sa Jung-gu, mula sa sariling mga pahina ng tagapagpatakbo tungkol sa transportasyon at pasilidad. Hindi nito sinasaklaw ang pagkakaayos ng upuan: hindi tulad ng Gocheok at ng World Cup Stadium, walang inilalathalang tsart ng upuan o panghanap ng upuan ang venue na ito, kaya walang sistema ng pagnunumerong maituturo dito at hindi iyon kinakatha ng pahinang ito.",
+    intro: [
+      "Ito ang maliit na silid sa tatlong venue sa Seoul na sinasaklaw ng sayt na ito — 4,507 na upuan, at 1,324 sa mga iyon ay maaaring itago. Isa itong arena ng volleyball na ayon sa tagapagpatakbo ay ginagamit din para sa konsiyerto, na sa praktika ay nangangahulugang mga fan meeting at mas maliliit na palabas at hindi mga tour.",
+      "Dalawang katotohanan tungkol dito ang mas mahalaga kaysa sa lahat ng iba: nakakabit sa gusali ang labasan ng tren sa ilalim ng lupa nang hindi lumalabas sa kalye, at sa araw ng kaganapan ay wala talagang pampublikong paradahan.",
+    ],
+    steps: [
+      {
+        title: "Line 3 patungong 동대입구역, labasan 5 — at nasa loob ka na",
+        body: "Sinasabi ng tagapagpatakbo na tuwirang nakakabit sa arena ang labasan 5. Sa isang basang gabi ng Nobyembre, o sa taglamig ng Seoul, ibang pagdating iyon kaysa sa alinmang venue sa sayt na ito: hindi ka umaahon, hindi ka tumatawid sa kalsada at hindi ka humahanap ng pinto. Ang adres ay 서울특별시 중구 동호로 241.",
+        pitfall:
+          "Ang paglabas sa ibang labasan dahil pinapaakyat ka ng karatula sa plataporma sa pinakamalapit na hagdan. Ang tuwirang kabit ay ang labasan 5 nang tiyakan, at inilalagay ka ng alinmang iba pang labasan sa labas ng gusaling kinaroroonan mo na.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Sa bus, may dalawang hintuang gamit ang pangalan mismo ng arena",
+        body: "Inililista ng tagapagpatakbo ang 장충체육관앞 bilang mga hintuang 02-201 at 02-202, na pawang pinagdadaanan ng N13, 144, 301 at 7212, at ang 동대입구역·장충동 bilang hintuang 02-222, na pinagdadaanan ng 05, 02 at 03. Nasa magkabilang panig ng kalsada ang dalawang hintuan ng arena, at mahalaga iyon lamang dahil ang isa sa kanila ay nangangahulugang tumawid.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Huwag magplanong magmaneho, at nasa sariling pananalita ng tagapagpatakbo ang dahilan",
+        body: "May 63 na puwesto ng paradahan sa kabuuan, at sa mga iyon ay dalawa ang puwestong madaling marating, dalawa ang para sa bus, walo ang nakalaan sa kababaihan at lima ang para sa mga panauhing pandangal. Pagkatapos ay tahasang sinasabi ng tagapagpatakbo na walang pampublikong paradahan sa panahon ng mga kaganapan. Para sa isang silid na may 4,507 katao, hindi iyon kakulangan, pagsasara iyon.",
+        pitfall:
+          "Ang pagtrato sa isang maliit na venue bilang ang madaling puntahan nang nakakotse. Mas maliit pa ang paradahan nito sa proporsiyon kaysa sa alinman sa dalawang mas malaking venue, at sa gabing iyon ay hindi talaga ito bukas sa iyo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Walang tsart ng upuang mababasa, at binabago niyan ang dapat asahan",
+        body: "Naglalathala ang Gocheok ng tsart kasama ang nakasulat na paliwanag ng pagnunumero nito, at naglalathala ang World Cup Stadium ng panghanap ng upuan. Wala ni isa sa mga iyon ang inilalathala ng venueng ito. Dahil 1,324 sa 4,507 na upuan nito ay maaaring itago, ang pagkakaayos ng palapag para sa isang fan meeting ay higit sa lahat sa prodyuser na itayo, kaya maaaring hindi tumugma sa anumang permanenteng plano ang upuang ipinagbili sa iyo. Ang tiket mo at ang larawan ng upuan mula sa prodyuser ang tanging awtoridad.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Aling labasan ang nakakabit sa gusali?",
+        a: "Ang labasan 5 ng 동대입구역 sa Line 3. Sinasabi ng tagapagpatakbo na tuwiran ang kabit sa arena, at iyon ang dahilan kung bakit pinapangalanan ng pahinang ito ang labasang iyon at hindi lamang ang istasyon.",
+      },
+      {
+        q: "Puwede ba akong magparada sa Jangchung Arena?",
+        a: "Hindi sa araw ng kaganapan. Naglalathala ang tagapagpatakbo ng 63 na puwesto sa paradahan sa panig na hilaga at sinasabing hindi available ang pampublikong paradahan sa panahon ng mga kaganapan.",
+      },
+      {
+        q: "Bakit walang gabay sa upuan para sa venueng ito?",
+        a: "Dahil walang inilalathalang tsart ng upuan at walang panghanap ng upuan ang tagapagpatakbo para dito, kaya walang sistema ng pagnunumerong mababasa. Ang pagsulat ng isa ay pagkatha nito, at hindi iyon ginagawa ng sayt na ito. Umiiral ang mga pahina ng Gocheok at ng World Cup Stadium dahil inilalathala ng mga venueng iyon ang materyal.",
+      },
+      {
+        q: "Gaano ito kalaki?",
+        a: "4,507 na upuan, kasama ang 1,324 na maaaring itago, sa dalawang antas ng basement at tatlo sa ibabaw ng lupa. Sa karaniwang paggamit nito ay isa itong arena ng volleyball at tahanan ng dalawang propesyonal na koponan.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "コンサートのためにソウルワールドカップ競技場へ行く",
+    summary:
+      "スタジアム規模のツアーが公演する上岩の競技場です。運営するソウル施設公団自身のページから、路線と出口、バスとどの停留所か、そして2つある駐車場のうち割引があるのはどちらかを読み取ります。",
+    scope:
+      "麻浦区にあるソウルワールドカップ競技場への到着を、運営者自身の交通と駐車のページから扱います。どのゲートから入れるか、開場がいつか、何を持ち込めるかは扱いません。それらは主催者のもので公演ごとに決まり、ここのどのページも事前に教えることはできません。",
+    intro: [
+      "ここは上岩にある66,704席の競技場で、運営者はサッカーだけでなく文化イベントのためにも開くと自身の言葉で述べています。ここでのスタジアム公演は、K-POPのツアーがソウルで使う最大の部屋です。",
+      "ここへ行くことについて役に立つのは、地下鉄の駅が競技場の名を冠しているので、高尺のガイドが1ステップ費やしている推測の問題がないということです。読む価値があるのは、どの出口か、どのバス停か、そして駐車場の罠です。",
+    ],
+    steps: [
+      {
+        title: "6号線で월드컵경기장역、そして2番出口から出る",
+        body: "駅は競技場の名を冠しているので、ここに駅を選ぶという問題はありません。運営者は2番出口を具体的に名指ししています。ソウルワールドカップ競技場は서울특별시 마포구 월드컵로240にあり、駅は歩く距離ではなくすぐ隣にあります。",
+        pitfall:
+          "運営者自身のサイトには企業情報のセクションの下にもう一つ찾아오시는 길のページがあり、そちらはソウル施設公団の城東区にある本部で、2号線용두역から行きます。競技場からは10キロほど離れています。会場サイトの案内ページを信じる前に、住所を読んでください。",
+        takes: "2分",
+      },
+      {
+        title: "バスなら西側の停留所を狙う",
+        body: "運営者は幹線路線として760番、710番、571番、支線路線として7019番と7715番、地域循環として마포08番、広域バスとして9711番を挙げています。そのうち710番、7019番、7715番を最速の到着として挙げ、14-105番の월드컵경기장 서측停留所で降ろされると記しています。",
+        pitfall:
+          "コンサートの夜にバスの番号だけでは足りません。この規模の競技場では同じ路線が複数の側に停留所を持ちますし、運営者が西側の停留所を名指ししているのには理由があります。",
+        takes: "2分",
+      },
+      {
+        title: "車で行くなら、2つの駐車場は同等ではありません",
+        body: "2つあります。西側にある競技場自身の駐車場で528台分、そして東側のHomeplusの駐車場で767台分です。運営者は、公開している割引がHomeplusの側には適用されないとはっきり述べています。大きいほうの駐車場が、割引のないほうです。",
+        pitfall:
+          "66,704席の会場に車で着くことは、どちらの側に停めても公演の夜の出入りで最も遅い方法です。地下鉄の駅はこの建物の名を冠しています。",
+        takes: "1分",
+      },
+      {
+        title: "その夜そのものについては、すべて主催者のものです",
+        body: "どのゲートから入れるか、開場がいつか、何を持ち込めるか、フロアがどう配置されるかは公演ごとに決まり、会場のページには載っていません。運営者が公開するのは建物で、主催者が公開するのは公演です。それらすべての権威は、あなたのチケットと主催者の告知です。",
+        takes: "1分",
+      },
+    ],
+    faq: [
+      {
+        q: "ソウルワールドカップ競技場は高尺スカイドームと同じですか。",
+        a: "違います。運営者は同じですが、別の区にある別の建物です。高尺は九老区にある屋内ドームで約16,600席、ワールドカップ競技場は麻浦区にある屋外の競技場で66,704席です。番号体系も異なり、だからこそここでは別々のページになっています。",
+      },
+      {
+        q: "どの出口を使えばいいですか。",
+        a: "6号線월드컵경기장역の2番出口です。運営者が自身の案内ページで名指ししている出口です。徒歩時間は公開していないので、このページもそれを作り出しません。",
+      },
+      {
+        q: "競技場に駐車できますか。",
+        a: "できます。西側に528台分あります。東側のHomeplusの駐車場は767台分で、運営者は公開している割引がそちらには適用されないと述べています。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "為了演唱會前往首爾世界盃競技場",
+    summary:
+      "位在上岩、供體育場規模巡演使用的競技場。取自營運它的首爾設施公團自己的頁面：線路與出口、公車與該在哪一站下，以及兩座停車場中有折扣的是哪一座。",
+    scope:
+      "涵蓋抵達位在麻浦區的首爾世界盃競技場，取自營運者自己的交通與停車頁面。不涵蓋哪個入口讓你進、何時開放入場，或可以帶什麼進去：那些屬於主辦方並逐場決定，這裡沒有任何頁面能事先告訴你。",
+    intro: [
+      "這是位在上岩、擁有66,704個座位的競技場，而營運者用自己的話說它除了足球之外也為文化活動開放。在這裡的體育場演出，是K-POP巡演在首爾會用到的最大的一個房間。",
+      "關於前往它，有用的一點是地鐵站以競技場命名，所以不存在高尺那份指南花掉一整步處理的猜測問題。值得讀的部分是哪一個出口、哪一個公車站，以及停車場的陷阱。",
+    ],
+    steps: [
+      {
+        title: "搭6號線到월드컵경기장역，然後從2號出口出去",
+        body: "車站用的就是競技場的名字，所以這裡沒有選車站的問題。營運者明確指名2號出口。首爾世界盃競技場位在서울특별시 마포구 월드컵로240，而車站就在它旁邊，不是需要走一段路的距離。",
+        pitfall:
+          "營運者自己的網站在企業區塊底下還有另一份찾아오시는 길頁面，而那一份是首爾設施公團位在城東區的總部，從2號線용두역過去。它距離競技場約十公里。在相信一個場館網站上的交通頁面之前，請先讀地址。",
+        takes: "2分鐘",
+      },
+      {
+        title: "搭公車的話，瞄準西側那一站",
+        body: "營運者列出760、710與571為幹線路線，7019與7715為支線路線，마포08為地區循環線，9711為廣域客運。它特別點出710、7019與7715為最快抵達，下車處是編號14-105的월드컵경기장 서측站。",
+        pitfall:
+          "在演唱會的夜晚，光有公車號碼不夠。這種規模的競技場，同一條路線在不止一側都有站，而營運者指名西側那一站是有原因的。",
+        takes: "2分鐘",
+      },
+      {
+        title: "如果你開車，兩座停車場並不等價",
+        body: "共有兩座：西側是競技場自己的停車場，有528個車位；東側是Homeplus的停車場，有767個。營運者直白地表示，它公布的減免不適用於Homeplus那一座。比較大的那座停車場，正是沒有折扣的那座。",
+        pitfall:
+          "在演出之夜開車抵達一座66,704個座位的場館，不論你停在哪一側，都是進出最慢的方式。地鐵站用的就是這棟建築的名字。",
+        takes: "1分鐘",
+      },
+      {
+        title: "關於那一晚本身的一切都屬於主辦方",
+        body: "哪個入口讓你進、何時開放入場、可以帶什麼進去，以及場地怎麼配置，都是逐場決定的，不在場館的頁面上。營運者公布的是建築，主辦方公布的是場次。以上全部的權威是你的票和主辦方的公告。",
+        takes: "1分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "首爾世界盃競技場和高尺天空巨蛋是同一個嗎？",
+        a: "不是。它們是位在不同行政區的不同建築，由同一個營運者負責。高尺是九老區的室內巨蛋，約16,600個座位；世界盃競技場是麻浦區的露天競技場，66,704個座位。編號系統也不同，這就是這裡各自有一頁的原因。",
+      },
+      {
+        q: "我該走哪一個出口？",
+        a: "6號線월드컵경기장역的2號出口，也就是營運者在自己的交通頁面上指名的出口。它沒有公布步行時間，所以本頁也不憑空造一個。",
+      },
+      {
+        q: "我可以在競技場停車嗎？",
+        a: "可以，在西側，那裡有528個車位。東側的Homeplus停車場有767個，而營運者表示它公布的減免不適用於那裡。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menuju Seoul World Cup Stadium untuk sebuah konser",
+    summary:
+      "Stadion di Sangam tempat tur berskala stadion berlangsung, dibaca dari halaman milik Seoul Facilities Corporation sendiri: jalur dan pintu keluarnya, bus-busnya dan perhentian yang mana, dan tempat parkir mana di antara keduanya yang memberi potongan.",
+    scope:
+      "Mencakup cara mencapai Seoul World Cup Stadium di Mapo-gu, dari halaman transportasi dan parkir milik pengelolanya. Tidak mencakup pintu mana yang memasukkan Anda, kapan pintu dibuka, atau apa yang boleh Anda bawa masuk: semua itu milik promotor dan ditetapkan per pertunjukan, dan tidak ada halaman di sini yang dapat memberitahukannya kepada Anda sebelumnya.",
+    intro: [
+      "Inilah stadion berkapasitas 66,704 kursi di Sangam, dan pengelolanya mengatakan dengan kata-katanya sendiri bahwa stadion itu dibuka untuk acara budaya selain sepak bola. Sebuah pertunjukan stadion di sana adalah ruang terbesar yang dimainkan sebuah tur K-pop di Seoul.",
+      "Hal yang berguna soal mencapainya adalah bahwa stasiun kereta bawah tanahnya dinamai menurut stadion itu, yang menghilangkan soal menduga-duga yang dihabiskan satu langkah penuh oleh panduan Gocheok. Bagian yang patut dibaca adalah pintu keluar mana, perhentian bus mana, dan jebakan tempat parkirnya.",
+    ],
+    steps: [
+      {
+        title: "Line 6 ke 월드컵경기장역, lalu keluar lewat pintu keluar 2",
+        body: "Stasiun itu memakai nama stadionnya, jadi di sini tidak ada persoalan memilih stasiun. Pengelola menyebut pintu keluar 2 secara khusus. Seoul World Cup Stadium berada di 서울특별시 마포구 월드컵로 240, dan stasiunnya berada tepat di sebelahnya alih-alih sejauh jalan kaki.",
+        pitfall:
+          "Situs milik pengelola sendiri punya halaman 찾아오시는 길 kedua di bawah bagian korporatnya, dan yang itu adalah kantor pusat Seoul Facilities Corporation di Seongdong-gu, yang dicapai dari 용두역 di Line 2. Jaraknya sekitar sepuluh kilometer dari stadion. Bacalah alamatnya sebelum Anda memercayai sebuah halaman petunjuk arah di situs sebuah venue.",
+        takes: "2 menit",
+      },
+      {
+        title: "Dengan bus, tujulah perhentian di sisi barat",
+        body: "Pengelola mendaftar 760, 710 dan 571 sebagai rute utama, 7019 dan 7715 sebagai rute cabang, 마포08 sebagai lingkar lokal dan 9711 sebagai bus antarwilayah. Ia menyebut khusus 710, 7019 dan 7715 sebagai kedatangan tercepat, yang menurunkan Anda di perhentian 월드컵경기장 서측, bernomor 14-105.",
+        pitfall:
+          "Nomor bus saja tidak cukup pada malam konser. Rute yang sama punya perhentian di lebih dari satu sisi stadion sebesar ini, dan pengelola menyebut perhentian sisi barat dengan alasan.",
+        takes: "2 menit",
+      },
+      {
+        title: "Kalau Anda menyetir, kedua tempat parkirnya tidak setara",
+        body: "Ada dua: milik stadion sendiri, di sisi barat, dengan 528 petak, dan tempat parkir Homeplus di sisi timur, dengan 767. Pengelola menyatakan terang-terangan bahwa potongan yang diterbitkannya tidak berlaku di yang Homeplus. Tempat parkir yang lebih besar adalah yang tidak memberi potongan.",
+        pitfall:
+          "Datang dengan mobil ke venue berkapasitas 66,704 kursi adalah cara paling lambat untuk masuk dan keluar pada malam pertunjukan, di sisi mana pun Anda parkir. Stasiun kereta bawah tanahnya dinamai menurut bangunan itu.",
+        takes: "1 menit",
+      },
+      {
+        title: "Segalanya tentang malam itu sendiri adalah milik promotor",
+        body: "Pintu mana yang memasukkan Anda, kapan pintu dibuka, apa yang boleh Anda bawa masuk dan bagaimana lantainya ditata ditetapkan per pertunjukan dan tidak ada di halaman venue. Pengelola menerbitkan bangunannya; promotor menerbitkan acaranya. Tiket Anda dan pemberitahuan promotor adalah otoritas atas semuanya.",
+        takes: "1 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah Seoul World Cup Stadium sama dengan Gocheok Sky Dome?",
+        a: "Tidak. Keduanya bangunan berbeda di distrik berbeda, dijalankan pengelola yang sama. Gocheok adalah dome dalam ruangan di Guro-gu berkapasitas sekitar 16,600; World Cup Stadium adalah stadion terbuka di Mapo-gu berkapasitas 66,704. Sistem penomorannya juga berbeda, dan itulah sebabnya masing-masing punya halaman sendiri di sini.",
+      },
+      {
+        q: "Pintu keluar mana yang harus saya pakai?",
+        a: "Pintu keluar 2 dari 월드컵경기장역 di Line 6, yakni pintu keluar yang disebut pengelola di halaman petunjuk arahnya sendiri. Ia tidak menerbitkan waktu jalan kaki, jadi halaman ini tidak mengarangnya.",
+      },
+      {
+        q: "Bisakah saya memarkir di stadion?",
+        a: "Bisa, di sisi barat, yang punya 528 petak. Tempat parkir Homeplus di sisi timur punya 767, dan pengelola menyatakan bahwa potongan yang diterbitkannya tidak berlaku di sana.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Zum Seoul World Cup Stadium für ein Konzert",
+    summary:
+      "Das Stadion in Sangam, in dem Tourneen in Stadiongröße spielen, abgelesen an den eigenen Seiten der Seoul Facilities Corporation: die Linie und der Ausgang, die Busse und welche Haltestelle, und welcher der beiden Parkplätze derjenige mit der Ermäßigung ist.",
+    scope:
+      "Behandelt die Anreise zum Seoul World Cup Stadium in Mapo-gu, aus den eigenen Verkehrs- und Parkseiten des Betreibers. Nicht behandelt wird, welches Tor Sie einlässt, wann die Türen öffnen oder was Sie mitbringen dürfen: das gehört dem Veranstalter und wird pro Show festgelegt, und keine Seite hier kann es Ihnen vorab sagen.",
+    intro: [
+      "Das ist das Stadion mit 66,704 Plätzen in Sangam, und der Betreiber sagt mit eigenen Worten, dass es neben Fußball auch für kulturelle Veranstaltungen öffnet. Eine Stadionshow dort ist der größte Saal, den eine K-POP-Tour in Seoul spielt.",
+      "Das Nützliche an der Anreise ist, dass die U-Bahn-Station nach dem Stadion benannt ist, was das Rätselraten erspart, dem die Gocheok-Anleitung einen ganzen Schritt widmet. Lesenswert ist, welcher Ausgang, welche Bushaltestelle, und die Parkplatzfalle.",
+    ],
+    steps: [
+      {
+        title: "Line 6 bis 월드컵경기장역, und hinaus über Ausgang 2",
+        body: "Die Station trägt den Namen des Stadions, es gibt hier also kein Problem der Stationswahl. Der Betreiber nennt ausdrücklich Ausgang 2. Das Seoul World Cup Stadium liegt an der 서울특별시 마포구 월드컵로 240, und die Station liegt daneben und nicht einen Fußweg entfernt.",
+        pitfall:
+          "Die eigene Website des Betreibers hat unter ihrem Unternehmensbereich eine zweite 찾아오시는 길-Seite, und die führt zur Hauptverwaltung der Seoul Facilities Corporation in Seongdong-gu, erreichbar von 용두역 an der Line 2. Sie liegt etwa zehn Kilometer vom Stadion entfernt. Lesen Sie die Adresse, bevor Sie einer Anreiseseite auf der Website einer Halle vertrauen.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Mit dem Bus halten Sie auf die Haltestelle an der Westseite zu",
+        body: "Der Betreiber führt 760, 710 und 571 als Hauptlinien, 7019 und 7715 als Zweiglinien, 마포08 als lokale Ringlinie und 9711 als Überlandbus. Er hebt 710, 7019 und 7715 als die schnellste Ankunft hervor, mit Ausstieg an der Haltestelle 월드컵경기장 서측, Nummer 14-105.",
+        pitfall:
+          "Eine Busnummer allein genügt an einem Konzertabend nicht. Dieselbe Linie hat an einem Stadion dieser Größe Haltestellen auf mehr als einer Seite, und der Betreiber nennt die Haltestelle an der Westseite aus einem Grund.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Wenn Sie fahren, sind die beiden Parkplätze nicht gleichwertig",
+        body: "Es gibt zwei: den eigenen des Stadions auf der Westseite mit 528 Plätzen und den Homeplus-Parkplatz auf der Ostseite mit 767. Der Betreiber erklärt klar, dass die von ihm veröffentlichten Ermäßigungen am Homeplus-Parkplatz nicht gelten. Der größere Parkplatz ist der ohne Ermäßigung.",
+        pitfall:
+          "Mit dem Auto an einer Halle mit 66,704 Plätzen anzukommen, ist an einem Showabend der langsamste Weg hinein und hinaus, auf welcher Seite Sie auch parken. Die U-Bahn-Station ist nach dem Gebäude benannt.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Alles am Abend selbst gehört dem Veranstalter",
+        body: "Welches Tor Sie einlässt, wann die Türen öffnen, was Sie mitbringen dürfen und wie der Boden angeordnet ist, wird pro Show festgelegt und steht nicht auf den Seiten der Halle. Der Betreiber veröffentlicht das Gebäude, der Veranstalter die Veranstaltung. Ihr Ticket und die Ankündigung des Veranstalters sind die Autorität über all das.",
+        takes: "1 Minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Ist das Seoul World Cup Stadium dasselbe wie der Gocheok Sky Dome?",
+        a: "Nein. Es sind verschiedene Gebäude in verschiedenen Bezirken, geführt vom selben Betreiber. Gocheok ist eine Halle mit Dach in Guro-gu mit etwa 16,600 Plätzen; das World Cup Stadium ist ein Freiluftstadion in Mapo-gu mit 66,704. Auch die Numerierungssysteme unterscheiden sich, weshalb hier jedes seine eigene Seite hat.",
+      },
+      {
+        q: "Welchen Ausgang soll ich nehmen?",
+        a: "Ausgang 2 von 월드컵경기장역 an der Line 6, den der Betreiber auf seiner eigenen Anreiseseite nennt. Eine Gehzeit veröffentlicht er nicht, diese Seite erfindet also keine.",
+      },
+      {
+        q: "Kann ich am Stadion parken?",
+        a: "Ja, auf der Westseite, wo es 528 Plätze gibt. Der Homeplus-Parkplatz auf der Ostseite hat 767, und der Betreiber erklärt, dass seine veröffentlichten Ermäßigungen dort nicht gelten.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Llegar al Seoul World Cup Stadium para un concierto",
+    summary:
+      "El estadio de Sangam donde se celebran las giras a escala de estadio, leído en las propias páginas de la Seoul Facilities Corporation: la línea y la salida, los autobuses y qué parada, y cuál de los dos aparcamientos es el que aplica descuento.",
+    scope:
+      "Cubre cómo llegar al Seoul World Cup Stadium, en Mapo-gu, a partir de las páginas de transporte y aparcamiento del propio operador. No cubre por qué puerta entras, cuándo abren las puertas ni qué puedes llevar dentro: eso es de la promotora y se fija por espectáculo, y ninguna página de aquí puede decírtelo por adelantado.",
+    intro: [
+      "Este es el estadio de 66,704 asientos de Sangam, y el operador dice con sus propias palabras que abre para eventos culturales además del fútbol. Un concierto de estadio allí es la sala más grande en la que toca una gira de K-POP en Seúl.",
+      "Lo útil de llegar hasta él es que la estación de metro lleva el nombre del estadio, lo que elimina las conjeturas a las que la guía de Gocheok dedica un paso entero. Lo que vale la pena leer es qué salida, qué parada de autobús, y la trampa del aparcamiento.",
+    ],
+    steps: [
+      {
+        title: "Line 6 hasta 월드컵경기장역, y sal por la salida 2",
+        body: "La estación lleva el nombre del estadio, así que aquí no hay problema de elegir estación. El operador nombra la salida 2 específicamente. El Seoul World Cup Stadium está en 서울특별시 마포구 월드컵로 240, y la estación queda al lado y no a un paseo.",
+        pitfall:
+          "La web del propio operador tiene una segunda página 찾아오시는 길 en su sección corporativa, y esa es la sede central de la Seoul Facilities Corporation en Seongdong-gu, a la que se llega desde 용두역 en la Line 2. Está a unos diez kilómetros del estadio. Lee la dirección antes de fiarte de una página de cómo llegar en la web de un recinto.",
+        takes: "2 minutos",
+      },
+      {
+        title: "En autobús, apunta a la parada del lado oeste",
+        body: "El operador enumera las líneas 760, 710 y 571 como rutas troncales, 7019 y 7715 como ramales, 마포08 como circular local y 9711 como autocar interurbano. Destaca la 710, la 7019 y la 7715 como la llegada más rápida, con parada en 월드컵경기장 서측, numerada 14-105.",
+        pitfall:
+          "Un número de autobús por sí solo no basta una noche de concierto. La misma línea tiene paradas en más de un lado de un estadio de este tamaño, y el operador nombra la parada del oeste por algo.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Si vas en coche, los dos aparcamientos no son equivalentes",
+        body: "Hay dos: el del propio estadio, en el lado oeste, con 528 plazas, y el aparcamiento de Homeplus en el lado este, con 767. El operador declara sin rodeos que las reducciones que publica no se aplican en el de Homeplus. El aparcamiento más grande es el que no descuenta.",
+        pitfall:
+          "Llegar en coche a un recinto de 66,704 asientos es la forma más lenta de entrar y salir una noche de espectáculo, en cualquiera de los dos lados que aparques. La estación de metro lleva el nombre del edificio.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Todo lo relativo a la noche en sí es de la promotora",
+        body: "Por qué puerta entras, cuándo abren las puertas, qué puedes llevar dentro y cómo se distribuye la pista se fijan por espectáculo y no están en las páginas del recinto. El operador publica el edificio; la promotora publica el evento. Tu entrada y el aviso de la promotora son la autoridad sobre todo ello.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿El Seoul World Cup Stadium es lo mismo que el Gocheok Sky Dome?",
+        a: "No. Son edificios distintos en distritos distintos, gestionados por el mismo operador. Gocheok es un recinto cubierto en Guro-gu con unos 16,600 asientos; el World Cup Stadium es un estadio al aire libre en Mapo-gu con 66,704. Los sistemas de numeración también son distintos, y por eso cada uno tiene aquí su propia página.",
+      },
+      {
+        q: "¿Qué salida debo usar?",
+        a: "La salida 2 de 월드컵경기장역 en la Line 6, que es la salida que el operador nombra en su propia página de cómo llegar. No publica un tiempo a pie, así que esta página no se lo inventa.",
+      },
+      {
+        q: "¿Puedo aparcar en el estadio?",
+        a: "Sí, en el lado oeste, donde hay 528 plazas. El aparcamiento de Homeplus en el lado este tiene 767, y el operador declara que sus reducciones publicadas no se aplican allí.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Se rendre au Seoul World Cup Stadium pour un concert",
+    summary:
+      "Le stade de Sangam où se jouent les tournées à l'échelle d'un stade, d'après les pages de la Seoul Facilities Corporation elle-même : la ligne et la sortie, les bus et quel arrêt, et lequel des deux parkings accorde la réduction.",
+    scope:
+      "Couvre l'accès au Seoul World Cup Stadium à Mapo-gu, d'après les pages de transport et de stationnement de l'exploitant lui-même. Ne couvre pas par quelle porte vous entrez, l'heure d'ouverture ni ce que vous pouvez apporter : cela appartient au promoteur et se fixe par spectacle, et aucune page ici ne peut vous le dire à l'avance.",
+    intro: [
+      "C'est le stade de 66,704 places à Sangam, et l'exploitant dit dans ses propres mots qu'il ouvre pour des événements culturels autant que pour le football. Un concert de stade là-bas est la plus grande salle qu'une tournée K-POP joue à Séoul.",
+      "Ce qui est utile à savoir pour y aller, c'est que la station de métro porte le nom du stade, ce qui supprime les devinettes auxquelles le guide de Gocheok consacre une étape entière. Ce qui mérite lecture, c'est quelle sortie, quel arrêt de bus, et le piège du parking.",
+    ],
+    steps: [
+      {
+        title: "Line 6 jusqu'à 월드컵경기장역, et sortez par la sortie 2",
+        body: "La station porte le nom du stade, il n'y a donc pas ici de problème de choix de station. L'exploitant nomme précisément la sortie 2. Le Seoul World Cup Stadium se trouve au 서울특별시 마포구 월드컵로 240, et la station est juste à côté et non à une marche de là.",
+        pitfall:
+          "Le site de l'exploitant lui-même comporte une seconde page 찾아오시는 길 dans sa section institutionnelle, et celle-là mène au siège de la Seoul Facilities Corporation à Seongdong-gu, accessible depuis 용두역 sur la Line 2. Il se trouve à une dizaine de kilomètres du stade. Lisez l'adresse avant de faire confiance à une page d'accès sur le site d'une salle.",
+        takes: "2 minutes",
+      },
+      {
+        title: "En bus, visez l'arrêt du côté ouest",
+        body: "L'exploitant indique les 760, 710 et 571 comme lignes principales, les 7019 et 7715 comme lignes secondaires, 마포08 comme circulaire locale et 9711 comme autocar interurbain. Il distingue les 710, 7019 et 7715 comme l'arrivée la plus rapide, avec dépose à l'arrêt 월드컵경기장 서측, numéroté 14-105.",
+        pitfall:
+          "Un numéro de bus seul ne suffit pas un soir de concert. La même ligne dessert des arrêts sur plus d'un côté d'un stade de cette taille, et l'exploitant nomme l'arrêt ouest pour une raison.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Si vous venez en voiture, les deux parkings ne sont pas équivalents",
+        body: "Il y en a deux : celui du stade, côté ouest, avec 528 places, et le parking Homeplus côté est, avec 767. L'exploitant indique clairement que les réductions qu'il publie ne s'appliquent pas à celui de Homeplus. Le plus grand parking est celui qui n'accorde pas de réduction.",
+        pitfall:
+          "Arriver en voiture à une salle de 66,704 places est le moyen le plus lent d'entrer et de sortir un soir de spectacle, de quelque côté que vous vous gariez. La station de métro porte le nom du bâtiment.",
+        takes: "1 minute",
+      },
+      {
+        title: "Tout ce qui concerne la soirée elle-même appartient au promoteur",
+        body: "Par quelle porte vous entrez, l'heure d'ouverture, ce que vous pouvez apporter et la façon dont le parterre est agencé se fixent par spectacle et ne figurent pas sur les pages de la salle. L'exploitant publie le bâtiment ; le promoteur publie l'événement. Votre billet et l'annonce du promoteur font autorité sur tout cela.",
+        takes: "1 minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Le Seoul World Cup Stadium est-il le même que le Gocheok Sky Dome ?",
+        a: "Non. Ce sont des bâtiments différents dans des arrondissements différents, gérés par le même exploitant. Gocheok est une salle couverte à Guro-gu d'environ 16,600 places ; le World Cup Stadium est un stade à ciel ouvert à Mapo-gu de 66,704 places. Les systèmes de numérotation diffèrent aussi, et c'est pourquoi chacun a ici sa propre page.",
+      },
+      {
+        q: "Quelle sortie dois-je prendre ?",
+        a: "La sortie 2 de 월드컵경기장역 sur la Line 6, celle que l'exploitant nomme sur sa propre page d'accès. Il ne publie pas de temps de marche, cette page n'en invente donc pas.",
+      },
+      {
+        q: "Puis-je me garer au stade ?",
+        a: "Oui, du côté ouest, où il y a 528 places. Le parking Homeplus côté est en compte 767, et l'exploitant indique que ses réductions publiées ne s'y appliquent pas.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Chegando ao Seoul World Cup Stadium para um show",
+    summary:
+      "O estádio em Sangam onde acontecem as turnês em escala de estádio, lido nas próprias páginas da Seoul Facilities Corporation: a linha e a saída, os ônibus e qual parada, e qual dos dois estacionamentos é o que dá desconto.",
+    scope:
+      "Cobre como chegar ao Seoul World Cup Stadium, em Mapo-gu, a partir das páginas de transporte e estacionamento do próprio operador. Não cobre por qual portão você entra, quando os portões abrem, nem o que você pode levar para dentro: isso é da produtora e é definido por show, e nenhuma página aqui pode te dizer isso de antemão.",
+    intro: [
+      "Este é o estádio de 66,704 lugares em Sangam, e o operador diz com as próprias palavras que ele abre para eventos culturais além do futebol. Um show de estádio ali é a maior sala em que uma turnê de K-POP toca em Seul.",
+      "O que é útil sobre chegar nele é que a estação de metrô leva o nome do estádio, o que elimina a adivinhação a que o guia do Gocheok dedica um passo inteiro. A parte que vale ler é qual saída, qual parada de ônibus, e a armadilha do estacionamento.",
+    ],
+    steps: [
+      {
+        title: "Line 6 até 월드컵경기장역, e saia pela saída 2",
+        body: "A estação leva o nome do estádio, então aqui não existe o problema de escolher estação. O operador nomeia a saída 2 especificamente. O Seoul World Cup Stadium fica na 서울특별시 마포구 월드컵로 240, e a estação fica ao lado dele, e não a uma caminhada de distância.",
+        pitfall:
+          "O site do próprio operador tem uma segunda página 찾아오시는 길 na seção institucional, e essa é a sede da Seoul Facilities Corporation em Seongdong-gu, alcançada a partir da 용두역 na Line 2. Fica a cerca de dez quilômetros do estádio. Leia o endereço antes de confiar numa página de como chegar no site de um local.",
+        takes: "2 minutos",
+      },
+      {
+        title: "De ônibus, mire na parada do lado oeste",
+        body: "O operador lista 760, 710 e 571 como linhas troncais, 7019 e 7715 como linhas alimentadoras, 마포08 como a circular local e 9711 como o ônibus intermunicipal. Ele destaca 710, 7019 e 7715 como a chegada mais rápida, com desembarque na parada 월드컵경기장 서측, de número 14-105.",
+        pitfall:
+          "Um número de ônibus sozinho não basta numa noite de show. A mesma linha tem paradas em mais de um lado de um estádio desse tamanho, e o operador nomeia a parada do oeste por um motivo.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Se você for de carro, os dois estacionamentos não são equivalentes",
+        body: "Há dois: o do próprio estádio, no lado oeste, com 528 vagas, e o estacionamento do Homeplus no lado leste, com 767. O operador afirma com todas as letras que as reduções que ele publica não valem no do Homeplus. O estacionamento maior é justamente o que não dá desconto.",
+        pitfall:
+          "Chegar de carro a um local de 66,704 lugares é a forma mais lenta de entrar e sair numa noite de show, em qualquer dos lados em que você estacione. A estação de metrô leva o nome do prédio.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Tudo sobre a noite em si é da produtora",
+        body: "Por qual portão você entra, quando os portões abrem, o que você pode levar para dentro e como a pista é montada são definidos por show e não estão nas páginas do local. O operador publica o prédio; a produtora publica o evento. O seu ingresso e o aviso da produtora são a autoridade sobre tudo isso.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "O Seoul World Cup Stadium é o mesmo que o Gocheok Sky Dome?",
+        a: "Não. São prédios diferentes em distritos diferentes, administrados pelo mesmo operador. O Gocheok é um domo fechado em Guro-gu com cerca de 16,600 lugares; o World Cup Stadium é um estádio a céu aberto em Mapo-gu com 66,704. Os sistemas de numeração também são diferentes, e é por isso que cada um tem a própria página aqui.",
+      },
+      {
+        q: "Qual saída eu devo usar?",
+        a: "A saída 2 da 월드컵경기장역 na Line 6, que é a saída que o operador nomeia na própria página de como chegar. Ele não publica um tempo de caminhada, então esta página não inventa um.",
+      },
+      {
+        q: "Posso estacionar no estádio?",
+        a: "Pode, no lado oeste, onde há 528 vagas. O estacionamento do Homeplus no lado leste tem 767, e o operador afirma que as reduções publicadas por ele não valem lá.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Đến Seoul World Cup Stadium để xem hoà nhạc",
+    summary:
+      "Sân vận động ở Sangam, nơi các chuyến lưu diễn quy mô sân vận động biểu diễn, đọc từ chính các trang của Seoul Facilities Corporation: tuyến và cửa ra, các tuyến xe buýt và bến nào, và trong hai bãi đậu xe thì bãi nào có giảm giá.",
+    scope:
+      "Bao gồm việc đến Seoul World Cup Stadium ở Mapo-gu, từ các trang giao thông và đậu xe của chính đơn vị vận hành. Không bao gồm cửa nào cho bạn vào, mấy giờ mở cửa, hay bạn được mang gì vào: những điều đó thuộc nhà tổ chức và được đặt theo từng buổi, và không trang nào ở đây có thể nói trước cho bạn.",
+    intro: [
+      "Đây là sân vận động 66,704 chỗ ở Sangam, và đơn vị vận hành nói bằng chính lời của họ rằng nơi này mở cho cả các sự kiện văn hoá chứ không chỉ bóng đá. Một buổi diễn sân vận động ở đó là khán phòng lớn nhất mà một chuyến lưu diễn K-POP dùng tại Seoul.",
+      "Điều hữu ích về việc đến đây là nhà ga tàu điện ngầm mang tên sân vận động, nên không còn chuyện phải đoán như bài hướng dẫn Gocheok phải dành trọn một bước để xử lý. Phần đáng đọc là cửa ra nào, bến xe buýt nào, và cái bẫy ở bãi đậu xe.",
+    ],
+    steps: [
+      {
+        title: "Line 6 tới 월드컵경기장역, và đi ra bằng cửa ra 2",
+        body: "Nhà ga mang đúng tên sân vận động, nên ở đây không có chuyện phải chọn nhà ga. Đơn vị vận hành nêu rõ cửa ra 2. Seoul World Cup Stadium ở 서울특별시 마포구 월드컵로 240, và nhà ga nằm ngay bên cạnh chứ không cách một đoạn đi bộ.",
+        pitfall:
+          "Trang web của chính đơn vị vận hành có một trang 찾아오시는 길 thứ hai nằm trong mục doanh nghiệp, và trang đó là trụ sở chính của Seoul Facilities Corporation ở Seongdong-gu, đi tới từ 용두역 trên Line 2. Nó cách sân vận động chừng mười ki lô mét. Hãy đọc địa chỉ trước khi tin một trang chỉ đường trên trang web của một địa điểm.",
+        takes: "2 phút",
+      },
+      {
+        title: "Đi xe buýt thì nhắm bến phía tây",
+        body: "Đơn vị vận hành ghi 760, 710 và 571 là các tuyến trục, 7019 và 7715 là các tuyến nhánh, 마포08 là tuyến vòng nội khu và 9711 là xe khách liên vùng. Họ nêu riêng 710, 7019 và 7715 là cách đến nhanh nhất, trả khách tại bến 월드컵경기장 서측, số 14-105.",
+        pitfall:
+          "Chỉ có số xe buýt thôi là không đủ trong tối hoà nhạc. Cùng một tuyến có bến ở hơn một phía của một sân vận động cỡ này, và đơn vị vận hành nêu tên bến phía tây là có lý do.",
+        takes: "2 phút",
+      },
+      {
+        title: "Nếu bạn lái xe, hai bãi đậu không tương đương nhau",
+        body: "Có hai bãi: bãi của chính sân vận động ở phía tây với 528 chỗ, và bãi Homeplus ở phía đông với 767 chỗ. Đơn vị vận hành nói rõ rằng các mức giảm mà họ công bố không áp dụng ở bãi Homeplus. Bãi lớn hơn chính là bãi không giảm giá.",
+        pitfall:
+          "Đến bằng xe hơi tại một địa điểm 66,704 chỗ là cách vào và ra chậm nhất trong tối có buổi diễn, bất kể bạn đậu ở phía nào. Nhà ga tàu điện ngầm mang tên toà nhà này.",
+        takes: "1 phút",
+      },
+      {
+        title: "Mọi thứ về chính buổi tối đó đều thuộc nhà tổ chức",
+        body: "Cửa nào cho bạn vào, mấy giờ mở cửa, bạn được mang gì vào và mặt sân được bố trí thế nào đều đặt theo từng buổi và không nằm trên các trang của địa điểm. Đơn vị vận hành công bố toà nhà; nhà tổ chức công bố buổi diễn. Vé của bạn và thông báo của nhà tổ chức là thẩm quyền về tất cả những điều đó.",
+        takes: "1 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Seoul World Cup Stadium có phải là Gocheok Sky Dome không?",
+        a: "Không. Đó là hai toà nhà khác nhau ở hai quận khác nhau, do cùng một đơn vị vận hành. Gocheok là một dome trong nhà ở Guro-gu với khoảng 16,600 chỗ; World Cup Stadium là sân vận động lộ thiên ở Mapo-gu với 66,704 chỗ. Hệ thống đánh số cũng khác nhau, và đó là lý do mỗi nơi có một trang riêng ở đây.",
+      },
+      {
+        q: "Tôi nên dùng cửa ra nào?",
+        a: "Cửa ra 2 của 월드컵경기장역 trên Line 6, chính là cửa mà đơn vị vận hành nêu trên trang chỉ đường của họ. Họ không công bố thời gian đi bộ, nên trang này cũng không bày ra một con số.",
+      },
+      {
+        q: "Tôi có thể đậu xe ở sân vận động không?",
+        a: "Có, ở phía tây, nơi có 528 chỗ. Bãi Homeplus ở phía đông có 767 chỗ, và đơn vị vận hành nói rằng các mức giảm họ công bố không áp dụng ở đó.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การไปสนามกีฬาโซลเวิลด์คัพเพื่อดูคอนเสิร์ต",
+    summary:
+      "สนามกีฬาที่ซังอัมซึ่งทัวร์ระดับสนามกีฬามาแสดง อ่านจากหน้าเว็บของ Seoul Facilities Corporation เอง ได้แก่ สายและทางออก รถเมล์และป้ายไหน และลานจอดรถสองแห่งนั้นแห่งไหนที่มีส่วนลด",
+    scope:
+      "ครอบคลุมการไปถึง Seoul World Cup Stadium ในเขตมาโพ จากหน้าการเดินทางและที่จอดรถของผู้บริหารเอง ไม่ครอบคลุมว่าประตูไหนให้คุณเข้า ประตูเปิดเมื่อไร หรือนำอะไรเข้าไปได้ เพราะสิ่งเหล่านั้นเป็นของผู้จัดงานและกำหนดเป็นรายงาน และไม่มีหน้าใดที่นี่บอกคุณล่วงหน้าได้",
+    intro: [
+      "นี่คือสนามกีฬาความจุ 66,704 ที่นั่งที่ซังอัม และผู้บริหารกล่าวด้วยถ้อยคำของตนว่าสนามเปิดสำหรับงานทางวัฒนธรรมด้วย ไม่ใช่เฉพาะฟุตบอล การแสดงระดับสนามกีฬาที่นั่นคือห้องที่ใหญ่ที่สุดที่ทัวร์ K-POP ใช้ในโซล",
+      "สิ่งที่มีประโยชน์เกี่ยวกับการไปถึงที่นั่นคือสถานีรถไฟฟ้าใต้ดินตั้งชื่อตามสนามกีฬา จึงไม่มีปัญหาการคาดเดาที่คู่มือโกชอกต้องใช้ไปทั้งขั้นหนึ่ง ส่วนที่ควรอ่านคือทางออกไหน ป้ายรถเมล์ไหน และกับดักเรื่องที่จอดรถ",
+    ],
+    steps: [
+      {
+        title: "สาย 6 ไป월드컵경기장역 แล้วออกทางออก 2",
+        body: "สถานีใช้ชื่อสนามกีฬา ดังนั้นที่นี่ไม่มีปัญหาเรื่องการเลือกสถานี ผู้บริหารระบุทางออก 2 ไว้อย่างเฉพาะเจาะจง Seoul World Cup Stadium อยู่ที่ 서울특별시 마포구 월드컵로 240 และสถานีอยู่ติดกับสนาม ไม่ใช่ระยะที่ต้องเดิน",
+        pitfall:
+          "เว็บไซต์ของผู้บริหารเองมีหน้า찾아오시는 길 อีกหน้าหนึ่งอยู่ใต้ส่วนข้อมูลองค์กร และหน้านั้นคือสำนักงานใหญ่ของ Seoul Facilities Corporation ในเขตซองดง ซึ่งไปจาก용두역 บน Line 2 มันอยู่ห่างจากสนามราวสิบกิโลเมตร โปรดอ่านที่อยู่ก่อนจะเชื่อหน้าบอกทางบนเว็บไซต์ของสถานที่จัดงาน",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถ้าไปรถเมล์ ให้เล็งป้ายฝั่งตะวันตก",
+        body: "ผู้บริหารระบุสาย 760, 710 และ 571 เป็นสายหลัก สาย 7019 และ 7715 เป็นสายย่อย สาย마포08 เป็นสายวนในพื้นที่ และสาย 9711 เป็นรถโดยสารข้ามเขต โดยชี้เฉพาะสาย 710, 7019 และ 7715 ว่าไปถึงเร็วที่สุด ลงที่ป้าย월드컵경기장 서측 หมายเลข 14-105",
+        pitfall:
+          "ในคืนคอนเสิร์ต แค่หมายเลขรถเมล์ยังไม่พอ สนามขนาดนี้สายเดียวกันมีป้ายอยู่มากกว่าหนึ่งฝั่ง และผู้บริหารระบุชื่อป้ายฝั่งตะวันตกไว้ด้วยเหตุผล",
+        takes: "2 นาที",
+      },
+      {
+        title: "ถ้าคุณขับรถ ลานจอดสองแห่งไม่เท่ากัน",
+        body: "มีสองแห่ง คือลานของสนามเองอยู่ฝั่งตะวันตก มี 528 ช่อง และลานจอดของ Homeplus อยู่ฝั่งตะวันออก มี 767 ช่อง ผู้บริหารระบุอย่างตรงไปตรงมาว่าส่วนลดที่ตนประกาศไว้ไม่ใช้กับลานของ Homeplus ลานที่ใหญ่กว่าคือลานที่ไม่มีส่วนลด",
+        pitfall:
+          "การมาถึงสถานที่ความจุ 66,704 ที่นั่งด้วยรถยนต์เป็นวิธีเข้าและออกที่ช้าที่สุดในคืนที่มีการแสดง ไม่ว่าคุณจะจอดฝั่งไหน สถานีรถไฟฟ้าใต้ดินตั้งชื่อตามอาคารนี้",
+        takes: "1 นาที",
+      },
+      {
+        title: "ทุกอย่างเกี่ยวกับคืนนั้นเองเป็นของผู้จัดงาน",
+        body: "ประตูไหนให้คุณเข้า ประตูเปิดเมื่อไร นำอะไรเข้าไปได้ และพื้นสนามจัดวางอย่างไร ถูกกำหนดเป็นรายงานและไม่อยู่บนหน้าของสถานที่จัดงาน ผู้บริหารเผยแพร่เรื่องอาคาร ผู้จัดงานเผยแพร่เรื่องงาน บัตรของคุณและประกาศของผู้จัดงานเป็นผู้มีอำนาจในเรื่องทั้งหมดนั้น",
+        takes: "1 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "Seoul World Cup Stadium กับ Gocheok Sky Dome เป็นที่เดียวกันไหม",
+        a: "ไม่ใช่ เป็นอาคารต่างกันในเขตต่างกัน บริหารโดยผู้บริหารรายเดียวกัน โกชอกเป็นโดมในร่มในเขตคูโร จุราว 16,600 ที่นั่ง ส่วนสนามเวิลด์คัพเป็นสนามกลางแจ้งในเขตมาโพ จุ 66,704 ที่นั่ง ระบบหมายเลขก็ต่างกันด้วย ซึ่งเป็นเหตุผลที่แต่ละแห่งมีหน้าของตัวเองที่นี่",
+      },
+      {
+        q: "ฉันควรใช้ทางออกไหน",
+        a: "ทางออก 2 ของ월드컵경기장역 บนสาย 6 ซึ่งเป็นทางออกที่ผู้บริหารระบุไว้บนหน้าบอกทางของตนเอง ผู้บริหารไม่ได้เผยแพร่เวลาเดิน ดังนั้นหน้านี้ก็ไม่คิดขึ้นมาเอง",
+      },
+      {
+        q: "ฉันจอดรถที่สนามได้ไหม",
+        a: "ได้ ที่ฝั่งตะวันตก ซึ่งมี 528 ช่อง ลานจอดของ Homeplus ฝั่งตะวันออกมี 767 ช่อง และผู้บริหารระบุว่าส่วนลดที่ตนประกาศไว้ไม่ใช้ที่นั่น",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "seoul-world-cup-stadium-getting-there",
+    sourceChecked: "2026-10-24",
+    sourceText: "3e1df75fca13",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Pagtungo sa Seoul World Cup Stadium para sa isang konsiyerto",
+    summary:
+      "Ang istadyum sa Sangam kung saan ginaganap ang mga tour na pang-istadyum, binasa mula sa sariling mga pahina ng Seoul Facilities Corporation: ang linya at ang labasan, ang mga bus at aling hintuan, at alin sa dalawang paradahan ang nagbibigay ng bawas.",
+    scope:
+      "Sinasaklaw ang pagtungo sa Seoul World Cup Stadium sa Mapo-gu, mula sa sariling mga pahina ng tagapagpatakbo tungkol sa transportasyon at paradahan. Hindi nito sinasaklaw kung aling tarangkahan ang pumapasok sa iyo, kailan bumubukas ang pinto, o ano ang maaari mong ipasok: sa prodyuser ang mga iyon at itinatakda sa bawat palabas, at walang pahina dito na makapagsasabi sa iyo nang patiuna.",
+    intro: [
+      "Ito ang istadyum na may 66,704 na upuan sa Sangam, at sinasabi ng tagapagpatakbo sa sariling pananalita nito na bumubukas ito para sa mga kultural na kaganapan at hindi lamang para sa putbol. Ang isang palabas na pang-istadyum doon ang pinakamalaking silid na tinutugtugan ng isang tour na K-POP sa Seoul.",
+      "Ang kapaki-pakinabang sa pagtungo doon ay ipinangalan sa istadyum ang istasyon ng tren sa ilalim ng lupa, na nag-aalis ng panghuhula na pinagkakaabalahan ng isang buong hakbang sa gabay ng Gocheok. Ang bahaging sulit basahin ay kung aling labasan, aling hintuan ng bus, at ang bitag sa paradahan.",
+    ],
+    steps: [
+      {
+        title: "Line 6 patungong 월드컵경기장역, at lumabas sa labasan 2",
+        body: "Taglay ng istasyon ang pangalan ng istadyum, kaya wala ritong problema sa pagpili ng istasyon. Pinapangalanan ng tagapagpatakbo ang labasan 2 nang tiyakan. Nasa 서울특별시 마포구 월드컵로 240 ang Seoul World Cup Stadium, at nasa tabi nito ang istasyon at hindi isang lakad ang layo.",
+        pitfall:
+          "May ikalawang pahinang 찾아오시는 길 ang sariling websayt ng tagapagpatakbo sa ilalim ng seksiyong pangkorporasyon, at ang isang iyon ay ang punong tanggapan ng Seoul Facilities Corporation sa Seongdong-gu, na naaabot mula sa 용두역 sa Line 2. Mga sampung kilometro ito mula sa istadyum. Basahin ang adres bago ka magtiwala sa isang pahina ng panuto sa sayt ng isang venue.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Sa bus, tumutok sa hintuan sa panig na kanluran",
+        body: "Inililista ng tagapagpatakbo ang 760, 710 at 571 bilang mga pangunahing ruta, ang 7019 at 7715 bilang mga sangang ruta, ang 마포08 bilang lokal na pabalik-balik at ang 9711 bilang bus na pang-malawakang lugar. Itinatangi nito ang 710, 7019 at 7715 bilang ang pinakamabilis na pagdating, na nagbababa sa iyo sa hintuang 월드컵경기장 서측, may numerong 14-105.",
+        pitfall:
+          "Hindi sapat ang numero ng bus lamang sa gabi ng konsiyerto. May hintuan ang parehong ruta sa mahigit isang panig ng istadyum na ganito kalaki, at may dahilan kung bakit pinapangalanan ng tagapagpatakbo ang hintuan sa kanluran.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Kung magmamaneho ka, hindi magkapantay ang dalawang paradahan",
+        body: "May dalawa: ang sariling paradahan ng istadyum sa panig na kanluran, na may 528 na puwesto, at ang paradahan ng Homeplus sa panig na silangan, na may 767. Tahasang sinasabi ng tagapagpatakbo na hindi naaangkop sa Homeplus ang mga bawas na inilalathala nito. Ang mas malaking paradahan ang hindi nagbibigay ng bawas.",
+        pitfall:
+          "Ang pagdating nang nakakotse sa isang venueng may 66,704 na upuan ay ang pinakamabagal na paraan ng pagpasok at paglabas sa gabi ng palabas, saang panig ka man magparada. Ipinangalan sa gusali ang istasyon ng tren sa ilalim ng lupa.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang lahat tungkol sa gabi mismo ay sa prodyuser",
+        body: "Itinatakda sa bawat palabas kung aling tarangkahan ang pumapasok sa iyo, kailan bumubukas ang pinto, ano ang maaari mong ipasok at paano inilalatag ang palapag, at wala ang mga iyon sa mga pahina ng venue. Inilalathala ng tagapagpatakbo ang gusali; inilalathala ng prodyuser ang kaganapan. Ang tiket mo at ang pabatid ng prodyuser ang awtoridad sa lahat ng iyon.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Pareho ba ang Seoul World Cup Stadium at ang Gocheok Sky Dome?",
+        a: "Hindi. Magkaibang gusali sila sa magkaibang distrito, pinapatakbo ng parehong tagapagpatakbo. Ang Gocheok ay isang dome na nasa loob sa Guro-gu na may mga 16,600 na upuan; ang World Cup Stadium ay isang bukas na istadyum sa Mapo-gu na may 66,704. Magkaiba rin ang mga sistema ng pagnunumero, at iyon ang dahilan kung bakit may sariling pahina ang bawat isa dito.",
+      },
+      {
+        q: "Aling labasan ang dapat kong gamitin?",
+        a: "Ang labasan 2 ng 월드컵경기장역 sa Line 6, na ang labasang pinapangalanan ng tagapagpatakbo sa sariling pahina nito ng panuto. Hindi nito inilalathala ang haba ng lakad, kaya hindi iyon kinakatha ng pahinang ito.",
+      },
+      {
+        q: "Puwede ba akong magparada sa istadyum?",
+        a: "Oo, sa panig na kanluran, kung saan may 528 na puwesto. May 767 ang paradahan ng Homeplus sa panig na silangan, at sinasabi ng tagapagpatakbo na hindi naaangkop doon ang mga inilathala nitong bawas.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "ソウルワールドカップ競技場で自分の席を見つける",
+    summary:
+      "この競技場が常設席にどう名前を付けているかを、運営者自身の座席検索から読み取ります。方位で名付けられた4つのスタンド、各スタンド内のアルファベット、そして決して使われない2つの文字です。",
+    scope:
+      "ソウルワールドカップ競技場が常設のスタンドとブロックにどう名前を付けているかを、ソウル施設公団自身の座席検索から扱います。フロアは扱いません。コンサートではピッチの一部がステージで、残りは主催者が配置するので、このページが記述できるほど恒久的なものは何もありません。",
+    intro: [
+      "ここの席には座標が2つあり、それを示しているのは運営者自身の座席検索です。方位を選ばせ、それからアルファベットを選ばせます。それだけです。",
+      "そのおかげでこの建物は高尺より読みやすくなっています。高尺ではブロック番号は規則を知るまで何も教えてくれません。ここでは名前の前半が方位なので、西スタンドの外に立っている読者は、目の前にあるのがWの側だとすでに分かっています。",
+    ],
+    steps: [
+      {
+        title: "まず方位を読む——それは記号ではなく方角です",
+        body: "4つのスタンドは동（東）、서（西）、남（南）、북（北）と名付けられており、会場の座席検索はどれかを選ぶまで何も検索してくれません。Wで始まるブロック名は競技場の西側にあります。それが第一の座標のすべてで、66,704人が入る建物の正しい側へあなたを連れて行く部分です。",
+        pitfall:
+          "遠回りして歩くこと。この規模では競技場の反対側はかなりの距離になり、方位がブロック名に印刷されているのは、まさにその距離を二度歩かなくて済むようにするためです。",
+        takes: "2分",
+      },
+      {
+        title: "次にアルファベット——そして2つの文字は存在しません",
+        body: "スタンド内のブロックはAから順にアルファベットで振られます。会場の検索は東側でAからT、北側と南側でAからP、西側でAからXを提示します。並びを注意して読むと、HからそのままJへ、NからそのままPへ飛ぶことが分かります。IとOはこの建物のどの側でも使われていません。1と0に見えるからです。",
+        pitfall:
+          "文字が飛ばされているように見えるのでIやOを探すこと。飛ばされているのは意図的で、どちらの文字のブロックもここには存在しません。",
+        takes: "2分",
+      },
+      {
+        title: "西は長い側で、その非対称は歩く上で意味を持ちます",
+        body: "4つのスタンドが持つブロックの数は同じではありません。北と南はPまでで、IとOを除けばそれぞれ14ブロックです。東はTまでで18。西はXまでで22——建物の中で最も長い側です。スタンドに沿ってブロックを数えていて数が合わない感じがするなら、数字を疑う前に自分がどのスタンドにいるかを確かめてください。",
+        takes: "1分",
+      },
+      {
+        title: "フロアはこの体系の一部ではまったくありません",
+        body: "ここまでのすべては常設のスタンドの説明で、それはコンクリートで動きません。コンサートではピッチがステージと、その残りに主催者が配置する座席を載せ、その配置は公演ごとに設計されます。競技場自身の芝は117メートル×78メートルで、それが組み替えられる空間です。どの方位の文字もそれを記述しません。",
+        pitfall:
+          "フロアのブロックがスタンドのアルファベットに従うと思い込むこと。従いませんし、それは会場が名付けるものでもありません。",
+        takes: "1分",
+      },
+      {
+        title: "このページが教えないこと、そしてその理由",
+        body: "スタンド内でアルファベットがどちら向きに進むかは教えません。高尺の配置図は自身の配置についての文章による説明を公開し、向きを言葉で明示していますが、この会場は座席の図を公開していてそうした説明はないので、向きは出典の中にありません。また、あなたの公演でどのブロックが売られるか、どのゲートから入れるか、ステージがどこかも教えません。それらは主催者のもので、公演ごとに変わります。",
+        takes: "1分",
+      },
+    ],
+    faq: [
+      {
+        q: "ここでチケットに書かれたIとOの文字は何を意味しますか。",
+        a: "何も意味しません。会場はそれらを使っていません。会場自身の座席検索は、どの側でもAからHのあとJへ、NのあとPへと進みます。Iに見える文字はほぼ確実にJで、Oに見える文字はほぼ確実にQかDです。",
+      },
+      {
+        q: "各側にブロックはいくつありますか。",
+        a: "北と南は14、東は18、西は22です。運営者の座席検索が実際に提示している文字を数えた数です。",
+      },
+      {
+        q: "スタンドの周りでアルファベットはどちら向きに進みますか。",
+        a: "会場が述べていないので、このページも述べません。どの文字がどこに位置するかについての権威は会場の図で、その図はこのページの末尾にリンクされています。",
+      },
+      {
+        q: "フロアはスタンドと同じように番号が振られていますか。",
+        a: "いいえ。コンサートではピッチはステージと、主催者が配置するものであり、公演ごとに設計されます。方位とアルファベットの体系が記述するのは常設のスタンドだけです。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "在首爾世界盃競技場找到你的座位",
+    summary:
+      "這座競技場如何為常設座位命名，取自營運者自己的座位查詢：以方位命名的四個看台、每個看台裡的字母，以及兩個從不被使用的字母。",
+    scope:
+      "涵蓋首爾世界盃競技場如何為常設看台與區塊命名，取自首爾設施公團自己的座位查詢。不涵蓋場地：演唱會時草皮的一部分是舞台，其餘由主辦方配置，所以沒有任何部分穩定到足以讓本頁描述。",
+    intro: [
+      "這裡的一個座位有兩個座標，而營運者自己的座位查詢正是展示這件事的東西：它先問你一個方位，然後問你一個字母。沒有別的了。",
+      "這讓這棟建築比高尺容易讀。在高尺，區塊號碼在你知道規則之前什麼也不會告訴你。這裡名字的前半是方位，所以站在西看台外面的讀者，已經知道眼前這一側就是W。",
+    ],
+    steps: [
+      {
+        title: "先讀方位——它是方向，不是代號",
+        body: "四個看台名為동（東）、서（西）、남（南）與북（北），而場館的座位查詢在你選一個之前什麼都不會查。以W開頭的區塊名在競技場的西側。那就是第一個座標的全部，也是把你帶到一棟容納66,704人的建築正確一側的那一部分。",
+        pitfall:
+          "繞遠路走。在這種尺度下，走錯邊是相當長的一段路，而方位之所以印在區塊名裡，正是為了讓你不必把那段路走兩次。",
+        takes: "2分鐘",
+      },
+      {
+        title: "然後是字母——而兩個字母並不存在",
+        body: "一個看台裡的區塊從A開始以字母編排。場館的查詢在東側提供A到T，在北側與南側提供A到P，在西側提供A到X。仔細讀那個序列，你會看到它從H直接跳到J，從N直接跳到P：I與O在這棟建築的任何一側都不使用，因為它們讀起來像1和0。",
+        pitfall:
+          "因為看起來有字母被跳過而去找I或O。它們確實被跳過了，而且是刻意的，帶這兩個字母的區塊在這裡並不存在。",
+        takes: "2分鐘",
+      },
+      {
+        title: "西側是長的那一邊，而這個不對稱和找路有關",
+        body: "四個看台所帶的區塊數量並不相同。北與南排到P，在去掉I與O之後各是14個區塊。東排到T，18個。西排到X，22個——是建築裡最長的一側。如果你沿著看台數區塊而覺得數目不對，先確認自己在哪一個看台，再去懷疑數字。",
+        takes: "1分鐘",
+      },
+      {
+        title: "場地完全不屬於這套系統",
+        body: "以上一切描述的是常設看台，它們是混凝土而且不會移動。演唱會時草皮承載舞台，以及主辦方在其餘部分配置的任何座位，而那個配置是逐場設計的。競技場自己的草皮是117公尺乘78公尺，那就是會被重新安排的空間。沒有任何方位字母描述它。",
+        pitfall:
+          "以為場地的區塊會跟著看台的字母走。它不會，而那也不是場館要命名的東西。",
+        takes: "1分鐘",
+      },
+      {
+        title: "本頁不會告訴你的事，以及原因",
+        body: "它不會告訴你字母在一個看台裡朝哪個方向排。高尺的配置圖公布了關於自身配置的文字說明，並明確用文字寫出方向；這座場館公布的是一張座位圖而沒有那樣的說明，所以方向不在來源裡。它也不會告訴你你那一場有哪些區塊開賣、哪個入口讓你進，或舞台在哪裡。那些屬於主辦方，並且逐場改變。",
+        takes: "1分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "這裡票上的I和O這兩個字母是什麼意思？",
+        a: "沒有意思——場館不使用它們。它自己的座位查詢在每一側都是A到H然後J，以及N然後P。看起來像I的字母幾乎一定是J，看起來像O的幾乎一定是Q或D。",
+      },
+      {
+        q: "每一側有幾個區塊？",
+        a: "北與南各14個，東側18個，西側22個，依營運者座位查詢實際提供的字母計算。",
+      },
+      {
+        q: "字母繞著看台朝哪個方向排？",
+        a: "場館沒有說，所以本頁也不說。關於某個字母位在哪裡，權威是場館的圖，而那張圖連結在本頁末尾。",
+      },
+      {
+        q: "場地的編號和看台一樣嗎？",
+        a: "不一樣。演唱會時草皮是舞台加上主辦方配置的東西，逐場設計。方位加字母的系統只描述常設看台。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Menemukan tempat duduk Anda di Seoul World Cup Stadium",
+    summary:
+      "Bagaimana stadion ini menamai tempat duduk permanennya, dibaca dari pencari kursi milik pengelolanya sendiri: empat tribun yang dinamai menurut arah mata angin, huruf-huruf di dalam masing-masing, dan dua huruf alfabet yang tidak pernah dipakai.",
+    scope:
+      "Mencakup bagaimana Seoul World Cup Stadium menamai tribun dan blok permanennya, dari pencari kursi milik Seoul Facilities Corporation sendiri. Tidak mencakup lapangannya: pada sebuah konser sebagian rumput menjadi panggung dan sisanya ditata oleh promotor, jadi tidak ada apa pun tentangnya yang cukup permanen untuk digambarkan halaman ini.",
+    intro: [
+      "Sebuah kursi di sini punya dua koordinat, dan pencari kursi milik pengelola sendirilah yang memperlihatkannya: ia menanyakan sebuah arah, lalu sebuah huruf. Tidak ada yang lain.",
+      "Itu membuat bangunan ini lebih mudah dibaca daripada Gocheok, di mana nomor blok tidak memberi tahu Anda apa pun sampai Anda tahu aturannya. Di sini separuh pertama nama itu adalah arah mata angin, jadi pembaca yang berdiri di luar tribun barat sudah tahu bahwa W adalah sisi di depannya.",
+    ],
+    steps: [
+      {
+        title: "Baca arahnya lebih dulu — ia sebuah arah, bukan sebuah kode",
+        body: "Keempat tribun dinamai 동 (Timur), 서 (Barat), 남 (Selatan) dan 북 (Utara), dan pencari kursi venue itu tidak akan mencari apa pun sampai Anda memilih salah satunya. Nama blok yang dimulai dengan W berada di sisi barat stadion. Itulah seluruh koordinat pertama, dan itulah bagian yang membawa Anda ke sisi yang benar dari bangunan berisi 66,704 orang.",
+        pitfall:
+          "Berjalan memutar jalan panjang. Pada ukuran seperti ini, sisi stadion yang salah adalah jalan kaki yang jauh, dan arahnya dicetak pada nama blok justru supaya Anda tidak harus menempuh jalan itu dua kali.",
+        takes: "2 menit",
+      },
+      {
+        title: "Lalu hurufnya — dan dua huruf tidak ada",
+        body: "Di dalam satu tribun, blok-bloknya diberi huruf mulai dari A. Pencari venue itu menawarkan A sampai T di sisi timur, A sampai P di utara dan selatan, dan A sampai X di barat. Bacalah urutannya dengan teliti dan Anda akan melihatnya melangkah dari H langsung ke J, dan dari N langsung ke P: I dan O tidak dipakai di mana pun dalam bangunan ini, di sisi mana pun, karena keduanya terbaca sebagai 1 dan 0.",
+        pitfall:
+          "Mencari-cari I atau O karena sebuah huruf tampak terlewat. Ia memang dilewati, dengan sengaja, dan blok dengan huruf mana pun di antara keduanya tidak ada di sini.",
+        takes: "2 menit",
+      },
+      {
+        title: "Barat adalah sisi yang panjang, dan ketidaksimetrisannya berguna untuk menjelajah",
+        body: "Keempat tribun tidak membawa jumlah blok yang sama. Utara dan selatan berjalan sampai P, yang berarti 14 blok masing-masing setelah I dan O dihapus. Timur berjalan sampai T, 18. Barat berjalan sampai X, 22 — sisi terpanjang dalam bangunan ini. Kalau Anda sedang menghitung blok sepanjang sebuah tribun dan hitungannya terasa salah, periksalah dulu Anda ada di tribun mana sebelum Anda meragukan angkanya.",
+        takes: "1 menit",
+      },
+      {
+        title: "Lapangan sama sekali bukan bagian dari sistem ini",
+        body: "Semua di atas menggambarkan tribun permanen, yang terbuat dari beton dan tidak berpindah. Pada sebuah konser, rumput itu menanggung panggung dan tempat duduk apa pun yang ditata promotor di sisanya, dan susunan itu dirancang per pertunjukan. Rumput stadion itu sendiri berukuran 117 meter kali 78 meter, dan itulah ruang yang ditata ulang. Tidak ada huruf arah mata angin yang menggambarkannya.",
+        pitfall:
+          "Menganggap sebuah blok lapangan mengikuti penghurufan tribun. Ia tidak mengikutinya, dan ia bukan milik venue untuk dinamai.",
+        takes: "1 menit",
+      },
+      {
+        title: "Apa yang tidak akan diberitahukan halaman ini, dan mengapa",
+        body: "Ia tidak akan memberi tahu Anda ke arah mana huruf-huruf itu berjalan di dalam sebuah tribun. Bagan Gocheok menerbitkan keterangan tertulis tentang tata letaknya sendiri dan menyatakan arahnya dengan kata-kata; venue ini menerbitkan sebuah grafik tempat duduk dan tanpa keterangan semacam itu, jadi arahnya tidak ada dalam sumbernya. Ia juga tidak akan memberi tahu blok mana yang dijual untuk pertunjukan Anda, pintu mana yang memasukkan Anda, atau di mana panggungnya. Semua itu milik promotor dan berubah per pertunjukan.",
+        takes: "1 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apa arti huruf I dan O pada sebuah tiket di sini?",
+        a: "Tidak ada artinya — venue ini tidak memakainya. Pencari kursinya sendiri berjalan A sampai H lalu J, dan N lalu P, di setiap sisi. Huruf yang tampak seperti I hampir pasti sebuah J, dan yang tampak seperti O hampir pasti sebuah Q atau sebuah D.",
+      },
+      {
+        q: "Ada berapa blok di setiap sisi?",
+        a: "Empat belas di utara dan selatan, delapan belas di timur, dan dua puluh dua di barat, dengan menghitung huruf-huruf yang benar-benar ditawarkan pencari kursi pengelolanya.",
+      },
+      {
+        q: "Ke arah mana huruf-huruf itu berjalan mengelilingi sebuah tribun?",
+        a: "Venue tidak mengatakannya, jadi halaman ini juga tidak. Bagannya adalah otoritas atas di mana sebuah huruf tertentu berada, dan bagan itu ditautkan di kaki halaman ini.",
+      },
+      {
+        q: "Apakah lapangan dinomori seperti tribun?",
+        a: "Tidak. Pada sebuah konser, rumputnya adalah panggung ditambah apa pun yang ditata promotor, dirancang per pertunjukan. Sistem arah mata angin dan huruf menggambarkan tribun permanen saja.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Den Platz im Seoul World Cup Stadium finden",
+    summary:
+      "Wie das Stadion seine festen Plätze benennt, abgelesen an der eigenen Platzsuche des Betreibers: vier Tribünen, nach Himmelsrichtungen benannt, Buchstaben innerhalb jeder einzelnen, und zwei Buchstaben des Alphabets, die nie verwendet werden.",
+    scope:
+      "Behandelt, wie das Seoul World Cup Stadium seine festen Tribünen und Blöcke benennt, aus der eigenen Platzsuche der Seoul Facilities Corporation. Nicht behandelt wird der Boden: bei einem Konzert ist ein Teil des Rasens Bühne und der Rest wird vom Veranstalter angelegt, nichts daran ist also dauerhaft genug, dass diese Seite es beschreiben könnte.",
+    intro: [
+      "Ein Platz hier hat zwei Koordinaten, und die eigene Platzsuche des Betreibers ist das, was das zeigt: sie fragt nach einer Richtung und dann nach einem Buchstaben. Nach nichts weiter.",
+      "Damit ist dieses Gebäude leichter zu lesen als Gocheok, wo eine Blocknummer nichts sagt, solange man die Regel nicht kennt. Hier ist die erste Hälfte des Namens eine Himmelsrichtung, wer also außen vor der Westtribüne steht, weiß bereits, dass W die Seite vor ihm ist.",
+    ],
+    steps: [
+      {
+        title: "Lesen Sie zuerst die Richtung — sie ist eine Peilung und kein Code",
+        body: "Die vier Tribünen heißen 동 (Ost), 서 (West), 남 (Süd) und 북 (Nord), und die Platzsuche der Halle sucht nichts, solange Sie keine davon gewählt haben. Ein Blockname, der mit W beginnt, liegt auf der Westseite des Stadions. Das ist die gesamte erste Koordinate, und es ist der Teil, der Sie in einem Gebäude für 66,704 Menschen auf die richtige Seite bringt.",
+        pitfall:
+          "Den weiten Weg herum zu gehen. In dieser Größe ist die falsche Seite des Stadions ein erheblicher Fußweg, und die Richtung steht im Blocknamen genau deshalb, damit Sie diesen Weg nicht zweimal machen müssen.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "Dann der Buchstabe — und zwei Buchstaben gibt es nicht",
+        body: "Innerhalb einer Tribüne sind die Blöcke ab A mit Buchstaben versehen. Die Suche der Halle bietet A bis T auf der Ostseite, A bis P im Norden und Süden und A bis X im Westen. Lesen Sie die Reihe genau, und Sie sehen, dass sie von H direkt zu J und von N direkt zu P springt: I und O werden nirgends im Gebäude verwendet, auf keiner Seite, weil sie als 1 und 0 gelesen werden.",
+        pitfall:
+          "Nach einem I oder einem O zu suchen, weil ein Buchstabe übersprungen zu sein scheint. Er wurde übersprungen, absichtlich, und einen Block mit einem der beiden Buchstaben gibt es hier nicht.",
+        takes: "2 Minuten",
+      },
+      {
+        title: "West ist die lange Seite, und die Asymmetrie ist für die Orientierung wichtig",
+        body: "Die vier Tribünen tragen nicht gleich viele Blöcke. Nord und Süd laufen bis P, nach dem Wegfall von I und O also je 14 Blöcke. Ost läuft bis T, 18. West läuft bis X, 22 — die längste Seite im Gebäude. Wenn Sie Blöcke entlang einer Tribüne abzählen und die Zahl sich falsch anfühlt, prüfen Sie zuerst, auf welcher Tribüne Sie sind, bevor Sie an der Zahl zweifeln.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Der Boden gehört überhaupt nicht zu diesem System",
+        body: "Alles oben beschreibt die festen Tribünen, die aus Beton sind und sich nicht verschieben. Bei einem Konzert trägt der Rasen die Bühne und dazu jene Bestuhlung, die der Veranstalter auf dem Rest anlegt, und diese Anordnung wird pro Show entworfen. Der Rasen des Stadions selbst misst 117 Meter mal 78 Meter, und das ist die Fläche, die umgebaut wird. Kein Himmelsrichtungs-Buchstabe beschreibt sie.",
+        pitfall:
+          "Anzunehmen, ein Bodenblock folge der Tribünenbeschriftung. Er tut es nicht, und es ist auch nicht Sache der Halle, ihn zu benennen.",
+        takes: "1 Minute",
+      },
+      {
+        title: "Was diese Seite Ihnen nicht sagt, und warum",
+        body: "Sie sagt Ihnen nicht, in welche Richtung die Buchstaben innerhalb einer Tribüne laufen. Der Gocheok-Plan veröffentlicht eine schriftliche Beschreibung seiner eigenen Anordnung und nennt die Richtung ausdrücklich; diese Halle veröffentlicht eine Sitzgrafik und keine solche Beschreibung, die Richtung steht also nicht in der Quelle. Sie sagt Ihnen auch nicht, welche Blöcke für Ihre Show verkauft werden, welches Tor Sie einlässt oder wo die Bühne steht. Das gehört dem Veranstalter und ändert sich pro Show.",
+        takes: "1 Minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Was bedeuten die Buchstaben I und O hier auf einem Ticket?",
+        a: "Nichts — die Halle verwendet sie nicht. Ihre eigene Platzsuche läuft auf jeder Seite A bis H, dann J, und N, dann P. Ein Buchstabe, der wie ein I aussieht, ist fast sicher ein J, und einer, der wie ein O aussieht, fast sicher ein Q oder ein D.",
+      },
+      {
+        q: "Wie viele Blöcke gibt es auf jeder Seite?",
+        a: "Vierzehn im Norden und Süden, achtzehn im Osten und zweiundzwanzig im Westen, gezählt nach den Buchstaben, die die Platzsuche des Betreibers tatsächlich anbietet.",
+      },
+      {
+        q: "In welche Richtung laufen die Buchstaben um eine Tribüne?",
+        a: "Die Halle sagt es nicht, diese Seite also auch nicht. Ihr Plan ist die Autorität dafür, wo ein bestimmter Buchstabe liegt, und dieser Plan ist am Fuß dieser Seite verlinkt.",
+      },
+      {
+        q: "Ist der Boden wie die Tribünen numeriert?",
+        a: "Nein. Bei einem Konzert ist der Rasen Bühne plus das, was der Veranstalter anlegt, pro Show entworfen. Das System aus Himmelsrichtung und Buchstabe beschreibt ausschließlich die festen Tribünen.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Encontrar tu asiento en el Seoul World Cup Stadium",
+    summary:
+      "Cómo nombra el estadio sus asientos permanentes, leído en el buscador de butacas del propio operador: cuatro gradas nombradas por el punto cardinal, letras dentro de cada una, y dos letras del alfabeto que nunca se usan.",
+    scope:
+      "Cubre cómo nombra el Seoul World Cup Stadium sus gradas y bloques permanentes, a partir del buscador de butacas de la propia Seoul Facilities Corporation. No cubre la pista: en un concierto parte del césped es escenario y el resto lo distribuye la promotora, así que nada de ello es lo bastante permanente para que esta página lo describa.",
+    intro: [
+      "Un asiento aquí tiene dos coordenadas, y el propio buscador de butacas del operador es lo que lo demuestra: pide una dirección y después una letra. Nada más.",
+      "Eso hace que este edificio sea más fácil de leer que Gocheok, donde un número de bloque no te dice nada hasta que conoces la regla. Aquí la primera mitad del nombre es un punto cardinal, así que quien está fuera de la grada oeste ya sabe que W es el lado que tiene delante.",
+    ],
+    steps: [
+      {
+        title: "Lee primero la dirección: es un rumbo, no un código",
+        body: "Las cuatro gradas se llaman 동 (Este), 서 (Oeste), 남 (Sur) y 북 (Norte), y el buscador de butacas del recinto no busca nada hasta que has elegido una. Un nombre de bloque que empieza por W está en el lado oeste del estadio. Esa es toda la primera coordenada, y es la parte que te lleva al lado correcto de un edificio que alberga a 66,704 personas.",
+        pitfall:
+          "Dar la vuelta larga a pie. A este tamaño, el lado equivocado del estadio es una caminata considerable, y la dirección va impresa en el nombre del bloque precisamente para que no tengas que hacer esa caminata dos veces.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Después la letra, y dos letras no existen",
+        body: "Dentro de una grada, los bloques se letrean desde la A. El buscador del recinto ofrece de la A a la T en el lado este, de la A a la P en el norte y el sur, y de la A a la X en el oeste. Lee la secuencia con atención y verás que salta de la H directamente a la J, y de la N directamente a la P: la I y la O no se usan en ninguna parte del edificio, en ningún lado, porque se leen como 1 y 0.",
+        pitfall:
+          "Buscar una I o una O porque parece que falta una letra. Falta, a propósito, y un bloque con cualquiera de esas dos letras no existe aquí.",
+        takes: "2 minutos",
+      },
+      {
+        title: "El oeste es el lado largo, y la asimetría sirve para orientarse",
+        body: "Las cuatro gradas no llevan el mismo número de bloques. El norte y el sur llegan hasta la P, lo que son 14 bloques cada uno una vez quitadas la I y la O. El este llega hasta la T, 18. El oeste llega hasta la X, 22: el lado más largo del edificio. Si estás contando bloques a lo largo de una grada y la cuenta te parece rara, comprueba en qué grada estás antes de dudar del número.",
+        takes: "1 minuto",
+      },
+      {
+        title: "La pista no forma parte de este sistema en absoluto",
+        body: "Todo lo anterior describe las gradas permanentes, que son de hormigón y no se mueven. En un concierto el césped lleva el escenario y los asientos que la promotora distribuya en el resto, y esa disposición se diseña por espectáculo. El propio césped del estadio mide 117 metros por 78, que es el espacio que se reorganiza. Ninguna letra cardinal lo describe.",
+        pitfall:
+          "Dar por hecho que un bloque de pista sigue el letreado de las gradas. No lo sigue, y además no le corresponde al recinto nombrarlo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Lo que esta página no te va a decir, y por qué",
+        body: "No te va a decir en qué dirección corren las letras dentro de una grada. El plano de Gocheok publica una descripción escrita de su propia distribución y declara la dirección con todas las palabras; este recinto publica un gráfico de asientos y ninguna descripción así, de modo que la dirección no está en la fuente. Tampoco te va a decir qué bloques se venden para tu concierto, por qué puerta entras ni dónde está el escenario. Eso es de la promotora y cambia por espectáculo.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Qué significan las letras I y O en una entrada de aquí?",
+        a: "Nada: el recinto no las usa. Su propio buscador de butacas va de la A a la H y luego la J, y de la N a la P, en todos los lados. Una letra que parece una I casi seguro es una J, y una que parece una O casi seguro es una Q o una D.",
+      },
+      {
+        q: "¿Cuántos bloques hay en cada lado?",
+        a: "Catorce en el norte y el sur, dieciocho en el este y veintidós en el oeste, contando las letras que el buscador de butacas del operador ofrece de verdad.",
+      },
+      {
+        q: "¿En qué dirección corren las letras alrededor de una grada?",
+        a: "El recinto no lo dice, así que esta página tampoco. Su plano es la autoridad sobre dónde está una letra concreta, y ese plano va enlazado al pie de esta página.",
+      },
+      {
+        q: "¿La pista está numerada como las gradas?",
+        a: "No. En un concierto el césped es escenario más lo que distribuya la promotora, diseñado por espectáculo. El sistema de punto cardinal y letra describe únicamente las gradas permanentes.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Trouver sa place au Seoul World Cup Stadium",
+    summary:
+      "Comment le stade nomme son placement permanent, d'après la recherche de place de l'exploitant lui-même : quatre tribunes nommées par point cardinal, des lettres à l'intérieur de chacune, et deux lettres de l'alphabet qui ne servent jamais.",
+    scope:
+      "Couvre la façon dont le Seoul World Cup Stadium nomme ses tribunes et ses blocs permanents, d'après la recherche de place de la Seoul Facilities Corporation elle-même. Ne couvre pas la pelouse : lors d'un concert une partie du gazon est la scène et le reste est agencé par le promoteur, rien n'y est donc assez permanent pour que cette page le décrive.",
+    intro: [
+      "Une place ici a deux coordonnées, et c'est la recherche de place de l'exploitant qui le montre : elle demande une direction, puis une lettre. Rien d'autre.",
+      "Cela rend ce bâtiment plus lisible que Gocheok, où un numéro de bloc ne vous apprend rien avant que vous connaissiez la règle. Ici la première moitié du nom est un relèvement, si bien que la personne qui se tient devant la tribune ouest sait déjà que W est le côté qu'elle a devant elle.",
+    ],
+    steps: [
+      {
+        title: "Lisez d'abord la direction — c'est un relèvement et non un code",
+        body: "Les quatre tribunes s'appellent 동 (Est), 서 (Ouest), 남 (Sud) et 북 (Nord), et la recherche de place de la salle ne cherche rien avant que vous en ayez choisi une. Un nom de bloc qui commence par W se trouve du côté ouest du stade. C'est toute la première coordonnée, et c'est la part qui vous amène du bon côté d'un bâtiment accueillant 66,704 personnes.",
+        pitfall:
+          "Faire le grand tour à pied. À cette taille, le mauvais côté du stade représente une marche considérable, et la direction figure dans le nom du bloc précisément pour que vous n'ayez pas à faire cette marche deux fois.",
+        takes: "2 minutes",
+      },
+      {
+        title: "Puis la lettre — et deux lettres n'existent pas",
+        body: "À l'intérieur d'une tribune, les blocs sont lettrés à partir de A. La recherche de la salle propose A à T côté est, A à P au nord et au sud, et A à X à l'ouest. Lisez la suite attentivement et vous la verrez passer de H directement à J, et de N directement à P : I et O ne servent nulle part dans le bâtiment, d'aucun côté, parce qu'elles se lisent comme 1 et 0.",
+        pitfall:
+          "Chercher un I ou un O parce qu'une lettre semble avoir été sautée. Elle l'a été, délibérément, et un bloc portant l'une de ces deux lettres n'existe pas ici.",
+        takes: "2 minutes",
+      },
+      {
+        title: "L'ouest est le côté long, et l'asymétrie sert à se repérer",
+        body: "Les quatre tribunes ne portent pas le même nombre de blocs. Le nord et le sud vont jusqu'à P, soit 14 blocs chacun une fois I et O retirés. L'est va jusqu'à T, 18. L'ouest va jusqu'à X, 22 — le côté le plus long du bâtiment. Si vous comptez les blocs le long d'une tribune et que le compte vous semble faux, vérifiez dans quelle tribune vous êtes avant de douter du nombre.",
+        takes: "1 minute",
+      },
+      {
+        title: "La pelouse ne fait pas partie de ce système du tout",
+        body: "Tout ce qui précède décrit les tribunes permanentes, qui sont en béton et ne bougent pas. Lors d'un concert, le gazon porte la scène et le placement que le promoteur installe sur le reste, et cet agencement est conçu par spectacle. Le gazon du stade mesure 117 mètres sur 78, et c'est l'espace qui est réaménagé. Aucune lettre de direction ne le décrit.",
+        pitfall:
+          "Supposer qu'un bloc de pelouse suit le lettrage des tribunes. Il ne le suit pas, et ce n'est pas à la salle de le nommer.",
+        takes: "1 minute",
+      },
+      {
+        title: "Ce que cette page ne vous dira pas, et pourquoi",
+        body: "Elle ne vous dira pas dans quel sens courent les lettres à l'intérieur d'une tribune. Le plan de Gocheok publie une description écrite de sa propre disposition et énonce la direction en toutes lettres ; cette salle publie un graphique de placement et aucune description de ce genre, la direction n'est donc pas dans la source. Elle ne vous dira pas non plus quels blocs sont mis en vente pour votre concert, par quelle porte vous entrez, ni où se trouve la scène. Cela appartient au promoteur et change par spectacle.",
+        takes: "1 minute",
+      },
+    ],
+    faq: [
+      {
+        q: "Que signifient les lettres I et O sur un billet ici ?",
+        a: "Rien — la salle ne les emploie pas. Sa propre recherche de place va de A à H puis J, et de N puis P, de chaque côté. Une lettre qui ressemble à un I est presque sûrement un J, et une qui ressemble à un O presque sûrement un Q ou un D.",
+      },
+      {
+        q: "Combien y a-t-il de blocs de chaque côté ?",
+        a: "Quatorze au nord et au sud, dix-huit à l'est et vingt-deux à l'ouest, en comptant les lettres que la recherche de place de l'exploitant propose réellement.",
+      },
+      {
+        q: "Dans quel sens courent les lettres autour d'une tribune ?",
+        a: "La salle ne le dit pas, donc cette page non plus. Son plan fait autorité sur l'emplacement d'une lettre donnée, et ce plan est lié au pied de cette page.",
+      },
+      {
+        q: "La pelouse est-elle numérotée comme les tribunes ?",
+        a: "Non. Lors d'un concert, le gazon est la scène plus ce que le promoteur installe, conçu par spectacle. Le système point cardinal plus lettre décrit uniquement les tribunes permanentes.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Achando seu lugar no Seoul World Cup Stadium",
+    summary:
+      "Como o estádio nomeia os assentos permanentes dele, lido no buscador de lugares do próprio operador: quatro setores nomeados por ponto cardeal, letras dentro de cada um, e duas letras do alfabeto que nunca são usadas.",
+    scope:
+      "Cobre como o Seoul World Cup Stadium nomeia os setores e blocos permanentes dele, a partir do buscador de lugares da própria Seoul Facilities Corporation. Não cobre a pista: num show parte do gramado é palco e o resto é montado pela produtora, então nada ali é permanente o bastante para esta página descrever.",
+    intro: [
+      "Um lugar aqui tem duas coordenadas, e o próprio buscador de lugares do operador é o que mostra isso: ele pede uma direção e depois uma letra. Nada mais.",
+      "Isso deixa este prédio mais fácil de ler que o Gocheok, onde o número do bloco não te diz nada até você saber a regra. Aqui a primeira metade do nome é um ponto cardeal, então quem está em pé do lado de fora do setor oeste já sabe que W é o lado na frente dele.",
+    ],
+    steps: [
+      {
+        title: "Leia a direção primeiro — ela é um rumo, não um código",
+        body: "Os quatro setores se chamam 동 (Leste), 서 (Oeste), 남 (Sul) e 북 (Norte), e o buscador de lugares do local não vai procurar nada até você escolher um. Um nome de bloco que começa com W fica no lado oeste do estádio. Isso é toda a primeira coordenada, e é a parte que te leva ao lado certo de um prédio que recebe 66,704 pessoas.",
+        pitfall:
+          "Dar a volta longa a pé. Nesse tamanho, o lado errado do estádio é uma caminhada considerável, e a direção vem impressa no nome do bloco justamente para você não ter de fazer essa caminhada duas vezes.",
+        takes: "2 minutos",
+      },
+      {
+        title: "Depois a letra — e duas letras não existem",
+        body: "Dentro de um setor os blocos recebem letras a partir do A. O buscador do local oferece A até T no lado leste, A até P no norte e no sul, e A até X no oeste. Leia a sequência com atenção e você vai ver que ela salta do H direto para o J, e do N direto para o P: I e O não são usados em lugar nenhum do prédio, em nenhum lado, porque são lidos como 1 e 0.",
+        pitfall:
+          "Caçar um I ou um O porque parece que uma letra foi pulada. Ela foi pulada, de propósito, e um bloco com qualquer uma dessas duas letras não existe aqui.",
+        takes: "2 minutos",
+      },
+      {
+        title: "O oeste é o lado comprido, e a assimetria serve para se achar",
+        body: "Os quatro setores não têm a mesma quantidade de blocos. Norte e sul vão até o P, o que dá 14 blocos cada um depois de tirar I e O. O leste vai até o T, 18. O oeste vai até o X, 22 — o lado mais comprido do prédio. Se você estiver contando blocos ao longo de um setor e a conta parecer errada, confira em qual setor você está antes de duvidar do número.",
+        takes: "1 minuto",
+      },
+      {
+        title: "A pista não faz parte deste sistema de jeito nenhum",
+        body: "Tudo acima descreve os setores permanentes, que são de concreto e não se mexem. Num show o gramado carrega o palco e os assentos que a produtora montar no resto dele, e esse arranjo é desenhado por show. O próprio gramado do estádio tem 117 metros por 78, que é o espaço reorganizado. Nenhuma letra de ponto cardeal descreve isso.",
+        pitfall:
+          "Supor que um bloco de pista segue as letras dos setores. Ele não segue, e também não é do local nomeá-lo.",
+        takes: "1 minuto",
+      },
+      {
+        title: "O que esta página não vai te dizer, e por quê",
+        body: "Ela não vai te dizer para que lado as letras correm dentro de um setor. O mapa do Gocheok publica uma descrição escrita do próprio layout e declara a direção com todas as palavras; este local publica um gráfico de assentos e nenhuma descrição desse tipo, então a direção não está na fonte. Ela também não vai te dizer quais blocos são vendidos para o seu show, por qual portão você entra, nem onde fica o palco. Isso é da produtora e muda por show.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "O que as letras I e O querem dizer num ingresso daqui?",
+        a: "Nada — o local não as usa. O buscador de lugares dele vai de A até H e então J, e de N então P, em todos os lados. Uma letra que parece um I é quase certamente um J, e uma que parece um O é quase certamente um Q ou um D.",
+      },
+      {
+        q: "Quantos blocos existem em cada lado?",
+        a: "Quatorze no norte e no sul, dezoito no leste e vinte e dois no oeste, contando as letras que o buscador de lugares do operador realmente oferece.",
+      },
+      {
+        q: "Para que lado as letras correm em volta de um setor?",
+        a: "O local não diz, então esta página também não. O mapa dele é a autoridade sobre onde uma letra fica, e esse mapa está linkado no pé desta página.",
+      },
+      {
+        q: "A pista é numerada como os setores?",
+        a: "Não. Num show o gramado é palco mais o que a produtora montar, desenhado por show. O sistema de ponto cardeal com letra descreve apenas os setores permanentes.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Tìm chỗ ngồi của bạn ở Seoul World Cup Stadium",
+    summary:
+      "Cách sân vận động đặt tên cho chỗ ngồi cố định, đọc từ công cụ tra chỗ của chính đơn vị vận hành: bốn khán đài đặt tên theo hướng, các chữ cái trong từng khán đài, và hai chữ cái trong bảng chữ cái không bao giờ được dùng.",
+    scope:
+      "Bao gồm cách Seoul World Cup Stadium đặt tên cho các khán đài và khu cố định, từ công cụ tra chỗ của chính Seoul Facilities Corporation. Không bao gồm mặt sân: trong một buổi hoà nhạc, một phần mặt cỏ là sân khấu và phần còn lại do nhà tổ chức bố trí, nên không có gì ở đó cố định đủ để trang này mô tả.",
+    intro: [
+      "Một chỗ ngồi ở đây có hai toạ độ, và chính công cụ tra chỗ của đơn vị vận hành là thứ cho thấy điều đó: nó hỏi một hướng, rồi hỏi một chữ cái. Không gì khác.",
+      "Điều đó làm toà nhà này dễ đọc hơn Gocheok, nơi một con số khu không cho bạn biết gì cho tới khi bạn biết quy tắc. Ở đây nửa đầu của cái tên là một hướng, nên người đang đứng ngoài khán đài phía tây đã biết rằng W là phía ngay trước mặt mình.",
+    ],
+    steps: [
+      {
+        title: "Đọc hướng trước — nó là một phương hướng, không phải một mã",
+        body: "Bốn khán đài có tên là 동 (Đông), 서 (Tây), 남 (Nam) và 북 (Bắc), và công cụ tra chỗ của địa điểm sẽ không tra gì cho tới khi bạn chọn một trong số đó. Tên khu bắt đầu bằng W nằm ở phía tây sân vận động. Đó là toàn bộ toạ độ thứ nhất, và đó là phần đưa bạn tới đúng phía của một toà nhà chứa 66,704 người.",
+        pitfall:
+          "Đi vòng đường dài. Ở quy mô này, đi sai phía sân vận động là một đoạn đi bộ đáng kể, và hướng được in trong tên khu chính là để bạn không phải đi đoạn đó hai lần.",
+        takes: "2 phút",
+      },
+      {
+        title: "Rồi đến chữ cái — và hai chữ cái không tồn tại",
+        body: "Trong một khán đài, các khu được đặt chữ cái bắt đầu từ A. Công cụ tra của địa điểm đưa ra A đến T ở phía đông, A đến P ở phía bắc và nam, và A đến X ở phía tây. Đọc kỹ dãy đó và bạn sẽ thấy nó nhảy từ H thẳng sang J, và từ N thẳng sang P: I và O không được dùng ở bất cứ đâu trong toà nhà, ở bất cứ phía nào, vì chúng đọc ra thành 1 và 0.",
+        pitfall:
+          "Đi tìm một chữ I hay một chữ O vì có một chữ cái trông như bị bỏ qua. Nó bị bỏ qua thật, một cách cố ý, và khu mang bất kỳ chữ nào trong hai chữ đó không tồn tại ở đây.",
+        takes: "2 phút",
+      },
+      {
+        title: "Phía tây là mặt dài, và sự bất đối xứng ấy có ích khi tìm đường",
+        body: "Bốn khán đài không có cùng số khu. Bắc và nam chạy đến P, nghĩa là mỗi bên 14 khu sau khi bỏ I và O. Đông chạy đến T, 18 khu. Tây chạy đến X, 22 khu — mặt dài nhất của toà nhà. Nếu bạn đang đếm khu dọc một khán đài mà thấy con số có vẻ sai, hãy kiểm tra xem mình đang ở khán đài nào trước khi nghi ngờ con số.",
+        takes: "1 phút",
+      },
+      {
+        title: "Mặt sân hoàn toàn không thuộc hệ thống này",
+        body: "Mọi điều ở trên mô tả các khán đài cố định, chúng bằng bê tông và không di chuyển. Trong một buổi hoà nhạc, mặt cỏ mang sân khấu cùng với bất kỳ chỗ ngồi nào mà nhà tổ chức bố trí trên phần còn lại, và cách bố trí đó được thiết kế theo từng buổi. Mặt cỏ của sân rộng 117 mét nhân 78 mét, và đó là không gian được xếp lại. Không có chữ cái chỉ hướng nào mô tả nó.",
+        pitfall:
+          "Cho rằng một khu trên mặt sân đi theo cách đặt chữ cái của khán đài. Nó không đi theo, và đặt tên cho nó cũng không phải việc của địa điểm.",
+        takes: "1 phút",
+      },
+      {
+        title: "Điều trang này sẽ không nói với bạn, và lý do",
+        body: "Nó sẽ không nói các chữ cái chạy theo hướng nào bên trong một khán đài. Sơ đồ Gocheok công bố phần mô tả bằng chữ về cách bố trí của chính nó và nêu rõ hướng bằng lời; địa điểm này công bố một hình chỗ ngồi mà không có phần mô tả như vậy, nên hướng không nằm trong nguồn. Nó cũng sẽ không nói buổi diễn của bạn bán những khu nào, cửa nào cho bạn vào, hay sân khấu ở đâu. Những điều đó thuộc nhà tổ chức và thay đổi theo từng buổi.",
+        takes: "1 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Chữ I và chữ O trên vé ở đây nghĩa là gì?",
+        a: "Không nghĩa gì — địa điểm này không dùng chúng. Công cụ tra chỗ của họ chạy A đến H rồi J, và N rồi P, ở mọi phía. Chữ nhìn như I thì gần như chắc chắn là J, và chữ nhìn như O thì gần như chắc chắn là Q hoặc D.",
+      },
+      {
+        q: "Mỗi phía có bao nhiêu khu?",
+        a: "Mười bốn ở phía bắc và nam, mười tám ở phía đông, và hai mươi hai ở phía tây, tính theo đúng những chữ cái mà công cụ tra chỗ của đơn vị vận hành thực sự đưa ra.",
+      },
+      {
+        q: "Các chữ cái chạy theo hướng nào quanh một khán đài?",
+        a: "Địa điểm không nói, nên trang này cũng không nói. Sơ đồ của họ là thẩm quyền về việc một chữ cái cụ thể nằm ở đâu, và sơ đồ đó được dẫn liên kết ở cuối trang này.",
+      },
+      {
+        q: "Mặt sân có được đánh số như các khán đài không?",
+        a: "Không. Trong một buổi hoà nhạc, mặt cỏ là sân khấu cộng với những gì nhà tổ chức bố trí, thiết kế theo từng buổi. Hệ thống hướng cộng chữ cái chỉ mô tả các khán đài cố định.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "การหาที่นั่งของคุณในสนามกีฬาโซลเวิลด์คัพ",
+    summary:
+      "วิธีที่สนามกีฬาตั้งชื่อที่นั่งถาวรของตน อ่านจากเครื่องมือค้นที่นั่งของผู้บริหารเอง ได้แก่ อัฒจันทร์สี่ด้านที่ตั้งชื่อตามทิศ ตัวอักษรภายในแต่ละด้าน และตัวอักษรสองตัวที่ไม่เคยถูกใช้",
+    scope:
+      "ครอบคลุมวิธีที่ Seoul World Cup Stadium ตั้งชื่ออัฒจันทร์และบล็อกถาวรของตน จากเครื่องมือค้นที่นั่งของ Seoul Facilities Corporation เอง ไม่ครอบคลุมพื้นสนาม เพราะในคอนเสิร์ตส่วนหนึ่งของสนามหญ้าเป็นเวทีและส่วนที่เหลือผู้จัดงานจัดวาง จึงไม่มีอะไรในนั้นถาวรพอให้หน้านี้บรรยายได้",
+    intro: [
+      "ที่นั่งที่นี่มีพิกัดสองอย่าง และเครื่องมือค้นที่นั่งของผู้บริหารเองก็แสดงสิ่งนั้น มันถามทิศก่อน แล้วถามตัวอักษร ไม่มีอย่างอื่น",
+      "นั่นทำให้อาคารนี้อ่านง่ายกว่าโกชอก ซึ่งเลขบล็อกไม่บอกคุณอะไรเลยจนกว่าคุณจะรู้กฎ ที่นี่ครึ่งแรกของชื่อคือทิศ ดังนั้นผู้อ่านที่ยืนอยู่นอกอัฒจันทร์ด้านตะวันตกก็รู้อยู่แล้วว่าด้านที่อยู่ตรงหน้าคือ W",
+    ],
+    steps: [
+      {
+        title: "อ่านทิศก่อน มันคือทิศ ไม่ใช่รหัส",
+        body: "อัฒจันทร์สี่ด้านมีชื่อว่า동 (ตะวันออก), 서 (ตะวันตก), 남 (ใต้) และ북 (เหนือ) และเครื่องมือค้นที่นั่งของสถานที่จัดงานจะไม่ค้นอะไรเลยจนกว่าคุณจะเลือกด้านหนึ่ง ชื่อบล็อกที่เริ่มด้วย W อยู่ทางด้านตะวันตกของสนาม นั่นคือพิกัดแรกทั้งหมด และเป็นส่วนที่พาคุณไปยังด้านที่ถูกต้องของอาคารที่จุคน 66,704 คน",
+        pitfall:
+          "การเดินอ้อมทางไกล ในขนาดเท่านี้ การไปผิดด้านของสนามคือการเดินที่ยาวพอสมควร และทิศถูกพิมพ์อยู่ในชื่อบล็อกก็เพื่อให้คุณไม่ต้องเดินระยะนั้นสองครั้ง",
+        takes: "2 นาที",
+      },
+      {
+        title: "แล้วจึงถึงตัวอักษร และตัวอักษรสองตัวไม่มีอยู่",
+        body: "ภายในอัฒจันทร์หนึ่งด้าน บล็อกถูกใส่ตัวอักษรเริ่มจาก A เครื่องมือค้นของสถานที่จัดงานให้ A ถึง T ทางด้านตะวันออก, A ถึง P ทางด้านเหนือและใต้ และ A ถึง X ทางด้านตะวันตก อ่านลำดับอย่างละเอียดแล้วคุณจะเห็นว่ามันข้ามจาก H ไป J เลย และจาก N ไป P เลย ตัวอักษร I และ O ไม่ถูกใช้ที่ใดในอาคารนี้ ไม่ว่าด้านใด เพราะมันอ่านดูเหมือน 1 และ 0",
+        pitfall:
+          "การไปตามหา I หรือ O เพราะดูเหมือนมีตัวอักษรถูกข้ามไป มันถูกข้ามจริง และเป็นการข้ามอย่างตั้งใจ บล็อกที่ใช้ตัวอักษรทั้งสองนั้นไม่มีอยู่ที่นี่",
+        takes: "2 นาที",
+      },
+      {
+        title: "ด้านตะวันตกคือด้านยาว และความไม่สมมาตรนั้นมีผลต่อการหาทาง",
+        body: "อัฒจันทร์สี่ด้านมีจำนวนบล็อกไม่เท่ากัน ด้านเหนือและใต้ไปถึง P ซึ่งเท่ากับ 14 บล็อกต่อด้านเมื่อตัด I และ O ออก ด้านตะวันออกไปถึง T คือ 18 ด้านตะวันตกไปถึง X คือ 22 ซึ่งเป็นด้านที่ยาวที่สุดในอาคาร ถ้าคุณกำลังนับบล็อกไปตามอัฒจันทร์แล้วรู้สึกว่าจำนวนไม่ถูก ให้ตรวจก่อนว่าคุณอยู่อัฒจันทร์ด้านไหน ก่อนจะสงสัยตัวเลข",
+        takes: "1 นาที",
+      },
+      {
+        title: "พื้นสนามไม่ได้เป็นส่วนหนึ่งของระบบนี้เลย",
+        body: "ทุกอย่างข้างต้นบรรยายอัฒจันทร์ถาวร ซึ่งเป็นคอนกรีตและไม่ขยับ ในคอนเสิร์ต สนามหญ้ารับเวทีและที่นั่งใดก็ตามที่ผู้จัดงานจัดวางบนส่วนที่เหลือ และการจัดวางนั้นออกแบบเป็นรายงาน สนามหญ้าของสนามกีฬาเองมีขนาด 117 เมตรคูณ 78 เมตร ซึ่งคือพื้นที่ที่ถูกจัดใหม่ ไม่มีตัวอักษรบอกทิศใดบรรยายมัน",
+        pitfall:
+          "การคิดว่าบล็อกบนพื้นสนามเป็นไปตามตัวอักษรของอัฒจันทร์ มันไม่เป็นเช่นนั้น และไม่ใช่สิ่งที่สถานที่จัดงานตั้งชื่อ",
+        takes: "1 นาที",
+      },
+      {
+        title: "สิ่งที่หน้านี้ไม่บอกคุณ และเหตุผล",
+        body: "มันจะไม่บอกคุณว่าตัวอักษรไล่ไปทางไหนภายในอัฒจันทร์หนึ่งด้าน ผังของโกชอกเผยแพร่คำบรรยายเป็นข้อความถึงการจัดวางของตนเองและระบุทิศทางไว้ด้วยถ้อยคำ ส่วนสถานที่นี้เผยแพร่ภาพที่นั่งโดยไม่มีคำบรรยายเช่นนั้น จึงไม่มีทิศทางอยู่ในแหล่งข้อมูล และมันก็จะไม่บอกคุณว่างานของคุณเปิดขายบล็อกไหน ประตูไหนให้คุณเข้า หรือเวทีอยู่ที่ใด สิ่งเหล่านั้นเป็นของผู้จัดงานและเปลี่ยนไปในแต่ละงาน",
+        takes: "1 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "ตัวอักษร I และ O บนบัตรที่นี่หมายถึงอะไร",
+        a: "ไม่หมายถึงอะไร สถานที่จัดงานไม่ใช้มัน เครื่องมือค้นที่นั่งของที่นี่ไล่จาก A ถึง H แล้วไป J และจาก N แล้วไป P ในทุกด้าน ตัวอักษรที่ดูเหมือน I แทบจะแน่นอนว่าเป็น J และตัวที่ดูเหมือน O แทบจะแน่นอนว่าเป็น Q หรือ D",
+      },
+      {
+        q: "แต่ละด้านมีกี่บล็อก",
+        a: "สิบสี่บล็อกทางด้านเหนือและใต้ สิบแปดทางด้านตะวันออก และยี่สิบสองทางด้านตะวันตก นับตามตัวอักษรที่เครื่องมือค้นที่นั่งของผู้บริหารให้ไว้จริง",
+      },
+      {
+        q: "ตัวอักษรไล่ไปทางไหนรอบอัฒจันทร์",
+        a: "สถานที่จัดงานไม่ได้บอก ดังนั้นหน้านี้ก็ไม่บอก ผังของที่นั่นเป็นผู้มีอำนาจเรื่องว่าตัวอักษรใดอยู่ตำแหน่งใด และผังนั้นมีลิงก์อยู่ท้ายหน้านี้",
+      },
+      {
+        q: "พื้นสนามให้หมายเลขแบบเดียวกับอัฒจันทร์ไหม",
+        a: "ไม่ ในคอนเสิร์ต สนามหญ้าคือเวทีบวกกับสิ่งที่ผู้จัดงานจัดวาง ออกแบบเป็นรายงาน ระบบทิศบวกตัวอักษรบรรยายเฉพาะอัฒจันทร์ถาวรเท่านั้น",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "seoul-world-cup-stadium-finding-your-seat",
+    sourceChecked: "2026-10-24",
+    sourceText: "de8f95e4a165",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Paghahanap ng upuan mo sa Seoul World Cup Stadium",
+    summary:
+      "Kung paano pinapangalanan ng istadyum ang permanenteng upuan nito, binasa mula sa sariling panghanap ng upuan ng tagapagpatakbo: apat na tribunang pinangalanan ayon sa direksiyon, mga titik sa loob ng bawat isa, at dalawang titik ng alpabetong hindi kailanman ginagamit.",
+    scope:
+      "Sinasaklaw kung paano pinapangalanan ng Seoul World Cup Stadium ang permanenteng mga tribuna at bloke nito, mula sa sariling panghanap ng upuan ng Seoul Facilities Corporation. Hindi nito sinasaklaw ang palapag: sa isang konsiyerto ay entablado ang bahagi ng damuhan at inilalatag ng prodyuser ang natitira, kaya walang anuman doon na permanente nang sapat upang ilarawan ng pahinang ito.",
+    intro: [
+      "May dalawang koordinado ang isang upuan dito, at ang sariling panghanap ng upuan ng tagapagpatakbo ang nagpapakita niyon: humihingi ito ng isang direksiyon, at pagkatapos ng isang titik. Wala nang iba.",
+      "Dahil doon ay mas madaling basahin ang gusaling ito kaysa sa Gocheok, kung saan walang sinasabi sa iyo ang numero ng bloke hangga't hindi mo alam ang tuntunin. Dito ay direksiyon ang unang kalahati ng pangalan, kaya alam na ng mambabasang nakatayo sa labas ng tribuna sa kanluran na ang W ang panig na nasa harap niya.",
+    ],
+    steps: [
+      {
+        title: "Basahin muna ang direksiyon — direksiyon iyon at hindi kodigo",
+        body: "Ang apat na tribuna ay pinangalanang 동 (Silangan), 서 (Kanluran), 남 (Timog) at 북 (Hilaga), at walang hahanapin ang panghanap ng upuan ng venue hangga't wala kang napipili sa kanila. Ang pangalan ng blokeng nagsisimula sa W ay nasa panig na kanluran ng istadyum. Iyon ang buong unang koordinado, at iyon ang bahaging naghahatid sa iyo sa tamang panig ng isang gusaling may 66,704 katao.",
+        pitfall:
+          "Ang paglalakad sa mahabang paikot. Sa laking ito, ang maling panig ng istadyum ay isang mahabang lakad, at nakaimprenta ang direksiyon sa pangalan ng bloke nang tiyakan upang hindi mo na kailangang lakarin iyon nang dalawang beses.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Pagkatapos ang titik — at dalawang titik ang hindi umiiral",
+        body: "Sa loob ng isang tribuna ay binibigyan ng titik ang mga bloke mula sa A. Nag-aalok ang panghanap ng venue ng A hanggang T sa panig na silangan, A hanggang P sa hilaga at timog, at A hanggang X sa kanluran. Basahing mabuti ang pagkakasunod at makikita mong tumatalon ito mula H nang tuwiran sa J, at mula N nang tuwiran sa P: hindi ginagamit ang I at O saanman sa gusali, sa alinmang panig, dahil nababasa sila bilang 1 at 0.",
+        pitfall:
+          "Ang paghahanap ng isang I o isang O dahil mukhang may titik na nilaktawan. Nilaktawan nga ito, nang sinadya, at hindi umiiral dito ang isang blokeng may alinman sa dalawang titik na iyon.",
+        takes: "2 minuto",
+      },
+      {
+        title: "Ang kanluran ang mahabang panig, at kapaki-pakinabang sa paglibot ang hindi pagkakapantay na iyon",
+        body: "Hindi pareho ang bilang ng blokeng taglay ng apat na tribuna. Umaabot ang hilaga at timog hanggang P, na 14 na bloke bawat isa kapag inalis na ang I at O. Umaabot ang silangan hanggang T, 18. Umaabot ang kanluran hanggang X, 22 — ang pinakamahabang panig sa gusali. Kung nagbibilang ka ng bloke sa haba ng isang tribuna at mukhang mali ang bilang, tingnan muna kung saang tribuna ka bago ka mag-alinlangan sa numero.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Hindi talaga bahagi ng sistemang ito ang palapag",
+        body: "Inilalarawan ng lahat ng nasa itaas ang permanenteng mga tribuna, na semento at hindi nagagalaw. Sa isang konsiyerto ay nagtataglay ang damuhan ng entablado at ng anumang upuang inilalatag ng prodyuser sa natitirang bahagi nito, at idinidisenyo ang pagkakaayos na iyon sa bawat palabas. Ang damuhan mismo ng istadyum ay 117 metro sa 78 metro, at iyon ang espasyong isinasaayos muli. Walang titik ng direksiyong naglalarawan nito.",
+        pitfall:
+          "Ang pag-akalang sumusunod sa pagbibigay-titik ng tribuna ang isang bloke sa palapag. Hindi ito sumusunod, at hindi rin sa venue ang pagpapangalan nito.",
+        takes: "1 minuto",
+      },
+      {
+        title: "Ang hindi sasabihin sa iyo ng pahinang ito, at kung bakit",
+        body: "Hindi nito sasabihin sa iyo kung saang direksiyon tumatakbo ang mga titik sa loob ng isang tribuna. Naglalathala ang tsart ng Gocheok ng nakasulat na paglalarawan ng sariling pagkakaayos nito at tahasang sinasabi ang direksiyon; naglalathala ang venueng ito ng isang grapiko ng upuan at walang gayong paglalarawan, kaya wala sa pinagkunan ang direksiyon. Hindi rin nito sasabihin kung aling mga bloke ang ipinagbibili para sa palabas mo, aling tarangkahan ang pumapasok sa iyo, o kung nasaan ang entablado. Sa prodyuser ang mga iyon at nagbabago sila sa bawat palabas.",
+        takes: "1 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Ano ang ibig sabihin ng mga titik na I at O sa isang tiket dito?",
+        a: "Wala — hindi ginagamit ng venue ang mga iyon. Tumatakbo ang sariling panghanap ng upuan nito mula A hanggang H at pagkatapos J, at N at pagkatapos P, sa bawat panig. Ang titik na mukhang I ay halos tiyak na isang J, at ang mukhang O ay halos tiyak na isang Q o isang D.",
+      },
+      {
+        q: "Ilang bloke ang nasa bawat panig?",
+        a: "Labing-apat sa hilaga at timog, labingwalo sa silangan, at dalawampu't dalawa sa kanluran, kung bibilangin ang mga titik na talagang iniaalok ng panghanap ng upuan ng tagapagpatakbo.",
+      },
+      {
+        q: "Saang direksiyon tumatakbo ang mga titik palibot sa isang tribuna?",
+        a: "Hindi sinasabi ng venue, kaya hindi rin sinasabi ng pahinang ito. Ang tsart nito ang awtoridad kung saan nakalagay ang isang partikular na titik, at nakakawing ang tsart na iyon sa paanan ng pahinang ito.",
+      },
+      {
+        q: "Binibigyan ba ng numero ang palapag gaya ng mga tribuna?",
+        a: "Hindi. Sa isang konsiyerto ay entablado ang damuhan kasama ang anumang ilatag ng prodyuser, idinisenyo sa bawat palabas. Ang mga permanenteng tribuna lamang ang inilalarawan ng sistemang direksiyon at titik.",
+      },
+    ],
+    labels: FIL_LABELS,
+  },
+
+  {
+    locale: "ja",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse ShopかKtown4uか：誰も書かない比較——どちらのページも片方の店の話だからです",
+    summary:
+      "どちらもHanteoに報告するので、チャートの問いでは決まりません。決めるのは、どちらの店にあなたのリリースがあるか、どちらの時計に間に合うか、そして——その二つよりも——必要なことを公開しているのはどちらかです。",
+    scope:
+      "海外のファンが韓国のアルバムを買うときに実際に選ぶ二つのショップを、正面から比べます。2026年10月21日にHanteoの認定ストア登録と各ショップ自身の告知に対して当サイトが確認した内容から組み立てているので、今日ではなくその日付を掲げています。比較は新しくても、その中の事実は再確認されていません。チャートへの報告、取扱い、決済の締切、費用がどこに現れるか、配送の拒否、サポート時間を扱います。価格や速さで順位は付けません。どちらもショップの性質ではなく、あなたの国、あなたのリリース、そしてその週に左右されるからです。",
+    intro: [
+      "当サイトにはWeverse Shopで注文するガイドとKtown4uで注文するガイドがありますが、どちらも相手に一度も触れていません。すでに決めている読者にはそれで構いませんが、まだ決めていないずっと多くの読者には役に立ちません。",
+      "答えは、多くのスレッドが言うものとは違います。どちらのショップもHanteoの認定なので、普段この話を決着させるチャートの議論は、そもそも議論になりません。実際に両者を分けるのはもっと狭く、もっと奇妙なことです。公開している内容が違い、その空白が同じ場所にないのです。",
+    ],
+    steps: [
+      {
+        title: "まずチャートの問いを片付ける。ここが多くの人が間違えるところです",
+        body: "公式ショップで買えばカウントされ、再販業者で買えばされない、というのがよくある思い込みです。この二つについては単純に誤りで、しかも信用の問題ではなく確認できることです。Hanteoは認定されたFamilyストアをコード付きで公開していて、Ktown4UはHF0082KTU001、WeverseはHF0082BTS001です。Hanteoはさらに、すべてのオンラインFamilyストアにフッターでFamilyマークを表示し、hanteochart.comへリンクすることを求めているので、ショップと登録簿が両側から互いを裏付けます。認定は毎年再発行されるので、このページから取るのではなくコードを確認してください。",
+        pitfall:
+          "はじめから危険にさらされていなかったチャートへの貢献を守るために、高いほうのショップを選ぶこと。チャートが高く払う理由のすべてなら、あなたはすでに持っていたものにお金を払っています。",
+        takes: "5分",
+      },
+      {
+        title: "ほかを比べる前に、どちらの店にあなたのリリースがあるかを尋ねる",
+        body: "価格よりも多くの注文を決めるのはここで、しかも非対称です。Ktown4uは総合小売で、レーベルをまたいで取り扱います。Weverse Shopはそもそも一つの店ではありません。GLOBALのショップがあり、地域別のショップがあり、それぞれ在庫が違い、予約の期間も違い、発送元も違います。他の国のファンが注文した商品が、あなたの国には存在しないことがあります。ですから比較はしばしばWeverse対Ktown4uではなく、Ktown4u対あなたがいるWeverse Shopなのです。",
+        pitfall:
+          "他人のWeverse Shopから予約の締切を読み取ること。ある店の締切は他の店について何も教えませんし、同梱特典はアルバムではなくその期間に紐づいています。",
+        takes: "10分",
+      },
+      {
+        title: "どちらの時計に間に合わなければならないかを知る",
+        body: "Ktown4uは一つ公開していて、しかも短いです。未決済の注文は、注文から6時間後に自動で取り消されます。24時間から短縮され、2025年2月19日KSTから有効です。ヨーロッパや南北アメリカで深夜に注文するファンにとっては、韓国の6時間が眠っている間にまるごと過ぎてしまい、置いたが払っていない予約は、置かれなかった予約です。Weverse Shopは、当サイトが読む告知の中に同等の締切を公開していません。それは存在しないということと同じではありません。実務上の要点は非対称であることです。片方のショップは、あなたにどれだけ時間があるかを教えてくれます。",
+        pitfall:
+          "確保するためにKtown4uの予約を置いて、朝に払うこと。それがまさに6時間のルールが打ち負かすために存在する習慣で、しかも静かに打ち負かします。何の通知もなく、注文は単に消えています。",
+        takes: "5分",
+      },
+      {
+        title: "費用が別の場所に現れることを見込む",
+        body: "どちらのショップも商品ページの価格が支払う額ではなく、そこから先で分かれます。2026年2月3日以降、Weverseは配送先と請求先の住所から税を計算します。韓国への注文は全体を税込みで表示し、それ以外への注文は税抜きの価格を表示して、住所が入力された時点でチェックアウトで配送先の税を加えます。Ktown4uの加算はもっと後に、別の形で現れます。2026年2月1日から国際配送料を7%引き上げ、米国向けには2025年6月2日以降、関税が発生していて電子的に前払いされていない場合にUSD 12の手数料を適用し、配達時に受取人から徴収します。",
+        pitfall:
+          "二つのカートを比べること。その時点でWeverseはすでに税を加えていて、Ktown4uはまだ12ドルを加えていないので、チェックアウトで安く見えるカートが、玄関で安いカートだとは限りません。",
+        takes: "15分",
+      },
+      {
+        title: "どちらがあなたに発送するか、それぞれの言い方で確認する",
+        body: "どちらも一部の宛先を断り、告知の仕方が違います。Weverseは韓国から発送できない国と地域の一覧を維持していて、2026年7月15日の改定では、ミャンマー、コンゴ民主共和国、イラク、イラン、レバノン、マリ、ロシア、アンドラ、ウクライナ、ベラルーシ、アフガニスタン、オランダ領アンティル、イスラエル、トルコが挙げられています。Ktown4uは国ごとではなく方法ごとに行います。2025年1月17日から、ドイツとスペインの郵便事業者が運用している枠組みから離脱したため、両国へのK-Packetを停止し、郵便番号の単位まで障害を公開しています。片方の一覧はそもそも注文できるかを教え、もう片方は前回使った方法がまだ存在するかを教えます。",
+        pitfall:
+          "どちらの一覧にも出てこない国は大丈夫だと思い込むこと。Ktown4uが方法を取り下げたときの対応は、影響を受ける顧客に別のサービスへの切り替えと追加費用についてメールすることだと明記されています。つまり、すでに置いた注文が後から価格を変えることがあります。",
+        takes: "10分",
+      },
+      {
+        title: "決済手段の一覧を読む。そして一覧があるのは片方だけだと気づく",
+        body: "Weverseは通貨ごとに何で払えるかを公開していて、その一覧は同じ長さではありません。USDにはPayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay、Grab Payがあります。JPYはそこからGrab Payを除いたものです。CNYはPayPalが落ちます。MXNは二つで最短です。PayPalとApple Payで、どちらもデジタル、現金の選択肢はありません。KRWは韓国のカードと韓国のウォレットが加わります。つまり既定の通貨が、チェックアウトに着く前にボタンを決めています。Ktown4uは告知の中に同等の一覧を公開していないので、何を受け付けるかは自分のチェックアウトで読み取るしかありません。",
+        pitfall:
+          "決済手段ではなく価格のために通貨を設定すること。短い一覧のどちらもあなたに用意できていないなら、チェックアウトに三つめのボタンはなく、その時点での回避策もありません。",
+        takes: "10分",
+      },
+      {
+        title: "うまくいかなかったとき、誰にいつ連絡できるかを把握する",
+        body: "Ktown4uは時間を明記しています。カスタマーサービスは2023年11月1日以降、平日のKST 10:00から17:00までで、12:30から13:30まで昼休みがあります。韓国の平日に5時間半で、ここの多くの読者にとっては真夜中であり、6時間の決済の時計と重なります。ヨーロッパで金曜の夜に置いた注文は、誰かが席に着く前に期限切れになり得ます。さらに韓国の祝日には発送とサポートの両方を止め、その日程を毎回公開します。Weverse Shopは同じ場所にサポート時間を公開していません。キャンセルの扱いのほうが記録が整っていて、当サイトには専用のガイドがあります。",
+        pitfall:
+          "韓国の祝日を配達の遅れとして扱うこと。Ktown4uは同じ日にサポートも止めるので、荷物について尋ねたい週が、誰も答えない週です。",
+        takes: "10分",
+      },
+    ],
+    faq: [
+      {
+        q: "Ktown4uの注文は韓国のチャートにカウントされますか。それともWeverseで買う必要がありますか。",
+        a: "どちらもカウントされます。HanteoはKtown4UをHF0082KTU001、WeverseをHF0082BTS001として認定Familyストアに挙げており、それぞれフッターに登録簿へリンクしたFamilyマークを表示することを求めています。認定は毎年再発行されるので、ここから取るのではなくhanteochart.comでコードを確認してください。",
+      },
+      {
+        q: "どちらが安いですか。",
+        a: "ショップの性質としては、どちらでもありません。アルバムがいくらになるかは、あなたの国、リリース、そしてその週によります。Weverseはチェックアウトで配送先の税を加え、Ktown4uは2026年2月に国際配送料を7%引き上げ、関税が前払いされていない米国配達にはUSD 12を加えます。二つの商品ページではなく、その日のあなたの住所での到着までの総額を比べてください。",
+      },
+      {
+        q: "どちらが速いですか。",
+        a: "一般には答えられませんし、答えられる問いのほうが重要です。あなたの国へどの方法がまだ走っているか、です。Ktown4uは国ごとに配送方法を取り下げます。2025年1月からドイツとスペインへのK-Packetがそうで、郵便番号の単位まで障害を公開します。一方Weverseはそもそも発送できない宛先の一覧を公開します。配達予想を比べる前に、自分の国の最新の告知を確認してください。",
+      },
+      {
+        q: "同じアルバムを両方で注文してもいいですか。",
+        a: "できますし、予約の同梱特典にとっては実際に有効な戦略です。特典はアルバムではなく期間に、そしてしばしば特定の小売店に紐づいています。二つのアルバム価格ではなく、到着までの二つの総額として見積もってください。そして特典が止まるのはアルバムの発売日ではなく、期間が閉じたときです。",
+      },
+      {
+        q: "私は米国にいます。それで答えは変わりますか。",
+        a: "一行だけ変わります。2025年6月2日以降、Ktown4uは米国向けの配送で、関税、税、その他の政府の課金が発生していて配達前に電子的に前払いされていない場合にUSD 12を適用し、玄関で受取人に請求します。Ktown4uは回避の道も公開しています。UPSの輸入関税と税の仕組みで前払いすることです。あなたのチェックアウトでWeverseが加える税と比べるべき、定額の加算です。",
+      },
+      {
+        q: "なぜこのページは比べる項目がこんなに少ないのですか。",
+        a: "残りが公開されていないからです。二つを並べてみて得られる正直な結論は、記録している半分が互いに違うということです。Ktown4uは決済の締切、サポート時間、国ごとの配送の変更を明記します。Weverseは通貨ごとの決済手段、税の扱い、発送除外を明記します。ショップが公開していないことについては、このページは推定せずにそう書きます。だから速さの順位も価格の結論もありません。",
+      },
+    ],
+    labels: JA_LABELS,
+  },
+
+  {
+    locale: "zh-Hant",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop還是Ktown4u：沒有人寫的那份比較，因為兩邊的頁面都只在講一家店",
+    summary:
+      "兩家都向Hanteo報數，所以榜單問題決定不了這件事。真正決定的是哪一家有你要的發行、你趕得上哪一家的時鐘，以及——比這兩件更重要——哪一家會把你需要知道的事公布出來。",
+    scope:
+      "針對海外粉絲買韓國專輯時實際會二選一的兩家商店做正面比較。它由本站在2026年10月21日對照Hanteo的認證商店名錄與各商店自己的公告所查核的內容組成，這也是它掛的是那個日期而不是今天的原因：比較是新的，裡面的事實並沒有重新查核。它涵蓋榜單報數、商品線、付款期限、費用出現在哪裡、拒運，以及客服時間。它不就價格或速度排名，因為那兩者都不是商店的屬性——都取決於你的國家、你要的發行，以及那一週。",
+    intro: [
+      "本站有一份在Weverse Shop下單的指南，也有一份在Ktown4u下單的指南，而兩份都一次也沒提到對方。對已經做好選擇的讀者而言那沒問題，對人數多得多、還沒選的讀者則毫無用處。",
+      "答案和大多數討論串給的不一樣。兩家商店都是Hanteo認證，所以平常用來拍板的那個榜單論點，根本不構成論點。真正把兩家分開的事更窄也更古怪：它們公布的東西不同，而空白不在同樣的位置。",
+    ],
+    steps: [
+      {
+        title: "先把榜單問題解決掉，因為那是大家最常弄錯的一題",
+        body: "常見的想法是在官方商店買會算，在轉售商買不算。對這兩家來說那純粹是錯的，而且是可以查核的，不是信任問題。Hanteo公布它認證的Family商店並附上代碼，Ktown4U是HF0082KTU001，Weverse是HF0082BTS001。Hanteo還要求每一家線上Family商店在頁尾顯示Family標記並連回hanteochart.com，所以商店與名錄從兩端互相確認。認證每年重新發放，所以請去查代碼，不要從本頁取用。",
+        pitfall:
+          "為了保護一份從來沒有風險的榜單貢獻而選了較貴的那家商店。如果榜單是你多付錢的全部理由，那你是在為自己原本就擁有的東西付錢。",
+        takes: "5分鐘",
+      },
+      {
+        title: "在比較其他任何事之前，先問哪一家有你要的發行",
+        body: "這件事決定的訂單比價格更多，而且不對稱。Ktown4u是綜合零售商，跨公司代理發行。Weverse Shop根本就不是一家店：有一個GLOBAL商店，也有地區商店，它們的庫存不同、預購期間不同、出貨地也不同。別的國家的粉絲訂到的商品，在你的國家可能並不存在。所以這份比較往往不是Weverse對Ktown4u——而是Ktown4u對你剛好所在的那一個Weverse Shop。",
+        pitfall:
+          "從別人的Weverse Shop上讀預購截止時間。一家店的截止時間完全不能說明其他店，而附贈品是綁在那個期間上，不是綁在專輯上。",
+        takes: "10分鐘",
+      },
+      {
+        title: "知道你必須趕上哪一家的時鐘",
+        body: "Ktown4u公布了一個，而且很短。未付款的訂單會在下單後6小時自動取消，由24小時縮短而來，自2025年2月19日KST起生效。對在歐洲或美洲於午夜下單的粉絲來說，韓國的6小時可能整段在睡覺時過完，而下了卻沒付的預購，就是沒下過的預購。Weverse Shop在本站讀到的公告裡沒有公布同等的期限，那和沒有期限並不是同一回事。實務上的重點是這個不對稱：其中一家會告訴你你還有多久。",
+        pitfall:
+          "為了先卡住而下Ktown4u的預購，打算早上再付。那正是6小時規則存在要擊敗的習慣，而且它擊敗得很安靜：沒有任何提醒，訂單就只是消失了。",
+        takes: "5分鐘",
+      },
+      {
+        title: "要預期費用會出現在不同的地方",
+        body: "兩家商店的商品頁價格都不是你付的錢，而從那之後它們就分岔了。自2026年2月3日起，Weverse依你的運送與帳單地址計算稅額：寄到韓國的訂單全程顯示含稅價，寄到其他地方的訂單顯示未稅價，並在輸入地址後於結帳時加上目的地的稅。Ktown4u的加項來得更晚，形式也不同——它自2026年2月1日起把國際運費調高7%，而對美國的寄件，自2025年6月2日起，若有應付關稅而未以電子方式預繳，則加收USD 12，於配送時向收件人收取。",
+        pitfall:
+          "拿兩個購物車相比。到那個時候Weverse已經加了稅，而Ktown4u還沒加上那十二美元，所以結帳時看起來較便宜的那一車，不一定是到門口時花得較少的那一車。",
+        takes: "15分鐘",
+      },
+      {
+        title: "確認哪一家會寄到你那裡，而且要照各自的說法去看",
+        body: "兩家都拒運某些目的地，而公告的方式不同。Weverse維護一份它無法從韓國寄送的國家與地區清單；2026年7月15日的修訂列出緬甸、剛果民主共和國、伊拉克、伊朗、黎巴嫩、馬利、俄羅斯、安道爾、烏克蘭、白俄羅斯、阿富汗、荷屬安地列斯、以色列與土耳其。Ktown4u是按方式而不是按國家處理：自2025年1月17日起，因德國與西班牙的郵政單位退出它所依賴的機制，它暫停了寄往兩國的K-Packet，並且把中斷公布到個別郵遞區號的層級。一份清單告訴你能不能下單；另一份告訴你上次用的那個方式是否還存在。",
+        pitfall:
+          "以為兩份清單上都沒出現的國家就沒問題。Ktown4u明定當一個方式被撤下時的處理方式，是寄電子郵件給受影響的客戶，說明改用其他服務以及額外的費用——所以已經下了的訂單可能事後改變價格。",
+        takes: "10分鐘",
+      },
+      {
+        title: "讀付款方式清單，並注意只有一家有這種清單",
+        body: "Weverse按幣別公布你可以用什麼付款，而那些清單長度並不相同。USD有PayPal、Eximbay、Alipay+、Apple Pay、WeChat Pay與Grab Pay。JPY是那份清單去掉Grab Pay。CNY則少了PayPal。MXN最短，只有兩個：PayPal與Apple Pay，兩者都是數位的，沒有現金選項。KRW加上韓國的卡與韓國的錢包。所以你的預設幣別在你走到結帳之前就決定了你的按鈕。Ktown4u在公告裡沒有公布可相比的清單，所以它接受什麼，只能從它自己的結帳頁面上讀。",
+        pitfall:
+          "為了價格而不是為了付款方式去設定幣別。如果那份短清單上的兩個對你都沒設定好，結帳時不會有第三個按鈕，到那時也沒有變通辦法。",
+        takes: "10分鐘",
+      },
+      {
+        title: "弄清楚出問題時你能找誰、在什麼時候",
+        body: "Ktown4u明定了時間：客服自2023年11月1日起為平日KST 10:00到17:00，中間12:30到13:30午休。那是韓國平日的五個半小時，對這裡大多數讀者而言是深夜，而且會和那個6小時的付款時鐘疊在一起——在歐洲星期五晚上下的訂單，可能在有人上班之前就到期了。它在韓國假日也同時暫停出貨與客服，並且每次公布日期。Weverse Shop沒有在同一個地方公布客服時間；它取消訂單的處理是記錄比較完整的那一半，本站另有專頁。",
+        pitfall:
+          "把韓國的公共假日當成配送延誤。Ktown4u在同樣的日子也停掉客服，所以你最想問包裹的那一週，正是沒有人回答的那一週。",
+        takes: "10分鐘",
+      },
+    ],
+    faq: [
+      {
+        q: "Ktown4u的訂單算進韓國的榜單嗎，還是我必須在Weverse買？",
+        a: "兩邊都算。Hanteo把Ktown4U列為HF0082KTU001、Weverse列為HF0082BTS001的認證Family商店，並要求各自在頁尾顯示連回名錄的Family標記。認證每年重新發放，所以請在hanteochart.com上確認代碼，而不是從這裡取用。",
+      },
+      {
+        q: "哪一家比較便宜？",
+        a: "就商店的屬性而言，兩家都不是。一張專輯對你來說要花多少，取決於你的國家、那個發行以及那一週：Weverse在結帳時加上你目的地的稅，Ktown4u在2026年2月把國際運費調高7%，並對未預繳關稅的美國配送加收USD 12。請比較當天寄到你地址的到手總價，而不是比兩個商品頁。",
+      },
+      {
+        q: "哪一家比較快？",
+        a: "一般而言無法回答，而能回答的那個問題更重要：還有哪些方式在跑到你的國家。Ktown4u會按國家撤下寄送方式——自2025年1月起寄往德國與西班牙的K-Packet就是——並且把中斷公布到郵遞區號層級，而Weverse公布的是它完全無法寄送的目的地清單。在比較送達時間之前，請先查你國家目前的公告。",
+      },
+      {
+        q: "我可以在兩家各訂一張同樣的專輯嗎？",
+        a: "可以，而且對預購附贈品來說那是真實有效的策略，因為附贈品綁在那個期間上，而且常常綁在特定零售商而不是綁在專輯上。請把它當成兩筆到手總價來算，而不是兩個專輯售價，並且記得附贈品停止的時點是期間關閉時，不是專輯發行時。",
+      },
+      {
+        q: "我在美國。這會改變答案嗎？",
+        a: "它改變其中一行。自2025年6月2日起，Ktown4u對美國的寄件，若有應付的關稅、稅或其他政府收費而未在配送前以電子方式預繳，則加收USD 12，於門口向收件人收取。Ktown4u也公布了解法：透過UPS的進口關稅與稅系統預繳。那是一筆定額的加項，拿去和Weverse在你結帳時加的稅相比。",
+      },
+      {
+        q: "為什麼本頁比較的項目這麼少？",
+        a: "因為其餘的沒有被公布。把兩家並排放在一起，誠實的結論是它們記錄的是不同的那一半：Ktown4u明定它的付款期限、客服時間與按國家的寄送變動；Weverse明定它按幣別的付款方式、稅的處理與寄送排除。遇到商店沒有公布的事，本頁就直說，而不是去估，這也是為什麼這裡沒有速度排名、也沒有價格結論。",
+      },
+    ],
+    labels: ZH_LABELS,
+  },
+
+  {
+    locale: "id",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop atau Ktown4u: perbandingan yang tidak ditulis siapa pun, karena kedua halaman itu masing-masing tentang satu toko",
+    summary:
+      "Keduanya melapor ke Hanteo, jadi pertanyaan soal tangga lagu tidak menentukannya. Yang menentukan adalah toko mana yang punya rilisan Anda, jam siapa yang bisa Anda penuhi, dan — lebih daripada keduanya — mana yang menerbitkan hal yang perlu Anda ketahui.",
+    scope:
+      "Perbandingan langsung atas dua toko yang benar-benar dipilih seorang penggemar luar negeri untuk sebuah album Korea. Ia disusun dari klaim yang diperiksa situs ini pada 21 Oktober 2026 terhadap daftar toko bersertifikat Hanteo dan pemberitahuan masing-masing toko, dan itulah sebabnya ia membawa tanggal itu alih-alih tanggal hari ini: perbandingannya baru, fakta di dalamnya tidak diperiksa ulang. Ia mencakup pelaporan tangga lagu, katalog, tenggat pembayaran, di mana biaya muncul, penolakan pengiriman dan jam layanan. Ia tidak memeringkat keduanya berdasarkan harga atau kecepatan, karena keduanya bukan sifat tokonya — keduanya bergantung pada negara Anda, rilisan Anda dan minggunya.",
+    intro: [
+      "Situs ini punya panduan memesan dari Weverse Shop dan panduan memesan dari Ktown4u, dan tidak satu pun menyebut yang lain sekali saja. Itu baik-baik saja untuk pembaca yang sudah memilih, dan tidak berguna bagi jumlah yang jauh lebih besar yang belum memilih.",
+      "Jawabannya bukan yang diberikan kebanyakan utas. Kedua toko bersertifikat Hanteo, jadi argumen tangga lagu yang biasanya menyelesaikan ini sama sekali bukan argumen. Yang benar-benar memisahkan keduanya lebih sempit dan lebih aneh: mereka menerbitkan hal-hal yang berbeda, dan celahnya tidak berada di tempat yang sama.",
+    ],
+    steps: [
+      {
+        title: "Selesaikan dulu pertanyaan tangga lagu, karena itulah yang paling sering disalahpahami",
+        body: "Keyakinan umumnya adalah membeli dari toko resmi dihitung dan membeli dari penjual pihak ketiga tidak. Untuk kedua toko ini hal itu sekadar salah, dan ia bisa diperiksa alih-alih menjadi soal kepercayaan. Hanteo menerbitkan toko Family bersertifikatnya dengan sebuah kode masing-masing: Ktown4U adalah HF0082KTU001 dan Weverse adalah HF0082BTS001. Hanteo juga mewajibkan setiap toko Family daring menampilkan tanda Family di kaki halamannya, ditautkan kembali ke hanteochart.com, jadi toko dan daftar itu saling menegaskan dari kedua ujung. Sertifikasi diterbitkan ulang setiap tahun, jadi periksalah kodenya alih-alih mengambilnya dari halaman ini.",
+        pitfall:
+          "Memilih toko yang lebih mahal untuk melindungi kontribusi tangga lagu yang sejak awal tidak pernah terancam. Kalau tangga lagu adalah seluruh alasan Anda membayar lebih, Anda membayar untuk sesuatu yang sudah Anda miliki.",
+        takes: "5 menit",
+      },
+      {
+        title: "Tanyakan toko mana yang punya rilisan Anda sebelum membandingkan apa pun yang lain",
+        body: "Hal ini menentukan lebih banyak pesanan daripada harga, dan ia asimetris. Ktown4u adalah pengecer umum dan membawa rilisan dari berbagai label. Weverse Shop sama sekali bukan satu toko: ada toko GLOBAL dan ada toko-toko regional, stoknya berbeda, jendela pra-pesannya berbeda dan mereka mengirim dari tempat yang berbeda. Sebuah barang yang dipesan penggemar di negara lain mungkin tidak ada di negara Anda. Jadi perbandingannya seringkali bukan Weverse melawan Ktown4u — melainkan Ktown4u melawan Weverse Shop mana pun yang kebetulan Anda tempati.",
+        pitfall:
+          "Membaca tenggat pra-pesan dari Weverse Shop milik orang lain. Batas waktu di satu toko tidak memberi tahu Anda apa pun tentang yang lain, dan bonusnya terikat pada jendelanya alih-alih pada albumnya.",
+        takes: "10 menit",
+      },
+      {
+        title: "Ketahui jam siapa yang harus Anda penuhi",
+        body: "Ktown4u menerbitkan satu dan ia singkat. Pesanan yang belum dibayar dibatalkan otomatis enam jam setelah dibuat — dipotong dari dua puluh empat, berlaku 19 Februari 2025 KST. Bagi penggemar yang memesan tengah malam di Eropa atau benua Amerika, enam jam Korea bisa lewat seluruhnya selagi tidur, dan pra-pesan yang dibuat tetapi tidak dibayar adalah pra-pesan yang tidak pernah dibuat. Weverse Shop tidak menerbitkan tenggat setara dalam pemberitahuan yang dibaca situs ini, yang tidak sama dengan tidak ada tenggat. Intinya secara praktis adalah asimetrinya: satu toko memberi tahu Anda berapa lama waktu Anda.",
+        pitfall:
+          "Membuat pra-pesan Ktown4u untuk mengamankannya lalu membayar paginya. Itulah satu kebiasaan yang keberadaan aturan enam jam itu bertujuan mengalahkan, dan ia mengalahkannya dengan senyap — tidak ada yang memperingatkan Anda, pesanannya sekadar hilang.",
+        takes: "5 menit",
+      },
+      {
+        title: "Harapkan biayanya muncul di tempat yang berbeda",
+        body: "Harga pada halaman produk kedua toko bukan harga yang Anda bayar, dan setelah itu keduanya menyimpang. Sejak 3 Februari 2026 Weverse menghitung pajak dari alamat pengiriman dan penagihan Anda: pesanan ke Korea menampilkan harga termasuk pajak di seluruh prosesnya, pesanan ke mana pun selain itu menampilkan harga tanpa pajak dan menambahkan pajak tujuan di kasir setelah sebuah alamat dimasukkan. Tambahan Ktown4u mendarat lebih belakangan dan mendarat secara berbeda — ia menaikkan pengiriman internasional 7% berlaku 1 Februari 2026, dan untuk kiriman ke Amerika Serikat sejak 2 Juni 2025 ia menerapkan biaya USD 12 jika bea terutang dan tidak dibayar lebih dulu secara elektronik, dipungut dari penerima saat pengantaran.",
+        pitfall:
+          "Membandingkan dua keranjang. Weverse sudah menambahkan pajaknya pada saat itu dan Ktown4u belum menambahkan dua belas dolarnya, jadi keranjang yang tampak lebih murah di kasir bukan dengan pasti yang lebih murah di depan pintu.",
+        takes: "15 menit",
+      },
+      {
+        title: "Periksa mana yang akan mengirim kepada Anda, dalam bentuk yang masing-masing menyatakannya",
+        body: "Keduanya menolak sebagian tujuan dan keduanya mengumumkannya secara berbeda. Weverse memelihara daftar negara dan wilayah yang tidak dapat dikirimi dari Korea Selatan; revisi 15 Juli 2026 menyebut Myanmar, Republik Demokratik Kongo, Irak, Iran, Lebanon, Mali, Rusia, Andorra, Ukraina, Belarus, Afghanistan, Antilles Belanda, Israel dan Turki. Ktown4u melakukannya per metode alih-alih per negara: ia menangguhkan K-Packet ke Jerman dan Spanyol sejak 17 Januari 2025 ketika operator pos di sana meninggalkan pengaturan yang menjadi dasarnya, dan ia menerbitkan gangguan hingga ke kode pos masing-masing. Satu daftar memberi tahu Anda apakah Anda bisa memesan sama sekali; yang lain memberi tahu apakah metode yang Anda pakai terakhir kali masih ada.",
+        pitfall:
+          "Menganggap sebuah negara yang tidak muncul di kedua daftar itu aman. Penanganan yang dinyatakan Ktown4u ketika sebuah metode ditarik adalah mengirim surel kepada pelanggan terdampak tentang beralih ke layanan lain dan biaya tambahannya — jadi pesanan yang sudah dibuat bisa berubah harga setelah fakta.",
+        takes: "10 menit",
+      },
+      {
+        title: "Baca daftar pembayarannya, dan perhatikan bahwa hanya satu toko yang punya",
+        body: "Weverse menerbitkan apa yang bisa Anda pakai untuk membayar, per mata uang, dan daftarnya tidak sama panjang. USD mendapat PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay dan Grab Pay. JPY mendapat daftar itu tanpa Grab Pay. CNY menanggalkan PayPal. MXN yang terpendek dengan dua — PayPal dan Apple Pay, keduanya digital, tanpa pilihan tunai. KRW menambahkan kartu Korea dan dompet Korea. Mata uang bawaan Anda karenanya menentukan tombol Anda sebelum Anda mencapai kasir. Ktown4u tidak menerbitkan daftar sebanding dalam pemberitahuannya, jadi apa yang ia terima harus dibaca dari kasirnya sendiri.",
+        pitfall:
+          "Menetapkan mata uang untuk harganya alih-alih untuk metode pembayarannya. Kalau tidak satu pun dari daftar pendek itu tersiapkan bagi Anda, tidak ada tombol ketiga di kasir dan tidak ada jalan pintas pada titik itu.",
+        takes: "10 menit",
+      },
+      {
+        title: "Cari tahu siapa yang bisa Anda hubungi ketika ada masalah, dan kapan",
+        body: "Ktown4u menyatakan jamnya: layanan pelanggan pada hari kerja 10:00 sampai 17:00 KST sejak 1 November 2023, dengan istirahat makan dari 12:30 sampai 13:30. Itu lima setengah jam pada hari kerja Korea, yang bagi sebagian besar pembaca di sini adalah tengah malam, dan ia berlipat dengan jam pembayaran enam jam itu — sebuah pesanan yang dibuat pada Jumat malam di Eropa bisa kedaluwarsa sebelum ada orang di meja. Ia juga menghentikan pengiriman maupun layanan selama hari raya Korea dan menerbitkan tanggalnya setiap kali. Weverse Shop tidak menerbitkan jam layanan di tempat yang sama; perilaku pembatalannya adalah separuh yang lebih terdokumentasi dan punya panduan sendiri di sini.",
+        pitfall:
+          "Memperlakukan hari raya umum Korea sebagai penundaan pengantaran. Ktown4u menghentikan layanan pada hari-hari yang sama, jadi minggu ketika Anda paling ingin menanyakan sebuah paket adalah minggu ketika tidak ada yang menjawab.",
+        takes: "10 menit",
+      },
+    ],
+    faq: [
+      {
+        q: "Apakah pesanan Ktown4u dihitung untuk tangga lagu Korea, atau saya harus membeli dari Weverse?",
+        a: "Keduanya dihitung. Hanteo mendaftar keduanya sebagai toko Family bersertifikat — Ktown4U sebagai HF0082KTU001 dan Weverse sebagai HF0082BTS001 — dan mewajibkan masing-masing menampilkan tanda Family di kaki halamannya yang ditautkan kembali ke daftar itu. Sertifikasi diterbitkan ulang setiap tahun, jadi pastikan kodenya di hanteochart.com alih-alih mengambilnya dari sini.",
+      },
+      {
+        q: "Mana yang lebih murah?",
+        a: "Tidak ada, sebagai sifat tokonya. Berapa harga album bagi Anda bergantung pada negara Anda, rilisannya dan minggunya: Weverse menambahkan pajak tujuan Anda di kasir, Ktown4u menaikkan pengiriman internasional 7% pada Februari 2026 dan menambahkan USD 12 pada pengantaran ke Amerika Serikat jika bea tidak dibayar lebih dulu. Bandingkan biaya sampai di tangan untuk alamat Anda pada hari itu, bukan kedua halaman produknya.",
+      },
+      {
+        q: "Mana yang mengirim lebih cepat?",
+        a: "Tidak terjawab secara umum, dan pertanyaan yang bisa dijawab lebih penting: metode mana yang masih berjalan ke negara Anda. Ktown4u menarik metode pengiriman per negara — K-Packet ke Jerman dan Spanyol sejak Januari 2025 — dan menerbitkan gangguan hingga ke kode pos, sementara Weverse menerbitkan daftar tujuan yang sama sekali tidak dapat dikiriminya. Periksa pemberitahuan terkini untuk negara Anda sebelum membandingkan perkiraan pengantaran.",
+      },
+      {
+        q: "Bisakah saya memesan album yang sama dari keduanya?",
+        a: "Bisa, dan itu strategi nyata untuk bonus pra-pesan, yang terikat pada jendelanya dan sering pada pengecer tertentu alih-alih pada albumnya. Hitunglah sebagai dua biaya sampai di tangan alih-alih dua harga album, dan ingat bonusnya berhenti saat jendelanya tutup, bukan saat albumnya dirilis.",
+      },
+      {
+        q: "Saya di Amerika Serikat. Apakah itu mengubah jawabannya?",
+        a: "Ia mengubah satu barisnya. Sejak 2 Juni 2025 Ktown4u menerapkan biaya USD 12 pada kiriman ke Amerika Serikat jika bea, pajak atau pungutan pemerintah lain terutang dan tidak dibayar lebih dulu secara elektronik sebelum pengantaran, ditagihkan kepada penerima di depan pintu. Ktown4u juga menerbitkan jalan keluarnya: bayar lebih dulu melalui sistem bea dan pajak impor milik UPS. Itu tambahan tetap untuk dibandingkan dengan pajak apa pun yang ditambahkan Weverse di kasir Anda.",
+      },
+      {
+        q: "Mengapa halaman ini membandingkan begitu sedikit hal?",
+        a: "Karena sisanya tidak diterbitkan. Temuan jujur dari menaruh keduanya berdampingan adalah bahwa mereka mendokumentasikan separuh yang berbeda: Ktown4u menyatakan tenggat pembayarannya, jam layanannya dan perubahan pengirimannya per negara; Weverse menyatakan metode pembayarannya per mata uang, perilaku pajaknya dan pengecualian pengirimannya. Ketika sebuah toko tidak menerbitkan sesuatu, halaman ini mengatakannya alih-alih memperkirakannya, dan itulah sebabnya tidak ada peringkat kecepatan dan tidak ada putusan harga.",
+      },
+    ],
+    labels: ID_LABELS,
+  },
+
+  {
+    locale: "de",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop oder Ktown4u: der Vergleich, den niemand schreibt, weil beide Seiten je von einem Shop handeln",
+    summary:
+      "Beide melden an Hanteo, die Chartfrage entscheidet es also nicht. Entscheidend ist, welcher Shop Ihre Veröffentlichung hat, wessen Uhr Sie einhalten können, und — mehr als beides — welcher das veröffentlicht, was Sie wissen müssen.",
+    scope:
+      "Ein direkter Vergleich der zwei Shops, zwischen denen ein Fan im Ausland für ein koreanisches Album tatsächlich wählt. Er ist aus Angaben zusammengesetzt, die diese Seite am 21. Oktober 2026 gegen Hanteos Register zertifizierter Stores und die eigenen Mitteilungen jedes Shops geprüft hat, weshalb er dieses Datum trägt und nicht das heutige: der Vergleich ist neu, die Fakten darin sind nicht erneut geprüft. Er behandelt Chartmeldung, Katalog, Zahlungsfristen, wo die Kosten auftauchen, Versandverweigerungen und Servicezeiten. Er bewertet die beiden nicht nach Preis oder Geschwindigkeit, weil keines von beiden eine Eigenschaft des Shops ist — beide hängen von Ihrem Land, Ihrer Veröffentlichung und der Woche ab.",
+    intro: [
+      "Diese Seite hat eine Anleitung zum Bestellen bei Weverse Shop und eine zum Bestellen bei Ktown4u, und keine erwähnt die andere ein einziges Mal. Für eine Leserin, die schon gewählt hat, ist das in Ordnung, und für die viel größere Zahl derer, die noch nicht gewählt haben, nutzlos.",
+      "Die Antwort ist nicht die, die die meisten Threads geben. Beide Shops sind Hanteo-zertifiziert, das Chartargument, das diese Sache sonst erledigt, ist also überhaupt kein Argument. Was die beiden tatsächlich trennt, ist schmaler und seltsamer: sie veröffentlichen verschiedene Dinge, und die Lücken liegen nicht an denselben Stellen.",
+    ],
+    steps: [
+      {
+        title: "Klären Sie zuerst die Chartfrage, denn das ist die, die am häufigsten falsch beantwortet wird",
+        body: "Die verbreitete Überzeugung ist, dass ein Kauf im offiziellen Shop zählt und einer bei einem Wiederverkäufer nicht. Für diese beiden ist das einfach falsch, und es ist überprüfbar statt eine Frage des Vertrauens. Hanteo veröffentlicht seine zertifizierten Family-Stores jeweils mit einem Code: Ktown4U ist HF0082KTU001 und Weverse ist HF0082BTS001. Hanteo verlangt außerdem von jedem Online-Family-Store, das Family-Zeichen im Fußbereich zu zeigen, verlinkt zurück auf hanteochart.com, Shop und Register bestätigen sich also von beiden Enden her. Die Zertifizierung wird jedes Jahr neu erteilt, prüfen Sie den Code also, anstatt ihn von dieser Seite zu nehmen.",
+        pitfall:
+          "Den teureren Shop zu wählen, um einen Chartbeitrag zu schützen, der nie in Gefahr war. Wenn die Charts der ganze Grund sind, warum Sie mehr zahlen, zahlen Sie für etwas, das Sie schon hatten.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Fragen Sie, welcher Shop Ihre Veröffentlichung hat, bevor Sie irgendetwas anderes vergleichen",
+        body: "Das entscheidet mehr Bestellungen als der Preis, und es ist asymmetrisch. Ktown4u ist ein allgemeiner Händler und führt Veröffentlichungen über Labels hinweg. Weverse Shop ist überhaupt nicht ein Shop: es gibt einen GLOBAL-Shop und es gibt Regionalshops, sie führen anderen Bestand, sie haben andere Vorverkaufsfenster und sie versenden von anderen Orten. Ein Artikel, den ein Fan in einem anderen Land bestellt hat, existiert in Ihrem vielleicht nicht. Der Vergleich ist deshalb oft nicht Weverse gegen Ktown4u — er ist Ktown4u gegen den Weverse Shop, in dem Sie gerade sind.",
+        pitfall:
+          "Eine Vorverkaufsfrist aus dem Weverse Shop von jemand anderem abzulesen. Ein Stichtag in einem Store sagt nichts über die anderen, und die Beigaben hängen am Fenster und nicht am Album.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Wissen Sie, wessen Uhr Sie einhalten müssen",
+        body: "Ktown4u veröffentlicht eine, und sie ist kurz. Eine unbezahlte Bestellung wird sechs Stunden nach der Aufgabe automatisch storniert — gekürzt von vierundzwanzig, gültig ab 19. Februar 2025 KST. Für einen Fan, der um Mitternacht in Europa oder Amerika bestellt, können sechs koreanische Stunden vollständig im Schlaf vergehen, und ein aufgegebener, aber nicht bezahlter Vorverkauf ist ein Vorverkauf, den es nie gab. Weverse Shop veröffentlicht in den Mitteilungen, die diese Seite liest, keine entsprechende Frist, was nicht dasselbe ist, wie keine zu haben. Der praktische Punkt ist die Asymmetrie: ein Shop sagt Ihnen, wie lange Sie haben.",
+        pitfall:
+          "Einen Ktown4u-Vorverkauf aufzugeben, um ihn zu sichern, und morgens zu bezahlen. Das ist die eine Gewohnheit, gegen die die Sechs-Stunden-Regel existiert, und sie besiegt sie lautlos — nichts warnt Sie, die Bestellung ist einfach weg.",
+        takes: "5 Minuten",
+      },
+      {
+        title: "Rechnen Sie damit, dass die Kosten an verschiedenen Stellen auftauchen",
+        body: "Bei keinem der beiden Shops ist der Preis auf der Produktseite der, den Sie zahlen, und danach gehen sie auseinander. Seit dem 3. Februar 2026 berechnet Weverse die Steuer aus Ihrer Versand- und Rechnungsadresse: Bestellungen nach Korea zeigen durchweg Preise inklusive Steuer, Bestellungen überall sonst zeigen den Preis ohne Steuer und addieren die Steuer des Ziellandes an der Kasse, sobald eine Adresse eingegeben ist. Die Zuschläge von Ktown4u landen später und landen anders — es hat den internationalen Versand zum 1. Februar 2026 um 7% erhöht, und für Sendungen in die USA wendet es seit dem 2. Juni 2025 eine Gebühr von USD 12 an, wenn Abgaben fällig sind und nicht elektronisch vorausbezahlt wurden, eingezogen beim Empfänger bei der Lieferung.",
+        pitfall:
+          "Zwei Warenkörbe zu vergleichen. Weverse hat die Steuer dann schon addiert und Ktown4u die zwölf Dollar noch nicht, der Korb, der an der Kasse günstiger aussieht, ist also nicht verlässlich der, der an der Tür weniger kostet.",
+        takes: "15 Minuten",
+      },
+      {
+        title: "Prüfen Sie, welcher zu Ihnen liefert, und zwar in der Form, in der jeder es sagt",
+        body: "Beide verweigern manche Ziele, und sie kündigen es unterschiedlich an. Weverse führt eine Liste von Ländern und Regionen, in die es aus Südkorea nicht versenden kann; die Fassung vom 15. Juli 2026 nennt Myanmar, die Demokratische Republik Kongo, Irak, Iran, Libanon, Mali, Russland, Andorra, die Ukraine, Belarus, Afghanistan, die Niederländischen Antillen, Israel und die Türkei. Ktown4u macht es pro Methode statt pro Land: es hat K-Packet nach Deutschland und Spanien ab dem 17. Januar 2025 ausgesetzt, als die dortigen Postbetreiber die Vereinbarung verließen, auf der es beruht, und es veröffentlicht Störungen bis auf einzelne Postleitzahlen. Die eine Liste sagt Ihnen, ob Sie überhaupt bestellen können; die andere sagt, ob die Methode, die Sie letztes Mal genutzt haben, noch existiert.",
+        pitfall:
+          "Anzunehmen, ein Land, das auf keiner der beiden Listen steht, sei unproblematisch. Ktown4u gibt als Vorgehen beim Wegfall einer Methode an, betroffene Kunden per E-Mail über den Wechsel zu einem anderen Dienst und die Zusatzkosten zu informieren — eine schon aufgegebene Bestellung kann also nachträglich den Preis ändern.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Lesen Sie die Zahlungslisten, und merken Sie, dass nur ein Shop sie hat",
+        body: "Weverse veröffentlicht je Währung, womit Sie zahlen können, und die Listen sind nicht gleich lang. USD bekommt PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay und Grab Pay. JPY bekommt diese Liste ohne Grab Pay. CNY verliert PayPal. MXN ist mit zwei die kürzeste — PayPal und Apple Pay, beide digital, keine Barzahlung. KRW ergänzt koreanische Karten und die koreanischen Wallets. Ihre Standardwährung entscheidet damit über Ihre Schaltflächen, bevor Sie die Kasse erreichen. Ktown4u veröffentlicht in seinen Mitteilungen keine vergleichbare Liste, was es annimmt, muss also an seiner eigenen Kasse abgelesen werden.",
+        pitfall:
+          "Eine Währung des Preises wegen zu setzen statt der Zahlungsmethode wegen. Wenn keine der beiden auf einer kurzen Liste für Sie eingerichtet ist, gibt es an der Kasse keine dritte Schaltfläche und an dieser Stelle keinen Ausweg.",
+        takes: "10 Minuten",
+      },
+      {
+        title: "Finden Sie heraus, wen Sie erreichen können, wenn etwas schiefgeht, und wann",
+        body: "Ktown4u nennt seine Zeiten: Kundenservice an Werktagen von 10:00 bis 17:00 KST seit dem 1. November 2023, mit Mittagspause von 12:30 bis 13:30. Das sind fünfeinhalb Stunden an koreanischen Werktagen, für die meisten Leserinnen hier mitten in der Nacht, und es verschränkt sich mit der Sechs-Stunden-Zahlungsuhr — eine Bestellung, die an einem Freitagabend in Europa aufgegeben wird, kann ablaufen, bevor jemand am Schreibtisch sitzt. Es pausiert außerdem über koreanische Feiertage Versand und Service und veröffentlicht die Daten jedes Mal. Weverse Shop veröffentlicht die Servicezeiten nicht an derselben Stelle; sein Storno-Verhalten ist die besser dokumentierte Hälfte und hat hier eine eigene Anleitung.",
+        pitfall:
+          "Einen koreanischen Feiertag für eine Lieferverzögerung zu halten. Ktown4u pausiert an denselben Tagen auch den Service, die Woche, in der Sie am dringendsten nach einem Paket fragen möchten, ist also die Woche, in der niemand antwortet.",
+        takes: "10 Minuten",
+      },
+    ],
+    faq: [
+      {
+        q: "Zählt eine Ktown4u-Bestellung für die koreanischen Charts, oder muss ich bei Weverse kaufen?",
+        a: "Beide zählen. Hanteo führt beide als zertifizierte Family-Stores — Ktown4U als HF0082KTU001 und Weverse als HF0082BTS001 — und verlangt von jedem, das Family-Zeichen im Fußbereich zu zeigen, verlinkt zurück auf das Register. Die Zertifizierung wird jedes Jahr neu erteilt, bestätigen Sie den Code also auf hanteochart.com, anstatt ihn von hier zu nehmen.",
+      },
+      {
+        q: "Welcher ist günstiger?",
+        a: "Keiner, als Eigenschaft des Shops. Was das Album Sie kostet, hängt von Ihrem Land, der Veröffentlichung und der Woche ab: Weverse addiert an der Kasse die Steuer Ihres Ziellandes, Ktown4u hat den internationalen Versand im Februar 2026 um 7% erhöht und legt auf US-Lieferungen USD 12 auf, wenn Abgaben nicht vorausbezahlt wurden. Vergleichen Sie die Gesamtkosten bis zur Haustür für Ihre Adresse am betreffenden Tag, nicht die beiden Produktseiten.",
+      },
+      {
+        q: "Welcher liefert schneller?",
+        a: "Allgemein nicht beantwortbar, und die beantwortbare Frage zählt mehr: welche Methoden noch in Ihr Land laufen. Ktown4u zieht Versandmethoden pro Land zurück — K-Packet nach Deutschland und Spanien ab Januar 2025 — und veröffentlicht Störungen bis auf Postleitzahlen, während Weverse eine Liste von Zielen veröffentlicht, in die es überhaupt nicht versenden kann. Prüfen Sie die aktuelle Mitteilung für Ihr Land, bevor Sie Lieferschätzungen vergleichen.",
+      },
+      {
+        q: "Kann ich dasselbe Album einfach bei beiden bestellen?",
+        a: "Sie können, und für Vorverkaufsbeigaben ist das eine echte Strategie, denn die hängen am Fenster und oft am konkreten Händler statt am Album. Rechnen Sie es als zwei Gesamtkosten bis zur Haustür statt als zwei Albumpreise, und denken Sie daran, dass die Beigaben enden, wenn das Fenster schließt, und nicht, wenn das Album erscheint.",
+      },
+      {
+        q: "Ich bin in den USA. Ändert das die Antwort?",
+        a: "Es ändert eine Zeile davon. Seit dem 2. Juni 2025 wendet Ktown4u auf US-Sendungen eine Gebühr von USD 12 an, wenn Abgaben, Steuern oder andere staatliche Gebühren fällig sind und vor der Lieferung nicht elektronisch vorausbezahlt wurden, dem Empfänger an der Tür in Rechnung gestellt. Ktown4u veröffentlicht auch den Ausweg: über das System für Einfuhrabgaben und Steuern von UPS vorauszahlen. Das ist ein fester Zuschlag, den Sie gegen die Steuer halten, die Weverse an Ihrer Kasse addiert.",
+      },
+      {
+        q: "Warum vergleicht diese Seite so wenige Dinge?",
+        a: "Weil der Rest nicht veröffentlicht ist. Der ehrliche Befund daraus, die beiden nebeneinanderzustellen, ist, dass sie verschiedene Hälften dokumentieren: Ktown4u nennt seine Zahlungsfrist, seine Servicezeiten und seine Versandänderungen pro Land; Weverse nennt seine Zahlungsmethoden je Währung, sein Steuerverhalten und seine Versandausschlüsse. Wo ein Shop etwas nicht veröffentlicht, sagt diese Seite das, anstatt es zu schätzen, und deshalb gibt es kein Geschwindigkeitsranking und kein Preisurteil.",
+      },
+    ],
+    labels: DE_LABELS,
+  },
+
+  {
+    locale: "es",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop o Ktown4u: la comparación que nadie escribe, porque las dos páginas hablan de una sola tienda",
+    summary:
+      "Las dos reportan a Hanteo, así que la cuestión de las listas no lo decide. Lo que lo decide es qué tienda tiene tu lanzamiento, a qué reloj puedes llegar y, más que ninguna de las dos cosas, cuál publica lo que necesitas saber.",
+    scope:
+      "Un cara a cara de las dos tiendas entre las que realmente elige una fan de fuera de Corea para un álbum coreano. Está montado con datos que este sitio comprobó el 21 de octubre de 2026 contra el registro de tiendas certificadas de Hanteo y los avisos de cada tienda, y por eso lleva esa fecha y no la de hoy: la comparación es nueva, los hechos que contiene no están vueltos a comprobar. Cubre el reporte a listas, el catálogo, los plazos de pago, dónde aparece el coste, las negativas de envío y el horario de atención. No las ordena por precio ni por rapidez, porque ninguna de las dos cosas es una propiedad de la tienda: ambas dependen de tu país, de tu lanzamiento y de la semana.",
+    intro: [
+      "Este sitio tiene una guía para pedir en Weverse Shop y una guía para pedir en Ktown4u, y ninguna menciona a la otra ni una vez. Eso está bien para quien ya ha elegido, y es inútil para el número mucho mayor de quienes no.",
+      "La respuesta no es la que dan la mayoría de los hilos. Las dos tiendas están certificadas por Hanteo, así que el argumento de las listas que suele zanjar esto no es un argumento en absoluto. Lo que de verdad las separa es más estrecho y más raro: publican cosas distintas, y los huecos no están en los mismos sitios.",
+    ],
+    steps: [
+      {
+        title: "Zanja primero la cuestión de las listas, porque es la que la gente falla",
+        body: "La creencia habitual es que comprar en la tienda oficial cuenta y comprar en una revendedora no. Para estas dos es simplemente falso, y es comprobable en lugar de ser una cuestión de confianza. Hanteo publica sus tiendas Family certificadas con un código cada una: Ktown4U es HF0082KTU001 y Weverse es HF0082BTS001. Hanteo también exige a toda tienda Family en línea mostrar la marca Family en su pie, enlazada de vuelta a hanteochart.com, así que la tienda y el registro se confirman desde los dos extremos. La certificación se reemite cada año, así que comprueba el código en lugar de tomarlo de esta página.",
+        pitfall:
+          "Elegir la tienda más cara para proteger una aportación a las listas que nunca estuvo en riesgo. Si la lista es toda la razón por la que pagas más, estás pagando por algo que ya tenías.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pregunta qué tienda tiene tu lanzamiento antes de comparar cualquier otra cosa",
+        body: "Esto decide más pedidos que el precio, y es asimétrico. Ktown4u es una minorista general y lleva lanzamientos de varias discográficas. Weverse Shop no es una sola tienda: hay una tienda GLOBAL y hay tiendas regionales, llevan existencias distintas, tienen ventanas de preventa distintas y envían desde sitios distintos. Un artículo que pidió una fan de otro país puede no existir en el tuyo. Así que la comparación a menudo no es Weverse contra Ktown4u, sino Ktown4u contra la Weverse Shop en la que resultas estar.",
+        pitfall:
+          "Leer un plazo de preventa en la Weverse Shop de otra persona. Una fecha de cierre en una tienda no te dice nada de las demás, y los artículos incluidos van ligados a la ventana y no al álbum.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Entérate de a qué reloj tienes que llegar",
+        body: "Ktown4u publica uno y es corto. Un pedido sin pagar se cancela automáticamente seis horas después de hacerse, recortado desde veinticuatro, con efecto desde el 19 de febrero de 2025 KST. Para una fan que pide a medianoche en Europa o en América, seis horas coreanas pueden pasar enteras mientras duerme, y una preventa hecha y no pagada es una preventa que nunca se hizo. Weverse Shop no publica un plazo equivalente en los avisos que este sitio lee, lo que no es lo mismo que no haberlo. El punto práctico es la asimetría: una de las tiendas te dice cuánto tiempo tienes.",
+        pitfall:
+          "Hacer una preventa en Ktown4u para asegurarla y pagar por la mañana. Esa es precisamente la costumbre contra la que existe la regla de las seis horas, y la derrota en silencio: nada te avisa, el pedido simplemente ya no está.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Cuenta con que el coste aparecerá en sitios distintos",
+        body: "En ninguna de las dos tiendas el precio de la página de producto es el que pagas, y a partir de ahí divergen. Desde el 3 de febrero de 2026 Weverse calcula el impuesto a partir de tu dirección de envío y de facturación: los pedidos a Corea muestran precios con impuestos incluidos en todo el proceso, y los pedidos a cualquier otro sitio muestran el precio sin impuestos y añaden el del destino en el pago una vez introducida una dirección. Los añadidos de Ktown4u llegan más tarde y llegan de otra forma: subió el envío internacional un 7% con efecto del 1 de febrero de 2026, y para envíos a Estados Unidos aplica desde el 2 de junio de 2025 un cargo de USD 12 cuando hay aranceles debidos que no se prepagaron electrónicamente, cobrado al destinatario en la entrega.",
+        pitfall:
+          "Comparar dos carritos. A esas alturas Weverse ya ha añadido el impuesto y Ktown4u todavía no ha añadido los doce dólares, así que el carrito que parece más barato al pagar no es de forma fiable el que cuesta menos en la puerta.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Comprueba cuál te enviará, en la forma en que cada una lo dice",
+        body: "Las dos rechazan algunos destinos y lo anuncian de forma distinta. Weverse mantiene una lista de países y regiones a los que no puede enviar desde Corea del Sur; la revisión del 15 de julio de 2026 nombra Myanmar, la República Democrática del Congo, Irak, Irán, Líbano, Malí, Rusia, Andorra, Ucrania, Bielorrusia, Afganistán, las Antillas Neerlandesas, Israel y Turquía. Ktown4u lo hace por método y no por país: suspendió K-Packet a Alemania y España desde el 17 de enero de 2025, cuando esos operadores postales dejaron el acuerdo en el que se basa, y publica las interrupciones hasta el nivel de código postal. Una lista te dice si puedes pedir siquiera; la otra te dice si el método que usaste la última vez todavía existe.",
+        pitfall:
+          "Dar por hecho que un país que no aparece en ninguna de las dos listas está despejado. Lo que Ktown4u dice que hace cuando se retira un método es escribir por correo a los clientes afectados sobre pasar a otro servicio y el coste adicional, así que un pedido ya hecho puede cambiar de precio después.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Lee las listas de pago, y fíjate en que solo una tienda las tiene",
+        body: "Weverse publica con qué puedes pagar, por divisa, y las listas no tienen la misma longitud. USD tiene PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay y Grab Pay. JPY tiene esa lista sin Grab Pay. CNY pierde PayPal. MXN es la más corta, con dos: PayPal y Apple Pay, las dos digitales, sin opción en efectivo. KRW añade tarjetas coreanas y las carteras coreanas. Tu divisa por defecto decide por tanto tus botones antes de que llegues al pago. Ktown4u no publica una lista comparable en sus avisos, así que lo que acepta hay que leerlo en su propio pago.",
+        pitfall:
+          "Fijar una divisa por el precio en lugar de por el método de pago. Si ninguno de los dos de una lista corta está configurado para ti, no hay un tercer botón al pagar ni solución a esas alturas.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Averigua a quién puedes acudir cuando sale mal, y cuándo",
+        body: "Ktown4u declara su horario: atención al cliente los días laborables de 10:00 a 17:00 KST desde el 1 de noviembre de 2023, con pausa de comida de 12:30 a 13:30. Eso son cinco horas y media en días laborables coreanos, que para la mayoría de quienes leen esto es la mitad de la noche, y se suma al reloj de pago de seis horas: un pedido hecho un viernes por la noche en Europa puede caducar antes de que haya alguien en la mesa. También pausa el despacho y la atención durante los festivos coreanos y publica las fechas cada vez. Weverse Shop no publica su horario de atención en el mismo sitio; su comportamiento de cancelación es la mitad mejor documentada y tiene aquí una guía propia.",
+        pitfall:
+          "Tratar un festivo coreano como un retraso de entrega. Ktown4u pausa la atención esos mismos días, así que la semana en la que más quieres preguntar por un paquete es la semana en la que nadie responde.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Un pedido en Ktown4u cuenta para las listas coreanas, o tengo que comprar en Weverse?",
+        a: "Cuentan las dos. Hanteo las lista como tiendas Family certificadas: Ktown4U como HF0082KTU001 y Weverse como HF0082BTS001, y exige a cada una mostrar la marca Family en su pie enlazada de vuelta al registro. La certificación se reemite cada año, así que confirma el código en hanteochart.com en lugar de tomarlo de aquí.",
+      },
+      {
+        q: "¿Cuál es más barata?",
+        a: "Ninguna, como propiedad de la tienda. Lo que te cuesta el álbum depende de tu país, del lanzamiento y de la semana: Weverse añade el impuesto de tu destino al pagar, Ktown4u subió el envío internacional un 7% en febrero de 2026 y añade USD 12 en entregas a Estados Unidos cuando los aranceles no se prepagaron. Compara el coste total hasta tu puerta para tu dirección ese día, no las dos páginas de producto.",
+      },
+      {
+        q: "¿Cuál envía más rápido?",
+        a: "No tiene respuesta en general, y la pregunta que sí la tiene importa más: qué métodos siguen llegando a tu país. Ktown4u retira métodos de envío por país — K-Packet a Alemania y España desde enero de 2025 — y publica interrupciones hasta el código postal, mientras Weverse publica una lista de destinos a los que no puede enviar en absoluto. Consulta el aviso vigente para tu país antes de comparar plazos de entrega.",
+      },
+      {
+        q: "¿Puedo pedir el mismo álbum en las dos?",
+        a: "Puedes, y es una estrategia real para los artículos de preventa, que van ligados a la ventana y a menudo a la minorista concreta y no al álbum. Cuéntalo como dos costes totales hasta la puerta y no como dos precios de álbum, y recuerda que los incluidos se acaban cuando cierra la ventana, no cuando sale el álbum.",
+      },
+      {
+        q: "Estoy en Estados Unidos. ¿Eso cambia la respuesta?",
+        a: "Cambia una línea. Desde el 2 de junio de 2025 Ktown4u aplica un cargo de USD 12 en envíos a Estados Unidos cuando hay aranceles, impuestos u otras tasas públicas debidas que no se prepagaron electrónicamente antes de la entrega, facturado al destinatario en la puerta. Ktown4u publica también la salida: prepagar por el sistema de aranceles e impuestos de importación de UPS. Es un añadido fijo que comparar con el impuesto que Weverse añada en tu pago.",
+      },
+      {
+        q: "¿Por qué esta página compara tan pocas cosas?",
+        a: "Porque el resto no está publicado. El hallazgo honesto de ponerlas una al lado de la otra es que documentan mitades distintas: Ktown4u declara su plazo de pago, su horario de atención y sus cambios de envío por país; Weverse declara sus métodos de pago por divisa, su comportamiento fiscal y sus exclusiones de envío. Donde una tienda no publica algo, esta página lo dice en lugar de estimarlo, y por eso no hay ranking de rapidez ni veredicto de precio.",
+      },
+    ],
+    labels: ES_LABELS,
+  },
+
+  {
+    locale: "fr",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop ou Ktown4u : la comparaison que personne n'écrit, parce que les deux pages parlent chacune d'une seule boutique",
+    summary:
+      "Toutes deux déclarent à Hanteo, la question des classements ne tranche donc rien. Ce qui tranche, c'est laquelle a votre sortie, quelle horloge vous pouvez tenir, et — plus que l'un ou l'autre — laquelle publie ce que vous avez besoin de savoir.",
+    scope:
+      "Un face-à-face des deux boutiques entre lesquelles une fan hors de Corée choisit réellement pour un album coréen. Il est assemblé à partir d'éléments que ce site a vérifiés le 21 octobre 2026 contre le registre des boutiques certifiées de Hanteo et les avis propres à chaque boutique, et c'est pourquoi il porte cette date et non celle du jour : la comparaison est récente, les faits qu'elle contient ne sont pas revérifiés. Il couvre la déclaration aux classements, le catalogue, les délais de paiement, l'endroit où le coût apparaît, les refus d'expédition et les horaires du service client. Il ne les classe ni par prix ni par rapidité, car ni l'un ni l'autre n'est une propriété de la boutique : les deux dépendent de votre pays, de votre sortie et de la semaine.",
+    intro: [
+      "Ce site a un guide pour commander sur Weverse Shop et un guide pour commander sur Ktown4u, et aucun des deux ne mentionne l'autre une seule fois. C'est très bien pour une lectrice qui a déjà choisi, et inutile pour le nombre beaucoup plus grand de celles qui n'ont pas choisi.",
+      "La réponse n'est pas celle que donnent la plupart des fils de discussion. Les deux boutiques sont certifiées Hanteo : l'argument des classements, qui règle habituellement la question, n'est donc pas un argument du tout. Ce qui les sépare réellement est plus étroit et plus étrange : elles ne publient pas les mêmes choses, et les manques ne sont pas aux mêmes endroits.",
+    ],
+    steps: [
+      {
+        title: "Réglez d'abord la question des classements, car c'est celle que l'on se trompe le plus souvent",
+        body: "La croyance répandue est qu'un achat dans la boutique officielle compte et qu'un achat chez un revendeur ne compte pas. Pour ces deux-là c'est tout simplement faux, et c'est vérifiable plutôt qu'une affaire de confiance. Hanteo publie ses boutiques Family certifiées avec un code pour chacune : Ktown4U est HF0082KTU001 et Weverse est HF0082BTS001. Hanteo exige aussi de chaque boutique Family en ligne qu'elle affiche la marque Family en pied de page, avec un lien vers hanteochart.com, si bien que la boutique et le registre se confirment des deux côtés. La certification est réémise chaque année : vérifiez donc le code plutôt que de le prendre sur cette page.",
+        pitfall:
+          "Choisir la boutique la plus chère pour protéger une contribution aux classements qui n'a jamais été en jeu. Si le classement est la seule raison pour laquelle vous payez plus, vous payez pour quelque chose que vous aviez déjà.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Demandez laquelle a votre sortie avant de comparer quoi que ce soit d'autre",
+        body: "Cela décide plus de commandes que le prix, et c'est asymétrique. Ktown4u est un détaillant généraliste et propose des sorties de plusieurs labels. Weverse Shop n'est pas une seule boutique : il y a une boutique GLOBAL et il y a des boutiques régionales, elles ont des stocks différents, des fenêtres de précommande différentes et elles expédient depuis des endroits différents. Un article qu'une fan d'un autre pays a commandé peut ne pas exister dans le vôtre. La comparaison n'est donc souvent pas Weverse contre Ktown4u, mais Ktown4u contre la Weverse Shop dans laquelle vous vous trouvez.",
+        pitfall:
+          "Relever une date limite de précommande sur la Weverse Shop de quelqu'un d'autre. Une échéance dans une boutique ne vous apprend rien sur les autres, et les contenus offerts sont liés à la fenêtre et non à l'album.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Sachez quelle horloge vous devez tenir",
+        body: "Ktown4u en publie une et elle est courte. Une commande non payée est annulée automatiquement six heures après avoir été passée — ramenée de vingt-quatre, en vigueur depuis le 19 février 2025 KST. Pour une fan qui commande à minuit en Europe ou dans les Amériques, six heures coréennes peuvent passer entièrement pendant son sommeil, et une précommande passée mais non payée est une précommande qui n'a jamais existé. Weverse Shop ne publie pas de délai équivalent dans les avis que ce site lit, ce qui n'équivaut pas à l'absence de délai. Le point pratique est l'asymétrie : une des boutiques vous dit de combien de temps vous disposez.",
+        pitfall:
+          "Passer une précommande Ktown4u pour la sécuriser et payer le matin. C'est précisément l'habitude contre laquelle la règle des six heures existe, et elle la défait en silence : rien ne vous avertit, la commande a simplement disparu.",
+        takes: "5 minutes",
+      },
+      {
+        title: "Attendez-vous à ce que le coût apparaisse à des endroits différents",
+        body: "Chez aucune des deux boutiques le prix de la fiche produit n'est celui que vous payez, et ensuite elles divergent. Depuis le 3 février 2026, Weverse calcule la taxe d'après votre adresse de livraison et de facturation : les commandes vers la Corée affichent des prix taxes comprises tout du long, les commandes vers ailleurs affichent le prix hors taxe et ajoutent la taxe de la destination au paiement une fois l'adresse saisie. Les ajouts de Ktown4u arrivent plus tard et autrement : elle a relevé l'expédition internationale de 7% au 1er février 2026, et pour les envois vers les États-Unis elle applique depuis le 2 juin 2025 des frais de USD 12 lorsque des droits sont dus et n'ont pas été prépayés par voie électronique, perçus auprès du destinataire à la livraison.",
+        pitfall:
+          "Comparer deux paniers. Weverse a déjà ajouté la taxe à ce moment-là et Ktown4u n'a pas encore ajouté les douze dollars : le panier qui paraît moins cher au paiement n'est donc pas de façon fiable celui qui coûte moins à la porte.",
+        takes: "15 minutes",
+      },
+      {
+        title: "Vérifiez laquelle vous livrera, dans la forme où chacune le dit",
+        body: "Les deux refusent certaines destinations et l'annoncent différemment. Weverse tient une liste de pays et de régions vers lesquels elle ne peut pas expédier depuis la Corée du Sud ; la révision du 15 juillet 2026 nomme le Myanmar, la République démocratique du Congo, l'Irak, l'Iran, le Liban, le Mali, la Russie, l'Andorre, l'Ukraine, la Biélorussie, l'Afghanistan, les Antilles néerlandaises, Israël et la Turquie. Ktown4u procède par méthode et non par pays : elle a suspendu K-Packet vers l'Allemagne et l'Espagne à partir du 17 janvier 2025, quand ces opérateurs postaux ont quitté l'accord sur lequel elle fonctionne, et elle publie les perturbations jusqu'au code postal. Une liste vous dit si vous pouvez commander du tout ; l'autre vous dit si la méthode que vous avez utilisée la dernière fois existe encore.",
+        pitfall:
+          "Supposer qu'un pays qui ne figure sur aucune des deux listes est dégagé. Ce que Ktown4u annonce faire quand une méthode est retirée, c'est écrire aux clients concernés pour leur proposer un autre service et le coût supplémentaire — une commande déjà passée peut donc changer de prix après coup.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Lisez les listes de paiement, et notez qu'une seule boutique en a",
+        body: "Weverse publie ce avec quoi vous pouvez payer, par devise, et les listes n'ont pas la même longueur. L'USD obtient PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay et Grab Pay. Le JPY obtient cette liste sans Grab Pay. Le CNY perd PayPal. Le MXN est la plus courte avec deux : PayPal et Apple Pay, toutes deux numériques, aucune option en espèces. Le KRW ajoute les cartes coréennes et les portefeuilles coréens. Votre devise par défaut décide donc de vos boutons avant que vous n'atteigniez le paiement. Ktown4u ne publie pas de liste comparable dans ses avis : ce qu'elle accepte doit donc se lire sur son propre paiement.",
+        pitfall:
+          "Choisir une devise pour le prix plutôt que pour le moyen de paiement. Si aucun des deux d'une liste courte n'est en place pour vous, il n'y a pas de troisième bouton au paiement ni de contournement à ce stade.",
+        takes: "10 minutes",
+      },
+      {
+        title: "Déterminez qui vous pouvez joindre quand cela tourne mal, et quand",
+        body: "Ktown4u indique ses horaires : service client en semaine de 10:00 à 17:00 KST depuis le 1er novembre 2023, avec une pause déjeuner de 12:30 à 13:30. Cela fait cinq heures et demie les jours ouvrés coréens, ce qui pour la plupart des lectrices d'ici est le milieu de la nuit, et cela se cumule avec l'horloge de paiement de six heures : une commande passée un vendredi soir en Europe peut expirer avant que quiconque soit à son bureau. Elle suspend aussi l'expédition et le service pendant les jours fériés coréens et publie les dates chaque fois. Weverse Shop ne publie pas ses horaires au même endroit ; son comportement en matière d'annulation est la moitié la mieux documentée et a son propre guide ici.",
+        pitfall:
+          "Prendre un jour férié coréen pour un retard de livraison. Ktown4u suspend le service les mêmes jours : la semaine où vous voulez le plus poser une question sur un colis est la semaine où personne ne répond.",
+        takes: "10 minutes",
+      },
+    ],
+    faq: [
+      {
+        q: "Une commande Ktown4u compte-t-elle pour les classements coréens, ou dois-je acheter sur Weverse ?",
+        a: "Les deux comptent. Hanteo les répertorie comme boutiques Family certifiées — Ktown4U sous HF0082KTU001 et Weverse sous HF0082BTS001 — et exige de chacune qu'elle affiche la marque Family en pied de page avec un lien vers le registre. La certification est réémise chaque année : confirmez donc le code sur hanteochart.com plutôt que de le prendre ici.",
+      },
+      {
+        q: "Laquelle est la moins chère ?",
+        a: "Aucune, en tant que propriété de la boutique. Ce que l'album vous coûte dépend de votre pays, de la sortie et de la semaine : Weverse ajoute la taxe de votre destination au paiement, Ktown4u a relevé l'expédition internationale de 7% en février 2026 et ajoute USD 12 sur les livraisons aux États-Unis quand les droits n'ont pas été prépayés. Comparez le coût rendu à votre adresse le jour même, et non les deux fiches produit.",
+      },
+      {
+        q: "Laquelle expédie le plus vite ?",
+        a: "Pas de réponse générale, et la question à laquelle on peut répondre compte davantage : quelles méthodes desservent encore votre pays. Ktown4u retire des méthodes d'expédition pays par pays — K-Packet vers l'Allemagne et l'Espagne depuis janvier 2025 — et publie les perturbations jusqu'au code postal, tandis que Weverse publie une liste de destinations qu'elle ne peut pas desservir du tout. Consultez l'avis en vigueur pour votre pays avant de comparer des estimations de livraison.",
+      },
+      {
+        q: "Puis-je simplement commander le même album chez les deux ?",
+        a: "Vous pouvez, et c'est une vraie stratégie pour les contenus offerts en précommande, qui sont liés à la fenêtre et souvent au détaillant précis plutôt qu'à l'album. Chiffrez-le comme deux coûts rendus et non comme deux prix d'album, et rappelez-vous que les contenus offerts s'arrêtent à la fermeture de la fenêtre, pas à la sortie de l'album.",
+      },
+      {
+        q: "Je suis aux États-Unis. Cela change-t-il la réponse ?",
+        a: "Cela en change une ligne. Depuis le 2 juin 2025, Ktown4u applique des frais de USD 12 sur les envois vers les États-Unis lorsque des droits, taxes ou autres redevances publiques sont dus et n'ont pas été prépayés par voie électronique avant la livraison, facturés au destinataire à la porte. Ktown4u publie aussi la sortie : prépayer via le système de droits et taxes à l'importation d'UPS. C'est un ajout forfaitaire à comparer à la taxe que Weverse ajoute à votre paiement.",
+      },
+      {
+        q: "Pourquoi cette page compare-t-elle si peu de choses ?",
+        a: "Parce que le reste n'est pas publié. Le constat honnête de les mettre côte à côte, c'est qu'elles documentent des moitiés différentes : Ktown4u indique son délai de paiement, ses horaires de service et ses changements d'expédition par pays ; Weverse indique ses moyens de paiement par devise, son traitement de la taxe et ses exclusions d'expédition. Là où une boutique ne publie pas quelque chose, cette page le dit au lieu de l'estimer, et c'est pourquoi il n'y a ni classement de rapidité ni verdict de prix.",
+      },
+    ],
+    labels: FR_LABELS,
+  },
+
+  {
+    locale: "pt-BR",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop ou Ktown4u: a comparação que ninguém escreve, porque as duas páginas falam de uma loja só",
+    summary:
+      "As duas reportam para a Hanteo, então a questão das paradas não decide isso. O que decide é qual loja tem o seu lançamento, de quem é o relógio que você consegue cumprir e — mais do que qualquer um dos dois — qual delas publica a coisa que você precisa saber.",
+    scope:
+      "Um confronto direto entre as duas lojas que uma fã de fora realmente escolhe para um álbum coreano. Está montado com afirmações que este site conferiu em 21 de outubro de 2026 contra o registro de lojas certificadas da Hanteo e os avisos de cada loja, e é por isso que ele traz essa data e não a de hoje: a comparação é nova, os fatos nela não foram reconferidos. Cobre o reporte às paradas, o catálogo, os prazos de pagamento, onde o custo aparece, as recusas de envio e o horário de atendimento. Não classifica as duas por preço nem por velocidade, porque nenhum dos dois é uma propriedade da loja — os dois dependem do seu país, do seu lançamento e da semana.",
+    intro: [
+      "Este site tem um guia de como pedir na Weverse Shop e um guia de como pedir na Ktown4u, e nenhum dos dois menciona o outro uma única vez. Isso está ótimo para quem já escolheu, e é inútil para o número muito maior de quem não escolheu.",
+      "A resposta não é a que a maioria das discussões dá. As duas lojas são certificadas pela Hanteo, então o argumento das paradas que normalmente encerra isso não é argumento nenhum. O que de fato separa as duas é mais estreito e mais estranho: elas publicam coisas diferentes, e as lacunas não estão nos mesmos lugares.",
+    ],
+    steps: [
+      {
+        title: "Resolva primeiro a questão das paradas, porque é a que as pessoas erram",
+        body: "A crença comum é que comprar na loja oficial conta e comprar de um revendedor não conta. Para estas duas isso é simplesmente falso, e é conferível em vez de ser questão de confiança. A Hanteo publica as lojas Family certificadas dela com um código cada: a Ktown4U é HF0082KTU001 e a Weverse é HF0082BTS001. A Hanteo também exige que toda loja Family online exiba o selo Family no rodapé, com link de volta para hanteochart.com, então a loja e o registro se confirmam pelas duas pontas. A certificação é reemitida todo ano, então confira o código em vez de tirá-lo desta página.",
+        pitfall:
+          "Escolher a loja mais cara para proteger uma contribuição às paradas que nunca esteve em risco. Se a parada é a razão inteira de você pagar mais, você está pagando por algo que já tinha.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Pergunte qual loja tem o seu lançamento antes de comparar qualquer outra coisa",
+        body: "Isso decide mais pedidos do que o preço, e é assimétrico. A Ktown4u é uma varejista geral e carrega lançamentos de várias gravadoras. A Weverse Shop não é uma loja só: existe uma loja GLOBAL e existem lojas regionais, elas têm estoques diferentes, janelas de pré-venda diferentes e despacham de lugares diferentes. Um item que uma fã de outro país pediu pode não existir no seu. Então a comparação muitas vezes não é Weverse contra Ktown4u — é Ktown4u contra a Weverse Shop em que você por acaso está.",
+        pitfall:
+          "Ler um prazo de pré-venda na Weverse Shop de outra pessoa. Um corte numa loja não diz nada sobre as outras, e os brindes estão amarrados à janela e não ao álbum.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Saiba de quem é o relógio que você tem de cumprir",
+        body: "A Ktown4u publica um e ele é curto. Um pedido não pago é cancelado automaticamente seis horas depois de ser feito — cortado de vinte e quatro, com efeito em 19 de fevereiro de 2025 KST. Para uma fã que pede à meia-noite na Europa ou nas Américas, seis horas coreanas podem passar inteiras enquanto ela dorme, e uma pré-venda feita mas não paga é uma pré-venda que nunca foi feita. A Weverse Shop não publica prazo equivalente nos avisos que este site lê, o que não é o mesmo que não haver prazo. O ponto prático é a assimetria: uma das lojas te diz quanto tempo você tem.",
+        pitfall:
+          "Fazer uma pré-venda na Ktown4u para garantir e pagar de manhã. Esse é justamente o hábito contra o qual a regra das seis horas existe, e ela o derrota em silêncio — nada te avisa, o pedido simplesmente não está mais lá.",
+        takes: "5 minutos",
+      },
+      {
+        title: "Espere que o custo apareça em lugares diferentes",
+        body: "Em nenhuma das duas lojas o preço da página do produto é o que você paga, e dali em diante elas divergem. Desde 3 de fevereiro de 2026 a Weverse calcula o imposto a partir do seu endereço de entrega e de cobrança: pedidos para a Coreia mostram preços com imposto incluído em todo o processo, e pedidos para qualquer outro lugar mostram o preço sem imposto e somam o imposto do destino no checkout depois que um endereço é inserido. As adições da Ktown4u chegam mais tarde e chegam de outro jeito — ela aumentou o frete internacional em 7% com efeito em 1 de fevereiro de 2026, e para envios aos Estados Unidos aplica desde 2 de junho de 2025 uma cobrança de USD 12 quando há tributos devidos que não foram pré-pagos eletronicamente, recolhida do destinatário na entrega.",
+        pitfall:
+          "Comparar dois carrinhos. A essa altura a Weverse já somou o imposto e a Ktown4u ainda não somou os doze dólares, então o carrinho que parece mais barato no checkout não é com segurança o que custa menos na porta.",
+        takes: "15 minutos",
+      },
+      {
+        title: "Confira qual delas envia para você, na forma em que cada uma diz isso",
+        body: "As duas recusam alguns destinos e anunciam isso de formas diferentes. A Weverse mantém uma lista de países e regiões para os quais não consegue enviar da Coreia do Sul; a revisão de 15 de julho de 2026 cita Mianmar, a República Democrática do Congo, o Iraque, o Irã, o Líbano, o Mali, a Rússia, Andorra, a Ucrânia, Belarus, o Afeganistão, as Antilhas Holandesas, Israel e a Turquia. A Ktown4u faz isso por método e não por país: suspendeu o K-Packet para a Alemanha e a Espanha a partir de 17 de janeiro de 2025, quando aqueles operadores postais saíram do arranjo em que ela se apoia, e publica interrupções até o nível de código postal. Uma lista te diz se você consegue pedir; a outra te diz se o método que você usou na última vez ainda existe.",
+        pitfall:
+          "Supor que um país que não aparece em nenhuma das duas listas está livre. O que a Ktown4u diz fazer quando um método é retirado é mandar e-mail aos clientes afetados sobre migrar para outro serviço e o custo extra — então um pedido já feito pode mudar de preço depois.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Leia as listas de pagamento, e note que só uma loja tem essas listas",
+        body: "A Weverse publica com o que você pode pagar, por moeda, e as listas não têm o mesmo tamanho. USD recebe PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay e Grab Pay. JPY recebe essa lista sem o Grab Pay. CNY perde o PayPal. MXN é a mais curta, com dois — PayPal e Apple Pay, os dois digitais, sem opção em dinheiro. KRW acrescenta cartões coreanos e as carteiras coreanas. A sua moeda padrão, portanto, decide os seus botões antes de você chegar ao checkout. A Ktown4u não publica lista comparável nos avisos dela, então o que ela aceita tem de ser lido no próprio checkout.",
+        pitfall:
+          "Definir uma moeda pelo preço em vez de pelo meio de pagamento. Se nenhum dos dois de uma lista curta está configurado para você, não existe um terceiro botão no checkout nem solução àquela altura.",
+        takes: "10 minutos",
+      },
+      {
+        title: "Descubra quem você consegue alcançar quando dá errado, e quando",
+        body: "A Ktown4u declara o horário dela: atendimento nos dias de semana das 10:00 às 17:00 KST desde 1 de novembro de 2023, com pausa de almoço das 12:30 às 13:30. São cinco horas e meia em dias úteis coreanos, o que para a maioria de quem lê isto é o meio da noite, e isso se soma ao relógio de pagamento de seis horas — um pedido feito numa sexta à noite na Europa pode expirar antes de alguém estar na mesa. Ela também pausa despacho e atendimento nos feriados coreanos e publica as datas todas as vezes. A Weverse Shop não publica horário de atendimento no mesmo lugar; o comportamento de cancelamento dela é a metade melhor documentada e tem um guia próprio aqui.",
+        pitfall:
+          "Tratar um feriado público coreano como atraso de entrega. A Ktown4u pausa o atendimento nos mesmos dias, então a semana em que você mais quer perguntar sobre uma encomenda é a semana em que ninguém responde.",
+        takes: "10 minutos",
+      },
+    ],
+    faq: [
+      {
+        q: "Um pedido na Ktown4u conta para as paradas coreanas, ou eu tenho de comprar na Weverse?",
+        a: "As duas contam. A Hanteo lista as duas como lojas Family certificadas — a Ktown4U como HF0082KTU001 e a Weverse como HF0082BTS001 — e exige que cada uma mostre o selo Family no rodapé com link de volta para o registro. A certificação é reemitida todo ano, então confirme o código em hanteochart.com em vez de tirá-lo daqui.",
+      },
+      {
+        q: "Qual é mais barata?",
+        a: "Nenhuma, como propriedade da loja. Quanto o álbum custa para você depende do seu país, do lançamento e da semana: a Weverse soma o imposto do seu destino no checkout, a Ktown4u aumentou o frete internacional em 7% em fevereiro de 2026 e soma USD 12 em entregas nos Estados Unidos quando os tributos não foram pré-pagos. Compare o custo até a sua porta para o seu endereço no dia, e não as duas páginas de produto.",
+      },
+      {
+        q: "Qual envia mais rápido?",
+        a: "Não é respondível em geral, e a pergunta que é respondível importa mais: quais métodos ainda rodam para o seu país. A Ktown4u retira métodos de envio por país — K-Packet para a Alemanha e a Espanha desde janeiro de 2025 — e publica interrupções até o código postal, enquanto a Weverse publica uma lista de destinos para os quais não consegue enviar de jeito nenhum. Veja o aviso atual para o seu país antes de comparar prazos de entrega.",
+      },
+      {
+        q: "Posso simplesmente pedir o mesmo álbum nas duas?",
+        a: "Pode, e é uma estratégia real para brindes de pré-venda, que estão amarrados à janela e muitas vezes à varejista específica em vez de ao álbum. Calcule como dois custos até a porta e não como dois preços de álbum, e lembre que os brindes param quando a janela fecha, não quando o álbum é lançado.",
+      },
+      {
+        q: "Estou nos Estados Unidos. Isso muda a resposta?",
+        a: "Muda uma linha dela. Desde 2 de junho de 2025 a Ktown4u aplica uma cobrança de USD 12 em envios aos Estados Unidos quando tributos, impostos ou outras taxas governamentais são devidos e não foram pré-pagos eletronicamente antes da entrega, cobrada do destinatário na porta. A Ktown4u publica a saída também: pré-pagar pelo sistema de tributos e impostos de importação da UPS. É uma adição fixa para comparar com qualquer imposto que a Weverse some no seu checkout.",
+      },
+      {
+        q: "Por que esta página compara tão poucas coisas?",
+        a: "Porque o resto não está publicado. A conclusão honesta de colocar as duas lado a lado é que elas documentam metades diferentes: a Ktown4u declara o prazo de pagamento, o horário de atendimento e as mudanças de envio por país; a Weverse declara os meios de pagamento por moeda, o comportamento do imposto e as exclusões de envio. Onde uma loja não publica algo, esta página diz isso em vez de estimar, e é por isso que não existe ranking de velocidade nem veredito de preço.",
+      },
+    ],
+    labels: PT_LABELS,
+  },
+
+  {
+    locale: "vi",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop hay Ktown4u: bài so sánh không ai viết, vì mỗi trang đều chỉ nói về một cửa hàng",
+    summary:
+      "Cả hai đều báo số cho Hanteo, nên câu hỏi về bảng xếp hạng không quyết định được. Quyết định là cửa hàng nào có bản phát hành của bạn, bạn kịp được chiếc đồng hồ của bên nào, và — hơn cả hai điều đó — bên nào công bố điều bạn cần biết.",
+    scope:
+      "Một bài so sánh trực diện hai cửa hàng mà một người hâm mộ ở nước ngoài thực sự chọn giữa chúng khi mua album Hàn Quốc. Nó được dựng từ những điều trang này đã kiểm tra vào ngày 21 tháng 10 năm 2026 đối chiếu với danh mục cửa hàng được chứng nhận của Hanteo và thông báo của chính mỗi cửa hàng, nên nó mang ngày đó chứ không mang ngày hôm nay: bài so sánh thì mới, còn các dữ kiện trong đó chưa được kiểm tra lại. Nó bao gồm việc báo số cho bảng xếp hạng, danh mục hàng, thời hạn thanh toán, chi phí hiện ra ở đâu, việc từ chối giao hàng và giờ hỗ trợ. Nó không xếp hạng hai bên theo giá hay theo tốc độ, vì không điều nào trong hai điều đó là thuộc tính của cửa hàng — cả hai đều phụ thuộc vào nước bạn, bản phát hành của bạn và tuần đó.",
+    intro: [
+      "Trang này có một bài hướng dẫn đặt hàng ở Weverse Shop và một bài hướng dẫn đặt hàng ở Ktown4u, mà không bài nào nhắc đến bài kia lấy một lần. Điều đó ổn với người đã chọn xong, và vô ích với số người lớn hơn nhiều vẫn chưa chọn.",
+      "Câu trả lời không phải là câu mà phần lớn các chủ đề thảo luận đưa ra. Cả hai cửa hàng đều được Hanteo chứng nhận, nên cái lập luận về bảng xếp hạng vốn thường dùng để chốt chuyện này hoàn toàn không phải một lập luận. Điều thực sự tách hai bên ra thì hẹp hơn và lạ hơn: họ công bố những thứ khác nhau, và các khoảng trống không nằm ở cùng chỗ.",
+    ],
+    steps: [
+      {
+        title: "Giải quyết câu hỏi bảng xếp hạng trước, vì đó là câu người ta hay nhầm",
+        body: "Niềm tin phổ biến là mua ở cửa hàng chính thức thì được tính, mua ở bên bán lại thì không. Với hai bên này điều đó đơn giản là sai, và nó kiểm tra được chứ không phải chuyện tin hay không tin. Hanteo công bố các cửa hàng Family được chứng nhận kèm một mã cho mỗi bên: Ktown4U là HF0082KTU001 và Weverse là HF0082BTS001. Hanteo còn yêu cầu mọi cửa hàng Family trực tuyến hiển thị dấu Family ở chân trang, có liên kết trở về hanteochart.com, nên cửa hàng và danh mục xác nhận lẫn nhau từ hai đầu. Chứng nhận được phát lại mỗi năm, nên hãy tra mã chứ đừng lấy từ trang này.",
+        pitfall:
+          "Chọn cửa hàng đắt hơn để bảo vệ phần đóng góp vào bảng xếp hạng vốn chưa bao giờ bị đe doạ. Nếu bảng xếp hạng là toàn bộ lý do bạn trả thêm, thì bạn đang trả tiền cho điều bạn vốn đã có.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy hỏi cửa hàng nào có bản phát hành của bạn trước khi so sánh bất cứ thứ gì khác",
+        body: "Điều này quyết định nhiều đơn hàng hơn cả giá cả, và nó không đối xứng. Ktown4u là nhà bán lẻ tổng hợp và có hàng của nhiều công ty. Weverse Shop vốn không phải một cửa hàng: có một cửa hàng GLOBAL và có các cửa hàng theo khu vực, hàng tồn khác nhau, thời gian đặt trước khác nhau và nơi gửi hàng cũng khác nhau. Một món mà người hâm mộ ở nước khác đặt được có thể không tồn tại ở nước bạn. Vậy nên bài so sánh thường không phải Weverse đối đầu Ktown4u — mà là Ktown4u đối đầu đúng cái Weverse Shop mà bạn đang ở trong.",
+        pitfall:
+          "Đọc thời hạn đặt trước trên Weverse Shop của người khác. Mốc chốt ở một cửa hàng không nói gì về các cửa hàng còn lại, và quà kèm gắn với khoảng thời gian đó chứ không gắn với album.",
+        takes: "10 phút",
+      },
+      {
+        title: "Biết bạn phải kịp chiếc đồng hồ của bên nào",
+        body: "Ktown4u công bố một mốc, và nó ngắn. Đơn chưa thanh toán bị huỷ tự động sau khi đặt sáu giờ — rút từ hai mươi bốn giờ, có hiệu lực từ ngày 19 tháng 2 năm 2025 KST. Với người hâm mộ đặt hàng lúc nửa đêm ở châu Âu hay châu Mỹ, sáu giờ Hàn Quốc có thể trôi qua trọn vẹn trong lúc ngủ, và một đơn đặt trước đã đặt mà chưa trả là một đơn chưa từng được đặt. Weverse Shop không công bố thời hạn tương đương trong những thông báo mà trang này đọc, và điều đó không giống với việc không có thời hạn. Điểm thực tế là sự bất đối xứng: một bên cho bạn biết bạn còn bao lâu.",
+        pitfall:
+          "Đặt trước ở Ktown4u để giữ chỗ rồi sáng mới trả tiền. Đó đúng là cái thói mà quy tắc sáu giờ tồn tại để đánh bại, và nó đánh bại một cách im lặng — không có gì báo cho bạn, đơn hàng chỉ đơn giản là biến mất.",
+        takes: "5 phút",
+      },
+      {
+        title: "Hãy lường rằng chi phí hiện ra ở những chỗ khác nhau",
+        body: "Ở cả hai cửa hàng, giá trên trang sản phẩm đều không phải số tiền bạn trả, và từ đó trở đi hai bên tách ra. Từ ngày 3 tháng 2 năm 2026, Weverse tính thuế theo địa chỉ giao hàng và địa chỉ thanh toán của bạn: đơn về Hàn Quốc hiển thị giá đã gồm thuế suốt quá trình, đơn đi mọi nơi khác hiển thị giá chưa thuế rồi cộng thuế của điểm đến khi thanh toán, sau khi địa chỉ được nhập. Các khoản cộng của Ktown4u đến muộn hơn và theo kiểu khác — họ tăng phí gửi quốc tế 7% hiệu lực từ ngày 1 tháng 2 năm 2026, và với hàng gửi tới Hoa Kỳ thì từ ngày 2 tháng 6 năm 2025 họ áp một khoản USD 12 khi có thuế phải trả mà chưa được trả trước bằng phương thức điện tử, thu từ người nhận lúc giao hàng.",
+        pitfall:
+          "So sánh hai giỏ hàng. Vào lúc đó Weverse đã cộng thuế rồi còn Ktown4u thì chưa cộng mười hai đô, nên cái giỏ trông rẻ hơn lúc thanh toán không chắc là cái giỏ tốn ít hơn khi tới cửa nhà.",
+        takes: "15 phút",
+      },
+      {
+        title: "Kiểm tra bên nào sẽ gửi tới chỗ bạn, theo đúng cách mỗi bên nói ra",
+        body: "Cả hai đều từ chối một số điểm đến và cách thông báo thì khác nhau. Weverse duy trì một danh sách các nước và vùng mà họ không thể gửi tới từ Hàn Quốc; bản sửa ngày 15 tháng 7 năm 2026 nêu Myanmar, Cộng hoà Dân chủ Congo, Iraq, Iran, Liban, Mali, Nga, Andorra, Ukraina, Belarus, Afghanistan, Antilles thuộc Hà Lan, Israel và Thổ Nhĩ Kỳ. Ktown4u làm theo từng phương thức chứ không theo từng nước: họ tạm dừng K-Packet đi Đức và Tây Ban Nha từ ngày 17 tháng 1 năm 2025 khi hai bên bưu chính đó rời khỏi thoả thuận mà họ dựa vào, và họ công bố gián đoạn xuống tới từng mã bưu chính. Một danh sách cho bạn biết liệu bạn có đặt được hay không; danh sách kia cho biết phương thức bạn dùng lần trước có còn tồn tại hay không.",
+        pitfall:
+          "Cho rằng một nước không xuất hiện trên cả hai danh sách là ổn. Cách Ktown4u nói họ xử lý khi một phương thức bị rút là gửi email cho khách bị ảnh hưởng về việc chuyển sang dịch vụ khác và khoản phí thêm — nên một đơn đã đặt có thể đổi giá về sau.",
+        takes: "10 phút",
+      },
+      {
+        title: "Hãy đọc danh sách thanh toán, và để ý rằng chỉ một bên có danh sách đó",
+        body: "Weverse công bố bạn được trả bằng gì, theo từng loại tiền, và các danh sách không dài bằng nhau. USD có PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay và Grab Pay. JPY có đúng danh sách đó trừ Grab Pay. CNY mất PayPal. MXN ngắn nhất với hai lựa chọn — PayPal và Apple Pay, cả hai đều là điện tử, không có lựa chọn tiền mặt. KRW thêm thẻ Hàn Quốc và các ví Hàn Quốc. Vậy nên loại tiền mặc định của bạn quyết định các nút của bạn trước cả khi bạn tới bước thanh toán. Ktown4u không công bố danh sách tương đương trong thông báo của họ, nên họ nhận gì thì phải đọc trên chính trang thanh toán của họ.",
+        pitfall:
+          "Đặt loại tiền vì giá chứ không vì phương thức thanh toán. Nếu không lựa chọn nào trong một danh sách ngắn được thiết lập sẵn cho bạn, thì ở bước thanh toán không có nút thứ ba và lúc đó cũng không có cách lách.",
+        takes: "10 phút",
+      },
+      {
+        title: "Xác định bạn liên hệ được với ai khi có chuyện, và vào lúc nào",
+        body: "Ktown4u nêu rõ giờ của họ: hỗ trợ khách hàng các ngày trong tuần từ 10:00 đến 17:00 KST kể từ ngày 1 tháng 11 năm 2023, nghỉ trưa từ 12:30 đến 13:30. Đó là năm giờ rưỡi trong ngày làm việc ở Hàn Quốc, với phần lớn người đọc ở đây là giữa đêm, và nó cộng dồn với chiếc đồng hồ thanh toán sáu giờ — một đơn đặt vào tối thứ Sáu ở châu Âu có thể hết hạn trước khi có ai ngồi vào bàn. Họ còn tạm dừng cả việc gửi hàng và hỗ trợ trong các ngày lễ Hàn Quốc và công bố ngày mỗi lần. Weverse Shop không công bố giờ hỗ trợ ở cùng một chỗ; cách họ xử lý việc huỷ đơn là nửa được ghi lại rõ hơn và có bài hướng dẫn riêng ở đây.",
+        pitfall:
+          "Coi một ngày lễ công của Hàn Quốc là chuyện giao hàng chậm. Ktown4u dừng cả hỗ trợ trong cùng những ngày đó, nên tuần bạn muốn hỏi về gói hàng nhất lại đúng là tuần không ai trả lời.",
+        takes: "10 phút",
+      },
+    ],
+    faq: [
+      {
+        q: "Đơn ở Ktown4u có được tính vào bảng xếp hạng Hàn Quốc không, hay tôi phải mua ở Weverse?",
+        a: "Cả hai đều được tính. Hanteo liệt cả hai là cửa hàng Family được chứng nhận — Ktown4U là HF0082KTU001 và Weverse là HF0082BTS001 — và yêu cầu mỗi bên hiển thị dấu Family ở chân trang có liên kết trở về danh mục. Chứng nhận được phát lại mỗi năm, nên hãy xác nhận mã trên hanteochart.com thay vì lấy từ đây.",
+      },
+      {
+        q: "Bên nào rẻ hơn?",
+        a: "Không bên nào, nếu xét như một thuộc tính của cửa hàng. Album tốn của bạn bao nhiêu thì tuỳ vào nước bạn, bản phát hành và tuần đó: Weverse cộng thuế của điểm đến khi bạn thanh toán, Ktown4u đã tăng phí gửi quốc tế 7% vào tháng 2 năm 2026 và cộng USD 12 cho hàng giao tại Hoa Kỳ khi thuế chưa được trả trước. Hãy so tổng chi phí tới tận địa chỉ của bạn trong ngày đó, chứ không so hai trang sản phẩm.",
+      },
+      {
+        q: "Bên nào gửi nhanh hơn?",
+        a: "Không trả lời được một cách chung chung, và câu hỏi trả lời được thì quan trọng hơn: những phương thức nào còn chạy tới nước bạn. Ktown4u rút phương thức gửi theo từng nước — K-Packet đi Đức và Tây Ban Nha từ tháng 1 năm 2025 — và công bố gián đoạn xuống tới mã bưu chính, còn Weverse công bố danh sách các điểm đến mà họ hoàn toàn không gửi được. Hãy xem thông báo hiện hành cho nước bạn trước khi so sánh thời gian giao dự kiến.",
+      },
+      {
+        q: "Tôi có thể đặt cùng một album ở cả hai bên không?",
+        a: "Được, và đó là một chiến thuật thật sự đối với quà kèm khi đặt trước, vì quà gắn với khoảng thời gian và thường gắn với đúng nhà bán lẻ đó chứ không gắn với album. Hãy tính nó thành hai tổng chi phí tới tận nhà chứ không phải hai giá album, và nhớ rằng quà kèm dừng khi khoảng thời gian đóng lại, không phải khi album phát hành.",
+      },
+      {
+        q: "Tôi ở Hoa Kỳ. Điều đó có đổi câu trả lời không?",
+        a: "Nó đổi một dòng. Từ ngày 2 tháng 6 năm 2025, Ktown4u áp khoản USD 12 lên hàng gửi tới Hoa Kỳ khi có thuế, phí hay các khoản thu khác của nhà nước phải trả mà chưa được trả trước bằng phương thức điện tử trước lúc giao, tính cho người nhận ngay tại cửa. Ktown4u cũng công bố cách thoát: trả trước qua hệ thống thuế nhập khẩu của UPS. Đó là một khoản cộng cố định để đem so với bất cứ khoản thuế nào Weverse cộng vào lúc bạn thanh toán.",
+      },
+      {
+        q: "Vì sao trang này so sánh ít thứ như vậy?",
+        a: "Vì phần còn lại không được công bố. Kết luận trung thực của việc đặt hai bên cạnh nhau là họ ghi lại những nửa khác nhau: Ktown4u nêu rõ thời hạn thanh toán, giờ hỗ trợ và các thay đổi về gửi hàng theo từng nước; Weverse nêu rõ phương thức thanh toán theo từng loại tiền, cách xử lý thuế và các điểm đến bị loại trừ. Chỗ nào một cửa hàng không công bố, trang này nói thẳng là vậy chứ không đi ước lượng, và đó là lý do ở đây không có xếp hạng tốc độ và không có phán quyết về giá.",
+      },
+    ],
+    labels: VI_LABELS,
+  },
+
+  {
+    locale: "th",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop หรือ Ktown4u: การเปรียบเทียบที่ไม่มีใครเขียน เพราะทั้งสองหน้าพูดถึงร้านเดียวกันคนละร้าน",
+    summary:
+      "ทั้งสองร้านรายงานต่อ Hanteo ดังนั้นคำถามเรื่องชาร์ตจึงไม่ได้ตัดสิน สิ่งที่ตัดสินคือร้านไหนมีงานที่คุณต้องการ คุณทันนาฬิกาของใคร และ—มากกว่าสองข้อนั้น—ร้านไหนเผยแพร่สิ่งที่คุณจำเป็นต้องรู้",
+    scope:
+      "การเทียบกันตัวต่อตัวของสองร้านที่แฟนในต่างประเทศเลือกจริง ๆ เมื่อจะซื้ออัลบั้มเกาหลี ประกอบขึ้นจากข้อความที่เว็บไซต์นี้ตรวจเมื่อวันที่ 21 ตุลาคม 2026 เทียบกับทะเบียนร้านที่ได้รับการรับรองของ Hanteo และประกาศของแต่ละร้านเอง จึงกำกับวันที่นั้นไว้ไม่ใช่วันนี้ การเปรียบเทียบนั้นใหม่ แต่ข้อเท็จจริงในนั้นไม่ได้ถูกตรวจซ้ำ ครอบคลุมการรายงานต่อชาร์ต รายการสินค้า กำหนดชำระเงิน ค่าใช้จ่ายปรากฏที่ไหน การปฏิเสธจัดส่ง และเวลาให้บริการ ไม่จัดอันดับทั้งสองด้วยราคาหรือความเร็ว เพราะทั้งสองอย่างไม่ใช่คุณสมบัติของร้าน ทั้งคู่ขึ้นกับประเทศของคุณ งานที่คุณจะซื้อ และสัปดาห์นั้น",
+    intro: [
+      "เว็บไซต์นี้มีคู่มือการสั่งซื้อจาก Weverse Shop และคู่มือการสั่งซื้อจาก Ktown4u แต่ทั้งสองไม่เอ่ยถึงกันเลยแม้ครั้งเดียว นั่นไม่เป็นไรสำหรับผู้อ่านที่เลือกแล้ว และไร้ประโยชน์สำหรับคนจำนวนมากกว่านั้นที่ยังไม่เลือก",
+      "คำตอบไม่ใช่คำตอบที่กระทู้ส่วนใหญ่ให้ไว้ ทั้งสองร้านได้รับการรับรองจาก Hanteo ดังนั้นข้อถกเถียงเรื่องชาร์ตที่มักใช้ปิดเรื่องนี้จึงไม่ใช่ข้อถกเถียงเลย สิ่งที่แยกสองร้านออกจากกันจริง ๆ แคบกว่าและแปลกกว่านั้น คือทั้งคู่เผยแพร่ของที่ต่างกัน และช่องว่างก็ไม่ได้อยู่ที่เดียวกัน",
+    ],
+    steps: [
+      {
+        title: "จัดการคำถามเรื่องชาร์ตก่อน เพราะเป็นข้อที่คนเข้าใจผิดกันมากที่สุด",
+        body: "ความเชื่อทั่วไปคือซื้อจากร้านทางการแล้วนับ ซื้อจากผู้ขายต่อแล้วไม่นับ สำหรับสองร้านนี้มันผิดอย่างตรงไปตรงมา และตรวจสอบได้ ไม่ใช่เรื่องของความไว้ใจ Hanteo เผยแพร่ร้าน Family ที่ได้รับการรับรองพร้อมรหัสของแต่ละร้าน Ktown4U คือ HF0082KTU001 และ Weverse คือ HF0082BTS001 Hanteo ยังกำหนดให้ร้าน Family ออนไลน์ทุกแห่งแสดงเครื่องหมาย Family ที่ท้ายหน้า โดยลิงก์กลับไปที่ hanteochart.com ดังนั้นร้านและทะเบียนยืนยันกันเองจากทั้งสองฝั่ง การรับรองออกใหม่ทุกปี โปรดตรวจรหัสเอง ไม่ใช่เอาจากหน้านี้",
+        pitfall:
+          "การเลือกร้านที่แพงกว่าเพื่อปกป้องการมีส่วนต่อชาร์ตซึ่งไม่เคยมีความเสี่ยงเลย ถ้าชาร์ตเป็นเหตุผลทั้งหมดที่คุณจ่ายแพงกว่า คุณกำลังจ่ายเงินให้สิ่งที่คุณมีอยู่แล้ว",
+        takes: "5 นาที",
+      },
+      {
+        title: "ถามว่าร้านไหนมีงานที่คุณต้องการ ก่อนจะเทียบอย่างอื่น",
+        body: "ข้อนี้ตัดสินคำสั่งซื้อมากกว่าราคา และมันไม่สมมาตร Ktown4u เป็นร้านค้าปลีกทั่วไปและมีงานจากหลายค่าย ส่วน Weverse Shop ไม่ใช่ร้านเดียวเลย มีร้าน GLOBAL และมีร้านตามภูมิภาค แต่ละแห่งมีสต็อกไม่เหมือนกัน ช่วงพรีออร์เดอร์ไม่เหมือนกัน และส่งจากที่ไม่เหมือนกัน สินค้าที่แฟนในประเทศอื่นสั่งได้อาจไม่มีอยู่ในประเทศของคุณ ดังนั้นการเปรียบเทียบจึงมักไม่ใช่ Weverse กับ Ktown4u แต่เป็น Ktown4u กับ Weverse Shop แห่งที่คุณบังเอิญอยู่",
+        pitfall:
+          "การอ่านกำหนดปิดพรีออร์เดอร์จาก Weverse Shop ของคนอื่น กำหนดปิดในร้านหนึ่งไม่บอกอะไรเกี่ยวกับร้านอื่น และของแถมผูกกับช่วงเวลานั้น ไม่ได้ผูกกับอัลบั้ม",
+        takes: "10 นาที",
+      },
+      {
+        title: "รู้ว่าคุณต้องทันนาฬิกาของใคร",
+        body: "Ktown4u เผยแพร่ไว้หนึ่งอย่าง และมันสั้น คำสั่งซื้อที่ยังไม่ชำระจะถูกยกเลิกอัตโนมัติหกชั่วโมงหลังสั่ง ลดลงจากยี่สิบสี่ชั่วโมง มีผลตั้งแต่วันที่ 19 กุมภาพันธ์ 2025 KST สำหรับแฟนที่สั่งตอนเที่ยงคืนในยุโรปหรือทวีปอเมริกา หกชั่วโมงของเกาหลีอาจผ่านไปทั้งหมดในระหว่างที่หลับ และพรีออร์เดอร์ที่สั่งแต่ไม่จ่ายก็คือพรีออร์เดอร์ที่ไม่เคยถูกสั่ง ส่วน Weverse Shop ไม่ได้เผยแพร่กำหนดเทียบเท่าในประกาศที่เว็บไซต์นี้อ่าน ซึ่งไม่เหมือนกับการไม่มีกำหนด ประเด็นในทางปฏิบัติคือความไม่สมมาตรนี้ ร้านหนึ่งบอกคุณว่าคุณมีเวลาเท่าไร",
+        pitfall:
+          "การสั่งพรีออร์เดอร์ที่ Ktown4u ไว้ก่อนเพื่อกันไว้ แล้วค่อยจ่ายตอนเช้า นั่นคือพฤติกรรมเดียวที่กฎหกชั่วโมงมีอยู่เพื่อเอาชนะ และมันเอาชนะอย่างเงียบ ๆ ไม่มีอะไรเตือนคุณ คำสั่งซื้อก็เพียงหายไป",
+        takes: "5 นาที",
+      },
+      {
+        title: "คาดไว้ว่าค่าใช้จ่ายจะปรากฏในที่ที่ต่างกัน",
+        body: "ราคาบนหน้าสินค้าของทั้งสองร้านไม่ใช่ราคาที่คุณจ่าย และจากนั้นทั้งคู่ก็แยกทาง ตั้งแต่วันที่ 3 กุมภาพันธ์ 2026 Weverse คำนวณภาษีจากที่อยู่จัดส่งและที่อยู่เรียกเก็บของคุณ คำสั่งซื้อไปเกาหลีแสดงราคารวมภาษีตลอดทั้งกระบวนการ ส่วนคำสั่งซื้อไปที่อื่นแสดงราคาไม่รวมภาษีและเพิ่มภาษีของปลายทางตอนชำระเงินเมื่อกรอกที่อยู่แล้ว ส่วนที่ Ktown4u เพิ่มมาถึงช้ากว่าและมาในรูปแบบอื่น คือขึ้นค่าส่งระหว่างประเทศ 7% มีผลตั้งแต่วันที่ 1 กุมภาพันธ์ 2026 และสำหรับการส่งไปสหรัฐ ตั้งแต่วันที่ 2 มิถุนายน 2025 เก็บค่าธรรมเนียม USD 12 เมื่อมีภาษีที่ต้องชำระและไม่ได้ชำระล่วงหน้าทางอิเล็กทรอนิกส์ โดยเก็บจากผู้รับตอนส่งมอบ",
+        pitfall:
+          "การเทียบตะกร้าสองใบ ตอนนั้น Weverse เพิ่มภาษีไปแล้ว และ Ktown4u ยังไม่เพิ่มสิบสองดอลลาร์ ดังนั้นตะกร้าที่ดูถูกกว่าตอนชำระเงินจึงไม่ใช่ตะกร้าที่ถูกกว่าตอนถึงหน้าประตูอย่างแน่นอน",
+        takes: "15 นาที",
+      },
+      {
+        title: "ตรวจว่าร้านไหนจะส่งถึงคุณ ตามรูปแบบที่แต่ละร้านบอกไว้",
+        body: "ทั้งสองปฏิเสธบางปลายทาง และประกาศด้วยวิธีที่ต่างกัน Weverse รักษารายชื่อประเทศและเขตแดนที่ส่งจากเกาหลีใต้ไปไม่ได้ ฉบับแก้ไขวันที่ 15 กรกฎาคม 2026 ระบุเมียนมา สาธารณรัฐประชาธิปไตยคองโก อิรัก อิหร่าน เลบานอน มาลี รัสเซีย อันดอร์รา ยูเครน เบลารุส อัฟกานิสถาน เนเธอร์แลนด์แอนทิลลิส อิสราเอล และตุรกี ส่วน Ktown4u ทำเป็นรายวิธีไม่ใช่รายประเทศ โดยระงับ K-Packet ไปเยอรมนีและสเปนตั้งแต่วันที่ 17 มกราคม 2025 เมื่อหน่วยไปรษณีย์ของสองประเทศนั้นออกจากข้อตกลงที่มันอาศัยอยู่ และเผยแพร่การขัดข้องลงลึกถึงรหัสไปรษณีย์แต่ละแห่ง รายชื่อหนึ่งบอกคุณว่าจะสั่งได้หรือไม่ อีกรายชื่อบอกว่าวิธีที่คุณใช้ครั้งก่อนยังมีอยู่หรือไม่",
+        pitfall:
+          "การคิดว่าประเทศที่ไม่ปรากฏในรายชื่อทั้งสองย่อมไม่มีปัญหา สิ่งที่ Ktown4u ระบุว่าจะทำเมื่อวิธีหนึ่งถูกถอนออก คือส่งอีเมลหาลูกค้าที่ได้รับผลกระทบเรื่องการย้ายไปใช้บริการอื่นและค่าใช้จ่ายส่วนเพิ่ม ดังนั้นคำสั่งซื้อที่สั่งไปแล้วอาจเปลี่ยนราคาภายหลัง",
+        takes: "10 นาที",
+      },
+      {
+        title: "อ่านรายการวิธีชำระเงิน และสังเกตว่ามีเพียงร้านเดียวที่มีรายการนั้น",
+        body: "Weverse เผยแพร่ว่าคุณจ่ายด้วยอะไรได้ แยกตามสกุลเงิน และรายการเหล่านั้นยาวไม่เท่ากัน USD ได้ PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay และ Grab Pay ส่วน JPY ได้รายการเดียวกันโดยไม่มี Grab Pay CNY ตัด PayPal ออก MXN สั้นที่สุดคือสองอย่าง ได้แก่ PayPal และ Apple Pay ทั้งคู่เป็นดิจิทัล ไม่มีทางเลือกเงินสด ส่วน KRW เพิ่มบัตรเกาหลีและกระเป๋าเงินเกาหลี ดังนั้นสกุลเงินตั้งต้นของคุณจึงกำหนดปุ่มของคุณไว้ก่อนที่คุณจะไปถึงหน้าชำระเงิน Ktown4u ไม่ได้เผยแพร่รายการที่เทียบกันได้ในประกาศของตน จึงต้องอ่านว่ารับอะไรจากหน้าชำระเงินของร้านเอง",
+        pitfall:
+          "การตั้งสกุลเงินเพราะราคา ไม่ใช่เพราะวิธีชำระเงิน ถ้าทั้งสองอย่างในรายการสั้นนั้นไม่ได้ตั้งไว้ให้คุณ ก็ไม่มีปุ่มที่สามในหน้าชำระเงิน และไม่มีทางเลี่ยงในจุดนั้น",
+        takes: "10 นาที",
+      },
+      {
+        title: "หาให้ได้ว่าคุณติดต่อใครได้เมื่อมีปัญหา และเมื่อไร",
+        body: "Ktown4u ระบุเวลาของตน ฝ่ายบริการลูกค้าเปิดวันทำการ 10:00 ถึง 17:00 KST ตั้งแต่วันที่ 1 พฤศจิกายน 2023 โดยพักกลางวัน 12:30 ถึง 13:30 นั่นคือห้าชั่วโมงครึ่งในวันทำการของเกาหลี ซึ่งสำหรับผู้อ่านที่นี่ส่วนใหญ่คือกลางดึก และมันทับซ้อนกับนาฬิกาชำระเงินหกชั่วโมง คำสั่งซื้อที่สั่งเย็นวันศุกร์ในยุโรปอาจหมดอายุก่อนที่จะมีใครนั่งอยู่ที่โต๊ะ ร้านยังหยุดทั้งการจัดส่งและการบริการในวันหยุดของเกาหลี และเผยแพร่วันที่ทุกครั้ง ส่วน Weverse Shop ไม่ได้เผยแพร่เวลาบริการไว้ที่เดียวกัน การจัดการเรื่องยกเลิกคำสั่งซื้อเป็นครึ่งที่มีบันทึกดีกว่า และมีคู่มือของตัวเองที่นี่",
+        pitfall:
+          "การถือเอาวันหยุดราชการของเกาหลีเป็นความล่าช้าของการส่งมอบ Ktown4u หยุดบริการในวันเดียวกันด้วย ดังนั้นสัปดาห์ที่คุณอยากถามเรื่องพัสดุที่สุด ก็คือสัปดาห์ที่ไม่มีใครตอบ",
+        takes: "10 นาที",
+      },
+    ],
+    faq: [
+      {
+        q: "คำสั่งซื้อที่ Ktown4u นับเข้าชาร์ตเกาหลีไหม หรือฉันต้องซื้อจาก Weverse",
+        a: "นับทั้งสองร้าน Hanteo ขึ้นทะเบียนทั้งคู่เป็นร้าน Family ที่ได้รับการรับรอง Ktown4U เป็น HF0082KTU001 และ Weverse เป็น HF0082BTS001 และกำหนดให้แต่ละร้านแสดงเครื่องหมาย Family ที่ท้ายหน้าโดยลิงก์กลับไปที่ทะเบียน การรับรองออกใหม่ทุกปี โปรดยืนยันรหัสที่ hanteochart.com แทนที่จะเอาจากที่นี่",
+      },
+      {
+        q: "ร้านไหนถูกกว่า",
+        a: "ไม่มีร้านไหน ถ้าถือเป็นคุณสมบัติของร้าน อัลบั้มจะมีราคาเท่าไรสำหรับคุณขึ้นกับประเทศของคุณ งานที่ออก และสัปดาห์นั้น Weverse เพิ่มภาษีของปลายทางคุณตอนชำระเงิน ส่วน Ktown4u ขึ้นค่าส่งระหว่างประเทศ 7% ในเดือนกุมภาพันธ์ 2026 และเพิ่ม USD 12 สำหรับการส่งในสหรัฐเมื่อไม่ได้ชำระภาษีล่วงหน้า โปรดเทียบราคารวมถึงมือที่อยู่ของคุณในวันนั้น ไม่ใช่เทียบหน้าสินค้าสองหน้า",
+      },
+      {
+        q: "ร้านไหนส่งเร็วกว่า",
+        a: "ตอบแบบทั่วไปไม่ได้ และคำถามที่ตอบได้สำคัญกว่า คือยังมีวิธีใดวิ่งไปถึงประเทศของคุณ Ktown4u ถอนวิธีจัดส่งเป็นรายประเทศ เช่น K-Packet ไปเยอรมนีและสเปนตั้งแต่เดือนมกราคม 2025 และเผยแพร่การขัดข้องลงถึงรหัสไปรษณีย์ ขณะที่ Weverse เผยแพร่รายชื่อปลายทางที่ส่งไปไม่ได้เลย โปรดดูประกาศปัจจุบันของประเทศคุณก่อนเทียบเวลาส่งมอบ",
+      },
+      {
+        q: "ฉันสั่งอัลบั้มเดียวกันจากทั้งสองร้านได้ไหม",
+        a: "ได้ และเป็นกลยุทธ์ที่ใช้ได้จริงสำหรับของแถมพรีออร์เดอร์ ซึ่งผูกกับช่วงเวลาและมักผูกกับร้านค้าปลีกรายนั้นมากกว่าผูกกับอัลบั้ม โปรดคิดเป็นราคารวมถึงมือสองรายการ ไม่ใช่ราคาอัลบั้มสองราคา และจำไว้ว่าของแถมหยุดเมื่อช่วงเวลาปิด ไม่ใช่เมื่ออัลบั้มออก",
+      },
+      {
+        q: "ฉันอยู่ในสหรัฐ นั่นเปลี่ยนคำตอบไหม",
+        a: "เปลี่ยนไปหนึ่งบรรทัด ตั้งแต่วันที่ 2 มิถุนายน 2025 Ktown4u เก็บค่าธรรมเนียม USD 12 สำหรับการส่งไปสหรัฐเมื่อมีภาษี อากร หรือค่าธรรมเนียมของรัฐอื่นที่ต้องชำระและไม่ได้ชำระล่วงหน้าทางอิเล็กทรอนิกส์ก่อนการส่งมอบ โดยเรียกเก็บจากผู้รับที่หน้าประตู Ktown4u เผยแพร่ทางออกไว้ด้วย คือชำระล่วงหน้าผ่านระบบภาษีนำเข้าของ UPS นั่นเป็นส่วนเพิ่มแบบคงที่ที่ควรนำไปเทียบกับภาษีที่ Weverse เพิ่มตอนคุณชำระเงิน",
+      },
+      {
+        q: "ทำไมหน้านี้เทียบของน้อยเหลือเกิน",
+        a: "เพราะส่วนที่เหลือไม่ได้ถูกเผยแพร่ ข้อค้นพบที่ซื่อตรงจากการวางสองร้านไว้ข้างกันคือทั้งคู่บันทึกคนละครึ่ง Ktown4u ระบุกำหนดชำระเงิน เวลาให้บริการ และการเปลี่ยนแปลงการจัดส่งรายประเทศ ส่วน Weverse ระบุวิธีชำระเงินตามสกุลเงิน การคิดภาษี และปลายทางที่ยกเว้น ตรงที่ร้านไม่ได้เผยแพร่ หน้านี้ก็บอกไปตามนั้นแทนที่จะประมาณเอา นี่จึงเป็นเหตุผลที่ไม่มีอันดับความเร็วและไม่มีคำตัดสินเรื่องราคา",
+      },
+    ],
+    labels: TH_LABELS,
+  },
+
+  {
+    locale: "fil",
+    slug: "weverse-shop-vs-ktown4u",
+    sourceChecked: "2026-10-21",
+    sourceText: "da335aae003a",
+    translated: "2026-10-27",
+    review: "machine-assisted",
+    title: "Weverse Shop o Ktown4u: ang paghahambing na hindi isinusulat ninuman, dahil tungkol sa isang tindahan ang bawat isa sa dalawang pahina",
+    summary:
+      "Pareho silang nag-uulat sa Hanteo, kaya hindi ito pinapasya ng tanong tungkol sa tsart. Ang nagpapasya ay kung aling tindahan ang may release mo, kaninong orasan ang kaya mong abutin, at — higit sa alinman sa dalawa — alin ang naglalathala ng bagay na kailangan mong malaman.",
+    scope:
+      "Isang tapat-tapatan sa dalawang tindahang talagang pinipilian ng isang tagahanga sa ibang bansa para sa isang album na Koreano. Binuo ito mula sa mga pahayag na tiningnan ng sayt na ito noong 21 Oktubre 2026 laban sa talaan ng mga tindahang sertipikado ng Hanteo at sa sariling pabatid ng bawat tindahan, at iyon ang dahilan kung bakit taglay nito ang petsang iyon at hindi ang ngayon: bago ang paghahambing, hindi muling tiningnan ang mga katotohanan dito. Sinasaklaw nito ang pag-uulat sa tsart, ang katalogo, ang mga taning sa bayad, kung saan lumilitaw ang gastos, ang mga pagtangging magpadala at ang oras ng suporta. Hindi nito sila niraranggo ayon sa presyo o bilis, dahil wala sa dalawang iyon ang katangian ng tindahan — pareho silang nakadepende sa bansa mo, sa release mo at sa linggo.",
+    intro: [
+      "May gabay ang sayt na ito sa pag-order mula sa Weverse Shop at may gabay sa pag-order mula sa Ktown4u, at ni minsan ay hindi binabanggit ng isa ang isa. Ayos lang iyon para sa mambabasang nakapili na, at walang silbi sa mas marami pang hindi pa nakapili.",
+      "Hindi ang sagot ang ibinibigay ng karamihan sa mga usapan. Sertipikado ng Hanteo ang dalawang tindahan, kaya ang argumento tungkol sa tsart na karaniwang nagwawakas nito ay hindi man lamang argumento. Ang talagang naghihiwalay sa kanila ay mas makitid at mas kakatwa: naglalathala sila ng magkaibang bagay, at hindi nasa parehong lugar ang mga butas.",
+    ],
+    steps: [
+      {
+        title: "Tapusin muna ang tanong tungkol sa tsart, dahil iyon ang namamali sa mga tao",
+        body: "Ang karaniwang paniniwala ay binibilang ang pagbili sa opisyal na tindahan at hindi binibilang ang pagbili sa isang muling nagtitinda. Para sa dalawang ito, mali lamang iyon, at matitingnan ito at hindi usapin ng pagtitiwala. Naglalathala ang Hanteo ng mga sertipikadong tindahang Family nito na may kodigo ang bawat isa: ang Ktown4U ay HF0082KTU001 at ang Weverse ay HF0082BTS001. Hinihingi rin ng Hanteo sa bawat tindahang Family na nasa linya na itanghal ang tanda ng Family sa paanan nito, na nakakawing pabalik sa hanteochart.com, kaya pinapatotohanan ng tindahan at ng talaan ang isa't isa mula sa dalawang dulo. Muling ipinapalabas ang sertipikasyon taon-taon, kaya tingnan ang kodigo at huwag kunin ito sa pahinang ito.",
+        pitfall:
+          "Ang pagpili sa mas mahal na tindahan upang ipagtanggol ang isang ambag sa tsart na hindi kailanman nanganib. Kung ang tsart ang buong dahilan kung bakit mas malaki ang binabayad mo, nagbabayad ka para sa isang bagay na taglay mo na.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Itanong kung aling tindahan ang may release mo bago mo ihambing ang anupaman",
+        body: "Mas marami pang order ang pinapasya nito kaysa sa presyo, at hindi ito simetriko. Isang pangkalahatang tindahan ang Ktown4u at may dala nitong mga release sa kabila ng mga label. Hindi talaga isang tindahan ang Weverse Shop: may tindahang GLOBAL at may mga tindahang pangrehiyon, magkaiba ang kanilang stock, magkaiba ang kanilang panahon ng pre-order at magkaiba ang pinagpapadalhan nila. Ang isang bagay na na-order ng isang tagahanga sa ibang bansa ay maaaring wala sa bansa mo. Kaya madalas na hindi Weverse laban sa Ktown4u ang paghahambing — Ktown4u laban sa anumang Weverse Shop na kinaroroonan mo.",
+        pitfall:
+          "Ang pagbasa ng taning sa pre-order sa Weverse Shop ng iba. Walang sinasabi sa iyo ang isang hangganan sa isang tindahan tungkol sa mga iba, at nakatali ang mga kasama sa panahon at hindi sa album.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Alamin kaninong orasan ang kailangan mong abutin",
+        body: "Isa ang inilalathala ng Ktown4u at maikli ito. Awtomatikong kinakansela ang hindi nabayarang order anim na oras matapos itong gawin — pinaikli mula dalawampu't apat, bisa noong 19 Pebrero 2025 KST. Para sa tagahangang nag-oorder sa hatinggabi sa Europa o sa mga Amerika, maaaring lumipas nang buo ang anim na oras ng Korea habang natutulog, at ang pre-order na nagawa ngunit hindi nabayaran ay pre-order na hindi kailanman nagawa. Hindi naglalathala ang Weverse Shop ng katumbas na taning sa mga pabatid na binabasa ng sayt na ito, at hindi iyon katumbas ng walang taning. Ang praktikal na punto ay ang hindi pagkakapantay: isang tindahan ang nagsasabi sa iyo kung gaano katagal ang mayroon ka.",
+        pitfall:
+          "Ang paggawa ng pre-order sa Ktown4u upang masigurado ito at pagbabayad kinabukasan ng umaga. Iyon ang isang nakagawian na umiiral ang tuntunin ng anim na oras upang talunin, at tinatalo niya iyon nang tahimik — walang nagbababala sa iyo, basta na lamang wala na ang order.",
+        takes: "5 minuto",
+      },
+      {
+        title: "Asahan na lilitaw ang gastos sa magkaibang lugar",
+        body: "Hindi ang presyo sa pahina ng produkto ng dalawang tindahan ang binabayaran mo, at pagkatapos niyon ay naghihiwalay sila. Mula 3 Pebrero 2026 ay kinakalkula ng Weverse ang buwis mula sa adres mo ng pagpapadala at ng pagbili: ang mga order patungong Korea ay nagtatanghal ng presyong may kasamang buwis sa buong proseso, at ang mga order patungo sa iba pa ay nagtatanghal ng presyong walang buwis at idinadagdag ang buwis ng patutunguhan sa kasa kapag naipasok na ang isang adres. Mas huling dumarating ang mga dagdag ng Ktown4u at iba ang paraan — itinaas nito ang pandaigdigang pagpapadala ng 7% na may bisa noong 1 Pebrero 2026, at para sa mga padalang papuntang Estados Unidos ay ipinapataw nito mula 2 Hunyo 2025 ang isang USD 12 kapag may buwis na dapat bayaran at hindi ito nabayaran nang patiuna sa elektronikong paraan, kinokolekta sa tatanggap sa oras ng paghahatid.",
+        pitfall:
+          "Ang paghahambing ng dalawang kariton. Naidagdag na ng Weverse ang buwis nito sa puntong iyon at hindi pa naidagdag ng Ktown4u ang labindalawang dolyar nito, kaya hindi maaasahang ang karitong mukhang mas mura sa kasa ang nagkakahalaga ng mas mababa sa pintuan.",
+        takes: "15 minuto",
+      },
+      {
+        title: "Tingnan kung alin ang magpapadala sa iyo, sa paraang sinasabi iyon ng bawat isa",
+        body: "Pareho silang tumatanggi sa ilang patutunguhan at magkaiba ang paraan ng pag-anunsyo nila. Nagtataglay ang Weverse ng listahan ng mga bansa at rehiyong hindi nito mapapadalhan mula sa Timog Korea; pinapangalanan ng rebisyon noong 15 Hulyo 2026 ang Myanmar, ang Demokratikong Republika ng Congo, ang Iraq, ang Iran, ang Lebanon, ang Mali, ang Russia, ang Andorra, ang Ukraine, ang Belarus, ang Afghanistan, ang Antilles ng Olanda, ang Israel at ang Turkey. Ginagawa iyon ng Ktown4u ayon sa paraan at hindi ayon sa bansa: sinuspinde nito ang K-Packet patungong Alemanya at Espanya mula 17 Enero 2025 nang lisanin ng mga operador ng koreo roon ang kasunduang pinapatakbo nito, at naglalathala ito ng mga abala hanggang sa bawat kodigo ng koreo. Sinasabi sa iyo ng isang listahan kung maaari ka man lamang mag-order; sinasabi ng isa kung umiiral pa ang paraang ginamit mo noong huli.",
+        pitfall:
+          "Ang pag-akalang malinaw ang isang bansang hindi lumilitaw sa alinman sa dalawang listahan. Ang sinasabing pamamaraan ng Ktown4u kapag may paraang inaalis ay ang pag-email sa mga naapektuhang kostumer tungkol sa paglipat sa ibang serbisyo at sa dagdag na gastos — kaya maaaring magbago ng presyo pagkatapos ang isang order na nagawa na.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Basahin ang mga listahan ng pagbabayad, at pansinin na isang tindahan lamang ang may mga iyon",
+        body: "Naglalathala ang Weverse ng puwede mong ipambayad, ayon sa salapi, at hindi pareho ang haba ng mga listahan. Nakukuha ng USD ang PayPal, Eximbay, Alipay+, Apple Pay, WeChat Pay at Grab Pay. Nakukuha ng JPY ang listahang iyon nang walang Grab Pay. Nawawala sa CNY ang PayPal. Ang MXN ang pinakamaikli na may dalawa — PayPal at Apple Pay, pawang digital, walang pagpipiliang salaping papel. Nagdadagdag ang KRW ng mga kard na Koreano at ng mga pitakang Koreano. Ang nakatakdang salapi mo kung gayon ang nagpapasya sa mga pindutan mo bago mo pa marating ang kasa. Hindi naglalathala ang Ktown4u ng mapapantayang listahan sa mga pabatid nito, kaya kailangang basahin sa sariling kasa nito ang tinatanggap niya.",
+        pitfall:
+          "Ang pagtatakda ng salapi para sa presyo at hindi para sa paraan ng pagbabayad. Kung wala ni isa sa dalawa sa isang maikling listahan ang nakahanda para sa iyo, walang pangatlong pindutan sa kasa at wala nang paraan sa puntong iyon.",
+        takes: "10 minuto",
+      },
+      {
+        title: "Alamin kung sino ang maaabot mo kapag may masama, at kailan",
+        body: "Sinasabi ng Ktown4u ang oras nito: serbisyo sa kostumer tuwing araw ng trabaho mula 10:00 hanggang 17:00 KST mula 1 Nobyembre 2023, na may pananghalian mula 12:30 hanggang 13:30. Limang oras at kalahati iyon sa mga araw ng trabaho sa Korea, na para sa halos lahat ng mambabasa dito ay hatinggabi, at nagsasalubong ito sa orasan ng pagbabayad na anim na oras — ang isang order na ginawa sa gabi ng Biyernes sa Europa ay maaaring mag-expire bago may taong nasa mesa. Ipinapatigil din nito ang pagpapadala at ang suporta tuwing pista opisyal ng Korea at inilalathala nito ang mga petsa sa bawat pagkakataon. Hindi inilalathala ng Weverse Shop ang oras ng suporta sa parehong lugar; ang pamamaraan nito sa pagkansela ang kalahating mas naitala at may sariling gabay dito.",
+        pitfall:
+          "Ang pagtrato sa isang pista opisyal ng Korea bilang pagkaantala sa paghahatid. Ipinapatigil ng Ktown4u ang suporta sa parehong mga araw, kaya ang linggong pinakagusto mong magtanong tungkol sa isang pakete ay ang linggong walang sumasagot.",
+        takes: "10 minuto",
+      },
+    ],
+    faq: [
+      {
+        q: "Binibilang ba sa mga tsart na Koreano ang isang order sa Ktown4u, o kailangan kong mamili sa Weverse?",
+        a: "Binibilang ang dalawa. Inililista ng Hanteo ang dalawa bilang sertipikadong tindahang Family — ang Ktown4U bilang HF0082KTU001 at ang Weverse bilang HF0082BTS001 — at hinihingi sa bawat isa na itanghal ang tanda ng Family sa paanan nito na nakakawing pabalik sa talaan. Muling ipinapalabas ang sertipikasyon taon-taon, kaya tiyakin ang kodigo sa hanteochart.com at huwag itong kunin dito.",
+      },
+      {
+        q: "Alin ang mas mura?",
+        a: "Wala, kung katangian ito ng tindahan. Ang halaga ng album sa iyo ay nakadepende sa bansa mo, sa release at sa linggo: idinadagdag ng Weverse ang buwis ng patutunguhan mo sa kasa, itinaas ng Ktown4u ang pandaigdigang pagpapadala ng 7% noong Pebrero 2026 at nagdadagdag ng USD 12 sa mga paghahatid sa Estados Unidos kapag hindi nabayaran nang patiuna ang buwis. Ihambing ang kabuuang gastos hanggang sa adres mo sa araw na iyon, at hindi ang dalawang pahina ng produkto.",
+      },
+      {
+        q: "Alin ang mas mabilis magpadala?",
+        a: "Hindi masasagot sa pangkalahatan, at mas mahalaga ang tanong na masasagot: aling mga paraan ang tumatakbo pa patungo sa bansa mo. Inaalis ng Ktown4u ang mga paraan ng pagpapadala ayon sa bansa — K-Packet patungong Alemanya at Espanya mula Enero 2025 — at naglalathala ng mga abala hanggang sa kodigo ng koreo, samantalang naglalathala ang Weverse ng listahan ng mga patutunguhang hindi talaga nito mapapadalhan. Tingnan ang kasalukuyang pabatid para sa bansa mo bago maghambing ng tantiya sa paghahatid.",
+      },
+      {
+        q: "Puwede ko bang i-order ang parehong album sa dalawa?",
+        a: "Puwede, at tunay na estratehiya iyon para sa mga kasama sa pre-order, na nakatali sa panahon at madalas sa partikular na tindahan at hindi sa album. Ihambing ito bilang dalawang kabuuang gastos hanggang sa pintuan at hindi bilang dalawang presyo ng album, at tandaan na humihinto ang mga kasama kapag nagsara ang panahon, at hindi kapag inilabas ang album.",
+      },
+      {
+        q: "Nasa Estados Unidos ako. Nagbabago ba niyan ang sagot?",
+        a: "Nagbabago ang isang linya nito. Mula 2 Hunyo 2025 ay ipinapataw ng Ktown4u ang isang USD 12 sa mga padalang papuntang Estados Unidos kapag may buwis, tubos o ibang bayarin ng pamahalaang dapat bayaran at hindi nabayaran nang patiuna sa elektronikong paraan bago ang paghahatid, isinasalang sa tatanggap sa pintuan. Inilalathala rin ng Ktown4u ang daang labas: magbayad nang patiuna sa pamamagitan ng sistema ng buwis sa pag-angkat ng UPS. Isa iyong patag na dagdag na ihahambing sa anumang buwis na idinadagdag ng Weverse sa kasa mo.",
+      },
+      {
+        q: "Bakit kakaunti lamang ang inihahambing ng pahinang ito?",
+        a: "Dahil hindi inilathala ang iba pa. Ang tapat na natuklasan sa paglalagay sa kanila nang katabi ay nagtatala sila ng magkaibang kalahati: sinasabi ng Ktown4u ang taning nito sa bayad, ang oras nito ng suporta at ang mga pagbabago nito sa pagpapadala ayon sa bansa; sinasabi ng Weverse ang mga paraan nito ng pagbabayad ayon sa salapi, ang pamamaraan nito sa buwis at ang mga pinagbabawalan nito sa pagpapadala. Kapag may bagay na hindi inilalathala ang isang tindahan, sinasabi iyon ng pahinang ito at hindi tinatantiya, at iyon ang dahilan kung bakit walang ranggo sa bilis at walang hatol sa presyo.",
       },
     ],
     labels: FIL_LABELS,

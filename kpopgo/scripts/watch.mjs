@@ -388,6 +388,56 @@ const DRIFT_LIMIT = 0.97;
  * it, it cannot reach any other source — and the next page needing one has
  * to state its own reason here, with the diff that justified it.
  */
+/**
+ * Sources where the payload is not the page, declared per host.
+ *
+ * `visibleText` gives almost nothing for a client-rendered page, so the
+ * comparison falls back to the payload — and on a Next.js app that payload
+ * carries the CSS framework's class names and whatever marketing the page
+ * also ships. NOL World redesigned in November 2026 and the sweep reported
+ * **38% of its FAQ reworded**. Diffed token by token, nearly all of it was
+ * `laptop:px_toplevelinlinepadding` giving way to `min-h-52`, plus a new
+ * promotions block. Not one FAQ had gone: the page still carries 114 of them
+ * across the ten categories, `play-stay` and `nol-facepass` included.
+ *
+ * That matters more here than anywhere else on this site, because **eight
+ * guides cite this one URL** as their evidence. A warning that fires on every
+ * redeploy is a warning those eight would learn to skip, and the event that
+ * should fire — an FAQ entry disappearing — looks identical to it.
+ *
+ * So for this host the comparison reads the FAQ index out of the payload
+ * instead: every entry's title and category, sorted, so a reordering is not a
+ * change and an entry leaving is. Scoped to the host that earned it; the
+ * blast radius was measured before it was written, and this is the only
+ * source of the 41 fingerprinted whose text comes from the payload at all.
+ */
+const FOCUS = [
+  {
+    host: "world.nol.com/en/my-info/faqs",
+    why: "the FAQ index, rather than the framework classes around it",
+    extract(body) {
+      const seen = new Set();
+      // Each FAQ ships as MDX frontmatter inside the payload.
+      for (const m of body.matchAll(
+        /\\"title\\":\\"((?:[^\\"]|\\\\.)*)\\",\\"category\\":\\"([a-z0-9-]+)\\"/g,
+      )) {
+        seen.add(`${m[2]} :: ${m[1]}`.toLowerCase());
+      }
+      return [...seen].sort().join(" | ");
+    },
+  },
+];
+
+/** The focused text for a source that declares one, else null. */
+function focusedText(url, body) {
+  for (const f of FOCUS) {
+    if (!url.includes(f.host)) continue;
+    const out = f.extract(body);
+    return out && out.length > 0 ? out : null;
+  }
+  return null;
+}
+
 const CHROME = [
   {
     host: "sg.finance.yahoo.com",
@@ -484,10 +534,12 @@ async function links(urls) {
       );
     }
 
-    let text = stripChrome(url, visibleText(r.body));
+    // A source that declares a focus is compared on that and nothing else.
+    let text = focusedText(url, r.body);
+    if (text === null) text = stripChrome(url, visibleText(r.body));
     // A client-rendered page gives up almost nothing to the markup pass, so
     // fall back to its payload rather than skipping the comparison.
-    if (text.split(" ").filter(Boolean).length < 200) {
+    if (focusedText(url, r.body) === null && text.split(" ").filter(Boolean).length < 200) {
       const fromPayload = payloadText(r.body);
       if (fromPayload.split(" ").filter(Boolean).length > text.split(" ").filter(Boolean).length) {
         text = fromPayload;

@@ -982,6 +982,64 @@ among the three — and **there is no general parking during events**, out of 63
 spaces total. Of its 4,507 seats, 1,324 are retractable, which is why even the
 floor plan is substantially the promoter's.
 
+## The week the watcher earned its keep, and nearly cried wolf
+
+On 11 November 2026 the sweep reported seven sources drifting — the first real
+test of it since the retry and chrome fixes. All seven were false, and finding
+that out took reading rather than reasoning.
+
+**NOL World's FAQ came back 38% reworded, 4,062 words down to 3,420.** Eight
+guides cite that one URL as their evidence — facepass, eKYC, cancellation,
+mobile ticket, Play&Stay, fees, account recovery and the queue — so this is
+the single alarm on this site that most deserved to be real.
+
+Diffed token by token, almost all of it was a CSS framework swap:
+`laptop:px_toplevelinlinepadding` and `bd-t-c_semantic.line.neutralweak1`
+giving way to `min-h-52` and `border-b border-transparent`, plus a new
+promotions block on the same payload. A handful of real FAQ phrases appeared
+to vanish too, which is what made this worth chasing rather than dismissing —
+and each turned out to be present under a different shape. `Play and Stay`
+reads zero times because the category slug is `play-stay`, which the page
+carries **34** times. The facepass retention claim, the one the guide calls
+the part most worth knowing, still matches word for word: the guide says the
+data is "retained for one year from the point of cancellation" and the live
+FAQ says "retained for one year after consent withdrawal".
+
+Nothing had gone. The page still carries 110 FAQ entries across ten
+categories, `play-stay`, `nol-facepass`, `verified-member` and
+`cancellation-refund` among them.
+
+**The cause is that the payload is not the page.** `visibleText` gives almost
+nothing for a client-rendered page, so the comparison falls back to the
+payload — and a Next.js payload carries the framework's class names. Every
+redeploy with a design change then reads as a content change, forever, on the
+one source eight guides depend on.
+
+`FOCUS` in `scripts/watch.mjs` fixes it per host, the way `CHROME` does: for
+this URL the comparison reads the FAQ index out of the payload — every
+entry's title and category, sorted, so a reordering is not a change and an
+entry leaving is. That is a better signal than the old one, not merely a
+quieter one: it fires on exactly the event that would break a citation.
+
+**The blast radius was measured before the hook was written.** Of the 41
+fingerprinted sources, scanning each stored baseline for CSS-shaped tokens
+found **one** above two percent — this one. So the fix is per-source rather
+than a change to the shared extractor, and no other baseline moved.
+
+**The other six were one sentence in a footer.** Six Ktown4u notices each
+reported 5–6%. Fetched and diffed all six: identical in every case, `k-pop
+global online offline integrated platform` out and `cosmetics` in. A company
+tagline that sits on every notice page. The notices' own content — payment
+deadlines, shipping, fees — did not move.
+
+Those six were re-baselined after reading all six rather than on the strength
+of reading one, which is what `--record` asks for. Surgically, too: the six
+entries were deleted from `content/source-fingerprints.json` and
+`--record-new` filled them, so the other 35 were never rewritten. That is how
+to re-baseline a known subset without the blanket run this file spends five
+paragraphs warning against. Two consecutive sweeps afterwards: 0 needing
+action, 0 worth a look.
+
 ## TicketLink, and what a guide may not say
 
 TicketLink is the fourth Korean ticketing platform and the one the English

@@ -5,7 +5,6 @@ import { ObjectMark, StageScene, CrowdScene } from "@/components/Objects";
 import { Artwork } from "@/components/Artwork";
 import { VerifiedBadge } from "@/components/Badges";
 import { SHELF_LIFE } from "@/lib/freshness";
-import { AdSlot } from "@/components/AdSlot";
 
 /**
  * The status this page shows is derived from today's date (lib/freshness.ts),

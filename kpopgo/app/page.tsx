@@ -3,6 +3,7 @@ import Link from "next/link";
 import { guides, glossary, platformList } from "@/content/guides";
 import { ObjectMark, StageScene, CrowdScene } from "@/components/Objects";
 import { Artwork } from "@/components/Artwork";
+import { AdSlot } from "@/components/AdSlot";
 import { VerifiedBadge } from "@/components/Badges";
 import { SHELF_LIFE } from "@/lib/freshness";
 
@@ -258,6 +259,15 @@ export default function Home() {
               </li>
             ))}
           </ul>
+
+          {/* The position the ten locale hubs already use: directly below the
+              guide list, inside the same wrap. The English home was the only
+              list page without one, which was an omission rather than a
+              decision — this file has imported AdSlot since a8cd51b without
+              ever rendering it. It sits well below the hero, the proof band
+              and the whole guide list, so the first thing a reader sees is
+              still the site rather than an advertisement. */}
+          <AdSlot placement="list" />
         </div>
       </section>
 

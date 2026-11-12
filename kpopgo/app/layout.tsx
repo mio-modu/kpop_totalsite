@@ -135,6 +135,21 @@ export default function RootLayout({
           title={`${site.name} — guides, newest verification first`}
           href="/feed.xml"
         />
+        {/* AdSense's loader, in the head because that is where its own
+            verification instructions put it: "copy the code and paste it
+            between the <head></head> tags of each page". It served from the
+            body before and would have worked for ad delivery, but site
+            verification is a crawler looking for a snippet where it was told
+            to look, and this is not the step to be clever on. `async` keeps
+            it off the render path, so the position costs nothing. Renders
+            only once a publisher id is configured. */}
+        {adsConfigured ? (
+          <script
+            async
+            crossOrigin="anonymous"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ads.client}`}
+          />
+        ) : null}
         {/* Applied before paint so a pinned theme never flashes the wrong one. */}
         <script
           dangerouslySetInnerHTML={{
@@ -156,13 +171,6 @@ export default function RootLayout({
         <Nav />
         <main id="main">{children}</main>
         <Footer />
-        {adsConfigured ? (
-          <script
-            async
-            crossOrigin="anonymous"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ads.client}`}
-          />
-        ) : null}
         {/*
           Measurement, behind one gate.
 

@@ -80,9 +80,16 @@ export const site = {
    * Naver is here because this site's subject is Korean even though its
    * readers are not: a fan searching 본인인증 or 선예매 in Korean reaches Naver,
    * and Naver's index is not Google's.
+   *
+   * Bing is here for the same reason one step further out: its index is not
+   * Google's either, and it is also DuckDuckGo's and Ecosia's. For a domain
+   * young enough that Google has not placed it yet, the cheapest search
+   * traffic available is the engine that indexes faster, and registering for
+   * it should not wait on a deploy.
    */
   verifyGoogle: process.env.NEXT_PUBLIC_VERIFY_GOOGLE ?? "",
   verifyNaver: process.env.NEXT_PUBLIC_VERIFY_NAVER ?? "",
+  verifyBing: process.env.NEXT_PUBLIC_VERIFY_BING ?? "",
 } as const;
 
 /**

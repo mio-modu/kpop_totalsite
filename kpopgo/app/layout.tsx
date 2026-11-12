@@ -97,11 +97,21 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   // Rendered only once a token exists. Next drops an undefined entry, so an
   // unset variable leaves no tag rather than an empty one.
+  //
+  // Google has a field of its own; everything else shares `other`, so the
+  // entries are collected into one object rather than spread in separately.
+  // Two spreads that each carry `other` do not merge — the second replaces
+  // the first — so adding Bing the obvious way would have silently deleted
+  // the Naver tag on any deployment that had set both, and nothing renders
+  // an error for a verification tag that is simply absent.
   verification: {
     ...(site.verifyGoogle ? { google: site.verifyGoogle } : {}),
-    ...(site.verifyNaver
-      ? { other: { "naver-site-verification": site.verifyNaver } }
-      : {}),
+    ...(() => {
+      const other: Record<string, string> = {};
+      if (site.verifyNaver) other["naver-site-verification"] = site.verifyNaver;
+      if (site.verifyBing) other["msvalidate.01"] = site.verifyBing;
+      return Object.keys(other).length ? { other } : {};
+    })(),
   },
 };
 

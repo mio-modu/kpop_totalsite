@@ -172,6 +172,16 @@ export default async function TranslatedGuide({
         ))}
       </div>
 
+      {/* The same slot the English template carries in the same place, below
+          the FAQ and above the sources. These pages had only the mid-article
+          one, so every translated guide — now the large majority of the site —
+          ran at half the inventory of its English original for no reason
+          anybody wrote down. Below all the content is also the position that
+          costs a reader the least. */}
+      <div className="wrap">
+        <AdSlot placement="foot" />
+      </div>
+
       {/* The sources stay in their original language on purpose: a citation
           is only checkable in the words the source actually uses. */}
       <div className="wrap mt-14">

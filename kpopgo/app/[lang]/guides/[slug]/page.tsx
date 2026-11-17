@@ -163,9 +163,28 @@ export default async function TranslatedGuide({
 
       <AdSlot placement="article" />
 
+      {/* `min-w-0` on the card, and it is load-bearing rather than tidy.
+          A FAQ answer is written from a source, and a source sometimes
+          answers with an address: `www.ticketlink.co.kr/global/en/home,` is
+          36 characters with no break opportunity in it. A grid item's
+          `min-width` defaults to `auto`, which floors the column at its
+          widest item's min-content — so that one URL set all six Spanish
+          cards to 306px where 288 was available and the page scrolled
+          sideways by 2px at 320. `check-layout.mjs` reports the Spanish
+          guide specifically because `riskiestPerLocale` picks the page
+          holding each locale's longest unbreakable run, and this URL is it.
+
+          The fix is not to make the text break anywhere. `[lang=es]` sets
+          `overflow-wrap: break-word` with `hyphens: auto` on purpose, since
+          Spanish, German and Indonesian hyphenate and that reads better than
+          breaking mid-word — and at (0,2,0) it beats any plain class written
+          to override it, which is the first attempt at this and the reason
+          the note is here. `break-word` already wraps the URL on screen; what
+          it does not do is count toward the intrinsic size. So the thing to
+          remove is the propagation, not the typography. */}
       <div className="wrap mt-14 grid gap-4">
         {tr.faq.map((item, i) => (
-          <div key={i} className="obj p-5 sm:p-6">
+          <div key={i} className="obj min-w-0 p-5 sm:p-6">
             <h3 className="pm">{item.q}</h3>
             <p className="t-sm mt-3">{item.a}</p>
           </div>

@@ -298,7 +298,7 @@ export default async function GuidePage({
         <p className="han-m dim mt-3">자주 나오는 질문</p>
         <div className="mt-8 grid gap-3">
           {guide.faq.map((item) => (
-            <details key={item.q} className="obj group p-5 sm:p-6">
+            <details key={item.q} className="obj group min-w-0 p-5 sm:p-6">
               <summary className="ps flex cursor-pointer items-start justify-between gap-4 marker:content-none [&::-webkit-details-marker]:hidden">
                 {item.q}
                 <svg

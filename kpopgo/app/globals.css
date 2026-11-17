@@ -988,15 +988,28 @@ h4 {
      article down is a layout shift, and layout shift is something Google
      ranks on. On a site whose only channel is search, an unreserved slot
      spends search position to buy impressions. */
+  /* The box is invisible until an ad fills it, and the same size either way.
+     AdSense builds its frame before serving is enabled for a site and paints
+     it white, so the border, the plate and the word ADVERTISEMENT were
+     framing a blank rectangle on a dark page. Everything here is a paint
+     change — `transparent`, `opacity`, `visibility` — never `display` or a
+     height,
+     because collapsing the box on reveal is the layout shift the slot
+     reserves its height to avoid. `.is-filled` is set in AdSlot.tsx from
+     `data-ad-status`. */
   .ad-slot {
     display: block;
     margin-block: 36px;
     padding: 14px;
-    border: 1px solid var(--rule-soft);
+    border: 1px solid transparent;
     border-radius: 18px;
-    background: var(--paper-2);
+    background: transparent;
     min-height: 308px;
     overflow: hidden;
+  }
+  .ad-slot.is-filled {
+    border-color: var(--rule-soft);
+    background: var(--paper-2);
   }
   @media (min-width: 760px) {
     .ad-slot {
@@ -1006,9 +1019,23 @@ h4 {
   .ad-label {
     margin-bottom: 10px;
     letter-spacing: 0.14em;
+    visibility: hidden;
+  }
+  .ad-slot.is-filled .ad-label {
+    visibility: visible;
   }
   .ad-slot .adsbygoogle {
     min-height: 250px;
+  }
+  /* `opacity`, not `visibility`. AdSense writes `visibility: visible` inline
+     on the host div it builds inside the `<ins>`, and a descendant setting
+     that un-hides itself out of an inherited `visibility: hidden` — which it
+     did here, putting the frame back on screen under a container that
+     measured as hidden. Opacity does not inherit that way and no child can
+     undo it. */
+  .ad-slot:not(.is-filled) .adsbygoogle {
+    opacity: 0;
+    pointer-events: none;
   }
 
   /* The cut-out renders carry no baked shadow — a shadow the render chose

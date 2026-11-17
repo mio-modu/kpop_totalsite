@@ -1479,6 +1479,56 @@ Do not apply for AdSense before the guides are verified and there is real
 search data — a rejection carries a cooldown that makes a premature
 application the slower path.
 
+**"Renders nothing until its ids are set" had a hole, and the hole is the
+weeks the first sentence of this section is about.** Ids configured and
+serving not yet enabled is a third state, and `adEnabled` cannot see it: the
+site sat at `준비 중 · 사이트의 광고 게재 가능 여부 검토 중` in AdSense while
+every page carried the ad code, which is what that review needs to see. Google
+builds its frame regardless and paints it white, so a dark page showed a 280px
+white rectangle under the word ADVERTISEMENT, mid-article, on the exact pages
+being reviewed. The label is the worse half: a notice saying an advertisement
+is here, over nothing, on a site whose product is being accurate.
+
+So the chrome and the unit are hidden until `data-ad-status` reads `filled`,
+and **hidden is not removed** — the reserved height is identical in both
+states, measured at 336px either way, because collapsing the box on reveal is
+the layout shift the first rule exists to prevent. After approval this stops
+mattering by itself: AdSense marks an unsold slot `unfilled` and collapses it.
+It still earns its place for a reader whose request returns no ad, and for one
+running a blocker.
+
+**`visibility` is the wrong tool for this and that is the part worth keeping.**
+A descendant can un-hide itself out of an inherited `visibility: hidden`, and
+AdSense writes `visibility: visible` **inline** on the host div it builds
+inside the `<ins>` — so the container measured as hidden, reported
+`visibility: hidden` on every element we own, and the frame was on screen
+anyway. `opacity` does not inherit that way and no child can undo it. Both
+directions were proved rather than reasoned about: `unfilled` renders
+transparent at full height, and setting `data-ad-status="filled"` by hand
+brings back the plate, the border and the label with a height delta of 0px.
+
+**It nearly shipped unverified, and the reason is a trap worth naming.** A
+rebuilt `next start` could not take port 3111 because the previous one still
+held it — `errno: -98` in a log nobody reads — so the browser was measuring
+the *old* build and reported `opacity: 1` for a rule that was sitting in the
+compiled CSS. A local server that silently refuses to restart is
+indistinguishable from a fix that does not work. Compare the CSS hash the page
+asks for against the one in `.next/static/css/` before believing a
+measurement, and kill by pid from `ss -ltnp` — the repo's existing warning
+about `pkill -f 'next start -p 311'` matching your own shell is why that
+server was left running in the first place.
+
+**And the diagnostic signature is worth recording, because it says where the
+problem is not.** A page whose `<ins>` reaches `data-adsbygoogle-status="done"`
+with an `aswift` host built at full height, no `/pagead/ads?` request at all
+and `data-ad-status` absent, is a site-level hold and not a markup bug — Google
+has not asked for an ad. The proof it is not ours: auto ads inject their own
+`<ins>`, built by Google and never passing through `AdSlot`, and that one does
+not fill either. The same build served from `localhost` *did* get a response,
+`unfilled`, which is the same code reaching the same account from a host that
+carries no site record. Check the AdSense site's status before reading any of
+this as a defect.
+
 ## Paid links
 
 `content/affiliates.ts` is the register. It held nothing for a long time and
